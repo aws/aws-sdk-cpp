@@ -89,6 +89,9 @@
 #if($memberKeyWithFirstLetterCapitalized == "ContentType" && $shape.hasStreamMembers() && $shape.request)
 #set($override = " override ")
 #end
+#if($shape.request)
+#set($getterFunctionName = $CppViewHelper.checkForCollision($getterFunctionName, "GetMember", $memberKeyWithFirstLetterCapitalized))
+#end
     $memberDocumentation
     ${inline}${returnType} ${getterFunctionName}() const$override${getterBody}
 

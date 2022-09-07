@@ -208,7 +208,7 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
     XmlNode clusterCreateTimeNode = resultNode.FirstChild("ClusterCreateTime");
     if(!clusterCreateTimeNode.IsNull())
     {
-      m_clusterCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(clusterCreateTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_clusterCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(clusterCreateTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_clusterCreateTimeHasBeenSet = true;
     }
     XmlNode automatedSnapshotRetentionPeriodNode = resultNode.FirstChild("AutomatedSnapshotRetentionPeriod");
@@ -460,7 +460,7 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
     XmlNode expectedNextSnapshotScheduleTimeNode = resultNode.FirstChild("ExpectedNextSnapshotScheduleTime");
     if(!expectedNextSnapshotScheduleTimeNode.IsNull())
     {
-      m_expectedNextSnapshotScheduleTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(expectedNextSnapshotScheduleTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_expectedNextSnapshotScheduleTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(expectedNextSnapshotScheduleTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_expectedNextSnapshotScheduleTimeHasBeenSet = true;
     }
     XmlNode expectedNextSnapshotScheduleTimeStatusNode = resultNode.FirstChild("ExpectedNextSnapshotScheduleTimeStatus");
@@ -472,7 +472,7 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
     XmlNode nextMaintenanceWindowStartTimeNode = resultNode.FirstChild("NextMaintenanceWindowStartTime");
     if(!nextMaintenanceWindowStartTimeNode.IsNull())
     {
-      m_nextMaintenanceWindowStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nextMaintenanceWindowStartTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_nextMaintenanceWindowStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nextMaintenanceWindowStartTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_nextMaintenanceWindowStartTimeHasBeenSet = true;
     }
     XmlNode resizeInfoNode = resultNode.FirstChild("ResizeInfo");
@@ -568,7 +568,7 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
 
   if(m_clusterCreateTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_automatedSnapshotRetentionPeriodHasBeenSet)
@@ -796,7 +796,7 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
 
   if(m_expectedNextSnapshotScheduleTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ExpectedNextSnapshotScheduleTime=" << StringUtils::URLEncode(m_expectedNextSnapshotScheduleTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".ExpectedNextSnapshotScheduleTime=" << StringUtils::URLEncode(m_expectedNextSnapshotScheduleTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_expectedNextSnapshotScheduleTimeStatusHasBeenSet)
@@ -806,7 +806,7 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
 
   if(m_nextMaintenanceWindowStartTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".NextMaintenanceWindowStartTime=" << StringUtils::URLEncode(m_nextMaintenanceWindowStartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".NextMaintenanceWindowStartTime=" << StringUtils::URLEncode(m_nextMaintenanceWindowStartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_resizeInfoHasBeenSet)
@@ -890,7 +890,7 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_clusterCreateTimeHasBeenSet)
   {
-      oStream << location << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_automatedSnapshotRetentionPeriodHasBeenSet)
   {
@@ -1084,7 +1084,7 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_expectedNextSnapshotScheduleTimeHasBeenSet)
   {
-      oStream << location << ".ExpectedNextSnapshotScheduleTime=" << StringUtils::URLEncode(m_expectedNextSnapshotScheduleTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".ExpectedNextSnapshotScheduleTime=" << StringUtils::URLEncode(m_expectedNextSnapshotScheduleTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_expectedNextSnapshotScheduleTimeStatusHasBeenSet)
   {
@@ -1092,7 +1092,7 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_nextMaintenanceWindowStartTimeHasBeenSet)
   {
-      oStream << location << ".NextMaintenanceWindowStartTime=" << StringUtils::URLEncode(m_nextMaintenanceWindowStartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".NextMaintenanceWindowStartTime=" << StringUtils::URLEncode(m_nextMaintenanceWindowStartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_resizeInfoHasBeenSet)
   {

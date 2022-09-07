@@ -40,7 +40,7 @@ Aws::String ModifyInstanceEventStartTimeRequest::SerializePayload() const
 
   if(m_notBeforeHasBeenSet)
   {
-    ss << "NotBefore=" << StringUtils::URLEncode(m_notBefore.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+    ss << "NotBefore=" << StringUtils::URLEncode(m_notBefore.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

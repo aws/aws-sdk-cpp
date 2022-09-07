@@ -160,13 +160,13 @@ JobDescriptor& JobDescriptor::operator =(const XmlNode& xmlNode)
     XmlNode creationTimeNode = resultNode.FirstChild("CreationTime");
     if(!creationTimeNode.IsNull())
     {
-      m_creationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_creationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_creationTimeHasBeenSet = true;
     }
     XmlNode terminationDateNode = resultNode.FirstChild("TerminationDate");
     if(!terminationDateNode.IsNull())
     {
-      m_terminationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(terminationDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_terminationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(terminationDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_terminationDateHasBeenSet = true;
     }
     XmlNode roleArnNode = resultNode.FirstChild("RoleArn");
@@ -178,7 +178,7 @@ JobDescriptor& JobDescriptor::operator =(const XmlNode& xmlNode)
     XmlNode suspendedDateNode = resultNode.FirstChild("SuspendedDate");
     if(!suspendedDateNode.IsNull())
     {
-      m_suspendedDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(suspendedDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_suspendedDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(suspendedDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_suspendedDateHasBeenSet = true;
     }
     XmlNode suspendedCauseNode = resultNode.FirstChild("SuspendedCause");
@@ -290,13 +290,13 @@ void JobDescriptor::AddToNode(XmlNode& parentNode) const
   if(m_creationTimeHasBeenSet)
   {
    XmlNode creationTimeNode = parentNode.CreateChildElement("CreationTime");
-   creationTimeNode.SetText(m_creationTime.ToGmtString(DateFormat::ISO_8601));
+   creationTimeNode.SetText(m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_terminationDateHasBeenSet)
   {
    XmlNode terminationDateNode = parentNode.CreateChildElement("TerminationDate");
-   terminationDateNode.SetText(m_terminationDate.ToGmtString(DateFormat::ISO_8601));
+   terminationDateNode.SetText(m_terminationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_roleArnHasBeenSet)
@@ -308,7 +308,7 @@ void JobDescriptor::AddToNode(XmlNode& parentNode) const
   if(m_suspendedDateHasBeenSet)
   {
    XmlNode suspendedDateNode = parentNode.CreateChildElement("SuspendedDate");
-   suspendedDateNode.SetText(m_suspendedDate.ToGmtString(DateFormat::ISO_8601));
+   suspendedDateNode.SetText(m_suspendedDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_suspendedCauseHasBeenSet)

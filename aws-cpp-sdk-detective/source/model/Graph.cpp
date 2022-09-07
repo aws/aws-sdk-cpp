@@ -62,7 +62,7 @@ JsonValue Graph::Jsonize() const
 
   if(m_createdTimeHasBeenSet)
   {
-   payload.WithString("CreatedTime", m_createdTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("CreatedTime", m_createdTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

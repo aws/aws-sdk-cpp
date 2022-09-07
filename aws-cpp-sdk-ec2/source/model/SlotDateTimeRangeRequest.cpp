@@ -42,13 +42,13 @@ SlotDateTimeRangeRequest& SlotDateTimeRangeRequest::operator =(const XmlNode& xm
     XmlNode earliestTimeNode = resultNode.FirstChild("EarliestTime");
     if(!earliestTimeNode.IsNull())
     {
-      m_earliestTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(earliestTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_earliestTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(earliestTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_earliestTimeHasBeenSet = true;
     }
     XmlNode latestTimeNode = resultNode.FirstChild("LatestTime");
     if(!latestTimeNode.IsNull())
     {
-      m_latestTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(latestTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_latestTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(latestTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_latestTimeHasBeenSet = true;
     }
   }
@@ -60,12 +60,12 @@ void SlotDateTimeRangeRequest::OutputToStream(Aws::OStream& oStream, const char*
 {
   if(m_earliestTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EarliestTime=" << StringUtils::URLEncode(m_earliestTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".EarliestTime=" << StringUtils::URLEncode(m_earliestTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_latestTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LatestTime=" << StringUtils::URLEncode(m_latestTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".LatestTime=" << StringUtils::URLEncode(m_latestTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
 }
@@ -74,11 +74,11 @@ void SlotDateTimeRangeRequest::OutputToStream(Aws::OStream& oStream, const char*
 {
   if(m_earliestTimeHasBeenSet)
   {
-      oStream << location << ".EarliestTime=" << StringUtils::URLEncode(m_earliestTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".EarliestTime=" << StringUtils::URLEncode(m_earliestTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_latestTimeHasBeenSet)
   {
-      oStream << location << ".LatestTime=" << StringUtils::URLEncode(m_latestTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".LatestTime=" << StringUtils::URLEncode(m_latestTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

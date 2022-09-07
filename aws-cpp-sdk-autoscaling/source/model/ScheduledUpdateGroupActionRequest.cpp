@@ -66,13 +66,13 @@ ScheduledUpdateGroupActionRequest& ScheduledUpdateGroupActionRequest::operator =
     XmlNode startTimeNode = resultNode.FirstChild("StartTime");
     if(!startTimeNode.IsNull())
     {
-      m_startTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_startTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_startTimeHasBeenSet = true;
     }
     XmlNode endTimeNode = resultNode.FirstChild("EndTime");
     if(!endTimeNode.IsNull())
     {
-      m_endTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_endTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_endTimeHasBeenSet = true;
     }
     XmlNode recurrenceNode = resultNode.FirstChild("Recurrence");
@@ -119,12 +119,12 @@ void ScheduledUpdateGroupActionRequest::OutputToStream(Aws::OStream& oStream, co
 
   if(m_startTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_endTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_recurrenceHasBeenSet)
@@ -162,11 +162,11 @@ void ScheduledUpdateGroupActionRequest::OutputToStream(Aws::OStream& oStream, co
   }
   if(m_startTimeHasBeenSet)
   {
-      oStream << location << ".StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_endTimeHasBeenSet)
   {
-      oStream << location << ".EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_recurrenceHasBeenSet)
   {

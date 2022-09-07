@@ -68,7 +68,7 @@ GetOpenIDConnectProviderResult& GetOpenIDConnectProviderResult::operator =(const
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
     if(!createDateNode.IsNull())
     {
-      m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
     if(!tagsNode.IsNull())

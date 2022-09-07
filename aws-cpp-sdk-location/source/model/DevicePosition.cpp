@@ -132,12 +132,12 @@ JsonValue DevicePosition::Jsonize() const
 
   if(m_receivedTimeHasBeenSet)
   {
-   payload.WithString("ReceivedTime", m_receivedTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("ReceivedTime", m_receivedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_sampleTimeHasBeenSet)
   {
-   payload.WithString("SampleTime", m_sampleTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("SampleTime", m_sampleTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

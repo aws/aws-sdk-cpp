@@ -73,7 +73,7 @@ CreateVolumeResponse& CreateVolumeResponse::operator =(const Aws::AmazonWebServi
     XmlNode createTimeNode = resultNode.FirstChild("createTime");
     if(!createTimeNode.IsNull())
     {
-      m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
     }
     XmlNode encryptedNode = resultNode.FirstChild("encrypted");
     if(!encryptedNode.IsNull())

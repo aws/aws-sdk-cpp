@@ -193,7 +193,7 @@ JsonValue FindingSummary::Jsonize() const
 
   if(m_analyzedAtHasBeenSet)
   {
-   payload.WithString("analyzedAt", m_analyzedAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("analyzedAt", m_analyzedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_conditionHasBeenSet)
@@ -209,7 +209,7 @@ JsonValue FindingSummary::Jsonize() const
 
   if(m_createdAtHasBeenSet)
   {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_errorHasBeenSet)
@@ -276,7 +276,7 @@ JsonValue FindingSummary::Jsonize() const
 
   if(m_updatedAtHasBeenSet)
   {
-   payload.WithString("updatedAt", m_updatedAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

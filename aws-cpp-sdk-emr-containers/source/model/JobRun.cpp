@@ -248,7 +248,7 @@ JsonValue JobRun::Jsonize() const
 
   if(m_createdAtHasBeenSet)
   {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_createdByHasBeenSet)
@@ -259,7 +259,7 @@ JsonValue JobRun::Jsonize() const
 
   if(m_finishedAtHasBeenSet)
   {
-   payload.WithString("finishedAt", m_finishedAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("finishedAt", m_finishedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_stateDetailsHasBeenSet)

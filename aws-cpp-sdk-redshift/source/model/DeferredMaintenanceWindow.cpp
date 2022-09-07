@@ -50,13 +50,13 @@ DeferredMaintenanceWindow& DeferredMaintenanceWindow::operator =(const XmlNode& 
     XmlNode deferMaintenanceStartTimeNode = resultNode.FirstChild("DeferMaintenanceStartTime");
     if(!deferMaintenanceStartTimeNode.IsNull())
     {
-      m_deferMaintenanceStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deferMaintenanceStartTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_deferMaintenanceStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deferMaintenanceStartTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_deferMaintenanceStartTimeHasBeenSet = true;
     }
     XmlNode deferMaintenanceEndTimeNode = resultNode.FirstChild("DeferMaintenanceEndTime");
     if(!deferMaintenanceEndTimeNode.IsNull())
     {
-      m_deferMaintenanceEndTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deferMaintenanceEndTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_deferMaintenanceEndTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deferMaintenanceEndTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_deferMaintenanceEndTimeHasBeenSet = true;
     }
   }
@@ -73,12 +73,12 @@ void DeferredMaintenanceWindow::OutputToStream(Aws::OStream& oStream, const char
 
   if(m_deferMaintenanceStartTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DeferMaintenanceStartTime=" << StringUtils::URLEncode(m_deferMaintenanceStartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".DeferMaintenanceStartTime=" << StringUtils::URLEncode(m_deferMaintenanceStartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_deferMaintenanceEndTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DeferMaintenanceEndTime=" << StringUtils::URLEncode(m_deferMaintenanceEndTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".DeferMaintenanceEndTime=" << StringUtils::URLEncode(m_deferMaintenanceEndTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
 }
@@ -91,11 +91,11 @@ void DeferredMaintenanceWindow::OutputToStream(Aws::OStream& oStream, const char
   }
   if(m_deferMaintenanceStartTimeHasBeenSet)
   {
-      oStream << location << ".DeferMaintenanceStartTime=" << StringUtils::URLEncode(m_deferMaintenanceStartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".DeferMaintenanceStartTime=" << StringUtils::URLEncode(m_deferMaintenanceStartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_deferMaintenanceEndTimeHasBeenSet)
   {
-      oStream << location << ".DeferMaintenanceEndTime=" << StringUtils::URLEncode(m_deferMaintenanceEndTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".DeferMaintenanceEndTime=" << StringUtils::URLEncode(m_deferMaintenanceEndTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

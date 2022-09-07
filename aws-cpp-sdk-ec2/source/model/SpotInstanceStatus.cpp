@@ -56,7 +56,7 @@ SpotInstanceStatus& SpotInstanceStatus::operator =(const XmlNode& xmlNode)
     XmlNode updateTimeNode = resultNode.FirstChild("updateTime");
     if(!updateTimeNode.IsNull())
     {
-      m_updateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_updateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_updateTimeHasBeenSet = true;
     }
   }
@@ -78,7 +78,7 @@ void SpotInstanceStatus::OutputToStream(Aws::OStream& oStream, const char* locat
 
   if(m_updateTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".UpdateTime=" << StringUtils::URLEncode(m_updateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".UpdateTime=" << StringUtils::URLEncode(m_updateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
 }
@@ -95,7 +95,7 @@ void SpotInstanceStatus::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_updateTimeHasBeenSet)
   {
-      oStream << location << ".UpdateTime=" << StringUtils::URLEncode(m_updateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".UpdateTime=" << StringUtils::URLEncode(m_updateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

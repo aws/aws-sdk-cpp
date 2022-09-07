@@ -74,7 +74,7 @@ NetworkInsightsPath& NetworkInsightsPath::operator =(const XmlNode& xmlNode)
     XmlNode createdDateNode = resultNode.FirstChild("createdDate");
     if(!createdDateNode.IsNull())
     {
-      m_createdDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_createdDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createdDateHasBeenSet = true;
     }
     XmlNode sourceNode = resultNode.FirstChild("source");
@@ -144,7 +144,7 @@ void NetworkInsightsPath::OutputToStream(Aws::OStream& oStream, const char* loca
 
   if(m_createdDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreatedDate=" << StringUtils::URLEncode(m_createdDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".CreatedDate=" << StringUtils::URLEncode(m_createdDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_sourceHasBeenSet)
@@ -202,7 +202,7 @@ void NetworkInsightsPath::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_createdDateHasBeenSet)
   {
-      oStream << location << ".CreatedDate=" << StringUtils::URLEncode(m_createdDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".CreatedDate=" << StringUtils::URLEncode(m_createdDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_sourceHasBeenSet)
   {

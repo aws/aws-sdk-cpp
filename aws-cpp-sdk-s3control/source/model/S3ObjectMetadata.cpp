@@ -124,7 +124,7 @@ S3ObjectMetadata& S3ObjectMetadata::operator =(const XmlNode& xmlNode)
     XmlNode httpExpiresDateNode = resultNode.FirstChild("HttpExpiresDate");
     if(!httpExpiresDateNode.IsNull())
     {
-      m_httpExpiresDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpExpiresDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_httpExpiresDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpExpiresDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_httpExpiresDateHasBeenSet = true;
     }
     XmlNode requesterChargedNode = resultNode.FirstChild("RequesterCharged");
@@ -198,7 +198,7 @@ void S3ObjectMetadata::AddToNode(XmlNode& parentNode) const
   if(m_httpExpiresDateHasBeenSet)
   {
    XmlNode httpExpiresDateNode = parentNode.CreateChildElement("HttpExpiresDate");
-   httpExpiresDateNode.SetText(m_httpExpiresDate.ToGmtString(DateFormat::ISO_8601));
+   httpExpiresDateNode.SetText(m_httpExpiresDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_requesterChargedHasBeenSet)

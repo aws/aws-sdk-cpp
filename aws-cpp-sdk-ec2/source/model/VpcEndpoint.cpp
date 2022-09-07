@@ -206,7 +206,7 @@ VpcEndpoint& VpcEndpoint::operator =(const XmlNode& xmlNode)
     XmlNode creationTimestampNode = resultNode.FirstChild("creationTimestamp");
     if(!creationTimestampNode.IsNull())
     {
-      m_creationTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimestampNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_creationTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_creationTimestampHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
@@ -343,7 +343,7 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location, un
 
   if(m_creationTimestampHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreationTimestamp=" << StringUtils::URLEncode(m_creationTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".CreationTimestamp=" << StringUtils::URLEncode(m_creationTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_tagsHasBeenSet)
@@ -461,7 +461,7 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_creationTimestampHasBeenSet)
   {
-      oStream << location << ".CreationTimestamp=" << StringUtils::URLEncode(m_creationTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".CreationTimestamp=" << StringUtils::URLEncode(m_creationTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_tagsHasBeenSet)
   {
