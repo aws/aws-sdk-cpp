@@ -12,7 +12,6 @@ namespace Aws
 {
     namespace Endpoint
     {
-        // IDK how to express the level of ugliness of this "interface".
         class AWS_CORE_API EndpointParameter
         {
         public:

@@ -141,8 +141,8 @@ namespace Model
     {
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/model/ModelGetEndpointRulesContextParamBody.vm")
     }
-#end
 
+#end
 #set($useRequiredField = true)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassMembersAndInlines.vm")
   };

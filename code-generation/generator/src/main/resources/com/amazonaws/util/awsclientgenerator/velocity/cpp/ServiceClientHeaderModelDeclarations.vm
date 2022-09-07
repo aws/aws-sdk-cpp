@@ -1,14 +1,17 @@
+      /* Service model forward declarations required in ${metadata.classNamePrefix}Client header */
 #foreach($operation in $serviceModel.operations)
 #if($operation.request)
-        class ${operation.request.shape.name};
+      class ${operation.request.shape.name};
 #foreach($entity in $operation.request.shape.members.entrySet())
 #if($entity.value.shape.isEventStream())
-        class ${entity.value.shape.name};
+      class ${entity.value.shape.name};
 #end
 #end
 #end
 #end
+      /* End of service model forward declarations required in ${metadata.classNamePrefix}Client header */
 
+      /* Service model Outcome class definitions */
 #if($serviceModel.shapes.containsKey("${metadata.classNamePrefix}Error"))
 #set($clientErrorType = "${rootNamespace}::$serviceNamespace::${metadata.classNamePrefix}Error")
 #else
@@ -16,14 +19,17 @@
 #end
 #foreach($operation in $serviceModel.operations)
 #if($operation.result && !$operation.result.shape.hasEventStreamMembers())
-        typedef Aws::Utils::Outcome<${operation.result.shape.name}, $clientErrorType> ${operation.name}Outcome;
+      typedef Aws::Utils::Outcome<${operation.result.shape.name}, $clientErrorType> ${operation.name}Outcome;
 #else##--#if($operation.result && !$operation.result.shape.hasEventStreamMembers())
-        typedef Aws::Utils::Outcome<Aws::NoResult, $clientErrorType> ${operation.name}Outcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, $clientErrorType> ${operation.name}Outcome;
 #end##--#if($operation.result && !$operation.result.shape.hasEventStreamMembers())
 #end##--#foreach($operation in $serviceModel.operations)
+      /* End of service model Outcome class definitions */
 
+      /* Service model Outcome callable definitions */
 #foreach($operation in $serviceModel.operations)
 #if(!$operation.s3CrtSpecific)
-        typedef std::future<${operation.name}Outcome> ${operation.name}OutcomeCallable;
+      typedef std::future<${operation.name}Outcome> ${operation.name}OutcomeCallable;
 #end
 #end
+      /* End of service model Outcome callable definitions */

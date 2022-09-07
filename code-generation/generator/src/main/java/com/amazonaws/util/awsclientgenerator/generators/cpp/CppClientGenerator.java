@@ -62,6 +62,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         fileList.addAll(generateModelHeaderFiles(serviceModel));
         fileList.addAll(generateModelSourceFiles(serviceModel));
         fileList.add(generateClientHeaderFile(serviceModel));
+        fileList.add(generateServiceClientModelInclude(serviceModel));
         fileList.add(generateClientSourceFile(serviceModel));
         fileList.add(generateARNHeaderFile(serviceModel));
         fileList.add(generateARNSourceFile(serviceModel));
@@ -209,6 +210,18 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
     //these probably don't need to be abstract, since xml and json implementations are not considered here.
     protected abstract SdkFileEntry generateClientHeaderFile(final ServiceModel serviceModel) throws Exception;
+
+    protected SdkFileEntry generateServiceClientModelInclude(ServiceModel serviceModel) throws Exception {
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/common/model/ServiceClientModelHeaderInclude.vm", StandardCharsets.UTF_8.name());
+
+        VelocityContext context = createContext(serviceModel);
+        context.put("CppViewHelper", CppViewHelper.class);
+
+        String fileName = String.format("include/aws/%s/%sServiceClientModel.h", serviceModel.getMetadata().getProjectName(),
+                serviceModel.getMetadata().getClassNamePrefix());
+
+        return makeFile(template, context, fileName, true);
+    }
 
     protected abstract SdkFileEntry generateClientSourceFile(final ServiceModel serviceModel) throws Exception;
 
