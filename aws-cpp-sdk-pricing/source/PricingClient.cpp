@@ -119,12 +119,10 @@ DescribeServicesOutcomeCallable PricingClient::DescribeServicesCallable(const De
 
 void PricingClient::DescribeServicesAsync(const DescribeServicesRequest& request, const DescribeServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeServicesAsyncHelper( request, handler, context ); } );
-}
-
-void PricingClient::DescribeServicesAsyncHelper(const DescribeServicesRequest& request, const DescribeServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeServices(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeServices(request), context);
+    } );
 }
 
 GetAttributeValuesOutcome PricingClient::GetAttributeValues(const GetAttributeValuesRequest& request) const
@@ -143,12 +141,10 @@ GetAttributeValuesOutcomeCallable PricingClient::GetAttributeValuesCallable(cons
 
 void PricingClient::GetAttributeValuesAsync(const GetAttributeValuesRequest& request, const GetAttributeValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAttributeValuesAsyncHelper( request, handler, context ); } );
-}
-
-void PricingClient::GetAttributeValuesAsyncHelper(const GetAttributeValuesRequest& request, const GetAttributeValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetAttributeValues(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAttributeValues(request), context);
+    } );
 }
 
 GetProductsOutcome PricingClient::GetProducts(const GetProductsRequest& request) const
@@ -167,11 +163,9 @@ GetProductsOutcomeCallable PricingClient::GetProductsCallable(const GetProductsR
 
 void PricingClient::GetProductsAsync(const GetProductsRequest& request, const GetProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetProductsAsyncHelper( request, handler, context ); } );
-}
-
-void PricingClient::GetProductsAsyncHelper(const GetProductsRequest& request, const GetProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetProducts(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetProducts(request), context);
+    } );
 }
 

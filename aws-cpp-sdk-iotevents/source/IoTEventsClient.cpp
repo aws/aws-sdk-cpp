@@ -143,12 +143,10 @@ CreateAlarmModelOutcomeCallable IoTEventsClient::CreateAlarmModelCallable(const 
 
 void IoTEventsClient::CreateAlarmModelAsync(const CreateAlarmModelRequest& request, const CreateAlarmModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAlarmModelAsyncHelper( request, handler, context ); } );
-}
-
-void IoTEventsClient::CreateAlarmModelAsyncHelper(const CreateAlarmModelRequest& request, const CreateAlarmModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateAlarmModel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateAlarmModel(request), context);
+    } );
 }
 
 CreateDetectorModelOutcome IoTEventsClient::CreateDetectorModel(const CreateDetectorModelRequest& request) const
@@ -168,12 +166,10 @@ CreateDetectorModelOutcomeCallable IoTEventsClient::CreateDetectorModelCallable(
 
 void IoTEventsClient::CreateDetectorModelAsync(const CreateDetectorModelRequest& request, const CreateDetectorModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDetectorModelAsyncHelper( request, handler, context ); } );
-}
-
-void IoTEventsClient::CreateDetectorModelAsyncHelper(const CreateDetectorModelRequest& request, const CreateDetectorModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateDetectorModel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateDetectorModel(request), context);
+    } );
 }
 
 CreateInputOutcome IoTEventsClient::CreateInput(const CreateInputRequest& request) const
@@ -193,12 +189,10 @@ CreateInputOutcomeCallable IoTEventsClient::CreateInputCallable(const CreateInpu
 
 void IoTEventsClient::CreateInputAsync(const CreateInputRequest& request, const CreateInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateInputAsyncHelper( request, handler, context ); } );
-}
-
-void IoTEventsClient::CreateInputAsyncHelper(const CreateInputRequest& request, const CreateInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateInput(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateInput(request), context);
+    } );
 }
 
 DeleteAlarmModelOutcome IoTEventsClient::DeleteAlarmModel(const DeleteAlarmModelRequest& request) const
@@ -224,12 +218,10 @@ DeleteAlarmModelOutcomeCallable IoTEventsClient::DeleteAlarmModelCallable(const 
 
 void IoTEventsClient::DeleteAlarmModelAsync(const DeleteAlarmModelRequest& request, const DeleteAlarmModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAlarmModelAsyncHelper( request, handler, context ); } );
-}
-
-void IoTEventsClient::DeleteAlarmModelAsyncHelper(const DeleteAlarmModelRequest& request, const DeleteAlarmModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteAlarmModel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteAlarmModel(request), context);
+    } );
 }
 
 DeleteDetectorModelOutcome IoTEventsClient::DeleteDetectorModel(const DeleteDetectorModelRequest& request) const
@@ -255,12 +247,10 @@ DeleteDetectorModelOutcomeCallable IoTEventsClient::DeleteDetectorModelCallable(
 
 void IoTEventsClient::DeleteDetectorModelAsync(const DeleteDetectorModelRequest& request, const DeleteDetectorModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDetectorModelAsyncHelper( request, handler, context ); } );
-}
-
-void IoTEventsClient::DeleteDetectorModelAsyncHelper(const DeleteDetectorModelRequest& request, const DeleteDetectorModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteDetectorModel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteDetectorModel(request), context);
+    } );
 }
 
 DeleteInputOutcome IoTEventsClient::DeleteInput(const DeleteInputRequest& request) const
@@ -286,12 +276,10 @@ DeleteInputOutcomeCallable IoTEventsClient::DeleteInputCallable(const DeleteInpu
 
 void IoTEventsClient::DeleteInputAsync(const DeleteInputRequest& request, const DeleteInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteInputAsyncHelper( request, handler, context ); } );
-}
-
-void IoTEventsClient::DeleteInputAsyncHelper(const DeleteInputRequest& request, const DeleteInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteInput(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteInput(request), context);
+    } );
 }
 
 DescribeAlarmModelOutcome IoTEventsClient::DescribeAlarmModel(const DescribeAlarmModelRequest& request) const
@@ -317,12 +305,10 @@ DescribeAlarmModelOutcomeCallable IoTEventsClient::DescribeAlarmModelCallable(co
 
 void IoTEventsClient::DescribeAlarmModelAsync(const DescribeAlarmModelRequest& request, const DescribeAlarmModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAlarmModelAsyncHelper( request, handler, context ); } );
-}
-
-void IoTEventsClient::DescribeAlarmModelAsyncHelper(const DescribeAlarmModelRequest& request, const DescribeAlarmModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAlarmModel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAlarmModel(request), context);
+    } );
 }
 
 DescribeDetectorModelOutcome IoTEventsClient::DescribeDetectorModel(const DescribeDetectorModelRequest& request) const
@@ -348,12 +334,10 @@ DescribeDetectorModelOutcomeCallable IoTEventsClient::DescribeDetectorModelCalla
 
 void IoTEventsClient::DescribeDetectorModelAsync(const DescribeDetectorModelRequest& request, const DescribeDetectorModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDetectorModelAsyncHelper( request, handler, context ); } );
-}
-
-void IoTEventsClient::DescribeDetectorModelAsyncHelper(const DescribeDetectorModelRequest& request, const DescribeDetectorModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeDetectorModel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeDetectorModel(request), context);
+    } );
 }
 
 DescribeDetectorModelAnalysisOutcome IoTEventsClient::DescribeDetectorModelAnalysis(const DescribeDetectorModelAnalysisRequest& request) const
@@ -379,12 +363,10 @@ DescribeDetectorModelAnalysisOutcomeCallable IoTEventsClient::DescribeDetectorMo
 
 void IoTEventsClient::DescribeDetectorModelAnalysisAsync(const DescribeDetectorModelAnalysisRequest& request, const DescribeDetectorModelAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDetectorModelAnalysisAsyncHelper( request, handler, context ); } );
-}
-
-void IoTEventsClient::DescribeDetectorModelAnalysisAsyncHelper(const DescribeDetectorModelAnalysisRequest& request, const DescribeDetectorModelAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeDetectorModelAnalysis(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeDetectorModelAnalysis(request), context);
+    } );
 }
 
 DescribeInputOutcome IoTEventsClient::DescribeInput(const DescribeInputRequest& request) const
@@ -410,12 +392,10 @@ DescribeInputOutcomeCallable IoTEventsClient::DescribeInputCallable(const Descri
 
 void IoTEventsClient::DescribeInputAsync(const DescribeInputRequest& request, const DescribeInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeInputAsyncHelper( request, handler, context ); } );
-}
-
-void IoTEventsClient::DescribeInputAsyncHelper(const DescribeInputRequest& request, const DescribeInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeInput(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeInput(request), context);
+    } );
 }
 
 DescribeLoggingOptionsOutcome IoTEventsClient::DescribeLoggingOptions(const DescribeLoggingOptionsRequest& request) const
@@ -435,12 +415,10 @@ DescribeLoggingOptionsOutcomeCallable IoTEventsClient::DescribeLoggingOptionsCal
 
 void IoTEventsClient::DescribeLoggingOptionsAsync(const DescribeLoggingOptionsRequest& request, const DescribeLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLoggingOptionsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTEventsClient::DescribeLoggingOptionsAsyncHelper(const DescribeLoggingOptionsRequest& request, const DescribeLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeLoggingOptions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeLoggingOptions(request), context);
+    } );
 }
 
 GetDetectorModelAnalysisResultsOutcome IoTEventsClient::GetDetectorModelAnalysisResults(const GetDetectorModelAnalysisResultsRequest& request) const
@@ -467,12 +445,10 @@ GetDetectorModelAnalysisResultsOutcomeCallable IoTEventsClient::GetDetectorModel
 
 void IoTEventsClient::GetDetectorModelAnalysisResultsAsync(const GetDetectorModelAnalysisResultsRequest& request, const GetDetectorModelAnalysisResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDetectorModelAnalysisResultsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTEventsClient::GetDetectorModelAnalysisResultsAsyncHelper(const GetDetectorModelAnalysisResultsRequest& request, const GetDetectorModelAnalysisResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDetectorModelAnalysisResults(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDetectorModelAnalysisResults(request), context);
+    } );
 }
 
 ListAlarmModelVersionsOutcome IoTEventsClient::ListAlarmModelVersions(const ListAlarmModelVersionsRequest& request) const
@@ -499,12 +475,10 @@ ListAlarmModelVersionsOutcomeCallable IoTEventsClient::ListAlarmModelVersionsCal
 
 void IoTEventsClient::ListAlarmModelVersionsAsync(const ListAlarmModelVersionsRequest& request, const ListAlarmModelVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAlarmModelVersionsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTEventsClient::ListAlarmModelVersionsAsyncHelper(const ListAlarmModelVersionsRequest& request, const ListAlarmModelVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAlarmModelVersions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAlarmModelVersions(request), context);
+    } );
 }
 
 ListAlarmModelsOutcome IoTEventsClient::ListAlarmModels(const ListAlarmModelsRequest& request) const
@@ -524,12 +498,10 @@ ListAlarmModelsOutcomeCallable IoTEventsClient::ListAlarmModelsCallable(const Li
 
 void IoTEventsClient::ListAlarmModelsAsync(const ListAlarmModelsRequest& request, const ListAlarmModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAlarmModelsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTEventsClient::ListAlarmModelsAsyncHelper(const ListAlarmModelsRequest& request, const ListAlarmModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAlarmModels(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAlarmModels(request), context);
+    } );
 }
 
 ListDetectorModelVersionsOutcome IoTEventsClient::ListDetectorModelVersions(const ListDetectorModelVersionsRequest& request) const
@@ -556,12 +528,10 @@ ListDetectorModelVersionsOutcomeCallable IoTEventsClient::ListDetectorModelVersi
 
 void IoTEventsClient::ListDetectorModelVersionsAsync(const ListDetectorModelVersionsRequest& request, const ListDetectorModelVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDetectorModelVersionsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTEventsClient::ListDetectorModelVersionsAsyncHelper(const ListDetectorModelVersionsRequest& request, const ListDetectorModelVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDetectorModelVersions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDetectorModelVersions(request), context);
+    } );
 }
 
 ListDetectorModelsOutcome IoTEventsClient::ListDetectorModels(const ListDetectorModelsRequest& request) const
@@ -581,12 +551,10 @@ ListDetectorModelsOutcomeCallable IoTEventsClient::ListDetectorModelsCallable(co
 
 void IoTEventsClient::ListDetectorModelsAsync(const ListDetectorModelsRequest& request, const ListDetectorModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDetectorModelsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTEventsClient::ListDetectorModelsAsyncHelper(const ListDetectorModelsRequest& request, const ListDetectorModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDetectorModels(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDetectorModels(request), context);
+    } );
 }
 
 ListInputRoutingsOutcome IoTEventsClient::ListInputRoutings(const ListInputRoutingsRequest& request) const
@@ -606,12 +574,10 @@ ListInputRoutingsOutcomeCallable IoTEventsClient::ListInputRoutingsCallable(cons
 
 void IoTEventsClient::ListInputRoutingsAsync(const ListInputRoutingsRequest& request, const ListInputRoutingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListInputRoutingsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTEventsClient::ListInputRoutingsAsyncHelper(const ListInputRoutingsRequest& request, const ListInputRoutingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListInputRoutings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListInputRoutings(request), context);
+    } );
 }
 
 ListInputsOutcome IoTEventsClient::ListInputs(const ListInputsRequest& request) const
@@ -631,12 +597,10 @@ ListInputsOutcomeCallable IoTEventsClient::ListInputsCallable(const ListInputsRe
 
 void IoTEventsClient::ListInputsAsync(const ListInputsRequest& request, const ListInputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListInputsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTEventsClient::ListInputsAsyncHelper(const ListInputsRequest& request, const ListInputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListInputs(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListInputs(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome IoTEventsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -661,12 +625,10 @@ ListTagsForResourceOutcomeCallable IoTEventsClient::ListTagsForResourceCallable(
 
 void IoTEventsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void IoTEventsClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 PutLoggingOptionsOutcome IoTEventsClient::PutLoggingOptions(const PutLoggingOptionsRequest& request) const
@@ -686,12 +648,10 @@ PutLoggingOptionsOutcomeCallable IoTEventsClient::PutLoggingOptionsCallable(cons
 
 void IoTEventsClient::PutLoggingOptionsAsync(const PutLoggingOptionsRequest& request, const PutLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutLoggingOptionsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTEventsClient::PutLoggingOptionsAsyncHelper(const PutLoggingOptionsRequest& request, const PutLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutLoggingOptions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutLoggingOptions(request), context);
+    } );
 }
 
 StartDetectorModelAnalysisOutcome IoTEventsClient::StartDetectorModelAnalysis(const StartDetectorModelAnalysisRequest& request) const
@@ -711,12 +671,10 @@ StartDetectorModelAnalysisOutcomeCallable IoTEventsClient::StartDetectorModelAna
 
 void IoTEventsClient::StartDetectorModelAnalysisAsync(const StartDetectorModelAnalysisRequest& request, const StartDetectorModelAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartDetectorModelAnalysisAsyncHelper( request, handler, context ); } );
-}
-
-void IoTEventsClient::StartDetectorModelAnalysisAsyncHelper(const StartDetectorModelAnalysisRequest& request, const StartDetectorModelAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartDetectorModelAnalysis(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartDetectorModelAnalysis(request), context);
+    } );
 }
 
 TagResourceOutcome IoTEventsClient::TagResource(const TagResourceRequest& request) const
@@ -741,12 +699,10 @@ TagResourceOutcomeCallable IoTEventsClient::TagResourceCallable(const TagResourc
 
 void IoTEventsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void IoTEventsClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome IoTEventsClient::UntagResource(const UntagResourceRequest& request) const
@@ -776,12 +732,10 @@ UntagResourceOutcomeCallable IoTEventsClient::UntagResourceCallable(const UntagR
 
 void IoTEventsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void IoTEventsClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateAlarmModelOutcome IoTEventsClient::UpdateAlarmModel(const UpdateAlarmModelRequest& request) const
@@ -807,12 +761,10 @@ UpdateAlarmModelOutcomeCallable IoTEventsClient::UpdateAlarmModelCallable(const 
 
 void IoTEventsClient::UpdateAlarmModelAsync(const UpdateAlarmModelRequest& request, const UpdateAlarmModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAlarmModelAsyncHelper( request, handler, context ); } );
-}
-
-void IoTEventsClient::UpdateAlarmModelAsyncHelper(const UpdateAlarmModelRequest& request, const UpdateAlarmModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateAlarmModel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateAlarmModel(request), context);
+    } );
 }
 
 UpdateDetectorModelOutcome IoTEventsClient::UpdateDetectorModel(const UpdateDetectorModelRequest& request) const
@@ -838,12 +790,10 @@ UpdateDetectorModelOutcomeCallable IoTEventsClient::UpdateDetectorModelCallable(
 
 void IoTEventsClient::UpdateDetectorModelAsync(const UpdateDetectorModelRequest& request, const UpdateDetectorModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDetectorModelAsyncHelper( request, handler, context ); } );
-}
-
-void IoTEventsClient::UpdateDetectorModelAsyncHelper(const UpdateDetectorModelRequest& request, const UpdateDetectorModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateDetectorModel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateDetectorModel(request), context);
+    } );
 }
 
 UpdateInputOutcome IoTEventsClient::UpdateInput(const UpdateInputRequest& request) const
@@ -869,11 +819,9 @@ UpdateInputOutcomeCallable IoTEventsClient::UpdateInputCallable(const UpdateInpu
 
 void IoTEventsClient::UpdateInputAsync(const UpdateInputRequest& request, const UpdateInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateInputAsyncHelper( request, handler, context ); } );
-}
-
-void IoTEventsClient::UpdateInputAsyncHelper(const UpdateInputRequest& request, const UpdateInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateInput(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateInput(request), context);
+    } );
 }
 

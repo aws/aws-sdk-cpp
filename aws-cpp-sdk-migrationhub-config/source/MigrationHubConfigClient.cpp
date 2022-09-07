@@ -119,12 +119,10 @@ CreateHomeRegionControlOutcomeCallable MigrationHubConfigClient::CreateHomeRegio
 
 void MigrationHubConfigClient::CreateHomeRegionControlAsync(const CreateHomeRegionControlRequest& request, const CreateHomeRegionControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateHomeRegionControlAsyncHelper( request, handler, context ); } );
-}
-
-void MigrationHubConfigClient::CreateHomeRegionControlAsyncHelper(const CreateHomeRegionControlRequest& request, const CreateHomeRegionControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateHomeRegionControl(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateHomeRegionControl(request), context);
+    } );
 }
 
 DescribeHomeRegionControlsOutcome MigrationHubConfigClient::DescribeHomeRegionControls(const DescribeHomeRegionControlsRequest& request) const
@@ -143,12 +141,10 @@ DescribeHomeRegionControlsOutcomeCallable MigrationHubConfigClient::DescribeHome
 
 void MigrationHubConfigClient::DescribeHomeRegionControlsAsync(const DescribeHomeRegionControlsRequest& request, const DescribeHomeRegionControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeHomeRegionControlsAsyncHelper( request, handler, context ); } );
-}
-
-void MigrationHubConfigClient::DescribeHomeRegionControlsAsyncHelper(const DescribeHomeRegionControlsRequest& request, const DescribeHomeRegionControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeHomeRegionControls(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeHomeRegionControls(request), context);
+    } );
 }
 
 GetHomeRegionOutcome MigrationHubConfigClient::GetHomeRegion(const GetHomeRegionRequest& request) const
@@ -167,11 +163,9 @@ GetHomeRegionOutcomeCallable MigrationHubConfigClient::GetHomeRegionCallable(con
 
 void MigrationHubConfigClient::GetHomeRegionAsync(const GetHomeRegionRequest& request, const GetHomeRegionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetHomeRegionAsyncHelper( request, handler, context ); } );
-}
-
-void MigrationHubConfigClient::GetHomeRegionAsyncHelper(const GetHomeRegionRequest& request, const GetHomeRegionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetHomeRegion(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetHomeRegion(request), context);
+    } );
 }
 

@@ -124,12 +124,10 @@ DescribeReportCreationOutcomeCallable ResourceGroupsTaggingAPIClient::DescribeRe
 
 void ResourceGroupsTaggingAPIClient::DescribeReportCreationAsync(const DescribeReportCreationRequest& request, const DescribeReportCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeReportCreationAsyncHelper( request, handler, context ); } );
-}
-
-void ResourceGroupsTaggingAPIClient::DescribeReportCreationAsyncHelper(const DescribeReportCreationRequest& request, const DescribeReportCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeReportCreation(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeReportCreation(request), context);
+    } );
 }
 
 GetComplianceSummaryOutcome ResourceGroupsTaggingAPIClient::GetComplianceSummary(const GetComplianceSummaryRequest& request) const
@@ -148,12 +146,10 @@ GetComplianceSummaryOutcomeCallable ResourceGroupsTaggingAPIClient::GetComplianc
 
 void ResourceGroupsTaggingAPIClient::GetComplianceSummaryAsync(const GetComplianceSummaryRequest& request, const GetComplianceSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetComplianceSummaryAsyncHelper( request, handler, context ); } );
-}
-
-void ResourceGroupsTaggingAPIClient::GetComplianceSummaryAsyncHelper(const GetComplianceSummaryRequest& request, const GetComplianceSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetComplianceSummary(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetComplianceSummary(request), context);
+    } );
 }
 
 GetResourcesOutcome ResourceGroupsTaggingAPIClient::GetResources(const GetResourcesRequest& request) const
@@ -172,12 +168,10 @@ GetResourcesOutcomeCallable ResourceGroupsTaggingAPIClient::GetResourcesCallable
 
 void ResourceGroupsTaggingAPIClient::GetResourcesAsync(const GetResourcesRequest& request, const GetResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResourcesAsyncHelper( request, handler, context ); } );
-}
-
-void ResourceGroupsTaggingAPIClient::GetResourcesAsyncHelper(const GetResourcesRequest& request, const GetResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetResources(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetResources(request), context);
+    } );
 }
 
 GetTagKeysOutcome ResourceGroupsTaggingAPIClient::GetTagKeys(const GetTagKeysRequest& request) const
@@ -196,12 +190,10 @@ GetTagKeysOutcomeCallable ResourceGroupsTaggingAPIClient::GetTagKeysCallable(con
 
 void ResourceGroupsTaggingAPIClient::GetTagKeysAsync(const GetTagKeysRequest& request, const GetTagKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTagKeysAsyncHelper( request, handler, context ); } );
-}
-
-void ResourceGroupsTaggingAPIClient::GetTagKeysAsyncHelper(const GetTagKeysRequest& request, const GetTagKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetTagKeys(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetTagKeys(request), context);
+    } );
 }
 
 GetTagValuesOutcome ResourceGroupsTaggingAPIClient::GetTagValues(const GetTagValuesRequest& request) const
@@ -220,12 +212,10 @@ GetTagValuesOutcomeCallable ResourceGroupsTaggingAPIClient::GetTagValuesCallable
 
 void ResourceGroupsTaggingAPIClient::GetTagValuesAsync(const GetTagValuesRequest& request, const GetTagValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTagValuesAsyncHelper( request, handler, context ); } );
-}
-
-void ResourceGroupsTaggingAPIClient::GetTagValuesAsyncHelper(const GetTagValuesRequest& request, const GetTagValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetTagValues(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetTagValues(request), context);
+    } );
 }
 
 StartReportCreationOutcome ResourceGroupsTaggingAPIClient::StartReportCreation(const StartReportCreationRequest& request) const
@@ -244,12 +234,10 @@ StartReportCreationOutcomeCallable ResourceGroupsTaggingAPIClient::StartReportCr
 
 void ResourceGroupsTaggingAPIClient::StartReportCreationAsync(const StartReportCreationRequest& request, const StartReportCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartReportCreationAsyncHelper( request, handler, context ); } );
-}
-
-void ResourceGroupsTaggingAPIClient::StartReportCreationAsyncHelper(const StartReportCreationRequest& request, const StartReportCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartReportCreation(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartReportCreation(request), context);
+    } );
 }
 
 TagResourcesOutcome ResourceGroupsTaggingAPIClient::TagResources(const TagResourcesRequest& request) const
@@ -268,12 +256,10 @@ TagResourcesOutcomeCallable ResourceGroupsTaggingAPIClient::TagResourcesCallable
 
 void ResourceGroupsTaggingAPIClient::TagResourcesAsync(const TagResourcesRequest& request, const TagResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourcesAsyncHelper( request, handler, context ); } );
-}
-
-void ResourceGroupsTaggingAPIClient::TagResourcesAsyncHelper(const TagResourcesRequest& request, const TagResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResources(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResources(request), context);
+    } );
 }
 
 UntagResourcesOutcome ResourceGroupsTaggingAPIClient::UntagResources(const UntagResourcesRequest& request) const
@@ -292,11 +278,9 @@ UntagResourcesOutcomeCallable ResourceGroupsTaggingAPIClient::UntagResourcesCall
 
 void ResourceGroupsTaggingAPIClient::UntagResourcesAsync(const UntagResourcesRequest& request, const UntagResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourcesAsyncHelper( request, handler, context ); } );
-}
-
-void ResourceGroupsTaggingAPIClient::UntagResourcesAsyncHelper(const UntagResourcesRequest& request, const UntagResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResources(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResources(request), context);
+    } );
 }
 

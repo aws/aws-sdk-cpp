@@ -278,12 +278,10 @@ AssociateApprovedOriginOutcomeCallable ConnectClient::AssociateApprovedOriginCal
 
 void ConnectClient::AssociateApprovedOriginAsync(const AssociateApprovedOriginRequest& request, const AssociateApprovedOriginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateApprovedOriginAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::AssociateApprovedOriginAsyncHelper(const AssociateApprovedOriginRequest& request, const AssociateApprovedOriginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateApprovedOrigin(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateApprovedOrigin(request), context);
+    } );
 }
 
 AssociateBotOutcome ConnectClient::AssociateBot(const AssociateBotRequest& request) const
@@ -310,12 +308,10 @@ AssociateBotOutcomeCallable ConnectClient::AssociateBotCallable(const AssociateB
 
 void ConnectClient::AssociateBotAsync(const AssociateBotRequest& request, const AssociateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateBotAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::AssociateBotAsyncHelper(const AssociateBotRequest& request, const AssociateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateBot(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateBot(request), context);
+    } );
 }
 
 AssociateDefaultVocabularyOutcome ConnectClient::AssociateDefaultVocabulary(const AssociateDefaultVocabularyRequest& request) const
@@ -347,12 +343,10 @@ AssociateDefaultVocabularyOutcomeCallable ConnectClient::AssociateDefaultVocabul
 
 void ConnectClient::AssociateDefaultVocabularyAsync(const AssociateDefaultVocabularyRequest& request, const AssociateDefaultVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateDefaultVocabularyAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::AssociateDefaultVocabularyAsyncHelper(const AssociateDefaultVocabularyRequest& request, const AssociateDefaultVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateDefaultVocabulary(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateDefaultVocabulary(request), context);
+    } );
 }
 
 AssociateInstanceStorageConfigOutcome ConnectClient::AssociateInstanceStorageConfig(const AssociateInstanceStorageConfigRequest& request) const
@@ -379,12 +373,10 @@ AssociateInstanceStorageConfigOutcomeCallable ConnectClient::AssociateInstanceSt
 
 void ConnectClient::AssociateInstanceStorageConfigAsync(const AssociateInstanceStorageConfigRequest& request, const AssociateInstanceStorageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateInstanceStorageConfigAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::AssociateInstanceStorageConfigAsyncHelper(const AssociateInstanceStorageConfigRequest& request, const AssociateInstanceStorageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateInstanceStorageConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateInstanceStorageConfig(request), context);
+    } );
 }
 
 AssociateLambdaFunctionOutcome ConnectClient::AssociateLambdaFunction(const AssociateLambdaFunctionRequest& request) const
@@ -411,12 +403,10 @@ AssociateLambdaFunctionOutcomeCallable ConnectClient::AssociateLambdaFunctionCal
 
 void ConnectClient::AssociateLambdaFunctionAsync(const AssociateLambdaFunctionRequest& request, const AssociateLambdaFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateLambdaFunctionAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::AssociateLambdaFunctionAsyncHelper(const AssociateLambdaFunctionRequest& request, const AssociateLambdaFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateLambdaFunction(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateLambdaFunction(request), context);
+    } );
 }
 
 AssociateLexBotOutcome ConnectClient::AssociateLexBot(const AssociateLexBotRequest& request) const
@@ -443,12 +433,10 @@ AssociateLexBotOutcomeCallable ConnectClient::AssociateLexBotCallable(const Asso
 
 void ConnectClient::AssociateLexBotAsync(const AssociateLexBotRequest& request, const AssociateLexBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateLexBotAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::AssociateLexBotAsyncHelper(const AssociateLexBotRequest& request, const AssociateLexBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateLexBot(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateLexBot(request), context);
+    } );
 }
 
 AssociatePhoneNumberContactFlowOutcome ConnectClient::AssociatePhoneNumberContactFlow(const AssociatePhoneNumberContactFlowRequest& request) const
@@ -475,12 +463,10 @@ AssociatePhoneNumberContactFlowOutcomeCallable ConnectClient::AssociatePhoneNumb
 
 void ConnectClient::AssociatePhoneNumberContactFlowAsync(const AssociatePhoneNumberContactFlowRequest& request, const AssociatePhoneNumberContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociatePhoneNumberContactFlowAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::AssociatePhoneNumberContactFlowAsyncHelper(const AssociatePhoneNumberContactFlowRequest& request, const AssociatePhoneNumberContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociatePhoneNumberContactFlow(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociatePhoneNumberContactFlow(request), context);
+    } );
 }
 
 AssociateQueueQuickConnectsOutcome ConnectClient::AssociateQueueQuickConnects(const AssociateQueueQuickConnectsRequest& request) const
@@ -513,12 +499,10 @@ AssociateQueueQuickConnectsOutcomeCallable ConnectClient::AssociateQueueQuickCon
 
 void ConnectClient::AssociateQueueQuickConnectsAsync(const AssociateQueueQuickConnectsRequest& request, const AssociateQueueQuickConnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateQueueQuickConnectsAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::AssociateQueueQuickConnectsAsyncHelper(const AssociateQueueQuickConnectsRequest& request, const AssociateQueueQuickConnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateQueueQuickConnects(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateQueueQuickConnects(request), context);
+    } );
 }
 
 AssociateRoutingProfileQueuesOutcome ConnectClient::AssociateRoutingProfileQueues(const AssociateRoutingProfileQueuesRequest& request) const
@@ -551,12 +535,10 @@ AssociateRoutingProfileQueuesOutcomeCallable ConnectClient::AssociateRoutingProf
 
 void ConnectClient::AssociateRoutingProfileQueuesAsync(const AssociateRoutingProfileQueuesRequest& request, const AssociateRoutingProfileQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateRoutingProfileQueuesAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::AssociateRoutingProfileQueuesAsyncHelper(const AssociateRoutingProfileQueuesRequest& request, const AssociateRoutingProfileQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateRoutingProfileQueues(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateRoutingProfileQueues(request), context);
+    } );
 }
 
 AssociateSecurityKeyOutcome ConnectClient::AssociateSecurityKey(const AssociateSecurityKeyRequest& request) const
@@ -583,12 +565,10 @@ AssociateSecurityKeyOutcomeCallable ConnectClient::AssociateSecurityKeyCallable(
 
 void ConnectClient::AssociateSecurityKeyAsync(const AssociateSecurityKeyRequest& request, const AssociateSecurityKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateSecurityKeyAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::AssociateSecurityKeyAsyncHelper(const AssociateSecurityKeyRequest& request, const AssociateSecurityKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateSecurityKey(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateSecurityKey(request), context);
+    } );
 }
 
 ClaimPhoneNumberOutcome ConnectClient::ClaimPhoneNumber(const ClaimPhoneNumberRequest& request) const
@@ -608,12 +588,10 @@ ClaimPhoneNumberOutcomeCallable ConnectClient::ClaimPhoneNumberCallable(const Cl
 
 void ConnectClient::ClaimPhoneNumberAsync(const ClaimPhoneNumberRequest& request, const ClaimPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ClaimPhoneNumberAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::ClaimPhoneNumberAsyncHelper(const ClaimPhoneNumberRequest& request, const ClaimPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ClaimPhoneNumber(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ClaimPhoneNumber(request), context);
+    } );
 }
 
 CreateAgentStatusOutcome ConnectClient::CreateAgentStatus(const CreateAgentStatusRequest& request) const
@@ -639,12 +617,10 @@ CreateAgentStatusOutcomeCallable ConnectClient::CreateAgentStatusCallable(const 
 
 void ConnectClient::CreateAgentStatusAsync(const CreateAgentStatusRequest& request, const CreateAgentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAgentStatusAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::CreateAgentStatusAsyncHelper(const CreateAgentStatusRequest& request, const CreateAgentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateAgentStatus(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateAgentStatus(request), context);
+    } );
 }
 
 CreateContactFlowOutcome ConnectClient::CreateContactFlow(const CreateContactFlowRequest& request) const
@@ -670,12 +646,10 @@ CreateContactFlowOutcomeCallable ConnectClient::CreateContactFlowCallable(const 
 
 void ConnectClient::CreateContactFlowAsync(const CreateContactFlowRequest& request, const CreateContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateContactFlowAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::CreateContactFlowAsyncHelper(const CreateContactFlowRequest& request, const CreateContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateContactFlow(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateContactFlow(request), context);
+    } );
 }
 
 CreateContactFlowModuleOutcome ConnectClient::CreateContactFlowModule(const CreateContactFlowModuleRequest& request) const
@@ -701,12 +675,10 @@ CreateContactFlowModuleOutcomeCallable ConnectClient::CreateContactFlowModuleCal
 
 void ConnectClient::CreateContactFlowModuleAsync(const CreateContactFlowModuleRequest& request, const CreateContactFlowModuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateContactFlowModuleAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::CreateContactFlowModuleAsyncHelper(const CreateContactFlowModuleRequest& request, const CreateContactFlowModuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateContactFlowModule(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateContactFlowModule(request), context);
+    } );
 }
 
 CreateHoursOfOperationOutcome ConnectClient::CreateHoursOfOperation(const CreateHoursOfOperationRequest& request) const
@@ -732,12 +704,10 @@ CreateHoursOfOperationOutcomeCallable ConnectClient::CreateHoursOfOperationCalla
 
 void ConnectClient::CreateHoursOfOperationAsync(const CreateHoursOfOperationRequest& request, const CreateHoursOfOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateHoursOfOperationAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::CreateHoursOfOperationAsyncHelper(const CreateHoursOfOperationRequest& request, const CreateHoursOfOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateHoursOfOperation(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateHoursOfOperation(request), context);
+    } );
 }
 
 CreateInstanceOutcome ConnectClient::CreateInstance(const CreateInstanceRequest& request) const
@@ -757,12 +727,10 @@ CreateInstanceOutcomeCallable ConnectClient::CreateInstanceCallable(const Create
 
 void ConnectClient::CreateInstanceAsync(const CreateInstanceRequest& request, const CreateInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateInstanceAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::CreateInstanceAsyncHelper(const CreateInstanceRequest& request, const CreateInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateInstance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateInstance(request), context);
+    } );
 }
 
 CreateIntegrationAssociationOutcome ConnectClient::CreateIntegrationAssociation(const CreateIntegrationAssociationRequest& request) const
@@ -789,12 +757,10 @@ CreateIntegrationAssociationOutcomeCallable ConnectClient::CreateIntegrationAsso
 
 void ConnectClient::CreateIntegrationAssociationAsync(const CreateIntegrationAssociationRequest& request, const CreateIntegrationAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateIntegrationAssociationAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::CreateIntegrationAssociationAsyncHelper(const CreateIntegrationAssociationRequest& request, const CreateIntegrationAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateIntegrationAssociation(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateIntegrationAssociation(request), context);
+    } );
 }
 
 CreateQueueOutcome ConnectClient::CreateQueue(const CreateQueueRequest& request) const
@@ -820,12 +786,10 @@ CreateQueueOutcomeCallable ConnectClient::CreateQueueCallable(const CreateQueueR
 
 void ConnectClient::CreateQueueAsync(const CreateQueueRequest& request, const CreateQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateQueueAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::CreateQueueAsyncHelper(const CreateQueueRequest& request, const CreateQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateQueue(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateQueue(request), context);
+    } );
 }
 
 CreateQuickConnectOutcome ConnectClient::CreateQuickConnect(const CreateQuickConnectRequest& request) const
@@ -851,12 +815,10 @@ CreateQuickConnectOutcomeCallable ConnectClient::CreateQuickConnectCallable(cons
 
 void ConnectClient::CreateQuickConnectAsync(const CreateQuickConnectRequest& request, const CreateQuickConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateQuickConnectAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::CreateQuickConnectAsyncHelper(const CreateQuickConnectRequest& request, const CreateQuickConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateQuickConnect(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateQuickConnect(request), context);
+    } );
 }
 
 CreateRoutingProfileOutcome ConnectClient::CreateRoutingProfile(const CreateRoutingProfileRequest& request) const
@@ -882,12 +844,10 @@ CreateRoutingProfileOutcomeCallable ConnectClient::CreateRoutingProfileCallable(
 
 void ConnectClient::CreateRoutingProfileAsync(const CreateRoutingProfileRequest& request, const CreateRoutingProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRoutingProfileAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::CreateRoutingProfileAsyncHelper(const CreateRoutingProfileRequest& request, const CreateRoutingProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateRoutingProfile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateRoutingProfile(request), context);
+    } );
 }
 
 CreateSecurityProfileOutcome ConnectClient::CreateSecurityProfile(const CreateSecurityProfileRequest& request) const
@@ -913,12 +873,10 @@ CreateSecurityProfileOutcomeCallable ConnectClient::CreateSecurityProfileCallabl
 
 void ConnectClient::CreateSecurityProfileAsync(const CreateSecurityProfileRequest& request, const CreateSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSecurityProfileAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::CreateSecurityProfileAsyncHelper(const CreateSecurityProfileRequest& request, const CreateSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateSecurityProfile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateSecurityProfile(request), context);
+    } );
 }
 
 CreateTaskTemplateOutcome ConnectClient::CreateTaskTemplate(const CreateTaskTemplateRequest& request) const
@@ -945,12 +903,10 @@ CreateTaskTemplateOutcomeCallable ConnectClient::CreateTaskTemplateCallable(cons
 
 void ConnectClient::CreateTaskTemplateAsync(const CreateTaskTemplateRequest& request, const CreateTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTaskTemplateAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::CreateTaskTemplateAsyncHelper(const CreateTaskTemplateRequest& request, const CreateTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateTaskTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateTaskTemplate(request), context);
+    } );
 }
 
 CreateUseCaseOutcome ConnectClient::CreateUseCase(const CreateUseCaseRequest& request) const
@@ -984,12 +940,10 @@ CreateUseCaseOutcomeCallable ConnectClient::CreateUseCaseCallable(const CreateUs
 
 void ConnectClient::CreateUseCaseAsync(const CreateUseCaseRequest& request, const CreateUseCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateUseCaseAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::CreateUseCaseAsyncHelper(const CreateUseCaseRequest& request, const CreateUseCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateUseCase(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateUseCase(request), context);
+    } );
 }
 
 CreateUserOutcome ConnectClient::CreateUser(const CreateUserRequest& request) const
@@ -1015,12 +969,10 @@ CreateUserOutcomeCallable ConnectClient::CreateUserCallable(const CreateUserRequ
 
 void ConnectClient::CreateUserAsync(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateUserAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::CreateUserAsyncHelper(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateUser(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateUser(request), context);
+    } );
 }
 
 CreateUserHierarchyGroupOutcome ConnectClient::CreateUserHierarchyGroup(const CreateUserHierarchyGroupRequest& request) const
@@ -1046,12 +998,10 @@ CreateUserHierarchyGroupOutcomeCallable ConnectClient::CreateUserHierarchyGroupC
 
 void ConnectClient::CreateUserHierarchyGroupAsync(const CreateUserHierarchyGroupRequest& request, const CreateUserHierarchyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateUserHierarchyGroupAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::CreateUserHierarchyGroupAsyncHelper(const CreateUserHierarchyGroupRequest& request, const CreateUserHierarchyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateUserHierarchyGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateUserHierarchyGroup(request), context);
+    } );
 }
 
 CreateVocabularyOutcome ConnectClient::CreateVocabulary(const CreateVocabularyRequest& request) const
@@ -1077,12 +1027,10 @@ CreateVocabularyOutcomeCallable ConnectClient::CreateVocabularyCallable(const Cr
 
 void ConnectClient::CreateVocabularyAsync(const CreateVocabularyRequest& request, const CreateVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateVocabularyAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::CreateVocabularyAsyncHelper(const CreateVocabularyRequest& request, const CreateVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateVocabulary(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateVocabulary(request), context);
+    } );
 }
 
 DeleteContactFlowOutcome ConnectClient::DeleteContactFlow(const DeleteContactFlowRequest& request) const
@@ -1114,12 +1062,10 @@ DeleteContactFlowOutcomeCallable ConnectClient::DeleteContactFlowCallable(const 
 
 void ConnectClient::DeleteContactFlowAsync(const DeleteContactFlowRequest& request, const DeleteContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteContactFlowAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DeleteContactFlowAsyncHelper(const DeleteContactFlowRequest& request, const DeleteContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteContactFlow(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteContactFlow(request), context);
+    } );
 }
 
 DeleteContactFlowModuleOutcome ConnectClient::DeleteContactFlowModule(const DeleteContactFlowModuleRequest& request) const
@@ -1151,12 +1097,10 @@ DeleteContactFlowModuleOutcomeCallable ConnectClient::DeleteContactFlowModuleCal
 
 void ConnectClient::DeleteContactFlowModuleAsync(const DeleteContactFlowModuleRequest& request, const DeleteContactFlowModuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteContactFlowModuleAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DeleteContactFlowModuleAsyncHelper(const DeleteContactFlowModuleRequest& request, const DeleteContactFlowModuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteContactFlowModule(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteContactFlowModule(request), context);
+    } );
 }
 
 DeleteHoursOfOperationOutcome ConnectClient::DeleteHoursOfOperation(const DeleteHoursOfOperationRequest& request) const
@@ -1188,12 +1132,10 @@ DeleteHoursOfOperationOutcomeCallable ConnectClient::DeleteHoursOfOperationCalla
 
 void ConnectClient::DeleteHoursOfOperationAsync(const DeleteHoursOfOperationRequest& request, const DeleteHoursOfOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteHoursOfOperationAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DeleteHoursOfOperationAsyncHelper(const DeleteHoursOfOperationRequest& request, const DeleteHoursOfOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteHoursOfOperation(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteHoursOfOperation(request), context);
+    } );
 }
 
 DeleteInstanceOutcome ConnectClient::DeleteInstance(const DeleteInstanceRequest& request) const
@@ -1219,12 +1161,10 @@ DeleteInstanceOutcomeCallable ConnectClient::DeleteInstanceCallable(const Delete
 
 void ConnectClient::DeleteInstanceAsync(const DeleteInstanceRequest& request, const DeleteInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteInstanceAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DeleteInstanceAsyncHelper(const DeleteInstanceRequest& request, const DeleteInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteInstance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteInstance(request), context);
+    } );
 }
 
 DeleteIntegrationAssociationOutcome ConnectClient::DeleteIntegrationAssociation(const DeleteIntegrationAssociationRequest& request) const
@@ -1257,12 +1197,10 @@ DeleteIntegrationAssociationOutcomeCallable ConnectClient::DeleteIntegrationAsso
 
 void ConnectClient::DeleteIntegrationAssociationAsync(const DeleteIntegrationAssociationRequest& request, const DeleteIntegrationAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteIntegrationAssociationAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DeleteIntegrationAssociationAsyncHelper(const DeleteIntegrationAssociationRequest& request, const DeleteIntegrationAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteIntegrationAssociation(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteIntegrationAssociation(request), context);
+    } );
 }
 
 DeleteQuickConnectOutcome ConnectClient::DeleteQuickConnect(const DeleteQuickConnectRequest& request) const
@@ -1294,12 +1232,10 @@ DeleteQuickConnectOutcomeCallable ConnectClient::DeleteQuickConnectCallable(cons
 
 void ConnectClient::DeleteQuickConnectAsync(const DeleteQuickConnectRequest& request, const DeleteQuickConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteQuickConnectAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DeleteQuickConnectAsyncHelper(const DeleteQuickConnectRequest& request, const DeleteQuickConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteQuickConnect(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteQuickConnect(request), context);
+    } );
 }
 
 DeleteSecurityProfileOutcome ConnectClient::DeleteSecurityProfile(const DeleteSecurityProfileRequest& request) const
@@ -1331,12 +1267,10 @@ DeleteSecurityProfileOutcomeCallable ConnectClient::DeleteSecurityProfileCallabl
 
 void ConnectClient::DeleteSecurityProfileAsync(const DeleteSecurityProfileRequest& request, const DeleteSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSecurityProfileAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DeleteSecurityProfileAsyncHelper(const DeleteSecurityProfileRequest& request, const DeleteSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteSecurityProfile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteSecurityProfile(request), context);
+    } );
 }
 
 DeleteTaskTemplateOutcome ConnectClient::DeleteTaskTemplate(const DeleteTaskTemplateRequest& request) const
@@ -1369,12 +1303,10 @@ DeleteTaskTemplateOutcomeCallable ConnectClient::DeleteTaskTemplateCallable(cons
 
 void ConnectClient::DeleteTaskTemplateAsync(const DeleteTaskTemplateRequest& request, const DeleteTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTaskTemplateAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DeleteTaskTemplateAsyncHelper(const DeleteTaskTemplateRequest& request, const DeleteTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteTaskTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteTaskTemplate(request), context);
+    } );
 }
 
 DeleteUseCaseOutcome ConnectClient::DeleteUseCase(const DeleteUseCaseRequest& request) const
@@ -1414,12 +1346,10 @@ DeleteUseCaseOutcomeCallable ConnectClient::DeleteUseCaseCallable(const DeleteUs
 
 void ConnectClient::DeleteUseCaseAsync(const DeleteUseCaseRequest& request, const DeleteUseCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteUseCaseAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DeleteUseCaseAsyncHelper(const DeleteUseCaseRequest& request, const DeleteUseCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteUseCase(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteUseCase(request), context);
+    } );
 }
 
 DeleteUserOutcome ConnectClient::DeleteUser(const DeleteUserRequest& request) const
@@ -1451,12 +1381,10 @@ DeleteUserOutcomeCallable ConnectClient::DeleteUserCallable(const DeleteUserRequ
 
 void ConnectClient::DeleteUserAsync(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteUserAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DeleteUserAsyncHelper(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteUser(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteUser(request), context);
+    } );
 }
 
 DeleteUserHierarchyGroupOutcome ConnectClient::DeleteUserHierarchyGroup(const DeleteUserHierarchyGroupRequest& request) const
@@ -1488,12 +1416,10 @@ DeleteUserHierarchyGroupOutcomeCallable ConnectClient::DeleteUserHierarchyGroupC
 
 void ConnectClient::DeleteUserHierarchyGroupAsync(const DeleteUserHierarchyGroupRequest& request, const DeleteUserHierarchyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteUserHierarchyGroupAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DeleteUserHierarchyGroupAsyncHelper(const DeleteUserHierarchyGroupRequest& request, const DeleteUserHierarchyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteUserHierarchyGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteUserHierarchyGroup(request), context);
+    } );
 }
 
 DeleteVocabularyOutcome ConnectClient::DeleteVocabulary(const DeleteVocabularyRequest& request) const
@@ -1525,12 +1451,10 @@ DeleteVocabularyOutcomeCallable ConnectClient::DeleteVocabularyCallable(const De
 
 void ConnectClient::DeleteVocabularyAsync(const DeleteVocabularyRequest& request, const DeleteVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteVocabularyAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DeleteVocabularyAsyncHelper(const DeleteVocabularyRequest& request, const DeleteVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteVocabulary(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteVocabulary(request), context);
+    } );
 }
 
 DescribeAgentStatusOutcome ConnectClient::DescribeAgentStatus(const DescribeAgentStatusRequest& request) const
@@ -1562,12 +1486,10 @@ DescribeAgentStatusOutcomeCallable ConnectClient::DescribeAgentStatusCallable(co
 
 void ConnectClient::DescribeAgentStatusAsync(const DescribeAgentStatusRequest& request, const DescribeAgentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAgentStatusAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DescribeAgentStatusAsyncHelper(const DescribeAgentStatusRequest& request, const DescribeAgentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAgentStatus(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAgentStatus(request), context);
+    } );
 }
 
 DescribeContactOutcome ConnectClient::DescribeContact(const DescribeContactRequest& request) const
@@ -1599,12 +1521,10 @@ DescribeContactOutcomeCallable ConnectClient::DescribeContactCallable(const Desc
 
 void ConnectClient::DescribeContactAsync(const DescribeContactRequest& request, const DescribeContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeContactAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DescribeContactAsyncHelper(const DescribeContactRequest& request, const DescribeContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeContact(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeContact(request), context);
+    } );
 }
 
 DescribeContactFlowOutcome ConnectClient::DescribeContactFlow(const DescribeContactFlowRequest& request) const
@@ -1636,12 +1556,10 @@ DescribeContactFlowOutcomeCallable ConnectClient::DescribeContactFlowCallable(co
 
 void ConnectClient::DescribeContactFlowAsync(const DescribeContactFlowRequest& request, const DescribeContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeContactFlowAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DescribeContactFlowAsyncHelper(const DescribeContactFlowRequest& request, const DescribeContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeContactFlow(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeContactFlow(request), context);
+    } );
 }
 
 DescribeContactFlowModuleOutcome ConnectClient::DescribeContactFlowModule(const DescribeContactFlowModuleRequest& request) const
@@ -1673,12 +1591,10 @@ DescribeContactFlowModuleOutcomeCallable ConnectClient::DescribeContactFlowModul
 
 void ConnectClient::DescribeContactFlowModuleAsync(const DescribeContactFlowModuleRequest& request, const DescribeContactFlowModuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeContactFlowModuleAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DescribeContactFlowModuleAsyncHelper(const DescribeContactFlowModuleRequest& request, const DescribeContactFlowModuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeContactFlowModule(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeContactFlowModule(request), context);
+    } );
 }
 
 DescribeHoursOfOperationOutcome ConnectClient::DescribeHoursOfOperation(const DescribeHoursOfOperationRequest& request) const
@@ -1710,12 +1626,10 @@ DescribeHoursOfOperationOutcomeCallable ConnectClient::DescribeHoursOfOperationC
 
 void ConnectClient::DescribeHoursOfOperationAsync(const DescribeHoursOfOperationRequest& request, const DescribeHoursOfOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeHoursOfOperationAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DescribeHoursOfOperationAsyncHelper(const DescribeHoursOfOperationRequest& request, const DescribeHoursOfOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeHoursOfOperation(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeHoursOfOperation(request), context);
+    } );
 }
 
 DescribeInstanceOutcome ConnectClient::DescribeInstance(const DescribeInstanceRequest& request) const
@@ -1741,12 +1655,10 @@ DescribeInstanceOutcomeCallable ConnectClient::DescribeInstanceCallable(const De
 
 void ConnectClient::DescribeInstanceAsync(const DescribeInstanceRequest& request, const DescribeInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeInstanceAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DescribeInstanceAsyncHelper(const DescribeInstanceRequest& request, const DescribeInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeInstance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeInstance(request), context);
+    } );
 }
 
 DescribeInstanceAttributeOutcome ConnectClient::DescribeInstanceAttribute(const DescribeInstanceAttributeRequest& request) const
@@ -1779,12 +1691,10 @@ DescribeInstanceAttributeOutcomeCallable ConnectClient::DescribeInstanceAttribut
 
 void ConnectClient::DescribeInstanceAttributeAsync(const DescribeInstanceAttributeRequest& request, const DescribeInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeInstanceAttributeAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DescribeInstanceAttributeAsyncHelper(const DescribeInstanceAttributeRequest& request, const DescribeInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeInstanceAttribute(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeInstanceAttribute(request), context);
+    } );
 }
 
 DescribeInstanceStorageConfigOutcome ConnectClient::DescribeInstanceStorageConfig(const DescribeInstanceStorageConfigRequest& request) const
@@ -1822,12 +1732,10 @@ DescribeInstanceStorageConfigOutcomeCallable ConnectClient::DescribeInstanceStor
 
 void ConnectClient::DescribeInstanceStorageConfigAsync(const DescribeInstanceStorageConfigRequest& request, const DescribeInstanceStorageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeInstanceStorageConfigAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DescribeInstanceStorageConfigAsyncHelper(const DescribeInstanceStorageConfigRequest& request, const DescribeInstanceStorageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeInstanceStorageConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeInstanceStorageConfig(request), context);
+    } );
 }
 
 DescribePhoneNumberOutcome ConnectClient::DescribePhoneNumber(const DescribePhoneNumberRequest& request) const
@@ -1853,12 +1761,10 @@ DescribePhoneNumberOutcomeCallable ConnectClient::DescribePhoneNumberCallable(co
 
 void ConnectClient::DescribePhoneNumberAsync(const DescribePhoneNumberRequest& request, const DescribePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePhoneNumberAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DescribePhoneNumberAsyncHelper(const DescribePhoneNumberRequest& request, const DescribePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribePhoneNumber(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribePhoneNumber(request), context);
+    } );
 }
 
 DescribeQueueOutcome ConnectClient::DescribeQueue(const DescribeQueueRequest& request) const
@@ -1890,12 +1796,10 @@ DescribeQueueOutcomeCallable ConnectClient::DescribeQueueCallable(const Describe
 
 void ConnectClient::DescribeQueueAsync(const DescribeQueueRequest& request, const DescribeQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeQueueAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DescribeQueueAsyncHelper(const DescribeQueueRequest& request, const DescribeQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeQueue(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeQueue(request), context);
+    } );
 }
 
 DescribeQuickConnectOutcome ConnectClient::DescribeQuickConnect(const DescribeQuickConnectRequest& request) const
@@ -1927,12 +1831,10 @@ DescribeQuickConnectOutcomeCallable ConnectClient::DescribeQuickConnectCallable(
 
 void ConnectClient::DescribeQuickConnectAsync(const DescribeQuickConnectRequest& request, const DescribeQuickConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeQuickConnectAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DescribeQuickConnectAsyncHelper(const DescribeQuickConnectRequest& request, const DescribeQuickConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeQuickConnect(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeQuickConnect(request), context);
+    } );
 }
 
 DescribeRoutingProfileOutcome ConnectClient::DescribeRoutingProfile(const DescribeRoutingProfileRequest& request) const
@@ -1964,12 +1866,10 @@ DescribeRoutingProfileOutcomeCallable ConnectClient::DescribeRoutingProfileCalla
 
 void ConnectClient::DescribeRoutingProfileAsync(const DescribeRoutingProfileRequest& request, const DescribeRoutingProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRoutingProfileAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DescribeRoutingProfileAsyncHelper(const DescribeRoutingProfileRequest& request, const DescribeRoutingProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeRoutingProfile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeRoutingProfile(request), context);
+    } );
 }
 
 DescribeSecurityProfileOutcome ConnectClient::DescribeSecurityProfile(const DescribeSecurityProfileRequest& request) const
@@ -2001,12 +1901,10 @@ DescribeSecurityProfileOutcomeCallable ConnectClient::DescribeSecurityProfileCal
 
 void ConnectClient::DescribeSecurityProfileAsync(const DescribeSecurityProfileRequest& request, const DescribeSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSecurityProfileAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DescribeSecurityProfileAsyncHelper(const DescribeSecurityProfileRequest& request, const DescribeSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeSecurityProfile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeSecurityProfile(request), context);
+    } );
 }
 
 DescribeUserOutcome ConnectClient::DescribeUser(const DescribeUserRequest& request) const
@@ -2038,12 +1936,10 @@ DescribeUserOutcomeCallable ConnectClient::DescribeUserCallable(const DescribeUs
 
 void ConnectClient::DescribeUserAsync(const DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeUserAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DescribeUserAsyncHelper(const DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeUser(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeUser(request), context);
+    } );
 }
 
 DescribeUserHierarchyGroupOutcome ConnectClient::DescribeUserHierarchyGroup(const DescribeUserHierarchyGroupRequest& request) const
@@ -2075,12 +1971,10 @@ DescribeUserHierarchyGroupOutcomeCallable ConnectClient::DescribeUserHierarchyGr
 
 void ConnectClient::DescribeUserHierarchyGroupAsync(const DescribeUserHierarchyGroupRequest& request, const DescribeUserHierarchyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeUserHierarchyGroupAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DescribeUserHierarchyGroupAsyncHelper(const DescribeUserHierarchyGroupRequest& request, const DescribeUserHierarchyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeUserHierarchyGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeUserHierarchyGroup(request), context);
+    } );
 }
 
 DescribeUserHierarchyStructureOutcome ConnectClient::DescribeUserHierarchyStructure(const DescribeUserHierarchyStructureRequest& request) const
@@ -2106,12 +2000,10 @@ DescribeUserHierarchyStructureOutcomeCallable ConnectClient::DescribeUserHierarc
 
 void ConnectClient::DescribeUserHierarchyStructureAsync(const DescribeUserHierarchyStructureRequest& request, const DescribeUserHierarchyStructureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeUserHierarchyStructureAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DescribeUserHierarchyStructureAsyncHelper(const DescribeUserHierarchyStructureRequest& request, const DescribeUserHierarchyStructureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeUserHierarchyStructure(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeUserHierarchyStructure(request), context);
+    } );
 }
 
 DescribeVocabularyOutcome ConnectClient::DescribeVocabulary(const DescribeVocabularyRequest& request) const
@@ -2143,12 +2035,10 @@ DescribeVocabularyOutcomeCallable ConnectClient::DescribeVocabularyCallable(cons
 
 void ConnectClient::DescribeVocabularyAsync(const DescribeVocabularyRequest& request, const DescribeVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeVocabularyAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DescribeVocabularyAsyncHelper(const DescribeVocabularyRequest& request, const DescribeVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeVocabulary(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeVocabulary(request), context);
+    } );
 }
 
 DisassociateApprovedOriginOutcome ConnectClient::DisassociateApprovedOrigin(const DisassociateApprovedOriginRequest& request) const
@@ -2180,12 +2070,10 @@ DisassociateApprovedOriginOutcomeCallable ConnectClient::DisassociateApprovedOri
 
 void ConnectClient::DisassociateApprovedOriginAsync(const DisassociateApprovedOriginRequest& request, const DisassociateApprovedOriginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateApprovedOriginAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DisassociateApprovedOriginAsyncHelper(const DisassociateApprovedOriginRequest& request, const DisassociateApprovedOriginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateApprovedOrigin(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateApprovedOrigin(request), context);
+    } );
 }
 
 DisassociateBotOutcome ConnectClient::DisassociateBot(const DisassociateBotRequest& request) const
@@ -2212,12 +2100,10 @@ DisassociateBotOutcomeCallable ConnectClient::DisassociateBotCallable(const Disa
 
 void ConnectClient::DisassociateBotAsync(const DisassociateBotRequest& request, const DisassociateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateBotAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DisassociateBotAsyncHelper(const DisassociateBotRequest& request, const DisassociateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateBot(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateBot(request), context);
+    } );
 }
 
 DisassociateInstanceStorageConfigOutcome ConnectClient::DisassociateInstanceStorageConfig(const DisassociateInstanceStorageConfigRequest& request) const
@@ -2255,12 +2141,10 @@ DisassociateInstanceStorageConfigOutcomeCallable ConnectClient::DisassociateInst
 
 void ConnectClient::DisassociateInstanceStorageConfigAsync(const DisassociateInstanceStorageConfigRequest& request, const DisassociateInstanceStorageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateInstanceStorageConfigAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DisassociateInstanceStorageConfigAsyncHelper(const DisassociateInstanceStorageConfigRequest& request, const DisassociateInstanceStorageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateInstanceStorageConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateInstanceStorageConfig(request), context);
+    } );
 }
 
 DisassociateLambdaFunctionOutcome ConnectClient::DisassociateLambdaFunction(const DisassociateLambdaFunctionRequest& request) const
@@ -2292,12 +2176,10 @@ DisassociateLambdaFunctionOutcomeCallable ConnectClient::DisassociateLambdaFunct
 
 void ConnectClient::DisassociateLambdaFunctionAsync(const DisassociateLambdaFunctionRequest& request, const DisassociateLambdaFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateLambdaFunctionAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DisassociateLambdaFunctionAsyncHelper(const DisassociateLambdaFunctionRequest& request, const DisassociateLambdaFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateLambdaFunction(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateLambdaFunction(request), context);
+    } );
 }
 
 DisassociateLexBotOutcome ConnectClient::DisassociateLexBot(const DisassociateLexBotRequest& request) const
@@ -2334,12 +2216,10 @@ DisassociateLexBotOutcomeCallable ConnectClient::DisassociateLexBotCallable(cons
 
 void ConnectClient::DisassociateLexBotAsync(const DisassociateLexBotRequest& request, const DisassociateLexBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateLexBotAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DisassociateLexBotAsyncHelper(const DisassociateLexBotRequest& request, const DisassociateLexBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateLexBot(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateLexBot(request), context);
+    } );
 }
 
 DisassociatePhoneNumberContactFlowOutcome ConnectClient::DisassociatePhoneNumberContactFlow(const DisassociatePhoneNumberContactFlowRequest& request) const
@@ -2371,12 +2251,10 @@ DisassociatePhoneNumberContactFlowOutcomeCallable ConnectClient::DisassociatePho
 
 void ConnectClient::DisassociatePhoneNumberContactFlowAsync(const DisassociatePhoneNumberContactFlowRequest& request, const DisassociatePhoneNumberContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociatePhoneNumberContactFlowAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DisassociatePhoneNumberContactFlowAsyncHelper(const DisassociatePhoneNumberContactFlowRequest& request, const DisassociatePhoneNumberContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociatePhoneNumberContactFlow(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociatePhoneNumberContactFlow(request), context);
+    } );
 }
 
 DisassociateQueueQuickConnectsOutcome ConnectClient::DisassociateQueueQuickConnects(const DisassociateQueueQuickConnectsRequest& request) const
@@ -2409,12 +2287,10 @@ DisassociateQueueQuickConnectsOutcomeCallable ConnectClient::DisassociateQueueQu
 
 void ConnectClient::DisassociateQueueQuickConnectsAsync(const DisassociateQueueQuickConnectsRequest& request, const DisassociateQueueQuickConnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateQueueQuickConnectsAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DisassociateQueueQuickConnectsAsyncHelper(const DisassociateQueueQuickConnectsRequest& request, const DisassociateQueueQuickConnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateQueueQuickConnects(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateQueueQuickConnects(request), context);
+    } );
 }
 
 DisassociateRoutingProfileQueuesOutcome ConnectClient::DisassociateRoutingProfileQueues(const DisassociateRoutingProfileQueuesRequest& request) const
@@ -2447,12 +2323,10 @@ DisassociateRoutingProfileQueuesOutcomeCallable ConnectClient::DisassociateRouti
 
 void ConnectClient::DisassociateRoutingProfileQueuesAsync(const DisassociateRoutingProfileQueuesRequest& request, const DisassociateRoutingProfileQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateRoutingProfileQueuesAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DisassociateRoutingProfileQueuesAsyncHelper(const DisassociateRoutingProfileQueuesRequest& request, const DisassociateRoutingProfileQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateRoutingProfileQueues(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateRoutingProfileQueues(request), context);
+    } );
 }
 
 DisassociateSecurityKeyOutcome ConnectClient::DisassociateSecurityKey(const DisassociateSecurityKeyRequest& request) const
@@ -2485,12 +2359,10 @@ DisassociateSecurityKeyOutcomeCallable ConnectClient::DisassociateSecurityKeyCal
 
 void ConnectClient::DisassociateSecurityKeyAsync(const DisassociateSecurityKeyRequest& request, const DisassociateSecurityKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateSecurityKeyAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::DisassociateSecurityKeyAsyncHelper(const DisassociateSecurityKeyRequest& request, const DisassociateSecurityKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateSecurityKey(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateSecurityKey(request), context);
+    } );
 }
 
 GetContactAttributesOutcome ConnectClient::GetContactAttributes(const GetContactAttributesRequest& request) const
@@ -2522,12 +2394,10 @@ GetContactAttributesOutcomeCallable ConnectClient::GetContactAttributesCallable(
 
 void ConnectClient::GetContactAttributesAsync(const GetContactAttributesRequest& request, const GetContactAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetContactAttributesAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::GetContactAttributesAsyncHelper(const GetContactAttributesRequest& request, const GetContactAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetContactAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetContactAttributes(request), context);
+    } );
 }
 
 GetCurrentMetricDataOutcome ConnectClient::GetCurrentMetricData(const GetCurrentMetricDataRequest& request) const
@@ -2553,12 +2423,10 @@ GetCurrentMetricDataOutcomeCallable ConnectClient::GetCurrentMetricDataCallable(
 
 void ConnectClient::GetCurrentMetricDataAsync(const GetCurrentMetricDataRequest& request, const GetCurrentMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCurrentMetricDataAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::GetCurrentMetricDataAsyncHelper(const GetCurrentMetricDataRequest& request, const GetCurrentMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetCurrentMetricData(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetCurrentMetricData(request), context);
+    } );
 }
 
 GetCurrentUserDataOutcome ConnectClient::GetCurrentUserData(const GetCurrentUserDataRequest& request) const
@@ -2584,12 +2452,10 @@ GetCurrentUserDataOutcomeCallable ConnectClient::GetCurrentUserDataCallable(cons
 
 void ConnectClient::GetCurrentUserDataAsync(const GetCurrentUserDataRequest& request, const GetCurrentUserDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCurrentUserDataAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::GetCurrentUserDataAsyncHelper(const GetCurrentUserDataRequest& request, const GetCurrentUserDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetCurrentUserData(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetCurrentUserData(request), context);
+    } );
 }
 
 GetFederationTokenOutcome ConnectClient::GetFederationToken(const GetFederationTokenRequest& request) const
@@ -2615,12 +2481,10 @@ GetFederationTokenOutcomeCallable ConnectClient::GetFederationTokenCallable(cons
 
 void ConnectClient::GetFederationTokenAsync(const GetFederationTokenRequest& request, const GetFederationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFederationTokenAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::GetFederationTokenAsyncHelper(const GetFederationTokenRequest& request, const GetFederationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetFederationToken(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetFederationToken(request), context);
+    } );
 }
 
 GetMetricDataOutcome ConnectClient::GetMetricData(const GetMetricDataRequest& request) const
@@ -2646,12 +2510,10 @@ GetMetricDataOutcomeCallable ConnectClient::GetMetricDataCallable(const GetMetri
 
 void ConnectClient::GetMetricDataAsync(const GetMetricDataRequest& request, const GetMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMetricDataAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::GetMetricDataAsyncHelper(const GetMetricDataRequest& request, const GetMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetMetricData(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetMetricData(request), context);
+    } );
 }
 
 GetTaskTemplateOutcome ConnectClient::GetTaskTemplate(const GetTaskTemplateRequest& request) const
@@ -2684,12 +2546,10 @@ GetTaskTemplateOutcomeCallable ConnectClient::GetTaskTemplateCallable(const GetT
 
 void ConnectClient::GetTaskTemplateAsync(const GetTaskTemplateRequest& request, const GetTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTaskTemplateAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::GetTaskTemplateAsyncHelper(const GetTaskTemplateRequest& request, const GetTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetTaskTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetTaskTemplate(request), context);
+    } );
 }
 
 ListAgentStatusesOutcome ConnectClient::ListAgentStatuses(const ListAgentStatusesRequest& request) const
@@ -2715,12 +2575,10 @@ ListAgentStatusesOutcomeCallable ConnectClient::ListAgentStatusesCallable(const 
 
 void ConnectClient::ListAgentStatusesAsync(const ListAgentStatusesRequest& request, const ListAgentStatusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAgentStatusesAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::ListAgentStatusesAsyncHelper(const ListAgentStatusesRequest& request, const ListAgentStatusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAgentStatuses(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAgentStatuses(request), context);
+    } );
 }
 
 ListApprovedOriginsOutcome ConnectClient::ListApprovedOrigins(const ListApprovedOriginsRequest& request) const
@@ -2747,12 +2605,10 @@ ListApprovedOriginsOutcomeCallable ConnectClient::ListApprovedOriginsCallable(co
 
 void ConnectClient::ListApprovedOriginsAsync(const ListApprovedOriginsRequest& request, const ListApprovedOriginsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListApprovedOriginsAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::ListApprovedOriginsAsyncHelper(const ListApprovedOriginsRequest& request, const ListApprovedOriginsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListApprovedOrigins(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListApprovedOrigins(request), context);
+    } );
 }
 
 ListBotsOutcome ConnectClient::ListBots(const ListBotsRequest& request) const
@@ -2784,12 +2640,10 @@ ListBotsOutcomeCallable ConnectClient::ListBotsCallable(const ListBotsRequest& r
 
 void ConnectClient::ListBotsAsync(const ListBotsRequest& request, const ListBotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBotsAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::ListBotsAsyncHelper(const ListBotsRequest& request, const ListBotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListBots(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListBots(request), context);
+    } );
 }
 
 ListContactFlowModulesOutcome ConnectClient::ListContactFlowModules(const ListContactFlowModulesRequest& request) const
@@ -2815,12 +2669,10 @@ ListContactFlowModulesOutcomeCallable ConnectClient::ListContactFlowModulesCalla
 
 void ConnectClient::ListContactFlowModulesAsync(const ListContactFlowModulesRequest& request, const ListContactFlowModulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListContactFlowModulesAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::ListContactFlowModulesAsyncHelper(const ListContactFlowModulesRequest& request, const ListContactFlowModulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListContactFlowModules(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListContactFlowModules(request), context);
+    } );
 }
 
 ListContactFlowsOutcome ConnectClient::ListContactFlows(const ListContactFlowsRequest& request) const
@@ -2846,12 +2698,10 @@ ListContactFlowsOutcomeCallable ConnectClient::ListContactFlowsCallable(const Li
 
 void ConnectClient::ListContactFlowsAsync(const ListContactFlowsRequest& request, const ListContactFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListContactFlowsAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::ListContactFlowsAsyncHelper(const ListContactFlowsRequest& request, const ListContactFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListContactFlows(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListContactFlows(request), context);
+    } );
 }
 
 ListContactReferencesOutcome ConnectClient::ListContactReferences(const ListContactReferencesRequest& request) const
@@ -2888,12 +2738,10 @@ ListContactReferencesOutcomeCallable ConnectClient::ListContactReferencesCallabl
 
 void ConnectClient::ListContactReferencesAsync(const ListContactReferencesRequest& request, const ListContactReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListContactReferencesAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::ListContactReferencesAsyncHelper(const ListContactReferencesRequest& request, const ListContactReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListContactReferences(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListContactReferences(request), context);
+    } );
 }
 
 ListDefaultVocabulariesOutcome ConnectClient::ListDefaultVocabularies(const ListDefaultVocabulariesRequest& request) const
@@ -2919,12 +2767,10 @@ ListDefaultVocabulariesOutcomeCallable ConnectClient::ListDefaultVocabulariesCal
 
 void ConnectClient::ListDefaultVocabulariesAsync(const ListDefaultVocabulariesRequest& request, const ListDefaultVocabulariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDefaultVocabulariesAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::ListDefaultVocabulariesAsyncHelper(const ListDefaultVocabulariesRequest& request, const ListDefaultVocabulariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDefaultVocabularies(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDefaultVocabularies(request), context);
+    } );
 }
 
 ListHoursOfOperationsOutcome ConnectClient::ListHoursOfOperations(const ListHoursOfOperationsRequest& request) const
@@ -2950,12 +2796,10 @@ ListHoursOfOperationsOutcomeCallable ConnectClient::ListHoursOfOperationsCallabl
 
 void ConnectClient::ListHoursOfOperationsAsync(const ListHoursOfOperationsRequest& request, const ListHoursOfOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListHoursOfOperationsAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::ListHoursOfOperationsAsyncHelper(const ListHoursOfOperationsRequest& request, const ListHoursOfOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListHoursOfOperations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListHoursOfOperations(request), context);
+    } );
 }
 
 ListInstanceAttributesOutcome ConnectClient::ListInstanceAttributes(const ListInstanceAttributesRequest& request) const
@@ -2982,12 +2826,10 @@ ListInstanceAttributesOutcomeCallable ConnectClient::ListInstanceAttributesCalla
 
 void ConnectClient::ListInstanceAttributesAsync(const ListInstanceAttributesRequest& request, const ListInstanceAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListInstanceAttributesAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::ListInstanceAttributesAsyncHelper(const ListInstanceAttributesRequest& request, const ListInstanceAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListInstanceAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListInstanceAttributes(request), context);
+    } );
 }
 
 ListInstanceStorageConfigsOutcome ConnectClient::ListInstanceStorageConfigs(const ListInstanceStorageConfigsRequest& request) const
@@ -3019,12 +2861,10 @@ ListInstanceStorageConfigsOutcomeCallable ConnectClient::ListInstanceStorageConf
 
 void ConnectClient::ListInstanceStorageConfigsAsync(const ListInstanceStorageConfigsRequest& request, const ListInstanceStorageConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListInstanceStorageConfigsAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::ListInstanceStorageConfigsAsyncHelper(const ListInstanceStorageConfigsRequest& request, const ListInstanceStorageConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListInstanceStorageConfigs(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListInstanceStorageConfigs(request), context);
+    } );
 }
 
 ListInstancesOutcome ConnectClient::ListInstances(const ListInstancesRequest& request) const
@@ -3044,12 +2884,10 @@ ListInstancesOutcomeCallable ConnectClient::ListInstancesCallable(const ListInst
 
 void ConnectClient::ListInstancesAsync(const ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListInstancesAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::ListInstancesAsyncHelper(const ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListInstances(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListInstances(request), context);
+    } );
 }
 
 ListIntegrationAssociationsOutcome ConnectClient::ListIntegrationAssociations(const ListIntegrationAssociationsRequest& request) const
@@ -3076,12 +2914,10 @@ ListIntegrationAssociationsOutcomeCallable ConnectClient::ListIntegrationAssocia
 
 void ConnectClient::ListIntegrationAssociationsAsync(const ListIntegrationAssociationsRequest& request, const ListIntegrationAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListIntegrationAssociationsAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::ListIntegrationAssociationsAsyncHelper(const ListIntegrationAssociationsRequest& request, const ListIntegrationAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListIntegrationAssociations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListIntegrationAssociations(request), context);
+    } );
 }
 
 ListLambdaFunctionsOutcome ConnectClient::ListLambdaFunctions(const ListLambdaFunctionsRequest& request) const
@@ -3108,12 +2944,10 @@ ListLambdaFunctionsOutcomeCallable ConnectClient::ListLambdaFunctionsCallable(co
 
 void ConnectClient::ListLambdaFunctionsAsync(const ListLambdaFunctionsRequest& request, const ListLambdaFunctionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLambdaFunctionsAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::ListLambdaFunctionsAsyncHelper(const ListLambdaFunctionsRequest& request, const ListLambdaFunctionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListLambdaFunctions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListLambdaFunctions(request), context);
+    } );
 }
 
 ListLexBotsOutcome ConnectClient::ListLexBots(const ListLexBotsRequest& request) const
@@ -3140,12 +2974,10 @@ ListLexBotsOutcomeCallable ConnectClient::ListLexBotsCallable(const ListLexBotsR
 
 void ConnectClient::ListLexBotsAsync(const ListLexBotsRequest& request, const ListLexBotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLexBotsAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::ListLexBotsAsyncHelper(const ListLexBotsRequest& request, const ListLexBotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListLexBots(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListLexBots(request), context);
+    } );
 }
 
 ListPhoneNumbersOutcome ConnectClient::ListPhoneNumbers(const ListPhoneNumbersRequest& request) const
@@ -3171,12 +3003,10 @@ ListPhoneNumbersOutcomeCallable ConnectClient::ListPhoneNumbersCallable(const Li
 
 void ConnectClient::ListPhoneNumbersAsync(const ListPhoneNumbersRequest& request, const ListPhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPhoneNumbersAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::ListPhoneNumbersAsyncHelper(const ListPhoneNumbersRequest& request, const ListPhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListPhoneNumbers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListPhoneNumbers(request), context);
+    } );
 }
 
 ListPhoneNumbersV2Outcome ConnectClient::ListPhoneNumbersV2(const ListPhoneNumbersV2Request& request) const
@@ -3196,12 +3026,10 @@ ListPhoneNumbersV2OutcomeCallable ConnectClient::ListPhoneNumbersV2Callable(cons
 
 void ConnectClient::ListPhoneNumbersV2Async(const ListPhoneNumbersV2Request& request, const ListPhoneNumbersV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPhoneNumbersV2AsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::ListPhoneNumbersV2AsyncHelper(const ListPhoneNumbersV2Request& request, const ListPhoneNumbersV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListPhoneNumbersV2(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListPhoneNumbersV2(request), context);
+    } );
 }
 
 ListPromptsOutcome ConnectClient::ListPrompts(const ListPromptsRequest& request) const
@@ -3227,12 +3055,10 @@ ListPromptsOutcomeCallable ConnectClient::ListPromptsCallable(const ListPromptsR
 
 void ConnectClient::ListPromptsAsync(const ListPromptsRequest& request, const ListPromptsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPromptsAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::ListPromptsAsyncHelper(const ListPromptsRequest& request, const ListPromptsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListPrompts(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListPrompts(request), context);
+    } );
 }
 
 ListQueueQuickConnectsOutcome ConnectClient::ListQueueQuickConnects(const ListQueueQuickConnectsRequest& request) const
@@ -3265,12 +3091,10 @@ ListQueueQuickConnectsOutcomeCallable ConnectClient::ListQueueQuickConnectsCalla
 
 void ConnectClient::ListQueueQuickConnectsAsync(const ListQueueQuickConnectsRequest& request, const ListQueueQuickConnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListQueueQuickConnectsAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::ListQueueQuickConnectsAsyncHelper(const ListQueueQuickConnectsRequest& request, const ListQueueQuickConnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListQueueQuickConnects(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListQueueQuickConnects(request), context);
+    } );
 }
 
 ListQueuesOutcome ConnectClient::ListQueues(const ListQueuesRequest& request) const
@@ -3296,12 +3120,10 @@ ListQueuesOutcomeCallable ConnectClient::ListQueuesCallable(const ListQueuesRequ
 
 void ConnectClient::ListQueuesAsync(const ListQueuesRequest& request, const ListQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListQueuesAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::ListQueuesAsyncHelper(const ListQueuesRequest& request, const ListQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListQueues(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListQueues(request), context);
+    } );
 }
 
 ListQuickConnectsOutcome ConnectClient::ListQuickConnects(const ListQuickConnectsRequest& request) const
@@ -3327,12 +3149,10 @@ ListQuickConnectsOutcomeCallable ConnectClient::ListQuickConnectsCallable(const 
 
 void ConnectClient::ListQuickConnectsAsync(const ListQuickConnectsRequest& request, const ListQuickConnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListQuickConnectsAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::ListQuickConnectsAsyncHelper(const ListQuickConnectsRequest& request, const ListQuickConnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListQuickConnects(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListQuickConnects(request), context);
+    } );
 }
 
 ListRoutingProfileQueuesOutcome ConnectClient::ListRoutingProfileQueues(const ListRoutingProfileQueuesRequest& request) const
@@ -3365,12 +3185,10 @@ ListRoutingProfileQueuesOutcomeCallable ConnectClient::ListRoutingProfileQueuesC
 
 void ConnectClient::ListRoutingProfileQueuesAsync(const ListRoutingProfileQueuesRequest& request, const ListRoutingProfileQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRoutingProfileQueuesAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::ListRoutingProfileQueuesAsyncHelper(const ListRoutingProfileQueuesRequest& request, const ListRoutingProfileQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListRoutingProfileQueues(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListRoutingProfileQueues(request), context);
+    } );
 }
 
 ListRoutingProfilesOutcome ConnectClient::ListRoutingProfiles(const ListRoutingProfilesRequest& request) const
@@ -3396,12 +3214,10 @@ ListRoutingProfilesOutcomeCallable ConnectClient::ListRoutingProfilesCallable(co
 
 void ConnectClient::ListRoutingProfilesAsync(const ListRoutingProfilesRequest& request, const ListRoutingProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRoutingProfilesAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::ListRoutingProfilesAsyncHelper(const ListRoutingProfilesRequest& request, const ListRoutingProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListRoutingProfiles(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListRoutingProfiles(request), context);
+    } );
 }
 
 ListSecurityKeysOutcome ConnectClient::ListSecurityKeys(const ListSecurityKeysRequest& request) const
@@ -3428,12 +3244,10 @@ ListSecurityKeysOutcomeCallable ConnectClient::ListSecurityKeysCallable(const Li
 
 void ConnectClient::ListSecurityKeysAsync(const ListSecurityKeysRequest& request, const ListSecurityKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSecurityKeysAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::ListSecurityKeysAsyncHelper(const ListSecurityKeysRequest& request, const ListSecurityKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListSecurityKeys(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListSecurityKeys(request), context);
+    } );
 }
 
 ListSecurityProfilePermissionsOutcome ConnectClient::ListSecurityProfilePermissions(const ListSecurityProfilePermissionsRequest& request) const
@@ -3465,12 +3279,10 @@ ListSecurityProfilePermissionsOutcomeCallable ConnectClient::ListSecurityProfile
 
 void ConnectClient::ListSecurityProfilePermissionsAsync(const ListSecurityProfilePermissionsRequest& request, const ListSecurityProfilePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSecurityProfilePermissionsAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::ListSecurityProfilePermissionsAsyncHelper(const ListSecurityProfilePermissionsRequest& request, const ListSecurityProfilePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListSecurityProfilePermissions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListSecurityProfilePermissions(request), context);
+    } );
 }
 
 ListSecurityProfilesOutcome ConnectClient::ListSecurityProfiles(const ListSecurityProfilesRequest& request) const
@@ -3496,12 +3308,10 @@ ListSecurityProfilesOutcomeCallable ConnectClient::ListSecurityProfilesCallable(
 
 void ConnectClient::ListSecurityProfilesAsync(const ListSecurityProfilesRequest& request, const ListSecurityProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSecurityProfilesAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::ListSecurityProfilesAsyncHelper(const ListSecurityProfilesRequest& request, const ListSecurityProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListSecurityProfiles(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListSecurityProfiles(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome ConnectClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -3527,12 +3337,10 @@ ListTagsForResourceOutcomeCallable ConnectClient::ListTagsForResourceCallable(co
 
 void ConnectClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 ListTaskTemplatesOutcome ConnectClient::ListTaskTemplates(const ListTaskTemplatesRequest& request) const
@@ -3559,12 +3367,10 @@ ListTaskTemplatesOutcomeCallable ConnectClient::ListTaskTemplatesCallable(const 
 
 void ConnectClient::ListTaskTemplatesAsync(const ListTaskTemplatesRequest& request, const ListTaskTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTaskTemplatesAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::ListTaskTemplatesAsyncHelper(const ListTaskTemplatesRequest& request, const ListTaskTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTaskTemplates(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTaskTemplates(request), context);
+    } );
 }
 
 ListUseCasesOutcome ConnectClient::ListUseCases(const ListUseCasesRequest& request) const
@@ -3598,12 +3404,10 @@ ListUseCasesOutcomeCallable ConnectClient::ListUseCasesCallable(const ListUseCas
 
 void ConnectClient::ListUseCasesAsync(const ListUseCasesRequest& request, const ListUseCasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListUseCasesAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::ListUseCasesAsyncHelper(const ListUseCasesRequest& request, const ListUseCasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListUseCases(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListUseCases(request), context);
+    } );
 }
 
 ListUserHierarchyGroupsOutcome ConnectClient::ListUserHierarchyGroups(const ListUserHierarchyGroupsRequest& request) const
@@ -3629,12 +3433,10 @@ ListUserHierarchyGroupsOutcomeCallable ConnectClient::ListUserHierarchyGroupsCal
 
 void ConnectClient::ListUserHierarchyGroupsAsync(const ListUserHierarchyGroupsRequest& request, const ListUserHierarchyGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListUserHierarchyGroupsAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::ListUserHierarchyGroupsAsyncHelper(const ListUserHierarchyGroupsRequest& request, const ListUserHierarchyGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListUserHierarchyGroups(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListUserHierarchyGroups(request), context);
+    } );
 }
 
 ListUsersOutcome ConnectClient::ListUsers(const ListUsersRequest& request) const
@@ -3660,12 +3462,10 @@ ListUsersOutcomeCallable ConnectClient::ListUsersCallable(const ListUsersRequest
 
 void ConnectClient::ListUsersAsync(const ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListUsersAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::ListUsersAsyncHelper(const ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListUsers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListUsers(request), context);
+    } );
 }
 
 PutUserStatusOutcome ConnectClient::PutUserStatus(const PutUserStatusRequest& request) const
@@ -3698,12 +3498,10 @@ PutUserStatusOutcomeCallable ConnectClient::PutUserStatusCallable(const PutUserS
 
 void ConnectClient::PutUserStatusAsync(const PutUserStatusRequest& request, const PutUserStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutUserStatusAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::PutUserStatusAsyncHelper(const PutUserStatusRequest& request, const PutUserStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutUserStatus(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutUserStatus(request), context);
+    } );
 }
 
 ReleasePhoneNumberOutcome ConnectClient::ReleasePhoneNumber(const ReleasePhoneNumberRequest& request) const
@@ -3729,12 +3527,10 @@ ReleasePhoneNumberOutcomeCallable ConnectClient::ReleasePhoneNumberCallable(cons
 
 void ConnectClient::ReleasePhoneNumberAsync(const ReleasePhoneNumberRequest& request, const ReleasePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ReleasePhoneNumberAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::ReleasePhoneNumberAsyncHelper(const ReleasePhoneNumberRequest& request, const ReleasePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ReleasePhoneNumber(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ReleasePhoneNumber(request), context);
+    } );
 }
 
 ResumeContactRecordingOutcome ConnectClient::ResumeContactRecording(const ResumeContactRecordingRequest& request) const
@@ -3754,12 +3550,10 @@ ResumeContactRecordingOutcomeCallable ConnectClient::ResumeContactRecordingCalla
 
 void ConnectClient::ResumeContactRecordingAsync(const ResumeContactRecordingRequest& request, const ResumeContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ResumeContactRecordingAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::ResumeContactRecordingAsyncHelper(const ResumeContactRecordingRequest& request, const ResumeContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ResumeContactRecording(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ResumeContactRecording(request), context);
+    } );
 }
 
 SearchAvailablePhoneNumbersOutcome ConnectClient::SearchAvailablePhoneNumbers(const SearchAvailablePhoneNumbersRequest& request) const
@@ -3779,12 +3573,10 @@ SearchAvailablePhoneNumbersOutcomeCallable ConnectClient::SearchAvailablePhoneNu
 
 void ConnectClient::SearchAvailablePhoneNumbersAsync(const SearchAvailablePhoneNumbersRequest& request, const SearchAvailablePhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchAvailablePhoneNumbersAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::SearchAvailablePhoneNumbersAsyncHelper(const SearchAvailablePhoneNumbersRequest& request, const SearchAvailablePhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SearchAvailablePhoneNumbers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SearchAvailablePhoneNumbers(request), context);
+    } );
 }
 
 SearchQueuesOutcome ConnectClient::SearchQueues(const SearchQueuesRequest& request) const
@@ -3804,12 +3596,10 @@ SearchQueuesOutcomeCallable ConnectClient::SearchQueuesCallable(const SearchQueu
 
 void ConnectClient::SearchQueuesAsync(const SearchQueuesRequest& request, const SearchQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchQueuesAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::SearchQueuesAsyncHelper(const SearchQueuesRequest& request, const SearchQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SearchQueues(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SearchQueues(request), context);
+    } );
 }
 
 SearchRoutingProfilesOutcome ConnectClient::SearchRoutingProfiles(const SearchRoutingProfilesRequest& request) const
@@ -3829,12 +3619,10 @@ SearchRoutingProfilesOutcomeCallable ConnectClient::SearchRoutingProfilesCallabl
 
 void ConnectClient::SearchRoutingProfilesAsync(const SearchRoutingProfilesRequest& request, const SearchRoutingProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchRoutingProfilesAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::SearchRoutingProfilesAsyncHelper(const SearchRoutingProfilesRequest& request, const SearchRoutingProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SearchRoutingProfiles(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SearchRoutingProfiles(request), context);
+    } );
 }
 
 SearchSecurityProfilesOutcome ConnectClient::SearchSecurityProfiles(const SearchSecurityProfilesRequest& request) const
@@ -3854,12 +3642,10 @@ SearchSecurityProfilesOutcomeCallable ConnectClient::SearchSecurityProfilesCalla
 
 void ConnectClient::SearchSecurityProfilesAsync(const SearchSecurityProfilesRequest& request, const SearchSecurityProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchSecurityProfilesAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::SearchSecurityProfilesAsyncHelper(const SearchSecurityProfilesRequest& request, const SearchSecurityProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SearchSecurityProfiles(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SearchSecurityProfiles(request), context);
+    } );
 }
 
 SearchUsersOutcome ConnectClient::SearchUsers(const SearchUsersRequest& request) const
@@ -3879,12 +3665,10 @@ SearchUsersOutcomeCallable ConnectClient::SearchUsersCallable(const SearchUsersR
 
 void ConnectClient::SearchUsersAsync(const SearchUsersRequest& request, const SearchUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchUsersAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::SearchUsersAsyncHelper(const SearchUsersRequest& request, const SearchUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SearchUsers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SearchUsers(request), context);
+    } );
 }
 
 SearchVocabulariesOutcome ConnectClient::SearchVocabularies(const SearchVocabulariesRequest& request) const
@@ -3910,12 +3694,10 @@ SearchVocabulariesOutcomeCallable ConnectClient::SearchVocabulariesCallable(cons
 
 void ConnectClient::SearchVocabulariesAsync(const SearchVocabulariesRequest& request, const SearchVocabulariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchVocabulariesAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::SearchVocabulariesAsyncHelper(const SearchVocabulariesRequest& request, const SearchVocabulariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SearchVocabularies(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SearchVocabularies(request), context);
+    } );
 }
 
 StartChatContactOutcome ConnectClient::StartChatContact(const StartChatContactRequest& request) const
@@ -3935,12 +3717,10 @@ StartChatContactOutcomeCallable ConnectClient::StartChatContactCallable(const St
 
 void ConnectClient::StartChatContactAsync(const StartChatContactRequest& request, const StartChatContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartChatContactAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::StartChatContactAsyncHelper(const StartChatContactRequest& request, const StartChatContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartChatContact(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartChatContact(request), context);
+    } );
 }
 
 StartContactRecordingOutcome ConnectClient::StartContactRecording(const StartContactRecordingRequest& request) const
@@ -3960,12 +3740,10 @@ StartContactRecordingOutcomeCallable ConnectClient::StartContactRecordingCallabl
 
 void ConnectClient::StartContactRecordingAsync(const StartContactRecordingRequest& request, const StartContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartContactRecordingAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::StartContactRecordingAsyncHelper(const StartContactRecordingRequest& request, const StartContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartContactRecording(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartContactRecording(request), context);
+    } );
 }
 
 StartContactStreamingOutcome ConnectClient::StartContactStreaming(const StartContactStreamingRequest& request) const
@@ -3985,12 +3763,10 @@ StartContactStreamingOutcomeCallable ConnectClient::StartContactStreamingCallabl
 
 void ConnectClient::StartContactStreamingAsync(const StartContactStreamingRequest& request, const StartContactStreamingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartContactStreamingAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::StartContactStreamingAsyncHelper(const StartContactStreamingRequest& request, const StartContactStreamingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartContactStreaming(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartContactStreaming(request), context);
+    } );
 }
 
 StartOutboundVoiceContactOutcome ConnectClient::StartOutboundVoiceContact(const StartOutboundVoiceContactRequest& request) const
@@ -4010,12 +3786,10 @@ StartOutboundVoiceContactOutcomeCallable ConnectClient::StartOutboundVoiceContac
 
 void ConnectClient::StartOutboundVoiceContactAsync(const StartOutboundVoiceContactRequest& request, const StartOutboundVoiceContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartOutboundVoiceContactAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::StartOutboundVoiceContactAsyncHelper(const StartOutboundVoiceContactRequest& request, const StartOutboundVoiceContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartOutboundVoiceContact(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartOutboundVoiceContact(request), context);
+    } );
 }
 
 StartTaskContactOutcome ConnectClient::StartTaskContact(const StartTaskContactRequest& request) const
@@ -4035,12 +3809,10 @@ StartTaskContactOutcomeCallable ConnectClient::StartTaskContactCallable(const St
 
 void ConnectClient::StartTaskContactAsync(const StartTaskContactRequest& request, const StartTaskContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartTaskContactAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::StartTaskContactAsyncHelper(const StartTaskContactRequest& request, const StartTaskContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartTaskContact(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartTaskContact(request), context);
+    } );
 }
 
 StopContactOutcome ConnectClient::StopContact(const StopContactRequest& request) const
@@ -4060,12 +3832,10 @@ StopContactOutcomeCallable ConnectClient::StopContactCallable(const StopContactR
 
 void ConnectClient::StopContactAsync(const StopContactRequest& request, const StopContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopContactAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::StopContactAsyncHelper(const StopContactRequest& request, const StopContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StopContact(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopContact(request), context);
+    } );
 }
 
 StopContactRecordingOutcome ConnectClient::StopContactRecording(const StopContactRecordingRequest& request) const
@@ -4085,12 +3855,10 @@ StopContactRecordingOutcomeCallable ConnectClient::StopContactRecordingCallable(
 
 void ConnectClient::StopContactRecordingAsync(const StopContactRecordingRequest& request, const StopContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopContactRecordingAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::StopContactRecordingAsyncHelper(const StopContactRecordingRequest& request, const StopContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StopContactRecording(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopContactRecording(request), context);
+    } );
 }
 
 StopContactStreamingOutcome ConnectClient::StopContactStreaming(const StopContactStreamingRequest& request) const
@@ -4110,12 +3878,10 @@ StopContactStreamingOutcomeCallable ConnectClient::StopContactStreamingCallable(
 
 void ConnectClient::StopContactStreamingAsync(const StopContactStreamingRequest& request, const StopContactStreamingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopContactStreamingAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::StopContactStreamingAsyncHelper(const StopContactStreamingRequest& request, const StopContactStreamingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StopContactStreaming(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopContactStreaming(request), context);
+    } );
 }
 
 SuspendContactRecordingOutcome ConnectClient::SuspendContactRecording(const SuspendContactRecordingRequest& request) const
@@ -4135,12 +3901,10 @@ SuspendContactRecordingOutcomeCallable ConnectClient::SuspendContactRecordingCal
 
 void ConnectClient::SuspendContactRecordingAsync(const SuspendContactRecordingRequest& request, const SuspendContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SuspendContactRecordingAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::SuspendContactRecordingAsyncHelper(const SuspendContactRecordingRequest& request, const SuspendContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SuspendContactRecording(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SuspendContactRecording(request), context);
+    } );
 }
 
 TagResourceOutcome ConnectClient::TagResource(const TagResourceRequest& request) const
@@ -4166,12 +3930,10 @@ TagResourceOutcomeCallable ConnectClient::TagResourceCallable(const TagResourceR
 
 void ConnectClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 TransferContactOutcome ConnectClient::TransferContact(const TransferContactRequest& request) const
@@ -4191,12 +3953,10 @@ TransferContactOutcomeCallable ConnectClient::TransferContactCallable(const Tran
 
 void ConnectClient::TransferContactAsync(const TransferContactRequest& request, const TransferContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TransferContactAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::TransferContactAsyncHelper(const TransferContactRequest& request, const TransferContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TransferContact(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TransferContact(request), context);
+    } );
 }
 
 UntagResourceOutcome ConnectClient::UntagResource(const UntagResourceRequest& request) const
@@ -4227,12 +3987,10 @@ UntagResourceOutcomeCallable ConnectClient::UntagResourceCallable(const UntagRes
 
 void ConnectClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateAgentStatusOutcome ConnectClient::UpdateAgentStatus(const UpdateAgentStatusRequest& request) const
@@ -4264,12 +4022,10 @@ UpdateAgentStatusOutcomeCallable ConnectClient::UpdateAgentStatusCallable(const 
 
 void ConnectClient::UpdateAgentStatusAsync(const UpdateAgentStatusRequest& request, const UpdateAgentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAgentStatusAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::UpdateAgentStatusAsyncHelper(const UpdateAgentStatusRequest& request, const UpdateAgentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateAgentStatus(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateAgentStatus(request), context);
+    } );
 }
 
 UpdateContactOutcome ConnectClient::UpdateContact(const UpdateContactRequest& request) const
@@ -4301,12 +4057,10 @@ UpdateContactOutcomeCallable ConnectClient::UpdateContactCallable(const UpdateCo
 
 void ConnectClient::UpdateContactAsync(const UpdateContactRequest& request, const UpdateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateContactAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::UpdateContactAsyncHelper(const UpdateContactRequest& request, const UpdateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateContact(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateContact(request), context);
+    } );
 }
 
 UpdateContactAttributesOutcome ConnectClient::UpdateContactAttributes(const UpdateContactAttributesRequest& request) const
@@ -4326,12 +4080,10 @@ UpdateContactAttributesOutcomeCallable ConnectClient::UpdateContactAttributesCal
 
 void ConnectClient::UpdateContactAttributesAsync(const UpdateContactAttributesRequest& request, const UpdateContactAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateContactAttributesAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::UpdateContactAttributesAsyncHelper(const UpdateContactAttributesRequest& request, const UpdateContactAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateContactAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateContactAttributes(request), context);
+    } );
 }
 
 UpdateContactFlowContentOutcome ConnectClient::UpdateContactFlowContent(const UpdateContactFlowContentRequest& request) const
@@ -4364,12 +4116,10 @@ UpdateContactFlowContentOutcomeCallable ConnectClient::UpdateContactFlowContentC
 
 void ConnectClient::UpdateContactFlowContentAsync(const UpdateContactFlowContentRequest& request, const UpdateContactFlowContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateContactFlowContentAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::UpdateContactFlowContentAsyncHelper(const UpdateContactFlowContentRequest& request, const UpdateContactFlowContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateContactFlowContent(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateContactFlowContent(request), context);
+    } );
 }
 
 UpdateContactFlowMetadataOutcome ConnectClient::UpdateContactFlowMetadata(const UpdateContactFlowMetadataRequest& request) const
@@ -4402,12 +4152,10 @@ UpdateContactFlowMetadataOutcomeCallable ConnectClient::UpdateContactFlowMetadat
 
 void ConnectClient::UpdateContactFlowMetadataAsync(const UpdateContactFlowMetadataRequest& request, const UpdateContactFlowMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateContactFlowMetadataAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::UpdateContactFlowMetadataAsyncHelper(const UpdateContactFlowMetadataRequest& request, const UpdateContactFlowMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateContactFlowMetadata(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateContactFlowMetadata(request), context);
+    } );
 }
 
 UpdateContactFlowModuleContentOutcome ConnectClient::UpdateContactFlowModuleContent(const UpdateContactFlowModuleContentRequest& request) const
@@ -4440,12 +4188,10 @@ UpdateContactFlowModuleContentOutcomeCallable ConnectClient::UpdateContactFlowMo
 
 void ConnectClient::UpdateContactFlowModuleContentAsync(const UpdateContactFlowModuleContentRequest& request, const UpdateContactFlowModuleContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateContactFlowModuleContentAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::UpdateContactFlowModuleContentAsyncHelper(const UpdateContactFlowModuleContentRequest& request, const UpdateContactFlowModuleContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateContactFlowModuleContent(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateContactFlowModuleContent(request), context);
+    } );
 }
 
 UpdateContactFlowModuleMetadataOutcome ConnectClient::UpdateContactFlowModuleMetadata(const UpdateContactFlowModuleMetadataRequest& request) const
@@ -4478,12 +4224,10 @@ UpdateContactFlowModuleMetadataOutcomeCallable ConnectClient::UpdateContactFlowM
 
 void ConnectClient::UpdateContactFlowModuleMetadataAsync(const UpdateContactFlowModuleMetadataRequest& request, const UpdateContactFlowModuleMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateContactFlowModuleMetadataAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::UpdateContactFlowModuleMetadataAsyncHelper(const UpdateContactFlowModuleMetadataRequest& request, const UpdateContactFlowModuleMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateContactFlowModuleMetadata(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateContactFlowModuleMetadata(request), context);
+    } );
 }
 
 UpdateContactFlowNameOutcome ConnectClient::UpdateContactFlowName(const UpdateContactFlowNameRequest& request) const
@@ -4516,12 +4260,10 @@ UpdateContactFlowNameOutcomeCallable ConnectClient::UpdateContactFlowNameCallabl
 
 void ConnectClient::UpdateContactFlowNameAsync(const UpdateContactFlowNameRequest& request, const UpdateContactFlowNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateContactFlowNameAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::UpdateContactFlowNameAsyncHelper(const UpdateContactFlowNameRequest& request, const UpdateContactFlowNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateContactFlowName(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateContactFlowName(request), context);
+    } );
 }
 
 UpdateContactScheduleOutcome ConnectClient::UpdateContactSchedule(const UpdateContactScheduleRequest& request) const
@@ -4541,12 +4283,10 @@ UpdateContactScheduleOutcomeCallable ConnectClient::UpdateContactScheduleCallabl
 
 void ConnectClient::UpdateContactScheduleAsync(const UpdateContactScheduleRequest& request, const UpdateContactScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateContactScheduleAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::UpdateContactScheduleAsyncHelper(const UpdateContactScheduleRequest& request, const UpdateContactScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateContactSchedule(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateContactSchedule(request), context);
+    } );
 }
 
 UpdateHoursOfOperationOutcome ConnectClient::UpdateHoursOfOperation(const UpdateHoursOfOperationRequest& request) const
@@ -4578,12 +4318,10 @@ UpdateHoursOfOperationOutcomeCallable ConnectClient::UpdateHoursOfOperationCalla
 
 void ConnectClient::UpdateHoursOfOperationAsync(const UpdateHoursOfOperationRequest& request, const UpdateHoursOfOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateHoursOfOperationAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::UpdateHoursOfOperationAsyncHelper(const UpdateHoursOfOperationRequest& request, const UpdateHoursOfOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateHoursOfOperation(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateHoursOfOperation(request), context);
+    } );
 }
 
 UpdateInstanceAttributeOutcome ConnectClient::UpdateInstanceAttribute(const UpdateInstanceAttributeRequest& request) const
@@ -4616,12 +4354,10 @@ UpdateInstanceAttributeOutcomeCallable ConnectClient::UpdateInstanceAttributeCal
 
 void ConnectClient::UpdateInstanceAttributeAsync(const UpdateInstanceAttributeRequest& request, const UpdateInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateInstanceAttributeAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::UpdateInstanceAttributeAsyncHelper(const UpdateInstanceAttributeRequest& request, const UpdateInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateInstanceAttribute(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateInstanceAttribute(request), context);
+    } );
 }
 
 UpdateInstanceStorageConfigOutcome ConnectClient::UpdateInstanceStorageConfig(const UpdateInstanceStorageConfigRequest& request) const
@@ -4659,12 +4395,10 @@ UpdateInstanceStorageConfigOutcomeCallable ConnectClient::UpdateInstanceStorageC
 
 void ConnectClient::UpdateInstanceStorageConfigAsync(const UpdateInstanceStorageConfigRequest& request, const UpdateInstanceStorageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateInstanceStorageConfigAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::UpdateInstanceStorageConfigAsyncHelper(const UpdateInstanceStorageConfigRequest& request, const UpdateInstanceStorageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateInstanceStorageConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateInstanceStorageConfig(request), context);
+    } );
 }
 
 UpdatePhoneNumberOutcome ConnectClient::UpdatePhoneNumber(const UpdatePhoneNumberRequest& request) const
@@ -4690,12 +4424,10 @@ UpdatePhoneNumberOutcomeCallable ConnectClient::UpdatePhoneNumberCallable(const 
 
 void ConnectClient::UpdatePhoneNumberAsync(const UpdatePhoneNumberRequest& request, const UpdatePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePhoneNumberAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::UpdatePhoneNumberAsyncHelper(const UpdatePhoneNumberRequest& request, const UpdatePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdatePhoneNumber(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdatePhoneNumber(request), context);
+    } );
 }
 
 UpdateQueueHoursOfOperationOutcome ConnectClient::UpdateQueueHoursOfOperation(const UpdateQueueHoursOfOperationRequest& request) const
@@ -4728,12 +4460,10 @@ UpdateQueueHoursOfOperationOutcomeCallable ConnectClient::UpdateQueueHoursOfOper
 
 void ConnectClient::UpdateQueueHoursOfOperationAsync(const UpdateQueueHoursOfOperationRequest& request, const UpdateQueueHoursOfOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateQueueHoursOfOperationAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::UpdateQueueHoursOfOperationAsyncHelper(const UpdateQueueHoursOfOperationRequest& request, const UpdateQueueHoursOfOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateQueueHoursOfOperation(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateQueueHoursOfOperation(request), context);
+    } );
 }
 
 UpdateQueueMaxContactsOutcome ConnectClient::UpdateQueueMaxContacts(const UpdateQueueMaxContactsRequest& request) const
@@ -4766,12 +4496,10 @@ UpdateQueueMaxContactsOutcomeCallable ConnectClient::UpdateQueueMaxContactsCalla
 
 void ConnectClient::UpdateQueueMaxContactsAsync(const UpdateQueueMaxContactsRequest& request, const UpdateQueueMaxContactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateQueueMaxContactsAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::UpdateQueueMaxContactsAsyncHelper(const UpdateQueueMaxContactsRequest& request, const UpdateQueueMaxContactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateQueueMaxContacts(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateQueueMaxContacts(request), context);
+    } );
 }
 
 UpdateQueueNameOutcome ConnectClient::UpdateQueueName(const UpdateQueueNameRequest& request) const
@@ -4804,12 +4532,10 @@ UpdateQueueNameOutcomeCallable ConnectClient::UpdateQueueNameCallable(const Upda
 
 void ConnectClient::UpdateQueueNameAsync(const UpdateQueueNameRequest& request, const UpdateQueueNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateQueueNameAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::UpdateQueueNameAsyncHelper(const UpdateQueueNameRequest& request, const UpdateQueueNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateQueueName(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateQueueName(request), context);
+    } );
 }
 
 UpdateQueueOutboundCallerConfigOutcome ConnectClient::UpdateQueueOutboundCallerConfig(const UpdateQueueOutboundCallerConfigRequest& request) const
@@ -4842,12 +4568,10 @@ UpdateQueueOutboundCallerConfigOutcomeCallable ConnectClient::UpdateQueueOutboun
 
 void ConnectClient::UpdateQueueOutboundCallerConfigAsync(const UpdateQueueOutboundCallerConfigRequest& request, const UpdateQueueOutboundCallerConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateQueueOutboundCallerConfigAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::UpdateQueueOutboundCallerConfigAsyncHelper(const UpdateQueueOutboundCallerConfigRequest& request, const UpdateQueueOutboundCallerConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateQueueOutboundCallerConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateQueueOutboundCallerConfig(request), context);
+    } );
 }
 
 UpdateQueueStatusOutcome ConnectClient::UpdateQueueStatus(const UpdateQueueStatusRequest& request) const
@@ -4880,12 +4604,10 @@ UpdateQueueStatusOutcomeCallable ConnectClient::UpdateQueueStatusCallable(const 
 
 void ConnectClient::UpdateQueueStatusAsync(const UpdateQueueStatusRequest& request, const UpdateQueueStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateQueueStatusAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::UpdateQueueStatusAsyncHelper(const UpdateQueueStatusRequest& request, const UpdateQueueStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateQueueStatus(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateQueueStatus(request), context);
+    } );
 }
 
 UpdateQuickConnectConfigOutcome ConnectClient::UpdateQuickConnectConfig(const UpdateQuickConnectConfigRequest& request) const
@@ -4918,12 +4640,10 @@ UpdateQuickConnectConfigOutcomeCallable ConnectClient::UpdateQuickConnectConfigC
 
 void ConnectClient::UpdateQuickConnectConfigAsync(const UpdateQuickConnectConfigRequest& request, const UpdateQuickConnectConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateQuickConnectConfigAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::UpdateQuickConnectConfigAsyncHelper(const UpdateQuickConnectConfigRequest& request, const UpdateQuickConnectConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateQuickConnectConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateQuickConnectConfig(request), context);
+    } );
 }
 
 UpdateQuickConnectNameOutcome ConnectClient::UpdateQuickConnectName(const UpdateQuickConnectNameRequest& request) const
@@ -4956,12 +4676,10 @@ UpdateQuickConnectNameOutcomeCallable ConnectClient::UpdateQuickConnectNameCalla
 
 void ConnectClient::UpdateQuickConnectNameAsync(const UpdateQuickConnectNameRequest& request, const UpdateQuickConnectNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateQuickConnectNameAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::UpdateQuickConnectNameAsyncHelper(const UpdateQuickConnectNameRequest& request, const UpdateQuickConnectNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateQuickConnectName(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateQuickConnectName(request), context);
+    } );
 }
 
 UpdateRoutingProfileConcurrencyOutcome ConnectClient::UpdateRoutingProfileConcurrency(const UpdateRoutingProfileConcurrencyRequest& request) const
@@ -4994,12 +4712,10 @@ UpdateRoutingProfileConcurrencyOutcomeCallable ConnectClient::UpdateRoutingProfi
 
 void ConnectClient::UpdateRoutingProfileConcurrencyAsync(const UpdateRoutingProfileConcurrencyRequest& request, const UpdateRoutingProfileConcurrencyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRoutingProfileConcurrencyAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::UpdateRoutingProfileConcurrencyAsyncHelper(const UpdateRoutingProfileConcurrencyRequest& request, const UpdateRoutingProfileConcurrencyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateRoutingProfileConcurrency(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateRoutingProfileConcurrency(request), context);
+    } );
 }
 
 UpdateRoutingProfileDefaultOutboundQueueOutcome ConnectClient::UpdateRoutingProfileDefaultOutboundQueue(const UpdateRoutingProfileDefaultOutboundQueueRequest& request) const
@@ -5032,12 +4748,10 @@ UpdateRoutingProfileDefaultOutboundQueueOutcomeCallable ConnectClient::UpdateRou
 
 void ConnectClient::UpdateRoutingProfileDefaultOutboundQueueAsync(const UpdateRoutingProfileDefaultOutboundQueueRequest& request, const UpdateRoutingProfileDefaultOutboundQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRoutingProfileDefaultOutboundQueueAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::UpdateRoutingProfileDefaultOutboundQueueAsyncHelper(const UpdateRoutingProfileDefaultOutboundQueueRequest& request, const UpdateRoutingProfileDefaultOutboundQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateRoutingProfileDefaultOutboundQueue(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateRoutingProfileDefaultOutboundQueue(request), context);
+    } );
 }
 
 UpdateRoutingProfileNameOutcome ConnectClient::UpdateRoutingProfileName(const UpdateRoutingProfileNameRequest& request) const
@@ -5070,12 +4784,10 @@ UpdateRoutingProfileNameOutcomeCallable ConnectClient::UpdateRoutingProfileNameC
 
 void ConnectClient::UpdateRoutingProfileNameAsync(const UpdateRoutingProfileNameRequest& request, const UpdateRoutingProfileNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRoutingProfileNameAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::UpdateRoutingProfileNameAsyncHelper(const UpdateRoutingProfileNameRequest& request, const UpdateRoutingProfileNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateRoutingProfileName(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateRoutingProfileName(request), context);
+    } );
 }
 
 UpdateRoutingProfileQueuesOutcome ConnectClient::UpdateRoutingProfileQueues(const UpdateRoutingProfileQueuesRequest& request) const
@@ -5108,12 +4820,10 @@ UpdateRoutingProfileQueuesOutcomeCallable ConnectClient::UpdateRoutingProfileQue
 
 void ConnectClient::UpdateRoutingProfileQueuesAsync(const UpdateRoutingProfileQueuesRequest& request, const UpdateRoutingProfileQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRoutingProfileQueuesAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::UpdateRoutingProfileQueuesAsyncHelper(const UpdateRoutingProfileQueuesRequest& request, const UpdateRoutingProfileQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateRoutingProfileQueues(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateRoutingProfileQueues(request), context);
+    } );
 }
 
 UpdateSecurityProfileOutcome ConnectClient::UpdateSecurityProfile(const UpdateSecurityProfileRequest& request) const
@@ -5145,12 +4855,10 @@ UpdateSecurityProfileOutcomeCallable ConnectClient::UpdateSecurityProfileCallabl
 
 void ConnectClient::UpdateSecurityProfileAsync(const UpdateSecurityProfileRequest& request, const UpdateSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSecurityProfileAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::UpdateSecurityProfileAsyncHelper(const UpdateSecurityProfileRequest& request, const UpdateSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateSecurityProfile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateSecurityProfile(request), context);
+    } );
 }
 
 UpdateTaskTemplateOutcome ConnectClient::UpdateTaskTemplate(const UpdateTaskTemplateRequest& request) const
@@ -5183,12 +4891,10 @@ UpdateTaskTemplateOutcomeCallable ConnectClient::UpdateTaskTemplateCallable(cons
 
 void ConnectClient::UpdateTaskTemplateAsync(const UpdateTaskTemplateRequest& request, const UpdateTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTaskTemplateAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::UpdateTaskTemplateAsyncHelper(const UpdateTaskTemplateRequest& request, const UpdateTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateTaskTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateTaskTemplate(request), context);
+    } );
 }
 
 UpdateUserHierarchyOutcome ConnectClient::UpdateUserHierarchy(const UpdateUserHierarchyRequest& request) const
@@ -5221,12 +4927,10 @@ UpdateUserHierarchyOutcomeCallable ConnectClient::UpdateUserHierarchyCallable(co
 
 void ConnectClient::UpdateUserHierarchyAsync(const UpdateUserHierarchyRequest& request, const UpdateUserHierarchyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateUserHierarchyAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::UpdateUserHierarchyAsyncHelper(const UpdateUserHierarchyRequest& request, const UpdateUserHierarchyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateUserHierarchy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateUserHierarchy(request), context);
+    } );
 }
 
 UpdateUserHierarchyGroupNameOutcome ConnectClient::UpdateUserHierarchyGroupName(const UpdateUserHierarchyGroupNameRequest& request) const
@@ -5259,12 +4963,10 @@ UpdateUserHierarchyGroupNameOutcomeCallable ConnectClient::UpdateUserHierarchyGr
 
 void ConnectClient::UpdateUserHierarchyGroupNameAsync(const UpdateUserHierarchyGroupNameRequest& request, const UpdateUserHierarchyGroupNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateUserHierarchyGroupNameAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::UpdateUserHierarchyGroupNameAsyncHelper(const UpdateUserHierarchyGroupNameRequest& request, const UpdateUserHierarchyGroupNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateUserHierarchyGroupName(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateUserHierarchyGroupName(request), context);
+    } );
 }
 
 UpdateUserHierarchyStructureOutcome ConnectClient::UpdateUserHierarchyStructure(const UpdateUserHierarchyStructureRequest& request) const
@@ -5290,12 +4992,10 @@ UpdateUserHierarchyStructureOutcomeCallable ConnectClient::UpdateUserHierarchySt
 
 void ConnectClient::UpdateUserHierarchyStructureAsync(const UpdateUserHierarchyStructureRequest& request, const UpdateUserHierarchyStructureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateUserHierarchyStructureAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::UpdateUserHierarchyStructureAsyncHelper(const UpdateUserHierarchyStructureRequest& request, const UpdateUserHierarchyStructureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateUserHierarchyStructure(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateUserHierarchyStructure(request), context);
+    } );
 }
 
 UpdateUserIdentityInfoOutcome ConnectClient::UpdateUserIdentityInfo(const UpdateUserIdentityInfoRequest& request) const
@@ -5328,12 +5028,10 @@ UpdateUserIdentityInfoOutcomeCallable ConnectClient::UpdateUserIdentityInfoCalla
 
 void ConnectClient::UpdateUserIdentityInfoAsync(const UpdateUserIdentityInfoRequest& request, const UpdateUserIdentityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateUserIdentityInfoAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::UpdateUserIdentityInfoAsyncHelper(const UpdateUserIdentityInfoRequest& request, const UpdateUserIdentityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateUserIdentityInfo(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateUserIdentityInfo(request), context);
+    } );
 }
 
 UpdateUserPhoneConfigOutcome ConnectClient::UpdateUserPhoneConfig(const UpdateUserPhoneConfigRequest& request) const
@@ -5366,12 +5064,10 @@ UpdateUserPhoneConfigOutcomeCallable ConnectClient::UpdateUserPhoneConfigCallabl
 
 void ConnectClient::UpdateUserPhoneConfigAsync(const UpdateUserPhoneConfigRequest& request, const UpdateUserPhoneConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateUserPhoneConfigAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::UpdateUserPhoneConfigAsyncHelper(const UpdateUserPhoneConfigRequest& request, const UpdateUserPhoneConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateUserPhoneConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateUserPhoneConfig(request), context);
+    } );
 }
 
 UpdateUserRoutingProfileOutcome ConnectClient::UpdateUserRoutingProfile(const UpdateUserRoutingProfileRequest& request) const
@@ -5404,12 +5100,10 @@ UpdateUserRoutingProfileOutcomeCallable ConnectClient::UpdateUserRoutingProfileC
 
 void ConnectClient::UpdateUserRoutingProfileAsync(const UpdateUserRoutingProfileRequest& request, const UpdateUserRoutingProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateUserRoutingProfileAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::UpdateUserRoutingProfileAsyncHelper(const UpdateUserRoutingProfileRequest& request, const UpdateUserRoutingProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateUserRoutingProfile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateUserRoutingProfile(request), context);
+    } );
 }
 
 UpdateUserSecurityProfilesOutcome ConnectClient::UpdateUserSecurityProfiles(const UpdateUserSecurityProfilesRequest& request) const
@@ -5442,11 +5136,9 @@ UpdateUserSecurityProfilesOutcomeCallable ConnectClient::UpdateUserSecurityProfi
 
 void ConnectClient::UpdateUserSecurityProfilesAsync(const UpdateUserSecurityProfilesRequest& request, const UpdateUserSecurityProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateUserSecurityProfilesAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectClient::UpdateUserSecurityProfilesAsyncHelper(const UpdateUserSecurityProfilesRequest& request, const UpdateUserSecurityProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateUserSecurityProfiles(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateUserSecurityProfiles(request), context);
+    } );
 }
 

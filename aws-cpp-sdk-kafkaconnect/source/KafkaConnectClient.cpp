@@ -129,12 +129,10 @@ CreateConnectorOutcomeCallable KafkaConnectClient::CreateConnectorCallable(const
 
 void KafkaConnectClient::CreateConnectorAsync(const CreateConnectorRequest& request, const CreateConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateConnectorAsyncHelper( request, handler, context ); } );
-}
-
-void KafkaConnectClient::CreateConnectorAsyncHelper(const CreateConnectorRequest& request, const CreateConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateConnector(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateConnector(request), context);
+    } );
 }
 
 CreateCustomPluginOutcome KafkaConnectClient::CreateCustomPlugin(const CreateCustomPluginRequest& request) const
@@ -154,12 +152,10 @@ CreateCustomPluginOutcomeCallable KafkaConnectClient::CreateCustomPluginCallable
 
 void KafkaConnectClient::CreateCustomPluginAsync(const CreateCustomPluginRequest& request, const CreateCustomPluginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCustomPluginAsyncHelper( request, handler, context ); } );
-}
-
-void KafkaConnectClient::CreateCustomPluginAsyncHelper(const CreateCustomPluginRequest& request, const CreateCustomPluginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateCustomPlugin(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateCustomPlugin(request), context);
+    } );
 }
 
 CreateWorkerConfigurationOutcome KafkaConnectClient::CreateWorkerConfiguration(const CreateWorkerConfigurationRequest& request) const
@@ -179,12 +175,10 @@ CreateWorkerConfigurationOutcomeCallable KafkaConnectClient::CreateWorkerConfigu
 
 void KafkaConnectClient::CreateWorkerConfigurationAsync(const CreateWorkerConfigurationRequest& request, const CreateWorkerConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateWorkerConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void KafkaConnectClient::CreateWorkerConfigurationAsyncHelper(const CreateWorkerConfigurationRequest& request, const CreateWorkerConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateWorkerConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateWorkerConfiguration(request), context);
+    } );
 }
 
 DeleteConnectorOutcome KafkaConnectClient::DeleteConnector(const DeleteConnectorRequest& request) const
@@ -210,12 +204,10 @@ DeleteConnectorOutcomeCallable KafkaConnectClient::DeleteConnectorCallable(const
 
 void KafkaConnectClient::DeleteConnectorAsync(const DeleteConnectorRequest& request, const DeleteConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteConnectorAsyncHelper( request, handler, context ); } );
-}
-
-void KafkaConnectClient::DeleteConnectorAsyncHelper(const DeleteConnectorRequest& request, const DeleteConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteConnector(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteConnector(request), context);
+    } );
 }
 
 DeleteCustomPluginOutcome KafkaConnectClient::DeleteCustomPlugin(const DeleteCustomPluginRequest& request) const
@@ -241,12 +233,10 @@ DeleteCustomPluginOutcomeCallable KafkaConnectClient::DeleteCustomPluginCallable
 
 void KafkaConnectClient::DeleteCustomPluginAsync(const DeleteCustomPluginRequest& request, const DeleteCustomPluginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCustomPluginAsyncHelper( request, handler, context ); } );
-}
-
-void KafkaConnectClient::DeleteCustomPluginAsyncHelper(const DeleteCustomPluginRequest& request, const DeleteCustomPluginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteCustomPlugin(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteCustomPlugin(request), context);
+    } );
 }
 
 DescribeConnectorOutcome KafkaConnectClient::DescribeConnector(const DescribeConnectorRequest& request) const
@@ -272,12 +262,10 @@ DescribeConnectorOutcomeCallable KafkaConnectClient::DescribeConnectorCallable(c
 
 void KafkaConnectClient::DescribeConnectorAsync(const DescribeConnectorRequest& request, const DescribeConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeConnectorAsyncHelper( request, handler, context ); } );
-}
-
-void KafkaConnectClient::DescribeConnectorAsyncHelper(const DescribeConnectorRequest& request, const DescribeConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeConnector(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeConnector(request), context);
+    } );
 }
 
 DescribeCustomPluginOutcome KafkaConnectClient::DescribeCustomPlugin(const DescribeCustomPluginRequest& request) const
@@ -303,12 +291,10 @@ DescribeCustomPluginOutcomeCallable KafkaConnectClient::DescribeCustomPluginCall
 
 void KafkaConnectClient::DescribeCustomPluginAsync(const DescribeCustomPluginRequest& request, const DescribeCustomPluginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCustomPluginAsyncHelper( request, handler, context ); } );
-}
-
-void KafkaConnectClient::DescribeCustomPluginAsyncHelper(const DescribeCustomPluginRequest& request, const DescribeCustomPluginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeCustomPlugin(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeCustomPlugin(request), context);
+    } );
 }
 
 DescribeWorkerConfigurationOutcome KafkaConnectClient::DescribeWorkerConfiguration(const DescribeWorkerConfigurationRequest& request) const
@@ -334,12 +320,10 @@ DescribeWorkerConfigurationOutcomeCallable KafkaConnectClient::DescribeWorkerCon
 
 void KafkaConnectClient::DescribeWorkerConfigurationAsync(const DescribeWorkerConfigurationRequest& request, const DescribeWorkerConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeWorkerConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void KafkaConnectClient::DescribeWorkerConfigurationAsyncHelper(const DescribeWorkerConfigurationRequest& request, const DescribeWorkerConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeWorkerConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeWorkerConfiguration(request), context);
+    } );
 }
 
 ListConnectorsOutcome KafkaConnectClient::ListConnectors(const ListConnectorsRequest& request) const
@@ -359,12 +343,10 @@ ListConnectorsOutcomeCallable KafkaConnectClient::ListConnectorsCallable(const L
 
 void KafkaConnectClient::ListConnectorsAsync(const ListConnectorsRequest& request, const ListConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListConnectorsAsyncHelper( request, handler, context ); } );
-}
-
-void KafkaConnectClient::ListConnectorsAsyncHelper(const ListConnectorsRequest& request, const ListConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListConnectors(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListConnectors(request), context);
+    } );
 }
 
 ListCustomPluginsOutcome KafkaConnectClient::ListCustomPlugins(const ListCustomPluginsRequest& request) const
@@ -384,12 +366,10 @@ ListCustomPluginsOutcomeCallable KafkaConnectClient::ListCustomPluginsCallable(c
 
 void KafkaConnectClient::ListCustomPluginsAsync(const ListCustomPluginsRequest& request, const ListCustomPluginsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCustomPluginsAsyncHelper( request, handler, context ); } );
-}
-
-void KafkaConnectClient::ListCustomPluginsAsyncHelper(const ListCustomPluginsRequest& request, const ListCustomPluginsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListCustomPlugins(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListCustomPlugins(request), context);
+    } );
 }
 
 ListWorkerConfigurationsOutcome KafkaConnectClient::ListWorkerConfigurations(const ListWorkerConfigurationsRequest& request) const
@@ -409,12 +389,10 @@ ListWorkerConfigurationsOutcomeCallable KafkaConnectClient::ListWorkerConfigurat
 
 void KafkaConnectClient::ListWorkerConfigurationsAsync(const ListWorkerConfigurationsRequest& request, const ListWorkerConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListWorkerConfigurationsAsyncHelper( request, handler, context ); } );
-}
-
-void KafkaConnectClient::ListWorkerConfigurationsAsyncHelper(const ListWorkerConfigurationsRequest& request, const ListWorkerConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListWorkerConfigurations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListWorkerConfigurations(request), context);
+    } );
 }
 
 UpdateConnectorOutcome KafkaConnectClient::UpdateConnector(const UpdateConnectorRequest& request) const
@@ -445,11 +423,9 @@ UpdateConnectorOutcomeCallable KafkaConnectClient::UpdateConnectorCallable(const
 
 void KafkaConnectClient::UpdateConnectorAsync(const UpdateConnectorRequest& request, const UpdateConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateConnectorAsyncHelper( request, handler, context ); } );
-}
-
-void KafkaConnectClient::UpdateConnectorAsyncHelper(const UpdateConnectorRequest& request, const UpdateConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateConnector(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateConnector(request), context);
+    } );
 }
 

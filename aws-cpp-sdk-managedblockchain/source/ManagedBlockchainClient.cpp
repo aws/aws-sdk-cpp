@@ -147,12 +147,10 @@ CreateMemberOutcomeCallable ManagedBlockchainClient::CreateMemberCallable(const 
 
 void ManagedBlockchainClient::CreateMemberAsync(const CreateMemberRequest& request, const CreateMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateMemberAsyncHelper( request, handler, context ); } );
-}
-
-void ManagedBlockchainClient::CreateMemberAsyncHelper(const CreateMemberRequest& request, const CreateMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateMember(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateMember(request), context);
+    } );
 }
 
 CreateNetworkOutcome ManagedBlockchainClient::CreateNetwork(const CreateNetworkRequest& request) const
@@ -172,12 +170,10 @@ CreateNetworkOutcomeCallable ManagedBlockchainClient::CreateNetworkCallable(cons
 
 void ManagedBlockchainClient::CreateNetworkAsync(const CreateNetworkRequest& request, const CreateNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateNetworkAsyncHelper( request, handler, context ); } );
-}
-
-void ManagedBlockchainClient::CreateNetworkAsyncHelper(const CreateNetworkRequest& request, const CreateNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateNetwork(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateNetwork(request), context);
+    } );
 }
 
 CreateNodeOutcome ManagedBlockchainClient::CreateNode(const CreateNodeRequest& request) const
@@ -204,12 +200,10 @@ CreateNodeOutcomeCallable ManagedBlockchainClient::CreateNodeCallable(const Crea
 
 void ManagedBlockchainClient::CreateNodeAsync(const CreateNodeRequest& request, const CreateNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateNodeAsyncHelper( request, handler, context ); } );
-}
-
-void ManagedBlockchainClient::CreateNodeAsyncHelper(const CreateNodeRequest& request, const CreateNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateNode(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateNode(request), context);
+    } );
 }
 
 CreateProposalOutcome ManagedBlockchainClient::CreateProposal(const CreateProposalRequest& request) const
@@ -236,12 +230,10 @@ CreateProposalOutcomeCallable ManagedBlockchainClient::CreateProposalCallable(co
 
 void ManagedBlockchainClient::CreateProposalAsync(const CreateProposalRequest& request, const CreateProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateProposalAsyncHelper( request, handler, context ); } );
-}
-
-void ManagedBlockchainClient::CreateProposalAsyncHelper(const CreateProposalRequest& request, const CreateProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateProposal(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateProposal(request), context);
+    } );
 }
 
 DeleteMemberOutcome ManagedBlockchainClient::DeleteMember(const DeleteMemberRequest& request) const
@@ -274,12 +266,10 @@ DeleteMemberOutcomeCallable ManagedBlockchainClient::DeleteMemberCallable(const 
 
 void ManagedBlockchainClient::DeleteMemberAsync(const DeleteMemberRequest& request, const DeleteMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteMemberAsyncHelper( request, handler, context ); } );
-}
-
-void ManagedBlockchainClient::DeleteMemberAsyncHelper(const DeleteMemberRequest& request, const DeleteMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteMember(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteMember(request), context);
+    } );
 }
 
 DeleteNodeOutcome ManagedBlockchainClient::DeleteNode(const DeleteNodeRequest& request) const
@@ -312,12 +302,10 @@ DeleteNodeOutcomeCallable ManagedBlockchainClient::DeleteNodeCallable(const Dele
 
 void ManagedBlockchainClient::DeleteNodeAsync(const DeleteNodeRequest& request, const DeleteNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteNodeAsyncHelper( request, handler, context ); } );
-}
-
-void ManagedBlockchainClient::DeleteNodeAsyncHelper(const DeleteNodeRequest& request, const DeleteNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteNode(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteNode(request), context);
+    } );
 }
 
 GetMemberOutcome ManagedBlockchainClient::GetMember(const GetMemberRequest& request) const
@@ -350,12 +338,10 @@ GetMemberOutcomeCallable ManagedBlockchainClient::GetMemberCallable(const GetMem
 
 void ManagedBlockchainClient::GetMemberAsync(const GetMemberRequest& request, const GetMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMemberAsyncHelper( request, handler, context ); } );
-}
-
-void ManagedBlockchainClient::GetMemberAsyncHelper(const GetMemberRequest& request, const GetMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetMember(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetMember(request), context);
+    } );
 }
 
 GetNetworkOutcome ManagedBlockchainClient::GetNetwork(const GetNetworkRequest& request) const
@@ -381,12 +367,10 @@ GetNetworkOutcomeCallable ManagedBlockchainClient::GetNetworkCallable(const GetN
 
 void ManagedBlockchainClient::GetNetworkAsync(const GetNetworkRequest& request, const GetNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetNetworkAsyncHelper( request, handler, context ); } );
-}
-
-void ManagedBlockchainClient::GetNetworkAsyncHelper(const GetNetworkRequest& request, const GetNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetNetwork(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetNetwork(request), context);
+    } );
 }
 
 GetNodeOutcome ManagedBlockchainClient::GetNode(const GetNodeRequest& request) const
@@ -419,12 +403,10 @@ GetNodeOutcomeCallable ManagedBlockchainClient::GetNodeCallable(const GetNodeReq
 
 void ManagedBlockchainClient::GetNodeAsync(const GetNodeRequest& request, const GetNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetNodeAsyncHelper( request, handler, context ); } );
-}
-
-void ManagedBlockchainClient::GetNodeAsyncHelper(const GetNodeRequest& request, const GetNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetNode(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetNode(request), context);
+    } );
 }
 
 GetProposalOutcome ManagedBlockchainClient::GetProposal(const GetProposalRequest& request) const
@@ -457,12 +439,10 @@ GetProposalOutcomeCallable ManagedBlockchainClient::GetProposalCallable(const Ge
 
 void ManagedBlockchainClient::GetProposalAsync(const GetProposalRequest& request, const GetProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetProposalAsyncHelper( request, handler, context ); } );
-}
-
-void ManagedBlockchainClient::GetProposalAsyncHelper(const GetProposalRequest& request, const GetProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetProposal(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetProposal(request), context);
+    } );
 }
 
 ListInvitationsOutcome ManagedBlockchainClient::ListInvitations(const ListInvitationsRequest& request) const
@@ -482,12 +462,10 @@ ListInvitationsOutcomeCallable ManagedBlockchainClient::ListInvitationsCallable(
 
 void ManagedBlockchainClient::ListInvitationsAsync(const ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListInvitationsAsyncHelper( request, handler, context ); } );
-}
-
-void ManagedBlockchainClient::ListInvitationsAsyncHelper(const ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListInvitations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListInvitations(request), context);
+    } );
 }
 
 ListMembersOutcome ManagedBlockchainClient::ListMembers(const ListMembersRequest& request) const
@@ -514,12 +492,10 @@ ListMembersOutcomeCallable ManagedBlockchainClient::ListMembersCallable(const Li
 
 void ManagedBlockchainClient::ListMembersAsync(const ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMembersAsyncHelper( request, handler, context ); } );
-}
-
-void ManagedBlockchainClient::ListMembersAsyncHelper(const ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListMembers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListMembers(request), context);
+    } );
 }
 
 ListNetworksOutcome ManagedBlockchainClient::ListNetworks(const ListNetworksRequest& request) const
@@ -539,12 +515,10 @@ ListNetworksOutcomeCallable ManagedBlockchainClient::ListNetworksCallable(const 
 
 void ManagedBlockchainClient::ListNetworksAsync(const ListNetworksRequest& request, const ListNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListNetworksAsyncHelper( request, handler, context ); } );
-}
-
-void ManagedBlockchainClient::ListNetworksAsyncHelper(const ListNetworksRequest& request, const ListNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListNetworks(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListNetworks(request), context);
+    } );
 }
 
 ListNodesOutcome ManagedBlockchainClient::ListNodes(const ListNodesRequest& request) const
@@ -571,12 +545,10 @@ ListNodesOutcomeCallable ManagedBlockchainClient::ListNodesCallable(const ListNo
 
 void ManagedBlockchainClient::ListNodesAsync(const ListNodesRequest& request, const ListNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListNodesAsyncHelper( request, handler, context ); } );
-}
-
-void ManagedBlockchainClient::ListNodesAsyncHelper(const ListNodesRequest& request, const ListNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListNodes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListNodes(request), context);
+    } );
 }
 
 ListProposalVotesOutcome ManagedBlockchainClient::ListProposalVotes(const ListProposalVotesRequest& request) const
@@ -610,12 +582,10 @@ ListProposalVotesOutcomeCallable ManagedBlockchainClient::ListProposalVotesCalla
 
 void ManagedBlockchainClient::ListProposalVotesAsync(const ListProposalVotesRequest& request, const ListProposalVotesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListProposalVotesAsyncHelper( request, handler, context ); } );
-}
-
-void ManagedBlockchainClient::ListProposalVotesAsyncHelper(const ListProposalVotesRequest& request, const ListProposalVotesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListProposalVotes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListProposalVotes(request), context);
+    } );
 }
 
 ListProposalsOutcome ManagedBlockchainClient::ListProposals(const ListProposalsRequest& request) const
@@ -642,12 +612,10 @@ ListProposalsOutcomeCallable ManagedBlockchainClient::ListProposalsCallable(cons
 
 void ManagedBlockchainClient::ListProposalsAsync(const ListProposalsRequest& request, const ListProposalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListProposalsAsyncHelper( request, handler, context ); } );
-}
-
-void ManagedBlockchainClient::ListProposalsAsyncHelper(const ListProposalsRequest& request, const ListProposalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListProposals(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListProposals(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome ManagedBlockchainClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -673,12 +641,10 @@ ListTagsForResourceOutcomeCallable ManagedBlockchainClient::ListTagsForResourceC
 
 void ManagedBlockchainClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ManagedBlockchainClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 RejectInvitationOutcome ManagedBlockchainClient::RejectInvitation(const RejectInvitationRequest& request) const
@@ -704,12 +670,10 @@ RejectInvitationOutcomeCallable ManagedBlockchainClient::RejectInvitationCallabl
 
 void ManagedBlockchainClient::RejectInvitationAsync(const RejectInvitationRequest& request, const RejectInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RejectInvitationAsyncHelper( request, handler, context ); } );
-}
-
-void ManagedBlockchainClient::RejectInvitationAsyncHelper(const RejectInvitationRequest& request, const RejectInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RejectInvitation(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RejectInvitation(request), context);
+    } );
 }
 
 TagResourceOutcome ManagedBlockchainClient::TagResource(const TagResourceRequest& request) const
@@ -735,12 +699,10 @@ TagResourceOutcomeCallable ManagedBlockchainClient::TagResourceCallable(const Ta
 
 void ManagedBlockchainClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ManagedBlockchainClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome ManagedBlockchainClient::UntagResource(const UntagResourceRequest& request) const
@@ -771,12 +733,10 @@ UntagResourceOutcomeCallable ManagedBlockchainClient::UntagResourceCallable(cons
 
 void ManagedBlockchainClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ManagedBlockchainClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateMemberOutcome ManagedBlockchainClient::UpdateMember(const UpdateMemberRequest& request) const
@@ -809,12 +769,10 @@ UpdateMemberOutcomeCallable ManagedBlockchainClient::UpdateMemberCallable(const 
 
 void ManagedBlockchainClient::UpdateMemberAsync(const UpdateMemberRequest& request, const UpdateMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateMemberAsyncHelper( request, handler, context ); } );
-}
-
-void ManagedBlockchainClient::UpdateMemberAsyncHelper(const UpdateMemberRequest& request, const UpdateMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateMember(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateMember(request), context);
+    } );
 }
 
 UpdateNodeOutcome ManagedBlockchainClient::UpdateNode(const UpdateNodeRequest& request) const
@@ -847,12 +805,10 @@ UpdateNodeOutcomeCallable ManagedBlockchainClient::UpdateNodeCallable(const Upda
 
 void ManagedBlockchainClient::UpdateNodeAsync(const UpdateNodeRequest& request, const UpdateNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateNodeAsyncHelper( request, handler, context ); } );
-}
-
-void ManagedBlockchainClient::UpdateNodeAsyncHelper(const UpdateNodeRequest& request, const UpdateNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateNode(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateNode(request), context);
+    } );
 }
 
 VoteOnProposalOutcome ManagedBlockchainClient::VoteOnProposal(const VoteOnProposalRequest& request) const
@@ -886,11 +842,9 @@ VoteOnProposalOutcomeCallable ManagedBlockchainClient::VoteOnProposalCallable(co
 
 void ManagedBlockchainClient::VoteOnProposalAsync(const VoteOnProposalRequest& request, const VoteOnProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->VoteOnProposalAsyncHelper( request, handler, context ); } );
-}
-
-void ManagedBlockchainClient::VoteOnProposalAsyncHelper(const VoteOnProposalRequest& request, const VoteOnProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, VoteOnProposal(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, VoteOnProposal(request), context);
+    } );
 }
 

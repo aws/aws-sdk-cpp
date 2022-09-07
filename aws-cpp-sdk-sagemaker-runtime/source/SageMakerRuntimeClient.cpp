@@ -126,12 +126,10 @@ InvokeEndpointOutcomeCallable SageMakerRuntimeClient::InvokeEndpointCallable(con
 
 void SageMakerRuntimeClient::InvokeEndpointAsync(const InvokeEndpointRequest& request, const InvokeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->InvokeEndpointAsyncHelper( request, handler, context ); } );
-}
-
-void SageMakerRuntimeClient::InvokeEndpointAsyncHelper(const InvokeEndpointRequest& request, const InvokeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, InvokeEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, InvokeEndpoint(request), context);
+    } );
 }
 
 InvokeEndpointAsyncOutcome SageMakerRuntimeClient::InvokeEndpointAsync(const InvokeEndpointAsyncRequest& request) const
@@ -163,11 +161,9 @@ InvokeEndpointAsyncOutcomeCallable SageMakerRuntimeClient::InvokeEndpointAsyncCa
 
 void SageMakerRuntimeClient::InvokeEndpointAsyncAsync(const InvokeEndpointAsyncRequest& request, const InvokeEndpointAsyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->InvokeEndpointAsyncAsyncHelper( request, handler, context ); } );
-}
-
-void SageMakerRuntimeClient::InvokeEndpointAsyncAsyncHelper(const InvokeEndpointAsyncRequest& request, const InvokeEndpointAsyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, InvokeEndpointAsync(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, InvokeEndpointAsync(request), context);
+    } );
 }
 

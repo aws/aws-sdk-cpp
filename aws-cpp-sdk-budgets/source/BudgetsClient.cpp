@@ -139,12 +139,10 @@ CreateBudgetOutcomeCallable BudgetsClient::CreateBudgetCallable(const CreateBudg
 
 void BudgetsClient::CreateBudgetAsync(const CreateBudgetRequest& request, const CreateBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBudgetAsyncHelper( request, handler, context ); } );
-}
-
-void BudgetsClient::CreateBudgetAsyncHelper(const CreateBudgetRequest& request, const CreateBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateBudget(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateBudget(request), context);
+    } );
 }
 
 CreateBudgetActionOutcome BudgetsClient::CreateBudgetAction(const CreateBudgetActionRequest& request) const
@@ -163,12 +161,10 @@ CreateBudgetActionOutcomeCallable BudgetsClient::CreateBudgetActionCallable(cons
 
 void BudgetsClient::CreateBudgetActionAsync(const CreateBudgetActionRequest& request, const CreateBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBudgetActionAsyncHelper( request, handler, context ); } );
-}
-
-void BudgetsClient::CreateBudgetActionAsyncHelper(const CreateBudgetActionRequest& request, const CreateBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateBudgetAction(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateBudgetAction(request), context);
+    } );
 }
 
 CreateNotificationOutcome BudgetsClient::CreateNotification(const CreateNotificationRequest& request) const
@@ -187,12 +183,10 @@ CreateNotificationOutcomeCallable BudgetsClient::CreateNotificationCallable(cons
 
 void BudgetsClient::CreateNotificationAsync(const CreateNotificationRequest& request, const CreateNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateNotificationAsyncHelper( request, handler, context ); } );
-}
-
-void BudgetsClient::CreateNotificationAsyncHelper(const CreateNotificationRequest& request, const CreateNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateNotification(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateNotification(request), context);
+    } );
 }
 
 CreateSubscriberOutcome BudgetsClient::CreateSubscriber(const CreateSubscriberRequest& request) const
@@ -211,12 +205,10 @@ CreateSubscriberOutcomeCallable BudgetsClient::CreateSubscriberCallable(const Cr
 
 void BudgetsClient::CreateSubscriberAsync(const CreateSubscriberRequest& request, const CreateSubscriberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSubscriberAsyncHelper( request, handler, context ); } );
-}
-
-void BudgetsClient::CreateSubscriberAsyncHelper(const CreateSubscriberRequest& request, const CreateSubscriberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateSubscriber(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateSubscriber(request), context);
+    } );
 }
 
 DeleteBudgetOutcome BudgetsClient::DeleteBudget(const DeleteBudgetRequest& request) const
@@ -235,12 +227,10 @@ DeleteBudgetOutcomeCallable BudgetsClient::DeleteBudgetCallable(const DeleteBudg
 
 void BudgetsClient::DeleteBudgetAsync(const DeleteBudgetRequest& request, const DeleteBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBudgetAsyncHelper( request, handler, context ); } );
-}
-
-void BudgetsClient::DeleteBudgetAsyncHelper(const DeleteBudgetRequest& request, const DeleteBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteBudget(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteBudget(request), context);
+    } );
 }
 
 DeleteBudgetActionOutcome BudgetsClient::DeleteBudgetAction(const DeleteBudgetActionRequest& request) const
@@ -259,12 +249,10 @@ DeleteBudgetActionOutcomeCallable BudgetsClient::DeleteBudgetActionCallable(cons
 
 void BudgetsClient::DeleteBudgetActionAsync(const DeleteBudgetActionRequest& request, const DeleteBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBudgetActionAsyncHelper( request, handler, context ); } );
-}
-
-void BudgetsClient::DeleteBudgetActionAsyncHelper(const DeleteBudgetActionRequest& request, const DeleteBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteBudgetAction(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteBudgetAction(request), context);
+    } );
 }
 
 DeleteNotificationOutcome BudgetsClient::DeleteNotification(const DeleteNotificationRequest& request) const
@@ -283,12 +271,10 @@ DeleteNotificationOutcomeCallable BudgetsClient::DeleteNotificationCallable(cons
 
 void BudgetsClient::DeleteNotificationAsync(const DeleteNotificationRequest& request, const DeleteNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteNotificationAsyncHelper( request, handler, context ); } );
-}
-
-void BudgetsClient::DeleteNotificationAsyncHelper(const DeleteNotificationRequest& request, const DeleteNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteNotification(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteNotification(request), context);
+    } );
 }
 
 DeleteSubscriberOutcome BudgetsClient::DeleteSubscriber(const DeleteSubscriberRequest& request) const
@@ -307,12 +293,10 @@ DeleteSubscriberOutcomeCallable BudgetsClient::DeleteSubscriberCallable(const De
 
 void BudgetsClient::DeleteSubscriberAsync(const DeleteSubscriberRequest& request, const DeleteSubscriberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSubscriberAsyncHelper( request, handler, context ); } );
-}
-
-void BudgetsClient::DeleteSubscriberAsyncHelper(const DeleteSubscriberRequest& request, const DeleteSubscriberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteSubscriber(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteSubscriber(request), context);
+    } );
 }
 
 DescribeBudgetOutcome BudgetsClient::DescribeBudget(const DescribeBudgetRequest& request) const
@@ -331,12 +315,10 @@ DescribeBudgetOutcomeCallable BudgetsClient::DescribeBudgetCallable(const Descri
 
 void BudgetsClient::DescribeBudgetAsync(const DescribeBudgetRequest& request, const DescribeBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeBudgetAsyncHelper( request, handler, context ); } );
-}
-
-void BudgetsClient::DescribeBudgetAsyncHelper(const DescribeBudgetRequest& request, const DescribeBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeBudget(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeBudget(request), context);
+    } );
 }
 
 DescribeBudgetActionOutcome BudgetsClient::DescribeBudgetAction(const DescribeBudgetActionRequest& request) const
@@ -355,12 +337,10 @@ DescribeBudgetActionOutcomeCallable BudgetsClient::DescribeBudgetActionCallable(
 
 void BudgetsClient::DescribeBudgetActionAsync(const DescribeBudgetActionRequest& request, const DescribeBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeBudgetActionAsyncHelper( request, handler, context ); } );
-}
-
-void BudgetsClient::DescribeBudgetActionAsyncHelper(const DescribeBudgetActionRequest& request, const DescribeBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeBudgetAction(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeBudgetAction(request), context);
+    } );
 }
 
 DescribeBudgetActionHistoriesOutcome BudgetsClient::DescribeBudgetActionHistories(const DescribeBudgetActionHistoriesRequest& request) const
@@ -379,12 +359,10 @@ DescribeBudgetActionHistoriesOutcomeCallable BudgetsClient::DescribeBudgetAction
 
 void BudgetsClient::DescribeBudgetActionHistoriesAsync(const DescribeBudgetActionHistoriesRequest& request, const DescribeBudgetActionHistoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeBudgetActionHistoriesAsyncHelper( request, handler, context ); } );
-}
-
-void BudgetsClient::DescribeBudgetActionHistoriesAsyncHelper(const DescribeBudgetActionHistoriesRequest& request, const DescribeBudgetActionHistoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeBudgetActionHistories(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeBudgetActionHistories(request), context);
+    } );
 }
 
 DescribeBudgetActionsForAccountOutcome BudgetsClient::DescribeBudgetActionsForAccount(const DescribeBudgetActionsForAccountRequest& request) const
@@ -403,12 +381,10 @@ DescribeBudgetActionsForAccountOutcomeCallable BudgetsClient::DescribeBudgetActi
 
 void BudgetsClient::DescribeBudgetActionsForAccountAsync(const DescribeBudgetActionsForAccountRequest& request, const DescribeBudgetActionsForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeBudgetActionsForAccountAsyncHelper( request, handler, context ); } );
-}
-
-void BudgetsClient::DescribeBudgetActionsForAccountAsyncHelper(const DescribeBudgetActionsForAccountRequest& request, const DescribeBudgetActionsForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeBudgetActionsForAccount(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeBudgetActionsForAccount(request), context);
+    } );
 }
 
 DescribeBudgetActionsForBudgetOutcome BudgetsClient::DescribeBudgetActionsForBudget(const DescribeBudgetActionsForBudgetRequest& request) const
@@ -427,12 +403,10 @@ DescribeBudgetActionsForBudgetOutcomeCallable BudgetsClient::DescribeBudgetActio
 
 void BudgetsClient::DescribeBudgetActionsForBudgetAsync(const DescribeBudgetActionsForBudgetRequest& request, const DescribeBudgetActionsForBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeBudgetActionsForBudgetAsyncHelper( request, handler, context ); } );
-}
-
-void BudgetsClient::DescribeBudgetActionsForBudgetAsyncHelper(const DescribeBudgetActionsForBudgetRequest& request, const DescribeBudgetActionsForBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeBudgetActionsForBudget(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeBudgetActionsForBudget(request), context);
+    } );
 }
 
 DescribeBudgetNotificationsForAccountOutcome BudgetsClient::DescribeBudgetNotificationsForAccount(const DescribeBudgetNotificationsForAccountRequest& request) const
@@ -451,12 +425,10 @@ DescribeBudgetNotificationsForAccountOutcomeCallable BudgetsClient::DescribeBudg
 
 void BudgetsClient::DescribeBudgetNotificationsForAccountAsync(const DescribeBudgetNotificationsForAccountRequest& request, const DescribeBudgetNotificationsForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeBudgetNotificationsForAccountAsyncHelper( request, handler, context ); } );
-}
-
-void BudgetsClient::DescribeBudgetNotificationsForAccountAsyncHelper(const DescribeBudgetNotificationsForAccountRequest& request, const DescribeBudgetNotificationsForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeBudgetNotificationsForAccount(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeBudgetNotificationsForAccount(request), context);
+    } );
 }
 
 DescribeBudgetPerformanceHistoryOutcome BudgetsClient::DescribeBudgetPerformanceHistory(const DescribeBudgetPerformanceHistoryRequest& request) const
@@ -475,12 +447,10 @@ DescribeBudgetPerformanceHistoryOutcomeCallable BudgetsClient::DescribeBudgetPer
 
 void BudgetsClient::DescribeBudgetPerformanceHistoryAsync(const DescribeBudgetPerformanceHistoryRequest& request, const DescribeBudgetPerformanceHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeBudgetPerformanceHistoryAsyncHelper( request, handler, context ); } );
-}
-
-void BudgetsClient::DescribeBudgetPerformanceHistoryAsyncHelper(const DescribeBudgetPerformanceHistoryRequest& request, const DescribeBudgetPerformanceHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeBudgetPerformanceHistory(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeBudgetPerformanceHistory(request), context);
+    } );
 }
 
 DescribeBudgetsOutcome BudgetsClient::DescribeBudgets(const DescribeBudgetsRequest& request) const
@@ -499,12 +469,10 @@ DescribeBudgetsOutcomeCallable BudgetsClient::DescribeBudgetsCallable(const Desc
 
 void BudgetsClient::DescribeBudgetsAsync(const DescribeBudgetsRequest& request, const DescribeBudgetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeBudgetsAsyncHelper( request, handler, context ); } );
-}
-
-void BudgetsClient::DescribeBudgetsAsyncHelper(const DescribeBudgetsRequest& request, const DescribeBudgetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeBudgets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeBudgets(request), context);
+    } );
 }
 
 DescribeNotificationsForBudgetOutcome BudgetsClient::DescribeNotificationsForBudget(const DescribeNotificationsForBudgetRequest& request) const
@@ -523,12 +491,10 @@ DescribeNotificationsForBudgetOutcomeCallable BudgetsClient::DescribeNotificatio
 
 void BudgetsClient::DescribeNotificationsForBudgetAsync(const DescribeNotificationsForBudgetRequest& request, const DescribeNotificationsForBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeNotificationsForBudgetAsyncHelper( request, handler, context ); } );
-}
-
-void BudgetsClient::DescribeNotificationsForBudgetAsyncHelper(const DescribeNotificationsForBudgetRequest& request, const DescribeNotificationsForBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeNotificationsForBudget(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeNotificationsForBudget(request), context);
+    } );
 }
 
 DescribeSubscribersForNotificationOutcome BudgetsClient::DescribeSubscribersForNotification(const DescribeSubscribersForNotificationRequest& request) const
@@ -547,12 +513,10 @@ DescribeSubscribersForNotificationOutcomeCallable BudgetsClient::DescribeSubscri
 
 void BudgetsClient::DescribeSubscribersForNotificationAsync(const DescribeSubscribersForNotificationRequest& request, const DescribeSubscribersForNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSubscribersForNotificationAsyncHelper( request, handler, context ); } );
-}
-
-void BudgetsClient::DescribeSubscribersForNotificationAsyncHelper(const DescribeSubscribersForNotificationRequest& request, const DescribeSubscribersForNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeSubscribersForNotification(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeSubscribersForNotification(request), context);
+    } );
 }
 
 ExecuteBudgetActionOutcome BudgetsClient::ExecuteBudgetAction(const ExecuteBudgetActionRequest& request) const
@@ -571,12 +535,10 @@ ExecuteBudgetActionOutcomeCallable BudgetsClient::ExecuteBudgetActionCallable(co
 
 void BudgetsClient::ExecuteBudgetActionAsync(const ExecuteBudgetActionRequest& request, const ExecuteBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExecuteBudgetActionAsyncHelper( request, handler, context ); } );
-}
-
-void BudgetsClient::ExecuteBudgetActionAsyncHelper(const ExecuteBudgetActionRequest& request, const ExecuteBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ExecuteBudgetAction(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ExecuteBudgetAction(request), context);
+    } );
 }
 
 UpdateBudgetOutcome BudgetsClient::UpdateBudget(const UpdateBudgetRequest& request) const
@@ -595,12 +557,10 @@ UpdateBudgetOutcomeCallable BudgetsClient::UpdateBudgetCallable(const UpdateBudg
 
 void BudgetsClient::UpdateBudgetAsync(const UpdateBudgetRequest& request, const UpdateBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBudgetAsyncHelper( request, handler, context ); } );
-}
-
-void BudgetsClient::UpdateBudgetAsyncHelper(const UpdateBudgetRequest& request, const UpdateBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateBudget(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateBudget(request), context);
+    } );
 }
 
 UpdateBudgetActionOutcome BudgetsClient::UpdateBudgetAction(const UpdateBudgetActionRequest& request) const
@@ -619,12 +579,10 @@ UpdateBudgetActionOutcomeCallable BudgetsClient::UpdateBudgetActionCallable(cons
 
 void BudgetsClient::UpdateBudgetActionAsync(const UpdateBudgetActionRequest& request, const UpdateBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBudgetActionAsyncHelper( request, handler, context ); } );
-}
-
-void BudgetsClient::UpdateBudgetActionAsyncHelper(const UpdateBudgetActionRequest& request, const UpdateBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateBudgetAction(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateBudgetAction(request), context);
+    } );
 }
 
 UpdateNotificationOutcome BudgetsClient::UpdateNotification(const UpdateNotificationRequest& request) const
@@ -643,12 +601,10 @@ UpdateNotificationOutcomeCallable BudgetsClient::UpdateNotificationCallable(cons
 
 void BudgetsClient::UpdateNotificationAsync(const UpdateNotificationRequest& request, const UpdateNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateNotificationAsyncHelper( request, handler, context ); } );
-}
-
-void BudgetsClient::UpdateNotificationAsyncHelper(const UpdateNotificationRequest& request, const UpdateNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateNotification(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateNotification(request), context);
+    } );
 }
 
 UpdateSubscriberOutcome BudgetsClient::UpdateSubscriber(const UpdateSubscriberRequest& request) const
@@ -667,11 +623,9 @@ UpdateSubscriberOutcomeCallable BudgetsClient::UpdateSubscriberCallable(const Up
 
 void BudgetsClient::UpdateSubscriberAsync(const UpdateSubscriberRequest& request, const UpdateSubscriberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSubscriberAsyncHelper( request, handler, context ); } );
-}
-
-void BudgetsClient::UpdateSubscriberAsyncHelper(const UpdateSubscriberRequest& request, const UpdateSubscriberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateSubscriber(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateSubscriber(request), context);
+    } );
 }
 

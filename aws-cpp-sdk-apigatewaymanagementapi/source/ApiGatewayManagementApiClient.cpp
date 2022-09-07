@@ -126,12 +126,10 @@ DeleteConnectionOutcomeCallable ApiGatewayManagementApiClient::DeleteConnectionC
 
 void ApiGatewayManagementApiClient::DeleteConnectionAsync(const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteConnectionAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayManagementApiClient::DeleteConnectionAsyncHelper(const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteConnection(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteConnection(request), context);
+    } );
 }
 
 GetConnectionOutcome ApiGatewayManagementApiClient::GetConnection(const GetConnectionRequest& request) const
@@ -157,12 +155,10 @@ GetConnectionOutcomeCallable ApiGatewayManagementApiClient::GetConnectionCallabl
 
 void ApiGatewayManagementApiClient::GetConnectionAsync(const GetConnectionRequest& request, const GetConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetConnectionAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayManagementApiClient::GetConnectionAsyncHelper(const GetConnectionRequest& request, const GetConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetConnection(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetConnection(request), context);
+    } );
 }
 
 PostToConnectionOutcome ApiGatewayManagementApiClient::PostToConnection(const PostToConnectionRequest& request) const
@@ -188,11 +184,9 @@ PostToConnectionOutcomeCallable ApiGatewayManagementApiClient::PostToConnectionC
 
 void ApiGatewayManagementApiClient::PostToConnectionAsync(const PostToConnectionRequest& request, const PostToConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PostToConnectionAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayManagementApiClient::PostToConnectionAsyncHelper(const PostToConnectionRequest& request, const PostToConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PostToConnection(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PostToConnection(request), context);
+    } );
 }
 

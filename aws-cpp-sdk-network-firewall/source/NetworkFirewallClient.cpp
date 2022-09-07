@@ -147,12 +147,10 @@ AssociateFirewallPolicyOutcomeCallable NetworkFirewallClient::AssociateFirewallP
 
 void NetworkFirewallClient::AssociateFirewallPolicyAsync(const AssociateFirewallPolicyRequest& request, const AssociateFirewallPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateFirewallPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void NetworkFirewallClient::AssociateFirewallPolicyAsyncHelper(const AssociateFirewallPolicyRequest& request, const AssociateFirewallPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateFirewallPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateFirewallPolicy(request), context);
+    } );
 }
 
 AssociateSubnetsOutcome NetworkFirewallClient::AssociateSubnets(const AssociateSubnetsRequest& request) const
@@ -171,12 +169,10 @@ AssociateSubnetsOutcomeCallable NetworkFirewallClient::AssociateSubnetsCallable(
 
 void NetworkFirewallClient::AssociateSubnetsAsync(const AssociateSubnetsRequest& request, const AssociateSubnetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateSubnetsAsyncHelper( request, handler, context ); } );
-}
-
-void NetworkFirewallClient::AssociateSubnetsAsyncHelper(const AssociateSubnetsRequest& request, const AssociateSubnetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateSubnets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateSubnets(request), context);
+    } );
 }
 
 CreateFirewallOutcome NetworkFirewallClient::CreateFirewall(const CreateFirewallRequest& request) const
@@ -195,12 +191,10 @@ CreateFirewallOutcomeCallable NetworkFirewallClient::CreateFirewallCallable(cons
 
 void NetworkFirewallClient::CreateFirewallAsync(const CreateFirewallRequest& request, const CreateFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFirewallAsyncHelper( request, handler, context ); } );
-}
-
-void NetworkFirewallClient::CreateFirewallAsyncHelper(const CreateFirewallRequest& request, const CreateFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateFirewall(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateFirewall(request), context);
+    } );
 }
 
 CreateFirewallPolicyOutcome NetworkFirewallClient::CreateFirewallPolicy(const CreateFirewallPolicyRequest& request) const
@@ -219,12 +213,10 @@ CreateFirewallPolicyOutcomeCallable NetworkFirewallClient::CreateFirewallPolicyC
 
 void NetworkFirewallClient::CreateFirewallPolicyAsync(const CreateFirewallPolicyRequest& request, const CreateFirewallPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFirewallPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void NetworkFirewallClient::CreateFirewallPolicyAsyncHelper(const CreateFirewallPolicyRequest& request, const CreateFirewallPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateFirewallPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateFirewallPolicy(request), context);
+    } );
 }
 
 CreateRuleGroupOutcome NetworkFirewallClient::CreateRuleGroup(const CreateRuleGroupRequest& request) const
@@ -243,12 +235,10 @@ CreateRuleGroupOutcomeCallable NetworkFirewallClient::CreateRuleGroupCallable(co
 
 void NetworkFirewallClient::CreateRuleGroupAsync(const CreateRuleGroupRequest& request, const CreateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRuleGroupAsyncHelper( request, handler, context ); } );
-}
-
-void NetworkFirewallClient::CreateRuleGroupAsyncHelper(const CreateRuleGroupRequest& request, const CreateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateRuleGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateRuleGroup(request), context);
+    } );
 }
 
 DeleteFirewallOutcome NetworkFirewallClient::DeleteFirewall(const DeleteFirewallRequest& request) const
@@ -267,12 +257,10 @@ DeleteFirewallOutcomeCallable NetworkFirewallClient::DeleteFirewallCallable(cons
 
 void NetworkFirewallClient::DeleteFirewallAsync(const DeleteFirewallRequest& request, const DeleteFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFirewallAsyncHelper( request, handler, context ); } );
-}
-
-void NetworkFirewallClient::DeleteFirewallAsyncHelper(const DeleteFirewallRequest& request, const DeleteFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteFirewall(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteFirewall(request), context);
+    } );
 }
 
 DeleteFirewallPolicyOutcome NetworkFirewallClient::DeleteFirewallPolicy(const DeleteFirewallPolicyRequest& request) const
@@ -291,12 +279,10 @@ DeleteFirewallPolicyOutcomeCallable NetworkFirewallClient::DeleteFirewallPolicyC
 
 void NetworkFirewallClient::DeleteFirewallPolicyAsync(const DeleteFirewallPolicyRequest& request, const DeleteFirewallPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFirewallPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void NetworkFirewallClient::DeleteFirewallPolicyAsyncHelper(const DeleteFirewallPolicyRequest& request, const DeleteFirewallPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteFirewallPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteFirewallPolicy(request), context);
+    } );
 }
 
 DeleteResourcePolicyOutcome NetworkFirewallClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
@@ -315,12 +301,10 @@ DeleteResourcePolicyOutcomeCallable NetworkFirewallClient::DeleteResourcePolicyC
 
 void NetworkFirewallClient::DeleteResourcePolicyAsync(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteResourcePolicyAsyncHelper( request, handler, context ); } );
-}
-
-void NetworkFirewallClient::DeleteResourcePolicyAsyncHelper(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteResourcePolicy(request), context);
+    } );
 }
 
 DeleteRuleGroupOutcome NetworkFirewallClient::DeleteRuleGroup(const DeleteRuleGroupRequest& request) const
@@ -339,12 +323,10 @@ DeleteRuleGroupOutcomeCallable NetworkFirewallClient::DeleteRuleGroupCallable(co
 
 void NetworkFirewallClient::DeleteRuleGroupAsync(const DeleteRuleGroupRequest& request, const DeleteRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRuleGroupAsyncHelper( request, handler, context ); } );
-}
-
-void NetworkFirewallClient::DeleteRuleGroupAsyncHelper(const DeleteRuleGroupRequest& request, const DeleteRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteRuleGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteRuleGroup(request), context);
+    } );
 }
 
 DescribeFirewallOutcome NetworkFirewallClient::DescribeFirewall(const DescribeFirewallRequest& request) const
@@ -363,12 +345,10 @@ DescribeFirewallOutcomeCallable NetworkFirewallClient::DescribeFirewallCallable(
 
 void NetworkFirewallClient::DescribeFirewallAsync(const DescribeFirewallRequest& request, const DescribeFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFirewallAsyncHelper( request, handler, context ); } );
-}
-
-void NetworkFirewallClient::DescribeFirewallAsyncHelper(const DescribeFirewallRequest& request, const DescribeFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeFirewall(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeFirewall(request), context);
+    } );
 }
 
 DescribeFirewallPolicyOutcome NetworkFirewallClient::DescribeFirewallPolicy(const DescribeFirewallPolicyRequest& request) const
@@ -387,12 +367,10 @@ DescribeFirewallPolicyOutcomeCallable NetworkFirewallClient::DescribeFirewallPol
 
 void NetworkFirewallClient::DescribeFirewallPolicyAsync(const DescribeFirewallPolicyRequest& request, const DescribeFirewallPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFirewallPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void NetworkFirewallClient::DescribeFirewallPolicyAsyncHelper(const DescribeFirewallPolicyRequest& request, const DescribeFirewallPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeFirewallPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeFirewallPolicy(request), context);
+    } );
 }
 
 DescribeLoggingConfigurationOutcome NetworkFirewallClient::DescribeLoggingConfiguration(const DescribeLoggingConfigurationRequest& request) const
@@ -411,12 +389,10 @@ DescribeLoggingConfigurationOutcomeCallable NetworkFirewallClient::DescribeLoggi
 
 void NetworkFirewallClient::DescribeLoggingConfigurationAsync(const DescribeLoggingConfigurationRequest& request, const DescribeLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLoggingConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void NetworkFirewallClient::DescribeLoggingConfigurationAsyncHelper(const DescribeLoggingConfigurationRequest& request, const DescribeLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeLoggingConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeLoggingConfiguration(request), context);
+    } );
 }
 
 DescribeResourcePolicyOutcome NetworkFirewallClient::DescribeResourcePolicy(const DescribeResourcePolicyRequest& request) const
@@ -435,12 +411,10 @@ DescribeResourcePolicyOutcomeCallable NetworkFirewallClient::DescribeResourcePol
 
 void NetworkFirewallClient::DescribeResourcePolicyAsync(const DescribeResourcePolicyRequest& request, const DescribeResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeResourcePolicyAsyncHelper( request, handler, context ); } );
-}
-
-void NetworkFirewallClient::DescribeResourcePolicyAsyncHelper(const DescribeResourcePolicyRequest& request, const DescribeResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeResourcePolicy(request), context);
+    } );
 }
 
 DescribeRuleGroupOutcome NetworkFirewallClient::DescribeRuleGroup(const DescribeRuleGroupRequest& request) const
@@ -459,12 +433,10 @@ DescribeRuleGroupOutcomeCallable NetworkFirewallClient::DescribeRuleGroupCallabl
 
 void NetworkFirewallClient::DescribeRuleGroupAsync(const DescribeRuleGroupRequest& request, const DescribeRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRuleGroupAsyncHelper( request, handler, context ); } );
-}
-
-void NetworkFirewallClient::DescribeRuleGroupAsyncHelper(const DescribeRuleGroupRequest& request, const DescribeRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeRuleGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeRuleGroup(request), context);
+    } );
 }
 
 DescribeRuleGroupMetadataOutcome NetworkFirewallClient::DescribeRuleGroupMetadata(const DescribeRuleGroupMetadataRequest& request) const
@@ -483,12 +455,10 @@ DescribeRuleGroupMetadataOutcomeCallable NetworkFirewallClient::DescribeRuleGrou
 
 void NetworkFirewallClient::DescribeRuleGroupMetadataAsync(const DescribeRuleGroupMetadataRequest& request, const DescribeRuleGroupMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRuleGroupMetadataAsyncHelper( request, handler, context ); } );
-}
-
-void NetworkFirewallClient::DescribeRuleGroupMetadataAsyncHelper(const DescribeRuleGroupMetadataRequest& request, const DescribeRuleGroupMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeRuleGroupMetadata(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeRuleGroupMetadata(request), context);
+    } );
 }
 
 DisassociateSubnetsOutcome NetworkFirewallClient::DisassociateSubnets(const DisassociateSubnetsRequest& request) const
@@ -507,12 +477,10 @@ DisassociateSubnetsOutcomeCallable NetworkFirewallClient::DisassociateSubnetsCal
 
 void NetworkFirewallClient::DisassociateSubnetsAsync(const DisassociateSubnetsRequest& request, const DisassociateSubnetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateSubnetsAsyncHelper( request, handler, context ); } );
-}
-
-void NetworkFirewallClient::DisassociateSubnetsAsyncHelper(const DisassociateSubnetsRequest& request, const DisassociateSubnetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateSubnets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateSubnets(request), context);
+    } );
 }
 
 ListFirewallPoliciesOutcome NetworkFirewallClient::ListFirewallPolicies(const ListFirewallPoliciesRequest& request) const
@@ -531,12 +499,10 @@ ListFirewallPoliciesOutcomeCallable NetworkFirewallClient::ListFirewallPoliciesC
 
 void NetworkFirewallClient::ListFirewallPoliciesAsync(const ListFirewallPoliciesRequest& request, const ListFirewallPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFirewallPoliciesAsyncHelper( request, handler, context ); } );
-}
-
-void NetworkFirewallClient::ListFirewallPoliciesAsyncHelper(const ListFirewallPoliciesRequest& request, const ListFirewallPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListFirewallPolicies(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListFirewallPolicies(request), context);
+    } );
 }
 
 ListFirewallsOutcome NetworkFirewallClient::ListFirewalls(const ListFirewallsRequest& request) const
@@ -555,12 +521,10 @@ ListFirewallsOutcomeCallable NetworkFirewallClient::ListFirewallsCallable(const 
 
 void NetworkFirewallClient::ListFirewallsAsync(const ListFirewallsRequest& request, const ListFirewallsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFirewallsAsyncHelper( request, handler, context ); } );
-}
-
-void NetworkFirewallClient::ListFirewallsAsyncHelper(const ListFirewallsRequest& request, const ListFirewallsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListFirewalls(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListFirewalls(request), context);
+    } );
 }
 
 ListRuleGroupsOutcome NetworkFirewallClient::ListRuleGroups(const ListRuleGroupsRequest& request) const
@@ -579,12 +543,10 @@ ListRuleGroupsOutcomeCallable NetworkFirewallClient::ListRuleGroupsCallable(cons
 
 void NetworkFirewallClient::ListRuleGroupsAsync(const ListRuleGroupsRequest& request, const ListRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRuleGroupsAsyncHelper( request, handler, context ); } );
-}
-
-void NetworkFirewallClient::ListRuleGroupsAsyncHelper(const ListRuleGroupsRequest& request, const ListRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListRuleGroups(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListRuleGroups(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome NetworkFirewallClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -603,12 +565,10 @@ ListTagsForResourceOutcomeCallable NetworkFirewallClient::ListTagsForResourceCal
 
 void NetworkFirewallClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void NetworkFirewallClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 PutResourcePolicyOutcome NetworkFirewallClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
@@ -627,12 +587,10 @@ PutResourcePolicyOutcomeCallable NetworkFirewallClient::PutResourcePolicyCallabl
 
 void NetworkFirewallClient::PutResourcePolicyAsync(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutResourcePolicyAsyncHelper( request, handler, context ); } );
-}
-
-void NetworkFirewallClient::PutResourcePolicyAsyncHelper(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutResourcePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutResourcePolicy(request), context);
+    } );
 }
 
 TagResourceOutcome NetworkFirewallClient::TagResource(const TagResourceRequest& request) const
@@ -651,12 +609,10 @@ TagResourceOutcomeCallable NetworkFirewallClient::TagResourceCallable(const TagR
 
 void NetworkFirewallClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void NetworkFirewallClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome NetworkFirewallClient::UntagResource(const UntagResourceRequest& request) const
@@ -675,12 +631,10 @@ UntagResourceOutcomeCallable NetworkFirewallClient::UntagResourceCallable(const 
 
 void NetworkFirewallClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void NetworkFirewallClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateFirewallDeleteProtectionOutcome NetworkFirewallClient::UpdateFirewallDeleteProtection(const UpdateFirewallDeleteProtectionRequest& request) const
@@ -699,12 +653,10 @@ UpdateFirewallDeleteProtectionOutcomeCallable NetworkFirewallClient::UpdateFirew
 
 void NetworkFirewallClient::UpdateFirewallDeleteProtectionAsync(const UpdateFirewallDeleteProtectionRequest& request, const UpdateFirewallDeleteProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFirewallDeleteProtectionAsyncHelper( request, handler, context ); } );
-}
-
-void NetworkFirewallClient::UpdateFirewallDeleteProtectionAsyncHelper(const UpdateFirewallDeleteProtectionRequest& request, const UpdateFirewallDeleteProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateFirewallDeleteProtection(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateFirewallDeleteProtection(request), context);
+    } );
 }
 
 UpdateFirewallDescriptionOutcome NetworkFirewallClient::UpdateFirewallDescription(const UpdateFirewallDescriptionRequest& request) const
@@ -723,12 +675,10 @@ UpdateFirewallDescriptionOutcomeCallable NetworkFirewallClient::UpdateFirewallDe
 
 void NetworkFirewallClient::UpdateFirewallDescriptionAsync(const UpdateFirewallDescriptionRequest& request, const UpdateFirewallDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFirewallDescriptionAsyncHelper( request, handler, context ); } );
-}
-
-void NetworkFirewallClient::UpdateFirewallDescriptionAsyncHelper(const UpdateFirewallDescriptionRequest& request, const UpdateFirewallDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateFirewallDescription(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateFirewallDescription(request), context);
+    } );
 }
 
 UpdateFirewallEncryptionConfigurationOutcome NetworkFirewallClient::UpdateFirewallEncryptionConfiguration(const UpdateFirewallEncryptionConfigurationRequest& request) const
@@ -747,12 +697,10 @@ UpdateFirewallEncryptionConfigurationOutcomeCallable NetworkFirewallClient::Upda
 
 void NetworkFirewallClient::UpdateFirewallEncryptionConfigurationAsync(const UpdateFirewallEncryptionConfigurationRequest& request, const UpdateFirewallEncryptionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFirewallEncryptionConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void NetworkFirewallClient::UpdateFirewallEncryptionConfigurationAsyncHelper(const UpdateFirewallEncryptionConfigurationRequest& request, const UpdateFirewallEncryptionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateFirewallEncryptionConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateFirewallEncryptionConfiguration(request), context);
+    } );
 }
 
 UpdateFirewallPolicyOutcome NetworkFirewallClient::UpdateFirewallPolicy(const UpdateFirewallPolicyRequest& request) const
@@ -771,12 +719,10 @@ UpdateFirewallPolicyOutcomeCallable NetworkFirewallClient::UpdateFirewallPolicyC
 
 void NetworkFirewallClient::UpdateFirewallPolicyAsync(const UpdateFirewallPolicyRequest& request, const UpdateFirewallPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFirewallPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void NetworkFirewallClient::UpdateFirewallPolicyAsyncHelper(const UpdateFirewallPolicyRequest& request, const UpdateFirewallPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateFirewallPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateFirewallPolicy(request), context);
+    } );
 }
 
 UpdateFirewallPolicyChangeProtectionOutcome NetworkFirewallClient::UpdateFirewallPolicyChangeProtection(const UpdateFirewallPolicyChangeProtectionRequest& request) const
@@ -795,12 +741,10 @@ UpdateFirewallPolicyChangeProtectionOutcomeCallable NetworkFirewallClient::Updat
 
 void NetworkFirewallClient::UpdateFirewallPolicyChangeProtectionAsync(const UpdateFirewallPolicyChangeProtectionRequest& request, const UpdateFirewallPolicyChangeProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFirewallPolicyChangeProtectionAsyncHelper( request, handler, context ); } );
-}
-
-void NetworkFirewallClient::UpdateFirewallPolicyChangeProtectionAsyncHelper(const UpdateFirewallPolicyChangeProtectionRequest& request, const UpdateFirewallPolicyChangeProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateFirewallPolicyChangeProtection(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateFirewallPolicyChangeProtection(request), context);
+    } );
 }
 
 UpdateLoggingConfigurationOutcome NetworkFirewallClient::UpdateLoggingConfiguration(const UpdateLoggingConfigurationRequest& request) const
@@ -819,12 +763,10 @@ UpdateLoggingConfigurationOutcomeCallable NetworkFirewallClient::UpdateLoggingCo
 
 void NetworkFirewallClient::UpdateLoggingConfigurationAsync(const UpdateLoggingConfigurationRequest& request, const UpdateLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateLoggingConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void NetworkFirewallClient::UpdateLoggingConfigurationAsyncHelper(const UpdateLoggingConfigurationRequest& request, const UpdateLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateLoggingConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateLoggingConfiguration(request), context);
+    } );
 }
 
 UpdateRuleGroupOutcome NetworkFirewallClient::UpdateRuleGroup(const UpdateRuleGroupRequest& request) const
@@ -843,12 +785,10 @@ UpdateRuleGroupOutcomeCallable NetworkFirewallClient::UpdateRuleGroupCallable(co
 
 void NetworkFirewallClient::UpdateRuleGroupAsync(const UpdateRuleGroupRequest& request, const UpdateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRuleGroupAsyncHelper( request, handler, context ); } );
-}
-
-void NetworkFirewallClient::UpdateRuleGroupAsyncHelper(const UpdateRuleGroupRequest& request, const UpdateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateRuleGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateRuleGroup(request), context);
+    } );
 }
 
 UpdateSubnetChangeProtectionOutcome NetworkFirewallClient::UpdateSubnetChangeProtection(const UpdateSubnetChangeProtectionRequest& request) const
@@ -867,11 +807,9 @@ UpdateSubnetChangeProtectionOutcomeCallable NetworkFirewallClient::UpdateSubnetC
 
 void NetworkFirewallClient::UpdateSubnetChangeProtectionAsync(const UpdateSubnetChangeProtectionRequest& request, const UpdateSubnetChangeProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSubnetChangeProtectionAsyncHelper( request, handler, context ); } );
-}
-
-void NetworkFirewallClient::UpdateSubnetChangeProtectionAsyncHelper(const UpdateSubnetChangeProtectionRequest& request, const UpdateSubnetChangeProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateSubnetChangeProtection(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateSubnetChangeProtection(request), context);
+    } );
 }
 

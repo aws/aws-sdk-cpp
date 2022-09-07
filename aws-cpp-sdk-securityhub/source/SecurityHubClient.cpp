@@ -170,12 +170,10 @@ AcceptAdministratorInvitationOutcomeCallable SecurityHubClient::AcceptAdministra
 
 void SecurityHubClient::AcceptAdministratorInvitationAsync(const AcceptAdministratorInvitationRequest& request, const AcceptAdministratorInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AcceptAdministratorInvitationAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::AcceptAdministratorInvitationAsyncHelper(const AcceptAdministratorInvitationRequest& request, const AcceptAdministratorInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AcceptAdministratorInvitation(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AcceptAdministratorInvitation(request), context);
+    } );
 }
 
 BatchDisableStandardsOutcome SecurityHubClient::BatchDisableStandards(const BatchDisableStandardsRequest& request) const
@@ -195,12 +193,10 @@ BatchDisableStandardsOutcomeCallable SecurityHubClient::BatchDisableStandardsCal
 
 void SecurityHubClient::BatchDisableStandardsAsync(const BatchDisableStandardsRequest& request, const BatchDisableStandardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchDisableStandardsAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::BatchDisableStandardsAsyncHelper(const BatchDisableStandardsRequest& request, const BatchDisableStandardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchDisableStandards(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchDisableStandards(request), context);
+    } );
 }
 
 BatchEnableStandardsOutcome SecurityHubClient::BatchEnableStandards(const BatchEnableStandardsRequest& request) const
@@ -220,12 +216,10 @@ BatchEnableStandardsOutcomeCallable SecurityHubClient::BatchEnableStandardsCalla
 
 void SecurityHubClient::BatchEnableStandardsAsync(const BatchEnableStandardsRequest& request, const BatchEnableStandardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchEnableStandardsAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::BatchEnableStandardsAsyncHelper(const BatchEnableStandardsRequest& request, const BatchEnableStandardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchEnableStandards(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchEnableStandards(request), context);
+    } );
 }
 
 BatchImportFindingsOutcome SecurityHubClient::BatchImportFindings(const BatchImportFindingsRequest& request) const
@@ -245,12 +239,10 @@ BatchImportFindingsOutcomeCallable SecurityHubClient::BatchImportFindingsCallabl
 
 void SecurityHubClient::BatchImportFindingsAsync(const BatchImportFindingsRequest& request, const BatchImportFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchImportFindingsAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::BatchImportFindingsAsyncHelper(const BatchImportFindingsRequest& request, const BatchImportFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchImportFindings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchImportFindings(request), context);
+    } );
 }
 
 BatchUpdateFindingsOutcome SecurityHubClient::BatchUpdateFindings(const BatchUpdateFindingsRequest& request) const
@@ -270,12 +262,10 @@ BatchUpdateFindingsOutcomeCallable SecurityHubClient::BatchUpdateFindingsCallabl
 
 void SecurityHubClient::BatchUpdateFindingsAsync(const BatchUpdateFindingsRequest& request, const BatchUpdateFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchUpdateFindingsAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::BatchUpdateFindingsAsyncHelper(const BatchUpdateFindingsRequest& request, const BatchUpdateFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchUpdateFindings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchUpdateFindings(request), context);
+    } );
 }
 
 CreateActionTargetOutcome SecurityHubClient::CreateActionTarget(const CreateActionTargetRequest& request) const
@@ -295,12 +285,10 @@ CreateActionTargetOutcomeCallable SecurityHubClient::CreateActionTargetCallable(
 
 void SecurityHubClient::CreateActionTargetAsync(const CreateActionTargetRequest& request, const CreateActionTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateActionTargetAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::CreateActionTargetAsyncHelper(const CreateActionTargetRequest& request, const CreateActionTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateActionTarget(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateActionTarget(request), context);
+    } );
 }
 
 CreateFindingAggregatorOutcome SecurityHubClient::CreateFindingAggregator(const CreateFindingAggregatorRequest& request) const
@@ -320,12 +308,10 @@ CreateFindingAggregatorOutcomeCallable SecurityHubClient::CreateFindingAggregato
 
 void SecurityHubClient::CreateFindingAggregatorAsync(const CreateFindingAggregatorRequest& request, const CreateFindingAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFindingAggregatorAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::CreateFindingAggregatorAsyncHelper(const CreateFindingAggregatorRequest& request, const CreateFindingAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateFindingAggregator(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateFindingAggregator(request), context);
+    } );
 }
 
 CreateInsightOutcome SecurityHubClient::CreateInsight(const CreateInsightRequest& request) const
@@ -345,12 +331,10 @@ CreateInsightOutcomeCallable SecurityHubClient::CreateInsightCallable(const Crea
 
 void SecurityHubClient::CreateInsightAsync(const CreateInsightRequest& request, const CreateInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateInsightAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::CreateInsightAsyncHelper(const CreateInsightRequest& request, const CreateInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateInsight(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateInsight(request), context);
+    } );
 }
 
 CreateMembersOutcome SecurityHubClient::CreateMembers(const CreateMembersRequest& request) const
@@ -370,12 +354,10 @@ CreateMembersOutcomeCallable SecurityHubClient::CreateMembersCallable(const Crea
 
 void SecurityHubClient::CreateMembersAsync(const CreateMembersRequest& request, const CreateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateMembersAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::CreateMembersAsyncHelper(const CreateMembersRequest& request, const CreateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateMembers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateMembers(request), context);
+    } );
 }
 
 DeclineInvitationsOutcome SecurityHubClient::DeclineInvitations(const DeclineInvitationsRequest& request) const
@@ -395,12 +377,10 @@ DeclineInvitationsOutcomeCallable SecurityHubClient::DeclineInvitationsCallable(
 
 void SecurityHubClient::DeclineInvitationsAsync(const DeclineInvitationsRequest& request, const DeclineInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeclineInvitationsAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::DeclineInvitationsAsyncHelper(const DeclineInvitationsRequest& request, const DeclineInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeclineInvitations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeclineInvitations(request), context);
+    } );
 }
 
 DeleteActionTargetOutcome SecurityHubClient::DeleteActionTarget(const DeleteActionTargetRequest& request) const
@@ -426,12 +406,10 @@ DeleteActionTargetOutcomeCallable SecurityHubClient::DeleteActionTargetCallable(
 
 void SecurityHubClient::DeleteActionTargetAsync(const DeleteActionTargetRequest& request, const DeleteActionTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteActionTargetAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::DeleteActionTargetAsyncHelper(const DeleteActionTargetRequest& request, const DeleteActionTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteActionTarget(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteActionTarget(request), context);
+    } );
 }
 
 DeleteFindingAggregatorOutcome SecurityHubClient::DeleteFindingAggregator(const DeleteFindingAggregatorRequest& request) const
@@ -457,12 +435,10 @@ DeleteFindingAggregatorOutcomeCallable SecurityHubClient::DeleteFindingAggregato
 
 void SecurityHubClient::DeleteFindingAggregatorAsync(const DeleteFindingAggregatorRequest& request, const DeleteFindingAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFindingAggregatorAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::DeleteFindingAggregatorAsyncHelper(const DeleteFindingAggregatorRequest& request, const DeleteFindingAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteFindingAggregator(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteFindingAggregator(request), context);
+    } );
 }
 
 DeleteInsightOutcome SecurityHubClient::DeleteInsight(const DeleteInsightRequest& request) const
@@ -488,12 +464,10 @@ DeleteInsightOutcomeCallable SecurityHubClient::DeleteInsightCallable(const Dele
 
 void SecurityHubClient::DeleteInsightAsync(const DeleteInsightRequest& request, const DeleteInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteInsightAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::DeleteInsightAsyncHelper(const DeleteInsightRequest& request, const DeleteInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteInsight(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteInsight(request), context);
+    } );
 }
 
 DeleteInvitationsOutcome SecurityHubClient::DeleteInvitations(const DeleteInvitationsRequest& request) const
@@ -513,12 +487,10 @@ DeleteInvitationsOutcomeCallable SecurityHubClient::DeleteInvitationsCallable(co
 
 void SecurityHubClient::DeleteInvitationsAsync(const DeleteInvitationsRequest& request, const DeleteInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteInvitationsAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::DeleteInvitationsAsyncHelper(const DeleteInvitationsRequest& request, const DeleteInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteInvitations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteInvitations(request), context);
+    } );
 }
 
 DeleteMembersOutcome SecurityHubClient::DeleteMembers(const DeleteMembersRequest& request) const
@@ -538,12 +510,10 @@ DeleteMembersOutcomeCallable SecurityHubClient::DeleteMembersCallable(const Dele
 
 void SecurityHubClient::DeleteMembersAsync(const DeleteMembersRequest& request, const DeleteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteMembersAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::DeleteMembersAsyncHelper(const DeleteMembersRequest& request, const DeleteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteMembers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteMembers(request), context);
+    } );
 }
 
 DescribeActionTargetsOutcome SecurityHubClient::DescribeActionTargets(const DescribeActionTargetsRequest& request) const
@@ -563,12 +533,10 @@ DescribeActionTargetsOutcomeCallable SecurityHubClient::DescribeActionTargetsCal
 
 void SecurityHubClient::DescribeActionTargetsAsync(const DescribeActionTargetsRequest& request, const DescribeActionTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeActionTargetsAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::DescribeActionTargetsAsyncHelper(const DescribeActionTargetsRequest& request, const DescribeActionTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeActionTargets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeActionTargets(request), context);
+    } );
 }
 
 DescribeHubOutcome SecurityHubClient::DescribeHub(const DescribeHubRequest& request) const
@@ -588,12 +556,10 @@ DescribeHubOutcomeCallable SecurityHubClient::DescribeHubCallable(const Describe
 
 void SecurityHubClient::DescribeHubAsync(const DescribeHubRequest& request, const DescribeHubResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeHubAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::DescribeHubAsyncHelper(const DescribeHubRequest& request, const DescribeHubResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeHub(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeHub(request), context);
+    } );
 }
 
 DescribeOrganizationConfigurationOutcome SecurityHubClient::DescribeOrganizationConfiguration(const DescribeOrganizationConfigurationRequest& request) const
@@ -613,12 +579,10 @@ DescribeOrganizationConfigurationOutcomeCallable SecurityHubClient::DescribeOrga
 
 void SecurityHubClient::DescribeOrganizationConfigurationAsync(const DescribeOrganizationConfigurationRequest& request, const DescribeOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeOrganizationConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::DescribeOrganizationConfigurationAsyncHelper(const DescribeOrganizationConfigurationRequest& request, const DescribeOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeOrganizationConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeOrganizationConfiguration(request), context);
+    } );
 }
 
 DescribeProductsOutcome SecurityHubClient::DescribeProducts(const DescribeProductsRequest& request) const
@@ -638,12 +602,10 @@ DescribeProductsOutcomeCallable SecurityHubClient::DescribeProductsCallable(cons
 
 void SecurityHubClient::DescribeProductsAsync(const DescribeProductsRequest& request, const DescribeProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeProductsAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::DescribeProductsAsyncHelper(const DescribeProductsRequest& request, const DescribeProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeProducts(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeProducts(request), context);
+    } );
 }
 
 DescribeStandardsOutcome SecurityHubClient::DescribeStandards(const DescribeStandardsRequest& request) const
@@ -663,12 +625,10 @@ DescribeStandardsOutcomeCallable SecurityHubClient::DescribeStandardsCallable(co
 
 void SecurityHubClient::DescribeStandardsAsync(const DescribeStandardsRequest& request, const DescribeStandardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeStandardsAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::DescribeStandardsAsyncHelper(const DescribeStandardsRequest& request, const DescribeStandardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeStandards(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeStandards(request), context);
+    } );
 }
 
 DescribeStandardsControlsOutcome SecurityHubClient::DescribeStandardsControls(const DescribeStandardsControlsRequest& request) const
@@ -694,12 +654,10 @@ DescribeStandardsControlsOutcomeCallable SecurityHubClient::DescribeStandardsCon
 
 void SecurityHubClient::DescribeStandardsControlsAsync(const DescribeStandardsControlsRequest& request, const DescribeStandardsControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeStandardsControlsAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::DescribeStandardsControlsAsyncHelper(const DescribeStandardsControlsRequest& request, const DescribeStandardsControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeStandardsControls(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeStandardsControls(request), context);
+    } );
 }
 
 DisableImportFindingsForProductOutcome SecurityHubClient::DisableImportFindingsForProduct(const DisableImportFindingsForProductRequest& request) const
@@ -725,12 +683,10 @@ DisableImportFindingsForProductOutcomeCallable SecurityHubClient::DisableImportF
 
 void SecurityHubClient::DisableImportFindingsForProductAsync(const DisableImportFindingsForProductRequest& request, const DisableImportFindingsForProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableImportFindingsForProductAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::DisableImportFindingsForProductAsyncHelper(const DisableImportFindingsForProductRequest& request, const DisableImportFindingsForProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisableImportFindingsForProduct(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisableImportFindingsForProduct(request), context);
+    } );
 }
 
 DisableOrganizationAdminAccountOutcome SecurityHubClient::DisableOrganizationAdminAccount(const DisableOrganizationAdminAccountRequest& request) const
@@ -750,12 +706,10 @@ DisableOrganizationAdminAccountOutcomeCallable SecurityHubClient::DisableOrganiz
 
 void SecurityHubClient::DisableOrganizationAdminAccountAsync(const DisableOrganizationAdminAccountRequest& request, const DisableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableOrganizationAdminAccountAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::DisableOrganizationAdminAccountAsyncHelper(const DisableOrganizationAdminAccountRequest& request, const DisableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisableOrganizationAdminAccount(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisableOrganizationAdminAccount(request), context);
+    } );
 }
 
 DisableSecurityHubOutcome SecurityHubClient::DisableSecurityHub(const DisableSecurityHubRequest& request) const
@@ -775,12 +729,10 @@ DisableSecurityHubOutcomeCallable SecurityHubClient::DisableSecurityHubCallable(
 
 void SecurityHubClient::DisableSecurityHubAsync(const DisableSecurityHubRequest& request, const DisableSecurityHubResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableSecurityHubAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::DisableSecurityHubAsyncHelper(const DisableSecurityHubRequest& request, const DisableSecurityHubResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisableSecurityHub(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisableSecurityHub(request), context);
+    } );
 }
 
 DisassociateFromAdministratorAccountOutcome SecurityHubClient::DisassociateFromAdministratorAccount(const DisassociateFromAdministratorAccountRequest& request) const
@@ -800,12 +752,10 @@ DisassociateFromAdministratorAccountOutcomeCallable SecurityHubClient::Disassoci
 
 void SecurityHubClient::DisassociateFromAdministratorAccountAsync(const DisassociateFromAdministratorAccountRequest& request, const DisassociateFromAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateFromAdministratorAccountAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::DisassociateFromAdministratorAccountAsyncHelper(const DisassociateFromAdministratorAccountRequest& request, const DisassociateFromAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateFromAdministratorAccount(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateFromAdministratorAccount(request), context);
+    } );
 }
 
 DisassociateMembersOutcome SecurityHubClient::DisassociateMembers(const DisassociateMembersRequest& request) const
@@ -825,12 +775,10 @@ DisassociateMembersOutcomeCallable SecurityHubClient::DisassociateMembersCallabl
 
 void SecurityHubClient::DisassociateMembersAsync(const DisassociateMembersRequest& request, const DisassociateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateMembersAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::DisassociateMembersAsyncHelper(const DisassociateMembersRequest& request, const DisassociateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateMembers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateMembers(request), context);
+    } );
 }
 
 EnableImportFindingsForProductOutcome SecurityHubClient::EnableImportFindingsForProduct(const EnableImportFindingsForProductRequest& request) const
@@ -850,12 +798,10 @@ EnableImportFindingsForProductOutcomeCallable SecurityHubClient::EnableImportFin
 
 void SecurityHubClient::EnableImportFindingsForProductAsync(const EnableImportFindingsForProductRequest& request, const EnableImportFindingsForProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableImportFindingsForProductAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::EnableImportFindingsForProductAsyncHelper(const EnableImportFindingsForProductRequest& request, const EnableImportFindingsForProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, EnableImportFindingsForProduct(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, EnableImportFindingsForProduct(request), context);
+    } );
 }
 
 EnableOrganizationAdminAccountOutcome SecurityHubClient::EnableOrganizationAdminAccount(const EnableOrganizationAdminAccountRequest& request) const
@@ -875,12 +821,10 @@ EnableOrganizationAdminAccountOutcomeCallable SecurityHubClient::EnableOrganizat
 
 void SecurityHubClient::EnableOrganizationAdminAccountAsync(const EnableOrganizationAdminAccountRequest& request, const EnableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableOrganizationAdminAccountAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::EnableOrganizationAdminAccountAsyncHelper(const EnableOrganizationAdminAccountRequest& request, const EnableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, EnableOrganizationAdminAccount(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, EnableOrganizationAdminAccount(request), context);
+    } );
 }
 
 EnableSecurityHubOutcome SecurityHubClient::EnableSecurityHub(const EnableSecurityHubRequest& request) const
@@ -900,12 +844,10 @@ EnableSecurityHubOutcomeCallable SecurityHubClient::EnableSecurityHubCallable(co
 
 void SecurityHubClient::EnableSecurityHubAsync(const EnableSecurityHubRequest& request, const EnableSecurityHubResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableSecurityHubAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::EnableSecurityHubAsyncHelper(const EnableSecurityHubRequest& request, const EnableSecurityHubResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, EnableSecurityHub(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, EnableSecurityHub(request), context);
+    } );
 }
 
 GetAdministratorAccountOutcome SecurityHubClient::GetAdministratorAccount(const GetAdministratorAccountRequest& request) const
@@ -925,12 +867,10 @@ GetAdministratorAccountOutcomeCallable SecurityHubClient::GetAdministratorAccoun
 
 void SecurityHubClient::GetAdministratorAccountAsync(const GetAdministratorAccountRequest& request, const GetAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAdministratorAccountAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::GetAdministratorAccountAsyncHelper(const GetAdministratorAccountRequest& request, const GetAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetAdministratorAccount(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAdministratorAccount(request), context);
+    } );
 }
 
 GetEnabledStandardsOutcome SecurityHubClient::GetEnabledStandards(const GetEnabledStandardsRequest& request) const
@@ -950,12 +890,10 @@ GetEnabledStandardsOutcomeCallable SecurityHubClient::GetEnabledStandardsCallabl
 
 void SecurityHubClient::GetEnabledStandardsAsync(const GetEnabledStandardsRequest& request, const GetEnabledStandardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEnabledStandardsAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::GetEnabledStandardsAsyncHelper(const GetEnabledStandardsRequest& request, const GetEnabledStandardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetEnabledStandards(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetEnabledStandards(request), context);
+    } );
 }
 
 GetFindingAggregatorOutcome SecurityHubClient::GetFindingAggregator(const GetFindingAggregatorRequest& request) const
@@ -981,12 +919,10 @@ GetFindingAggregatorOutcomeCallable SecurityHubClient::GetFindingAggregatorCalla
 
 void SecurityHubClient::GetFindingAggregatorAsync(const GetFindingAggregatorRequest& request, const GetFindingAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFindingAggregatorAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::GetFindingAggregatorAsyncHelper(const GetFindingAggregatorRequest& request, const GetFindingAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetFindingAggregator(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetFindingAggregator(request), context);
+    } );
 }
 
 GetFindingsOutcome SecurityHubClient::GetFindings(const GetFindingsRequest& request) const
@@ -1006,12 +942,10 @@ GetFindingsOutcomeCallable SecurityHubClient::GetFindingsCallable(const GetFindi
 
 void SecurityHubClient::GetFindingsAsync(const GetFindingsRequest& request, const GetFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFindingsAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::GetFindingsAsyncHelper(const GetFindingsRequest& request, const GetFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetFindings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetFindings(request), context);
+    } );
 }
 
 GetInsightResultsOutcome SecurityHubClient::GetInsightResults(const GetInsightResultsRequest& request) const
@@ -1037,12 +971,10 @@ GetInsightResultsOutcomeCallable SecurityHubClient::GetInsightResultsCallable(co
 
 void SecurityHubClient::GetInsightResultsAsync(const GetInsightResultsRequest& request, const GetInsightResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetInsightResultsAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::GetInsightResultsAsyncHelper(const GetInsightResultsRequest& request, const GetInsightResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetInsightResults(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetInsightResults(request), context);
+    } );
 }
 
 GetInsightsOutcome SecurityHubClient::GetInsights(const GetInsightsRequest& request) const
@@ -1062,12 +994,10 @@ GetInsightsOutcomeCallable SecurityHubClient::GetInsightsCallable(const GetInsig
 
 void SecurityHubClient::GetInsightsAsync(const GetInsightsRequest& request, const GetInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetInsightsAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::GetInsightsAsyncHelper(const GetInsightsRequest& request, const GetInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetInsights(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetInsights(request), context);
+    } );
 }
 
 GetInvitationsCountOutcome SecurityHubClient::GetInvitationsCount(const GetInvitationsCountRequest& request) const
@@ -1087,12 +1017,10 @@ GetInvitationsCountOutcomeCallable SecurityHubClient::GetInvitationsCountCallabl
 
 void SecurityHubClient::GetInvitationsCountAsync(const GetInvitationsCountRequest& request, const GetInvitationsCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetInvitationsCountAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::GetInvitationsCountAsyncHelper(const GetInvitationsCountRequest& request, const GetInvitationsCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetInvitationsCount(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetInvitationsCount(request), context);
+    } );
 }
 
 GetMembersOutcome SecurityHubClient::GetMembers(const GetMembersRequest& request) const
@@ -1112,12 +1040,10 @@ GetMembersOutcomeCallable SecurityHubClient::GetMembersCallable(const GetMembers
 
 void SecurityHubClient::GetMembersAsync(const GetMembersRequest& request, const GetMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMembersAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::GetMembersAsyncHelper(const GetMembersRequest& request, const GetMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetMembers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetMembers(request), context);
+    } );
 }
 
 InviteMembersOutcome SecurityHubClient::InviteMembers(const InviteMembersRequest& request) const
@@ -1137,12 +1063,10 @@ InviteMembersOutcomeCallable SecurityHubClient::InviteMembersCallable(const Invi
 
 void SecurityHubClient::InviteMembersAsync(const InviteMembersRequest& request, const InviteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->InviteMembersAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::InviteMembersAsyncHelper(const InviteMembersRequest& request, const InviteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, InviteMembers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, InviteMembers(request), context);
+    } );
 }
 
 ListEnabledProductsForImportOutcome SecurityHubClient::ListEnabledProductsForImport(const ListEnabledProductsForImportRequest& request) const
@@ -1162,12 +1086,10 @@ ListEnabledProductsForImportOutcomeCallable SecurityHubClient::ListEnabledProduc
 
 void SecurityHubClient::ListEnabledProductsForImportAsync(const ListEnabledProductsForImportRequest& request, const ListEnabledProductsForImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEnabledProductsForImportAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::ListEnabledProductsForImportAsyncHelper(const ListEnabledProductsForImportRequest& request, const ListEnabledProductsForImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListEnabledProductsForImport(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListEnabledProductsForImport(request), context);
+    } );
 }
 
 ListFindingAggregatorsOutcome SecurityHubClient::ListFindingAggregators(const ListFindingAggregatorsRequest& request) const
@@ -1187,12 +1109,10 @@ ListFindingAggregatorsOutcomeCallable SecurityHubClient::ListFindingAggregatorsC
 
 void SecurityHubClient::ListFindingAggregatorsAsync(const ListFindingAggregatorsRequest& request, const ListFindingAggregatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFindingAggregatorsAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::ListFindingAggregatorsAsyncHelper(const ListFindingAggregatorsRequest& request, const ListFindingAggregatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListFindingAggregators(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListFindingAggregators(request), context);
+    } );
 }
 
 ListInvitationsOutcome SecurityHubClient::ListInvitations(const ListInvitationsRequest& request) const
@@ -1212,12 +1132,10 @@ ListInvitationsOutcomeCallable SecurityHubClient::ListInvitationsCallable(const 
 
 void SecurityHubClient::ListInvitationsAsync(const ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListInvitationsAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::ListInvitationsAsyncHelper(const ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListInvitations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListInvitations(request), context);
+    } );
 }
 
 ListMembersOutcome SecurityHubClient::ListMembers(const ListMembersRequest& request) const
@@ -1237,12 +1155,10 @@ ListMembersOutcomeCallable SecurityHubClient::ListMembersCallable(const ListMemb
 
 void SecurityHubClient::ListMembersAsync(const ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMembersAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::ListMembersAsyncHelper(const ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListMembers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListMembers(request), context);
+    } );
 }
 
 ListOrganizationAdminAccountsOutcome SecurityHubClient::ListOrganizationAdminAccounts(const ListOrganizationAdminAccountsRequest& request) const
@@ -1262,12 +1178,10 @@ ListOrganizationAdminAccountsOutcomeCallable SecurityHubClient::ListOrganization
 
 void SecurityHubClient::ListOrganizationAdminAccountsAsync(const ListOrganizationAdminAccountsRequest& request, const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListOrganizationAdminAccountsAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::ListOrganizationAdminAccountsAsyncHelper(const ListOrganizationAdminAccountsRequest& request, const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListOrganizationAdminAccounts(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListOrganizationAdminAccounts(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome SecurityHubClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1293,12 +1207,10 @@ ListTagsForResourceOutcomeCallable SecurityHubClient::ListTagsForResourceCallabl
 
 void SecurityHubClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 TagResourceOutcome SecurityHubClient::TagResource(const TagResourceRequest& request) const
@@ -1324,12 +1236,10 @@ TagResourceOutcomeCallable SecurityHubClient::TagResourceCallable(const TagResou
 
 void SecurityHubClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome SecurityHubClient::UntagResource(const UntagResourceRequest& request) const
@@ -1360,12 +1270,10 @@ UntagResourceOutcomeCallable SecurityHubClient::UntagResourceCallable(const Unta
 
 void SecurityHubClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateActionTargetOutcome SecurityHubClient::UpdateActionTarget(const UpdateActionTargetRequest& request) const
@@ -1391,12 +1299,10 @@ UpdateActionTargetOutcomeCallable SecurityHubClient::UpdateActionTargetCallable(
 
 void SecurityHubClient::UpdateActionTargetAsync(const UpdateActionTargetRequest& request, const UpdateActionTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateActionTargetAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::UpdateActionTargetAsyncHelper(const UpdateActionTargetRequest& request, const UpdateActionTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateActionTarget(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateActionTarget(request), context);
+    } );
 }
 
 UpdateFindingAggregatorOutcome SecurityHubClient::UpdateFindingAggregator(const UpdateFindingAggregatorRequest& request) const
@@ -1416,12 +1322,10 @@ UpdateFindingAggregatorOutcomeCallable SecurityHubClient::UpdateFindingAggregato
 
 void SecurityHubClient::UpdateFindingAggregatorAsync(const UpdateFindingAggregatorRequest& request, const UpdateFindingAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFindingAggregatorAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::UpdateFindingAggregatorAsyncHelper(const UpdateFindingAggregatorRequest& request, const UpdateFindingAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateFindingAggregator(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateFindingAggregator(request), context);
+    } );
 }
 
 UpdateFindingsOutcome SecurityHubClient::UpdateFindings(const UpdateFindingsRequest& request) const
@@ -1441,12 +1345,10 @@ UpdateFindingsOutcomeCallable SecurityHubClient::UpdateFindingsCallable(const Up
 
 void SecurityHubClient::UpdateFindingsAsync(const UpdateFindingsRequest& request, const UpdateFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFindingsAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::UpdateFindingsAsyncHelper(const UpdateFindingsRequest& request, const UpdateFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateFindings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateFindings(request), context);
+    } );
 }
 
 UpdateInsightOutcome SecurityHubClient::UpdateInsight(const UpdateInsightRequest& request) const
@@ -1472,12 +1374,10 @@ UpdateInsightOutcomeCallable SecurityHubClient::UpdateInsightCallable(const Upda
 
 void SecurityHubClient::UpdateInsightAsync(const UpdateInsightRequest& request, const UpdateInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateInsightAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::UpdateInsightAsyncHelper(const UpdateInsightRequest& request, const UpdateInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateInsight(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateInsight(request), context);
+    } );
 }
 
 UpdateOrganizationConfigurationOutcome SecurityHubClient::UpdateOrganizationConfiguration(const UpdateOrganizationConfigurationRequest& request) const
@@ -1497,12 +1397,10 @@ UpdateOrganizationConfigurationOutcomeCallable SecurityHubClient::UpdateOrganiza
 
 void SecurityHubClient::UpdateOrganizationConfigurationAsync(const UpdateOrganizationConfigurationRequest& request, const UpdateOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateOrganizationConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::UpdateOrganizationConfigurationAsyncHelper(const UpdateOrganizationConfigurationRequest& request, const UpdateOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateOrganizationConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateOrganizationConfiguration(request), context);
+    } );
 }
 
 UpdateSecurityHubConfigurationOutcome SecurityHubClient::UpdateSecurityHubConfiguration(const UpdateSecurityHubConfigurationRequest& request) const
@@ -1522,12 +1420,10 @@ UpdateSecurityHubConfigurationOutcomeCallable SecurityHubClient::UpdateSecurityH
 
 void SecurityHubClient::UpdateSecurityHubConfigurationAsync(const UpdateSecurityHubConfigurationRequest& request, const UpdateSecurityHubConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSecurityHubConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::UpdateSecurityHubConfigurationAsyncHelper(const UpdateSecurityHubConfigurationRequest& request, const UpdateSecurityHubConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateSecurityHubConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateSecurityHubConfiguration(request), context);
+    } );
 }
 
 UpdateStandardsControlOutcome SecurityHubClient::UpdateStandardsControl(const UpdateStandardsControlRequest& request) const
@@ -1553,11 +1449,9 @@ UpdateStandardsControlOutcomeCallable SecurityHubClient::UpdateStandardsControlC
 
 void SecurityHubClient::UpdateStandardsControlAsync(const UpdateStandardsControlRequest& request, const UpdateStandardsControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateStandardsControlAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::UpdateStandardsControlAsyncHelper(const UpdateStandardsControlRequest& request, const UpdateStandardsControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateStandardsControl(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateStandardsControl(request), context);
+    } );
 }
 

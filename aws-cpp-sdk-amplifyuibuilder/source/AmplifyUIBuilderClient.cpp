@@ -145,12 +145,10 @@ CreateComponentOutcomeCallable AmplifyUIBuilderClient::CreateComponentCallable(c
 
 void AmplifyUIBuilderClient::CreateComponentAsync(const CreateComponentRequest& request, const CreateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateComponentAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyUIBuilderClient::CreateComponentAsyncHelper(const CreateComponentRequest& request, const CreateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateComponent(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateComponent(request), context);
+    } );
 }
 
 CreateThemeOutcome AmplifyUIBuilderClient::CreateTheme(const CreateThemeRequest& request) const
@@ -184,12 +182,10 @@ CreateThemeOutcomeCallable AmplifyUIBuilderClient::CreateThemeCallable(const Cre
 
 void AmplifyUIBuilderClient::CreateThemeAsync(const CreateThemeRequest& request, const CreateThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateThemeAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyUIBuilderClient::CreateThemeAsyncHelper(const CreateThemeRequest& request, const CreateThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateTheme(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateTheme(request), context);
+    } );
 }
 
 DeleteComponentOutcome AmplifyUIBuilderClient::DeleteComponent(const DeleteComponentRequest& request) const
@@ -229,12 +225,10 @@ DeleteComponentOutcomeCallable AmplifyUIBuilderClient::DeleteComponentCallable(c
 
 void AmplifyUIBuilderClient::DeleteComponentAsync(const DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteComponentAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyUIBuilderClient::DeleteComponentAsyncHelper(const DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteComponent(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteComponent(request), context);
+    } );
 }
 
 DeleteThemeOutcome AmplifyUIBuilderClient::DeleteTheme(const DeleteThemeRequest& request) const
@@ -274,12 +268,10 @@ DeleteThemeOutcomeCallable AmplifyUIBuilderClient::DeleteThemeCallable(const Del
 
 void AmplifyUIBuilderClient::DeleteThemeAsync(const DeleteThemeRequest& request, const DeleteThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteThemeAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyUIBuilderClient::DeleteThemeAsyncHelper(const DeleteThemeRequest& request, const DeleteThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteTheme(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteTheme(request), context);
+    } );
 }
 
 ExchangeCodeForTokenOutcome AmplifyUIBuilderClient::ExchangeCodeForToken(const ExchangeCodeForTokenRequest& request) const
@@ -305,12 +297,10 @@ ExchangeCodeForTokenOutcomeCallable AmplifyUIBuilderClient::ExchangeCodeForToken
 
 void AmplifyUIBuilderClient::ExchangeCodeForTokenAsync(const ExchangeCodeForTokenRequest& request, const ExchangeCodeForTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExchangeCodeForTokenAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyUIBuilderClient::ExchangeCodeForTokenAsyncHelper(const ExchangeCodeForTokenRequest& request, const ExchangeCodeForTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ExchangeCodeForToken(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ExchangeCodeForToken(request), context);
+    } );
 }
 
 ExportComponentsOutcome AmplifyUIBuilderClient::ExportComponents(const ExportComponentsRequest& request) const
@@ -344,12 +334,10 @@ ExportComponentsOutcomeCallable AmplifyUIBuilderClient::ExportComponentsCallable
 
 void AmplifyUIBuilderClient::ExportComponentsAsync(const ExportComponentsRequest& request, const ExportComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExportComponentsAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyUIBuilderClient::ExportComponentsAsyncHelper(const ExportComponentsRequest& request, const ExportComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ExportComponents(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ExportComponents(request), context);
+    } );
 }
 
 ExportThemesOutcome AmplifyUIBuilderClient::ExportThemes(const ExportThemesRequest& request) const
@@ -383,12 +371,10 @@ ExportThemesOutcomeCallable AmplifyUIBuilderClient::ExportThemesCallable(const E
 
 void AmplifyUIBuilderClient::ExportThemesAsync(const ExportThemesRequest& request, const ExportThemesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExportThemesAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyUIBuilderClient::ExportThemesAsyncHelper(const ExportThemesRequest& request, const ExportThemesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ExportThemes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ExportThemes(request), context);
+    } );
 }
 
 GetComponentOutcome AmplifyUIBuilderClient::GetComponent(const GetComponentRequest& request) const
@@ -428,12 +414,10 @@ GetComponentOutcomeCallable AmplifyUIBuilderClient::GetComponentCallable(const G
 
 void AmplifyUIBuilderClient::GetComponentAsync(const GetComponentRequest& request, const GetComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetComponentAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyUIBuilderClient::GetComponentAsyncHelper(const GetComponentRequest& request, const GetComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetComponent(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetComponent(request), context);
+    } );
 }
 
 GetThemeOutcome AmplifyUIBuilderClient::GetTheme(const GetThemeRequest& request) const
@@ -473,12 +457,10 @@ GetThemeOutcomeCallable AmplifyUIBuilderClient::GetThemeCallable(const GetThemeR
 
 void AmplifyUIBuilderClient::GetThemeAsync(const GetThemeRequest& request, const GetThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetThemeAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyUIBuilderClient::GetThemeAsyncHelper(const GetThemeRequest& request, const GetThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetTheme(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetTheme(request), context);
+    } );
 }
 
 ListComponentsOutcome AmplifyUIBuilderClient::ListComponents(const ListComponentsRequest& request) const
@@ -512,12 +494,10 @@ ListComponentsOutcomeCallable AmplifyUIBuilderClient::ListComponentsCallable(con
 
 void AmplifyUIBuilderClient::ListComponentsAsync(const ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListComponentsAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyUIBuilderClient::ListComponentsAsyncHelper(const ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListComponents(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListComponents(request), context);
+    } );
 }
 
 ListThemesOutcome AmplifyUIBuilderClient::ListThemes(const ListThemesRequest& request) const
@@ -551,12 +531,10 @@ ListThemesOutcomeCallable AmplifyUIBuilderClient::ListThemesCallable(const ListT
 
 void AmplifyUIBuilderClient::ListThemesAsync(const ListThemesRequest& request, const ListThemesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListThemesAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyUIBuilderClient::ListThemesAsyncHelper(const ListThemesRequest& request, const ListThemesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListThemes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListThemes(request), context);
+    } );
 }
 
 RefreshTokenOutcome AmplifyUIBuilderClient::RefreshToken(const RefreshTokenRequest& request) const
@@ -583,12 +561,10 @@ RefreshTokenOutcomeCallable AmplifyUIBuilderClient::RefreshTokenCallable(const R
 
 void AmplifyUIBuilderClient::RefreshTokenAsync(const RefreshTokenRequest& request, const RefreshTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RefreshTokenAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyUIBuilderClient::RefreshTokenAsyncHelper(const RefreshTokenRequest& request, const RefreshTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RefreshToken(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RefreshToken(request), context);
+    } );
 }
 
 UpdateComponentOutcome AmplifyUIBuilderClient::UpdateComponent(const UpdateComponentRequest& request) const
@@ -628,12 +604,10 @@ UpdateComponentOutcomeCallable AmplifyUIBuilderClient::UpdateComponentCallable(c
 
 void AmplifyUIBuilderClient::UpdateComponentAsync(const UpdateComponentRequest& request, const UpdateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateComponentAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyUIBuilderClient::UpdateComponentAsyncHelper(const UpdateComponentRequest& request, const UpdateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateComponent(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateComponent(request), context);
+    } );
 }
 
 UpdateThemeOutcome AmplifyUIBuilderClient::UpdateTheme(const UpdateThemeRequest& request) const
@@ -673,11 +647,9 @@ UpdateThemeOutcomeCallable AmplifyUIBuilderClient::UpdateThemeCallable(const Upd
 
 void AmplifyUIBuilderClient::UpdateThemeAsync(const UpdateThemeRequest& request, const UpdateThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateThemeAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyUIBuilderClient::UpdateThemeAsyncHelper(const UpdateThemeRequest& request, const UpdateThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateTheme(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateTheme(request), context);
+    } );
 }
 

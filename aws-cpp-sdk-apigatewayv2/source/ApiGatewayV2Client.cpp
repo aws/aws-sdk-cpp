@@ -189,12 +189,10 @@ CreateApiOutcomeCallable ApiGatewayV2Client::CreateApiCallable(const CreateApiRe
 
 void ApiGatewayV2Client::CreateApiAsync(const CreateApiRequest& request, const CreateApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateApiAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::CreateApiAsyncHelper(const CreateApiRequest& request, const CreateApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateApi(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateApi(request), context);
+    } );
 }
 
 CreateApiMappingOutcome ApiGatewayV2Client::CreateApiMapping(const CreateApiMappingRequest& request) const
@@ -221,12 +219,10 @@ CreateApiMappingOutcomeCallable ApiGatewayV2Client::CreateApiMappingCallable(con
 
 void ApiGatewayV2Client::CreateApiMappingAsync(const CreateApiMappingRequest& request, const CreateApiMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateApiMappingAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::CreateApiMappingAsyncHelper(const CreateApiMappingRequest& request, const CreateApiMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateApiMapping(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateApiMapping(request), context);
+    } );
 }
 
 CreateAuthorizerOutcome ApiGatewayV2Client::CreateAuthorizer(const CreateAuthorizerRequest& request) const
@@ -253,12 +249,10 @@ CreateAuthorizerOutcomeCallable ApiGatewayV2Client::CreateAuthorizerCallable(con
 
 void ApiGatewayV2Client::CreateAuthorizerAsync(const CreateAuthorizerRequest& request, const CreateAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAuthorizerAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::CreateAuthorizerAsyncHelper(const CreateAuthorizerRequest& request, const CreateAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateAuthorizer(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateAuthorizer(request), context);
+    } );
 }
 
 CreateDeploymentOutcome ApiGatewayV2Client::CreateDeployment(const CreateDeploymentRequest& request) const
@@ -285,12 +279,10 @@ CreateDeploymentOutcomeCallable ApiGatewayV2Client::CreateDeploymentCallable(con
 
 void ApiGatewayV2Client::CreateDeploymentAsync(const CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDeploymentAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::CreateDeploymentAsyncHelper(const CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateDeployment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateDeployment(request), context);
+    } );
 }
 
 CreateDomainNameOutcome ApiGatewayV2Client::CreateDomainName(const CreateDomainNameRequest& request) const
@@ -310,12 +302,10 @@ CreateDomainNameOutcomeCallable ApiGatewayV2Client::CreateDomainNameCallable(con
 
 void ApiGatewayV2Client::CreateDomainNameAsync(const CreateDomainNameRequest& request, const CreateDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDomainNameAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::CreateDomainNameAsyncHelper(const CreateDomainNameRequest& request, const CreateDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateDomainName(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateDomainName(request), context);
+    } );
 }
 
 CreateIntegrationOutcome ApiGatewayV2Client::CreateIntegration(const CreateIntegrationRequest& request) const
@@ -342,12 +332,10 @@ CreateIntegrationOutcomeCallable ApiGatewayV2Client::CreateIntegrationCallable(c
 
 void ApiGatewayV2Client::CreateIntegrationAsync(const CreateIntegrationRequest& request, const CreateIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateIntegrationAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::CreateIntegrationAsyncHelper(const CreateIntegrationRequest& request, const CreateIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateIntegration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateIntegration(request), context);
+    } );
 }
 
 CreateIntegrationResponseOutcome ApiGatewayV2Client::CreateIntegrationResponse(const CreateIntegrationResponseRequest& request) const
@@ -381,12 +369,10 @@ CreateIntegrationResponseOutcomeCallable ApiGatewayV2Client::CreateIntegrationRe
 
 void ApiGatewayV2Client::CreateIntegrationResponseAsync(const CreateIntegrationResponseRequest& request, const CreateIntegrationResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateIntegrationResponseAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::CreateIntegrationResponseAsyncHelper(const CreateIntegrationResponseRequest& request, const CreateIntegrationResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateIntegrationResponse(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateIntegrationResponse(request), context);
+    } );
 }
 
 CreateModelOutcome ApiGatewayV2Client::CreateModel(const CreateModelRequest& request) const
@@ -413,12 +399,10 @@ CreateModelOutcomeCallable ApiGatewayV2Client::CreateModelCallable(const CreateM
 
 void ApiGatewayV2Client::CreateModelAsync(const CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateModelAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::CreateModelAsyncHelper(const CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateModel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateModel(request), context);
+    } );
 }
 
 CreateRouteOutcome ApiGatewayV2Client::CreateRoute(const CreateRouteRequest& request) const
@@ -445,12 +429,10 @@ CreateRouteOutcomeCallable ApiGatewayV2Client::CreateRouteCallable(const CreateR
 
 void ApiGatewayV2Client::CreateRouteAsync(const CreateRouteRequest& request, const CreateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRouteAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::CreateRouteAsyncHelper(const CreateRouteRequest& request, const CreateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateRoute(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateRoute(request), context);
+    } );
 }
 
 CreateRouteResponseOutcome ApiGatewayV2Client::CreateRouteResponse(const CreateRouteResponseRequest& request) const
@@ -484,12 +466,10 @@ CreateRouteResponseOutcomeCallable ApiGatewayV2Client::CreateRouteResponseCallab
 
 void ApiGatewayV2Client::CreateRouteResponseAsync(const CreateRouteResponseRequest& request, const CreateRouteResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRouteResponseAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::CreateRouteResponseAsyncHelper(const CreateRouteResponseRequest& request, const CreateRouteResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateRouteResponse(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateRouteResponse(request), context);
+    } );
 }
 
 CreateStageOutcome ApiGatewayV2Client::CreateStage(const CreateStageRequest& request) const
@@ -516,12 +496,10 @@ CreateStageOutcomeCallable ApiGatewayV2Client::CreateStageCallable(const CreateS
 
 void ApiGatewayV2Client::CreateStageAsync(const CreateStageRequest& request, const CreateStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateStageAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::CreateStageAsyncHelper(const CreateStageRequest& request, const CreateStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateStage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateStage(request), context);
+    } );
 }
 
 CreateVpcLinkOutcome ApiGatewayV2Client::CreateVpcLink(const CreateVpcLinkRequest& request) const
@@ -541,12 +519,10 @@ CreateVpcLinkOutcomeCallable ApiGatewayV2Client::CreateVpcLinkCallable(const Cre
 
 void ApiGatewayV2Client::CreateVpcLinkAsync(const CreateVpcLinkRequest& request, const CreateVpcLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateVpcLinkAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::CreateVpcLinkAsyncHelper(const CreateVpcLinkRequest& request, const CreateVpcLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateVpcLink(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateVpcLink(request), context);
+    } );
 }
 
 DeleteAccessLogSettingsOutcome ApiGatewayV2Client::DeleteAccessLogSettings(const DeleteAccessLogSettingsRequest& request) const
@@ -580,12 +556,10 @@ DeleteAccessLogSettingsOutcomeCallable ApiGatewayV2Client::DeleteAccessLogSettin
 
 void ApiGatewayV2Client::DeleteAccessLogSettingsAsync(const DeleteAccessLogSettingsRequest& request, const DeleteAccessLogSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAccessLogSettingsAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::DeleteAccessLogSettingsAsyncHelper(const DeleteAccessLogSettingsRequest& request, const DeleteAccessLogSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteAccessLogSettings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteAccessLogSettings(request), context);
+    } );
 }
 
 DeleteApiOutcome ApiGatewayV2Client::DeleteApi(const DeleteApiRequest& request) const
@@ -611,12 +585,10 @@ DeleteApiOutcomeCallable ApiGatewayV2Client::DeleteApiCallable(const DeleteApiRe
 
 void ApiGatewayV2Client::DeleteApiAsync(const DeleteApiRequest& request, const DeleteApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteApiAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::DeleteApiAsyncHelper(const DeleteApiRequest& request, const DeleteApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteApi(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteApi(request), context);
+    } );
 }
 
 DeleteApiMappingOutcome ApiGatewayV2Client::DeleteApiMapping(const DeleteApiMappingRequest& request) const
@@ -649,12 +621,10 @@ DeleteApiMappingOutcomeCallable ApiGatewayV2Client::DeleteApiMappingCallable(con
 
 void ApiGatewayV2Client::DeleteApiMappingAsync(const DeleteApiMappingRequest& request, const DeleteApiMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteApiMappingAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::DeleteApiMappingAsyncHelper(const DeleteApiMappingRequest& request, const DeleteApiMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteApiMapping(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteApiMapping(request), context);
+    } );
 }
 
 DeleteAuthorizerOutcome ApiGatewayV2Client::DeleteAuthorizer(const DeleteAuthorizerRequest& request) const
@@ -687,12 +657,10 @@ DeleteAuthorizerOutcomeCallable ApiGatewayV2Client::DeleteAuthorizerCallable(con
 
 void ApiGatewayV2Client::DeleteAuthorizerAsync(const DeleteAuthorizerRequest& request, const DeleteAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAuthorizerAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::DeleteAuthorizerAsyncHelper(const DeleteAuthorizerRequest& request, const DeleteAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteAuthorizer(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteAuthorizer(request), context);
+    } );
 }
 
 DeleteCorsConfigurationOutcome ApiGatewayV2Client::DeleteCorsConfiguration(const DeleteCorsConfigurationRequest& request) const
@@ -719,12 +687,10 @@ DeleteCorsConfigurationOutcomeCallable ApiGatewayV2Client::DeleteCorsConfigurati
 
 void ApiGatewayV2Client::DeleteCorsConfigurationAsync(const DeleteCorsConfigurationRequest& request, const DeleteCorsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCorsConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::DeleteCorsConfigurationAsyncHelper(const DeleteCorsConfigurationRequest& request, const DeleteCorsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteCorsConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteCorsConfiguration(request), context);
+    } );
 }
 
 DeleteDeploymentOutcome ApiGatewayV2Client::DeleteDeployment(const DeleteDeploymentRequest& request) const
@@ -757,12 +723,10 @@ DeleteDeploymentOutcomeCallable ApiGatewayV2Client::DeleteDeploymentCallable(con
 
 void ApiGatewayV2Client::DeleteDeploymentAsync(const DeleteDeploymentRequest& request, const DeleteDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDeploymentAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::DeleteDeploymentAsyncHelper(const DeleteDeploymentRequest& request, const DeleteDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteDeployment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteDeployment(request), context);
+    } );
 }
 
 DeleteDomainNameOutcome ApiGatewayV2Client::DeleteDomainName(const DeleteDomainNameRequest& request) const
@@ -788,12 +752,10 @@ DeleteDomainNameOutcomeCallable ApiGatewayV2Client::DeleteDomainNameCallable(con
 
 void ApiGatewayV2Client::DeleteDomainNameAsync(const DeleteDomainNameRequest& request, const DeleteDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDomainNameAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::DeleteDomainNameAsyncHelper(const DeleteDomainNameRequest& request, const DeleteDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteDomainName(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteDomainName(request), context);
+    } );
 }
 
 DeleteIntegrationOutcome ApiGatewayV2Client::DeleteIntegration(const DeleteIntegrationRequest& request) const
@@ -826,12 +788,10 @@ DeleteIntegrationOutcomeCallable ApiGatewayV2Client::DeleteIntegrationCallable(c
 
 void ApiGatewayV2Client::DeleteIntegrationAsync(const DeleteIntegrationRequest& request, const DeleteIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteIntegrationAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::DeleteIntegrationAsyncHelper(const DeleteIntegrationRequest& request, const DeleteIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteIntegration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteIntegration(request), context);
+    } );
 }
 
 DeleteIntegrationResponseOutcome ApiGatewayV2Client::DeleteIntegrationResponse(const DeleteIntegrationResponseRequest& request) const
@@ -871,12 +831,10 @@ DeleteIntegrationResponseOutcomeCallable ApiGatewayV2Client::DeleteIntegrationRe
 
 void ApiGatewayV2Client::DeleteIntegrationResponseAsync(const DeleteIntegrationResponseRequest& request, const DeleteIntegrationResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteIntegrationResponseAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::DeleteIntegrationResponseAsyncHelper(const DeleteIntegrationResponseRequest& request, const DeleteIntegrationResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteIntegrationResponse(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteIntegrationResponse(request), context);
+    } );
 }
 
 DeleteModelOutcome ApiGatewayV2Client::DeleteModel(const DeleteModelRequest& request) const
@@ -909,12 +867,10 @@ DeleteModelOutcomeCallable ApiGatewayV2Client::DeleteModelCallable(const DeleteM
 
 void ApiGatewayV2Client::DeleteModelAsync(const DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteModelAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::DeleteModelAsyncHelper(const DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteModel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteModel(request), context);
+    } );
 }
 
 DeleteRouteOutcome ApiGatewayV2Client::DeleteRoute(const DeleteRouteRequest& request) const
@@ -947,12 +903,10 @@ DeleteRouteOutcomeCallable ApiGatewayV2Client::DeleteRouteCallable(const DeleteR
 
 void ApiGatewayV2Client::DeleteRouteAsync(const DeleteRouteRequest& request, const DeleteRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRouteAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::DeleteRouteAsyncHelper(const DeleteRouteRequest& request, const DeleteRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteRoute(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteRoute(request), context);
+    } );
 }
 
 DeleteRouteRequestParameterOutcome ApiGatewayV2Client::DeleteRouteRequestParameter(const DeleteRouteRequestParameterRequest& request) const
@@ -992,12 +946,10 @@ DeleteRouteRequestParameterOutcomeCallable ApiGatewayV2Client::DeleteRouteReques
 
 void ApiGatewayV2Client::DeleteRouteRequestParameterAsync(const DeleteRouteRequestParameterRequest& request, const DeleteRouteRequestParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRouteRequestParameterAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::DeleteRouteRequestParameterAsyncHelper(const DeleteRouteRequestParameterRequest& request, const DeleteRouteRequestParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteRouteRequestParameter(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteRouteRequestParameter(request), context);
+    } );
 }
 
 DeleteRouteResponseOutcome ApiGatewayV2Client::DeleteRouteResponse(const DeleteRouteResponseRequest& request) const
@@ -1037,12 +989,10 @@ DeleteRouteResponseOutcomeCallable ApiGatewayV2Client::DeleteRouteResponseCallab
 
 void ApiGatewayV2Client::DeleteRouteResponseAsync(const DeleteRouteResponseRequest& request, const DeleteRouteResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRouteResponseAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::DeleteRouteResponseAsyncHelper(const DeleteRouteResponseRequest& request, const DeleteRouteResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteRouteResponse(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteRouteResponse(request), context);
+    } );
 }
 
 DeleteRouteSettingsOutcome ApiGatewayV2Client::DeleteRouteSettings(const DeleteRouteSettingsRequest& request) const
@@ -1082,12 +1032,10 @@ DeleteRouteSettingsOutcomeCallable ApiGatewayV2Client::DeleteRouteSettingsCallab
 
 void ApiGatewayV2Client::DeleteRouteSettingsAsync(const DeleteRouteSettingsRequest& request, const DeleteRouteSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRouteSettingsAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::DeleteRouteSettingsAsyncHelper(const DeleteRouteSettingsRequest& request, const DeleteRouteSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteRouteSettings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteRouteSettings(request), context);
+    } );
 }
 
 DeleteStageOutcome ApiGatewayV2Client::DeleteStage(const DeleteStageRequest& request) const
@@ -1120,12 +1068,10 @@ DeleteStageOutcomeCallable ApiGatewayV2Client::DeleteStageCallable(const DeleteS
 
 void ApiGatewayV2Client::DeleteStageAsync(const DeleteStageRequest& request, const DeleteStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteStageAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::DeleteStageAsyncHelper(const DeleteStageRequest& request, const DeleteStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteStage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteStage(request), context);
+    } );
 }
 
 DeleteVpcLinkOutcome ApiGatewayV2Client::DeleteVpcLink(const DeleteVpcLinkRequest& request) const
@@ -1151,12 +1097,10 @@ DeleteVpcLinkOutcomeCallable ApiGatewayV2Client::DeleteVpcLinkCallable(const Del
 
 void ApiGatewayV2Client::DeleteVpcLinkAsync(const DeleteVpcLinkRequest& request, const DeleteVpcLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteVpcLinkAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::DeleteVpcLinkAsyncHelper(const DeleteVpcLinkRequest& request, const DeleteVpcLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteVpcLink(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteVpcLink(request), context);
+    } );
 }
 
 ExportApiOutcome ApiGatewayV2Client::ExportApi(const ExportApiRequest& request) const
@@ -1194,12 +1138,10 @@ ExportApiOutcomeCallable ApiGatewayV2Client::ExportApiCallable(const ExportApiRe
 
 void ApiGatewayV2Client::ExportApiAsync(const ExportApiRequest& request, const ExportApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExportApiAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::ExportApiAsyncHelper(const ExportApiRequest& request, const ExportApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ExportApi(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ExportApi(request), context);
+    } );
 }
 
 ResetAuthorizersCacheOutcome ApiGatewayV2Client::ResetAuthorizersCache(const ResetAuthorizersCacheRequest& request) const
@@ -1233,12 +1175,10 @@ ResetAuthorizersCacheOutcomeCallable ApiGatewayV2Client::ResetAuthorizersCacheCa
 
 void ApiGatewayV2Client::ResetAuthorizersCacheAsync(const ResetAuthorizersCacheRequest& request, const ResetAuthorizersCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ResetAuthorizersCacheAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::ResetAuthorizersCacheAsyncHelper(const ResetAuthorizersCacheRequest& request, const ResetAuthorizersCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ResetAuthorizersCache(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ResetAuthorizersCache(request), context);
+    } );
 }
 
 GetApiOutcome ApiGatewayV2Client::GetApi(const GetApiRequest& request) const
@@ -1264,12 +1204,10 @@ GetApiOutcomeCallable ApiGatewayV2Client::GetApiCallable(const GetApiRequest& re
 
 void ApiGatewayV2Client::GetApiAsync(const GetApiRequest& request, const GetApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetApiAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::GetApiAsyncHelper(const GetApiRequest& request, const GetApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetApi(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetApi(request), context);
+    } );
 }
 
 GetApiMappingOutcome ApiGatewayV2Client::GetApiMapping(const GetApiMappingRequest& request) const
@@ -1302,12 +1240,10 @@ GetApiMappingOutcomeCallable ApiGatewayV2Client::GetApiMappingCallable(const Get
 
 void ApiGatewayV2Client::GetApiMappingAsync(const GetApiMappingRequest& request, const GetApiMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetApiMappingAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::GetApiMappingAsyncHelper(const GetApiMappingRequest& request, const GetApiMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetApiMapping(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetApiMapping(request), context);
+    } );
 }
 
 GetApiMappingsOutcome ApiGatewayV2Client::GetApiMappings(const GetApiMappingsRequest& request) const
@@ -1334,12 +1270,10 @@ GetApiMappingsOutcomeCallable ApiGatewayV2Client::GetApiMappingsCallable(const G
 
 void ApiGatewayV2Client::GetApiMappingsAsync(const GetApiMappingsRequest& request, const GetApiMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetApiMappingsAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::GetApiMappingsAsyncHelper(const GetApiMappingsRequest& request, const GetApiMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetApiMappings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetApiMappings(request), context);
+    } );
 }
 
 GetApisOutcome ApiGatewayV2Client::GetApis(const GetApisRequest& request) const
@@ -1359,12 +1293,10 @@ GetApisOutcomeCallable ApiGatewayV2Client::GetApisCallable(const GetApisRequest&
 
 void ApiGatewayV2Client::GetApisAsync(const GetApisRequest& request, const GetApisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetApisAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::GetApisAsyncHelper(const GetApisRequest& request, const GetApisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetApis(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetApis(request), context);
+    } );
 }
 
 GetAuthorizerOutcome ApiGatewayV2Client::GetAuthorizer(const GetAuthorizerRequest& request) const
@@ -1397,12 +1329,10 @@ GetAuthorizerOutcomeCallable ApiGatewayV2Client::GetAuthorizerCallable(const Get
 
 void ApiGatewayV2Client::GetAuthorizerAsync(const GetAuthorizerRequest& request, const GetAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAuthorizerAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::GetAuthorizerAsyncHelper(const GetAuthorizerRequest& request, const GetAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetAuthorizer(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAuthorizer(request), context);
+    } );
 }
 
 GetAuthorizersOutcome ApiGatewayV2Client::GetAuthorizers(const GetAuthorizersRequest& request) const
@@ -1429,12 +1359,10 @@ GetAuthorizersOutcomeCallable ApiGatewayV2Client::GetAuthorizersCallable(const G
 
 void ApiGatewayV2Client::GetAuthorizersAsync(const GetAuthorizersRequest& request, const GetAuthorizersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAuthorizersAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::GetAuthorizersAsyncHelper(const GetAuthorizersRequest& request, const GetAuthorizersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetAuthorizers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAuthorizers(request), context);
+    } );
 }
 
 GetDeploymentOutcome ApiGatewayV2Client::GetDeployment(const GetDeploymentRequest& request) const
@@ -1467,12 +1395,10 @@ GetDeploymentOutcomeCallable ApiGatewayV2Client::GetDeploymentCallable(const Get
 
 void ApiGatewayV2Client::GetDeploymentAsync(const GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDeploymentAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::GetDeploymentAsyncHelper(const GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDeployment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDeployment(request), context);
+    } );
 }
 
 GetDeploymentsOutcome ApiGatewayV2Client::GetDeployments(const GetDeploymentsRequest& request) const
@@ -1499,12 +1425,10 @@ GetDeploymentsOutcomeCallable ApiGatewayV2Client::GetDeploymentsCallable(const G
 
 void ApiGatewayV2Client::GetDeploymentsAsync(const GetDeploymentsRequest& request, const GetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDeploymentsAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::GetDeploymentsAsyncHelper(const GetDeploymentsRequest& request, const GetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDeployments(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDeployments(request), context);
+    } );
 }
 
 GetDomainNameOutcome ApiGatewayV2Client::GetDomainName(const GetDomainNameRequest& request) const
@@ -1530,12 +1454,10 @@ GetDomainNameOutcomeCallable ApiGatewayV2Client::GetDomainNameCallable(const Get
 
 void ApiGatewayV2Client::GetDomainNameAsync(const GetDomainNameRequest& request, const GetDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDomainNameAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::GetDomainNameAsyncHelper(const GetDomainNameRequest& request, const GetDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDomainName(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDomainName(request), context);
+    } );
 }
 
 GetDomainNamesOutcome ApiGatewayV2Client::GetDomainNames(const GetDomainNamesRequest& request) const
@@ -1555,12 +1477,10 @@ GetDomainNamesOutcomeCallable ApiGatewayV2Client::GetDomainNamesCallable(const G
 
 void ApiGatewayV2Client::GetDomainNamesAsync(const GetDomainNamesRequest& request, const GetDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDomainNamesAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::GetDomainNamesAsyncHelper(const GetDomainNamesRequest& request, const GetDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDomainNames(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDomainNames(request), context);
+    } );
 }
 
 GetIntegrationOutcome ApiGatewayV2Client::GetIntegration(const GetIntegrationRequest& request) const
@@ -1593,12 +1513,10 @@ GetIntegrationOutcomeCallable ApiGatewayV2Client::GetIntegrationCallable(const G
 
 void ApiGatewayV2Client::GetIntegrationAsync(const GetIntegrationRequest& request, const GetIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetIntegrationAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::GetIntegrationAsyncHelper(const GetIntegrationRequest& request, const GetIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetIntegration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetIntegration(request), context);
+    } );
 }
 
 GetIntegrationResponseOutcome ApiGatewayV2Client::GetIntegrationResponse(const GetIntegrationResponseRequest& request) const
@@ -1638,12 +1556,10 @@ GetIntegrationResponseOutcomeCallable ApiGatewayV2Client::GetIntegrationResponse
 
 void ApiGatewayV2Client::GetIntegrationResponseAsync(const GetIntegrationResponseRequest& request, const GetIntegrationResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetIntegrationResponseAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::GetIntegrationResponseAsyncHelper(const GetIntegrationResponseRequest& request, const GetIntegrationResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetIntegrationResponse(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetIntegrationResponse(request), context);
+    } );
 }
 
 GetIntegrationResponsesOutcome ApiGatewayV2Client::GetIntegrationResponses(const GetIntegrationResponsesRequest& request) const
@@ -1677,12 +1593,10 @@ GetIntegrationResponsesOutcomeCallable ApiGatewayV2Client::GetIntegrationRespons
 
 void ApiGatewayV2Client::GetIntegrationResponsesAsync(const GetIntegrationResponsesRequest& request, const GetIntegrationResponsesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetIntegrationResponsesAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::GetIntegrationResponsesAsyncHelper(const GetIntegrationResponsesRequest& request, const GetIntegrationResponsesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetIntegrationResponses(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetIntegrationResponses(request), context);
+    } );
 }
 
 GetIntegrationsOutcome ApiGatewayV2Client::GetIntegrations(const GetIntegrationsRequest& request) const
@@ -1709,12 +1623,10 @@ GetIntegrationsOutcomeCallable ApiGatewayV2Client::GetIntegrationsCallable(const
 
 void ApiGatewayV2Client::GetIntegrationsAsync(const GetIntegrationsRequest& request, const GetIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetIntegrationsAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::GetIntegrationsAsyncHelper(const GetIntegrationsRequest& request, const GetIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetIntegrations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetIntegrations(request), context);
+    } );
 }
 
 GetModelOutcome ApiGatewayV2Client::GetModel(const GetModelRequest& request) const
@@ -1747,12 +1659,10 @@ GetModelOutcomeCallable ApiGatewayV2Client::GetModelCallable(const GetModelReque
 
 void ApiGatewayV2Client::GetModelAsync(const GetModelRequest& request, const GetModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetModelAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::GetModelAsyncHelper(const GetModelRequest& request, const GetModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetModel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetModel(request), context);
+    } );
 }
 
 GetModelTemplateOutcome ApiGatewayV2Client::GetModelTemplate(const GetModelTemplateRequest& request) const
@@ -1786,12 +1696,10 @@ GetModelTemplateOutcomeCallable ApiGatewayV2Client::GetModelTemplateCallable(con
 
 void ApiGatewayV2Client::GetModelTemplateAsync(const GetModelTemplateRequest& request, const GetModelTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetModelTemplateAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::GetModelTemplateAsyncHelper(const GetModelTemplateRequest& request, const GetModelTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetModelTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetModelTemplate(request), context);
+    } );
 }
 
 GetModelsOutcome ApiGatewayV2Client::GetModels(const GetModelsRequest& request) const
@@ -1818,12 +1726,10 @@ GetModelsOutcomeCallable ApiGatewayV2Client::GetModelsCallable(const GetModelsRe
 
 void ApiGatewayV2Client::GetModelsAsync(const GetModelsRequest& request, const GetModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetModelsAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::GetModelsAsyncHelper(const GetModelsRequest& request, const GetModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetModels(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetModels(request), context);
+    } );
 }
 
 GetRouteOutcome ApiGatewayV2Client::GetRoute(const GetRouteRequest& request) const
@@ -1856,12 +1762,10 @@ GetRouteOutcomeCallable ApiGatewayV2Client::GetRouteCallable(const GetRouteReque
 
 void ApiGatewayV2Client::GetRouteAsync(const GetRouteRequest& request, const GetRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRouteAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::GetRouteAsyncHelper(const GetRouteRequest& request, const GetRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetRoute(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetRoute(request), context);
+    } );
 }
 
 GetRouteResponseOutcome ApiGatewayV2Client::GetRouteResponse(const GetRouteResponseRequest& request) const
@@ -1901,12 +1805,10 @@ GetRouteResponseOutcomeCallable ApiGatewayV2Client::GetRouteResponseCallable(con
 
 void ApiGatewayV2Client::GetRouteResponseAsync(const GetRouteResponseRequest& request, const GetRouteResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRouteResponseAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::GetRouteResponseAsyncHelper(const GetRouteResponseRequest& request, const GetRouteResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetRouteResponse(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetRouteResponse(request), context);
+    } );
 }
 
 GetRouteResponsesOutcome ApiGatewayV2Client::GetRouteResponses(const GetRouteResponsesRequest& request) const
@@ -1940,12 +1842,10 @@ GetRouteResponsesOutcomeCallable ApiGatewayV2Client::GetRouteResponsesCallable(c
 
 void ApiGatewayV2Client::GetRouteResponsesAsync(const GetRouteResponsesRequest& request, const GetRouteResponsesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRouteResponsesAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::GetRouteResponsesAsyncHelper(const GetRouteResponsesRequest& request, const GetRouteResponsesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetRouteResponses(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetRouteResponses(request), context);
+    } );
 }
 
 GetRoutesOutcome ApiGatewayV2Client::GetRoutes(const GetRoutesRequest& request) const
@@ -1972,12 +1872,10 @@ GetRoutesOutcomeCallable ApiGatewayV2Client::GetRoutesCallable(const GetRoutesRe
 
 void ApiGatewayV2Client::GetRoutesAsync(const GetRoutesRequest& request, const GetRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRoutesAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::GetRoutesAsyncHelper(const GetRoutesRequest& request, const GetRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetRoutes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetRoutes(request), context);
+    } );
 }
 
 GetStageOutcome ApiGatewayV2Client::GetStage(const GetStageRequest& request) const
@@ -2010,12 +1908,10 @@ GetStageOutcomeCallable ApiGatewayV2Client::GetStageCallable(const GetStageReque
 
 void ApiGatewayV2Client::GetStageAsync(const GetStageRequest& request, const GetStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetStageAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::GetStageAsyncHelper(const GetStageRequest& request, const GetStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetStage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetStage(request), context);
+    } );
 }
 
 GetStagesOutcome ApiGatewayV2Client::GetStages(const GetStagesRequest& request) const
@@ -2042,12 +1938,10 @@ GetStagesOutcomeCallable ApiGatewayV2Client::GetStagesCallable(const GetStagesRe
 
 void ApiGatewayV2Client::GetStagesAsync(const GetStagesRequest& request, const GetStagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetStagesAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::GetStagesAsyncHelper(const GetStagesRequest& request, const GetStagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetStages(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetStages(request), context);
+    } );
 }
 
 GetTagsOutcome ApiGatewayV2Client::GetTags(const GetTagsRequest& request) const
@@ -2073,12 +1967,10 @@ GetTagsOutcomeCallable ApiGatewayV2Client::GetTagsCallable(const GetTagsRequest&
 
 void ApiGatewayV2Client::GetTagsAsync(const GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTagsAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::GetTagsAsyncHelper(const GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetTags(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetTags(request), context);
+    } );
 }
 
 GetVpcLinkOutcome ApiGatewayV2Client::GetVpcLink(const GetVpcLinkRequest& request) const
@@ -2104,12 +1996,10 @@ GetVpcLinkOutcomeCallable ApiGatewayV2Client::GetVpcLinkCallable(const GetVpcLin
 
 void ApiGatewayV2Client::GetVpcLinkAsync(const GetVpcLinkRequest& request, const GetVpcLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetVpcLinkAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::GetVpcLinkAsyncHelper(const GetVpcLinkRequest& request, const GetVpcLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetVpcLink(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetVpcLink(request), context);
+    } );
 }
 
 GetVpcLinksOutcome ApiGatewayV2Client::GetVpcLinks(const GetVpcLinksRequest& request) const
@@ -2129,12 +2019,10 @@ GetVpcLinksOutcomeCallable ApiGatewayV2Client::GetVpcLinksCallable(const GetVpcL
 
 void ApiGatewayV2Client::GetVpcLinksAsync(const GetVpcLinksRequest& request, const GetVpcLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetVpcLinksAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::GetVpcLinksAsyncHelper(const GetVpcLinksRequest& request, const GetVpcLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetVpcLinks(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetVpcLinks(request), context);
+    } );
 }
 
 ImportApiOutcome ApiGatewayV2Client::ImportApi(const ImportApiRequest& request) const
@@ -2154,12 +2042,10 @@ ImportApiOutcomeCallable ApiGatewayV2Client::ImportApiCallable(const ImportApiRe
 
 void ApiGatewayV2Client::ImportApiAsync(const ImportApiRequest& request, const ImportApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportApiAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::ImportApiAsyncHelper(const ImportApiRequest& request, const ImportApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ImportApi(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ImportApi(request), context);
+    } );
 }
 
 ReimportApiOutcome ApiGatewayV2Client::ReimportApi(const ReimportApiRequest& request) const
@@ -2185,12 +2071,10 @@ ReimportApiOutcomeCallable ApiGatewayV2Client::ReimportApiCallable(const Reimpor
 
 void ApiGatewayV2Client::ReimportApiAsync(const ReimportApiRequest& request, const ReimportApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ReimportApiAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::ReimportApiAsyncHelper(const ReimportApiRequest& request, const ReimportApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ReimportApi(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ReimportApi(request), context);
+    } );
 }
 
 TagResourceOutcome ApiGatewayV2Client::TagResource(const TagResourceRequest& request) const
@@ -2216,12 +2100,10 @@ TagResourceOutcomeCallable ApiGatewayV2Client::TagResourceCallable(const TagReso
 
 void ApiGatewayV2Client::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome ApiGatewayV2Client::UntagResource(const UntagResourceRequest& request) const
@@ -2252,12 +2134,10 @@ UntagResourceOutcomeCallable ApiGatewayV2Client::UntagResourceCallable(const Unt
 
 void ApiGatewayV2Client::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateApiOutcome ApiGatewayV2Client::UpdateApi(const UpdateApiRequest& request) const
@@ -2283,12 +2163,10 @@ UpdateApiOutcomeCallable ApiGatewayV2Client::UpdateApiCallable(const UpdateApiRe
 
 void ApiGatewayV2Client::UpdateApiAsync(const UpdateApiRequest& request, const UpdateApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateApiAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::UpdateApiAsyncHelper(const UpdateApiRequest& request, const UpdateApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateApi(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateApi(request), context);
+    } );
 }
 
 UpdateApiMappingOutcome ApiGatewayV2Client::UpdateApiMapping(const UpdateApiMappingRequest& request) const
@@ -2321,12 +2199,10 @@ UpdateApiMappingOutcomeCallable ApiGatewayV2Client::UpdateApiMappingCallable(con
 
 void ApiGatewayV2Client::UpdateApiMappingAsync(const UpdateApiMappingRequest& request, const UpdateApiMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateApiMappingAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::UpdateApiMappingAsyncHelper(const UpdateApiMappingRequest& request, const UpdateApiMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateApiMapping(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateApiMapping(request), context);
+    } );
 }
 
 UpdateAuthorizerOutcome ApiGatewayV2Client::UpdateAuthorizer(const UpdateAuthorizerRequest& request) const
@@ -2359,12 +2235,10 @@ UpdateAuthorizerOutcomeCallable ApiGatewayV2Client::UpdateAuthorizerCallable(con
 
 void ApiGatewayV2Client::UpdateAuthorizerAsync(const UpdateAuthorizerRequest& request, const UpdateAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAuthorizerAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::UpdateAuthorizerAsyncHelper(const UpdateAuthorizerRequest& request, const UpdateAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateAuthorizer(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateAuthorizer(request), context);
+    } );
 }
 
 UpdateDeploymentOutcome ApiGatewayV2Client::UpdateDeployment(const UpdateDeploymentRequest& request) const
@@ -2397,12 +2271,10 @@ UpdateDeploymentOutcomeCallable ApiGatewayV2Client::UpdateDeploymentCallable(con
 
 void ApiGatewayV2Client::UpdateDeploymentAsync(const UpdateDeploymentRequest& request, const UpdateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDeploymentAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::UpdateDeploymentAsyncHelper(const UpdateDeploymentRequest& request, const UpdateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateDeployment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateDeployment(request), context);
+    } );
 }
 
 UpdateDomainNameOutcome ApiGatewayV2Client::UpdateDomainName(const UpdateDomainNameRequest& request) const
@@ -2428,12 +2300,10 @@ UpdateDomainNameOutcomeCallable ApiGatewayV2Client::UpdateDomainNameCallable(con
 
 void ApiGatewayV2Client::UpdateDomainNameAsync(const UpdateDomainNameRequest& request, const UpdateDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDomainNameAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::UpdateDomainNameAsyncHelper(const UpdateDomainNameRequest& request, const UpdateDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateDomainName(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateDomainName(request), context);
+    } );
 }
 
 UpdateIntegrationOutcome ApiGatewayV2Client::UpdateIntegration(const UpdateIntegrationRequest& request) const
@@ -2466,12 +2336,10 @@ UpdateIntegrationOutcomeCallable ApiGatewayV2Client::UpdateIntegrationCallable(c
 
 void ApiGatewayV2Client::UpdateIntegrationAsync(const UpdateIntegrationRequest& request, const UpdateIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateIntegrationAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::UpdateIntegrationAsyncHelper(const UpdateIntegrationRequest& request, const UpdateIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateIntegration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateIntegration(request), context);
+    } );
 }
 
 UpdateIntegrationResponseOutcome ApiGatewayV2Client::UpdateIntegrationResponse(const UpdateIntegrationResponseRequest& request) const
@@ -2511,12 +2379,10 @@ UpdateIntegrationResponseOutcomeCallable ApiGatewayV2Client::UpdateIntegrationRe
 
 void ApiGatewayV2Client::UpdateIntegrationResponseAsync(const UpdateIntegrationResponseRequest& request, const UpdateIntegrationResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateIntegrationResponseAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::UpdateIntegrationResponseAsyncHelper(const UpdateIntegrationResponseRequest& request, const UpdateIntegrationResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateIntegrationResponse(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateIntegrationResponse(request), context);
+    } );
 }
 
 UpdateModelOutcome ApiGatewayV2Client::UpdateModel(const UpdateModelRequest& request) const
@@ -2549,12 +2415,10 @@ UpdateModelOutcomeCallable ApiGatewayV2Client::UpdateModelCallable(const UpdateM
 
 void ApiGatewayV2Client::UpdateModelAsync(const UpdateModelRequest& request, const UpdateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateModelAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::UpdateModelAsyncHelper(const UpdateModelRequest& request, const UpdateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateModel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateModel(request), context);
+    } );
 }
 
 UpdateRouteOutcome ApiGatewayV2Client::UpdateRoute(const UpdateRouteRequest& request) const
@@ -2587,12 +2451,10 @@ UpdateRouteOutcomeCallable ApiGatewayV2Client::UpdateRouteCallable(const UpdateR
 
 void ApiGatewayV2Client::UpdateRouteAsync(const UpdateRouteRequest& request, const UpdateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRouteAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::UpdateRouteAsyncHelper(const UpdateRouteRequest& request, const UpdateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateRoute(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateRoute(request), context);
+    } );
 }
 
 UpdateRouteResponseOutcome ApiGatewayV2Client::UpdateRouteResponse(const UpdateRouteResponseRequest& request) const
@@ -2632,12 +2494,10 @@ UpdateRouteResponseOutcomeCallable ApiGatewayV2Client::UpdateRouteResponseCallab
 
 void ApiGatewayV2Client::UpdateRouteResponseAsync(const UpdateRouteResponseRequest& request, const UpdateRouteResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRouteResponseAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::UpdateRouteResponseAsyncHelper(const UpdateRouteResponseRequest& request, const UpdateRouteResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateRouteResponse(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateRouteResponse(request), context);
+    } );
 }
 
 UpdateStageOutcome ApiGatewayV2Client::UpdateStage(const UpdateStageRequest& request) const
@@ -2670,12 +2530,10 @@ UpdateStageOutcomeCallable ApiGatewayV2Client::UpdateStageCallable(const UpdateS
 
 void ApiGatewayV2Client::UpdateStageAsync(const UpdateStageRequest& request, const UpdateStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateStageAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::UpdateStageAsyncHelper(const UpdateStageRequest& request, const UpdateStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateStage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateStage(request), context);
+    } );
 }
 
 UpdateVpcLinkOutcome ApiGatewayV2Client::UpdateVpcLink(const UpdateVpcLinkRequest& request) const
@@ -2701,11 +2559,9 @@ UpdateVpcLinkOutcomeCallable ApiGatewayV2Client::UpdateVpcLinkCallable(const Upd
 
 void ApiGatewayV2Client::UpdateVpcLinkAsync(const UpdateVpcLinkRequest& request, const UpdateVpcLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateVpcLinkAsyncHelper( request, handler, context ); } );
-}
-
-void ApiGatewayV2Client::UpdateVpcLinkAsyncHelper(const UpdateVpcLinkRequest& request, const UpdateVpcLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateVpcLink(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateVpcLink(request), context);
+    } );
 }
 

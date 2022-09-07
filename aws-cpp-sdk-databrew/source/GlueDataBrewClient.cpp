@@ -168,12 +168,10 @@ BatchDeleteRecipeVersionOutcomeCallable GlueDataBrewClient::BatchDeleteRecipeVer
 
 void GlueDataBrewClient::BatchDeleteRecipeVersionAsync(const BatchDeleteRecipeVersionRequest& request, const BatchDeleteRecipeVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchDeleteRecipeVersionAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::BatchDeleteRecipeVersionAsyncHelper(const BatchDeleteRecipeVersionRequest& request, const BatchDeleteRecipeVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchDeleteRecipeVersion(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchDeleteRecipeVersion(request), context);
+    } );
 }
 
 CreateDatasetOutcome GlueDataBrewClient::CreateDataset(const CreateDatasetRequest& request) const
@@ -193,12 +191,10 @@ CreateDatasetOutcomeCallable GlueDataBrewClient::CreateDatasetCallable(const Cre
 
 void GlueDataBrewClient::CreateDatasetAsync(const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDatasetAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::CreateDatasetAsyncHelper(const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateDataset(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateDataset(request), context);
+    } );
 }
 
 CreateProfileJobOutcome GlueDataBrewClient::CreateProfileJob(const CreateProfileJobRequest& request) const
@@ -218,12 +214,10 @@ CreateProfileJobOutcomeCallable GlueDataBrewClient::CreateProfileJobCallable(con
 
 void GlueDataBrewClient::CreateProfileJobAsync(const CreateProfileJobRequest& request, const CreateProfileJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateProfileJobAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::CreateProfileJobAsyncHelper(const CreateProfileJobRequest& request, const CreateProfileJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateProfileJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateProfileJob(request), context);
+    } );
 }
 
 CreateProjectOutcome GlueDataBrewClient::CreateProject(const CreateProjectRequest& request) const
@@ -243,12 +237,10 @@ CreateProjectOutcomeCallable GlueDataBrewClient::CreateProjectCallable(const Cre
 
 void GlueDataBrewClient::CreateProjectAsync(const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateProjectAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::CreateProjectAsyncHelper(const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateProject(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateProject(request), context);
+    } );
 }
 
 CreateRecipeOutcome GlueDataBrewClient::CreateRecipe(const CreateRecipeRequest& request) const
@@ -268,12 +260,10 @@ CreateRecipeOutcomeCallable GlueDataBrewClient::CreateRecipeCallable(const Creat
 
 void GlueDataBrewClient::CreateRecipeAsync(const CreateRecipeRequest& request, const CreateRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRecipeAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::CreateRecipeAsyncHelper(const CreateRecipeRequest& request, const CreateRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateRecipe(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateRecipe(request), context);
+    } );
 }
 
 CreateRecipeJobOutcome GlueDataBrewClient::CreateRecipeJob(const CreateRecipeJobRequest& request) const
@@ -293,12 +283,10 @@ CreateRecipeJobOutcomeCallable GlueDataBrewClient::CreateRecipeJobCallable(const
 
 void GlueDataBrewClient::CreateRecipeJobAsync(const CreateRecipeJobRequest& request, const CreateRecipeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRecipeJobAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::CreateRecipeJobAsyncHelper(const CreateRecipeJobRequest& request, const CreateRecipeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateRecipeJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateRecipeJob(request), context);
+    } );
 }
 
 CreateRulesetOutcome GlueDataBrewClient::CreateRuleset(const CreateRulesetRequest& request) const
@@ -318,12 +306,10 @@ CreateRulesetOutcomeCallable GlueDataBrewClient::CreateRulesetCallable(const Cre
 
 void GlueDataBrewClient::CreateRulesetAsync(const CreateRulesetRequest& request, const CreateRulesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRulesetAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::CreateRulesetAsyncHelper(const CreateRulesetRequest& request, const CreateRulesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateRuleset(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateRuleset(request), context);
+    } );
 }
 
 CreateScheduleOutcome GlueDataBrewClient::CreateSchedule(const CreateScheduleRequest& request) const
@@ -343,12 +329,10 @@ CreateScheduleOutcomeCallable GlueDataBrewClient::CreateScheduleCallable(const C
 
 void GlueDataBrewClient::CreateScheduleAsync(const CreateScheduleRequest& request, const CreateScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateScheduleAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::CreateScheduleAsyncHelper(const CreateScheduleRequest& request, const CreateScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateSchedule(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateSchedule(request), context);
+    } );
 }
 
 DeleteDatasetOutcome GlueDataBrewClient::DeleteDataset(const DeleteDatasetRequest& request) const
@@ -374,12 +358,10 @@ DeleteDatasetOutcomeCallable GlueDataBrewClient::DeleteDatasetCallable(const Del
 
 void GlueDataBrewClient::DeleteDatasetAsync(const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDatasetAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::DeleteDatasetAsyncHelper(const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteDataset(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteDataset(request), context);
+    } );
 }
 
 DeleteJobOutcome GlueDataBrewClient::DeleteJob(const DeleteJobRequest& request) const
@@ -405,12 +387,10 @@ DeleteJobOutcomeCallable GlueDataBrewClient::DeleteJobCallable(const DeleteJobRe
 
 void GlueDataBrewClient::DeleteJobAsync(const DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteJobAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::DeleteJobAsyncHelper(const DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteJob(request), context);
+    } );
 }
 
 DeleteProjectOutcome GlueDataBrewClient::DeleteProject(const DeleteProjectRequest& request) const
@@ -436,12 +416,10 @@ DeleteProjectOutcomeCallable GlueDataBrewClient::DeleteProjectCallable(const Del
 
 void GlueDataBrewClient::DeleteProjectAsync(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteProjectAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::DeleteProjectAsyncHelper(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteProject(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteProject(request), context);
+    } );
 }
 
 DeleteRecipeVersionOutcome GlueDataBrewClient::DeleteRecipeVersion(const DeleteRecipeVersionRequest& request) const
@@ -474,12 +452,10 @@ DeleteRecipeVersionOutcomeCallable GlueDataBrewClient::DeleteRecipeVersionCallab
 
 void GlueDataBrewClient::DeleteRecipeVersionAsync(const DeleteRecipeVersionRequest& request, const DeleteRecipeVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRecipeVersionAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::DeleteRecipeVersionAsyncHelper(const DeleteRecipeVersionRequest& request, const DeleteRecipeVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteRecipeVersion(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteRecipeVersion(request), context);
+    } );
 }
 
 DeleteRulesetOutcome GlueDataBrewClient::DeleteRuleset(const DeleteRulesetRequest& request) const
@@ -505,12 +481,10 @@ DeleteRulesetOutcomeCallable GlueDataBrewClient::DeleteRulesetCallable(const Del
 
 void GlueDataBrewClient::DeleteRulesetAsync(const DeleteRulesetRequest& request, const DeleteRulesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRulesetAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::DeleteRulesetAsyncHelper(const DeleteRulesetRequest& request, const DeleteRulesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteRuleset(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteRuleset(request), context);
+    } );
 }
 
 DeleteScheduleOutcome GlueDataBrewClient::DeleteSchedule(const DeleteScheduleRequest& request) const
@@ -536,12 +510,10 @@ DeleteScheduleOutcomeCallable GlueDataBrewClient::DeleteScheduleCallable(const D
 
 void GlueDataBrewClient::DeleteScheduleAsync(const DeleteScheduleRequest& request, const DeleteScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteScheduleAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::DeleteScheduleAsyncHelper(const DeleteScheduleRequest& request, const DeleteScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteSchedule(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteSchedule(request), context);
+    } );
 }
 
 DescribeDatasetOutcome GlueDataBrewClient::DescribeDataset(const DescribeDatasetRequest& request) const
@@ -567,12 +539,10 @@ DescribeDatasetOutcomeCallable GlueDataBrewClient::DescribeDatasetCallable(const
 
 void GlueDataBrewClient::DescribeDatasetAsync(const DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDatasetAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::DescribeDatasetAsyncHelper(const DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeDataset(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeDataset(request), context);
+    } );
 }
 
 DescribeJobOutcome GlueDataBrewClient::DescribeJob(const DescribeJobRequest& request) const
@@ -598,12 +568,10 @@ DescribeJobOutcomeCallable GlueDataBrewClient::DescribeJobCallable(const Describ
 
 void GlueDataBrewClient::DescribeJobAsync(const DescribeJobRequest& request, const DescribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeJobAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::DescribeJobAsyncHelper(const DescribeJobRequest& request, const DescribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeJob(request), context);
+    } );
 }
 
 DescribeJobRunOutcome GlueDataBrewClient::DescribeJobRun(const DescribeJobRunRequest& request) const
@@ -636,12 +604,10 @@ DescribeJobRunOutcomeCallable GlueDataBrewClient::DescribeJobRunCallable(const D
 
 void GlueDataBrewClient::DescribeJobRunAsync(const DescribeJobRunRequest& request, const DescribeJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeJobRunAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::DescribeJobRunAsyncHelper(const DescribeJobRunRequest& request, const DescribeJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeJobRun(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeJobRun(request), context);
+    } );
 }
 
 DescribeProjectOutcome GlueDataBrewClient::DescribeProject(const DescribeProjectRequest& request) const
@@ -667,12 +633,10 @@ DescribeProjectOutcomeCallable GlueDataBrewClient::DescribeProjectCallable(const
 
 void GlueDataBrewClient::DescribeProjectAsync(const DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeProjectAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::DescribeProjectAsyncHelper(const DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeProject(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeProject(request), context);
+    } );
 }
 
 DescribeRecipeOutcome GlueDataBrewClient::DescribeRecipe(const DescribeRecipeRequest& request) const
@@ -698,12 +662,10 @@ DescribeRecipeOutcomeCallable GlueDataBrewClient::DescribeRecipeCallable(const D
 
 void GlueDataBrewClient::DescribeRecipeAsync(const DescribeRecipeRequest& request, const DescribeRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRecipeAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::DescribeRecipeAsyncHelper(const DescribeRecipeRequest& request, const DescribeRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeRecipe(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeRecipe(request), context);
+    } );
 }
 
 DescribeRulesetOutcome GlueDataBrewClient::DescribeRuleset(const DescribeRulesetRequest& request) const
@@ -729,12 +691,10 @@ DescribeRulesetOutcomeCallable GlueDataBrewClient::DescribeRulesetCallable(const
 
 void GlueDataBrewClient::DescribeRulesetAsync(const DescribeRulesetRequest& request, const DescribeRulesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRulesetAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::DescribeRulesetAsyncHelper(const DescribeRulesetRequest& request, const DescribeRulesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeRuleset(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeRuleset(request), context);
+    } );
 }
 
 DescribeScheduleOutcome GlueDataBrewClient::DescribeSchedule(const DescribeScheduleRequest& request) const
@@ -760,12 +720,10 @@ DescribeScheduleOutcomeCallable GlueDataBrewClient::DescribeScheduleCallable(con
 
 void GlueDataBrewClient::DescribeScheduleAsync(const DescribeScheduleRequest& request, const DescribeScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeScheduleAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::DescribeScheduleAsyncHelper(const DescribeScheduleRequest& request, const DescribeScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeSchedule(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeSchedule(request), context);
+    } );
 }
 
 ListDatasetsOutcome GlueDataBrewClient::ListDatasets(const ListDatasetsRequest& request) const
@@ -785,12 +743,10 @@ ListDatasetsOutcomeCallable GlueDataBrewClient::ListDatasetsCallable(const ListD
 
 void GlueDataBrewClient::ListDatasetsAsync(const ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDatasetsAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::ListDatasetsAsyncHelper(const ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDatasets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDatasets(request), context);
+    } );
 }
 
 ListJobRunsOutcome GlueDataBrewClient::ListJobRuns(const ListJobRunsRequest& request) const
@@ -817,12 +773,10 @@ ListJobRunsOutcomeCallable GlueDataBrewClient::ListJobRunsCallable(const ListJob
 
 void GlueDataBrewClient::ListJobRunsAsync(const ListJobRunsRequest& request, const ListJobRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListJobRunsAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::ListJobRunsAsyncHelper(const ListJobRunsRequest& request, const ListJobRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListJobRuns(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListJobRuns(request), context);
+    } );
 }
 
 ListJobsOutcome GlueDataBrewClient::ListJobs(const ListJobsRequest& request) const
@@ -842,12 +796,10 @@ ListJobsOutcomeCallable GlueDataBrewClient::ListJobsCallable(const ListJobsReque
 
 void GlueDataBrewClient::ListJobsAsync(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListJobsAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::ListJobsAsyncHelper(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListJobs(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListJobs(request), context);
+    } );
 }
 
 ListProjectsOutcome GlueDataBrewClient::ListProjects(const ListProjectsRequest& request) const
@@ -867,12 +819,10 @@ ListProjectsOutcomeCallable GlueDataBrewClient::ListProjectsCallable(const ListP
 
 void GlueDataBrewClient::ListProjectsAsync(const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListProjectsAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::ListProjectsAsyncHelper(const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListProjects(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListProjects(request), context);
+    } );
 }
 
 ListRecipeVersionsOutcome GlueDataBrewClient::ListRecipeVersions(const ListRecipeVersionsRequest& request) const
@@ -897,12 +847,10 @@ ListRecipeVersionsOutcomeCallable GlueDataBrewClient::ListRecipeVersionsCallable
 
 void GlueDataBrewClient::ListRecipeVersionsAsync(const ListRecipeVersionsRequest& request, const ListRecipeVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRecipeVersionsAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::ListRecipeVersionsAsyncHelper(const ListRecipeVersionsRequest& request, const ListRecipeVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListRecipeVersions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListRecipeVersions(request), context);
+    } );
 }
 
 ListRecipesOutcome GlueDataBrewClient::ListRecipes(const ListRecipesRequest& request) const
@@ -922,12 +870,10 @@ ListRecipesOutcomeCallable GlueDataBrewClient::ListRecipesCallable(const ListRec
 
 void GlueDataBrewClient::ListRecipesAsync(const ListRecipesRequest& request, const ListRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRecipesAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::ListRecipesAsyncHelper(const ListRecipesRequest& request, const ListRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListRecipes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListRecipes(request), context);
+    } );
 }
 
 ListRulesetsOutcome GlueDataBrewClient::ListRulesets(const ListRulesetsRequest& request) const
@@ -947,12 +893,10 @@ ListRulesetsOutcomeCallable GlueDataBrewClient::ListRulesetsCallable(const ListR
 
 void GlueDataBrewClient::ListRulesetsAsync(const ListRulesetsRequest& request, const ListRulesetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRulesetsAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::ListRulesetsAsyncHelper(const ListRulesetsRequest& request, const ListRulesetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListRulesets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListRulesets(request), context);
+    } );
 }
 
 ListSchedulesOutcome GlueDataBrewClient::ListSchedules(const ListSchedulesRequest& request) const
@@ -972,12 +916,10 @@ ListSchedulesOutcomeCallable GlueDataBrewClient::ListSchedulesCallable(const Lis
 
 void GlueDataBrewClient::ListSchedulesAsync(const ListSchedulesRequest& request, const ListSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSchedulesAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::ListSchedulesAsyncHelper(const ListSchedulesRequest& request, const ListSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListSchedules(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListSchedules(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome GlueDataBrewClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1003,12 +945,10 @@ ListTagsForResourceOutcomeCallable GlueDataBrewClient::ListTagsForResourceCallab
 
 void GlueDataBrewClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 PublishRecipeOutcome GlueDataBrewClient::PublishRecipe(const PublishRecipeRequest& request) const
@@ -1035,12 +975,10 @@ PublishRecipeOutcomeCallable GlueDataBrewClient::PublishRecipeCallable(const Pub
 
 void GlueDataBrewClient::PublishRecipeAsync(const PublishRecipeRequest& request, const PublishRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PublishRecipeAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::PublishRecipeAsyncHelper(const PublishRecipeRequest& request, const PublishRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PublishRecipe(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PublishRecipe(request), context);
+    } );
 }
 
 SendProjectSessionActionOutcome GlueDataBrewClient::SendProjectSessionAction(const SendProjectSessionActionRequest& request) const
@@ -1067,12 +1005,10 @@ SendProjectSessionActionOutcomeCallable GlueDataBrewClient::SendProjectSessionAc
 
 void GlueDataBrewClient::SendProjectSessionActionAsync(const SendProjectSessionActionRequest& request, const SendProjectSessionActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendProjectSessionActionAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::SendProjectSessionActionAsyncHelper(const SendProjectSessionActionRequest& request, const SendProjectSessionActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SendProjectSessionAction(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SendProjectSessionAction(request), context);
+    } );
 }
 
 StartJobRunOutcome GlueDataBrewClient::StartJobRun(const StartJobRunRequest& request) const
@@ -1099,12 +1035,10 @@ StartJobRunOutcomeCallable GlueDataBrewClient::StartJobRunCallable(const StartJo
 
 void GlueDataBrewClient::StartJobRunAsync(const StartJobRunRequest& request, const StartJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartJobRunAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::StartJobRunAsyncHelper(const StartJobRunRequest& request, const StartJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartJobRun(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartJobRun(request), context);
+    } );
 }
 
 StartProjectSessionOutcome GlueDataBrewClient::StartProjectSession(const StartProjectSessionRequest& request) const
@@ -1131,12 +1065,10 @@ StartProjectSessionOutcomeCallable GlueDataBrewClient::StartProjectSessionCallab
 
 void GlueDataBrewClient::StartProjectSessionAsync(const StartProjectSessionRequest& request, const StartProjectSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartProjectSessionAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::StartProjectSessionAsyncHelper(const StartProjectSessionRequest& request, const StartProjectSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartProjectSession(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartProjectSession(request), context);
+    } );
 }
 
 StopJobRunOutcome GlueDataBrewClient::StopJobRun(const StopJobRunRequest& request) const
@@ -1170,12 +1102,10 @@ StopJobRunOutcomeCallable GlueDataBrewClient::StopJobRunCallable(const StopJobRu
 
 void GlueDataBrewClient::StopJobRunAsync(const StopJobRunRequest& request, const StopJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopJobRunAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::StopJobRunAsyncHelper(const StopJobRunRequest& request, const StopJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StopJobRun(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopJobRun(request), context);
+    } );
 }
 
 TagResourceOutcome GlueDataBrewClient::TagResource(const TagResourceRequest& request) const
@@ -1201,12 +1131,10 @@ TagResourceOutcomeCallable GlueDataBrewClient::TagResourceCallable(const TagReso
 
 void GlueDataBrewClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome GlueDataBrewClient::UntagResource(const UntagResourceRequest& request) const
@@ -1237,12 +1165,10 @@ UntagResourceOutcomeCallable GlueDataBrewClient::UntagResourceCallable(const Unt
 
 void GlueDataBrewClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateDatasetOutcome GlueDataBrewClient::UpdateDataset(const UpdateDatasetRequest& request) const
@@ -1268,12 +1194,10 @@ UpdateDatasetOutcomeCallable GlueDataBrewClient::UpdateDatasetCallable(const Upd
 
 void GlueDataBrewClient::UpdateDatasetAsync(const UpdateDatasetRequest& request, const UpdateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDatasetAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::UpdateDatasetAsyncHelper(const UpdateDatasetRequest& request, const UpdateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateDataset(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateDataset(request), context);
+    } );
 }
 
 UpdateProfileJobOutcome GlueDataBrewClient::UpdateProfileJob(const UpdateProfileJobRequest& request) const
@@ -1299,12 +1223,10 @@ UpdateProfileJobOutcomeCallable GlueDataBrewClient::UpdateProfileJobCallable(con
 
 void GlueDataBrewClient::UpdateProfileJobAsync(const UpdateProfileJobRequest& request, const UpdateProfileJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateProfileJobAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::UpdateProfileJobAsyncHelper(const UpdateProfileJobRequest& request, const UpdateProfileJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateProfileJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateProfileJob(request), context);
+    } );
 }
 
 UpdateProjectOutcome GlueDataBrewClient::UpdateProject(const UpdateProjectRequest& request) const
@@ -1330,12 +1252,10 @@ UpdateProjectOutcomeCallable GlueDataBrewClient::UpdateProjectCallable(const Upd
 
 void GlueDataBrewClient::UpdateProjectAsync(const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateProjectAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::UpdateProjectAsyncHelper(const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateProject(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateProject(request), context);
+    } );
 }
 
 UpdateRecipeOutcome GlueDataBrewClient::UpdateRecipe(const UpdateRecipeRequest& request) const
@@ -1361,12 +1281,10 @@ UpdateRecipeOutcomeCallable GlueDataBrewClient::UpdateRecipeCallable(const Updat
 
 void GlueDataBrewClient::UpdateRecipeAsync(const UpdateRecipeRequest& request, const UpdateRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRecipeAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::UpdateRecipeAsyncHelper(const UpdateRecipeRequest& request, const UpdateRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateRecipe(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateRecipe(request), context);
+    } );
 }
 
 UpdateRecipeJobOutcome GlueDataBrewClient::UpdateRecipeJob(const UpdateRecipeJobRequest& request) const
@@ -1392,12 +1310,10 @@ UpdateRecipeJobOutcomeCallable GlueDataBrewClient::UpdateRecipeJobCallable(const
 
 void GlueDataBrewClient::UpdateRecipeJobAsync(const UpdateRecipeJobRequest& request, const UpdateRecipeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRecipeJobAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::UpdateRecipeJobAsyncHelper(const UpdateRecipeJobRequest& request, const UpdateRecipeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateRecipeJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateRecipeJob(request), context);
+    } );
 }
 
 UpdateRulesetOutcome GlueDataBrewClient::UpdateRuleset(const UpdateRulesetRequest& request) const
@@ -1423,12 +1339,10 @@ UpdateRulesetOutcomeCallable GlueDataBrewClient::UpdateRulesetCallable(const Upd
 
 void GlueDataBrewClient::UpdateRulesetAsync(const UpdateRulesetRequest& request, const UpdateRulesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRulesetAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::UpdateRulesetAsyncHelper(const UpdateRulesetRequest& request, const UpdateRulesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateRuleset(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateRuleset(request), context);
+    } );
 }
 
 UpdateScheduleOutcome GlueDataBrewClient::UpdateSchedule(const UpdateScheduleRequest& request) const
@@ -1454,11 +1368,9 @@ UpdateScheduleOutcomeCallable GlueDataBrewClient::UpdateScheduleCallable(const U
 
 void GlueDataBrewClient::UpdateScheduleAsync(const UpdateScheduleRequest& request, const UpdateScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateScheduleAsyncHelper( request, handler, context ); } );
-}
-
-void GlueDataBrewClient::UpdateScheduleAsyncHelper(const UpdateScheduleRequest& request, const UpdateScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateSchedule(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateSchedule(request), context);
+    } );
 }
 

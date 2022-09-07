@@ -179,12 +179,10 @@ AssociateFirewallRuleGroupOutcomeCallable Route53ResolverClient::AssociateFirewa
 
 void Route53ResolverClient::AssociateFirewallRuleGroupAsync(const AssociateFirewallRuleGroupRequest& request, const AssociateFirewallRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateFirewallRuleGroupAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::AssociateFirewallRuleGroupAsyncHelper(const AssociateFirewallRuleGroupRequest& request, const AssociateFirewallRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateFirewallRuleGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateFirewallRuleGroup(request), context);
+    } );
 }
 
 AssociateResolverEndpointIpAddressOutcome Route53ResolverClient::AssociateResolverEndpointIpAddress(const AssociateResolverEndpointIpAddressRequest& request) const
@@ -203,12 +201,10 @@ AssociateResolverEndpointIpAddressOutcomeCallable Route53ResolverClient::Associa
 
 void Route53ResolverClient::AssociateResolverEndpointIpAddressAsync(const AssociateResolverEndpointIpAddressRequest& request, const AssociateResolverEndpointIpAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateResolverEndpointIpAddressAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::AssociateResolverEndpointIpAddressAsyncHelper(const AssociateResolverEndpointIpAddressRequest& request, const AssociateResolverEndpointIpAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateResolverEndpointIpAddress(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateResolverEndpointIpAddress(request), context);
+    } );
 }
 
 AssociateResolverQueryLogConfigOutcome Route53ResolverClient::AssociateResolverQueryLogConfig(const AssociateResolverQueryLogConfigRequest& request) const
@@ -227,12 +223,10 @@ AssociateResolverQueryLogConfigOutcomeCallable Route53ResolverClient::AssociateR
 
 void Route53ResolverClient::AssociateResolverQueryLogConfigAsync(const AssociateResolverQueryLogConfigRequest& request, const AssociateResolverQueryLogConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateResolverQueryLogConfigAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::AssociateResolverQueryLogConfigAsyncHelper(const AssociateResolverQueryLogConfigRequest& request, const AssociateResolverQueryLogConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateResolverQueryLogConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateResolverQueryLogConfig(request), context);
+    } );
 }
 
 AssociateResolverRuleOutcome Route53ResolverClient::AssociateResolverRule(const AssociateResolverRuleRequest& request) const
@@ -251,12 +245,10 @@ AssociateResolverRuleOutcomeCallable Route53ResolverClient::AssociateResolverRul
 
 void Route53ResolverClient::AssociateResolverRuleAsync(const AssociateResolverRuleRequest& request, const AssociateResolverRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateResolverRuleAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::AssociateResolverRuleAsyncHelper(const AssociateResolverRuleRequest& request, const AssociateResolverRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateResolverRule(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateResolverRule(request), context);
+    } );
 }
 
 CreateFirewallDomainListOutcome Route53ResolverClient::CreateFirewallDomainList(const CreateFirewallDomainListRequest& request) const
@@ -275,12 +267,10 @@ CreateFirewallDomainListOutcomeCallable Route53ResolverClient::CreateFirewallDom
 
 void Route53ResolverClient::CreateFirewallDomainListAsync(const CreateFirewallDomainListRequest& request, const CreateFirewallDomainListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFirewallDomainListAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::CreateFirewallDomainListAsyncHelper(const CreateFirewallDomainListRequest& request, const CreateFirewallDomainListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateFirewallDomainList(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateFirewallDomainList(request), context);
+    } );
 }
 
 CreateFirewallRuleOutcome Route53ResolverClient::CreateFirewallRule(const CreateFirewallRuleRequest& request) const
@@ -299,12 +289,10 @@ CreateFirewallRuleOutcomeCallable Route53ResolverClient::CreateFirewallRuleCalla
 
 void Route53ResolverClient::CreateFirewallRuleAsync(const CreateFirewallRuleRequest& request, const CreateFirewallRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFirewallRuleAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::CreateFirewallRuleAsyncHelper(const CreateFirewallRuleRequest& request, const CreateFirewallRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateFirewallRule(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateFirewallRule(request), context);
+    } );
 }
 
 CreateFirewallRuleGroupOutcome Route53ResolverClient::CreateFirewallRuleGroup(const CreateFirewallRuleGroupRequest& request) const
@@ -323,12 +311,10 @@ CreateFirewallRuleGroupOutcomeCallable Route53ResolverClient::CreateFirewallRule
 
 void Route53ResolverClient::CreateFirewallRuleGroupAsync(const CreateFirewallRuleGroupRequest& request, const CreateFirewallRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFirewallRuleGroupAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::CreateFirewallRuleGroupAsyncHelper(const CreateFirewallRuleGroupRequest& request, const CreateFirewallRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateFirewallRuleGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateFirewallRuleGroup(request), context);
+    } );
 }
 
 CreateResolverEndpointOutcome Route53ResolverClient::CreateResolverEndpoint(const CreateResolverEndpointRequest& request) const
@@ -347,12 +333,10 @@ CreateResolverEndpointOutcomeCallable Route53ResolverClient::CreateResolverEndpo
 
 void Route53ResolverClient::CreateResolverEndpointAsync(const CreateResolverEndpointRequest& request, const CreateResolverEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateResolverEndpointAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::CreateResolverEndpointAsyncHelper(const CreateResolverEndpointRequest& request, const CreateResolverEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateResolverEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateResolverEndpoint(request), context);
+    } );
 }
 
 CreateResolverQueryLogConfigOutcome Route53ResolverClient::CreateResolverQueryLogConfig(const CreateResolverQueryLogConfigRequest& request) const
@@ -371,12 +355,10 @@ CreateResolverQueryLogConfigOutcomeCallable Route53ResolverClient::CreateResolve
 
 void Route53ResolverClient::CreateResolverQueryLogConfigAsync(const CreateResolverQueryLogConfigRequest& request, const CreateResolverQueryLogConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateResolverQueryLogConfigAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::CreateResolverQueryLogConfigAsyncHelper(const CreateResolverQueryLogConfigRequest& request, const CreateResolverQueryLogConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateResolverQueryLogConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateResolverQueryLogConfig(request), context);
+    } );
 }
 
 CreateResolverRuleOutcome Route53ResolverClient::CreateResolverRule(const CreateResolverRuleRequest& request) const
@@ -395,12 +377,10 @@ CreateResolverRuleOutcomeCallable Route53ResolverClient::CreateResolverRuleCalla
 
 void Route53ResolverClient::CreateResolverRuleAsync(const CreateResolverRuleRequest& request, const CreateResolverRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateResolverRuleAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::CreateResolverRuleAsyncHelper(const CreateResolverRuleRequest& request, const CreateResolverRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateResolverRule(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateResolverRule(request), context);
+    } );
 }
 
 DeleteFirewallDomainListOutcome Route53ResolverClient::DeleteFirewallDomainList(const DeleteFirewallDomainListRequest& request) const
@@ -419,12 +399,10 @@ DeleteFirewallDomainListOutcomeCallable Route53ResolverClient::DeleteFirewallDom
 
 void Route53ResolverClient::DeleteFirewallDomainListAsync(const DeleteFirewallDomainListRequest& request, const DeleteFirewallDomainListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFirewallDomainListAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::DeleteFirewallDomainListAsyncHelper(const DeleteFirewallDomainListRequest& request, const DeleteFirewallDomainListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteFirewallDomainList(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteFirewallDomainList(request), context);
+    } );
 }
 
 DeleteFirewallRuleOutcome Route53ResolverClient::DeleteFirewallRule(const DeleteFirewallRuleRequest& request) const
@@ -443,12 +421,10 @@ DeleteFirewallRuleOutcomeCallable Route53ResolverClient::DeleteFirewallRuleCalla
 
 void Route53ResolverClient::DeleteFirewallRuleAsync(const DeleteFirewallRuleRequest& request, const DeleteFirewallRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFirewallRuleAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::DeleteFirewallRuleAsyncHelper(const DeleteFirewallRuleRequest& request, const DeleteFirewallRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteFirewallRule(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteFirewallRule(request), context);
+    } );
 }
 
 DeleteFirewallRuleGroupOutcome Route53ResolverClient::DeleteFirewallRuleGroup(const DeleteFirewallRuleGroupRequest& request) const
@@ -467,12 +443,10 @@ DeleteFirewallRuleGroupOutcomeCallable Route53ResolverClient::DeleteFirewallRule
 
 void Route53ResolverClient::DeleteFirewallRuleGroupAsync(const DeleteFirewallRuleGroupRequest& request, const DeleteFirewallRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFirewallRuleGroupAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::DeleteFirewallRuleGroupAsyncHelper(const DeleteFirewallRuleGroupRequest& request, const DeleteFirewallRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteFirewallRuleGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteFirewallRuleGroup(request), context);
+    } );
 }
 
 DeleteResolverEndpointOutcome Route53ResolverClient::DeleteResolverEndpoint(const DeleteResolverEndpointRequest& request) const
@@ -491,12 +465,10 @@ DeleteResolverEndpointOutcomeCallable Route53ResolverClient::DeleteResolverEndpo
 
 void Route53ResolverClient::DeleteResolverEndpointAsync(const DeleteResolverEndpointRequest& request, const DeleteResolverEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteResolverEndpointAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::DeleteResolverEndpointAsyncHelper(const DeleteResolverEndpointRequest& request, const DeleteResolverEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteResolverEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteResolverEndpoint(request), context);
+    } );
 }
 
 DeleteResolverQueryLogConfigOutcome Route53ResolverClient::DeleteResolverQueryLogConfig(const DeleteResolverQueryLogConfigRequest& request) const
@@ -515,12 +487,10 @@ DeleteResolverQueryLogConfigOutcomeCallable Route53ResolverClient::DeleteResolve
 
 void Route53ResolverClient::DeleteResolverQueryLogConfigAsync(const DeleteResolverQueryLogConfigRequest& request, const DeleteResolverQueryLogConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteResolverQueryLogConfigAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::DeleteResolverQueryLogConfigAsyncHelper(const DeleteResolverQueryLogConfigRequest& request, const DeleteResolverQueryLogConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteResolverQueryLogConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteResolverQueryLogConfig(request), context);
+    } );
 }
 
 DeleteResolverRuleOutcome Route53ResolverClient::DeleteResolverRule(const DeleteResolverRuleRequest& request) const
@@ -539,12 +509,10 @@ DeleteResolverRuleOutcomeCallable Route53ResolverClient::DeleteResolverRuleCalla
 
 void Route53ResolverClient::DeleteResolverRuleAsync(const DeleteResolverRuleRequest& request, const DeleteResolverRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteResolverRuleAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::DeleteResolverRuleAsyncHelper(const DeleteResolverRuleRequest& request, const DeleteResolverRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteResolverRule(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteResolverRule(request), context);
+    } );
 }
 
 DisassociateFirewallRuleGroupOutcome Route53ResolverClient::DisassociateFirewallRuleGroup(const DisassociateFirewallRuleGroupRequest& request) const
@@ -563,12 +531,10 @@ DisassociateFirewallRuleGroupOutcomeCallable Route53ResolverClient::Disassociate
 
 void Route53ResolverClient::DisassociateFirewallRuleGroupAsync(const DisassociateFirewallRuleGroupRequest& request, const DisassociateFirewallRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateFirewallRuleGroupAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::DisassociateFirewallRuleGroupAsyncHelper(const DisassociateFirewallRuleGroupRequest& request, const DisassociateFirewallRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateFirewallRuleGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateFirewallRuleGroup(request), context);
+    } );
 }
 
 DisassociateResolverEndpointIpAddressOutcome Route53ResolverClient::DisassociateResolverEndpointIpAddress(const DisassociateResolverEndpointIpAddressRequest& request) const
@@ -587,12 +553,10 @@ DisassociateResolverEndpointIpAddressOutcomeCallable Route53ResolverClient::Disa
 
 void Route53ResolverClient::DisassociateResolverEndpointIpAddressAsync(const DisassociateResolverEndpointIpAddressRequest& request, const DisassociateResolverEndpointIpAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateResolverEndpointIpAddressAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::DisassociateResolverEndpointIpAddressAsyncHelper(const DisassociateResolverEndpointIpAddressRequest& request, const DisassociateResolverEndpointIpAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateResolverEndpointIpAddress(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateResolverEndpointIpAddress(request), context);
+    } );
 }
 
 DisassociateResolverQueryLogConfigOutcome Route53ResolverClient::DisassociateResolverQueryLogConfig(const DisassociateResolverQueryLogConfigRequest& request) const
@@ -611,12 +575,10 @@ DisassociateResolverQueryLogConfigOutcomeCallable Route53ResolverClient::Disasso
 
 void Route53ResolverClient::DisassociateResolverQueryLogConfigAsync(const DisassociateResolverQueryLogConfigRequest& request, const DisassociateResolverQueryLogConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateResolverQueryLogConfigAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::DisassociateResolverQueryLogConfigAsyncHelper(const DisassociateResolverQueryLogConfigRequest& request, const DisassociateResolverQueryLogConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateResolverQueryLogConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateResolverQueryLogConfig(request), context);
+    } );
 }
 
 DisassociateResolverRuleOutcome Route53ResolverClient::DisassociateResolverRule(const DisassociateResolverRuleRequest& request) const
@@ -635,12 +597,10 @@ DisassociateResolverRuleOutcomeCallable Route53ResolverClient::DisassociateResol
 
 void Route53ResolverClient::DisassociateResolverRuleAsync(const DisassociateResolverRuleRequest& request, const DisassociateResolverRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateResolverRuleAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::DisassociateResolverRuleAsyncHelper(const DisassociateResolverRuleRequest& request, const DisassociateResolverRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateResolverRule(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateResolverRule(request), context);
+    } );
 }
 
 GetFirewallConfigOutcome Route53ResolverClient::GetFirewallConfig(const GetFirewallConfigRequest& request) const
@@ -659,12 +619,10 @@ GetFirewallConfigOutcomeCallable Route53ResolverClient::GetFirewallConfigCallabl
 
 void Route53ResolverClient::GetFirewallConfigAsync(const GetFirewallConfigRequest& request, const GetFirewallConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFirewallConfigAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::GetFirewallConfigAsyncHelper(const GetFirewallConfigRequest& request, const GetFirewallConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetFirewallConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetFirewallConfig(request), context);
+    } );
 }
 
 GetFirewallDomainListOutcome Route53ResolverClient::GetFirewallDomainList(const GetFirewallDomainListRequest& request) const
@@ -683,12 +641,10 @@ GetFirewallDomainListOutcomeCallable Route53ResolverClient::GetFirewallDomainLis
 
 void Route53ResolverClient::GetFirewallDomainListAsync(const GetFirewallDomainListRequest& request, const GetFirewallDomainListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFirewallDomainListAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::GetFirewallDomainListAsyncHelper(const GetFirewallDomainListRequest& request, const GetFirewallDomainListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetFirewallDomainList(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetFirewallDomainList(request), context);
+    } );
 }
 
 GetFirewallRuleGroupOutcome Route53ResolverClient::GetFirewallRuleGroup(const GetFirewallRuleGroupRequest& request) const
@@ -707,12 +663,10 @@ GetFirewallRuleGroupOutcomeCallable Route53ResolverClient::GetFirewallRuleGroupC
 
 void Route53ResolverClient::GetFirewallRuleGroupAsync(const GetFirewallRuleGroupRequest& request, const GetFirewallRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFirewallRuleGroupAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::GetFirewallRuleGroupAsyncHelper(const GetFirewallRuleGroupRequest& request, const GetFirewallRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetFirewallRuleGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetFirewallRuleGroup(request), context);
+    } );
 }
 
 GetFirewallRuleGroupAssociationOutcome Route53ResolverClient::GetFirewallRuleGroupAssociation(const GetFirewallRuleGroupAssociationRequest& request) const
@@ -731,12 +685,10 @@ GetFirewallRuleGroupAssociationOutcomeCallable Route53ResolverClient::GetFirewal
 
 void Route53ResolverClient::GetFirewallRuleGroupAssociationAsync(const GetFirewallRuleGroupAssociationRequest& request, const GetFirewallRuleGroupAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFirewallRuleGroupAssociationAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::GetFirewallRuleGroupAssociationAsyncHelper(const GetFirewallRuleGroupAssociationRequest& request, const GetFirewallRuleGroupAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetFirewallRuleGroupAssociation(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetFirewallRuleGroupAssociation(request), context);
+    } );
 }
 
 GetFirewallRuleGroupPolicyOutcome Route53ResolverClient::GetFirewallRuleGroupPolicy(const GetFirewallRuleGroupPolicyRequest& request) const
@@ -755,12 +707,10 @@ GetFirewallRuleGroupPolicyOutcomeCallable Route53ResolverClient::GetFirewallRule
 
 void Route53ResolverClient::GetFirewallRuleGroupPolicyAsync(const GetFirewallRuleGroupPolicyRequest& request, const GetFirewallRuleGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFirewallRuleGroupPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::GetFirewallRuleGroupPolicyAsyncHelper(const GetFirewallRuleGroupPolicyRequest& request, const GetFirewallRuleGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetFirewallRuleGroupPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetFirewallRuleGroupPolicy(request), context);
+    } );
 }
 
 GetResolverConfigOutcome Route53ResolverClient::GetResolverConfig(const GetResolverConfigRequest& request) const
@@ -779,12 +729,10 @@ GetResolverConfigOutcomeCallable Route53ResolverClient::GetResolverConfigCallabl
 
 void Route53ResolverClient::GetResolverConfigAsync(const GetResolverConfigRequest& request, const GetResolverConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResolverConfigAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::GetResolverConfigAsyncHelper(const GetResolverConfigRequest& request, const GetResolverConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetResolverConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetResolverConfig(request), context);
+    } );
 }
 
 GetResolverDnssecConfigOutcome Route53ResolverClient::GetResolverDnssecConfig(const GetResolverDnssecConfigRequest& request) const
@@ -803,12 +751,10 @@ GetResolverDnssecConfigOutcomeCallable Route53ResolverClient::GetResolverDnssecC
 
 void Route53ResolverClient::GetResolverDnssecConfigAsync(const GetResolverDnssecConfigRequest& request, const GetResolverDnssecConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResolverDnssecConfigAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::GetResolverDnssecConfigAsyncHelper(const GetResolverDnssecConfigRequest& request, const GetResolverDnssecConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetResolverDnssecConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetResolverDnssecConfig(request), context);
+    } );
 }
 
 GetResolverEndpointOutcome Route53ResolverClient::GetResolverEndpoint(const GetResolverEndpointRequest& request) const
@@ -827,12 +773,10 @@ GetResolverEndpointOutcomeCallable Route53ResolverClient::GetResolverEndpointCal
 
 void Route53ResolverClient::GetResolverEndpointAsync(const GetResolverEndpointRequest& request, const GetResolverEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResolverEndpointAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::GetResolverEndpointAsyncHelper(const GetResolverEndpointRequest& request, const GetResolverEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetResolverEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetResolverEndpoint(request), context);
+    } );
 }
 
 GetResolverQueryLogConfigOutcome Route53ResolverClient::GetResolverQueryLogConfig(const GetResolverQueryLogConfigRequest& request) const
@@ -851,12 +795,10 @@ GetResolverQueryLogConfigOutcomeCallable Route53ResolverClient::GetResolverQuery
 
 void Route53ResolverClient::GetResolverQueryLogConfigAsync(const GetResolverQueryLogConfigRequest& request, const GetResolverQueryLogConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResolverQueryLogConfigAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::GetResolverQueryLogConfigAsyncHelper(const GetResolverQueryLogConfigRequest& request, const GetResolverQueryLogConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetResolverQueryLogConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetResolverQueryLogConfig(request), context);
+    } );
 }
 
 GetResolverQueryLogConfigAssociationOutcome Route53ResolverClient::GetResolverQueryLogConfigAssociation(const GetResolverQueryLogConfigAssociationRequest& request) const
@@ -875,12 +817,10 @@ GetResolverQueryLogConfigAssociationOutcomeCallable Route53ResolverClient::GetRe
 
 void Route53ResolverClient::GetResolverQueryLogConfigAssociationAsync(const GetResolverQueryLogConfigAssociationRequest& request, const GetResolverQueryLogConfigAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResolverQueryLogConfigAssociationAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::GetResolverQueryLogConfigAssociationAsyncHelper(const GetResolverQueryLogConfigAssociationRequest& request, const GetResolverQueryLogConfigAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetResolverQueryLogConfigAssociation(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetResolverQueryLogConfigAssociation(request), context);
+    } );
 }
 
 GetResolverQueryLogConfigPolicyOutcome Route53ResolverClient::GetResolverQueryLogConfigPolicy(const GetResolverQueryLogConfigPolicyRequest& request) const
@@ -899,12 +839,10 @@ GetResolverQueryLogConfigPolicyOutcomeCallable Route53ResolverClient::GetResolve
 
 void Route53ResolverClient::GetResolverQueryLogConfigPolicyAsync(const GetResolverQueryLogConfigPolicyRequest& request, const GetResolverQueryLogConfigPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResolverQueryLogConfigPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::GetResolverQueryLogConfigPolicyAsyncHelper(const GetResolverQueryLogConfigPolicyRequest& request, const GetResolverQueryLogConfigPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetResolverQueryLogConfigPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetResolverQueryLogConfigPolicy(request), context);
+    } );
 }
 
 GetResolverRuleOutcome Route53ResolverClient::GetResolverRule(const GetResolverRuleRequest& request) const
@@ -923,12 +861,10 @@ GetResolverRuleOutcomeCallable Route53ResolverClient::GetResolverRuleCallable(co
 
 void Route53ResolverClient::GetResolverRuleAsync(const GetResolverRuleRequest& request, const GetResolverRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResolverRuleAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::GetResolverRuleAsyncHelper(const GetResolverRuleRequest& request, const GetResolverRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetResolverRule(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetResolverRule(request), context);
+    } );
 }
 
 GetResolverRuleAssociationOutcome Route53ResolverClient::GetResolverRuleAssociation(const GetResolverRuleAssociationRequest& request) const
@@ -947,12 +883,10 @@ GetResolverRuleAssociationOutcomeCallable Route53ResolverClient::GetResolverRule
 
 void Route53ResolverClient::GetResolverRuleAssociationAsync(const GetResolverRuleAssociationRequest& request, const GetResolverRuleAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResolverRuleAssociationAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::GetResolverRuleAssociationAsyncHelper(const GetResolverRuleAssociationRequest& request, const GetResolverRuleAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetResolverRuleAssociation(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetResolverRuleAssociation(request), context);
+    } );
 }
 
 GetResolverRulePolicyOutcome Route53ResolverClient::GetResolverRulePolicy(const GetResolverRulePolicyRequest& request) const
@@ -971,12 +905,10 @@ GetResolverRulePolicyOutcomeCallable Route53ResolverClient::GetResolverRulePolic
 
 void Route53ResolverClient::GetResolverRulePolicyAsync(const GetResolverRulePolicyRequest& request, const GetResolverRulePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResolverRulePolicyAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::GetResolverRulePolicyAsyncHelper(const GetResolverRulePolicyRequest& request, const GetResolverRulePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetResolverRulePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetResolverRulePolicy(request), context);
+    } );
 }
 
 ImportFirewallDomainsOutcome Route53ResolverClient::ImportFirewallDomains(const ImportFirewallDomainsRequest& request) const
@@ -995,12 +927,10 @@ ImportFirewallDomainsOutcomeCallable Route53ResolverClient::ImportFirewallDomain
 
 void Route53ResolverClient::ImportFirewallDomainsAsync(const ImportFirewallDomainsRequest& request, const ImportFirewallDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportFirewallDomainsAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::ImportFirewallDomainsAsyncHelper(const ImportFirewallDomainsRequest& request, const ImportFirewallDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ImportFirewallDomains(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ImportFirewallDomains(request), context);
+    } );
 }
 
 ListFirewallConfigsOutcome Route53ResolverClient::ListFirewallConfigs(const ListFirewallConfigsRequest& request) const
@@ -1019,12 +949,10 @@ ListFirewallConfigsOutcomeCallable Route53ResolverClient::ListFirewallConfigsCal
 
 void Route53ResolverClient::ListFirewallConfigsAsync(const ListFirewallConfigsRequest& request, const ListFirewallConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFirewallConfigsAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::ListFirewallConfigsAsyncHelper(const ListFirewallConfigsRequest& request, const ListFirewallConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListFirewallConfigs(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListFirewallConfigs(request), context);
+    } );
 }
 
 ListFirewallDomainListsOutcome Route53ResolverClient::ListFirewallDomainLists(const ListFirewallDomainListsRequest& request) const
@@ -1043,12 +971,10 @@ ListFirewallDomainListsOutcomeCallable Route53ResolverClient::ListFirewallDomain
 
 void Route53ResolverClient::ListFirewallDomainListsAsync(const ListFirewallDomainListsRequest& request, const ListFirewallDomainListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFirewallDomainListsAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::ListFirewallDomainListsAsyncHelper(const ListFirewallDomainListsRequest& request, const ListFirewallDomainListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListFirewallDomainLists(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListFirewallDomainLists(request), context);
+    } );
 }
 
 ListFirewallDomainsOutcome Route53ResolverClient::ListFirewallDomains(const ListFirewallDomainsRequest& request) const
@@ -1067,12 +993,10 @@ ListFirewallDomainsOutcomeCallable Route53ResolverClient::ListFirewallDomainsCal
 
 void Route53ResolverClient::ListFirewallDomainsAsync(const ListFirewallDomainsRequest& request, const ListFirewallDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFirewallDomainsAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::ListFirewallDomainsAsyncHelper(const ListFirewallDomainsRequest& request, const ListFirewallDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListFirewallDomains(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListFirewallDomains(request), context);
+    } );
 }
 
 ListFirewallRuleGroupAssociationsOutcome Route53ResolverClient::ListFirewallRuleGroupAssociations(const ListFirewallRuleGroupAssociationsRequest& request) const
@@ -1091,12 +1015,10 @@ ListFirewallRuleGroupAssociationsOutcomeCallable Route53ResolverClient::ListFire
 
 void Route53ResolverClient::ListFirewallRuleGroupAssociationsAsync(const ListFirewallRuleGroupAssociationsRequest& request, const ListFirewallRuleGroupAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFirewallRuleGroupAssociationsAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::ListFirewallRuleGroupAssociationsAsyncHelper(const ListFirewallRuleGroupAssociationsRequest& request, const ListFirewallRuleGroupAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListFirewallRuleGroupAssociations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListFirewallRuleGroupAssociations(request), context);
+    } );
 }
 
 ListFirewallRuleGroupsOutcome Route53ResolverClient::ListFirewallRuleGroups(const ListFirewallRuleGroupsRequest& request) const
@@ -1115,12 +1037,10 @@ ListFirewallRuleGroupsOutcomeCallable Route53ResolverClient::ListFirewallRuleGro
 
 void Route53ResolverClient::ListFirewallRuleGroupsAsync(const ListFirewallRuleGroupsRequest& request, const ListFirewallRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFirewallRuleGroupsAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::ListFirewallRuleGroupsAsyncHelper(const ListFirewallRuleGroupsRequest& request, const ListFirewallRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListFirewallRuleGroups(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListFirewallRuleGroups(request), context);
+    } );
 }
 
 ListFirewallRulesOutcome Route53ResolverClient::ListFirewallRules(const ListFirewallRulesRequest& request) const
@@ -1139,12 +1059,10 @@ ListFirewallRulesOutcomeCallable Route53ResolverClient::ListFirewallRulesCallabl
 
 void Route53ResolverClient::ListFirewallRulesAsync(const ListFirewallRulesRequest& request, const ListFirewallRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFirewallRulesAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::ListFirewallRulesAsyncHelper(const ListFirewallRulesRequest& request, const ListFirewallRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListFirewallRules(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListFirewallRules(request), context);
+    } );
 }
 
 ListResolverConfigsOutcome Route53ResolverClient::ListResolverConfigs(const ListResolverConfigsRequest& request) const
@@ -1163,12 +1081,10 @@ ListResolverConfigsOutcomeCallable Route53ResolverClient::ListResolverConfigsCal
 
 void Route53ResolverClient::ListResolverConfigsAsync(const ListResolverConfigsRequest& request, const ListResolverConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListResolverConfigsAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::ListResolverConfigsAsyncHelper(const ListResolverConfigsRequest& request, const ListResolverConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListResolverConfigs(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListResolverConfigs(request), context);
+    } );
 }
 
 ListResolverDnssecConfigsOutcome Route53ResolverClient::ListResolverDnssecConfigs(const ListResolverDnssecConfigsRequest& request) const
@@ -1187,12 +1103,10 @@ ListResolverDnssecConfigsOutcomeCallable Route53ResolverClient::ListResolverDnss
 
 void Route53ResolverClient::ListResolverDnssecConfigsAsync(const ListResolverDnssecConfigsRequest& request, const ListResolverDnssecConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListResolverDnssecConfigsAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::ListResolverDnssecConfigsAsyncHelper(const ListResolverDnssecConfigsRequest& request, const ListResolverDnssecConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListResolverDnssecConfigs(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListResolverDnssecConfigs(request), context);
+    } );
 }
 
 ListResolverEndpointIpAddressesOutcome Route53ResolverClient::ListResolverEndpointIpAddresses(const ListResolverEndpointIpAddressesRequest& request) const
@@ -1211,12 +1125,10 @@ ListResolverEndpointIpAddressesOutcomeCallable Route53ResolverClient::ListResolv
 
 void Route53ResolverClient::ListResolverEndpointIpAddressesAsync(const ListResolverEndpointIpAddressesRequest& request, const ListResolverEndpointIpAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListResolverEndpointIpAddressesAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::ListResolverEndpointIpAddressesAsyncHelper(const ListResolverEndpointIpAddressesRequest& request, const ListResolverEndpointIpAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListResolverEndpointIpAddresses(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListResolverEndpointIpAddresses(request), context);
+    } );
 }
 
 ListResolverEndpointsOutcome Route53ResolverClient::ListResolverEndpoints(const ListResolverEndpointsRequest& request) const
@@ -1235,12 +1147,10 @@ ListResolverEndpointsOutcomeCallable Route53ResolverClient::ListResolverEndpoint
 
 void Route53ResolverClient::ListResolverEndpointsAsync(const ListResolverEndpointsRequest& request, const ListResolverEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListResolverEndpointsAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::ListResolverEndpointsAsyncHelper(const ListResolverEndpointsRequest& request, const ListResolverEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListResolverEndpoints(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListResolverEndpoints(request), context);
+    } );
 }
 
 ListResolverQueryLogConfigAssociationsOutcome Route53ResolverClient::ListResolverQueryLogConfigAssociations(const ListResolverQueryLogConfigAssociationsRequest& request) const
@@ -1259,12 +1169,10 @@ ListResolverQueryLogConfigAssociationsOutcomeCallable Route53ResolverClient::Lis
 
 void Route53ResolverClient::ListResolverQueryLogConfigAssociationsAsync(const ListResolverQueryLogConfigAssociationsRequest& request, const ListResolverQueryLogConfigAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListResolverQueryLogConfigAssociationsAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::ListResolverQueryLogConfigAssociationsAsyncHelper(const ListResolverQueryLogConfigAssociationsRequest& request, const ListResolverQueryLogConfigAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListResolverQueryLogConfigAssociations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListResolverQueryLogConfigAssociations(request), context);
+    } );
 }
 
 ListResolverQueryLogConfigsOutcome Route53ResolverClient::ListResolverQueryLogConfigs(const ListResolverQueryLogConfigsRequest& request) const
@@ -1283,12 +1191,10 @@ ListResolverQueryLogConfigsOutcomeCallable Route53ResolverClient::ListResolverQu
 
 void Route53ResolverClient::ListResolverQueryLogConfigsAsync(const ListResolverQueryLogConfigsRequest& request, const ListResolverQueryLogConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListResolverQueryLogConfigsAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::ListResolverQueryLogConfigsAsyncHelper(const ListResolverQueryLogConfigsRequest& request, const ListResolverQueryLogConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListResolverQueryLogConfigs(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListResolverQueryLogConfigs(request), context);
+    } );
 }
 
 ListResolverRuleAssociationsOutcome Route53ResolverClient::ListResolverRuleAssociations(const ListResolverRuleAssociationsRequest& request) const
@@ -1307,12 +1213,10 @@ ListResolverRuleAssociationsOutcomeCallable Route53ResolverClient::ListResolverR
 
 void Route53ResolverClient::ListResolverRuleAssociationsAsync(const ListResolverRuleAssociationsRequest& request, const ListResolverRuleAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListResolverRuleAssociationsAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::ListResolverRuleAssociationsAsyncHelper(const ListResolverRuleAssociationsRequest& request, const ListResolverRuleAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListResolverRuleAssociations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListResolverRuleAssociations(request), context);
+    } );
 }
 
 ListResolverRulesOutcome Route53ResolverClient::ListResolverRules(const ListResolverRulesRequest& request) const
@@ -1331,12 +1235,10 @@ ListResolverRulesOutcomeCallable Route53ResolverClient::ListResolverRulesCallabl
 
 void Route53ResolverClient::ListResolverRulesAsync(const ListResolverRulesRequest& request, const ListResolverRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListResolverRulesAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::ListResolverRulesAsyncHelper(const ListResolverRulesRequest& request, const ListResolverRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListResolverRules(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListResolverRules(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome Route53ResolverClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1355,12 +1257,10 @@ ListTagsForResourceOutcomeCallable Route53ResolverClient::ListTagsForResourceCal
 
 void Route53ResolverClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 PutFirewallRuleGroupPolicyOutcome Route53ResolverClient::PutFirewallRuleGroupPolicy(const PutFirewallRuleGroupPolicyRequest& request) const
@@ -1379,12 +1279,10 @@ PutFirewallRuleGroupPolicyOutcomeCallable Route53ResolverClient::PutFirewallRule
 
 void Route53ResolverClient::PutFirewallRuleGroupPolicyAsync(const PutFirewallRuleGroupPolicyRequest& request, const PutFirewallRuleGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutFirewallRuleGroupPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::PutFirewallRuleGroupPolicyAsyncHelper(const PutFirewallRuleGroupPolicyRequest& request, const PutFirewallRuleGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutFirewallRuleGroupPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutFirewallRuleGroupPolicy(request), context);
+    } );
 }
 
 PutResolverQueryLogConfigPolicyOutcome Route53ResolverClient::PutResolverQueryLogConfigPolicy(const PutResolverQueryLogConfigPolicyRequest& request) const
@@ -1403,12 +1301,10 @@ PutResolverQueryLogConfigPolicyOutcomeCallable Route53ResolverClient::PutResolve
 
 void Route53ResolverClient::PutResolverQueryLogConfigPolicyAsync(const PutResolverQueryLogConfigPolicyRequest& request, const PutResolverQueryLogConfigPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutResolverQueryLogConfigPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::PutResolverQueryLogConfigPolicyAsyncHelper(const PutResolverQueryLogConfigPolicyRequest& request, const PutResolverQueryLogConfigPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutResolverQueryLogConfigPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutResolverQueryLogConfigPolicy(request), context);
+    } );
 }
 
 PutResolverRulePolicyOutcome Route53ResolverClient::PutResolverRulePolicy(const PutResolverRulePolicyRequest& request) const
@@ -1427,12 +1323,10 @@ PutResolverRulePolicyOutcomeCallable Route53ResolverClient::PutResolverRulePolic
 
 void Route53ResolverClient::PutResolverRulePolicyAsync(const PutResolverRulePolicyRequest& request, const PutResolverRulePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutResolverRulePolicyAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::PutResolverRulePolicyAsyncHelper(const PutResolverRulePolicyRequest& request, const PutResolverRulePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutResolverRulePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutResolverRulePolicy(request), context);
+    } );
 }
 
 TagResourceOutcome Route53ResolverClient::TagResource(const TagResourceRequest& request) const
@@ -1451,12 +1345,10 @@ TagResourceOutcomeCallable Route53ResolverClient::TagResourceCallable(const TagR
 
 void Route53ResolverClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome Route53ResolverClient::UntagResource(const UntagResourceRequest& request) const
@@ -1475,12 +1367,10 @@ UntagResourceOutcomeCallable Route53ResolverClient::UntagResourceCallable(const 
 
 void Route53ResolverClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateFirewallConfigOutcome Route53ResolverClient::UpdateFirewallConfig(const UpdateFirewallConfigRequest& request) const
@@ -1499,12 +1389,10 @@ UpdateFirewallConfigOutcomeCallable Route53ResolverClient::UpdateFirewallConfigC
 
 void Route53ResolverClient::UpdateFirewallConfigAsync(const UpdateFirewallConfigRequest& request, const UpdateFirewallConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFirewallConfigAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::UpdateFirewallConfigAsyncHelper(const UpdateFirewallConfigRequest& request, const UpdateFirewallConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateFirewallConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateFirewallConfig(request), context);
+    } );
 }
 
 UpdateFirewallDomainsOutcome Route53ResolverClient::UpdateFirewallDomains(const UpdateFirewallDomainsRequest& request) const
@@ -1523,12 +1411,10 @@ UpdateFirewallDomainsOutcomeCallable Route53ResolverClient::UpdateFirewallDomain
 
 void Route53ResolverClient::UpdateFirewallDomainsAsync(const UpdateFirewallDomainsRequest& request, const UpdateFirewallDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFirewallDomainsAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::UpdateFirewallDomainsAsyncHelper(const UpdateFirewallDomainsRequest& request, const UpdateFirewallDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateFirewallDomains(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateFirewallDomains(request), context);
+    } );
 }
 
 UpdateFirewallRuleOutcome Route53ResolverClient::UpdateFirewallRule(const UpdateFirewallRuleRequest& request) const
@@ -1547,12 +1433,10 @@ UpdateFirewallRuleOutcomeCallable Route53ResolverClient::UpdateFirewallRuleCalla
 
 void Route53ResolverClient::UpdateFirewallRuleAsync(const UpdateFirewallRuleRequest& request, const UpdateFirewallRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFirewallRuleAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::UpdateFirewallRuleAsyncHelper(const UpdateFirewallRuleRequest& request, const UpdateFirewallRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateFirewallRule(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateFirewallRule(request), context);
+    } );
 }
 
 UpdateFirewallRuleGroupAssociationOutcome Route53ResolverClient::UpdateFirewallRuleGroupAssociation(const UpdateFirewallRuleGroupAssociationRequest& request) const
@@ -1571,12 +1455,10 @@ UpdateFirewallRuleGroupAssociationOutcomeCallable Route53ResolverClient::UpdateF
 
 void Route53ResolverClient::UpdateFirewallRuleGroupAssociationAsync(const UpdateFirewallRuleGroupAssociationRequest& request, const UpdateFirewallRuleGroupAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFirewallRuleGroupAssociationAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::UpdateFirewallRuleGroupAssociationAsyncHelper(const UpdateFirewallRuleGroupAssociationRequest& request, const UpdateFirewallRuleGroupAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateFirewallRuleGroupAssociation(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateFirewallRuleGroupAssociation(request), context);
+    } );
 }
 
 UpdateResolverConfigOutcome Route53ResolverClient::UpdateResolverConfig(const UpdateResolverConfigRequest& request) const
@@ -1595,12 +1477,10 @@ UpdateResolverConfigOutcomeCallable Route53ResolverClient::UpdateResolverConfigC
 
 void Route53ResolverClient::UpdateResolverConfigAsync(const UpdateResolverConfigRequest& request, const UpdateResolverConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateResolverConfigAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::UpdateResolverConfigAsyncHelper(const UpdateResolverConfigRequest& request, const UpdateResolverConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateResolverConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateResolverConfig(request), context);
+    } );
 }
 
 UpdateResolverDnssecConfigOutcome Route53ResolverClient::UpdateResolverDnssecConfig(const UpdateResolverDnssecConfigRequest& request) const
@@ -1619,12 +1499,10 @@ UpdateResolverDnssecConfigOutcomeCallable Route53ResolverClient::UpdateResolverD
 
 void Route53ResolverClient::UpdateResolverDnssecConfigAsync(const UpdateResolverDnssecConfigRequest& request, const UpdateResolverDnssecConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateResolverDnssecConfigAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::UpdateResolverDnssecConfigAsyncHelper(const UpdateResolverDnssecConfigRequest& request, const UpdateResolverDnssecConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateResolverDnssecConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateResolverDnssecConfig(request), context);
+    } );
 }
 
 UpdateResolverEndpointOutcome Route53ResolverClient::UpdateResolverEndpoint(const UpdateResolverEndpointRequest& request) const
@@ -1643,12 +1521,10 @@ UpdateResolverEndpointOutcomeCallable Route53ResolverClient::UpdateResolverEndpo
 
 void Route53ResolverClient::UpdateResolverEndpointAsync(const UpdateResolverEndpointRequest& request, const UpdateResolverEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateResolverEndpointAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::UpdateResolverEndpointAsyncHelper(const UpdateResolverEndpointRequest& request, const UpdateResolverEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateResolverEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateResolverEndpoint(request), context);
+    } );
 }
 
 UpdateResolverRuleOutcome Route53ResolverClient::UpdateResolverRule(const UpdateResolverRuleRequest& request) const
@@ -1667,11 +1543,9 @@ UpdateResolverRuleOutcomeCallable Route53ResolverClient::UpdateResolverRuleCalla
 
 void Route53ResolverClient::UpdateResolverRuleAsync(const UpdateResolverRuleRequest& request, const UpdateResolverRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateResolverRuleAsyncHelper( request, handler, context ); } );
-}
-
-void Route53ResolverClient::UpdateResolverRuleAsyncHelper(const UpdateResolverRuleRequest& request, const UpdateResolverRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateResolverRule(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateResolverRule(request), context);
+    } );
 }
 

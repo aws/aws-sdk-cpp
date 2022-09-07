@@ -118,12 +118,10 @@ GenerateDataSetOutcomeCallable MarketplaceCommerceAnalyticsClient::GenerateDataS
 
 void MarketplaceCommerceAnalyticsClient::GenerateDataSetAsync(const GenerateDataSetRequest& request, const GenerateDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GenerateDataSetAsyncHelper( request, handler, context ); } );
-}
-
-void MarketplaceCommerceAnalyticsClient::GenerateDataSetAsyncHelper(const GenerateDataSetRequest& request, const GenerateDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GenerateDataSet(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GenerateDataSet(request), context);
+    } );
 }
 
 StartSupportDataExportOutcome MarketplaceCommerceAnalyticsClient::StartSupportDataExport(const StartSupportDataExportRequest& request) const
@@ -142,11 +140,9 @@ StartSupportDataExportOutcomeCallable MarketplaceCommerceAnalyticsClient::StartS
 
 void MarketplaceCommerceAnalyticsClient::StartSupportDataExportAsync(const StartSupportDataExportRequest& request, const StartSupportDataExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartSupportDataExportAsyncHelper( request, handler, context ); } );
-}
-
-void MarketplaceCommerceAnalyticsClient::StartSupportDataExportAsyncHelper(const StartSupportDataExportRequest& request, const StartSupportDataExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartSupportDataExport(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartSupportDataExport(request), context);
+    } );
 }
 

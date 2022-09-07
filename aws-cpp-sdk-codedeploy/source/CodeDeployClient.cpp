@@ -159,12 +159,10 @@ AddTagsToOnPremisesInstancesOutcomeCallable CodeDeployClient::AddTagsToOnPremise
 
 void CodeDeployClient::AddTagsToOnPremisesInstancesAsync(const AddTagsToOnPremisesInstancesRequest& request, const AddTagsToOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddTagsToOnPremisesInstancesAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::AddTagsToOnPremisesInstancesAsyncHelper(const AddTagsToOnPremisesInstancesRequest& request, const AddTagsToOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AddTagsToOnPremisesInstances(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AddTagsToOnPremisesInstances(request), context);
+    } );
 }
 
 BatchGetApplicationRevisionsOutcome CodeDeployClient::BatchGetApplicationRevisions(const BatchGetApplicationRevisionsRequest& request) const
@@ -183,12 +181,10 @@ BatchGetApplicationRevisionsOutcomeCallable CodeDeployClient::BatchGetApplicatio
 
 void CodeDeployClient::BatchGetApplicationRevisionsAsync(const BatchGetApplicationRevisionsRequest& request, const BatchGetApplicationRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetApplicationRevisionsAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::BatchGetApplicationRevisionsAsyncHelper(const BatchGetApplicationRevisionsRequest& request, const BatchGetApplicationRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchGetApplicationRevisions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchGetApplicationRevisions(request), context);
+    } );
 }
 
 BatchGetApplicationsOutcome CodeDeployClient::BatchGetApplications(const BatchGetApplicationsRequest& request) const
@@ -207,12 +203,10 @@ BatchGetApplicationsOutcomeCallable CodeDeployClient::BatchGetApplicationsCallab
 
 void CodeDeployClient::BatchGetApplicationsAsync(const BatchGetApplicationsRequest& request, const BatchGetApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetApplicationsAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::BatchGetApplicationsAsyncHelper(const BatchGetApplicationsRequest& request, const BatchGetApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchGetApplications(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchGetApplications(request), context);
+    } );
 }
 
 BatchGetDeploymentGroupsOutcome CodeDeployClient::BatchGetDeploymentGroups(const BatchGetDeploymentGroupsRequest& request) const
@@ -231,12 +225,10 @@ BatchGetDeploymentGroupsOutcomeCallable CodeDeployClient::BatchGetDeploymentGrou
 
 void CodeDeployClient::BatchGetDeploymentGroupsAsync(const BatchGetDeploymentGroupsRequest& request, const BatchGetDeploymentGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetDeploymentGroupsAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::BatchGetDeploymentGroupsAsyncHelper(const BatchGetDeploymentGroupsRequest& request, const BatchGetDeploymentGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchGetDeploymentGroups(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchGetDeploymentGroups(request), context);
+    } );
 }
 
 BatchGetDeploymentTargetsOutcome CodeDeployClient::BatchGetDeploymentTargets(const BatchGetDeploymentTargetsRequest& request) const
@@ -255,12 +247,10 @@ BatchGetDeploymentTargetsOutcomeCallable CodeDeployClient::BatchGetDeploymentTar
 
 void CodeDeployClient::BatchGetDeploymentTargetsAsync(const BatchGetDeploymentTargetsRequest& request, const BatchGetDeploymentTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetDeploymentTargetsAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::BatchGetDeploymentTargetsAsyncHelper(const BatchGetDeploymentTargetsRequest& request, const BatchGetDeploymentTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchGetDeploymentTargets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchGetDeploymentTargets(request), context);
+    } );
 }
 
 BatchGetDeploymentsOutcome CodeDeployClient::BatchGetDeployments(const BatchGetDeploymentsRequest& request) const
@@ -279,12 +269,10 @@ BatchGetDeploymentsOutcomeCallable CodeDeployClient::BatchGetDeploymentsCallable
 
 void CodeDeployClient::BatchGetDeploymentsAsync(const BatchGetDeploymentsRequest& request, const BatchGetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetDeploymentsAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::BatchGetDeploymentsAsyncHelper(const BatchGetDeploymentsRequest& request, const BatchGetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchGetDeployments(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchGetDeployments(request), context);
+    } );
 }
 
 BatchGetOnPremisesInstancesOutcome CodeDeployClient::BatchGetOnPremisesInstances(const BatchGetOnPremisesInstancesRequest& request) const
@@ -303,12 +291,10 @@ BatchGetOnPremisesInstancesOutcomeCallable CodeDeployClient::BatchGetOnPremisesI
 
 void CodeDeployClient::BatchGetOnPremisesInstancesAsync(const BatchGetOnPremisesInstancesRequest& request, const BatchGetOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetOnPremisesInstancesAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::BatchGetOnPremisesInstancesAsyncHelper(const BatchGetOnPremisesInstancesRequest& request, const BatchGetOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchGetOnPremisesInstances(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchGetOnPremisesInstances(request), context);
+    } );
 }
 
 ContinueDeploymentOutcome CodeDeployClient::ContinueDeployment(const ContinueDeploymentRequest& request) const
@@ -327,12 +313,10 @@ ContinueDeploymentOutcomeCallable CodeDeployClient::ContinueDeploymentCallable(c
 
 void CodeDeployClient::ContinueDeploymentAsync(const ContinueDeploymentRequest& request, const ContinueDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ContinueDeploymentAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::ContinueDeploymentAsyncHelper(const ContinueDeploymentRequest& request, const ContinueDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ContinueDeployment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ContinueDeployment(request), context);
+    } );
 }
 
 CreateApplicationOutcome CodeDeployClient::CreateApplication(const CreateApplicationRequest& request) const
@@ -351,12 +335,10 @@ CreateApplicationOutcomeCallable CodeDeployClient::CreateApplicationCallable(con
 
 void CodeDeployClient::CreateApplicationAsync(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateApplicationAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::CreateApplicationAsyncHelper(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateApplication(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateApplication(request), context);
+    } );
 }
 
 CreateDeploymentOutcome CodeDeployClient::CreateDeployment(const CreateDeploymentRequest& request) const
@@ -375,12 +357,10 @@ CreateDeploymentOutcomeCallable CodeDeployClient::CreateDeploymentCallable(const
 
 void CodeDeployClient::CreateDeploymentAsync(const CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDeploymentAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::CreateDeploymentAsyncHelper(const CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateDeployment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateDeployment(request), context);
+    } );
 }
 
 CreateDeploymentConfigOutcome CodeDeployClient::CreateDeploymentConfig(const CreateDeploymentConfigRequest& request) const
@@ -399,12 +379,10 @@ CreateDeploymentConfigOutcomeCallable CodeDeployClient::CreateDeploymentConfigCa
 
 void CodeDeployClient::CreateDeploymentConfigAsync(const CreateDeploymentConfigRequest& request, const CreateDeploymentConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDeploymentConfigAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::CreateDeploymentConfigAsyncHelper(const CreateDeploymentConfigRequest& request, const CreateDeploymentConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateDeploymentConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateDeploymentConfig(request), context);
+    } );
 }
 
 CreateDeploymentGroupOutcome CodeDeployClient::CreateDeploymentGroup(const CreateDeploymentGroupRequest& request) const
@@ -423,12 +401,10 @@ CreateDeploymentGroupOutcomeCallable CodeDeployClient::CreateDeploymentGroupCall
 
 void CodeDeployClient::CreateDeploymentGroupAsync(const CreateDeploymentGroupRequest& request, const CreateDeploymentGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDeploymentGroupAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::CreateDeploymentGroupAsyncHelper(const CreateDeploymentGroupRequest& request, const CreateDeploymentGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateDeploymentGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateDeploymentGroup(request), context);
+    } );
 }
 
 DeleteApplicationOutcome CodeDeployClient::DeleteApplication(const DeleteApplicationRequest& request) const
@@ -447,12 +423,10 @@ DeleteApplicationOutcomeCallable CodeDeployClient::DeleteApplicationCallable(con
 
 void CodeDeployClient::DeleteApplicationAsync(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteApplicationAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::DeleteApplicationAsyncHelper(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteApplication(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteApplication(request), context);
+    } );
 }
 
 DeleteDeploymentConfigOutcome CodeDeployClient::DeleteDeploymentConfig(const DeleteDeploymentConfigRequest& request) const
@@ -471,12 +445,10 @@ DeleteDeploymentConfigOutcomeCallable CodeDeployClient::DeleteDeploymentConfigCa
 
 void CodeDeployClient::DeleteDeploymentConfigAsync(const DeleteDeploymentConfigRequest& request, const DeleteDeploymentConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDeploymentConfigAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::DeleteDeploymentConfigAsyncHelper(const DeleteDeploymentConfigRequest& request, const DeleteDeploymentConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteDeploymentConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteDeploymentConfig(request), context);
+    } );
 }
 
 DeleteDeploymentGroupOutcome CodeDeployClient::DeleteDeploymentGroup(const DeleteDeploymentGroupRequest& request) const
@@ -495,12 +467,10 @@ DeleteDeploymentGroupOutcomeCallable CodeDeployClient::DeleteDeploymentGroupCall
 
 void CodeDeployClient::DeleteDeploymentGroupAsync(const DeleteDeploymentGroupRequest& request, const DeleteDeploymentGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDeploymentGroupAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::DeleteDeploymentGroupAsyncHelper(const DeleteDeploymentGroupRequest& request, const DeleteDeploymentGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteDeploymentGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteDeploymentGroup(request), context);
+    } );
 }
 
 DeleteGitHubAccountTokenOutcome CodeDeployClient::DeleteGitHubAccountToken(const DeleteGitHubAccountTokenRequest& request) const
@@ -519,12 +489,10 @@ DeleteGitHubAccountTokenOutcomeCallable CodeDeployClient::DeleteGitHubAccountTok
 
 void CodeDeployClient::DeleteGitHubAccountTokenAsync(const DeleteGitHubAccountTokenRequest& request, const DeleteGitHubAccountTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteGitHubAccountTokenAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::DeleteGitHubAccountTokenAsyncHelper(const DeleteGitHubAccountTokenRequest& request, const DeleteGitHubAccountTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteGitHubAccountToken(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteGitHubAccountToken(request), context);
+    } );
 }
 
 DeleteResourcesByExternalIdOutcome CodeDeployClient::DeleteResourcesByExternalId(const DeleteResourcesByExternalIdRequest& request) const
@@ -543,12 +511,10 @@ DeleteResourcesByExternalIdOutcomeCallable CodeDeployClient::DeleteResourcesByEx
 
 void CodeDeployClient::DeleteResourcesByExternalIdAsync(const DeleteResourcesByExternalIdRequest& request, const DeleteResourcesByExternalIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteResourcesByExternalIdAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::DeleteResourcesByExternalIdAsyncHelper(const DeleteResourcesByExternalIdRequest& request, const DeleteResourcesByExternalIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteResourcesByExternalId(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteResourcesByExternalId(request), context);
+    } );
 }
 
 DeregisterOnPremisesInstanceOutcome CodeDeployClient::DeregisterOnPremisesInstance(const DeregisterOnPremisesInstanceRequest& request) const
@@ -567,12 +533,10 @@ DeregisterOnPremisesInstanceOutcomeCallable CodeDeployClient::DeregisterOnPremis
 
 void CodeDeployClient::DeregisterOnPremisesInstanceAsync(const DeregisterOnPremisesInstanceRequest& request, const DeregisterOnPremisesInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeregisterOnPremisesInstanceAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::DeregisterOnPremisesInstanceAsyncHelper(const DeregisterOnPremisesInstanceRequest& request, const DeregisterOnPremisesInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeregisterOnPremisesInstance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeregisterOnPremisesInstance(request), context);
+    } );
 }
 
 GetApplicationOutcome CodeDeployClient::GetApplication(const GetApplicationRequest& request) const
@@ -591,12 +555,10 @@ GetApplicationOutcomeCallable CodeDeployClient::GetApplicationCallable(const Get
 
 void CodeDeployClient::GetApplicationAsync(const GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetApplicationAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::GetApplicationAsyncHelper(const GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetApplication(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetApplication(request), context);
+    } );
 }
 
 GetApplicationRevisionOutcome CodeDeployClient::GetApplicationRevision(const GetApplicationRevisionRequest& request) const
@@ -615,12 +577,10 @@ GetApplicationRevisionOutcomeCallable CodeDeployClient::GetApplicationRevisionCa
 
 void CodeDeployClient::GetApplicationRevisionAsync(const GetApplicationRevisionRequest& request, const GetApplicationRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetApplicationRevisionAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::GetApplicationRevisionAsyncHelper(const GetApplicationRevisionRequest& request, const GetApplicationRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetApplicationRevision(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetApplicationRevision(request), context);
+    } );
 }
 
 GetDeploymentOutcome CodeDeployClient::GetDeployment(const GetDeploymentRequest& request) const
@@ -639,12 +599,10 @@ GetDeploymentOutcomeCallable CodeDeployClient::GetDeploymentCallable(const GetDe
 
 void CodeDeployClient::GetDeploymentAsync(const GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDeploymentAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::GetDeploymentAsyncHelper(const GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDeployment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDeployment(request), context);
+    } );
 }
 
 GetDeploymentConfigOutcome CodeDeployClient::GetDeploymentConfig(const GetDeploymentConfigRequest& request) const
@@ -663,12 +621,10 @@ GetDeploymentConfigOutcomeCallable CodeDeployClient::GetDeploymentConfigCallable
 
 void CodeDeployClient::GetDeploymentConfigAsync(const GetDeploymentConfigRequest& request, const GetDeploymentConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDeploymentConfigAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::GetDeploymentConfigAsyncHelper(const GetDeploymentConfigRequest& request, const GetDeploymentConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDeploymentConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDeploymentConfig(request), context);
+    } );
 }
 
 GetDeploymentGroupOutcome CodeDeployClient::GetDeploymentGroup(const GetDeploymentGroupRequest& request) const
@@ -687,12 +643,10 @@ GetDeploymentGroupOutcomeCallable CodeDeployClient::GetDeploymentGroupCallable(c
 
 void CodeDeployClient::GetDeploymentGroupAsync(const GetDeploymentGroupRequest& request, const GetDeploymentGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDeploymentGroupAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::GetDeploymentGroupAsyncHelper(const GetDeploymentGroupRequest& request, const GetDeploymentGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDeploymentGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDeploymentGroup(request), context);
+    } );
 }
 
 GetDeploymentTargetOutcome CodeDeployClient::GetDeploymentTarget(const GetDeploymentTargetRequest& request) const
@@ -711,12 +665,10 @@ GetDeploymentTargetOutcomeCallable CodeDeployClient::GetDeploymentTargetCallable
 
 void CodeDeployClient::GetDeploymentTargetAsync(const GetDeploymentTargetRequest& request, const GetDeploymentTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDeploymentTargetAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::GetDeploymentTargetAsyncHelper(const GetDeploymentTargetRequest& request, const GetDeploymentTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDeploymentTarget(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDeploymentTarget(request), context);
+    } );
 }
 
 GetOnPremisesInstanceOutcome CodeDeployClient::GetOnPremisesInstance(const GetOnPremisesInstanceRequest& request) const
@@ -735,12 +687,10 @@ GetOnPremisesInstanceOutcomeCallable CodeDeployClient::GetOnPremisesInstanceCall
 
 void CodeDeployClient::GetOnPremisesInstanceAsync(const GetOnPremisesInstanceRequest& request, const GetOnPremisesInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetOnPremisesInstanceAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::GetOnPremisesInstanceAsyncHelper(const GetOnPremisesInstanceRequest& request, const GetOnPremisesInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetOnPremisesInstance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetOnPremisesInstance(request), context);
+    } );
 }
 
 ListApplicationRevisionsOutcome CodeDeployClient::ListApplicationRevisions(const ListApplicationRevisionsRequest& request) const
@@ -759,12 +709,10 @@ ListApplicationRevisionsOutcomeCallable CodeDeployClient::ListApplicationRevisio
 
 void CodeDeployClient::ListApplicationRevisionsAsync(const ListApplicationRevisionsRequest& request, const ListApplicationRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListApplicationRevisionsAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::ListApplicationRevisionsAsyncHelper(const ListApplicationRevisionsRequest& request, const ListApplicationRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListApplicationRevisions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListApplicationRevisions(request), context);
+    } );
 }
 
 ListApplicationsOutcome CodeDeployClient::ListApplications(const ListApplicationsRequest& request) const
@@ -783,12 +731,10 @@ ListApplicationsOutcomeCallable CodeDeployClient::ListApplicationsCallable(const
 
 void CodeDeployClient::ListApplicationsAsync(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListApplicationsAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::ListApplicationsAsyncHelper(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListApplications(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListApplications(request), context);
+    } );
 }
 
 ListDeploymentConfigsOutcome CodeDeployClient::ListDeploymentConfigs(const ListDeploymentConfigsRequest& request) const
@@ -807,12 +753,10 @@ ListDeploymentConfigsOutcomeCallable CodeDeployClient::ListDeploymentConfigsCall
 
 void CodeDeployClient::ListDeploymentConfigsAsync(const ListDeploymentConfigsRequest& request, const ListDeploymentConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDeploymentConfigsAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::ListDeploymentConfigsAsyncHelper(const ListDeploymentConfigsRequest& request, const ListDeploymentConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDeploymentConfigs(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDeploymentConfigs(request), context);
+    } );
 }
 
 ListDeploymentGroupsOutcome CodeDeployClient::ListDeploymentGroups(const ListDeploymentGroupsRequest& request) const
@@ -831,12 +775,10 @@ ListDeploymentGroupsOutcomeCallable CodeDeployClient::ListDeploymentGroupsCallab
 
 void CodeDeployClient::ListDeploymentGroupsAsync(const ListDeploymentGroupsRequest& request, const ListDeploymentGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDeploymentGroupsAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::ListDeploymentGroupsAsyncHelper(const ListDeploymentGroupsRequest& request, const ListDeploymentGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDeploymentGroups(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDeploymentGroups(request), context);
+    } );
 }
 
 ListDeploymentTargetsOutcome CodeDeployClient::ListDeploymentTargets(const ListDeploymentTargetsRequest& request) const
@@ -855,12 +797,10 @@ ListDeploymentTargetsOutcomeCallable CodeDeployClient::ListDeploymentTargetsCall
 
 void CodeDeployClient::ListDeploymentTargetsAsync(const ListDeploymentTargetsRequest& request, const ListDeploymentTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDeploymentTargetsAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::ListDeploymentTargetsAsyncHelper(const ListDeploymentTargetsRequest& request, const ListDeploymentTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDeploymentTargets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDeploymentTargets(request), context);
+    } );
 }
 
 ListDeploymentsOutcome CodeDeployClient::ListDeployments(const ListDeploymentsRequest& request) const
@@ -879,12 +819,10 @@ ListDeploymentsOutcomeCallable CodeDeployClient::ListDeploymentsCallable(const L
 
 void CodeDeployClient::ListDeploymentsAsync(const ListDeploymentsRequest& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDeploymentsAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::ListDeploymentsAsyncHelper(const ListDeploymentsRequest& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDeployments(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDeployments(request), context);
+    } );
 }
 
 ListGitHubAccountTokenNamesOutcome CodeDeployClient::ListGitHubAccountTokenNames(const ListGitHubAccountTokenNamesRequest& request) const
@@ -903,12 +841,10 @@ ListGitHubAccountTokenNamesOutcomeCallable CodeDeployClient::ListGitHubAccountTo
 
 void CodeDeployClient::ListGitHubAccountTokenNamesAsync(const ListGitHubAccountTokenNamesRequest& request, const ListGitHubAccountTokenNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGitHubAccountTokenNamesAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::ListGitHubAccountTokenNamesAsyncHelper(const ListGitHubAccountTokenNamesRequest& request, const ListGitHubAccountTokenNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListGitHubAccountTokenNames(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListGitHubAccountTokenNames(request), context);
+    } );
 }
 
 ListOnPremisesInstancesOutcome CodeDeployClient::ListOnPremisesInstances(const ListOnPremisesInstancesRequest& request) const
@@ -927,12 +863,10 @@ ListOnPremisesInstancesOutcomeCallable CodeDeployClient::ListOnPremisesInstances
 
 void CodeDeployClient::ListOnPremisesInstancesAsync(const ListOnPremisesInstancesRequest& request, const ListOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListOnPremisesInstancesAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::ListOnPremisesInstancesAsyncHelper(const ListOnPremisesInstancesRequest& request, const ListOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListOnPremisesInstances(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListOnPremisesInstances(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome CodeDeployClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -951,12 +885,10 @@ ListTagsForResourceOutcomeCallable CodeDeployClient::ListTagsForResourceCallable
 
 void CodeDeployClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 PutLifecycleEventHookExecutionStatusOutcome CodeDeployClient::PutLifecycleEventHookExecutionStatus(const PutLifecycleEventHookExecutionStatusRequest& request) const
@@ -975,12 +907,10 @@ PutLifecycleEventHookExecutionStatusOutcomeCallable CodeDeployClient::PutLifecyc
 
 void CodeDeployClient::PutLifecycleEventHookExecutionStatusAsync(const PutLifecycleEventHookExecutionStatusRequest& request, const PutLifecycleEventHookExecutionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutLifecycleEventHookExecutionStatusAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::PutLifecycleEventHookExecutionStatusAsyncHelper(const PutLifecycleEventHookExecutionStatusRequest& request, const PutLifecycleEventHookExecutionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutLifecycleEventHookExecutionStatus(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutLifecycleEventHookExecutionStatus(request), context);
+    } );
 }
 
 RegisterApplicationRevisionOutcome CodeDeployClient::RegisterApplicationRevision(const RegisterApplicationRevisionRequest& request) const
@@ -999,12 +929,10 @@ RegisterApplicationRevisionOutcomeCallable CodeDeployClient::RegisterApplication
 
 void CodeDeployClient::RegisterApplicationRevisionAsync(const RegisterApplicationRevisionRequest& request, const RegisterApplicationRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterApplicationRevisionAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::RegisterApplicationRevisionAsyncHelper(const RegisterApplicationRevisionRequest& request, const RegisterApplicationRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RegisterApplicationRevision(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RegisterApplicationRevision(request), context);
+    } );
 }
 
 RegisterOnPremisesInstanceOutcome CodeDeployClient::RegisterOnPremisesInstance(const RegisterOnPremisesInstanceRequest& request) const
@@ -1023,12 +951,10 @@ RegisterOnPremisesInstanceOutcomeCallable CodeDeployClient::RegisterOnPremisesIn
 
 void CodeDeployClient::RegisterOnPremisesInstanceAsync(const RegisterOnPremisesInstanceRequest& request, const RegisterOnPremisesInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterOnPremisesInstanceAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::RegisterOnPremisesInstanceAsyncHelper(const RegisterOnPremisesInstanceRequest& request, const RegisterOnPremisesInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RegisterOnPremisesInstance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RegisterOnPremisesInstance(request), context);
+    } );
 }
 
 RemoveTagsFromOnPremisesInstancesOutcome CodeDeployClient::RemoveTagsFromOnPremisesInstances(const RemoveTagsFromOnPremisesInstancesRequest& request) const
@@ -1047,12 +973,10 @@ RemoveTagsFromOnPremisesInstancesOutcomeCallable CodeDeployClient::RemoveTagsFro
 
 void CodeDeployClient::RemoveTagsFromOnPremisesInstancesAsync(const RemoveTagsFromOnPremisesInstancesRequest& request, const RemoveTagsFromOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveTagsFromOnPremisesInstancesAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::RemoveTagsFromOnPremisesInstancesAsyncHelper(const RemoveTagsFromOnPremisesInstancesRequest& request, const RemoveTagsFromOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RemoveTagsFromOnPremisesInstances(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RemoveTagsFromOnPremisesInstances(request), context);
+    } );
 }
 
 StopDeploymentOutcome CodeDeployClient::StopDeployment(const StopDeploymentRequest& request) const
@@ -1071,12 +995,10 @@ StopDeploymentOutcomeCallable CodeDeployClient::StopDeploymentCallable(const Sto
 
 void CodeDeployClient::StopDeploymentAsync(const StopDeploymentRequest& request, const StopDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopDeploymentAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::StopDeploymentAsyncHelper(const StopDeploymentRequest& request, const StopDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StopDeployment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopDeployment(request), context);
+    } );
 }
 
 TagResourceOutcome CodeDeployClient::TagResource(const TagResourceRequest& request) const
@@ -1095,12 +1017,10 @@ TagResourceOutcomeCallable CodeDeployClient::TagResourceCallable(const TagResour
 
 void CodeDeployClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome CodeDeployClient::UntagResource(const UntagResourceRequest& request) const
@@ -1119,12 +1039,10 @@ UntagResourceOutcomeCallable CodeDeployClient::UntagResourceCallable(const Untag
 
 void CodeDeployClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateApplicationOutcome CodeDeployClient::UpdateApplication(const UpdateApplicationRequest& request) const
@@ -1143,12 +1061,10 @@ UpdateApplicationOutcomeCallable CodeDeployClient::UpdateApplicationCallable(con
 
 void CodeDeployClient::UpdateApplicationAsync(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateApplicationAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::UpdateApplicationAsyncHelper(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateApplication(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateApplication(request), context);
+    } );
 }
 
 UpdateDeploymentGroupOutcome CodeDeployClient::UpdateDeploymentGroup(const UpdateDeploymentGroupRequest& request) const
@@ -1167,11 +1083,9 @@ UpdateDeploymentGroupOutcomeCallable CodeDeployClient::UpdateDeploymentGroupCall
 
 void CodeDeployClient::UpdateDeploymentGroupAsync(const UpdateDeploymentGroupRequest& request, const UpdateDeploymentGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDeploymentGroupAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::UpdateDeploymentGroupAsyncHelper(const UpdateDeploymentGroupRequest& request, const UpdateDeploymentGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateDeploymentGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateDeploymentGroup(request), context);
+    } );
 }
 

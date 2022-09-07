@@ -124,12 +124,10 @@ CloseTunnelOutcomeCallable IoTSecureTunnelingClient::CloseTunnelCallable(const C
 
 void IoTSecureTunnelingClient::CloseTunnelAsync(const CloseTunnelRequest& request, const CloseTunnelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CloseTunnelAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSecureTunnelingClient::CloseTunnelAsyncHelper(const CloseTunnelRequest& request, const CloseTunnelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CloseTunnel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CloseTunnel(request), context);
+    } );
 }
 
 DescribeTunnelOutcome IoTSecureTunnelingClient::DescribeTunnel(const DescribeTunnelRequest& request) const
@@ -148,12 +146,10 @@ DescribeTunnelOutcomeCallable IoTSecureTunnelingClient::DescribeTunnelCallable(c
 
 void IoTSecureTunnelingClient::DescribeTunnelAsync(const DescribeTunnelRequest& request, const DescribeTunnelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTunnelAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSecureTunnelingClient::DescribeTunnelAsyncHelper(const DescribeTunnelRequest& request, const DescribeTunnelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeTunnel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeTunnel(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome IoTSecureTunnelingClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -172,12 +168,10 @@ ListTagsForResourceOutcomeCallable IoTSecureTunnelingClient::ListTagsForResource
 
 void IoTSecureTunnelingClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSecureTunnelingClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 ListTunnelsOutcome IoTSecureTunnelingClient::ListTunnels(const ListTunnelsRequest& request) const
@@ -196,12 +190,10 @@ ListTunnelsOutcomeCallable IoTSecureTunnelingClient::ListTunnelsCallable(const L
 
 void IoTSecureTunnelingClient::ListTunnelsAsync(const ListTunnelsRequest& request, const ListTunnelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTunnelsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSecureTunnelingClient::ListTunnelsAsyncHelper(const ListTunnelsRequest& request, const ListTunnelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTunnels(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTunnels(request), context);
+    } );
 }
 
 OpenTunnelOutcome IoTSecureTunnelingClient::OpenTunnel(const OpenTunnelRequest& request) const
@@ -220,12 +212,10 @@ OpenTunnelOutcomeCallable IoTSecureTunnelingClient::OpenTunnelCallable(const Ope
 
 void IoTSecureTunnelingClient::OpenTunnelAsync(const OpenTunnelRequest& request, const OpenTunnelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->OpenTunnelAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSecureTunnelingClient::OpenTunnelAsyncHelper(const OpenTunnelRequest& request, const OpenTunnelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, OpenTunnel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, OpenTunnel(request), context);
+    } );
 }
 
 RotateTunnelAccessTokenOutcome IoTSecureTunnelingClient::RotateTunnelAccessToken(const RotateTunnelAccessTokenRequest& request) const
@@ -244,12 +234,10 @@ RotateTunnelAccessTokenOutcomeCallable IoTSecureTunnelingClient::RotateTunnelAcc
 
 void IoTSecureTunnelingClient::RotateTunnelAccessTokenAsync(const RotateTunnelAccessTokenRequest& request, const RotateTunnelAccessTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RotateTunnelAccessTokenAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSecureTunnelingClient::RotateTunnelAccessTokenAsyncHelper(const RotateTunnelAccessTokenRequest& request, const RotateTunnelAccessTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RotateTunnelAccessToken(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RotateTunnelAccessToken(request), context);
+    } );
 }
 
 TagResourceOutcome IoTSecureTunnelingClient::TagResource(const TagResourceRequest& request) const
@@ -268,12 +256,10 @@ TagResourceOutcomeCallable IoTSecureTunnelingClient::TagResourceCallable(const T
 
 void IoTSecureTunnelingClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSecureTunnelingClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome IoTSecureTunnelingClient::UntagResource(const UntagResourceRequest& request) const
@@ -292,11 +278,9 @@ UntagResourceOutcomeCallable IoTSecureTunnelingClient::UntagResourceCallable(con
 
 void IoTSecureTunnelingClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSecureTunnelingClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 

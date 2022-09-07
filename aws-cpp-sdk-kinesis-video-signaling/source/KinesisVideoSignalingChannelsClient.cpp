@@ -119,12 +119,10 @@ GetIceServerConfigOutcomeCallable KinesisVideoSignalingChannelsClient::GetIceSer
 
 void KinesisVideoSignalingChannelsClient::GetIceServerConfigAsync(const GetIceServerConfigRequest& request, const GetIceServerConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetIceServerConfigAsyncHelper( request, handler, context ); } );
-}
-
-void KinesisVideoSignalingChannelsClient::GetIceServerConfigAsyncHelper(const GetIceServerConfigRequest& request, const GetIceServerConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetIceServerConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetIceServerConfig(request), context);
+    } );
 }
 
 SendAlexaOfferToMasterOutcome KinesisVideoSignalingChannelsClient::SendAlexaOfferToMaster(const SendAlexaOfferToMasterRequest& request) const
@@ -144,11 +142,9 @@ SendAlexaOfferToMasterOutcomeCallable KinesisVideoSignalingChannelsClient::SendA
 
 void KinesisVideoSignalingChannelsClient::SendAlexaOfferToMasterAsync(const SendAlexaOfferToMasterRequest& request, const SendAlexaOfferToMasterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendAlexaOfferToMasterAsyncHelper( request, handler, context ); } );
-}
-
-void KinesisVideoSignalingChannelsClient::SendAlexaOfferToMasterAsyncHelper(const SendAlexaOfferToMasterRequest& request, const SendAlexaOfferToMasterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SendAlexaOfferToMaster(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SendAlexaOfferToMaster(request), context);
+    } );
 }
 

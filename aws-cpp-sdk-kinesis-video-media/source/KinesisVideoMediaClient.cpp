@@ -118,11 +118,9 @@ GetMediaOutcomeCallable KinesisVideoMediaClient::GetMediaCallable(const GetMedia
 
 void KinesisVideoMediaClient::GetMediaAsync(const GetMediaRequest& request, const GetMediaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMediaAsyncHelper( request, handler, context ); } );
-}
-
-void KinesisVideoMediaClient::GetMediaAsyncHelper(const GetMediaRequest& request, const GetMediaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetMedia(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetMedia(request), context);
+    } );
 }
 

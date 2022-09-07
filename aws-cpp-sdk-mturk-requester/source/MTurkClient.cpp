@@ -155,12 +155,10 @@ AcceptQualificationRequestOutcomeCallable MTurkClient::AcceptQualificationReques
 
 void MTurkClient::AcceptQualificationRequestAsync(const AcceptQualificationRequestRequest& request, const AcceptQualificationRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AcceptQualificationRequestAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::AcceptQualificationRequestAsyncHelper(const AcceptQualificationRequestRequest& request, const AcceptQualificationRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AcceptQualificationRequest(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AcceptQualificationRequest(request), context);
+    } );
 }
 
 ApproveAssignmentOutcome MTurkClient::ApproveAssignment(const ApproveAssignmentRequest& request) const
@@ -179,12 +177,10 @@ ApproveAssignmentOutcomeCallable MTurkClient::ApproveAssignmentCallable(const Ap
 
 void MTurkClient::ApproveAssignmentAsync(const ApproveAssignmentRequest& request, const ApproveAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ApproveAssignmentAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::ApproveAssignmentAsyncHelper(const ApproveAssignmentRequest& request, const ApproveAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ApproveAssignment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ApproveAssignment(request), context);
+    } );
 }
 
 AssociateQualificationWithWorkerOutcome MTurkClient::AssociateQualificationWithWorker(const AssociateQualificationWithWorkerRequest& request) const
@@ -203,12 +199,10 @@ AssociateQualificationWithWorkerOutcomeCallable MTurkClient::AssociateQualificat
 
 void MTurkClient::AssociateQualificationWithWorkerAsync(const AssociateQualificationWithWorkerRequest& request, const AssociateQualificationWithWorkerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateQualificationWithWorkerAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::AssociateQualificationWithWorkerAsyncHelper(const AssociateQualificationWithWorkerRequest& request, const AssociateQualificationWithWorkerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateQualificationWithWorker(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateQualificationWithWorker(request), context);
+    } );
 }
 
 CreateAdditionalAssignmentsForHITOutcome MTurkClient::CreateAdditionalAssignmentsForHIT(const CreateAdditionalAssignmentsForHITRequest& request) const
@@ -227,12 +221,10 @@ CreateAdditionalAssignmentsForHITOutcomeCallable MTurkClient::CreateAdditionalAs
 
 void MTurkClient::CreateAdditionalAssignmentsForHITAsync(const CreateAdditionalAssignmentsForHITRequest& request, const CreateAdditionalAssignmentsForHITResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAdditionalAssignmentsForHITAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::CreateAdditionalAssignmentsForHITAsyncHelper(const CreateAdditionalAssignmentsForHITRequest& request, const CreateAdditionalAssignmentsForHITResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateAdditionalAssignmentsForHIT(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateAdditionalAssignmentsForHIT(request), context);
+    } );
 }
 
 CreateHITOutcome MTurkClient::CreateHIT(const CreateHITRequest& request) const
@@ -251,12 +243,10 @@ CreateHITOutcomeCallable MTurkClient::CreateHITCallable(const CreateHITRequest& 
 
 void MTurkClient::CreateHITAsync(const CreateHITRequest& request, const CreateHITResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateHITAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::CreateHITAsyncHelper(const CreateHITRequest& request, const CreateHITResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateHIT(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateHIT(request), context);
+    } );
 }
 
 CreateHITTypeOutcome MTurkClient::CreateHITType(const CreateHITTypeRequest& request) const
@@ -275,12 +265,10 @@ CreateHITTypeOutcomeCallable MTurkClient::CreateHITTypeCallable(const CreateHITT
 
 void MTurkClient::CreateHITTypeAsync(const CreateHITTypeRequest& request, const CreateHITTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateHITTypeAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::CreateHITTypeAsyncHelper(const CreateHITTypeRequest& request, const CreateHITTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateHITType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateHITType(request), context);
+    } );
 }
 
 CreateHITWithHITTypeOutcome MTurkClient::CreateHITWithHITType(const CreateHITWithHITTypeRequest& request) const
@@ -299,12 +287,10 @@ CreateHITWithHITTypeOutcomeCallable MTurkClient::CreateHITWithHITTypeCallable(co
 
 void MTurkClient::CreateHITWithHITTypeAsync(const CreateHITWithHITTypeRequest& request, const CreateHITWithHITTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateHITWithHITTypeAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::CreateHITWithHITTypeAsyncHelper(const CreateHITWithHITTypeRequest& request, const CreateHITWithHITTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateHITWithHITType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateHITWithHITType(request), context);
+    } );
 }
 
 CreateQualificationTypeOutcome MTurkClient::CreateQualificationType(const CreateQualificationTypeRequest& request) const
@@ -323,12 +309,10 @@ CreateQualificationTypeOutcomeCallable MTurkClient::CreateQualificationTypeCalla
 
 void MTurkClient::CreateQualificationTypeAsync(const CreateQualificationTypeRequest& request, const CreateQualificationTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateQualificationTypeAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::CreateQualificationTypeAsyncHelper(const CreateQualificationTypeRequest& request, const CreateQualificationTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateQualificationType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateQualificationType(request), context);
+    } );
 }
 
 CreateWorkerBlockOutcome MTurkClient::CreateWorkerBlock(const CreateWorkerBlockRequest& request) const
@@ -347,12 +331,10 @@ CreateWorkerBlockOutcomeCallable MTurkClient::CreateWorkerBlockCallable(const Cr
 
 void MTurkClient::CreateWorkerBlockAsync(const CreateWorkerBlockRequest& request, const CreateWorkerBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateWorkerBlockAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::CreateWorkerBlockAsyncHelper(const CreateWorkerBlockRequest& request, const CreateWorkerBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateWorkerBlock(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateWorkerBlock(request), context);
+    } );
 }
 
 DeleteHITOutcome MTurkClient::DeleteHIT(const DeleteHITRequest& request) const
@@ -371,12 +353,10 @@ DeleteHITOutcomeCallable MTurkClient::DeleteHITCallable(const DeleteHITRequest& 
 
 void MTurkClient::DeleteHITAsync(const DeleteHITRequest& request, const DeleteHITResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteHITAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::DeleteHITAsyncHelper(const DeleteHITRequest& request, const DeleteHITResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteHIT(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteHIT(request), context);
+    } );
 }
 
 DeleteQualificationTypeOutcome MTurkClient::DeleteQualificationType(const DeleteQualificationTypeRequest& request) const
@@ -395,12 +375,10 @@ DeleteQualificationTypeOutcomeCallable MTurkClient::DeleteQualificationTypeCalla
 
 void MTurkClient::DeleteQualificationTypeAsync(const DeleteQualificationTypeRequest& request, const DeleteQualificationTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteQualificationTypeAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::DeleteQualificationTypeAsyncHelper(const DeleteQualificationTypeRequest& request, const DeleteQualificationTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteQualificationType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteQualificationType(request), context);
+    } );
 }
 
 DeleteWorkerBlockOutcome MTurkClient::DeleteWorkerBlock(const DeleteWorkerBlockRequest& request) const
@@ -419,12 +397,10 @@ DeleteWorkerBlockOutcomeCallable MTurkClient::DeleteWorkerBlockCallable(const De
 
 void MTurkClient::DeleteWorkerBlockAsync(const DeleteWorkerBlockRequest& request, const DeleteWorkerBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteWorkerBlockAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::DeleteWorkerBlockAsyncHelper(const DeleteWorkerBlockRequest& request, const DeleteWorkerBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteWorkerBlock(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteWorkerBlock(request), context);
+    } );
 }
 
 DisassociateQualificationFromWorkerOutcome MTurkClient::DisassociateQualificationFromWorker(const DisassociateQualificationFromWorkerRequest& request) const
@@ -443,12 +419,10 @@ DisassociateQualificationFromWorkerOutcomeCallable MTurkClient::DisassociateQual
 
 void MTurkClient::DisassociateQualificationFromWorkerAsync(const DisassociateQualificationFromWorkerRequest& request, const DisassociateQualificationFromWorkerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateQualificationFromWorkerAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::DisassociateQualificationFromWorkerAsyncHelper(const DisassociateQualificationFromWorkerRequest& request, const DisassociateQualificationFromWorkerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateQualificationFromWorker(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateQualificationFromWorker(request), context);
+    } );
 }
 
 GetAccountBalanceOutcome MTurkClient::GetAccountBalance(const GetAccountBalanceRequest& request) const
@@ -467,12 +441,10 @@ GetAccountBalanceOutcomeCallable MTurkClient::GetAccountBalanceCallable(const Ge
 
 void MTurkClient::GetAccountBalanceAsync(const GetAccountBalanceRequest& request, const GetAccountBalanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAccountBalanceAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::GetAccountBalanceAsyncHelper(const GetAccountBalanceRequest& request, const GetAccountBalanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetAccountBalance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAccountBalance(request), context);
+    } );
 }
 
 GetAssignmentOutcome MTurkClient::GetAssignment(const GetAssignmentRequest& request) const
@@ -491,12 +463,10 @@ GetAssignmentOutcomeCallable MTurkClient::GetAssignmentCallable(const GetAssignm
 
 void MTurkClient::GetAssignmentAsync(const GetAssignmentRequest& request, const GetAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAssignmentAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::GetAssignmentAsyncHelper(const GetAssignmentRequest& request, const GetAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetAssignment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAssignment(request), context);
+    } );
 }
 
 GetFileUploadURLOutcome MTurkClient::GetFileUploadURL(const GetFileUploadURLRequest& request) const
@@ -515,12 +485,10 @@ GetFileUploadURLOutcomeCallable MTurkClient::GetFileUploadURLCallable(const GetF
 
 void MTurkClient::GetFileUploadURLAsync(const GetFileUploadURLRequest& request, const GetFileUploadURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFileUploadURLAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::GetFileUploadURLAsyncHelper(const GetFileUploadURLRequest& request, const GetFileUploadURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetFileUploadURL(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetFileUploadURL(request), context);
+    } );
 }
 
 GetHITOutcome MTurkClient::GetHIT(const GetHITRequest& request) const
@@ -539,12 +507,10 @@ GetHITOutcomeCallable MTurkClient::GetHITCallable(const GetHITRequest& request) 
 
 void MTurkClient::GetHITAsync(const GetHITRequest& request, const GetHITResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetHITAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::GetHITAsyncHelper(const GetHITRequest& request, const GetHITResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetHIT(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetHIT(request), context);
+    } );
 }
 
 GetQualificationScoreOutcome MTurkClient::GetQualificationScore(const GetQualificationScoreRequest& request) const
@@ -563,12 +529,10 @@ GetQualificationScoreOutcomeCallable MTurkClient::GetQualificationScoreCallable(
 
 void MTurkClient::GetQualificationScoreAsync(const GetQualificationScoreRequest& request, const GetQualificationScoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetQualificationScoreAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::GetQualificationScoreAsyncHelper(const GetQualificationScoreRequest& request, const GetQualificationScoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetQualificationScore(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetQualificationScore(request), context);
+    } );
 }
 
 GetQualificationTypeOutcome MTurkClient::GetQualificationType(const GetQualificationTypeRequest& request) const
@@ -587,12 +551,10 @@ GetQualificationTypeOutcomeCallable MTurkClient::GetQualificationTypeCallable(co
 
 void MTurkClient::GetQualificationTypeAsync(const GetQualificationTypeRequest& request, const GetQualificationTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetQualificationTypeAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::GetQualificationTypeAsyncHelper(const GetQualificationTypeRequest& request, const GetQualificationTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetQualificationType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetQualificationType(request), context);
+    } );
 }
 
 ListAssignmentsForHITOutcome MTurkClient::ListAssignmentsForHIT(const ListAssignmentsForHITRequest& request) const
@@ -611,12 +573,10 @@ ListAssignmentsForHITOutcomeCallable MTurkClient::ListAssignmentsForHITCallable(
 
 void MTurkClient::ListAssignmentsForHITAsync(const ListAssignmentsForHITRequest& request, const ListAssignmentsForHITResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAssignmentsForHITAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::ListAssignmentsForHITAsyncHelper(const ListAssignmentsForHITRequest& request, const ListAssignmentsForHITResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAssignmentsForHIT(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAssignmentsForHIT(request), context);
+    } );
 }
 
 ListBonusPaymentsOutcome MTurkClient::ListBonusPayments(const ListBonusPaymentsRequest& request) const
@@ -635,12 +595,10 @@ ListBonusPaymentsOutcomeCallable MTurkClient::ListBonusPaymentsCallable(const Li
 
 void MTurkClient::ListBonusPaymentsAsync(const ListBonusPaymentsRequest& request, const ListBonusPaymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBonusPaymentsAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::ListBonusPaymentsAsyncHelper(const ListBonusPaymentsRequest& request, const ListBonusPaymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListBonusPayments(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListBonusPayments(request), context);
+    } );
 }
 
 ListHITsOutcome MTurkClient::ListHITs(const ListHITsRequest& request) const
@@ -659,12 +617,10 @@ ListHITsOutcomeCallable MTurkClient::ListHITsCallable(const ListHITsRequest& req
 
 void MTurkClient::ListHITsAsync(const ListHITsRequest& request, const ListHITsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListHITsAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::ListHITsAsyncHelper(const ListHITsRequest& request, const ListHITsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListHITs(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListHITs(request), context);
+    } );
 }
 
 ListHITsForQualificationTypeOutcome MTurkClient::ListHITsForQualificationType(const ListHITsForQualificationTypeRequest& request) const
@@ -683,12 +639,10 @@ ListHITsForQualificationTypeOutcomeCallable MTurkClient::ListHITsForQualificatio
 
 void MTurkClient::ListHITsForQualificationTypeAsync(const ListHITsForQualificationTypeRequest& request, const ListHITsForQualificationTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListHITsForQualificationTypeAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::ListHITsForQualificationTypeAsyncHelper(const ListHITsForQualificationTypeRequest& request, const ListHITsForQualificationTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListHITsForQualificationType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListHITsForQualificationType(request), context);
+    } );
 }
 
 ListQualificationRequestsOutcome MTurkClient::ListQualificationRequests(const ListQualificationRequestsRequest& request) const
@@ -707,12 +661,10 @@ ListQualificationRequestsOutcomeCallable MTurkClient::ListQualificationRequestsC
 
 void MTurkClient::ListQualificationRequestsAsync(const ListQualificationRequestsRequest& request, const ListQualificationRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListQualificationRequestsAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::ListQualificationRequestsAsyncHelper(const ListQualificationRequestsRequest& request, const ListQualificationRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListQualificationRequests(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListQualificationRequests(request), context);
+    } );
 }
 
 ListQualificationTypesOutcome MTurkClient::ListQualificationTypes(const ListQualificationTypesRequest& request) const
@@ -731,12 +683,10 @@ ListQualificationTypesOutcomeCallable MTurkClient::ListQualificationTypesCallabl
 
 void MTurkClient::ListQualificationTypesAsync(const ListQualificationTypesRequest& request, const ListQualificationTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListQualificationTypesAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::ListQualificationTypesAsyncHelper(const ListQualificationTypesRequest& request, const ListQualificationTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListQualificationTypes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListQualificationTypes(request), context);
+    } );
 }
 
 ListReviewPolicyResultsForHITOutcome MTurkClient::ListReviewPolicyResultsForHIT(const ListReviewPolicyResultsForHITRequest& request) const
@@ -755,12 +705,10 @@ ListReviewPolicyResultsForHITOutcomeCallable MTurkClient::ListReviewPolicyResult
 
 void MTurkClient::ListReviewPolicyResultsForHITAsync(const ListReviewPolicyResultsForHITRequest& request, const ListReviewPolicyResultsForHITResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListReviewPolicyResultsForHITAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::ListReviewPolicyResultsForHITAsyncHelper(const ListReviewPolicyResultsForHITRequest& request, const ListReviewPolicyResultsForHITResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListReviewPolicyResultsForHIT(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListReviewPolicyResultsForHIT(request), context);
+    } );
 }
 
 ListReviewableHITsOutcome MTurkClient::ListReviewableHITs(const ListReviewableHITsRequest& request) const
@@ -779,12 +727,10 @@ ListReviewableHITsOutcomeCallable MTurkClient::ListReviewableHITsCallable(const 
 
 void MTurkClient::ListReviewableHITsAsync(const ListReviewableHITsRequest& request, const ListReviewableHITsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListReviewableHITsAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::ListReviewableHITsAsyncHelper(const ListReviewableHITsRequest& request, const ListReviewableHITsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListReviewableHITs(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListReviewableHITs(request), context);
+    } );
 }
 
 ListWorkerBlocksOutcome MTurkClient::ListWorkerBlocks(const ListWorkerBlocksRequest& request) const
@@ -803,12 +749,10 @@ ListWorkerBlocksOutcomeCallable MTurkClient::ListWorkerBlocksCallable(const List
 
 void MTurkClient::ListWorkerBlocksAsync(const ListWorkerBlocksRequest& request, const ListWorkerBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListWorkerBlocksAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::ListWorkerBlocksAsyncHelper(const ListWorkerBlocksRequest& request, const ListWorkerBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListWorkerBlocks(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListWorkerBlocks(request), context);
+    } );
 }
 
 ListWorkersWithQualificationTypeOutcome MTurkClient::ListWorkersWithQualificationType(const ListWorkersWithQualificationTypeRequest& request) const
@@ -827,12 +771,10 @@ ListWorkersWithQualificationTypeOutcomeCallable MTurkClient::ListWorkersWithQual
 
 void MTurkClient::ListWorkersWithQualificationTypeAsync(const ListWorkersWithQualificationTypeRequest& request, const ListWorkersWithQualificationTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListWorkersWithQualificationTypeAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::ListWorkersWithQualificationTypeAsyncHelper(const ListWorkersWithQualificationTypeRequest& request, const ListWorkersWithQualificationTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListWorkersWithQualificationType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListWorkersWithQualificationType(request), context);
+    } );
 }
 
 NotifyWorkersOutcome MTurkClient::NotifyWorkers(const NotifyWorkersRequest& request) const
@@ -851,12 +793,10 @@ NotifyWorkersOutcomeCallable MTurkClient::NotifyWorkersCallable(const NotifyWork
 
 void MTurkClient::NotifyWorkersAsync(const NotifyWorkersRequest& request, const NotifyWorkersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->NotifyWorkersAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::NotifyWorkersAsyncHelper(const NotifyWorkersRequest& request, const NotifyWorkersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, NotifyWorkers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, NotifyWorkers(request), context);
+    } );
 }
 
 RejectAssignmentOutcome MTurkClient::RejectAssignment(const RejectAssignmentRequest& request) const
@@ -875,12 +815,10 @@ RejectAssignmentOutcomeCallable MTurkClient::RejectAssignmentCallable(const Reje
 
 void MTurkClient::RejectAssignmentAsync(const RejectAssignmentRequest& request, const RejectAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RejectAssignmentAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::RejectAssignmentAsyncHelper(const RejectAssignmentRequest& request, const RejectAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RejectAssignment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RejectAssignment(request), context);
+    } );
 }
 
 RejectQualificationRequestOutcome MTurkClient::RejectQualificationRequest(const RejectQualificationRequestRequest& request) const
@@ -899,12 +837,10 @@ RejectQualificationRequestOutcomeCallable MTurkClient::RejectQualificationReques
 
 void MTurkClient::RejectQualificationRequestAsync(const RejectQualificationRequestRequest& request, const RejectQualificationRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RejectQualificationRequestAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::RejectQualificationRequestAsyncHelper(const RejectQualificationRequestRequest& request, const RejectQualificationRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RejectQualificationRequest(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RejectQualificationRequest(request), context);
+    } );
 }
 
 SendBonusOutcome MTurkClient::SendBonus(const SendBonusRequest& request) const
@@ -923,12 +859,10 @@ SendBonusOutcomeCallable MTurkClient::SendBonusCallable(const SendBonusRequest& 
 
 void MTurkClient::SendBonusAsync(const SendBonusRequest& request, const SendBonusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendBonusAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::SendBonusAsyncHelper(const SendBonusRequest& request, const SendBonusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SendBonus(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SendBonus(request), context);
+    } );
 }
 
 SendTestEventNotificationOutcome MTurkClient::SendTestEventNotification(const SendTestEventNotificationRequest& request) const
@@ -947,12 +881,10 @@ SendTestEventNotificationOutcomeCallable MTurkClient::SendTestEventNotificationC
 
 void MTurkClient::SendTestEventNotificationAsync(const SendTestEventNotificationRequest& request, const SendTestEventNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendTestEventNotificationAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::SendTestEventNotificationAsyncHelper(const SendTestEventNotificationRequest& request, const SendTestEventNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SendTestEventNotification(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SendTestEventNotification(request), context);
+    } );
 }
 
 UpdateExpirationForHITOutcome MTurkClient::UpdateExpirationForHIT(const UpdateExpirationForHITRequest& request) const
@@ -971,12 +903,10 @@ UpdateExpirationForHITOutcomeCallable MTurkClient::UpdateExpirationForHITCallabl
 
 void MTurkClient::UpdateExpirationForHITAsync(const UpdateExpirationForHITRequest& request, const UpdateExpirationForHITResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateExpirationForHITAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::UpdateExpirationForHITAsyncHelper(const UpdateExpirationForHITRequest& request, const UpdateExpirationForHITResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateExpirationForHIT(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateExpirationForHIT(request), context);
+    } );
 }
 
 UpdateHITReviewStatusOutcome MTurkClient::UpdateHITReviewStatus(const UpdateHITReviewStatusRequest& request) const
@@ -995,12 +925,10 @@ UpdateHITReviewStatusOutcomeCallable MTurkClient::UpdateHITReviewStatusCallable(
 
 void MTurkClient::UpdateHITReviewStatusAsync(const UpdateHITReviewStatusRequest& request, const UpdateHITReviewStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateHITReviewStatusAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::UpdateHITReviewStatusAsyncHelper(const UpdateHITReviewStatusRequest& request, const UpdateHITReviewStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateHITReviewStatus(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateHITReviewStatus(request), context);
+    } );
 }
 
 UpdateHITTypeOfHITOutcome MTurkClient::UpdateHITTypeOfHIT(const UpdateHITTypeOfHITRequest& request) const
@@ -1019,12 +947,10 @@ UpdateHITTypeOfHITOutcomeCallable MTurkClient::UpdateHITTypeOfHITCallable(const 
 
 void MTurkClient::UpdateHITTypeOfHITAsync(const UpdateHITTypeOfHITRequest& request, const UpdateHITTypeOfHITResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateHITTypeOfHITAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::UpdateHITTypeOfHITAsyncHelper(const UpdateHITTypeOfHITRequest& request, const UpdateHITTypeOfHITResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateHITTypeOfHIT(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateHITTypeOfHIT(request), context);
+    } );
 }
 
 UpdateNotificationSettingsOutcome MTurkClient::UpdateNotificationSettings(const UpdateNotificationSettingsRequest& request) const
@@ -1043,12 +969,10 @@ UpdateNotificationSettingsOutcomeCallable MTurkClient::UpdateNotificationSetting
 
 void MTurkClient::UpdateNotificationSettingsAsync(const UpdateNotificationSettingsRequest& request, const UpdateNotificationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateNotificationSettingsAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::UpdateNotificationSettingsAsyncHelper(const UpdateNotificationSettingsRequest& request, const UpdateNotificationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateNotificationSettings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateNotificationSettings(request), context);
+    } );
 }
 
 UpdateQualificationTypeOutcome MTurkClient::UpdateQualificationType(const UpdateQualificationTypeRequest& request) const
@@ -1067,11 +991,9 @@ UpdateQualificationTypeOutcomeCallable MTurkClient::UpdateQualificationTypeCalla
 
 void MTurkClient::UpdateQualificationTypeAsync(const UpdateQualificationTypeRequest& request, const UpdateQualificationTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateQualificationTypeAsyncHelper( request, handler, context ); } );
-}
-
-void MTurkClient::UpdateQualificationTypeAsyncHelper(const UpdateQualificationTypeRequest& request, const UpdateQualificationTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateQualificationType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateQualificationType(request), context);
+    } );
 }
 

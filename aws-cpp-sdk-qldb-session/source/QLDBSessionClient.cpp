@@ -117,11 +117,9 @@ SendCommandOutcomeCallable QLDBSessionClient::SendCommandCallable(const SendComm
 
 void QLDBSessionClient::SendCommandAsync(const SendCommandRequest& request, const SendCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendCommandAsyncHelper( request, handler, context ); } );
-}
-
-void QLDBSessionClient::SendCommandAsyncHelper(const SendCommandRequest& request, const SendCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SendCommand(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SendCommand(request), context);
+    } );
 }
 

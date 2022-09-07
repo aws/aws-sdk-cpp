@@ -146,12 +146,10 @@ AddTagsToStreamOutcomeCallable KinesisClient::AddTagsToStreamCallable(const AddT
 
 void KinesisClient::AddTagsToStreamAsync(const AddTagsToStreamRequest& request, const AddTagsToStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddTagsToStreamAsyncHelper( request, handler, context ); } );
-}
-
-void KinesisClient::AddTagsToStreamAsyncHelper(const AddTagsToStreamRequest& request, const AddTagsToStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AddTagsToStream(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AddTagsToStream(request), context);
+    } );
 }
 
 CreateStreamOutcome KinesisClient::CreateStream(const CreateStreamRequest& request) const
@@ -170,12 +168,10 @@ CreateStreamOutcomeCallable KinesisClient::CreateStreamCallable(const CreateStre
 
 void KinesisClient::CreateStreamAsync(const CreateStreamRequest& request, const CreateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateStreamAsyncHelper( request, handler, context ); } );
-}
-
-void KinesisClient::CreateStreamAsyncHelper(const CreateStreamRequest& request, const CreateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateStream(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateStream(request), context);
+    } );
 }
 
 DecreaseStreamRetentionPeriodOutcome KinesisClient::DecreaseStreamRetentionPeriod(const DecreaseStreamRetentionPeriodRequest& request) const
@@ -194,12 +190,10 @@ DecreaseStreamRetentionPeriodOutcomeCallable KinesisClient::DecreaseStreamRetent
 
 void KinesisClient::DecreaseStreamRetentionPeriodAsync(const DecreaseStreamRetentionPeriodRequest& request, const DecreaseStreamRetentionPeriodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DecreaseStreamRetentionPeriodAsyncHelper( request, handler, context ); } );
-}
-
-void KinesisClient::DecreaseStreamRetentionPeriodAsyncHelper(const DecreaseStreamRetentionPeriodRequest& request, const DecreaseStreamRetentionPeriodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DecreaseStreamRetentionPeriod(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DecreaseStreamRetentionPeriod(request), context);
+    } );
 }
 
 DeleteStreamOutcome KinesisClient::DeleteStream(const DeleteStreamRequest& request) const
@@ -218,12 +212,10 @@ DeleteStreamOutcomeCallable KinesisClient::DeleteStreamCallable(const DeleteStre
 
 void KinesisClient::DeleteStreamAsync(const DeleteStreamRequest& request, const DeleteStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteStreamAsyncHelper( request, handler, context ); } );
-}
-
-void KinesisClient::DeleteStreamAsyncHelper(const DeleteStreamRequest& request, const DeleteStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteStream(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteStream(request), context);
+    } );
 }
 
 DeregisterStreamConsumerOutcome KinesisClient::DeregisterStreamConsumer(const DeregisterStreamConsumerRequest& request) const
@@ -242,12 +234,10 @@ DeregisterStreamConsumerOutcomeCallable KinesisClient::DeregisterStreamConsumerC
 
 void KinesisClient::DeregisterStreamConsumerAsync(const DeregisterStreamConsumerRequest& request, const DeregisterStreamConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeregisterStreamConsumerAsyncHelper( request, handler, context ); } );
-}
-
-void KinesisClient::DeregisterStreamConsumerAsyncHelper(const DeregisterStreamConsumerRequest& request, const DeregisterStreamConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeregisterStreamConsumer(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeregisterStreamConsumer(request), context);
+    } );
 }
 
 DescribeLimitsOutcome KinesisClient::DescribeLimits(const DescribeLimitsRequest& request) const
@@ -266,12 +256,10 @@ DescribeLimitsOutcomeCallable KinesisClient::DescribeLimitsCallable(const Descri
 
 void KinesisClient::DescribeLimitsAsync(const DescribeLimitsRequest& request, const DescribeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLimitsAsyncHelper( request, handler, context ); } );
-}
-
-void KinesisClient::DescribeLimitsAsyncHelper(const DescribeLimitsRequest& request, const DescribeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeLimits(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeLimits(request), context);
+    } );
 }
 
 DescribeStreamOutcome KinesisClient::DescribeStream(const DescribeStreamRequest& request) const
@@ -290,12 +278,10 @@ DescribeStreamOutcomeCallable KinesisClient::DescribeStreamCallable(const Descri
 
 void KinesisClient::DescribeStreamAsync(const DescribeStreamRequest& request, const DescribeStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeStreamAsyncHelper( request, handler, context ); } );
-}
-
-void KinesisClient::DescribeStreamAsyncHelper(const DescribeStreamRequest& request, const DescribeStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeStream(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeStream(request), context);
+    } );
 }
 
 DescribeStreamConsumerOutcome KinesisClient::DescribeStreamConsumer(const DescribeStreamConsumerRequest& request) const
@@ -314,12 +300,10 @@ DescribeStreamConsumerOutcomeCallable KinesisClient::DescribeStreamConsumerCalla
 
 void KinesisClient::DescribeStreamConsumerAsync(const DescribeStreamConsumerRequest& request, const DescribeStreamConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeStreamConsumerAsyncHelper( request, handler, context ); } );
-}
-
-void KinesisClient::DescribeStreamConsumerAsyncHelper(const DescribeStreamConsumerRequest& request, const DescribeStreamConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeStreamConsumer(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeStreamConsumer(request), context);
+    } );
 }
 
 DescribeStreamSummaryOutcome KinesisClient::DescribeStreamSummary(const DescribeStreamSummaryRequest& request) const
@@ -338,12 +322,10 @@ DescribeStreamSummaryOutcomeCallable KinesisClient::DescribeStreamSummaryCallabl
 
 void KinesisClient::DescribeStreamSummaryAsync(const DescribeStreamSummaryRequest& request, const DescribeStreamSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeStreamSummaryAsyncHelper( request, handler, context ); } );
-}
-
-void KinesisClient::DescribeStreamSummaryAsyncHelper(const DescribeStreamSummaryRequest& request, const DescribeStreamSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeStreamSummary(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeStreamSummary(request), context);
+    } );
 }
 
 DisableEnhancedMonitoringOutcome KinesisClient::DisableEnhancedMonitoring(const DisableEnhancedMonitoringRequest& request) const
@@ -362,12 +344,10 @@ DisableEnhancedMonitoringOutcomeCallable KinesisClient::DisableEnhancedMonitorin
 
 void KinesisClient::DisableEnhancedMonitoringAsync(const DisableEnhancedMonitoringRequest& request, const DisableEnhancedMonitoringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableEnhancedMonitoringAsyncHelper( request, handler, context ); } );
-}
-
-void KinesisClient::DisableEnhancedMonitoringAsyncHelper(const DisableEnhancedMonitoringRequest& request, const DisableEnhancedMonitoringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisableEnhancedMonitoring(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisableEnhancedMonitoring(request), context);
+    } );
 }
 
 EnableEnhancedMonitoringOutcome KinesisClient::EnableEnhancedMonitoring(const EnableEnhancedMonitoringRequest& request) const
@@ -386,12 +366,10 @@ EnableEnhancedMonitoringOutcomeCallable KinesisClient::EnableEnhancedMonitoringC
 
 void KinesisClient::EnableEnhancedMonitoringAsync(const EnableEnhancedMonitoringRequest& request, const EnableEnhancedMonitoringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableEnhancedMonitoringAsyncHelper( request, handler, context ); } );
-}
-
-void KinesisClient::EnableEnhancedMonitoringAsyncHelper(const EnableEnhancedMonitoringRequest& request, const EnableEnhancedMonitoringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, EnableEnhancedMonitoring(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, EnableEnhancedMonitoring(request), context);
+    } );
 }
 
 GetRecordsOutcome KinesisClient::GetRecords(const GetRecordsRequest& request) const
@@ -410,12 +388,10 @@ GetRecordsOutcomeCallable KinesisClient::GetRecordsCallable(const GetRecordsRequ
 
 void KinesisClient::GetRecordsAsync(const GetRecordsRequest& request, const GetRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRecordsAsyncHelper( request, handler, context ); } );
-}
-
-void KinesisClient::GetRecordsAsyncHelper(const GetRecordsRequest& request, const GetRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetRecords(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetRecords(request), context);
+    } );
 }
 
 GetShardIteratorOutcome KinesisClient::GetShardIterator(const GetShardIteratorRequest& request) const
@@ -434,12 +410,10 @@ GetShardIteratorOutcomeCallable KinesisClient::GetShardIteratorCallable(const Ge
 
 void KinesisClient::GetShardIteratorAsync(const GetShardIteratorRequest& request, const GetShardIteratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetShardIteratorAsyncHelper( request, handler, context ); } );
-}
-
-void KinesisClient::GetShardIteratorAsyncHelper(const GetShardIteratorRequest& request, const GetShardIteratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetShardIterator(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetShardIterator(request), context);
+    } );
 }
 
 IncreaseStreamRetentionPeriodOutcome KinesisClient::IncreaseStreamRetentionPeriod(const IncreaseStreamRetentionPeriodRequest& request) const
@@ -458,12 +432,10 @@ IncreaseStreamRetentionPeriodOutcomeCallable KinesisClient::IncreaseStreamRetent
 
 void KinesisClient::IncreaseStreamRetentionPeriodAsync(const IncreaseStreamRetentionPeriodRequest& request, const IncreaseStreamRetentionPeriodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->IncreaseStreamRetentionPeriodAsyncHelper( request, handler, context ); } );
-}
-
-void KinesisClient::IncreaseStreamRetentionPeriodAsyncHelper(const IncreaseStreamRetentionPeriodRequest& request, const IncreaseStreamRetentionPeriodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, IncreaseStreamRetentionPeriod(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, IncreaseStreamRetentionPeriod(request), context);
+    } );
 }
 
 ListShardsOutcome KinesisClient::ListShards(const ListShardsRequest& request) const
@@ -482,12 +454,10 @@ ListShardsOutcomeCallable KinesisClient::ListShardsCallable(const ListShardsRequ
 
 void KinesisClient::ListShardsAsync(const ListShardsRequest& request, const ListShardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListShardsAsyncHelper( request, handler, context ); } );
-}
-
-void KinesisClient::ListShardsAsyncHelper(const ListShardsRequest& request, const ListShardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListShards(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListShards(request), context);
+    } );
 }
 
 ListStreamConsumersOutcome KinesisClient::ListStreamConsumers(const ListStreamConsumersRequest& request) const
@@ -506,12 +476,10 @@ ListStreamConsumersOutcomeCallable KinesisClient::ListStreamConsumersCallable(co
 
 void KinesisClient::ListStreamConsumersAsync(const ListStreamConsumersRequest& request, const ListStreamConsumersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListStreamConsumersAsyncHelper( request, handler, context ); } );
-}
-
-void KinesisClient::ListStreamConsumersAsyncHelper(const ListStreamConsumersRequest& request, const ListStreamConsumersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListStreamConsumers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListStreamConsumers(request), context);
+    } );
 }
 
 ListStreamsOutcome KinesisClient::ListStreams(const ListStreamsRequest& request) const
@@ -530,12 +498,10 @@ ListStreamsOutcomeCallable KinesisClient::ListStreamsCallable(const ListStreamsR
 
 void KinesisClient::ListStreamsAsync(const ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListStreamsAsyncHelper( request, handler, context ); } );
-}
-
-void KinesisClient::ListStreamsAsyncHelper(const ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListStreams(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListStreams(request), context);
+    } );
 }
 
 ListTagsForStreamOutcome KinesisClient::ListTagsForStream(const ListTagsForStreamRequest& request) const
@@ -554,12 +520,10 @@ ListTagsForStreamOutcomeCallable KinesisClient::ListTagsForStreamCallable(const 
 
 void KinesisClient::ListTagsForStreamAsync(const ListTagsForStreamRequest& request, const ListTagsForStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForStreamAsyncHelper( request, handler, context ); } );
-}
-
-void KinesisClient::ListTagsForStreamAsyncHelper(const ListTagsForStreamRequest& request, const ListTagsForStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForStream(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForStream(request), context);
+    } );
 }
 
 MergeShardsOutcome KinesisClient::MergeShards(const MergeShardsRequest& request) const
@@ -578,12 +542,10 @@ MergeShardsOutcomeCallable KinesisClient::MergeShardsCallable(const MergeShardsR
 
 void KinesisClient::MergeShardsAsync(const MergeShardsRequest& request, const MergeShardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->MergeShardsAsyncHelper( request, handler, context ); } );
-}
-
-void KinesisClient::MergeShardsAsyncHelper(const MergeShardsRequest& request, const MergeShardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, MergeShards(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, MergeShards(request), context);
+    } );
 }
 
 PutRecordOutcome KinesisClient::PutRecord(const PutRecordRequest& request) const
@@ -602,12 +564,10 @@ PutRecordOutcomeCallable KinesisClient::PutRecordCallable(const PutRecordRequest
 
 void KinesisClient::PutRecordAsync(const PutRecordRequest& request, const PutRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutRecordAsyncHelper( request, handler, context ); } );
-}
-
-void KinesisClient::PutRecordAsyncHelper(const PutRecordRequest& request, const PutRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutRecord(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutRecord(request), context);
+    } );
 }
 
 PutRecordsOutcome KinesisClient::PutRecords(const PutRecordsRequest& request) const
@@ -626,12 +586,10 @@ PutRecordsOutcomeCallable KinesisClient::PutRecordsCallable(const PutRecordsRequ
 
 void KinesisClient::PutRecordsAsync(const PutRecordsRequest& request, const PutRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutRecordsAsyncHelper( request, handler, context ); } );
-}
-
-void KinesisClient::PutRecordsAsyncHelper(const PutRecordsRequest& request, const PutRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutRecords(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutRecords(request), context);
+    } );
 }
 
 RegisterStreamConsumerOutcome KinesisClient::RegisterStreamConsumer(const RegisterStreamConsumerRequest& request) const
@@ -650,12 +608,10 @@ RegisterStreamConsumerOutcomeCallable KinesisClient::RegisterStreamConsumerCalla
 
 void KinesisClient::RegisterStreamConsumerAsync(const RegisterStreamConsumerRequest& request, const RegisterStreamConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterStreamConsumerAsyncHelper( request, handler, context ); } );
-}
-
-void KinesisClient::RegisterStreamConsumerAsyncHelper(const RegisterStreamConsumerRequest& request, const RegisterStreamConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RegisterStreamConsumer(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RegisterStreamConsumer(request), context);
+    } );
 }
 
 RemoveTagsFromStreamOutcome KinesisClient::RemoveTagsFromStream(const RemoveTagsFromStreamRequest& request) const
@@ -674,12 +630,10 @@ RemoveTagsFromStreamOutcomeCallable KinesisClient::RemoveTagsFromStreamCallable(
 
 void KinesisClient::RemoveTagsFromStreamAsync(const RemoveTagsFromStreamRequest& request, const RemoveTagsFromStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveTagsFromStreamAsyncHelper( request, handler, context ); } );
-}
-
-void KinesisClient::RemoveTagsFromStreamAsyncHelper(const RemoveTagsFromStreamRequest& request, const RemoveTagsFromStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RemoveTagsFromStream(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RemoveTagsFromStream(request), context);
+    } );
 }
 
 SplitShardOutcome KinesisClient::SplitShard(const SplitShardRequest& request) const
@@ -698,12 +652,10 @@ SplitShardOutcomeCallable KinesisClient::SplitShardCallable(const SplitShardRequ
 
 void KinesisClient::SplitShardAsync(const SplitShardRequest& request, const SplitShardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SplitShardAsyncHelper( request, handler, context ); } );
-}
-
-void KinesisClient::SplitShardAsyncHelper(const SplitShardRequest& request, const SplitShardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SplitShard(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SplitShard(request), context);
+    } );
 }
 
 StartStreamEncryptionOutcome KinesisClient::StartStreamEncryption(const StartStreamEncryptionRequest& request) const
@@ -722,12 +674,10 @@ StartStreamEncryptionOutcomeCallable KinesisClient::StartStreamEncryptionCallabl
 
 void KinesisClient::StartStreamEncryptionAsync(const StartStreamEncryptionRequest& request, const StartStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartStreamEncryptionAsyncHelper( request, handler, context ); } );
-}
-
-void KinesisClient::StartStreamEncryptionAsyncHelper(const StartStreamEncryptionRequest& request, const StartStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartStreamEncryption(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartStreamEncryption(request), context);
+    } );
 }
 
 StopStreamEncryptionOutcome KinesisClient::StopStreamEncryption(const StopStreamEncryptionRequest& request) const
@@ -746,12 +696,10 @@ StopStreamEncryptionOutcomeCallable KinesisClient::StopStreamEncryptionCallable(
 
 void KinesisClient::StopStreamEncryptionAsync(const StopStreamEncryptionRequest& request, const StopStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopStreamEncryptionAsyncHelper( request, handler, context ); } );
-}
-
-void KinesisClient::StopStreamEncryptionAsyncHelper(const StopStreamEncryptionRequest& request, const StopStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StopStreamEncryption(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopStreamEncryption(request), context);
+    } );
 }
 
 SubscribeToShardOutcome KinesisClient::SubscribeToShard(SubscribeToShardRequest& request) const
@@ -773,12 +721,10 @@ SubscribeToShardOutcomeCallable KinesisClient::SubscribeToShardCallable(Subscrib
 
 void KinesisClient::SubscribeToShardAsync(SubscribeToShardRequest& request, const SubscribeToShardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, &request, handler, context](){ this->SubscribeToShardAsyncHelper( request, handler, context ); } );
-}
-
-void KinesisClient::SubscribeToShardAsyncHelper(SubscribeToShardRequest& request, const SubscribeToShardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SubscribeToShard(request), context);
+  m_executor->Submit( [this, &request, handler, context]()
+    {
+      handler(this, request, SubscribeToShard(request), context);
+    } );
 }
 
 UpdateShardCountOutcome KinesisClient::UpdateShardCount(const UpdateShardCountRequest& request) const
@@ -797,12 +743,10 @@ UpdateShardCountOutcomeCallable KinesisClient::UpdateShardCountCallable(const Up
 
 void KinesisClient::UpdateShardCountAsync(const UpdateShardCountRequest& request, const UpdateShardCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateShardCountAsyncHelper( request, handler, context ); } );
-}
-
-void KinesisClient::UpdateShardCountAsyncHelper(const UpdateShardCountRequest& request, const UpdateShardCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateShardCount(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateShardCount(request), context);
+    } );
 }
 
 UpdateStreamModeOutcome KinesisClient::UpdateStreamMode(const UpdateStreamModeRequest& request) const
@@ -821,11 +765,9 @@ UpdateStreamModeOutcomeCallable KinesisClient::UpdateStreamModeCallable(const Up
 
 void KinesisClient::UpdateStreamModeAsync(const UpdateStreamModeRequest& request, const UpdateStreamModeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateStreamModeAsyncHelper( request, handler, context ); } );
-}
-
-void KinesisClient::UpdateStreamModeAsyncHelper(const UpdateStreamModeRequest& request, const UpdateStreamModeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateStreamMode(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateStreamMode(request), context);
+    } );
 }
 

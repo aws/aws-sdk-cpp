@@ -137,12 +137,10 @@ CreateDomainOutcomeCallable VoiceIDClient::CreateDomainCallable(const CreateDoma
 
 void VoiceIDClient::CreateDomainAsync(const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDomainAsyncHelper( request, handler, context ); } );
-}
-
-void VoiceIDClient::CreateDomainAsyncHelper(const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateDomain(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateDomain(request), context);
+    } );
 }
 
 DeleteDomainOutcome VoiceIDClient::DeleteDomain(const DeleteDomainRequest& request) const
@@ -161,12 +159,10 @@ DeleteDomainOutcomeCallable VoiceIDClient::DeleteDomainCallable(const DeleteDoma
 
 void VoiceIDClient::DeleteDomainAsync(const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDomainAsyncHelper( request, handler, context ); } );
-}
-
-void VoiceIDClient::DeleteDomainAsyncHelper(const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteDomain(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteDomain(request), context);
+    } );
 }
 
 DeleteFraudsterOutcome VoiceIDClient::DeleteFraudster(const DeleteFraudsterRequest& request) const
@@ -185,12 +181,10 @@ DeleteFraudsterOutcomeCallable VoiceIDClient::DeleteFraudsterCallable(const Dele
 
 void VoiceIDClient::DeleteFraudsterAsync(const DeleteFraudsterRequest& request, const DeleteFraudsterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFraudsterAsyncHelper( request, handler, context ); } );
-}
-
-void VoiceIDClient::DeleteFraudsterAsyncHelper(const DeleteFraudsterRequest& request, const DeleteFraudsterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteFraudster(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteFraudster(request), context);
+    } );
 }
 
 DeleteSpeakerOutcome VoiceIDClient::DeleteSpeaker(const DeleteSpeakerRequest& request) const
@@ -209,12 +203,10 @@ DeleteSpeakerOutcomeCallable VoiceIDClient::DeleteSpeakerCallable(const DeleteSp
 
 void VoiceIDClient::DeleteSpeakerAsync(const DeleteSpeakerRequest& request, const DeleteSpeakerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSpeakerAsyncHelper( request, handler, context ); } );
-}
-
-void VoiceIDClient::DeleteSpeakerAsyncHelper(const DeleteSpeakerRequest& request, const DeleteSpeakerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteSpeaker(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteSpeaker(request), context);
+    } );
 }
 
 DescribeDomainOutcome VoiceIDClient::DescribeDomain(const DescribeDomainRequest& request) const
@@ -233,12 +225,10 @@ DescribeDomainOutcomeCallable VoiceIDClient::DescribeDomainCallable(const Descri
 
 void VoiceIDClient::DescribeDomainAsync(const DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDomainAsyncHelper( request, handler, context ); } );
-}
-
-void VoiceIDClient::DescribeDomainAsyncHelper(const DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeDomain(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeDomain(request), context);
+    } );
 }
 
 DescribeFraudsterOutcome VoiceIDClient::DescribeFraudster(const DescribeFraudsterRequest& request) const
@@ -257,12 +247,10 @@ DescribeFraudsterOutcomeCallable VoiceIDClient::DescribeFraudsterCallable(const 
 
 void VoiceIDClient::DescribeFraudsterAsync(const DescribeFraudsterRequest& request, const DescribeFraudsterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFraudsterAsyncHelper( request, handler, context ); } );
-}
-
-void VoiceIDClient::DescribeFraudsterAsyncHelper(const DescribeFraudsterRequest& request, const DescribeFraudsterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeFraudster(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeFraudster(request), context);
+    } );
 }
 
 DescribeFraudsterRegistrationJobOutcome VoiceIDClient::DescribeFraudsterRegistrationJob(const DescribeFraudsterRegistrationJobRequest& request) const
@@ -281,12 +269,10 @@ DescribeFraudsterRegistrationJobOutcomeCallable VoiceIDClient::DescribeFraudster
 
 void VoiceIDClient::DescribeFraudsterRegistrationJobAsync(const DescribeFraudsterRegistrationJobRequest& request, const DescribeFraudsterRegistrationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFraudsterRegistrationJobAsyncHelper( request, handler, context ); } );
-}
-
-void VoiceIDClient::DescribeFraudsterRegistrationJobAsyncHelper(const DescribeFraudsterRegistrationJobRequest& request, const DescribeFraudsterRegistrationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeFraudsterRegistrationJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeFraudsterRegistrationJob(request), context);
+    } );
 }
 
 DescribeSpeakerOutcome VoiceIDClient::DescribeSpeaker(const DescribeSpeakerRequest& request) const
@@ -305,12 +291,10 @@ DescribeSpeakerOutcomeCallable VoiceIDClient::DescribeSpeakerCallable(const Desc
 
 void VoiceIDClient::DescribeSpeakerAsync(const DescribeSpeakerRequest& request, const DescribeSpeakerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSpeakerAsyncHelper( request, handler, context ); } );
-}
-
-void VoiceIDClient::DescribeSpeakerAsyncHelper(const DescribeSpeakerRequest& request, const DescribeSpeakerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeSpeaker(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeSpeaker(request), context);
+    } );
 }
 
 DescribeSpeakerEnrollmentJobOutcome VoiceIDClient::DescribeSpeakerEnrollmentJob(const DescribeSpeakerEnrollmentJobRequest& request) const
@@ -329,12 +313,10 @@ DescribeSpeakerEnrollmentJobOutcomeCallable VoiceIDClient::DescribeSpeakerEnroll
 
 void VoiceIDClient::DescribeSpeakerEnrollmentJobAsync(const DescribeSpeakerEnrollmentJobRequest& request, const DescribeSpeakerEnrollmentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSpeakerEnrollmentJobAsyncHelper( request, handler, context ); } );
-}
-
-void VoiceIDClient::DescribeSpeakerEnrollmentJobAsyncHelper(const DescribeSpeakerEnrollmentJobRequest& request, const DescribeSpeakerEnrollmentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeSpeakerEnrollmentJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeSpeakerEnrollmentJob(request), context);
+    } );
 }
 
 EvaluateSessionOutcome VoiceIDClient::EvaluateSession(const EvaluateSessionRequest& request) const
@@ -353,12 +335,10 @@ EvaluateSessionOutcomeCallable VoiceIDClient::EvaluateSessionCallable(const Eval
 
 void VoiceIDClient::EvaluateSessionAsync(const EvaluateSessionRequest& request, const EvaluateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EvaluateSessionAsyncHelper( request, handler, context ); } );
-}
-
-void VoiceIDClient::EvaluateSessionAsyncHelper(const EvaluateSessionRequest& request, const EvaluateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, EvaluateSession(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, EvaluateSession(request), context);
+    } );
 }
 
 ListDomainsOutcome VoiceIDClient::ListDomains(const ListDomainsRequest& request) const
@@ -377,12 +357,10 @@ ListDomainsOutcomeCallable VoiceIDClient::ListDomainsCallable(const ListDomainsR
 
 void VoiceIDClient::ListDomainsAsync(const ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDomainsAsyncHelper( request, handler, context ); } );
-}
-
-void VoiceIDClient::ListDomainsAsyncHelper(const ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDomains(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDomains(request), context);
+    } );
 }
 
 ListFraudsterRegistrationJobsOutcome VoiceIDClient::ListFraudsterRegistrationJobs(const ListFraudsterRegistrationJobsRequest& request) const
@@ -401,12 +379,10 @@ ListFraudsterRegistrationJobsOutcomeCallable VoiceIDClient::ListFraudsterRegistr
 
 void VoiceIDClient::ListFraudsterRegistrationJobsAsync(const ListFraudsterRegistrationJobsRequest& request, const ListFraudsterRegistrationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFraudsterRegistrationJobsAsyncHelper( request, handler, context ); } );
-}
-
-void VoiceIDClient::ListFraudsterRegistrationJobsAsyncHelper(const ListFraudsterRegistrationJobsRequest& request, const ListFraudsterRegistrationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListFraudsterRegistrationJobs(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListFraudsterRegistrationJobs(request), context);
+    } );
 }
 
 ListSpeakerEnrollmentJobsOutcome VoiceIDClient::ListSpeakerEnrollmentJobs(const ListSpeakerEnrollmentJobsRequest& request) const
@@ -425,12 +401,10 @@ ListSpeakerEnrollmentJobsOutcomeCallable VoiceIDClient::ListSpeakerEnrollmentJob
 
 void VoiceIDClient::ListSpeakerEnrollmentJobsAsync(const ListSpeakerEnrollmentJobsRequest& request, const ListSpeakerEnrollmentJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSpeakerEnrollmentJobsAsyncHelper( request, handler, context ); } );
-}
-
-void VoiceIDClient::ListSpeakerEnrollmentJobsAsyncHelper(const ListSpeakerEnrollmentJobsRequest& request, const ListSpeakerEnrollmentJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListSpeakerEnrollmentJobs(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListSpeakerEnrollmentJobs(request), context);
+    } );
 }
 
 ListSpeakersOutcome VoiceIDClient::ListSpeakers(const ListSpeakersRequest& request) const
@@ -449,12 +423,10 @@ ListSpeakersOutcomeCallable VoiceIDClient::ListSpeakersCallable(const ListSpeake
 
 void VoiceIDClient::ListSpeakersAsync(const ListSpeakersRequest& request, const ListSpeakersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSpeakersAsyncHelper( request, handler, context ); } );
-}
-
-void VoiceIDClient::ListSpeakersAsyncHelper(const ListSpeakersRequest& request, const ListSpeakersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListSpeakers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListSpeakers(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome VoiceIDClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -473,12 +445,10 @@ ListTagsForResourceOutcomeCallable VoiceIDClient::ListTagsForResourceCallable(co
 
 void VoiceIDClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void VoiceIDClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 OptOutSpeakerOutcome VoiceIDClient::OptOutSpeaker(const OptOutSpeakerRequest& request) const
@@ -497,12 +467,10 @@ OptOutSpeakerOutcomeCallable VoiceIDClient::OptOutSpeakerCallable(const OptOutSp
 
 void VoiceIDClient::OptOutSpeakerAsync(const OptOutSpeakerRequest& request, const OptOutSpeakerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->OptOutSpeakerAsyncHelper( request, handler, context ); } );
-}
-
-void VoiceIDClient::OptOutSpeakerAsyncHelper(const OptOutSpeakerRequest& request, const OptOutSpeakerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, OptOutSpeaker(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, OptOutSpeaker(request), context);
+    } );
 }
 
 StartFraudsterRegistrationJobOutcome VoiceIDClient::StartFraudsterRegistrationJob(const StartFraudsterRegistrationJobRequest& request) const
@@ -521,12 +489,10 @@ StartFraudsterRegistrationJobOutcomeCallable VoiceIDClient::StartFraudsterRegist
 
 void VoiceIDClient::StartFraudsterRegistrationJobAsync(const StartFraudsterRegistrationJobRequest& request, const StartFraudsterRegistrationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartFraudsterRegistrationJobAsyncHelper( request, handler, context ); } );
-}
-
-void VoiceIDClient::StartFraudsterRegistrationJobAsyncHelper(const StartFraudsterRegistrationJobRequest& request, const StartFraudsterRegistrationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartFraudsterRegistrationJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartFraudsterRegistrationJob(request), context);
+    } );
 }
 
 StartSpeakerEnrollmentJobOutcome VoiceIDClient::StartSpeakerEnrollmentJob(const StartSpeakerEnrollmentJobRequest& request) const
@@ -545,12 +511,10 @@ StartSpeakerEnrollmentJobOutcomeCallable VoiceIDClient::StartSpeakerEnrollmentJo
 
 void VoiceIDClient::StartSpeakerEnrollmentJobAsync(const StartSpeakerEnrollmentJobRequest& request, const StartSpeakerEnrollmentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartSpeakerEnrollmentJobAsyncHelper( request, handler, context ); } );
-}
-
-void VoiceIDClient::StartSpeakerEnrollmentJobAsyncHelper(const StartSpeakerEnrollmentJobRequest& request, const StartSpeakerEnrollmentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartSpeakerEnrollmentJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartSpeakerEnrollmentJob(request), context);
+    } );
 }
 
 TagResourceOutcome VoiceIDClient::TagResource(const TagResourceRequest& request) const
@@ -569,12 +533,10 @@ TagResourceOutcomeCallable VoiceIDClient::TagResourceCallable(const TagResourceR
 
 void VoiceIDClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void VoiceIDClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome VoiceIDClient::UntagResource(const UntagResourceRequest& request) const
@@ -593,12 +555,10 @@ UntagResourceOutcomeCallable VoiceIDClient::UntagResourceCallable(const UntagRes
 
 void VoiceIDClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void VoiceIDClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateDomainOutcome VoiceIDClient::UpdateDomain(const UpdateDomainRequest& request) const
@@ -617,11 +577,9 @@ UpdateDomainOutcomeCallable VoiceIDClient::UpdateDomainCallable(const UpdateDoma
 
 void VoiceIDClient::UpdateDomainAsync(const UpdateDomainRequest& request, const UpdateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDomainAsyncHelper( request, handler, context ); } );
-}
-
-void VoiceIDClient::UpdateDomainAsyncHelper(const UpdateDomainRequest& request, const UpdateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateDomain(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateDomain(request), context);
+    } );
 }
 

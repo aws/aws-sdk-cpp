@@ -181,12 +181,10 @@ AddSourceIdentifierToSubscriptionOutcomeCallable DocDBClient::AddSourceIdentifie
 
 void DocDBClient::AddSourceIdentifierToSubscriptionAsync(const AddSourceIdentifierToSubscriptionRequest& request, const AddSourceIdentifierToSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddSourceIdentifierToSubscriptionAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::AddSourceIdentifierToSubscriptionAsyncHelper(const AddSourceIdentifierToSubscriptionRequest& request, const AddSourceIdentifierToSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AddSourceIdentifierToSubscription(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AddSourceIdentifierToSubscription(request), context);
+    } );
 }
 
 AddTagsToResourceOutcome DocDBClient::AddTagsToResource(const AddTagsToResourceRequest& request) const
@@ -205,12 +203,10 @@ AddTagsToResourceOutcomeCallable DocDBClient::AddTagsToResourceCallable(const Ad
 
 void DocDBClient::AddTagsToResourceAsync(const AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddTagsToResourceAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::AddTagsToResourceAsyncHelper(const AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AddTagsToResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AddTagsToResource(request), context);
+    } );
 }
 
 ApplyPendingMaintenanceActionOutcome DocDBClient::ApplyPendingMaintenanceAction(const ApplyPendingMaintenanceActionRequest& request) const
@@ -229,12 +225,10 @@ ApplyPendingMaintenanceActionOutcomeCallable DocDBClient::ApplyPendingMaintenanc
 
 void DocDBClient::ApplyPendingMaintenanceActionAsync(const ApplyPendingMaintenanceActionRequest& request, const ApplyPendingMaintenanceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ApplyPendingMaintenanceActionAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::ApplyPendingMaintenanceActionAsyncHelper(const ApplyPendingMaintenanceActionRequest& request, const ApplyPendingMaintenanceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ApplyPendingMaintenanceAction(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ApplyPendingMaintenanceAction(request), context);
+    } );
 }
 
 CopyDBClusterParameterGroupOutcome DocDBClient::CopyDBClusterParameterGroup(const CopyDBClusterParameterGroupRequest& request) const
@@ -253,12 +247,10 @@ CopyDBClusterParameterGroupOutcomeCallable DocDBClient::CopyDBClusterParameterGr
 
 void DocDBClient::CopyDBClusterParameterGroupAsync(const CopyDBClusterParameterGroupRequest& request, const CopyDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CopyDBClusterParameterGroupAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::CopyDBClusterParameterGroupAsyncHelper(const CopyDBClusterParameterGroupRequest& request, const CopyDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CopyDBClusterParameterGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CopyDBClusterParameterGroup(request), context);
+    } );
 }
 
 CopyDBClusterSnapshotOutcome DocDBClient::CopyDBClusterSnapshot(const CopyDBClusterSnapshotRequest& request) const
@@ -283,12 +275,10 @@ CopyDBClusterSnapshotOutcomeCallable DocDBClient::CopyDBClusterSnapshotCallable(
 
 void DocDBClient::CopyDBClusterSnapshotAsync(const CopyDBClusterSnapshotRequest& request, const CopyDBClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CopyDBClusterSnapshotAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::CopyDBClusterSnapshotAsyncHelper(const CopyDBClusterSnapshotRequest& request, const CopyDBClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CopyDBClusterSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CopyDBClusterSnapshot(request), context);
+    } );
 }
 
 CreateDBClusterOutcome DocDBClient::CreateDBCluster(const CreateDBClusterRequest& request) const
@@ -313,12 +303,10 @@ CreateDBClusterOutcomeCallable DocDBClient::CreateDBClusterCallable(const Create
 
 void DocDBClient::CreateDBClusterAsync(const CreateDBClusterRequest& request, const CreateDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDBClusterAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::CreateDBClusterAsyncHelper(const CreateDBClusterRequest& request, const CreateDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateDBCluster(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateDBCluster(request), context);
+    } );
 }
 
 CreateDBClusterParameterGroupOutcome DocDBClient::CreateDBClusterParameterGroup(const CreateDBClusterParameterGroupRequest& request) const
@@ -337,12 +325,10 @@ CreateDBClusterParameterGroupOutcomeCallable DocDBClient::CreateDBClusterParamet
 
 void DocDBClient::CreateDBClusterParameterGroupAsync(const CreateDBClusterParameterGroupRequest& request, const CreateDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDBClusterParameterGroupAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::CreateDBClusterParameterGroupAsyncHelper(const CreateDBClusterParameterGroupRequest& request, const CreateDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateDBClusterParameterGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateDBClusterParameterGroup(request), context);
+    } );
 }
 
 CreateDBClusterSnapshotOutcome DocDBClient::CreateDBClusterSnapshot(const CreateDBClusterSnapshotRequest& request) const
@@ -361,12 +347,10 @@ CreateDBClusterSnapshotOutcomeCallable DocDBClient::CreateDBClusterSnapshotCalla
 
 void DocDBClient::CreateDBClusterSnapshotAsync(const CreateDBClusterSnapshotRequest& request, const CreateDBClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDBClusterSnapshotAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::CreateDBClusterSnapshotAsyncHelper(const CreateDBClusterSnapshotRequest& request, const CreateDBClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateDBClusterSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateDBClusterSnapshot(request), context);
+    } );
 }
 
 CreateDBInstanceOutcome DocDBClient::CreateDBInstance(const CreateDBInstanceRequest& request) const
@@ -385,12 +369,10 @@ CreateDBInstanceOutcomeCallable DocDBClient::CreateDBInstanceCallable(const Crea
 
 void DocDBClient::CreateDBInstanceAsync(const CreateDBInstanceRequest& request, const CreateDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDBInstanceAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::CreateDBInstanceAsyncHelper(const CreateDBInstanceRequest& request, const CreateDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateDBInstance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateDBInstance(request), context);
+    } );
 }
 
 CreateDBSubnetGroupOutcome DocDBClient::CreateDBSubnetGroup(const CreateDBSubnetGroupRequest& request) const
@@ -409,12 +391,10 @@ CreateDBSubnetGroupOutcomeCallable DocDBClient::CreateDBSubnetGroupCallable(cons
 
 void DocDBClient::CreateDBSubnetGroupAsync(const CreateDBSubnetGroupRequest& request, const CreateDBSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDBSubnetGroupAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::CreateDBSubnetGroupAsyncHelper(const CreateDBSubnetGroupRequest& request, const CreateDBSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateDBSubnetGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateDBSubnetGroup(request), context);
+    } );
 }
 
 CreateEventSubscriptionOutcome DocDBClient::CreateEventSubscription(const CreateEventSubscriptionRequest& request) const
@@ -433,12 +413,10 @@ CreateEventSubscriptionOutcomeCallable DocDBClient::CreateEventSubscriptionCalla
 
 void DocDBClient::CreateEventSubscriptionAsync(const CreateEventSubscriptionRequest& request, const CreateEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEventSubscriptionAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::CreateEventSubscriptionAsyncHelper(const CreateEventSubscriptionRequest& request, const CreateEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateEventSubscription(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateEventSubscription(request), context);
+    } );
 }
 
 CreateGlobalClusterOutcome DocDBClient::CreateGlobalCluster(const CreateGlobalClusterRequest& request) const
@@ -457,12 +435,10 @@ CreateGlobalClusterOutcomeCallable DocDBClient::CreateGlobalClusterCallable(cons
 
 void DocDBClient::CreateGlobalClusterAsync(const CreateGlobalClusterRequest& request, const CreateGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateGlobalClusterAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::CreateGlobalClusterAsyncHelper(const CreateGlobalClusterRequest& request, const CreateGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateGlobalCluster(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateGlobalCluster(request), context);
+    } );
 }
 
 DeleteDBClusterOutcome DocDBClient::DeleteDBCluster(const DeleteDBClusterRequest& request) const
@@ -481,12 +457,10 @@ DeleteDBClusterOutcomeCallable DocDBClient::DeleteDBClusterCallable(const Delete
 
 void DocDBClient::DeleteDBClusterAsync(const DeleteDBClusterRequest& request, const DeleteDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDBClusterAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::DeleteDBClusterAsyncHelper(const DeleteDBClusterRequest& request, const DeleteDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteDBCluster(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteDBCluster(request), context);
+    } );
 }
 
 DeleteDBClusterParameterGroupOutcome DocDBClient::DeleteDBClusterParameterGroup(const DeleteDBClusterParameterGroupRequest& request) const
@@ -505,12 +479,10 @@ DeleteDBClusterParameterGroupOutcomeCallable DocDBClient::DeleteDBClusterParamet
 
 void DocDBClient::DeleteDBClusterParameterGroupAsync(const DeleteDBClusterParameterGroupRequest& request, const DeleteDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDBClusterParameterGroupAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::DeleteDBClusterParameterGroupAsyncHelper(const DeleteDBClusterParameterGroupRequest& request, const DeleteDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteDBClusterParameterGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteDBClusterParameterGroup(request), context);
+    } );
 }
 
 DeleteDBClusterSnapshotOutcome DocDBClient::DeleteDBClusterSnapshot(const DeleteDBClusterSnapshotRequest& request) const
@@ -529,12 +501,10 @@ DeleteDBClusterSnapshotOutcomeCallable DocDBClient::DeleteDBClusterSnapshotCalla
 
 void DocDBClient::DeleteDBClusterSnapshotAsync(const DeleteDBClusterSnapshotRequest& request, const DeleteDBClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDBClusterSnapshotAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::DeleteDBClusterSnapshotAsyncHelper(const DeleteDBClusterSnapshotRequest& request, const DeleteDBClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteDBClusterSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteDBClusterSnapshot(request), context);
+    } );
 }
 
 DeleteDBInstanceOutcome DocDBClient::DeleteDBInstance(const DeleteDBInstanceRequest& request) const
@@ -553,12 +523,10 @@ DeleteDBInstanceOutcomeCallable DocDBClient::DeleteDBInstanceCallable(const Dele
 
 void DocDBClient::DeleteDBInstanceAsync(const DeleteDBInstanceRequest& request, const DeleteDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDBInstanceAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::DeleteDBInstanceAsyncHelper(const DeleteDBInstanceRequest& request, const DeleteDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteDBInstance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteDBInstance(request), context);
+    } );
 }
 
 DeleteDBSubnetGroupOutcome DocDBClient::DeleteDBSubnetGroup(const DeleteDBSubnetGroupRequest& request) const
@@ -577,12 +545,10 @@ DeleteDBSubnetGroupOutcomeCallable DocDBClient::DeleteDBSubnetGroupCallable(cons
 
 void DocDBClient::DeleteDBSubnetGroupAsync(const DeleteDBSubnetGroupRequest& request, const DeleteDBSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDBSubnetGroupAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::DeleteDBSubnetGroupAsyncHelper(const DeleteDBSubnetGroupRequest& request, const DeleteDBSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteDBSubnetGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteDBSubnetGroup(request), context);
+    } );
 }
 
 DeleteEventSubscriptionOutcome DocDBClient::DeleteEventSubscription(const DeleteEventSubscriptionRequest& request) const
@@ -601,12 +567,10 @@ DeleteEventSubscriptionOutcomeCallable DocDBClient::DeleteEventSubscriptionCalla
 
 void DocDBClient::DeleteEventSubscriptionAsync(const DeleteEventSubscriptionRequest& request, const DeleteEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEventSubscriptionAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::DeleteEventSubscriptionAsyncHelper(const DeleteEventSubscriptionRequest& request, const DeleteEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteEventSubscription(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteEventSubscription(request), context);
+    } );
 }
 
 DeleteGlobalClusterOutcome DocDBClient::DeleteGlobalCluster(const DeleteGlobalClusterRequest& request) const
@@ -625,12 +589,10 @@ DeleteGlobalClusterOutcomeCallable DocDBClient::DeleteGlobalClusterCallable(cons
 
 void DocDBClient::DeleteGlobalClusterAsync(const DeleteGlobalClusterRequest& request, const DeleteGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteGlobalClusterAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::DeleteGlobalClusterAsyncHelper(const DeleteGlobalClusterRequest& request, const DeleteGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteGlobalCluster(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteGlobalCluster(request), context);
+    } );
 }
 
 DescribeCertificatesOutcome DocDBClient::DescribeCertificates(const DescribeCertificatesRequest& request) const
@@ -649,12 +611,10 @@ DescribeCertificatesOutcomeCallable DocDBClient::DescribeCertificatesCallable(co
 
 void DocDBClient::DescribeCertificatesAsync(const DescribeCertificatesRequest& request, const DescribeCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCertificatesAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::DescribeCertificatesAsyncHelper(const DescribeCertificatesRequest& request, const DescribeCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeCertificates(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeCertificates(request), context);
+    } );
 }
 
 DescribeDBClusterParameterGroupsOutcome DocDBClient::DescribeDBClusterParameterGroups(const DescribeDBClusterParameterGroupsRequest& request) const
@@ -673,12 +633,10 @@ DescribeDBClusterParameterGroupsOutcomeCallable DocDBClient::DescribeDBClusterPa
 
 void DocDBClient::DescribeDBClusterParameterGroupsAsync(const DescribeDBClusterParameterGroupsRequest& request, const DescribeDBClusterParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDBClusterParameterGroupsAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::DescribeDBClusterParameterGroupsAsyncHelper(const DescribeDBClusterParameterGroupsRequest& request, const DescribeDBClusterParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeDBClusterParameterGroups(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeDBClusterParameterGroups(request), context);
+    } );
 }
 
 DescribeDBClusterParametersOutcome DocDBClient::DescribeDBClusterParameters(const DescribeDBClusterParametersRequest& request) const
@@ -697,12 +655,10 @@ DescribeDBClusterParametersOutcomeCallable DocDBClient::DescribeDBClusterParamet
 
 void DocDBClient::DescribeDBClusterParametersAsync(const DescribeDBClusterParametersRequest& request, const DescribeDBClusterParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDBClusterParametersAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::DescribeDBClusterParametersAsyncHelper(const DescribeDBClusterParametersRequest& request, const DescribeDBClusterParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeDBClusterParameters(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeDBClusterParameters(request), context);
+    } );
 }
 
 DescribeDBClusterSnapshotAttributesOutcome DocDBClient::DescribeDBClusterSnapshotAttributes(const DescribeDBClusterSnapshotAttributesRequest& request) const
@@ -721,12 +677,10 @@ DescribeDBClusterSnapshotAttributesOutcomeCallable DocDBClient::DescribeDBCluste
 
 void DocDBClient::DescribeDBClusterSnapshotAttributesAsync(const DescribeDBClusterSnapshotAttributesRequest& request, const DescribeDBClusterSnapshotAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDBClusterSnapshotAttributesAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::DescribeDBClusterSnapshotAttributesAsyncHelper(const DescribeDBClusterSnapshotAttributesRequest& request, const DescribeDBClusterSnapshotAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeDBClusterSnapshotAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeDBClusterSnapshotAttributes(request), context);
+    } );
 }
 
 DescribeDBClusterSnapshotsOutcome DocDBClient::DescribeDBClusterSnapshots(const DescribeDBClusterSnapshotsRequest& request) const
@@ -745,12 +699,10 @@ DescribeDBClusterSnapshotsOutcomeCallable DocDBClient::DescribeDBClusterSnapshot
 
 void DocDBClient::DescribeDBClusterSnapshotsAsync(const DescribeDBClusterSnapshotsRequest& request, const DescribeDBClusterSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDBClusterSnapshotsAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::DescribeDBClusterSnapshotsAsyncHelper(const DescribeDBClusterSnapshotsRequest& request, const DescribeDBClusterSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeDBClusterSnapshots(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeDBClusterSnapshots(request), context);
+    } );
 }
 
 DescribeDBClustersOutcome DocDBClient::DescribeDBClusters(const DescribeDBClustersRequest& request) const
@@ -769,12 +721,10 @@ DescribeDBClustersOutcomeCallable DocDBClient::DescribeDBClustersCallable(const 
 
 void DocDBClient::DescribeDBClustersAsync(const DescribeDBClustersRequest& request, const DescribeDBClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDBClustersAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::DescribeDBClustersAsyncHelper(const DescribeDBClustersRequest& request, const DescribeDBClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeDBClusters(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeDBClusters(request), context);
+    } );
 }
 
 DescribeDBEngineVersionsOutcome DocDBClient::DescribeDBEngineVersions(const DescribeDBEngineVersionsRequest& request) const
@@ -793,12 +743,10 @@ DescribeDBEngineVersionsOutcomeCallable DocDBClient::DescribeDBEngineVersionsCal
 
 void DocDBClient::DescribeDBEngineVersionsAsync(const DescribeDBEngineVersionsRequest& request, const DescribeDBEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDBEngineVersionsAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::DescribeDBEngineVersionsAsyncHelper(const DescribeDBEngineVersionsRequest& request, const DescribeDBEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeDBEngineVersions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeDBEngineVersions(request), context);
+    } );
 }
 
 DescribeDBInstancesOutcome DocDBClient::DescribeDBInstances(const DescribeDBInstancesRequest& request) const
@@ -817,12 +765,10 @@ DescribeDBInstancesOutcomeCallable DocDBClient::DescribeDBInstancesCallable(cons
 
 void DocDBClient::DescribeDBInstancesAsync(const DescribeDBInstancesRequest& request, const DescribeDBInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDBInstancesAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::DescribeDBInstancesAsyncHelper(const DescribeDBInstancesRequest& request, const DescribeDBInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeDBInstances(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeDBInstances(request), context);
+    } );
 }
 
 DescribeDBSubnetGroupsOutcome DocDBClient::DescribeDBSubnetGroups(const DescribeDBSubnetGroupsRequest& request) const
@@ -841,12 +787,10 @@ DescribeDBSubnetGroupsOutcomeCallable DocDBClient::DescribeDBSubnetGroupsCallabl
 
 void DocDBClient::DescribeDBSubnetGroupsAsync(const DescribeDBSubnetGroupsRequest& request, const DescribeDBSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDBSubnetGroupsAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::DescribeDBSubnetGroupsAsyncHelper(const DescribeDBSubnetGroupsRequest& request, const DescribeDBSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeDBSubnetGroups(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeDBSubnetGroups(request), context);
+    } );
 }
 
 DescribeEngineDefaultClusterParametersOutcome DocDBClient::DescribeEngineDefaultClusterParameters(const DescribeEngineDefaultClusterParametersRequest& request) const
@@ -865,12 +809,10 @@ DescribeEngineDefaultClusterParametersOutcomeCallable DocDBClient::DescribeEngin
 
 void DocDBClient::DescribeEngineDefaultClusterParametersAsync(const DescribeEngineDefaultClusterParametersRequest& request, const DescribeEngineDefaultClusterParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEngineDefaultClusterParametersAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::DescribeEngineDefaultClusterParametersAsyncHelper(const DescribeEngineDefaultClusterParametersRequest& request, const DescribeEngineDefaultClusterParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeEngineDefaultClusterParameters(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeEngineDefaultClusterParameters(request), context);
+    } );
 }
 
 DescribeEventCategoriesOutcome DocDBClient::DescribeEventCategories(const DescribeEventCategoriesRequest& request) const
@@ -889,12 +831,10 @@ DescribeEventCategoriesOutcomeCallable DocDBClient::DescribeEventCategoriesCalla
 
 void DocDBClient::DescribeEventCategoriesAsync(const DescribeEventCategoriesRequest& request, const DescribeEventCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEventCategoriesAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::DescribeEventCategoriesAsyncHelper(const DescribeEventCategoriesRequest& request, const DescribeEventCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeEventCategories(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeEventCategories(request), context);
+    } );
 }
 
 DescribeEventSubscriptionsOutcome DocDBClient::DescribeEventSubscriptions(const DescribeEventSubscriptionsRequest& request) const
@@ -913,12 +853,10 @@ DescribeEventSubscriptionsOutcomeCallable DocDBClient::DescribeEventSubscription
 
 void DocDBClient::DescribeEventSubscriptionsAsync(const DescribeEventSubscriptionsRequest& request, const DescribeEventSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEventSubscriptionsAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::DescribeEventSubscriptionsAsyncHelper(const DescribeEventSubscriptionsRequest& request, const DescribeEventSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeEventSubscriptions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeEventSubscriptions(request), context);
+    } );
 }
 
 DescribeEventsOutcome DocDBClient::DescribeEvents(const DescribeEventsRequest& request) const
@@ -937,12 +875,10 @@ DescribeEventsOutcomeCallable DocDBClient::DescribeEventsCallable(const Describe
 
 void DocDBClient::DescribeEventsAsync(const DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEventsAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::DescribeEventsAsyncHelper(const DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeEvents(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeEvents(request), context);
+    } );
 }
 
 DescribeGlobalClustersOutcome DocDBClient::DescribeGlobalClusters(const DescribeGlobalClustersRequest& request) const
@@ -961,12 +897,10 @@ DescribeGlobalClustersOutcomeCallable DocDBClient::DescribeGlobalClustersCallabl
 
 void DocDBClient::DescribeGlobalClustersAsync(const DescribeGlobalClustersRequest& request, const DescribeGlobalClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeGlobalClustersAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::DescribeGlobalClustersAsyncHelper(const DescribeGlobalClustersRequest& request, const DescribeGlobalClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeGlobalClusters(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeGlobalClusters(request), context);
+    } );
 }
 
 DescribeOrderableDBInstanceOptionsOutcome DocDBClient::DescribeOrderableDBInstanceOptions(const DescribeOrderableDBInstanceOptionsRequest& request) const
@@ -985,12 +919,10 @@ DescribeOrderableDBInstanceOptionsOutcomeCallable DocDBClient::DescribeOrderable
 
 void DocDBClient::DescribeOrderableDBInstanceOptionsAsync(const DescribeOrderableDBInstanceOptionsRequest& request, const DescribeOrderableDBInstanceOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeOrderableDBInstanceOptionsAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::DescribeOrderableDBInstanceOptionsAsyncHelper(const DescribeOrderableDBInstanceOptionsRequest& request, const DescribeOrderableDBInstanceOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeOrderableDBInstanceOptions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeOrderableDBInstanceOptions(request), context);
+    } );
 }
 
 DescribePendingMaintenanceActionsOutcome DocDBClient::DescribePendingMaintenanceActions(const DescribePendingMaintenanceActionsRequest& request) const
@@ -1009,12 +941,10 @@ DescribePendingMaintenanceActionsOutcomeCallable DocDBClient::DescribePendingMai
 
 void DocDBClient::DescribePendingMaintenanceActionsAsync(const DescribePendingMaintenanceActionsRequest& request, const DescribePendingMaintenanceActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePendingMaintenanceActionsAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::DescribePendingMaintenanceActionsAsyncHelper(const DescribePendingMaintenanceActionsRequest& request, const DescribePendingMaintenanceActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribePendingMaintenanceActions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribePendingMaintenanceActions(request), context);
+    } );
 }
 
 FailoverDBClusterOutcome DocDBClient::FailoverDBCluster(const FailoverDBClusterRequest& request) const
@@ -1033,12 +963,10 @@ FailoverDBClusterOutcomeCallable DocDBClient::FailoverDBClusterCallable(const Fa
 
 void DocDBClient::FailoverDBClusterAsync(const FailoverDBClusterRequest& request, const FailoverDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->FailoverDBClusterAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::FailoverDBClusterAsyncHelper(const FailoverDBClusterRequest& request, const FailoverDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, FailoverDBCluster(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, FailoverDBCluster(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome DocDBClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1057,12 +985,10 @@ ListTagsForResourceOutcomeCallable DocDBClient::ListTagsForResourceCallable(cons
 
 void DocDBClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 ModifyDBClusterOutcome DocDBClient::ModifyDBCluster(const ModifyDBClusterRequest& request) const
@@ -1081,12 +1007,10 @@ ModifyDBClusterOutcomeCallable DocDBClient::ModifyDBClusterCallable(const Modify
 
 void DocDBClient::ModifyDBClusterAsync(const ModifyDBClusterRequest& request, const ModifyDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyDBClusterAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::ModifyDBClusterAsyncHelper(const ModifyDBClusterRequest& request, const ModifyDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ModifyDBCluster(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ModifyDBCluster(request), context);
+    } );
 }
 
 ModifyDBClusterParameterGroupOutcome DocDBClient::ModifyDBClusterParameterGroup(const ModifyDBClusterParameterGroupRequest& request) const
@@ -1105,12 +1029,10 @@ ModifyDBClusterParameterGroupOutcomeCallable DocDBClient::ModifyDBClusterParamet
 
 void DocDBClient::ModifyDBClusterParameterGroupAsync(const ModifyDBClusterParameterGroupRequest& request, const ModifyDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyDBClusterParameterGroupAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::ModifyDBClusterParameterGroupAsyncHelper(const ModifyDBClusterParameterGroupRequest& request, const ModifyDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ModifyDBClusterParameterGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ModifyDBClusterParameterGroup(request), context);
+    } );
 }
 
 ModifyDBClusterSnapshotAttributeOutcome DocDBClient::ModifyDBClusterSnapshotAttribute(const ModifyDBClusterSnapshotAttributeRequest& request) const
@@ -1129,12 +1051,10 @@ ModifyDBClusterSnapshotAttributeOutcomeCallable DocDBClient::ModifyDBClusterSnap
 
 void DocDBClient::ModifyDBClusterSnapshotAttributeAsync(const ModifyDBClusterSnapshotAttributeRequest& request, const ModifyDBClusterSnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyDBClusterSnapshotAttributeAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::ModifyDBClusterSnapshotAttributeAsyncHelper(const ModifyDBClusterSnapshotAttributeRequest& request, const ModifyDBClusterSnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ModifyDBClusterSnapshotAttribute(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ModifyDBClusterSnapshotAttribute(request), context);
+    } );
 }
 
 ModifyDBInstanceOutcome DocDBClient::ModifyDBInstance(const ModifyDBInstanceRequest& request) const
@@ -1153,12 +1073,10 @@ ModifyDBInstanceOutcomeCallable DocDBClient::ModifyDBInstanceCallable(const Modi
 
 void DocDBClient::ModifyDBInstanceAsync(const ModifyDBInstanceRequest& request, const ModifyDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyDBInstanceAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::ModifyDBInstanceAsyncHelper(const ModifyDBInstanceRequest& request, const ModifyDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ModifyDBInstance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ModifyDBInstance(request), context);
+    } );
 }
 
 ModifyDBSubnetGroupOutcome DocDBClient::ModifyDBSubnetGroup(const ModifyDBSubnetGroupRequest& request) const
@@ -1177,12 +1095,10 @@ ModifyDBSubnetGroupOutcomeCallable DocDBClient::ModifyDBSubnetGroupCallable(cons
 
 void DocDBClient::ModifyDBSubnetGroupAsync(const ModifyDBSubnetGroupRequest& request, const ModifyDBSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyDBSubnetGroupAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::ModifyDBSubnetGroupAsyncHelper(const ModifyDBSubnetGroupRequest& request, const ModifyDBSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ModifyDBSubnetGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ModifyDBSubnetGroup(request), context);
+    } );
 }
 
 ModifyEventSubscriptionOutcome DocDBClient::ModifyEventSubscription(const ModifyEventSubscriptionRequest& request) const
@@ -1201,12 +1117,10 @@ ModifyEventSubscriptionOutcomeCallable DocDBClient::ModifyEventSubscriptionCalla
 
 void DocDBClient::ModifyEventSubscriptionAsync(const ModifyEventSubscriptionRequest& request, const ModifyEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyEventSubscriptionAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::ModifyEventSubscriptionAsyncHelper(const ModifyEventSubscriptionRequest& request, const ModifyEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ModifyEventSubscription(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ModifyEventSubscription(request), context);
+    } );
 }
 
 ModifyGlobalClusterOutcome DocDBClient::ModifyGlobalCluster(const ModifyGlobalClusterRequest& request) const
@@ -1225,12 +1139,10 @@ ModifyGlobalClusterOutcomeCallable DocDBClient::ModifyGlobalClusterCallable(cons
 
 void DocDBClient::ModifyGlobalClusterAsync(const ModifyGlobalClusterRequest& request, const ModifyGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyGlobalClusterAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::ModifyGlobalClusterAsyncHelper(const ModifyGlobalClusterRequest& request, const ModifyGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ModifyGlobalCluster(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ModifyGlobalCluster(request), context);
+    } );
 }
 
 RebootDBInstanceOutcome DocDBClient::RebootDBInstance(const RebootDBInstanceRequest& request) const
@@ -1249,12 +1161,10 @@ RebootDBInstanceOutcomeCallable DocDBClient::RebootDBInstanceCallable(const Rebo
 
 void DocDBClient::RebootDBInstanceAsync(const RebootDBInstanceRequest& request, const RebootDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RebootDBInstanceAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::RebootDBInstanceAsyncHelper(const RebootDBInstanceRequest& request, const RebootDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RebootDBInstance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RebootDBInstance(request), context);
+    } );
 }
 
 RemoveFromGlobalClusterOutcome DocDBClient::RemoveFromGlobalCluster(const RemoveFromGlobalClusterRequest& request) const
@@ -1273,12 +1183,10 @@ RemoveFromGlobalClusterOutcomeCallable DocDBClient::RemoveFromGlobalClusterCalla
 
 void DocDBClient::RemoveFromGlobalClusterAsync(const RemoveFromGlobalClusterRequest& request, const RemoveFromGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveFromGlobalClusterAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::RemoveFromGlobalClusterAsyncHelper(const RemoveFromGlobalClusterRequest& request, const RemoveFromGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RemoveFromGlobalCluster(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RemoveFromGlobalCluster(request), context);
+    } );
 }
 
 RemoveSourceIdentifierFromSubscriptionOutcome DocDBClient::RemoveSourceIdentifierFromSubscription(const RemoveSourceIdentifierFromSubscriptionRequest& request) const
@@ -1297,12 +1205,10 @@ RemoveSourceIdentifierFromSubscriptionOutcomeCallable DocDBClient::RemoveSourceI
 
 void DocDBClient::RemoveSourceIdentifierFromSubscriptionAsync(const RemoveSourceIdentifierFromSubscriptionRequest& request, const RemoveSourceIdentifierFromSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveSourceIdentifierFromSubscriptionAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::RemoveSourceIdentifierFromSubscriptionAsyncHelper(const RemoveSourceIdentifierFromSubscriptionRequest& request, const RemoveSourceIdentifierFromSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RemoveSourceIdentifierFromSubscription(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RemoveSourceIdentifierFromSubscription(request), context);
+    } );
 }
 
 RemoveTagsFromResourceOutcome DocDBClient::RemoveTagsFromResource(const RemoveTagsFromResourceRequest& request) const
@@ -1321,12 +1227,10 @@ RemoveTagsFromResourceOutcomeCallable DocDBClient::RemoveTagsFromResourceCallabl
 
 void DocDBClient::RemoveTagsFromResourceAsync(const RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveTagsFromResourceAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::RemoveTagsFromResourceAsyncHelper(const RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RemoveTagsFromResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RemoveTagsFromResource(request), context);
+    } );
 }
 
 ResetDBClusterParameterGroupOutcome DocDBClient::ResetDBClusterParameterGroup(const ResetDBClusterParameterGroupRequest& request) const
@@ -1345,12 +1249,10 @@ ResetDBClusterParameterGroupOutcomeCallable DocDBClient::ResetDBClusterParameter
 
 void DocDBClient::ResetDBClusterParameterGroupAsync(const ResetDBClusterParameterGroupRequest& request, const ResetDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ResetDBClusterParameterGroupAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::ResetDBClusterParameterGroupAsyncHelper(const ResetDBClusterParameterGroupRequest& request, const ResetDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ResetDBClusterParameterGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ResetDBClusterParameterGroup(request), context);
+    } );
 }
 
 RestoreDBClusterFromSnapshotOutcome DocDBClient::RestoreDBClusterFromSnapshot(const RestoreDBClusterFromSnapshotRequest& request) const
@@ -1369,12 +1271,10 @@ RestoreDBClusterFromSnapshotOutcomeCallable DocDBClient::RestoreDBClusterFromSna
 
 void DocDBClient::RestoreDBClusterFromSnapshotAsync(const RestoreDBClusterFromSnapshotRequest& request, const RestoreDBClusterFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RestoreDBClusterFromSnapshotAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::RestoreDBClusterFromSnapshotAsyncHelper(const RestoreDBClusterFromSnapshotRequest& request, const RestoreDBClusterFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RestoreDBClusterFromSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RestoreDBClusterFromSnapshot(request), context);
+    } );
 }
 
 RestoreDBClusterToPointInTimeOutcome DocDBClient::RestoreDBClusterToPointInTime(const RestoreDBClusterToPointInTimeRequest& request) const
@@ -1393,12 +1293,10 @@ RestoreDBClusterToPointInTimeOutcomeCallable DocDBClient::RestoreDBClusterToPoin
 
 void DocDBClient::RestoreDBClusterToPointInTimeAsync(const RestoreDBClusterToPointInTimeRequest& request, const RestoreDBClusterToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RestoreDBClusterToPointInTimeAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::RestoreDBClusterToPointInTimeAsyncHelper(const RestoreDBClusterToPointInTimeRequest& request, const RestoreDBClusterToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RestoreDBClusterToPointInTime(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RestoreDBClusterToPointInTime(request), context);
+    } );
 }
 
 StartDBClusterOutcome DocDBClient::StartDBCluster(const StartDBClusterRequest& request) const
@@ -1417,12 +1315,10 @@ StartDBClusterOutcomeCallable DocDBClient::StartDBClusterCallable(const StartDBC
 
 void DocDBClient::StartDBClusterAsync(const StartDBClusterRequest& request, const StartDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartDBClusterAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::StartDBClusterAsyncHelper(const StartDBClusterRequest& request, const StartDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartDBCluster(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartDBCluster(request), context);
+    } );
 }
 
 StopDBClusterOutcome DocDBClient::StopDBCluster(const StopDBClusterRequest& request) const
@@ -1441,11 +1337,9 @@ StopDBClusterOutcomeCallable DocDBClient::StopDBClusterCallable(const StopDBClus
 
 void DocDBClient::StopDBClusterAsync(const StopDBClusterRequest& request, const StopDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopDBClusterAsyncHelper( request, handler, context ); } );
-}
-
-void DocDBClient::StopDBClusterAsyncHelper(const StopDBClusterRequest& request, const StopDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StopDBCluster(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopDBCluster(request), context);
+    } );
 }
 

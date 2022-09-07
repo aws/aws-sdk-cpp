@@ -125,12 +125,10 @@ CreateEnvironmentOutcomeCallable FinspaceClient::CreateEnvironmentCallable(const
 
 void FinspaceClient::CreateEnvironmentAsync(const CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEnvironmentAsyncHelper( request, handler, context ); } );
-}
-
-void FinspaceClient::CreateEnvironmentAsyncHelper(const CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateEnvironment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateEnvironment(request), context);
+    } );
 }
 
 DeleteEnvironmentOutcome FinspaceClient::DeleteEnvironment(const DeleteEnvironmentRequest& request) const
@@ -156,12 +154,10 @@ DeleteEnvironmentOutcomeCallable FinspaceClient::DeleteEnvironmentCallable(const
 
 void FinspaceClient::DeleteEnvironmentAsync(const DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEnvironmentAsyncHelper( request, handler, context ); } );
-}
-
-void FinspaceClient::DeleteEnvironmentAsyncHelper(const DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteEnvironment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteEnvironment(request), context);
+    } );
 }
 
 GetEnvironmentOutcome FinspaceClient::GetEnvironment(const GetEnvironmentRequest& request) const
@@ -187,12 +183,10 @@ GetEnvironmentOutcomeCallable FinspaceClient::GetEnvironmentCallable(const GetEn
 
 void FinspaceClient::GetEnvironmentAsync(const GetEnvironmentRequest& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEnvironmentAsyncHelper( request, handler, context ); } );
-}
-
-void FinspaceClient::GetEnvironmentAsyncHelper(const GetEnvironmentRequest& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetEnvironment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetEnvironment(request), context);
+    } );
 }
 
 ListEnvironmentsOutcome FinspaceClient::ListEnvironments(const ListEnvironmentsRequest& request) const
@@ -212,12 +206,10 @@ ListEnvironmentsOutcomeCallable FinspaceClient::ListEnvironmentsCallable(const L
 
 void FinspaceClient::ListEnvironmentsAsync(const ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEnvironmentsAsyncHelper( request, handler, context ); } );
-}
-
-void FinspaceClient::ListEnvironmentsAsyncHelper(const ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListEnvironments(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListEnvironments(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome FinspaceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -243,12 +235,10 @@ ListTagsForResourceOutcomeCallable FinspaceClient::ListTagsForResourceCallable(c
 
 void FinspaceClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void FinspaceClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 TagResourceOutcome FinspaceClient::TagResource(const TagResourceRequest& request) const
@@ -274,12 +264,10 @@ TagResourceOutcomeCallable FinspaceClient::TagResourceCallable(const TagResource
 
 void FinspaceClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void FinspaceClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome FinspaceClient::UntagResource(const UntagResourceRequest& request) const
@@ -310,12 +298,10 @@ UntagResourceOutcomeCallable FinspaceClient::UntagResourceCallable(const UntagRe
 
 void FinspaceClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void FinspaceClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateEnvironmentOutcome FinspaceClient::UpdateEnvironment(const UpdateEnvironmentRequest& request) const
@@ -341,11 +327,9 @@ UpdateEnvironmentOutcomeCallable FinspaceClient::UpdateEnvironmentCallable(const
 
 void FinspaceClient::UpdateEnvironmentAsync(const UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateEnvironmentAsyncHelper( request, handler, context ); } );
-}
-
-void FinspaceClient::UpdateEnvironmentAsyncHelper(const UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateEnvironment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateEnvironment(request), context);
+    } );
 }
 

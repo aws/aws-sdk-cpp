@@ -118,12 +118,10 @@ QueryForecastOutcomeCallable ForecastQueryServiceClient::QueryForecastCallable(c
 
 void ForecastQueryServiceClient::QueryForecastAsync(const QueryForecastRequest& request, const QueryForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->QueryForecastAsyncHelper( request, handler, context ); } );
-}
-
-void ForecastQueryServiceClient::QueryForecastAsyncHelper(const QueryForecastRequest& request, const QueryForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, QueryForecast(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, QueryForecast(request), context);
+    } );
 }
 
 QueryWhatIfForecastOutcome ForecastQueryServiceClient::QueryWhatIfForecast(const QueryWhatIfForecastRequest& request) const
@@ -142,11 +140,9 @@ QueryWhatIfForecastOutcomeCallable ForecastQueryServiceClient::QueryWhatIfForeca
 
 void ForecastQueryServiceClient::QueryWhatIfForecastAsync(const QueryWhatIfForecastRequest& request, const QueryWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->QueryWhatIfForecastAsyncHelper( request, handler, context ); } );
-}
-
-void ForecastQueryServiceClient::QueryWhatIfForecastAsyncHelper(const QueryWhatIfForecastRequest& request, const QueryWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, QueryWhatIfForecast(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, QueryWhatIfForecast(request), context);
+    } );
 }
 

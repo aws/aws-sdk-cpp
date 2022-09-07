@@ -287,7 +287,7 @@ namespace Model
     bool m_andHasBeenSet = false;
 
     std::shared_ptr<Expression> m_not;
-    bool m_notHasBeenSet;
+    bool m_notHasBeenSet = false;
 
     DimensionValues m_dimensions;
     bool m_dimensionsHasBeenSet = false;

@@ -135,12 +135,10 @@ CreateGroupOutcomeCallable IdentityStoreClient::CreateGroupCallable(const Create
 
 void IdentityStoreClient::CreateGroupAsync(const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateGroupAsyncHelper( request, handler, context ); } );
-}
-
-void IdentityStoreClient::CreateGroupAsyncHelper(const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateGroup(request), context);
+    } );
 }
 
 CreateGroupMembershipOutcome IdentityStoreClient::CreateGroupMembership(const CreateGroupMembershipRequest& request) const
@@ -159,12 +157,10 @@ CreateGroupMembershipOutcomeCallable IdentityStoreClient::CreateGroupMembershipC
 
 void IdentityStoreClient::CreateGroupMembershipAsync(const CreateGroupMembershipRequest& request, const CreateGroupMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateGroupMembershipAsyncHelper( request, handler, context ); } );
-}
-
-void IdentityStoreClient::CreateGroupMembershipAsyncHelper(const CreateGroupMembershipRequest& request, const CreateGroupMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateGroupMembership(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateGroupMembership(request), context);
+    } );
 }
 
 CreateUserOutcome IdentityStoreClient::CreateUser(const CreateUserRequest& request) const
@@ -183,12 +179,10 @@ CreateUserOutcomeCallable IdentityStoreClient::CreateUserCallable(const CreateUs
 
 void IdentityStoreClient::CreateUserAsync(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateUserAsyncHelper( request, handler, context ); } );
-}
-
-void IdentityStoreClient::CreateUserAsyncHelper(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateUser(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateUser(request), context);
+    } );
 }
 
 DeleteGroupOutcome IdentityStoreClient::DeleteGroup(const DeleteGroupRequest& request) const
@@ -207,12 +201,10 @@ DeleteGroupOutcomeCallable IdentityStoreClient::DeleteGroupCallable(const Delete
 
 void IdentityStoreClient::DeleteGroupAsync(const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteGroupAsyncHelper( request, handler, context ); } );
-}
-
-void IdentityStoreClient::DeleteGroupAsyncHelper(const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteGroup(request), context);
+    } );
 }
 
 DeleteGroupMembershipOutcome IdentityStoreClient::DeleteGroupMembership(const DeleteGroupMembershipRequest& request) const
@@ -231,12 +223,10 @@ DeleteGroupMembershipOutcomeCallable IdentityStoreClient::DeleteGroupMembershipC
 
 void IdentityStoreClient::DeleteGroupMembershipAsync(const DeleteGroupMembershipRequest& request, const DeleteGroupMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteGroupMembershipAsyncHelper( request, handler, context ); } );
-}
-
-void IdentityStoreClient::DeleteGroupMembershipAsyncHelper(const DeleteGroupMembershipRequest& request, const DeleteGroupMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteGroupMembership(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteGroupMembership(request), context);
+    } );
 }
 
 DeleteUserOutcome IdentityStoreClient::DeleteUser(const DeleteUserRequest& request) const
@@ -255,12 +245,10 @@ DeleteUserOutcomeCallable IdentityStoreClient::DeleteUserCallable(const DeleteUs
 
 void IdentityStoreClient::DeleteUserAsync(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteUserAsyncHelper( request, handler, context ); } );
-}
-
-void IdentityStoreClient::DeleteUserAsyncHelper(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteUser(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteUser(request), context);
+    } );
 }
 
 DescribeGroupOutcome IdentityStoreClient::DescribeGroup(const DescribeGroupRequest& request) const
@@ -279,12 +267,10 @@ DescribeGroupOutcomeCallable IdentityStoreClient::DescribeGroupCallable(const De
 
 void IdentityStoreClient::DescribeGroupAsync(const DescribeGroupRequest& request, const DescribeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeGroupAsyncHelper( request, handler, context ); } );
-}
-
-void IdentityStoreClient::DescribeGroupAsyncHelper(const DescribeGroupRequest& request, const DescribeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeGroup(request), context);
+    } );
 }
 
 DescribeGroupMembershipOutcome IdentityStoreClient::DescribeGroupMembership(const DescribeGroupMembershipRequest& request) const
@@ -303,12 +289,10 @@ DescribeGroupMembershipOutcomeCallable IdentityStoreClient::DescribeGroupMembers
 
 void IdentityStoreClient::DescribeGroupMembershipAsync(const DescribeGroupMembershipRequest& request, const DescribeGroupMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeGroupMembershipAsyncHelper( request, handler, context ); } );
-}
-
-void IdentityStoreClient::DescribeGroupMembershipAsyncHelper(const DescribeGroupMembershipRequest& request, const DescribeGroupMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeGroupMembership(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeGroupMembership(request), context);
+    } );
 }
 
 DescribeUserOutcome IdentityStoreClient::DescribeUser(const DescribeUserRequest& request) const
@@ -327,12 +311,10 @@ DescribeUserOutcomeCallable IdentityStoreClient::DescribeUserCallable(const Desc
 
 void IdentityStoreClient::DescribeUserAsync(const DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeUserAsyncHelper( request, handler, context ); } );
-}
-
-void IdentityStoreClient::DescribeUserAsyncHelper(const DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeUser(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeUser(request), context);
+    } );
 }
 
 GetGroupIdOutcome IdentityStoreClient::GetGroupId(const GetGroupIdRequest& request) const
@@ -351,12 +333,10 @@ GetGroupIdOutcomeCallable IdentityStoreClient::GetGroupIdCallable(const GetGroup
 
 void IdentityStoreClient::GetGroupIdAsync(const GetGroupIdRequest& request, const GetGroupIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetGroupIdAsyncHelper( request, handler, context ); } );
-}
-
-void IdentityStoreClient::GetGroupIdAsyncHelper(const GetGroupIdRequest& request, const GetGroupIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetGroupId(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetGroupId(request), context);
+    } );
 }
 
 GetGroupMembershipIdOutcome IdentityStoreClient::GetGroupMembershipId(const GetGroupMembershipIdRequest& request) const
@@ -375,12 +355,10 @@ GetGroupMembershipIdOutcomeCallable IdentityStoreClient::GetGroupMembershipIdCal
 
 void IdentityStoreClient::GetGroupMembershipIdAsync(const GetGroupMembershipIdRequest& request, const GetGroupMembershipIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetGroupMembershipIdAsyncHelper( request, handler, context ); } );
-}
-
-void IdentityStoreClient::GetGroupMembershipIdAsyncHelper(const GetGroupMembershipIdRequest& request, const GetGroupMembershipIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetGroupMembershipId(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetGroupMembershipId(request), context);
+    } );
 }
 
 GetUserIdOutcome IdentityStoreClient::GetUserId(const GetUserIdRequest& request) const
@@ -399,12 +377,10 @@ GetUserIdOutcomeCallable IdentityStoreClient::GetUserIdCallable(const GetUserIdR
 
 void IdentityStoreClient::GetUserIdAsync(const GetUserIdRequest& request, const GetUserIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetUserIdAsyncHelper( request, handler, context ); } );
-}
-
-void IdentityStoreClient::GetUserIdAsyncHelper(const GetUserIdRequest& request, const GetUserIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetUserId(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetUserId(request), context);
+    } );
 }
 
 IsMemberInGroupsOutcome IdentityStoreClient::IsMemberInGroups(const IsMemberInGroupsRequest& request) const
@@ -423,12 +399,10 @@ IsMemberInGroupsOutcomeCallable IdentityStoreClient::IsMemberInGroupsCallable(co
 
 void IdentityStoreClient::IsMemberInGroupsAsync(const IsMemberInGroupsRequest& request, const IsMemberInGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->IsMemberInGroupsAsyncHelper( request, handler, context ); } );
-}
-
-void IdentityStoreClient::IsMemberInGroupsAsyncHelper(const IsMemberInGroupsRequest& request, const IsMemberInGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, IsMemberInGroups(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, IsMemberInGroups(request), context);
+    } );
 }
 
 ListGroupMembershipsOutcome IdentityStoreClient::ListGroupMemberships(const ListGroupMembershipsRequest& request) const
@@ -447,12 +421,10 @@ ListGroupMembershipsOutcomeCallable IdentityStoreClient::ListGroupMembershipsCal
 
 void IdentityStoreClient::ListGroupMembershipsAsync(const ListGroupMembershipsRequest& request, const ListGroupMembershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGroupMembershipsAsyncHelper( request, handler, context ); } );
-}
-
-void IdentityStoreClient::ListGroupMembershipsAsyncHelper(const ListGroupMembershipsRequest& request, const ListGroupMembershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListGroupMemberships(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListGroupMemberships(request), context);
+    } );
 }
 
 ListGroupMembershipsForMemberOutcome IdentityStoreClient::ListGroupMembershipsForMember(const ListGroupMembershipsForMemberRequest& request) const
@@ -471,12 +443,10 @@ ListGroupMembershipsForMemberOutcomeCallable IdentityStoreClient::ListGroupMembe
 
 void IdentityStoreClient::ListGroupMembershipsForMemberAsync(const ListGroupMembershipsForMemberRequest& request, const ListGroupMembershipsForMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGroupMembershipsForMemberAsyncHelper( request, handler, context ); } );
-}
-
-void IdentityStoreClient::ListGroupMembershipsForMemberAsyncHelper(const ListGroupMembershipsForMemberRequest& request, const ListGroupMembershipsForMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListGroupMembershipsForMember(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListGroupMembershipsForMember(request), context);
+    } );
 }
 
 ListGroupsOutcome IdentityStoreClient::ListGroups(const ListGroupsRequest& request) const
@@ -495,12 +465,10 @@ ListGroupsOutcomeCallable IdentityStoreClient::ListGroupsCallable(const ListGrou
 
 void IdentityStoreClient::ListGroupsAsync(const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGroupsAsyncHelper( request, handler, context ); } );
-}
-
-void IdentityStoreClient::ListGroupsAsyncHelper(const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListGroups(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListGroups(request), context);
+    } );
 }
 
 ListUsersOutcome IdentityStoreClient::ListUsers(const ListUsersRequest& request) const
@@ -519,12 +487,10 @@ ListUsersOutcomeCallable IdentityStoreClient::ListUsersCallable(const ListUsersR
 
 void IdentityStoreClient::ListUsersAsync(const ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListUsersAsyncHelper( request, handler, context ); } );
-}
-
-void IdentityStoreClient::ListUsersAsyncHelper(const ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListUsers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListUsers(request), context);
+    } );
 }
 
 UpdateGroupOutcome IdentityStoreClient::UpdateGroup(const UpdateGroupRequest& request) const
@@ -543,12 +509,10 @@ UpdateGroupOutcomeCallable IdentityStoreClient::UpdateGroupCallable(const Update
 
 void IdentityStoreClient::UpdateGroupAsync(const UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateGroupAsyncHelper( request, handler, context ); } );
-}
-
-void IdentityStoreClient::UpdateGroupAsyncHelper(const UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateGroup(request), context);
+    } );
 }
 
 UpdateUserOutcome IdentityStoreClient::UpdateUser(const UpdateUserRequest& request) const
@@ -567,11 +531,9 @@ UpdateUserOutcomeCallable IdentityStoreClient::UpdateUserCallable(const UpdateUs
 
 void IdentityStoreClient::UpdateUserAsync(const UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateUserAsyncHelper( request, handler, context ); } );
-}
-
-void IdentityStoreClient::UpdateUserAsyncHelper(const UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateUser(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateUser(request), context);
+    } );
 }
 

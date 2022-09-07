@@ -146,12 +146,10 @@ AssociateServiceRoleToAccountOutcomeCallable GreengrassV2Client::AssociateServic
 
 void GreengrassV2Client::AssociateServiceRoleToAccountAsync(const AssociateServiceRoleToAccountRequest& request, const AssociateServiceRoleToAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateServiceRoleToAccountAsyncHelper( request, handler, context ); } );
-}
-
-void GreengrassV2Client::AssociateServiceRoleToAccountAsyncHelper(const AssociateServiceRoleToAccountRequest& request, const AssociateServiceRoleToAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateServiceRoleToAccount(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateServiceRoleToAccount(request), context);
+    } );
 }
 
 BatchAssociateClientDeviceWithCoreDeviceOutcome GreengrassV2Client::BatchAssociateClientDeviceWithCoreDevice(const BatchAssociateClientDeviceWithCoreDeviceRequest& request) const
@@ -178,12 +176,10 @@ BatchAssociateClientDeviceWithCoreDeviceOutcomeCallable GreengrassV2Client::Batc
 
 void GreengrassV2Client::BatchAssociateClientDeviceWithCoreDeviceAsync(const BatchAssociateClientDeviceWithCoreDeviceRequest& request, const BatchAssociateClientDeviceWithCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchAssociateClientDeviceWithCoreDeviceAsyncHelper( request, handler, context ); } );
-}
-
-void GreengrassV2Client::BatchAssociateClientDeviceWithCoreDeviceAsyncHelper(const BatchAssociateClientDeviceWithCoreDeviceRequest& request, const BatchAssociateClientDeviceWithCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchAssociateClientDeviceWithCoreDevice(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchAssociateClientDeviceWithCoreDevice(request), context);
+    } );
 }
 
 BatchDisassociateClientDeviceFromCoreDeviceOutcome GreengrassV2Client::BatchDisassociateClientDeviceFromCoreDevice(const BatchDisassociateClientDeviceFromCoreDeviceRequest& request) const
@@ -210,12 +206,10 @@ BatchDisassociateClientDeviceFromCoreDeviceOutcomeCallable GreengrassV2Client::B
 
 void GreengrassV2Client::BatchDisassociateClientDeviceFromCoreDeviceAsync(const BatchDisassociateClientDeviceFromCoreDeviceRequest& request, const BatchDisassociateClientDeviceFromCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchDisassociateClientDeviceFromCoreDeviceAsyncHelper( request, handler, context ); } );
-}
-
-void GreengrassV2Client::BatchDisassociateClientDeviceFromCoreDeviceAsyncHelper(const BatchDisassociateClientDeviceFromCoreDeviceRequest& request, const BatchDisassociateClientDeviceFromCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchDisassociateClientDeviceFromCoreDevice(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchDisassociateClientDeviceFromCoreDevice(request), context);
+    } );
 }
 
 CancelDeploymentOutcome GreengrassV2Client::CancelDeployment(const CancelDeploymentRequest& request) const
@@ -242,12 +236,10 @@ CancelDeploymentOutcomeCallable GreengrassV2Client::CancelDeploymentCallable(con
 
 void GreengrassV2Client::CancelDeploymentAsync(const CancelDeploymentRequest& request, const CancelDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelDeploymentAsyncHelper( request, handler, context ); } );
-}
-
-void GreengrassV2Client::CancelDeploymentAsyncHelper(const CancelDeploymentRequest& request, const CancelDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CancelDeployment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CancelDeployment(request), context);
+    } );
 }
 
 CreateComponentVersionOutcome GreengrassV2Client::CreateComponentVersion(const CreateComponentVersionRequest& request) const
@@ -267,12 +259,10 @@ CreateComponentVersionOutcomeCallable GreengrassV2Client::CreateComponentVersion
 
 void GreengrassV2Client::CreateComponentVersionAsync(const CreateComponentVersionRequest& request, const CreateComponentVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateComponentVersionAsyncHelper( request, handler, context ); } );
-}
-
-void GreengrassV2Client::CreateComponentVersionAsyncHelper(const CreateComponentVersionRequest& request, const CreateComponentVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateComponentVersion(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateComponentVersion(request), context);
+    } );
 }
 
 CreateDeploymentOutcome GreengrassV2Client::CreateDeployment(const CreateDeploymentRequest& request) const
@@ -292,12 +282,10 @@ CreateDeploymentOutcomeCallable GreengrassV2Client::CreateDeploymentCallable(con
 
 void GreengrassV2Client::CreateDeploymentAsync(const CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDeploymentAsyncHelper( request, handler, context ); } );
-}
-
-void GreengrassV2Client::CreateDeploymentAsyncHelper(const CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateDeployment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateDeployment(request), context);
+    } );
 }
 
 DeleteComponentOutcome GreengrassV2Client::DeleteComponent(const DeleteComponentRequest& request) const
@@ -323,12 +311,10 @@ DeleteComponentOutcomeCallable GreengrassV2Client::DeleteComponentCallable(const
 
 void GreengrassV2Client::DeleteComponentAsync(const DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteComponentAsyncHelper( request, handler, context ); } );
-}
-
-void GreengrassV2Client::DeleteComponentAsyncHelper(const DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteComponent(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteComponent(request), context);
+    } );
 }
 
 DeleteCoreDeviceOutcome GreengrassV2Client::DeleteCoreDevice(const DeleteCoreDeviceRequest& request) const
@@ -354,12 +340,10 @@ DeleteCoreDeviceOutcomeCallable GreengrassV2Client::DeleteCoreDeviceCallable(con
 
 void GreengrassV2Client::DeleteCoreDeviceAsync(const DeleteCoreDeviceRequest& request, const DeleteCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCoreDeviceAsyncHelper( request, handler, context ); } );
-}
-
-void GreengrassV2Client::DeleteCoreDeviceAsyncHelper(const DeleteCoreDeviceRequest& request, const DeleteCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteCoreDevice(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteCoreDevice(request), context);
+    } );
 }
 
 DeleteDeploymentOutcome GreengrassV2Client::DeleteDeployment(const DeleteDeploymentRequest& request) const
@@ -385,12 +369,10 @@ DeleteDeploymentOutcomeCallable GreengrassV2Client::DeleteDeploymentCallable(con
 
 void GreengrassV2Client::DeleteDeploymentAsync(const DeleteDeploymentRequest& request, const DeleteDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDeploymentAsyncHelper( request, handler, context ); } );
-}
-
-void GreengrassV2Client::DeleteDeploymentAsyncHelper(const DeleteDeploymentRequest& request, const DeleteDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteDeployment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteDeployment(request), context);
+    } );
 }
 
 DescribeComponentOutcome GreengrassV2Client::DescribeComponent(const DescribeComponentRequest& request) const
@@ -417,12 +399,10 @@ DescribeComponentOutcomeCallable GreengrassV2Client::DescribeComponentCallable(c
 
 void GreengrassV2Client::DescribeComponentAsync(const DescribeComponentRequest& request, const DescribeComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeComponentAsyncHelper( request, handler, context ); } );
-}
-
-void GreengrassV2Client::DescribeComponentAsyncHelper(const DescribeComponentRequest& request, const DescribeComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeComponent(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeComponent(request), context);
+    } );
 }
 
 DisassociateServiceRoleFromAccountOutcome GreengrassV2Client::DisassociateServiceRoleFromAccount(const DisassociateServiceRoleFromAccountRequest& request) const
@@ -442,12 +422,10 @@ DisassociateServiceRoleFromAccountOutcomeCallable GreengrassV2Client::Disassocia
 
 void GreengrassV2Client::DisassociateServiceRoleFromAccountAsync(const DisassociateServiceRoleFromAccountRequest& request, const DisassociateServiceRoleFromAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateServiceRoleFromAccountAsyncHelper( request, handler, context ); } );
-}
-
-void GreengrassV2Client::DisassociateServiceRoleFromAccountAsyncHelper(const DisassociateServiceRoleFromAccountRequest& request, const DisassociateServiceRoleFromAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateServiceRoleFromAccount(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateServiceRoleFromAccount(request), context);
+    } );
 }
 
 GetComponentOutcome GreengrassV2Client::GetComponent(const GetComponentRequest& request) const
@@ -473,12 +451,10 @@ GetComponentOutcomeCallable GreengrassV2Client::GetComponentCallable(const GetCo
 
 void GreengrassV2Client::GetComponentAsync(const GetComponentRequest& request, const GetComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetComponentAsyncHelper( request, handler, context ); } );
-}
-
-void GreengrassV2Client::GetComponentAsyncHelper(const GetComponentRequest& request, const GetComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetComponent(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetComponent(request), context);
+    } );
 }
 
 GetComponentVersionArtifactOutcome GreengrassV2Client::GetComponentVersionArtifact(const GetComponentVersionArtifactRequest& request) const
@@ -511,12 +487,10 @@ GetComponentVersionArtifactOutcomeCallable GreengrassV2Client::GetComponentVersi
 
 void GreengrassV2Client::GetComponentVersionArtifactAsync(const GetComponentVersionArtifactRequest& request, const GetComponentVersionArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetComponentVersionArtifactAsyncHelper( request, handler, context ); } );
-}
-
-void GreengrassV2Client::GetComponentVersionArtifactAsyncHelper(const GetComponentVersionArtifactRequest& request, const GetComponentVersionArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetComponentVersionArtifact(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetComponentVersionArtifact(request), context);
+    } );
 }
 
 GetConnectivityInfoOutcome GreengrassV2Client::GetConnectivityInfo(const GetConnectivityInfoRequest& request) const
@@ -543,12 +517,10 @@ GetConnectivityInfoOutcomeCallable GreengrassV2Client::GetConnectivityInfoCallab
 
 void GreengrassV2Client::GetConnectivityInfoAsync(const GetConnectivityInfoRequest& request, const GetConnectivityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetConnectivityInfoAsyncHelper( request, handler, context ); } );
-}
-
-void GreengrassV2Client::GetConnectivityInfoAsyncHelper(const GetConnectivityInfoRequest& request, const GetConnectivityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetConnectivityInfo(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetConnectivityInfo(request), context);
+    } );
 }
 
 GetCoreDeviceOutcome GreengrassV2Client::GetCoreDevice(const GetCoreDeviceRequest& request) const
@@ -574,12 +546,10 @@ GetCoreDeviceOutcomeCallable GreengrassV2Client::GetCoreDeviceCallable(const Get
 
 void GreengrassV2Client::GetCoreDeviceAsync(const GetCoreDeviceRequest& request, const GetCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCoreDeviceAsyncHelper( request, handler, context ); } );
-}
-
-void GreengrassV2Client::GetCoreDeviceAsyncHelper(const GetCoreDeviceRequest& request, const GetCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetCoreDevice(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetCoreDevice(request), context);
+    } );
 }
 
 GetDeploymentOutcome GreengrassV2Client::GetDeployment(const GetDeploymentRequest& request) const
@@ -605,12 +575,10 @@ GetDeploymentOutcomeCallable GreengrassV2Client::GetDeploymentCallable(const Get
 
 void GreengrassV2Client::GetDeploymentAsync(const GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDeploymentAsyncHelper( request, handler, context ); } );
-}
-
-void GreengrassV2Client::GetDeploymentAsyncHelper(const GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDeployment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDeployment(request), context);
+    } );
 }
 
 GetServiceRoleForAccountOutcome GreengrassV2Client::GetServiceRoleForAccount(const GetServiceRoleForAccountRequest& request) const
@@ -630,12 +598,10 @@ GetServiceRoleForAccountOutcomeCallable GreengrassV2Client::GetServiceRoleForAcc
 
 void GreengrassV2Client::GetServiceRoleForAccountAsync(const GetServiceRoleForAccountRequest& request, const GetServiceRoleForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetServiceRoleForAccountAsyncHelper( request, handler, context ); } );
-}
-
-void GreengrassV2Client::GetServiceRoleForAccountAsyncHelper(const GetServiceRoleForAccountRequest& request, const GetServiceRoleForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetServiceRoleForAccount(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetServiceRoleForAccount(request), context);
+    } );
 }
 
 ListClientDevicesAssociatedWithCoreDeviceOutcome GreengrassV2Client::ListClientDevicesAssociatedWithCoreDevice(const ListClientDevicesAssociatedWithCoreDeviceRequest& request) const
@@ -662,12 +628,10 @@ ListClientDevicesAssociatedWithCoreDeviceOutcomeCallable GreengrassV2Client::Lis
 
 void GreengrassV2Client::ListClientDevicesAssociatedWithCoreDeviceAsync(const ListClientDevicesAssociatedWithCoreDeviceRequest& request, const ListClientDevicesAssociatedWithCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListClientDevicesAssociatedWithCoreDeviceAsyncHelper( request, handler, context ); } );
-}
-
-void GreengrassV2Client::ListClientDevicesAssociatedWithCoreDeviceAsyncHelper(const ListClientDevicesAssociatedWithCoreDeviceRequest& request, const ListClientDevicesAssociatedWithCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListClientDevicesAssociatedWithCoreDevice(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListClientDevicesAssociatedWithCoreDevice(request), context);
+    } );
 }
 
 ListComponentVersionsOutcome GreengrassV2Client::ListComponentVersions(const ListComponentVersionsRequest& request) const
@@ -694,12 +658,10 @@ ListComponentVersionsOutcomeCallable GreengrassV2Client::ListComponentVersionsCa
 
 void GreengrassV2Client::ListComponentVersionsAsync(const ListComponentVersionsRequest& request, const ListComponentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListComponentVersionsAsyncHelper( request, handler, context ); } );
-}
-
-void GreengrassV2Client::ListComponentVersionsAsyncHelper(const ListComponentVersionsRequest& request, const ListComponentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListComponentVersions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListComponentVersions(request), context);
+    } );
 }
 
 ListComponentsOutcome GreengrassV2Client::ListComponents(const ListComponentsRequest& request) const
@@ -719,12 +681,10 @@ ListComponentsOutcomeCallable GreengrassV2Client::ListComponentsCallable(const L
 
 void GreengrassV2Client::ListComponentsAsync(const ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListComponentsAsyncHelper( request, handler, context ); } );
-}
-
-void GreengrassV2Client::ListComponentsAsyncHelper(const ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListComponents(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListComponents(request), context);
+    } );
 }
 
 ListCoreDevicesOutcome GreengrassV2Client::ListCoreDevices(const ListCoreDevicesRequest& request) const
@@ -744,12 +704,10 @@ ListCoreDevicesOutcomeCallable GreengrassV2Client::ListCoreDevicesCallable(const
 
 void GreengrassV2Client::ListCoreDevicesAsync(const ListCoreDevicesRequest& request, const ListCoreDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCoreDevicesAsyncHelper( request, handler, context ); } );
-}
-
-void GreengrassV2Client::ListCoreDevicesAsyncHelper(const ListCoreDevicesRequest& request, const ListCoreDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListCoreDevices(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListCoreDevices(request), context);
+    } );
 }
 
 ListDeploymentsOutcome GreengrassV2Client::ListDeployments(const ListDeploymentsRequest& request) const
@@ -769,12 +727,10 @@ ListDeploymentsOutcomeCallable GreengrassV2Client::ListDeploymentsCallable(const
 
 void GreengrassV2Client::ListDeploymentsAsync(const ListDeploymentsRequest& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDeploymentsAsyncHelper( request, handler, context ); } );
-}
-
-void GreengrassV2Client::ListDeploymentsAsyncHelper(const ListDeploymentsRequest& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDeployments(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDeployments(request), context);
+    } );
 }
 
 ListEffectiveDeploymentsOutcome GreengrassV2Client::ListEffectiveDeployments(const ListEffectiveDeploymentsRequest& request) const
@@ -801,12 +757,10 @@ ListEffectiveDeploymentsOutcomeCallable GreengrassV2Client::ListEffectiveDeploym
 
 void GreengrassV2Client::ListEffectiveDeploymentsAsync(const ListEffectiveDeploymentsRequest& request, const ListEffectiveDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEffectiveDeploymentsAsyncHelper( request, handler, context ); } );
-}
-
-void GreengrassV2Client::ListEffectiveDeploymentsAsyncHelper(const ListEffectiveDeploymentsRequest& request, const ListEffectiveDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListEffectiveDeployments(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListEffectiveDeployments(request), context);
+    } );
 }
 
 ListInstalledComponentsOutcome GreengrassV2Client::ListInstalledComponents(const ListInstalledComponentsRequest& request) const
@@ -833,12 +787,10 @@ ListInstalledComponentsOutcomeCallable GreengrassV2Client::ListInstalledComponen
 
 void GreengrassV2Client::ListInstalledComponentsAsync(const ListInstalledComponentsRequest& request, const ListInstalledComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListInstalledComponentsAsyncHelper( request, handler, context ); } );
-}
-
-void GreengrassV2Client::ListInstalledComponentsAsyncHelper(const ListInstalledComponentsRequest& request, const ListInstalledComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListInstalledComponents(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListInstalledComponents(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome GreengrassV2Client::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -864,12 +816,10 @@ ListTagsForResourceOutcomeCallable GreengrassV2Client::ListTagsForResourceCallab
 
 void GreengrassV2Client::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void GreengrassV2Client::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 ResolveComponentCandidatesOutcome GreengrassV2Client::ResolveComponentCandidates(const ResolveComponentCandidatesRequest& request) const
@@ -889,12 +839,10 @@ ResolveComponentCandidatesOutcomeCallable GreengrassV2Client::ResolveComponentCa
 
 void GreengrassV2Client::ResolveComponentCandidatesAsync(const ResolveComponentCandidatesRequest& request, const ResolveComponentCandidatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ResolveComponentCandidatesAsyncHelper( request, handler, context ); } );
-}
-
-void GreengrassV2Client::ResolveComponentCandidatesAsyncHelper(const ResolveComponentCandidatesRequest& request, const ResolveComponentCandidatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ResolveComponentCandidates(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ResolveComponentCandidates(request), context);
+    } );
 }
 
 TagResourceOutcome GreengrassV2Client::TagResource(const TagResourceRequest& request) const
@@ -920,12 +868,10 @@ TagResourceOutcomeCallable GreengrassV2Client::TagResourceCallable(const TagReso
 
 void GreengrassV2Client::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void GreengrassV2Client::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome GreengrassV2Client::UntagResource(const UntagResourceRequest& request) const
@@ -956,12 +902,10 @@ UntagResourceOutcomeCallable GreengrassV2Client::UntagResourceCallable(const Unt
 
 void GreengrassV2Client::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void GreengrassV2Client::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateConnectivityInfoOutcome GreengrassV2Client::UpdateConnectivityInfo(const UpdateConnectivityInfoRequest& request) const
@@ -988,11 +932,9 @@ UpdateConnectivityInfoOutcomeCallable GreengrassV2Client::UpdateConnectivityInfo
 
 void GreengrassV2Client::UpdateConnectivityInfoAsync(const UpdateConnectivityInfoRequest& request, const UpdateConnectivityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateConnectivityInfoAsyncHelper( request, handler, context ); } );
-}
-
-void GreengrassV2Client::UpdateConnectivityInfoAsyncHelper(const UpdateConnectivityInfoRequest& request, const UpdateConnectivityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateConnectivityInfo(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateConnectivityInfo(request), context);
+    } );
 }
 

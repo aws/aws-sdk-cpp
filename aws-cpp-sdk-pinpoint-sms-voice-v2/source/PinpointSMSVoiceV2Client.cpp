@@ -159,12 +159,10 @@ AssociateOriginationIdentityOutcomeCallable PinpointSMSVoiceV2Client::AssociateO
 
 void PinpointSMSVoiceV2Client::AssociateOriginationIdentityAsync(const AssociateOriginationIdentityRequest& request, const AssociateOriginationIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateOriginationIdentityAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::AssociateOriginationIdentityAsyncHelper(const AssociateOriginationIdentityRequest& request, const AssociateOriginationIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateOriginationIdentity(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateOriginationIdentity(request), context);
+    } );
 }
 
 CreateConfigurationSetOutcome PinpointSMSVoiceV2Client::CreateConfigurationSet(const CreateConfigurationSetRequest& request) const
@@ -183,12 +181,10 @@ CreateConfigurationSetOutcomeCallable PinpointSMSVoiceV2Client::CreateConfigurat
 
 void PinpointSMSVoiceV2Client::CreateConfigurationSetAsync(const CreateConfigurationSetRequest& request, const CreateConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateConfigurationSetAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::CreateConfigurationSetAsyncHelper(const CreateConfigurationSetRequest& request, const CreateConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateConfigurationSet(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateConfigurationSet(request), context);
+    } );
 }
 
 CreateEventDestinationOutcome PinpointSMSVoiceV2Client::CreateEventDestination(const CreateEventDestinationRequest& request) const
@@ -207,12 +203,10 @@ CreateEventDestinationOutcomeCallable PinpointSMSVoiceV2Client::CreateEventDesti
 
 void PinpointSMSVoiceV2Client::CreateEventDestinationAsync(const CreateEventDestinationRequest& request, const CreateEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEventDestinationAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::CreateEventDestinationAsyncHelper(const CreateEventDestinationRequest& request, const CreateEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateEventDestination(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateEventDestination(request), context);
+    } );
 }
 
 CreateOptOutListOutcome PinpointSMSVoiceV2Client::CreateOptOutList(const CreateOptOutListRequest& request) const
@@ -231,12 +225,10 @@ CreateOptOutListOutcomeCallable PinpointSMSVoiceV2Client::CreateOptOutListCallab
 
 void PinpointSMSVoiceV2Client::CreateOptOutListAsync(const CreateOptOutListRequest& request, const CreateOptOutListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateOptOutListAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::CreateOptOutListAsyncHelper(const CreateOptOutListRequest& request, const CreateOptOutListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateOptOutList(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateOptOutList(request), context);
+    } );
 }
 
 CreatePoolOutcome PinpointSMSVoiceV2Client::CreatePool(const CreatePoolRequest& request) const
@@ -255,12 +247,10 @@ CreatePoolOutcomeCallable PinpointSMSVoiceV2Client::CreatePoolCallable(const Cre
 
 void PinpointSMSVoiceV2Client::CreatePoolAsync(const CreatePoolRequest& request, const CreatePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePoolAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::CreatePoolAsyncHelper(const CreatePoolRequest& request, const CreatePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreatePool(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreatePool(request), context);
+    } );
 }
 
 DeleteConfigurationSetOutcome PinpointSMSVoiceV2Client::DeleteConfigurationSet(const DeleteConfigurationSetRequest& request) const
@@ -279,12 +269,10 @@ DeleteConfigurationSetOutcomeCallable PinpointSMSVoiceV2Client::DeleteConfigurat
 
 void PinpointSMSVoiceV2Client::DeleteConfigurationSetAsync(const DeleteConfigurationSetRequest& request, const DeleteConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteConfigurationSetAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::DeleteConfigurationSetAsyncHelper(const DeleteConfigurationSetRequest& request, const DeleteConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteConfigurationSet(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteConfigurationSet(request), context);
+    } );
 }
 
 DeleteDefaultMessageTypeOutcome PinpointSMSVoiceV2Client::DeleteDefaultMessageType(const DeleteDefaultMessageTypeRequest& request) const
@@ -303,12 +291,10 @@ DeleteDefaultMessageTypeOutcomeCallable PinpointSMSVoiceV2Client::DeleteDefaultM
 
 void PinpointSMSVoiceV2Client::DeleteDefaultMessageTypeAsync(const DeleteDefaultMessageTypeRequest& request, const DeleteDefaultMessageTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDefaultMessageTypeAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::DeleteDefaultMessageTypeAsyncHelper(const DeleteDefaultMessageTypeRequest& request, const DeleteDefaultMessageTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteDefaultMessageType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteDefaultMessageType(request), context);
+    } );
 }
 
 DeleteDefaultSenderIdOutcome PinpointSMSVoiceV2Client::DeleteDefaultSenderId(const DeleteDefaultSenderIdRequest& request) const
@@ -327,12 +313,10 @@ DeleteDefaultSenderIdOutcomeCallable PinpointSMSVoiceV2Client::DeleteDefaultSend
 
 void PinpointSMSVoiceV2Client::DeleteDefaultSenderIdAsync(const DeleteDefaultSenderIdRequest& request, const DeleteDefaultSenderIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDefaultSenderIdAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::DeleteDefaultSenderIdAsyncHelper(const DeleteDefaultSenderIdRequest& request, const DeleteDefaultSenderIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteDefaultSenderId(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteDefaultSenderId(request), context);
+    } );
 }
 
 DeleteEventDestinationOutcome PinpointSMSVoiceV2Client::DeleteEventDestination(const DeleteEventDestinationRequest& request) const
@@ -351,12 +335,10 @@ DeleteEventDestinationOutcomeCallable PinpointSMSVoiceV2Client::DeleteEventDesti
 
 void PinpointSMSVoiceV2Client::DeleteEventDestinationAsync(const DeleteEventDestinationRequest& request, const DeleteEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEventDestinationAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::DeleteEventDestinationAsyncHelper(const DeleteEventDestinationRequest& request, const DeleteEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteEventDestination(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteEventDestination(request), context);
+    } );
 }
 
 DeleteKeywordOutcome PinpointSMSVoiceV2Client::DeleteKeyword(const DeleteKeywordRequest& request) const
@@ -375,12 +357,10 @@ DeleteKeywordOutcomeCallable PinpointSMSVoiceV2Client::DeleteKeywordCallable(con
 
 void PinpointSMSVoiceV2Client::DeleteKeywordAsync(const DeleteKeywordRequest& request, const DeleteKeywordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteKeywordAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::DeleteKeywordAsyncHelper(const DeleteKeywordRequest& request, const DeleteKeywordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteKeyword(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteKeyword(request), context);
+    } );
 }
 
 DeleteOptOutListOutcome PinpointSMSVoiceV2Client::DeleteOptOutList(const DeleteOptOutListRequest& request) const
@@ -399,12 +379,10 @@ DeleteOptOutListOutcomeCallable PinpointSMSVoiceV2Client::DeleteOptOutListCallab
 
 void PinpointSMSVoiceV2Client::DeleteOptOutListAsync(const DeleteOptOutListRequest& request, const DeleteOptOutListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteOptOutListAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::DeleteOptOutListAsyncHelper(const DeleteOptOutListRequest& request, const DeleteOptOutListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteOptOutList(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteOptOutList(request), context);
+    } );
 }
 
 DeleteOptedOutNumberOutcome PinpointSMSVoiceV2Client::DeleteOptedOutNumber(const DeleteOptedOutNumberRequest& request) const
@@ -423,12 +401,10 @@ DeleteOptedOutNumberOutcomeCallable PinpointSMSVoiceV2Client::DeleteOptedOutNumb
 
 void PinpointSMSVoiceV2Client::DeleteOptedOutNumberAsync(const DeleteOptedOutNumberRequest& request, const DeleteOptedOutNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteOptedOutNumberAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::DeleteOptedOutNumberAsyncHelper(const DeleteOptedOutNumberRequest& request, const DeleteOptedOutNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteOptedOutNumber(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteOptedOutNumber(request), context);
+    } );
 }
 
 DeletePoolOutcome PinpointSMSVoiceV2Client::DeletePool(const DeletePoolRequest& request) const
@@ -447,12 +423,10 @@ DeletePoolOutcomeCallable PinpointSMSVoiceV2Client::DeletePoolCallable(const Del
 
 void PinpointSMSVoiceV2Client::DeletePoolAsync(const DeletePoolRequest& request, const DeletePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePoolAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::DeletePoolAsyncHelper(const DeletePoolRequest& request, const DeletePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeletePool(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeletePool(request), context);
+    } );
 }
 
 DeleteTextMessageSpendLimitOverrideOutcome PinpointSMSVoiceV2Client::DeleteTextMessageSpendLimitOverride(const DeleteTextMessageSpendLimitOverrideRequest& request) const
@@ -471,12 +445,10 @@ DeleteTextMessageSpendLimitOverrideOutcomeCallable PinpointSMSVoiceV2Client::Del
 
 void PinpointSMSVoiceV2Client::DeleteTextMessageSpendLimitOverrideAsync(const DeleteTextMessageSpendLimitOverrideRequest& request, const DeleteTextMessageSpendLimitOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTextMessageSpendLimitOverrideAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::DeleteTextMessageSpendLimitOverrideAsyncHelper(const DeleteTextMessageSpendLimitOverrideRequest& request, const DeleteTextMessageSpendLimitOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteTextMessageSpendLimitOverride(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteTextMessageSpendLimitOverride(request), context);
+    } );
 }
 
 DeleteVoiceMessageSpendLimitOverrideOutcome PinpointSMSVoiceV2Client::DeleteVoiceMessageSpendLimitOverride(const DeleteVoiceMessageSpendLimitOverrideRequest& request) const
@@ -495,12 +467,10 @@ DeleteVoiceMessageSpendLimitOverrideOutcomeCallable PinpointSMSVoiceV2Client::De
 
 void PinpointSMSVoiceV2Client::DeleteVoiceMessageSpendLimitOverrideAsync(const DeleteVoiceMessageSpendLimitOverrideRequest& request, const DeleteVoiceMessageSpendLimitOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteVoiceMessageSpendLimitOverrideAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::DeleteVoiceMessageSpendLimitOverrideAsyncHelper(const DeleteVoiceMessageSpendLimitOverrideRequest& request, const DeleteVoiceMessageSpendLimitOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteVoiceMessageSpendLimitOverride(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteVoiceMessageSpendLimitOverride(request), context);
+    } );
 }
 
 DescribeAccountAttributesOutcome PinpointSMSVoiceV2Client::DescribeAccountAttributes(const DescribeAccountAttributesRequest& request) const
@@ -519,12 +489,10 @@ DescribeAccountAttributesOutcomeCallable PinpointSMSVoiceV2Client::DescribeAccou
 
 void PinpointSMSVoiceV2Client::DescribeAccountAttributesAsync(const DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAccountAttributesAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::DescribeAccountAttributesAsyncHelper(const DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAccountAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAccountAttributes(request), context);
+    } );
 }
 
 DescribeAccountLimitsOutcome PinpointSMSVoiceV2Client::DescribeAccountLimits(const DescribeAccountLimitsRequest& request) const
@@ -543,12 +511,10 @@ DescribeAccountLimitsOutcomeCallable PinpointSMSVoiceV2Client::DescribeAccountLi
 
 void PinpointSMSVoiceV2Client::DescribeAccountLimitsAsync(const DescribeAccountLimitsRequest& request, const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAccountLimitsAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::DescribeAccountLimitsAsyncHelper(const DescribeAccountLimitsRequest& request, const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAccountLimits(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAccountLimits(request), context);
+    } );
 }
 
 DescribeConfigurationSetsOutcome PinpointSMSVoiceV2Client::DescribeConfigurationSets(const DescribeConfigurationSetsRequest& request) const
@@ -567,12 +533,10 @@ DescribeConfigurationSetsOutcomeCallable PinpointSMSVoiceV2Client::DescribeConfi
 
 void PinpointSMSVoiceV2Client::DescribeConfigurationSetsAsync(const DescribeConfigurationSetsRequest& request, const DescribeConfigurationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeConfigurationSetsAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::DescribeConfigurationSetsAsyncHelper(const DescribeConfigurationSetsRequest& request, const DescribeConfigurationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeConfigurationSets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeConfigurationSets(request), context);
+    } );
 }
 
 DescribeKeywordsOutcome PinpointSMSVoiceV2Client::DescribeKeywords(const DescribeKeywordsRequest& request) const
@@ -591,12 +555,10 @@ DescribeKeywordsOutcomeCallable PinpointSMSVoiceV2Client::DescribeKeywordsCallab
 
 void PinpointSMSVoiceV2Client::DescribeKeywordsAsync(const DescribeKeywordsRequest& request, const DescribeKeywordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeKeywordsAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::DescribeKeywordsAsyncHelper(const DescribeKeywordsRequest& request, const DescribeKeywordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeKeywords(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeKeywords(request), context);
+    } );
 }
 
 DescribeOptOutListsOutcome PinpointSMSVoiceV2Client::DescribeOptOutLists(const DescribeOptOutListsRequest& request) const
@@ -615,12 +577,10 @@ DescribeOptOutListsOutcomeCallable PinpointSMSVoiceV2Client::DescribeOptOutLists
 
 void PinpointSMSVoiceV2Client::DescribeOptOutListsAsync(const DescribeOptOutListsRequest& request, const DescribeOptOutListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeOptOutListsAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::DescribeOptOutListsAsyncHelper(const DescribeOptOutListsRequest& request, const DescribeOptOutListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeOptOutLists(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeOptOutLists(request), context);
+    } );
 }
 
 DescribeOptedOutNumbersOutcome PinpointSMSVoiceV2Client::DescribeOptedOutNumbers(const DescribeOptedOutNumbersRequest& request) const
@@ -639,12 +599,10 @@ DescribeOptedOutNumbersOutcomeCallable PinpointSMSVoiceV2Client::DescribeOptedOu
 
 void PinpointSMSVoiceV2Client::DescribeOptedOutNumbersAsync(const DescribeOptedOutNumbersRequest& request, const DescribeOptedOutNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeOptedOutNumbersAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::DescribeOptedOutNumbersAsyncHelper(const DescribeOptedOutNumbersRequest& request, const DescribeOptedOutNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeOptedOutNumbers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeOptedOutNumbers(request), context);
+    } );
 }
 
 DescribePhoneNumbersOutcome PinpointSMSVoiceV2Client::DescribePhoneNumbers(const DescribePhoneNumbersRequest& request) const
@@ -663,12 +621,10 @@ DescribePhoneNumbersOutcomeCallable PinpointSMSVoiceV2Client::DescribePhoneNumbe
 
 void PinpointSMSVoiceV2Client::DescribePhoneNumbersAsync(const DescribePhoneNumbersRequest& request, const DescribePhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePhoneNumbersAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::DescribePhoneNumbersAsyncHelper(const DescribePhoneNumbersRequest& request, const DescribePhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribePhoneNumbers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribePhoneNumbers(request), context);
+    } );
 }
 
 DescribePoolsOutcome PinpointSMSVoiceV2Client::DescribePools(const DescribePoolsRequest& request) const
@@ -687,12 +643,10 @@ DescribePoolsOutcomeCallable PinpointSMSVoiceV2Client::DescribePoolsCallable(con
 
 void PinpointSMSVoiceV2Client::DescribePoolsAsync(const DescribePoolsRequest& request, const DescribePoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePoolsAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::DescribePoolsAsyncHelper(const DescribePoolsRequest& request, const DescribePoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribePools(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribePools(request), context);
+    } );
 }
 
 DescribeSenderIdsOutcome PinpointSMSVoiceV2Client::DescribeSenderIds(const DescribeSenderIdsRequest& request) const
@@ -711,12 +665,10 @@ DescribeSenderIdsOutcomeCallable PinpointSMSVoiceV2Client::DescribeSenderIdsCall
 
 void PinpointSMSVoiceV2Client::DescribeSenderIdsAsync(const DescribeSenderIdsRequest& request, const DescribeSenderIdsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSenderIdsAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::DescribeSenderIdsAsyncHelper(const DescribeSenderIdsRequest& request, const DescribeSenderIdsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeSenderIds(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeSenderIds(request), context);
+    } );
 }
 
 DescribeSpendLimitsOutcome PinpointSMSVoiceV2Client::DescribeSpendLimits(const DescribeSpendLimitsRequest& request) const
@@ -735,12 +687,10 @@ DescribeSpendLimitsOutcomeCallable PinpointSMSVoiceV2Client::DescribeSpendLimits
 
 void PinpointSMSVoiceV2Client::DescribeSpendLimitsAsync(const DescribeSpendLimitsRequest& request, const DescribeSpendLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSpendLimitsAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::DescribeSpendLimitsAsyncHelper(const DescribeSpendLimitsRequest& request, const DescribeSpendLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeSpendLimits(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeSpendLimits(request), context);
+    } );
 }
 
 DisassociateOriginationIdentityOutcome PinpointSMSVoiceV2Client::DisassociateOriginationIdentity(const DisassociateOriginationIdentityRequest& request) const
@@ -759,12 +709,10 @@ DisassociateOriginationIdentityOutcomeCallable PinpointSMSVoiceV2Client::Disasso
 
 void PinpointSMSVoiceV2Client::DisassociateOriginationIdentityAsync(const DisassociateOriginationIdentityRequest& request, const DisassociateOriginationIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateOriginationIdentityAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::DisassociateOriginationIdentityAsyncHelper(const DisassociateOriginationIdentityRequest& request, const DisassociateOriginationIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateOriginationIdentity(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateOriginationIdentity(request), context);
+    } );
 }
 
 ListPoolOriginationIdentitiesOutcome PinpointSMSVoiceV2Client::ListPoolOriginationIdentities(const ListPoolOriginationIdentitiesRequest& request) const
@@ -783,12 +731,10 @@ ListPoolOriginationIdentitiesOutcomeCallable PinpointSMSVoiceV2Client::ListPoolO
 
 void PinpointSMSVoiceV2Client::ListPoolOriginationIdentitiesAsync(const ListPoolOriginationIdentitiesRequest& request, const ListPoolOriginationIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPoolOriginationIdentitiesAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::ListPoolOriginationIdentitiesAsyncHelper(const ListPoolOriginationIdentitiesRequest& request, const ListPoolOriginationIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListPoolOriginationIdentities(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListPoolOriginationIdentities(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome PinpointSMSVoiceV2Client::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -807,12 +753,10 @@ ListTagsForResourceOutcomeCallable PinpointSMSVoiceV2Client::ListTagsForResource
 
 void PinpointSMSVoiceV2Client::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 PutKeywordOutcome PinpointSMSVoiceV2Client::PutKeyword(const PutKeywordRequest& request) const
@@ -831,12 +775,10 @@ PutKeywordOutcomeCallable PinpointSMSVoiceV2Client::PutKeywordCallable(const Put
 
 void PinpointSMSVoiceV2Client::PutKeywordAsync(const PutKeywordRequest& request, const PutKeywordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutKeywordAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::PutKeywordAsyncHelper(const PutKeywordRequest& request, const PutKeywordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutKeyword(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutKeyword(request), context);
+    } );
 }
 
 PutOptedOutNumberOutcome PinpointSMSVoiceV2Client::PutOptedOutNumber(const PutOptedOutNumberRequest& request) const
@@ -855,12 +797,10 @@ PutOptedOutNumberOutcomeCallable PinpointSMSVoiceV2Client::PutOptedOutNumberCall
 
 void PinpointSMSVoiceV2Client::PutOptedOutNumberAsync(const PutOptedOutNumberRequest& request, const PutOptedOutNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutOptedOutNumberAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::PutOptedOutNumberAsyncHelper(const PutOptedOutNumberRequest& request, const PutOptedOutNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutOptedOutNumber(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutOptedOutNumber(request), context);
+    } );
 }
 
 ReleasePhoneNumberOutcome PinpointSMSVoiceV2Client::ReleasePhoneNumber(const ReleasePhoneNumberRequest& request) const
@@ -879,12 +819,10 @@ ReleasePhoneNumberOutcomeCallable PinpointSMSVoiceV2Client::ReleasePhoneNumberCa
 
 void PinpointSMSVoiceV2Client::ReleasePhoneNumberAsync(const ReleasePhoneNumberRequest& request, const ReleasePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ReleasePhoneNumberAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::ReleasePhoneNumberAsyncHelper(const ReleasePhoneNumberRequest& request, const ReleasePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ReleasePhoneNumber(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ReleasePhoneNumber(request), context);
+    } );
 }
 
 RequestPhoneNumberOutcome PinpointSMSVoiceV2Client::RequestPhoneNumber(const RequestPhoneNumberRequest& request) const
@@ -903,12 +841,10 @@ RequestPhoneNumberOutcomeCallable PinpointSMSVoiceV2Client::RequestPhoneNumberCa
 
 void PinpointSMSVoiceV2Client::RequestPhoneNumberAsync(const RequestPhoneNumberRequest& request, const RequestPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RequestPhoneNumberAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::RequestPhoneNumberAsyncHelper(const RequestPhoneNumberRequest& request, const RequestPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RequestPhoneNumber(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RequestPhoneNumber(request), context);
+    } );
 }
 
 SendTextMessageOutcome PinpointSMSVoiceV2Client::SendTextMessage(const SendTextMessageRequest& request) const
@@ -927,12 +863,10 @@ SendTextMessageOutcomeCallable PinpointSMSVoiceV2Client::SendTextMessageCallable
 
 void PinpointSMSVoiceV2Client::SendTextMessageAsync(const SendTextMessageRequest& request, const SendTextMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendTextMessageAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::SendTextMessageAsyncHelper(const SendTextMessageRequest& request, const SendTextMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SendTextMessage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SendTextMessage(request), context);
+    } );
 }
 
 SendVoiceMessageOutcome PinpointSMSVoiceV2Client::SendVoiceMessage(const SendVoiceMessageRequest& request) const
@@ -951,12 +885,10 @@ SendVoiceMessageOutcomeCallable PinpointSMSVoiceV2Client::SendVoiceMessageCallab
 
 void PinpointSMSVoiceV2Client::SendVoiceMessageAsync(const SendVoiceMessageRequest& request, const SendVoiceMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendVoiceMessageAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::SendVoiceMessageAsyncHelper(const SendVoiceMessageRequest& request, const SendVoiceMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SendVoiceMessage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SendVoiceMessage(request), context);
+    } );
 }
 
 SetDefaultMessageTypeOutcome PinpointSMSVoiceV2Client::SetDefaultMessageType(const SetDefaultMessageTypeRequest& request) const
@@ -975,12 +907,10 @@ SetDefaultMessageTypeOutcomeCallable PinpointSMSVoiceV2Client::SetDefaultMessage
 
 void PinpointSMSVoiceV2Client::SetDefaultMessageTypeAsync(const SetDefaultMessageTypeRequest& request, const SetDefaultMessageTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetDefaultMessageTypeAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::SetDefaultMessageTypeAsyncHelper(const SetDefaultMessageTypeRequest& request, const SetDefaultMessageTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SetDefaultMessageType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SetDefaultMessageType(request), context);
+    } );
 }
 
 SetDefaultSenderIdOutcome PinpointSMSVoiceV2Client::SetDefaultSenderId(const SetDefaultSenderIdRequest& request) const
@@ -999,12 +929,10 @@ SetDefaultSenderIdOutcomeCallable PinpointSMSVoiceV2Client::SetDefaultSenderIdCa
 
 void PinpointSMSVoiceV2Client::SetDefaultSenderIdAsync(const SetDefaultSenderIdRequest& request, const SetDefaultSenderIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetDefaultSenderIdAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::SetDefaultSenderIdAsyncHelper(const SetDefaultSenderIdRequest& request, const SetDefaultSenderIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SetDefaultSenderId(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SetDefaultSenderId(request), context);
+    } );
 }
 
 SetTextMessageSpendLimitOverrideOutcome PinpointSMSVoiceV2Client::SetTextMessageSpendLimitOverride(const SetTextMessageSpendLimitOverrideRequest& request) const
@@ -1023,12 +951,10 @@ SetTextMessageSpendLimitOverrideOutcomeCallable PinpointSMSVoiceV2Client::SetTex
 
 void PinpointSMSVoiceV2Client::SetTextMessageSpendLimitOverrideAsync(const SetTextMessageSpendLimitOverrideRequest& request, const SetTextMessageSpendLimitOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetTextMessageSpendLimitOverrideAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::SetTextMessageSpendLimitOverrideAsyncHelper(const SetTextMessageSpendLimitOverrideRequest& request, const SetTextMessageSpendLimitOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SetTextMessageSpendLimitOverride(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SetTextMessageSpendLimitOverride(request), context);
+    } );
 }
 
 SetVoiceMessageSpendLimitOverrideOutcome PinpointSMSVoiceV2Client::SetVoiceMessageSpendLimitOverride(const SetVoiceMessageSpendLimitOverrideRequest& request) const
@@ -1047,12 +973,10 @@ SetVoiceMessageSpendLimitOverrideOutcomeCallable PinpointSMSVoiceV2Client::SetVo
 
 void PinpointSMSVoiceV2Client::SetVoiceMessageSpendLimitOverrideAsync(const SetVoiceMessageSpendLimitOverrideRequest& request, const SetVoiceMessageSpendLimitOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetVoiceMessageSpendLimitOverrideAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::SetVoiceMessageSpendLimitOverrideAsyncHelper(const SetVoiceMessageSpendLimitOverrideRequest& request, const SetVoiceMessageSpendLimitOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SetVoiceMessageSpendLimitOverride(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SetVoiceMessageSpendLimitOverride(request), context);
+    } );
 }
 
 TagResourceOutcome PinpointSMSVoiceV2Client::TagResource(const TagResourceRequest& request) const
@@ -1071,12 +995,10 @@ TagResourceOutcomeCallable PinpointSMSVoiceV2Client::TagResourceCallable(const T
 
 void PinpointSMSVoiceV2Client::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome PinpointSMSVoiceV2Client::UntagResource(const UntagResourceRequest& request) const
@@ -1095,12 +1017,10 @@ UntagResourceOutcomeCallable PinpointSMSVoiceV2Client::UntagResourceCallable(con
 
 void PinpointSMSVoiceV2Client::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateEventDestinationOutcome PinpointSMSVoiceV2Client::UpdateEventDestination(const UpdateEventDestinationRequest& request) const
@@ -1119,12 +1039,10 @@ UpdateEventDestinationOutcomeCallable PinpointSMSVoiceV2Client::UpdateEventDesti
 
 void PinpointSMSVoiceV2Client::UpdateEventDestinationAsync(const UpdateEventDestinationRequest& request, const UpdateEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateEventDestinationAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::UpdateEventDestinationAsyncHelper(const UpdateEventDestinationRequest& request, const UpdateEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateEventDestination(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateEventDestination(request), context);
+    } );
 }
 
 UpdatePhoneNumberOutcome PinpointSMSVoiceV2Client::UpdatePhoneNumber(const UpdatePhoneNumberRequest& request) const
@@ -1143,12 +1061,10 @@ UpdatePhoneNumberOutcomeCallable PinpointSMSVoiceV2Client::UpdatePhoneNumberCall
 
 void PinpointSMSVoiceV2Client::UpdatePhoneNumberAsync(const UpdatePhoneNumberRequest& request, const UpdatePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePhoneNumberAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::UpdatePhoneNumberAsyncHelper(const UpdatePhoneNumberRequest& request, const UpdatePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdatePhoneNumber(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdatePhoneNumber(request), context);
+    } );
 }
 
 UpdatePoolOutcome PinpointSMSVoiceV2Client::UpdatePool(const UpdatePoolRequest& request) const
@@ -1167,11 +1083,9 @@ UpdatePoolOutcomeCallable PinpointSMSVoiceV2Client::UpdatePoolCallable(const Upd
 
 void PinpointSMSVoiceV2Client::UpdatePoolAsync(const UpdatePoolRequest& request, const UpdatePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePoolAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointSMSVoiceV2Client::UpdatePoolAsyncHelper(const UpdatePoolRequest& request, const UpdatePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdatePool(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdatePool(request), context);
+    } );
 }
 

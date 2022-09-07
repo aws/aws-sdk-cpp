@@ -155,12 +155,10 @@ AcknowledgeJobOutcomeCallable CodePipelineClient::AcknowledgeJobCallable(const A
 
 void CodePipelineClient::AcknowledgeJobAsync(const AcknowledgeJobRequest& request, const AcknowledgeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AcknowledgeJobAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::AcknowledgeJobAsyncHelper(const AcknowledgeJobRequest& request, const AcknowledgeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AcknowledgeJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AcknowledgeJob(request), context);
+    } );
 }
 
 AcknowledgeThirdPartyJobOutcome CodePipelineClient::AcknowledgeThirdPartyJob(const AcknowledgeThirdPartyJobRequest& request) const
@@ -179,12 +177,10 @@ AcknowledgeThirdPartyJobOutcomeCallable CodePipelineClient::AcknowledgeThirdPart
 
 void CodePipelineClient::AcknowledgeThirdPartyJobAsync(const AcknowledgeThirdPartyJobRequest& request, const AcknowledgeThirdPartyJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AcknowledgeThirdPartyJobAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::AcknowledgeThirdPartyJobAsyncHelper(const AcknowledgeThirdPartyJobRequest& request, const AcknowledgeThirdPartyJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AcknowledgeThirdPartyJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AcknowledgeThirdPartyJob(request), context);
+    } );
 }
 
 CreateCustomActionTypeOutcome CodePipelineClient::CreateCustomActionType(const CreateCustomActionTypeRequest& request) const
@@ -203,12 +199,10 @@ CreateCustomActionTypeOutcomeCallable CodePipelineClient::CreateCustomActionType
 
 void CodePipelineClient::CreateCustomActionTypeAsync(const CreateCustomActionTypeRequest& request, const CreateCustomActionTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCustomActionTypeAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::CreateCustomActionTypeAsyncHelper(const CreateCustomActionTypeRequest& request, const CreateCustomActionTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateCustomActionType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateCustomActionType(request), context);
+    } );
 }
 
 CreatePipelineOutcome CodePipelineClient::CreatePipeline(const CreatePipelineRequest& request) const
@@ -227,12 +221,10 @@ CreatePipelineOutcomeCallable CodePipelineClient::CreatePipelineCallable(const C
 
 void CodePipelineClient::CreatePipelineAsync(const CreatePipelineRequest& request, const CreatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePipelineAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::CreatePipelineAsyncHelper(const CreatePipelineRequest& request, const CreatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreatePipeline(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreatePipeline(request), context);
+    } );
 }
 
 DeleteCustomActionTypeOutcome CodePipelineClient::DeleteCustomActionType(const DeleteCustomActionTypeRequest& request) const
@@ -251,12 +243,10 @@ DeleteCustomActionTypeOutcomeCallable CodePipelineClient::DeleteCustomActionType
 
 void CodePipelineClient::DeleteCustomActionTypeAsync(const DeleteCustomActionTypeRequest& request, const DeleteCustomActionTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCustomActionTypeAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::DeleteCustomActionTypeAsyncHelper(const DeleteCustomActionTypeRequest& request, const DeleteCustomActionTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteCustomActionType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteCustomActionType(request), context);
+    } );
 }
 
 DeletePipelineOutcome CodePipelineClient::DeletePipeline(const DeletePipelineRequest& request) const
@@ -275,12 +265,10 @@ DeletePipelineOutcomeCallable CodePipelineClient::DeletePipelineCallable(const D
 
 void CodePipelineClient::DeletePipelineAsync(const DeletePipelineRequest& request, const DeletePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePipelineAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::DeletePipelineAsyncHelper(const DeletePipelineRequest& request, const DeletePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeletePipeline(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeletePipeline(request), context);
+    } );
 }
 
 DeleteWebhookOutcome CodePipelineClient::DeleteWebhook(const DeleteWebhookRequest& request) const
@@ -299,12 +287,10 @@ DeleteWebhookOutcomeCallable CodePipelineClient::DeleteWebhookCallable(const Del
 
 void CodePipelineClient::DeleteWebhookAsync(const DeleteWebhookRequest& request, const DeleteWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteWebhookAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::DeleteWebhookAsyncHelper(const DeleteWebhookRequest& request, const DeleteWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteWebhook(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteWebhook(request), context);
+    } );
 }
 
 DeregisterWebhookWithThirdPartyOutcome CodePipelineClient::DeregisterWebhookWithThirdParty(const DeregisterWebhookWithThirdPartyRequest& request) const
@@ -323,12 +309,10 @@ DeregisterWebhookWithThirdPartyOutcomeCallable CodePipelineClient::DeregisterWeb
 
 void CodePipelineClient::DeregisterWebhookWithThirdPartyAsync(const DeregisterWebhookWithThirdPartyRequest& request, const DeregisterWebhookWithThirdPartyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeregisterWebhookWithThirdPartyAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::DeregisterWebhookWithThirdPartyAsyncHelper(const DeregisterWebhookWithThirdPartyRequest& request, const DeregisterWebhookWithThirdPartyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeregisterWebhookWithThirdParty(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeregisterWebhookWithThirdParty(request), context);
+    } );
 }
 
 DisableStageTransitionOutcome CodePipelineClient::DisableStageTransition(const DisableStageTransitionRequest& request) const
@@ -347,12 +331,10 @@ DisableStageTransitionOutcomeCallable CodePipelineClient::DisableStageTransition
 
 void CodePipelineClient::DisableStageTransitionAsync(const DisableStageTransitionRequest& request, const DisableStageTransitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableStageTransitionAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::DisableStageTransitionAsyncHelper(const DisableStageTransitionRequest& request, const DisableStageTransitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisableStageTransition(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisableStageTransition(request), context);
+    } );
 }
 
 EnableStageTransitionOutcome CodePipelineClient::EnableStageTransition(const EnableStageTransitionRequest& request) const
@@ -371,12 +353,10 @@ EnableStageTransitionOutcomeCallable CodePipelineClient::EnableStageTransitionCa
 
 void CodePipelineClient::EnableStageTransitionAsync(const EnableStageTransitionRequest& request, const EnableStageTransitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableStageTransitionAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::EnableStageTransitionAsyncHelper(const EnableStageTransitionRequest& request, const EnableStageTransitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, EnableStageTransition(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, EnableStageTransition(request), context);
+    } );
 }
 
 GetActionTypeOutcome CodePipelineClient::GetActionType(const GetActionTypeRequest& request) const
@@ -395,12 +375,10 @@ GetActionTypeOutcomeCallable CodePipelineClient::GetActionTypeCallable(const Get
 
 void CodePipelineClient::GetActionTypeAsync(const GetActionTypeRequest& request, const GetActionTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetActionTypeAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::GetActionTypeAsyncHelper(const GetActionTypeRequest& request, const GetActionTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetActionType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetActionType(request), context);
+    } );
 }
 
 GetJobDetailsOutcome CodePipelineClient::GetJobDetails(const GetJobDetailsRequest& request) const
@@ -419,12 +397,10 @@ GetJobDetailsOutcomeCallable CodePipelineClient::GetJobDetailsCallable(const Get
 
 void CodePipelineClient::GetJobDetailsAsync(const GetJobDetailsRequest& request, const GetJobDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetJobDetailsAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::GetJobDetailsAsyncHelper(const GetJobDetailsRequest& request, const GetJobDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetJobDetails(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetJobDetails(request), context);
+    } );
 }
 
 GetPipelineOutcome CodePipelineClient::GetPipeline(const GetPipelineRequest& request) const
@@ -443,12 +419,10 @@ GetPipelineOutcomeCallable CodePipelineClient::GetPipelineCallable(const GetPipe
 
 void CodePipelineClient::GetPipelineAsync(const GetPipelineRequest& request, const GetPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPipelineAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::GetPipelineAsyncHelper(const GetPipelineRequest& request, const GetPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetPipeline(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetPipeline(request), context);
+    } );
 }
 
 GetPipelineExecutionOutcome CodePipelineClient::GetPipelineExecution(const GetPipelineExecutionRequest& request) const
@@ -467,12 +441,10 @@ GetPipelineExecutionOutcomeCallable CodePipelineClient::GetPipelineExecutionCall
 
 void CodePipelineClient::GetPipelineExecutionAsync(const GetPipelineExecutionRequest& request, const GetPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPipelineExecutionAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::GetPipelineExecutionAsyncHelper(const GetPipelineExecutionRequest& request, const GetPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetPipelineExecution(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetPipelineExecution(request), context);
+    } );
 }
 
 GetPipelineStateOutcome CodePipelineClient::GetPipelineState(const GetPipelineStateRequest& request) const
@@ -491,12 +463,10 @@ GetPipelineStateOutcomeCallable CodePipelineClient::GetPipelineStateCallable(con
 
 void CodePipelineClient::GetPipelineStateAsync(const GetPipelineStateRequest& request, const GetPipelineStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPipelineStateAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::GetPipelineStateAsyncHelper(const GetPipelineStateRequest& request, const GetPipelineStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetPipelineState(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetPipelineState(request), context);
+    } );
 }
 
 GetThirdPartyJobDetailsOutcome CodePipelineClient::GetThirdPartyJobDetails(const GetThirdPartyJobDetailsRequest& request) const
@@ -515,12 +485,10 @@ GetThirdPartyJobDetailsOutcomeCallable CodePipelineClient::GetThirdPartyJobDetai
 
 void CodePipelineClient::GetThirdPartyJobDetailsAsync(const GetThirdPartyJobDetailsRequest& request, const GetThirdPartyJobDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetThirdPartyJobDetailsAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::GetThirdPartyJobDetailsAsyncHelper(const GetThirdPartyJobDetailsRequest& request, const GetThirdPartyJobDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetThirdPartyJobDetails(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetThirdPartyJobDetails(request), context);
+    } );
 }
 
 ListActionExecutionsOutcome CodePipelineClient::ListActionExecutions(const ListActionExecutionsRequest& request) const
@@ -539,12 +507,10 @@ ListActionExecutionsOutcomeCallable CodePipelineClient::ListActionExecutionsCall
 
 void CodePipelineClient::ListActionExecutionsAsync(const ListActionExecutionsRequest& request, const ListActionExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListActionExecutionsAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::ListActionExecutionsAsyncHelper(const ListActionExecutionsRequest& request, const ListActionExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListActionExecutions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListActionExecutions(request), context);
+    } );
 }
 
 ListActionTypesOutcome CodePipelineClient::ListActionTypes(const ListActionTypesRequest& request) const
@@ -563,12 +529,10 @@ ListActionTypesOutcomeCallable CodePipelineClient::ListActionTypesCallable(const
 
 void CodePipelineClient::ListActionTypesAsync(const ListActionTypesRequest& request, const ListActionTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListActionTypesAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::ListActionTypesAsyncHelper(const ListActionTypesRequest& request, const ListActionTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListActionTypes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListActionTypes(request), context);
+    } );
 }
 
 ListPipelineExecutionsOutcome CodePipelineClient::ListPipelineExecutions(const ListPipelineExecutionsRequest& request) const
@@ -587,12 +551,10 @@ ListPipelineExecutionsOutcomeCallable CodePipelineClient::ListPipelineExecutions
 
 void CodePipelineClient::ListPipelineExecutionsAsync(const ListPipelineExecutionsRequest& request, const ListPipelineExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPipelineExecutionsAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::ListPipelineExecutionsAsyncHelper(const ListPipelineExecutionsRequest& request, const ListPipelineExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListPipelineExecutions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListPipelineExecutions(request), context);
+    } );
 }
 
 ListPipelinesOutcome CodePipelineClient::ListPipelines(const ListPipelinesRequest& request) const
@@ -611,12 +573,10 @@ ListPipelinesOutcomeCallable CodePipelineClient::ListPipelinesCallable(const Lis
 
 void CodePipelineClient::ListPipelinesAsync(const ListPipelinesRequest& request, const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPipelinesAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::ListPipelinesAsyncHelper(const ListPipelinesRequest& request, const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListPipelines(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListPipelines(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome CodePipelineClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -635,12 +595,10 @@ ListTagsForResourceOutcomeCallable CodePipelineClient::ListTagsForResourceCallab
 
 void CodePipelineClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 ListWebhooksOutcome CodePipelineClient::ListWebhooks(const ListWebhooksRequest& request) const
@@ -659,12 +617,10 @@ ListWebhooksOutcomeCallable CodePipelineClient::ListWebhooksCallable(const ListW
 
 void CodePipelineClient::ListWebhooksAsync(const ListWebhooksRequest& request, const ListWebhooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListWebhooksAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::ListWebhooksAsyncHelper(const ListWebhooksRequest& request, const ListWebhooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListWebhooks(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListWebhooks(request), context);
+    } );
 }
 
 PollForJobsOutcome CodePipelineClient::PollForJobs(const PollForJobsRequest& request) const
@@ -683,12 +639,10 @@ PollForJobsOutcomeCallable CodePipelineClient::PollForJobsCallable(const PollFor
 
 void CodePipelineClient::PollForJobsAsync(const PollForJobsRequest& request, const PollForJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PollForJobsAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::PollForJobsAsyncHelper(const PollForJobsRequest& request, const PollForJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PollForJobs(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PollForJobs(request), context);
+    } );
 }
 
 PollForThirdPartyJobsOutcome CodePipelineClient::PollForThirdPartyJobs(const PollForThirdPartyJobsRequest& request) const
@@ -707,12 +661,10 @@ PollForThirdPartyJobsOutcomeCallable CodePipelineClient::PollForThirdPartyJobsCa
 
 void CodePipelineClient::PollForThirdPartyJobsAsync(const PollForThirdPartyJobsRequest& request, const PollForThirdPartyJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PollForThirdPartyJobsAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::PollForThirdPartyJobsAsyncHelper(const PollForThirdPartyJobsRequest& request, const PollForThirdPartyJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PollForThirdPartyJobs(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PollForThirdPartyJobs(request), context);
+    } );
 }
 
 PutActionRevisionOutcome CodePipelineClient::PutActionRevision(const PutActionRevisionRequest& request) const
@@ -731,12 +683,10 @@ PutActionRevisionOutcomeCallable CodePipelineClient::PutActionRevisionCallable(c
 
 void CodePipelineClient::PutActionRevisionAsync(const PutActionRevisionRequest& request, const PutActionRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutActionRevisionAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::PutActionRevisionAsyncHelper(const PutActionRevisionRequest& request, const PutActionRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutActionRevision(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutActionRevision(request), context);
+    } );
 }
 
 PutApprovalResultOutcome CodePipelineClient::PutApprovalResult(const PutApprovalResultRequest& request) const
@@ -755,12 +705,10 @@ PutApprovalResultOutcomeCallable CodePipelineClient::PutApprovalResultCallable(c
 
 void CodePipelineClient::PutApprovalResultAsync(const PutApprovalResultRequest& request, const PutApprovalResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutApprovalResultAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::PutApprovalResultAsyncHelper(const PutApprovalResultRequest& request, const PutApprovalResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutApprovalResult(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutApprovalResult(request), context);
+    } );
 }
 
 PutJobFailureResultOutcome CodePipelineClient::PutJobFailureResult(const PutJobFailureResultRequest& request) const
@@ -779,12 +727,10 @@ PutJobFailureResultOutcomeCallable CodePipelineClient::PutJobFailureResultCallab
 
 void CodePipelineClient::PutJobFailureResultAsync(const PutJobFailureResultRequest& request, const PutJobFailureResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutJobFailureResultAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::PutJobFailureResultAsyncHelper(const PutJobFailureResultRequest& request, const PutJobFailureResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutJobFailureResult(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutJobFailureResult(request), context);
+    } );
 }
 
 PutJobSuccessResultOutcome CodePipelineClient::PutJobSuccessResult(const PutJobSuccessResultRequest& request) const
@@ -803,12 +749,10 @@ PutJobSuccessResultOutcomeCallable CodePipelineClient::PutJobSuccessResultCallab
 
 void CodePipelineClient::PutJobSuccessResultAsync(const PutJobSuccessResultRequest& request, const PutJobSuccessResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutJobSuccessResultAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::PutJobSuccessResultAsyncHelper(const PutJobSuccessResultRequest& request, const PutJobSuccessResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutJobSuccessResult(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutJobSuccessResult(request), context);
+    } );
 }
 
 PutThirdPartyJobFailureResultOutcome CodePipelineClient::PutThirdPartyJobFailureResult(const PutThirdPartyJobFailureResultRequest& request) const
@@ -827,12 +771,10 @@ PutThirdPartyJobFailureResultOutcomeCallable CodePipelineClient::PutThirdPartyJo
 
 void CodePipelineClient::PutThirdPartyJobFailureResultAsync(const PutThirdPartyJobFailureResultRequest& request, const PutThirdPartyJobFailureResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutThirdPartyJobFailureResultAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::PutThirdPartyJobFailureResultAsyncHelper(const PutThirdPartyJobFailureResultRequest& request, const PutThirdPartyJobFailureResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutThirdPartyJobFailureResult(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutThirdPartyJobFailureResult(request), context);
+    } );
 }
 
 PutThirdPartyJobSuccessResultOutcome CodePipelineClient::PutThirdPartyJobSuccessResult(const PutThirdPartyJobSuccessResultRequest& request) const
@@ -851,12 +793,10 @@ PutThirdPartyJobSuccessResultOutcomeCallable CodePipelineClient::PutThirdPartyJo
 
 void CodePipelineClient::PutThirdPartyJobSuccessResultAsync(const PutThirdPartyJobSuccessResultRequest& request, const PutThirdPartyJobSuccessResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutThirdPartyJobSuccessResultAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::PutThirdPartyJobSuccessResultAsyncHelper(const PutThirdPartyJobSuccessResultRequest& request, const PutThirdPartyJobSuccessResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutThirdPartyJobSuccessResult(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutThirdPartyJobSuccessResult(request), context);
+    } );
 }
 
 PutWebhookOutcome CodePipelineClient::PutWebhook(const PutWebhookRequest& request) const
@@ -875,12 +815,10 @@ PutWebhookOutcomeCallable CodePipelineClient::PutWebhookCallable(const PutWebhoo
 
 void CodePipelineClient::PutWebhookAsync(const PutWebhookRequest& request, const PutWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutWebhookAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::PutWebhookAsyncHelper(const PutWebhookRequest& request, const PutWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutWebhook(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutWebhook(request), context);
+    } );
 }
 
 RegisterWebhookWithThirdPartyOutcome CodePipelineClient::RegisterWebhookWithThirdParty(const RegisterWebhookWithThirdPartyRequest& request) const
@@ -899,12 +837,10 @@ RegisterWebhookWithThirdPartyOutcomeCallable CodePipelineClient::RegisterWebhook
 
 void CodePipelineClient::RegisterWebhookWithThirdPartyAsync(const RegisterWebhookWithThirdPartyRequest& request, const RegisterWebhookWithThirdPartyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterWebhookWithThirdPartyAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::RegisterWebhookWithThirdPartyAsyncHelper(const RegisterWebhookWithThirdPartyRequest& request, const RegisterWebhookWithThirdPartyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RegisterWebhookWithThirdParty(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RegisterWebhookWithThirdParty(request), context);
+    } );
 }
 
 RetryStageExecutionOutcome CodePipelineClient::RetryStageExecution(const RetryStageExecutionRequest& request) const
@@ -923,12 +859,10 @@ RetryStageExecutionOutcomeCallable CodePipelineClient::RetryStageExecutionCallab
 
 void CodePipelineClient::RetryStageExecutionAsync(const RetryStageExecutionRequest& request, const RetryStageExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RetryStageExecutionAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::RetryStageExecutionAsyncHelper(const RetryStageExecutionRequest& request, const RetryStageExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RetryStageExecution(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RetryStageExecution(request), context);
+    } );
 }
 
 StartPipelineExecutionOutcome CodePipelineClient::StartPipelineExecution(const StartPipelineExecutionRequest& request) const
@@ -947,12 +881,10 @@ StartPipelineExecutionOutcomeCallable CodePipelineClient::StartPipelineExecution
 
 void CodePipelineClient::StartPipelineExecutionAsync(const StartPipelineExecutionRequest& request, const StartPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartPipelineExecutionAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::StartPipelineExecutionAsyncHelper(const StartPipelineExecutionRequest& request, const StartPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartPipelineExecution(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartPipelineExecution(request), context);
+    } );
 }
 
 StopPipelineExecutionOutcome CodePipelineClient::StopPipelineExecution(const StopPipelineExecutionRequest& request) const
@@ -971,12 +903,10 @@ StopPipelineExecutionOutcomeCallable CodePipelineClient::StopPipelineExecutionCa
 
 void CodePipelineClient::StopPipelineExecutionAsync(const StopPipelineExecutionRequest& request, const StopPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopPipelineExecutionAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::StopPipelineExecutionAsyncHelper(const StopPipelineExecutionRequest& request, const StopPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StopPipelineExecution(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopPipelineExecution(request), context);
+    } );
 }
 
 TagResourceOutcome CodePipelineClient::TagResource(const TagResourceRequest& request) const
@@ -995,12 +925,10 @@ TagResourceOutcomeCallable CodePipelineClient::TagResourceCallable(const TagReso
 
 void CodePipelineClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome CodePipelineClient::UntagResource(const UntagResourceRequest& request) const
@@ -1019,12 +947,10 @@ UntagResourceOutcomeCallable CodePipelineClient::UntagResourceCallable(const Unt
 
 void CodePipelineClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateActionTypeOutcome CodePipelineClient::UpdateActionType(const UpdateActionTypeRequest& request) const
@@ -1043,12 +969,10 @@ UpdateActionTypeOutcomeCallable CodePipelineClient::UpdateActionTypeCallable(con
 
 void CodePipelineClient::UpdateActionTypeAsync(const UpdateActionTypeRequest& request, const UpdateActionTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateActionTypeAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::UpdateActionTypeAsyncHelper(const UpdateActionTypeRequest& request, const UpdateActionTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateActionType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateActionType(request), context);
+    } );
 }
 
 UpdatePipelineOutcome CodePipelineClient::UpdatePipeline(const UpdatePipelineRequest& request) const
@@ -1067,11 +991,9 @@ UpdatePipelineOutcomeCallable CodePipelineClient::UpdatePipelineCallable(const U
 
 void CodePipelineClient::UpdatePipelineAsync(const UpdatePipelineRequest& request, const UpdatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePipelineAsyncHelper( request, handler, context ); } );
-}
-
-void CodePipelineClient::UpdatePipelineAsyncHelper(const UpdatePipelineRequest& request, const UpdatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdatePipeline(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdatePipeline(request), context);
+    } );
 }
 

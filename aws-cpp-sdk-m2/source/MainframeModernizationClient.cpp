@@ -163,12 +163,10 @@ CancelBatchJobExecutionOutcomeCallable MainframeModernizationClient::CancelBatch
 
 void MainframeModernizationClient::CancelBatchJobExecutionAsync(const CancelBatchJobExecutionRequest& request, const CancelBatchJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelBatchJobExecutionAsyncHelper( request, handler, context ); } );
-}
-
-void MainframeModernizationClient::CancelBatchJobExecutionAsyncHelper(const CancelBatchJobExecutionRequest& request, const CancelBatchJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CancelBatchJobExecution(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CancelBatchJobExecution(request), context);
+    } );
 }
 
 CreateApplicationOutcome MainframeModernizationClient::CreateApplication(const CreateApplicationRequest& request) const
@@ -188,12 +186,10 @@ CreateApplicationOutcomeCallable MainframeModernizationClient::CreateApplication
 
 void MainframeModernizationClient::CreateApplicationAsync(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateApplicationAsyncHelper( request, handler, context ); } );
-}
-
-void MainframeModernizationClient::CreateApplicationAsyncHelper(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateApplication(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateApplication(request), context);
+    } );
 }
 
 CreateDataSetImportTaskOutcome MainframeModernizationClient::CreateDataSetImportTask(const CreateDataSetImportTaskRequest& request) const
@@ -220,12 +216,10 @@ CreateDataSetImportTaskOutcomeCallable MainframeModernizationClient::CreateDataS
 
 void MainframeModernizationClient::CreateDataSetImportTaskAsync(const CreateDataSetImportTaskRequest& request, const CreateDataSetImportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDataSetImportTaskAsyncHelper( request, handler, context ); } );
-}
-
-void MainframeModernizationClient::CreateDataSetImportTaskAsyncHelper(const CreateDataSetImportTaskRequest& request, const CreateDataSetImportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateDataSetImportTask(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateDataSetImportTask(request), context);
+    } );
 }
 
 CreateDeploymentOutcome MainframeModernizationClient::CreateDeployment(const CreateDeploymentRequest& request) const
@@ -252,12 +246,10 @@ CreateDeploymentOutcomeCallable MainframeModernizationClient::CreateDeploymentCa
 
 void MainframeModernizationClient::CreateDeploymentAsync(const CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDeploymentAsyncHelper( request, handler, context ); } );
-}
-
-void MainframeModernizationClient::CreateDeploymentAsyncHelper(const CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateDeployment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateDeployment(request), context);
+    } );
 }
 
 CreateEnvironmentOutcome MainframeModernizationClient::CreateEnvironment(const CreateEnvironmentRequest& request) const
@@ -277,12 +269,10 @@ CreateEnvironmentOutcomeCallable MainframeModernizationClient::CreateEnvironment
 
 void MainframeModernizationClient::CreateEnvironmentAsync(const CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEnvironmentAsyncHelper( request, handler, context ); } );
-}
-
-void MainframeModernizationClient::CreateEnvironmentAsyncHelper(const CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateEnvironment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateEnvironment(request), context);
+    } );
 }
 
 DeleteApplicationOutcome MainframeModernizationClient::DeleteApplication(const DeleteApplicationRequest& request) const
@@ -308,12 +298,10 @@ DeleteApplicationOutcomeCallable MainframeModernizationClient::DeleteApplication
 
 void MainframeModernizationClient::DeleteApplicationAsync(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteApplicationAsyncHelper( request, handler, context ); } );
-}
-
-void MainframeModernizationClient::DeleteApplicationAsyncHelper(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteApplication(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteApplication(request), context);
+    } );
 }
 
 DeleteApplicationFromEnvironmentOutcome MainframeModernizationClient::DeleteApplicationFromEnvironment(const DeleteApplicationFromEnvironmentRequest& request) const
@@ -346,12 +334,10 @@ DeleteApplicationFromEnvironmentOutcomeCallable MainframeModernizationClient::De
 
 void MainframeModernizationClient::DeleteApplicationFromEnvironmentAsync(const DeleteApplicationFromEnvironmentRequest& request, const DeleteApplicationFromEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteApplicationFromEnvironmentAsyncHelper( request, handler, context ); } );
-}
-
-void MainframeModernizationClient::DeleteApplicationFromEnvironmentAsyncHelper(const DeleteApplicationFromEnvironmentRequest& request, const DeleteApplicationFromEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteApplicationFromEnvironment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteApplicationFromEnvironment(request), context);
+    } );
 }
 
 DeleteEnvironmentOutcome MainframeModernizationClient::DeleteEnvironment(const DeleteEnvironmentRequest& request) const
@@ -377,12 +363,10 @@ DeleteEnvironmentOutcomeCallable MainframeModernizationClient::DeleteEnvironment
 
 void MainframeModernizationClient::DeleteEnvironmentAsync(const DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEnvironmentAsyncHelper( request, handler, context ); } );
-}
-
-void MainframeModernizationClient::DeleteEnvironmentAsyncHelper(const DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteEnvironment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteEnvironment(request), context);
+    } );
 }
 
 GetApplicationOutcome MainframeModernizationClient::GetApplication(const GetApplicationRequest& request) const
@@ -408,12 +392,10 @@ GetApplicationOutcomeCallable MainframeModernizationClient::GetApplicationCallab
 
 void MainframeModernizationClient::GetApplicationAsync(const GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetApplicationAsyncHelper( request, handler, context ); } );
-}
-
-void MainframeModernizationClient::GetApplicationAsyncHelper(const GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetApplication(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetApplication(request), context);
+    } );
 }
 
 GetApplicationVersionOutcome MainframeModernizationClient::GetApplicationVersion(const GetApplicationVersionRequest& request) const
@@ -446,12 +428,10 @@ GetApplicationVersionOutcomeCallable MainframeModernizationClient::GetApplicatio
 
 void MainframeModernizationClient::GetApplicationVersionAsync(const GetApplicationVersionRequest& request, const GetApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetApplicationVersionAsyncHelper( request, handler, context ); } );
-}
-
-void MainframeModernizationClient::GetApplicationVersionAsyncHelper(const GetApplicationVersionRequest& request, const GetApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetApplicationVersion(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetApplicationVersion(request), context);
+    } );
 }
 
 GetBatchJobExecutionOutcome MainframeModernizationClient::GetBatchJobExecution(const GetBatchJobExecutionRequest& request) const
@@ -484,12 +464,10 @@ GetBatchJobExecutionOutcomeCallable MainframeModernizationClient::GetBatchJobExe
 
 void MainframeModernizationClient::GetBatchJobExecutionAsync(const GetBatchJobExecutionRequest& request, const GetBatchJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBatchJobExecutionAsyncHelper( request, handler, context ); } );
-}
-
-void MainframeModernizationClient::GetBatchJobExecutionAsyncHelper(const GetBatchJobExecutionRequest& request, const GetBatchJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetBatchJobExecution(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetBatchJobExecution(request), context);
+    } );
 }
 
 GetDataSetDetailsOutcome MainframeModernizationClient::GetDataSetDetails(const GetDataSetDetailsRequest& request) const
@@ -522,12 +500,10 @@ GetDataSetDetailsOutcomeCallable MainframeModernizationClient::GetDataSetDetails
 
 void MainframeModernizationClient::GetDataSetDetailsAsync(const GetDataSetDetailsRequest& request, const GetDataSetDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDataSetDetailsAsyncHelper( request, handler, context ); } );
-}
-
-void MainframeModernizationClient::GetDataSetDetailsAsyncHelper(const GetDataSetDetailsRequest& request, const GetDataSetDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDataSetDetails(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDataSetDetails(request), context);
+    } );
 }
 
 GetDataSetImportTaskOutcome MainframeModernizationClient::GetDataSetImportTask(const GetDataSetImportTaskRequest& request) const
@@ -560,12 +536,10 @@ GetDataSetImportTaskOutcomeCallable MainframeModernizationClient::GetDataSetImpo
 
 void MainframeModernizationClient::GetDataSetImportTaskAsync(const GetDataSetImportTaskRequest& request, const GetDataSetImportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDataSetImportTaskAsyncHelper( request, handler, context ); } );
-}
-
-void MainframeModernizationClient::GetDataSetImportTaskAsyncHelper(const GetDataSetImportTaskRequest& request, const GetDataSetImportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDataSetImportTask(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDataSetImportTask(request), context);
+    } );
 }
 
 GetDeploymentOutcome MainframeModernizationClient::GetDeployment(const GetDeploymentRequest& request) const
@@ -598,12 +572,10 @@ GetDeploymentOutcomeCallable MainframeModernizationClient::GetDeploymentCallable
 
 void MainframeModernizationClient::GetDeploymentAsync(const GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDeploymentAsyncHelper( request, handler, context ); } );
-}
-
-void MainframeModernizationClient::GetDeploymentAsyncHelper(const GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDeployment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDeployment(request), context);
+    } );
 }
 
 GetEnvironmentOutcome MainframeModernizationClient::GetEnvironment(const GetEnvironmentRequest& request) const
@@ -629,12 +601,10 @@ GetEnvironmentOutcomeCallable MainframeModernizationClient::GetEnvironmentCallab
 
 void MainframeModernizationClient::GetEnvironmentAsync(const GetEnvironmentRequest& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEnvironmentAsyncHelper( request, handler, context ); } );
-}
-
-void MainframeModernizationClient::GetEnvironmentAsyncHelper(const GetEnvironmentRequest& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetEnvironment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetEnvironment(request), context);
+    } );
 }
 
 ListApplicationVersionsOutcome MainframeModernizationClient::ListApplicationVersions(const ListApplicationVersionsRequest& request) const
@@ -661,12 +631,10 @@ ListApplicationVersionsOutcomeCallable MainframeModernizationClient::ListApplica
 
 void MainframeModernizationClient::ListApplicationVersionsAsync(const ListApplicationVersionsRequest& request, const ListApplicationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListApplicationVersionsAsyncHelper( request, handler, context ); } );
-}
-
-void MainframeModernizationClient::ListApplicationVersionsAsyncHelper(const ListApplicationVersionsRequest& request, const ListApplicationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListApplicationVersions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListApplicationVersions(request), context);
+    } );
 }
 
 ListApplicationsOutcome MainframeModernizationClient::ListApplications(const ListApplicationsRequest& request) const
@@ -686,12 +654,10 @@ ListApplicationsOutcomeCallable MainframeModernizationClient::ListApplicationsCa
 
 void MainframeModernizationClient::ListApplicationsAsync(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListApplicationsAsyncHelper( request, handler, context ); } );
-}
-
-void MainframeModernizationClient::ListApplicationsAsyncHelper(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListApplications(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListApplications(request), context);
+    } );
 }
 
 ListBatchJobDefinitionsOutcome MainframeModernizationClient::ListBatchJobDefinitions(const ListBatchJobDefinitionsRequest& request) const
@@ -718,12 +684,10 @@ ListBatchJobDefinitionsOutcomeCallable MainframeModernizationClient::ListBatchJo
 
 void MainframeModernizationClient::ListBatchJobDefinitionsAsync(const ListBatchJobDefinitionsRequest& request, const ListBatchJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBatchJobDefinitionsAsyncHelper( request, handler, context ); } );
-}
-
-void MainframeModernizationClient::ListBatchJobDefinitionsAsyncHelper(const ListBatchJobDefinitionsRequest& request, const ListBatchJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListBatchJobDefinitions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListBatchJobDefinitions(request), context);
+    } );
 }
 
 ListBatchJobExecutionsOutcome MainframeModernizationClient::ListBatchJobExecutions(const ListBatchJobExecutionsRequest& request) const
@@ -750,12 +714,10 @@ ListBatchJobExecutionsOutcomeCallable MainframeModernizationClient::ListBatchJob
 
 void MainframeModernizationClient::ListBatchJobExecutionsAsync(const ListBatchJobExecutionsRequest& request, const ListBatchJobExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBatchJobExecutionsAsyncHelper( request, handler, context ); } );
-}
-
-void MainframeModernizationClient::ListBatchJobExecutionsAsyncHelper(const ListBatchJobExecutionsRequest& request, const ListBatchJobExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListBatchJobExecutions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListBatchJobExecutions(request), context);
+    } );
 }
 
 ListDataSetImportHistoryOutcome MainframeModernizationClient::ListDataSetImportHistory(const ListDataSetImportHistoryRequest& request) const
@@ -782,12 +744,10 @@ ListDataSetImportHistoryOutcomeCallable MainframeModernizationClient::ListDataSe
 
 void MainframeModernizationClient::ListDataSetImportHistoryAsync(const ListDataSetImportHistoryRequest& request, const ListDataSetImportHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDataSetImportHistoryAsyncHelper( request, handler, context ); } );
-}
-
-void MainframeModernizationClient::ListDataSetImportHistoryAsyncHelper(const ListDataSetImportHistoryRequest& request, const ListDataSetImportHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDataSetImportHistory(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDataSetImportHistory(request), context);
+    } );
 }
 
 ListDataSetsOutcome MainframeModernizationClient::ListDataSets(const ListDataSetsRequest& request) const
@@ -814,12 +774,10 @@ ListDataSetsOutcomeCallable MainframeModernizationClient::ListDataSetsCallable(c
 
 void MainframeModernizationClient::ListDataSetsAsync(const ListDataSetsRequest& request, const ListDataSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDataSetsAsyncHelper( request, handler, context ); } );
-}
-
-void MainframeModernizationClient::ListDataSetsAsyncHelper(const ListDataSetsRequest& request, const ListDataSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDataSets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDataSets(request), context);
+    } );
 }
 
 ListDeploymentsOutcome MainframeModernizationClient::ListDeployments(const ListDeploymentsRequest& request) const
@@ -846,12 +804,10 @@ ListDeploymentsOutcomeCallable MainframeModernizationClient::ListDeploymentsCall
 
 void MainframeModernizationClient::ListDeploymentsAsync(const ListDeploymentsRequest& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDeploymentsAsyncHelper( request, handler, context ); } );
-}
-
-void MainframeModernizationClient::ListDeploymentsAsyncHelper(const ListDeploymentsRequest& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDeployments(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDeployments(request), context);
+    } );
 }
 
 ListEngineVersionsOutcome MainframeModernizationClient::ListEngineVersions(const ListEngineVersionsRequest& request) const
@@ -871,12 +827,10 @@ ListEngineVersionsOutcomeCallable MainframeModernizationClient::ListEngineVersio
 
 void MainframeModernizationClient::ListEngineVersionsAsync(const ListEngineVersionsRequest& request, const ListEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEngineVersionsAsyncHelper( request, handler, context ); } );
-}
-
-void MainframeModernizationClient::ListEngineVersionsAsyncHelper(const ListEngineVersionsRequest& request, const ListEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListEngineVersions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListEngineVersions(request), context);
+    } );
 }
 
 ListEnvironmentsOutcome MainframeModernizationClient::ListEnvironments(const ListEnvironmentsRequest& request) const
@@ -896,12 +850,10 @@ ListEnvironmentsOutcomeCallable MainframeModernizationClient::ListEnvironmentsCa
 
 void MainframeModernizationClient::ListEnvironmentsAsync(const ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEnvironmentsAsyncHelper( request, handler, context ); } );
-}
-
-void MainframeModernizationClient::ListEnvironmentsAsyncHelper(const ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListEnvironments(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListEnvironments(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome MainframeModernizationClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -927,12 +879,10 @@ ListTagsForResourceOutcomeCallable MainframeModernizationClient::ListTagsForReso
 
 void MainframeModernizationClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void MainframeModernizationClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 StartApplicationOutcome MainframeModernizationClient::StartApplication(const StartApplicationRequest& request) const
@@ -959,12 +909,10 @@ StartApplicationOutcomeCallable MainframeModernizationClient::StartApplicationCa
 
 void MainframeModernizationClient::StartApplicationAsync(const StartApplicationRequest& request, const StartApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartApplicationAsyncHelper( request, handler, context ); } );
-}
-
-void MainframeModernizationClient::StartApplicationAsyncHelper(const StartApplicationRequest& request, const StartApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartApplication(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartApplication(request), context);
+    } );
 }
 
 StartBatchJobOutcome MainframeModernizationClient::StartBatchJob(const StartBatchJobRequest& request) const
@@ -991,12 +939,10 @@ StartBatchJobOutcomeCallable MainframeModernizationClient::StartBatchJobCallable
 
 void MainframeModernizationClient::StartBatchJobAsync(const StartBatchJobRequest& request, const StartBatchJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartBatchJobAsyncHelper( request, handler, context ); } );
-}
-
-void MainframeModernizationClient::StartBatchJobAsyncHelper(const StartBatchJobRequest& request, const StartBatchJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartBatchJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartBatchJob(request), context);
+    } );
 }
 
 StopApplicationOutcome MainframeModernizationClient::StopApplication(const StopApplicationRequest& request) const
@@ -1023,12 +969,10 @@ StopApplicationOutcomeCallable MainframeModernizationClient::StopApplicationCall
 
 void MainframeModernizationClient::StopApplicationAsync(const StopApplicationRequest& request, const StopApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopApplicationAsyncHelper( request, handler, context ); } );
-}
-
-void MainframeModernizationClient::StopApplicationAsyncHelper(const StopApplicationRequest& request, const StopApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StopApplication(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopApplication(request), context);
+    } );
 }
 
 TagResourceOutcome MainframeModernizationClient::TagResource(const TagResourceRequest& request) const
@@ -1054,12 +998,10 @@ TagResourceOutcomeCallable MainframeModernizationClient::TagResourceCallable(con
 
 void MainframeModernizationClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void MainframeModernizationClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome MainframeModernizationClient::UntagResource(const UntagResourceRequest& request) const
@@ -1090,12 +1032,10 @@ UntagResourceOutcomeCallable MainframeModernizationClient::UntagResourceCallable
 
 void MainframeModernizationClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void MainframeModernizationClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateApplicationOutcome MainframeModernizationClient::UpdateApplication(const UpdateApplicationRequest& request) const
@@ -1121,12 +1061,10 @@ UpdateApplicationOutcomeCallable MainframeModernizationClient::UpdateApplication
 
 void MainframeModernizationClient::UpdateApplicationAsync(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateApplicationAsyncHelper( request, handler, context ); } );
-}
-
-void MainframeModernizationClient::UpdateApplicationAsyncHelper(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateApplication(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateApplication(request), context);
+    } );
 }
 
 UpdateEnvironmentOutcome MainframeModernizationClient::UpdateEnvironment(const UpdateEnvironmentRequest& request) const
@@ -1152,11 +1090,9 @@ UpdateEnvironmentOutcomeCallable MainframeModernizationClient::UpdateEnvironment
 
 void MainframeModernizationClient::UpdateEnvironmentAsync(const UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateEnvironmentAsyncHelper( request, handler, context ); } );
-}
-
-void MainframeModernizationClient::UpdateEnvironmentAsyncHelper(const UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateEnvironment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateEnvironment(request), context);
+    } );
 }
 

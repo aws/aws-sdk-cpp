@@ -159,12 +159,10 @@ CreateConfigurationSetOutcomeCallable PinpointEmailClient::CreateConfigurationSe
 
 void PinpointEmailClient::CreateConfigurationSetAsync(const CreateConfigurationSetRequest& request, const CreateConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateConfigurationSetAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::CreateConfigurationSetAsyncHelper(const CreateConfigurationSetRequest& request, const CreateConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateConfigurationSet(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateConfigurationSet(request), context);
+    } );
 }
 
 CreateConfigurationSetEventDestinationOutcome PinpointEmailClient::CreateConfigurationSetEventDestination(const CreateConfigurationSetEventDestinationRequest& request) const
@@ -191,12 +189,10 @@ CreateConfigurationSetEventDestinationOutcomeCallable PinpointEmailClient::Creat
 
 void PinpointEmailClient::CreateConfigurationSetEventDestinationAsync(const CreateConfigurationSetEventDestinationRequest& request, const CreateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateConfigurationSetEventDestinationAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::CreateConfigurationSetEventDestinationAsyncHelper(const CreateConfigurationSetEventDestinationRequest& request, const CreateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateConfigurationSetEventDestination(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateConfigurationSetEventDestination(request), context);
+    } );
 }
 
 CreateDedicatedIpPoolOutcome PinpointEmailClient::CreateDedicatedIpPool(const CreateDedicatedIpPoolRequest& request) const
@@ -216,12 +212,10 @@ CreateDedicatedIpPoolOutcomeCallable PinpointEmailClient::CreateDedicatedIpPoolC
 
 void PinpointEmailClient::CreateDedicatedIpPoolAsync(const CreateDedicatedIpPoolRequest& request, const CreateDedicatedIpPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDedicatedIpPoolAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::CreateDedicatedIpPoolAsyncHelper(const CreateDedicatedIpPoolRequest& request, const CreateDedicatedIpPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateDedicatedIpPool(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateDedicatedIpPool(request), context);
+    } );
 }
 
 CreateDeliverabilityTestReportOutcome PinpointEmailClient::CreateDeliverabilityTestReport(const CreateDeliverabilityTestReportRequest& request) const
@@ -241,12 +235,10 @@ CreateDeliverabilityTestReportOutcomeCallable PinpointEmailClient::CreateDeliver
 
 void PinpointEmailClient::CreateDeliverabilityTestReportAsync(const CreateDeliverabilityTestReportRequest& request, const CreateDeliverabilityTestReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDeliverabilityTestReportAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::CreateDeliverabilityTestReportAsyncHelper(const CreateDeliverabilityTestReportRequest& request, const CreateDeliverabilityTestReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateDeliverabilityTestReport(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateDeliverabilityTestReport(request), context);
+    } );
 }
 
 CreateEmailIdentityOutcome PinpointEmailClient::CreateEmailIdentity(const CreateEmailIdentityRequest& request) const
@@ -266,12 +258,10 @@ CreateEmailIdentityOutcomeCallable PinpointEmailClient::CreateEmailIdentityCalla
 
 void PinpointEmailClient::CreateEmailIdentityAsync(const CreateEmailIdentityRequest& request, const CreateEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEmailIdentityAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::CreateEmailIdentityAsyncHelper(const CreateEmailIdentityRequest& request, const CreateEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateEmailIdentity(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateEmailIdentity(request), context);
+    } );
 }
 
 DeleteConfigurationSetOutcome PinpointEmailClient::DeleteConfigurationSet(const DeleteConfigurationSetRequest& request) const
@@ -297,12 +287,10 @@ DeleteConfigurationSetOutcomeCallable PinpointEmailClient::DeleteConfigurationSe
 
 void PinpointEmailClient::DeleteConfigurationSetAsync(const DeleteConfigurationSetRequest& request, const DeleteConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteConfigurationSetAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::DeleteConfigurationSetAsyncHelper(const DeleteConfigurationSetRequest& request, const DeleteConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteConfigurationSet(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteConfigurationSet(request), context);
+    } );
 }
 
 DeleteConfigurationSetEventDestinationOutcome PinpointEmailClient::DeleteConfigurationSetEventDestination(const DeleteConfigurationSetEventDestinationRequest& request) const
@@ -335,12 +323,10 @@ DeleteConfigurationSetEventDestinationOutcomeCallable PinpointEmailClient::Delet
 
 void PinpointEmailClient::DeleteConfigurationSetEventDestinationAsync(const DeleteConfigurationSetEventDestinationRequest& request, const DeleteConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteConfigurationSetEventDestinationAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::DeleteConfigurationSetEventDestinationAsyncHelper(const DeleteConfigurationSetEventDestinationRequest& request, const DeleteConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteConfigurationSetEventDestination(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteConfigurationSetEventDestination(request), context);
+    } );
 }
 
 DeleteDedicatedIpPoolOutcome PinpointEmailClient::DeleteDedicatedIpPool(const DeleteDedicatedIpPoolRequest& request) const
@@ -366,12 +352,10 @@ DeleteDedicatedIpPoolOutcomeCallable PinpointEmailClient::DeleteDedicatedIpPoolC
 
 void PinpointEmailClient::DeleteDedicatedIpPoolAsync(const DeleteDedicatedIpPoolRequest& request, const DeleteDedicatedIpPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDedicatedIpPoolAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::DeleteDedicatedIpPoolAsyncHelper(const DeleteDedicatedIpPoolRequest& request, const DeleteDedicatedIpPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteDedicatedIpPool(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteDedicatedIpPool(request), context);
+    } );
 }
 
 DeleteEmailIdentityOutcome PinpointEmailClient::DeleteEmailIdentity(const DeleteEmailIdentityRequest& request) const
@@ -397,12 +381,10 @@ DeleteEmailIdentityOutcomeCallable PinpointEmailClient::DeleteEmailIdentityCalla
 
 void PinpointEmailClient::DeleteEmailIdentityAsync(const DeleteEmailIdentityRequest& request, const DeleteEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEmailIdentityAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::DeleteEmailIdentityAsyncHelper(const DeleteEmailIdentityRequest& request, const DeleteEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteEmailIdentity(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteEmailIdentity(request), context);
+    } );
 }
 
 GetAccountOutcome PinpointEmailClient::GetAccount(const GetAccountRequest& request) const
@@ -422,12 +404,10 @@ GetAccountOutcomeCallable PinpointEmailClient::GetAccountCallable(const GetAccou
 
 void PinpointEmailClient::GetAccountAsync(const GetAccountRequest& request, const GetAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAccountAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::GetAccountAsyncHelper(const GetAccountRequest& request, const GetAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetAccount(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAccount(request), context);
+    } );
 }
 
 GetBlacklistReportsOutcome PinpointEmailClient::GetBlacklistReports(const GetBlacklistReportsRequest& request) const
@@ -452,12 +432,10 @@ GetBlacklistReportsOutcomeCallable PinpointEmailClient::GetBlacklistReportsCalla
 
 void PinpointEmailClient::GetBlacklistReportsAsync(const GetBlacklistReportsRequest& request, const GetBlacklistReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBlacklistReportsAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::GetBlacklistReportsAsyncHelper(const GetBlacklistReportsRequest& request, const GetBlacklistReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetBlacklistReports(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetBlacklistReports(request), context);
+    } );
 }
 
 GetConfigurationSetOutcome PinpointEmailClient::GetConfigurationSet(const GetConfigurationSetRequest& request) const
@@ -483,12 +461,10 @@ GetConfigurationSetOutcomeCallable PinpointEmailClient::GetConfigurationSetCalla
 
 void PinpointEmailClient::GetConfigurationSetAsync(const GetConfigurationSetRequest& request, const GetConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetConfigurationSetAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::GetConfigurationSetAsyncHelper(const GetConfigurationSetRequest& request, const GetConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetConfigurationSet(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetConfigurationSet(request), context);
+    } );
 }
 
 GetConfigurationSetEventDestinationsOutcome PinpointEmailClient::GetConfigurationSetEventDestinations(const GetConfigurationSetEventDestinationsRequest& request) const
@@ -515,12 +491,10 @@ GetConfigurationSetEventDestinationsOutcomeCallable PinpointEmailClient::GetConf
 
 void PinpointEmailClient::GetConfigurationSetEventDestinationsAsync(const GetConfigurationSetEventDestinationsRequest& request, const GetConfigurationSetEventDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetConfigurationSetEventDestinationsAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::GetConfigurationSetEventDestinationsAsyncHelper(const GetConfigurationSetEventDestinationsRequest& request, const GetConfigurationSetEventDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetConfigurationSetEventDestinations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetConfigurationSetEventDestinations(request), context);
+    } );
 }
 
 GetDedicatedIpOutcome PinpointEmailClient::GetDedicatedIp(const GetDedicatedIpRequest& request) const
@@ -546,12 +520,10 @@ GetDedicatedIpOutcomeCallable PinpointEmailClient::GetDedicatedIpCallable(const 
 
 void PinpointEmailClient::GetDedicatedIpAsync(const GetDedicatedIpRequest& request, const GetDedicatedIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDedicatedIpAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::GetDedicatedIpAsyncHelper(const GetDedicatedIpRequest& request, const GetDedicatedIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDedicatedIp(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDedicatedIp(request), context);
+    } );
 }
 
 GetDedicatedIpsOutcome PinpointEmailClient::GetDedicatedIps(const GetDedicatedIpsRequest& request) const
@@ -571,12 +543,10 @@ GetDedicatedIpsOutcomeCallable PinpointEmailClient::GetDedicatedIpsCallable(cons
 
 void PinpointEmailClient::GetDedicatedIpsAsync(const GetDedicatedIpsRequest& request, const GetDedicatedIpsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDedicatedIpsAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::GetDedicatedIpsAsyncHelper(const GetDedicatedIpsRequest& request, const GetDedicatedIpsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDedicatedIps(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDedicatedIps(request), context);
+    } );
 }
 
 GetDeliverabilityDashboardOptionsOutcome PinpointEmailClient::GetDeliverabilityDashboardOptions(const GetDeliverabilityDashboardOptionsRequest& request) const
@@ -596,12 +566,10 @@ GetDeliverabilityDashboardOptionsOutcomeCallable PinpointEmailClient::GetDeliver
 
 void PinpointEmailClient::GetDeliverabilityDashboardOptionsAsync(const GetDeliverabilityDashboardOptionsRequest& request, const GetDeliverabilityDashboardOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDeliverabilityDashboardOptionsAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::GetDeliverabilityDashboardOptionsAsyncHelper(const GetDeliverabilityDashboardOptionsRequest& request, const GetDeliverabilityDashboardOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDeliverabilityDashboardOptions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDeliverabilityDashboardOptions(request), context);
+    } );
 }
 
 GetDeliverabilityTestReportOutcome PinpointEmailClient::GetDeliverabilityTestReport(const GetDeliverabilityTestReportRequest& request) const
@@ -627,12 +595,10 @@ GetDeliverabilityTestReportOutcomeCallable PinpointEmailClient::GetDeliverabilit
 
 void PinpointEmailClient::GetDeliverabilityTestReportAsync(const GetDeliverabilityTestReportRequest& request, const GetDeliverabilityTestReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDeliverabilityTestReportAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::GetDeliverabilityTestReportAsyncHelper(const GetDeliverabilityTestReportRequest& request, const GetDeliverabilityTestReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDeliverabilityTestReport(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDeliverabilityTestReport(request), context);
+    } );
 }
 
 GetDomainDeliverabilityCampaignOutcome PinpointEmailClient::GetDomainDeliverabilityCampaign(const GetDomainDeliverabilityCampaignRequest& request) const
@@ -658,12 +624,10 @@ GetDomainDeliverabilityCampaignOutcomeCallable PinpointEmailClient::GetDomainDel
 
 void PinpointEmailClient::GetDomainDeliverabilityCampaignAsync(const GetDomainDeliverabilityCampaignRequest& request, const GetDomainDeliverabilityCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDomainDeliverabilityCampaignAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::GetDomainDeliverabilityCampaignAsyncHelper(const GetDomainDeliverabilityCampaignRequest& request, const GetDomainDeliverabilityCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDomainDeliverabilityCampaign(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDomainDeliverabilityCampaign(request), context);
+    } );
 }
 
 GetDomainStatisticsReportOutcome PinpointEmailClient::GetDomainStatisticsReport(const GetDomainStatisticsReportRequest& request) const
@@ -699,12 +663,10 @@ GetDomainStatisticsReportOutcomeCallable PinpointEmailClient::GetDomainStatistic
 
 void PinpointEmailClient::GetDomainStatisticsReportAsync(const GetDomainStatisticsReportRequest& request, const GetDomainStatisticsReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDomainStatisticsReportAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::GetDomainStatisticsReportAsyncHelper(const GetDomainStatisticsReportRequest& request, const GetDomainStatisticsReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDomainStatisticsReport(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDomainStatisticsReport(request), context);
+    } );
 }
 
 GetEmailIdentityOutcome PinpointEmailClient::GetEmailIdentity(const GetEmailIdentityRequest& request) const
@@ -730,12 +692,10 @@ GetEmailIdentityOutcomeCallable PinpointEmailClient::GetEmailIdentityCallable(co
 
 void PinpointEmailClient::GetEmailIdentityAsync(const GetEmailIdentityRequest& request, const GetEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEmailIdentityAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::GetEmailIdentityAsyncHelper(const GetEmailIdentityRequest& request, const GetEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetEmailIdentity(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetEmailIdentity(request), context);
+    } );
 }
 
 ListConfigurationSetsOutcome PinpointEmailClient::ListConfigurationSets(const ListConfigurationSetsRequest& request) const
@@ -755,12 +715,10 @@ ListConfigurationSetsOutcomeCallable PinpointEmailClient::ListConfigurationSetsC
 
 void PinpointEmailClient::ListConfigurationSetsAsync(const ListConfigurationSetsRequest& request, const ListConfigurationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListConfigurationSetsAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::ListConfigurationSetsAsyncHelper(const ListConfigurationSetsRequest& request, const ListConfigurationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListConfigurationSets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListConfigurationSets(request), context);
+    } );
 }
 
 ListDedicatedIpPoolsOutcome PinpointEmailClient::ListDedicatedIpPools(const ListDedicatedIpPoolsRequest& request) const
@@ -780,12 +738,10 @@ ListDedicatedIpPoolsOutcomeCallable PinpointEmailClient::ListDedicatedIpPoolsCal
 
 void PinpointEmailClient::ListDedicatedIpPoolsAsync(const ListDedicatedIpPoolsRequest& request, const ListDedicatedIpPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDedicatedIpPoolsAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::ListDedicatedIpPoolsAsyncHelper(const ListDedicatedIpPoolsRequest& request, const ListDedicatedIpPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDedicatedIpPools(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDedicatedIpPools(request), context);
+    } );
 }
 
 ListDeliverabilityTestReportsOutcome PinpointEmailClient::ListDeliverabilityTestReports(const ListDeliverabilityTestReportsRequest& request) const
@@ -805,12 +761,10 @@ ListDeliverabilityTestReportsOutcomeCallable PinpointEmailClient::ListDeliverabi
 
 void PinpointEmailClient::ListDeliverabilityTestReportsAsync(const ListDeliverabilityTestReportsRequest& request, const ListDeliverabilityTestReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDeliverabilityTestReportsAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::ListDeliverabilityTestReportsAsyncHelper(const ListDeliverabilityTestReportsRequest& request, const ListDeliverabilityTestReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDeliverabilityTestReports(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDeliverabilityTestReports(request), context);
+    } );
 }
 
 ListDomainDeliverabilityCampaignsOutcome PinpointEmailClient::ListDomainDeliverabilityCampaigns(const ListDomainDeliverabilityCampaignsRequest& request) const
@@ -847,12 +801,10 @@ ListDomainDeliverabilityCampaignsOutcomeCallable PinpointEmailClient::ListDomain
 
 void PinpointEmailClient::ListDomainDeliverabilityCampaignsAsync(const ListDomainDeliverabilityCampaignsRequest& request, const ListDomainDeliverabilityCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDomainDeliverabilityCampaignsAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::ListDomainDeliverabilityCampaignsAsyncHelper(const ListDomainDeliverabilityCampaignsRequest& request, const ListDomainDeliverabilityCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDomainDeliverabilityCampaigns(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDomainDeliverabilityCampaigns(request), context);
+    } );
 }
 
 ListEmailIdentitiesOutcome PinpointEmailClient::ListEmailIdentities(const ListEmailIdentitiesRequest& request) const
@@ -872,12 +824,10 @@ ListEmailIdentitiesOutcomeCallable PinpointEmailClient::ListEmailIdentitiesCalla
 
 void PinpointEmailClient::ListEmailIdentitiesAsync(const ListEmailIdentitiesRequest& request, const ListEmailIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEmailIdentitiesAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::ListEmailIdentitiesAsyncHelper(const ListEmailIdentitiesRequest& request, const ListEmailIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListEmailIdentities(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListEmailIdentities(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome PinpointEmailClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -902,12 +852,10 @@ ListTagsForResourceOutcomeCallable PinpointEmailClient::ListTagsForResourceCalla
 
 void PinpointEmailClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 PutAccountDedicatedIpWarmupAttributesOutcome PinpointEmailClient::PutAccountDedicatedIpWarmupAttributes(const PutAccountDedicatedIpWarmupAttributesRequest& request) const
@@ -927,12 +875,10 @@ PutAccountDedicatedIpWarmupAttributesOutcomeCallable PinpointEmailClient::PutAcc
 
 void PinpointEmailClient::PutAccountDedicatedIpWarmupAttributesAsync(const PutAccountDedicatedIpWarmupAttributesRequest& request, const PutAccountDedicatedIpWarmupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutAccountDedicatedIpWarmupAttributesAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::PutAccountDedicatedIpWarmupAttributesAsyncHelper(const PutAccountDedicatedIpWarmupAttributesRequest& request, const PutAccountDedicatedIpWarmupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutAccountDedicatedIpWarmupAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutAccountDedicatedIpWarmupAttributes(request), context);
+    } );
 }
 
 PutAccountSendingAttributesOutcome PinpointEmailClient::PutAccountSendingAttributes(const PutAccountSendingAttributesRequest& request) const
@@ -952,12 +898,10 @@ PutAccountSendingAttributesOutcomeCallable PinpointEmailClient::PutAccountSendin
 
 void PinpointEmailClient::PutAccountSendingAttributesAsync(const PutAccountSendingAttributesRequest& request, const PutAccountSendingAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutAccountSendingAttributesAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::PutAccountSendingAttributesAsyncHelper(const PutAccountSendingAttributesRequest& request, const PutAccountSendingAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutAccountSendingAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutAccountSendingAttributes(request), context);
+    } );
 }
 
 PutConfigurationSetDeliveryOptionsOutcome PinpointEmailClient::PutConfigurationSetDeliveryOptions(const PutConfigurationSetDeliveryOptionsRequest& request) const
@@ -984,12 +928,10 @@ PutConfigurationSetDeliveryOptionsOutcomeCallable PinpointEmailClient::PutConfig
 
 void PinpointEmailClient::PutConfigurationSetDeliveryOptionsAsync(const PutConfigurationSetDeliveryOptionsRequest& request, const PutConfigurationSetDeliveryOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutConfigurationSetDeliveryOptionsAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::PutConfigurationSetDeliveryOptionsAsyncHelper(const PutConfigurationSetDeliveryOptionsRequest& request, const PutConfigurationSetDeliveryOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutConfigurationSetDeliveryOptions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutConfigurationSetDeliveryOptions(request), context);
+    } );
 }
 
 PutConfigurationSetReputationOptionsOutcome PinpointEmailClient::PutConfigurationSetReputationOptions(const PutConfigurationSetReputationOptionsRequest& request) const
@@ -1016,12 +958,10 @@ PutConfigurationSetReputationOptionsOutcomeCallable PinpointEmailClient::PutConf
 
 void PinpointEmailClient::PutConfigurationSetReputationOptionsAsync(const PutConfigurationSetReputationOptionsRequest& request, const PutConfigurationSetReputationOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutConfigurationSetReputationOptionsAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::PutConfigurationSetReputationOptionsAsyncHelper(const PutConfigurationSetReputationOptionsRequest& request, const PutConfigurationSetReputationOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutConfigurationSetReputationOptions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutConfigurationSetReputationOptions(request), context);
+    } );
 }
 
 PutConfigurationSetSendingOptionsOutcome PinpointEmailClient::PutConfigurationSetSendingOptions(const PutConfigurationSetSendingOptionsRequest& request) const
@@ -1048,12 +988,10 @@ PutConfigurationSetSendingOptionsOutcomeCallable PinpointEmailClient::PutConfigu
 
 void PinpointEmailClient::PutConfigurationSetSendingOptionsAsync(const PutConfigurationSetSendingOptionsRequest& request, const PutConfigurationSetSendingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutConfigurationSetSendingOptionsAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::PutConfigurationSetSendingOptionsAsyncHelper(const PutConfigurationSetSendingOptionsRequest& request, const PutConfigurationSetSendingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutConfigurationSetSendingOptions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutConfigurationSetSendingOptions(request), context);
+    } );
 }
 
 PutConfigurationSetTrackingOptionsOutcome PinpointEmailClient::PutConfigurationSetTrackingOptions(const PutConfigurationSetTrackingOptionsRequest& request) const
@@ -1080,12 +1018,10 @@ PutConfigurationSetTrackingOptionsOutcomeCallable PinpointEmailClient::PutConfig
 
 void PinpointEmailClient::PutConfigurationSetTrackingOptionsAsync(const PutConfigurationSetTrackingOptionsRequest& request, const PutConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutConfigurationSetTrackingOptionsAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::PutConfigurationSetTrackingOptionsAsyncHelper(const PutConfigurationSetTrackingOptionsRequest& request, const PutConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutConfigurationSetTrackingOptions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutConfigurationSetTrackingOptions(request), context);
+    } );
 }
 
 PutDedicatedIpInPoolOutcome PinpointEmailClient::PutDedicatedIpInPool(const PutDedicatedIpInPoolRequest& request) const
@@ -1112,12 +1048,10 @@ PutDedicatedIpInPoolOutcomeCallable PinpointEmailClient::PutDedicatedIpInPoolCal
 
 void PinpointEmailClient::PutDedicatedIpInPoolAsync(const PutDedicatedIpInPoolRequest& request, const PutDedicatedIpInPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutDedicatedIpInPoolAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::PutDedicatedIpInPoolAsyncHelper(const PutDedicatedIpInPoolRequest& request, const PutDedicatedIpInPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutDedicatedIpInPool(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutDedicatedIpInPool(request), context);
+    } );
 }
 
 PutDedicatedIpWarmupAttributesOutcome PinpointEmailClient::PutDedicatedIpWarmupAttributes(const PutDedicatedIpWarmupAttributesRequest& request) const
@@ -1144,12 +1078,10 @@ PutDedicatedIpWarmupAttributesOutcomeCallable PinpointEmailClient::PutDedicatedI
 
 void PinpointEmailClient::PutDedicatedIpWarmupAttributesAsync(const PutDedicatedIpWarmupAttributesRequest& request, const PutDedicatedIpWarmupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutDedicatedIpWarmupAttributesAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::PutDedicatedIpWarmupAttributesAsyncHelper(const PutDedicatedIpWarmupAttributesRequest& request, const PutDedicatedIpWarmupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutDedicatedIpWarmupAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutDedicatedIpWarmupAttributes(request), context);
+    } );
 }
 
 PutDeliverabilityDashboardOptionOutcome PinpointEmailClient::PutDeliverabilityDashboardOption(const PutDeliverabilityDashboardOptionRequest& request) const
@@ -1169,12 +1101,10 @@ PutDeliverabilityDashboardOptionOutcomeCallable PinpointEmailClient::PutDelivera
 
 void PinpointEmailClient::PutDeliverabilityDashboardOptionAsync(const PutDeliverabilityDashboardOptionRequest& request, const PutDeliverabilityDashboardOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutDeliverabilityDashboardOptionAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::PutDeliverabilityDashboardOptionAsyncHelper(const PutDeliverabilityDashboardOptionRequest& request, const PutDeliverabilityDashboardOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutDeliverabilityDashboardOption(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutDeliverabilityDashboardOption(request), context);
+    } );
 }
 
 PutEmailIdentityDkimAttributesOutcome PinpointEmailClient::PutEmailIdentityDkimAttributes(const PutEmailIdentityDkimAttributesRequest& request) const
@@ -1201,12 +1131,10 @@ PutEmailIdentityDkimAttributesOutcomeCallable PinpointEmailClient::PutEmailIdent
 
 void PinpointEmailClient::PutEmailIdentityDkimAttributesAsync(const PutEmailIdentityDkimAttributesRequest& request, const PutEmailIdentityDkimAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutEmailIdentityDkimAttributesAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::PutEmailIdentityDkimAttributesAsyncHelper(const PutEmailIdentityDkimAttributesRequest& request, const PutEmailIdentityDkimAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutEmailIdentityDkimAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutEmailIdentityDkimAttributes(request), context);
+    } );
 }
 
 PutEmailIdentityFeedbackAttributesOutcome PinpointEmailClient::PutEmailIdentityFeedbackAttributes(const PutEmailIdentityFeedbackAttributesRequest& request) const
@@ -1233,12 +1161,10 @@ PutEmailIdentityFeedbackAttributesOutcomeCallable PinpointEmailClient::PutEmailI
 
 void PinpointEmailClient::PutEmailIdentityFeedbackAttributesAsync(const PutEmailIdentityFeedbackAttributesRequest& request, const PutEmailIdentityFeedbackAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutEmailIdentityFeedbackAttributesAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::PutEmailIdentityFeedbackAttributesAsyncHelper(const PutEmailIdentityFeedbackAttributesRequest& request, const PutEmailIdentityFeedbackAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutEmailIdentityFeedbackAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutEmailIdentityFeedbackAttributes(request), context);
+    } );
 }
 
 PutEmailIdentityMailFromAttributesOutcome PinpointEmailClient::PutEmailIdentityMailFromAttributes(const PutEmailIdentityMailFromAttributesRequest& request) const
@@ -1265,12 +1191,10 @@ PutEmailIdentityMailFromAttributesOutcomeCallable PinpointEmailClient::PutEmailI
 
 void PinpointEmailClient::PutEmailIdentityMailFromAttributesAsync(const PutEmailIdentityMailFromAttributesRequest& request, const PutEmailIdentityMailFromAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutEmailIdentityMailFromAttributesAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::PutEmailIdentityMailFromAttributesAsyncHelper(const PutEmailIdentityMailFromAttributesRequest& request, const PutEmailIdentityMailFromAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutEmailIdentityMailFromAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutEmailIdentityMailFromAttributes(request), context);
+    } );
 }
 
 SendEmailOutcome PinpointEmailClient::SendEmail(const SendEmailRequest& request) const
@@ -1290,12 +1214,10 @@ SendEmailOutcomeCallable PinpointEmailClient::SendEmailCallable(const SendEmailR
 
 void PinpointEmailClient::SendEmailAsync(const SendEmailRequest& request, const SendEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendEmailAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::SendEmailAsyncHelper(const SendEmailRequest& request, const SendEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SendEmail(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SendEmail(request), context);
+    } );
 }
 
 TagResourceOutcome PinpointEmailClient::TagResource(const TagResourceRequest& request) const
@@ -1315,12 +1237,10 @@ TagResourceOutcomeCallable PinpointEmailClient::TagResourceCallable(const TagRes
 
 void PinpointEmailClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome PinpointEmailClient::UntagResource(const UntagResourceRequest& request) const
@@ -1350,12 +1270,10 @@ UntagResourceOutcomeCallable PinpointEmailClient::UntagResourceCallable(const Un
 
 void PinpointEmailClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateConfigurationSetEventDestinationOutcome PinpointEmailClient::UpdateConfigurationSetEventDestination(const UpdateConfigurationSetEventDestinationRequest& request) const
@@ -1388,11 +1306,9 @@ UpdateConfigurationSetEventDestinationOutcomeCallable PinpointEmailClient::Updat
 
 void PinpointEmailClient::UpdateConfigurationSetEventDestinationAsync(const UpdateConfigurationSetEventDestinationRequest& request, const UpdateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateConfigurationSetEventDestinationAsyncHelper( request, handler, context ); } );
-}
-
-void PinpointEmailClient::UpdateConfigurationSetEventDestinationAsyncHelper(const UpdateConfigurationSetEventDestinationRequest& request, const UpdateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateConfigurationSetEventDestination(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateConfigurationSetEventDestination(request), context);
+    } );
 }
 

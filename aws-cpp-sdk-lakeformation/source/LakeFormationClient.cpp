@@ -171,12 +171,10 @@ AddLFTagsToResourceOutcomeCallable LakeFormationClient::AddLFTagsToResourceCalla
 
 void LakeFormationClient::AddLFTagsToResourceAsync(const AddLFTagsToResourceRequest& request, const AddLFTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddLFTagsToResourceAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::AddLFTagsToResourceAsyncHelper(const AddLFTagsToResourceRequest& request, const AddLFTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AddLFTagsToResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AddLFTagsToResource(request), context);
+    } );
 }
 
 AssumeDecoratedRoleWithSAMLOutcome LakeFormationClient::AssumeDecoratedRoleWithSAML(const AssumeDecoratedRoleWithSAMLRequest& request) const
@@ -196,12 +194,10 @@ AssumeDecoratedRoleWithSAMLOutcomeCallable LakeFormationClient::AssumeDecoratedR
 
 void LakeFormationClient::AssumeDecoratedRoleWithSAMLAsync(const AssumeDecoratedRoleWithSAMLRequest& request, const AssumeDecoratedRoleWithSAMLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssumeDecoratedRoleWithSAMLAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::AssumeDecoratedRoleWithSAMLAsyncHelper(const AssumeDecoratedRoleWithSAMLRequest& request, const AssumeDecoratedRoleWithSAMLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssumeDecoratedRoleWithSAML(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssumeDecoratedRoleWithSAML(request), context);
+    } );
 }
 
 BatchGrantPermissionsOutcome LakeFormationClient::BatchGrantPermissions(const BatchGrantPermissionsRequest& request) const
@@ -221,12 +217,10 @@ BatchGrantPermissionsOutcomeCallable LakeFormationClient::BatchGrantPermissionsC
 
 void LakeFormationClient::BatchGrantPermissionsAsync(const BatchGrantPermissionsRequest& request, const BatchGrantPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGrantPermissionsAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::BatchGrantPermissionsAsyncHelper(const BatchGrantPermissionsRequest& request, const BatchGrantPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchGrantPermissions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchGrantPermissions(request), context);
+    } );
 }
 
 BatchRevokePermissionsOutcome LakeFormationClient::BatchRevokePermissions(const BatchRevokePermissionsRequest& request) const
@@ -246,12 +240,10 @@ BatchRevokePermissionsOutcomeCallable LakeFormationClient::BatchRevokePermission
 
 void LakeFormationClient::BatchRevokePermissionsAsync(const BatchRevokePermissionsRequest& request, const BatchRevokePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchRevokePermissionsAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::BatchRevokePermissionsAsyncHelper(const BatchRevokePermissionsRequest& request, const BatchRevokePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchRevokePermissions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchRevokePermissions(request), context);
+    } );
 }
 
 CancelTransactionOutcome LakeFormationClient::CancelTransaction(const CancelTransactionRequest& request) const
@@ -271,12 +263,10 @@ CancelTransactionOutcomeCallable LakeFormationClient::CancelTransactionCallable(
 
 void LakeFormationClient::CancelTransactionAsync(const CancelTransactionRequest& request, const CancelTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelTransactionAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::CancelTransactionAsyncHelper(const CancelTransactionRequest& request, const CancelTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CancelTransaction(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CancelTransaction(request), context);
+    } );
 }
 
 CommitTransactionOutcome LakeFormationClient::CommitTransaction(const CommitTransactionRequest& request) const
@@ -296,12 +286,10 @@ CommitTransactionOutcomeCallable LakeFormationClient::CommitTransactionCallable(
 
 void LakeFormationClient::CommitTransactionAsync(const CommitTransactionRequest& request, const CommitTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CommitTransactionAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::CommitTransactionAsyncHelper(const CommitTransactionRequest& request, const CommitTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CommitTransaction(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CommitTransaction(request), context);
+    } );
 }
 
 CreateDataCellsFilterOutcome LakeFormationClient::CreateDataCellsFilter(const CreateDataCellsFilterRequest& request) const
@@ -321,12 +309,10 @@ CreateDataCellsFilterOutcomeCallable LakeFormationClient::CreateDataCellsFilterC
 
 void LakeFormationClient::CreateDataCellsFilterAsync(const CreateDataCellsFilterRequest& request, const CreateDataCellsFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDataCellsFilterAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::CreateDataCellsFilterAsyncHelper(const CreateDataCellsFilterRequest& request, const CreateDataCellsFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateDataCellsFilter(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateDataCellsFilter(request), context);
+    } );
 }
 
 CreateLFTagOutcome LakeFormationClient::CreateLFTag(const CreateLFTagRequest& request) const
@@ -346,12 +332,10 @@ CreateLFTagOutcomeCallable LakeFormationClient::CreateLFTagCallable(const Create
 
 void LakeFormationClient::CreateLFTagAsync(const CreateLFTagRequest& request, const CreateLFTagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLFTagAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::CreateLFTagAsyncHelper(const CreateLFTagRequest& request, const CreateLFTagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateLFTag(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateLFTag(request), context);
+    } );
 }
 
 DeleteDataCellsFilterOutcome LakeFormationClient::DeleteDataCellsFilter(const DeleteDataCellsFilterRequest& request) const
@@ -371,12 +355,10 @@ DeleteDataCellsFilterOutcomeCallable LakeFormationClient::DeleteDataCellsFilterC
 
 void LakeFormationClient::DeleteDataCellsFilterAsync(const DeleteDataCellsFilterRequest& request, const DeleteDataCellsFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDataCellsFilterAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::DeleteDataCellsFilterAsyncHelper(const DeleteDataCellsFilterRequest& request, const DeleteDataCellsFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteDataCellsFilter(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteDataCellsFilter(request), context);
+    } );
 }
 
 DeleteLFTagOutcome LakeFormationClient::DeleteLFTag(const DeleteLFTagRequest& request) const
@@ -396,12 +378,10 @@ DeleteLFTagOutcomeCallable LakeFormationClient::DeleteLFTagCallable(const Delete
 
 void LakeFormationClient::DeleteLFTagAsync(const DeleteLFTagRequest& request, const DeleteLFTagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLFTagAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::DeleteLFTagAsyncHelper(const DeleteLFTagRequest& request, const DeleteLFTagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteLFTag(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteLFTag(request), context);
+    } );
 }
 
 DeleteObjectsOnCancelOutcome LakeFormationClient::DeleteObjectsOnCancel(const DeleteObjectsOnCancelRequest& request) const
@@ -421,12 +401,10 @@ DeleteObjectsOnCancelOutcomeCallable LakeFormationClient::DeleteObjectsOnCancelC
 
 void LakeFormationClient::DeleteObjectsOnCancelAsync(const DeleteObjectsOnCancelRequest& request, const DeleteObjectsOnCancelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteObjectsOnCancelAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::DeleteObjectsOnCancelAsyncHelper(const DeleteObjectsOnCancelRequest& request, const DeleteObjectsOnCancelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteObjectsOnCancel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteObjectsOnCancel(request), context);
+    } );
 }
 
 DeregisterResourceOutcome LakeFormationClient::DeregisterResource(const DeregisterResourceRequest& request) const
@@ -446,12 +424,10 @@ DeregisterResourceOutcomeCallable LakeFormationClient::DeregisterResourceCallabl
 
 void LakeFormationClient::DeregisterResourceAsync(const DeregisterResourceRequest& request, const DeregisterResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeregisterResourceAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::DeregisterResourceAsyncHelper(const DeregisterResourceRequest& request, const DeregisterResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeregisterResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeregisterResource(request), context);
+    } );
 }
 
 DescribeResourceOutcome LakeFormationClient::DescribeResource(const DescribeResourceRequest& request) const
@@ -471,12 +447,10 @@ DescribeResourceOutcomeCallable LakeFormationClient::DescribeResourceCallable(co
 
 void LakeFormationClient::DescribeResourceAsync(const DescribeResourceRequest& request, const DescribeResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeResourceAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::DescribeResourceAsyncHelper(const DescribeResourceRequest& request, const DescribeResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeResource(request), context);
+    } );
 }
 
 DescribeTransactionOutcome LakeFormationClient::DescribeTransaction(const DescribeTransactionRequest& request) const
@@ -496,12 +470,10 @@ DescribeTransactionOutcomeCallable LakeFormationClient::DescribeTransactionCalla
 
 void LakeFormationClient::DescribeTransactionAsync(const DescribeTransactionRequest& request, const DescribeTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTransactionAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::DescribeTransactionAsyncHelper(const DescribeTransactionRequest& request, const DescribeTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeTransaction(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeTransaction(request), context);
+    } );
 }
 
 ExtendTransactionOutcome LakeFormationClient::ExtendTransaction(const ExtendTransactionRequest& request) const
@@ -521,12 +493,10 @@ ExtendTransactionOutcomeCallable LakeFormationClient::ExtendTransactionCallable(
 
 void LakeFormationClient::ExtendTransactionAsync(const ExtendTransactionRequest& request, const ExtendTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExtendTransactionAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::ExtendTransactionAsyncHelper(const ExtendTransactionRequest& request, const ExtendTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ExtendTransaction(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ExtendTransaction(request), context);
+    } );
 }
 
 GetDataLakeSettingsOutcome LakeFormationClient::GetDataLakeSettings(const GetDataLakeSettingsRequest& request) const
@@ -546,12 +516,10 @@ GetDataLakeSettingsOutcomeCallable LakeFormationClient::GetDataLakeSettingsCalla
 
 void LakeFormationClient::GetDataLakeSettingsAsync(const GetDataLakeSettingsRequest& request, const GetDataLakeSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDataLakeSettingsAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::GetDataLakeSettingsAsyncHelper(const GetDataLakeSettingsRequest& request, const GetDataLakeSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDataLakeSettings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDataLakeSettings(request), context);
+    } );
 }
 
 GetEffectivePermissionsForPathOutcome LakeFormationClient::GetEffectivePermissionsForPath(const GetEffectivePermissionsForPathRequest& request) const
@@ -571,12 +539,10 @@ GetEffectivePermissionsForPathOutcomeCallable LakeFormationClient::GetEffectiveP
 
 void LakeFormationClient::GetEffectivePermissionsForPathAsync(const GetEffectivePermissionsForPathRequest& request, const GetEffectivePermissionsForPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEffectivePermissionsForPathAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::GetEffectivePermissionsForPathAsyncHelper(const GetEffectivePermissionsForPathRequest& request, const GetEffectivePermissionsForPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetEffectivePermissionsForPath(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetEffectivePermissionsForPath(request), context);
+    } );
 }
 
 GetLFTagOutcome LakeFormationClient::GetLFTag(const GetLFTagRequest& request) const
@@ -596,12 +562,10 @@ GetLFTagOutcomeCallable LakeFormationClient::GetLFTagCallable(const GetLFTagRequ
 
 void LakeFormationClient::GetLFTagAsync(const GetLFTagRequest& request, const GetLFTagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLFTagAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::GetLFTagAsyncHelper(const GetLFTagRequest& request, const GetLFTagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetLFTag(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetLFTag(request), context);
+    } );
 }
 
 GetQueryStateOutcome LakeFormationClient::GetQueryState(const GetQueryStateRequest& request) const
@@ -630,12 +594,10 @@ GetQueryStateOutcomeCallable LakeFormationClient::GetQueryStateCallable(const Ge
 
 void LakeFormationClient::GetQueryStateAsync(const GetQueryStateRequest& request, const GetQueryStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetQueryStateAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::GetQueryStateAsyncHelper(const GetQueryStateRequest& request, const GetQueryStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetQueryState(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetQueryState(request), context);
+    } );
 }
 
 GetQueryStatisticsOutcome LakeFormationClient::GetQueryStatistics(const GetQueryStatisticsRequest& request) const
@@ -664,12 +626,10 @@ GetQueryStatisticsOutcomeCallable LakeFormationClient::GetQueryStatisticsCallabl
 
 void LakeFormationClient::GetQueryStatisticsAsync(const GetQueryStatisticsRequest& request, const GetQueryStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetQueryStatisticsAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::GetQueryStatisticsAsyncHelper(const GetQueryStatisticsRequest& request, const GetQueryStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetQueryStatistics(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetQueryStatistics(request), context);
+    } );
 }
 
 GetResourceLFTagsOutcome LakeFormationClient::GetResourceLFTags(const GetResourceLFTagsRequest& request) const
@@ -689,12 +649,10 @@ GetResourceLFTagsOutcomeCallable LakeFormationClient::GetResourceLFTagsCallable(
 
 void LakeFormationClient::GetResourceLFTagsAsync(const GetResourceLFTagsRequest& request, const GetResourceLFTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResourceLFTagsAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::GetResourceLFTagsAsyncHelper(const GetResourceLFTagsRequest& request, const GetResourceLFTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetResourceLFTags(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetResourceLFTags(request), context);
+    } );
 }
 
 GetTableObjectsOutcome LakeFormationClient::GetTableObjects(const GetTableObjectsRequest& request) const
@@ -714,12 +672,10 @@ GetTableObjectsOutcomeCallable LakeFormationClient::GetTableObjectsCallable(cons
 
 void LakeFormationClient::GetTableObjectsAsync(const GetTableObjectsRequest& request, const GetTableObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTableObjectsAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::GetTableObjectsAsyncHelper(const GetTableObjectsRequest& request, const GetTableObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetTableObjects(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetTableObjects(request), context);
+    } );
 }
 
 GetTemporaryGluePartitionCredentialsOutcome LakeFormationClient::GetTemporaryGluePartitionCredentials(const GetTemporaryGluePartitionCredentialsRequest& request) const
@@ -739,12 +695,10 @@ GetTemporaryGluePartitionCredentialsOutcomeCallable LakeFormationClient::GetTemp
 
 void LakeFormationClient::GetTemporaryGluePartitionCredentialsAsync(const GetTemporaryGluePartitionCredentialsRequest& request, const GetTemporaryGluePartitionCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTemporaryGluePartitionCredentialsAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::GetTemporaryGluePartitionCredentialsAsyncHelper(const GetTemporaryGluePartitionCredentialsRequest& request, const GetTemporaryGluePartitionCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetTemporaryGluePartitionCredentials(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetTemporaryGluePartitionCredentials(request), context);
+    } );
 }
 
 GetTemporaryGlueTableCredentialsOutcome LakeFormationClient::GetTemporaryGlueTableCredentials(const GetTemporaryGlueTableCredentialsRequest& request) const
@@ -764,12 +718,10 @@ GetTemporaryGlueTableCredentialsOutcomeCallable LakeFormationClient::GetTemporar
 
 void LakeFormationClient::GetTemporaryGlueTableCredentialsAsync(const GetTemporaryGlueTableCredentialsRequest& request, const GetTemporaryGlueTableCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTemporaryGlueTableCredentialsAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::GetTemporaryGlueTableCredentialsAsyncHelper(const GetTemporaryGlueTableCredentialsRequest& request, const GetTemporaryGlueTableCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetTemporaryGlueTableCredentials(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetTemporaryGlueTableCredentials(request), context);
+    } );
 }
 
 GetWorkUnitResultsOutcome LakeFormationClient::GetWorkUnitResults(const GetWorkUnitResultsRequest& request) const
@@ -798,12 +750,10 @@ GetWorkUnitResultsOutcomeCallable LakeFormationClient::GetWorkUnitResultsCallabl
 
 void LakeFormationClient::GetWorkUnitResultsAsync(const GetWorkUnitResultsRequest& request, const GetWorkUnitResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetWorkUnitResultsAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::GetWorkUnitResultsAsyncHelper(const GetWorkUnitResultsRequest& request, const GetWorkUnitResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetWorkUnitResults(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetWorkUnitResults(request), context);
+    } );
 }
 
 GetWorkUnitsOutcome LakeFormationClient::GetWorkUnits(const GetWorkUnitsRequest& request) const
@@ -832,12 +782,10 @@ GetWorkUnitsOutcomeCallable LakeFormationClient::GetWorkUnitsCallable(const GetW
 
 void LakeFormationClient::GetWorkUnitsAsync(const GetWorkUnitsRequest& request, const GetWorkUnitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetWorkUnitsAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::GetWorkUnitsAsyncHelper(const GetWorkUnitsRequest& request, const GetWorkUnitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetWorkUnits(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetWorkUnits(request), context);
+    } );
 }
 
 GrantPermissionsOutcome LakeFormationClient::GrantPermissions(const GrantPermissionsRequest& request) const
@@ -857,12 +805,10 @@ GrantPermissionsOutcomeCallable LakeFormationClient::GrantPermissionsCallable(co
 
 void LakeFormationClient::GrantPermissionsAsync(const GrantPermissionsRequest& request, const GrantPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GrantPermissionsAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::GrantPermissionsAsyncHelper(const GrantPermissionsRequest& request, const GrantPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GrantPermissions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GrantPermissions(request), context);
+    } );
 }
 
 ListDataCellsFilterOutcome LakeFormationClient::ListDataCellsFilter(const ListDataCellsFilterRequest& request) const
@@ -882,12 +828,10 @@ ListDataCellsFilterOutcomeCallable LakeFormationClient::ListDataCellsFilterCalla
 
 void LakeFormationClient::ListDataCellsFilterAsync(const ListDataCellsFilterRequest& request, const ListDataCellsFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDataCellsFilterAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::ListDataCellsFilterAsyncHelper(const ListDataCellsFilterRequest& request, const ListDataCellsFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDataCellsFilter(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDataCellsFilter(request), context);
+    } );
 }
 
 ListLFTagsOutcome LakeFormationClient::ListLFTags(const ListLFTagsRequest& request) const
@@ -907,12 +851,10 @@ ListLFTagsOutcomeCallable LakeFormationClient::ListLFTagsCallable(const ListLFTa
 
 void LakeFormationClient::ListLFTagsAsync(const ListLFTagsRequest& request, const ListLFTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLFTagsAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::ListLFTagsAsyncHelper(const ListLFTagsRequest& request, const ListLFTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListLFTags(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListLFTags(request), context);
+    } );
 }
 
 ListPermissionsOutcome LakeFormationClient::ListPermissions(const ListPermissionsRequest& request) const
@@ -932,12 +874,10 @@ ListPermissionsOutcomeCallable LakeFormationClient::ListPermissionsCallable(cons
 
 void LakeFormationClient::ListPermissionsAsync(const ListPermissionsRequest& request, const ListPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPermissionsAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::ListPermissionsAsyncHelper(const ListPermissionsRequest& request, const ListPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListPermissions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListPermissions(request), context);
+    } );
 }
 
 ListResourcesOutcome LakeFormationClient::ListResources(const ListResourcesRequest& request) const
@@ -957,12 +897,10 @@ ListResourcesOutcomeCallable LakeFormationClient::ListResourcesCallable(const Li
 
 void LakeFormationClient::ListResourcesAsync(const ListResourcesRequest& request, const ListResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListResourcesAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::ListResourcesAsyncHelper(const ListResourcesRequest& request, const ListResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListResources(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListResources(request), context);
+    } );
 }
 
 ListTableStorageOptimizersOutcome LakeFormationClient::ListTableStorageOptimizers(const ListTableStorageOptimizersRequest& request) const
@@ -982,12 +920,10 @@ ListTableStorageOptimizersOutcomeCallable LakeFormationClient::ListTableStorageO
 
 void LakeFormationClient::ListTableStorageOptimizersAsync(const ListTableStorageOptimizersRequest& request, const ListTableStorageOptimizersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTableStorageOptimizersAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::ListTableStorageOptimizersAsyncHelper(const ListTableStorageOptimizersRequest& request, const ListTableStorageOptimizersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTableStorageOptimizers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTableStorageOptimizers(request), context);
+    } );
 }
 
 ListTransactionsOutcome LakeFormationClient::ListTransactions(const ListTransactionsRequest& request) const
@@ -1007,12 +943,10 @@ ListTransactionsOutcomeCallable LakeFormationClient::ListTransactionsCallable(co
 
 void LakeFormationClient::ListTransactionsAsync(const ListTransactionsRequest& request, const ListTransactionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTransactionsAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::ListTransactionsAsyncHelper(const ListTransactionsRequest& request, const ListTransactionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTransactions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTransactions(request), context);
+    } );
 }
 
 PutDataLakeSettingsOutcome LakeFormationClient::PutDataLakeSettings(const PutDataLakeSettingsRequest& request) const
@@ -1032,12 +966,10 @@ PutDataLakeSettingsOutcomeCallable LakeFormationClient::PutDataLakeSettingsCalla
 
 void LakeFormationClient::PutDataLakeSettingsAsync(const PutDataLakeSettingsRequest& request, const PutDataLakeSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutDataLakeSettingsAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::PutDataLakeSettingsAsyncHelper(const PutDataLakeSettingsRequest& request, const PutDataLakeSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutDataLakeSettings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutDataLakeSettings(request), context);
+    } );
 }
 
 RegisterResourceOutcome LakeFormationClient::RegisterResource(const RegisterResourceRequest& request) const
@@ -1057,12 +989,10 @@ RegisterResourceOutcomeCallable LakeFormationClient::RegisterResourceCallable(co
 
 void LakeFormationClient::RegisterResourceAsync(const RegisterResourceRequest& request, const RegisterResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterResourceAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::RegisterResourceAsyncHelper(const RegisterResourceRequest& request, const RegisterResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RegisterResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RegisterResource(request), context);
+    } );
 }
 
 RemoveLFTagsFromResourceOutcome LakeFormationClient::RemoveLFTagsFromResource(const RemoveLFTagsFromResourceRequest& request) const
@@ -1082,12 +1012,10 @@ RemoveLFTagsFromResourceOutcomeCallable LakeFormationClient::RemoveLFTagsFromRes
 
 void LakeFormationClient::RemoveLFTagsFromResourceAsync(const RemoveLFTagsFromResourceRequest& request, const RemoveLFTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveLFTagsFromResourceAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::RemoveLFTagsFromResourceAsyncHelper(const RemoveLFTagsFromResourceRequest& request, const RemoveLFTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RemoveLFTagsFromResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RemoveLFTagsFromResource(request), context);
+    } );
 }
 
 RevokePermissionsOutcome LakeFormationClient::RevokePermissions(const RevokePermissionsRequest& request) const
@@ -1107,12 +1035,10 @@ RevokePermissionsOutcomeCallable LakeFormationClient::RevokePermissionsCallable(
 
 void LakeFormationClient::RevokePermissionsAsync(const RevokePermissionsRequest& request, const RevokePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RevokePermissionsAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::RevokePermissionsAsyncHelper(const RevokePermissionsRequest& request, const RevokePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RevokePermissions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RevokePermissions(request), context);
+    } );
 }
 
 SearchDatabasesByLFTagsOutcome LakeFormationClient::SearchDatabasesByLFTags(const SearchDatabasesByLFTagsRequest& request) const
@@ -1132,12 +1058,10 @@ SearchDatabasesByLFTagsOutcomeCallable LakeFormationClient::SearchDatabasesByLFT
 
 void LakeFormationClient::SearchDatabasesByLFTagsAsync(const SearchDatabasesByLFTagsRequest& request, const SearchDatabasesByLFTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchDatabasesByLFTagsAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::SearchDatabasesByLFTagsAsyncHelper(const SearchDatabasesByLFTagsRequest& request, const SearchDatabasesByLFTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SearchDatabasesByLFTags(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SearchDatabasesByLFTags(request), context);
+    } );
 }
 
 SearchTablesByLFTagsOutcome LakeFormationClient::SearchTablesByLFTags(const SearchTablesByLFTagsRequest& request) const
@@ -1157,12 +1081,10 @@ SearchTablesByLFTagsOutcomeCallable LakeFormationClient::SearchTablesByLFTagsCal
 
 void LakeFormationClient::SearchTablesByLFTagsAsync(const SearchTablesByLFTagsRequest& request, const SearchTablesByLFTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchTablesByLFTagsAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::SearchTablesByLFTagsAsyncHelper(const SearchTablesByLFTagsRequest& request, const SearchTablesByLFTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SearchTablesByLFTags(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SearchTablesByLFTags(request), context);
+    } );
 }
 
 StartQueryPlanningOutcome LakeFormationClient::StartQueryPlanning(const StartQueryPlanningRequest& request) const
@@ -1191,12 +1113,10 @@ StartQueryPlanningOutcomeCallable LakeFormationClient::StartQueryPlanningCallabl
 
 void LakeFormationClient::StartQueryPlanningAsync(const StartQueryPlanningRequest& request, const StartQueryPlanningResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartQueryPlanningAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::StartQueryPlanningAsyncHelper(const StartQueryPlanningRequest& request, const StartQueryPlanningResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartQueryPlanning(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartQueryPlanning(request), context);
+    } );
 }
 
 StartTransactionOutcome LakeFormationClient::StartTransaction(const StartTransactionRequest& request) const
@@ -1216,12 +1136,10 @@ StartTransactionOutcomeCallable LakeFormationClient::StartTransactionCallable(co
 
 void LakeFormationClient::StartTransactionAsync(const StartTransactionRequest& request, const StartTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartTransactionAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::StartTransactionAsyncHelper(const StartTransactionRequest& request, const StartTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartTransaction(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartTransaction(request), context);
+    } );
 }
 
 UpdateLFTagOutcome LakeFormationClient::UpdateLFTag(const UpdateLFTagRequest& request) const
@@ -1241,12 +1159,10 @@ UpdateLFTagOutcomeCallable LakeFormationClient::UpdateLFTagCallable(const Update
 
 void LakeFormationClient::UpdateLFTagAsync(const UpdateLFTagRequest& request, const UpdateLFTagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateLFTagAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::UpdateLFTagAsyncHelper(const UpdateLFTagRequest& request, const UpdateLFTagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateLFTag(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateLFTag(request), context);
+    } );
 }
 
 UpdateResourceOutcome LakeFormationClient::UpdateResource(const UpdateResourceRequest& request) const
@@ -1266,12 +1182,10 @@ UpdateResourceOutcomeCallable LakeFormationClient::UpdateResourceCallable(const 
 
 void LakeFormationClient::UpdateResourceAsync(const UpdateResourceRequest& request, const UpdateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateResourceAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::UpdateResourceAsyncHelper(const UpdateResourceRequest& request, const UpdateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateResource(request), context);
+    } );
 }
 
 UpdateTableObjectsOutcome LakeFormationClient::UpdateTableObjects(const UpdateTableObjectsRequest& request) const
@@ -1291,12 +1205,10 @@ UpdateTableObjectsOutcomeCallable LakeFormationClient::UpdateTableObjectsCallabl
 
 void LakeFormationClient::UpdateTableObjectsAsync(const UpdateTableObjectsRequest& request, const UpdateTableObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTableObjectsAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::UpdateTableObjectsAsyncHelper(const UpdateTableObjectsRequest& request, const UpdateTableObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateTableObjects(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateTableObjects(request), context);
+    } );
 }
 
 UpdateTableStorageOptimizerOutcome LakeFormationClient::UpdateTableStorageOptimizer(const UpdateTableStorageOptimizerRequest& request) const
@@ -1316,11 +1228,9 @@ UpdateTableStorageOptimizerOutcomeCallable LakeFormationClient::UpdateTableStora
 
 void LakeFormationClient::UpdateTableStorageOptimizerAsync(const UpdateTableStorageOptimizerRequest& request, const UpdateTableStorageOptimizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTableStorageOptimizerAsyncHelper( request, handler, context ); } );
-}
-
-void LakeFormationClient::UpdateTableStorageOptimizerAsyncHelper(const UpdateTableStorageOptimizerRequest& request, const UpdateTableStorageOptimizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateTableStorageOptimizer(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateTableStorageOptimizer(request), context);
+    } );
 }
 

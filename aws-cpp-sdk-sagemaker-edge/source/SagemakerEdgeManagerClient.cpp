@@ -120,12 +120,10 @@ GetDeploymentsOutcomeCallable SagemakerEdgeManagerClient::GetDeploymentsCallable
 
 void SagemakerEdgeManagerClient::GetDeploymentsAsync(const GetDeploymentsRequest& request, const GetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDeploymentsAsyncHelper( request, handler, context ); } );
-}
-
-void SagemakerEdgeManagerClient::GetDeploymentsAsyncHelper(const GetDeploymentsRequest& request, const GetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDeployments(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDeployments(request), context);
+    } );
 }
 
 GetDeviceRegistrationOutcome SagemakerEdgeManagerClient::GetDeviceRegistration(const GetDeviceRegistrationRequest& request) const
@@ -145,12 +143,10 @@ GetDeviceRegistrationOutcomeCallable SagemakerEdgeManagerClient::GetDeviceRegist
 
 void SagemakerEdgeManagerClient::GetDeviceRegistrationAsync(const GetDeviceRegistrationRequest& request, const GetDeviceRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDeviceRegistrationAsyncHelper( request, handler, context ); } );
-}
-
-void SagemakerEdgeManagerClient::GetDeviceRegistrationAsyncHelper(const GetDeviceRegistrationRequest& request, const GetDeviceRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDeviceRegistration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDeviceRegistration(request), context);
+    } );
 }
 
 SendHeartbeatOutcome SagemakerEdgeManagerClient::SendHeartbeat(const SendHeartbeatRequest& request) const
@@ -170,11 +166,9 @@ SendHeartbeatOutcomeCallable SagemakerEdgeManagerClient::SendHeartbeatCallable(c
 
 void SagemakerEdgeManagerClient::SendHeartbeatAsync(const SendHeartbeatRequest& request, const SendHeartbeatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendHeartbeatAsyncHelper( request, handler, context ); } );
-}
-
-void SagemakerEdgeManagerClient::SendHeartbeatAsyncHelper(const SendHeartbeatRequest& request, const SendHeartbeatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SendHeartbeat(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SendHeartbeat(request), context);
+    } );
 }
 

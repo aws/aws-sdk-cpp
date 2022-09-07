@@ -137,12 +137,10 @@ CreateContainerOutcomeCallable MediaStoreClient::CreateContainerCallable(const C
 
 void MediaStoreClient::CreateContainerAsync(const CreateContainerRequest& request, const CreateContainerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateContainerAsyncHelper( request, handler, context ); } );
-}
-
-void MediaStoreClient::CreateContainerAsyncHelper(const CreateContainerRequest& request, const CreateContainerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateContainer(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateContainer(request), context);
+    } );
 }
 
 DeleteContainerOutcome MediaStoreClient::DeleteContainer(const DeleteContainerRequest& request) const
@@ -161,12 +159,10 @@ DeleteContainerOutcomeCallable MediaStoreClient::DeleteContainerCallable(const D
 
 void MediaStoreClient::DeleteContainerAsync(const DeleteContainerRequest& request, const DeleteContainerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteContainerAsyncHelper( request, handler, context ); } );
-}
-
-void MediaStoreClient::DeleteContainerAsyncHelper(const DeleteContainerRequest& request, const DeleteContainerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteContainer(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteContainer(request), context);
+    } );
 }
 
 DeleteContainerPolicyOutcome MediaStoreClient::DeleteContainerPolicy(const DeleteContainerPolicyRequest& request) const
@@ -185,12 +181,10 @@ DeleteContainerPolicyOutcomeCallable MediaStoreClient::DeleteContainerPolicyCall
 
 void MediaStoreClient::DeleteContainerPolicyAsync(const DeleteContainerPolicyRequest& request, const DeleteContainerPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteContainerPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void MediaStoreClient::DeleteContainerPolicyAsyncHelper(const DeleteContainerPolicyRequest& request, const DeleteContainerPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteContainerPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteContainerPolicy(request), context);
+    } );
 }
 
 DeleteCorsPolicyOutcome MediaStoreClient::DeleteCorsPolicy(const DeleteCorsPolicyRequest& request) const
@@ -209,12 +203,10 @@ DeleteCorsPolicyOutcomeCallable MediaStoreClient::DeleteCorsPolicyCallable(const
 
 void MediaStoreClient::DeleteCorsPolicyAsync(const DeleteCorsPolicyRequest& request, const DeleteCorsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCorsPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void MediaStoreClient::DeleteCorsPolicyAsyncHelper(const DeleteCorsPolicyRequest& request, const DeleteCorsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteCorsPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteCorsPolicy(request), context);
+    } );
 }
 
 DeleteLifecyclePolicyOutcome MediaStoreClient::DeleteLifecyclePolicy(const DeleteLifecyclePolicyRequest& request) const
@@ -233,12 +225,10 @@ DeleteLifecyclePolicyOutcomeCallable MediaStoreClient::DeleteLifecyclePolicyCall
 
 void MediaStoreClient::DeleteLifecyclePolicyAsync(const DeleteLifecyclePolicyRequest& request, const DeleteLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLifecyclePolicyAsyncHelper( request, handler, context ); } );
-}
-
-void MediaStoreClient::DeleteLifecyclePolicyAsyncHelper(const DeleteLifecyclePolicyRequest& request, const DeleteLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteLifecyclePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteLifecyclePolicy(request), context);
+    } );
 }
 
 DeleteMetricPolicyOutcome MediaStoreClient::DeleteMetricPolicy(const DeleteMetricPolicyRequest& request) const
@@ -257,12 +247,10 @@ DeleteMetricPolicyOutcomeCallable MediaStoreClient::DeleteMetricPolicyCallable(c
 
 void MediaStoreClient::DeleteMetricPolicyAsync(const DeleteMetricPolicyRequest& request, const DeleteMetricPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteMetricPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void MediaStoreClient::DeleteMetricPolicyAsyncHelper(const DeleteMetricPolicyRequest& request, const DeleteMetricPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteMetricPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteMetricPolicy(request), context);
+    } );
 }
 
 DescribeContainerOutcome MediaStoreClient::DescribeContainer(const DescribeContainerRequest& request) const
@@ -281,12 +269,10 @@ DescribeContainerOutcomeCallable MediaStoreClient::DescribeContainerCallable(con
 
 void MediaStoreClient::DescribeContainerAsync(const DescribeContainerRequest& request, const DescribeContainerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeContainerAsyncHelper( request, handler, context ); } );
-}
-
-void MediaStoreClient::DescribeContainerAsyncHelper(const DescribeContainerRequest& request, const DescribeContainerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeContainer(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeContainer(request), context);
+    } );
 }
 
 GetContainerPolicyOutcome MediaStoreClient::GetContainerPolicy(const GetContainerPolicyRequest& request) const
@@ -305,12 +291,10 @@ GetContainerPolicyOutcomeCallable MediaStoreClient::GetContainerPolicyCallable(c
 
 void MediaStoreClient::GetContainerPolicyAsync(const GetContainerPolicyRequest& request, const GetContainerPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetContainerPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void MediaStoreClient::GetContainerPolicyAsyncHelper(const GetContainerPolicyRequest& request, const GetContainerPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetContainerPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetContainerPolicy(request), context);
+    } );
 }
 
 GetCorsPolicyOutcome MediaStoreClient::GetCorsPolicy(const GetCorsPolicyRequest& request) const
@@ -329,12 +313,10 @@ GetCorsPolicyOutcomeCallable MediaStoreClient::GetCorsPolicyCallable(const GetCo
 
 void MediaStoreClient::GetCorsPolicyAsync(const GetCorsPolicyRequest& request, const GetCorsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCorsPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void MediaStoreClient::GetCorsPolicyAsyncHelper(const GetCorsPolicyRequest& request, const GetCorsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetCorsPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetCorsPolicy(request), context);
+    } );
 }
 
 GetLifecyclePolicyOutcome MediaStoreClient::GetLifecyclePolicy(const GetLifecyclePolicyRequest& request) const
@@ -353,12 +335,10 @@ GetLifecyclePolicyOutcomeCallable MediaStoreClient::GetLifecyclePolicyCallable(c
 
 void MediaStoreClient::GetLifecyclePolicyAsync(const GetLifecyclePolicyRequest& request, const GetLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLifecyclePolicyAsyncHelper( request, handler, context ); } );
-}
-
-void MediaStoreClient::GetLifecyclePolicyAsyncHelper(const GetLifecyclePolicyRequest& request, const GetLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetLifecyclePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetLifecyclePolicy(request), context);
+    } );
 }
 
 GetMetricPolicyOutcome MediaStoreClient::GetMetricPolicy(const GetMetricPolicyRequest& request) const
@@ -377,12 +357,10 @@ GetMetricPolicyOutcomeCallable MediaStoreClient::GetMetricPolicyCallable(const G
 
 void MediaStoreClient::GetMetricPolicyAsync(const GetMetricPolicyRequest& request, const GetMetricPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMetricPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void MediaStoreClient::GetMetricPolicyAsyncHelper(const GetMetricPolicyRequest& request, const GetMetricPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetMetricPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetMetricPolicy(request), context);
+    } );
 }
 
 ListContainersOutcome MediaStoreClient::ListContainers(const ListContainersRequest& request) const
@@ -401,12 +379,10 @@ ListContainersOutcomeCallable MediaStoreClient::ListContainersCallable(const Lis
 
 void MediaStoreClient::ListContainersAsync(const ListContainersRequest& request, const ListContainersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListContainersAsyncHelper( request, handler, context ); } );
-}
-
-void MediaStoreClient::ListContainersAsyncHelper(const ListContainersRequest& request, const ListContainersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListContainers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListContainers(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome MediaStoreClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -425,12 +401,10 @@ ListTagsForResourceOutcomeCallable MediaStoreClient::ListTagsForResourceCallable
 
 void MediaStoreClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void MediaStoreClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 PutContainerPolicyOutcome MediaStoreClient::PutContainerPolicy(const PutContainerPolicyRequest& request) const
@@ -449,12 +423,10 @@ PutContainerPolicyOutcomeCallable MediaStoreClient::PutContainerPolicyCallable(c
 
 void MediaStoreClient::PutContainerPolicyAsync(const PutContainerPolicyRequest& request, const PutContainerPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutContainerPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void MediaStoreClient::PutContainerPolicyAsyncHelper(const PutContainerPolicyRequest& request, const PutContainerPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutContainerPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutContainerPolicy(request), context);
+    } );
 }
 
 PutCorsPolicyOutcome MediaStoreClient::PutCorsPolicy(const PutCorsPolicyRequest& request) const
@@ -473,12 +445,10 @@ PutCorsPolicyOutcomeCallable MediaStoreClient::PutCorsPolicyCallable(const PutCo
 
 void MediaStoreClient::PutCorsPolicyAsync(const PutCorsPolicyRequest& request, const PutCorsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutCorsPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void MediaStoreClient::PutCorsPolicyAsyncHelper(const PutCorsPolicyRequest& request, const PutCorsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutCorsPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutCorsPolicy(request), context);
+    } );
 }
 
 PutLifecyclePolicyOutcome MediaStoreClient::PutLifecyclePolicy(const PutLifecyclePolicyRequest& request) const
@@ -497,12 +467,10 @@ PutLifecyclePolicyOutcomeCallable MediaStoreClient::PutLifecyclePolicyCallable(c
 
 void MediaStoreClient::PutLifecyclePolicyAsync(const PutLifecyclePolicyRequest& request, const PutLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutLifecyclePolicyAsyncHelper( request, handler, context ); } );
-}
-
-void MediaStoreClient::PutLifecyclePolicyAsyncHelper(const PutLifecyclePolicyRequest& request, const PutLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutLifecyclePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutLifecyclePolicy(request), context);
+    } );
 }
 
 PutMetricPolicyOutcome MediaStoreClient::PutMetricPolicy(const PutMetricPolicyRequest& request) const
@@ -521,12 +489,10 @@ PutMetricPolicyOutcomeCallable MediaStoreClient::PutMetricPolicyCallable(const P
 
 void MediaStoreClient::PutMetricPolicyAsync(const PutMetricPolicyRequest& request, const PutMetricPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutMetricPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void MediaStoreClient::PutMetricPolicyAsyncHelper(const PutMetricPolicyRequest& request, const PutMetricPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutMetricPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutMetricPolicy(request), context);
+    } );
 }
 
 StartAccessLoggingOutcome MediaStoreClient::StartAccessLogging(const StartAccessLoggingRequest& request) const
@@ -545,12 +511,10 @@ StartAccessLoggingOutcomeCallable MediaStoreClient::StartAccessLoggingCallable(c
 
 void MediaStoreClient::StartAccessLoggingAsync(const StartAccessLoggingRequest& request, const StartAccessLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartAccessLoggingAsyncHelper( request, handler, context ); } );
-}
-
-void MediaStoreClient::StartAccessLoggingAsyncHelper(const StartAccessLoggingRequest& request, const StartAccessLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartAccessLogging(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartAccessLogging(request), context);
+    } );
 }
 
 StopAccessLoggingOutcome MediaStoreClient::StopAccessLogging(const StopAccessLoggingRequest& request) const
@@ -569,12 +533,10 @@ StopAccessLoggingOutcomeCallable MediaStoreClient::StopAccessLoggingCallable(con
 
 void MediaStoreClient::StopAccessLoggingAsync(const StopAccessLoggingRequest& request, const StopAccessLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopAccessLoggingAsyncHelper( request, handler, context ); } );
-}
-
-void MediaStoreClient::StopAccessLoggingAsyncHelper(const StopAccessLoggingRequest& request, const StopAccessLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StopAccessLogging(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopAccessLogging(request), context);
+    } );
 }
 
 TagResourceOutcome MediaStoreClient::TagResource(const TagResourceRequest& request) const
@@ -593,12 +555,10 @@ TagResourceOutcomeCallable MediaStoreClient::TagResourceCallable(const TagResour
 
 void MediaStoreClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void MediaStoreClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome MediaStoreClient::UntagResource(const UntagResourceRequest& request) const
@@ -617,11 +577,9 @@ UntagResourceOutcomeCallable MediaStoreClient::UntagResourceCallable(const Untag
 
 void MediaStoreClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void MediaStoreClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 

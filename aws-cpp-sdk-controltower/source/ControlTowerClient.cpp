@@ -121,12 +121,10 @@ DisableControlOutcomeCallable ControlTowerClient::DisableControlCallable(const D
 
 void ControlTowerClient::DisableControlAsync(const DisableControlRequest& request, const DisableControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableControlAsyncHelper( request, handler, context ); } );
-}
-
-void ControlTowerClient::DisableControlAsyncHelper(const DisableControlRequest& request, const DisableControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisableControl(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisableControl(request), context);
+    } );
 }
 
 EnableControlOutcome ControlTowerClient::EnableControl(const EnableControlRequest& request) const
@@ -146,12 +144,10 @@ EnableControlOutcomeCallable ControlTowerClient::EnableControlCallable(const Ena
 
 void ControlTowerClient::EnableControlAsync(const EnableControlRequest& request, const EnableControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableControlAsyncHelper( request, handler, context ); } );
-}
-
-void ControlTowerClient::EnableControlAsyncHelper(const EnableControlRequest& request, const EnableControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, EnableControl(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, EnableControl(request), context);
+    } );
 }
 
 GetControlOperationOutcome ControlTowerClient::GetControlOperation(const GetControlOperationRequest& request) const
@@ -171,12 +167,10 @@ GetControlOperationOutcomeCallable ControlTowerClient::GetControlOperationCallab
 
 void ControlTowerClient::GetControlOperationAsync(const GetControlOperationRequest& request, const GetControlOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetControlOperationAsyncHelper( request, handler, context ); } );
-}
-
-void ControlTowerClient::GetControlOperationAsyncHelper(const GetControlOperationRequest& request, const GetControlOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetControlOperation(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetControlOperation(request), context);
+    } );
 }
 
 ListEnabledControlsOutcome ControlTowerClient::ListEnabledControls(const ListEnabledControlsRequest& request) const
@@ -196,11 +190,9 @@ ListEnabledControlsOutcomeCallable ControlTowerClient::ListEnabledControlsCallab
 
 void ControlTowerClient::ListEnabledControlsAsync(const ListEnabledControlsRequest& request, const ListEnabledControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEnabledControlsAsyncHelper( request, handler, context ); } );
-}
-
-void ControlTowerClient::ListEnabledControlsAsyncHelper(const ListEnabledControlsRequest& request, const ListEnabledControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListEnabledControls(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListEnabledControls(request), context);
+    } );
 }
 

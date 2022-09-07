@@ -193,12 +193,10 @@ ActivateTypeOutcomeCallable CloudFormationClient::ActivateTypeCallable(const Act
 
 void CloudFormationClient::ActivateTypeAsync(const ActivateTypeRequest& request, const ActivateTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ActivateTypeAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::ActivateTypeAsyncHelper(const ActivateTypeRequest& request, const ActivateTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ActivateType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ActivateType(request), context);
+    } );
 }
 
 BatchDescribeTypeConfigurationsOutcome CloudFormationClient::BatchDescribeTypeConfigurations(const BatchDescribeTypeConfigurationsRequest& request) const
@@ -217,12 +215,10 @@ BatchDescribeTypeConfigurationsOutcomeCallable CloudFormationClient::BatchDescri
 
 void CloudFormationClient::BatchDescribeTypeConfigurationsAsync(const BatchDescribeTypeConfigurationsRequest& request, const BatchDescribeTypeConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchDescribeTypeConfigurationsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::BatchDescribeTypeConfigurationsAsyncHelper(const BatchDescribeTypeConfigurationsRequest& request, const BatchDescribeTypeConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchDescribeTypeConfigurations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchDescribeTypeConfigurations(request), context);
+    } );
 }
 
 CancelUpdateStackOutcome CloudFormationClient::CancelUpdateStack(const CancelUpdateStackRequest& request) const
@@ -241,12 +237,10 @@ CancelUpdateStackOutcomeCallable CloudFormationClient::CancelUpdateStackCallable
 
 void CloudFormationClient::CancelUpdateStackAsync(const CancelUpdateStackRequest& request, const CancelUpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelUpdateStackAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::CancelUpdateStackAsyncHelper(const CancelUpdateStackRequest& request, const CancelUpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CancelUpdateStack(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CancelUpdateStack(request), context);
+    } );
 }
 
 ContinueUpdateRollbackOutcome CloudFormationClient::ContinueUpdateRollback(const ContinueUpdateRollbackRequest& request) const
@@ -265,12 +259,10 @@ ContinueUpdateRollbackOutcomeCallable CloudFormationClient::ContinueUpdateRollba
 
 void CloudFormationClient::ContinueUpdateRollbackAsync(const ContinueUpdateRollbackRequest& request, const ContinueUpdateRollbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ContinueUpdateRollbackAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::ContinueUpdateRollbackAsyncHelper(const ContinueUpdateRollbackRequest& request, const ContinueUpdateRollbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ContinueUpdateRollback(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ContinueUpdateRollback(request), context);
+    } );
 }
 
 CreateChangeSetOutcome CloudFormationClient::CreateChangeSet(const CreateChangeSetRequest& request) const
@@ -289,12 +281,10 @@ CreateChangeSetOutcomeCallable CloudFormationClient::CreateChangeSetCallable(con
 
 void CloudFormationClient::CreateChangeSetAsync(const CreateChangeSetRequest& request, const CreateChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateChangeSetAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::CreateChangeSetAsyncHelper(const CreateChangeSetRequest& request, const CreateChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateChangeSet(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateChangeSet(request), context);
+    } );
 }
 
 CreateStackOutcome CloudFormationClient::CreateStack(const CreateStackRequest& request) const
@@ -313,12 +303,10 @@ CreateStackOutcomeCallable CloudFormationClient::CreateStackCallable(const Creat
 
 void CloudFormationClient::CreateStackAsync(const CreateStackRequest& request, const CreateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateStackAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::CreateStackAsyncHelper(const CreateStackRequest& request, const CreateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateStack(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateStack(request), context);
+    } );
 }
 
 CreateStackInstancesOutcome CloudFormationClient::CreateStackInstances(const CreateStackInstancesRequest& request) const
@@ -337,12 +325,10 @@ CreateStackInstancesOutcomeCallable CloudFormationClient::CreateStackInstancesCa
 
 void CloudFormationClient::CreateStackInstancesAsync(const CreateStackInstancesRequest& request, const CreateStackInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateStackInstancesAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::CreateStackInstancesAsyncHelper(const CreateStackInstancesRequest& request, const CreateStackInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateStackInstances(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateStackInstances(request), context);
+    } );
 }
 
 CreateStackSetOutcome CloudFormationClient::CreateStackSet(const CreateStackSetRequest& request) const
@@ -361,12 +347,10 @@ CreateStackSetOutcomeCallable CloudFormationClient::CreateStackSetCallable(const
 
 void CloudFormationClient::CreateStackSetAsync(const CreateStackSetRequest& request, const CreateStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateStackSetAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::CreateStackSetAsyncHelper(const CreateStackSetRequest& request, const CreateStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateStackSet(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateStackSet(request), context);
+    } );
 }
 
 DeactivateTypeOutcome CloudFormationClient::DeactivateType(const DeactivateTypeRequest& request) const
@@ -385,12 +369,10 @@ DeactivateTypeOutcomeCallable CloudFormationClient::DeactivateTypeCallable(const
 
 void CloudFormationClient::DeactivateTypeAsync(const DeactivateTypeRequest& request, const DeactivateTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeactivateTypeAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::DeactivateTypeAsyncHelper(const DeactivateTypeRequest& request, const DeactivateTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeactivateType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeactivateType(request), context);
+    } );
 }
 
 DeleteChangeSetOutcome CloudFormationClient::DeleteChangeSet(const DeleteChangeSetRequest& request) const
@@ -409,12 +391,10 @@ DeleteChangeSetOutcomeCallable CloudFormationClient::DeleteChangeSetCallable(con
 
 void CloudFormationClient::DeleteChangeSetAsync(const DeleteChangeSetRequest& request, const DeleteChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteChangeSetAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::DeleteChangeSetAsyncHelper(const DeleteChangeSetRequest& request, const DeleteChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteChangeSet(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteChangeSet(request), context);
+    } );
 }
 
 DeleteStackOutcome CloudFormationClient::DeleteStack(const DeleteStackRequest& request) const
@@ -433,12 +413,10 @@ DeleteStackOutcomeCallable CloudFormationClient::DeleteStackCallable(const Delet
 
 void CloudFormationClient::DeleteStackAsync(const DeleteStackRequest& request, const DeleteStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteStackAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::DeleteStackAsyncHelper(const DeleteStackRequest& request, const DeleteStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteStack(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteStack(request), context);
+    } );
 }
 
 DeleteStackInstancesOutcome CloudFormationClient::DeleteStackInstances(const DeleteStackInstancesRequest& request) const
@@ -457,12 +435,10 @@ DeleteStackInstancesOutcomeCallable CloudFormationClient::DeleteStackInstancesCa
 
 void CloudFormationClient::DeleteStackInstancesAsync(const DeleteStackInstancesRequest& request, const DeleteStackInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteStackInstancesAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::DeleteStackInstancesAsyncHelper(const DeleteStackInstancesRequest& request, const DeleteStackInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteStackInstances(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteStackInstances(request), context);
+    } );
 }
 
 DeleteStackSetOutcome CloudFormationClient::DeleteStackSet(const DeleteStackSetRequest& request) const
@@ -481,12 +457,10 @@ DeleteStackSetOutcomeCallable CloudFormationClient::DeleteStackSetCallable(const
 
 void CloudFormationClient::DeleteStackSetAsync(const DeleteStackSetRequest& request, const DeleteStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteStackSetAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::DeleteStackSetAsyncHelper(const DeleteStackSetRequest& request, const DeleteStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteStackSet(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteStackSet(request), context);
+    } );
 }
 
 DeregisterTypeOutcome CloudFormationClient::DeregisterType(const DeregisterTypeRequest& request) const
@@ -505,12 +479,10 @@ DeregisterTypeOutcomeCallable CloudFormationClient::DeregisterTypeCallable(const
 
 void CloudFormationClient::DeregisterTypeAsync(const DeregisterTypeRequest& request, const DeregisterTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeregisterTypeAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::DeregisterTypeAsyncHelper(const DeregisterTypeRequest& request, const DeregisterTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeregisterType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeregisterType(request), context);
+    } );
 }
 
 DescribeAccountLimitsOutcome CloudFormationClient::DescribeAccountLimits(const DescribeAccountLimitsRequest& request) const
@@ -529,12 +501,10 @@ DescribeAccountLimitsOutcomeCallable CloudFormationClient::DescribeAccountLimits
 
 void CloudFormationClient::DescribeAccountLimitsAsync(const DescribeAccountLimitsRequest& request, const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAccountLimitsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::DescribeAccountLimitsAsyncHelper(const DescribeAccountLimitsRequest& request, const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAccountLimits(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAccountLimits(request), context);
+    } );
 }
 
 DescribeChangeSetOutcome CloudFormationClient::DescribeChangeSet(const DescribeChangeSetRequest& request) const
@@ -553,12 +523,10 @@ DescribeChangeSetOutcomeCallable CloudFormationClient::DescribeChangeSetCallable
 
 void CloudFormationClient::DescribeChangeSetAsync(const DescribeChangeSetRequest& request, const DescribeChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeChangeSetAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::DescribeChangeSetAsyncHelper(const DescribeChangeSetRequest& request, const DescribeChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeChangeSet(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeChangeSet(request), context);
+    } );
 }
 
 DescribeChangeSetHooksOutcome CloudFormationClient::DescribeChangeSetHooks(const DescribeChangeSetHooksRequest& request) const
@@ -577,12 +545,10 @@ DescribeChangeSetHooksOutcomeCallable CloudFormationClient::DescribeChangeSetHoo
 
 void CloudFormationClient::DescribeChangeSetHooksAsync(const DescribeChangeSetHooksRequest& request, const DescribeChangeSetHooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeChangeSetHooksAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::DescribeChangeSetHooksAsyncHelper(const DescribeChangeSetHooksRequest& request, const DescribeChangeSetHooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeChangeSetHooks(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeChangeSetHooks(request), context);
+    } );
 }
 
 DescribePublisherOutcome CloudFormationClient::DescribePublisher(const DescribePublisherRequest& request) const
@@ -601,12 +567,10 @@ DescribePublisherOutcomeCallable CloudFormationClient::DescribePublisherCallable
 
 void CloudFormationClient::DescribePublisherAsync(const DescribePublisherRequest& request, const DescribePublisherResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePublisherAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::DescribePublisherAsyncHelper(const DescribePublisherRequest& request, const DescribePublisherResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribePublisher(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribePublisher(request), context);
+    } );
 }
 
 DescribeStackDriftDetectionStatusOutcome CloudFormationClient::DescribeStackDriftDetectionStatus(const DescribeStackDriftDetectionStatusRequest& request) const
@@ -625,12 +589,10 @@ DescribeStackDriftDetectionStatusOutcomeCallable CloudFormationClient::DescribeS
 
 void CloudFormationClient::DescribeStackDriftDetectionStatusAsync(const DescribeStackDriftDetectionStatusRequest& request, const DescribeStackDriftDetectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeStackDriftDetectionStatusAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::DescribeStackDriftDetectionStatusAsyncHelper(const DescribeStackDriftDetectionStatusRequest& request, const DescribeStackDriftDetectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeStackDriftDetectionStatus(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeStackDriftDetectionStatus(request), context);
+    } );
 }
 
 DescribeStackEventsOutcome CloudFormationClient::DescribeStackEvents(const DescribeStackEventsRequest& request) const
@@ -649,12 +611,10 @@ DescribeStackEventsOutcomeCallable CloudFormationClient::DescribeStackEventsCall
 
 void CloudFormationClient::DescribeStackEventsAsync(const DescribeStackEventsRequest& request, const DescribeStackEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeStackEventsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::DescribeStackEventsAsyncHelper(const DescribeStackEventsRequest& request, const DescribeStackEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeStackEvents(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeStackEvents(request), context);
+    } );
 }
 
 DescribeStackInstanceOutcome CloudFormationClient::DescribeStackInstance(const DescribeStackInstanceRequest& request) const
@@ -673,12 +633,10 @@ DescribeStackInstanceOutcomeCallable CloudFormationClient::DescribeStackInstance
 
 void CloudFormationClient::DescribeStackInstanceAsync(const DescribeStackInstanceRequest& request, const DescribeStackInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeStackInstanceAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::DescribeStackInstanceAsyncHelper(const DescribeStackInstanceRequest& request, const DescribeStackInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeStackInstance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeStackInstance(request), context);
+    } );
 }
 
 DescribeStackResourceOutcome CloudFormationClient::DescribeStackResource(const DescribeStackResourceRequest& request) const
@@ -697,12 +655,10 @@ DescribeStackResourceOutcomeCallable CloudFormationClient::DescribeStackResource
 
 void CloudFormationClient::DescribeStackResourceAsync(const DescribeStackResourceRequest& request, const DescribeStackResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeStackResourceAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::DescribeStackResourceAsyncHelper(const DescribeStackResourceRequest& request, const DescribeStackResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeStackResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeStackResource(request), context);
+    } );
 }
 
 DescribeStackResourceDriftsOutcome CloudFormationClient::DescribeStackResourceDrifts(const DescribeStackResourceDriftsRequest& request) const
@@ -721,12 +677,10 @@ DescribeStackResourceDriftsOutcomeCallable CloudFormationClient::DescribeStackRe
 
 void CloudFormationClient::DescribeStackResourceDriftsAsync(const DescribeStackResourceDriftsRequest& request, const DescribeStackResourceDriftsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeStackResourceDriftsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::DescribeStackResourceDriftsAsyncHelper(const DescribeStackResourceDriftsRequest& request, const DescribeStackResourceDriftsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeStackResourceDrifts(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeStackResourceDrifts(request), context);
+    } );
 }
 
 DescribeStackResourcesOutcome CloudFormationClient::DescribeStackResources(const DescribeStackResourcesRequest& request) const
@@ -745,12 +699,10 @@ DescribeStackResourcesOutcomeCallable CloudFormationClient::DescribeStackResourc
 
 void CloudFormationClient::DescribeStackResourcesAsync(const DescribeStackResourcesRequest& request, const DescribeStackResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeStackResourcesAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::DescribeStackResourcesAsyncHelper(const DescribeStackResourcesRequest& request, const DescribeStackResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeStackResources(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeStackResources(request), context);
+    } );
 }
 
 DescribeStackSetOutcome CloudFormationClient::DescribeStackSet(const DescribeStackSetRequest& request) const
@@ -769,12 +721,10 @@ DescribeStackSetOutcomeCallable CloudFormationClient::DescribeStackSetCallable(c
 
 void CloudFormationClient::DescribeStackSetAsync(const DescribeStackSetRequest& request, const DescribeStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeStackSetAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::DescribeStackSetAsyncHelper(const DescribeStackSetRequest& request, const DescribeStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeStackSet(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeStackSet(request), context);
+    } );
 }
 
 DescribeStackSetOperationOutcome CloudFormationClient::DescribeStackSetOperation(const DescribeStackSetOperationRequest& request) const
@@ -793,12 +743,10 @@ DescribeStackSetOperationOutcomeCallable CloudFormationClient::DescribeStackSetO
 
 void CloudFormationClient::DescribeStackSetOperationAsync(const DescribeStackSetOperationRequest& request, const DescribeStackSetOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeStackSetOperationAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::DescribeStackSetOperationAsyncHelper(const DescribeStackSetOperationRequest& request, const DescribeStackSetOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeStackSetOperation(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeStackSetOperation(request), context);
+    } );
 }
 
 DescribeStacksOutcome CloudFormationClient::DescribeStacks(const DescribeStacksRequest& request) const
@@ -817,12 +765,10 @@ DescribeStacksOutcomeCallable CloudFormationClient::DescribeStacksCallable(const
 
 void CloudFormationClient::DescribeStacksAsync(const DescribeStacksRequest& request, const DescribeStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeStacksAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::DescribeStacksAsyncHelper(const DescribeStacksRequest& request, const DescribeStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeStacks(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeStacks(request), context);
+    } );
 }
 
 DescribeTypeOutcome CloudFormationClient::DescribeType(const DescribeTypeRequest& request) const
@@ -841,12 +787,10 @@ DescribeTypeOutcomeCallable CloudFormationClient::DescribeTypeCallable(const Des
 
 void CloudFormationClient::DescribeTypeAsync(const DescribeTypeRequest& request, const DescribeTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTypeAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::DescribeTypeAsyncHelper(const DescribeTypeRequest& request, const DescribeTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeType(request), context);
+    } );
 }
 
 DescribeTypeRegistrationOutcome CloudFormationClient::DescribeTypeRegistration(const DescribeTypeRegistrationRequest& request) const
@@ -865,12 +809,10 @@ DescribeTypeRegistrationOutcomeCallable CloudFormationClient::DescribeTypeRegist
 
 void CloudFormationClient::DescribeTypeRegistrationAsync(const DescribeTypeRegistrationRequest& request, const DescribeTypeRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTypeRegistrationAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::DescribeTypeRegistrationAsyncHelper(const DescribeTypeRegistrationRequest& request, const DescribeTypeRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeTypeRegistration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeTypeRegistration(request), context);
+    } );
 }
 
 DetectStackDriftOutcome CloudFormationClient::DetectStackDrift(const DetectStackDriftRequest& request) const
@@ -889,12 +831,10 @@ DetectStackDriftOutcomeCallable CloudFormationClient::DetectStackDriftCallable(c
 
 void CloudFormationClient::DetectStackDriftAsync(const DetectStackDriftRequest& request, const DetectStackDriftResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetectStackDriftAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::DetectStackDriftAsyncHelper(const DetectStackDriftRequest& request, const DetectStackDriftResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DetectStackDrift(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DetectStackDrift(request), context);
+    } );
 }
 
 DetectStackResourceDriftOutcome CloudFormationClient::DetectStackResourceDrift(const DetectStackResourceDriftRequest& request) const
@@ -913,12 +853,10 @@ DetectStackResourceDriftOutcomeCallable CloudFormationClient::DetectStackResourc
 
 void CloudFormationClient::DetectStackResourceDriftAsync(const DetectStackResourceDriftRequest& request, const DetectStackResourceDriftResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetectStackResourceDriftAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::DetectStackResourceDriftAsyncHelper(const DetectStackResourceDriftRequest& request, const DetectStackResourceDriftResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DetectStackResourceDrift(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DetectStackResourceDrift(request), context);
+    } );
 }
 
 DetectStackSetDriftOutcome CloudFormationClient::DetectStackSetDrift(const DetectStackSetDriftRequest& request) const
@@ -937,12 +875,10 @@ DetectStackSetDriftOutcomeCallable CloudFormationClient::DetectStackSetDriftCall
 
 void CloudFormationClient::DetectStackSetDriftAsync(const DetectStackSetDriftRequest& request, const DetectStackSetDriftResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetectStackSetDriftAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::DetectStackSetDriftAsyncHelper(const DetectStackSetDriftRequest& request, const DetectStackSetDriftResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DetectStackSetDrift(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DetectStackSetDrift(request), context);
+    } );
 }
 
 EstimateTemplateCostOutcome CloudFormationClient::EstimateTemplateCost(const EstimateTemplateCostRequest& request) const
@@ -961,12 +897,10 @@ EstimateTemplateCostOutcomeCallable CloudFormationClient::EstimateTemplateCostCa
 
 void CloudFormationClient::EstimateTemplateCostAsync(const EstimateTemplateCostRequest& request, const EstimateTemplateCostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EstimateTemplateCostAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::EstimateTemplateCostAsyncHelper(const EstimateTemplateCostRequest& request, const EstimateTemplateCostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, EstimateTemplateCost(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, EstimateTemplateCost(request), context);
+    } );
 }
 
 ExecuteChangeSetOutcome CloudFormationClient::ExecuteChangeSet(const ExecuteChangeSetRequest& request) const
@@ -985,12 +919,10 @@ ExecuteChangeSetOutcomeCallable CloudFormationClient::ExecuteChangeSetCallable(c
 
 void CloudFormationClient::ExecuteChangeSetAsync(const ExecuteChangeSetRequest& request, const ExecuteChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExecuteChangeSetAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::ExecuteChangeSetAsyncHelper(const ExecuteChangeSetRequest& request, const ExecuteChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ExecuteChangeSet(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ExecuteChangeSet(request), context);
+    } );
 }
 
 GetStackPolicyOutcome CloudFormationClient::GetStackPolicy(const GetStackPolicyRequest& request) const
@@ -1009,12 +941,10 @@ GetStackPolicyOutcomeCallable CloudFormationClient::GetStackPolicyCallable(const
 
 void CloudFormationClient::GetStackPolicyAsync(const GetStackPolicyRequest& request, const GetStackPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetStackPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::GetStackPolicyAsyncHelper(const GetStackPolicyRequest& request, const GetStackPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetStackPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetStackPolicy(request), context);
+    } );
 }
 
 GetTemplateOutcome CloudFormationClient::GetTemplate(const GetTemplateRequest& request) const
@@ -1033,12 +963,10 @@ GetTemplateOutcomeCallable CloudFormationClient::GetTemplateCallable(const GetTe
 
 void CloudFormationClient::GetTemplateAsync(const GetTemplateRequest& request, const GetTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTemplateAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::GetTemplateAsyncHelper(const GetTemplateRequest& request, const GetTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetTemplate(request), context);
+    } );
 }
 
 GetTemplateSummaryOutcome CloudFormationClient::GetTemplateSummary(const GetTemplateSummaryRequest& request) const
@@ -1057,12 +985,10 @@ GetTemplateSummaryOutcomeCallable CloudFormationClient::GetTemplateSummaryCallab
 
 void CloudFormationClient::GetTemplateSummaryAsync(const GetTemplateSummaryRequest& request, const GetTemplateSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTemplateSummaryAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::GetTemplateSummaryAsyncHelper(const GetTemplateSummaryRequest& request, const GetTemplateSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetTemplateSummary(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetTemplateSummary(request), context);
+    } );
 }
 
 ImportStacksToStackSetOutcome CloudFormationClient::ImportStacksToStackSet(const ImportStacksToStackSetRequest& request) const
@@ -1081,12 +1007,10 @@ ImportStacksToStackSetOutcomeCallable CloudFormationClient::ImportStacksToStackS
 
 void CloudFormationClient::ImportStacksToStackSetAsync(const ImportStacksToStackSetRequest& request, const ImportStacksToStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportStacksToStackSetAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::ImportStacksToStackSetAsyncHelper(const ImportStacksToStackSetRequest& request, const ImportStacksToStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ImportStacksToStackSet(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ImportStacksToStackSet(request), context);
+    } );
 }
 
 ListChangeSetsOutcome CloudFormationClient::ListChangeSets(const ListChangeSetsRequest& request) const
@@ -1105,12 +1029,10 @@ ListChangeSetsOutcomeCallable CloudFormationClient::ListChangeSetsCallable(const
 
 void CloudFormationClient::ListChangeSetsAsync(const ListChangeSetsRequest& request, const ListChangeSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListChangeSetsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::ListChangeSetsAsyncHelper(const ListChangeSetsRequest& request, const ListChangeSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListChangeSets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListChangeSets(request), context);
+    } );
 }
 
 ListExportsOutcome CloudFormationClient::ListExports(const ListExportsRequest& request) const
@@ -1129,12 +1051,10 @@ ListExportsOutcomeCallable CloudFormationClient::ListExportsCallable(const ListE
 
 void CloudFormationClient::ListExportsAsync(const ListExportsRequest& request, const ListExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListExportsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::ListExportsAsyncHelper(const ListExportsRequest& request, const ListExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListExports(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListExports(request), context);
+    } );
 }
 
 ListImportsOutcome CloudFormationClient::ListImports(const ListImportsRequest& request) const
@@ -1153,12 +1073,10 @@ ListImportsOutcomeCallable CloudFormationClient::ListImportsCallable(const ListI
 
 void CloudFormationClient::ListImportsAsync(const ListImportsRequest& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListImportsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::ListImportsAsyncHelper(const ListImportsRequest& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListImports(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListImports(request), context);
+    } );
 }
 
 ListStackInstancesOutcome CloudFormationClient::ListStackInstances(const ListStackInstancesRequest& request) const
@@ -1177,12 +1095,10 @@ ListStackInstancesOutcomeCallable CloudFormationClient::ListStackInstancesCallab
 
 void CloudFormationClient::ListStackInstancesAsync(const ListStackInstancesRequest& request, const ListStackInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListStackInstancesAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::ListStackInstancesAsyncHelper(const ListStackInstancesRequest& request, const ListStackInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListStackInstances(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListStackInstances(request), context);
+    } );
 }
 
 ListStackResourcesOutcome CloudFormationClient::ListStackResources(const ListStackResourcesRequest& request) const
@@ -1201,12 +1117,10 @@ ListStackResourcesOutcomeCallable CloudFormationClient::ListStackResourcesCallab
 
 void CloudFormationClient::ListStackResourcesAsync(const ListStackResourcesRequest& request, const ListStackResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListStackResourcesAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::ListStackResourcesAsyncHelper(const ListStackResourcesRequest& request, const ListStackResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListStackResources(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListStackResources(request), context);
+    } );
 }
 
 ListStackSetOperationResultsOutcome CloudFormationClient::ListStackSetOperationResults(const ListStackSetOperationResultsRequest& request) const
@@ -1225,12 +1139,10 @@ ListStackSetOperationResultsOutcomeCallable CloudFormationClient::ListStackSetOp
 
 void CloudFormationClient::ListStackSetOperationResultsAsync(const ListStackSetOperationResultsRequest& request, const ListStackSetOperationResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListStackSetOperationResultsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::ListStackSetOperationResultsAsyncHelper(const ListStackSetOperationResultsRequest& request, const ListStackSetOperationResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListStackSetOperationResults(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListStackSetOperationResults(request), context);
+    } );
 }
 
 ListStackSetOperationsOutcome CloudFormationClient::ListStackSetOperations(const ListStackSetOperationsRequest& request) const
@@ -1249,12 +1161,10 @@ ListStackSetOperationsOutcomeCallable CloudFormationClient::ListStackSetOperatio
 
 void CloudFormationClient::ListStackSetOperationsAsync(const ListStackSetOperationsRequest& request, const ListStackSetOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListStackSetOperationsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::ListStackSetOperationsAsyncHelper(const ListStackSetOperationsRequest& request, const ListStackSetOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListStackSetOperations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListStackSetOperations(request), context);
+    } );
 }
 
 ListStackSetsOutcome CloudFormationClient::ListStackSets(const ListStackSetsRequest& request) const
@@ -1273,12 +1183,10 @@ ListStackSetsOutcomeCallable CloudFormationClient::ListStackSetsCallable(const L
 
 void CloudFormationClient::ListStackSetsAsync(const ListStackSetsRequest& request, const ListStackSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListStackSetsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::ListStackSetsAsyncHelper(const ListStackSetsRequest& request, const ListStackSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListStackSets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListStackSets(request), context);
+    } );
 }
 
 ListStacksOutcome CloudFormationClient::ListStacks(const ListStacksRequest& request) const
@@ -1297,12 +1205,10 @@ ListStacksOutcomeCallable CloudFormationClient::ListStacksCallable(const ListSta
 
 void CloudFormationClient::ListStacksAsync(const ListStacksRequest& request, const ListStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListStacksAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::ListStacksAsyncHelper(const ListStacksRequest& request, const ListStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListStacks(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListStacks(request), context);
+    } );
 }
 
 ListTypeRegistrationsOutcome CloudFormationClient::ListTypeRegistrations(const ListTypeRegistrationsRequest& request) const
@@ -1321,12 +1227,10 @@ ListTypeRegistrationsOutcomeCallable CloudFormationClient::ListTypeRegistrations
 
 void CloudFormationClient::ListTypeRegistrationsAsync(const ListTypeRegistrationsRequest& request, const ListTypeRegistrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTypeRegistrationsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::ListTypeRegistrationsAsyncHelper(const ListTypeRegistrationsRequest& request, const ListTypeRegistrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTypeRegistrations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTypeRegistrations(request), context);
+    } );
 }
 
 ListTypeVersionsOutcome CloudFormationClient::ListTypeVersions(const ListTypeVersionsRequest& request) const
@@ -1345,12 +1249,10 @@ ListTypeVersionsOutcomeCallable CloudFormationClient::ListTypeVersionsCallable(c
 
 void CloudFormationClient::ListTypeVersionsAsync(const ListTypeVersionsRequest& request, const ListTypeVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTypeVersionsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::ListTypeVersionsAsyncHelper(const ListTypeVersionsRequest& request, const ListTypeVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTypeVersions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTypeVersions(request), context);
+    } );
 }
 
 ListTypesOutcome CloudFormationClient::ListTypes(const ListTypesRequest& request) const
@@ -1369,12 +1271,10 @@ ListTypesOutcomeCallable CloudFormationClient::ListTypesCallable(const ListTypes
 
 void CloudFormationClient::ListTypesAsync(const ListTypesRequest& request, const ListTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTypesAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::ListTypesAsyncHelper(const ListTypesRequest& request, const ListTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTypes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTypes(request), context);
+    } );
 }
 
 PublishTypeOutcome CloudFormationClient::PublishType(const PublishTypeRequest& request) const
@@ -1393,12 +1293,10 @@ PublishTypeOutcomeCallable CloudFormationClient::PublishTypeCallable(const Publi
 
 void CloudFormationClient::PublishTypeAsync(const PublishTypeRequest& request, const PublishTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PublishTypeAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::PublishTypeAsyncHelper(const PublishTypeRequest& request, const PublishTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PublishType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PublishType(request), context);
+    } );
 }
 
 RecordHandlerProgressOutcome CloudFormationClient::RecordHandlerProgress(const RecordHandlerProgressRequest& request) const
@@ -1417,12 +1315,10 @@ RecordHandlerProgressOutcomeCallable CloudFormationClient::RecordHandlerProgress
 
 void CloudFormationClient::RecordHandlerProgressAsync(const RecordHandlerProgressRequest& request, const RecordHandlerProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RecordHandlerProgressAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::RecordHandlerProgressAsyncHelper(const RecordHandlerProgressRequest& request, const RecordHandlerProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RecordHandlerProgress(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RecordHandlerProgress(request), context);
+    } );
 }
 
 RegisterPublisherOutcome CloudFormationClient::RegisterPublisher(const RegisterPublisherRequest& request) const
@@ -1441,12 +1337,10 @@ RegisterPublisherOutcomeCallable CloudFormationClient::RegisterPublisherCallable
 
 void CloudFormationClient::RegisterPublisherAsync(const RegisterPublisherRequest& request, const RegisterPublisherResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterPublisherAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::RegisterPublisherAsyncHelper(const RegisterPublisherRequest& request, const RegisterPublisherResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RegisterPublisher(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RegisterPublisher(request), context);
+    } );
 }
 
 RegisterTypeOutcome CloudFormationClient::RegisterType(const RegisterTypeRequest& request) const
@@ -1465,12 +1359,10 @@ RegisterTypeOutcomeCallable CloudFormationClient::RegisterTypeCallable(const Reg
 
 void CloudFormationClient::RegisterTypeAsync(const RegisterTypeRequest& request, const RegisterTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterTypeAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::RegisterTypeAsyncHelper(const RegisterTypeRequest& request, const RegisterTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RegisterType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RegisterType(request), context);
+    } );
 }
 
 RollbackStackOutcome CloudFormationClient::RollbackStack(const RollbackStackRequest& request) const
@@ -1489,12 +1381,10 @@ RollbackStackOutcomeCallable CloudFormationClient::RollbackStackCallable(const R
 
 void CloudFormationClient::RollbackStackAsync(const RollbackStackRequest& request, const RollbackStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RollbackStackAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::RollbackStackAsyncHelper(const RollbackStackRequest& request, const RollbackStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RollbackStack(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RollbackStack(request), context);
+    } );
 }
 
 SetStackPolicyOutcome CloudFormationClient::SetStackPolicy(const SetStackPolicyRequest& request) const
@@ -1513,12 +1403,10 @@ SetStackPolicyOutcomeCallable CloudFormationClient::SetStackPolicyCallable(const
 
 void CloudFormationClient::SetStackPolicyAsync(const SetStackPolicyRequest& request, const SetStackPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetStackPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::SetStackPolicyAsyncHelper(const SetStackPolicyRequest& request, const SetStackPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SetStackPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SetStackPolicy(request), context);
+    } );
 }
 
 SetTypeConfigurationOutcome CloudFormationClient::SetTypeConfiguration(const SetTypeConfigurationRequest& request) const
@@ -1537,12 +1425,10 @@ SetTypeConfigurationOutcomeCallable CloudFormationClient::SetTypeConfigurationCa
 
 void CloudFormationClient::SetTypeConfigurationAsync(const SetTypeConfigurationRequest& request, const SetTypeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetTypeConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::SetTypeConfigurationAsyncHelper(const SetTypeConfigurationRequest& request, const SetTypeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SetTypeConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SetTypeConfiguration(request), context);
+    } );
 }
 
 SetTypeDefaultVersionOutcome CloudFormationClient::SetTypeDefaultVersion(const SetTypeDefaultVersionRequest& request) const
@@ -1561,12 +1447,10 @@ SetTypeDefaultVersionOutcomeCallable CloudFormationClient::SetTypeDefaultVersion
 
 void CloudFormationClient::SetTypeDefaultVersionAsync(const SetTypeDefaultVersionRequest& request, const SetTypeDefaultVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetTypeDefaultVersionAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::SetTypeDefaultVersionAsyncHelper(const SetTypeDefaultVersionRequest& request, const SetTypeDefaultVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SetTypeDefaultVersion(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SetTypeDefaultVersion(request), context);
+    } );
 }
 
 SignalResourceOutcome CloudFormationClient::SignalResource(const SignalResourceRequest& request) const
@@ -1585,12 +1469,10 @@ SignalResourceOutcomeCallable CloudFormationClient::SignalResourceCallable(const
 
 void CloudFormationClient::SignalResourceAsync(const SignalResourceRequest& request, const SignalResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SignalResourceAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::SignalResourceAsyncHelper(const SignalResourceRequest& request, const SignalResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SignalResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SignalResource(request), context);
+    } );
 }
 
 StopStackSetOperationOutcome CloudFormationClient::StopStackSetOperation(const StopStackSetOperationRequest& request) const
@@ -1609,12 +1491,10 @@ StopStackSetOperationOutcomeCallable CloudFormationClient::StopStackSetOperation
 
 void CloudFormationClient::StopStackSetOperationAsync(const StopStackSetOperationRequest& request, const StopStackSetOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopStackSetOperationAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::StopStackSetOperationAsyncHelper(const StopStackSetOperationRequest& request, const StopStackSetOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StopStackSetOperation(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopStackSetOperation(request), context);
+    } );
 }
 
 TestTypeOutcome CloudFormationClient::TestType(const TestTypeRequest& request) const
@@ -1633,12 +1513,10 @@ TestTypeOutcomeCallable CloudFormationClient::TestTypeCallable(const TestTypeReq
 
 void CloudFormationClient::TestTypeAsync(const TestTypeRequest& request, const TestTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TestTypeAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::TestTypeAsyncHelper(const TestTypeRequest& request, const TestTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TestType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TestType(request), context);
+    } );
 }
 
 UpdateStackOutcome CloudFormationClient::UpdateStack(const UpdateStackRequest& request) const
@@ -1657,12 +1535,10 @@ UpdateStackOutcomeCallable CloudFormationClient::UpdateStackCallable(const Updat
 
 void CloudFormationClient::UpdateStackAsync(const UpdateStackRequest& request, const UpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateStackAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::UpdateStackAsyncHelper(const UpdateStackRequest& request, const UpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateStack(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateStack(request), context);
+    } );
 }
 
 UpdateStackInstancesOutcome CloudFormationClient::UpdateStackInstances(const UpdateStackInstancesRequest& request) const
@@ -1681,12 +1557,10 @@ UpdateStackInstancesOutcomeCallable CloudFormationClient::UpdateStackInstancesCa
 
 void CloudFormationClient::UpdateStackInstancesAsync(const UpdateStackInstancesRequest& request, const UpdateStackInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateStackInstancesAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::UpdateStackInstancesAsyncHelper(const UpdateStackInstancesRequest& request, const UpdateStackInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateStackInstances(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateStackInstances(request), context);
+    } );
 }
 
 UpdateStackSetOutcome CloudFormationClient::UpdateStackSet(const UpdateStackSetRequest& request) const
@@ -1705,12 +1579,10 @@ UpdateStackSetOutcomeCallable CloudFormationClient::UpdateStackSetCallable(const
 
 void CloudFormationClient::UpdateStackSetAsync(const UpdateStackSetRequest& request, const UpdateStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateStackSetAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::UpdateStackSetAsyncHelper(const UpdateStackSetRequest& request, const UpdateStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateStackSet(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateStackSet(request), context);
+    } );
 }
 
 UpdateTerminationProtectionOutcome CloudFormationClient::UpdateTerminationProtection(const UpdateTerminationProtectionRequest& request) const
@@ -1729,12 +1601,10 @@ UpdateTerminationProtectionOutcomeCallable CloudFormationClient::UpdateTerminati
 
 void CloudFormationClient::UpdateTerminationProtectionAsync(const UpdateTerminationProtectionRequest& request, const UpdateTerminationProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTerminationProtectionAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::UpdateTerminationProtectionAsyncHelper(const UpdateTerminationProtectionRequest& request, const UpdateTerminationProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateTerminationProtection(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateTerminationProtection(request), context);
+    } );
 }
 
 ValidateTemplateOutcome CloudFormationClient::ValidateTemplate(const ValidateTemplateRequest& request) const
@@ -1753,11 +1623,9 @@ ValidateTemplateOutcomeCallable CloudFormationClient::ValidateTemplateCallable(c
 
 void CloudFormationClient::ValidateTemplateAsync(const ValidateTemplateRequest& request, const ValidateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ValidateTemplateAsyncHelper( request, handler, context ); } );
-}
-
-void CloudFormationClient::ValidateTemplateAsyncHelper(const ValidateTemplateRequest& request, const ValidateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ValidateTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ValidateTemplate(request), context);
+    } );
 }
 

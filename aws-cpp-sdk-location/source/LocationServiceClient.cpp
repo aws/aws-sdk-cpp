@@ -194,12 +194,10 @@ AssociateTrackerConsumerOutcomeCallable LocationServiceClient::AssociateTrackerC
 
 void LocationServiceClient::AssociateTrackerConsumerAsync(const AssociateTrackerConsumerRequest& request, const AssociateTrackerConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateTrackerConsumerAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::AssociateTrackerConsumerAsyncHelper(const AssociateTrackerConsumerRequest& request, const AssociateTrackerConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateTrackerConsumer(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateTrackerConsumer(request), context);
+    } );
 }
 
 BatchDeleteDevicePositionHistoryOutcome LocationServiceClient::BatchDeleteDevicePositionHistory(const BatchDeleteDevicePositionHistoryRequest& request) const
@@ -235,12 +233,10 @@ BatchDeleteDevicePositionHistoryOutcomeCallable LocationServiceClient::BatchDele
 
 void LocationServiceClient::BatchDeleteDevicePositionHistoryAsync(const BatchDeleteDevicePositionHistoryRequest& request, const BatchDeleteDevicePositionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchDeleteDevicePositionHistoryAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::BatchDeleteDevicePositionHistoryAsyncHelper(const BatchDeleteDevicePositionHistoryRequest& request, const BatchDeleteDevicePositionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchDeleteDevicePositionHistory(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchDeleteDevicePositionHistory(request), context);
+    } );
 }
 
 BatchDeleteGeofenceOutcome LocationServiceClient::BatchDeleteGeofence(const BatchDeleteGeofenceRequest& request) const
@@ -276,12 +272,10 @@ BatchDeleteGeofenceOutcomeCallable LocationServiceClient::BatchDeleteGeofenceCal
 
 void LocationServiceClient::BatchDeleteGeofenceAsync(const BatchDeleteGeofenceRequest& request, const BatchDeleteGeofenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchDeleteGeofenceAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::BatchDeleteGeofenceAsyncHelper(const BatchDeleteGeofenceRequest& request, const BatchDeleteGeofenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchDeleteGeofence(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchDeleteGeofence(request), context);
+    } );
 }
 
 BatchEvaluateGeofencesOutcome LocationServiceClient::BatchEvaluateGeofences(const BatchEvaluateGeofencesRequest& request) const
@@ -317,12 +311,10 @@ BatchEvaluateGeofencesOutcomeCallable LocationServiceClient::BatchEvaluateGeofen
 
 void LocationServiceClient::BatchEvaluateGeofencesAsync(const BatchEvaluateGeofencesRequest& request, const BatchEvaluateGeofencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchEvaluateGeofencesAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::BatchEvaluateGeofencesAsyncHelper(const BatchEvaluateGeofencesRequest& request, const BatchEvaluateGeofencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchEvaluateGeofences(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchEvaluateGeofences(request), context);
+    } );
 }
 
 BatchGetDevicePositionOutcome LocationServiceClient::BatchGetDevicePosition(const BatchGetDevicePositionRequest& request) const
@@ -358,12 +350,10 @@ BatchGetDevicePositionOutcomeCallable LocationServiceClient::BatchGetDevicePosit
 
 void LocationServiceClient::BatchGetDevicePositionAsync(const BatchGetDevicePositionRequest& request, const BatchGetDevicePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetDevicePositionAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::BatchGetDevicePositionAsyncHelper(const BatchGetDevicePositionRequest& request, const BatchGetDevicePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchGetDevicePosition(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchGetDevicePosition(request), context);
+    } );
 }
 
 BatchPutGeofenceOutcome LocationServiceClient::BatchPutGeofence(const BatchPutGeofenceRequest& request) const
@@ -399,12 +389,10 @@ BatchPutGeofenceOutcomeCallable LocationServiceClient::BatchPutGeofenceCallable(
 
 void LocationServiceClient::BatchPutGeofenceAsync(const BatchPutGeofenceRequest& request, const BatchPutGeofenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchPutGeofenceAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::BatchPutGeofenceAsyncHelper(const BatchPutGeofenceRequest& request, const BatchPutGeofenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchPutGeofence(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchPutGeofence(request), context);
+    } );
 }
 
 BatchUpdateDevicePositionOutcome LocationServiceClient::BatchUpdateDevicePosition(const BatchUpdateDevicePositionRequest& request) const
@@ -440,12 +428,10 @@ BatchUpdateDevicePositionOutcomeCallable LocationServiceClient::BatchUpdateDevic
 
 void LocationServiceClient::BatchUpdateDevicePositionAsync(const BatchUpdateDevicePositionRequest& request, const BatchUpdateDevicePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchUpdateDevicePositionAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::BatchUpdateDevicePositionAsyncHelper(const BatchUpdateDevicePositionRequest& request, const BatchUpdateDevicePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchUpdateDevicePosition(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchUpdateDevicePosition(request), context);
+    } );
 }
 
 CalculateRouteOutcome LocationServiceClient::CalculateRoute(const CalculateRouteRequest& request) const
@@ -481,12 +467,10 @@ CalculateRouteOutcomeCallable LocationServiceClient::CalculateRouteCallable(cons
 
 void LocationServiceClient::CalculateRouteAsync(const CalculateRouteRequest& request, const CalculateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CalculateRouteAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::CalculateRouteAsyncHelper(const CalculateRouteRequest& request, const CalculateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CalculateRoute(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CalculateRoute(request), context);
+    } );
 }
 
 CalculateRouteMatrixOutcome LocationServiceClient::CalculateRouteMatrix(const CalculateRouteMatrixRequest& request) const
@@ -522,12 +506,10 @@ CalculateRouteMatrixOutcomeCallable LocationServiceClient::CalculateRouteMatrixC
 
 void LocationServiceClient::CalculateRouteMatrixAsync(const CalculateRouteMatrixRequest& request, const CalculateRouteMatrixResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CalculateRouteMatrixAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::CalculateRouteMatrixAsyncHelper(const CalculateRouteMatrixRequest& request, const CalculateRouteMatrixResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CalculateRouteMatrix(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CalculateRouteMatrix(request), context);
+    } );
 }
 
 CreateGeofenceCollectionOutcome LocationServiceClient::CreateGeofenceCollection(const CreateGeofenceCollectionRequest& request) const
@@ -556,12 +538,10 @@ CreateGeofenceCollectionOutcomeCallable LocationServiceClient::CreateGeofenceCol
 
 void LocationServiceClient::CreateGeofenceCollectionAsync(const CreateGeofenceCollectionRequest& request, const CreateGeofenceCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateGeofenceCollectionAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::CreateGeofenceCollectionAsyncHelper(const CreateGeofenceCollectionRequest& request, const CreateGeofenceCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateGeofenceCollection(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateGeofenceCollection(request), context);
+    } );
 }
 
 CreateMapOutcome LocationServiceClient::CreateMap(const CreateMapRequest& request) const
@@ -590,12 +570,10 @@ CreateMapOutcomeCallable LocationServiceClient::CreateMapCallable(const CreateMa
 
 void LocationServiceClient::CreateMapAsync(const CreateMapRequest& request, const CreateMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateMapAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::CreateMapAsyncHelper(const CreateMapRequest& request, const CreateMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateMap(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateMap(request), context);
+    } );
 }
 
 CreatePlaceIndexOutcome LocationServiceClient::CreatePlaceIndex(const CreatePlaceIndexRequest& request) const
@@ -624,12 +602,10 @@ CreatePlaceIndexOutcomeCallable LocationServiceClient::CreatePlaceIndexCallable(
 
 void LocationServiceClient::CreatePlaceIndexAsync(const CreatePlaceIndexRequest& request, const CreatePlaceIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePlaceIndexAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::CreatePlaceIndexAsyncHelper(const CreatePlaceIndexRequest& request, const CreatePlaceIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreatePlaceIndex(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreatePlaceIndex(request), context);
+    } );
 }
 
 CreateRouteCalculatorOutcome LocationServiceClient::CreateRouteCalculator(const CreateRouteCalculatorRequest& request) const
@@ -658,12 +634,10 @@ CreateRouteCalculatorOutcomeCallable LocationServiceClient::CreateRouteCalculato
 
 void LocationServiceClient::CreateRouteCalculatorAsync(const CreateRouteCalculatorRequest& request, const CreateRouteCalculatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRouteCalculatorAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::CreateRouteCalculatorAsyncHelper(const CreateRouteCalculatorRequest& request, const CreateRouteCalculatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateRouteCalculator(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateRouteCalculator(request), context);
+    } );
 }
 
 CreateTrackerOutcome LocationServiceClient::CreateTracker(const CreateTrackerRequest& request) const
@@ -692,12 +666,10 @@ CreateTrackerOutcomeCallable LocationServiceClient::CreateTrackerCallable(const 
 
 void LocationServiceClient::CreateTrackerAsync(const CreateTrackerRequest& request, const CreateTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTrackerAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::CreateTrackerAsyncHelper(const CreateTrackerRequest& request, const CreateTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateTracker(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateTracker(request), context);
+    } );
 }
 
 DeleteGeofenceCollectionOutcome LocationServiceClient::DeleteGeofenceCollection(const DeleteGeofenceCollectionRequest& request) const
@@ -732,12 +704,10 @@ DeleteGeofenceCollectionOutcomeCallable LocationServiceClient::DeleteGeofenceCol
 
 void LocationServiceClient::DeleteGeofenceCollectionAsync(const DeleteGeofenceCollectionRequest& request, const DeleteGeofenceCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteGeofenceCollectionAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::DeleteGeofenceCollectionAsyncHelper(const DeleteGeofenceCollectionRequest& request, const DeleteGeofenceCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteGeofenceCollection(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteGeofenceCollection(request), context);
+    } );
 }
 
 DeleteMapOutcome LocationServiceClient::DeleteMap(const DeleteMapRequest& request) const
@@ -772,12 +742,10 @@ DeleteMapOutcomeCallable LocationServiceClient::DeleteMapCallable(const DeleteMa
 
 void LocationServiceClient::DeleteMapAsync(const DeleteMapRequest& request, const DeleteMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteMapAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::DeleteMapAsyncHelper(const DeleteMapRequest& request, const DeleteMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteMap(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteMap(request), context);
+    } );
 }
 
 DeletePlaceIndexOutcome LocationServiceClient::DeletePlaceIndex(const DeletePlaceIndexRequest& request) const
@@ -812,12 +780,10 @@ DeletePlaceIndexOutcomeCallable LocationServiceClient::DeletePlaceIndexCallable(
 
 void LocationServiceClient::DeletePlaceIndexAsync(const DeletePlaceIndexRequest& request, const DeletePlaceIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePlaceIndexAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::DeletePlaceIndexAsyncHelper(const DeletePlaceIndexRequest& request, const DeletePlaceIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeletePlaceIndex(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeletePlaceIndex(request), context);
+    } );
 }
 
 DeleteRouteCalculatorOutcome LocationServiceClient::DeleteRouteCalculator(const DeleteRouteCalculatorRequest& request) const
@@ -852,12 +818,10 @@ DeleteRouteCalculatorOutcomeCallable LocationServiceClient::DeleteRouteCalculato
 
 void LocationServiceClient::DeleteRouteCalculatorAsync(const DeleteRouteCalculatorRequest& request, const DeleteRouteCalculatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRouteCalculatorAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::DeleteRouteCalculatorAsyncHelper(const DeleteRouteCalculatorRequest& request, const DeleteRouteCalculatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteRouteCalculator(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteRouteCalculator(request), context);
+    } );
 }
 
 DeleteTrackerOutcome LocationServiceClient::DeleteTracker(const DeleteTrackerRequest& request) const
@@ -892,12 +856,10 @@ DeleteTrackerOutcomeCallable LocationServiceClient::DeleteTrackerCallable(const 
 
 void LocationServiceClient::DeleteTrackerAsync(const DeleteTrackerRequest& request, const DeleteTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTrackerAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::DeleteTrackerAsyncHelper(const DeleteTrackerRequest& request, const DeleteTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteTracker(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteTracker(request), context);
+    } );
 }
 
 DescribeGeofenceCollectionOutcome LocationServiceClient::DescribeGeofenceCollection(const DescribeGeofenceCollectionRequest& request) const
@@ -932,12 +894,10 @@ DescribeGeofenceCollectionOutcomeCallable LocationServiceClient::DescribeGeofenc
 
 void LocationServiceClient::DescribeGeofenceCollectionAsync(const DescribeGeofenceCollectionRequest& request, const DescribeGeofenceCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeGeofenceCollectionAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::DescribeGeofenceCollectionAsyncHelper(const DescribeGeofenceCollectionRequest& request, const DescribeGeofenceCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeGeofenceCollection(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeGeofenceCollection(request), context);
+    } );
 }
 
 DescribeMapOutcome LocationServiceClient::DescribeMap(const DescribeMapRequest& request) const
@@ -972,12 +932,10 @@ DescribeMapOutcomeCallable LocationServiceClient::DescribeMapCallable(const Desc
 
 void LocationServiceClient::DescribeMapAsync(const DescribeMapRequest& request, const DescribeMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeMapAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::DescribeMapAsyncHelper(const DescribeMapRequest& request, const DescribeMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeMap(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeMap(request), context);
+    } );
 }
 
 DescribePlaceIndexOutcome LocationServiceClient::DescribePlaceIndex(const DescribePlaceIndexRequest& request) const
@@ -1012,12 +970,10 @@ DescribePlaceIndexOutcomeCallable LocationServiceClient::DescribePlaceIndexCalla
 
 void LocationServiceClient::DescribePlaceIndexAsync(const DescribePlaceIndexRequest& request, const DescribePlaceIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePlaceIndexAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::DescribePlaceIndexAsyncHelper(const DescribePlaceIndexRequest& request, const DescribePlaceIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribePlaceIndex(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribePlaceIndex(request), context);
+    } );
 }
 
 DescribeRouteCalculatorOutcome LocationServiceClient::DescribeRouteCalculator(const DescribeRouteCalculatorRequest& request) const
@@ -1052,12 +1008,10 @@ DescribeRouteCalculatorOutcomeCallable LocationServiceClient::DescribeRouteCalcu
 
 void LocationServiceClient::DescribeRouteCalculatorAsync(const DescribeRouteCalculatorRequest& request, const DescribeRouteCalculatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRouteCalculatorAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::DescribeRouteCalculatorAsyncHelper(const DescribeRouteCalculatorRequest& request, const DescribeRouteCalculatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeRouteCalculator(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeRouteCalculator(request), context);
+    } );
 }
 
 DescribeTrackerOutcome LocationServiceClient::DescribeTracker(const DescribeTrackerRequest& request) const
@@ -1092,12 +1046,10 @@ DescribeTrackerOutcomeCallable LocationServiceClient::DescribeTrackerCallable(co
 
 void LocationServiceClient::DescribeTrackerAsync(const DescribeTrackerRequest& request, const DescribeTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTrackerAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::DescribeTrackerAsyncHelper(const DescribeTrackerRequest& request, const DescribeTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeTracker(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeTracker(request), context);
+    } );
 }
 
 DisassociateTrackerConsumerOutcome LocationServiceClient::DisassociateTrackerConsumer(const DisassociateTrackerConsumerRequest& request) const
@@ -1139,12 +1091,10 @@ DisassociateTrackerConsumerOutcomeCallable LocationServiceClient::DisassociateTr
 
 void LocationServiceClient::DisassociateTrackerConsumerAsync(const DisassociateTrackerConsumerRequest& request, const DisassociateTrackerConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateTrackerConsumerAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::DisassociateTrackerConsumerAsyncHelper(const DisassociateTrackerConsumerRequest& request, const DisassociateTrackerConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateTrackerConsumer(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateTrackerConsumer(request), context);
+    } );
 }
 
 GetDevicePositionOutcome LocationServiceClient::GetDevicePosition(const GetDevicePositionRequest& request) const
@@ -1187,12 +1137,10 @@ GetDevicePositionOutcomeCallable LocationServiceClient::GetDevicePositionCallabl
 
 void LocationServiceClient::GetDevicePositionAsync(const GetDevicePositionRequest& request, const GetDevicePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDevicePositionAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::GetDevicePositionAsyncHelper(const GetDevicePositionRequest& request, const GetDevicePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDevicePosition(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDevicePosition(request), context);
+    } );
 }
 
 GetDevicePositionHistoryOutcome LocationServiceClient::GetDevicePositionHistory(const GetDevicePositionHistoryRequest& request) const
@@ -1235,12 +1183,10 @@ GetDevicePositionHistoryOutcomeCallable LocationServiceClient::GetDevicePosition
 
 void LocationServiceClient::GetDevicePositionHistoryAsync(const GetDevicePositionHistoryRequest& request, const GetDevicePositionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDevicePositionHistoryAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::GetDevicePositionHistoryAsyncHelper(const GetDevicePositionHistoryRequest& request, const GetDevicePositionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDevicePositionHistory(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDevicePositionHistory(request), context);
+    } );
 }
 
 GetGeofenceOutcome LocationServiceClient::GetGeofence(const GetGeofenceRequest& request) const
@@ -1282,12 +1228,10 @@ GetGeofenceOutcomeCallable LocationServiceClient::GetGeofenceCallable(const GetG
 
 void LocationServiceClient::GetGeofenceAsync(const GetGeofenceRequest& request, const GetGeofenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetGeofenceAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::GetGeofenceAsyncHelper(const GetGeofenceRequest& request, const GetGeofenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetGeofence(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetGeofence(request), context);
+    } );
 }
 
 GetMapGlyphsOutcome LocationServiceClient::GetMapGlyphs(const GetMapGlyphsRequest& request) const
@@ -1335,12 +1279,10 @@ GetMapGlyphsOutcomeCallable LocationServiceClient::GetMapGlyphsCallable(const Ge
 
 void LocationServiceClient::GetMapGlyphsAsync(const GetMapGlyphsRequest& request, const GetMapGlyphsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMapGlyphsAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::GetMapGlyphsAsyncHelper(const GetMapGlyphsRequest& request, const GetMapGlyphsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetMapGlyphs(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetMapGlyphs(request), context);
+    } );
 }
 
 GetMapSpritesOutcome LocationServiceClient::GetMapSprites(const GetMapSpritesRequest& request) const
@@ -1382,12 +1324,10 @@ GetMapSpritesOutcomeCallable LocationServiceClient::GetMapSpritesCallable(const 
 
 void LocationServiceClient::GetMapSpritesAsync(const GetMapSpritesRequest& request, const GetMapSpritesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMapSpritesAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::GetMapSpritesAsyncHelper(const GetMapSpritesRequest& request, const GetMapSpritesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetMapSprites(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetMapSprites(request), context);
+    } );
 }
 
 GetMapStyleDescriptorOutcome LocationServiceClient::GetMapStyleDescriptor(const GetMapStyleDescriptorRequest& request) const
@@ -1423,12 +1363,10 @@ GetMapStyleDescriptorOutcomeCallable LocationServiceClient::GetMapStyleDescripto
 
 void LocationServiceClient::GetMapStyleDescriptorAsync(const GetMapStyleDescriptorRequest& request, const GetMapStyleDescriptorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMapStyleDescriptorAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::GetMapStyleDescriptorAsyncHelper(const GetMapStyleDescriptorRequest& request, const GetMapStyleDescriptorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetMapStyleDescriptor(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetMapStyleDescriptor(request), context);
+    } );
 }
 
 GetMapTileOutcome LocationServiceClient::GetMapTile(const GetMapTileRequest& request) const
@@ -1482,12 +1420,10 @@ GetMapTileOutcomeCallable LocationServiceClient::GetMapTileCallable(const GetMap
 
 void LocationServiceClient::GetMapTileAsync(const GetMapTileRequest& request, const GetMapTileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMapTileAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::GetMapTileAsyncHelper(const GetMapTileRequest& request, const GetMapTileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetMapTile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetMapTile(request), context);
+    } );
 }
 
 ListDevicePositionsOutcome LocationServiceClient::ListDevicePositions(const ListDevicePositionsRequest& request) const
@@ -1523,12 +1459,10 @@ ListDevicePositionsOutcomeCallable LocationServiceClient::ListDevicePositionsCal
 
 void LocationServiceClient::ListDevicePositionsAsync(const ListDevicePositionsRequest& request, const ListDevicePositionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDevicePositionsAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::ListDevicePositionsAsyncHelper(const ListDevicePositionsRequest& request, const ListDevicePositionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDevicePositions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDevicePositions(request), context);
+    } );
 }
 
 ListGeofenceCollectionsOutcome LocationServiceClient::ListGeofenceCollections(const ListGeofenceCollectionsRequest& request) const
@@ -1557,12 +1491,10 @@ ListGeofenceCollectionsOutcomeCallable LocationServiceClient::ListGeofenceCollec
 
 void LocationServiceClient::ListGeofenceCollectionsAsync(const ListGeofenceCollectionsRequest& request, const ListGeofenceCollectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGeofenceCollectionsAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::ListGeofenceCollectionsAsyncHelper(const ListGeofenceCollectionsRequest& request, const ListGeofenceCollectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListGeofenceCollections(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListGeofenceCollections(request), context);
+    } );
 }
 
 ListGeofencesOutcome LocationServiceClient::ListGeofences(const ListGeofencesRequest& request) const
@@ -1598,12 +1530,10 @@ ListGeofencesOutcomeCallable LocationServiceClient::ListGeofencesCallable(const 
 
 void LocationServiceClient::ListGeofencesAsync(const ListGeofencesRequest& request, const ListGeofencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGeofencesAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::ListGeofencesAsyncHelper(const ListGeofencesRequest& request, const ListGeofencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListGeofences(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListGeofences(request), context);
+    } );
 }
 
 ListMapsOutcome LocationServiceClient::ListMaps(const ListMapsRequest& request) const
@@ -1632,12 +1562,10 @@ ListMapsOutcomeCallable LocationServiceClient::ListMapsCallable(const ListMapsRe
 
 void LocationServiceClient::ListMapsAsync(const ListMapsRequest& request, const ListMapsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMapsAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::ListMapsAsyncHelper(const ListMapsRequest& request, const ListMapsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListMaps(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListMaps(request), context);
+    } );
 }
 
 ListPlaceIndexesOutcome LocationServiceClient::ListPlaceIndexes(const ListPlaceIndexesRequest& request) const
@@ -1666,12 +1594,10 @@ ListPlaceIndexesOutcomeCallable LocationServiceClient::ListPlaceIndexesCallable(
 
 void LocationServiceClient::ListPlaceIndexesAsync(const ListPlaceIndexesRequest& request, const ListPlaceIndexesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPlaceIndexesAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::ListPlaceIndexesAsyncHelper(const ListPlaceIndexesRequest& request, const ListPlaceIndexesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListPlaceIndexes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListPlaceIndexes(request), context);
+    } );
 }
 
 ListRouteCalculatorsOutcome LocationServiceClient::ListRouteCalculators(const ListRouteCalculatorsRequest& request) const
@@ -1700,12 +1626,10 @@ ListRouteCalculatorsOutcomeCallable LocationServiceClient::ListRouteCalculatorsC
 
 void LocationServiceClient::ListRouteCalculatorsAsync(const ListRouteCalculatorsRequest& request, const ListRouteCalculatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRouteCalculatorsAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::ListRouteCalculatorsAsyncHelper(const ListRouteCalculatorsRequest& request, const ListRouteCalculatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListRouteCalculators(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListRouteCalculators(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome LocationServiceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1740,12 +1664,10 @@ ListTagsForResourceOutcomeCallable LocationServiceClient::ListTagsForResourceCal
 
 void LocationServiceClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 ListTrackerConsumersOutcome LocationServiceClient::ListTrackerConsumers(const ListTrackerConsumersRequest& request) const
@@ -1781,12 +1703,10 @@ ListTrackerConsumersOutcomeCallable LocationServiceClient::ListTrackerConsumersC
 
 void LocationServiceClient::ListTrackerConsumersAsync(const ListTrackerConsumersRequest& request, const ListTrackerConsumersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTrackerConsumersAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::ListTrackerConsumersAsyncHelper(const ListTrackerConsumersRequest& request, const ListTrackerConsumersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTrackerConsumers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTrackerConsumers(request), context);
+    } );
 }
 
 ListTrackersOutcome LocationServiceClient::ListTrackers(const ListTrackersRequest& request) const
@@ -1815,12 +1735,10 @@ ListTrackersOutcomeCallable LocationServiceClient::ListTrackersCallable(const Li
 
 void LocationServiceClient::ListTrackersAsync(const ListTrackersRequest& request, const ListTrackersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTrackersAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::ListTrackersAsyncHelper(const ListTrackersRequest& request, const ListTrackersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTrackers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTrackers(request), context);
+    } );
 }
 
 PutGeofenceOutcome LocationServiceClient::PutGeofence(const PutGeofenceRequest& request) const
@@ -1862,12 +1780,10 @@ PutGeofenceOutcomeCallable LocationServiceClient::PutGeofenceCallable(const PutG
 
 void LocationServiceClient::PutGeofenceAsync(const PutGeofenceRequest& request, const PutGeofenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutGeofenceAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::PutGeofenceAsyncHelper(const PutGeofenceRequest& request, const PutGeofenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutGeofence(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutGeofence(request), context);
+    } );
 }
 
 SearchPlaceIndexForPositionOutcome LocationServiceClient::SearchPlaceIndexForPosition(const SearchPlaceIndexForPositionRequest& request) const
@@ -1903,12 +1819,10 @@ SearchPlaceIndexForPositionOutcomeCallable LocationServiceClient::SearchPlaceInd
 
 void LocationServiceClient::SearchPlaceIndexForPositionAsync(const SearchPlaceIndexForPositionRequest& request, const SearchPlaceIndexForPositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchPlaceIndexForPositionAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::SearchPlaceIndexForPositionAsyncHelper(const SearchPlaceIndexForPositionRequest& request, const SearchPlaceIndexForPositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SearchPlaceIndexForPosition(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SearchPlaceIndexForPosition(request), context);
+    } );
 }
 
 SearchPlaceIndexForSuggestionsOutcome LocationServiceClient::SearchPlaceIndexForSuggestions(const SearchPlaceIndexForSuggestionsRequest& request) const
@@ -1944,12 +1858,10 @@ SearchPlaceIndexForSuggestionsOutcomeCallable LocationServiceClient::SearchPlace
 
 void LocationServiceClient::SearchPlaceIndexForSuggestionsAsync(const SearchPlaceIndexForSuggestionsRequest& request, const SearchPlaceIndexForSuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchPlaceIndexForSuggestionsAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::SearchPlaceIndexForSuggestionsAsyncHelper(const SearchPlaceIndexForSuggestionsRequest& request, const SearchPlaceIndexForSuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SearchPlaceIndexForSuggestions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SearchPlaceIndexForSuggestions(request), context);
+    } );
 }
 
 SearchPlaceIndexForTextOutcome LocationServiceClient::SearchPlaceIndexForText(const SearchPlaceIndexForTextRequest& request) const
@@ -1985,12 +1897,10 @@ SearchPlaceIndexForTextOutcomeCallable LocationServiceClient::SearchPlaceIndexFo
 
 void LocationServiceClient::SearchPlaceIndexForTextAsync(const SearchPlaceIndexForTextRequest& request, const SearchPlaceIndexForTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchPlaceIndexForTextAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::SearchPlaceIndexForTextAsyncHelper(const SearchPlaceIndexForTextRequest& request, const SearchPlaceIndexForTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SearchPlaceIndexForText(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SearchPlaceIndexForText(request), context);
+    } );
 }
 
 TagResourceOutcome LocationServiceClient::TagResource(const TagResourceRequest& request) const
@@ -2025,12 +1935,10 @@ TagResourceOutcomeCallable LocationServiceClient::TagResourceCallable(const TagR
 
 void LocationServiceClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome LocationServiceClient::UntagResource(const UntagResourceRequest& request) const
@@ -2070,12 +1978,10 @@ UntagResourceOutcomeCallable LocationServiceClient::UntagResourceCallable(const 
 
 void LocationServiceClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateGeofenceCollectionOutcome LocationServiceClient::UpdateGeofenceCollection(const UpdateGeofenceCollectionRequest& request) const
@@ -2110,12 +2016,10 @@ UpdateGeofenceCollectionOutcomeCallable LocationServiceClient::UpdateGeofenceCol
 
 void LocationServiceClient::UpdateGeofenceCollectionAsync(const UpdateGeofenceCollectionRequest& request, const UpdateGeofenceCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateGeofenceCollectionAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::UpdateGeofenceCollectionAsyncHelper(const UpdateGeofenceCollectionRequest& request, const UpdateGeofenceCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateGeofenceCollection(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateGeofenceCollection(request), context);
+    } );
 }
 
 UpdateMapOutcome LocationServiceClient::UpdateMap(const UpdateMapRequest& request) const
@@ -2150,12 +2054,10 @@ UpdateMapOutcomeCallable LocationServiceClient::UpdateMapCallable(const UpdateMa
 
 void LocationServiceClient::UpdateMapAsync(const UpdateMapRequest& request, const UpdateMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateMapAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::UpdateMapAsyncHelper(const UpdateMapRequest& request, const UpdateMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateMap(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateMap(request), context);
+    } );
 }
 
 UpdatePlaceIndexOutcome LocationServiceClient::UpdatePlaceIndex(const UpdatePlaceIndexRequest& request) const
@@ -2190,12 +2092,10 @@ UpdatePlaceIndexOutcomeCallable LocationServiceClient::UpdatePlaceIndexCallable(
 
 void LocationServiceClient::UpdatePlaceIndexAsync(const UpdatePlaceIndexRequest& request, const UpdatePlaceIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePlaceIndexAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::UpdatePlaceIndexAsyncHelper(const UpdatePlaceIndexRequest& request, const UpdatePlaceIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdatePlaceIndex(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdatePlaceIndex(request), context);
+    } );
 }
 
 UpdateRouteCalculatorOutcome LocationServiceClient::UpdateRouteCalculator(const UpdateRouteCalculatorRequest& request) const
@@ -2230,12 +2130,10 @@ UpdateRouteCalculatorOutcomeCallable LocationServiceClient::UpdateRouteCalculato
 
 void LocationServiceClient::UpdateRouteCalculatorAsync(const UpdateRouteCalculatorRequest& request, const UpdateRouteCalculatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRouteCalculatorAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::UpdateRouteCalculatorAsyncHelper(const UpdateRouteCalculatorRequest& request, const UpdateRouteCalculatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateRouteCalculator(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateRouteCalculator(request), context);
+    } );
 }
 
 UpdateTrackerOutcome LocationServiceClient::UpdateTracker(const UpdateTrackerRequest& request) const
@@ -2270,11 +2168,9 @@ UpdateTrackerOutcomeCallable LocationServiceClient::UpdateTrackerCallable(const 
 
 void LocationServiceClient::UpdateTrackerAsync(const UpdateTrackerRequest& request, const UpdateTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTrackerAsyncHelper( request, handler, context ); } );
-}
-
-void LocationServiceClient::UpdateTrackerAsyncHelper(const UpdateTrackerRequest& request, const UpdateTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateTracker(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateTracker(request), context);
+    } );
 }
 

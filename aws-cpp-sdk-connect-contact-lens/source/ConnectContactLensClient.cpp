@@ -118,11 +118,9 @@ ListRealtimeContactAnalysisSegmentsOutcomeCallable ConnectContactLensClient::Lis
 
 void ConnectContactLensClient::ListRealtimeContactAnalysisSegmentsAsync(const ListRealtimeContactAnalysisSegmentsRequest& request, const ListRealtimeContactAnalysisSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRealtimeContactAnalysisSegmentsAsyncHelper( request, handler, context ); } );
-}
-
-void ConnectContactLensClient::ListRealtimeContactAnalysisSegmentsAsyncHelper(const ListRealtimeContactAnalysisSegmentsRequest& request, const ListRealtimeContactAnalysisSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListRealtimeContactAnalysisSegments(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListRealtimeContactAnalysisSegments(request), context);
+    } );
 }
 

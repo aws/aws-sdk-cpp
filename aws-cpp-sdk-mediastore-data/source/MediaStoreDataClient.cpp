@@ -127,12 +127,10 @@ DeleteObjectOutcomeCallable MediaStoreDataClient::DeleteObjectCallable(const Del
 
 void MediaStoreDataClient::DeleteObjectAsync(const DeleteObjectRequest& request, const DeleteObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteObjectAsyncHelper( request, handler, context ); } );
-}
-
-void MediaStoreDataClient::DeleteObjectAsyncHelper(const DeleteObjectRequest& request, const DeleteObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteObject(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteObject(request), context);
+    } );
 }
 
 DescribeObjectOutcome MediaStoreDataClient::DescribeObject(const DescribeObjectRequest& request) const
@@ -157,12 +155,10 @@ DescribeObjectOutcomeCallable MediaStoreDataClient::DescribeObjectCallable(const
 
 void MediaStoreDataClient::DescribeObjectAsync(const DescribeObjectRequest& request, const DescribeObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeObjectAsyncHelper( request, handler, context ); } );
-}
-
-void MediaStoreDataClient::DescribeObjectAsyncHelper(const DescribeObjectRequest& request, const DescribeObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeObject(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeObject(request), context);
+    } );
 }
 
 GetObjectOutcome MediaStoreDataClient::GetObject(const GetObjectRequest& request) const
@@ -187,12 +183,10 @@ GetObjectOutcomeCallable MediaStoreDataClient::GetObjectCallable(const GetObject
 
 void MediaStoreDataClient::GetObjectAsync(const GetObjectRequest& request, const GetObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetObjectAsyncHelper( request, handler, context ); } );
-}
-
-void MediaStoreDataClient::GetObjectAsyncHelper(const GetObjectRequest& request, const GetObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetObject(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetObject(request), context);
+    } );
 }
 
 ListItemsOutcome MediaStoreDataClient::ListItems(const ListItemsRequest& request) const
@@ -211,12 +205,10 @@ ListItemsOutcomeCallable MediaStoreDataClient::ListItemsCallable(const ListItems
 
 void MediaStoreDataClient::ListItemsAsync(const ListItemsRequest& request, const ListItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListItemsAsyncHelper( request, handler, context ); } );
-}
-
-void MediaStoreDataClient::ListItemsAsyncHelper(const ListItemsRequest& request, const ListItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListItems(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListItems(request), context);
+    } );
 }
 
 PutObjectOutcome MediaStoreDataClient::PutObject(const PutObjectRequest& request) const
@@ -241,11 +233,9 @@ PutObjectOutcomeCallable MediaStoreDataClient::PutObjectCallable(const PutObject
 
 void MediaStoreDataClient::PutObjectAsync(const PutObjectRequest& request, const PutObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutObjectAsyncHelper( request, handler, context ); } );
-}
-
-void MediaStoreDataClient::PutObjectAsyncHelper(const PutObjectRequest& request, const PutObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutObject(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutObject(request), context);
+    } );
 }
 

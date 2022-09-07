@@ -181,12 +181,10 @@ AcceptSharedDirectoryOutcomeCallable DirectoryServiceClient::AcceptSharedDirecto
 
 void DirectoryServiceClient::AcceptSharedDirectoryAsync(const AcceptSharedDirectoryRequest& request, const AcceptSharedDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AcceptSharedDirectoryAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::AcceptSharedDirectoryAsyncHelper(const AcceptSharedDirectoryRequest& request, const AcceptSharedDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AcceptSharedDirectory(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AcceptSharedDirectory(request), context);
+    } );
 }
 
 AddIpRoutesOutcome DirectoryServiceClient::AddIpRoutes(const AddIpRoutesRequest& request) const
@@ -205,12 +203,10 @@ AddIpRoutesOutcomeCallable DirectoryServiceClient::AddIpRoutesCallable(const Add
 
 void DirectoryServiceClient::AddIpRoutesAsync(const AddIpRoutesRequest& request, const AddIpRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddIpRoutesAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::AddIpRoutesAsyncHelper(const AddIpRoutesRequest& request, const AddIpRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AddIpRoutes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AddIpRoutes(request), context);
+    } );
 }
 
 AddRegionOutcome DirectoryServiceClient::AddRegion(const AddRegionRequest& request) const
@@ -229,12 +225,10 @@ AddRegionOutcomeCallable DirectoryServiceClient::AddRegionCallable(const AddRegi
 
 void DirectoryServiceClient::AddRegionAsync(const AddRegionRequest& request, const AddRegionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddRegionAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::AddRegionAsyncHelper(const AddRegionRequest& request, const AddRegionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AddRegion(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AddRegion(request), context);
+    } );
 }
 
 AddTagsToResourceOutcome DirectoryServiceClient::AddTagsToResource(const AddTagsToResourceRequest& request) const
@@ -253,12 +247,10 @@ AddTagsToResourceOutcomeCallable DirectoryServiceClient::AddTagsToResourceCallab
 
 void DirectoryServiceClient::AddTagsToResourceAsync(const AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddTagsToResourceAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::AddTagsToResourceAsyncHelper(const AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AddTagsToResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AddTagsToResource(request), context);
+    } );
 }
 
 CancelSchemaExtensionOutcome DirectoryServiceClient::CancelSchemaExtension(const CancelSchemaExtensionRequest& request) const
@@ -277,12 +269,10 @@ CancelSchemaExtensionOutcomeCallable DirectoryServiceClient::CancelSchemaExtensi
 
 void DirectoryServiceClient::CancelSchemaExtensionAsync(const CancelSchemaExtensionRequest& request, const CancelSchemaExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelSchemaExtensionAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::CancelSchemaExtensionAsyncHelper(const CancelSchemaExtensionRequest& request, const CancelSchemaExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CancelSchemaExtension(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CancelSchemaExtension(request), context);
+    } );
 }
 
 ConnectDirectoryOutcome DirectoryServiceClient::ConnectDirectory(const ConnectDirectoryRequest& request) const
@@ -301,12 +291,10 @@ ConnectDirectoryOutcomeCallable DirectoryServiceClient::ConnectDirectoryCallable
 
 void DirectoryServiceClient::ConnectDirectoryAsync(const ConnectDirectoryRequest& request, const ConnectDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ConnectDirectoryAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::ConnectDirectoryAsyncHelper(const ConnectDirectoryRequest& request, const ConnectDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ConnectDirectory(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ConnectDirectory(request), context);
+    } );
 }
 
 CreateAliasOutcome DirectoryServiceClient::CreateAlias(const CreateAliasRequest& request) const
@@ -325,12 +313,10 @@ CreateAliasOutcomeCallable DirectoryServiceClient::CreateAliasCallable(const Cre
 
 void DirectoryServiceClient::CreateAliasAsync(const CreateAliasRequest& request, const CreateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAliasAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::CreateAliasAsyncHelper(const CreateAliasRequest& request, const CreateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateAlias(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateAlias(request), context);
+    } );
 }
 
 CreateComputerOutcome DirectoryServiceClient::CreateComputer(const CreateComputerRequest& request) const
@@ -349,12 +335,10 @@ CreateComputerOutcomeCallable DirectoryServiceClient::CreateComputerCallable(con
 
 void DirectoryServiceClient::CreateComputerAsync(const CreateComputerRequest& request, const CreateComputerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateComputerAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::CreateComputerAsyncHelper(const CreateComputerRequest& request, const CreateComputerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateComputer(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateComputer(request), context);
+    } );
 }
 
 CreateConditionalForwarderOutcome DirectoryServiceClient::CreateConditionalForwarder(const CreateConditionalForwarderRequest& request) const
@@ -373,12 +357,10 @@ CreateConditionalForwarderOutcomeCallable DirectoryServiceClient::CreateConditio
 
 void DirectoryServiceClient::CreateConditionalForwarderAsync(const CreateConditionalForwarderRequest& request, const CreateConditionalForwarderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateConditionalForwarderAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::CreateConditionalForwarderAsyncHelper(const CreateConditionalForwarderRequest& request, const CreateConditionalForwarderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateConditionalForwarder(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateConditionalForwarder(request), context);
+    } );
 }
 
 CreateDirectoryOutcome DirectoryServiceClient::CreateDirectory(const CreateDirectoryRequest& request) const
@@ -397,12 +379,10 @@ CreateDirectoryOutcomeCallable DirectoryServiceClient::CreateDirectoryCallable(c
 
 void DirectoryServiceClient::CreateDirectoryAsync(const CreateDirectoryRequest& request, const CreateDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDirectoryAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::CreateDirectoryAsyncHelper(const CreateDirectoryRequest& request, const CreateDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateDirectory(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateDirectory(request), context);
+    } );
 }
 
 CreateLogSubscriptionOutcome DirectoryServiceClient::CreateLogSubscription(const CreateLogSubscriptionRequest& request) const
@@ -421,12 +401,10 @@ CreateLogSubscriptionOutcomeCallable DirectoryServiceClient::CreateLogSubscripti
 
 void DirectoryServiceClient::CreateLogSubscriptionAsync(const CreateLogSubscriptionRequest& request, const CreateLogSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLogSubscriptionAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::CreateLogSubscriptionAsyncHelper(const CreateLogSubscriptionRequest& request, const CreateLogSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateLogSubscription(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateLogSubscription(request), context);
+    } );
 }
 
 CreateMicrosoftADOutcome DirectoryServiceClient::CreateMicrosoftAD(const CreateMicrosoftADRequest& request) const
@@ -445,12 +423,10 @@ CreateMicrosoftADOutcomeCallable DirectoryServiceClient::CreateMicrosoftADCallab
 
 void DirectoryServiceClient::CreateMicrosoftADAsync(const CreateMicrosoftADRequest& request, const CreateMicrosoftADResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateMicrosoftADAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::CreateMicrosoftADAsyncHelper(const CreateMicrosoftADRequest& request, const CreateMicrosoftADResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateMicrosoftAD(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateMicrosoftAD(request), context);
+    } );
 }
 
 CreateSnapshotOutcome DirectoryServiceClient::CreateSnapshot(const CreateSnapshotRequest& request) const
@@ -469,12 +445,10 @@ CreateSnapshotOutcomeCallable DirectoryServiceClient::CreateSnapshotCallable(con
 
 void DirectoryServiceClient::CreateSnapshotAsync(const CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSnapshotAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::CreateSnapshotAsyncHelper(const CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateSnapshot(request), context);
+    } );
 }
 
 CreateTrustOutcome DirectoryServiceClient::CreateTrust(const CreateTrustRequest& request) const
@@ -493,12 +467,10 @@ CreateTrustOutcomeCallable DirectoryServiceClient::CreateTrustCallable(const Cre
 
 void DirectoryServiceClient::CreateTrustAsync(const CreateTrustRequest& request, const CreateTrustResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTrustAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::CreateTrustAsyncHelper(const CreateTrustRequest& request, const CreateTrustResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateTrust(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateTrust(request), context);
+    } );
 }
 
 DeleteConditionalForwarderOutcome DirectoryServiceClient::DeleteConditionalForwarder(const DeleteConditionalForwarderRequest& request) const
@@ -517,12 +489,10 @@ DeleteConditionalForwarderOutcomeCallable DirectoryServiceClient::DeleteConditio
 
 void DirectoryServiceClient::DeleteConditionalForwarderAsync(const DeleteConditionalForwarderRequest& request, const DeleteConditionalForwarderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteConditionalForwarderAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::DeleteConditionalForwarderAsyncHelper(const DeleteConditionalForwarderRequest& request, const DeleteConditionalForwarderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteConditionalForwarder(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteConditionalForwarder(request), context);
+    } );
 }
 
 DeleteDirectoryOutcome DirectoryServiceClient::DeleteDirectory(const DeleteDirectoryRequest& request) const
@@ -541,12 +511,10 @@ DeleteDirectoryOutcomeCallable DirectoryServiceClient::DeleteDirectoryCallable(c
 
 void DirectoryServiceClient::DeleteDirectoryAsync(const DeleteDirectoryRequest& request, const DeleteDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDirectoryAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::DeleteDirectoryAsyncHelper(const DeleteDirectoryRequest& request, const DeleteDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteDirectory(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteDirectory(request), context);
+    } );
 }
 
 DeleteLogSubscriptionOutcome DirectoryServiceClient::DeleteLogSubscription(const DeleteLogSubscriptionRequest& request) const
@@ -565,12 +533,10 @@ DeleteLogSubscriptionOutcomeCallable DirectoryServiceClient::DeleteLogSubscripti
 
 void DirectoryServiceClient::DeleteLogSubscriptionAsync(const DeleteLogSubscriptionRequest& request, const DeleteLogSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLogSubscriptionAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::DeleteLogSubscriptionAsyncHelper(const DeleteLogSubscriptionRequest& request, const DeleteLogSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteLogSubscription(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteLogSubscription(request), context);
+    } );
 }
 
 DeleteSnapshotOutcome DirectoryServiceClient::DeleteSnapshot(const DeleteSnapshotRequest& request) const
@@ -589,12 +555,10 @@ DeleteSnapshotOutcomeCallable DirectoryServiceClient::DeleteSnapshotCallable(con
 
 void DirectoryServiceClient::DeleteSnapshotAsync(const DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSnapshotAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::DeleteSnapshotAsyncHelper(const DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteSnapshot(request), context);
+    } );
 }
 
 DeleteTrustOutcome DirectoryServiceClient::DeleteTrust(const DeleteTrustRequest& request) const
@@ -613,12 +577,10 @@ DeleteTrustOutcomeCallable DirectoryServiceClient::DeleteTrustCallable(const Del
 
 void DirectoryServiceClient::DeleteTrustAsync(const DeleteTrustRequest& request, const DeleteTrustResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTrustAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::DeleteTrustAsyncHelper(const DeleteTrustRequest& request, const DeleteTrustResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteTrust(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteTrust(request), context);
+    } );
 }
 
 DeregisterCertificateOutcome DirectoryServiceClient::DeregisterCertificate(const DeregisterCertificateRequest& request) const
@@ -637,12 +599,10 @@ DeregisterCertificateOutcomeCallable DirectoryServiceClient::DeregisterCertifica
 
 void DirectoryServiceClient::DeregisterCertificateAsync(const DeregisterCertificateRequest& request, const DeregisterCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeregisterCertificateAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::DeregisterCertificateAsyncHelper(const DeregisterCertificateRequest& request, const DeregisterCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeregisterCertificate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeregisterCertificate(request), context);
+    } );
 }
 
 DeregisterEventTopicOutcome DirectoryServiceClient::DeregisterEventTopic(const DeregisterEventTopicRequest& request) const
@@ -661,12 +621,10 @@ DeregisterEventTopicOutcomeCallable DirectoryServiceClient::DeregisterEventTopic
 
 void DirectoryServiceClient::DeregisterEventTopicAsync(const DeregisterEventTopicRequest& request, const DeregisterEventTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeregisterEventTopicAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::DeregisterEventTopicAsyncHelper(const DeregisterEventTopicRequest& request, const DeregisterEventTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeregisterEventTopic(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeregisterEventTopic(request), context);
+    } );
 }
 
 DescribeCertificateOutcome DirectoryServiceClient::DescribeCertificate(const DescribeCertificateRequest& request) const
@@ -685,12 +643,10 @@ DescribeCertificateOutcomeCallable DirectoryServiceClient::DescribeCertificateCa
 
 void DirectoryServiceClient::DescribeCertificateAsync(const DescribeCertificateRequest& request, const DescribeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCertificateAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::DescribeCertificateAsyncHelper(const DescribeCertificateRequest& request, const DescribeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeCertificate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeCertificate(request), context);
+    } );
 }
 
 DescribeClientAuthenticationSettingsOutcome DirectoryServiceClient::DescribeClientAuthenticationSettings(const DescribeClientAuthenticationSettingsRequest& request) const
@@ -709,12 +665,10 @@ DescribeClientAuthenticationSettingsOutcomeCallable DirectoryServiceClient::Desc
 
 void DirectoryServiceClient::DescribeClientAuthenticationSettingsAsync(const DescribeClientAuthenticationSettingsRequest& request, const DescribeClientAuthenticationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeClientAuthenticationSettingsAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::DescribeClientAuthenticationSettingsAsyncHelper(const DescribeClientAuthenticationSettingsRequest& request, const DescribeClientAuthenticationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeClientAuthenticationSettings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeClientAuthenticationSettings(request), context);
+    } );
 }
 
 DescribeConditionalForwardersOutcome DirectoryServiceClient::DescribeConditionalForwarders(const DescribeConditionalForwardersRequest& request) const
@@ -733,12 +687,10 @@ DescribeConditionalForwardersOutcomeCallable DirectoryServiceClient::DescribeCon
 
 void DirectoryServiceClient::DescribeConditionalForwardersAsync(const DescribeConditionalForwardersRequest& request, const DescribeConditionalForwardersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeConditionalForwardersAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::DescribeConditionalForwardersAsyncHelper(const DescribeConditionalForwardersRequest& request, const DescribeConditionalForwardersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeConditionalForwarders(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeConditionalForwarders(request), context);
+    } );
 }
 
 DescribeDirectoriesOutcome DirectoryServiceClient::DescribeDirectories(const DescribeDirectoriesRequest& request) const
@@ -757,12 +709,10 @@ DescribeDirectoriesOutcomeCallable DirectoryServiceClient::DescribeDirectoriesCa
 
 void DirectoryServiceClient::DescribeDirectoriesAsync(const DescribeDirectoriesRequest& request, const DescribeDirectoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDirectoriesAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::DescribeDirectoriesAsyncHelper(const DescribeDirectoriesRequest& request, const DescribeDirectoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeDirectories(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeDirectories(request), context);
+    } );
 }
 
 DescribeDomainControllersOutcome DirectoryServiceClient::DescribeDomainControllers(const DescribeDomainControllersRequest& request) const
@@ -781,12 +731,10 @@ DescribeDomainControllersOutcomeCallable DirectoryServiceClient::DescribeDomainC
 
 void DirectoryServiceClient::DescribeDomainControllersAsync(const DescribeDomainControllersRequest& request, const DescribeDomainControllersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDomainControllersAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::DescribeDomainControllersAsyncHelper(const DescribeDomainControllersRequest& request, const DescribeDomainControllersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeDomainControllers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeDomainControllers(request), context);
+    } );
 }
 
 DescribeEventTopicsOutcome DirectoryServiceClient::DescribeEventTopics(const DescribeEventTopicsRequest& request) const
@@ -805,12 +753,10 @@ DescribeEventTopicsOutcomeCallable DirectoryServiceClient::DescribeEventTopicsCa
 
 void DirectoryServiceClient::DescribeEventTopicsAsync(const DescribeEventTopicsRequest& request, const DescribeEventTopicsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEventTopicsAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::DescribeEventTopicsAsyncHelper(const DescribeEventTopicsRequest& request, const DescribeEventTopicsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeEventTopics(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeEventTopics(request), context);
+    } );
 }
 
 DescribeLDAPSSettingsOutcome DirectoryServiceClient::DescribeLDAPSSettings(const DescribeLDAPSSettingsRequest& request) const
@@ -829,12 +775,10 @@ DescribeLDAPSSettingsOutcomeCallable DirectoryServiceClient::DescribeLDAPSSettin
 
 void DirectoryServiceClient::DescribeLDAPSSettingsAsync(const DescribeLDAPSSettingsRequest& request, const DescribeLDAPSSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLDAPSSettingsAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::DescribeLDAPSSettingsAsyncHelper(const DescribeLDAPSSettingsRequest& request, const DescribeLDAPSSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeLDAPSSettings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeLDAPSSettings(request), context);
+    } );
 }
 
 DescribeRegionsOutcome DirectoryServiceClient::DescribeRegions(const DescribeRegionsRequest& request) const
@@ -853,12 +797,10 @@ DescribeRegionsOutcomeCallable DirectoryServiceClient::DescribeRegionsCallable(c
 
 void DirectoryServiceClient::DescribeRegionsAsync(const DescribeRegionsRequest& request, const DescribeRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRegionsAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::DescribeRegionsAsyncHelper(const DescribeRegionsRequest& request, const DescribeRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeRegions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeRegions(request), context);
+    } );
 }
 
 DescribeSettingsOutcome DirectoryServiceClient::DescribeSettings(const DescribeSettingsRequest& request) const
@@ -877,12 +819,10 @@ DescribeSettingsOutcomeCallable DirectoryServiceClient::DescribeSettingsCallable
 
 void DirectoryServiceClient::DescribeSettingsAsync(const DescribeSettingsRequest& request, const DescribeSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSettingsAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::DescribeSettingsAsyncHelper(const DescribeSettingsRequest& request, const DescribeSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeSettings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeSettings(request), context);
+    } );
 }
 
 DescribeSharedDirectoriesOutcome DirectoryServiceClient::DescribeSharedDirectories(const DescribeSharedDirectoriesRequest& request) const
@@ -901,12 +841,10 @@ DescribeSharedDirectoriesOutcomeCallable DirectoryServiceClient::DescribeSharedD
 
 void DirectoryServiceClient::DescribeSharedDirectoriesAsync(const DescribeSharedDirectoriesRequest& request, const DescribeSharedDirectoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSharedDirectoriesAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::DescribeSharedDirectoriesAsyncHelper(const DescribeSharedDirectoriesRequest& request, const DescribeSharedDirectoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeSharedDirectories(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeSharedDirectories(request), context);
+    } );
 }
 
 DescribeSnapshotsOutcome DirectoryServiceClient::DescribeSnapshots(const DescribeSnapshotsRequest& request) const
@@ -925,12 +863,10 @@ DescribeSnapshotsOutcomeCallable DirectoryServiceClient::DescribeSnapshotsCallab
 
 void DirectoryServiceClient::DescribeSnapshotsAsync(const DescribeSnapshotsRequest& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSnapshotsAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::DescribeSnapshotsAsyncHelper(const DescribeSnapshotsRequest& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeSnapshots(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeSnapshots(request), context);
+    } );
 }
 
 DescribeTrustsOutcome DirectoryServiceClient::DescribeTrusts(const DescribeTrustsRequest& request) const
@@ -949,12 +885,10 @@ DescribeTrustsOutcomeCallable DirectoryServiceClient::DescribeTrustsCallable(con
 
 void DirectoryServiceClient::DescribeTrustsAsync(const DescribeTrustsRequest& request, const DescribeTrustsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTrustsAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::DescribeTrustsAsyncHelper(const DescribeTrustsRequest& request, const DescribeTrustsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeTrusts(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeTrusts(request), context);
+    } );
 }
 
 DisableClientAuthenticationOutcome DirectoryServiceClient::DisableClientAuthentication(const DisableClientAuthenticationRequest& request) const
@@ -973,12 +907,10 @@ DisableClientAuthenticationOutcomeCallable DirectoryServiceClient::DisableClient
 
 void DirectoryServiceClient::DisableClientAuthenticationAsync(const DisableClientAuthenticationRequest& request, const DisableClientAuthenticationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableClientAuthenticationAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::DisableClientAuthenticationAsyncHelper(const DisableClientAuthenticationRequest& request, const DisableClientAuthenticationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisableClientAuthentication(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisableClientAuthentication(request), context);
+    } );
 }
 
 DisableLDAPSOutcome DirectoryServiceClient::DisableLDAPS(const DisableLDAPSRequest& request) const
@@ -997,12 +929,10 @@ DisableLDAPSOutcomeCallable DirectoryServiceClient::DisableLDAPSCallable(const D
 
 void DirectoryServiceClient::DisableLDAPSAsync(const DisableLDAPSRequest& request, const DisableLDAPSResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableLDAPSAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::DisableLDAPSAsyncHelper(const DisableLDAPSRequest& request, const DisableLDAPSResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisableLDAPS(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisableLDAPS(request), context);
+    } );
 }
 
 DisableRadiusOutcome DirectoryServiceClient::DisableRadius(const DisableRadiusRequest& request) const
@@ -1021,12 +951,10 @@ DisableRadiusOutcomeCallable DirectoryServiceClient::DisableRadiusCallable(const
 
 void DirectoryServiceClient::DisableRadiusAsync(const DisableRadiusRequest& request, const DisableRadiusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableRadiusAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::DisableRadiusAsyncHelper(const DisableRadiusRequest& request, const DisableRadiusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisableRadius(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisableRadius(request), context);
+    } );
 }
 
 DisableSsoOutcome DirectoryServiceClient::DisableSso(const DisableSsoRequest& request) const
@@ -1045,12 +973,10 @@ DisableSsoOutcomeCallable DirectoryServiceClient::DisableSsoCallable(const Disab
 
 void DirectoryServiceClient::DisableSsoAsync(const DisableSsoRequest& request, const DisableSsoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableSsoAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::DisableSsoAsyncHelper(const DisableSsoRequest& request, const DisableSsoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisableSso(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisableSso(request), context);
+    } );
 }
 
 EnableClientAuthenticationOutcome DirectoryServiceClient::EnableClientAuthentication(const EnableClientAuthenticationRequest& request) const
@@ -1069,12 +995,10 @@ EnableClientAuthenticationOutcomeCallable DirectoryServiceClient::EnableClientAu
 
 void DirectoryServiceClient::EnableClientAuthenticationAsync(const EnableClientAuthenticationRequest& request, const EnableClientAuthenticationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableClientAuthenticationAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::EnableClientAuthenticationAsyncHelper(const EnableClientAuthenticationRequest& request, const EnableClientAuthenticationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, EnableClientAuthentication(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, EnableClientAuthentication(request), context);
+    } );
 }
 
 EnableLDAPSOutcome DirectoryServiceClient::EnableLDAPS(const EnableLDAPSRequest& request) const
@@ -1093,12 +1017,10 @@ EnableLDAPSOutcomeCallable DirectoryServiceClient::EnableLDAPSCallable(const Ena
 
 void DirectoryServiceClient::EnableLDAPSAsync(const EnableLDAPSRequest& request, const EnableLDAPSResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableLDAPSAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::EnableLDAPSAsyncHelper(const EnableLDAPSRequest& request, const EnableLDAPSResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, EnableLDAPS(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, EnableLDAPS(request), context);
+    } );
 }
 
 EnableRadiusOutcome DirectoryServiceClient::EnableRadius(const EnableRadiusRequest& request) const
@@ -1117,12 +1039,10 @@ EnableRadiusOutcomeCallable DirectoryServiceClient::EnableRadiusCallable(const E
 
 void DirectoryServiceClient::EnableRadiusAsync(const EnableRadiusRequest& request, const EnableRadiusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableRadiusAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::EnableRadiusAsyncHelper(const EnableRadiusRequest& request, const EnableRadiusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, EnableRadius(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, EnableRadius(request), context);
+    } );
 }
 
 EnableSsoOutcome DirectoryServiceClient::EnableSso(const EnableSsoRequest& request) const
@@ -1141,12 +1061,10 @@ EnableSsoOutcomeCallable DirectoryServiceClient::EnableSsoCallable(const EnableS
 
 void DirectoryServiceClient::EnableSsoAsync(const EnableSsoRequest& request, const EnableSsoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableSsoAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::EnableSsoAsyncHelper(const EnableSsoRequest& request, const EnableSsoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, EnableSso(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, EnableSso(request), context);
+    } );
 }
 
 GetDirectoryLimitsOutcome DirectoryServiceClient::GetDirectoryLimits(const GetDirectoryLimitsRequest& request) const
@@ -1165,12 +1083,10 @@ GetDirectoryLimitsOutcomeCallable DirectoryServiceClient::GetDirectoryLimitsCall
 
 void DirectoryServiceClient::GetDirectoryLimitsAsync(const GetDirectoryLimitsRequest& request, const GetDirectoryLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDirectoryLimitsAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::GetDirectoryLimitsAsyncHelper(const GetDirectoryLimitsRequest& request, const GetDirectoryLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDirectoryLimits(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDirectoryLimits(request), context);
+    } );
 }
 
 GetSnapshotLimitsOutcome DirectoryServiceClient::GetSnapshotLimits(const GetSnapshotLimitsRequest& request) const
@@ -1189,12 +1105,10 @@ GetSnapshotLimitsOutcomeCallable DirectoryServiceClient::GetSnapshotLimitsCallab
 
 void DirectoryServiceClient::GetSnapshotLimitsAsync(const GetSnapshotLimitsRequest& request, const GetSnapshotLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSnapshotLimitsAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::GetSnapshotLimitsAsyncHelper(const GetSnapshotLimitsRequest& request, const GetSnapshotLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetSnapshotLimits(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetSnapshotLimits(request), context);
+    } );
 }
 
 ListCertificatesOutcome DirectoryServiceClient::ListCertificates(const ListCertificatesRequest& request) const
@@ -1213,12 +1127,10 @@ ListCertificatesOutcomeCallable DirectoryServiceClient::ListCertificatesCallable
 
 void DirectoryServiceClient::ListCertificatesAsync(const ListCertificatesRequest& request, const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCertificatesAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::ListCertificatesAsyncHelper(const ListCertificatesRequest& request, const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListCertificates(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListCertificates(request), context);
+    } );
 }
 
 ListIpRoutesOutcome DirectoryServiceClient::ListIpRoutes(const ListIpRoutesRequest& request) const
@@ -1237,12 +1149,10 @@ ListIpRoutesOutcomeCallable DirectoryServiceClient::ListIpRoutesCallable(const L
 
 void DirectoryServiceClient::ListIpRoutesAsync(const ListIpRoutesRequest& request, const ListIpRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListIpRoutesAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::ListIpRoutesAsyncHelper(const ListIpRoutesRequest& request, const ListIpRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListIpRoutes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListIpRoutes(request), context);
+    } );
 }
 
 ListLogSubscriptionsOutcome DirectoryServiceClient::ListLogSubscriptions(const ListLogSubscriptionsRequest& request) const
@@ -1261,12 +1171,10 @@ ListLogSubscriptionsOutcomeCallable DirectoryServiceClient::ListLogSubscriptions
 
 void DirectoryServiceClient::ListLogSubscriptionsAsync(const ListLogSubscriptionsRequest& request, const ListLogSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLogSubscriptionsAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::ListLogSubscriptionsAsyncHelper(const ListLogSubscriptionsRequest& request, const ListLogSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListLogSubscriptions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListLogSubscriptions(request), context);
+    } );
 }
 
 ListSchemaExtensionsOutcome DirectoryServiceClient::ListSchemaExtensions(const ListSchemaExtensionsRequest& request) const
@@ -1285,12 +1193,10 @@ ListSchemaExtensionsOutcomeCallable DirectoryServiceClient::ListSchemaExtensions
 
 void DirectoryServiceClient::ListSchemaExtensionsAsync(const ListSchemaExtensionsRequest& request, const ListSchemaExtensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSchemaExtensionsAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::ListSchemaExtensionsAsyncHelper(const ListSchemaExtensionsRequest& request, const ListSchemaExtensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListSchemaExtensions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListSchemaExtensions(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome DirectoryServiceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1309,12 +1215,10 @@ ListTagsForResourceOutcomeCallable DirectoryServiceClient::ListTagsForResourceCa
 
 void DirectoryServiceClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 RegisterCertificateOutcome DirectoryServiceClient::RegisterCertificate(const RegisterCertificateRequest& request) const
@@ -1333,12 +1237,10 @@ RegisterCertificateOutcomeCallable DirectoryServiceClient::RegisterCertificateCa
 
 void DirectoryServiceClient::RegisterCertificateAsync(const RegisterCertificateRequest& request, const RegisterCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterCertificateAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::RegisterCertificateAsyncHelper(const RegisterCertificateRequest& request, const RegisterCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RegisterCertificate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RegisterCertificate(request), context);
+    } );
 }
 
 RegisterEventTopicOutcome DirectoryServiceClient::RegisterEventTopic(const RegisterEventTopicRequest& request) const
@@ -1357,12 +1259,10 @@ RegisterEventTopicOutcomeCallable DirectoryServiceClient::RegisterEventTopicCall
 
 void DirectoryServiceClient::RegisterEventTopicAsync(const RegisterEventTopicRequest& request, const RegisterEventTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterEventTopicAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::RegisterEventTopicAsyncHelper(const RegisterEventTopicRequest& request, const RegisterEventTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RegisterEventTopic(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RegisterEventTopic(request), context);
+    } );
 }
 
 RejectSharedDirectoryOutcome DirectoryServiceClient::RejectSharedDirectory(const RejectSharedDirectoryRequest& request) const
@@ -1381,12 +1281,10 @@ RejectSharedDirectoryOutcomeCallable DirectoryServiceClient::RejectSharedDirecto
 
 void DirectoryServiceClient::RejectSharedDirectoryAsync(const RejectSharedDirectoryRequest& request, const RejectSharedDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RejectSharedDirectoryAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::RejectSharedDirectoryAsyncHelper(const RejectSharedDirectoryRequest& request, const RejectSharedDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RejectSharedDirectory(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RejectSharedDirectory(request), context);
+    } );
 }
 
 RemoveIpRoutesOutcome DirectoryServiceClient::RemoveIpRoutes(const RemoveIpRoutesRequest& request) const
@@ -1405,12 +1303,10 @@ RemoveIpRoutesOutcomeCallable DirectoryServiceClient::RemoveIpRoutesCallable(con
 
 void DirectoryServiceClient::RemoveIpRoutesAsync(const RemoveIpRoutesRequest& request, const RemoveIpRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveIpRoutesAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::RemoveIpRoutesAsyncHelper(const RemoveIpRoutesRequest& request, const RemoveIpRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RemoveIpRoutes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RemoveIpRoutes(request), context);
+    } );
 }
 
 RemoveRegionOutcome DirectoryServiceClient::RemoveRegion(const RemoveRegionRequest& request) const
@@ -1429,12 +1325,10 @@ RemoveRegionOutcomeCallable DirectoryServiceClient::RemoveRegionCallable(const R
 
 void DirectoryServiceClient::RemoveRegionAsync(const RemoveRegionRequest& request, const RemoveRegionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveRegionAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::RemoveRegionAsyncHelper(const RemoveRegionRequest& request, const RemoveRegionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RemoveRegion(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RemoveRegion(request), context);
+    } );
 }
 
 RemoveTagsFromResourceOutcome DirectoryServiceClient::RemoveTagsFromResource(const RemoveTagsFromResourceRequest& request) const
@@ -1453,12 +1347,10 @@ RemoveTagsFromResourceOutcomeCallable DirectoryServiceClient::RemoveTagsFromReso
 
 void DirectoryServiceClient::RemoveTagsFromResourceAsync(const RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveTagsFromResourceAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::RemoveTagsFromResourceAsyncHelper(const RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RemoveTagsFromResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RemoveTagsFromResource(request), context);
+    } );
 }
 
 ResetUserPasswordOutcome DirectoryServiceClient::ResetUserPassword(const ResetUserPasswordRequest& request) const
@@ -1477,12 +1369,10 @@ ResetUserPasswordOutcomeCallable DirectoryServiceClient::ResetUserPasswordCallab
 
 void DirectoryServiceClient::ResetUserPasswordAsync(const ResetUserPasswordRequest& request, const ResetUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ResetUserPasswordAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::ResetUserPasswordAsyncHelper(const ResetUserPasswordRequest& request, const ResetUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ResetUserPassword(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ResetUserPassword(request), context);
+    } );
 }
 
 RestoreFromSnapshotOutcome DirectoryServiceClient::RestoreFromSnapshot(const RestoreFromSnapshotRequest& request) const
@@ -1501,12 +1391,10 @@ RestoreFromSnapshotOutcomeCallable DirectoryServiceClient::RestoreFromSnapshotCa
 
 void DirectoryServiceClient::RestoreFromSnapshotAsync(const RestoreFromSnapshotRequest& request, const RestoreFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RestoreFromSnapshotAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::RestoreFromSnapshotAsyncHelper(const RestoreFromSnapshotRequest& request, const RestoreFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RestoreFromSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RestoreFromSnapshot(request), context);
+    } );
 }
 
 ShareDirectoryOutcome DirectoryServiceClient::ShareDirectory(const ShareDirectoryRequest& request) const
@@ -1525,12 +1413,10 @@ ShareDirectoryOutcomeCallable DirectoryServiceClient::ShareDirectoryCallable(con
 
 void DirectoryServiceClient::ShareDirectoryAsync(const ShareDirectoryRequest& request, const ShareDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ShareDirectoryAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::ShareDirectoryAsyncHelper(const ShareDirectoryRequest& request, const ShareDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ShareDirectory(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ShareDirectory(request), context);
+    } );
 }
 
 StartSchemaExtensionOutcome DirectoryServiceClient::StartSchemaExtension(const StartSchemaExtensionRequest& request) const
@@ -1549,12 +1435,10 @@ StartSchemaExtensionOutcomeCallable DirectoryServiceClient::StartSchemaExtension
 
 void DirectoryServiceClient::StartSchemaExtensionAsync(const StartSchemaExtensionRequest& request, const StartSchemaExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartSchemaExtensionAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::StartSchemaExtensionAsyncHelper(const StartSchemaExtensionRequest& request, const StartSchemaExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartSchemaExtension(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartSchemaExtension(request), context);
+    } );
 }
 
 UnshareDirectoryOutcome DirectoryServiceClient::UnshareDirectory(const UnshareDirectoryRequest& request) const
@@ -1573,12 +1457,10 @@ UnshareDirectoryOutcomeCallable DirectoryServiceClient::UnshareDirectoryCallable
 
 void DirectoryServiceClient::UnshareDirectoryAsync(const UnshareDirectoryRequest& request, const UnshareDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UnshareDirectoryAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::UnshareDirectoryAsyncHelper(const UnshareDirectoryRequest& request, const UnshareDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UnshareDirectory(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UnshareDirectory(request), context);
+    } );
 }
 
 UpdateConditionalForwarderOutcome DirectoryServiceClient::UpdateConditionalForwarder(const UpdateConditionalForwarderRequest& request) const
@@ -1597,12 +1479,10 @@ UpdateConditionalForwarderOutcomeCallable DirectoryServiceClient::UpdateConditio
 
 void DirectoryServiceClient::UpdateConditionalForwarderAsync(const UpdateConditionalForwarderRequest& request, const UpdateConditionalForwarderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateConditionalForwarderAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::UpdateConditionalForwarderAsyncHelper(const UpdateConditionalForwarderRequest& request, const UpdateConditionalForwarderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateConditionalForwarder(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateConditionalForwarder(request), context);
+    } );
 }
 
 UpdateNumberOfDomainControllersOutcome DirectoryServiceClient::UpdateNumberOfDomainControllers(const UpdateNumberOfDomainControllersRequest& request) const
@@ -1621,12 +1501,10 @@ UpdateNumberOfDomainControllersOutcomeCallable DirectoryServiceClient::UpdateNum
 
 void DirectoryServiceClient::UpdateNumberOfDomainControllersAsync(const UpdateNumberOfDomainControllersRequest& request, const UpdateNumberOfDomainControllersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateNumberOfDomainControllersAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::UpdateNumberOfDomainControllersAsyncHelper(const UpdateNumberOfDomainControllersRequest& request, const UpdateNumberOfDomainControllersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateNumberOfDomainControllers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateNumberOfDomainControllers(request), context);
+    } );
 }
 
 UpdateRadiusOutcome DirectoryServiceClient::UpdateRadius(const UpdateRadiusRequest& request) const
@@ -1645,12 +1523,10 @@ UpdateRadiusOutcomeCallable DirectoryServiceClient::UpdateRadiusCallable(const U
 
 void DirectoryServiceClient::UpdateRadiusAsync(const UpdateRadiusRequest& request, const UpdateRadiusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRadiusAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::UpdateRadiusAsyncHelper(const UpdateRadiusRequest& request, const UpdateRadiusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateRadius(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateRadius(request), context);
+    } );
 }
 
 UpdateSettingsOutcome DirectoryServiceClient::UpdateSettings(const UpdateSettingsRequest& request) const
@@ -1669,12 +1545,10 @@ UpdateSettingsOutcomeCallable DirectoryServiceClient::UpdateSettingsCallable(con
 
 void DirectoryServiceClient::UpdateSettingsAsync(const UpdateSettingsRequest& request, const UpdateSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSettingsAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::UpdateSettingsAsyncHelper(const UpdateSettingsRequest& request, const UpdateSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateSettings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateSettings(request), context);
+    } );
 }
 
 UpdateTrustOutcome DirectoryServiceClient::UpdateTrust(const UpdateTrustRequest& request) const
@@ -1693,12 +1567,10 @@ UpdateTrustOutcomeCallable DirectoryServiceClient::UpdateTrustCallable(const Upd
 
 void DirectoryServiceClient::UpdateTrustAsync(const UpdateTrustRequest& request, const UpdateTrustResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTrustAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::UpdateTrustAsyncHelper(const UpdateTrustRequest& request, const UpdateTrustResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateTrust(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateTrust(request), context);
+    } );
 }
 
 VerifyTrustOutcome DirectoryServiceClient::VerifyTrust(const VerifyTrustRequest& request) const
@@ -1717,11 +1589,9 @@ VerifyTrustOutcomeCallable DirectoryServiceClient::VerifyTrustCallable(const Ver
 
 void DirectoryServiceClient::VerifyTrustAsync(const VerifyTrustRequest& request, const VerifyTrustResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->VerifyTrustAsyncHelper( request, handler, context ); } );
-}
-
-void DirectoryServiceClient::VerifyTrustAsyncHelper(const VerifyTrustRequest& request, const VerifyTrustResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, VerifyTrust(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, VerifyTrust(request), context);
+    } );
 }
 

@@ -176,12 +176,10 @@ AssociateChannelFlowOutcomeCallable ChimeSDKMessagingClient::AssociateChannelFlo
 
 void ChimeSDKMessagingClient::AssociateChannelFlowAsync(const AssociateChannelFlowRequest& request, const AssociateChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateChannelFlowAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::AssociateChannelFlowAsyncHelper(const AssociateChannelFlowRequest& request, const AssociateChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateChannelFlow(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateChannelFlow(request), context);
+    } );
 }
 
 BatchCreateChannelMembershipOutcome ChimeSDKMessagingClient::BatchCreateChannelMembership(const BatchCreateChannelMembershipRequest& request) const
@@ -216,12 +214,10 @@ BatchCreateChannelMembershipOutcomeCallable ChimeSDKMessagingClient::BatchCreate
 
 void ChimeSDKMessagingClient::BatchCreateChannelMembershipAsync(const BatchCreateChannelMembershipRequest& request, const BatchCreateChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchCreateChannelMembershipAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::BatchCreateChannelMembershipAsyncHelper(const BatchCreateChannelMembershipRequest& request, const BatchCreateChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchCreateChannelMembership(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchCreateChannelMembership(request), context);
+    } );
 }
 
 ChannelFlowCallbackOutcome ChimeSDKMessagingClient::ChannelFlowCallback(const ChannelFlowCallbackRequest& request) const
@@ -250,12 +246,10 @@ ChannelFlowCallbackOutcomeCallable ChimeSDKMessagingClient::ChannelFlowCallbackC
 
 void ChimeSDKMessagingClient::ChannelFlowCallbackAsync(const ChannelFlowCallbackRequest& request, const ChannelFlowCallbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ChannelFlowCallbackAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::ChannelFlowCallbackAsyncHelper(const ChannelFlowCallbackRequest& request, const ChannelFlowCallbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ChannelFlowCallback(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ChannelFlowCallback(request), context);
+    } );
 }
 
 CreateChannelOutcome ChimeSDKMessagingClient::CreateChannel(const CreateChannelRequest& request) const
@@ -280,12 +274,10 @@ CreateChannelOutcomeCallable ChimeSDKMessagingClient::CreateChannelCallable(cons
 
 void ChimeSDKMessagingClient::CreateChannelAsync(const CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateChannelAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::CreateChannelAsyncHelper(const CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateChannel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateChannel(request), context);
+    } );
 }
 
 CreateChannelBanOutcome ChimeSDKMessagingClient::CreateChannelBan(const CreateChannelBanRequest& request) const
@@ -317,12 +309,10 @@ CreateChannelBanOutcomeCallable ChimeSDKMessagingClient::CreateChannelBanCallabl
 
 void ChimeSDKMessagingClient::CreateChannelBanAsync(const CreateChannelBanRequest& request, const CreateChannelBanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateChannelBanAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::CreateChannelBanAsyncHelper(const CreateChannelBanRequest& request, const CreateChannelBanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateChannelBan(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateChannelBan(request), context);
+    } );
 }
 
 CreateChannelFlowOutcome ChimeSDKMessagingClient::CreateChannelFlow(const CreateChannelFlowRequest& request) const
@@ -342,12 +332,10 @@ CreateChannelFlowOutcomeCallable ChimeSDKMessagingClient::CreateChannelFlowCalla
 
 void ChimeSDKMessagingClient::CreateChannelFlowAsync(const CreateChannelFlowRequest& request, const CreateChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateChannelFlowAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::CreateChannelFlowAsyncHelper(const CreateChannelFlowRequest& request, const CreateChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateChannelFlow(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateChannelFlow(request), context);
+    } );
 }
 
 CreateChannelMembershipOutcome ChimeSDKMessagingClient::CreateChannelMembership(const CreateChannelMembershipRequest& request) const
@@ -379,12 +367,10 @@ CreateChannelMembershipOutcomeCallable ChimeSDKMessagingClient::CreateChannelMem
 
 void ChimeSDKMessagingClient::CreateChannelMembershipAsync(const CreateChannelMembershipRequest& request, const CreateChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateChannelMembershipAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::CreateChannelMembershipAsyncHelper(const CreateChannelMembershipRequest& request, const CreateChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateChannelMembership(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateChannelMembership(request), context);
+    } );
 }
 
 CreateChannelModeratorOutcome ChimeSDKMessagingClient::CreateChannelModerator(const CreateChannelModeratorRequest& request) const
@@ -416,12 +402,10 @@ CreateChannelModeratorOutcomeCallable ChimeSDKMessagingClient::CreateChannelMode
 
 void ChimeSDKMessagingClient::CreateChannelModeratorAsync(const CreateChannelModeratorRequest& request, const CreateChannelModeratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateChannelModeratorAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::CreateChannelModeratorAsyncHelper(const CreateChannelModeratorRequest& request, const CreateChannelModeratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateChannelModerator(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateChannelModerator(request), context);
+    } );
 }
 
 DeleteChannelOutcome ChimeSDKMessagingClient::DeleteChannel(const DeleteChannelRequest& request) const
@@ -452,12 +436,10 @@ DeleteChannelOutcomeCallable ChimeSDKMessagingClient::DeleteChannelCallable(cons
 
 void ChimeSDKMessagingClient::DeleteChannelAsync(const DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteChannelAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::DeleteChannelAsyncHelper(const DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteChannel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteChannel(request), context);
+    } );
 }
 
 DeleteChannelBanOutcome ChimeSDKMessagingClient::DeleteChannelBan(const DeleteChannelBanRequest& request) const
@@ -495,12 +477,10 @@ DeleteChannelBanOutcomeCallable ChimeSDKMessagingClient::DeleteChannelBanCallabl
 
 void ChimeSDKMessagingClient::DeleteChannelBanAsync(const DeleteChannelBanRequest& request, const DeleteChannelBanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteChannelBanAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::DeleteChannelBanAsyncHelper(const DeleteChannelBanRequest& request, const DeleteChannelBanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteChannelBan(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteChannelBan(request), context);
+    } );
 }
 
 DeleteChannelFlowOutcome ChimeSDKMessagingClient::DeleteChannelFlow(const DeleteChannelFlowRequest& request) const
@@ -526,12 +506,10 @@ DeleteChannelFlowOutcomeCallable ChimeSDKMessagingClient::DeleteChannelFlowCalla
 
 void ChimeSDKMessagingClient::DeleteChannelFlowAsync(const DeleteChannelFlowRequest& request, const DeleteChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteChannelFlowAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::DeleteChannelFlowAsyncHelper(const DeleteChannelFlowRequest& request, const DeleteChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteChannelFlow(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteChannelFlow(request), context);
+    } );
 }
 
 DeleteChannelMembershipOutcome ChimeSDKMessagingClient::DeleteChannelMembership(const DeleteChannelMembershipRequest& request) const
@@ -569,12 +547,10 @@ DeleteChannelMembershipOutcomeCallable ChimeSDKMessagingClient::DeleteChannelMem
 
 void ChimeSDKMessagingClient::DeleteChannelMembershipAsync(const DeleteChannelMembershipRequest& request, const DeleteChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteChannelMembershipAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::DeleteChannelMembershipAsyncHelper(const DeleteChannelMembershipRequest& request, const DeleteChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteChannelMembership(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteChannelMembership(request), context);
+    } );
 }
 
 DeleteChannelMessageOutcome ChimeSDKMessagingClient::DeleteChannelMessage(const DeleteChannelMessageRequest& request) const
@@ -612,12 +588,10 @@ DeleteChannelMessageOutcomeCallable ChimeSDKMessagingClient::DeleteChannelMessag
 
 void ChimeSDKMessagingClient::DeleteChannelMessageAsync(const DeleteChannelMessageRequest& request, const DeleteChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteChannelMessageAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::DeleteChannelMessageAsyncHelper(const DeleteChannelMessageRequest& request, const DeleteChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteChannelMessage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteChannelMessage(request), context);
+    } );
 }
 
 DeleteChannelModeratorOutcome ChimeSDKMessagingClient::DeleteChannelModerator(const DeleteChannelModeratorRequest& request) const
@@ -655,12 +629,10 @@ DeleteChannelModeratorOutcomeCallable ChimeSDKMessagingClient::DeleteChannelMode
 
 void ChimeSDKMessagingClient::DeleteChannelModeratorAsync(const DeleteChannelModeratorRequest& request, const DeleteChannelModeratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteChannelModeratorAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::DeleteChannelModeratorAsyncHelper(const DeleteChannelModeratorRequest& request, const DeleteChannelModeratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteChannelModerator(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteChannelModerator(request), context);
+    } );
 }
 
 DescribeChannelOutcome ChimeSDKMessagingClient::DescribeChannel(const DescribeChannelRequest& request) const
@@ -691,12 +663,10 @@ DescribeChannelOutcomeCallable ChimeSDKMessagingClient::DescribeChannelCallable(
 
 void ChimeSDKMessagingClient::DescribeChannelAsync(const DescribeChannelRequest& request, const DescribeChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeChannelAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::DescribeChannelAsyncHelper(const DescribeChannelRequest& request, const DescribeChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeChannel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeChannel(request), context);
+    } );
 }
 
 DescribeChannelBanOutcome ChimeSDKMessagingClient::DescribeChannelBan(const DescribeChannelBanRequest& request) const
@@ -734,12 +704,10 @@ DescribeChannelBanOutcomeCallable ChimeSDKMessagingClient::DescribeChannelBanCal
 
 void ChimeSDKMessagingClient::DescribeChannelBanAsync(const DescribeChannelBanRequest& request, const DescribeChannelBanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeChannelBanAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::DescribeChannelBanAsyncHelper(const DescribeChannelBanRequest& request, const DescribeChannelBanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeChannelBan(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeChannelBan(request), context);
+    } );
 }
 
 DescribeChannelFlowOutcome ChimeSDKMessagingClient::DescribeChannelFlow(const DescribeChannelFlowRequest& request) const
@@ -765,12 +733,10 @@ DescribeChannelFlowOutcomeCallable ChimeSDKMessagingClient::DescribeChannelFlowC
 
 void ChimeSDKMessagingClient::DescribeChannelFlowAsync(const DescribeChannelFlowRequest& request, const DescribeChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeChannelFlowAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::DescribeChannelFlowAsyncHelper(const DescribeChannelFlowRequest& request, const DescribeChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeChannelFlow(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeChannelFlow(request), context);
+    } );
 }
 
 DescribeChannelMembershipOutcome ChimeSDKMessagingClient::DescribeChannelMembership(const DescribeChannelMembershipRequest& request) const
@@ -808,12 +774,10 @@ DescribeChannelMembershipOutcomeCallable ChimeSDKMessagingClient::DescribeChanne
 
 void ChimeSDKMessagingClient::DescribeChannelMembershipAsync(const DescribeChannelMembershipRequest& request, const DescribeChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeChannelMembershipAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::DescribeChannelMembershipAsyncHelper(const DescribeChannelMembershipRequest& request, const DescribeChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeChannelMembership(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeChannelMembership(request), context);
+    } );
 }
 
 DescribeChannelMembershipForAppInstanceUserOutcome ChimeSDKMessagingClient::DescribeChannelMembershipForAppInstanceUser(const DescribeChannelMembershipForAppInstanceUserRequest& request) const
@@ -852,12 +816,10 @@ DescribeChannelMembershipForAppInstanceUserOutcomeCallable ChimeSDKMessagingClie
 
 void ChimeSDKMessagingClient::DescribeChannelMembershipForAppInstanceUserAsync(const DescribeChannelMembershipForAppInstanceUserRequest& request, const DescribeChannelMembershipForAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeChannelMembershipForAppInstanceUserAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::DescribeChannelMembershipForAppInstanceUserAsyncHelper(const DescribeChannelMembershipForAppInstanceUserRequest& request, const DescribeChannelMembershipForAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeChannelMembershipForAppInstanceUser(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeChannelMembershipForAppInstanceUser(request), context);
+    } );
 }
 
 DescribeChannelModeratedByAppInstanceUserOutcome ChimeSDKMessagingClient::DescribeChannelModeratedByAppInstanceUser(const DescribeChannelModeratedByAppInstanceUserRequest& request) const
@@ -896,12 +858,10 @@ DescribeChannelModeratedByAppInstanceUserOutcomeCallable ChimeSDKMessagingClient
 
 void ChimeSDKMessagingClient::DescribeChannelModeratedByAppInstanceUserAsync(const DescribeChannelModeratedByAppInstanceUserRequest& request, const DescribeChannelModeratedByAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeChannelModeratedByAppInstanceUserAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::DescribeChannelModeratedByAppInstanceUserAsyncHelper(const DescribeChannelModeratedByAppInstanceUserRequest& request, const DescribeChannelModeratedByAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeChannelModeratedByAppInstanceUser(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeChannelModeratedByAppInstanceUser(request), context);
+    } );
 }
 
 DescribeChannelModeratorOutcome ChimeSDKMessagingClient::DescribeChannelModerator(const DescribeChannelModeratorRequest& request) const
@@ -939,12 +899,10 @@ DescribeChannelModeratorOutcomeCallable ChimeSDKMessagingClient::DescribeChannel
 
 void ChimeSDKMessagingClient::DescribeChannelModeratorAsync(const DescribeChannelModeratorRequest& request, const DescribeChannelModeratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeChannelModeratorAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::DescribeChannelModeratorAsyncHelper(const DescribeChannelModeratorRequest& request, const DescribeChannelModeratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeChannelModerator(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeChannelModerator(request), context);
+    } );
 }
 
 DisassociateChannelFlowOutcome ChimeSDKMessagingClient::DisassociateChannelFlow(const DisassociateChannelFlowRequest& request) const
@@ -982,12 +940,10 @@ DisassociateChannelFlowOutcomeCallable ChimeSDKMessagingClient::DisassociateChan
 
 void ChimeSDKMessagingClient::DisassociateChannelFlowAsync(const DisassociateChannelFlowRequest& request, const DisassociateChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateChannelFlowAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::DisassociateChannelFlowAsyncHelper(const DisassociateChannelFlowRequest& request, const DisassociateChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateChannelFlow(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateChannelFlow(request), context);
+    } );
 }
 
 GetChannelMembershipPreferencesOutcome ChimeSDKMessagingClient::GetChannelMembershipPreferences(const GetChannelMembershipPreferencesRequest& request) const
@@ -1026,12 +982,10 @@ GetChannelMembershipPreferencesOutcomeCallable ChimeSDKMessagingClient::GetChann
 
 void ChimeSDKMessagingClient::GetChannelMembershipPreferencesAsync(const GetChannelMembershipPreferencesRequest& request, const GetChannelMembershipPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetChannelMembershipPreferencesAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::GetChannelMembershipPreferencesAsyncHelper(const GetChannelMembershipPreferencesRequest& request, const GetChannelMembershipPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetChannelMembershipPreferences(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetChannelMembershipPreferences(request), context);
+    } );
 }
 
 GetChannelMessageOutcome ChimeSDKMessagingClient::GetChannelMessage(const GetChannelMessageRequest& request) const
@@ -1069,12 +1023,10 @@ GetChannelMessageOutcomeCallable ChimeSDKMessagingClient::GetChannelMessageCalla
 
 void ChimeSDKMessagingClient::GetChannelMessageAsync(const GetChannelMessageRequest& request, const GetChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetChannelMessageAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::GetChannelMessageAsyncHelper(const GetChannelMessageRequest& request, const GetChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetChannelMessage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetChannelMessage(request), context);
+    } );
 }
 
 GetChannelMessageStatusOutcome ChimeSDKMessagingClient::GetChannelMessageStatus(const GetChannelMessageStatusRequest& request) const
@@ -1115,12 +1067,10 @@ GetChannelMessageStatusOutcomeCallable ChimeSDKMessagingClient::GetChannelMessag
 
 void ChimeSDKMessagingClient::GetChannelMessageStatusAsync(const GetChannelMessageStatusRequest& request, const GetChannelMessageStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetChannelMessageStatusAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::GetChannelMessageStatusAsyncHelper(const GetChannelMessageStatusRequest& request, const GetChannelMessageStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetChannelMessageStatus(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetChannelMessageStatus(request), context);
+    } );
 }
 
 GetMessagingSessionEndpointOutcome ChimeSDKMessagingClient::GetMessagingSessionEndpoint(const GetMessagingSessionEndpointRequest& request) const
@@ -1140,12 +1090,10 @@ GetMessagingSessionEndpointOutcomeCallable ChimeSDKMessagingClient::GetMessaging
 
 void ChimeSDKMessagingClient::GetMessagingSessionEndpointAsync(const GetMessagingSessionEndpointRequest& request, const GetMessagingSessionEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMessagingSessionEndpointAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::GetMessagingSessionEndpointAsyncHelper(const GetMessagingSessionEndpointRequest& request, const GetMessagingSessionEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetMessagingSessionEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetMessagingSessionEndpoint(request), context);
+    } );
 }
 
 ListChannelBansOutcome ChimeSDKMessagingClient::ListChannelBans(const ListChannelBansRequest& request) const
@@ -1177,12 +1125,10 @@ ListChannelBansOutcomeCallable ChimeSDKMessagingClient::ListChannelBansCallable(
 
 void ChimeSDKMessagingClient::ListChannelBansAsync(const ListChannelBansRequest& request, const ListChannelBansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListChannelBansAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::ListChannelBansAsyncHelper(const ListChannelBansRequest& request, const ListChannelBansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListChannelBans(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListChannelBans(request), context);
+    } );
 }
 
 ListChannelFlowsOutcome ChimeSDKMessagingClient::ListChannelFlows(const ListChannelFlowsRequest& request) const
@@ -1207,12 +1153,10 @@ ListChannelFlowsOutcomeCallable ChimeSDKMessagingClient::ListChannelFlowsCallabl
 
 void ChimeSDKMessagingClient::ListChannelFlowsAsync(const ListChannelFlowsRequest& request, const ListChannelFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListChannelFlowsAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::ListChannelFlowsAsyncHelper(const ListChannelFlowsRequest& request, const ListChannelFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListChannelFlows(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListChannelFlows(request), context);
+    } );
 }
 
 ListChannelMembershipsOutcome ChimeSDKMessagingClient::ListChannelMemberships(const ListChannelMembershipsRequest& request) const
@@ -1244,12 +1188,10 @@ ListChannelMembershipsOutcomeCallable ChimeSDKMessagingClient::ListChannelMember
 
 void ChimeSDKMessagingClient::ListChannelMembershipsAsync(const ListChannelMembershipsRequest& request, const ListChannelMembershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListChannelMembershipsAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::ListChannelMembershipsAsyncHelper(const ListChannelMembershipsRequest& request, const ListChannelMembershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListChannelMemberships(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListChannelMemberships(request), context);
+    } );
 }
 
 ListChannelMembershipsForAppInstanceUserOutcome ChimeSDKMessagingClient::ListChannelMembershipsForAppInstanceUser(const ListChannelMembershipsForAppInstanceUserRequest& request) const
@@ -1277,12 +1219,10 @@ ListChannelMembershipsForAppInstanceUserOutcomeCallable ChimeSDKMessagingClient:
 
 void ChimeSDKMessagingClient::ListChannelMembershipsForAppInstanceUserAsync(const ListChannelMembershipsForAppInstanceUserRequest& request, const ListChannelMembershipsForAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListChannelMembershipsForAppInstanceUserAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::ListChannelMembershipsForAppInstanceUserAsyncHelper(const ListChannelMembershipsForAppInstanceUserRequest& request, const ListChannelMembershipsForAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListChannelMembershipsForAppInstanceUser(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListChannelMembershipsForAppInstanceUser(request), context);
+    } );
 }
 
 ListChannelMessagesOutcome ChimeSDKMessagingClient::ListChannelMessages(const ListChannelMessagesRequest& request) const
@@ -1314,12 +1254,10 @@ ListChannelMessagesOutcomeCallable ChimeSDKMessagingClient::ListChannelMessagesC
 
 void ChimeSDKMessagingClient::ListChannelMessagesAsync(const ListChannelMessagesRequest& request, const ListChannelMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListChannelMessagesAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::ListChannelMessagesAsyncHelper(const ListChannelMessagesRequest& request, const ListChannelMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListChannelMessages(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListChannelMessages(request), context);
+    } );
 }
 
 ListChannelModeratorsOutcome ChimeSDKMessagingClient::ListChannelModerators(const ListChannelModeratorsRequest& request) const
@@ -1351,12 +1289,10 @@ ListChannelModeratorsOutcomeCallable ChimeSDKMessagingClient::ListChannelModerat
 
 void ChimeSDKMessagingClient::ListChannelModeratorsAsync(const ListChannelModeratorsRequest& request, const ListChannelModeratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListChannelModeratorsAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::ListChannelModeratorsAsyncHelper(const ListChannelModeratorsRequest& request, const ListChannelModeratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListChannelModerators(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListChannelModerators(request), context);
+    } );
 }
 
 ListChannelsOutcome ChimeSDKMessagingClient::ListChannels(const ListChannelsRequest& request) const
@@ -1386,12 +1322,10 @@ ListChannelsOutcomeCallable ChimeSDKMessagingClient::ListChannelsCallable(const 
 
 void ChimeSDKMessagingClient::ListChannelsAsync(const ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListChannelsAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::ListChannelsAsyncHelper(const ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListChannels(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListChannels(request), context);
+    } );
 }
 
 ListChannelsAssociatedWithChannelFlowOutcome ChimeSDKMessagingClient::ListChannelsAssociatedWithChannelFlow(const ListChannelsAssociatedWithChannelFlowRequest& request) const
@@ -1419,12 +1353,10 @@ ListChannelsAssociatedWithChannelFlowOutcomeCallable ChimeSDKMessagingClient::Li
 
 void ChimeSDKMessagingClient::ListChannelsAssociatedWithChannelFlowAsync(const ListChannelsAssociatedWithChannelFlowRequest& request, const ListChannelsAssociatedWithChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListChannelsAssociatedWithChannelFlowAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::ListChannelsAssociatedWithChannelFlowAsyncHelper(const ListChannelsAssociatedWithChannelFlowRequest& request, const ListChannelsAssociatedWithChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListChannelsAssociatedWithChannelFlow(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListChannelsAssociatedWithChannelFlow(request), context);
+    } );
 }
 
 ListChannelsModeratedByAppInstanceUserOutcome ChimeSDKMessagingClient::ListChannelsModeratedByAppInstanceUser(const ListChannelsModeratedByAppInstanceUserRequest& request) const
@@ -1452,12 +1384,10 @@ ListChannelsModeratedByAppInstanceUserOutcomeCallable ChimeSDKMessagingClient::L
 
 void ChimeSDKMessagingClient::ListChannelsModeratedByAppInstanceUserAsync(const ListChannelsModeratedByAppInstanceUserRequest& request, const ListChannelsModeratedByAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListChannelsModeratedByAppInstanceUserAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::ListChannelsModeratedByAppInstanceUserAsyncHelper(const ListChannelsModeratedByAppInstanceUserRequest& request, const ListChannelsModeratedByAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListChannelsModeratedByAppInstanceUser(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListChannelsModeratedByAppInstanceUser(request), context);
+    } );
 }
 
 ListSubChannelsOutcome ChimeSDKMessagingClient::ListSubChannels(const ListSubChannelsRequest& request) const
@@ -1489,12 +1419,10 @@ ListSubChannelsOutcomeCallable ChimeSDKMessagingClient::ListSubChannelsCallable(
 
 void ChimeSDKMessagingClient::ListSubChannelsAsync(const ListSubChannelsRequest& request, const ListSubChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSubChannelsAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::ListSubChannelsAsyncHelper(const ListSubChannelsRequest& request, const ListSubChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListSubChannels(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListSubChannels(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome ChimeSDKMessagingClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1519,12 +1447,10 @@ ListTagsForResourceOutcomeCallable ChimeSDKMessagingClient::ListTagsForResourceC
 
 void ChimeSDKMessagingClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 PutChannelMembershipPreferencesOutcome ChimeSDKMessagingClient::PutChannelMembershipPreferences(const PutChannelMembershipPreferencesRequest& request) const
@@ -1563,12 +1489,10 @@ PutChannelMembershipPreferencesOutcomeCallable ChimeSDKMessagingClient::PutChann
 
 void ChimeSDKMessagingClient::PutChannelMembershipPreferencesAsync(const PutChannelMembershipPreferencesRequest& request, const PutChannelMembershipPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutChannelMembershipPreferencesAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::PutChannelMembershipPreferencesAsyncHelper(const PutChannelMembershipPreferencesRequest& request, const PutChannelMembershipPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutChannelMembershipPreferences(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutChannelMembershipPreferences(request), context);
+    } );
 }
 
 RedactChannelMessageOutcome ChimeSDKMessagingClient::RedactChannelMessage(const RedactChannelMessageRequest& request) const
@@ -1609,12 +1533,10 @@ RedactChannelMessageOutcomeCallable ChimeSDKMessagingClient::RedactChannelMessag
 
 void ChimeSDKMessagingClient::RedactChannelMessageAsync(const RedactChannelMessageRequest& request, const RedactChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RedactChannelMessageAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::RedactChannelMessageAsyncHelper(const RedactChannelMessageRequest& request, const RedactChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RedactChannelMessage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RedactChannelMessage(request), context);
+    } );
 }
 
 SearchChannelsOutcome ChimeSDKMessagingClient::SearchChannels(const SearchChannelsRequest& request) const
@@ -1637,12 +1559,10 @@ SearchChannelsOutcomeCallable ChimeSDKMessagingClient::SearchChannelsCallable(co
 
 void ChimeSDKMessagingClient::SearchChannelsAsync(const SearchChannelsRequest& request, const SearchChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchChannelsAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::SearchChannelsAsyncHelper(const SearchChannelsRequest& request, const SearchChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SearchChannels(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SearchChannels(request), context);
+    } );
 }
 
 SendChannelMessageOutcome ChimeSDKMessagingClient::SendChannelMessage(const SendChannelMessageRequest& request) const
@@ -1674,12 +1594,10 @@ SendChannelMessageOutcomeCallable ChimeSDKMessagingClient::SendChannelMessageCal
 
 void ChimeSDKMessagingClient::SendChannelMessageAsync(const SendChannelMessageRequest& request, const SendChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendChannelMessageAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::SendChannelMessageAsyncHelper(const SendChannelMessageRequest& request, const SendChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SendChannelMessage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SendChannelMessage(request), context);
+    } );
 }
 
 TagResourceOutcome ChimeSDKMessagingClient::TagResource(const TagResourceRequest& request) const
@@ -1702,12 +1620,10 @@ TagResourceOutcomeCallable ChimeSDKMessagingClient::TagResourceCallable(const Ta
 
 void ChimeSDKMessagingClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome ChimeSDKMessagingClient::UntagResource(const UntagResourceRequest& request) const
@@ -1730,12 +1646,10 @@ UntagResourceOutcomeCallable ChimeSDKMessagingClient::UntagResourceCallable(cons
 
 void ChimeSDKMessagingClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateChannelOutcome ChimeSDKMessagingClient::UpdateChannel(const UpdateChannelRequest& request) const
@@ -1766,12 +1680,10 @@ UpdateChannelOutcomeCallable ChimeSDKMessagingClient::UpdateChannelCallable(cons
 
 void ChimeSDKMessagingClient::UpdateChannelAsync(const UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateChannelAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::UpdateChannelAsyncHelper(const UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateChannel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateChannel(request), context);
+    } );
 }
 
 UpdateChannelFlowOutcome ChimeSDKMessagingClient::UpdateChannelFlow(const UpdateChannelFlowRequest& request) const
@@ -1797,12 +1709,10 @@ UpdateChannelFlowOutcomeCallable ChimeSDKMessagingClient::UpdateChannelFlowCalla
 
 void ChimeSDKMessagingClient::UpdateChannelFlowAsync(const UpdateChannelFlowRequest& request, const UpdateChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateChannelFlowAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::UpdateChannelFlowAsyncHelper(const UpdateChannelFlowRequest& request, const UpdateChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateChannelFlow(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateChannelFlow(request), context);
+    } );
 }
 
 UpdateChannelMessageOutcome ChimeSDKMessagingClient::UpdateChannelMessage(const UpdateChannelMessageRequest& request) const
@@ -1840,12 +1750,10 @@ UpdateChannelMessageOutcomeCallable ChimeSDKMessagingClient::UpdateChannelMessag
 
 void ChimeSDKMessagingClient::UpdateChannelMessageAsync(const UpdateChannelMessageRequest& request, const UpdateChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateChannelMessageAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::UpdateChannelMessageAsyncHelper(const UpdateChannelMessageRequest& request, const UpdateChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateChannelMessage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateChannelMessage(request), context);
+    } );
 }
 
 UpdateChannelReadMarkerOutcome ChimeSDKMessagingClient::UpdateChannelReadMarker(const UpdateChannelReadMarkerRequest& request) const
@@ -1877,11 +1785,9 @@ UpdateChannelReadMarkerOutcomeCallable ChimeSDKMessagingClient::UpdateChannelRea
 
 void ChimeSDKMessagingClient::UpdateChannelReadMarkerAsync(const UpdateChannelReadMarkerRequest& request, const UpdateChannelReadMarkerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateChannelReadMarkerAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMessagingClient::UpdateChannelReadMarkerAsyncHelper(const UpdateChannelReadMarkerRequest& request, const UpdateChannelReadMarkerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateChannelReadMarker(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateChannelReadMarker(request), context);
+    } );
 }
 

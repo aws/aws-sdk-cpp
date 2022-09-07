@@ -171,12 +171,10 @@ AcceptEulasOutcomeCallable NimbleStudioClient::AcceptEulasCallable(const AcceptE
 
 void NimbleStudioClient::AcceptEulasAsync(const AcceptEulasRequest& request, const AcceptEulasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AcceptEulasAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::AcceptEulasAsyncHelper(const AcceptEulasRequest& request, const AcceptEulasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AcceptEulas(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AcceptEulas(request), context);
+    } );
 }
 
 CreateLaunchProfileOutcome NimbleStudioClient::CreateLaunchProfile(const CreateLaunchProfileRequest& request) const
@@ -203,12 +201,10 @@ CreateLaunchProfileOutcomeCallable NimbleStudioClient::CreateLaunchProfileCallab
 
 void NimbleStudioClient::CreateLaunchProfileAsync(const CreateLaunchProfileRequest& request, const CreateLaunchProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLaunchProfileAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::CreateLaunchProfileAsyncHelper(const CreateLaunchProfileRequest& request, const CreateLaunchProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateLaunchProfile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateLaunchProfile(request), context);
+    } );
 }
 
 CreateStreamingImageOutcome NimbleStudioClient::CreateStreamingImage(const CreateStreamingImageRequest& request) const
@@ -235,12 +231,10 @@ CreateStreamingImageOutcomeCallable NimbleStudioClient::CreateStreamingImageCall
 
 void NimbleStudioClient::CreateStreamingImageAsync(const CreateStreamingImageRequest& request, const CreateStreamingImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateStreamingImageAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::CreateStreamingImageAsyncHelper(const CreateStreamingImageRequest& request, const CreateStreamingImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateStreamingImage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateStreamingImage(request), context);
+    } );
 }
 
 CreateStreamingSessionOutcome NimbleStudioClient::CreateStreamingSession(const CreateStreamingSessionRequest& request) const
@@ -267,12 +261,10 @@ CreateStreamingSessionOutcomeCallable NimbleStudioClient::CreateStreamingSession
 
 void NimbleStudioClient::CreateStreamingSessionAsync(const CreateStreamingSessionRequest& request, const CreateStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateStreamingSessionAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::CreateStreamingSessionAsyncHelper(const CreateStreamingSessionRequest& request, const CreateStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateStreamingSession(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateStreamingSession(request), context);
+    } );
 }
 
 CreateStreamingSessionStreamOutcome NimbleStudioClient::CreateStreamingSessionStream(const CreateStreamingSessionStreamRequest& request) const
@@ -306,12 +298,10 @@ CreateStreamingSessionStreamOutcomeCallable NimbleStudioClient::CreateStreamingS
 
 void NimbleStudioClient::CreateStreamingSessionStreamAsync(const CreateStreamingSessionStreamRequest& request, const CreateStreamingSessionStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateStreamingSessionStreamAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::CreateStreamingSessionStreamAsyncHelper(const CreateStreamingSessionStreamRequest& request, const CreateStreamingSessionStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateStreamingSessionStream(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateStreamingSessionStream(request), context);
+    } );
 }
 
 CreateStudioOutcome NimbleStudioClient::CreateStudio(const CreateStudioRequest& request) const
@@ -331,12 +321,10 @@ CreateStudioOutcomeCallable NimbleStudioClient::CreateStudioCallable(const Creat
 
 void NimbleStudioClient::CreateStudioAsync(const CreateStudioRequest& request, const CreateStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateStudioAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::CreateStudioAsyncHelper(const CreateStudioRequest& request, const CreateStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateStudio(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateStudio(request), context);
+    } );
 }
 
 CreateStudioComponentOutcome NimbleStudioClient::CreateStudioComponent(const CreateStudioComponentRequest& request) const
@@ -363,12 +351,10 @@ CreateStudioComponentOutcomeCallable NimbleStudioClient::CreateStudioComponentCa
 
 void NimbleStudioClient::CreateStudioComponentAsync(const CreateStudioComponentRequest& request, const CreateStudioComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateStudioComponentAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::CreateStudioComponentAsyncHelper(const CreateStudioComponentRequest& request, const CreateStudioComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateStudioComponent(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateStudioComponent(request), context);
+    } );
 }
 
 DeleteLaunchProfileOutcome NimbleStudioClient::DeleteLaunchProfile(const DeleteLaunchProfileRequest& request) const
@@ -401,12 +387,10 @@ DeleteLaunchProfileOutcomeCallable NimbleStudioClient::DeleteLaunchProfileCallab
 
 void NimbleStudioClient::DeleteLaunchProfileAsync(const DeleteLaunchProfileRequest& request, const DeleteLaunchProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLaunchProfileAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::DeleteLaunchProfileAsyncHelper(const DeleteLaunchProfileRequest& request, const DeleteLaunchProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteLaunchProfile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteLaunchProfile(request), context);
+    } );
 }
 
 DeleteLaunchProfileMemberOutcome NimbleStudioClient::DeleteLaunchProfileMember(const DeleteLaunchProfileMemberRequest& request) const
@@ -446,12 +430,10 @@ DeleteLaunchProfileMemberOutcomeCallable NimbleStudioClient::DeleteLaunchProfile
 
 void NimbleStudioClient::DeleteLaunchProfileMemberAsync(const DeleteLaunchProfileMemberRequest& request, const DeleteLaunchProfileMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLaunchProfileMemberAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::DeleteLaunchProfileMemberAsyncHelper(const DeleteLaunchProfileMemberRequest& request, const DeleteLaunchProfileMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteLaunchProfileMember(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteLaunchProfileMember(request), context);
+    } );
 }
 
 DeleteStreamingImageOutcome NimbleStudioClient::DeleteStreamingImage(const DeleteStreamingImageRequest& request) const
@@ -484,12 +466,10 @@ DeleteStreamingImageOutcomeCallable NimbleStudioClient::DeleteStreamingImageCall
 
 void NimbleStudioClient::DeleteStreamingImageAsync(const DeleteStreamingImageRequest& request, const DeleteStreamingImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteStreamingImageAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::DeleteStreamingImageAsyncHelper(const DeleteStreamingImageRequest& request, const DeleteStreamingImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteStreamingImage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteStreamingImage(request), context);
+    } );
 }
 
 DeleteStreamingSessionOutcome NimbleStudioClient::DeleteStreamingSession(const DeleteStreamingSessionRequest& request) const
@@ -522,12 +502,10 @@ DeleteStreamingSessionOutcomeCallable NimbleStudioClient::DeleteStreamingSession
 
 void NimbleStudioClient::DeleteStreamingSessionAsync(const DeleteStreamingSessionRequest& request, const DeleteStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteStreamingSessionAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::DeleteStreamingSessionAsyncHelper(const DeleteStreamingSessionRequest& request, const DeleteStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteStreamingSession(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteStreamingSession(request), context);
+    } );
 }
 
 DeleteStudioOutcome NimbleStudioClient::DeleteStudio(const DeleteStudioRequest& request) const
@@ -553,12 +531,10 @@ DeleteStudioOutcomeCallable NimbleStudioClient::DeleteStudioCallable(const Delet
 
 void NimbleStudioClient::DeleteStudioAsync(const DeleteStudioRequest& request, const DeleteStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteStudioAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::DeleteStudioAsyncHelper(const DeleteStudioRequest& request, const DeleteStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteStudio(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteStudio(request), context);
+    } );
 }
 
 DeleteStudioComponentOutcome NimbleStudioClient::DeleteStudioComponent(const DeleteStudioComponentRequest& request) const
@@ -591,12 +567,10 @@ DeleteStudioComponentOutcomeCallable NimbleStudioClient::DeleteStudioComponentCa
 
 void NimbleStudioClient::DeleteStudioComponentAsync(const DeleteStudioComponentRequest& request, const DeleteStudioComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteStudioComponentAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::DeleteStudioComponentAsyncHelper(const DeleteStudioComponentRequest& request, const DeleteStudioComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteStudioComponent(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteStudioComponent(request), context);
+    } );
 }
 
 DeleteStudioMemberOutcome NimbleStudioClient::DeleteStudioMember(const DeleteStudioMemberRequest& request) const
@@ -629,12 +603,10 @@ DeleteStudioMemberOutcomeCallable NimbleStudioClient::DeleteStudioMemberCallable
 
 void NimbleStudioClient::DeleteStudioMemberAsync(const DeleteStudioMemberRequest& request, const DeleteStudioMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteStudioMemberAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::DeleteStudioMemberAsyncHelper(const DeleteStudioMemberRequest& request, const DeleteStudioMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteStudioMember(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteStudioMember(request), context);
+    } );
 }
 
 GetEulaOutcome NimbleStudioClient::GetEula(const GetEulaRequest& request) const
@@ -660,12 +632,10 @@ GetEulaOutcomeCallable NimbleStudioClient::GetEulaCallable(const GetEulaRequest&
 
 void NimbleStudioClient::GetEulaAsync(const GetEulaRequest& request, const GetEulaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEulaAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::GetEulaAsyncHelper(const GetEulaRequest& request, const GetEulaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetEula(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetEula(request), context);
+    } );
 }
 
 GetLaunchProfileOutcome NimbleStudioClient::GetLaunchProfile(const GetLaunchProfileRequest& request) const
@@ -698,12 +668,10 @@ GetLaunchProfileOutcomeCallable NimbleStudioClient::GetLaunchProfileCallable(con
 
 void NimbleStudioClient::GetLaunchProfileAsync(const GetLaunchProfileRequest& request, const GetLaunchProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLaunchProfileAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::GetLaunchProfileAsyncHelper(const GetLaunchProfileRequest& request, const GetLaunchProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetLaunchProfile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetLaunchProfile(request), context);
+    } );
 }
 
 GetLaunchProfileDetailsOutcome NimbleStudioClient::GetLaunchProfileDetails(const GetLaunchProfileDetailsRequest& request) const
@@ -737,12 +705,10 @@ GetLaunchProfileDetailsOutcomeCallable NimbleStudioClient::GetLaunchProfileDetai
 
 void NimbleStudioClient::GetLaunchProfileDetailsAsync(const GetLaunchProfileDetailsRequest& request, const GetLaunchProfileDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLaunchProfileDetailsAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::GetLaunchProfileDetailsAsyncHelper(const GetLaunchProfileDetailsRequest& request, const GetLaunchProfileDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetLaunchProfileDetails(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetLaunchProfileDetails(request), context);
+    } );
 }
 
 GetLaunchProfileInitializationOutcome NimbleStudioClient::GetLaunchProfileInitialization(const GetLaunchProfileInitializationRequest& request) const
@@ -791,12 +757,10 @@ GetLaunchProfileInitializationOutcomeCallable NimbleStudioClient::GetLaunchProfi
 
 void NimbleStudioClient::GetLaunchProfileInitializationAsync(const GetLaunchProfileInitializationRequest& request, const GetLaunchProfileInitializationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLaunchProfileInitializationAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::GetLaunchProfileInitializationAsyncHelper(const GetLaunchProfileInitializationRequest& request, const GetLaunchProfileInitializationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetLaunchProfileInitialization(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetLaunchProfileInitialization(request), context);
+    } );
 }
 
 GetLaunchProfileMemberOutcome NimbleStudioClient::GetLaunchProfileMember(const GetLaunchProfileMemberRequest& request) const
@@ -836,12 +800,10 @@ GetLaunchProfileMemberOutcomeCallable NimbleStudioClient::GetLaunchProfileMember
 
 void NimbleStudioClient::GetLaunchProfileMemberAsync(const GetLaunchProfileMemberRequest& request, const GetLaunchProfileMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLaunchProfileMemberAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::GetLaunchProfileMemberAsyncHelper(const GetLaunchProfileMemberRequest& request, const GetLaunchProfileMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetLaunchProfileMember(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetLaunchProfileMember(request), context);
+    } );
 }
 
 GetStreamingImageOutcome NimbleStudioClient::GetStreamingImage(const GetStreamingImageRequest& request) const
@@ -874,12 +836,10 @@ GetStreamingImageOutcomeCallable NimbleStudioClient::GetStreamingImageCallable(c
 
 void NimbleStudioClient::GetStreamingImageAsync(const GetStreamingImageRequest& request, const GetStreamingImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetStreamingImageAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::GetStreamingImageAsyncHelper(const GetStreamingImageRequest& request, const GetStreamingImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetStreamingImage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetStreamingImage(request), context);
+    } );
 }
 
 GetStreamingSessionOutcome NimbleStudioClient::GetStreamingSession(const GetStreamingSessionRequest& request) const
@@ -912,12 +872,10 @@ GetStreamingSessionOutcomeCallable NimbleStudioClient::GetStreamingSessionCallab
 
 void NimbleStudioClient::GetStreamingSessionAsync(const GetStreamingSessionRequest& request, const GetStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetStreamingSessionAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::GetStreamingSessionAsyncHelper(const GetStreamingSessionRequest& request, const GetStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetStreamingSession(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetStreamingSession(request), context);
+    } );
 }
 
 GetStreamingSessionStreamOutcome NimbleStudioClient::GetStreamingSessionStream(const GetStreamingSessionStreamRequest& request) const
@@ -957,12 +915,10 @@ GetStreamingSessionStreamOutcomeCallable NimbleStudioClient::GetStreamingSession
 
 void NimbleStudioClient::GetStreamingSessionStreamAsync(const GetStreamingSessionStreamRequest& request, const GetStreamingSessionStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetStreamingSessionStreamAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::GetStreamingSessionStreamAsyncHelper(const GetStreamingSessionStreamRequest& request, const GetStreamingSessionStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetStreamingSessionStream(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetStreamingSessionStream(request), context);
+    } );
 }
 
 GetStudioOutcome NimbleStudioClient::GetStudio(const GetStudioRequest& request) const
@@ -988,12 +944,10 @@ GetStudioOutcomeCallable NimbleStudioClient::GetStudioCallable(const GetStudioRe
 
 void NimbleStudioClient::GetStudioAsync(const GetStudioRequest& request, const GetStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetStudioAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::GetStudioAsyncHelper(const GetStudioRequest& request, const GetStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetStudio(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetStudio(request), context);
+    } );
 }
 
 GetStudioComponentOutcome NimbleStudioClient::GetStudioComponent(const GetStudioComponentRequest& request) const
@@ -1026,12 +980,10 @@ GetStudioComponentOutcomeCallable NimbleStudioClient::GetStudioComponentCallable
 
 void NimbleStudioClient::GetStudioComponentAsync(const GetStudioComponentRequest& request, const GetStudioComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetStudioComponentAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::GetStudioComponentAsyncHelper(const GetStudioComponentRequest& request, const GetStudioComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetStudioComponent(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetStudioComponent(request), context);
+    } );
 }
 
 GetStudioMemberOutcome NimbleStudioClient::GetStudioMember(const GetStudioMemberRequest& request) const
@@ -1064,12 +1016,10 @@ GetStudioMemberOutcomeCallable NimbleStudioClient::GetStudioMemberCallable(const
 
 void NimbleStudioClient::GetStudioMemberAsync(const GetStudioMemberRequest& request, const GetStudioMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetStudioMemberAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::GetStudioMemberAsyncHelper(const GetStudioMemberRequest& request, const GetStudioMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetStudioMember(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetStudioMember(request), context);
+    } );
 }
 
 ListEulaAcceptancesOutcome NimbleStudioClient::ListEulaAcceptances(const ListEulaAcceptancesRequest& request) const
@@ -1096,12 +1046,10 @@ ListEulaAcceptancesOutcomeCallable NimbleStudioClient::ListEulaAcceptancesCallab
 
 void NimbleStudioClient::ListEulaAcceptancesAsync(const ListEulaAcceptancesRequest& request, const ListEulaAcceptancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEulaAcceptancesAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::ListEulaAcceptancesAsyncHelper(const ListEulaAcceptancesRequest& request, const ListEulaAcceptancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListEulaAcceptances(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListEulaAcceptances(request), context);
+    } );
 }
 
 ListEulasOutcome NimbleStudioClient::ListEulas(const ListEulasRequest& request) const
@@ -1121,12 +1069,10 @@ ListEulasOutcomeCallable NimbleStudioClient::ListEulasCallable(const ListEulasRe
 
 void NimbleStudioClient::ListEulasAsync(const ListEulasRequest& request, const ListEulasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEulasAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::ListEulasAsyncHelper(const ListEulasRequest& request, const ListEulasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListEulas(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListEulas(request), context);
+    } );
 }
 
 ListLaunchProfileMembersOutcome NimbleStudioClient::ListLaunchProfileMembers(const ListLaunchProfileMembersRequest& request) const
@@ -1160,12 +1106,10 @@ ListLaunchProfileMembersOutcomeCallable NimbleStudioClient::ListLaunchProfileMem
 
 void NimbleStudioClient::ListLaunchProfileMembersAsync(const ListLaunchProfileMembersRequest& request, const ListLaunchProfileMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLaunchProfileMembersAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::ListLaunchProfileMembersAsyncHelper(const ListLaunchProfileMembersRequest& request, const ListLaunchProfileMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListLaunchProfileMembers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListLaunchProfileMembers(request), context);
+    } );
 }
 
 ListLaunchProfilesOutcome NimbleStudioClient::ListLaunchProfiles(const ListLaunchProfilesRequest& request) const
@@ -1192,12 +1136,10 @@ ListLaunchProfilesOutcomeCallable NimbleStudioClient::ListLaunchProfilesCallable
 
 void NimbleStudioClient::ListLaunchProfilesAsync(const ListLaunchProfilesRequest& request, const ListLaunchProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLaunchProfilesAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::ListLaunchProfilesAsyncHelper(const ListLaunchProfilesRequest& request, const ListLaunchProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListLaunchProfiles(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListLaunchProfiles(request), context);
+    } );
 }
 
 ListStreamingImagesOutcome NimbleStudioClient::ListStreamingImages(const ListStreamingImagesRequest& request) const
@@ -1224,12 +1166,10 @@ ListStreamingImagesOutcomeCallable NimbleStudioClient::ListStreamingImagesCallab
 
 void NimbleStudioClient::ListStreamingImagesAsync(const ListStreamingImagesRequest& request, const ListStreamingImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListStreamingImagesAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::ListStreamingImagesAsyncHelper(const ListStreamingImagesRequest& request, const ListStreamingImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListStreamingImages(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListStreamingImages(request), context);
+    } );
 }
 
 ListStreamingSessionsOutcome NimbleStudioClient::ListStreamingSessions(const ListStreamingSessionsRequest& request) const
@@ -1256,12 +1196,10 @@ ListStreamingSessionsOutcomeCallable NimbleStudioClient::ListStreamingSessionsCa
 
 void NimbleStudioClient::ListStreamingSessionsAsync(const ListStreamingSessionsRequest& request, const ListStreamingSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListStreamingSessionsAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::ListStreamingSessionsAsyncHelper(const ListStreamingSessionsRequest& request, const ListStreamingSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListStreamingSessions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListStreamingSessions(request), context);
+    } );
 }
 
 ListStudioComponentsOutcome NimbleStudioClient::ListStudioComponents(const ListStudioComponentsRequest& request) const
@@ -1288,12 +1226,10 @@ ListStudioComponentsOutcomeCallable NimbleStudioClient::ListStudioComponentsCall
 
 void NimbleStudioClient::ListStudioComponentsAsync(const ListStudioComponentsRequest& request, const ListStudioComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListStudioComponentsAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::ListStudioComponentsAsyncHelper(const ListStudioComponentsRequest& request, const ListStudioComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListStudioComponents(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListStudioComponents(request), context);
+    } );
 }
 
 ListStudioMembersOutcome NimbleStudioClient::ListStudioMembers(const ListStudioMembersRequest& request) const
@@ -1320,12 +1256,10 @@ ListStudioMembersOutcomeCallable NimbleStudioClient::ListStudioMembersCallable(c
 
 void NimbleStudioClient::ListStudioMembersAsync(const ListStudioMembersRequest& request, const ListStudioMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListStudioMembersAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::ListStudioMembersAsyncHelper(const ListStudioMembersRequest& request, const ListStudioMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListStudioMembers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListStudioMembers(request), context);
+    } );
 }
 
 ListStudiosOutcome NimbleStudioClient::ListStudios(const ListStudiosRequest& request) const
@@ -1345,12 +1279,10 @@ ListStudiosOutcomeCallable NimbleStudioClient::ListStudiosCallable(const ListStu
 
 void NimbleStudioClient::ListStudiosAsync(const ListStudiosRequest& request, const ListStudiosResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListStudiosAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::ListStudiosAsyncHelper(const ListStudiosRequest& request, const ListStudiosResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListStudios(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListStudios(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome NimbleStudioClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1376,12 +1308,10 @@ ListTagsForResourceOutcomeCallable NimbleStudioClient::ListTagsForResourceCallab
 
 void NimbleStudioClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 PutLaunchProfileMembersOutcome NimbleStudioClient::PutLaunchProfileMembers(const PutLaunchProfileMembersRequest& request) const
@@ -1415,12 +1345,10 @@ PutLaunchProfileMembersOutcomeCallable NimbleStudioClient::PutLaunchProfileMembe
 
 void NimbleStudioClient::PutLaunchProfileMembersAsync(const PutLaunchProfileMembersRequest& request, const PutLaunchProfileMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutLaunchProfileMembersAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::PutLaunchProfileMembersAsyncHelper(const PutLaunchProfileMembersRequest& request, const PutLaunchProfileMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutLaunchProfileMembers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutLaunchProfileMembers(request), context);
+    } );
 }
 
 PutStudioMembersOutcome NimbleStudioClient::PutStudioMembers(const PutStudioMembersRequest& request) const
@@ -1447,12 +1375,10 @@ PutStudioMembersOutcomeCallable NimbleStudioClient::PutStudioMembersCallable(con
 
 void NimbleStudioClient::PutStudioMembersAsync(const PutStudioMembersRequest& request, const PutStudioMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutStudioMembersAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::PutStudioMembersAsyncHelper(const PutStudioMembersRequest& request, const PutStudioMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutStudioMembers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutStudioMembers(request), context);
+    } );
 }
 
 StartStreamingSessionOutcome NimbleStudioClient::StartStreamingSession(const StartStreamingSessionRequest& request) const
@@ -1486,12 +1412,10 @@ StartStreamingSessionOutcomeCallable NimbleStudioClient::StartStreamingSessionCa
 
 void NimbleStudioClient::StartStreamingSessionAsync(const StartStreamingSessionRequest& request, const StartStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartStreamingSessionAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::StartStreamingSessionAsyncHelper(const StartStreamingSessionRequest& request, const StartStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartStreamingSession(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartStreamingSession(request), context);
+    } );
 }
 
 StartStudioSSOConfigurationRepairOutcome NimbleStudioClient::StartStudioSSOConfigurationRepair(const StartStudioSSOConfigurationRepairRequest& request) const
@@ -1518,12 +1442,10 @@ StartStudioSSOConfigurationRepairOutcomeCallable NimbleStudioClient::StartStudio
 
 void NimbleStudioClient::StartStudioSSOConfigurationRepairAsync(const StartStudioSSOConfigurationRepairRequest& request, const StartStudioSSOConfigurationRepairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartStudioSSOConfigurationRepairAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::StartStudioSSOConfigurationRepairAsyncHelper(const StartStudioSSOConfigurationRepairRequest& request, const StartStudioSSOConfigurationRepairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartStudioSSOConfigurationRepair(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartStudioSSOConfigurationRepair(request), context);
+    } );
 }
 
 StopStreamingSessionOutcome NimbleStudioClient::StopStreamingSession(const StopStreamingSessionRequest& request) const
@@ -1557,12 +1479,10 @@ StopStreamingSessionOutcomeCallable NimbleStudioClient::StopStreamingSessionCall
 
 void NimbleStudioClient::StopStreamingSessionAsync(const StopStreamingSessionRequest& request, const StopStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopStreamingSessionAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::StopStreamingSessionAsyncHelper(const StopStreamingSessionRequest& request, const StopStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StopStreamingSession(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopStreamingSession(request), context);
+    } );
 }
 
 TagResourceOutcome NimbleStudioClient::TagResource(const TagResourceRequest& request) const
@@ -1588,12 +1508,10 @@ TagResourceOutcomeCallable NimbleStudioClient::TagResourceCallable(const TagReso
 
 void NimbleStudioClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome NimbleStudioClient::UntagResource(const UntagResourceRequest& request) const
@@ -1624,12 +1542,10 @@ UntagResourceOutcomeCallable NimbleStudioClient::UntagResourceCallable(const Unt
 
 void NimbleStudioClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateLaunchProfileOutcome NimbleStudioClient::UpdateLaunchProfile(const UpdateLaunchProfileRequest& request) const
@@ -1662,12 +1578,10 @@ UpdateLaunchProfileOutcomeCallable NimbleStudioClient::UpdateLaunchProfileCallab
 
 void NimbleStudioClient::UpdateLaunchProfileAsync(const UpdateLaunchProfileRequest& request, const UpdateLaunchProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateLaunchProfileAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::UpdateLaunchProfileAsyncHelper(const UpdateLaunchProfileRequest& request, const UpdateLaunchProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateLaunchProfile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateLaunchProfile(request), context);
+    } );
 }
 
 UpdateLaunchProfileMemberOutcome NimbleStudioClient::UpdateLaunchProfileMember(const UpdateLaunchProfileMemberRequest& request) const
@@ -1707,12 +1621,10 @@ UpdateLaunchProfileMemberOutcomeCallable NimbleStudioClient::UpdateLaunchProfile
 
 void NimbleStudioClient::UpdateLaunchProfileMemberAsync(const UpdateLaunchProfileMemberRequest& request, const UpdateLaunchProfileMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateLaunchProfileMemberAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::UpdateLaunchProfileMemberAsyncHelper(const UpdateLaunchProfileMemberRequest& request, const UpdateLaunchProfileMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateLaunchProfileMember(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateLaunchProfileMember(request), context);
+    } );
 }
 
 UpdateStreamingImageOutcome NimbleStudioClient::UpdateStreamingImage(const UpdateStreamingImageRequest& request) const
@@ -1745,12 +1657,10 @@ UpdateStreamingImageOutcomeCallable NimbleStudioClient::UpdateStreamingImageCall
 
 void NimbleStudioClient::UpdateStreamingImageAsync(const UpdateStreamingImageRequest& request, const UpdateStreamingImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateStreamingImageAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::UpdateStreamingImageAsyncHelper(const UpdateStreamingImageRequest& request, const UpdateStreamingImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateStreamingImage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateStreamingImage(request), context);
+    } );
 }
 
 UpdateStudioOutcome NimbleStudioClient::UpdateStudio(const UpdateStudioRequest& request) const
@@ -1776,12 +1686,10 @@ UpdateStudioOutcomeCallable NimbleStudioClient::UpdateStudioCallable(const Updat
 
 void NimbleStudioClient::UpdateStudioAsync(const UpdateStudioRequest& request, const UpdateStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateStudioAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::UpdateStudioAsyncHelper(const UpdateStudioRequest& request, const UpdateStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateStudio(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateStudio(request), context);
+    } );
 }
 
 UpdateStudioComponentOutcome NimbleStudioClient::UpdateStudioComponent(const UpdateStudioComponentRequest& request) const
@@ -1814,11 +1722,9 @@ UpdateStudioComponentOutcomeCallable NimbleStudioClient::UpdateStudioComponentCa
 
 void NimbleStudioClient::UpdateStudioComponentAsync(const UpdateStudioComponentRequest& request, const UpdateStudioComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateStudioComponentAsyncHelper( request, handler, context ); } );
-}
-
-void NimbleStudioClient::UpdateStudioComponentAsyncHelper(const UpdateStudioComponentRequest& request, const UpdateStudioComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateStudioComponent(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateStudioComponent(request), context);
+    } );
 }
 

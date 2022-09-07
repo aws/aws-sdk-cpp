@@ -144,12 +144,10 @@ CancelJobRunOutcomeCallable EMRServerlessClient::CancelJobRunCallable(const Canc
 
 void EMRServerlessClient::CancelJobRunAsync(const CancelJobRunRequest& request, const CancelJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelJobRunAsyncHelper( request, handler, context ); } );
-}
-
-void EMRServerlessClient::CancelJobRunAsyncHelper(const CancelJobRunRequest& request, const CancelJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CancelJobRun(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CancelJobRun(request), context);
+    } );
 }
 
 CreateApplicationOutcome EMRServerlessClient::CreateApplication(const CreateApplicationRequest& request) const
@@ -169,12 +167,10 @@ CreateApplicationOutcomeCallable EMRServerlessClient::CreateApplicationCallable(
 
 void EMRServerlessClient::CreateApplicationAsync(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateApplicationAsyncHelper( request, handler, context ); } );
-}
-
-void EMRServerlessClient::CreateApplicationAsyncHelper(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateApplication(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateApplication(request), context);
+    } );
 }
 
 DeleteApplicationOutcome EMRServerlessClient::DeleteApplication(const DeleteApplicationRequest& request) const
@@ -200,12 +196,10 @@ DeleteApplicationOutcomeCallable EMRServerlessClient::DeleteApplicationCallable(
 
 void EMRServerlessClient::DeleteApplicationAsync(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteApplicationAsyncHelper( request, handler, context ); } );
-}
-
-void EMRServerlessClient::DeleteApplicationAsyncHelper(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteApplication(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteApplication(request), context);
+    } );
 }
 
 GetApplicationOutcome EMRServerlessClient::GetApplication(const GetApplicationRequest& request) const
@@ -231,12 +225,10 @@ GetApplicationOutcomeCallable EMRServerlessClient::GetApplicationCallable(const 
 
 void EMRServerlessClient::GetApplicationAsync(const GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetApplicationAsyncHelper( request, handler, context ); } );
-}
-
-void EMRServerlessClient::GetApplicationAsyncHelper(const GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetApplication(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetApplication(request), context);
+    } );
 }
 
 GetJobRunOutcome EMRServerlessClient::GetJobRun(const GetJobRunRequest& request) const
@@ -269,12 +261,10 @@ GetJobRunOutcomeCallable EMRServerlessClient::GetJobRunCallable(const GetJobRunR
 
 void EMRServerlessClient::GetJobRunAsync(const GetJobRunRequest& request, const GetJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetJobRunAsyncHelper( request, handler, context ); } );
-}
-
-void EMRServerlessClient::GetJobRunAsyncHelper(const GetJobRunRequest& request, const GetJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetJobRun(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetJobRun(request), context);
+    } );
 }
 
 ListApplicationsOutcome EMRServerlessClient::ListApplications(const ListApplicationsRequest& request) const
@@ -294,12 +284,10 @@ ListApplicationsOutcomeCallable EMRServerlessClient::ListApplicationsCallable(co
 
 void EMRServerlessClient::ListApplicationsAsync(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListApplicationsAsyncHelper( request, handler, context ); } );
-}
-
-void EMRServerlessClient::ListApplicationsAsyncHelper(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListApplications(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListApplications(request), context);
+    } );
 }
 
 ListJobRunsOutcome EMRServerlessClient::ListJobRuns(const ListJobRunsRequest& request) const
@@ -326,12 +314,10 @@ ListJobRunsOutcomeCallable EMRServerlessClient::ListJobRunsCallable(const ListJo
 
 void EMRServerlessClient::ListJobRunsAsync(const ListJobRunsRequest& request, const ListJobRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListJobRunsAsyncHelper( request, handler, context ); } );
-}
-
-void EMRServerlessClient::ListJobRunsAsyncHelper(const ListJobRunsRequest& request, const ListJobRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListJobRuns(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListJobRuns(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome EMRServerlessClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -357,12 +343,10 @@ ListTagsForResourceOutcomeCallable EMRServerlessClient::ListTagsForResourceCalla
 
 void EMRServerlessClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void EMRServerlessClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 StartApplicationOutcome EMRServerlessClient::StartApplication(const StartApplicationRequest& request) const
@@ -389,12 +373,10 @@ StartApplicationOutcomeCallable EMRServerlessClient::StartApplicationCallable(co
 
 void EMRServerlessClient::StartApplicationAsync(const StartApplicationRequest& request, const StartApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartApplicationAsyncHelper( request, handler, context ); } );
-}
-
-void EMRServerlessClient::StartApplicationAsyncHelper(const StartApplicationRequest& request, const StartApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartApplication(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartApplication(request), context);
+    } );
 }
 
 StartJobRunOutcome EMRServerlessClient::StartJobRun(const StartJobRunRequest& request) const
@@ -421,12 +403,10 @@ StartJobRunOutcomeCallable EMRServerlessClient::StartJobRunCallable(const StartJ
 
 void EMRServerlessClient::StartJobRunAsync(const StartJobRunRequest& request, const StartJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartJobRunAsyncHelper( request, handler, context ); } );
-}
-
-void EMRServerlessClient::StartJobRunAsyncHelper(const StartJobRunRequest& request, const StartJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartJobRun(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartJobRun(request), context);
+    } );
 }
 
 StopApplicationOutcome EMRServerlessClient::StopApplication(const StopApplicationRequest& request) const
@@ -453,12 +433,10 @@ StopApplicationOutcomeCallable EMRServerlessClient::StopApplicationCallable(cons
 
 void EMRServerlessClient::StopApplicationAsync(const StopApplicationRequest& request, const StopApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopApplicationAsyncHelper( request, handler, context ); } );
-}
-
-void EMRServerlessClient::StopApplicationAsyncHelper(const StopApplicationRequest& request, const StopApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StopApplication(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopApplication(request), context);
+    } );
 }
 
 TagResourceOutcome EMRServerlessClient::TagResource(const TagResourceRequest& request) const
@@ -484,12 +462,10 @@ TagResourceOutcomeCallable EMRServerlessClient::TagResourceCallable(const TagRes
 
 void EMRServerlessClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void EMRServerlessClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome EMRServerlessClient::UntagResource(const UntagResourceRequest& request) const
@@ -520,12 +496,10 @@ UntagResourceOutcomeCallable EMRServerlessClient::UntagResourceCallable(const Un
 
 void EMRServerlessClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void EMRServerlessClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateApplicationOutcome EMRServerlessClient::UpdateApplication(const UpdateApplicationRequest& request) const
@@ -551,11 +525,9 @@ UpdateApplicationOutcomeCallable EMRServerlessClient::UpdateApplicationCallable(
 
 void EMRServerlessClient::UpdateApplicationAsync(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateApplicationAsyncHelper( request, handler, context ); } );
-}
-
-void EMRServerlessClient::UpdateApplicationAsyncHelper(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateApplication(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateApplication(request), context);
+    } );
 }
 

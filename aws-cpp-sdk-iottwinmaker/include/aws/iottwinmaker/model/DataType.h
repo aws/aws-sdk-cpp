@@ -222,7 +222,7 @@ namespace Model
     bool m_allowedValuesHasBeenSet = false;
 
     std::shared_ptr<DataType> m_nestedType;
-    bool m_nestedTypeHasBeenSet;
+    bool m_nestedTypeHasBeenSet = false;
 
     Relationship m_relationship;
     bool m_relationshipHasBeenSet = false;

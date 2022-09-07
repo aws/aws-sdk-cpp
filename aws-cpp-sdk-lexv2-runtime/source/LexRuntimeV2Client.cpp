@@ -151,12 +151,10 @@ DeleteSessionOutcomeCallable LexRuntimeV2Client::DeleteSessionCallable(const Del
 
 void LexRuntimeV2Client::DeleteSessionAsync(const DeleteSessionRequest& request, const DeleteSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSessionAsyncHelper( request, handler, context ); } );
-}
-
-void LexRuntimeV2Client::DeleteSessionAsyncHelper(const DeleteSessionRequest& request, const DeleteSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteSession(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteSession(request), context);
+    } );
 }
 
 GetSessionOutcome LexRuntimeV2Client::GetSession(const GetSessionRequest& request) const
@@ -203,12 +201,10 @@ GetSessionOutcomeCallable LexRuntimeV2Client::GetSessionCallable(const GetSessio
 
 void LexRuntimeV2Client::GetSessionAsync(const GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSessionAsyncHelper( request, handler, context ); } );
-}
-
-void LexRuntimeV2Client::GetSessionAsyncHelper(const GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetSession(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetSession(request), context);
+    } );
 }
 
 PutSessionOutcome LexRuntimeV2Client::PutSession(const PutSessionRequest& request) const
@@ -255,12 +251,10 @@ PutSessionOutcomeCallable LexRuntimeV2Client::PutSessionCallable(const PutSessio
 
 void LexRuntimeV2Client::PutSessionAsync(const PutSessionRequest& request, const PutSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutSessionAsyncHelper( request, handler, context ); } );
-}
-
-void LexRuntimeV2Client::PutSessionAsyncHelper(const PutSessionRequest& request, const PutSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutSession(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutSession(request), context);
+    } );
 }
 
 RecognizeTextOutcome LexRuntimeV2Client::RecognizeText(const RecognizeTextRequest& request) const
@@ -308,12 +302,10 @@ RecognizeTextOutcomeCallable LexRuntimeV2Client::RecognizeTextCallable(const Rec
 
 void LexRuntimeV2Client::RecognizeTextAsync(const RecognizeTextRequest& request, const RecognizeTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RecognizeTextAsyncHelper( request, handler, context ); } );
-}
-
-void LexRuntimeV2Client::RecognizeTextAsyncHelper(const RecognizeTextRequest& request, const RecognizeTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RecognizeText(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RecognizeText(request), context);
+    } );
 }
 
 RecognizeUtteranceOutcome LexRuntimeV2Client::RecognizeUtterance(const RecognizeUtteranceRequest& request) const
@@ -366,12 +358,10 @@ RecognizeUtteranceOutcomeCallable LexRuntimeV2Client::RecognizeUtteranceCallable
 
 void LexRuntimeV2Client::RecognizeUtteranceAsync(const RecognizeUtteranceRequest& request, const RecognizeUtteranceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RecognizeUtteranceAsyncHelper( request, handler, context ); } );
-}
-
-void LexRuntimeV2Client::RecognizeUtteranceAsyncHelper(const RecognizeUtteranceRequest& request, const RecognizeUtteranceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RecognizeUtterance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RecognizeUtterance(request), context);
+    } );
 }
 
 void LexRuntimeV2Client::StartConversationAsync(Model::StartConversationRequest& request,
