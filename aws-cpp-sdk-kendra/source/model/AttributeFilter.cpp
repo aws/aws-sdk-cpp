@@ -47,6 +47,13 @@ AttributeFilter::AttributeFilter(JsonView jsonValue) :
   *this = jsonValue;
 }
 
+const AttributeFilter& AttributeFilter::GetNotFilter() const{ return *m_notFilter; }
+bool AttributeFilter::NotFilterHasBeenSet() const { return m_notFilterHasBeenSet; }
+void AttributeFilter::SetNotFilter(const AttributeFilter& value) { m_notFilterHasBeenSet = true; m_notFilter = Aws::MakeShared<AttributeFilter>("AttributeFilter", value); }
+void AttributeFilter::SetNotFilter(AttributeFilter&& value) { m_notFilterHasBeenSet = true; m_notFilter = Aws::MakeShared<AttributeFilter>("AttributeFilter", std::move(value)); }
+AttributeFilter& AttributeFilter::WithNotFilter(const AttributeFilter& value) { SetNotFilter(value); return *this;}
+AttributeFilter& AttributeFilter::WithNotFilter(AttributeFilter&& value) { SetNotFilter(std::move(value)); return *this;}
+
 AttributeFilter& AttributeFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AndAllFilters"))
@@ -71,8 +78,7 @@ AttributeFilter& AttributeFilter::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("NotFilter"))
   {
-    m_notFilter.resize(1);
-    m_notFilter[0] = jsonValue.GetObject("NotFilter");
+    m_notFilter = Aws::MakeShared<AttributeFilter>("AttributeFilter", jsonValue.GetObject("NotFilter"));
 
     m_notFilterHasBeenSet = true;
   }
@@ -157,7 +163,7 @@ JsonValue AttributeFilter::Jsonize() const
 
   if(m_notFilterHasBeenSet)
   {
-   payload.WithObject("NotFilter", m_notFilter[0].Jsonize());
+   payload.WithObject("NotFilter", m_notFilter->Jsonize());
 
   }
 

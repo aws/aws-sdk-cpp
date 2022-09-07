@@ -39,6 +39,13 @@ DataType::DataType(JsonView jsonValue) :
   *this = jsonValue;
 }
 
+const DataType& DataType::GetNestedType() const{ return *m_nestedType; }
+bool DataType::NestedTypeHasBeenSet() const { return m_nestedTypeHasBeenSet; }
+void DataType::SetNestedType(const DataType& value) { m_nestedTypeHasBeenSet = true; m_nestedType = Aws::MakeShared<DataType>("DataType", value); }
+void DataType::SetNestedType(DataType&& value) { m_nestedTypeHasBeenSet = true; m_nestedType = Aws::MakeShared<DataType>("DataType", std::move(value)); }
+DataType& DataType::WithNestedType(const DataType& value) { SetNestedType(value); return *this;}
+DataType& DataType::WithNestedType(DataType&& value) { SetNestedType(std::move(value)); return *this;}
+
 DataType& DataType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("allowedValues"))
@@ -53,8 +60,7 @@ DataType& DataType::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("nestedType"))
   {
-    m_nestedType.resize(1);
-    m_nestedType[0] = jsonValue.GetObject("nestedType");
+    m_nestedType = Aws::MakeShared<DataType>("DataType", jsonValue.GetObject("nestedType"));
 
     m_nestedTypeHasBeenSet = true;
   }
@@ -100,7 +106,7 @@ JsonValue DataType::Jsonize() const
 
   if(m_nestedTypeHasBeenSet)
   {
-   payload.WithObject("nestedType", m_nestedType[0].Jsonize());
+   payload.WithObject("nestedType", m_nestedType->Jsonize());
 
   }
 

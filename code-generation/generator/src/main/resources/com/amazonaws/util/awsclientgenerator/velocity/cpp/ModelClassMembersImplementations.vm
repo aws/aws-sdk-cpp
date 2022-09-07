@@ -1,5 +1,5 @@
 #foreach($member in $shape.members.entrySet())
-#if($member.value.shape.isMutuallyReferencedWith($shape))
+#if($member.value.shape.isMutuallyReferencedWith($shape) || $member.value.shape.getName() == $shape.getName())
 #set($moveType = '')
 #set($moveValueType = '')
 #set ($required = '')
@@ -17,7 +17,7 @@
 #end
 #set($memberVariableName = $CppViewHelper.computeMemberVariableName($member.key))
 #set($memberKeyWithFirstLetterCapitalized = $CppViewHelper.capitalizeFirstChar($member.key))
-#if($member.value.shape.isMutuallyReferencedWith($shape))
+#if($member.value.shape.isMutuallyReferencedWith($shape) || $member.value.shape.getName() == $shape.getName())
 #set($getterBody = "{ return *${memberVariableName}; }")
 #set($setterWithCopy = " { ${required}${memberVariableName} = Aws::MakeShared<$CppViewHelper.computeCppType($member.value.shape)>(" + '"' + ${typeInfo.className} + '", value); }')
 #set($setterWithMove = " { ${required}${memberVariableName} = Aws::MakeShared<$CppViewHelper.computeCppType($member.value.shape)>(" + '"' + ${typeInfo.className} + '", std::move(value)); }')

@@ -39,9 +39,9 @@
       ${spaces}payload.WithObject("${memberName}", JsonValue(m_${lowerCaseVarName}.View()));
     }
 #else
-#if($member.shape.getName() == $shape.getName())
+#if($member.shape.getName() == $shape.getName() && $member.shape.list)
 #set($jsonizeString = "[0]" + ${CppViewHelper.computeJsonizeString($member.shape)})
-#elseif($member.shape.isMutuallyReferencedWith($shape))
+#elseif($member.shape.isMutuallyReferencedWith($shape) || $member.shape.getName() == $shape.getName())
 #set($jsonizeString = ${CppViewHelper.computeJsonizeString($member.shape, true)})
 #else
 #set($jsonizeString = ${CppViewHelper.computeJsonizeString($member.shape)})
