@@ -679,6 +679,63 @@ namespace Model
      */
     inline CreateTopicRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The body of the policy document you want to use for this topic.</p> <p>You
+     * can only add one policy per topic.</p> <p>The policy must be in JSON string
+     * format.</p> <p>Length Constraints: Maximum length of 30,720.</p>
+     */
+    inline const Aws::String& GetDataProtectionPolicy() const{ return m_dataProtectionPolicy; }
+
+    /**
+     * <p>The body of the policy document you want to use for this topic.</p> <p>You
+     * can only add one policy per topic.</p> <p>The policy must be in JSON string
+     * format.</p> <p>Length Constraints: Maximum length of 30,720.</p>
+     */
+    inline bool DataProtectionPolicyHasBeenSet() const { return m_dataProtectionPolicyHasBeenSet; }
+
+    /**
+     * <p>The body of the policy document you want to use for this topic.</p> <p>You
+     * can only add one policy per topic.</p> <p>The policy must be in JSON string
+     * format.</p> <p>Length Constraints: Maximum length of 30,720.</p>
+     */
+    inline void SetDataProtectionPolicy(const Aws::String& value) { m_dataProtectionPolicyHasBeenSet = true; m_dataProtectionPolicy = value; }
+
+    /**
+     * <p>The body of the policy document you want to use for this topic.</p> <p>You
+     * can only add one policy per topic.</p> <p>The policy must be in JSON string
+     * format.</p> <p>Length Constraints: Maximum length of 30,720.</p>
+     */
+    inline void SetDataProtectionPolicy(Aws::String&& value) { m_dataProtectionPolicyHasBeenSet = true; m_dataProtectionPolicy = std::move(value); }
+
+    /**
+     * <p>The body of the policy document you want to use for this topic.</p> <p>You
+     * can only add one policy per topic.</p> <p>The policy must be in JSON string
+     * format.</p> <p>Length Constraints: Maximum length of 30,720.</p>
+     */
+    inline void SetDataProtectionPolicy(const char* value) { m_dataProtectionPolicyHasBeenSet = true; m_dataProtectionPolicy.assign(value); }
+
+    /**
+     * <p>The body of the policy document you want to use for this topic.</p> <p>You
+     * can only add one policy per topic.</p> <p>The policy must be in JSON string
+     * format.</p> <p>Length Constraints: Maximum length of 30,720.</p>
+     */
+    inline CreateTopicRequest& WithDataProtectionPolicy(const Aws::String& value) { SetDataProtectionPolicy(value); return *this;}
+
+    /**
+     * <p>The body of the policy document you want to use for this topic.</p> <p>You
+     * can only add one policy per topic.</p> <p>The policy must be in JSON string
+     * format.</p> <p>Length Constraints: Maximum length of 30,720.</p>
+     */
+    inline CreateTopicRequest& WithDataProtectionPolicy(Aws::String&& value) { SetDataProtectionPolicy(std::move(value)); return *this;}
+
+    /**
+     * <p>The body of the policy document you want to use for this topic.</p> <p>You
+     * can only add one policy per topic.</p> <p>The policy must be in JSON string
+     * format.</p> <p>Length Constraints: Maximum length of 30,720.</p>
+     */
+    inline CreateTopicRequest& WithDataProtectionPolicy(const char* value) { SetDataProtectionPolicy(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -689,6 +746,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_dataProtectionPolicy;
+    bool m_dataProtectionPolicyHasBeenSet = false;
   };
 
 } // namespace Model

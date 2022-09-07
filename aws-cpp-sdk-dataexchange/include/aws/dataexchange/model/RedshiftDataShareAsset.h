@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * The Amazon Redshift datashare asset.<p><h3>See Also:</h3>   <a
+   * <p>The Amazon Redshift datashare asset.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/RedshiftDataShareAsset">AWS
    * API Reference</a></p>
    */
@@ -38,42 +38,42 @@ namespace Model
 
 
     /**
-     * The Amazon Resource Name (ARN) of the datashare asset.
+     * <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * The Amazon Resource Name (ARN) of the datashare asset.
+     * <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * The Amazon Resource Name (ARN) of the datashare asset.
+     * <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * The Amazon Resource Name (ARN) of the datashare asset.
+     * <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * The Amazon Resource Name (ARN) of the datashare asset.
+     * <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * The Amazon Resource Name (ARN) of the datashare asset.
+     * <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
      */
     inline RedshiftDataShareAsset& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * The Amazon Resource Name (ARN) of the datashare asset.
+     * <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
      */
     inline RedshiftDataShareAsset& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * The Amazon Resource Name (ARN) of the datashare asset.
+     * <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
      */
     inline RedshiftDataShareAsset& WithArn(const char* value) { SetArn(value); return *this;}
 

@@ -30,7 +30,13 @@ ProductionVariant::ProductionVariant() :
     m_acceleratorType(ProductionVariantAcceleratorType::NOT_SET),
     m_acceleratorTypeHasBeenSet(false),
     m_coreDumpConfigHasBeenSet(false),
-    m_serverlessConfigHasBeenSet(false)
+    m_serverlessConfigHasBeenSet(false),
+    m_volumeSizeInGB(0),
+    m_volumeSizeInGBHasBeenSet(false),
+    m_modelDataDownloadTimeoutInSeconds(0),
+    m_modelDataDownloadTimeoutInSecondsHasBeenSet(false),
+    m_containerStartupHealthCheckTimeoutInSeconds(0),
+    m_containerStartupHealthCheckTimeoutInSecondsHasBeenSet(false)
 {
 }
 
@@ -46,7 +52,13 @@ ProductionVariant::ProductionVariant(JsonView jsonValue) :
     m_acceleratorType(ProductionVariantAcceleratorType::NOT_SET),
     m_acceleratorTypeHasBeenSet(false),
     m_coreDumpConfigHasBeenSet(false),
-    m_serverlessConfigHasBeenSet(false)
+    m_serverlessConfigHasBeenSet(false),
+    m_volumeSizeInGB(0),
+    m_volumeSizeInGBHasBeenSet(false),
+    m_modelDataDownloadTimeoutInSeconds(0),
+    m_modelDataDownloadTimeoutInSecondsHasBeenSet(false),
+    m_containerStartupHealthCheckTimeoutInSeconds(0),
+    m_containerStartupHealthCheckTimeoutInSecondsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -109,6 +121,27 @@ ProductionVariant& ProductionVariant::operator =(JsonView jsonValue)
     m_serverlessConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VolumeSizeInGB"))
+  {
+    m_volumeSizeInGB = jsonValue.GetInteger("VolumeSizeInGB");
+
+    m_volumeSizeInGBHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ModelDataDownloadTimeoutInSeconds"))
+  {
+    m_modelDataDownloadTimeoutInSeconds = jsonValue.GetInteger("ModelDataDownloadTimeoutInSeconds");
+
+    m_modelDataDownloadTimeoutInSecondsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ContainerStartupHealthCheckTimeoutInSeconds"))
+  {
+    m_containerStartupHealthCheckTimeoutInSeconds = jsonValue.GetInteger("ContainerStartupHealthCheckTimeoutInSeconds");
+
+    m_containerStartupHealthCheckTimeoutInSecondsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -159,6 +192,24 @@ JsonValue ProductionVariant::Jsonize() const
   if(m_serverlessConfigHasBeenSet)
   {
    payload.WithObject("ServerlessConfig", m_serverlessConfig.Jsonize());
+
+  }
+
+  if(m_volumeSizeInGBHasBeenSet)
+  {
+   payload.WithInteger("VolumeSizeInGB", m_volumeSizeInGB);
+
+  }
+
+  if(m_modelDataDownloadTimeoutInSecondsHasBeenSet)
+  {
+   payload.WithInteger("ModelDataDownloadTimeoutInSeconds", m_modelDataDownloadTimeoutInSeconds);
+
+  }
+
+  if(m_containerStartupHealthCheckTimeoutInSecondsHasBeenSet)
+  {
+   payload.WithInteger("ContainerStartupHealthCheckTimeoutInSeconds", m_containerStartupHealthCheckTimeoutInSeconds);
 
   }
 

@@ -18,9 +18,6 @@ namespace Model
 {
 
   /**
-   * <p>The request body for CreateEventAction.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateEventActionRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_DATAEXCHANGE_API CreateEventActionRequest : public DataExchangeRequest
   {

@@ -137,63 +137,63 @@ namespace Model
 
 
     /**
-     * <p>Details about the import from signed URL request.</p>
+     * <p>Details about the import from Amazon S3 request.</p>
      */
     inline const ImportAssetFromSignedUrlRequestDetails& GetImportAssetFromSignedUrl() const{ return m_importAssetFromSignedUrl; }
 
     /**
-     * <p>Details about the import from signed URL request.</p>
+     * <p>Details about the import from Amazon S3 request.</p>
      */
     inline bool ImportAssetFromSignedUrlHasBeenSet() const { return m_importAssetFromSignedUrlHasBeenSet; }
 
     /**
-     * <p>Details about the import from signed URL request.</p>
+     * <p>Details about the import from Amazon S3 request.</p>
      */
     inline void SetImportAssetFromSignedUrl(const ImportAssetFromSignedUrlRequestDetails& value) { m_importAssetFromSignedUrlHasBeenSet = true; m_importAssetFromSignedUrl = value; }
 
     /**
-     * <p>Details about the import from signed URL request.</p>
+     * <p>Details about the import from Amazon S3 request.</p>
      */
     inline void SetImportAssetFromSignedUrl(ImportAssetFromSignedUrlRequestDetails&& value) { m_importAssetFromSignedUrlHasBeenSet = true; m_importAssetFromSignedUrl = std::move(value); }
 
     /**
-     * <p>Details about the import from signed URL request.</p>
+     * <p>Details about the import from Amazon S3 request.</p>
      */
     inline RequestDetails& WithImportAssetFromSignedUrl(const ImportAssetFromSignedUrlRequestDetails& value) { SetImportAssetFromSignedUrl(value); return *this;}
 
     /**
-     * <p>Details about the import from signed URL request.</p>
+     * <p>Details about the import from Amazon S3 request.</p>
      */
     inline RequestDetails& WithImportAssetFromSignedUrl(ImportAssetFromSignedUrlRequestDetails&& value) { SetImportAssetFromSignedUrl(std::move(value)); return *this;}
 
 
     /**
-     * <p>Details about the import from Amazon S3 request.</p>
+     * <p>Information about the import asset from API Gateway API request.</p>
      */
     inline const ImportAssetsFromS3RequestDetails& GetImportAssetsFromS3() const{ return m_importAssetsFromS3; }
 
     /**
-     * <p>Details about the import from Amazon S3 request.</p>
+     * <p>Information about the import asset from API Gateway API request.</p>
      */
     inline bool ImportAssetsFromS3HasBeenSet() const { return m_importAssetsFromS3HasBeenSet; }
 
     /**
-     * <p>Details about the import from Amazon S3 request.</p>
+     * <p>Information about the import asset from API Gateway API request.</p>
      */
     inline void SetImportAssetsFromS3(const ImportAssetsFromS3RequestDetails& value) { m_importAssetsFromS3HasBeenSet = true; m_importAssetsFromS3 = value; }
 
     /**
-     * <p>Details about the import from Amazon S3 request.</p>
+     * <p>Information about the import asset from API Gateway API request.</p>
      */
     inline void SetImportAssetsFromS3(ImportAssetsFromS3RequestDetails&& value) { m_importAssetsFromS3HasBeenSet = true; m_importAssetsFromS3 = std::move(value); }
 
     /**
-     * <p>Details about the import from Amazon S3 request.</p>
+     * <p>Information about the import asset from API Gateway API request.</p>
      */
     inline RequestDetails& WithImportAssetsFromS3(const ImportAssetsFromS3RequestDetails& value) { SetImportAssetsFromS3(value); return *this;}
 
     /**
-     * <p>Details about the import from Amazon S3 request.</p>
+     * <p>Information about the import asset from API Gateway API request.</p>
      */
     inline RequestDetails& WithImportAssetsFromS3(ImportAssetsFromS3RequestDetails&& value) { SetImportAssetsFromS3(std::move(value)); return *this;}
 
@@ -230,32 +230,32 @@ namespace Model
 
 
     /**
-     * <p>Information about the import asset from API Gateway API request.</p>
+     * <p>Details about the import from signed URL request.</p>
      */
     inline const ImportAssetFromApiGatewayApiRequestDetails& GetImportAssetFromApiGatewayApi() const{ return m_importAssetFromApiGatewayApi; }
 
     /**
-     * <p>Information about the import asset from API Gateway API request.</p>
+     * <p>Details about the import from signed URL request.</p>
      */
     inline bool ImportAssetFromApiGatewayApiHasBeenSet() const { return m_importAssetFromApiGatewayApiHasBeenSet; }
 
     /**
-     * <p>Information about the import asset from API Gateway API request.</p>
+     * <p>Details about the import from signed URL request.</p>
      */
     inline void SetImportAssetFromApiGatewayApi(const ImportAssetFromApiGatewayApiRequestDetails& value) { m_importAssetFromApiGatewayApiHasBeenSet = true; m_importAssetFromApiGatewayApi = value; }
 
     /**
-     * <p>Information about the import asset from API Gateway API request.</p>
+     * <p>Details about the import from signed URL request.</p>
      */
     inline void SetImportAssetFromApiGatewayApi(ImportAssetFromApiGatewayApiRequestDetails&& value) { m_importAssetFromApiGatewayApiHasBeenSet = true; m_importAssetFromApiGatewayApi = std::move(value); }
 
     /**
-     * <p>Information about the import asset from API Gateway API request.</p>
+     * <p>Details about the import from signed URL request.</p>
      */
     inline RequestDetails& WithImportAssetFromApiGatewayApi(const ImportAssetFromApiGatewayApiRequestDetails& value) { SetImportAssetFromApiGatewayApi(value); return *this;}
 
     /**
-     * <p>Information about the import asset from API Gateway API request.</p>
+     * <p>Details about the import from signed URL request.</p>
      */
     inline RequestDetails& WithImportAssetFromApiGatewayApi(ImportAssetFromApiGatewayApiRequestDetails&& value) { SetImportAssetFromApiGatewayApi(std::move(value)); return *this;}
 

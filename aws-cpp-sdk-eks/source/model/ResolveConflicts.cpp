@@ -22,6 +22,7 @@ namespace Aws
 
         static const int OVERWRITE_HASH = HashingUtils::HashString("OVERWRITE");
         static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static const int PRESERVE_HASH = HashingUtils::HashString("PRESERVE");
 
 
         ResolveConflicts GetResolveConflictsForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == NONE_HASH)
           {
             return ResolveConflicts::NONE;
+          }
+          else if (hashCode == PRESERVE_HASH)
+          {
+            return ResolveConflicts::PRESERVE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "OVERWRITE";
           case ResolveConflicts::NONE:
             return "NONE";
+          case ResolveConflicts::PRESERVE:
+            return "PRESERVE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

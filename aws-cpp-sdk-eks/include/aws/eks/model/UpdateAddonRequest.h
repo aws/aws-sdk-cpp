@@ -319,38 +319,80 @@ namespace Model
 
 
     /**
-     * <p>How to resolve parameter value conflicts when applying the new version of the
-     * add-on to the cluster.</p>
+     * <p>How to resolve field value conflicts for an Amazon EKS add-on if you've
+     * changed a value from the Amazon EKS default value. Conflicts are handled based
+     * on the option you choose:</p> <ul> <li> <p> <b>None</b> – Amazon EKS doesn't
+     * change the value. The update might fail.</p> </li> <li> <p> <b>Overwrite</b> –
+     * Amazon EKS overwrites the changed value back to the Amazon EKS default
+     * value.</p> </li> <li> <p> <b>Preserve</b> – Amazon EKS preserves the value. If
+     * you choose this option, we recommend that you test any field and value changes
+     * on a non-production cluster before updating the add-on on your production
+     * cluster.</p> </li> </ul>
      */
     inline const ResolveConflicts& GetResolveConflicts() const{ return m_resolveConflicts; }
 
     /**
-     * <p>How to resolve parameter value conflicts when applying the new version of the
-     * add-on to the cluster.</p>
+     * <p>How to resolve field value conflicts for an Amazon EKS add-on if you've
+     * changed a value from the Amazon EKS default value. Conflicts are handled based
+     * on the option you choose:</p> <ul> <li> <p> <b>None</b> – Amazon EKS doesn't
+     * change the value. The update might fail.</p> </li> <li> <p> <b>Overwrite</b> –
+     * Amazon EKS overwrites the changed value back to the Amazon EKS default
+     * value.</p> </li> <li> <p> <b>Preserve</b> – Amazon EKS preserves the value. If
+     * you choose this option, we recommend that you test any field and value changes
+     * on a non-production cluster before updating the add-on on your production
+     * cluster.</p> </li> </ul>
      */
     inline bool ResolveConflictsHasBeenSet() const { return m_resolveConflictsHasBeenSet; }
 
     /**
-     * <p>How to resolve parameter value conflicts when applying the new version of the
-     * add-on to the cluster.</p>
+     * <p>How to resolve field value conflicts for an Amazon EKS add-on if you've
+     * changed a value from the Amazon EKS default value. Conflicts are handled based
+     * on the option you choose:</p> <ul> <li> <p> <b>None</b> – Amazon EKS doesn't
+     * change the value. The update might fail.</p> </li> <li> <p> <b>Overwrite</b> –
+     * Amazon EKS overwrites the changed value back to the Amazon EKS default
+     * value.</p> </li> <li> <p> <b>Preserve</b> – Amazon EKS preserves the value. If
+     * you choose this option, we recommend that you test any field and value changes
+     * on a non-production cluster before updating the add-on on your production
+     * cluster.</p> </li> </ul>
      */
     inline void SetResolveConflicts(const ResolveConflicts& value) { m_resolveConflictsHasBeenSet = true; m_resolveConflicts = value; }
 
     /**
-     * <p>How to resolve parameter value conflicts when applying the new version of the
-     * add-on to the cluster.</p>
+     * <p>How to resolve field value conflicts for an Amazon EKS add-on if you've
+     * changed a value from the Amazon EKS default value. Conflicts are handled based
+     * on the option you choose:</p> <ul> <li> <p> <b>None</b> – Amazon EKS doesn't
+     * change the value. The update might fail.</p> </li> <li> <p> <b>Overwrite</b> –
+     * Amazon EKS overwrites the changed value back to the Amazon EKS default
+     * value.</p> </li> <li> <p> <b>Preserve</b> – Amazon EKS preserves the value. If
+     * you choose this option, we recommend that you test any field and value changes
+     * on a non-production cluster before updating the add-on on your production
+     * cluster.</p> </li> </ul>
      */
     inline void SetResolveConflicts(ResolveConflicts&& value) { m_resolveConflictsHasBeenSet = true; m_resolveConflicts = std::move(value); }
 
     /**
-     * <p>How to resolve parameter value conflicts when applying the new version of the
-     * add-on to the cluster.</p>
+     * <p>How to resolve field value conflicts for an Amazon EKS add-on if you've
+     * changed a value from the Amazon EKS default value. Conflicts are handled based
+     * on the option you choose:</p> <ul> <li> <p> <b>None</b> – Amazon EKS doesn't
+     * change the value. The update might fail.</p> </li> <li> <p> <b>Overwrite</b> –
+     * Amazon EKS overwrites the changed value back to the Amazon EKS default
+     * value.</p> </li> <li> <p> <b>Preserve</b> – Amazon EKS preserves the value. If
+     * you choose this option, we recommend that you test any field and value changes
+     * on a non-production cluster before updating the add-on on your production
+     * cluster.</p> </li> </ul>
      */
     inline UpdateAddonRequest& WithResolveConflicts(const ResolveConflicts& value) { SetResolveConflicts(value); return *this;}
 
     /**
-     * <p>How to resolve parameter value conflicts when applying the new version of the
-     * add-on to the cluster.</p>
+     * <p>How to resolve field value conflicts for an Amazon EKS add-on if you've
+     * changed a value from the Amazon EKS default value. Conflicts are handled based
+     * on the option you choose:</p> <ul> <li> <p> <b>None</b> – Amazon EKS doesn't
+     * change the value. The update might fail.</p> </li> <li> <p> <b>Overwrite</b> –
+     * Amazon EKS overwrites the changed value back to the Amazon EKS default
+     * value.</p> </li> <li> <p> <b>Preserve</b> – Amazon EKS preserves the value. If
+     * you choose this option, we recommend that you test any field and value changes
+     * on a non-production cluster before updating the add-on on your production
+     * cluster.</p> </li> </ul>
      */
     inline UpdateAddonRequest& WithResolveConflicts(ResolveConflicts&& value) { SetResolveConflicts(std::move(value)); return *this;}
 

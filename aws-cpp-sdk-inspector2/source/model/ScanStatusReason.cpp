@@ -34,6 +34,8 @@ namespace Aws
         static const int SCAN_FREQUENCY_SCAN_ON_PUSH_HASH = HashingUtils::HashString("SCAN_FREQUENCY_SCAN_ON_PUSH");
         static const int EC2_INSTANCE_STOPPED_HASH = HashingUtils::HashString("EC2_INSTANCE_STOPPED");
         static const int PENDING_DISABLE_HASH = HashingUtils::HashString("PENDING_DISABLE");
+        static const int NO_INVENTORY_HASH = HashingUtils::HashString("NO_INVENTORY");
+        static const int STALE_INVENTORY_HASH = HashingUtils::HashString("STALE_INVENTORY");
 
 
         ScanStatusReason GetScanStatusReasonForName(const Aws::String& name)
@@ -95,6 +97,14 @@ namespace Aws
           {
             return ScanStatusReason::PENDING_DISABLE;
           }
+          else if (hashCode == NO_INVENTORY_HASH)
+          {
+            return ScanStatusReason::NO_INVENTORY;
+          }
+          else if (hashCode == STALE_INVENTORY_HASH)
+          {
+            return ScanStatusReason::STALE_INVENTORY;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -137,6 +147,10 @@ namespace Aws
             return "EC2_INSTANCE_STOPPED";
           case ScanStatusReason::PENDING_DISABLE:
             return "PENDING_DISABLE";
+          case ScanStatusReason::NO_INVENTORY:
+            return "NO_INVENTORY";
+          case ScanStatusReason::STALE_INVENTORY:
+            return "STALE_INVENTORY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

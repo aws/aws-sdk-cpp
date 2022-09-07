@@ -22,7 +22,8 @@ namespace Model
     UPDATING,
     DELETING,
     DELETE_FAILED,
-    DEGRADED
+    DEGRADED,
+    UPDATE_FAILED
   };
 
 namespace AddonStatusMapper

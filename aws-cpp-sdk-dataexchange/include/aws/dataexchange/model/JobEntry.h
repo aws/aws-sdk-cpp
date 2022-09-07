@@ -30,10 +30,10 @@ namespace Model
 {
 
   /**
-   * AWS Data Exchange Jobs are asynchronous import or export operations used to
+   * <p>AWS Data Exchange Jobs are asynchronous import or export operations used to
    * create or copy assets. A data set owner can both import and export as they see
    * fit. Someone with an entitlement to a data set can only export. Jobs are deleted
-   * 90 days after they are created.<p><h3>See Also:</h3>   <a
+   * 90 days after they are created.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/JobEntry">AWS
    * API Reference</a></p>
    */

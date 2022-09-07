@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     OVERWRITE,
-    NONE
+    NONE,
+    PRESERVE
   };
 
 namespace ResolveConflictsMapper

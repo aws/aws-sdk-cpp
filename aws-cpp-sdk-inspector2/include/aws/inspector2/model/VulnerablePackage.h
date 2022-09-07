@@ -297,6 +297,55 @@ namespace Model
 
 
     /**
+     * <p>The code to run in your environment to update packages with a fix
+     * available.</p>
+     */
+    inline const Aws::String& GetRemediation() const{ return m_remediation; }
+
+    /**
+     * <p>The code to run in your environment to update packages with a fix
+     * available.</p>
+     */
+    inline bool RemediationHasBeenSet() const { return m_remediationHasBeenSet; }
+
+    /**
+     * <p>The code to run in your environment to update packages with a fix
+     * available.</p>
+     */
+    inline void SetRemediation(const Aws::String& value) { m_remediationHasBeenSet = true; m_remediation = value; }
+
+    /**
+     * <p>The code to run in your environment to update packages with a fix
+     * available.</p>
+     */
+    inline void SetRemediation(Aws::String&& value) { m_remediationHasBeenSet = true; m_remediation = std::move(value); }
+
+    /**
+     * <p>The code to run in your environment to update packages with a fix
+     * available.</p>
+     */
+    inline void SetRemediation(const char* value) { m_remediationHasBeenSet = true; m_remediation.assign(value); }
+
+    /**
+     * <p>The code to run in your environment to update packages with a fix
+     * available.</p>
+     */
+    inline VulnerablePackage& WithRemediation(const Aws::String& value) { SetRemediation(value); return *this;}
+
+    /**
+     * <p>The code to run in your environment to update packages with a fix
+     * available.</p>
+     */
+    inline VulnerablePackage& WithRemediation(Aws::String&& value) { SetRemediation(std::move(value)); return *this;}
+
+    /**
+     * <p>The code to run in your environment to update packages with a fix
+     * available.</p>
+     */
+    inline VulnerablePackage& WithRemediation(const char* value) { SetRemediation(value); return *this;}
+
+
+    /**
      * <p>The source layer hash of the vulnerable package.</p>
      */
     inline const Aws::String& GetSourceLayerHash() const{ return m_sourceLayerHash; }
@@ -399,6 +448,9 @@ namespace Model
 
     Aws::String m_release;
     bool m_releaseHasBeenSet = false;
+
+    Aws::String m_remediation;
+    bool m_remediationHasBeenSet = false;
 
     Aws::String m_sourceLayerHash;
     bool m_sourceLayerHashHasBeenSet = false;

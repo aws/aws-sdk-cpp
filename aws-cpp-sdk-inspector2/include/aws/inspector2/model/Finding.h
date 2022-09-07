@@ -7,6 +7,7 @@
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/inspector2/model/FixAvailable.h>
 #include <aws/inspector2/model/InspectorScoreDetails.h>
 #include <aws/inspector2/model/NetworkReachabilityDetails.h>
 #include <aws/inspector2/model/PackageVulnerabilityDetails.h>
@@ -199,6 +200,55 @@ namespace Model
      * <p>The date and time that the finding was first observed.</p>
      */
     inline Finding& WithFirstObservedAt(Aws::Utils::DateTime&& value) { SetFirstObservedAt(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline const FixAvailable& GetFixAvailable() const{ return m_fixAvailable; }
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline bool FixAvailableHasBeenSet() const { return m_fixAvailableHasBeenSet; }
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline void SetFixAvailable(const FixAvailable& value) { m_fixAvailableHasBeenSet = true; m_fixAvailable = value; }
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline void SetFixAvailable(FixAvailable&& value) { m_fixAvailableHasBeenSet = true; m_fixAvailable = std::move(value); }
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline Finding& WithFixAvailable(const FixAvailable& value) { SetFixAvailable(value); return *this;}
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline Finding& WithFixAvailable(FixAvailable&& value) { SetFixAvailable(std::move(value)); return *this;}
 
 
     /**
@@ -595,6 +645,9 @@ namespace Model
 
     Aws::Utils::DateTime m_firstObservedAt;
     bool m_firstObservedAtHasBeenSet = false;
+
+    FixAvailable m_fixAvailable;
+    bool m_fixAvailableHasBeenSet = false;
 
     double m_inspectorScore;
     bool m_inspectorScoreHasBeenSet = false;

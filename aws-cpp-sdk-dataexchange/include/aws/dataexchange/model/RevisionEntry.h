@@ -197,10 +197,10 @@ namespace Model
      * <p>To publish a revision to a data set in a product, the revision must first be
      * finalized. Finalizing a revision tells AWS Data Exchange that your changes to
      * the assets in the revision are complete. After it's in this read-only state, you
-     * can publish the revision to your products.</p> <p>Finalized revisions can be
-     * published through the AWS Data Exchange console or the AWS Marketplace Catalog
-     * API, using the StartChangeSet AWS Marketplace Catalog API action. When using the
-     * API, revisions are uniquely identified by their ARN.</p>
+     * can publish the revision to your products. Finalized revisions can be published
+     * through the AWS Data Exchange console or the AWS Marketplace Catalog API, using
+     * the StartChangeSet AWS Marketplace Catalog API action. When using the API,
+     * revisions are uniquely identified by their ARN.</p>
      */
     inline bool GetFinalized() const{ return m_finalized; }
 
@@ -208,10 +208,10 @@ namespace Model
      * <p>To publish a revision to a data set in a product, the revision must first be
      * finalized. Finalizing a revision tells AWS Data Exchange that your changes to
      * the assets in the revision are complete. After it's in this read-only state, you
-     * can publish the revision to your products.</p> <p>Finalized revisions can be
-     * published through the AWS Data Exchange console or the AWS Marketplace Catalog
-     * API, using the StartChangeSet AWS Marketplace Catalog API action. When using the
-     * API, revisions are uniquely identified by their ARN.</p>
+     * can publish the revision to your products. Finalized revisions can be published
+     * through the AWS Data Exchange console or the AWS Marketplace Catalog API, using
+     * the StartChangeSet AWS Marketplace Catalog API action. When using the API,
+     * revisions are uniquely identified by their ARN.</p>
      */
     inline bool FinalizedHasBeenSet() const { return m_finalizedHasBeenSet; }
 
@@ -219,10 +219,10 @@ namespace Model
      * <p>To publish a revision to a data set in a product, the revision must first be
      * finalized. Finalizing a revision tells AWS Data Exchange that your changes to
      * the assets in the revision are complete. After it's in this read-only state, you
-     * can publish the revision to your products.</p> <p>Finalized revisions can be
-     * published through the AWS Data Exchange console or the AWS Marketplace Catalog
-     * API, using the StartChangeSet AWS Marketplace Catalog API action. When using the
-     * API, revisions are uniquely identified by their ARN.</p>
+     * can publish the revision to your products. Finalized revisions can be published
+     * through the AWS Data Exchange console or the AWS Marketplace Catalog API, using
+     * the StartChangeSet AWS Marketplace Catalog API action. When using the API,
+     * revisions are uniquely identified by their ARN.</p>
      */
     inline void SetFinalized(bool value) { m_finalizedHasBeenSet = true; m_finalized = value; }
 
@@ -230,10 +230,10 @@ namespace Model
      * <p>To publish a revision to a data set in a product, the revision must first be
      * finalized. Finalizing a revision tells AWS Data Exchange that your changes to
      * the assets in the revision are complete. After it's in this read-only state, you
-     * can publish the revision to your products.</p> <p>Finalized revisions can be
-     * published through the AWS Data Exchange console or the AWS Marketplace Catalog
-     * API, using the StartChangeSet AWS Marketplace Catalog API action. When using the
-     * API, revisions are uniquely identified by their ARN.</p>
+     * can publish the revision to your products. Finalized revisions can be published
+     * through the AWS Data Exchange console or the AWS Marketplace Catalog API, using
+     * the StartChangeSet AWS Marketplace Catalog API action. When using the API,
+     * revisions are uniquely identified by their ARN.</p>
      */
     inline RevisionEntry& WithFinalized(bool value) { SetFinalized(value); return *this;}
 
