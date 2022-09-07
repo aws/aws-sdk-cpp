@@ -5,73 +5,15 @@
 
 #pragma once
 #include <aws/migrationhub-config/MigrationHubConfig_EXPORTS.h>
-#include <aws/migrationhub-config/MigrationHubConfigErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/migrationhub-config/model/CreateHomeRegionControlResult.h>
-#include <aws/migrationhub-config/model/DescribeHomeRegionControlsResult.h>
-#include <aws/migrationhub-config/model/GetHomeRegionResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/migrationhub-config/MigrationHubConfigServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace MigrationHubConfig
 {
-
-namespace Model
-{
-        class CreateHomeRegionControlRequest;
-        class DescribeHomeRegionControlsRequest;
-        class GetHomeRegionRequest;
-
-        typedef Aws::Utils::Outcome<CreateHomeRegionControlResult, MigrationHubConfigError> CreateHomeRegionControlOutcome;
-        typedef Aws::Utils::Outcome<DescribeHomeRegionControlsResult, MigrationHubConfigError> DescribeHomeRegionControlsOutcome;
-        typedef Aws::Utils::Outcome<GetHomeRegionResult, MigrationHubConfigError> GetHomeRegionOutcome;
-
-        typedef std::future<CreateHomeRegionControlOutcome> CreateHomeRegionControlOutcomeCallable;
-        typedef std::future<DescribeHomeRegionControlsOutcome> DescribeHomeRegionControlsOutcomeCallable;
-        typedef std::future<GetHomeRegionOutcome> GetHomeRegionOutcomeCallable;
-} // namespace Model
-
-  class MigrationHubConfigClient;
-
-    typedef std::function<void(const MigrationHubConfigClient*, const Model::CreateHomeRegionControlRequest&, const Model::CreateHomeRegionControlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHomeRegionControlResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubConfigClient*, const Model::DescribeHomeRegionControlsRequest&, const Model::DescribeHomeRegionControlsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeHomeRegionControlsResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubConfigClient*, const Model::GetHomeRegionRequest&, const Model::GetHomeRegionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHomeRegionResponseReceivedHandler;
-
   /**
    * <p>The AWS Migration Hub home region APIs are available specifically for working
    * with your Migration Hub home region. You can use these APIs to determine a home

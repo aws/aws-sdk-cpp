@@ -5,98 +5,15 @@
 
 #pragma once
 #include <aws/connectparticipant/ConnectParticipant_EXPORTS.h>
-#include <aws/connectparticipant/ConnectParticipantErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/connectparticipant/model/CompleteAttachmentUploadResult.h>
-#include <aws/connectparticipant/model/CreateParticipantConnectionResult.h>
-#include <aws/connectparticipant/model/DisconnectParticipantResult.h>
-#include <aws/connectparticipant/model/GetAttachmentResult.h>
-#include <aws/connectparticipant/model/GetTranscriptResult.h>
-#include <aws/connectparticipant/model/SendEventResult.h>
-#include <aws/connectparticipant/model/SendMessageResult.h>
-#include <aws/connectparticipant/model/StartAttachmentUploadResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/connectparticipant/ConnectParticipantServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace ConnectParticipant
 {
-
-namespace Model
-{
-        class CompleteAttachmentUploadRequest;
-        class CreateParticipantConnectionRequest;
-        class DisconnectParticipantRequest;
-        class GetAttachmentRequest;
-        class GetTranscriptRequest;
-        class SendEventRequest;
-        class SendMessageRequest;
-        class StartAttachmentUploadRequest;
-
-        typedef Aws::Utils::Outcome<CompleteAttachmentUploadResult, ConnectParticipantError> CompleteAttachmentUploadOutcome;
-        typedef Aws::Utils::Outcome<CreateParticipantConnectionResult, ConnectParticipantError> CreateParticipantConnectionOutcome;
-        typedef Aws::Utils::Outcome<DisconnectParticipantResult, ConnectParticipantError> DisconnectParticipantOutcome;
-        typedef Aws::Utils::Outcome<GetAttachmentResult, ConnectParticipantError> GetAttachmentOutcome;
-        typedef Aws::Utils::Outcome<GetTranscriptResult, ConnectParticipantError> GetTranscriptOutcome;
-        typedef Aws::Utils::Outcome<SendEventResult, ConnectParticipantError> SendEventOutcome;
-        typedef Aws::Utils::Outcome<SendMessageResult, ConnectParticipantError> SendMessageOutcome;
-        typedef Aws::Utils::Outcome<StartAttachmentUploadResult, ConnectParticipantError> StartAttachmentUploadOutcome;
-
-        typedef std::future<CompleteAttachmentUploadOutcome> CompleteAttachmentUploadOutcomeCallable;
-        typedef std::future<CreateParticipantConnectionOutcome> CreateParticipantConnectionOutcomeCallable;
-        typedef std::future<DisconnectParticipantOutcome> DisconnectParticipantOutcomeCallable;
-        typedef std::future<GetAttachmentOutcome> GetAttachmentOutcomeCallable;
-        typedef std::future<GetTranscriptOutcome> GetTranscriptOutcomeCallable;
-        typedef std::future<SendEventOutcome> SendEventOutcomeCallable;
-        typedef std::future<SendMessageOutcome> SendMessageOutcomeCallable;
-        typedef std::future<StartAttachmentUploadOutcome> StartAttachmentUploadOutcomeCallable;
-} // namespace Model
-
-  class ConnectParticipantClient;
-
-    typedef std::function<void(const ConnectParticipantClient*, const Model::CompleteAttachmentUploadRequest&, const Model::CompleteAttachmentUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CompleteAttachmentUploadResponseReceivedHandler;
-    typedef std::function<void(const ConnectParticipantClient*, const Model::CreateParticipantConnectionRequest&, const Model::CreateParticipantConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateParticipantConnectionResponseReceivedHandler;
-    typedef std::function<void(const ConnectParticipantClient*, const Model::DisconnectParticipantRequest&, const Model::DisconnectParticipantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisconnectParticipantResponseReceivedHandler;
-    typedef std::function<void(const ConnectParticipantClient*, const Model::GetAttachmentRequest&, const Model::GetAttachmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAttachmentResponseReceivedHandler;
-    typedef std::function<void(const ConnectParticipantClient*, const Model::GetTranscriptRequest&, const Model::GetTranscriptOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTranscriptResponseReceivedHandler;
-    typedef std::function<void(const ConnectParticipantClient*, const Model::SendEventRequest&, const Model::SendEventOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendEventResponseReceivedHandler;
-    typedef std::function<void(const ConnectParticipantClient*, const Model::SendMessageRequest&, const Model::SendMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendMessageResponseReceivedHandler;
-    typedef std::function<void(const ConnectParticipantClient*, const Model::StartAttachmentUploadRequest&, const Model::StartAttachmentUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartAttachmentUploadResponseReceivedHandler;
-
   /**
    * <p>Amazon Connect is a cloud-based contact center solution that makes it easy to
    * set up and manage a customer contact center and provide reliable customer

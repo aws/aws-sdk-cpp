@@ -5,98 +5,15 @@
 
 #pragma once
 #include <aws/rbin/RecycleBin_EXPORTS.h>
-#include <aws/rbin/RecycleBinErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/rbin/model/CreateRuleResult.h>
-#include <aws/rbin/model/DeleteRuleResult.h>
-#include <aws/rbin/model/GetRuleResult.h>
-#include <aws/rbin/model/ListRulesResult.h>
-#include <aws/rbin/model/ListTagsForResourceResult.h>
-#include <aws/rbin/model/TagResourceResult.h>
-#include <aws/rbin/model/UntagResourceResult.h>
-#include <aws/rbin/model/UpdateRuleResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/rbin/RecycleBinServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace RecycleBin
 {
-
-namespace Model
-{
-        class CreateRuleRequest;
-        class DeleteRuleRequest;
-        class GetRuleRequest;
-        class ListRulesRequest;
-        class ListTagsForResourceRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateRuleRequest;
-
-        typedef Aws::Utils::Outcome<CreateRuleResult, RecycleBinError> CreateRuleOutcome;
-        typedef Aws::Utils::Outcome<DeleteRuleResult, RecycleBinError> DeleteRuleOutcome;
-        typedef Aws::Utils::Outcome<GetRuleResult, RecycleBinError> GetRuleOutcome;
-        typedef Aws::Utils::Outcome<ListRulesResult, RecycleBinError> ListRulesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, RecycleBinError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, RecycleBinError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, RecycleBinError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateRuleResult, RecycleBinError> UpdateRuleOutcome;
-
-        typedef std::future<CreateRuleOutcome> CreateRuleOutcomeCallable;
-        typedef std::future<DeleteRuleOutcome> DeleteRuleOutcomeCallable;
-        typedef std::future<GetRuleOutcome> GetRuleOutcomeCallable;
-        typedef std::future<ListRulesOutcome> ListRulesOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateRuleOutcome> UpdateRuleOutcomeCallable;
-} // namespace Model
-
-  class RecycleBinClient;
-
-    typedef std::function<void(const RecycleBinClient*, const Model::CreateRuleRequest&, const Model::CreateRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRuleResponseReceivedHandler;
-    typedef std::function<void(const RecycleBinClient*, const Model::DeleteRuleRequest&, const Model::DeleteRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRuleResponseReceivedHandler;
-    typedef std::function<void(const RecycleBinClient*, const Model::GetRuleRequest&, const Model::GetRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRuleResponseReceivedHandler;
-    typedef std::function<void(const RecycleBinClient*, const Model::ListRulesRequest&, const Model::ListRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRulesResponseReceivedHandler;
-    typedef std::function<void(const RecycleBinClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const RecycleBinClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const RecycleBinClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const RecycleBinClient*, const Model::UpdateRuleRequest&, const Model::UpdateRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRuleResponseReceivedHandler;
-
   /**
    * <p>This is the <i>Recycle Bin API Reference</i>. This documentation provides
    * descriptions and syntax for each of the actions and data types in Recycle

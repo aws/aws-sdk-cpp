@@ -5,68 +5,15 @@
 
 #pragma once
 #include <aws/personalize-runtime/PersonalizeRuntime_EXPORTS.h>
-#include <aws/personalize-runtime/PersonalizeRuntimeErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/personalize-runtime/model/GetPersonalizedRankingResult.h>
-#include <aws/personalize-runtime/model/GetRecommendationsResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/personalize-runtime/PersonalizeRuntimeServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace PersonalizeRuntime
 {
-
-namespace Model
-{
-        class GetPersonalizedRankingRequest;
-        class GetRecommendationsRequest;
-
-        typedef Aws::Utils::Outcome<GetPersonalizedRankingResult, PersonalizeRuntimeError> GetPersonalizedRankingOutcome;
-        typedef Aws::Utils::Outcome<GetRecommendationsResult, PersonalizeRuntimeError> GetRecommendationsOutcome;
-
-        typedef std::future<GetPersonalizedRankingOutcome> GetPersonalizedRankingOutcomeCallable;
-        typedef std::future<GetRecommendationsOutcome> GetRecommendationsOutcomeCallable;
-} // namespace Model
-
-  class PersonalizeRuntimeClient;
-
-    typedef std::function<void(const PersonalizeRuntimeClient*, const Model::GetPersonalizedRankingRequest&, const Model::GetPersonalizedRankingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPersonalizedRankingResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeRuntimeClient*, const Model::GetRecommendationsRequest&, const Model::GetRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRecommendationsResponseReceivedHandler;
-
   /**
    * <p/>
    */

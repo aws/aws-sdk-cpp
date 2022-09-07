@@ -5,98 +5,15 @@
 
 #pragma once
 #include <aws/finspace/Finspace_EXPORTS.h>
-#include <aws/finspace/FinspaceErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/finspace/model/CreateEnvironmentResult.h>
-#include <aws/finspace/model/DeleteEnvironmentResult.h>
-#include <aws/finspace/model/GetEnvironmentResult.h>
-#include <aws/finspace/model/ListEnvironmentsResult.h>
-#include <aws/finspace/model/ListTagsForResourceResult.h>
-#include <aws/finspace/model/TagResourceResult.h>
-#include <aws/finspace/model/UntagResourceResult.h>
-#include <aws/finspace/model/UpdateEnvironmentResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/finspace/FinspaceServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace finspace
 {
-
-namespace Model
-{
-        class CreateEnvironmentRequest;
-        class DeleteEnvironmentRequest;
-        class GetEnvironmentRequest;
-        class ListEnvironmentsRequest;
-        class ListTagsForResourceRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateEnvironmentRequest;
-
-        typedef Aws::Utils::Outcome<CreateEnvironmentResult, FinspaceError> CreateEnvironmentOutcome;
-        typedef Aws::Utils::Outcome<DeleteEnvironmentResult, FinspaceError> DeleteEnvironmentOutcome;
-        typedef Aws::Utils::Outcome<GetEnvironmentResult, FinspaceError> GetEnvironmentOutcome;
-        typedef Aws::Utils::Outcome<ListEnvironmentsResult, FinspaceError> ListEnvironmentsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, FinspaceError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, FinspaceError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, FinspaceError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateEnvironmentResult, FinspaceError> UpdateEnvironmentOutcome;
-
-        typedef std::future<CreateEnvironmentOutcome> CreateEnvironmentOutcomeCallable;
-        typedef std::future<DeleteEnvironmentOutcome> DeleteEnvironmentOutcomeCallable;
-        typedef std::future<GetEnvironmentOutcome> GetEnvironmentOutcomeCallable;
-        typedef std::future<ListEnvironmentsOutcome> ListEnvironmentsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateEnvironmentOutcome> UpdateEnvironmentOutcomeCallable;
-} // namespace Model
-
-  class FinspaceClient;
-
-    typedef std::function<void(const FinspaceClient*, const Model::CreateEnvironmentRequest&, const Model::CreateEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEnvironmentResponseReceivedHandler;
-    typedef std::function<void(const FinspaceClient*, const Model::DeleteEnvironmentRequest&, const Model::DeleteEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEnvironmentResponseReceivedHandler;
-    typedef std::function<void(const FinspaceClient*, const Model::GetEnvironmentRequest&, const Model::GetEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEnvironmentResponseReceivedHandler;
-    typedef std::function<void(const FinspaceClient*, const Model::ListEnvironmentsRequest&, const Model::ListEnvironmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEnvironmentsResponseReceivedHandler;
-    typedef std::function<void(const FinspaceClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const FinspaceClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const FinspaceClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const FinspaceClient*, const Model::UpdateEnvironmentRequest&, const Model::UpdateEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEnvironmentResponseReceivedHandler;
-
   /**
    * <p>The FinSpace management service provides the APIs for managing FinSpace
    * environments.</p>

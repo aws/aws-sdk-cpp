@@ -5,83 +5,15 @@
 
 #pragma once
 #include <aws/mediastore-data/MediaStoreData_EXPORTS.h>
-#include <aws/mediastore-data/MediaStoreDataErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/mediastore-data/model/DeleteObjectResult.h>
-#include <aws/mediastore-data/model/DescribeObjectResult.h>
-#include <aws/mediastore-data/model/GetObjectResult.h>
-#include <aws/mediastore-data/model/ListItemsResult.h>
-#include <aws/mediastore-data/model/PutObjectResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/mediastore-data/MediaStoreDataServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace MediaStoreData
 {
-
-namespace Model
-{
-        class DeleteObjectRequest;
-        class DescribeObjectRequest;
-        class GetObjectRequest;
-        class ListItemsRequest;
-        class PutObjectRequest;
-
-        typedef Aws::Utils::Outcome<DeleteObjectResult, MediaStoreDataError> DeleteObjectOutcome;
-        typedef Aws::Utils::Outcome<DescribeObjectResult, MediaStoreDataError> DescribeObjectOutcome;
-        typedef Aws::Utils::Outcome<GetObjectResult, MediaStoreDataError> GetObjectOutcome;
-        typedef Aws::Utils::Outcome<ListItemsResult, MediaStoreDataError> ListItemsOutcome;
-        typedef Aws::Utils::Outcome<PutObjectResult, MediaStoreDataError> PutObjectOutcome;
-
-        typedef std::future<DeleteObjectOutcome> DeleteObjectOutcomeCallable;
-        typedef std::future<DescribeObjectOutcome> DescribeObjectOutcomeCallable;
-        typedef std::future<GetObjectOutcome> GetObjectOutcomeCallable;
-        typedef std::future<ListItemsOutcome> ListItemsOutcomeCallable;
-        typedef std::future<PutObjectOutcome> PutObjectOutcomeCallable;
-} // namespace Model
-
-  class MediaStoreDataClient;
-
-    typedef std::function<void(const MediaStoreDataClient*, const Model::DeleteObjectRequest&, const Model::DeleteObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteObjectResponseReceivedHandler;
-    typedef std::function<void(const MediaStoreDataClient*, const Model::DescribeObjectRequest&, const Model::DescribeObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeObjectResponseReceivedHandler;
-    typedef std::function<void(const MediaStoreDataClient*, const Model::GetObjectRequest&, Model::GetObjectOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetObjectResponseReceivedHandler;
-    typedef std::function<void(const MediaStoreDataClient*, const Model::ListItemsRequest&, const Model::ListItemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListItemsResponseReceivedHandler;
-    typedef std::function<void(const MediaStoreDataClient*, const Model::PutObjectRequest&, const Model::PutObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutObjectResponseReceivedHandler;
-
   /**
    * <p>An AWS Elemental MediaStore asset is an object, similar to an object in the
    * Amazon S3 service. Objects are the fundamental entities that are stored in AWS

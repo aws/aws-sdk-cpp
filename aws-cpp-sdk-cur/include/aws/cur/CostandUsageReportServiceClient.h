@@ -5,78 +5,15 @@
 
 #pragma once
 #include <aws/cur/CostandUsageReportService_EXPORTS.h>
-#include <aws/cur/CostandUsageReportServiceErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/cur/model/DeleteReportDefinitionResult.h>
-#include <aws/cur/model/DescribeReportDefinitionsResult.h>
-#include <aws/cur/model/ModifyReportDefinitionResult.h>
-#include <aws/cur/model/PutReportDefinitionResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/cur/CostandUsageReportServiceServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace CostandUsageReportService
 {
-
-namespace Model
-{
-        class DeleteReportDefinitionRequest;
-        class DescribeReportDefinitionsRequest;
-        class ModifyReportDefinitionRequest;
-        class PutReportDefinitionRequest;
-
-        typedef Aws::Utils::Outcome<DeleteReportDefinitionResult, CostandUsageReportServiceError> DeleteReportDefinitionOutcome;
-        typedef Aws::Utils::Outcome<DescribeReportDefinitionsResult, CostandUsageReportServiceError> DescribeReportDefinitionsOutcome;
-        typedef Aws::Utils::Outcome<ModifyReportDefinitionResult, CostandUsageReportServiceError> ModifyReportDefinitionOutcome;
-        typedef Aws::Utils::Outcome<PutReportDefinitionResult, CostandUsageReportServiceError> PutReportDefinitionOutcome;
-
-        typedef std::future<DeleteReportDefinitionOutcome> DeleteReportDefinitionOutcomeCallable;
-        typedef std::future<DescribeReportDefinitionsOutcome> DescribeReportDefinitionsOutcomeCallable;
-        typedef std::future<ModifyReportDefinitionOutcome> ModifyReportDefinitionOutcomeCallable;
-        typedef std::future<PutReportDefinitionOutcome> PutReportDefinitionOutcomeCallable;
-} // namespace Model
-
-  class CostandUsageReportServiceClient;
-
-    typedef std::function<void(const CostandUsageReportServiceClient*, const Model::DeleteReportDefinitionRequest&, const Model::DeleteReportDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReportDefinitionResponseReceivedHandler;
-    typedef std::function<void(const CostandUsageReportServiceClient*, const Model::DescribeReportDefinitionsRequest&, const Model::DescribeReportDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReportDefinitionsResponseReceivedHandler;
-    typedef std::function<void(const CostandUsageReportServiceClient*, const Model::ModifyReportDefinitionRequest&, const Model::ModifyReportDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyReportDefinitionResponseReceivedHandler;
-    typedef std::function<void(const CostandUsageReportServiceClient*, const Model::PutReportDefinitionRequest&, const Model::PutReportDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutReportDefinitionResponseReceivedHandler;
-
   /**
    * <p>The AWS Cost and Usage Report API enables you to programmatically create,
    * query, and delete AWS Cost and Usage report definitions.</p> <p>AWS Cost and

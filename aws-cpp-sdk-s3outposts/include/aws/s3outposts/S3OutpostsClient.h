@@ -5,78 +5,15 @@
 
 #pragma once
 #include <aws/s3outposts/S3Outposts_EXPORTS.h>
-#include <aws/s3outposts/S3OutpostsErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/s3outposts/model/CreateEndpointResult.h>
-#include <aws/s3outposts/model/ListEndpointsResult.h>
-#include <aws/s3outposts/model/ListSharedEndpointsResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/s3outposts/S3OutpostsServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace S3Outposts
 {
-
-namespace Model
-{
-        class CreateEndpointRequest;
-        class DeleteEndpointRequest;
-        class ListEndpointsRequest;
-        class ListSharedEndpointsRequest;
-
-        typedef Aws::Utils::Outcome<CreateEndpointResult, S3OutpostsError> CreateEndpointOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, S3OutpostsError> DeleteEndpointOutcome;
-        typedef Aws::Utils::Outcome<ListEndpointsResult, S3OutpostsError> ListEndpointsOutcome;
-        typedef Aws::Utils::Outcome<ListSharedEndpointsResult, S3OutpostsError> ListSharedEndpointsOutcome;
-
-        typedef std::future<CreateEndpointOutcome> CreateEndpointOutcomeCallable;
-        typedef std::future<DeleteEndpointOutcome> DeleteEndpointOutcomeCallable;
-        typedef std::future<ListEndpointsOutcome> ListEndpointsOutcomeCallable;
-        typedef std::future<ListSharedEndpointsOutcome> ListSharedEndpointsOutcomeCallable;
-} // namespace Model
-
-  class S3OutpostsClient;
-
-    typedef std::function<void(const S3OutpostsClient*, const Model::CreateEndpointRequest&, const Model::CreateEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEndpointResponseReceivedHandler;
-    typedef std::function<void(const S3OutpostsClient*, const Model::DeleteEndpointRequest&, const Model::DeleteEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEndpointResponseReceivedHandler;
-    typedef std::function<void(const S3OutpostsClient*, const Model::ListEndpointsRequest&, const Model::ListEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEndpointsResponseReceivedHandler;
-    typedef std::function<void(const S3OutpostsClient*, const Model::ListSharedEndpointsRequest&, const Model::ListSharedEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSharedEndpointsResponseReceivedHandler;
-
   /**
    * <p>Amazon S3 on Outposts provides access to S3 on Outposts operations.</p>
    */

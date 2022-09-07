@@ -5,133 +5,15 @@
 
 #pragma once
 #include <aws/translate/Translate_EXPORTS.h>
-#include <aws/translate/TranslateErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/translate/model/CreateParallelDataResult.h>
-#include <aws/translate/model/DeleteParallelDataResult.h>
-#include <aws/translate/model/DescribeTextTranslationJobResult.h>
-#include <aws/translate/model/GetParallelDataResult.h>
-#include <aws/translate/model/GetTerminologyResult.h>
-#include <aws/translate/model/ImportTerminologyResult.h>
-#include <aws/translate/model/ListLanguagesResult.h>
-#include <aws/translate/model/ListParallelDataResult.h>
-#include <aws/translate/model/ListTerminologiesResult.h>
-#include <aws/translate/model/ListTextTranslationJobsResult.h>
-#include <aws/translate/model/StartTextTranslationJobResult.h>
-#include <aws/translate/model/StopTextTranslationJobResult.h>
-#include <aws/translate/model/TranslateTextResult.h>
-#include <aws/translate/model/UpdateParallelDataResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/translate/TranslateServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace Translate
 {
-
-namespace Model
-{
-        class CreateParallelDataRequest;
-        class DeleteParallelDataRequest;
-        class DeleteTerminologyRequest;
-        class DescribeTextTranslationJobRequest;
-        class GetParallelDataRequest;
-        class GetTerminologyRequest;
-        class ImportTerminologyRequest;
-        class ListLanguagesRequest;
-        class ListParallelDataRequest;
-        class ListTerminologiesRequest;
-        class ListTextTranslationJobsRequest;
-        class StartTextTranslationJobRequest;
-        class StopTextTranslationJobRequest;
-        class TranslateTextRequest;
-        class UpdateParallelDataRequest;
-
-        typedef Aws::Utils::Outcome<CreateParallelDataResult, TranslateError> CreateParallelDataOutcome;
-        typedef Aws::Utils::Outcome<DeleteParallelDataResult, TranslateError> DeleteParallelDataOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, TranslateError> DeleteTerminologyOutcome;
-        typedef Aws::Utils::Outcome<DescribeTextTranslationJobResult, TranslateError> DescribeTextTranslationJobOutcome;
-        typedef Aws::Utils::Outcome<GetParallelDataResult, TranslateError> GetParallelDataOutcome;
-        typedef Aws::Utils::Outcome<GetTerminologyResult, TranslateError> GetTerminologyOutcome;
-        typedef Aws::Utils::Outcome<ImportTerminologyResult, TranslateError> ImportTerminologyOutcome;
-        typedef Aws::Utils::Outcome<ListLanguagesResult, TranslateError> ListLanguagesOutcome;
-        typedef Aws::Utils::Outcome<ListParallelDataResult, TranslateError> ListParallelDataOutcome;
-        typedef Aws::Utils::Outcome<ListTerminologiesResult, TranslateError> ListTerminologiesOutcome;
-        typedef Aws::Utils::Outcome<ListTextTranslationJobsResult, TranslateError> ListTextTranslationJobsOutcome;
-        typedef Aws::Utils::Outcome<StartTextTranslationJobResult, TranslateError> StartTextTranslationJobOutcome;
-        typedef Aws::Utils::Outcome<StopTextTranslationJobResult, TranslateError> StopTextTranslationJobOutcome;
-        typedef Aws::Utils::Outcome<TranslateTextResult, TranslateError> TranslateTextOutcome;
-        typedef Aws::Utils::Outcome<UpdateParallelDataResult, TranslateError> UpdateParallelDataOutcome;
-
-        typedef std::future<CreateParallelDataOutcome> CreateParallelDataOutcomeCallable;
-        typedef std::future<DeleteParallelDataOutcome> DeleteParallelDataOutcomeCallable;
-        typedef std::future<DeleteTerminologyOutcome> DeleteTerminologyOutcomeCallable;
-        typedef std::future<DescribeTextTranslationJobOutcome> DescribeTextTranslationJobOutcomeCallable;
-        typedef std::future<GetParallelDataOutcome> GetParallelDataOutcomeCallable;
-        typedef std::future<GetTerminologyOutcome> GetTerminologyOutcomeCallable;
-        typedef std::future<ImportTerminologyOutcome> ImportTerminologyOutcomeCallable;
-        typedef std::future<ListLanguagesOutcome> ListLanguagesOutcomeCallable;
-        typedef std::future<ListParallelDataOutcome> ListParallelDataOutcomeCallable;
-        typedef std::future<ListTerminologiesOutcome> ListTerminologiesOutcomeCallable;
-        typedef std::future<ListTextTranslationJobsOutcome> ListTextTranslationJobsOutcomeCallable;
-        typedef std::future<StartTextTranslationJobOutcome> StartTextTranslationJobOutcomeCallable;
-        typedef std::future<StopTextTranslationJobOutcome> StopTextTranslationJobOutcomeCallable;
-        typedef std::future<TranslateTextOutcome> TranslateTextOutcomeCallable;
-        typedef std::future<UpdateParallelDataOutcome> UpdateParallelDataOutcomeCallable;
-} // namespace Model
-
-  class TranslateClient;
-
-    typedef std::function<void(const TranslateClient*, const Model::CreateParallelDataRequest&, const Model::CreateParallelDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateParallelDataResponseReceivedHandler;
-    typedef std::function<void(const TranslateClient*, const Model::DeleteParallelDataRequest&, const Model::DeleteParallelDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteParallelDataResponseReceivedHandler;
-    typedef std::function<void(const TranslateClient*, const Model::DeleteTerminologyRequest&, const Model::DeleteTerminologyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTerminologyResponseReceivedHandler;
-    typedef std::function<void(const TranslateClient*, const Model::DescribeTextTranslationJobRequest&, const Model::DescribeTextTranslationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTextTranslationJobResponseReceivedHandler;
-    typedef std::function<void(const TranslateClient*, const Model::GetParallelDataRequest&, const Model::GetParallelDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetParallelDataResponseReceivedHandler;
-    typedef std::function<void(const TranslateClient*, const Model::GetTerminologyRequest&, const Model::GetTerminologyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTerminologyResponseReceivedHandler;
-    typedef std::function<void(const TranslateClient*, const Model::ImportTerminologyRequest&, const Model::ImportTerminologyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportTerminologyResponseReceivedHandler;
-    typedef std::function<void(const TranslateClient*, const Model::ListLanguagesRequest&, const Model::ListLanguagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLanguagesResponseReceivedHandler;
-    typedef std::function<void(const TranslateClient*, const Model::ListParallelDataRequest&, const Model::ListParallelDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListParallelDataResponseReceivedHandler;
-    typedef std::function<void(const TranslateClient*, const Model::ListTerminologiesRequest&, const Model::ListTerminologiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTerminologiesResponseReceivedHandler;
-    typedef std::function<void(const TranslateClient*, const Model::ListTextTranslationJobsRequest&, const Model::ListTextTranslationJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTextTranslationJobsResponseReceivedHandler;
-    typedef std::function<void(const TranslateClient*, const Model::StartTextTranslationJobRequest&, const Model::StartTextTranslationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartTextTranslationJobResponseReceivedHandler;
-    typedef std::function<void(const TranslateClient*, const Model::StopTextTranslationJobRequest&, const Model::StopTextTranslationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopTextTranslationJobResponseReceivedHandler;
-    typedef std::function<void(const TranslateClient*, const Model::TranslateTextRequest&, const Model::TranslateTextOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TranslateTextResponseReceivedHandler;
-    typedef std::function<void(const TranslateClient*, const Model::UpdateParallelDataRequest&, const Model::UpdateParallelDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateParallelDataResponseReceivedHandler;
-
   /**
    * <p>Provides translation between one source language and another of the same set
    * of languages.</p>

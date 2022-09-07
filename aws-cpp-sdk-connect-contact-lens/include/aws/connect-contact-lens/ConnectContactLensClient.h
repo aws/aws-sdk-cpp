@@ -5,63 +5,15 @@
 
 #pragma once
 #include <aws/connect-contact-lens/ConnectContactLens_EXPORTS.h>
-#include <aws/connect-contact-lens/ConnectContactLensErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/connect-contact-lens/model/ListRealtimeContactAnalysisSegmentsResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/connect-contact-lens/ConnectContactLensServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace ConnectContactLens
 {
-
-namespace Model
-{
-        class ListRealtimeContactAnalysisSegmentsRequest;
-
-        typedef Aws::Utils::Outcome<ListRealtimeContactAnalysisSegmentsResult, ConnectContactLensError> ListRealtimeContactAnalysisSegmentsOutcome;
-
-        typedef std::future<ListRealtimeContactAnalysisSegmentsOutcome> ListRealtimeContactAnalysisSegmentsOutcomeCallable;
-} // namespace Model
-
-  class ConnectContactLensClient;
-
-    typedef std::function<void(const ConnectContactLensClient*, const Model::ListRealtimeContactAnalysisSegmentsRequest&, const Model::ListRealtimeContactAnalysisSegmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRealtimeContactAnalysisSegmentsResponseReceivedHandler;
-
   /**
    * <p>Contact Lens for Amazon Connect enables you to analyze conversations between
    * customer and agents, by using speech transcription, natural language processing,

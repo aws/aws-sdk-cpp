@@ -5,63 +5,15 @@
 
 #pragma once
 #include <aws/qldb-session/QLDBSession_EXPORTS.h>
-#include <aws/qldb-session/QLDBSessionErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/qldb-session/model/SendCommandResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/qldb-session/QLDBSessionServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace QLDBSession
 {
-
-namespace Model
-{
-        class SendCommandRequest;
-
-        typedef Aws::Utils::Outcome<SendCommandResult, QLDBSessionError> SendCommandOutcome;
-
-        typedef std::future<SendCommandOutcome> SendCommandOutcomeCallable;
-} // namespace Model
-
-  class QLDBSessionClient;
-
-    typedef std::function<void(const QLDBSessionClient*, const Model::SendCommandRequest&, const Model::SendCommandOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendCommandResponseReceivedHandler;
-
   /**
    * <p>The transactional data APIs for Amazon QLDB</p>  <p>Instead of
    * interacting directly with this API, we recommend using the QLDB driver or the

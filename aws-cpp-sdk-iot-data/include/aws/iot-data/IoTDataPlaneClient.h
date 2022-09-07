@@ -5,93 +5,15 @@
 
 #pragma once
 #include <aws/iot-data/IoTDataPlane_EXPORTS.h>
-#include <aws/iot-data/IoTDataPlaneErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/iot-data/model/DeleteThingShadowResult.h>
-#include <aws/iot-data/model/GetRetainedMessageResult.h>
-#include <aws/iot-data/model/GetThingShadowResult.h>
-#include <aws/iot-data/model/ListNamedShadowsForThingResult.h>
-#include <aws/iot-data/model/ListRetainedMessagesResult.h>
-#include <aws/iot-data/model/UpdateThingShadowResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/iot-data/IoTDataPlaneServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace IoTDataPlane
 {
-
-namespace Model
-{
-        class DeleteThingShadowRequest;
-        class GetRetainedMessageRequest;
-        class GetThingShadowRequest;
-        class ListNamedShadowsForThingRequest;
-        class ListRetainedMessagesRequest;
-        class PublishRequest;
-        class UpdateThingShadowRequest;
-
-        typedef Aws::Utils::Outcome<DeleteThingShadowResult, IoTDataPlaneError> DeleteThingShadowOutcome;
-        typedef Aws::Utils::Outcome<GetRetainedMessageResult, IoTDataPlaneError> GetRetainedMessageOutcome;
-        typedef Aws::Utils::Outcome<GetThingShadowResult, IoTDataPlaneError> GetThingShadowOutcome;
-        typedef Aws::Utils::Outcome<ListNamedShadowsForThingResult, IoTDataPlaneError> ListNamedShadowsForThingOutcome;
-        typedef Aws::Utils::Outcome<ListRetainedMessagesResult, IoTDataPlaneError> ListRetainedMessagesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, IoTDataPlaneError> PublishOutcome;
-        typedef Aws::Utils::Outcome<UpdateThingShadowResult, IoTDataPlaneError> UpdateThingShadowOutcome;
-
-        typedef std::future<DeleteThingShadowOutcome> DeleteThingShadowOutcomeCallable;
-        typedef std::future<GetRetainedMessageOutcome> GetRetainedMessageOutcomeCallable;
-        typedef std::future<GetThingShadowOutcome> GetThingShadowOutcomeCallable;
-        typedef std::future<ListNamedShadowsForThingOutcome> ListNamedShadowsForThingOutcomeCallable;
-        typedef std::future<ListRetainedMessagesOutcome> ListRetainedMessagesOutcomeCallable;
-        typedef std::future<PublishOutcome> PublishOutcomeCallable;
-        typedef std::future<UpdateThingShadowOutcome> UpdateThingShadowOutcomeCallable;
-} // namespace Model
-
-  class IoTDataPlaneClient;
-
-    typedef std::function<void(const IoTDataPlaneClient*, const Model::DeleteThingShadowRequest&, Model::DeleteThingShadowOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteThingShadowResponseReceivedHandler;
-    typedef std::function<void(const IoTDataPlaneClient*, const Model::GetRetainedMessageRequest&, const Model::GetRetainedMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRetainedMessageResponseReceivedHandler;
-    typedef std::function<void(const IoTDataPlaneClient*, const Model::GetThingShadowRequest&, Model::GetThingShadowOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetThingShadowResponseReceivedHandler;
-    typedef std::function<void(const IoTDataPlaneClient*, const Model::ListNamedShadowsForThingRequest&, const Model::ListNamedShadowsForThingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNamedShadowsForThingResponseReceivedHandler;
-    typedef std::function<void(const IoTDataPlaneClient*, const Model::ListRetainedMessagesRequest&, const Model::ListRetainedMessagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRetainedMessagesResponseReceivedHandler;
-    typedef std::function<void(const IoTDataPlaneClient*, const Model::PublishRequest&, const Model::PublishOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PublishResponseReceivedHandler;
-    typedef std::function<void(const IoTDataPlaneClient*, const Model::UpdateThingShadowRequest&, Model::UpdateThingShadowOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateThingShadowResponseReceivedHandler;
-
   /**
    * <fullname>IoT data</fullname> <p>IoT data enables secure, bi-directional
    * communication between Internet-connected things (such as sensors, actuators,
