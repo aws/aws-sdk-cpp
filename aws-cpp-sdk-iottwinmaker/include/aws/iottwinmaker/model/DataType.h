@@ -86,32 +86,32 @@ namespace Model
     /**
      * <p>The nested type in the data type.</p>
      */
-    inline const DataType& GetNestedType() const{ return m_nestedType[0]; }
+    const DataType& GetNestedType() const;
 
     /**
      * <p>The nested type in the data type.</p>
      */
-    inline bool NestedTypeHasBeenSet() const { return m_nestedTypeHasBeenSet; }
+    bool NestedTypeHasBeenSet() const;
 
     /**
      * <p>The nested type in the data type.</p>
      */
-    inline void SetNestedType(const DataType& value) { m_nestedTypeHasBeenSet = true; m_nestedType.resize(1); m_nestedType[0] = value; }
+    void SetNestedType(const DataType& value);
 
     /**
      * <p>The nested type in the data type.</p>
      */
-    inline void SetNestedType(DataType&& value) { m_nestedTypeHasBeenSet = true; m_nestedType.resize(1); m_nestedType[0] = std::move(value); }
+    void SetNestedType(DataType&& value);
 
     /**
      * <p>The nested type in the data type.</p>
      */
-    inline DataType& WithNestedType(const DataType& value) { SetNestedType(value); return *this;}
+    DataType& WithNestedType(const DataType& value);
 
     /**
      * <p>The nested type in the data type.</p>
      */
-    inline DataType& WithNestedType(DataType&& value) { SetNestedType(std::move(value)); return *this;}
+    DataType& WithNestedType(DataType&& value);
 
 
     /**
@@ -221,8 +221,8 @@ namespace Model
     Aws::Vector<DataValue> m_allowedValues;
     bool m_allowedValuesHasBeenSet = false;
 
-    Aws::Vector<DataType> m_nestedType;
-    bool m_nestedTypeHasBeenSet = false;
+    std::shared_ptr<DataType> m_nestedType;
+    bool m_nestedTypeHasBeenSet;
 
     Relationship m_relationship;
     bool m_relationshipHasBeenSet = false;

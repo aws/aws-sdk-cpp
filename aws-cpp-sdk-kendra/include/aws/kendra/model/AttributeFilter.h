@@ -134,32 +134,32 @@ namespace Model
     /**
      * <p>Performs a logical <code>NOT</code> operation on all supplied filters.</p>
      */
-    inline const AttributeFilter& GetNotFilter() const{ return m_notFilter[0]; }
+    const AttributeFilter& GetNotFilter() const;
 
     /**
      * <p>Performs a logical <code>NOT</code> operation on all supplied filters.</p>
      */
-    inline bool NotFilterHasBeenSet() const { return m_notFilterHasBeenSet; }
+    bool NotFilterHasBeenSet() const;
 
     /**
      * <p>Performs a logical <code>NOT</code> operation on all supplied filters.</p>
      */
-    inline void SetNotFilter(const AttributeFilter& value) { m_notFilterHasBeenSet = true; m_notFilter.resize(1); m_notFilter[0] = value; }
+    void SetNotFilter(const AttributeFilter& value);
 
     /**
      * <p>Performs a logical <code>NOT</code> operation on all supplied filters.</p>
      */
-    inline void SetNotFilter(AttributeFilter&& value) { m_notFilterHasBeenSet = true; m_notFilter.resize(1); m_notFilter[0] = std::move(value); }
+    void SetNotFilter(AttributeFilter&& value);
 
     /**
      * <p>Performs a logical <code>NOT</code> operation on all supplied filters.</p>
      */
-    inline AttributeFilter& WithNotFilter(const AttributeFilter& value) { SetNotFilter(value); return *this;}
+    AttributeFilter& WithNotFilter(const AttributeFilter& value);
 
     /**
      * <p>Performs a logical <code>NOT</code> operation on all supplied filters.</p>
      */
-    inline AttributeFilter& WithNotFilter(AttributeFilter&& value) { SetNotFilter(std::move(value)); return *this;}
+    AttributeFilter& WithNotFilter(AttributeFilter&& value);
 
 
     /**
@@ -434,8 +434,8 @@ namespace Model
     Aws::Vector<AttributeFilter> m_orAllFilters;
     bool m_orAllFiltersHasBeenSet = false;
 
-    Aws::Vector<AttributeFilter> m_notFilter;
-    bool m_notFilterHasBeenSet = false;
+    std::shared_ptr<AttributeFilter> m_notFilter;
+    bool m_notFilterHasBeenSet;
 
     DocumentAttribute m_equalsTo;
     bool m_equalsToHasBeenSet = false;
