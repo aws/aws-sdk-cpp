@@ -151,14 +151,14 @@ BatchGetNamedQueryOutcomeCallable AthenaClient::BatchGetNamedQueryCallable(const
   return task->get_future();
 }
 
-void AthenaClient::BatchGetNamedQueryAsync(const BatchGetNamedQueryRequest& request, const BatchGetNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientBatchGetNamedQueryAsyncHelper(AthenaClient const * const clientThis, const BatchGetNamedQueryRequest& request, const BatchGetNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetNamedQueryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchGetNamedQuery(request), context);
 }
 
-void AthenaClient::BatchGetNamedQueryAsyncHelper(const BatchGetNamedQueryRequest& request, const BatchGetNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::BatchGetNamedQueryAsync(const BatchGetNamedQueryRequest& request, const BatchGetNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchGetNamedQuery(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientBatchGetNamedQueryAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchGetPreparedStatementOutcome AthenaClient::BatchGetPreparedStatement(const BatchGetPreparedStatementRequest& request) const
@@ -175,14 +175,14 @@ BatchGetPreparedStatementOutcomeCallable AthenaClient::BatchGetPreparedStatement
   return task->get_future();
 }
 
-void AthenaClient::BatchGetPreparedStatementAsync(const BatchGetPreparedStatementRequest& request, const BatchGetPreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientBatchGetPreparedStatementAsyncHelper(AthenaClient const * const clientThis, const BatchGetPreparedStatementRequest& request, const BatchGetPreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetPreparedStatementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchGetPreparedStatement(request), context);
 }
 
-void AthenaClient::BatchGetPreparedStatementAsyncHelper(const BatchGetPreparedStatementRequest& request, const BatchGetPreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::BatchGetPreparedStatementAsync(const BatchGetPreparedStatementRequest& request, const BatchGetPreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchGetPreparedStatement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientBatchGetPreparedStatementAsyncHelper( this, request, handler, context ); } );
 }
 
 BatchGetQueryExecutionOutcome AthenaClient::BatchGetQueryExecution(const BatchGetQueryExecutionRequest& request) const
@@ -199,14 +199,14 @@ BatchGetQueryExecutionOutcomeCallable AthenaClient::BatchGetQueryExecutionCallab
   return task->get_future();
 }
 
-void AthenaClient::BatchGetQueryExecutionAsync(const BatchGetQueryExecutionRequest& request, const BatchGetQueryExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientBatchGetQueryExecutionAsyncHelper(AthenaClient const * const clientThis, const BatchGetQueryExecutionRequest& request, const BatchGetQueryExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetQueryExecutionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->BatchGetQueryExecution(request), context);
 }
 
-void AthenaClient::BatchGetQueryExecutionAsyncHelper(const BatchGetQueryExecutionRequest& request, const BatchGetQueryExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::BatchGetQueryExecutionAsync(const BatchGetQueryExecutionRequest& request, const BatchGetQueryExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchGetQueryExecution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientBatchGetQueryExecutionAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateDataCatalogOutcome AthenaClient::CreateDataCatalog(const CreateDataCatalogRequest& request) const
@@ -223,14 +223,14 @@ CreateDataCatalogOutcomeCallable AthenaClient::CreateDataCatalogCallable(const C
   return task->get_future();
 }
 
-void AthenaClient::CreateDataCatalogAsync(const CreateDataCatalogRequest& request, const CreateDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientCreateDataCatalogAsyncHelper(AthenaClient const * const clientThis, const CreateDataCatalogRequest& request, const CreateDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDataCatalogAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateDataCatalog(request), context);
 }
 
-void AthenaClient::CreateDataCatalogAsyncHelper(const CreateDataCatalogRequest& request, const CreateDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::CreateDataCatalogAsync(const CreateDataCatalogRequest& request, const CreateDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateDataCatalog(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientCreateDataCatalogAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateNamedQueryOutcome AthenaClient::CreateNamedQuery(const CreateNamedQueryRequest& request) const
@@ -247,14 +247,14 @@ CreateNamedQueryOutcomeCallable AthenaClient::CreateNamedQueryCallable(const Cre
   return task->get_future();
 }
 
-void AthenaClient::CreateNamedQueryAsync(const CreateNamedQueryRequest& request, const CreateNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientCreateNamedQueryAsyncHelper(AthenaClient const * const clientThis, const CreateNamedQueryRequest& request, const CreateNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateNamedQueryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateNamedQuery(request), context);
 }
 
-void AthenaClient::CreateNamedQueryAsyncHelper(const CreateNamedQueryRequest& request, const CreateNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::CreateNamedQueryAsync(const CreateNamedQueryRequest& request, const CreateNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateNamedQuery(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientCreateNamedQueryAsyncHelper( this, request, handler, context ); } );
 }
 
 CreatePreparedStatementOutcome AthenaClient::CreatePreparedStatement(const CreatePreparedStatementRequest& request) const
@@ -271,14 +271,14 @@ CreatePreparedStatementOutcomeCallable AthenaClient::CreatePreparedStatementCall
   return task->get_future();
 }
 
-void AthenaClient::CreatePreparedStatementAsync(const CreatePreparedStatementRequest& request, const CreatePreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientCreatePreparedStatementAsyncHelper(AthenaClient const * const clientThis, const CreatePreparedStatementRequest& request, const CreatePreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePreparedStatementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreatePreparedStatement(request), context);
 }
 
-void AthenaClient::CreatePreparedStatementAsyncHelper(const CreatePreparedStatementRequest& request, const CreatePreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::CreatePreparedStatementAsync(const CreatePreparedStatementRequest& request, const CreatePreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreatePreparedStatement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientCreatePreparedStatementAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateWorkGroupOutcome AthenaClient::CreateWorkGroup(const CreateWorkGroupRequest& request) const
@@ -295,14 +295,14 @@ CreateWorkGroupOutcomeCallable AthenaClient::CreateWorkGroupCallable(const Creat
   return task->get_future();
 }
 
-void AthenaClient::CreateWorkGroupAsync(const CreateWorkGroupRequest& request, const CreateWorkGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientCreateWorkGroupAsyncHelper(AthenaClient const * const clientThis, const CreateWorkGroupRequest& request, const CreateWorkGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateWorkGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateWorkGroup(request), context);
 }
 
-void AthenaClient::CreateWorkGroupAsyncHelper(const CreateWorkGroupRequest& request, const CreateWorkGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::CreateWorkGroupAsync(const CreateWorkGroupRequest& request, const CreateWorkGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateWorkGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientCreateWorkGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteDataCatalogOutcome AthenaClient::DeleteDataCatalog(const DeleteDataCatalogRequest& request) const
@@ -319,14 +319,14 @@ DeleteDataCatalogOutcomeCallable AthenaClient::DeleteDataCatalogCallable(const D
   return task->get_future();
 }
 
-void AthenaClient::DeleteDataCatalogAsync(const DeleteDataCatalogRequest& request, const DeleteDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientDeleteDataCatalogAsyncHelper(AthenaClient const * const clientThis, const DeleteDataCatalogRequest& request, const DeleteDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDataCatalogAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteDataCatalog(request), context);
 }
 
-void AthenaClient::DeleteDataCatalogAsyncHelper(const DeleteDataCatalogRequest& request, const DeleteDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::DeleteDataCatalogAsync(const DeleteDataCatalogRequest& request, const DeleteDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteDataCatalog(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientDeleteDataCatalogAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteNamedQueryOutcome AthenaClient::DeleteNamedQuery(const DeleteNamedQueryRequest& request) const
@@ -343,14 +343,14 @@ DeleteNamedQueryOutcomeCallable AthenaClient::DeleteNamedQueryCallable(const Del
   return task->get_future();
 }
 
-void AthenaClient::DeleteNamedQueryAsync(const DeleteNamedQueryRequest& request, const DeleteNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientDeleteNamedQueryAsyncHelper(AthenaClient const * const clientThis, const DeleteNamedQueryRequest& request, const DeleteNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteNamedQueryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteNamedQuery(request), context);
 }
 
-void AthenaClient::DeleteNamedQueryAsyncHelper(const DeleteNamedQueryRequest& request, const DeleteNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::DeleteNamedQueryAsync(const DeleteNamedQueryRequest& request, const DeleteNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteNamedQuery(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientDeleteNamedQueryAsyncHelper( this, request, handler, context ); } );
 }
 
 DeletePreparedStatementOutcome AthenaClient::DeletePreparedStatement(const DeletePreparedStatementRequest& request) const
@@ -367,14 +367,14 @@ DeletePreparedStatementOutcomeCallable AthenaClient::DeletePreparedStatementCall
   return task->get_future();
 }
 
-void AthenaClient::DeletePreparedStatementAsync(const DeletePreparedStatementRequest& request, const DeletePreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientDeletePreparedStatementAsyncHelper(AthenaClient const * const clientThis, const DeletePreparedStatementRequest& request, const DeletePreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePreparedStatementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeletePreparedStatement(request), context);
 }
 
-void AthenaClient::DeletePreparedStatementAsyncHelper(const DeletePreparedStatementRequest& request, const DeletePreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::DeletePreparedStatementAsync(const DeletePreparedStatementRequest& request, const DeletePreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeletePreparedStatement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientDeletePreparedStatementAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteWorkGroupOutcome AthenaClient::DeleteWorkGroup(const DeleteWorkGroupRequest& request) const
@@ -391,14 +391,14 @@ DeleteWorkGroupOutcomeCallable AthenaClient::DeleteWorkGroupCallable(const Delet
   return task->get_future();
 }
 
-void AthenaClient::DeleteWorkGroupAsync(const DeleteWorkGroupRequest& request, const DeleteWorkGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientDeleteWorkGroupAsyncHelper(AthenaClient const * const clientThis, const DeleteWorkGroupRequest& request, const DeleteWorkGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteWorkGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteWorkGroup(request), context);
 }
 
-void AthenaClient::DeleteWorkGroupAsyncHelper(const DeleteWorkGroupRequest& request, const DeleteWorkGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::DeleteWorkGroupAsync(const DeleteWorkGroupRequest& request, const DeleteWorkGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteWorkGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientDeleteWorkGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDataCatalogOutcome AthenaClient::GetDataCatalog(const GetDataCatalogRequest& request) const
@@ -415,14 +415,14 @@ GetDataCatalogOutcomeCallable AthenaClient::GetDataCatalogCallable(const GetData
   return task->get_future();
 }
 
-void AthenaClient::GetDataCatalogAsync(const GetDataCatalogRequest& request, const GetDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientGetDataCatalogAsyncHelper(AthenaClient const * const clientThis, const GetDataCatalogRequest& request, const GetDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDataCatalogAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDataCatalog(request), context);
 }
 
-void AthenaClient::GetDataCatalogAsyncHelper(const GetDataCatalogRequest& request, const GetDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::GetDataCatalogAsync(const GetDataCatalogRequest& request, const GetDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDataCatalog(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientGetDataCatalogAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDatabaseOutcome AthenaClient::GetDatabase(const GetDatabaseRequest& request) const
@@ -439,14 +439,14 @@ GetDatabaseOutcomeCallable AthenaClient::GetDatabaseCallable(const GetDatabaseRe
   return task->get_future();
 }
 
-void AthenaClient::GetDatabaseAsync(const GetDatabaseRequest& request, const GetDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientGetDatabaseAsyncHelper(AthenaClient const * const clientThis, const GetDatabaseRequest& request, const GetDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDatabaseAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDatabase(request), context);
 }
 
-void AthenaClient::GetDatabaseAsyncHelper(const GetDatabaseRequest& request, const GetDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::GetDatabaseAsync(const GetDatabaseRequest& request, const GetDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDatabase(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientGetDatabaseAsyncHelper( this, request, handler, context ); } );
 }
 
 GetNamedQueryOutcome AthenaClient::GetNamedQuery(const GetNamedQueryRequest& request) const
@@ -463,14 +463,14 @@ GetNamedQueryOutcomeCallable AthenaClient::GetNamedQueryCallable(const GetNamedQ
   return task->get_future();
 }
 
-void AthenaClient::GetNamedQueryAsync(const GetNamedQueryRequest& request, const GetNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientGetNamedQueryAsyncHelper(AthenaClient const * const clientThis, const GetNamedQueryRequest& request, const GetNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetNamedQueryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetNamedQuery(request), context);
 }
 
-void AthenaClient::GetNamedQueryAsyncHelper(const GetNamedQueryRequest& request, const GetNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::GetNamedQueryAsync(const GetNamedQueryRequest& request, const GetNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetNamedQuery(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientGetNamedQueryAsyncHelper( this, request, handler, context ); } );
 }
 
 GetPreparedStatementOutcome AthenaClient::GetPreparedStatement(const GetPreparedStatementRequest& request) const
@@ -487,14 +487,14 @@ GetPreparedStatementOutcomeCallable AthenaClient::GetPreparedStatementCallable(c
   return task->get_future();
 }
 
-void AthenaClient::GetPreparedStatementAsync(const GetPreparedStatementRequest& request, const GetPreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientGetPreparedStatementAsyncHelper(AthenaClient const * const clientThis, const GetPreparedStatementRequest& request, const GetPreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPreparedStatementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetPreparedStatement(request), context);
 }
 
-void AthenaClient::GetPreparedStatementAsyncHelper(const GetPreparedStatementRequest& request, const GetPreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::GetPreparedStatementAsync(const GetPreparedStatementRequest& request, const GetPreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetPreparedStatement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientGetPreparedStatementAsyncHelper( this, request, handler, context ); } );
 }
 
 GetQueryExecutionOutcome AthenaClient::GetQueryExecution(const GetQueryExecutionRequest& request) const
@@ -511,14 +511,14 @@ GetQueryExecutionOutcomeCallable AthenaClient::GetQueryExecutionCallable(const G
   return task->get_future();
 }
 
-void AthenaClient::GetQueryExecutionAsync(const GetQueryExecutionRequest& request, const GetQueryExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientGetQueryExecutionAsyncHelper(AthenaClient const * const clientThis, const GetQueryExecutionRequest& request, const GetQueryExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetQueryExecutionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetQueryExecution(request), context);
 }
 
-void AthenaClient::GetQueryExecutionAsyncHelper(const GetQueryExecutionRequest& request, const GetQueryExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::GetQueryExecutionAsync(const GetQueryExecutionRequest& request, const GetQueryExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetQueryExecution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientGetQueryExecutionAsyncHelper( this, request, handler, context ); } );
 }
 
 GetQueryResultsOutcome AthenaClient::GetQueryResults(const GetQueryResultsRequest& request) const
@@ -535,14 +535,14 @@ GetQueryResultsOutcomeCallable AthenaClient::GetQueryResultsCallable(const GetQu
   return task->get_future();
 }
 
-void AthenaClient::GetQueryResultsAsync(const GetQueryResultsRequest& request, const GetQueryResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientGetQueryResultsAsyncHelper(AthenaClient const * const clientThis, const GetQueryResultsRequest& request, const GetQueryResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetQueryResultsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetQueryResults(request), context);
 }
 
-void AthenaClient::GetQueryResultsAsyncHelper(const GetQueryResultsRequest& request, const GetQueryResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::GetQueryResultsAsync(const GetQueryResultsRequest& request, const GetQueryResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetQueryResults(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientGetQueryResultsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetQueryRuntimeStatisticsOutcome AthenaClient::GetQueryRuntimeStatistics(const GetQueryRuntimeStatisticsRequest& request) const
@@ -559,14 +559,14 @@ GetQueryRuntimeStatisticsOutcomeCallable AthenaClient::GetQueryRuntimeStatistics
   return task->get_future();
 }
 
-void AthenaClient::GetQueryRuntimeStatisticsAsync(const GetQueryRuntimeStatisticsRequest& request, const GetQueryRuntimeStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientGetQueryRuntimeStatisticsAsyncHelper(AthenaClient const * const clientThis, const GetQueryRuntimeStatisticsRequest& request, const GetQueryRuntimeStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetQueryRuntimeStatisticsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetQueryRuntimeStatistics(request), context);
 }
 
-void AthenaClient::GetQueryRuntimeStatisticsAsyncHelper(const GetQueryRuntimeStatisticsRequest& request, const GetQueryRuntimeStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::GetQueryRuntimeStatisticsAsync(const GetQueryRuntimeStatisticsRequest& request, const GetQueryRuntimeStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetQueryRuntimeStatistics(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientGetQueryRuntimeStatisticsAsyncHelper( this, request, handler, context ); } );
 }
 
 GetTableMetadataOutcome AthenaClient::GetTableMetadata(const GetTableMetadataRequest& request) const
@@ -583,14 +583,14 @@ GetTableMetadataOutcomeCallable AthenaClient::GetTableMetadataCallable(const Get
   return task->get_future();
 }
 
-void AthenaClient::GetTableMetadataAsync(const GetTableMetadataRequest& request, const GetTableMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientGetTableMetadataAsyncHelper(AthenaClient const * const clientThis, const GetTableMetadataRequest& request, const GetTableMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTableMetadataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetTableMetadata(request), context);
 }
 
-void AthenaClient::GetTableMetadataAsyncHelper(const GetTableMetadataRequest& request, const GetTableMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::GetTableMetadataAsync(const GetTableMetadataRequest& request, const GetTableMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetTableMetadata(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientGetTableMetadataAsyncHelper( this, request, handler, context ); } );
 }
 
 GetWorkGroupOutcome AthenaClient::GetWorkGroup(const GetWorkGroupRequest& request) const
@@ -607,14 +607,14 @@ GetWorkGroupOutcomeCallable AthenaClient::GetWorkGroupCallable(const GetWorkGrou
   return task->get_future();
 }
 
-void AthenaClient::GetWorkGroupAsync(const GetWorkGroupRequest& request, const GetWorkGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientGetWorkGroupAsyncHelper(AthenaClient const * const clientThis, const GetWorkGroupRequest& request, const GetWorkGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetWorkGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetWorkGroup(request), context);
 }
 
-void AthenaClient::GetWorkGroupAsyncHelper(const GetWorkGroupRequest& request, const GetWorkGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::GetWorkGroupAsync(const GetWorkGroupRequest& request, const GetWorkGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetWorkGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientGetWorkGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDataCatalogsOutcome AthenaClient::ListDataCatalogs(const ListDataCatalogsRequest& request) const
@@ -631,14 +631,14 @@ ListDataCatalogsOutcomeCallable AthenaClient::ListDataCatalogsCallable(const Lis
   return task->get_future();
 }
 
-void AthenaClient::ListDataCatalogsAsync(const ListDataCatalogsRequest& request, const ListDataCatalogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientListDataCatalogsAsyncHelper(AthenaClient const * const clientThis, const ListDataCatalogsRequest& request, const ListDataCatalogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDataCatalogsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDataCatalogs(request), context);
 }
 
-void AthenaClient::ListDataCatalogsAsyncHelper(const ListDataCatalogsRequest& request, const ListDataCatalogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::ListDataCatalogsAsync(const ListDataCatalogsRequest& request, const ListDataCatalogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDataCatalogs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientListDataCatalogsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDatabasesOutcome AthenaClient::ListDatabases(const ListDatabasesRequest& request) const
@@ -655,14 +655,14 @@ ListDatabasesOutcomeCallable AthenaClient::ListDatabasesCallable(const ListDatab
   return task->get_future();
 }
 
-void AthenaClient::ListDatabasesAsync(const ListDatabasesRequest& request, const ListDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientListDatabasesAsyncHelper(AthenaClient const * const clientThis, const ListDatabasesRequest& request, const ListDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDatabasesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDatabases(request), context);
 }
 
-void AthenaClient::ListDatabasesAsyncHelper(const ListDatabasesRequest& request, const ListDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::ListDatabasesAsync(const ListDatabasesRequest& request, const ListDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDatabases(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientListDatabasesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListEngineVersionsOutcome AthenaClient::ListEngineVersions(const ListEngineVersionsRequest& request) const
@@ -679,14 +679,14 @@ ListEngineVersionsOutcomeCallable AthenaClient::ListEngineVersionsCallable(const
   return task->get_future();
 }
 
-void AthenaClient::ListEngineVersionsAsync(const ListEngineVersionsRequest& request, const ListEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientListEngineVersionsAsyncHelper(AthenaClient const * const clientThis, const ListEngineVersionsRequest& request, const ListEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEngineVersionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListEngineVersions(request), context);
 }
 
-void AthenaClient::ListEngineVersionsAsyncHelper(const ListEngineVersionsRequest& request, const ListEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::ListEngineVersionsAsync(const ListEngineVersionsRequest& request, const ListEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListEngineVersions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientListEngineVersionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListNamedQueriesOutcome AthenaClient::ListNamedQueries(const ListNamedQueriesRequest& request) const
@@ -703,14 +703,14 @@ ListNamedQueriesOutcomeCallable AthenaClient::ListNamedQueriesCallable(const Lis
   return task->get_future();
 }
 
-void AthenaClient::ListNamedQueriesAsync(const ListNamedQueriesRequest& request, const ListNamedQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientListNamedQueriesAsyncHelper(AthenaClient const * const clientThis, const ListNamedQueriesRequest& request, const ListNamedQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListNamedQueriesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListNamedQueries(request), context);
 }
 
-void AthenaClient::ListNamedQueriesAsyncHelper(const ListNamedQueriesRequest& request, const ListNamedQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::ListNamedQueriesAsync(const ListNamedQueriesRequest& request, const ListNamedQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListNamedQueries(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientListNamedQueriesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListPreparedStatementsOutcome AthenaClient::ListPreparedStatements(const ListPreparedStatementsRequest& request) const
@@ -727,14 +727,14 @@ ListPreparedStatementsOutcomeCallable AthenaClient::ListPreparedStatementsCallab
   return task->get_future();
 }
 
-void AthenaClient::ListPreparedStatementsAsync(const ListPreparedStatementsRequest& request, const ListPreparedStatementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientListPreparedStatementsAsyncHelper(AthenaClient const * const clientThis, const ListPreparedStatementsRequest& request, const ListPreparedStatementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPreparedStatementsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListPreparedStatements(request), context);
 }
 
-void AthenaClient::ListPreparedStatementsAsyncHelper(const ListPreparedStatementsRequest& request, const ListPreparedStatementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::ListPreparedStatementsAsync(const ListPreparedStatementsRequest& request, const ListPreparedStatementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListPreparedStatements(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientListPreparedStatementsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListQueryExecutionsOutcome AthenaClient::ListQueryExecutions(const ListQueryExecutionsRequest& request) const
@@ -751,14 +751,14 @@ ListQueryExecutionsOutcomeCallable AthenaClient::ListQueryExecutionsCallable(con
   return task->get_future();
 }
 
-void AthenaClient::ListQueryExecutionsAsync(const ListQueryExecutionsRequest& request, const ListQueryExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientListQueryExecutionsAsyncHelper(AthenaClient const * const clientThis, const ListQueryExecutionsRequest& request, const ListQueryExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListQueryExecutionsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListQueryExecutions(request), context);
 }
 
-void AthenaClient::ListQueryExecutionsAsyncHelper(const ListQueryExecutionsRequest& request, const ListQueryExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::ListQueryExecutionsAsync(const ListQueryExecutionsRequest& request, const ListQueryExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListQueryExecutions(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientListQueryExecutionsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTableMetadataOutcome AthenaClient::ListTableMetadata(const ListTableMetadataRequest& request) const
@@ -775,14 +775,14 @@ ListTableMetadataOutcomeCallable AthenaClient::ListTableMetadataCallable(const L
   return task->get_future();
 }
 
-void AthenaClient::ListTableMetadataAsync(const ListTableMetadataRequest& request, const ListTableMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientListTableMetadataAsyncHelper(AthenaClient const * const clientThis, const ListTableMetadataRequest& request, const ListTableMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTableMetadataAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTableMetadata(request), context);
 }
 
-void AthenaClient::ListTableMetadataAsyncHelper(const ListTableMetadataRequest& request, const ListTableMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::ListTableMetadataAsync(const ListTableMetadataRequest& request, const ListTableMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTableMetadata(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientListTableMetadataAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome AthenaClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -799,14 +799,14 @@ ListTagsForResourceOutcomeCallable AthenaClient::ListTagsForResourceCallable(con
   return task->get_future();
 }
 
-void AthenaClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientListTagsForResourceAsyncHelper(AthenaClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void AthenaClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListWorkGroupsOutcome AthenaClient::ListWorkGroups(const ListWorkGroupsRequest& request) const
@@ -823,14 +823,14 @@ ListWorkGroupsOutcomeCallable AthenaClient::ListWorkGroupsCallable(const ListWor
   return task->get_future();
 }
 
-void AthenaClient::ListWorkGroupsAsync(const ListWorkGroupsRequest& request, const ListWorkGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientListWorkGroupsAsyncHelper(AthenaClient const * const clientThis, const ListWorkGroupsRequest& request, const ListWorkGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListWorkGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListWorkGroups(request), context);
 }
 
-void AthenaClient::ListWorkGroupsAsyncHelper(const ListWorkGroupsRequest& request, const ListWorkGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::ListWorkGroupsAsync(const ListWorkGroupsRequest& request, const ListWorkGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListWorkGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientListWorkGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 StartQueryExecutionOutcome AthenaClient::StartQueryExecution(const StartQueryExecutionRequest& request) const
@@ -847,14 +847,14 @@ StartQueryExecutionOutcomeCallable AthenaClient::StartQueryExecutionCallable(con
   return task->get_future();
 }
 
-void AthenaClient::StartQueryExecutionAsync(const StartQueryExecutionRequest& request, const StartQueryExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientStartQueryExecutionAsyncHelper(AthenaClient const * const clientThis, const StartQueryExecutionRequest& request, const StartQueryExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartQueryExecutionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartQueryExecution(request), context);
 }
 
-void AthenaClient::StartQueryExecutionAsyncHelper(const StartQueryExecutionRequest& request, const StartQueryExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::StartQueryExecutionAsync(const StartQueryExecutionRequest& request, const StartQueryExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartQueryExecution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientStartQueryExecutionAsyncHelper( this, request, handler, context ); } );
 }
 
 StopQueryExecutionOutcome AthenaClient::StopQueryExecution(const StopQueryExecutionRequest& request) const
@@ -871,14 +871,14 @@ StopQueryExecutionOutcomeCallable AthenaClient::StopQueryExecutionCallable(const
   return task->get_future();
 }
 
-void AthenaClient::StopQueryExecutionAsync(const StopQueryExecutionRequest& request, const StopQueryExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientStopQueryExecutionAsyncHelper(AthenaClient const * const clientThis, const StopQueryExecutionRequest& request, const StopQueryExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopQueryExecutionAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopQueryExecution(request), context);
 }
 
-void AthenaClient::StopQueryExecutionAsyncHelper(const StopQueryExecutionRequest& request, const StopQueryExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::StopQueryExecutionAsync(const StopQueryExecutionRequest& request, const StopQueryExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopQueryExecution(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientStopQueryExecutionAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome AthenaClient::TagResource(const TagResourceRequest& request) const
@@ -895,14 +895,14 @@ TagResourceOutcomeCallable AthenaClient::TagResourceCallable(const TagResourceRe
   return task->get_future();
 }
 
-void AthenaClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientTagResourceAsyncHelper(AthenaClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void AthenaClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome AthenaClient::UntagResource(const UntagResourceRequest& request) const
@@ -919,14 +919,14 @@ UntagResourceOutcomeCallable AthenaClient::UntagResourceCallable(const UntagReso
   return task->get_future();
 }
 
-void AthenaClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientUntagResourceAsyncHelper(AthenaClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void AthenaClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDataCatalogOutcome AthenaClient::UpdateDataCatalog(const UpdateDataCatalogRequest& request) const
@@ -943,14 +943,14 @@ UpdateDataCatalogOutcomeCallable AthenaClient::UpdateDataCatalogCallable(const U
   return task->get_future();
 }
 
-void AthenaClient::UpdateDataCatalogAsync(const UpdateDataCatalogRequest& request, const UpdateDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientUpdateDataCatalogAsyncHelper(AthenaClient const * const clientThis, const UpdateDataCatalogRequest& request, const UpdateDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDataCatalogAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDataCatalog(request), context);
 }
 
-void AthenaClient::UpdateDataCatalogAsyncHelper(const UpdateDataCatalogRequest& request, const UpdateDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::UpdateDataCatalogAsync(const UpdateDataCatalogRequest& request, const UpdateDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDataCatalog(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientUpdateDataCatalogAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateNamedQueryOutcome AthenaClient::UpdateNamedQuery(const UpdateNamedQueryRequest& request) const
@@ -967,14 +967,14 @@ UpdateNamedQueryOutcomeCallable AthenaClient::UpdateNamedQueryCallable(const Upd
   return task->get_future();
 }
 
-void AthenaClient::UpdateNamedQueryAsync(const UpdateNamedQueryRequest& request, const UpdateNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientUpdateNamedQueryAsyncHelper(AthenaClient const * const clientThis, const UpdateNamedQueryRequest& request, const UpdateNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateNamedQueryAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateNamedQuery(request), context);
 }
 
-void AthenaClient::UpdateNamedQueryAsyncHelper(const UpdateNamedQueryRequest& request, const UpdateNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::UpdateNamedQueryAsync(const UpdateNamedQueryRequest& request, const UpdateNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateNamedQuery(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientUpdateNamedQueryAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdatePreparedStatementOutcome AthenaClient::UpdatePreparedStatement(const UpdatePreparedStatementRequest& request) const
@@ -991,14 +991,14 @@ UpdatePreparedStatementOutcomeCallable AthenaClient::UpdatePreparedStatementCall
   return task->get_future();
 }
 
-void AthenaClient::UpdatePreparedStatementAsync(const UpdatePreparedStatementRequest& request, const UpdatePreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientUpdatePreparedStatementAsyncHelper(AthenaClient const * const clientThis, const UpdatePreparedStatementRequest& request, const UpdatePreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePreparedStatementAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdatePreparedStatement(request), context);
 }
 
-void AthenaClient::UpdatePreparedStatementAsyncHelper(const UpdatePreparedStatementRequest& request, const UpdatePreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::UpdatePreparedStatementAsync(const UpdatePreparedStatementRequest& request, const UpdatePreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdatePreparedStatement(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientUpdatePreparedStatementAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateWorkGroupOutcome AthenaClient::UpdateWorkGroup(const UpdateWorkGroupRequest& request) const
@@ -1015,13 +1015,13 @@ UpdateWorkGroupOutcomeCallable AthenaClient::UpdateWorkGroupCallable(const Updat
   return task->get_future();
 }
 
-void AthenaClient::UpdateWorkGroupAsync(const UpdateWorkGroupRequest& request, const UpdateWorkGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClientUpdateWorkGroupAsyncHelper(AthenaClient const * const clientThis, const UpdateWorkGroupRequest& request, const UpdateWorkGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateWorkGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateWorkGroup(request), context);
 }
 
-void AthenaClient::UpdateWorkGroupAsyncHelper(const UpdateWorkGroupRequest& request, const UpdateWorkGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void AthenaClient::UpdateWorkGroupAsync(const UpdateWorkGroupRequest& request, const UpdateWorkGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateWorkGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ AthenaClientUpdateWorkGroupAsyncHelper( this, request, handler, context ); } );
 }
 

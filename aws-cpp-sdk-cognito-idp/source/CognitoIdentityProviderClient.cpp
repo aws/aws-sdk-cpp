@@ -215,14 +215,14 @@ AddCustomAttributesOutcomeCallable CognitoIdentityProviderClient::AddCustomAttri
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::AddCustomAttributesAsync(const AddCustomAttributesRequest& request, const AddCustomAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientAddCustomAttributesAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const AddCustomAttributesRequest& request, const AddCustomAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddCustomAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AddCustomAttributes(request), context);
 }
 
-void CognitoIdentityProviderClient::AddCustomAttributesAsyncHelper(const AddCustomAttributesRequest& request, const AddCustomAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::AddCustomAttributesAsync(const AddCustomAttributesRequest& request, const AddCustomAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AddCustomAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientAddCustomAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 AdminAddUserToGroupOutcome CognitoIdentityProviderClient::AdminAddUserToGroup(const AdminAddUserToGroupRequest& request) const
@@ -239,14 +239,14 @@ AdminAddUserToGroupOutcomeCallable CognitoIdentityProviderClient::AdminAddUserTo
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::AdminAddUserToGroupAsync(const AdminAddUserToGroupRequest& request, const AdminAddUserToGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientAdminAddUserToGroupAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const AdminAddUserToGroupRequest& request, const AdminAddUserToGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AdminAddUserToGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AdminAddUserToGroup(request), context);
 }
 
-void CognitoIdentityProviderClient::AdminAddUserToGroupAsyncHelper(const AdminAddUserToGroupRequest& request, const AdminAddUserToGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::AdminAddUserToGroupAsync(const AdminAddUserToGroupRequest& request, const AdminAddUserToGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AdminAddUserToGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientAdminAddUserToGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 AdminConfirmSignUpOutcome CognitoIdentityProviderClient::AdminConfirmSignUp(const AdminConfirmSignUpRequest& request) const
@@ -263,14 +263,14 @@ AdminConfirmSignUpOutcomeCallable CognitoIdentityProviderClient::AdminConfirmSig
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::AdminConfirmSignUpAsync(const AdminConfirmSignUpRequest& request, const AdminConfirmSignUpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientAdminConfirmSignUpAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const AdminConfirmSignUpRequest& request, const AdminConfirmSignUpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AdminConfirmSignUpAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AdminConfirmSignUp(request), context);
 }
 
-void CognitoIdentityProviderClient::AdminConfirmSignUpAsyncHelper(const AdminConfirmSignUpRequest& request, const AdminConfirmSignUpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::AdminConfirmSignUpAsync(const AdminConfirmSignUpRequest& request, const AdminConfirmSignUpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AdminConfirmSignUp(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientAdminConfirmSignUpAsyncHelper( this, request, handler, context ); } );
 }
 
 AdminCreateUserOutcome CognitoIdentityProviderClient::AdminCreateUser(const AdminCreateUserRequest& request) const
@@ -287,14 +287,14 @@ AdminCreateUserOutcomeCallable CognitoIdentityProviderClient::AdminCreateUserCal
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::AdminCreateUserAsync(const AdminCreateUserRequest& request, const AdminCreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientAdminCreateUserAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const AdminCreateUserRequest& request, const AdminCreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AdminCreateUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AdminCreateUser(request), context);
 }
 
-void CognitoIdentityProviderClient::AdminCreateUserAsyncHelper(const AdminCreateUserRequest& request, const AdminCreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::AdminCreateUserAsync(const AdminCreateUserRequest& request, const AdminCreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AdminCreateUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientAdminCreateUserAsyncHelper( this, request, handler, context ); } );
 }
 
 AdminDeleteUserOutcome CognitoIdentityProviderClient::AdminDeleteUser(const AdminDeleteUserRequest& request) const
@@ -311,14 +311,14 @@ AdminDeleteUserOutcomeCallable CognitoIdentityProviderClient::AdminDeleteUserCal
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::AdminDeleteUserAsync(const AdminDeleteUserRequest& request, const AdminDeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientAdminDeleteUserAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const AdminDeleteUserRequest& request, const AdminDeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AdminDeleteUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AdminDeleteUser(request), context);
 }
 
-void CognitoIdentityProviderClient::AdminDeleteUserAsyncHelper(const AdminDeleteUserRequest& request, const AdminDeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::AdminDeleteUserAsync(const AdminDeleteUserRequest& request, const AdminDeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AdminDeleteUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientAdminDeleteUserAsyncHelper( this, request, handler, context ); } );
 }
 
 AdminDeleteUserAttributesOutcome CognitoIdentityProviderClient::AdminDeleteUserAttributes(const AdminDeleteUserAttributesRequest& request) const
@@ -335,14 +335,14 @@ AdminDeleteUserAttributesOutcomeCallable CognitoIdentityProviderClient::AdminDel
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::AdminDeleteUserAttributesAsync(const AdminDeleteUserAttributesRequest& request, const AdminDeleteUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientAdminDeleteUserAttributesAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const AdminDeleteUserAttributesRequest& request, const AdminDeleteUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AdminDeleteUserAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AdminDeleteUserAttributes(request), context);
 }
 
-void CognitoIdentityProviderClient::AdminDeleteUserAttributesAsyncHelper(const AdminDeleteUserAttributesRequest& request, const AdminDeleteUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::AdminDeleteUserAttributesAsync(const AdminDeleteUserAttributesRequest& request, const AdminDeleteUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AdminDeleteUserAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientAdminDeleteUserAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 AdminDisableProviderForUserOutcome CognitoIdentityProviderClient::AdminDisableProviderForUser(const AdminDisableProviderForUserRequest& request) const
@@ -359,14 +359,14 @@ AdminDisableProviderForUserOutcomeCallable CognitoIdentityProviderClient::AdminD
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::AdminDisableProviderForUserAsync(const AdminDisableProviderForUserRequest& request, const AdminDisableProviderForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientAdminDisableProviderForUserAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const AdminDisableProviderForUserRequest& request, const AdminDisableProviderForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AdminDisableProviderForUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AdminDisableProviderForUser(request), context);
 }
 
-void CognitoIdentityProviderClient::AdminDisableProviderForUserAsyncHelper(const AdminDisableProviderForUserRequest& request, const AdminDisableProviderForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::AdminDisableProviderForUserAsync(const AdminDisableProviderForUserRequest& request, const AdminDisableProviderForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AdminDisableProviderForUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientAdminDisableProviderForUserAsyncHelper( this, request, handler, context ); } );
 }
 
 AdminDisableUserOutcome CognitoIdentityProviderClient::AdminDisableUser(const AdminDisableUserRequest& request) const
@@ -383,14 +383,14 @@ AdminDisableUserOutcomeCallable CognitoIdentityProviderClient::AdminDisableUserC
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::AdminDisableUserAsync(const AdminDisableUserRequest& request, const AdminDisableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientAdminDisableUserAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const AdminDisableUserRequest& request, const AdminDisableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AdminDisableUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AdminDisableUser(request), context);
 }
 
-void CognitoIdentityProviderClient::AdminDisableUserAsyncHelper(const AdminDisableUserRequest& request, const AdminDisableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::AdminDisableUserAsync(const AdminDisableUserRequest& request, const AdminDisableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AdminDisableUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientAdminDisableUserAsyncHelper( this, request, handler, context ); } );
 }
 
 AdminEnableUserOutcome CognitoIdentityProviderClient::AdminEnableUser(const AdminEnableUserRequest& request) const
@@ -407,14 +407,14 @@ AdminEnableUserOutcomeCallable CognitoIdentityProviderClient::AdminEnableUserCal
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::AdminEnableUserAsync(const AdminEnableUserRequest& request, const AdminEnableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientAdminEnableUserAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const AdminEnableUserRequest& request, const AdminEnableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AdminEnableUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AdminEnableUser(request), context);
 }
 
-void CognitoIdentityProviderClient::AdminEnableUserAsyncHelper(const AdminEnableUserRequest& request, const AdminEnableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::AdminEnableUserAsync(const AdminEnableUserRequest& request, const AdminEnableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AdminEnableUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientAdminEnableUserAsyncHelper( this, request, handler, context ); } );
 }
 
 AdminForgetDeviceOutcome CognitoIdentityProviderClient::AdminForgetDevice(const AdminForgetDeviceRequest& request) const
@@ -431,14 +431,14 @@ AdminForgetDeviceOutcomeCallable CognitoIdentityProviderClient::AdminForgetDevic
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::AdminForgetDeviceAsync(const AdminForgetDeviceRequest& request, const AdminForgetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientAdminForgetDeviceAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const AdminForgetDeviceRequest& request, const AdminForgetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AdminForgetDeviceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AdminForgetDevice(request), context);
 }
 
-void CognitoIdentityProviderClient::AdminForgetDeviceAsyncHelper(const AdminForgetDeviceRequest& request, const AdminForgetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::AdminForgetDeviceAsync(const AdminForgetDeviceRequest& request, const AdminForgetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AdminForgetDevice(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientAdminForgetDeviceAsyncHelper( this, request, handler, context ); } );
 }
 
 AdminGetDeviceOutcome CognitoIdentityProviderClient::AdminGetDevice(const AdminGetDeviceRequest& request) const
@@ -455,14 +455,14 @@ AdminGetDeviceOutcomeCallable CognitoIdentityProviderClient::AdminGetDeviceCalla
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::AdminGetDeviceAsync(const AdminGetDeviceRequest& request, const AdminGetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientAdminGetDeviceAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const AdminGetDeviceRequest& request, const AdminGetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AdminGetDeviceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AdminGetDevice(request), context);
 }
 
-void CognitoIdentityProviderClient::AdminGetDeviceAsyncHelper(const AdminGetDeviceRequest& request, const AdminGetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::AdminGetDeviceAsync(const AdminGetDeviceRequest& request, const AdminGetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AdminGetDevice(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientAdminGetDeviceAsyncHelper( this, request, handler, context ); } );
 }
 
 AdminGetUserOutcome CognitoIdentityProviderClient::AdminGetUser(const AdminGetUserRequest& request) const
@@ -479,14 +479,14 @@ AdminGetUserOutcomeCallable CognitoIdentityProviderClient::AdminGetUserCallable(
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::AdminGetUserAsync(const AdminGetUserRequest& request, const AdminGetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientAdminGetUserAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const AdminGetUserRequest& request, const AdminGetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AdminGetUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AdminGetUser(request), context);
 }
 
-void CognitoIdentityProviderClient::AdminGetUserAsyncHelper(const AdminGetUserRequest& request, const AdminGetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::AdminGetUserAsync(const AdminGetUserRequest& request, const AdminGetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AdminGetUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientAdminGetUserAsyncHelper( this, request, handler, context ); } );
 }
 
 AdminInitiateAuthOutcome CognitoIdentityProviderClient::AdminInitiateAuth(const AdminInitiateAuthRequest& request) const
@@ -503,14 +503,14 @@ AdminInitiateAuthOutcomeCallable CognitoIdentityProviderClient::AdminInitiateAut
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::AdminInitiateAuthAsync(const AdminInitiateAuthRequest& request, const AdminInitiateAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientAdminInitiateAuthAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const AdminInitiateAuthRequest& request, const AdminInitiateAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AdminInitiateAuthAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AdminInitiateAuth(request), context);
 }
 
-void CognitoIdentityProviderClient::AdminInitiateAuthAsyncHelper(const AdminInitiateAuthRequest& request, const AdminInitiateAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::AdminInitiateAuthAsync(const AdminInitiateAuthRequest& request, const AdminInitiateAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AdminInitiateAuth(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientAdminInitiateAuthAsyncHelper( this, request, handler, context ); } );
 }
 
 AdminLinkProviderForUserOutcome CognitoIdentityProviderClient::AdminLinkProviderForUser(const AdminLinkProviderForUserRequest& request) const
@@ -527,14 +527,14 @@ AdminLinkProviderForUserOutcomeCallable CognitoIdentityProviderClient::AdminLink
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::AdminLinkProviderForUserAsync(const AdminLinkProviderForUserRequest& request, const AdminLinkProviderForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientAdminLinkProviderForUserAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const AdminLinkProviderForUserRequest& request, const AdminLinkProviderForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AdminLinkProviderForUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AdminLinkProviderForUser(request), context);
 }
 
-void CognitoIdentityProviderClient::AdminLinkProviderForUserAsyncHelper(const AdminLinkProviderForUserRequest& request, const AdminLinkProviderForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::AdminLinkProviderForUserAsync(const AdminLinkProviderForUserRequest& request, const AdminLinkProviderForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AdminLinkProviderForUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientAdminLinkProviderForUserAsyncHelper( this, request, handler, context ); } );
 }
 
 AdminListDevicesOutcome CognitoIdentityProviderClient::AdminListDevices(const AdminListDevicesRequest& request) const
@@ -551,14 +551,14 @@ AdminListDevicesOutcomeCallable CognitoIdentityProviderClient::AdminListDevicesC
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::AdminListDevicesAsync(const AdminListDevicesRequest& request, const AdminListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientAdminListDevicesAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const AdminListDevicesRequest& request, const AdminListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AdminListDevicesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AdminListDevices(request), context);
 }
 
-void CognitoIdentityProviderClient::AdminListDevicesAsyncHelper(const AdminListDevicesRequest& request, const AdminListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::AdminListDevicesAsync(const AdminListDevicesRequest& request, const AdminListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AdminListDevices(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientAdminListDevicesAsyncHelper( this, request, handler, context ); } );
 }
 
 AdminListGroupsForUserOutcome CognitoIdentityProviderClient::AdminListGroupsForUser(const AdminListGroupsForUserRequest& request) const
@@ -575,14 +575,14 @@ AdminListGroupsForUserOutcomeCallable CognitoIdentityProviderClient::AdminListGr
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::AdminListGroupsForUserAsync(const AdminListGroupsForUserRequest& request, const AdminListGroupsForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientAdminListGroupsForUserAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const AdminListGroupsForUserRequest& request, const AdminListGroupsForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AdminListGroupsForUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AdminListGroupsForUser(request), context);
 }
 
-void CognitoIdentityProviderClient::AdminListGroupsForUserAsyncHelper(const AdminListGroupsForUserRequest& request, const AdminListGroupsForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::AdminListGroupsForUserAsync(const AdminListGroupsForUserRequest& request, const AdminListGroupsForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AdminListGroupsForUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientAdminListGroupsForUserAsyncHelper( this, request, handler, context ); } );
 }
 
 AdminListUserAuthEventsOutcome CognitoIdentityProviderClient::AdminListUserAuthEvents(const AdminListUserAuthEventsRequest& request) const
@@ -599,14 +599,14 @@ AdminListUserAuthEventsOutcomeCallable CognitoIdentityProviderClient::AdminListU
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::AdminListUserAuthEventsAsync(const AdminListUserAuthEventsRequest& request, const AdminListUserAuthEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientAdminListUserAuthEventsAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const AdminListUserAuthEventsRequest& request, const AdminListUserAuthEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AdminListUserAuthEventsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AdminListUserAuthEvents(request), context);
 }
 
-void CognitoIdentityProviderClient::AdminListUserAuthEventsAsyncHelper(const AdminListUserAuthEventsRequest& request, const AdminListUserAuthEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::AdminListUserAuthEventsAsync(const AdminListUserAuthEventsRequest& request, const AdminListUserAuthEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AdminListUserAuthEvents(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientAdminListUserAuthEventsAsyncHelper( this, request, handler, context ); } );
 }
 
 AdminRemoveUserFromGroupOutcome CognitoIdentityProviderClient::AdminRemoveUserFromGroup(const AdminRemoveUserFromGroupRequest& request) const
@@ -623,14 +623,14 @@ AdminRemoveUserFromGroupOutcomeCallable CognitoIdentityProviderClient::AdminRemo
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::AdminRemoveUserFromGroupAsync(const AdminRemoveUserFromGroupRequest& request, const AdminRemoveUserFromGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientAdminRemoveUserFromGroupAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const AdminRemoveUserFromGroupRequest& request, const AdminRemoveUserFromGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AdminRemoveUserFromGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AdminRemoveUserFromGroup(request), context);
 }
 
-void CognitoIdentityProviderClient::AdminRemoveUserFromGroupAsyncHelper(const AdminRemoveUserFromGroupRequest& request, const AdminRemoveUserFromGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::AdminRemoveUserFromGroupAsync(const AdminRemoveUserFromGroupRequest& request, const AdminRemoveUserFromGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AdminRemoveUserFromGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientAdminRemoveUserFromGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 AdminResetUserPasswordOutcome CognitoIdentityProviderClient::AdminResetUserPassword(const AdminResetUserPasswordRequest& request) const
@@ -647,14 +647,14 @@ AdminResetUserPasswordOutcomeCallable CognitoIdentityProviderClient::AdminResetU
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::AdminResetUserPasswordAsync(const AdminResetUserPasswordRequest& request, const AdminResetUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientAdminResetUserPasswordAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const AdminResetUserPasswordRequest& request, const AdminResetUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AdminResetUserPasswordAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AdminResetUserPassword(request), context);
 }
 
-void CognitoIdentityProviderClient::AdminResetUserPasswordAsyncHelper(const AdminResetUserPasswordRequest& request, const AdminResetUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::AdminResetUserPasswordAsync(const AdminResetUserPasswordRequest& request, const AdminResetUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AdminResetUserPassword(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientAdminResetUserPasswordAsyncHelper( this, request, handler, context ); } );
 }
 
 AdminRespondToAuthChallengeOutcome CognitoIdentityProviderClient::AdminRespondToAuthChallenge(const AdminRespondToAuthChallengeRequest& request) const
@@ -671,14 +671,14 @@ AdminRespondToAuthChallengeOutcomeCallable CognitoIdentityProviderClient::AdminR
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::AdminRespondToAuthChallengeAsync(const AdminRespondToAuthChallengeRequest& request, const AdminRespondToAuthChallengeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientAdminRespondToAuthChallengeAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const AdminRespondToAuthChallengeRequest& request, const AdminRespondToAuthChallengeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AdminRespondToAuthChallengeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AdminRespondToAuthChallenge(request), context);
 }
 
-void CognitoIdentityProviderClient::AdminRespondToAuthChallengeAsyncHelper(const AdminRespondToAuthChallengeRequest& request, const AdminRespondToAuthChallengeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::AdminRespondToAuthChallengeAsync(const AdminRespondToAuthChallengeRequest& request, const AdminRespondToAuthChallengeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AdminRespondToAuthChallenge(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientAdminRespondToAuthChallengeAsyncHelper( this, request, handler, context ); } );
 }
 
 AdminSetUserMFAPreferenceOutcome CognitoIdentityProviderClient::AdminSetUserMFAPreference(const AdminSetUserMFAPreferenceRequest& request) const
@@ -695,14 +695,14 @@ AdminSetUserMFAPreferenceOutcomeCallable CognitoIdentityProviderClient::AdminSet
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::AdminSetUserMFAPreferenceAsync(const AdminSetUserMFAPreferenceRequest& request, const AdminSetUserMFAPreferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientAdminSetUserMFAPreferenceAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const AdminSetUserMFAPreferenceRequest& request, const AdminSetUserMFAPreferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AdminSetUserMFAPreferenceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AdminSetUserMFAPreference(request), context);
 }
 
-void CognitoIdentityProviderClient::AdminSetUserMFAPreferenceAsyncHelper(const AdminSetUserMFAPreferenceRequest& request, const AdminSetUserMFAPreferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::AdminSetUserMFAPreferenceAsync(const AdminSetUserMFAPreferenceRequest& request, const AdminSetUserMFAPreferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AdminSetUserMFAPreference(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientAdminSetUserMFAPreferenceAsyncHelper( this, request, handler, context ); } );
 }
 
 AdminSetUserPasswordOutcome CognitoIdentityProviderClient::AdminSetUserPassword(const AdminSetUserPasswordRequest& request) const
@@ -719,14 +719,14 @@ AdminSetUserPasswordOutcomeCallable CognitoIdentityProviderClient::AdminSetUserP
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::AdminSetUserPasswordAsync(const AdminSetUserPasswordRequest& request, const AdminSetUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientAdminSetUserPasswordAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const AdminSetUserPasswordRequest& request, const AdminSetUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AdminSetUserPasswordAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AdminSetUserPassword(request), context);
 }
 
-void CognitoIdentityProviderClient::AdminSetUserPasswordAsyncHelper(const AdminSetUserPasswordRequest& request, const AdminSetUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::AdminSetUserPasswordAsync(const AdminSetUserPasswordRequest& request, const AdminSetUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AdminSetUserPassword(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientAdminSetUserPasswordAsyncHelper( this, request, handler, context ); } );
 }
 
 AdminSetUserSettingsOutcome CognitoIdentityProviderClient::AdminSetUserSettings(const AdminSetUserSettingsRequest& request) const
@@ -743,14 +743,14 @@ AdminSetUserSettingsOutcomeCallable CognitoIdentityProviderClient::AdminSetUserS
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::AdminSetUserSettingsAsync(const AdminSetUserSettingsRequest& request, const AdminSetUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientAdminSetUserSettingsAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const AdminSetUserSettingsRequest& request, const AdminSetUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AdminSetUserSettingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AdminSetUserSettings(request), context);
 }
 
-void CognitoIdentityProviderClient::AdminSetUserSettingsAsyncHelper(const AdminSetUserSettingsRequest& request, const AdminSetUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::AdminSetUserSettingsAsync(const AdminSetUserSettingsRequest& request, const AdminSetUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AdminSetUserSettings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientAdminSetUserSettingsAsyncHelper( this, request, handler, context ); } );
 }
 
 AdminUpdateAuthEventFeedbackOutcome CognitoIdentityProviderClient::AdminUpdateAuthEventFeedback(const AdminUpdateAuthEventFeedbackRequest& request) const
@@ -767,14 +767,14 @@ AdminUpdateAuthEventFeedbackOutcomeCallable CognitoIdentityProviderClient::Admin
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::AdminUpdateAuthEventFeedbackAsync(const AdminUpdateAuthEventFeedbackRequest& request, const AdminUpdateAuthEventFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientAdminUpdateAuthEventFeedbackAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const AdminUpdateAuthEventFeedbackRequest& request, const AdminUpdateAuthEventFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AdminUpdateAuthEventFeedbackAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AdminUpdateAuthEventFeedback(request), context);
 }
 
-void CognitoIdentityProviderClient::AdminUpdateAuthEventFeedbackAsyncHelper(const AdminUpdateAuthEventFeedbackRequest& request, const AdminUpdateAuthEventFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::AdminUpdateAuthEventFeedbackAsync(const AdminUpdateAuthEventFeedbackRequest& request, const AdminUpdateAuthEventFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AdminUpdateAuthEventFeedback(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientAdminUpdateAuthEventFeedbackAsyncHelper( this, request, handler, context ); } );
 }
 
 AdminUpdateDeviceStatusOutcome CognitoIdentityProviderClient::AdminUpdateDeviceStatus(const AdminUpdateDeviceStatusRequest& request) const
@@ -791,14 +791,14 @@ AdminUpdateDeviceStatusOutcomeCallable CognitoIdentityProviderClient::AdminUpdat
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::AdminUpdateDeviceStatusAsync(const AdminUpdateDeviceStatusRequest& request, const AdminUpdateDeviceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientAdminUpdateDeviceStatusAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const AdminUpdateDeviceStatusRequest& request, const AdminUpdateDeviceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AdminUpdateDeviceStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AdminUpdateDeviceStatus(request), context);
 }
 
-void CognitoIdentityProviderClient::AdminUpdateDeviceStatusAsyncHelper(const AdminUpdateDeviceStatusRequest& request, const AdminUpdateDeviceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::AdminUpdateDeviceStatusAsync(const AdminUpdateDeviceStatusRequest& request, const AdminUpdateDeviceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AdminUpdateDeviceStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientAdminUpdateDeviceStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 AdminUpdateUserAttributesOutcome CognitoIdentityProviderClient::AdminUpdateUserAttributes(const AdminUpdateUserAttributesRequest& request) const
@@ -815,14 +815,14 @@ AdminUpdateUserAttributesOutcomeCallable CognitoIdentityProviderClient::AdminUpd
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::AdminUpdateUserAttributesAsync(const AdminUpdateUserAttributesRequest& request, const AdminUpdateUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientAdminUpdateUserAttributesAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const AdminUpdateUserAttributesRequest& request, const AdminUpdateUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AdminUpdateUserAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AdminUpdateUserAttributes(request), context);
 }
 
-void CognitoIdentityProviderClient::AdminUpdateUserAttributesAsyncHelper(const AdminUpdateUserAttributesRequest& request, const AdminUpdateUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::AdminUpdateUserAttributesAsync(const AdminUpdateUserAttributesRequest& request, const AdminUpdateUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AdminUpdateUserAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientAdminUpdateUserAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 AdminUserGlobalSignOutOutcome CognitoIdentityProviderClient::AdminUserGlobalSignOut(const AdminUserGlobalSignOutRequest& request) const
@@ -839,14 +839,14 @@ AdminUserGlobalSignOutOutcomeCallable CognitoIdentityProviderClient::AdminUserGl
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::AdminUserGlobalSignOutAsync(const AdminUserGlobalSignOutRequest& request, const AdminUserGlobalSignOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientAdminUserGlobalSignOutAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const AdminUserGlobalSignOutRequest& request, const AdminUserGlobalSignOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AdminUserGlobalSignOutAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AdminUserGlobalSignOut(request), context);
 }
 
-void CognitoIdentityProviderClient::AdminUserGlobalSignOutAsyncHelper(const AdminUserGlobalSignOutRequest& request, const AdminUserGlobalSignOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::AdminUserGlobalSignOutAsync(const AdminUserGlobalSignOutRequest& request, const AdminUserGlobalSignOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AdminUserGlobalSignOut(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientAdminUserGlobalSignOutAsyncHelper( this, request, handler, context ); } );
 }
 
 AssociateSoftwareTokenOutcome CognitoIdentityProviderClient::AssociateSoftwareToken(const AssociateSoftwareTokenRequest& request) const
@@ -863,14 +863,14 @@ AssociateSoftwareTokenOutcomeCallable CognitoIdentityProviderClient::AssociateSo
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::AssociateSoftwareTokenAsync(const AssociateSoftwareTokenRequest& request, const AssociateSoftwareTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientAssociateSoftwareTokenAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const AssociateSoftwareTokenRequest& request, const AssociateSoftwareTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateSoftwareTokenAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->AssociateSoftwareToken(request), context);
 }
 
-void CognitoIdentityProviderClient::AssociateSoftwareTokenAsyncHelper(const AssociateSoftwareTokenRequest& request, const AssociateSoftwareTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::AssociateSoftwareTokenAsync(const AssociateSoftwareTokenRequest& request, const AssociateSoftwareTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AssociateSoftwareToken(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientAssociateSoftwareTokenAsyncHelper( this, request, handler, context ); } );
 }
 
 ChangePasswordOutcome CognitoIdentityProviderClient::ChangePassword(const ChangePasswordRequest& request) const
@@ -887,14 +887,14 @@ ChangePasswordOutcomeCallable CognitoIdentityProviderClient::ChangePasswordCalla
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::ChangePasswordAsync(const ChangePasswordRequest& request, const ChangePasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientChangePasswordAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const ChangePasswordRequest& request, const ChangePasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ChangePasswordAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ChangePassword(request), context);
 }
 
-void CognitoIdentityProviderClient::ChangePasswordAsyncHelper(const ChangePasswordRequest& request, const ChangePasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::ChangePasswordAsync(const ChangePasswordRequest& request, const ChangePasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ChangePassword(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientChangePasswordAsyncHelper( this, request, handler, context ); } );
 }
 
 ConfirmDeviceOutcome CognitoIdentityProviderClient::ConfirmDevice(const ConfirmDeviceRequest& request) const
@@ -911,14 +911,14 @@ ConfirmDeviceOutcomeCallable CognitoIdentityProviderClient::ConfirmDeviceCallabl
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::ConfirmDeviceAsync(const ConfirmDeviceRequest& request, const ConfirmDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientConfirmDeviceAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const ConfirmDeviceRequest& request, const ConfirmDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ConfirmDeviceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ConfirmDevice(request), context);
 }
 
-void CognitoIdentityProviderClient::ConfirmDeviceAsyncHelper(const ConfirmDeviceRequest& request, const ConfirmDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::ConfirmDeviceAsync(const ConfirmDeviceRequest& request, const ConfirmDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ConfirmDevice(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientConfirmDeviceAsyncHelper( this, request, handler, context ); } );
 }
 
 ConfirmForgotPasswordOutcome CognitoIdentityProviderClient::ConfirmForgotPassword(const ConfirmForgotPasswordRequest& request) const
@@ -935,14 +935,14 @@ ConfirmForgotPasswordOutcomeCallable CognitoIdentityProviderClient::ConfirmForgo
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::ConfirmForgotPasswordAsync(const ConfirmForgotPasswordRequest& request, const ConfirmForgotPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientConfirmForgotPasswordAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const ConfirmForgotPasswordRequest& request, const ConfirmForgotPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ConfirmForgotPasswordAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ConfirmForgotPassword(request), context);
 }
 
-void CognitoIdentityProviderClient::ConfirmForgotPasswordAsyncHelper(const ConfirmForgotPasswordRequest& request, const ConfirmForgotPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::ConfirmForgotPasswordAsync(const ConfirmForgotPasswordRequest& request, const ConfirmForgotPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ConfirmForgotPassword(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientConfirmForgotPasswordAsyncHelper( this, request, handler, context ); } );
 }
 
 ConfirmSignUpOutcome CognitoIdentityProviderClient::ConfirmSignUp(const ConfirmSignUpRequest& request) const
@@ -959,14 +959,14 @@ ConfirmSignUpOutcomeCallable CognitoIdentityProviderClient::ConfirmSignUpCallabl
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::ConfirmSignUpAsync(const ConfirmSignUpRequest& request, const ConfirmSignUpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientConfirmSignUpAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const ConfirmSignUpRequest& request, const ConfirmSignUpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ConfirmSignUpAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ConfirmSignUp(request), context);
 }
 
-void CognitoIdentityProviderClient::ConfirmSignUpAsyncHelper(const ConfirmSignUpRequest& request, const ConfirmSignUpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::ConfirmSignUpAsync(const ConfirmSignUpRequest& request, const ConfirmSignUpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ConfirmSignUp(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientConfirmSignUpAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateGroupOutcome CognitoIdentityProviderClient::CreateGroup(const CreateGroupRequest& request) const
@@ -983,14 +983,14 @@ CreateGroupOutcomeCallable CognitoIdentityProviderClient::CreateGroupCallable(co
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::CreateGroupAsync(const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientCreateGroupAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateGroup(request), context);
 }
 
-void CognitoIdentityProviderClient::CreateGroupAsyncHelper(const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::CreateGroupAsync(const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientCreateGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateIdentityProviderOutcome CognitoIdentityProviderClient::CreateIdentityProvider(const CreateIdentityProviderRequest& request) const
@@ -1007,14 +1007,14 @@ CreateIdentityProviderOutcomeCallable CognitoIdentityProviderClient::CreateIdent
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::CreateIdentityProviderAsync(const CreateIdentityProviderRequest& request, const CreateIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientCreateIdentityProviderAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const CreateIdentityProviderRequest& request, const CreateIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateIdentityProviderAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateIdentityProvider(request), context);
 }
 
-void CognitoIdentityProviderClient::CreateIdentityProviderAsyncHelper(const CreateIdentityProviderRequest& request, const CreateIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::CreateIdentityProviderAsync(const CreateIdentityProviderRequest& request, const CreateIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateIdentityProvider(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientCreateIdentityProviderAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateResourceServerOutcome CognitoIdentityProviderClient::CreateResourceServer(const CreateResourceServerRequest& request) const
@@ -1031,14 +1031,14 @@ CreateResourceServerOutcomeCallable CognitoIdentityProviderClient::CreateResourc
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::CreateResourceServerAsync(const CreateResourceServerRequest& request, const CreateResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientCreateResourceServerAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const CreateResourceServerRequest& request, const CreateResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateResourceServerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateResourceServer(request), context);
 }
 
-void CognitoIdentityProviderClient::CreateResourceServerAsyncHelper(const CreateResourceServerRequest& request, const CreateResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::CreateResourceServerAsync(const CreateResourceServerRequest& request, const CreateResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateResourceServer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientCreateResourceServerAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateUserImportJobOutcome CognitoIdentityProviderClient::CreateUserImportJob(const CreateUserImportJobRequest& request) const
@@ -1055,14 +1055,14 @@ CreateUserImportJobOutcomeCallable CognitoIdentityProviderClient::CreateUserImpo
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::CreateUserImportJobAsync(const CreateUserImportJobRequest& request, const CreateUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientCreateUserImportJobAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const CreateUserImportJobRequest& request, const CreateUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateUserImportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateUserImportJob(request), context);
 }
 
-void CognitoIdentityProviderClient::CreateUserImportJobAsyncHelper(const CreateUserImportJobRequest& request, const CreateUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::CreateUserImportJobAsync(const CreateUserImportJobRequest& request, const CreateUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateUserImportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientCreateUserImportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateUserPoolOutcome CognitoIdentityProviderClient::CreateUserPool(const CreateUserPoolRequest& request) const
@@ -1079,14 +1079,14 @@ CreateUserPoolOutcomeCallable CognitoIdentityProviderClient::CreateUserPoolCalla
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::CreateUserPoolAsync(const CreateUserPoolRequest& request, const CreateUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientCreateUserPoolAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const CreateUserPoolRequest& request, const CreateUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateUserPoolAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateUserPool(request), context);
 }
 
-void CognitoIdentityProviderClient::CreateUserPoolAsyncHelper(const CreateUserPoolRequest& request, const CreateUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::CreateUserPoolAsync(const CreateUserPoolRequest& request, const CreateUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateUserPool(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientCreateUserPoolAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateUserPoolClientOutcome CognitoIdentityProviderClient::CreateUserPoolClient(const CreateUserPoolClientRequest& request) const
@@ -1103,14 +1103,14 @@ CreateUserPoolClientOutcomeCallable CognitoIdentityProviderClient::CreateUserPoo
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::CreateUserPoolClientAsync(const CreateUserPoolClientRequest& request, const CreateUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientCreateUserPoolClientAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const CreateUserPoolClientRequest& request, const CreateUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateUserPoolClientAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateUserPoolClient(request), context);
 }
 
-void CognitoIdentityProviderClient::CreateUserPoolClientAsyncHelper(const CreateUserPoolClientRequest& request, const CreateUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::CreateUserPoolClientAsync(const CreateUserPoolClientRequest& request, const CreateUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateUserPoolClient(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientCreateUserPoolClientAsyncHelper( this, request, handler, context ); } );
 }
 
 CreateUserPoolDomainOutcome CognitoIdentityProviderClient::CreateUserPoolDomain(const CreateUserPoolDomainRequest& request) const
@@ -1127,14 +1127,14 @@ CreateUserPoolDomainOutcomeCallable CognitoIdentityProviderClient::CreateUserPoo
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::CreateUserPoolDomainAsync(const CreateUserPoolDomainRequest& request, const CreateUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientCreateUserPoolDomainAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const CreateUserPoolDomainRequest& request, const CreateUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateUserPoolDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->CreateUserPoolDomain(request), context);
 }
 
-void CognitoIdentityProviderClient::CreateUserPoolDomainAsyncHelper(const CreateUserPoolDomainRequest& request, const CreateUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::CreateUserPoolDomainAsync(const CreateUserPoolDomainRequest& request, const CreateUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateUserPoolDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientCreateUserPoolDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteGroupOutcome CognitoIdentityProviderClient::DeleteGroup(const DeleteGroupRequest& request) const
@@ -1151,14 +1151,14 @@ DeleteGroupOutcomeCallable CognitoIdentityProviderClient::DeleteGroupCallable(co
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::DeleteGroupAsync(const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientDeleteGroupAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteGroup(request), context);
 }
 
-void CognitoIdentityProviderClient::DeleteGroupAsyncHelper(const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::DeleteGroupAsync(const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientDeleteGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteIdentityProviderOutcome CognitoIdentityProviderClient::DeleteIdentityProvider(const DeleteIdentityProviderRequest& request) const
@@ -1175,14 +1175,14 @@ DeleteIdentityProviderOutcomeCallable CognitoIdentityProviderClient::DeleteIdent
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::DeleteIdentityProviderAsync(const DeleteIdentityProviderRequest& request, const DeleteIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientDeleteIdentityProviderAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const DeleteIdentityProviderRequest& request, const DeleteIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteIdentityProviderAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteIdentityProvider(request), context);
 }
 
-void CognitoIdentityProviderClient::DeleteIdentityProviderAsyncHelper(const DeleteIdentityProviderRequest& request, const DeleteIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::DeleteIdentityProviderAsync(const DeleteIdentityProviderRequest& request, const DeleteIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteIdentityProvider(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientDeleteIdentityProviderAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteResourceServerOutcome CognitoIdentityProviderClient::DeleteResourceServer(const DeleteResourceServerRequest& request) const
@@ -1199,14 +1199,14 @@ DeleteResourceServerOutcomeCallable CognitoIdentityProviderClient::DeleteResourc
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::DeleteResourceServerAsync(const DeleteResourceServerRequest& request, const DeleteResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientDeleteResourceServerAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const DeleteResourceServerRequest& request, const DeleteResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteResourceServerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteResourceServer(request), context);
 }
 
-void CognitoIdentityProviderClient::DeleteResourceServerAsyncHelper(const DeleteResourceServerRequest& request, const DeleteResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::DeleteResourceServerAsync(const DeleteResourceServerRequest& request, const DeleteResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteResourceServer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientDeleteResourceServerAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteUserOutcome CognitoIdentityProviderClient::DeleteUser(const DeleteUserRequest& request) const
@@ -1223,14 +1223,14 @@ DeleteUserOutcomeCallable CognitoIdentityProviderClient::DeleteUserCallable(cons
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::DeleteUserAsync(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientDeleteUserAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteUser(request), context);
 }
 
-void CognitoIdentityProviderClient::DeleteUserAsyncHelper(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::DeleteUserAsync(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientDeleteUserAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteUserAttributesOutcome CognitoIdentityProviderClient::DeleteUserAttributes(const DeleteUserAttributesRequest& request) const
@@ -1247,14 +1247,14 @@ DeleteUserAttributesOutcomeCallable CognitoIdentityProviderClient::DeleteUserAtt
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::DeleteUserAttributesAsync(const DeleteUserAttributesRequest& request, const DeleteUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientDeleteUserAttributesAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const DeleteUserAttributesRequest& request, const DeleteUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteUserAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteUserAttributes(request), context);
 }
 
-void CognitoIdentityProviderClient::DeleteUserAttributesAsyncHelper(const DeleteUserAttributesRequest& request, const DeleteUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::DeleteUserAttributesAsync(const DeleteUserAttributesRequest& request, const DeleteUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteUserAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientDeleteUserAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteUserPoolOutcome CognitoIdentityProviderClient::DeleteUserPool(const DeleteUserPoolRequest& request) const
@@ -1271,14 +1271,14 @@ DeleteUserPoolOutcomeCallable CognitoIdentityProviderClient::DeleteUserPoolCalla
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::DeleteUserPoolAsync(const DeleteUserPoolRequest& request, const DeleteUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientDeleteUserPoolAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const DeleteUserPoolRequest& request, const DeleteUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteUserPoolAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteUserPool(request), context);
 }
 
-void CognitoIdentityProviderClient::DeleteUserPoolAsyncHelper(const DeleteUserPoolRequest& request, const DeleteUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::DeleteUserPoolAsync(const DeleteUserPoolRequest& request, const DeleteUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteUserPool(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientDeleteUserPoolAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteUserPoolClientOutcome CognitoIdentityProviderClient::DeleteUserPoolClient(const DeleteUserPoolClientRequest& request) const
@@ -1295,14 +1295,14 @@ DeleteUserPoolClientOutcomeCallable CognitoIdentityProviderClient::DeleteUserPoo
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::DeleteUserPoolClientAsync(const DeleteUserPoolClientRequest& request, const DeleteUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientDeleteUserPoolClientAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const DeleteUserPoolClientRequest& request, const DeleteUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteUserPoolClientAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteUserPoolClient(request), context);
 }
 
-void CognitoIdentityProviderClient::DeleteUserPoolClientAsyncHelper(const DeleteUserPoolClientRequest& request, const DeleteUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::DeleteUserPoolClientAsync(const DeleteUserPoolClientRequest& request, const DeleteUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteUserPoolClient(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientDeleteUserPoolClientAsyncHelper( this, request, handler, context ); } );
 }
 
 DeleteUserPoolDomainOutcome CognitoIdentityProviderClient::DeleteUserPoolDomain(const DeleteUserPoolDomainRequest& request) const
@@ -1319,14 +1319,14 @@ DeleteUserPoolDomainOutcomeCallable CognitoIdentityProviderClient::DeleteUserPoo
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::DeleteUserPoolDomainAsync(const DeleteUserPoolDomainRequest& request, const DeleteUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientDeleteUserPoolDomainAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const DeleteUserPoolDomainRequest& request, const DeleteUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteUserPoolDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DeleteUserPoolDomain(request), context);
 }
 
-void CognitoIdentityProviderClient::DeleteUserPoolDomainAsyncHelper(const DeleteUserPoolDomainRequest& request, const DeleteUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::DeleteUserPoolDomainAsync(const DeleteUserPoolDomainRequest& request, const DeleteUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteUserPoolDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientDeleteUserPoolDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeIdentityProviderOutcome CognitoIdentityProviderClient::DescribeIdentityProvider(const DescribeIdentityProviderRequest& request) const
@@ -1343,14 +1343,14 @@ DescribeIdentityProviderOutcomeCallable CognitoIdentityProviderClient::DescribeI
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::DescribeIdentityProviderAsync(const DescribeIdentityProviderRequest& request, const DescribeIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientDescribeIdentityProviderAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const DescribeIdentityProviderRequest& request, const DescribeIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeIdentityProviderAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeIdentityProvider(request), context);
 }
 
-void CognitoIdentityProviderClient::DescribeIdentityProviderAsyncHelper(const DescribeIdentityProviderRequest& request, const DescribeIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::DescribeIdentityProviderAsync(const DescribeIdentityProviderRequest& request, const DescribeIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeIdentityProvider(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientDescribeIdentityProviderAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeResourceServerOutcome CognitoIdentityProviderClient::DescribeResourceServer(const DescribeResourceServerRequest& request) const
@@ -1367,14 +1367,14 @@ DescribeResourceServerOutcomeCallable CognitoIdentityProviderClient::DescribeRes
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::DescribeResourceServerAsync(const DescribeResourceServerRequest& request, const DescribeResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientDescribeResourceServerAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const DescribeResourceServerRequest& request, const DescribeResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeResourceServerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeResourceServer(request), context);
 }
 
-void CognitoIdentityProviderClient::DescribeResourceServerAsyncHelper(const DescribeResourceServerRequest& request, const DescribeResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::DescribeResourceServerAsync(const DescribeResourceServerRequest& request, const DescribeResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeResourceServer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientDescribeResourceServerAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeRiskConfigurationOutcome CognitoIdentityProviderClient::DescribeRiskConfiguration(const DescribeRiskConfigurationRequest& request) const
@@ -1391,14 +1391,14 @@ DescribeRiskConfigurationOutcomeCallable CognitoIdentityProviderClient::Describe
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::DescribeRiskConfigurationAsync(const DescribeRiskConfigurationRequest& request, const DescribeRiskConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientDescribeRiskConfigurationAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const DescribeRiskConfigurationRequest& request, const DescribeRiskConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRiskConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeRiskConfiguration(request), context);
 }
 
-void CognitoIdentityProviderClient::DescribeRiskConfigurationAsyncHelper(const DescribeRiskConfigurationRequest& request, const DescribeRiskConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::DescribeRiskConfigurationAsync(const DescribeRiskConfigurationRequest& request, const DescribeRiskConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeRiskConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientDescribeRiskConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeUserImportJobOutcome CognitoIdentityProviderClient::DescribeUserImportJob(const DescribeUserImportJobRequest& request) const
@@ -1415,14 +1415,14 @@ DescribeUserImportJobOutcomeCallable CognitoIdentityProviderClient::DescribeUser
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::DescribeUserImportJobAsync(const DescribeUserImportJobRequest& request, const DescribeUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientDescribeUserImportJobAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const DescribeUserImportJobRequest& request, const DescribeUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeUserImportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeUserImportJob(request), context);
 }
 
-void CognitoIdentityProviderClient::DescribeUserImportJobAsyncHelper(const DescribeUserImportJobRequest& request, const DescribeUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::DescribeUserImportJobAsync(const DescribeUserImportJobRequest& request, const DescribeUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeUserImportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientDescribeUserImportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeUserPoolOutcome CognitoIdentityProviderClient::DescribeUserPool(const DescribeUserPoolRequest& request) const
@@ -1439,14 +1439,14 @@ DescribeUserPoolOutcomeCallable CognitoIdentityProviderClient::DescribeUserPoolC
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::DescribeUserPoolAsync(const DescribeUserPoolRequest& request, const DescribeUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientDescribeUserPoolAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const DescribeUserPoolRequest& request, const DescribeUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeUserPoolAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeUserPool(request), context);
 }
 
-void CognitoIdentityProviderClient::DescribeUserPoolAsyncHelper(const DescribeUserPoolRequest& request, const DescribeUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::DescribeUserPoolAsync(const DescribeUserPoolRequest& request, const DescribeUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeUserPool(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientDescribeUserPoolAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeUserPoolClientOutcome CognitoIdentityProviderClient::DescribeUserPoolClient(const DescribeUserPoolClientRequest& request) const
@@ -1463,14 +1463,14 @@ DescribeUserPoolClientOutcomeCallable CognitoIdentityProviderClient::DescribeUse
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::DescribeUserPoolClientAsync(const DescribeUserPoolClientRequest& request, const DescribeUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientDescribeUserPoolClientAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const DescribeUserPoolClientRequest& request, const DescribeUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeUserPoolClientAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeUserPoolClient(request), context);
 }
 
-void CognitoIdentityProviderClient::DescribeUserPoolClientAsyncHelper(const DescribeUserPoolClientRequest& request, const DescribeUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::DescribeUserPoolClientAsync(const DescribeUserPoolClientRequest& request, const DescribeUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeUserPoolClient(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientDescribeUserPoolClientAsyncHelper( this, request, handler, context ); } );
 }
 
 DescribeUserPoolDomainOutcome CognitoIdentityProviderClient::DescribeUserPoolDomain(const DescribeUserPoolDomainRequest& request) const
@@ -1487,14 +1487,14 @@ DescribeUserPoolDomainOutcomeCallable CognitoIdentityProviderClient::DescribeUse
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::DescribeUserPoolDomainAsync(const DescribeUserPoolDomainRequest& request, const DescribeUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientDescribeUserPoolDomainAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const DescribeUserPoolDomainRequest& request, const DescribeUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeUserPoolDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->DescribeUserPoolDomain(request), context);
 }
 
-void CognitoIdentityProviderClient::DescribeUserPoolDomainAsyncHelper(const DescribeUserPoolDomainRequest& request, const DescribeUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::DescribeUserPoolDomainAsync(const DescribeUserPoolDomainRequest& request, const DescribeUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeUserPoolDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientDescribeUserPoolDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 ForgetDeviceOutcome CognitoIdentityProviderClient::ForgetDevice(const ForgetDeviceRequest& request) const
@@ -1511,14 +1511,14 @@ ForgetDeviceOutcomeCallable CognitoIdentityProviderClient::ForgetDeviceCallable(
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::ForgetDeviceAsync(const ForgetDeviceRequest& request, const ForgetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientForgetDeviceAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const ForgetDeviceRequest& request, const ForgetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ForgetDeviceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ForgetDevice(request), context);
 }
 
-void CognitoIdentityProviderClient::ForgetDeviceAsyncHelper(const ForgetDeviceRequest& request, const ForgetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::ForgetDeviceAsync(const ForgetDeviceRequest& request, const ForgetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ForgetDevice(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientForgetDeviceAsyncHelper( this, request, handler, context ); } );
 }
 
 ForgotPasswordOutcome CognitoIdentityProviderClient::ForgotPassword(const ForgotPasswordRequest& request) const
@@ -1535,14 +1535,14 @@ ForgotPasswordOutcomeCallable CognitoIdentityProviderClient::ForgotPasswordCalla
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::ForgotPasswordAsync(const ForgotPasswordRequest& request, const ForgotPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientForgotPasswordAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const ForgotPasswordRequest& request, const ForgotPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ForgotPasswordAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ForgotPassword(request), context);
 }
 
-void CognitoIdentityProviderClient::ForgotPasswordAsyncHelper(const ForgotPasswordRequest& request, const ForgotPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::ForgotPasswordAsync(const ForgotPasswordRequest& request, const ForgotPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ForgotPassword(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientForgotPasswordAsyncHelper( this, request, handler, context ); } );
 }
 
 GetCSVHeaderOutcome CognitoIdentityProviderClient::GetCSVHeader(const GetCSVHeaderRequest& request) const
@@ -1559,14 +1559,14 @@ GetCSVHeaderOutcomeCallable CognitoIdentityProviderClient::GetCSVHeaderCallable(
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::GetCSVHeaderAsync(const GetCSVHeaderRequest& request, const GetCSVHeaderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientGetCSVHeaderAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const GetCSVHeaderRequest& request, const GetCSVHeaderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCSVHeaderAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetCSVHeader(request), context);
 }
 
-void CognitoIdentityProviderClient::GetCSVHeaderAsyncHelper(const GetCSVHeaderRequest& request, const GetCSVHeaderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::GetCSVHeaderAsync(const GetCSVHeaderRequest& request, const GetCSVHeaderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetCSVHeader(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientGetCSVHeaderAsyncHelper( this, request, handler, context ); } );
 }
 
 GetDeviceOutcome CognitoIdentityProviderClient::GetDevice(const GetDeviceRequest& request) const
@@ -1583,14 +1583,14 @@ GetDeviceOutcomeCallable CognitoIdentityProviderClient::GetDeviceCallable(const 
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::GetDeviceAsync(const GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientGetDeviceAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDeviceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetDevice(request), context);
 }
 
-void CognitoIdentityProviderClient::GetDeviceAsyncHelper(const GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::GetDeviceAsync(const GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDevice(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientGetDeviceAsyncHelper( this, request, handler, context ); } );
 }
 
 GetGroupOutcome CognitoIdentityProviderClient::GetGroup(const GetGroupRequest& request) const
@@ -1607,14 +1607,14 @@ GetGroupOutcomeCallable CognitoIdentityProviderClient::GetGroupCallable(const Ge
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::GetGroupAsync(const GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientGetGroupAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetGroup(request), context);
 }
 
-void CognitoIdentityProviderClient::GetGroupAsyncHelper(const GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::GetGroupAsync(const GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientGetGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 GetIdentityProviderByIdentifierOutcome CognitoIdentityProviderClient::GetIdentityProviderByIdentifier(const GetIdentityProviderByIdentifierRequest& request) const
@@ -1631,14 +1631,14 @@ GetIdentityProviderByIdentifierOutcomeCallable CognitoIdentityProviderClient::Ge
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::GetIdentityProviderByIdentifierAsync(const GetIdentityProviderByIdentifierRequest& request, const GetIdentityProviderByIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientGetIdentityProviderByIdentifierAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const GetIdentityProviderByIdentifierRequest& request, const GetIdentityProviderByIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetIdentityProviderByIdentifierAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetIdentityProviderByIdentifier(request), context);
 }
 
-void CognitoIdentityProviderClient::GetIdentityProviderByIdentifierAsyncHelper(const GetIdentityProviderByIdentifierRequest& request, const GetIdentityProviderByIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::GetIdentityProviderByIdentifierAsync(const GetIdentityProviderByIdentifierRequest& request, const GetIdentityProviderByIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetIdentityProviderByIdentifier(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientGetIdentityProviderByIdentifierAsyncHelper( this, request, handler, context ); } );
 }
 
 GetSigningCertificateOutcome CognitoIdentityProviderClient::GetSigningCertificate(const GetSigningCertificateRequest& request) const
@@ -1655,14 +1655,14 @@ GetSigningCertificateOutcomeCallable CognitoIdentityProviderClient::GetSigningCe
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::GetSigningCertificateAsync(const GetSigningCertificateRequest& request, const GetSigningCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientGetSigningCertificateAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const GetSigningCertificateRequest& request, const GetSigningCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSigningCertificateAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetSigningCertificate(request), context);
 }
 
-void CognitoIdentityProviderClient::GetSigningCertificateAsyncHelper(const GetSigningCertificateRequest& request, const GetSigningCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::GetSigningCertificateAsync(const GetSigningCertificateRequest& request, const GetSigningCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetSigningCertificate(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientGetSigningCertificateAsyncHelper( this, request, handler, context ); } );
 }
 
 GetUICustomizationOutcome CognitoIdentityProviderClient::GetUICustomization(const GetUICustomizationRequest& request) const
@@ -1679,14 +1679,14 @@ GetUICustomizationOutcomeCallable CognitoIdentityProviderClient::GetUICustomizat
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::GetUICustomizationAsync(const GetUICustomizationRequest& request, const GetUICustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientGetUICustomizationAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const GetUICustomizationRequest& request, const GetUICustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetUICustomizationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetUICustomization(request), context);
 }
 
-void CognitoIdentityProviderClient::GetUICustomizationAsyncHelper(const GetUICustomizationRequest& request, const GetUICustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::GetUICustomizationAsync(const GetUICustomizationRequest& request, const GetUICustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetUICustomization(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientGetUICustomizationAsyncHelper( this, request, handler, context ); } );
 }
 
 GetUserOutcome CognitoIdentityProviderClient::GetUser(const GetUserRequest& request) const
@@ -1703,14 +1703,14 @@ GetUserOutcomeCallable CognitoIdentityProviderClient::GetUserCallable(const GetU
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::GetUserAsync(const GetUserRequest& request, const GetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientGetUserAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const GetUserRequest& request, const GetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetUserAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetUser(request), context);
 }
 
-void CognitoIdentityProviderClient::GetUserAsyncHelper(const GetUserRequest& request, const GetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::GetUserAsync(const GetUserRequest& request, const GetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetUser(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientGetUserAsyncHelper( this, request, handler, context ); } );
 }
 
 GetUserAttributeVerificationCodeOutcome CognitoIdentityProviderClient::GetUserAttributeVerificationCode(const GetUserAttributeVerificationCodeRequest& request) const
@@ -1727,14 +1727,14 @@ GetUserAttributeVerificationCodeOutcomeCallable CognitoIdentityProviderClient::G
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::GetUserAttributeVerificationCodeAsync(const GetUserAttributeVerificationCodeRequest& request, const GetUserAttributeVerificationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientGetUserAttributeVerificationCodeAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const GetUserAttributeVerificationCodeRequest& request, const GetUserAttributeVerificationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetUserAttributeVerificationCodeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetUserAttributeVerificationCode(request), context);
 }
 
-void CognitoIdentityProviderClient::GetUserAttributeVerificationCodeAsyncHelper(const GetUserAttributeVerificationCodeRequest& request, const GetUserAttributeVerificationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::GetUserAttributeVerificationCodeAsync(const GetUserAttributeVerificationCodeRequest& request, const GetUserAttributeVerificationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetUserAttributeVerificationCode(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientGetUserAttributeVerificationCodeAsyncHelper( this, request, handler, context ); } );
 }
 
 GetUserPoolMfaConfigOutcome CognitoIdentityProviderClient::GetUserPoolMfaConfig(const GetUserPoolMfaConfigRequest& request) const
@@ -1751,14 +1751,14 @@ GetUserPoolMfaConfigOutcomeCallable CognitoIdentityProviderClient::GetUserPoolMf
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::GetUserPoolMfaConfigAsync(const GetUserPoolMfaConfigRequest& request, const GetUserPoolMfaConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientGetUserPoolMfaConfigAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const GetUserPoolMfaConfigRequest& request, const GetUserPoolMfaConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetUserPoolMfaConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GetUserPoolMfaConfig(request), context);
 }
 
-void CognitoIdentityProviderClient::GetUserPoolMfaConfigAsyncHelper(const GetUserPoolMfaConfigRequest& request, const GetUserPoolMfaConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::GetUserPoolMfaConfigAsync(const GetUserPoolMfaConfigRequest& request, const GetUserPoolMfaConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetUserPoolMfaConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientGetUserPoolMfaConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 GlobalSignOutOutcome CognitoIdentityProviderClient::GlobalSignOut(const GlobalSignOutRequest& request) const
@@ -1775,14 +1775,14 @@ GlobalSignOutOutcomeCallable CognitoIdentityProviderClient::GlobalSignOutCallabl
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::GlobalSignOutAsync(const GlobalSignOutRequest& request, const GlobalSignOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientGlobalSignOutAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const GlobalSignOutRequest& request, const GlobalSignOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GlobalSignOutAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->GlobalSignOut(request), context);
 }
 
-void CognitoIdentityProviderClient::GlobalSignOutAsyncHelper(const GlobalSignOutRequest& request, const GlobalSignOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::GlobalSignOutAsync(const GlobalSignOutRequest& request, const GlobalSignOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GlobalSignOut(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientGlobalSignOutAsyncHelper( this, request, handler, context ); } );
 }
 
 InitiateAuthOutcome CognitoIdentityProviderClient::InitiateAuth(const InitiateAuthRequest& request) const
@@ -1799,14 +1799,14 @@ InitiateAuthOutcomeCallable CognitoIdentityProviderClient::InitiateAuthCallable(
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::InitiateAuthAsync(const InitiateAuthRequest& request, const InitiateAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientInitiateAuthAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const InitiateAuthRequest& request, const InitiateAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->InitiateAuthAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->InitiateAuth(request), context);
 }
 
-void CognitoIdentityProviderClient::InitiateAuthAsyncHelper(const InitiateAuthRequest& request, const InitiateAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::InitiateAuthAsync(const InitiateAuthRequest& request, const InitiateAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, InitiateAuth(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientInitiateAuthAsyncHelper( this, request, handler, context ); } );
 }
 
 ListDevicesOutcome CognitoIdentityProviderClient::ListDevices(const ListDevicesRequest& request) const
@@ -1823,14 +1823,14 @@ ListDevicesOutcomeCallable CognitoIdentityProviderClient::ListDevicesCallable(co
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::ListDevicesAsync(const ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientListDevicesAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDevicesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListDevices(request), context);
 }
 
-void CognitoIdentityProviderClient::ListDevicesAsyncHelper(const ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::ListDevicesAsync(const ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDevices(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientListDevicesAsyncHelper( this, request, handler, context ); } );
 }
 
 ListGroupsOutcome CognitoIdentityProviderClient::ListGroups(const ListGroupsRequest& request) const
@@ -1847,14 +1847,14 @@ ListGroupsOutcomeCallable CognitoIdentityProviderClient::ListGroupsCallable(cons
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::ListGroupsAsync(const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientListGroupsAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGroupsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListGroups(request), context);
 }
 
-void CognitoIdentityProviderClient::ListGroupsAsyncHelper(const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::ListGroupsAsync(const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListGroups(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientListGroupsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListIdentityProvidersOutcome CognitoIdentityProviderClient::ListIdentityProviders(const ListIdentityProvidersRequest& request) const
@@ -1871,14 +1871,14 @@ ListIdentityProvidersOutcomeCallable CognitoIdentityProviderClient::ListIdentity
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::ListIdentityProvidersAsync(const ListIdentityProvidersRequest& request, const ListIdentityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientListIdentityProvidersAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const ListIdentityProvidersRequest& request, const ListIdentityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListIdentityProvidersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListIdentityProviders(request), context);
 }
 
-void CognitoIdentityProviderClient::ListIdentityProvidersAsyncHelper(const ListIdentityProvidersRequest& request, const ListIdentityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::ListIdentityProvidersAsync(const ListIdentityProvidersRequest& request, const ListIdentityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListIdentityProviders(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientListIdentityProvidersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListResourceServersOutcome CognitoIdentityProviderClient::ListResourceServers(const ListResourceServersRequest& request) const
@@ -1895,14 +1895,14 @@ ListResourceServersOutcomeCallable CognitoIdentityProviderClient::ListResourceSe
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::ListResourceServersAsync(const ListResourceServersRequest& request, const ListResourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientListResourceServersAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const ListResourceServersRequest& request, const ListResourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListResourceServersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListResourceServers(request), context);
 }
 
-void CognitoIdentityProviderClient::ListResourceServersAsyncHelper(const ListResourceServersRequest& request, const ListResourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::ListResourceServersAsync(const ListResourceServersRequest& request, const ListResourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListResourceServers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientListResourceServersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListTagsForResourceOutcome CognitoIdentityProviderClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1919,14 +1919,14 @@ ListTagsForResourceOutcomeCallable CognitoIdentityProviderClient::ListTagsForRes
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientListTagsForResourceAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListTagsForResource(request), context);
 }
 
-void CognitoIdentityProviderClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientListTagsForResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 ListUserImportJobsOutcome CognitoIdentityProviderClient::ListUserImportJobs(const ListUserImportJobsRequest& request) const
@@ -1943,14 +1943,14 @@ ListUserImportJobsOutcomeCallable CognitoIdentityProviderClient::ListUserImportJ
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::ListUserImportJobsAsync(const ListUserImportJobsRequest& request, const ListUserImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientListUserImportJobsAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const ListUserImportJobsRequest& request, const ListUserImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListUserImportJobsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListUserImportJobs(request), context);
 }
 
-void CognitoIdentityProviderClient::ListUserImportJobsAsyncHelper(const ListUserImportJobsRequest& request, const ListUserImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::ListUserImportJobsAsync(const ListUserImportJobsRequest& request, const ListUserImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListUserImportJobs(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientListUserImportJobsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListUserPoolClientsOutcome CognitoIdentityProviderClient::ListUserPoolClients(const ListUserPoolClientsRequest& request) const
@@ -1967,14 +1967,14 @@ ListUserPoolClientsOutcomeCallable CognitoIdentityProviderClient::ListUserPoolCl
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::ListUserPoolClientsAsync(const ListUserPoolClientsRequest& request, const ListUserPoolClientsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientListUserPoolClientsAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const ListUserPoolClientsRequest& request, const ListUserPoolClientsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListUserPoolClientsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListUserPoolClients(request), context);
 }
 
-void CognitoIdentityProviderClient::ListUserPoolClientsAsyncHelper(const ListUserPoolClientsRequest& request, const ListUserPoolClientsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::ListUserPoolClientsAsync(const ListUserPoolClientsRequest& request, const ListUserPoolClientsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListUserPoolClients(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientListUserPoolClientsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListUserPoolsOutcome CognitoIdentityProviderClient::ListUserPools(const ListUserPoolsRequest& request) const
@@ -1991,14 +1991,14 @@ ListUserPoolsOutcomeCallable CognitoIdentityProviderClient::ListUserPoolsCallabl
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::ListUserPoolsAsync(const ListUserPoolsRequest& request, const ListUserPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientListUserPoolsAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const ListUserPoolsRequest& request, const ListUserPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListUserPoolsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListUserPools(request), context);
 }
 
-void CognitoIdentityProviderClient::ListUserPoolsAsyncHelper(const ListUserPoolsRequest& request, const ListUserPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::ListUserPoolsAsync(const ListUserPoolsRequest& request, const ListUserPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListUserPools(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientListUserPoolsAsyncHelper( this, request, handler, context ); } );
 }
 
 ListUsersOutcome CognitoIdentityProviderClient::ListUsers(const ListUsersRequest& request) const
@@ -2015,14 +2015,14 @@ ListUsersOutcomeCallable CognitoIdentityProviderClient::ListUsersCallable(const 
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::ListUsersAsync(const ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientListUsersAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListUsersAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListUsers(request), context);
 }
 
-void CognitoIdentityProviderClient::ListUsersAsyncHelper(const ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::ListUsersAsync(const ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListUsers(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientListUsersAsyncHelper( this, request, handler, context ); } );
 }
 
 ListUsersInGroupOutcome CognitoIdentityProviderClient::ListUsersInGroup(const ListUsersInGroupRequest& request) const
@@ -2039,14 +2039,14 @@ ListUsersInGroupOutcomeCallable CognitoIdentityProviderClient::ListUsersInGroupC
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::ListUsersInGroupAsync(const ListUsersInGroupRequest& request, const ListUsersInGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientListUsersInGroupAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const ListUsersInGroupRequest& request, const ListUsersInGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListUsersInGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ListUsersInGroup(request), context);
 }
 
-void CognitoIdentityProviderClient::ListUsersInGroupAsyncHelper(const ListUsersInGroupRequest& request, const ListUsersInGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::ListUsersInGroupAsync(const ListUsersInGroupRequest& request, const ListUsersInGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListUsersInGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientListUsersInGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 ResendConfirmationCodeOutcome CognitoIdentityProviderClient::ResendConfirmationCode(const ResendConfirmationCodeRequest& request) const
@@ -2063,14 +2063,14 @@ ResendConfirmationCodeOutcomeCallable CognitoIdentityProviderClient::ResendConfi
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::ResendConfirmationCodeAsync(const ResendConfirmationCodeRequest& request, const ResendConfirmationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientResendConfirmationCodeAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const ResendConfirmationCodeRequest& request, const ResendConfirmationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ResendConfirmationCodeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->ResendConfirmationCode(request), context);
 }
 
-void CognitoIdentityProviderClient::ResendConfirmationCodeAsyncHelper(const ResendConfirmationCodeRequest& request, const ResendConfirmationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::ResendConfirmationCodeAsync(const ResendConfirmationCodeRequest& request, const ResendConfirmationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ResendConfirmationCode(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientResendConfirmationCodeAsyncHelper( this, request, handler, context ); } );
 }
 
 RespondToAuthChallengeOutcome CognitoIdentityProviderClient::RespondToAuthChallenge(const RespondToAuthChallengeRequest& request) const
@@ -2087,14 +2087,14 @@ RespondToAuthChallengeOutcomeCallable CognitoIdentityProviderClient::RespondToAu
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::RespondToAuthChallengeAsync(const RespondToAuthChallengeRequest& request, const RespondToAuthChallengeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientRespondToAuthChallengeAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const RespondToAuthChallengeRequest& request, const RespondToAuthChallengeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RespondToAuthChallengeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RespondToAuthChallenge(request), context);
 }
 
-void CognitoIdentityProviderClient::RespondToAuthChallengeAsyncHelper(const RespondToAuthChallengeRequest& request, const RespondToAuthChallengeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::RespondToAuthChallengeAsync(const RespondToAuthChallengeRequest& request, const RespondToAuthChallengeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RespondToAuthChallenge(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientRespondToAuthChallengeAsyncHelper( this, request, handler, context ); } );
 }
 
 RevokeTokenOutcome CognitoIdentityProviderClient::RevokeToken(const RevokeTokenRequest& request) const
@@ -2111,14 +2111,14 @@ RevokeTokenOutcomeCallable CognitoIdentityProviderClient::RevokeTokenCallable(co
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::RevokeTokenAsync(const RevokeTokenRequest& request, const RevokeTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientRevokeTokenAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const RevokeTokenRequest& request, const RevokeTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RevokeTokenAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->RevokeToken(request), context);
 }
 
-void CognitoIdentityProviderClient::RevokeTokenAsyncHelper(const RevokeTokenRequest& request, const RevokeTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::RevokeTokenAsync(const RevokeTokenRequest& request, const RevokeTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, RevokeToken(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientRevokeTokenAsyncHelper( this, request, handler, context ); } );
 }
 
 SetRiskConfigurationOutcome CognitoIdentityProviderClient::SetRiskConfiguration(const SetRiskConfigurationRequest& request) const
@@ -2135,14 +2135,14 @@ SetRiskConfigurationOutcomeCallable CognitoIdentityProviderClient::SetRiskConfig
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::SetRiskConfigurationAsync(const SetRiskConfigurationRequest& request, const SetRiskConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientSetRiskConfigurationAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const SetRiskConfigurationRequest& request, const SetRiskConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetRiskConfigurationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SetRiskConfiguration(request), context);
 }
 
-void CognitoIdentityProviderClient::SetRiskConfigurationAsyncHelper(const SetRiskConfigurationRequest& request, const SetRiskConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::SetRiskConfigurationAsync(const SetRiskConfigurationRequest& request, const SetRiskConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SetRiskConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientSetRiskConfigurationAsyncHelper( this, request, handler, context ); } );
 }
 
 SetUICustomizationOutcome CognitoIdentityProviderClient::SetUICustomization(const SetUICustomizationRequest& request) const
@@ -2159,14 +2159,14 @@ SetUICustomizationOutcomeCallable CognitoIdentityProviderClient::SetUICustomizat
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::SetUICustomizationAsync(const SetUICustomizationRequest& request, const SetUICustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientSetUICustomizationAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const SetUICustomizationRequest& request, const SetUICustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetUICustomizationAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SetUICustomization(request), context);
 }
 
-void CognitoIdentityProviderClient::SetUICustomizationAsyncHelper(const SetUICustomizationRequest& request, const SetUICustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::SetUICustomizationAsync(const SetUICustomizationRequest& request, const SetUICustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SetUICustomization(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientSetUICustomizationAsyncHelper( this, request, handler, context ); } );
 }
 
 SetUserMFAPreferenceOutcome CognitoIdentityProviderClient::SetUserMFAPreference(const SetUserMFAPreferenceRequest& request) const
@@ -2183,14 +2183,14 @@ SetUserMFAPreferenceOutcomeCallable CognitoIdentityProviderClient::SetUserMFAPre
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::SetUserMFAPreferenceAsync(const SetUserMFAPreferenceRequest& request, const SetUserMFAPreferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientSetUserMFAPreferenceAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const SetUserMFAPreferenceRequest& request, const SetUserMFAPreferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetUserMFAPreferenceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SetUserMFAPreference(request), context);
 }
 
-void CognitoIdentityProviderClient::SetUserMFAPreferenceAsyncHelper(const SetUserMFAPreferenceRequest& request, const SetUserMFAPreferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::SetUserMFAPreferenceAsync(const SetUserMFAPreferenceRequest& request, const SetUserMFAPreferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SetUserMFAPreference(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientSetUserMFAPreferenceAsyncHelper( this, request, handler, context ); } );
 }
 
 SetUserPoolMfaConfigOutcome CognitoIdentityProviderClient::SetUserPoolMfaConfig(const SetUserPoolMfaConfigRequest& request) const
@@ -2207,14 +2207,14 @@ SetUserPoolMfaConfigOutcomeCallable CognitoIdentityProviderClient::SetUserPoolMf
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::SetUserPoolMfaConfigAsync(const SetUserPoolMfaConfigRequest& request, const SetUserPoolMfaConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientSetUserPoolMfaConfigAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const SetUserPoolMfaConfigRequest& request, const SetUserPoolMfaConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetUserPoolMfaConfigAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SetUserPoolMfaConfig(request), context);
 }
 
-void CognitoIdentityProviderClient::SetUserPoolMfaConfigAsyncHelper(const SetUserPoolMfaConfigRequest& request, const SetUserPoolMfaConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::SetUserPoolMfaConfigAsync(const SetUserPoolMfaConfigRequest& request, const SetUserPoolMfaConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SetUserPoolMfaConfig(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientSetUserPoolMfaConfigAsyncHelper( this, request, handler, context ); } );
 }
 
 SetUserSettingsOutcome CognitoIdentityProviderClient::SetUserSettings(const SetUserSettingsRequest& request) const
@@ -2231,14 +2231,14 @@ SetUserSettingsOutcomeCallable CognitoIdentityProviderClient::SetUserSettingsCal
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::SetUserSettingsAsync(const SetUserSettingsRequest& request, const SetUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientSetUserSettingsAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const SetUserSettingsRequest& request, const SetUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetUserSettingsAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SetUserSettings(request), context);
 }
 
-void CognitoIdentityProviderClient::SetUserSettingsAsyncHelper(const SetUserSettingsRequest& request, const SetUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::SetUserSettingsAsync(const SetUserSettingsRequest& request, const SetUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SetUserSettings(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientSetUserSettingsAsyncHelper( this, request, handler, context ); } );
 }
 
 SignUpOutcome CognitoIdentityProviderClient::SignUp(const SignUpRequest& request) const
@@ -2255,14 +2255,14 @@ SignUpOutcomeCallable CognitoIdentityProviderClient::SignUpCallable(const SignUp
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::SignUpAsync(const SignUpRequest& request, const SignUpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientSignUpAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const SignUpRequest& request, const SignUpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SignUpAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->SignUp(request), context);
 }
 
-void CognitoIdentityProviderClient::SignUpAsyncHelper(const SignUpRequest& request, const SignUpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::SignUpAsync(const SignUpRequest& request, const SignUpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SignUp(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientSignUpAsyncHelper( this, request, handler, context ); } );
 }
 
 StartUserImportJobOutcome CognitoIdentityProviderClient::StartUserImportJob(const StartUserImportJobRequest& request) const
@@ -2279,14 +2279,14 @@ StartUserImportJobOutcomeCallable CognitoIdentityProviderClient::StartUserImport
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::StartUserImportJobAsync(const StartUserImportJobRequest& request, const StartUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientStartUserImportJobAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const StartUserImportJobRequest& request, const StartUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartUserImportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StartUserImportJob(request), context);
 }
 
-void CognitoIdentityProviderClient::StartUserImportJobAsyncHelper(const StartUserImportJobRequest& request, const StartUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::StartUserImportJobAsync(const StartUserImportJobRequest& request, const StartUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartUserImportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientStartUserImportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 StopUserImportJobOutcome CognitoIdentityProviderClient::StopUserImportJob(const StopUserImportJobRequest& request) const
@@ -2303,14 +2303,14 @@ StopUserImportJobOutcomeCallable CognitoIdentityProviderClient::StopUserImportJo
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::StopUserImportJobAsync(const StopUserImportJobRequest& request, const StopUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientStopUserImportJobAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const StopUserImportJobRequest& request, const StopUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopUserImportJobAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->StopUserImportJob(request), context);
 }
 
-void CognitoIdentityProviderClient::StopUserImportJobAsyncHelper(const StopUserImportJobRequest& request, const StopUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::StopUserImportJobAsync(const StopUserImportJobRequest& request, const StopUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopUserImportJob(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientStopUserImportJobAsyncHelper( this, request, handler, context ); } );
 }
 
 TagResourceOutcome CognitoIdentityProviderClient::TagResource(const TagResourceRequest& request) const
@@ -2327,14 +2327,14 @@ TagResourceOutcomeCallable CognitoIdentityProviderClient::TagResourceCallable(co
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientTagResourceAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->TagResource(request), context);
 }
 
-void CognitoIdentityProviderClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientTagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UntagResourceOutcome CognitoIdentityProviderClient::UntagResource(const UntagResourceRequest& request) const
@@ -2351,14 +2351,14 @@ UntagResourceOutcomeCallable CognitoIdentityProviderClient::UntagResourceCallabl
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientUntagResourceAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UntagResource(request), context);
 }
 
-void CognitoIdentityProviderClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientUntagResourceAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateAuthEventFeedbackOutcome CognitoIdentityProviderClient::UpdateAuthEventFeedback(const UpdateAuthEventFeedbackRequest& request) const
@@ -2375,14 +2375,14 @@ UpdateAuthEventFeedbackOutcomeCallable CognitoIdentityProviderClient::UpdateAuth
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::UpdateAuthEventFeedbackAsync(const UpdateAuthEventFeedbackRequest& request, const UpdateAuthEventFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientUpdateAuthEventFeedbackAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const UpdateAuthEventFeedbackRequest& request, const UpdateAuthEventFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAuthEventFeedbackAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateAuthEventFeedback(request), context);
 }
 
-void CognitoIdentityProviderClient::UpdateAuthEventFeedbackAsyncHelper(const UpdateAuthEventFeedbackRequest& request, const UpdateAuthEventFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::UpdateAuthEventFeedbackAsync(const UpdateAuthEventFeedbackRequest& request, const UpdateAuthEventFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAuthEventFeedback(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientUpdateAuthEventFeedbackAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateDeviceStatusOutcome CognitoIdentityProviderClient::UpdateDeviceStatus(const UpdateDeviceStatusRequest& request) const
@@ -2399,14 +2399,14 @@ UpdateDeviceStatusOutcomeCallable CognitoIdentityProviderClient::UpdateDeviceSta
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::UpdateDeviceStatusAsync(const UpdateDeviceStatusRequest& request, const UpdateDeviceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientUpdateDeviceStatusAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const UpdateDeviceStatusRequest& request, const UpdateDeviceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDeviceStatusAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateDeviceStatus(request), context);
 }
 
-void CognitoIdentityProviderClient::UpdateDeviceStatusAsyncHelper(const UpdateDeviceStatusRequest& request, const UpdateDeviceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::UpdateDeviceStatusAsync(const UpdateDeviceStatusRequest& request, const UpdateDeviceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateDeviceStatus(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientUpdateDeviceStatusAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateGroupOutcome CognitoIdentityProviderClient::UpdateGroup(const UpdateGroupRequest& request) const
@@ -2423,14 +2423,14 @@ UpdateGroupOutcomeCallable CognitoIdentityProviderClient::UpdateGroupCallable(co
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::UpdateGroupAsync(const UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientUpdateGroupAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateGroupAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateGroup(request), context);
 }
 
-void CognitoIdentityProviderClient::UpdateGroupAsyncHelper(const UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::UpdateGroupAsync(const UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateGroup(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientUpdateGroupAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateIdentityProviderOutcome CognitoIdentityProviderClient::UpdateIdentityProvider(const UpdateIdentityProviderRequest& request) const
@@ -2447,14 +2447,14 @@ UpdateIdentityProviderOutcomeCallable CognitoIdentityProviderClient::UpdateIdent
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::UpdateIdentityProviderAsync(const UpdateIdentityProviderRequest& request, const UpdateIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientUpdateIdentityProviderAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const UpdateIdentityProviderRequest& request, const UpdateIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateIdentityProviderAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateIdentityProvider(request), context);
 }
 
-void CognitoIdentityProviderClient::UpdateIdentityProviderAsyncHelper(const UpdateIdentityProviderRequest& request, const UpdateIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::UpdateIdentityProviderAsync(const UpdateIdentityProviderRequest& request, const UpdateIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateIdentityProvider(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientUpdateIdentityProviderAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateResourceServerOutcome CognitoIdentityProviderClient::UpdateResourceServer(const UpdateResourceServerRequest& request) const
@@ -2471,14 +2471,14 @@ UpdateResourceServerOutcomeCallable CognitoIdentityProviderClient::UpdateResourc
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::UpdateResourceServerAsync(const UpdateResourceServerRequest& request, const UpdateResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientUpdateResourceServerAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const UpdateResourceServerRequest& request, const UpdateResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateResourceServerAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateResourceServer(request), context);
 }
 
-void CognitoIdentityProviderClient::UpdateResourceServerAsyncHelper(const UpdateResourceServerRequest& request, const UpdateResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::UpdateResourceServerAsync(const UpdateResourceServerRequest& request, const UpdateResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateResourceServer(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientUpdateResourceServerAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateUserAttributesOutcome CognitoIdentityProviderClient::UpdateUserAttributes(const UpdateUserAttributesRequest& request) const
@@ -2495,14 +2495,14 @@ UpdateUserAttributesOutcomeCallable CognitoIdentityProviderClient::UpdateUserAtt
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::UpdateUserAttributesAsync(const UpdateUserAttributesRequest& request, const UpdateUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientUpdateUserAttributesAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const UpdateUserAttributesRequest& request, const UpdateUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateUserAttributesAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateUserAttributes(request), context);
 }
 
-void CognitoIdentityProviderClient::UpdateUserAttributesAsyncHelper(const UpdateUserAttributesRequest& request, const UpdateUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::UpdateUserAttributesAsync(const UpdateUserAttributesRequest& request, const UpdateUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateUserAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientUpdateUserAttributesAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateUserPoolOutcome CognitoIdentityProviderClient::UpdateUserPool(const UpdateUserPoolRequest& request) const
@@ -2519,14 +2519,14 @@ UpdateUserPoolOutcomeCallable CognitoIdentityProviderClient::UpdateUserPoolCalla
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::UpdateUserPoolAsync(const UpdateUserPoolRequest& request, const UpdateUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientUpdateUserPoolAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const UpdateUserPoolRequest& request, const UpdateUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateUserPoolAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateUserPool(request), context);
 }
 
-void CognitoIdentityProviderClient::UpdateUserPoolAsyncHelper(const UpdateUserPoolRequest& request, const UpdateUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::UpdateUserPoolAsync(const UpdateUserPoolRequest& request, const UpdateUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateUserPool(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientUpdateUserPoolAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateUserPoolClientOutcome CognitoIdentityProviderClient::UpdateUserPoolClient(const UpdateUserPoolClientRequest& request) const
@@ -2543,14 +2543,14 @@ UpdateUserPoolClientOutcomeCallable CognitoIdentityProviderClient::UpdateUserPoo
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::UpdateUserPoolClientAsync(const UpdateUserPoolClientRequest& request, const UpdateUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientUpdateUserPoolClientAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const UpdateUserPoolClientRequest& request, const UpdateUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateUserPoolClientAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateUserPoolClient(request), context);
 }
 
-void CognitoIdentityProviderClient::UpdateUserPoolClientAsyncHelper(const UpdateUserPoolClientRequest& request, const UpdateUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::UpdateUserPoolClientAsync(const UpdateUserPoolClientRequest& request, const UpdateUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateUserPoolClient(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientUpdateUserPoolClientAsyncHelper( this, request, handler, context ); } );
 }
 
 UpdateUserPoolDomainOutcome CognitoIdentityProviderClient::UpdateUserPoolDomain(const UpdateUserPoolDomainRequest& request) const
@@ -2567,14 +2567,14 @@ UpdateUserPoolDomainOutcomeCallable CognitoIdentityProviderClient::UpdateUserPoo
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::UpdateUserPoolDomainAsync(const UpdateUserPoolDomainRequest& request, const UpdateUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientUpdateUserPoolDomainAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const UpdateUserPoolDomainRequest& request, const UpdateUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateUserPoolDomainAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->UpdateUserPoolDomain(request), context);
 }
 
-void CognitoIdentityProviderClient::UpdateUserPoolDomainAsyncHelper(const UpdateUserPoolDomainRequest& request, const UpdateUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::UpdateUserPoolDomainAsync(const UpdateUserPoolDomainRequest& request, const UpdateUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateUserPoolDomain(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientUpdateUserPoolDomainAsyncHelper( this, request, handler, context ); } );
 }
 
 VerifySoftwareTokenOutcome CognitoIdentityProviderClient::VerifySoftwareToken(const VerifySoftwareTokenRequest& request) const
@@ -2591,14 +2591,14 @@ VerifySoftwareTokenOutcomeCallable CognitoIdentityProviderClient::VerifySoftware
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::VerifySoftwareTokenAsync(const VerifySoftwareTokenRequest& request, const VerifySoftwareTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientVerifySoftwareTokenAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const VerifySoftwareTokenRequest& request, const VerifySoftwareTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->VerifySoftwareTokenAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->VerifySoftwareToken(request), context);
 }
 
-void CognitoIdentityProviderClient::VerifySoftwareTokenAsyncHelper(const VerifySoftwareTokenRequest& request, const VerifySoftwareTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::VerifySoftwareTokenAsync(const VerifySoftwareTokenRequest& request, const VerifySoftwareTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, VerifySoftwareToken(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientVerifySoftwareTokenAsyncHelper( this, request, handler, context ); } );
 }
 
 VerifyUserAttributeOutcome CognitoIdentityProviderClient::VerifyUserAttribute(const VerifyUserAttributeRequest& request) const
@@ -2615,13 +2615,13 @@ VerifyUserAttributeOutcomeCallable CognitoIdentityProviderClient::VerifyUserAttr
   return task->get_future();
 }
 
-void CognitoIdentityProviderClient::VerifyUserAttributeAsync(const VerifyUserAttributeRequest& request, const VerifyUserAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClientVerifyUserAttributeAsyncHelper(CognitoIdentityProviderClient const * const clientThis, const VerifyUserAttributeRequest& request, const VerifyUserAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->VerifyUserAttributeAsyncHelper( request, handler, context ); } );
+  handler(clientThis, request, clientThis->VerifyUserAttribute(request), context);
 }
 
-void CognitoIdentityProviderClient::VerifyUserAttributeAsyncHelper(const VerifyUserAttributeRequest& request, const VerifyUserAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CognitoIdentityProviderClient::VerifyUserAttributeAsync(const VerifyUserAttributeRequest& request, const VerifyUserAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, VerifyUserAttribute(request), context);
+  m_executor->Submit( [this, request, handler, context](){ CognitoIdentityProviderClientVerifyUserAttributeAsyncHelper( this, request, handler, context ); } );
 }
 
