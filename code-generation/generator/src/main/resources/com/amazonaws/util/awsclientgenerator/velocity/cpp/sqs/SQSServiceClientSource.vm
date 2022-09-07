@@ -53,14 +53,14 @@ ${operation.name}OutcomeCallable ${className}::${operation.name}Callable(const $
   return task->get_future();
 }
 
-void ${className}::${operation.name}Async(const ${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ${className}${operation.name}AsyncHelper(${className} const * const clientThis, const ${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
 {
-  m_executor->Submit( [this, request, handler, context](){ this->${operation.name}AsyncHelper(request, handler, context); } );
+  handler(clientThis, request, clientThis->${operation.name}(request), context);
 }
 
-void ${className}::${operation.name}AsyncHelper(const ${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ${className}::${operation.name}Async(const ${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ${operation.name}(request), context);
+  m_executor->Submit( [this, request, handler, context](){ ${className}${operation.name}AsyncHelper(this, request, handler, context); } );
 }
 
 #end
