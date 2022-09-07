@@ -5,68 +5,15 @@
 
 #pragma once
 #include <aws/ec2-instance-connect/EC2InstanceConnect_EXPORTS.h>
-#include <aws/ec2-instance-connect/EC2InstanceConnectErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/ec2-instance-connect/model/SendSSHPublicKeyResult.h>
-#include <aws/ec2-instance-connect/model/SendSerialConsoleSSHPublicKeyResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/ec2-instance-connect/EC2InstanceConnectServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace EC2InstanceConnect
 {
-
-namespace Model
-{
-        class SendSSHPublicKeyRequest;
-        class SendSerialConsoleSSHPublicKeyRequest;
-
-        typedef Aws::Utils::Outcome<SendSSHPublicKeyResult, EC2InstanceConnectError> SendSSHPublicKeyOutcome;
-        typedef Aws::Utils::Outcome<SendSerialConsoleSSHPublicKeyResult, EC2InstanceConnectError> SendSerialConsoleSSHPublicKeyOutcome;
-
-        typedef std::future<SendSSHPublicKeyOutcome> SendSSHPublicKeyOutcomeCallable;
-        typedef std::future<SendSerialConsoleSSHPublicKeyOutcome> SendSerialConsoleSSHPublicKeyOutcomeCallable;
-} // namespace Model
-
-  class EC2InstanceConnectClient;
-
-    typedef std::function<void(const EC2InstanceConnectClient*, const Model::SendSSHPublicKeyRequest&, const Model::SendSSHPublicKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendSSHPublicKeyResponseReceivedHandler;
-    typedef std::function<void(const EC2InstanceConnectClient*, const Model::SendSerialConsoleSSHPublicKeyRequest&, const Model::SendSerialConsoleSSHPublicKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendSerialConsoleSSHPublicKeyResponseReceivedHandler;
-
   /**
    * <p>Amazon EC2 Instance Connect enables system administrators to publish one-time
    * use SSH public keys to EC2, providing users a simple and secure way to connect

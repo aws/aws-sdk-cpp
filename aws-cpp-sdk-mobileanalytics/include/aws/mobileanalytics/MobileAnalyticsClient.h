@@ -5,63 +5,15 @@
 
 #pragma once
 #include <aws/mobileanalytics/MobileAnalytics_EXPORTS.h>
-#include <aws/mobileanalytics/MobileAnalyticsErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/mobileanalytics/MobileAnalyticsServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace MobileAnalytics
 {
-
-namespace Model
-{
-        class PutEventsRequest;
-
-        typedef Aws::Utils::Outcome<Aws::NoResult, MobileAnalyticsError> PutEventsOutcome;
-
-        typedef std::future<PutEventsOutcome> PutEventsOutcomeCallable;
-} // namespace Model
-
-  class MobileAnalyticsClient;
-
-    typedef std::function<void(const MobileAnalyticsClient*, const Model::PutEventsRequest&, const Model::PutEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEventsResponseReceivedHandler;
-
   /**
    * <p>Amazon Mobile Analytics is a service for collecting, visualizing, and
    * understanding app usage data at scale.</p>

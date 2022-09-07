@@ -5,77 +5,15 @@
 
 #pragma once
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntime_EXPORTS.h>
-#include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/sagemaker-featurestore-runtime/model/BatchGetRecordResult.h>
-#include <aws/sagemaker-featurestore-runtime/model/GetRecordResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace SageMakerFeatureStoreRuntime
 {
-
-namespace Model
-{
-        class BatchGetRecordRequest;
-        class DeleteRecordRequest;
-        class GetRecordRequest;
-        class PutRecordRequest;
-
-        typedef Aws::Utils::Outcome<BatchGetRecordResult, SageMakerFeatureStoreRuntimeError> BatchGetRecordOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerFeatureStoreRuntimeError> DeleteRecordOutcome;
-        typedef Aws::Utils::Outcome<GetRecordResult, SageMakerFeatureStoreRuntimeError> GetRecordOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerFeatureStoreRuntimeError> PutRecordOutcome;
-
-        typedef std::future<BatchGetRecordOutcome> BatchGetRecordOutcomeCallable;
-        typedef std::future<DeleteRecordOutcome> DeleteRecordOutcomeCallable;
-        typedef std::future<GetRecordOutcome> GetRecordOutcomeCallable;
-        typedef std::future<PutRecordOutcome> PutRecordOutcomeCallable;
-} // namespace Model
-
-  class SageMakerFeatureStoreRuntimeClient;
-
-    typedef std::function<void(const SageMakerFeatureStoreRuntimeClient*, const Model::BatchGetRecordRequest&, const Model::BatchGetRecordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetRecordResponseReceivedHandler;
-    typedef std::function<void(const SageMakerFeatureStoreRuntimeClient*, const Model::DeleteRecordRequest&, const Model::DeleteRecordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRecordResponseReceivedHandler;
-    typedef std::function<void(const SageMakerFeatureStoreRuntimeClient*, const Model::GetRecordRequest&, const Model::GetRecordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRecordResponseReceivedHandler;
-    typedef std::function<void(const SageMakerFeatureStoreRuntimeClient*, const Model::PutRecordRequest&, const Model::PutRecordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRecordResponseReceivedHandler;
-
   /**
    * <p>Contains all data plane API operations and data types for the Amazon
    * SageMaker Feature Store. Use this API to put, delete, and retrieve (get)

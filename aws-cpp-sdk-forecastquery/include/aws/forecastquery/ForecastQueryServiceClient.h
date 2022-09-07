@@ -5,68 +5,15 @@
 
 #pragma once
 #include <aws/forecastquery/ForecastQueryService_EXPORTS.h>
-#include <aws/forecastquery/ForecastQueryServiceErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/forecastquery/model/QueryForecastResult.h>
-#include <aws/forecastquery/model/QueryWhatIfForecastResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/forecastquery/ForecastQueryServiceServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace ForecastQueryService
 {
-
-namespace Model
-{
-        class QueryForecastRequest;
-        class QueryWhatIfForecastRequest;
-
-        typedef Aws::Utils::Outcome<QueryForecastResult, ForecastQueryServiceError> QueryForecastOutcome;
-        typedef Aws::Utils::Outcome<QueryWhatIfForecastResult, ForecastQueryServiceError> QueryWhatIfForecastOutcome;
-
-        typedef std::future<QueryForecastOutcome> QueryForecastOutcomeCallable;
-        typedef std::future<QueryWhatIfForecastOutcome> QueryWhatIfForecastOutcomeCallable;
-} // namespace Model
-
-  class ForecastQueryServiceClient;
-
-    typedef std::function<void(const ForecastQueryServiceClient*, const Model::QueryForecastRequest&, const Model::QueryForecastOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > QueryForecastResponseReceivedHandler;
-    typedef std::function<void(const ForecastQueryServiceClient*, const Model::QueryWhatIfForecastRequest&, const Model::QueryWhatIfForecastOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > QueryWhatIfForecastResponseReceivedHandler;
-
   /**
    * <p>Provides APIs for creating and managing Amazon Forecast resources.</p>
    */

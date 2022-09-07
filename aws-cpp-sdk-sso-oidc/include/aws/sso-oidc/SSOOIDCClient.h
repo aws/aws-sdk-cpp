@@ -5,73 +5,15 @@
 
 #pragma once
 #include <aws/sso-oidc/SSOOIDC_EXPORTS.h>
-#include <aws/sso-oidc/SSOOIDCErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/sso-oidc/model/CreateTokenResult.h>
-#include <aws/sso-oidc/model/RegisterClientResult.h>
-#include <aws/sso-oidc/model/StartDeviceAuthorizationResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/sso-oidc/SSOOIDCServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace SSOOIDC
 {
-
-namespace Model
-{
-        class CreateTokenRequest;
-        class RegisterClientRequest;
-        class StartDeviceAuthorizationRequest;
-
-        typedef Aws::Utils::Outcome<CreateTokenResult, SSOOIDCError> CreateTokenOutcome;
-        typedef Aws::Utils::Outcome<RegisterClientResult, SSOOIDCError> RegisterClientOutcome;
-        typedef Aws::Utils::Outcome<StartDeviceAuthorizationResult, SSOOIDCError> StartDeviceAuthorizationOutcome;
-
-        typedef std::future<CreateTokenOutcome> CreateTokenOutcomeCallable;
-        typedef std::future<RegisterClientOutcome> RegisterClientOutcomeCallable;
-        typedef std::future<StartDeviceAuthorizationOutcome> StartDeviceAuthorizationOutcomeCallable;
-} // namespace Model
-
-  class SSOOIDCClient;
-
-    typedef std::function<void(const SSOOIDCClient*, const Model::CreateTokenRequest&, const Model::CreateTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTokenResponseReceivedHandler;
-    typedef std::function<void(const SSOOIDCClient*, const Model::RegisterClientRequest&, const Model::RegisterClientOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterClientResponseReceivedHandler;
-    typedef std::function<void(const SSOOIDCClient*, const Model::StartDeviceAuthorizationRequest&, const Model::StartDeviceAuthorizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDeviceAuthorizationResponseReceivedHandler;
-
   /**
    * <p>AWS Single Sign-On (SSO) OpenID Connect (OIDC) is a web service that enables
    * a client (such as AWS CLI or a native application) to register with AWS SSO. The

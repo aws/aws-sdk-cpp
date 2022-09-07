@@ -5,63 +5,15 @@
 
 #pragma once
 #include <aws/kinesis-video-media/KinesisVideoMedia_EXPORTS.h>
-#include <aws/kinesis-video-media/KinesisVideoMediaErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/kinesis-video-media/model/GetMediaResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/kinesis-video-media/KinesisVideoMediaServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace KinesisVideoMedia
 {
-
-namespace Model
-{
-        class GetMediaRequest;
-
-        typedef Aws::Utils::Outcome<GetMediaResult, KinesisVideoMediaError> GetMediaOutcome;
-
-        typedef std::future<GetMediaOutcome> GetMediaOutcomeCallable;
-} // namespace Model
-
-  class KinesisVideoMediaClient;
-
-    typedef std::function<void(const KinesisVideoMediaClient*, const Model::GetMediaRequest&, Model::GetMediaOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMediaResponseReceivedHandler;
-
   /**
    * <p/>
    */

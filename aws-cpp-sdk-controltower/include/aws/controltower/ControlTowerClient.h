@@ -5,78 +5,15 @@
 
 #pragma once
 #include <aws/controltower/ControlTower_EXPORTS.h>
-#include <aws/controltower/ControlTowerErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/controltower/model/DisableControlResult.h>
-#include <aws/controltower/model/EnableControlResult.h>
-#include <aws/controltower/model/GetControlOperationResult.h>
-#include <aws/controltower/model/ListEnabledControlsResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/controltower/ControlTowerServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace ControlTower
 {
-
-namespace Model
-{
-        class DisableControlRequest;
-        class EnableControlRequest;
-        class GetControlOperationRequest;
-        class ListEnabledControlsRequest;
-
-        typedef Aws::Utils::Outcome<DisableControlResult, ControlTowerError> DisableControlOutcome;
-        typedef Aws::Utils::Outcome<EnableControlResult, ControlTowerError> EnableControlOutcome;
-        typedef Aws::Utils::Outcome<GetControlOperationResult, ControlTowerError> GetControlOperationOutcome;
-        typedef Aws::Utils::Outcome<ListEnabledControlsResult, ControlTowerError> ListEnabledControlsOutcome;
-
-        typedef std::future<DisableControlOutcome> DisableControlOutcomeCallable;
-        typedef std::future<EnableControlOutcome> EnableControlOutcomeCallable;
-        typedef std::future<GetControlOperationOutcome> GetControlOperationOutcomeCallable;
-        typedef std::future<ListEnabledControlsOutcome> ListEnabledControlsOutcomeCallable;
-} // namespace Model
-
-  class ControlTowerClient;
-
-    typedef std::function<void(const ControlTowerClient*, const Model::DisableControlRequest&, const Model::DisableControlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableControlResponseReceivedHandler;
-    typedef std::function<void(const ControlTowerClient*, const Model::EnableControlRequest&, const Model::EnableControlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableControlResponseReceivedHandler;
-    typedef std::function<void(const ControlTowerClient*, const Model::GetControlOperationRequest&, const Model::GetControlOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetControlOperationResponseReceivedHandler;
-    typedef std::function<void(const ControlTowerClient*, const Model::ListEnabledControlsRequest&, const Model::ListEnabledControlsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEnabledControlsResponseReceivedHandler;
-
   /**
    * <p>These interfaces allow you to apply the AWS library of pre-defined
    * <i>controls</i> to your organizational units, programmatically. In this context,

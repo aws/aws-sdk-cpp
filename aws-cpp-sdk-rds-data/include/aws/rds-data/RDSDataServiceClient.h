@@ -5,83 +5,15 @@
 
 #pragma once
 #include <aws/rds-data/RDSDataService_EXPORTS.h>
-#include <aws/rds-data/RDSDataServiceErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/rds-data/model/BatchExecuteStatementResult.h>
-#include <aws/rds-data/model/BeginTransactionResult.h>
-#include <aws/rds-data/model/CommitTransactionResult.h>
-#include <aws/rds-data/model/ExecuteStatementResult.h>
-#include <aws/rds-data/model/RollbackTransactionResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/rds-data/RDSDataServiceServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace RDSDataService
 {
-
-namespace Model
-{
-        class BatchExecuteStatementRequest;
-        class BeginTransactionRequest;
-        class CommitTransactionRequest;
-        class ExecuteStatementRequest;
-        class RollbackTransactionRequest;
-
-        typedef Aws::Utils::Outcome<BatchExecuteStatementResult, RDSDataServiceError> BatchExecuteStatementOutcome;
-        typedef Aws::Utils::Outcome<BeginTransactionResult, RDSDataServiceError> BeginTransactionOutcome;
-        typedef Aws::Utils::Outcome<CommitTransactionResult, RDSDataServiceError> CommitTransactionOutcome;
-        typedef Aws::Utils::Outcome<ExecuteStatementResult, RDSDataServiceError> ExecuteStatementOutcome;
-        typedef Aws::Utils::Outcome<RollbackTransactionResult, RDSDataServiceError> RollbackTransactionOutcome;
-
-        typedef std::future<BatchExecuteStatementOutcome> BatchExecuteStatementOutcomeCallable;
-        typedef std::future<BeginTransactionOutcome> BeginTransactionOutcomeCallable;
-        typedef std::future<CommitTransactionOutcome> CommitTransactionOutcomeCallable;
-        typedef std::future<ExecuteStatementOutcome> ExecuteStatementOutcomeCallable;
-        typedef std::future<RollbackTransactionOutcome> RollbackTransactionOutcomeCallable;
-} // namespace Model
-
-  class RDSDataServiceClient;
-
-    typedef std::function<void(const RDSDataServiceClient*, const Model::BatchExecuteStatementRequest&, const Model::BatchExecuteStatementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchExecuteStatementResponseReceivedHandler;
-    typedef std::function<void(const RDSDataServiceClient*, const Model::BeginTransactionRequest&, const Model::BeginTransactionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BeginTransactionResponseReceivedHandler;
-    typedef std::function<void(const RDSDataServiceClient*, const Model::CommitTransactionRequest&, const Model::CommitTransactionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CommitTransactionResponseReceivedHandler;
-    typedef std::function<void(const RDSDataServiceClient*, const Model::ExecuteStatementRequest&, const Model::ExecuteStatementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExecuteStatementResponseReceivedHandler;
-    typedef std::function<void(const RDSDataServiceClient*, const Model::RollbackTransactionRequest&, const Model::RollbackTransactionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RollbackTransactionResponseReceivedHandler;
-
   /**
    * <p><fullname>Amazon RDS Data Service</fullname> <p>Amazon RDS provides an HTTP
    * endpoint to run SQL statements on an Amazon Aurora Serverless v1 DB cluster. To

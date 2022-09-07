@@ -5,148 +5,15 @@
 
 #pragma once
 #include <aws/backup-gateway/BackupGateway_EXPORTS.h>
-#include <aws/backup-gateway/BackupGatewayErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/backup-gateway/model/AssociateGatewayToServerResult.h>
-#include <aws/backup-gateway/model/CreateGatewayResult.h>
-#include <aws/backup-gateway/model/DeleteGatewayResult.h>
-#include <aws/backup-gateway/model/DeleteHypervisorResult.h>
-#include <aws/backup-gateway/model/DisassociateGatewayFromServerResult.h>
-#include <aws/backup-gateway/model/GetGatewayResult.h>
-#include <aws/backup-gateway/model/ImportHypervisorConfigurationResult.h>
-#include <aws/backup-gateway/model/ListGatewaysResult.h>
-#include <aws/backup-gateway/model/ListHypervisorsResult.h>
-#include <aws/backup-gateway/model/ListTagsForResourceResult.h>
-#include <aws/backup-gateway/model/ListVirtualMachinesResult.h>
-#include <aws/backup-gateway/model/PutMaintenanceStartTimeResult.h>
-#include <aws/backup-gateway/model/TagResourceResult.h>
-#include <aws/backup-gateway/model/TestHypervisorConfigurationResult.h>
-#include <aws/backup-gateway/model/UntagResourceResult.h>
-#include <aws/backup-gateway/model/UpdateGatewayInformationResult.h>
-#include <aws/backup-gateway/model/UpdateGatewaySoftwareNowResult.h>
-#include <aws/backup-gateway/model/UpdateHypervisorResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/backup-gateway/BackupGatewayServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace BackupGateway
 {
-
-namespace Model
-{
-        class AssociateGatewayToServerRequest;
-        class CreateGatewayRequest;
-        class DeleteGatewayRequest;
-        class DeleteHypervisorRequest;
-        class DisassociateGatewayFromServerRequest;
-        class GetGatewayRequest;
-        class ImportHypervisorConfigurationRequest;
-        class ListGatewaysRequest;
-        class ListHypervisorsRequest;
-        class ListTagsForResourceRequest;
-        class ListVirtualMachinesRequest;
-        class PutMaintenanceStartTimeRequest;
-        class TagResourceRequest;
-        class TestHypervisorConfigurationRequest;
-        class UntagResourceRequest;
-        class UpdateGatewayInformationRequest;
-        class UpdateGatewaySoftwareNowRequest;
-        class UpdateHypervisorRequest;
-
-        typedef Aws::Utils::Outcome<AssociateGatewayToServerResult, BackupGatewayError> AssociateGatewayToServerOutcome;
-        typedef Aws::Utils::Outcome<CreateGatewayResult, BackupGatewayError> CreateGatewayOutcome;
-        typedef Aws::Utils::Outcome<DeleteGatewayResult, BackupGatewayError> DeleteGatewayOutcome;
-        typedef Aws::Utils::Outcome<DeleteHypervisorResult, BackupGatewayError> DeleteHypervisorOutcome;
-        typedef Aws::Utils::Outcome<DisassociateGatewayFromServerResult, BackupGatewayError> DisassociateGatewayFromServerOutcome;
-        typedef Aws::Utils::Outcome<GetGatewayResult, BackupGatewayError> GetGatewayOutcome;
-        typedef Aws::Utils::Outcome<ImportHypervisorConfigurationResult, BackupGatewayError> ImportHypervisorConfigurationOutcome;
-        typedef Aws::Utils::Outcome<ListGatewaysResult, BackupGatewayError> ListGatewaysOutcome;
-        typedef Aws::Utils::Outcome<ListHypervisorsResult, BackupGatewayError> ListHypervisorsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, BackupGatewayError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListVirtualMachinesResult, BackupGatewayError> ListVirtualMachinesOutcome;
-        typedef Aws::Utils::Outcome<PutMaintenanceStartTimeResult, BackupGatewayError> PutMaintenanceStartTimeOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, BackupGatewayError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<TestHypervisorConfigurationResult, BackupGatewayError> TestHypervisorConfigurationOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, BackupGatewayError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateGatewayInformationResult, BackupGatewayError> UpdateGatewayInformationOutcome;
-        typedef Aws::Utils::Outcome<UpdateGatewaySoftwareNowResult, BackupGatewayError> UpdateGatewaySoftwareNowOutcome;
-        typedef Aws::Utils::Outcome<UpdateHypervisorResult, BackupGatewayError> UpdateHypervisorOutcome;
-
-        typedef std::future<AssociateGatewayToServerOutcome> AssociateGatewayToServerOutcomeCallable;
-        typedef std::future<CreateGatewayOutcome> CreateGatewayOutcomeCallable;
-        typedef std::future<DeleteGatewayOutcome> DeleteGatewayOutcomeCallable;
-        typedef std::future<DeleteHypervisorOutcome> DeleteHypervisorOutcomeCallable;
-        typedef std::future<DisassociateGatewayFromServerOutcome> DisassociateGatewayFromServerOutcomeCallable;
-        typedef std::future<GetGatewayOutcome> GetGatewayOutcomeCallable;
-        typedef std::future<ImportHypervisorConfigurationOutcome> ImportHypervisorConfigurationOutcomeCallable;
-        typedef std::future<ListGatewaysOutcome> ListGatewaysOutcomeCallable;
-        typedef std::future<ListHypervisorsOutcome> ListHypervisorsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<ListVirtualMachinesOutcome> ListVirtualMachinesOutcomeCallable;
-        typedef std::future<PutMaintenanceStartTimeOutcome> PutMaintenanceStartTimeOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<TestHypervisorConfigurationOutcome> TestHypervisorConfigurationOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateGatewayInformationOutcome> UpdateGatewayInformationOutcomeCallable;
-        typedef std::future<UpdateGatewaySoftwareNowOutcome> UpdateGatewaySoftwareNowOutcomeCallable;
-        typedef std::future<UpdateHypervisorOutcome> UpdateHypervisorOutcomeCallable;
-} // namespace Model
-
-  class BackupGatewayClient;
-
-    typedef std::function<void(const BackupGatewayClient*, const Model::AssociateGatewayToServerRequest&, const Model::AssociateGatewayToServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateGatewayToServerResponseReceivedHandler;
-    typedef std::function<void(const BackupGatewayClient*, const Model::CreateGatewayRequest&, const Model::CreateGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGatewayResponseReceivedHandler;
-    typedef std::function<void(const BackupGatewayClient*, const Model::DeleteGatewayRequest&, const Model::DeleteGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGatewayResponseReceivedHandler;
-    typedef std::function<void(const BackupGatewayClient*, const Model::DeleteHypervisorRequest&, const Model::DeleteHypervisorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHypervisorResponseReceivedHandler;
-    typedef std::function<void(const BackupGatewayClient*, const Model::DisassociateGatewayFromServerRequest&, const Model::DisassociateGatewayFromServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateGatewayFromServerResponseReceivedHandler;
-    typedef std::function<void(const BackupGatewayClient*, const Model::GetGatewayRequest&, const Model::GetGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGatewayResponseReceivedHandler;
-    typedef std::function<void(const BackupGatewayClient*, const Model::ImportHypervisorConfigurationRequest&, const Model::ImportHypervisorConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportHypervisorConfigurationResponseReceivedHandler;
-    typedef std::function<void(const BackupGatewayClient*, const Model::ListGatewaysRequest&, const Model::ListGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGatewaysResponseReceivedHandler;
-    typedef std::function<void(const BackupGatewayClient*, const Model::ListHypervisorsRequest&, const Model::ListHypervisorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHypervisorsResponseReceivedHandler;
-    typedef std::function<void(const BackupGatewayClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const BackupGatewayClient*, const Model::ListVirtualMachinesRequest&, const Model::ListVirtualMachinesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVirtualMachinesResponseReceivedHandler;
-    typedef std::function<void(const BackupGatewayClient*, const Model::PutMaintenanceStartTimeRequest&, const Model::PutMaintenanceStartTimeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutMaintenanceStartTimeResponseReceivedHandler;
-    typedef std::function<void(const BackupGatewayClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const BackupGatewayClient*, const Model::TestHypervisorConfigurationRequest&, const Model::TestHypervisorConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestHypervisorConfigurationResponseReceivedHandler;
-    typedef std::function<void(const BackupGatewayClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const BackupGatewayClient*, const Model::UpdateGatewayInformationRequest&, const Model::UpdateGatewayInformationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGatewayInformationResponseReceivedHandler;
-    typedef std::function<void(const BackupGatewayClient*, const Model::UpdateGatewaySoftwareNowRequest&, const Model::UpdateGatewaySoftwareNowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGatewaySoftwareNowResponseReceivedHandler;
-    typedef std::function<void(const BackupGatewayClient*, const Model::UpdateHypervisorRequest&, const Model::UpdateHypervisorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateHypervisorResponseReceivedHandler;
-
   /**
    * <p><fullname>Backup gateway</fullname> <p>Backup gateway connects Backup to your
    * hypervisor, so you can create, store, and restore backups of your virtual

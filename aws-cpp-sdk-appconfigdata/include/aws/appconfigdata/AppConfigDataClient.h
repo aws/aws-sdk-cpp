@@ -5,68 +5,15 @@
 
 #pragma once
 #include <aws/appconfigdata/AppConfigData_EXPORTS.h>
-#include <aws/appconfigdata/AppConfigDataErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/appconfigdata/model/GetLatestConfigurationResult.h>
-#include <aws/appconfigdata/model/StartConfigurationSessionResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/appconfigdata/AppConfigDataServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace AppConfigData
 {
-
-namespace Model
-{
-        class GetLatestConfigurationRequest;
-        class StartConfigurationSessionRequest;
-
-        typedef Aws::Utils::Outcome<GetLatestConfigurationResult, AppConfigDataError> GetLatestConfigurationOutcome;
-        typedef Aws::Utils::Outcome<StartConfigurationSessionResult, AppConfigDataError> StartConfigurationSessionOutcome;
-
-        typedef std::future<GetLatestConfigurationOutcome> GetLatestConfigurationOutcomeCallable;
-        typedef std::future<StartConfigurationSessionOutcome> StartConfigurationSessionOutcomeCallable;
-} // namespace Model
-
-  class AppConfigDataClient;
-
-    typedef std::function<void(const AppConfigDataClient*, const Model::GetLatestConfigurationRequest&, Model::GetLatestConfigurationOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLatestConfigurationResponseReceivedHandler;
-    typedef std::function<void(const AppConfigDataClient*, const Model::StartConfigurationSessionRequest&, const Model::StartConfigurationSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartConfigurationSessionResponseReceivedHandler;
-
   /**
    * <p>AppConfig Data provides the data plane APIs your application uses to retrieve
    * configuration data. Here's how it works:</p> <p>Your application retrieves

@@ -5,63 +5,15 @@
 
 #pragma once
 #include <aws/marketplace-entitlement/MarketplaceEntitlementService_EXPORTS.h>
-#include <aws/marketplace-entitlement/MarketplaceEntitlementServiceErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/marketplace-entitlement/model/GetEntitlementsResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/marketplace-entitlement/MarketplaceEntitlementServiceServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace MarketplaceEntitlementService
 {
-
-namespace Model
-{
-        class GetEntitlementsRequest;
-
-        typedef Aws::Utils::Outcome<GetEntitlementsResult, MarketplaceEntitlementServiceError> GetEntitlementsOutcome;
-
-        typedef std::future<GetEntitlementsOutcome> GetEntitlementsOutcomeCallable;
-} // namespace Model
-
-  class MarketplaceEntitlementServiceClient;
-
-    typedef std::function<void(const MarketplaceEntitlementServiceClient*, const Model::GetEntitlementsRequest&, const Model::GetEntitlementsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEntitlementsResponseReceivedHandler;
-
   /**
    * <fullname>AWS Marketplace Entitlement Service</fullname> <p>This reference
    * provides descriptions of the AWS Marketplace Entitlement Service API.</p> <p>AWS

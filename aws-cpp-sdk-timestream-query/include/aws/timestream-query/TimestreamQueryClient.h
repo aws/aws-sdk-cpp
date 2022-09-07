@@ -5,122 +5,15 @@
 
 #pragma once
 #include <aws/timestream-query/TimestreamQuery_EXPORTS.h>
-#include <aws/timestream-query/TimestreamQueryErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/timestream-query/model/CancelQueryResult.h>
-#include <aws/timestream-query/model/CreateScheduledQueryResult.h>
-#include <aws/timestream-query/model/DescribeEndpointsResult.h>
-#include <aws/timestream-query/model/DescribeScheduledQueryResult.h>
-#include <aws/timestream-query/model/ListScheduledQueriesResult.h>
-#include <aws/timestream-query/model/ListTagsForResourceResult.h>
-#include <aws/timestream-query/model/PrepareQueryResult.h>
-#include <aws/timestream-query/model/QueryResult.h>
-#include <aws/timestream-query/model/TagResourceResult.h>
-#include <aws/timestream-query/model/UntagResourceResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <aws/core/utils/ConcurrentCache.h>
-#include <future>
-#include <functional>
+#include <aws/timestream-query/TimestreamQueryServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace TimestreamQuery
 {
-
-namespace Model
-{
-        class CancelQueryRequest;
-        class CreateScheduledQueryRequest;
-        class DeleteScheduledQueryRequest;
-        class DescribeEndpointsRequest;
-        class DescribeScheduledQueryRequest;
-        class ExecuteScheduledQueryRequest;
-        class ListScheduledQueriesRequest;
-        class ListTagsForResourceRequest;
-        class PrepareQueryRequest;
-        class QueryRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateScheduledQueryRequest;
-
-        typedef Aws::Utils::Outcome<CancelQueryResult, TimestreamQueryError> CancelQueryOutcome;
-        typedef Aws::Utils::Outcome<CreateScheduledQueryResult, TimestreamQueryError> CreateScheduledQueryOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, TimestreamQueryError> DeleteScheduledQueryOutcome;
-        typedef Aws::Utils::Outcome<DescribeEndpointsResult, TimestreamQueryError> DescribeEndpointsOutcome;
-        typedef Aws::Utils::Outcome<DescribeScheduledQueryResult, TimestreamQueryError> DescribeScheduledQueryOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, TimestreamQueryError> ExecuteScheduledQueryOutcome;
-        typedef Aws::Utils::Outcome<ListScheduledQueriesResult, TimestreamQueryError> ListScheduledQueriesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, TimestreamQueryError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<PrepareQueryResult, TimestreamQueryError> PrepareQueryOutcome;
-        typedef Aws::Utils::Outcome<QueryResult, TimestreamQueryError> QueryOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, TimestreamQueryError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, TimestreamQueryError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, TimestreamQueryError> UpdateScheduledQueryOutcome;
-
-        typedef std::future<CancelQueryOutcome> CancelQueryOutcomeCallable;
-        typedef std::future<CreateScheduledQueryOutcome> CreateScheduledQueryOutcomeCallable;
-        typedef std::future<DeleteScheduledQueryOutcome> DeleteScheduledQueryOutcomeCallable;
-        typedef std::future<DescribeEndpointsOutcome> DescribeEndpointsOutcomeCallable;
-        typedef std::future<DescribeScheduledQueryOutcome> DescribeScheduledQueryOutcomeCallable;
-        typedef std::future<ExecuteScheduledQueryOutcome> ExecuteScheduledQueryOutcomeCallable;
-        typedef std::future<ListScheduledQueriesOutcome> ListScheduledQueriesOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<PrepareQueryOutcome> PrepareQueryOutcomeCallable;
-        typedef std::future<QueryOutcome> QueryOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateScheduledQueryOutcome> UpdateScheduledQueryOutcomeCallable;
-} // namespace Model
-
-  class TimestreamQueryClient;
-
-    typedef std::function<void(const TimestreamQueryClient*, const Model::CancelQueryRequest&, const Model::CancelQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelQueryResponseReceivedHandler;
-    typedef std::function<void(const TimestreamQueryClient*, const Model::CreateScheduledQueryRequest&, const Model::CreateScheduledQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateScheduledQueryResponseReceivedHandler;
-    typedef std::function<void(const TimestreamQueryClient*, const Model::DeleteScheduledQueryRequest&, const Model::DeleteScheduledQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteScheduledQueryResponseReceivedHandler;
-    typedef std::function<void(const TimestreamQueryClient*, const Model::DescribeEndpointsRequest&, const Model::DescribeEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEndpointsResponseReceivedHandler;
-    typedef std::function<void(const TimestreamQueryClient*, const Model::DescribeScheduledQueryRequest&, const Model::DescribeScheduledQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeScheduledQueryResponseReceivedHandler;
-    typedef std::function<void(const TimestreamQueryClient*, const Model::ExecuteScheduledQueryRequest&, const Model::ExecuteScheduledQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExecuteScheduledQueryResponseReceivedHandler;
-    typedef std::function<void(const TimestreamQueryClient*, const Model::ListScheduledQueriesRequest&, const Model::ListScheduledQueriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListScheduledQueriesResponseReceivedHandler;
-    typedef std::function<void(const TimestreamQueryClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const TimestreamQueryClient*, const Model::PrepareQueryRequest&, const Model::PrepareQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PrepareQueryResponseReceivedHandler;
-    typedef std::function<void(const TimestreamQueryClient*, const Model::QueryRequest&, const Model::QueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > QueryResponseReceivedHandler;
-    typedef std::function<void(const TimestreamQueryClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const TimestreamQueryClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const TimestreamQueryClient*, const Model::UpdateScheduledQueryRequest&, const Model::UpdateScheduledQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateScheduledQueryResponseReceivedHandler;
-
   /**
    * <fullname>Amazon Timestream Query </fullname> <p/>
    */
@@ -432,7 +325,7 @@ namespace Model
 
       Aws::String m_uri;
       mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;
-      bool m_enableEndpointDiscovery;
+      bool m_enableEndpointDiscovery = false;
       Aws::String m_configScheme;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };

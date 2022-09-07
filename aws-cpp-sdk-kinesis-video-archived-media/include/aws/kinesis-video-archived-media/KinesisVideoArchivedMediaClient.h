@@ -5,88 +5,15 @@
 
 #pragma once
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMedia_EXPORTS.h>
-#include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/kinesis-video-archived-media/model/GetClipResult.h>
-#include <aws/kinesis-video-archived-media/model/GetDASHStreamingSessionURLResult.h>
-#include <aws/kinesis-video-archived-media/model/GetHLSStreamingSessionURLResult.h>
-#include <aws/kinesis-video-archived-media/model/GetImagesResult.h>
-#include <aws/kinesis-video-archived-media/model/GetMediaForFragmentListResult.h>
-#include <aws/kinesis-video-archived-media/model/ListFragmentsResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace KinesisVideoArchivedMedia
 {
-
-namespace Model
-{
-        class GetClipRequest;
-        class GetDASHStreamingSessionURLRequest;
-        class GetHLSStreamingSessionURLRequest;
-        class GetImagesRequest;
-        class GetMediaForFragmentListRequest;
-        class ListFragmentsRequest;
-
-        typedef Aws::Utils::Outcome<GetClipResult, KinesisVideoArchivedMediaError> GetClipOutcome;
-        typedef Aws::Utils::Outcome<GetDASHStreamingSessionURLResult, KinesisVideoArchivedMediaError> GetDASHStreamingSessionURLOutcome;
-        typedef Aws::Utils::Outcome<GetHLSStreamingSessionURLResult, KinesisVideoArchivedMediaError> GetHLSStreamingSessionURLOutcome;
-        typedef Aws::Utils::Outcome<GetImagesResult, KinesisVideoArchivedMediaError> GetImagesOutcome;
-        typedef Aws::Utils::Outcome<GetMediaForFragmentListResult, KinesisVideoArchivedMediaError> GetMediaForFragmentListOutcome;
-        typedef Aws::Utils::Outcome<ListFragmentsResult, KinesisVideoArchivedMediaError> ListFragmentsOutcome;
-
-        typedef std::future<GetClipOutcome> GetClipOutcomeCallable;
-        typedef std::future<GetDASHStreamingSessionURLOutcome> GetDASHStreamingSessionURLOutcomeCallable;
-        typedef std::future<GetHLSStreamingSessionURLOutcome> GetHLSStreamingSessionURLOutcomeCallable;
-        typedef std::future<GetImagesOutcome> GetImagesOutcomeCallable;
-        typedef std::future<GetMediaForFragmentListOutcome> GetMediaForFragmentListOutcomeCallable;
-        typedef std::future<ListFragmentsOutcome> ListFragmentsOutcomeCallable;
-} // namespace Model
-
-  class KinesisVideoArchivedMediaClient;
-
-    typedef std::function<void(const KinesisVideoArchivedMediaClient*, const Model::GetClipRequest&, Model::GetClipOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetClipResponseReceivedHandler;
-    typedef std::function<void(const KinesisVideoArchivedMediaClient*, const Model::GetDASHStreamingSessionURLRequest&, const Model::GetDASHStreamingSessionURLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDASHStreamingSessionURLResponseReceivedHandler;
-    typedef std::function<void(const KinesisVideoArchivedMediaClient*, const Model::GetHLSStreamingSessionURLRequest&, const Model::GetHLSStreamingSessionURLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHLSStreamingSessionURLResponseReceivedHandler;
-    typedef std::function<void(const KinesisVideoArchivedMediaClient*, const Model::GetImagesRequest&, const Model::GetImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetImagesResponseReceivedHandler;
-    typedef std::function<void(const KinesisVideoArchivedMediaClient*, const Model::GetMediaForFragmentListRequest&, Model::GetMediaForFragmentListOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMediaForFragmentListResponseReceivedHandler;
-    typedef std::function<void(const KinesisVideoArchivedMediaClient*, const Model::ListFragmentsRequest&, const Model::ListFragmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFragmentsResponseReceivedHandler;
-
   /**
    * <p/>
    */

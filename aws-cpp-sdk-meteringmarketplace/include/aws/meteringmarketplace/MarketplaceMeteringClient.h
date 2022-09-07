@@ -5,78 +5,15 @@
 
 #pragma once
 #include <aws/meteringmarketplace/MarketplaceMetering_EXPORTS.h>
-#include <aws/meteringmarketplace/MarketplaceMeteringErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/meteringmarketplace/model/BatchMeterUsageResult.h>
-#include <aws/meteringmarketplace/model/MeterUsageResult.h>
-#include <aws/meteringmarketplace/model/RegisterUsageResult.h>
-#include <aws/meteringmarketplace/model/ResolveCustomerResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/meteringmarketplace/MarketplaceMeteringServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace MarketplaceMetering
 {
-
-namespace Model
-{
-        class BatchMeterUsageRequest;
-        class MeterUsageRequest;
-        class RegisterUsageRequest;
-        class ResolveCustomerRequest;
-
-        typedef Aws::Utils::Outcome<BatchMeterUsageResult, MarketplaceMeteringError> BatchMeterUsageOutcome;
-        typedef Aws::Utils::Outcome<MeterUsageResult, MarketplaceMeteringError> MeterUsageOutcome;
-        typedef Aws::Utils::Outcome<RegisterUsageResult, MarketplaceMeteringError> RegisterUsageOutcome;
-        typedef Aws::Utils::Outcome<ResolveCustomerResult, MarketplaceMeteringError> ResolveCustomerOutcome;
-
-        typedef std::future<BatchMeterUsageOutcome> BatchMeterUsageOutcomeCallable;
-        typedef std::future<MeterUsageOutcome> MeterUsageOutcomeCallable;
-        typedef std::future<RegisterUsageOutcome> RegisterUsageOutcomeCallable;
-        typedef std::future<ResolveCustomerOutcome> ResolveCustomerOutcomeCallable;
-} // namespace Model
-
-  class MarketplaceMeteringClient;
-
-    typedef std::function<void(const MarketplaceMeteringClient*, const Model::BatchMeterUsageRequest&, const Model::BatchMeterUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchMeterUsageResponseReceivedHandler;
-    typedef std::function<void(const MarketplaceMeteringClient*, const Model::MeterUsageRequest&, const Model::MeterUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MeterUsageResponseReceivedHandler;
-    typedef std::function<void(const MarketplaceMeteringClient*, const Model::RegisterUsageRequest&, const Model::RegisterUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterUsageResponseReceivedHandler;
-    typedef std::function<void(const MarketplaceMeteringClient*, const Model::ResolveCustomerRequest&, const Model::ResolveCustomerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResolveCustomerResponseReceivedHandler;
-
   /**
    * <fullname>AWS Marketplace Metering Service</fullname> <p>This reference provides
    * descriptions of the low-level AWS Marketplace Metering Service API.</p> <p>AWS

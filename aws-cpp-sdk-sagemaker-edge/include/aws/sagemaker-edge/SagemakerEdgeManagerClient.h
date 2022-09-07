@@ -5,73 +5,15 @@
 
 #pragma once
 #include <aws/sagemaker-edge/SagemakerEdgeManager_EXPORTS.h>
-#include <aws/sagemaker-edge/SagemakerEdgeManagerErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/sagemaker-edge/model/GetDeploymentsResult.h>
-#include <aws/sagemaker-edge/model/GetDeviceRegistrationResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/sagemaker-edge/SagemakerEdgeManagerServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace SagemakerEdgeManager
 {
-
-namespace Model
-{
-        class GetDeploymentsRequest;
-        class GetDeviceRegistrationRequest;
-        class SendHeartbeatRequest;
-
-        typedef Aws::Utils::Outcome<GetDeploymentsResult, SagemakerEdgeManagerError> GetDeploymentsOutcome;
-        typedef Aws::Utils::Outcome<GetDeviceRegistrationResult, SagemakerEdgeManagerError> GetDeviceRegistrationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SagemakerEdgeManagerError> SendHeartbeatOutcome;
-
-        typedef std::future<GetDeploymentsOutcome> GetDeploymentsOutcomeCallable;
-        typedef std::future<GetDeviceRegistrationOutcome> GetDeviceRegistrationOutcomeCallable;
-        typedef std::future<SendHeartbeatOutcome> SendHeartbeatOutcomeCallable;
-} // namespace Model
-
-  class SagemakerEdgeManagerClient;
-
-    typedef std::function<void(const SagemakerEdgeManagerClient*, const Model::GetDeploymentsRequest&, const Model::GetDeploymentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeploymentsResponseReceivedHandler;
-    typedef std::function<void(const SagemakerEdgeManagerClient*, const Model::GetDeviceRegistrationRequest&, const Model::GetDeviceRegistrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeviceRegistrationResponseReceivedHandler;
-    typedef std::function<void(const SagemakerEdgeManagerClient*, const Model::SendHeartbeatRequest&, const Model::SendHeartbeatOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendHeartbeatResponseReceivedHandler;
-
   /**
    * <p>SageMaker Edge Manager dataplane service for communicating with active
    * agents.</p>

@@ -5,73 +5,15 @@
 
 #pragma once
 #include <aws/pricing/Pricing_EXPORTS.h>
-#include <aws/pricing/PricingErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/pricing/model/DescribeServicesResult.h>
-#include <aws/pricing/model/GetAttributeValuesResult.h>
-#include <aws/pricing/model/GetProductsResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/pricing/PricingServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace Pricing
 {
-
-namespace Model
-{
-        class DescribeServicesRequest;
-        class GetAttributeValuesRequest;
-        class GetProductsRequest;
-
-        typedef Aws::Utils::Outcome<DescribeServicesResult, PricingError> DescribeServicesOutcome;
-        typedef Aws::Utils::Outcome<GetAttributeValuesResult, PricingError> GetAttributeValuesOutcome;
-        typedef Aws::Utils::Outcome<GetProductsResult, PricingError> GetProductsOutcome;
-
-        typedef std::future<DescribeServicesOutcome> DescribeServicesOutcomeCallable;
-        typedef std::future<GetAttributeValuesOutcome> GetAttributeValuesOutcomeCallable;
-        typedef std::future<GetProductsOutcome> GetProductsOutcomeCallable;
-} // namespace Model
-
-  class PricingClient;
-
-    typedef std::function<void(const PricingClient*, const Model::DescribeServicesRequest&, const Model::DescribeServicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeServicesResponseReceivedHandler;
-    typedef std::function<void(const PricingClient*, const Model::GetAttributeValuesRequest&, const Model::GetAttributeValuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAttributeValuesResponseReceivedHandler;
-    typedef std::function<void(const PricingClient*, const Model::GetProductsRequest&, const Model::GetProductsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProductsResponseReceivedHandler;
-
   /**
    * <p>Amazon Web Services Price List API is a centralized and convenient way to
    * programmatically query Amazon Web Services for services, products, and pricing

@@ -5,76 +5,15 @@
 
 #pragma once
 #include <aws/transcribestreaming/TranscribeStreamingService_EXPORTS.h>
-#include <aws/transcribestreaming/TranscribeStreamingServiceErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/transcribestreaming/TranscribeStreamingServiceServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Event
-{
-  class EventEncoderStream;
-}
-
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace TranscribeStreamingService
 {
-
-namespace Model
-{
-        class StartMedicalStreamTranscriptionRequest;
-        class AudioStream;
-        class StartStreamTranscriptionRequest;
-        class AudioStream;
-
-        typedef Aws::Utils::Outcome<Aws::NoResult, TranscribeStreamingServiceError> StartMedicalStreamTranscriptionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, TranscribeStreamingServiceError> StartStreamTranscriptionOutcome;
-
-        typedef std::future<StartMedicalStreamTranscriptionOutcome> StartMedicalStreamTranscriptionOutcomeCallable;
-        typedef std::future<StartStreamTranscriptionOutcome> StartStreamTranscriptionOutcomeCallable;
-} // namespace Model
-
-  class TranscribeStreamingServiceClient;
-
-    typedef std::function<void(Model::AudioStream&)> StartMedicalStreamTranscriptionStreamReadyHandler;
-    typedef std::function<void(const TranscribeStreamingServiceClient*, const Model::StartMedicalStreamTranscriptionRequest&, const Model::StartMedicalStreamTranscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMedicalStreamTranscriptionResponseReceivedHandler;
-    typedef std::function<void(Model::AudioStream&)> StartStreamTranscriptionStreamReadyHandler;
-    typedef std::function<void(const TranscribeStreamingServiceClient*, const Model::StartStreamTranscriptionRequest&, const Model::StartStreamTranscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartStreamTranscriptionResponseReceivedHandler;
-
   /**
    * <p>Operations and objects for transcribing streaming speech to text.</p>
    */
