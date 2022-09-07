@@ -93,6 +93,7 @@ namespace Aws
         static const int capacity_reservation_fleet_HASH = HashingUtils::HashString("capacity-reservation-fleet");
         static const int traffic_mirror_filter_rule_HASH = HashingUtils::HashString("traffic-mirror-filter-rule");
         static const int vpc_endpoint_connection_device_type_HASH = HashingUtils::HashString("vpc-endpoint-connection-device-type");
+        static const int vpn_connection_device_type_HASH = HashingUtils::HashString("vpn-connection-device-type");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -390,6 +391,10 @@ namespace Aws
           {
             return ResourceType::vpc_endpoint_connection_device_type;
           }
+          else if (hashCode == vpn_connection_device_type_HASH)
+          {
+            return ResourceType::vpn_connection_device_type;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -550,6 +555,8 @@ namespace Aws
             return "traffic-mirror-filter-rule";
           case ResourceType::vpc_endpoint_connection_device_type:
             return "vpc-endpoint-connection-device-type";
+          case ResourceType::vpn_connection_device_type:
+            return "vpn-connection-device-type";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

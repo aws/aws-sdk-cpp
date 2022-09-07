@@ -351,6 +351,97 @@ namespace Model
      */
     inline ProductionVariant& WithServerlessConfig(ProductionVariantServerlessConfig&& value) { SetServerlessConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The size, in GB, of the ML storage volume attached to individual inference
+     * instance associated with the production variant. Currenly only Amazon EBS gp2
+     * storage volumes are supported.</p>
+     */
+    inline int GetVolumeSizeInGB() const{ return m_volumeSizeInGB; }
+
+    /**
+     * <p>The size, in GB, of the ML storage volume attached to individual inference
+     * instance associated with the production variant. Currenly only Amazon EBS gp2
+     * storage volumes are supported.</p>
+     */
+    inline bool VolumeSizeInGBHasBeenSet() const { return m_volumeSizeInGBHasBeenSet; }
+
+    /**
+     * <p>The size, in GB, of the ML storage volume attached to individual inference
+     * instance associated with the production variant. Currenly only Amazon EBS gp2
+     * storage volumes are supported.</p>
+     */
+    inline void SetVolumeSizeInGB(int value) { m_volumeSizeInGBHasBeenSet = true; m_volumeSizeInGB = value; }
+
+    /**
+     * <p>The size, in GB, of the ML storage volume attached to individual inference
+     * instance associated with the production variant. Currenly only Amazon EBS gp2
+     * storage volumes are supported.</p>
+     */
+    inline ProductionVariant& WithVolumeSizeInGB(int value) { SetVolumeSizeInGB(value); return *this;}
+
+
+    /**
+     * <p>The timeout value, in seconds, to download and extract customer model
+     * artifact from Amazon S3 to individual inference instance associated with this
+     * production variant.</p>
+     */
+    inline int GetModelDataDownloadTimeoutInSeconds() const{ return m_modelDataDownloadTimeoutInSeconds; }
+
+    /**
+     * <p>The timeout value, in seconds, to download and extract customer model
+     * artifact from Amazon S3 to individual inference instance associated with this
+     * production variant.</p>
+     */
+    inline bool ModelDataDownloadTimeoutInSecondsHasBeenSet() const { return m_modelDataDownloadTimeoutInSecondsHasBeenSet; }
+
+    /**
+     * <p>The timeout value, in seconds, to download and extract customer model
+     * artifact from Amazon S3 to individual inference instance associated with this
+     * production variant.</p>
+     */
+    inline void SetModelDataDownloadTimeoutInSeconds(int value) { m_modelDataDownloadTimeoutInSecondsHasBeenSet = true; m_modelDataDownloadTimeoutInSeconds = value; }
+
+    /**
+     * <p>The timeout value, in seconds, to download and extract customer model
+     * artifact from Amazon S3 to individual inference instance associated with this
+     * production variant.</p>
+     */
+    inline ProductionVariant& WithModelDataDownloadTimeoutInSeconds(int value) { SetModelDataDownloadTimeoutInSeconds(value); return *this;}
+
+
+    /**
+     * <p>The timeout value, in seconds, for the customer inference container to pass
+     * health check by SageMaker Hosting. For more information on health check, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-inference-code.html#your-algorithms-inference-algo-ping-requests">How
+     * Your Container Should Respond to Health Check (Ping) Requests</a>.</p>
+     */
+    inline int GetContainerStartupHealthCheckTimeoutInSeconds() const{ return m_containerStartupHealthCheckTimeoutInSeconds; }
+
+    /**
+     * <p>The timeout value, in seconds, for the customer inference container to pass
+     * health check by SageMaker Hosting. For more information on health check, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-inference-code.html#your-algorithms-inference-algo-ping-requests">How
+     * Your Container Should Respond to Health Check (Ping) Requests</a>.</p>
+     */
+    inline bool ContainerStartupHealthCheckTimeoutInSecondsHasBeenSet() const { return m_containerStartupHealthCheckTimeoutInSecondsHasBeenSet; }
+
+    /**
+     * <p>The timeout value, in seconds, for the customer inference container to pass
+     * health check by SageMaker Hosting. For more information on health check, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-inference-code.html#your-algorithms-inference-algo-ping-requests">How
+     * Your Container Should Respond to Health Check (Ping) Requests</a>.</p>
+     */
+    inline void SetContainerStartupHealthCheckTimeoutInSeconds(int value) { m_containerStartupHealthCheckTimeoutInSecondsHasBeenSet = true; m_containerStartupHealthCheckTimeoutInSeconds = value; }
+
+    /**
+     * <p>The timeout value, in seconds, for the customer inference container to pass
+     * health check by SageMaker Hosting. For more information on health check, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-inference-code.html#your-algorithms-inference-algo-ping-requests">How
+     * Your Container Should Respond to Health Check (Ping) Requests</a>.</p>
+     */
+    inline ProductionVariant& WithContainerStartupHealthCheckTimeoutInSeconds(int value) { SetContainerStartupHealthCheckTimeoutInSeconds(value); return *this;}
+
   private:
 
     Aws::String m_variantName;
@@ -376,6 +467,15 @@ namespace Model
 
     ProductionVariantServerlessConfig m_serverlessConfig;
     bool m_serverlessConfigHasBeenSet = false;
+
+    int m_volumeSizeInGB;
+    bool m_volumeSizeInGBHasBeenSet = false;
+
+    int m_modelDataDownloadTimeoutInSeconds;
+    bool m_modelDataDownloadTimeoutInSecondsHasBeenSet = false;
+
+    int m_containerStartupHealthCheckTimeoutInSeconds;
+    bool m_containerStartupHealthCheckTimeoutInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

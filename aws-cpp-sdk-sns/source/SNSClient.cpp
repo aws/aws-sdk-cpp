@@ -31,6 +31,7 @@
 #include <aws/sns/model/DeletePlatformApplicationRequest.h>
 #include <aws/sns/model/DeleteSMSSandboxPhoneNumberRequest.h>
 #include <aws/sns/model/DeleteTopicRequest.h>
+#include <aws/sns/model/GetDataProtectionPolicyRequest.h>
 #include <aws/sns/model/GetEndpointAttributesRequest.h>
 #include <aws/sns/model/GetPlatformApplicationAttributesRequest.h>
 #include <aws/sns/model/GetSMSAttributesRequest.h>
@@ -49,6 +50,7 @@
 #include <aws/sns/model/OptInPhoneNumberRequest.h>
 #include <aws/sns/model/PublishRequest.h>
 #include <aws/sns/model/PublishBatchRequest.h>
+#include <aws/sns/model/PutDataProtectionPolicyRequest.h>
 #include <aws/sns/model/RemovePermissionRequest.h>
 #include <aws/sns/model/SetEndpointAttributesRequest.h>
 #include <aws/sns/model/SetPlatformApplicationAttributesRequest.h>
@@ -390,6 +392,28 @@ void SNSClient::DeleteTopicAsync(const DeleteTopicRequest& request, const Delete
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DeleteTopic(request), context);
+    } );
+}
+
+GetDataProtectionPolicyOutcome SNSClient::GetDataProtectionPolicy(const GetDataProtectionPolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetDataProtectionPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+GetDataProtectionPolicyOutcomeCallable SNSClient::GetDataProtectionPolicyCallable(const GetDataProtectionPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetDataProtectionPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDataProtectionPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SNSClient::GetDataProtectionPolicyAsync(const GetDataProtectionPolicyRequest& request, const GetDataProtectionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDataProtectionPolicy(request), context);
     } );
 }
 
@@ -786,6 +810,28 @@ void SNSClient::PublishBatchAsync(const PublishBatchRequest& request, const Publ
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, PublishBatch(request), context);
+    } );
+}
+
+PutDataProtectionPolicyOutcome SNSClient::PutDataProtectionPolicy(const PutDataProtectionPolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return PutDataProtectionPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+PutDataProtectionPolicyOutcomeCallable SNSClient::PutDataProtectionPolicyCallable(const PutDataProtectionPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutDataProtectionPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutDataProtectionPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SNSClient::PutDataProtectionPolicyAsync(const PutDataProtectionPolicyRequest& request, const PutDataProtectionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutDataProtectionPolicy(request), context);
     } );
 }
 

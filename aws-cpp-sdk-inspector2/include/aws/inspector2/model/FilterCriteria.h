@@ -725,6 +725,71 @@ namespace Model
 
 
     /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline const Aws::Vector<StringFilter>& GetFixAvailable() const{ return m_fixAvailable; }
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline bool FixAvailableHasBeenSet() const { return m_fixAvailableHasBeenSet; }
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline void SetFixAvailable(const Aws::Vector<StringFilter>& value) { m_fixAvailableHasBeenSet = true; m_fixAvailable = value; }
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline void SetFixAvailable(Aws::Vector<StringFilter>&& value) { m_fixAvailableHasBeenSet = true; m_fixAvailable = std::move(value); }
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline FilterCriteria& WithFixAvailable(const Aws::Vector<StringFilter>& value) { SetFixAvailable(value); return *this;}
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline FilterCriteria& WithFixAvailable(Aws::Vector<StringFilter>&& value) { SetFixAvailable(std::move(value)); return *this;}
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline FilterCriteria& AddFixAvailable(const StringFilter& value) { m_fixAvailableHasBeenSet = true; m_fixAvailable.push_back(value); return *this; }
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline FilterCriteria& AddFixAvailable(StringFilter&& value) { m_fixAvailableHasBeenSet = true; m_fixAvailable.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The Amazon Inspector score to filter on.</p>
      */
     inline const Aws::Vector<NumberFilter>& GetInspectorScore() const{ return m_inspectorScore; }
@@ -1403,6 +1468,9 @@ namespace Model
 
     Aws::Vector<DateFilter> m_firstObservedAt;
     bool m_firstObservedAtHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_fixAvailable;
+    bool m_fixAvailableHasBeenSet = false;
 
     Aws::Vector<NumberFilter> m_inspectorScore;
     bool m_inspectorScoreHasBeenSet = false;

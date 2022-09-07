@@ -88,7 +88,8 @@ namespace Model
     vpc_flow_log,
     capacity_reservation_fleet,
     traffic_mirror_filter_rule,
-    vpc_endpoint_connection_device_type
+    vpc_endpoint_connection_device_type,
+    vpn_connection_device_type
   };
 
 namespace ResourceTypeMapper

@@ -685,10 +685,8 @@ namespace Model
         virtual void CreateAssetModelAsync(const Model::CreateAssetModelRequest& request, const CreateAssetModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This API operation is in preview release for IoT SiteWise and is
-         * subject to change. We recommend that you use this operation only with test data,
-         * and not in production environments.</p>  <p>Defines a job to ingest data
-         * to IoT SiteWise from Amazon S3. For more information, see <a
+         * <p>Defines a job to ingest data to IoT SiteWise from Amazon S3. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/CreateBulkImportJob.html">Create
          * a bulk import job (CLI)</a> in the <i>Amazon Simple Storage Service User
          * Guide</i>.</p>  <p>You must enable IoT SiteWise to export data to
@@ -1031,10 +1029,8 @@ namespace Model
         virtual void DescribeAssetPropertyAsync(const Model::DescribeAssetPropertyRequest& request, const DescribeAssetPropertyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This API operation is in preview release for IoT SiteWise and is
-         * subject to change. We recommend that you use this operation only with test data,
-         * and not in production environments.</p>  <p>Retrieves information about a
-         * bulk import job request. For more information, see <a
+         * <p>Retrieves information about a bulk import job request. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/DescribeBulkImportJob.html">Describe
          * a bulk import job (CLI)</a> in the <i>Amazon Simple Storage Service User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1471,13 +1467,11 @@ namespace Model
         virtual void ListAssociatedAssetsAsync(const Model::ListAssociatedAssetsRequest& request, const ListAssociatedAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This API operation is in preview release for IoT SiteWise and is
-         * subject to change. We recommend that you use this operation only with test data,
-         * and not in production environments.</p>  <p>Retrieves a paginated list of
-         * bulk import job requests. For more information, see <a
+         * <p>Retrieves a paginated list of bulk import job requests. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ListBulkImportJobs.html">List
-         * bulk import jobs (CLI)</a> in the <i>Amazon Simple Storage Service User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * bulk import jobs (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListBulkImportJobs">AWS
          * API Reference</a></p>
          */

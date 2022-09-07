@@ -35,42 +35,42 @@ namespace Model
 
 
     /**
-     * <p>A unique, friendly name for the asset.</p>
+     * <p>A friendly name for the asset.</p>
      */
     inline const Aws::String& GetAssetName() const{ return m_assetName; }
 
     /**
-     * <p>A unique, friendly name for the asset.</p>
+     * <p>A friendly name for the asset.</p>
      */
     inline bool AssetNameHasBeenSet() const { return m_assetNameHasBeenSet; }
 
     /**
-     * <p>A unique, friendly name for the asset.</p>
+     * <p>A friendly name for the asset.</p>
      */
     inline void SetAssetName(const Aws::String& value) { m_assetNameHasBeenSet = true; m_assetName = value; }
 
     /**
-     * <p>A unique, friendly name for the asset.</p>
+     * <p>A friendly name for the asset.</p>
      */
     inline void SetAssetName(Aws::String&& value) { m_assetNameHasBeenSet = true; m_assetName = std::move(value); }
 
     /**
-     * <p>A unique, friendly name for the asset.</p>
+     * <p>A friendly name for the asset.</p>
      */
     inline void SetAssetName(const char* value) { m_assetNameHasBeenSet = true; m_assetName.assign(value); }
 
     /**
-     * <p>A unique, friendly name for the asset.</p>
+     * <p>A friendly name for the asset.</p>
      */
     inline CreateAssetRequest& WithAssetName(const Aws::String& value) { SetAssetName(value); return *this;}
 
     /**
-     * <p>A unique, friendly name for the asset.</p>
+     * <p>A friendly name for the asset.</p>
      */
     inline CreateAssetRequest& WithAssetName(Aws::String&& value) { SetAssetName(std::move(value)); return *this;}
 
     /**
-     * <p>A unique, friendly name for the asset.</p>
+     * <p>A friendly name for the asset.</p>
      */
     inline CreateAssetRequest& WithAssetName(const char* value) { SetAssetName(value); return *this;}
 

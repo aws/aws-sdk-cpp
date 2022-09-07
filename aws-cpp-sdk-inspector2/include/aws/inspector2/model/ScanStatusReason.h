@@ -29,7 +29,9 @@ namespace Model
     SCAN_FREQUENCY_MANUAL,
     SCAN_FREQUENCY_SCAN_ON_PUSH,
     EC2_INSTANCE_STOPPED,
-    PENDING_DISABLE
+    PENDING_DISABLE,
+    NO_INVENTORY,
+    STALE_INVENTORY
   };
 
 namespace ScanStatusReasonMapper
