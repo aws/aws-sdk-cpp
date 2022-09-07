@@ -5,58 +5,15 @@
 
 #pragma once
 #include <aws/iotthingsgraph/IoTThingsGraph_EXPORTS.h>
-#include <aws/iotthingsgraph/IoTThingsGraphErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/iotthingsgraph/IoTThingsGraphServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace IoTThingsGraph
 {
-
-namespace Model
-{
-
-
-} // namespace Model
-
-  class IoTThingsGraphClient;
-
-
   /**
    * <fullname>AWS IoT Things Graph</fullname> <p>AWS IoT Things Graph provides an
    * integrated set of tools that enable developers to connect devices and services

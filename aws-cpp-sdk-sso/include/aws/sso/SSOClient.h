@@ -5,78 +5,15 @@
 
 #pragma once
 #include <aws/sso/SSO_EXPORTS.h>
-#include <aws/sso/SSOErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/sso/model/GetRoleCredentialsResult.h>
-#include <aws/sso/model/ListAccountRolesResult.h>
-#include <aws/sso/model/ListAccountsResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/sso/SSOServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace SSO
 {
-
-namespace Model
-{
-        class GetRoleCredentialsRequest;
-        class ListAccountRolesRequest;
-        class ListAccountsRequest;
-        class LogoutRequest;
-
-        typedef Aws::Utils::Outcome<GetRoleCredentialsResult, SSOError> GetRoleCredentialsOutcome;
-        typedef Aws::Utils::Outcome<ListAccountRolesResult, SSOError> ListAccountRolesOutcome;
-        typedef Aws::Utils::Outcome<ListAccountsResult, SSOError> ListAccountsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SSOError> LogoutOutcome;
-
-        typedef std::future<GetRoleCredentialsOutcome> GetRoleCredentialsOutcomeCallable;
-        typedef std::future<ListAccountRolesOutcome> ListAccountRolesOutcomeCallable;
-        typedef std::future<ListAccountsOutcome> ListAccountsOutcomeCallable;
-        typedef std::future<LogoutOutcome> LogoutOutcomeCallable;
-} // namespace Model
-
-  class SSOClient;
-
-    typedef std::function<void(const SSOClient*, const Model::GetRoleCredentialsRequest&, const Model::GetRoleCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRoleCredentialsResponseReceivedHandler;
-    typedef std::function<void(const SSOClient*, const Model::ListAccountRolesRequest&, const Model::ListAccountRolesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccountRolesResponseReceivedHandler;
-    typedef std::function<void(const SSOClient*, const Model::ListAccountsRequest&, const Model::ListAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccountsResponseReceivedHandler;
-    typedef std::function<void(const SSOClient*, const Model::LogoutRequest&, const Model::LogoutOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > LogoutResponseReceivedHandler;
-
   /**
    * <p>AWS IAM Identity Center (successor to AWS Single Sign-On) Portal is a web
    * service that makes it easy for you to assign user access to IAM Identity Center

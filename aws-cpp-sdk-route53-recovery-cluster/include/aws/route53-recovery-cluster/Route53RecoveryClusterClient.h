@@ -5,78 +5,15 @@
 
 #pragma once
 #include <aws/route53-recovery-cluster/Route53RecoveryCluster_EXPORTS.h>
-#include <aws/route53-recovery-cluster/Route53RecoveryClusterErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/route53-recovery-cluster/model/GetRoutingControlStateResult.h>
-#include <aws/route53-recovery-cluster/model/ListRoutingControlsResult.h>
-#include <aws/route53-recovery-cluster/model/UpdateRoutingControlStateResult.h>
-#include <aws/route53-recovery-cluster/model/UpdateRoutingControlStatesResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/route53-recovery-cluster/Route53RecoveryClusterServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace Route53RecoveryCluster
 {
-
-namespace Model
-{
-        class GetRoutingControlStateRequest;
-        class ListRoutingControlsRequest;
-        class UpdateRoutingControlStateRequest;
-        class UpdateRoutingControlStatesRequest;
-
-        typedef Aws::Utils::Outcome<GetRoutingControlStateResult, Route53RecoveryClusterError> GetRoutingControlStateOutcome;
-        typedef Aws::Utils::Outcome<ListRoutingControlsResult, Route53RecoveryClusterError> ListRoutingControlsOutcome;
-        typedef Aws::Utils::Outcome<UpdateRoutingControlStateResult, Route53RecoveryClusterError> UpdateRoutingControlStateOutcome;
-        typedef Aws::Utils::Outcome<UpdateRoutingControlStatesResult, Route53RecoveryClusterError> UpdateRoutingControlStatesOutcome;
-
-        typedef std::future<GetRoutingControlStateOutcome> GetRoutingControlStateOutcomeCallable;
-        typedef std::future<ListRoutingControlsOutcome> ListRoutingControlsOutcomeCallable;
-        typedef std::future<UpdateRoutingControlStateOutcome> UpdateRoutingControlStateOutcomeCallable;
-        typedef std::future<UpdateRoutingControlStatesOutcome> UpdateRoutingControlStatesOutcomeCallable;
-} // namespace Model
-
-  class Route53RecoveryClusterClient;
-
-    typedef std::function<void(const Route53RecoveryClusterClient*, const Model::GetRoutingControlStateRequest&, const Model::GetRoutingControlStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRoutingControlStateResponseReceivedHandler;
-    typedef std::function<void(const Route53RecoveryClusterClient*, const Model::ListRoutingControlsRequest&, const Model::ListRoutingControlsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRoutingControlsResponseReceivedHandler;
-    typedef std::function<void(const Route53RecoveryClusterClient*, const Model::UpdateRoutingControlStateRequest&, const Model::UpdateRoutingControlStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRoutingControlStateResponseReceivedHandler;
-    typedef std::function<void(const Route53RecoveryClusterClient*, const Model::UpdateRoutingControlStatesRequest&, const Model::UpdateRoutingControlStatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRoutingControlStatesResponseReceivedHandler;
-
   /**
    * <p>Welcome to the Routing Control (Recovery Cluster) API Reference Guide for
    * Amazon Route 53 Application Recovery Controller.</p> <p>With Route 53 ARC, you

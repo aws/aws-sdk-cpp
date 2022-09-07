@@ -5,103 +5,15 @@
 
 #pragma once
 #include <aws/support-app/SupportApp_EXPORTS.h>
-#include <aws/support-app/SupportAppErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/support-app/model/CreateSlackChannelConfigurationResult.h>
-#include <aws/support-app/model/DeleteAccountAliasResult.h>
-#include <aws/support-app/model/DeleteSlackChannelConfigurationResult.h>
-#include <aws/support-app/model/DeleteSlackWorkspaceConfigurationResult.h>
-#include <aws/support-app/model/GetAccountAliasResult.h>
-#include <aws/support-app/model/ListSlackChannelConfigurationsResult.h>
-#include <aws/support-app/model/ListSlackWorkspaceConfigurationsResult.h>
-#include <aws/support-app/model/PutAccountAliasResult.h>
-#include <aws/support-app/model/UpdateSlackChannelConfigurationResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/support-app/SupportAppServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace SupportApp
 {
-
-namespace Model
-{
-        class CreateSlackChannelConfigurationRequest;
-        class DeleteAccountAliasRequest;
-        class DeleteSlackChannelConfigurationRequest;
-        class DeleteSlackWorkspaceConfigurationRequest;
-        class GetAccountAliasRequest;
-        class ListSlackChannelConfigurationsRequest;
-        class ListSlackWorkspaceConfigurationsRequest;
-        class PutAccountAliasRequest;
-        class UpdateSlackChannelConfigurationRequest;
-
-        typedef Aws::Utils::Outcome<CreateSlackChannelConfigurationResult, SupportAppError> CreateSlackChannelConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DeleteAccountAliasResult, SupportAppError> DeleteAccountAliasOutcome;
-        typedef Aws::Utils::Outcome<DeleteSlackChannelConfigurationResult, SupportAppError> DeleteSlackChannelConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DeleteSlackWorkspaceConfigurationResult, SupportAppError> DeleteSlackWorkspaceConfigurationOutcome;
-        typedef Aws::Utils::Outcome<GetAccountAliasResult, SupportAppError> GetAccountAliasOutcome;
-        typedef Aws::Utils::Outcome<ListSlackChannelConfigurationsResult, SupportAppError> ListSlackChannelConfigurationsOutcome;
-        typedef Aws::Utils::Outcome<ListSlackWorkspaceConfigurationsResult, SupportAppError> ListSlackWorkspaceConfigurationsOutcome;
-        typedef Aws::Utils::Outcome<PutAccountAliasResult, SupportAppError> PutAccountAliasOutcome;
-        typedef Aws::Utils::Outcome<UpdateSlackChannelConfigurationResult, SupportAppError> UpdateSlackChannelConfigurationOutcome;
-
-        typedef std::future<CreateSlackChannelConfigurationOutcome> CreateSlackChannelConfigurationOutcomeCallable;
-        typedef std::future<DeleteAccountAliasOutcome> DeleteAccountAliasOutcomeCallable;
-        typedef std::future<DeleteSlackChannelConfigurationOutcome> DeleteSlackChannelConfigurationOutcomeCallable;
-        typedef std::future<DeleteSlackWorkspaceConfigurationOutcome> DeleteSlackWorkspaceConfigurationOutcomeCallable;
-        typedef std::future<GetAccountAliasOutcome> GetAccountAliasOutcomeCallable;
-        typedef std::future<ListSlackChannelConfigurationsOutcome> ListSlackChannelConfigurationsOutcomeCallable;
-        typedef std::future<ListSlackWorkspaceConfigurationsOutcome> ListSlackWorkspaceConfigurationsOutcomeCallable;
-        typedef std::future<PutAccountAliasOutcome> PutAccountAliasOutcomeCallable;
-        typedef std::future<UpdateSlackChannelConfigurationOutcome> UpdateSlackChannelConfigurationOutcomeCallable;
-} // namespace Model
-
-  class SupportAppClient;
-
-    typedef std::function<void(const SupportAppClient*, const Model::CreateSlackChannelConfigurationRequest&, const Model::CreateSlackChannelConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSlackChannelConfigurationResponseReceivedHandler;
-    typedef std::function<void(const SupportAppClient*, const Model::DeleteAccountAliasRequest&, const Model::DeleteAccountAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccountAliasResponseReceivedHandler;
-    typedef std::function<void(const SupportAppClient*, const Model::DeleteSlackChannelConfigurationRequest&, const Model::DeleteSlackChannelConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSlackChannelConfigurationResponseReceivedHandler;
-    typedef std::function<void(const SupportAppClient*, const Model::DeleteSlackWorkspaceConfigurationRequest&, const Model::DeleteSlackWorkspaceConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSlackWorkspaceConfigurationResponseReceivedHandler;
-    typedef std::function<void(const SupportAppClient*, const Model::GetAccountAliasRequest&, const Model::GetAccountAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccountAliasResponseReceivedHandler;
-    typedef std::function<void(const SupportAppClient*, const Model::ListSlackChannelConfigurationsRequest&, const Model::ListSlackChannelConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSlackChannelConfigurationsResponseReceivedHandler;
-    typedef std::function<void(const SupportAppClient*, const Model::ListSlackWorkspaceConfigurationsRequest&, const Model::ListSlackWorkspaceConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSlackWorkspaceConfigurationsResponseReceivedHandler;
-    typedef std::function<void(const SupportAppClient*, const Model::PutAccountAliasRequest&, const Model::PutAccountAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccountAliasResponseReceivedHandler;
-    typedef std::function<void(const SupportAppClient*, const Model::UpdateSlackChannelConfigurationRequest&, const Model::UpdateSlackChannelConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSlackChannelConfigurationResponseReceivedHandler;
-
   /**
    * <p><fullname>Amazon Web Services Support App in Slack</fullname> <p>You can use
    * the Amazon Web Services Support App in Slack API to manage your support cases in

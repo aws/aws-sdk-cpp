@@ -5,118 +5,15 @@
 
 #pragma once
 #include <aws/ivschat/Ivschat_EXPORTS.h>
-#include <aws/ivschat/IvschatErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/ivschat/model/CreateChatTokenResult.h>
-#include <aws/ivschat/model/CreateRoomResult.h>
-#include <aws/ivschat/model/DeleteMessageResult.h>
-#include <aws/ivschat/model/DisconnectUserResult.h>
-#include <aws/ivschat/model/GetRoomResult.h>
-#include <aws/ivschat/model/ListRoomsResult.h>
-#include <aws/ivschat/model/ListTagsForResourceResult.h>
-#include <aws/ivschat/model/SendEventResult.h>
-#include <aws/ivschat/model/TagResourceResult.h>
-#include <aws/ivschat/model/UntagResourceResult.h>
-#include <aws/ivschat/model/UpdateRoomResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/ivschat/IvschatServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace ivschat
 {
-
-namespace Model
-{
-        class CreateChatTokenRequest;
-        class CreateRoomRequest;
-        class DeleteMessageRequest;
-        class DeleteRoomRequest;
-        class DisconnectUserRequest;
-        class GetRoomRequest;
-        class ListRoomsRequest;
-        class ListTagsForResourceRequest;
-        class SendEventRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateRoomRequest;
-
-        typedef Aws::Utils::Outcome<CreateChatTokenResult, IvschatError> CreateChatTokenOutcome;
-        typedef Aws::Utils::Outcome<CreateRoomResult, IvschatError> CreateRoomOutcome;
-        typedef Aws::Utils::Outcome<DeleteMessageResult, IvschatError> DeleteMessageOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, IvschatError> DeleteRoomOutcome;
-        typedef Aws::Utils::Outcome<DisconnectUserResult, IvschatError> DisconnectUserOutcome;
-        typedef Aws::Utils::Outcome<GetRoomResult, IvschatError> GetRoomOutcome;
-        typedef Aws::Utils::Outcome<ListRoomsResult, IvschatError> ListRoomsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, IvschatError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<SendEventResult, IvschatError> SendEventOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, IvschatError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, IvschatError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateRoomResult, IvschatError> UpdateRoomOutcome;
-
-        typedef std::future<CreateChatTokenOutcome> CreateChatTokenOutcomeCallable;
-        typedef std::future<CreateRoomOutcome> CreateRoomOutcomeCallable;
-        typedef std::future<DeleteMessageOutcome> DeleteMessageOutcomeCallable;
-        typedef std::future<DeleteRoomOutcome> DeleteRoomOutcomeCallable;
-        typedef std::future<DisconnectUserOutcome> DisconnectUserOutcomeCallable;
-        typedef std::future<GetRoomOutcome> GetRoomOutcomeCallable;
-        typedef std::future<ListRoomsOutcome> ListRoomsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<SendEventOutcome> SendEventOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateRoomOutcome> UpdateRoomOutcomeCallable;
-} // namespace Model
-
-  class IvschatClient;
-
-    typedef std::function<void(const IvschatClient*, const Model::CreateChatTokenRequest&, const Model::CreateChatTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateChatTokenResponseReceivedHandler;
-    typedef std::function<void(const IvschatClient*, const Model::CreateRoomRequest&, const Model::CreateRoomOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRoomResponseReceivedHandler;
-    typedef std::function<void(const IvschatClient*, const Model::DeleteMessageRequest&, const Model::DeleteMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMessageResponseReceivedHandler;
-    typedef std::function<void(const IvschatClient*, const Model::DeleteRoomRequest&, const Model::DeleteRoomOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRoomResponseReceivedHandler;
-    typedef std::function<void(const IvschatClient*, const Model::DisconnectUserRequest&, const Model::DisconnectUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisconnectUserResponseReceivedHandler;
-    typedef std::function<void(const IvschatClient*, const Model::GetRoomRequest&, const Model::GetRoomOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRoomResponseReceivedHandler;
-    typedef std::function<void(const IvschatClient*, const Model::ListRoomsRequest&, const Model::ListRoomsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRoomsResponseReceivedHandler;
-    typedef std::function<void(const IvschatClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const IvschatClient*, const Model::SendEventRequest&, const Model::SendEventOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendEventResponseReceivedHandler;
-    typedef std::function<void(const IvschatClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const IvschatClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const IvschatClient*, const Model::UpdateRoomRequest&, const Model::UpdateRoomOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRoomResponseReceivedHandler;
-
   /**
    * <p> <b>Introduction</b> </p> <p>The Amazon IVS Chat control-plane API enables
    * you to create and manage Amazon IVS Chat resources. You also need to integrate

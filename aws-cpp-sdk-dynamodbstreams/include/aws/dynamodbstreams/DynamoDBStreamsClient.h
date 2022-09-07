@@ -5,78 +5,15 @@
 
 #pragma once
 #include <aws/dynamodbstreams/DynamoDBStreams_EXPORTS.h>
-#include <aws/dynamodbstreams/DynamoDBStreamsErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/dynamodbstreams/model/DescribeStreamResult.h>
-#include <aws/dynamodbstreams/model/GetRecordsResult.h>
-#include <aws/dynamodbstreams/model/GetShardIteratorResult.h>
-#include <aws/dynamodbstreams/model/ListStreamsResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/dynamodbstreams/DynamoDBStreamsServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace DynamoDBStreams
 {
-
-namespace Model
-{
-        class DescribeStreamRequest;
-        class GetRecordsRequest;
-        class GetShardIteratorRequest;
-        class ListStreamsRequest;
-
-        typedef Aws::Utils::Outcome<DescribeStreamResult, DynamoDBStreamsError> DescribeStreamOutcome;
-        typedef Aws::Utils::Outcome<GetRecordsResult, DynamoDBStreamsError> GetRecordsOutcome;
-        typedef Aws::Utils::Outcome<GetShardIteratorResult, DynamoDBStreamsError> GetShardIteratorOutcome;
-        typedef Aws::Utils::Outcome<ListStreamsResult, DynamoDBStreamsError> ListStreamsOutcome;
-
-        typedef std::future<DescribeStreamOutcome> DescribeStreamOutcomeCallable;
-        typedef std::future<GetRecordsOutcome> GetRecordsOutcomeCallable;
-        typedef std::future<GetShardIteratorOutcome> GetShardIteratorOutcomeCallable;
-        typedef std::future<ListStreamsOutcome> ListStreamsOutcomeCallable;
-} // namespace Model
-
-  class DynamoDBStreamsClient;
-
-    typedef std::function<void(const DynamoDBStreamsClient*, const Model::DescribeStreamRequest&, const Model::DescribeStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStreamResponseReceivedHandler;
-    typedef std::function<void(const DynamoDBStreamsClient*, const Model::GetRecordsRequest&, const Model::GetRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRecordsResponseReceivedHandler;
-    typedef std::function<void(const DynamoDBStreamsClient*, const Model::GetShardIteratorRequest&, const Model::GetShardIteratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetShardIteratorResponseReceivedHandler;
-    typedef std::function<void(const DynamoDBStreamsClient*, const Model::ListStreamsRequest&, const Model::ListStreamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStreamsResponseReceivedHandler;
-
   /**
    * <fullname>Amazon DynamoDB</fullname> <p>Amazon DynamoDB Streams provides API
    * actions for accessing streams and processing stream records. To learn more about
