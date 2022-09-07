@@ -148,12 +148,10 @@ AddNotificationChannelOutcomeCallable DevOpsGuruClient::AddNotificationChannelCa
 
 void DevOpsGuruClient::AddNotificationChannelAsync(const AddNotificationChannelRequest& request, const AddNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddNotificationChannelAsyncHelper( request, handler, context ); } );
-}
-
-void DevOpsGuruClient::AddNotificationChannelAsyncHelper(const AddNotificationChannelRequest& request, const AddNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AddNotificationChannel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AddNotificationChannel(request), context);
+    } );
 }
 
 DeleteInsightOutcome DevOpsGuruClient::DeleteInsight(const DeleteInsightRequest& request) const
@@ -179,12 +177,10 @@ DeleteInsightOutcomeCallable DevOpsGuruClient::DeleteInsightCallable(const Delet
 
 void DevOpsGuruClient::DeleteInsightAsync(const DeleteInsightRequest& request, const DeleteInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteInsightAsyncHelper( request, handler, context ); } );
-}
-
-void DevOpsGuruClient::DeleteInsightAsyncHelper(const DeleteInsightRequest& request, const DeleteInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteInsight(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteInsight(request), context);
+    } );
 }
 
 DescribeAccountHealthOutcome DevOpsGuruClient::DescribeAccountHealth(const DescribeAccountHealthRequest& request) const
@@ -204,12 +200,10 @@ DescribeAccountHealthOutcomeCallable DevOpsGuruClient::DescribeAccountHealthCall
 
 void DevOpsGuruClient::DescribeAccountHealthAsync(const DescribeAccountHealthRequest& request, const DescribeAccountHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAccountHealthAsyncHelper( request, handler, context ); } );
-}
-
-void DevOpsGuruClient::DescribeAccountHealthAsyncHelper(const DescribeAccountHealthRequest& request, const DescribeAccountHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAccountHealth(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAccountHealth(request), context);
+    } );
 }
 
 DescribeAccountOverviewOutcome DevOpsGuruClient::DescribeAccountOverview(const DescribeAccountOverviewRequest& request) const
@@ -229,12 +223,10 @@ DescribeAccountOverviewOutcomeCallable DevOpsGuruClient::DescribeAccountOverview
 
 void DevOpsGuruClient::DescribeAccountOverviewAsync(const DescribeAccountOverviewRequest& request, const DescribeAccountOverviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAccountOverviewAsyncHelper( request, handler, context ); } );
-}
-
-void DevOpsGuruClient::DescribeAccountOverviewAsyncHelper(const DescribeAccountOverviewRequest& request, const DescribeAccountOverviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAccountOverview(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAccountOverview(request), context);
+    } );
 }
 
 DescribeAnomalyOutcome DevOpsGuruClient::DescribeAnomaly(const DescribeAnomalyRequest& request) const
@@ -260,12 +252,10 @@ DescribeAnomalyOutcomeCallable DevOpsGuruClient::DescribeAnomalyCallable(const D
 
 void DevOpsGuruClient::DescribeAnomalyAsync(const DescribeAnomalyRequest& request, const DescribeAnomalyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAnomalyAsyncHelper( request, handler, context ); } );
-}
-
-void DevOpsGuruClient::DescribeAnomalyAsyncHelper(const DescribeAnomalyRequest& request, const DescribeAnomalyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAnomaly(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAnomaly(request), context);
+    } );
 }
 
 DescribeEventSourcesConfigOutcome DevOpsGuruClient::DescribeEventSourcesConfig(const DescribeEventSourcesConfigRequest& request) const
@@ -285,12 +275,10 @@ DescribeEventSourcesConfigOutcomeCallable DevOpsGuruClient::DescribeEventSources
 
 void DevOpsGuruClient::DescribeEventSourcesConfigAsync(const DescribeEventSourcesConfigRequest& request, const DescribeEventSourcesConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEventSourcesConfigAsyncHelper( request, handler, context ); } );
-}
-
-void DevOpsGuruClient::DescribeEventSourcesConfigAsyncHelper(const DescribeEventSourcesConfigRequest& request, const DescribeEventSourcesConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeEventSourcesConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeEventSourcesConfig(request), context);
+    } );
 }
 
 DescribeFeedbackOutcome DevOpsGuruClient::DescribeFeedback(const DescribeFeedbackRequest& request) const
@@ -310,12 +298,10 @@ DescribeFeedbackOutcomeCallable DevOpsGuruClient::DescribeFeedbackCallable(const
 
 void DevOpsGuruClient::DescribeFeedbackAsync(const DescribeFeedbackRequest& request, const DescribeFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFeedbackAsyncHelper( request, handler, context ); } );
-}
-
-void DevOpsGuruClient::DescribeFeedbackAsyncHelper(const DescribeFeedbackRequest& request, const DescribeFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeFeedback(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeFeedback(request), context);
+    } );
 }
 
 DescribeInsightOutcome DevOpsGuruClient::DescribeInsight(const DescribeInsightRequest& request) const
@@ -341,12 +327,10 @@ DescribeInsightOutcomeCallable DevOpsGuruClient::DescribeInsightCallable(const D
 
 void DevOpsGuruClient::DescribeInsightAsync(const DescribeInsightRequest& request, const DescribeInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeInsightAsyncHelper( request, handler, context ); } );
-}
-
-void DevOpsGuruClient::DescribeInsightAsyncHelper(const DescribeInsightRequest& request, const DescribeInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeInsight(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeInsight(request), context);
+    } );
 }
 
 DescribeOrganizationHealthOutcome DevOpsGuruClient::DescribeOrganizationHealth(const DescribeOrganizationHealthRequest& request) const
@@ -366,12 +350,10 @@ DescribeOrganizationHealthOutcomeCallable DevOpsGuruClient::DescribeOrganization
 
 void DevOpsGuruClient::DescribeOrganizationHealthAsync(const DescribeOrganizationHealthRequest& request, const DescribeOrganizationHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeOrganizationHealthAsyncHelper( request, handler, context ); } );
-}
-
-void DevOpsGuruClient::DescribeOrganizationHealthAsyncHelper(const DescribeOrganizationHealthRequest& request, const DescribeOrganizationHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeOrganizationHealth(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeOrganizationHealth(request), context);
+    } );
 }
 
 DescribeOrganizationOverviewOutcome DevOpsGuruClient::DescribeOrganizationOverview(const DescribeOrganizationOverviewRequest& request) const
@@ -391,12 +373,10 @@ DescribeOrganizationOverviewOutcomeCallable DevOpsGuruClient::DescribeOrganizati
 
 void DevOpsGuruClient::DescribeOrganizationOverviewAsync(const DescribeOrganizationOverviewRequest& request, const DescribeOrganizationOverviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeOrganizationOverviewAsyncHelper( request, handler, context ); } );
-}
-
-void DevOpsGuruClient::DescribeOrganizationOverviewAsyncHelper(const DescribeOrganizationOverviewRequest& request, const DescribeOrganizationOverviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeOrganizationOverview(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeOrganizationOverview(request), context);
+    } );
 }
 
 DescribeOrganizationResourceCollectionHealthOutcome DevOpsGuruClient::DescribeOrganizationResourceCollectionHealth(const DescribeOrganizationResourceCollectionHealthRequest& request) const
@@ -416,12 +396,10 @@ DescribeOrganizationResourceCollectionHealthOutcomeCallable DevOpsGuruClient::De
 
 void DevOpsGuruClient::DescribeOrganizationResourceCollectionHealthAsync(const DescribeOrganizationResourceCollectionHealthRequest& request, const DescribeOrganizationResourceCollectionHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeOrganizationResourceCollectionHealthAsyncHelper( request, handler, context ); } );
-}
-
-void DevOpsGuruClient::DescribeOrganizationResourceCollectionHealthAsyncHelper(const DescribeOrganizationResourceCollectionHealthRequest& request, const DescribeOrganizationResourceCollectionHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeOrganizationResourceCollectionHealth(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeOrganizationResourceCollectionHealth(request), context);
+    } );
 }
 
 DescribeResourceCollectionHealthOutcome DevOpsGuruClient::DescribeResourceCollectionHealth(const DescribeResourceCollectionHealthRequest& request) const
@@ -447,12 +425,10 @@ DescribeResourceCollectionHealthOutcomeCallable DevOpsGuruClient::DescribeResour
 
 void DevOpsGuruClient::DescribeResourceCollectionHealthAsync(const DescribeResourceCollectionHealthRequest& request, const DescribeResourceCollectionHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeResourceCollectionHealthAsyncHelper( request, handler, context ); } );
-}
-
-void DevOpsGuruClient::DescribeResourceCollectionHealthAsyncHelper(const DescribeResourceCollectionHealthRequest& request, const DescribeResourceCollectionHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeResourceCollectionHealth(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeResourceCollectionHealth(request), context);
+    } );
 }
 
 DescribeServiceIntegrationOutcome DevOpsGuruClient::DescribeServiceIntegration(const DescribeServiceIntegrationRequest& request) const
@@ -472,12 +448,10 @@ DescribeServiceIntegrationOutcomeCallable DevOpsGuruClient::DescribeServiceInteg
 
 void DevOpsGuruClient::DescribeServiceIntegrationAsync(const DescribeServiceIntegrationRequest& request, const DescribeServiceIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeServiceIntegrationAsyncHelper( request, handler, context ); } );
-}
-
-void DevOpsGuruClient::DescribeServiceIntegrationAsyncHelper(const DescribeServiceIntegrationRequest& request, const DescribeServiceIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeServiceIntegration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeServiceIntegration(request), context);
+    } );
 }
 
 GetCostEstimationOutcome DevOpsGuruClient::GetCostEstimation(const GetCostEstimationRequest& request) const
@@ -497,12 +471,10 @@ GetCostEstimationOutcomeCallable DevOpsGuruClient::GetCostEstimationCallable(con
 
 void DevOpsGuruClient::GetCostEstimationAsync(const GetCostEstimationRequest& request, const GetCostEstimationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCostEstimationAsyncHelper( request, handler, context ); } );
-}
-
-void DevOpsGuruClient::GetCostEstimationAsyncHelper(const GetCostEstimationRequest& request, const GetCostEstimationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetCostEstimation(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetCostEstimation(request), context);
+    } );
 }
 
 GetResourceCollectionOutcome DevOpsGuruClient::GetResourceCollection(const GetResourceCollectionRequest& request) const
@@ -528,12 +500,10 @@ GetResourceCollectionOutcomeCallable DevOpsGuruClient::GetResourceCollectionCall
 
 void DevOpsGuruClient::GetResourceCollectionAsync(const GetResourceCollectionRequest& request, const GetResourceCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResourceCollectionAsyncHelper( request, handler, context ); } );
-}
-
-void DevOpsGuruClient::GetResourceCollectionAsyncHelper(const GetResourceCollectionRequest& request, const GetResourceCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetResourceCollection(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetResourceCollection(request), context);
+    } );
 }
 
 ListAnomaliesForInsightOutcome DevOpsGuruClient::ListAnomaliesForInsight(const ListAnomaliesForInsightRequest& request) const
@@ -559,12 +529,10 @@ ListAnomaliesForInsightOutcomeCallable DevOpsGuruClient::ListAnomaliesForInsight
 
 void DevOpsGuruClient::ListAnomaliesForInsightAsync(const ListAnomaliesForInsightRequest& request, const ListAnomaliesForInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAnomaliesForInsightAsyncHelper( request, handler, context ); } );
-}
-
-void DevOpsGuruClient::ListAnomaliesForInsightAsyncHelper(const ListAnomaliesForInsightRequest& request, const ListAnomaliesForInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAnomaliesForInsight(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAnomaliesForInsight(request), context);
+    } );
 }
 
 ListAnomalousLogGroupsOutcome DevOpsGuruClient::ListAnomalousLogGroups(const ListAnomalousLogGroupsRequest& request) const
@@ -584,12 +552,10 @@ ListAnomalousLogGroupsOutcomeCallable DevOpsGuruClient::ListAnomalousLogGroupsCa
 
 void DevOpsGuruClient::ListAnomalousLogGroupsAsync(const ListAnomalousLogGroupsRequest& request, const ListAnomalousLogGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAnomalousLogGroupsAsyncHelper( request, handler, context ); } );
-}
-
-void DevOpsGuruClient::ListAnomalousLogGroupsAsyncHelper(const ListAnomalousLogGroupsRequest& request, const ListAnomalousLogGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAnomalousLogGroups(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAnomalousLogGroups(request), context);
+    } );
 }
 
 ListEventsOutcome DevOpsGuruClient::ListEvents(const ListEventsRequest& request) const
@@ -609,12 +575,10 @@ ListEventsOutcomeCallable DevOpsGuruClient::ListEventsCallable(const ListEventsR
 
 void DevOpsGuruClient::ListEventsAsync(const ListEventsRequest& request, const ListEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEventsAsyncHelper( request, handler, context ); } );
-}
-
-void DevOpsGuruClient::ListEventsAsyncHelper(const ListEventsRequest& request, const ListEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListEvents(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListEvents(request), context);
+    } );
 }
 
 ListInsightsOutcome DevOpsGuruClient::ListInsights(const ListInsightsRequest& request) const
@@ -634,12 +598,10 @@ ListInsightsOutcomeCallable DevOpsGuruClient::ListInsightsCallable(const ListIns
 
 void DevOpsGuruClient::ListInsightsAsync(const ListInsightsRequest& request, const ListInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListInsightsAsyncHelper( request, handler, context ); } );
-}
-
-void DevOpsGuruClient::ListInsightsAsyncHelper(const ListInsightsRequest& request, const ListInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListInsights(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListInsights(request), context);
+    } );
 }
 
 ListMonitoredResourcesOutcome DevOpsGuruClient::ListMonitoredResources(const ListMonitoredResourcesRequest& request) const
@@ -659,12 +621,10 @@ ListMonitoredResourcesOutcomeCallable DevOpsGuruClient::ListMonitoredResourcesCa
 
 void DevOpsGuruClient::ListMonitoredResourcesAsync(const ListMonitoredResourcesRequest& request, const ListMonitoredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMonitoredResourcesAsyncHelper( request, handler, context ); } );
-}
-
-void DevOpsGuruClient::ListMonitoredResourcesAsyncHelper(const ListMonitoredResourcesRequest& request, const ListMonitoredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListMonitoredResources(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListMonitoredResources(request), context);
+    } );
 }
 
 ListNotificationChannelsOutcome DevOpsGuruClient::ListNotificationChannels(const ListNotificationChannelsRequest& request) const
@@ -684,12 +644,10 @@ ListNotificationChannelsOutcomeCallable DevOpsGuruClient::ListNotificationChanne
 
 void DevOpsGuruClient::ListNotificationChannelsAsync(const ListNotificationChannelsRequest& request, const ListNotificationChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListNotificationChannelsAsyncHelper( request, handler, context ); } );
-}
-
-void DevOpsGuruClient::ListNotificationChannelsAsyncHelper(const ListNotificationChannelsRequest& request, const ListNotificationChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListNotificationChannels(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListNotificationChannels(request), context);
+    } );
 }
 
 ListOrganizationInsightsOutcome DevOpsGuruClient::ListOrganizationInsights(const ListOrganizationInsightsRequest& request) const
@@ -709,12 +667,10 @@ ListOrganizationInsightsOutcomeCallable DevOpsGuruClient::ListOrganizationInsigh
 
 void DevOpsGuruClient::ListOrganizationInsightsAsync(const ListOrganizationInsightsRequest& request, const ListOrganizationInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListOrganizationInsightsAsyncHelper( request, handler, context ); } );
-}
-
-void DevOpsGuruClient::ListOrganizationInsightsAsyncHelper(const ListOrganizationInsightsRequest& request, const ListOrganizationInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListOrganizationInsights(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListOrganizationInsights(request), context);
+    } );
 }
 
 ListRecommendationsOutcome DevOpsGuruClient::ListRecommendations(const ListRecommendationsRequest& request) const
@@ -734,12 +690,10 @@ ListRecommendationsOutcomeCallable DevOpsGuruClient::ListRecommendationsCallable
 
 void DevOpsGuruClient::ListRecommendationsAsync(const ListRecommendationsRequest& request, const ListRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRecommendationsAsyncHelper( request, handler, context ); } );
-}
-
-void DevOpsGuruClient::ListRecommendationsAsyncHelper(const ListRecommendationsRequest& request, const ListRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListRecommendations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListRecommendations(request), context);
+    } );
 }
 
 PutFeedbackOutcome DevOpsGuruClient::PutFeedback(const PutFeedbackRequest& request) const
@@ -759,12 +713,10 @@ PutFeedbackOutcomeCallable DevOpsGuruClient::PutFeedbackCallable(const PutFeedba
 
 void DevOpsGuruClient::PutFeedbackAsync(const PutFeedbackRequest& request, const PutFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutFeedbackAsyncHelper( request, handler, context ); } );
-}
-
-void DevOpsGuruClient::PutFeedbackAsyncHelper(const PutFeedbackRequest& request, const PutFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutFeedback(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutFeedback(request), context);
+    } );
 }
 
 RemoveNotificationChannelOutcome DevOpsGuruClient::RemoveNotificationChannel(const RemoveNotificationChannelRequest& request) const
@@ -790,12 +742,10 @@ RemoveNotificationChannelOutcomeCallable DevOpsGuruClient::RemoveNotificationCha
 
 void DevOpsGuruClient::RemoveNotificationChannelAsync(const RemoveNotificationChannelRequest& request, const RemoveNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveNotificationChannelAsyncHelper( request, handler, context ); } );
-}
-
-void DevOpsGuruClient::RemoveNotificationChannelAsyncHelper(const RemoveNotificationChannelRequest& request, const RemoveNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RemoveNotificationChannel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RemoveNotificationChannel(request), context);
+    } );
 }
 
 SearchInsightsOutcome DevOpsGuruClient::SearchInsights(const SearchInsightsRequest& request) const
@@ -815,12 +765,10 @@ SearchInsightsOutcomeCallable DevOpsGuruClient::SearchInsightsCallable(const Sea
 
 void DevOpsGuruClient::SearchInsightsAsync(const SearchInsightsRequest& request, const SearchInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchInsightsAsyncHelper( request, handler, context ); } );
-}
-
-void DevOpsGuruClient::SearchInsightsAsyncHelper(const SearchInsightsRequest& request, const SearchInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SearchInsights(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SearchInsights(request), context);
+    } );
 }
 
 SearchOrganizationInsightsOutcome DevOpsGuruClient::SearchOrganizationInsights(const SearchOrganizationInsightsRequest& request) const
@@ -840,12 +788,10 @@ SearchOrganizationInsightsOutcomeCallable DevOpsGuruClient::SearchOrganizationIn
 
 void DevOpsGuruClient::SearchOrganizationInsightsAsync(const SearchOrganizationInsightsRequest& request, const SearchOrganizationInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchOrganizationInsightsAsyncHelper( request, handler, context ); } );
-}
-
-void DevOpsGuruClient::SearchOrganizationInsightsAsyncHelper(const SearchOrganizationInsightsRequest& request, const SearchOrganizationInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SearchOrganizationInsights(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SearchOrganizationInsights(request), context);
+    } );
 }
 
 StartCostEstimationOutcome DevOpsGuruClient::StartCostEstimation(const StartCostEstimationRequest& request) const
@@ -865,12 +811,10 @@ StartCostEstimationOutcomeCallable DevOpsGuruClient::StartCostEstimationCallable
 
 void DevOpsGuruClient::StartCostEstimationAsync(const StartCostEstimationRequest& request, const StartCostEstimationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartCostEstimationAsyncHelper( request, handler, context ); } );
-}
-
-void DevOpsGuruClient::StartCostEstimationAsyncHelper(const StartCostEstimationRequest& request, const StartCostEstimationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartCostEstimation(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartCostEstimation(request), context);
+    } );
 }
 
 UpdateEventSourcesConfigOutcome DevOpsGuruClient::UpdateEventSourcesConfig(const UpdateEventSourcesConfigRequest& request) const
@@ -890,12 +834,10 @@ UpdateEventSourcesConfigOutcomeCallable DevOpsGuruClient::UpdateEventSourcesConf
 
 void DevOpsGuruClient::UpdateEventSourcesConfigAsync(const UpdateEventSourcesConfigRequest& request, const UpdateEventSourcesConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateEventSourcesConfigAsyncHelper( request, handler, context ); } );
-}
-
-void DevOpsGuruClient::UpdateEventSourcesConfigAsyncHelper(const UpdateEventSourcesConfigRequest& request, const UpdateEventSourcesConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateEventSourcesConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateEventSourcesConfig(request), context);
+    } );
 }
 
 UpdateResourceCollectionOutcome DevOpsGuruClient::UpdateResourceCollection(const UpdateResourceCollectionRequest& request) const
@@ -915,12 +857,10 @@ UpdateResourceCollectionOutcomeCallable DevOpsGuruClient::UpdateResourceCollecti
 
 void DevOpsGuruClient::UpdateResourceCollectionAsync(const UpdateResourceCollectionRequest& request, const UpdateResourceCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateResourceCollectionAsyncHelper( request, handler, context ); } );
-}
-
-void DevOpsGuruClient::UpdateResourceCollectionAsyncHelper(const UpdateResourceCollectionRequest& request, const UpdateResourceCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateResourceCollection(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateResourceCollection(request), context);
+    } );
 }
 
 UpdateServiceIntegrationOutcome DevOpsGuruClient::UpdateServiceIntegration(const UpdateServiceIntegrationRequest& request) const
@@ -940,11 +880,9 @@ UpdateServiceIntegrationOutcomeCallable DevOpsGuruClient::UpdateServiceIntegrati
 
 void DevOpsGuruClient::UpdateServiceIntegrationAsync(const UpdateServiceIntegrationRequest& request, const UpdateServiceIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateServiceIntegrationAsyncHelper( request, handler, context ); } );
-}
-
-void DevOpsGuruClient::UpdateServiceIntegrationAsyncHelper(const UpdateServiceIntegrationRequest& request, const UpdateServiceIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateServiceIntegration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateServiceIntegration(request), context);
+    } );
 }
 

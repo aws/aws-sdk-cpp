@@ -129,12 +129,10 @@ CreateMediaCapturePipelineOutcomeCallable ChimeSDKMediaPipelinesClient::CreateMe
 
 void ChimeSDKMediaPipelinesClient::CreateMediaCapturePipelineAsync(const CreateMediaCapturePipelineRequest& request, const CreateMediaCapturePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateMediaCapturePipelineAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMediaPipelinesClient::CreateMediaCapturePipelineAsyncHelper(const CreateMediaCapturePipelineRequest& request, const CreateMediaCapturePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateMediaCapturePipeline(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateMediaCapturePipeline(request), context);
+    } );
 }
 
 CreateMediaConcatenationPipelineOutcome ChimeSDKMediaPipelinesClient::CreateMediaConcatenationPipeline(const CreateMediaConcatenationPipelineRequest& request) const
@@ -154,12 +152,10 @@ CreateMediaConcatenationPipelineOutcomeCallable ChimeSDKMediaPipelinesClient::Cr
 
 void ChimeSDKMediaPipelinesClient::CreateMediaConcatenationPipelineAsync(const CreateMediaConcatenationPipelineRequest& request, const CreateMediaConcatenationPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateMediaConcatenationPipelineAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMediaPipelinesClient::CreateMediaConcatenationPipelineAsyncHelper(const CreateMediaConcatenationPipelineRequest& request, const CreateMediaConcatenationPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateMediaConcatenationPipeline(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateMediaConcatenationPipeline(request), context);
+    } );
 }
 
 CreateMediaLiveConnectorPipelineOutcome ChimeSDKMediaPipelinesClient::CreateMediaLiveConnectorPipeline(const CreateMediaLiveConnectorPipelineRequest& request) const
@@ -179,12 +175,10 @@ CreateMediaLiveConnectorPipelineOutcomeCallable ChimeSDKMediaPipelinesClient::Cr
 
 void ChimeSDKMediaPipelinesClient::CreateMediaLiveConnectorPipelineAsync(const CreateMediaLiveConnectorPipelineRequest& request, const CreateMediaLiveConnectorPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateMediaLiveConnectorPipelineAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMediaPipelinesClient::CreateMediaLiveConnectorPipelineAsyncHelper(const CreateMediaLiveConnectorPipelineRequest& request, const CreateMediaLiveConnectorPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateMediaLiveConnectorPipeline(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateMediaLiveConnectorPipeline(request), context);
+    } );
 }
 
 DeleteMediaCapturePipelineOutcome ChimeSDKMediaPipelinesClient::DeleteMediaCapturePipeline(const DeleteMediaCapturePipelineRequest& request) const
@@ -210,12 +204,10 @@ DeleteMediaCapturePipelineOutcomeCallable ChimeSDKMediaPipelinesClient::DeleteMe
 
 void ChimeSDKMediaPipelinesClient::DeleteMediaCapturePipelineAsync(const DeleteMediaCapturePipelineRequest& request, const DeleteMediaCapturePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteMediaCapturePipelineAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMediaPipelinesClient::DeleteMediaCapturePipelineAsyncHelper(const DeleteMediaCapturePipelineRequest& request, const DeleteMediaCapturePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteMediaCapturePipeline(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteMediaCapturePipeline(request), context);
+    } );
 }
 
 DeleteMediaPipelineOutcome ChimeSDKMediaPipelinesClient::DeleteMediaPipeline(const DeleteMediaPipelineRequest& request) const
@@ -241,12 +233,10 @@ DeleteMediaPipelineOutcomeCallable ChimeSDKMediaPipelinesClient::DeleteMediaPipe
 
 void ChimeSDKMediaPipelinesClient::DeleteMediaPipelineAsync(const DeleteMediaPipelineRequest& request, const DeleteMediaPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteMediaPipelineAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMediaPipelinesClient::DeleteMediaPipelineAsyncHelper(const DeleteMediaPipelineRequest& request, const DeleteMediaPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteMediaPipeline(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteMediaPipeline(request), context);
+    } );
 }
 
 GetMediaCapturePipelineOutcome ChimeSDKMediaPipelinesClient::GetMediaCapturePipeline(const GetMediaCapturePipelineRequest& request) const
@@ -272,12 +262,10 @@ GetMediaCapturePipelineOutcomeCallable ChimeSDKMediaPipelinesClient::GetMediaCap
 
 void ChimeSDKMediaPipelinesClient::GetMediaCapturePipelineAsync(const GetMediaCapturePipelineRequest& request, const GetMediaCapturePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMediaCapturePipelineAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMediaPipelinesClient::GetMediaCapturePipelineAsyncHelper(const GetMediaCapturePipelineRequest& request, const GetMediaCapturePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetMediaCapturePipeline(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetMediaCapturePipeline(request), context);
+    } );
 }
 
 GetMediaPipelineOutcome ChimeSDKMediaPipelinesClient::GetMediaPipeline(const GetMediaPipelineRequest& request) const
@@ -303,12 +291,10 @@ GetMediaPipelineOutcomeCallable ChimeSDKMediaPipelinesClient::GetMediaPipelineCa
 
 void ChimeSDKMediaPipelinesClient::GetMediaPipelineAsync(const GetMediaPipelineRequest& request, const GetMediaPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMediaPipelineAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMediaPipelinesClient::GetMediaPipelineAsyncHelper(const GetMediaPipelineRequest& request, const GetMediaPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetMediaPipeline(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetMediaPipeline(request), context);
+    } );
 }
 
 ListMediaCapturePipelinesOutcome ChimeSDKMediaPipelinesClient::ListMediaCapturePipelines(const ListMediaCapturePipelinesRequest& request) const
@@ -328,12 +314,10 @@ ListMediaCapturePipelinesOutcomeCallable ChimeSDKMediaPipelinesClient::ListMedia
 
 void ChimeSDKMediaPipelinesClient::ListMediaCapturePipelinesAsync(const ListMediaCapturePipelinesRequest& request, const ListMediaCapturePipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMediaCapturePipelinesAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMediaPipelinesClient::ListMediaCapturePipelinesAsyncHelper(const ListMediaCapturePipelinesRequest& request, const ListMediaCapturePipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListMediaCapturePipelines(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListMediaCapturePipelines(request), context);
+    } );
 }
 
 ListMediaPipelinesOutcome ChimeSDKMediaPipelinesClient::ListMediaPipelines(const ListMediaPipelinesRequest& request) const
@@ -353,12 +337,10 @@ ListMediaPipelinesOutcomeCallable ChimeSDKMediaPipelinesClient::ListMediaPipelin
 
 void ChimeSDKMediaPipelinesClient::ListMediaPipelinesAsync(const ListMediaPipelinesRequest& request, const ListMediaPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMediaPipelinesAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMediaPipelinesClient::ListMediaPipelinesAsyncHelper(const ListMediaPipelinesRequest& request, const ListMediaPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListMediaPipelines(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListMediaPipelines(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome ChimeSDKMediaPipelinesClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -383,12 +365,10 @@ ListTagsForResourceOutcomeCallable ChimeSDKMediaPipelinesClient::ListTagsForReso
 
 void ChimeSDKMediaPipelinesClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMediaPipelinesClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 TagResourceOutcome ChimeSDKMediaPipelinesClient::TagResource(const TagResourceRequest& request) const
@@ -411,12 +391,10 @@ TagResourceOutcomeCallable ChimeSDKMediaPipelinesClient::TagResourceCallable(con
 
 void ChimeSDKMediaPipelinesClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMediaPipelinesClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome ChimeSDKMediaPipelinesClient::UntagResource(const UntagResourceRequest& request) const
@@ -439,11 +417,9 @@ UntagResourceOutcomeCallable ChimeSDKMediaPipelinesClient::UntagResourceCallable
 
 void ChimeSDKMediaPipelinesClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMediaPipelinesClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 

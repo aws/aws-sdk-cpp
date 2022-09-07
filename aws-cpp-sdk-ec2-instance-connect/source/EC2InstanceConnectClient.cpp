@@ -118,12 +118,10 @@ SendSSHPublicKeyOutcomeCallable EC2InstanceConnectClient::SendSSHPublicKeyCallab
 
 void EC2InstanceConnectClient::SendSSHPublicKeyAsync(const SendSSHPublicKeyRequest& request, const SendSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendSSHPublicKeyAsyncHelper( request, handler, context ); } );
-}
-
-void EC2InstanceConnectClient::SendSSHPublicKeyAsyncHelper(const SendSSHPublicKeyRequest& request, const SendSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SendSSHPublicKey(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SendSSHPublicKey(request), context);
+    } );
 }
 
 SendSerialConsoleSSHPublicKeyOutcome EC2InstanceConnectClient::SendSerialConsoleSSHPublicKey(const SendSerialConsoleSSHPublicKeyRequest& request) const
@@ -142,11 +140,9 @@ SendSerialConsoleSSHPublicKeyOutcomeCallable EC2InstanceConnectClient::SendSeria
 
 void EC2InstanceConnectClient::SendSerialConsoleSSHPublicKeyAsync(const SendSerialConsoleSSHPublicKeyRequest& request, const SendSerialConsoleSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendSerialConsoleSSHPublicKeyAsyncHelper( request, handler, context ); } );
-}
-
-void EC2InstanceConnectClient::SendSerialConsoleSSHPublicKeyAsyncHelper(const SendSerialConsoleSSHPublicKeyRequest& request, const SendSerialConsoleSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SendSerialConsoleSSHPublicKey(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SendSerialConsoleSSHPublicKey(request), context);
+    } );
 }
 

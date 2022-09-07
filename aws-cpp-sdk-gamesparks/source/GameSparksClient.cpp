@@ -150,12 +150,10 @@ CreateGameOutcomeCallable GameSparksClient::CreateGameCallable(const CreateGameR
 
 void GameSparksClient::CreateGameAsync(const CreateGameRequest& request, const CreateGameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateGameAsyncHelper( request, handler, context ); } );
-}
-
-void GameSparksClient::CreateGameAsyncHelper(const CreateGameRequest& request, const CreateGameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateGame(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateGame(request), context);
+    } );
 }
 
 CreateSnapshotOutcome GameSparksClient::CreateSnapshot(const CreateSnapshotRequest& request) const
@@ -182,12 +180,10 @@ CreateSnapshotOutcomeCallable GameSparksClient::CreateSnapshotCallable(const Cre
 
 void GameSparksClient::CreateSnapshotAsync(const CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSnapshotAsyncHelper( request, handler, context ); } );
-}
-
-void GameSparksClient::CreateSnapshotAsyncHelper(const CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateSnapshot(request), context);
+    } );
 }
 
 CreateStageOutcome GameSparksClient::CreateStage(const CreateStageRequest& request) const
@@ -214,12 +210,10 @@ CreateStageOutcomeCallable GameSparksClient::CreateStageCallable(const CreateSta
 
 void GameSparksClient::CreateStageAsync(const CreateStageRequest& request, const CreateStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateStageAsyncHelper( request, handler, context ); } );
-}
-
-void GameSparksClient::CreateStageAsyncHelper(const CreateStageRequest& request, const CreateStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateStage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateStage(request), context);
+    } );
 }
 
 DeleteGameOutcome GameSparksClient::DeleteGame(const DeleteGameRequest& request) const
@@ -245,12 +239,10 @@ DeleteGameOutcomeCallable GameSparksClient::DeleteGameCallable(const DeleteGameR
 
 void GameSparksClient::DeleteGameAsync(const DeleteGameRequest& request, const DeleteGameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteGameAsyncHelper( request, handler, context ); } );
-}
-
-void GameSparksClient::DeleteGameAsyncHelper(const DeleteGameRequest& request, const DeleteGameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteGame(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteGame(request), context);
+    } );
 }
 
 DeleteStageOutcome GameSparksClient::DeleteStage(const DeleteStageRequest& request) const
@@ -283,12 +275,10 @@ DeleteStageOutcomeCallable GameSparksClient::DeleteStageCallable(const DeleteSta
 
 void GameSparksClient::DeleteStageAsync(const DeleteStageRequest& request, const DeleteStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteStageAsyncHelper( request, handler, context ); } );
-}
-
-void GameSparksClient::DeleteStageAsyncHelper(const DeleteStageRequest& request, const DeleteStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteStage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteStage(request), context);
+    } );
 }
 
 DisconnectPlayerOutcome GameSparksClient::DisconnectPlayer(const DisconnectPlayerRequest& request) const
@@ -329,12 +319,10 @@ DisconnectPlayerOutcomeCallable GameSparksClient::DisconnectPlayerCallable(const
 
 void GameSparksClient::DisconnectPlayerAsync(const DisconnectPlayerRequest& request, const DisconnectPlayerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisconnectPlayerAsyncHelper( request, handler, context ); } );
-}
-
-void GameSparksClient::DisconnectPlayerAsyncHelper(const DisconnectPlayerRequest& request, const DisconnectPlayerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisconnectPlayer(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisconnectPlayer(request), context);
+    } );
 }
 
 ExportSnapshotOutcome GameSparksClient::ExportSnapshot(const ExportSnapshotRequest& request) const
@@ -368,12 +356,10 @@ ExportSnapshotOutcomeCallable GameSparksClient::ExportSnapshotCallable(const Exp
 
 void GameSparksClient::ExportSnapshotAsync(const ExportSnapshotRequest& request, const ExportSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExportSnapshotAsyncHelper( request, handler, context ); } );
-}
-
-void GameSparksClient::ExportSnapshotAsyncHelper(const ExportSnapshotRequest& request, const ExportSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ExportSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ExportSnapshot(request), context);
+    } );
 }
 
 GetExtensionOutcome GameSparksClient::GetExtension(const GetExtensionRequest& request) const
@@ -405,12 +391,10 @@ GetExtensionOutcomeCallable GameSparksClient::GetExtensionCallable(const GetExte
 
 void GameSparksClient::GetExtensionAsync(const GetExtensionRequest& request, const GetExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetExtensionAsyncHelper( request, handler, context ); } );
-}
-
-void GameSparksClient::GetExtensionAsyncHelper(const GetExtensionRequest& request, const GetExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetExtension(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetExtension(request), context);
+    } );
 }
 
 GetExtensionVersionOutcome GameSparksClient::GetExtensionVersion(const GetExtensionVersionRequest& request) const
@@ -449,12 +433,10 @@ GetExtensionVersionOutcomeCallable GameSparksClient::GetExtensionVersionCallable
 
 void GameSparksClient::GetExtensionVersionAsync(const GetExtensionVersionRequest& request, const GetExtensionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetExtensionVersionAsyncHelper( request, handler, context ); } );
-}
-
-void GameSparksClient::GetExtensionVersionAsyncHelper(const GetExtensionVersionRequest& request, const GetExtensionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetExtensionVersion(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetExtensionVersion(request), context);
+    } );
 }
 
 GetGameOutcome GameSparksClient::GetGame(const GetGameRequest& request) const
@@ -480,12 +462,10 @@ GetGameOutcomeCallable GameSparksClient::GetGameCallable(const GetGameRequest& r
 
 void GameSparksClient::GetGameAsync(const GetGameRequest& request, const GetGameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetGameAsyncHelper( request, handler, context ); } );
-}
-
-void GameSparksClient::GetGameAsyncHelper(const GetGameRequest& request, const GetGameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetGame(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetGame(request), context);
+    } );
 }
 
 GetGameConfigurationOutcome GameSparksClient::GetGameConfiguration(const GetGameConfigurationRequest& request) const
@@ -512,12 +492,10 @@ GetGameConfigurationOutcomeCallable GameSparksClient::GetGameConfigurationCallab
 
 void GameSparksClient::GetGameConfigurationAsync(const GetGameConfigurationRequest& request, const GetGameConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetGameConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void GameSparksClient::GetGameConfigurationAsyncHelper(const GetGameConfigurationRequest& request, const GetGameConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetGameConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetGameConfiguration(request), context);
+    } );
 }
 
 GetGeneratedCodeJobOutcome GameSparksClient::GetGeneratedCodeJob(const GetGeneratedCodeJobRequest& request) const
@@ -557,12 +535,10 @@ GetGeneratedCodeJobOutcomeCallable GameSparksClient::GetGeneratedCodeJobCallable
 
 void GameSparksClient::GetGeneratedCodeJobAsync(const GetGeneratedCodeJobRequest& request, const GetGeneratedCodeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetGeneratedCodeJobAsyncHelper( request, handler, context ); } );
-}
-
-void GameSparksClient::GetGeneratedCodeJobAsyncHelper(const GetGeneratedCodeJobRequest& request, const GetGeneratedCodeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetGeneratedCodeJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetGeneratedCodeJob(request), context);
+    } );
 }
 
 GetPlayerConnectionStatusOutcome GameSparksClient::GetPlayerConnectionStatus(const GetPlayerConnectionStatusRequest& request) const
@@ -603,12 +579,10 @@ GetPlayerConnectionStatusOutcomeCallable GameSparksClient::GetPlayerConnectionSt
 
 void GameSparksClient::GetPlayerConnectionStatusAsync(const GetPlayerConnectionStatusRequest& request, const GetPlayerConnectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPlayerConnectionStatusAsyncHelper( request, handler, context ); } );
-}
-
-void GameSparksClient::GetPlayerConnectionStatusAsyncHelper(const GetPlayerConnectionStatusRequest& request, const GetPlayerConnectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetPlayerConnectionStatus(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetPlayerConnectionStatus(request), context);
+    } );
 }
 
 GetSnapshotOutcome GameSparksClient::GetSnapshot(const GetSnapshotRequest& request) const
@@ -641,12 +615,10 @@ GetSnapshotOutcomeCallable GameSparksClient::GetSnapshotCallable(const GetSnapsh
 
 void GameSparksClient::GetSnapshotAsync(const GetSnapshotRequest& request, const GetSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSnapshotAsyncHelper( request, handler, context ); } );
-}
-
-void GameSparksClient::GetSnapshotAsyncHelper(const GetSnapshotRequest& request, const GetSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetSnapshot(request), context);
+    } );
 }
 
 GetStageOutcome GameSparksClient::GetStage(const GetStageRequest& request) const
@@ -679,12 +651,10 @@ GetStageOutcomeCallable GameSparksClient::GetStageCallable(const GetStageRequest
 
 void GameSparksClient::GetStageAsync(const GetStageRequest& request, const GetStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetStageAsyncHelper( request, handler, context ); } );
-}
-
-void GameSparksClient::GetStageAsyncHelper(const GetStageRequest& request, const GetStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetStage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetStage(request), context);
+    } );
 }
 
 GetStageDeploymentOutcome GameSparksClient::GetStageDeployment(const GetStageDeploymentRequest& request) const
@@ -718,12 +688,10 @@ GetStageDeploymentOutcomeCallable GameSparksClient::GetStageDeploymentCallable(c
 
 void GameSparksClient::GetStageDeploymentAsync(const GetStageDeploymentRequest& request, const GetStageDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetStageDeploymentAsyncHelper( request, handler, context ); } );
-}
-
-void GameSparksClient::GetStageDeploymentAsyncHelper(const GetStageDeploymentRequest& request, const GetStageDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetStageDeployment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetStageDeployment(request), context);
+    } );
 }
 
 ImportGameConfigurationOutcome GameSparksClient::ImportGameConfiguration(const ImportGameConfigurationRequest& request) const
@@ -750,12 +718,10 @@ ImportGameConfigurationOutcomeCallable GameSparksClient::ImportGameConfiguration
 
 void GameSparksClient::ImportGameConfigurationAsync(const ImportGameConfigurationRequest& request, const ImportGameConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportGameConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void GameSparksClient::ImportGameConfigurationAsyncHelper(const ImportGameConfigurationRequest& request, const ImportGameConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ImportGameConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ImportGameConfiguration(request), context);
+    } );
 }
 
 ListExtensionVersionsOutcome GameSparksClient::ListExtensionVersions(const ListExtensionVersionsRequest& request) const
@@ -788,12 +754,10 @@ ListExtensionVersionsOutcomeCallable GameSparksClient::ListExtensionVersionsCall
 
 void GameSparksClient::ListExtensionVersionsAsync(const ListExtensionVersionsRequest& request, const ListExtensionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListExtensionVersionsAsyncHelper( request, handler, context ); } );
-}
-
-void GameSparksClient::ListExtensionVersionsAsyncHelper(const ListExtensionVersionsRequest& request, const ListExtensionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListExtensionVersions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListExtensionVersions(request), context);
+    } );
 }
 
 ListExtensionsOutcome GameSparksClient::ListExtensions(const ListExtensionsRequest& request) const
@@ -813,12 +777,10 @@ ListExtensionsOutcomeCallable GameSparksClient::ListExtensionsCallable(const Lis
 
 void GameSparksClient::ListExtensionsAsync(const ListExtensionsRequest& request, const ListExtensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListExtensionsAsyncHelper( request, handler, context ); } );
-}
-
-void GameSparksClient::ListExtensionsAsyncHelper(const ListExtensionsRequest& request, const ListExtensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListExtensions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListExtensions(request), context);
+    } );
 }
 
 ListGamesOutcome GameSparksClient::ListGames(const ListGamesRequest& request) const
@@ -838,12 +800,10 @@ ListGamesOutcomeCallable GameSparksClient::ListGamesCallable(const ListGamesRequ
 
 void GameSparksClient::ListGamesAsync(const ListGamesRequest& request, const ListGamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGamesAsyncHelper( request, handler, context ); } );
-}
-
-void GameSparksClient::ListGamesAsyncHelper(const ListGamesRequest& request, const ListGamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListGames(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListGames(request), context);
+    } );
 }
 
 ListGeneratedCodeJobsOutcome GameSparksClient::ListGeneratedCodeJobs(const ListGeneratedCodeJobsRequest& request) const
@@ -877,12 +837,10 @@ ListGeneratedCodeJobsOutcomeCallable GameSparksClient::ListGeneratedCodeJobsCall
 
 void GameSparksClient::ListGeneratedCodeJobsAsync(const ListGeneratedCodeJobsRequest& request, const ListGeneratedCodeJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGeneratedCodeJobsAsyncHelper( request, handler, context ); } );
-}
-
-void GameSparksClient::ListGeneratedCodeJobsAsyncHelper(const ListGeneratedCodeJobsRequest& request, const ListGeneratedCodeJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListGeneratedCodeJobs(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListGeneratedCodeJobs(request), context);
+    } );
 }
 
 ListSnapshotsOutcome GameSparksClient::ListSnapshots(const ListSnapshotsRequest& request) const
@@ -909,12 +867,10 @@ ListSnapshotsOutcomeCallable GameSparksClient::ListSnapshotsCallable(const ListS
 
 void GameSparksClient::ListSnapshotsAsync(const ListSnapshotsRequest& request, const ListSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSnapshotsAsyncHelper( request, handler, context ); } );
-}
-
-void GameSparksClient::ListSnapshotsAsyncHelper(const ListSnapshotsRequest& request, const ListSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListSnapshots(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListSnapshots(request), context);
+    } );
 }
 
 ListStageDeploymentsOutcome GameSparksClient::ListStageDeployments(const ListStageDeploymentsRequest& request) const
@@ -948,12 +904,10 @@ ListStageDeploymentsOutcomeCallable GameSparksClient::ListStageDeploymentsCallab
 
 void GameSparksClient::ListStageDeploymentsAsync(const ListStageDeploymentsRequest& request, const ListStageDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListStageDeploymentsAsyncHelper( request, handler, context ); } );
-}
-
-void GameSparksClient::ListStageDeploymentsAsyncHelper(const ListStageDeploymentsRequest& request, const ListStageDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListStageDeployments(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListStageDeployments(request), context);
+    } );
 }
 
 ListStagesOutcome GameSparksClient::ListStages(const ListStagesRequest& request) const
@@ -980,12 +934,10 @@ ListStagesOutcomeCallable GameSparksClient::ListStagesCallable(const ListStagesR
 
 void GameSparksClient::ListStagesAsync(const ListStagesRequest& request, const ListStagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListStagesAsyncHelper( request, handler, context ); } );
-}
-
-void GameSparksClient::ListStagesAsyncHelper(const ListStagesRequest& request, const ListStagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListStages(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListStages(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome GameSparksClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1011,12 +963,10 @@ ListTagsForResourceOutcomeCallable GameSparksClient::ListTagsForResourceCallable
 
 void GameSparksClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void GameSparksClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 StartGeneratedCodeJobOutcome GameSparksClient::StartGeneratedCodeJob(const StartGeneratedCodeJobRequest& request) const
@@ -1050,12 +1000,10 @@ StartGeneratedCodeJobOutcomeCallable GameSparksClient::StartGeneratedCodeJobCall
 
 void GameSparksClient::StartGeneratedCodeJobAsync(const StartGeneratedCodeJobRequest& request, const StartGeneratedCodeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartGeneratedCodeJobAsyncHelper( request, handler, context ); } );
-}
-
-void GameSparksClient::StartGeneratedCodeJobAsyncHelper(const StartGeneratedCodeJobRequest& request, const StartGeneratedCodeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartGeneratedCodeJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartGeneratedCodeJob(request), context);
+    } );
 }
 
 StartStageDeploymentOutcome GameSparksClient::StartStageDeployment(const StartStageDeploymentRequest& request) const
@@ -1089,12 +1037,10 @@ StartStageDeploymentOutcomeCallable GameSparksClient::StartStageDeploymentCallab
 
 void GameSparksClient::StartStageDeploymentAsync(const StartStageDeploymentRequest& request, const StartStageDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartStageDeploymentAsyncHelper( request, handler, context ); } );
-}
-
-void GameSparksClient::StartStageDeploymentAsyncHelper(const StartStageDeploymentRequest& request, const StartStageDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartStageDeployment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartStageDeployment(request), context);
+    } );
 }
 
 TagResourceOutcome GameSparksClient::TagResource(const TagResourceRequest& request) const
@@ -1120,12 +1066,10 @@ TagResourceOutcomeCallable GameSparksClient::TagResourceCallable(const TagResour
 
 void GameSparksClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void GameSparksClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome GameSparksClient::UntagResource(const UntagResourceRequest& request) const
@@ -1156,12 +1100,10 @@ UntagResourceOutcomeCallable GameSparksClient::UntagResourceCallable(const Untag
 
 void GameSparksClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void GameSparksClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateGameOutcome GameSparksClient::UpdateGame(const UpdateGameRequest& request) const
@@ -1187,12 +1129,10 @@ UpdateGameOutcomeCallable GameSparksClient::UpdateGameCallable(const UpdateGameR
 
 void GameSparksClient::UpdateGameAsync(const UpdateGameRequest& request, const UpdateGameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateGameAsyncHelper( request, handler, context ); } );
-}
-
-void GameSparksClient::UpdateGameAsyncHelper(const UpdateGameRequest& request, const UpdateGameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateGame(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateGame(request), context);
+    } );
 }
 
 UpdateGameConfigurationOutcome GameSparksClient::UpdateGameConfiguration(const UpdateGameConfigurationRequest& request) const
@@ -1219,12 +1159,10 @@ UpdateGameConfigurationOutcomeCallable GameSparksClient::UpdateGameConfiguration
 
 void GameSparksClient::UpdateGameConfigurationAsync(const UpdateGameConfigurationRequest& request, const UpdateGameConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateGameConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void GameSparksClient::UpdateGameConfigurationAsyncHelper(const UpdateGameConfigurationRequest& request, const UpdateGameConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateGameConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateGameConfiguration(request), context);
+    } );
 }
 
 UpdateSnapshotOutcome GameSparksClient::UpdateSnapshot(const UpdateSnapshotRequest& request) const
@@ -1257,12 +1195,10 @@ UpdateSnapshotOutcomeCallable GameSparksClient::UpdateSnapshotCallable(const Upd
 
 void GameSparksClient::UpdateSnapshotAsync(const UpdateSnapshotRequest& request, const UpdateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSnapshotAsyncHelper( request, handler, context ); } );
-}
-
-void GameSparksClient::UpdateSnapshotAsyncHelper(const UpdateSnapshotRequest& request, const UpdateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateSnapshot(request), context);
+    } );
 }
 
 UpdateStageOutcome GameSparksClient::UpdateStage(const UpdateStageRequest& request) const
@@ -1295,11 +1231,9 @@ UpdateStageOutcomeCallable GameSparksClient::UpdateStageCallable(const UpdateSta
 
 void GameSparksClient::UpdateStageAsync(const UpdateStageRequest& request, const UpdateStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateStageAsyncHelper( request, handler, context ); } );
-}
-
-void GameSparksClient::UpdateStageAsyncHelper(const UpdateStageRequest& request, const UpdateStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateStage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateStage(request), context);
+    } );
 }
 

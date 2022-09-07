@@ -193,12 +193,10 @@ AssociateApprovalRuleTemplateWithRepositoryOutcomeCallable CodeCommitClient::Ass
 
 void CodeCommitClient::AssociateApprovalRuleTemplateWithRepositoryAsync(const AssociateApprovalRuleTemplateWithRepositoryRequest& request, const AssociateApprovalRuleTemplateWithRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateApprovalRuleTemplateWithRepositoryAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::AssociateApprovalRuleTemplateWithRepositoryAsyncHelper(const AssociateApprovalRuleTemplateWithRepositoryRequest& request, const AssociateApprovalRuleTemplateWithRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateApprovalRuleTemplateWithRepository(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateApprovalRuleTemplateWithRepository(request), context);
+    } );
 }
 
 BatchAssociateApprovalRuleTemplateWithRepositoriesOutcome CodeCommitClient::BatchAssociateApprovalRuleTemplateWithRepositories(const BatchAssociateApprovalRuleTemplateWithRepositoriesRequest& request) const
@@ -217,12 +215,10 @@ BatchAssociateApprovalRuleTemplateWithRepositoriesOutcomeCallable CodeCommitClie
 
 void CodeCommitClient::BatchAssociateApprovalRuleTemplateWithRepositoriesAsync(const BatchAssociateApprovalRuleTemplateWithRepositoriesRequest& request, const BatchAssociateApprovalRuleTemplateWithRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchAssociateApprovalRuleTemplateWithRepositoriesAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::BatchAssociateApprovalRuleTemplateWithRepositoriesAsyncHelper(const BatchAssociateApprovalRuleTemplateWithRepositoriesRequest& request, const BatchAssociateApprovalRuleTemplateWithRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchAssociateApprovalRuleTemplateWithRepositories(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchAssociateApprovalRuleTemplateWithRepositories(request), context);
+    } );
 }
 
 BatchDescribeMergeConflictsOutcome CodeCommitClient::BatchDescribeMergeConflicts(const BatchDescribeMergeConflictsRequest& request) const
@@ -241,12 +237,10 @@ BatchDescribeMergeConflictsOutcomeCallable CodeCommitClient::BatchDescribeMergeC
 
 void CodeCommitClient::BatchDescribeMergeConflictsAsync(const BatchDescribeMergeConflictsRequest& request, const BatchDescribeMergeConflictsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchDescribeMergeConflictsAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::BatchDescribeMergeConflictsAsyncHelper(const BatchDescribeMergeConflictsRequest& request, const BatchDescribeMergeConflictsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchDescribeMergeConflicts(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchDescribeMergeConflicts(request), context);
+    } );
 }
 
 BatchDisassociateApprovalRuleTemplateFromRepositoriesOutcome CodeCommitClient::BatchDisassociateApprovalRuleTemplateFromRepositories(const BatchDisassociateApprovalRuleTemplateFromRepositoriesRequest& request) const
@@ -265,12 +259,10 @@ BatchDisassociateApprovalRuleTemplateFromRepositoriesOutcomeCallable CodeCommitC
 
 void CodeCommitClient::BatchDisassociateApprovalRuleTemplateFromRepositoriesAsync(const BatchDisassociateApprovalRuleTemplateFromRepositoriesRequest& request, const BatchDisassociateApprovalRuleTemplateFromRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchDisassociateApprovalRuleTemplateFromRepositoriesAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::BatchDisassociateApprovalRuleTemplateFromRepositoriesAsyncHelper(const BatchDisassociateApprovalRuleTemplateFromRepositoriesRequest& request, const BatchDisassociateApprovalRuleTemplateFromRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchDisassociateApprovalRuleTemplateFromRepositories(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchDisassociateApprovalRuleTemplateFromRepositories(request), context);
+    } );
 }
 
 BatchGetCommitsOutcome CodeCommitClient::BatchGetCommits(const BatchGetCommitsRequest& request) const
@@ -289,12 +281,10 @@ BatchGetCommitsOutcomeCallable CodeCommitClient::BatchGetCommitsCallable(const B
 
 void CodeCommitClient::BatchGetCommitsAsync(const BatchGetCommitsRequest& request, const BatchGetCommitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetCommitsAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::BatchGetCommitsAsyncHelper(const BatchGetCommitsRequest& request, const BatchGetCommitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchGetCommits(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchGetCommits(request), context);
+    } );
 }
 
 BatchGetRepositoriesOutcome CodeCommitClient::BatchGetRepositories(const BatchGetRepositoriesRequest& request) const
@@ -313,12 +303,10 @@ BatchGetRepositoriesOutcomeCallable CodeCommitClient::BatchGetRepositoriesCallab
 
 void CodeCommitClient::BatchGetRepositoriesAsync(const BatchGetRepositoriesRequest& request, const BatchGetRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetRepositoriesAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::BatchGetRepositoriesAsyncHelper(const BatchGetRepositoriesRequest& request, const BatchGetRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchGetRepositories(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchGetRepositories(request), context);
+    } );
 }
 
 CreateApprovalRuleTemplateOutcome CodeCommitClient::CreateApprovalRuleTemplate(const CreateApprovalRuleTemplateRequest& request) const
@@ -337,12 +325,10 @@ CreateApprovalRuleTemplateOutcomeCallable CodeCommitClient::CreateApprovalRuleTe
 
 void CodeCommitClient::CreateApprovalRuleTemplateAsync(const CreateApprovalRuleTemplateRequest& request, const CreateApprovalRuleTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateApprovalRuleTemplateAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::CreateApprovalRuleTemplateAsyncHelper(const CreateApprovalRuleTemplateRequest& request, const CreateApprovalRuleTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateApprovalRuleTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateApprovalRuleTemplate(request), context);
+    } );
 }
 
 CreateBranchOutcome CodeCommitClient::CreateBranch(const CreateBranchRequest& request) const
@@ -361,12 +347,10 @@ CreateBranchOutcomeCallable CodeCommitClient::CreateBranchCallable(const CreateB
 
 void CodeCommitClient::CreateBranchAsync(const CreateBranchRequest& request, const CreateBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBranchAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::CreateBranchAsyncHelper(const CreateBranchRequest& request, const CreateBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateBranch(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateBranch(request), context);
+    } );
 }
 
 CreateCommitOutcome CodeCommitClient::CreateCommit(const CreateCommitRequest& request) const
@@ -385,12 +369,10 @@ CreateCommitOutcomeCallable CodeCommitClient::CreateCommitCallable(const CreateC
 
 void CodeCommitClient::CreateCommitAsync(const CreateCommitRequest& request, const CreateCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCommitAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::CreateCommitAsyncHelper(const CreateCommitRequest& request, const CreateCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateCommit(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateCommit(request), context);
+    } );
 }
 
 CreatePullRequestOutcome CodeCommitClient::CreatePullRequest(const CreatePullRequestRequest& request) const
@@ -409,12 +391,10 @@ CreatePullRequestOutcomeCallable CodeCommitClient::CreatePullRequestCallable(con
 
 void CodeCommitClient::CreatePullRequestAsync(const CreatePullRequestRequest& request, const CreatePullRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePullRequestAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::CreatePullRequestAsyncHelper(const CreatePullRequestRequest& request, const CreatePullRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreatePullRequest(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreatePullRequest(request), context);
+    } );
 }
 
 CreatePullRequestApprovalRuleOutcome CodeCommitClient::CreatePullRequestApprovalRule(const CreatePullRequestApprovalRuleRequest& request) const
@@ -433,12 +413,10 @@ CreatePullRequestApprovalRuleOutcomeCallable CodeCommitClient::CreatePullRequest
 
 void CodeCommitClient::CreatePullRequestApprovalRuleAsync(const CreatePullRequestApprovalRuleRequest& request, const CreatePullRequestApprovalRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePullRequestApprovalRuleAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::CreatePullRequestApprovalRuleAsyncHelper(const CreatePullRequestApprovalRuleRequest& request, const CreatePullRequestApprovalRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreatePullRequestApprovalRule(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreatePullRequestApprovalRule(request), context);
+    } );
 }
 
 CreateRepositoryOutcome CodeCommitClient::CreateRepository(const CreateRepositoryRequest& request) const
@@ -457,12 +435,10 @@ CreateRepositoryOutcomeCallable CodeCommitClient::CreateRepositoryCallable(const
 
 void CodeCommitClient::CreateRepositoryAsync(const CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRepositoryAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::CreateRepositoryAsyncHelper(const CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateRepository(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateRepository(request), context);
+    } );
 }
 
 CreateUnreferencedMergeCommitOutcome CodeCommitClient::CreateUnreferencedMergeCommit(const CreateUnreferencedMergeCommitRequest& request) const
@@ -481,12 +457,10 @@ CreateUnreferencedMergeCommitOutcomeCallable CodeCommitClient::CreateUnreference
 
 void CodeCommitClient::CreateUnreferencedMergeCommitAsync(const CreateUnreferencedMergeCommitRequest& request, const CreateUnreferencedMergeCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateUnreferencedMergeCommitAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::CreateUnreferencedMergeCommitAsyncHelper(const CreateUnreferencedMergeCommitRequest& request, const CreateUnreferencedMergeCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateUnreferencedMergeCommit(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateUnreferencedMergeCommit(request), context);
+    } );
 }
 
 DeleteApprovalRuleTemplateOutcome CodeCommitClient::DeleteApprovalRuleTemplate(const DeleteApprovalRuleTemplateRequest& request) const
@@ -505,12 +479,10 @@ DeleteApprovalRuleTemplateOutcomeCallable CodeCommitClient::DeleteApprovalRuleTe
 
 void CodeCommitClient::DeleteApprovalRuleTemplateAsync(const DeleteApprovalRuleTemplateRequest& request, const DeleteApprovalRuleTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteApprovalRuleTemplateAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::DeleteApprovalRuleTemplateAsyncHelper(const DeleteApprovalRuleTemplateRequest& request, const DeleteApprovalRuleTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteApprovalRuleTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteApprovalRuleTemplate(request), context);
+    } );
 }
 
 DeleteBranchOutcome CodeCommitClient::DeleteBranch(const DeleteBranchRequest& request) const
@@ -529,12 +501,10 @@ DeleteBranchOutcomeCallable CodeCommitClient::DeleteBranchCallable(const DeleteB
 
 void CodeCommitClient::DeleteBranchAsync(const DeleteBranchRequest& request, const DeleteBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBranchAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::DeleteBranchAsyncHelper(const DeleteBranchRequest& request, const DeleteBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteBranch(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteBranch(request), context);
+    } );
 }
 
 DeleteCommentContentOutcome CodeCommitClient::DeleteCommentContent(const DeleteCommentContentRequest& request) const
@@ -553,12 +523,10 @@ DeleteCommentContentOutcomeCallable CodeCommitClient::DeleteCommentContentCallab
 
 void CodeCommitClient::DeleteCommentContentAsync(const DeleteCommentContentRequest& request, const DeleteCommentContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCommentContentAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::DeleteCommentContentAsyncHelper(const DeleteCommentContentRequest& request, const DeleteCommentContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteCommentContent(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteCommentContent(request), context);
+    } );
 }
 
 DeleteFileOutcome CodeCommitClient::DeleteFile(const DeleteFileRequest& request) const
@@ -577,12 +545,10 @@ DeleteFileOutcomeCallable CodeCommitClient::DeleteFileCallable(const DeleteFileR
 
 void CodeCommitClient::DeleteFileAsync(const DeleteFileRequest& request, const DeleteFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFileAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::DeleteFileAsyncHelper(const DeleteFileRequest& request, const DeleteFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteFile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteFile(request), context);
+    } );
 }
 
 DeletePullRequestApprovalRuleOutcome CodeCommitClient::DeletePullRequestApprovalRule(const DeletePullRequestApprovalRuleRequest& request) const
@@ -601,12 +567,10 @@ DeletePullRequestApprovalRuleOutcomeCallable CodeCommitClient::DeletePullRequest
 
 void CodeCommitClient::DeletePullRequestApprovalRuleAsync(const DeletePullRequestApprovalRuleRequest& request, const DeletePullRequestApprovalRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePullRequestApprovalRuleAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::DeletePullRequestApprovalRuleAsyncHelper(const DeletePullRequestApprovalRuleRequest& request, const DeletePullRequestApprovalRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeletePullRequestApprovalRule(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeletePullRequestApprovalRule(request), context);
+    } );
 }
 
 DeleteRepositoryOutcome CodeCommitClient::DeleteRepository(const DeleteRepositoryRequest& request) const
@@ -625,12 +589,10 @@ DeleteRepositoryOutcomeCallable CodeCommitClient::DeleteRepositoryCallable(const
 
 void CodeCommitClient::DeleteRepositoryAsync(const DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRepositoryAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::DeleteRepositoryAsyncHelper(const DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteRepository(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteRepository(request), context);
+    } );
 }
 
 DescribeMergeConflictsOutcome CodeCommitClient::DescribeMergeConflicts(const DescribeMergeConflictsRequest& request) const
@@ -649,12 +611,10 @@ DescribeMergeConflictsOutcomeCallable CodeCommitClient::DescribeMergeConflictsCa
 
 void CodeCommitClient::DescribeMergeConflictsAsync(const DescribeMergeConflictsRequest& request, const DescribeMergeConflictsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeMergeConflictsAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::DescribeMergeConflictsAsyncHelper(const DescribeMergeConflictsRequest& request, const DescribeMergeConflictsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeMergeConflicts(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeMergeConflicts(request), context);
+    } );
 }
 
 DescribePullRequestEventsOutcome CodeCommitClient::DescribePullRequestEvents(const DescribePullRequestEventsRequest& request) const
@@ -673,12 +633,10 @@ DescribePullRequestEventsOutcomeCallable CodeCommitClient::DescribePullRequestEv
 
 void CodeCommitClient::DescribePullRequestEventsAsync(const DescribePullRequestEventsRequest& request, const DescribePullRequestEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePullRequestEventsAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::DescribePullRequestEventsAsyncHelper(const DescribePullRequestEventsRequest& request, const DescribePullRequestEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribePullRequestEvents(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribePullRequestEvents(request), context);
+    } );
 }
 
 DisassociateApprovalRuleTemplateFromRepositoryOutcome CodeCommitClient::DisassociateApprovalRuleTemplateFromRepository(const DisassociateApprovalRuleTemplateFromRepositoryRequest& request) const
@@ -697,12 +655,10 @@ DisassociateApprovalRuleTemplateFromRepositoryOutcomeCallable CodeCommitClient::
 
 void CodeCommitClient::DisassociateApprovalRuleTemplateFromRepositoryAsync(const DisassociateApprovalRuleTemplateFromRepositoryRequest& request, const DisassociateApprovalRuleTemplateFromRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateApprovalRuleTemplateFromRepositoryAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::DisassociateApprovalRuleTemplateFromRepositoryAsyncHelper(const DisassociateApprovalRuleTemplateFromRepositoryRequest& request, const DisassociateApprovalRuleTemplateFromRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateApprovalRuleTemplateFromRepository(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateApprovalRuleTemplateFromRepository(request), context);
+    } );
 }
 
 EvaluatePullRequestApprovalRulesOutcome CodeCommitClient::EvaluatePullRequestApprovalRules(const EvaluatePullRequestApprovalRulesRequest& request) const
@@ -721,12 +677,10 @@ EvaluatePullRequestApprovalRulesOutcomeCallable CodeCommitClient::EvaluatePullRe
 
 void CodeCommitClient::EvaluatePullRequestApprovalRulesAsync(const EvaluatePullRequestApprovalRulesRequest& request, const EvaluatePullRequestApprovalRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EvaluatePullRequestApprovalRulesAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::EvaluatePullRequestApprovalRulesAsyncHelper(const EvaluatePullRequestApprovalRulesRequest& request, const EvaluatePullRequestApprovalRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, EvaluatePullRequestApprovalRules(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, EvaluatePullRequestApprovalRules(request), context);
+    } );
 }
 
 GetApprovalRuleTemplateOutcome CodeCommitClient::GetApprovalRuleTemplate(const GetApprovalRuleTemplateRequest& request) const
@@ -745,12 +699,10 @@ GetApprovalRuleTemplateOutcomeCallable CodeCommitClient::GetApprovalRuleTemplate
 
 void CodeCommitClient::GetApprovalRuleTemplateAsync(const GetApprovalRuleTemplateRequest& request, const GetApprovalRuleTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetApprovalRuleTemplateAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::GetApprovalRuleTemplateAsyncHelper(const GetApprovalRuleTemplateRequest& request, const GetApprovalRuleTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetApprovalRuleTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetApprovalRuleTemplate(request), context);
+    } );
 }
 
 GetBlobOutcome CodeCommitClient::GetBlob(const GetBlobRequest& request) const
@@ -769,12 +721,10 @@ GetBlobOutcomeCallable CodeCommitClient::GetBlobCallable(const GetBlobRequest& r
 
 void CodeCommitClient::GetBlobAsync(const GetBlobRequest& request, const GetBlobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBlobAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::GetBlobAsyncHelper(const GetBlobRequest& request, const GetBlobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetBlob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetBlob(request), context);
+    } );
 }
 
 GetBranchOutcome CodeCommitClient::GetBranch(const GetBranchRequest& request) const
@@ -793,12 +743,10 @@ GetBranchOutcomeCallable CodeCommitClient::GetBranchCallable(const GetBranchRequ
 
 void CodeCommitClient::GetBranchAsync(const GetBranchRequest& request, const GetBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBranchAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::GetBranchAsyncHelper(const GetBranchRequest& request, const GetBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetBranch(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetBranch(request), context);
+    } );
 }
 
 GetCommentOutcome CodeCommitClient::GetComment(const GetCommentRequest& request) const
@@ -817,12 +765,10 @@ GetCommentOutcomeCallable CodeCommitClient::GetCommentCallable(const GetCommentR
 
 void CodeCommitClient::GetCommentAsync(const GetCommentRequest& request, const GetCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCommentAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::GetCommentAsyncHelper(const GetCommentRequest& request, const GetCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetComment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetComment(request), context);
+    } );
 }
 
 GetCommentReactionsOutcome CodeCommitClient::GetCommentReactions(const GetCommentReactionsRequest& request) const
@@ -841,12 +787,10 @@ GetCommentReactionsOutcomeCallable CodeCommitClient::GetCommentReactionsCallable
 
 void CodeCommitClient::GetCommentReactionsAsync(const GetCommentReactionsRequest& request, const GetCommentReactionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCommentReactionsAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::GetCommentReactionsAsyncHelper(const GetCommentReactionsRequest& request, const GetCommentReactionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetCommentReactions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetCommentReactions(request), context);
+    } );
 }
 
 GetCommentsForComparedCommitOutcome CodeCommitClient::GetCommentsForComparedCommit(const GetCommentsForComparedCommitRequest& request) const
@@ -865,12 +809,10 @@ GetCommentsForComparedCommitOutcomeCallable CodeCommitClient::GetCommentsForComp
 
 void CodeCommitClient::GetCommentsForComparedCommitAsync(const GetCommentsForComparedCommitRequest& request, const GetCommentsForComparedCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCommentsForComparedCommitAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::GetCommentsForComparedCommitAsyncHelper(const GetCommentsForComparedCommitRequest& request, const GetCommentsForComparedCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetCommentsForComparedCommit(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetCommentsForComparedCommit(request), context);
+    } );
 }
 
 GetCommentsForPullRequestOutcome CodeCommitClient::GetCommentsForPullRequest(const GetCommentsForPullRequestRequest& request) const
@@ -889,12 +831,10 @@ GetCommentsForPullRequestOutcomeCallable CodeCommitClient::GetCommentsForPullReq
 
 void CodeCommitClient::GetCommentsForPullRequestAsync(const GetCommentsForPullRequestRequest& request, const GetCommentsForPullRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCommentsForPullRequestAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::GetCommentsForPullRequestAsyncHelper(const GetCommentsForPullRequestRequest& request, const GetCommentsForPullRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetCommentsForPullRequest(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetCommentsForPullRequest(request), context);
+    } );
 }
 
 GetCommitOutcome CodeCommitClient::GetCommit(const GetCommitRequest& request) const
@@ -913,12 +853,10 @@ GetCommitOutcomeCallable CodeCommitClient::GetCommitCallable(const GetCommitRequ
 
 void CodeCommitClient::GetCommitAsync(const GetCommitRequest& request, const GetCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCommitAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::GetCommitAsyncHelper(const GetCommitRequest& request, const GetCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetCommit(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetCommit(request), context);
+    } );
 }
 
 GetDifferencesOutcome CodeCommitClient::GetDifferences(const GetDifferencesRequest& request) const
@@ -937,12 +875,10 @@ GetDifferencesOutcomeCallable CodeCommitClient::GetDifferencesCallable(const Get
 
 void CodeCommitClient::GetDifferencesAsync(const GetDifferencesRequest& request, const GetDifferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDifferencesAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::GetDifferencesAsyncHelper(const GetDifferencesRequest& request, const GetDifferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDifferences(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDifferences(request), context);
+    } );
 }
 
 GetFileOutcome CodeCommitClient::GetFile(const GetFileRequest& request) const
@@ -961,12 +897,10 @@ GetFileOutcomeCallable CodeCommitClient::GetFileCallable(const GetFileRequest& r
 
 void CodeCommitClient::GetFileAsync(const GetFileRequest& request, const GetFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFileAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::GetFileAsyncHelper(const GetFileRequest& request, const GetFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetFile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetFile(request), context);
+    } );
 }
 
 GetFolderOutcome CodeCommitClient::GetFolder(const GetFolderRequest& request) const
@@ -985,12 +919,10 @@ GetFolderOutcomeCallable CodeCommitClient::GetFolderCallable(const GetFolderRequ
 
 void CodeCommitClient::GetFolderAsync(const GetFolderRequest& request, const GetFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFolderAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::GetFolderAsyncHelper(const GetFolderRequest& request, const GetFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetFolder(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetFolder(request), context);
+    } );
 }
 
 GetMergeCommitOutcome CodeCommitClient::GetMergeCommit(const GetMergeCommitRequest& request) const
@@ -1009,12 +941,10 @@ GetMergeCommitOutcomeCallable CodeCommitClient::GetMergeCommitCallable(const Get
 
 void CodeCommitClient::GetMergeCommitAsync(const GetMergeCommitRequest& request, const GetMergeCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMergeCommitAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::GetMergeCommitAsyncHelper(const GetMergeCommitRequest& request, const GetMergeCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetMergeCommit(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetMergeCommit(request), context);
+    } );
 }
 
 GetMergeConflictsOutcome CodeCommitClient::GetMergeConflicts(const GetMergeConflictsRequest& request) const
@@ -1033,12 +963,10 @@ GetMergeConflictsOutcomeCallable CodeCommitClient::GetMergeConflictsCallable(con
 
 void CodeCommitClient::GetMergeConflictsAsync(const GetMergeConflictsRequest& request, const GetMergeConflictsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMergeConflictsAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::GetMergeConflictsAsyncHelper(const GetMergeConflictsRequest& request, const GetMergeConflictsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetMergeConflicts(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetMergeConflicts(request), context);
+    } );
 }
 
 GetMergeOptionsOutcome CodeCommitClient::GetMergeOptions(const GetMergeOptionsRequest& request) const
@@ -1057,12 +985,10 @@ GetMergeOptionsOutcomeCallable CodeCommitClient::GetMergeOptionsCallable(const G
 
 void CodeCommitClient::GetMergeOptionsAsync(const GetMergeOptionsRequest& request, const GetMergeOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMergeOptionsAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::GetMergeOptionsAsyncHelper(const GetMergeOptionsRequest& request, const GetMergeOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetMergeOptions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetMergeOptions(request), context);
+    } );
 }
 
 GetPullRequestOutcome CodeCommitClient::GetPullRequest(const GetPullRequestRequest& request) const
@@ -1081,12 +1007,10 @@ GetPullRequestOutcomeCallable CodeCommitClient::GetPullRequestCallable(const Get
 
 void CodeCommitClient::GetPullRequestAsync(const GetPullRequestRequest& request, const GetPullRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPullRequestAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::GetPullRequestAsyncHelper(const GetPullRequestRequest& request, const GetPullRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetPullRequest(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetPullRequest(request), context);
+    } );
 }
 
 GetPullRequestApprovalStatesOutcome CodeCommitClient::GetPullRequestApprovalStates(const GetPullRequestApprovalStatesRequest& request) const
@@ -1105,12 +1029,10 @@ GetPullRequestApprovalStatesOutcomeCallable CodeCommitClient::GetPullRequestAppr
 
 void CodeCommitClient::GetPullRequestApprovalStatesAsync(const GetPullRequestApprovalStatesRequest& request, const GetPullRequestApprovalStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPullRequestApprovalStatesAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::GetPullRequestApprovalStatesAsyncHelper(const GetPullRequestApprovalStatesRequest& request, const GetPullRequestApprovalStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetPullRequestApprovalStates(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetPullRequestApprovalStates(request), context);
+    } );
 }
 
 GetPullRequestOverrideStateOutcome CodeCommitClient::GetPullRequestOverrideState(const GetPullRequestOverrideStateRequest& request) const
@@ -1129,12 +1051,10 @@ GetPullRequestOverrideStateOutcomeCallable CodeCommitClient::GetPullRequestOverr
 
 void CodeCommitClient::GetPullRequestOverrideStateAsync(const GetPullRequestOverrideStateRequest& request, const GetPullRequestOverrideStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPullRequestOverrideStateAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::GetPullRequestOverrideStateAsyncHelper(const GetPullRequestOverrideStateRequest& request, const GetPullRequestOverrideStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetPullRequestOverrideState(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetPullRequestOverrideState(request), context);
+    } );
 }
 
 GetRepositoryOutcome CodeCommitClient::GetRepository(const GetRepositoryRequest& request) const
@@ -1153,12 +1073,10 @@ GetRepositoryOutcomeCallable CodeCommitClient::GetRepositoryCallable(const GetRe
 
 void CodeCommitClient::GetRepositoryAsync(const GetRepositoryRequest& request, const GetRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRepositoryAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::GetRepositoryAsyncHelper(const GetRepositoryRequest& request, const GetRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetRepository(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetRepository(request), context);
+    } );
 }
 
 GetRepositoryTriggersOutcome CodeCommitClient::GetRepositoryTriggers(const GetRepositoryTriggersRequest& request) const
@@ -1177,12 +1095,10 @@ GetRepositoryTriggersOutcomeCallable CodeCommitClient::GetRepositoryTriggersCall
 
 void CodeCommitClient::GetRepositoryTriggersAsync(const GetRepositoryTriggersRequest& request, const GetRepositoryTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRepositoryTriggersAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::GetRepositoryTriggersAsyncHelper(const GetRepositoryTriggersRequest& request, const GetRepositoryTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetRepositoryTriggers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetRepositoryTriggers(request), context);
+    } );
 }
 
 ListApprovalRuleTemplatesOutcome CodeCommitClient::ListApprovalRuleTemplates(const ListApprovalRuleTemplatesRequest& request) const
@@ -1201,12 +1117,10 @@ ListApprovalRuleTemplatesOutcomeCallable CodeCommitClient::ListApprovalRuleTempl
 
 void CodeCommitClient::ListApprovalRuleTemplatesAsync(const ListApprovalRuleTemplatesRequest& request, const ListApprovalRuleTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListApprovalRuleTemplatesAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::ListApprovalRuleTemplatesAsyncHelper(const ListApprovalRuleTemplatesRequest& request, const ListApprovalRuleTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListApprovalRuleTemplates(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListApprovalRuleTemplates(request), context);
+    } );
 }
 
 ListAssociatedApprovalRuleTemplatesForRepositoryOutcome CodeCommitClient::ListAssociatedApprovalRuleTemplatesForRepository(const ListAssociatedApprovalRuleTemplatesForRepositoryRequest& request) const
@@ -1225,12 +1139,10 @@ ListAssociatedApprovalRuleTemplatesForRepositoryOutcomeCallable CodeCommitClient
 
 void CodeCommitClient::ListAssociatedApprovalRuleTemplatesForRepositoryAsync(const ListAssociatedApprovalRuleTemplatesForRepositoryRequest& request, const ListAssociatedApprovalRuleTemplatesForRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAssociatedApprovalRuleTemplatesForRepositoryAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::ListAssociatedApprovalRuleTemplatesForRepositoryAsyncHelper(const ListAssociatedApprovalRuleTemplatesForRepositoryRequest& request, const ListAssociatedApprovalRuleTemplatesForRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAssociatedApprovalRuleTemplatesForRepository(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAssociatedApprovalRuleTemplatesForRepository(request), context);
+    } );
 }
 
 ListBranchesOutcome CodeCommitClient::ListBranches(const ListBranchesRequest& request) const
@@ -1249,12 +1161,10 @@ ListBranchesOutcomeCallable CodeCommitClient::ListBranchesCallable(const ListBra
 
 void CodeCommitClient::ListBranchesAsync(const ListBranchesRequest& request, const ListBranchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBranchesAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::ListBranchesAsyncHelper(const ListBranchesRequest& request, const ListBranchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListBranches(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListBranches(request), context);
+    } );
 }
 
 ListPullRequestsOutcome CodeCommitClient::ListPullRequests(const ListPullRequestsRequest& request) const
@@ -1273,12 +1183,10 @@ ListPullRequestsOutcomeCallable CodeCommitClient::ListPullRequestsCallable(const
 
 void CodeCommitClient::ListPullRequestsAsync(const ListPullRequestsRequest& request, const ListPullRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPullRequestsAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::ListPullRequestsAsyncHelper(const ListPullRequestsRequest& request, const ListPullRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListPullRequests(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListPullRequests(request), context);
+    } );
 }
 
 ListRepositoriesOutcome CodeCommitClient::ListRepositories(const ListRepositoriesRequest& request) const
@@ -1297,12 +1205,10 @@ ListRepositoriesOutcomeCallable CodeCommitClient::ListRepositoriesCallable(const
 
 void CodeCommitClient::ListRepositoriesAsync(const ListRepositoriesRequest& request, const ListRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRepositoriesAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::ListRepositoriesAsyncHelper(const ListRepositoriesRequest& request, const ListRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListRepositories(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListRepositories(request), context);
+    } );
 }
 
 ListRepositoriesForApprovalRuleTemplateOutcome CodeCommitClient::ListRepositoriesForApprovalRuleTemplate(const ListRepositoriesForApprovalRuleTemplateRequest& request) const
@@ -1321,12 +1227,10 @@ ListRepositoriesForApprovalRuleTemplateOutcomeCallable CodeCommitClient::ListRep
 
 void CodeCommitClient::ListRepositoriesForApprovalRuleTemplateAsync(const ListRepositoriesForApprovalRuleTemplateRequest& request, const ListRepositoriesForApprovalRuleTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRepositoriesForApprovalRuleTemplateAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::ListRepositoriesForApprovalRuleTemplateAsyncHelper(const ListRepositoriesForApprovalRuleTemplateRequest& request, const ListRepositoriesForApprovalRuleTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListRepositoriesForApprovalRuleTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListRepositoriesForApprovalRuleTemplate(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome CodeCommitClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1345,12 +1249,10 @@ ListTagsForResourceOutcomeCallable CodeCommitClient::ListTagsForResourceCallable
 
 void CodeCommitClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 MergeBranchesByFastForwardOutcome CodeCommitClient::MergeBranchesByFastForward(const MergeBranchesByFastForwardRequest& request) const
@@ -1369,12 +1271,10 @@ MergeBranchesByFastForwardOutcomeCallable CodeCommitClient::MergeBranchesByFastF
 
 void CodeCommitClient::MergeBranchesByFastForwardAsync(const MergeBranchesByFastForwardRequest& request, const MergeBranchesByFastForwardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->MergeBranchesByFastForwardAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::MergeBranchesByFastForwardAsyncHelper(const MergeBranchesByFastForwardRequest& request, const MergeBranchesByFastForwardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, MergeBranchesByFastForward(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, MergeBranchesByFastForward(request), context);
+    } );
 }
 
 MergeBranchesBySquashOutcome CodeCommitClient::MergeBranchesBySquash(const MergeBranchesBySquashRequest& request) const
@@ -1393,12 +1293,10 @@ MergeBranchesBySquashOutcomeCallable CodeCommitClient::MergeBranchesBySquashCall
 
 void CodeCommitClient::MergeBranchesBySquashAsync(const MergeBranchesBySquashRequest& request, const MergeBranchesBySquashResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->MergeBranchesBySquashAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::MergeBranchesBySquashAsyncHelper(const MergeBranchesBySquashRequest& request, const MergeBranchesBySquashResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, MergeBranchesBySquash(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, MergeBranchesBySquash(request), context);
+    } );
 }
 
 MergeBranchesByThreeWayOutcome CodeCommitClient::MergeBranchesByThreeWay(const MergeBranchesByThreeWayRequest& request) const
@@ -1417,12 +1315,10 @@ MergeBranchesByThreeWayOutcomeCallable CodeCommitClient::MergeBranchesByThreeWay
 
 void CodeCommitClient::MergeBranchesByThreeWayAsync(const MergeBranchesByThreeWayRequest& request, const MergeBranchesByThreeWayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->MergeBranchesByThreeWayAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::MergeBranchesByThreeWayAsyncHelper(const MergeBranchesByThreeWayRequest& request, const MergeBranchesByThreeWayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, MergeBranchesByThreeWay(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, MergeBranchesByThreeWay(request), context);
+    } );
 }
 
 MergePullRequestByFastForwardOutcome CodeCommitClient::MergePullRequestByFastForward(const MergePullRequestByFastForwardRequest& request) const
@@ -1441,12 +1337,10 @@ MergePullRequestByFastForwardOutcomeCallable CodeCommitClient::MergePullRequestB
 
 void CodeCommitClient::MergePullRequestByFastForwardAsync(const MergePullRequestByFastForwardRequest& request, const MergePullRequestByFastForwardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->MergePullRequestByFastForwardAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::MergePullRequestByFastForwardAsyncHelper(const MergePullRequestByFastForwardRequest& request, const MergePullRequestByFastForwardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, MergePullRequestByFastForward(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, MergePullRequestByFastForward(request), context);
+    } );
 }
 
 MergePullRequestBySquashOutcome CodeCommitClient::MergePullRequestBySquash(const MergePullRequestBySquashRequest& request) const
@@ -1465,12 +1359,10 @@ MergePullRequestBySquashOutcomeCallable CodeCommitClient::MergePullRequestBySqua
 
 void CodeCommitClient::MergePullRequestBySquashAsync(const MergePullRequestBySquashRequest& request, const MergePullRequestBySquashResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->MergePullRequestBySquashAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::MergePullRequestBySquashAsyncHelper(const MergePullRequestBySquashRequest& request, const MergePullRequestBySquashResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, MergePullRequestBySquash(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, MergePullRequestBySquash(request), context);
+    } );
 }
 
 MergePullRequestByThreeWayOutcome CodeCommitClient::MergePullRequestByThreeWay(const MergePullRequestByThreeWayRequest& request) const
@@ -1489,12 +1381,10 @@ MergePullRequestByThreeWayOutcomeCallable CodeCommitClient::MergePullRequestByTh
 
 void CodeCommitClient::MergePullRequestByThreeWayAsync(const MergePullRequestByThreeWayRequest& request, const MergePullRequestByThreeWayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->MergePullRequestByThreeWayAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::MergePullRequestByThreeWayAsyncHelper(const MergePullRequestByThreeWayRequest& request, const MergePullRequestByThreeWayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, MergePullRequestByThreeWay(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, MergePullRequestByThreeWay(request), context);
+    } );
 }
 
 OverridePullRequestApprovalRulesOutcome CodeCommitClient::OverridePullRequestApprovalRules(const OverridePullRequestApprovalRulesRequest& request) const
@@ -1513,12 +1403,10 @@ OverridePullRequestApprovalRulesOutcomeCallable CodeCommitClient::OverridePullRe
 
 void CodeCommitClient::OverridePullRequestApprovalRulesAsync(const OverridePullRequestApprovalRulesRequest& request, const OverridePullRequestApprovalRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->OverridePullRequestApprovalRulesAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::OverridePullRequestApprovalRulesAsyncHelper(const OverridePullRequestApprovalRulesRequest& request, const OverridePullRequestApprovalRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, OverridePullRequestApprovalRules(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, OverridePullRequestApprovalRules(request), context);
+    } );
 }
 
 PostCommentForComparedCommitOutcome CodeCommitClient::PostCommentForComparedCommit(const PostCommentForComparedCommitRequest& request) const
@@ -1537,12 +1425,10 @@ PostCommentForComparedCommitOutcomeCallable CodeCommitClient::PostCommentForComp
 
 void CodeCommitClient::PostCommentForComparedCommitAsync(const PostCommentForComparedCommitRequest& request, const PostCommentForComparedCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PostCommentForComparedCommitAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::PostCommentForComparedCommitAsyncHelper(const PostCommentForComparedCommitRequest& request, const PostCommentForComparedCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PostCommentForComparedCommit(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PostCommentForComparedCommit(request), context);
+    } );
 }
 
 PostCommentForPullRequestOutcome CodeCommitClient::PostCommentForPullRequest(const PostCommentForPullRequestRequest& request) const
@@ -1561,12 +1447,10 @@ PostCommentForPullRequestOutcomeCallable CodeCommitClient::PostCommentForPullReq
 
 void CodeCommitClient::PostCommentForPullRequestAsync(const PostCommentForPullRequestRequest& request, const PostCommentForPullRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PostCommentForPullRequestAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::PostCommentForPullRequestAsyncHelper(const PostCommentForPullRequestRequest& request, const PostCommentForPullRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PostCommentForPullRequest(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PostCommentForPullRequest(request), context);
+    } );
 }
 
 PostCommentReplyOutcome CodeCommitClient::PostCommentReply(const PostCommentReplyRequest& request) const
@@ -1585,12 +1469,10 @@ PostCommentReplyOutcomeCallable CodeCommitClient::PostCommentReplyCallable(const
 
 void CodeCommitClient::PostCommentReplyAsync(const PostCommentReplyRequest& request, const PostCommentReplyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PostCommentReplyAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::PostCommentReplyAsyncHelper(const PostCommentReplyRequest& request, const PostCommentReplyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PostCommentReply(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PostCommentReply(request), context);
+    } );
 }
 
 PutCommentReactionOutcome CodeCommitClient::PutCommentReaction(const PutCommentReactionRequest& request) const
@@ -1609,12 +1491,10 @@ PutCommentReactionOutcomeCallable CodeCommitClient::PutCommentReactionCallable(c
 
 void CodeCommitClient::PutCommentReactionAsync(const PutCommentReactionRequest& request, const PutCommentReactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutCommentReactionAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::PutCommentReactionAsyncHelper(const PutCommentReactionRequest& request, const PutCommentReactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutCommentReaction(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutCommentReaction(request), context);
+    } );
 }
 
 PutFileOutcome CodeCommitClient::PutFile(const PutFileRequest& request) const
@@ -1633,12 +1513,10 @@ PutFileOutcomeCallable CodeCommitClient::PutFileCallable(const PutFileRequest& r
 
 void CodeCommitClient::PutFileAsync(const PutFileRequest& request, const PutFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutFileAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::PutFileAsyncHelper(const PutFileRequest& request, const PutFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutFile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutFile(request), context);
+    } );
 }
 
 PutRepositoryTriggersOutcome CodeCommitClient::PutRepositoryTriggers(const PutRepositoryTriggersRequest& request) const
@@ -1657,12 +1535,10 @@ PutRepositoryTriggersOutcomeCallable CodeCommitClient::PutRepositoryTriggersCall
 
 void CodeCommitClient::PutRepositoryTriggersAsync(const PutRepositoryTriggersRequest& request, const PutRepositoryTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutRepositoryTriggersAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::PutRepositoryTriggersAsyncHelper(const PutRepositoryTriggersRequest& request, const PutRepositoryTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutRepositoryTriggers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutRepositoryTriggers(request), context);
+    } );
 }
 
 TagResourceOutcome CodeCommitClient::TagResource(const TagResourceRequest& request) const
@@ -1681,12 +1557,10 @@ TagResourceOutcomeCallable CodeCommitClient::TagResourceCallable(const TagResour
 
 void CodeCommitClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 TestRepositoryTriggersOutcome CodeCommitClient::TestRepositoryTriggers(const TestRepositoryTriggersRequest& request) const
@@ -1705,12 +1579,10 @@ TestRepositoryTriggersOutcomeCallable CodeCommitClient::TestRepositoryTriggersCa
 
 void CodeCommitClient::TestRepositoryTriggersAsync(const TestRepositoryTriggersRequest& request, const TestRepositoryTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TestRepositoryTriggersAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::TestRepositoryTriggersAsyncHelper(const TestRepositoryTriggersRequest& request, const TestRepositoryTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TestRepositoryTriggers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TestRepositoryTriggers(request), context);
+    } );
 }
 
 UntagResourceOutcome CodeCommitClient::UntagResource(const UntagResourceRequest& request) const
@@ -1729,12 +1601,10 @@ UntagResourceOutcomeCallable CodeCommitClient::UntagResourceCallable(const Untag
 
 void CodeCommitClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateApprovalRuleTemplateContentOutcome CodeCommitClient::UpdateApprovalRuleTemplateContent(const UpdateApprovalRuleTemplateContentRequest& request) const
@@ -1753,12 +1623,10 @@ UpdateApprovalRuleTemplateContentOutcomeCallable CodeCommitClient::UpdateApprova
 
 void CodeCommitClient::UpdateApprovalRuleTemplateContentAsync(const UpdateApprovalRuleTemplateContentRequest& request, const UpdateApprovalRuleTemplateContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateApprovalRuleTemplateContentAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::UpdateApprovalRuleTemplateContentAsyncHelper(const UpdateApprovalRuleTemplateContentRequest& request, const UpdateApprovalRuleTemplateContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateApprovalRuleTemplateContent(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateApprovalRuleTemplateContent(request), context);
+    } );
 }
 
 UpdateApprovalRuleTemplateDescriptionOutcome CodeCommitClient::UpdateApprovalRuleTemplateDescription(const UpdateApprovalRuleTemplateDescriptionRequest& request) const
@@ -1777,12 +1645,10 @@ UpdateApprovalRuleTemplateDescriptionOutcomeCallable CodeCommitClient::UpdateApp
 
 void CodeCommitClient::UpdateApprovalRuleTemplateDescriptionAsync(const UpdateApprovalRuleTemplateDescriptionRequest& request, const UpdateApprovalRuleTemplateDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateApprovalRuleTemplateDescriptionAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::UpdateApprovalRuleTemplateDescriptionAsyncHelper(const UpdateApprovalRuleTemplateDescriptionRequest& request, const UpdateApprovalRuleTemplateDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateApprovalRuleTemplateDescription(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateApprovalRuleTemplateDescription(request), context);
+    } );
 }
 
 UpdateApprovalRuleTemplateNameOutcome CodeCommitClient::UpdateApprovalRuleTemplateName(const UpdateApprovalRuleTemplateNameRequest& request) const
@@ -1801,12 +1667,10 @@ UpdateApprovalRuleTemplateNameOutcomeCallable CodeCommitClient::UpdateApprovalRu
 
 void CodeCommitClient::UpdateApprovalRuleTemplateNameAsync(const UpdateApprovalRuleTemplateNameRequest& request, const UpdateApprovalRuleTemplateNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateApprovalRuleTemplateNameAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::UpdateApprovalRuleTemplateNameAsyncHelper(const UpdateApprovalRuleTemplateNameRequest& request, const UpdateApprovalRuleTemplateNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateApprovalRuleTemplateName(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateApprovalRuleTemplateName(request), context);
+    } );
 }
 
 UpdateCommentOutcome CodeCommitClient::UpdateComment(const UpdateCommentRequest& request) const
@@ -1825,12 +1689,10 @@ UpdateCommentOutcomeCallable CodeCommitClient::UpdateCommentCallable(const Updat
 
 void CodeCommitClient::UpdateCommentAsync(const UpdateCommentRequest& request, const UpdateCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateCommentAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::UpdateCommentAsyncHelper(const UpdateCommentRequest& request, const UpdateCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateComment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateComment(request), context);
+    } );
 }
 
 UpdateDefaultBranchOutcome CodeCommitClient::UpdateDefaultBranch(const UpdateDefaultBranchRequest& request) const
@@ -1849,12 +1711,10 @@ UpdateDefaultBranchOutcomeCallable CodeCommitClient::UpdateDefaultBranchCallable
 
 void CodeCommitClient::UpdateDefaultBranchAsync(const UpdateDefaultBranchRequest& request, const UpdateDefaultBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDefaultBranchAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::UpdateDefaultBranchAsyncHelper(const UpdateDefaultBranchRequest& request, const UpdateDefaultBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateDefaultBranch(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateDefaultBranch(request), context);
+    } );
 }
 
 UpdatePullRequestApprovalRuleContentOutcome CodeCommitClient::UpdatePullRequestApprovalRuleContent(const UpdatePullRequestApprovalRuleContentRequest& request) const
@@ -1873,12 +1733,10 @@ UpdatePullRequestApprovalRuleContentOutcomeCallable CodeCommitClient::UpdatePull
 
 void CodeCommitClient::UpdatePullRequestApprovalRuleContentAsync(const UpdatePullRequestApprovalRuleContentRequest& request, const UpdatePullRequestApprovalRuleContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePullRequestApprovalRuleContentAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::UpdatePullRequestApprovalRuleContentAsyncHelper(const UpdatePullRequestApprovalRuleContentRequest& request, const UpdatePullRequestApprovalRuleContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdatePullRequestApprovalRuleContent(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdatePullRequestApprovalRuleContent(request), context);
+    } );
 }
 
 UpdatePullRequestApprovalStateOutcome CodeCommitClient::UpdatePullRequestApprovalState(const UpdatePullRequestApprovalStateRequest& request) const
@@ -1897,12 +1755,10 @@ UpdatePullRequestApprovalStateOutcomeCallable CodeCommitClient::UpdatePullReques
 
 void CodeCommitClient::UpdatePullRequestApprovalStateAsync(const UpdatePullRequestApprovalStateRequest& request, const UpdatePullRequestApprovalStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePullRequestApprovalStateAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::UpdatePullRequestApprovalStateAsyncHelper(const UpdatePullRequestApprovalStateRequest& request, const UpdatePullRequestApprovalStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdatePullRequestApprovalState(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdatePullRequestApprovalState(request), context);
+    } );
 }
 
 UpdatePullRequestDescriptionOutcome CodeCommitClient::UpdatePullRequestDescription(const UpdatePullRequestDescriptionRequest& request) const
@@ -1921,12 +1777,10 @@ UpdatePullRequestDescriptionOutcomeCallable CodeCommitClient::UpdatePullRequestD
 
 void CodeCommitClient::UpdatePullRequestDescriptionAsync(const UpdatePullRequestDescriptionRequest& request, const UpdatePullRequestDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePullRequestDescriptionAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::UpdatePullRequestDescriptionAsyncHelper(const UpdatePullRequestDescriptionRequest& request, const UpdatePullRequestDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdatePullRequestDescription(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdatePullRequestDescription(request), context);
+    } );
 }
 
 UpdatePullRequestStatusOutcome CodeCommitClient::UpdatePullRequestStatus(const UpdatePullRequestStatusRequest& request) const
@@ -1945,12 +1799,10 @@ UpdatePullRequestStatusOutcomeCallable CodeCommitClient::UpdatePullRequestStatus
 
 void CodeCommitClient::UpdatePullRequestStatusAsync(const UpdatePullRequestStatusRequest& request, const UpdatePullRequestStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePullRequestStatusAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::UpdatePullRequestStatusAsyncHelper(const UpdatePullRequestStatusRequest& request, const UpdatePullRequestStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdatePullRequestStatus(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdatePullRequestStatus(request), context);
+    } );
 }
 
 UpdatePullRequestTitleOutcome CodeCommitClient::UpdatePullRequestTitle(const UpdatePullRequestTitleRequest& request) const
@@ -1969,12 +1821,10 @@ UpdatePullRequestTitleOutcomeCallable CodeCommitClient::UpdatePullRequestTitleCa
 
 void CodeCommitClient::UpdatePullRequestTitleAsync(const UpdatePullRequestTitleRequest& request, const UpdatePullRequestTitleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePullRequestTitleAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::UpdatePullRequestTitleAsyncHelper(const UpdatePullRequestTitleRequest& request, const UpdatePullRequestTitleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdatePullRequestTitle(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdatePullRequestTitle(request), context);
+    } );
 }
 
 UpdateRepositoryDescriptionOutcome CodeCommitClient::UpdateRepositoryDescription(const UpdateRepositoryDescriptionRequest& request) const
@@ -1993,12 +1843,10 @@ UpdateRepositoryDescriptionOutcomeCallable CodeCommitClient::UpdateRepositoryDes
 
 void CodeCommitClient::UpdateRepositoryDescriptionAsync(const UpdateRepositoryDescriptionRequest& request, const UpdateRepositoryDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRepositoryDescriptionAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::UpdateRepositoryDescriptionAsyncHelper(const UpdateRepositoryDescriptionRequest& request, const UpdateRepositoryDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateRepositoryDescription(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateRepositoryDescription(request), context);
+    } );
 }
 
 UpdateRepositoryNameOutcome CodeCommitClient::UpdateRepositoryName(const UpdateRepositoryNameRequest& request) const
@@ -2017,11 +1865,9 @@ UpdateRepositoryNameOutcomeCallable CodeCommitClient::UpdateRepositoryNameCallab
 
 void CodeCommitClient::UpdateRepositoryNameAsync(const UpdateRepositoryNameRequest& request, const UpdateRepositoryNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRepositoryNameAsyncHelper( request, handler, context ); } );
-}
-
-void CodeCommitClient::UpdateRepositoryNameAsyncHelper(const UpdateRepositoryNameRequest& request, const UpdateRepositoryNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateRepositoryName(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateRepositoryName(request), context);
+    } );
 }
 

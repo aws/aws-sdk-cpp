@@ -150,12 +150,10 @@ CancelOrderOutcomeCallable OutpostsClient::CancelOrderCallable(const CancelOrder
 
 void OutpostsClient::CancelOrderAsync(const CancelOrderRequest& request, const CancelOrderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelOrderAsyncHelper( request, handler, context ); } );
-}
-
-void OutpostsClient::CancelOrderAsyncHelper(const CancelOrderRequest& request, const CancelOrderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CancelOrder(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CancelOrder(request), context);
+    } );
 }
 
 CreateOrderOutcome OutpostsClient::CreateOrder(const CreateOrderRequest& request) const
@@ -175,12 +173,10 @@ CreateOrderOutcomeCallable OutpostsClient::CreateOrderCallable(const CreateOrder
 
 void OutpostsClient::CreateOrderAsync(const CreateOrderRequest& request, const CreateOrderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateOrderAsyncHelper( request, handler, context ); } );
-}
-
-void OutpostsClient::CreateOrderAsyncHelper(const CreateOrderRequest& request, const CreateOrderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateOrder(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateOrder(request), context);
+    } );
 }
 
 CreateOutpostOutcome OutpostsClient::CreateOutpost(const CreateOutpostRequest& request) const
@@ -200,12 +196,10 @@ CreateOutpostOutcomeCallable OutpostsClient::CreateOutpostCallable(const CreateO
 
 void OutpostsClient::CreateOutpostAsync(const CreateOutpostRequest& request, const CreateOutpostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateOutpostAsyncHelper( request, handler, context ); } );
-}
-
-void OutpostsClient::CreateOutpostAsyncHelper(const CreateOutpostRequest& request, const CreateOutpostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateOutpost(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateOutpost(request), context);
+    } );
 }
 
 CreateSiteOutcome OutpostsClient::CreateSite(const CreateSiteRequest& request) const
@@ -225,12 +219,10 @@ CreateSiteOutcomeCallable OutpostsClient::CreateSiteCallable(const CreateSiteReq
 
 void OutpostsClient::CreateSiteAsync(const CreateSiteRequest& request, const CreateSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSiteAsyncHelper( request, handler, context ); } );
-}
-
-void OutpostsClient::CreateSiteAsyncHelper(const CreateSiteRequest& request, const CreateSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateSite(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateSite(request), context);
+    } );
 }
 
 DeleteOutpostOutcome OutpostsClient::DeleteOutpost(const DeleteOutpostRequest& request) const
@@ -256,12 +248,10 @@ DeleteOutpostOutcomeCallable OutpostsClient::DeleteOutpostCallable(const DeleteO
 
 void OutpostsClient::DeleteOutpostAsync(const DeleteOutpostRequest& request, const DeleteOutpostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteOutpostAsyncHelper( request, handler, context ); } );
-}
-
-void OutpostsClient::DeleteOutpostAsyncHelper(const DeleteOutpostRequest& request, const DeleteOutpostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteOutpost(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteOutpost(request), context);
+    } );
 }
 
 DeleteSiteOutcome OutpostsClient::DeleteSite(const DeleteSiteRequest& request) const
@@ -287,12 +277,10 @@ DeleteSiteOutcomeCallable OutpostsClient::DeleteSiteCallable(const DeleteSiteReq
 
 void OutpostsClient::DeleteSiteAsync(const DeleteSiteRequest& request, const DeleteSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSiteAsyncHelper( request, handler, context ); } );
-}
-
-void OutpostsClient::DeleteSiteAsyncHelper(const DeleteSiteRequest& request, const DeleteSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteSite(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteSite(request), context);
+    } );
 }
 
 GetCatalogItemOutcome OutpostsClient::GetCatalogItem(const GetCatalogItemRequest& request) const
@@ -318,12 +306,10 @@ GetCatalogItemOutcomeCallable OutpostsClient::GetCatalogItemCallable(const GetCa
 
 void OutpostsClient::GetCatalogItemAsync(const GetCatalogItemRequest& request, const GetCatalogItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCatalogItemAsyncHelper( request, handler, context ); } );
-}
-
-void OutpostsClient::GetCatalogItemAsyncHelper(const GetCatalogItemRequest& request, const GetCatalogItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetCatalogItem(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetCatalogItem(request), context);
+    } );
 }
 
 GetConnectionOutcome OutpostsClient::GetConnection(const GetConnectionRequest& request) const
@@ -349,12 +335,10 @@ GetConnectionOutcomeCallable OutpostsClient::GetConnectionCallable(const GetConn
 
 void OutpostsClient::GetConnectionAsync(const GetConnectionRequest& request, const GetConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetConnectionAsyncHelper( request, handler, context ); } );
-}
-
-void OutpostsClient::GetConnectionAsyncHelper(const GetConnectionRequest& request, const GetConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetConnection(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetConnection(request), context);
+    } );
 }
 
 GetOrderOutcome OutpostsClient::GetOrder(const GetOrderRequest& request) const
@@ -380,12 +364,10 @@ GetOrderOutcomeCallable OutpostsClient::GetOrderCallable(const GetOrderRequest& 
 
 void OutpostsClient::GetOrderAsync(const GetOrderRequest& request, const GetOrderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetOrderAsyncHelper( request, handler, context ); } );
-}
-
-void OutpostsClient::GetOrderAsyncHelper(const GetOrderRequest& request, const GetOrderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetOrder(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetOrder(request), context);
+    } );
 }
 
 GetOutpostOutcome OutpostsClient::GetOutpost(const GetOutpostRequest& request) const
@@ -411,12 +393,10 @@ GetOutpostOutcomeCallable OutpostsClient::GetOutpostCallable(const GetOutpostReq
 
 void OutpostsClient::GetOutpostAsync(const GetOutpostRequest& request, const GetOutpostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetOutpostAsyncHelper( request, handler, context ); } );
-}
-
-void OutpostsClient::GetOutpostAsyncHelper(const GetOutpostRequest& request, const GetOutpostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetOutpost(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetOutpost(request), context);
+    } );
 }
 
 GetOutpostInstanceTypesOutcome OutpostsClient::GetOutpostInstanceTypes(const GetOutpostInstanceTypesRequest& request) const
@@ -443,12 +423,10 @@ GetOutpostInstanceTypesOutcomeCallable OutpostsClient::GetOutpostInstanceTypesCa
 
 void OutpostsClient::GetOutpostInstanceTypesAsync(const GetOutpostInstanceTypesRequest& request, const GetOutpostInstanceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetOutpostInstanceTypesAsyncHelper( request, handler, context ); } );
-}
-
-void OutpostsClient::GetOutpostInstanceTypesAsyncHelper(const GetOutpostInstanceTypesRequest& request, const GetOutpostInstanceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetOutpostInstanceTypes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetOutpostInstanceTypes(request), context);
+    } );
 }
 
 GetSiteOutcome OutpostsClient::GetSite(const GetSiteRequest& request) const
@@ -474,12 +452,10 @@ GetSiteOutcomeCallable OutpostsClient::GetSiteCallable(const GetSiteRequest& req
 
 void OutpostsClient::GetSiteAsync(const GetSiteRequest& request, const GetSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSiteAsyncHelper( request, handler, context ); } );
-}
-
-void OutpostsClient::GetSiteAsyncHelper(const GetSiteRequest& request, const GetSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetSite(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetSite(request), context);
+    } );
 }
 
 GetSiteAddressOutcome OutpostsClient::GetSiteAddress(const GetSiteAddressRequest& request) const
@@ -511,12 +487,10 @@ GetSiteAddressOutcomeCallable OutpostsClient::GetSiteAddressCallable(const GetSi
 
 void OutpostsClient::GetSiteAddressAsync(const GetSiteAddressRequest& request, const GetSiteAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSiteAddressAsyncHelper( request, handler, context ); } );
-}
-
-void OutpostsClient::GetSiteAddressAsyncHelper(const GetSiteAddressRequest& request, const GetSiteAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetSiteAddress(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetSiteAddress(request), context);
+    } );
 }
 
 ListAssetsOutcome OutpostsClient::ListAssets(const ListAssetsRequest& request) const
@@ -543,12 +517,10 @@ ListAssetsOutcomeCallable OutpostsClient::ListAssetsCallable(const ListAssetsReq
 
 void OutpostsClient::ListAssetsAsync(const ListAssetsRequest& request, const ListAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAssetsAsyncHelper( request, handler, context ); } );
-}
-
-void OutpostsClient::ListAssetsAsyncHelper(const ListAssetsRequest& request, const ListAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAssets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAssets(request), context);
+    } );
 }
 
 ListCatalogItemsOutcome OutpostsClient::ListCatalogItems(const ListCatalogItemsRequest& request) const
@@ -568,12 +540,10 @@ ListCatalogItemsOutcomeCallable OutpostsClient::ListCatalogItemsCallable(const L
 
 void OutpostsClient::ListCatalogItemsAsync(const ListCatalogItemsRequest& request, const ListCatalogItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCatalogItemsAsyncHelper( request, handler, context ); } );
-}
-
-void OutpostsClient::ListCatalogItemsAsyncHelper(const ListCatalogItemsRequest& request, const ListCatalogItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListCatalogItems(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListCatalogItems(request), context);
+    } );
 }
 
 ListOrdersOutcome OutpostsClient::ListOrders(const ListOrdersRequest& request) const
@@ -593,12 +563,10 @@ ListOrdersOutcomeCallable OutpostsClient::ListOrdersCallable(const ListOrdersReq
 
 void OutpostsClient::ListOrdersAsync(const ListOrdersRequest& request, const ListOrdersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListOrdersAsyncHelper( request, handler, context ); } );
-}
-
-void OutpostsClient::ListOrdersAsyncHelper(const ListOrdersRequest& request, const ListOrdersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListOrders(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListOrders(request), context);
+    } );
 }
 
 ListOutpostsOutcome OutpostsClient::ListOutposts(const ListOutpostsRequest& request) const
@@ -618,12 +586,10 @@ ListOutpostsOutcomeCallable OutpostsClient::ListOutpostsCallable(const ListOutpo
 
 void OutpostsClient::ListOutpostsAsync(const ListOutpostsRequest& request, const ListOutpostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListOutpostsAsyncHelper( request, handler, context ); } );
-}
-
-void OutpostsClient::ListOutpostsAsyncHelper(const ListOutpostsRequest& request, const ListOutpostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListOutposts(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListOutposts(request), context);
+    } );
 }
 
 ListSitesOutcome OutpostsClient::ListSites(const ListSitesRequest& request) const
@@ -643,12 +609,10 @@ ListSitesOutcomeCallable OutpostsClient::ListSitesCallable(const ListSitesReques
 
 void OutpostsClient::ListSitesAsync(const ListSitesRequest& request, const ListSitesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSitesAsyncHelper( request, handler, context ); } );
-}
-
-void OutpostsClient::ListSitesAsyncHelper(const ListSitesRequest& request, const ListSitesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListSites(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListSites(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome OutpostsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -674,12 +638,10 @@ ListTagsForResourceOutcomeCallable OutpostsClient::ListTagsForResourceCallable(c
 
 void OutpostsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void OutpostsClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 StartConnectionOutcome OutpostsClient::StartConnection(const StartConnectionRequest& request) const
@@ -699,12 +661,10 @@ StartConnectionOutcomeCallable OutpostsClient::StartConnectionCallable(const Sta
 
 void OutpostsClient::StartConnectionAsync(const StartConnectionRequest& request, const StartConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartConnectionAsyncHelper( request, handler, context ); } );
-}
-
-void OutpostsClient::StartConnectionAsyncHelper(const StartConnectionRequest& request, const StartConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartConnection(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartConnection(request), context);
+    } );
 }
 
 TagResourceOutcome OutpostsClient::TagResource(const TagResourceRequest& request) const
@@ -730,12 +690,10 @@ TagResourceOutcomeCallable OutpostsClient::TagResourceCallable(const TagResource
 
 void OutpostsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void OutpostsClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome OutpostsClient::UntagResource(const UntagResourceRequest& request) const
@@ -766,12 +724,10 @@ UntagResourceOutcomeCallable OutpostsClient::UntagResourceCallable(const UntagRe
 
 void OutpostsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void OutpostsClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateOutpostOutcome OutpostsClient::UpdateOutpost(const UpdateOutpostRequest& request) const
@@ -797,12 +753,10 @@ UpdateOutpostOutcomeCallable OutpostsClient::UpdateOutpostCallable(const UpdateO
 
 void OutpostsClient::UpdateOutpostAsync(const UpdateOutpostRequest& request, const UpdateOutpostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateOutpostAsyncHelper( request, handler, context ); } );
-}
-
-void OutpostsClient::UpdateOutpostAsyncHelper(const UpdateOutpostRequest& request, const UpdateOutpostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateOutpost(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateOutpost(request), context);
+    } );
 }
 
 UpdateSiteOutcome OutpostsClient::UpdateSite(const UpdateSiteRequest& request) const
@@ -828,12 +782,10 @@ UpdateSiteOutcomeCallable OutpostsClient::UpdateSiteCallable(const UpdateSiteReq
 
 void OutpostsClient::UpdateSiteAsync(const UpdateSiteRequest& request, const UpdateSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSiteAsyncHelper( request, handler, context ); } );
-}
-
-void OutpostsClient::UpdateSiteAsyncHelper(const UpdateSiteRequest& request, const UpdateSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateSite(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateSite(request), context);
+    } );
 }
 
 UpdateSiteAddressOutcome OutpostsClient::UpdateSiteAddress(const UpdateSiteAddressRequest& request) const
@@ -860,12 +812,10 @@ UpdateSiteAddressOutcomeCallable OutpostsClient::UpdateSiteAddressCallable(const
 
 void OutpostsClient::UpdateSiteAddressAsync(const UpdateSiteAddressRequest& request, const UpdateSiteAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSiteAddressAsyncHelper( request, handler, context ); } );
-}
-
-void OutpostsClient::UpdateSiteAddressAsyncHelper(const UpdateSiteAddressRequest& request, const UpdateSiteAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateSiteAddress(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateSiteAddress(request), context);
+    } );
 }
 
 UpdateSiteRackPhysicalPropertiesOutcome OutpostsClient::UpdateSiteRackPhysicalProperties(const UpdateSiteRackPhysicalPropertiesRequest& request) const
@@ -892,11 +842,9 @@ UpdateSiteRackPhysicalPropertiesOutcomeCallable OutpostsClient::UpdateSiteRackPh
 
 void OutpostsClient::UpdateSiteRackPhysicalPropertiesAsync(const UpdateSiteRackPhysicalPropertiesRequest& request, const UpdateSiteRackPhysicalPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSiteRackPhysicalPropertiesAsyncHelper( request, handler, context ); } );
-}
-
-void OutpostsClient::UpdateSiteRackPhysicalPropertiesAsyncHelper(const UpdateSiteRackPhysicalPropertiesRequest& request, const UpdateSiteRackPhysicalPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateSiteRackPhysicalProperties(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateSiteRackPhysicalProperties(request), context);
+    } );
 }
 

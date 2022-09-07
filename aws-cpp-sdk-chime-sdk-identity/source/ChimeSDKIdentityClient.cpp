@@ -141,12 +141,10 @@ CreateAppInstanceOutcomeCallable ChimeSDKIdentityClient::CreateAppInstanceCallab
 
 void ChimeSDKIdentityClient::CreateAppInstanceAsync(const CreateAppInstanceRequest& request, const CreateAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAppInstanceAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKIdentityClient::CreateAppInstanceAsyncHelper(const CreateAppInstanceRequest& request, const CreateAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateAppInstance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateAppInstance(request), context);
+    } );
 }
 
 CreateAppInstanceAdminOutcome ChimeSDKIdentityClient::CreateAppInstanceAdmin(const CreateAppInstanceAdminRequest& request) const
@@ -173,12 +171,10 @@ CreateAppInstanceAdminOutcomeCallable ChimeSDKIdentityClient::CreateAppInstanceA
 
 void ChimeSDKIdentityClient::CreateAppInstanceAdminAsync(const CreateAppInstanceAdminRequest& request, const CreateAppInstanceAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAppInstanceAdminAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKIdentityClient::CreateAppInstanceAdminAsyncHelper(const CreateAppInstanceAdminRequest& request, const CreateAppInstanceAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateAppInstanceAdmin(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateAppInstanceAdmin(request), context);
+    } );
 }
 
 CreateAppInstanceUserOutcome ChimeSDKIdentityClient::CreateAppInstanceUser(const CreateAppInstanceUserRequest& request) const
@@ -198,12 +194,10 @@ CreateAppInstanceUserOutcomeCallable ChimeSDKIdentityClient::CreateAppInstanceUs
 
 void ChimeSDKIdentityClient::CreateAppInstanceUserAsync(const CreateAppInstanceUserRequest& request, const CreateAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAppInstanceUserAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKIdentityClient::CreateAppInstanceUserAsyncHelper(const CreateAppInstanceUserRequest& request, const CreateAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateAppInstanceUser(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateAppInstanceUser(request), context);
+    } );
 }
 
 DeleteAppInstanceOutcome ChimeSDKIdentityClient::DeleteAppInstance(const DeleteAppInstanceRequest& request) const
@@ -229,12 +223,10 @@ DeleteAppInstanceOutcomeCallable ChimeSDKIdentityClient::DeleteAppInstanceCallab
 
 void ChimeSDKIdentityClient::DeleteAppInstanceAsync(const DeleteAppInstanceRequest& request, const DeleteAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAppInstanceAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKIdentityClient::DeleteAppInstanceAsyncHelper(const DeleteAppInstanceRequest& request, const DeleteAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteAppInstance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteAppInstance(request), context);
+    } );
 }
 
 DeleteAppInstanceAdminOutcome ChimeSDKIdentityClient::DeleteAppInstanceAdmin(const DeleteAppInstanceAdminRequest& request) const
@@ -267,12 +259,10 @@ DeleteAppInstanceAdminOutcomeCallable ChimeSDKIdentityClient::DeleteAppInstanceA
 
 void ChimeSDKIdentityClient::DeleteAppInstanceAdminAsync(const DeleteAppInstanceAdminRequest& request, const DeleteAppInstanceAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAppInstanceAdminAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKIdentityClient::DeleteAppInstanceAdminAsyncHelper(const DeleteAppInstanceAdminRequest& request, const DeleteAppInstanceAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteAppInstanceAdmin(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteAppInstanceAdmin(request), context);
+    } );
 }
 
 DeleteAppInstanceUserOutcome ChimeSDKIdentityClient::DeleteAppInstanceUser(const DeleteAppInstanceUserRequest& request) const
@@ -298,12 +288,10 @@ DeleteAppInstanceUserOutcomeCallable ChimeSDKIdentityClient::DeleteAppInstanceUs
 
 void ChimeSDKIdentityClient::DeleteAppInstanceUserAsync(const DeleteAppInstanceUserRequest& request, const DeleteAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAppInstanceUserAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKIdentityClient::DeleteAppInstanceUserAsyncHelper(const DeleteAppInstanceUserRequest& request, const DeleteAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteAppInstanceUser(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteAppInstanceUser(request), context);
+    } );
 }
 
 DeregisterAppInstanceUserEndpointOutcome ChimeSDKIdentityClient::DeregisterAppInstanceUserEndpoint(const DeregisterAppInstanceUserEndpointRequest& request) const
@@ -336,12 +324,10 @@ DeregisterAppInstanceUserEndpointOutcomeCallable ChimeSDKIdentityClient::Deregis
 
 void ChimeSDKIdentityClient::DeregisterAppInstanceUserEndpointAsync(const DeregisterAppInstanceUserEndpointRequest& request, const DeregisterAppInstanceUserEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeregisterAppInstanceUserEndpointAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKIdentityClient::DeregisterAppInstanceUserEndpointAsyncHelper(const DeregisterAppInstanceUserEndpointRequest& request, const DeregisterAppInstanceUserEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeregisterAppInstanceUserEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeregisterAppInstanceUserEndpoint(request), context);
+    } );
 }
 
 DescribeAppInstanceOutcome ChimeSDKIdentityClient::DescribeAppInstance(const DescribeAppInstanceRequest& request) const
@@ -367,12 +353,10 @@ DescribeAppInstanceOutcomeCallable ChimeSDKIdentityClient::DescribeAppInstanceCa
 
 void ChimeSDKIdentityClient::DescribeAppInstanceAsync(const DescribeAppInstanceRequest& request, const DescribeAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAppInstanceAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKIdentityClient::DescribeAppInstanceAsyncHelper(const DescribeAppInstanceRequest& request, const DescribeAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAppInstance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAppInstance(request), context);
+    } );
 }
 
 DescribeAppInstanceAdminOutcome ChimeSDKIdentityClient::DescribeAppInstanceAdmin(const DescribeAppInstanceAdminRequest& request) const
@@ -405,12 +389,10 @@ DescribeAppInstanceAdminOutcomeCallable ChimeSDKIdentityClient::DescribeAppInsta
 
 void ChimeSDKIdentityClient::DescribeAppInstanceAdminAsync(const DescribeAppInstanceAdminRequest& request, const DescribeAppInstanceAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAppInstanceAdminAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKIdentityClient::DescribeAppInstanceAdminAsyncHelper(const DescribeAppInstanceAdminRequest& request, const DescribeAppInstanceAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAppInstanceAdmin(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAppInstanceAdmin(request), context);
+    } );
 }
 
 DescribeAppInstanceUserOutcome ChimeSDKIdentityClient::DescribeAppInstanceUser(const DescribeAppInstanceUserRequest& request) const
@@ -436,12 +418,10 @@ DescribeAppInstanceUserOutcomeCallable ChimeSDKIdentityClient::DescribeAppInstan
 
 void ChimeSDKIdentityClient::DescribeAppInstanceUserAsync(const DescribeAppInstanceUserRequest& request, const DescribeAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAppInstanceUserAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKIdentityClient::DescribeAppInstanceUserAsyncHelper(const DescribeAppInstanceUserRequest& request, const DescribeAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAppInstanceUser(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAppInstanceUser(request), context);
+    } );
 }
 
 DescribeAppInstanceUserEndpointOutcome ChimeSDKIdentityClient::DescribeAppInstanceUserEndpoint(const DescribeAppInstanceUserEndpointRequest& request) const
@@ -474,12 +454,10 @@ DescribeAppInstanceUserEndpointOutcomeCallable ChimeSDKIdentityClient::DescribeA
 
 void ChimeSDKIdentityClient::DescribeAppInstanceUserEndpointAsync(const DescribeAppInstanceUserEndpointRequest& request, const DescribeAppInstanceUserEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAppInstanceUserEndpointAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKIdentityClient::DescribeAppInstanceUserEndpointAsyncHelper(const DescribeAppInstanceUserEndpointRequest& request, const DescribeAppInstanceUserEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAppInstanceUserEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAppInstanceUserEndpoint(request), context);
+    } );
 }
 
 GetAppInstanceRetentionSettingsOutcome ChimeSDKIdentityClient::GetAppInstanceRetentionSettings(const GetAppInstanceRetentionSettingsRequest& request) const
@@ -506,12 +484,10 @@ GetAppInstanceRetentionSettingsOutcomeCallable ChimeSDKIdentityClient::GetAppIns
 
 void ChimeSDKIdentityClient::GetAppInstanceRetentionSettingsAsync(const GetAppInstanceRetentionSettingsRequest& request, const GetAppInstanceRetentionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAppInstanceRetentionSettingsAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKIdentityClient::GetAppInstanceRetentionSettingsAsyncHelper(const GetAppInstanceRetentionSettingsRequest& request, const GetAppInstanceRetentionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetAppInstanceRetentionSettings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAppInstanceRetentionSettings(request), context);
+    } );
 }
 
 ListAppInstanceAdminsOutcome ChimeSDKIdentityClient::ListAppInstanceAdmins(const ListAppInstanceAdminsRequest& request) const
@@ -538,12 +514,10 @@ ListAppInstanceAdminsOutcomeCallable ChimeSDKIdentityClient::ListAppInstanceAdmi
 
 void ChimeSDKIdentityClient::ListAppInstanceAdminsAsync(const ListAppInstanceAdminsRequest& request, const ListAppInstanceAdminsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAppInstanceAdminsAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKIdentityClient::ListAppInstanceAdminsAsyncHelper(const ListAppInstanceAdminsRequest& request, const ListAppInstanceAdminsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAppInstanceAdmins(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAppInstanceAdmins(request), context);
+    } );
 }
 
 ListAppInstanceUserEndpointsOutcome ChimeSDKIdentityClient::ListAppInstanceUserEndpoints(const ListAppInstanceUserEndpointsRequest& request) const
@@ -570,12 +544,10 @@ ListAppInstanceUserEndpointsOutcomeCallable ChimeSDKIdentityClient::ListAppInsta
 
 void ChimeSDKIdentityClient::ListAppInstanceUserEndpointsAsync(const ListAppInstanceUserEndpointsRequest& request, const ListAppInstanceUserEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAppInstanceUserEndpointsAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKIdentityClient::ListAppInstanceUserEndpointsAsyncHelper(const ListAppInstanceUserEndpointsRequest& request, const ListAppInstanceUserEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAppInstanceUserEndpoints(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAppInstanceUserEndpoints(request), context);
+    } );
 }
 
 ListAppInstanceUsersOutcome ChimeSDKIdentityClient::ListAppInstanceUsers(const ListAppInstanceUsersRequest& request) const
@@ -600,12 +572,10 @@ ListAppInstanceUsersOutcomeCallable ChimeSDKIdentityClient::ListAppInstanceUsers
 
 void ChimeSDKIdentityClient::ListAppInstanceUsersAsync(const ListAppInstanceUsersRequest& request, const ListAppInstanceUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAppInstanceUsersAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKIdentityClient::ListAppInstanceUsersAsyncHelper(const ListAppInstanceUsersRequest& request, const ListAppInstanceUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAppInstanceUsers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAppInstanceUsers(request), context);
+    } );
 }
 
 ListAppInstancesOutcome ChimeSDKIdentityClient::ListAppInstances(const ListAppInstancesRequest& request) const
@@ -625,12 +595,10 @@ ListAppInstancesOutcomeCallable ChimeSDKIdentityClient::ListAppInstancesCallable
 
 void ChimeSDKIdentityClient::ListAppInstancesAsync(const ListAppInstancesRequest& request, const ListAppInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAppInstancesAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKIdentityClient::ListAppInstancesAsyncHelper(const ListAppInstancesRequest& request, const ListAppInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAppInstances(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAppInstances(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome ChimeSDKIdentityClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -655,12 +623,10 @@ ListTagsForResourceOutcomeCallable ChimeSDKIdentityClient::ListTagsForResourceCa
 
 void ChimeSDKIdentityClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKIdentityClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 PutAppInstanceRetentionSettingsOutcome ChimeSDKIdentityClient::PutAppInstanceRetentionSettings(const PutAppInstanceRetentionSettingsRequest& request) const
@@ -687,12 +653,10 @@ PutAppInstanceRetentionSettingsOutcomeCallable ChimeSDKIdentityClient::PutAppIns
 
 void ChimeSDKIdentityClient::PutAppInstanceRetentionSettingsAsync(const PutAppInstanceRetentionSettingsRequest& request, const PutAppInstanceRetentionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutAppInstanceRetentionSettingsAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKIdentityClient::PutAppInstanceRetentionSettingsAsyncHelper(const PutAppInstanceRetentionSettingsRequest& request, const PutAppInstanceRetentionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutAppInstanceRetentionSettings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutAppInstanceRetentionSettings(request), context);
+    } );
 }
 
 RegisterAppInstanceUserEndpointOutcome ChimeSDKIdentityClient::RegisterAppInstanceUserEndpoint(const RegisterAppInstanceUserEndpointRequest& request) const
@@ -719,12 +683,10 @@ RegisterAppInstanceUserEndpointOutcomeCallable ChimeSDKIdentityClient::RegisterA
 
 void ChimeSDKIdentityClient::RegisterAppInstanceUserEndpointAsync(const RegisterAppInstanceUserEndpointRequest& request, const RegisterAppInstanceUserEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterAppInstanceUserEndpointAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKIdentityClient::RegisterAppInstanceUserEndpointAsyncHelper(const RegisterAppInstanceUserEndpointRequest& request, const RegisterAppInstanceUserEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RegisterAppInstanceUserEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RegisterAppInstanceUserEndpoint(request), context);
+    } );
 }
 
 TagResourceOutcome ChimeSDKIdentityClient::TagResource(const TagResourceRequest& request) const
@@ -747,12 +709,10 @@ TagResourceOutcomeCallable ChimeSDKIdentityClient::TagResourceCallable(const Tag
 
 void ChimeSDKIdentityClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKIdentityClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome ChimeSDKIdentityClient::UntagResource(const UntagResourceRequest& request) const
@@ -775,12 +735,10 @@ UntagResourceOutcomeCallable ChimeSDKIdentityClient::UntagResourceCallable(const
 
 void ChimeSDKIdentityClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKIdentityClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateAppInstanceOutcome ChimeSDKIdentityClient::UpdateAppInstance(const UpdateAppInstanceRequest& request) const
@@ -806,12 +764,10 @@ UpdateAppInstanceOutcomeCallable ChimeSDKIdentityClient::UpdateAppInstanceCallab
 
 void ChimeSDKIdentityClient::UpdateAppInstanceAsync(const UpdateAppInstanceRequest& request, const UpdateAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAppInstanceAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKIdentityClient::UpdateAppInstanceAsyncHelper(const UpdateAppInstanceRequest& request, const UpdateAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateAppInstance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateAppInstance(request), context);
+    } );
 }
 
 UpdateAppInstanceUserOutcome ChimeSDKIdentityClient::UpdateAppInstanceUser(const UpdateAppInstanceUserRequest& request) const
@@ -837,12 +793,10 @@ UpdateAppInstanceUserOutcomeCallable ChimeSDKIdentityClient::UpdateAppInstanceUs
 
 void ChimeSDKIdentityClient::UpdateAppInstanceUserAsync(const UpdateAppInstanceUserRequest& request, const UpdateAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAppInstanceUserAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKIdentityClient::UpdateAppInstanceUserAsyncHelper(const UpdateAppInstanceUserRequest& request, const UpdateAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateAppInstanceUser(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateAppInstanceUser(request), context);
+    } );
 }
 
 UpdateAppInstanceUserEndpointOutcome ChimeSDKIdentityClient::UpdateAppInstanceUserEndpoint(const UpdateAppInstanceUserEndpointRequest& request) const
@@ -875,11 +829,9 @@ UpdateAppInstanceUserEndpointOutcomeCallable ChimeSDKIdentityClient::UpdateAppIn
 
 void ChimeSDKIdentityClient::UpdateAppInstanceUserEndpointAsync(const UpdateAppInstanceUserEndpointRequest& request, const UpdateAppInstanceUserEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAppInstanceUserEndpointAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKIdentityClient::UpdateAppInstanceUserEndpointAsyncHelper(const UpdateAppInstanceUserEndpointRequest& request, const UpdateAppInstanceUserEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateAppInstanceUserEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateAppInstanceUserEndpoint(request), context);
+    } );
 }
 

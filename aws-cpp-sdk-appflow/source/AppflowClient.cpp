@@ -139,12 +139,10 @@ CreateConnectorProfileOutcomeCallable AppflowClient::CreateConnectorProfileCalla
 
 void AppflowClient::CreateConnectorProfileAsync(const CreateConnectorProfileRequest& request, const CreateConnectorProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateConnectorProfileAsyncHelper( request, handler, context ); } );
-}
-
-void AppflowClient::CreateConnectorProfileAsyncHelper(const CreateConnectorProfileRequest& request, const CreateConnectorProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateConnectorProfile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateConnectorProfile(request), context);
+    } );
 }
 
 CreateFlowOutcome AppflowClient::CreateFlow(const CreateFlowRequest& request) const
@@ -164,12 +162,10 @@ CreateFlowOutcomeCallable AppflowClient::CreateFlowCallable(const CreateFlowRequ
 
 void AppflowClient::CreateFlowAsync(const CreateFlowRequest& request, const CreateFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFlowAsyncHelper( request, handler, context ); } );
-}
-
-void AppflowClient::CreateFlowAsyncHelper(const CreateFlowRequest& request, const CreateFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateFlow(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateFlow(request), context);
+    } );
 }
 
 DeleteConnectorProfileOutcome AppflowClient::DeleteConnectorProfile(const DeleteConnectorProfileRequest& request) const
@@ -189,12 +185,10 @@ DeleteConnectorProfileOutcomeCallable AppflowClient::DeleteConnectorProfileCalla
 
 void AppflowClient::DeleteConnectorProfileAsync(const DeleteConnectorProfileRequest& request, const DeleteConnectorProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteConnectorProfileAsyncHelper( request, handler, context ); } );
-}
-
-void AppflowClient::DeleteConnectorProfileAsyncHelper(const DeleteConnectorProfileRequest& request, const DeleteConnectorProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteConnectorProfile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteConnectorProfile(request), context);
+    } );
 }
 
 DeleteFlowOutcome AppflowClient::DeleteFlow(const DeleteFlowRequest& request) const
@@ -214,12 +208,10 @@ DeleteFlowOutcomeCallable AppflowClient::DeleteFlowCallable(const DeleteFlowRequ
 
 void AppflowClient::DeleteFlowAsync(const DeleteFlowRequest& request, const DeleteFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFlowAsyncHelper( request, handler, context ); } );
-}
-
-void AppflowClient::DeleteFlowAsyncHelper(const DeleteFlowRequest& request, const DeleteFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteFlow(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteFlow(request), context);
+    } );
 }
 
 DescribeConnectorOutcome AppflowClient::DescribeConnector(const DescribeConnectorRequest& request) const
@@ -239,12 +231,10 @@ DescribeConnectorOutcomeCallable AppflowClient::DescribeConnectorCallable(const 
 
 void AppflowClient::DescribeConnectorAsync(const DescribeConnectorRequest& request, const DescribeConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeConnectorAsyncHelper( request, handler, context ); } );
-}
-
-void AppflowClient::DescribeConnectorAsyncHelper(const DescribeConnectorRequest& request, const DescribeConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeConnector(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeConnector(request), context);
+    } );
 }
 
 DescribeConnectorEntityOutcome AppflowClient::DescribeConnectorEntity(const DescribeConnectorEntityRequest& request) const
@@ -264,12 +254,10 @@ DescribeConnectorEntityOutcomeCallable AppflowClient::DescribeConnectorEntityCal
 
 void AppflowClient::DescribeConnectorEntityAsync(const DescribeConnectorEntityRequest& request, const DescribeConnectorEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeConnectorEntityAsyncHelper( request, handler, context ); } );
-}
-
-void AppflowClient::DescribeConnectorEntityAsyncHelper(const DescribeConnectorEntityRequest& request, const DescribeConnectorEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeConnectorEntity(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeConnectorEntity(request), context);
+    } );
 }
 
 DescribeConnectorProfilesOutcome AppflowClient::DescribeConnectorProfiles(const DescribeConnectorProfilesRequest& request) const
@@ -289,12 +277,10 @@ DescribeConnectorProfilesOutcomeCallable AppflowClient::DescribeConnectorProfile
 
 void AppflowClient::DescribeConnectorProfilesAsync(const DescribeConnectorProfilesRequest& request, const DescribeConnectorProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeConnectorProfilesAsyncHelper( request, handler, context ); } );
-}
-
-void AppflowClient::DescribeConnectorProfilesAsyncHelper(const DescribeConnectorProfilesRequest& request, const DescribeConnectorProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeConnectorProfiles(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeConnectorProfiles(request), context);
+    } );
 }
 
 DescribeConnectorsOutcome AppflowClient::DescribeConnectors(const DescribeConnectorsRequest& request) const
@@ -314,12 +300,10 @@ DescribeConnectorsOutcomeCallable AppflowClient::DescribeConnectorsCallable(cons
 
 void AppflowClient::DescribeConnectorsAsync(const DescribeConnectorsRequest& request, const DescribeConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeConnectorsAsyncHelper( request, handler, context ); } );
-}
-
-void AppflowClient::DescribeConnectorsAsyncHelper(const DescribeConnectorsRequest& request, const DescribeConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeConnectors(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeConnectors(request), context);
+    } );
 }
 
 DescribeFlowOutcome AppflowClient::DescribeFlow(const DescribeFlowRequest& request) const
@@ -339,12 +323,10 @@ DescribeFlowOutcomeCallable AppflowClient::DescribeFlowCallable(const DescribeFl
 
 void AppflowClient::DescribeFlowAsync(const DescribeFlowRequest& request, const DescribeFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFlowAsyncHelper( request, handler, context ); } );
-}
-
-void AppflowClient::DescribeFlowAsyncHelper(const DescribeFlowRequest& request, const DescribeFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeFlow(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeFlow(request), context);
+    } );
 }
 
 DescribeFlowExecutionRecordsOutcome AppflowClient::DescribeFlowExecutionRecords(const DescribeFlowExecutionRecordsRequest& request) const
@@ -364,12 +346,10 @@ DescribeFlowExecutionRecordsOutcomeCallable AppflowClient::DescribeFlowExecution
 
 void AppflowClient::DescribeFlowExecutionRecordsAsync(const DescribeFlowExecutionRecordsRequest& request, const DescribeFlowExecutionRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFlowExecutionRecordsAsyncHelper( request, handler, context ); } );
-}
-
-void AppflowClient::DescribeFlowExecutionRecordsAsyncHelper(const DescribeFlowExecutionRecordsRequest& request, const DescribeFlowExecutionRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeFlowExecutionRecords(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeFlowExecutionRecords(request), context);
+    } );
 }
 
 ListConnectorEntitiesOutcome AppflowClient::ListConnectorEntities(const ListConnectorEntitiesRequest& request) const
@@ -389,12 +369,10 @@ ListConnectorEntitiesOutcomeCallable AppflowClient::ListConnectorEntitiesCallabl
 
 void AppflowClient::ListConnectorEntitiesAsync(const ListConnectorEntitiesRequest& request, const ListConnectorEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListConnectorEntitiesAsyncHelper( request, handler, context ); } );
-}
-
-void AppflowClient::ListConnectorEntitiesAsyncHelper(const ListConnectorEntitiesRequest& request, const ListConnectorEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListConnectorEntities(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListConnectorEntities(request), context);
+    } );
 }
 
 ListConnectorsOutcome AppflowClient::ListConnectors(const ListConnectorsRequest& request) const
@@ -414,12 +392,10 @@ ListConnectorsOutcomeCallable AppflowClient::ListConnectorsCallable(const ListCo
 
 void AppflowClient::ListConnectorsAsync(const ListConnectorsRequest& request, const ListConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListConnectorsAsyncHelper( request, handler, context ); } );
-}
-
-void AppflowClient::ListConnectorsAsyncHelper(const ListConnectorsRequest& request, const ListConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListConnectors(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListConnectors(request), context);
+    } );
 }
 
 ListFlowsOutcome AppflowClient::ListFlows(const ListFlowsRequest& request) const
@@ -439,12 +415,10 @@ ListFlowsOutcomeCallable AppflowClient::ListFlowsCallable(const ListFlowsRequest
 
 void AppflowClient::ListFlowsAsync(const ListFlowsRequest& request, const ListFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFlowsAsyncHelper( request, handler, context ); } );
-}
-
-void AppflowClient::ListFlowsAsyncHelper(const ListFlowsRequest& request, const ListFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListFlows(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListFlows(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome AppflowClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -470,12 +444,10 @@ ListTagsForResourceOutcomeCallable AppflowClient::ListTagsForResourceCallable(co
 
 void AppflowClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void AppflowClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 RegisterConnectorOutcome AppflowClient::RegisterConnector(const RegisterConnectorRequest& request) const
@@ -495,12 +467,10 @@ RegisterConnectorOutcomeCallable AppflowClient::RegisterConnectorCallable(const 
 
 void AppflowClient::RegisterConnectorAsync(const RegisterConnectorRequest& request, const RegisterConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterConnectorAsyncHelper( request, handler, context ); } );
-}
-
-void AppflowClient::RegisterConnectorAsyncHelper(const RegisterConnectorRequest& request, const RegisterConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RegisterConnector(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RegisterConnector(request), context);
+    } );
 }
 
 StartFlowOutcome AppflowClient::StartFlow(const StartFlowRequest& request) const
@@ -520,12 +490,10 @@ StartFlowOutcomeCallable AppflowClient::StartFlowCallable(const StartFlowRequest
 
 void AppflowClient::StartFlowAsync(const StartFlowRequest& request, const StartFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartFlowAsyncHelper( request, handler, context ); } );
-}
-
-void AppflowClient::StartFlowAsyncHelper(const StartFlowRequest& request, const StartFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartFlow(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartFlow(request), context);
+    } );
 }
 
 StopFlowOutcome AppflowClient::StopFlow(const StopFlowRequest& request) const
@@ -545,12 +513,10 @@ StopFlowOutcomeCallable AppflowClient::StopFlowCallable(const StopFlowRequest& r
 
 void AppflowClient::StopFlowAsync(const StopFlowRequest& request, const StopFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopFlowAsyncHelper( request, handler, context ); } );
-}
-
-void AppflowClient::StopFlowAsyncHelper(const StopFlowRequest& request, const StopFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StopFlow(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopFlow(request), context);
+    } );
 }
 
 TagResourceOutcome AppflowClient::TagResource(const TagResourceRequest& request) const
@@ -576,12 +542,10 @@ TagResourceOutcomeCallable AppflowClient::TagResourceCallable(const TagResourceR
 
 void AppflowClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void AppflowClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UnregisterConnectorOutcome AppflowClient::UnregisterConnector(const UnregisterConnectorRequest& request) const
@@ -601,12 +565,10 @@ UnregisterConnectorOutcomeCallable AppflowClient::UnregisterConnectorCallable(co
 
 void AppflowClient::UnregisterConnectorAsync(const UnregisterConnectorRequest& request, const UnregisterConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UnregisterConnectorAsyncHelper( request, handler, context ); } );
-}
-
-void AppflowClient::UnregisterConnectorAsyncHelper(const UnregisterConnectorRequest& request, const UnregisterConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UnregisterConnector(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UnregisterConnector(request), context);
+    } );
 }
 
 UntagResourceOutcome AppflowClient::UntagResource(const UntagResourceRequest& request) const
@@ -637,12 +599,10 @@ UntagResourceOutcomeCallable AppflowClient::UntagResourceCallable(const UntagRes
 
 void AppflowClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void AppflowClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateConnectorProfileOutcome AppflowClient::UpdateConnectorProfile(const UpdateConnectorProfileRequest& request) const
@@ -662,12 +622,10 @@ UpdateConnectorProfileOutcomeCallable AppflowClient::UpdateConnectorProfileCalla
 
 void AppflowClient::UpdateConnectorProfileAsync(const UpdateConnectorProfileRequest& request, const UpdateConnectorProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateConnectorProfileAsyncHelper( request, handler, context ); } );
-}
-
-void AppflowClient::UpdateConnectorProfileAsyncHelper(const UpdateConnectorProfileRequest& request, const UpdateConnectorProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateConnectorProfile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateConnectorProfile(request), context);
+    } );
 }
 
 UpdateFlowOutcome AppflowClient::UpdateFlow(const UpdateFlowRequest& request) const
@@ -687,11 +645,9 @@ UpdateFlowOutcomeCallable AppflowClient::UpdateFlowCallable(const UpdateFlowRequ
 
 void AppflowClient::UpdateFlowAsync(const UpdateFlowRequest& request, const UpdateFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFlowAsyncHelper( request, handler, context ); } );
-}
-
-void AppflowClient::UpdateFlowAsyncHelper(const UpdateFlowRequest& request, const UpdateFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateFlow(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateFlow(request), context);
+    } );
 }
 

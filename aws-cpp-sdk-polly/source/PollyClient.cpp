@@ -132,12 +132,10 @@ DeleteLexiconOutcomeCallable PollyClient::DeleteLexiconCallable(const DeleteLexi
 
 void PollyClient::DeleteLexiconAsync(const DeleteLexiconRequest& request, const DeleteLexiconResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLexiconAsyncHelper( request, handler, context ); } );
-}
-
-void PollyClient::DeleteLexiconAsyncHelper(const DeleteLexiconRequest& request, const DeleteLexiconResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteLexicon(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteLexicon(request), context);
+    } );
 }
 
 DescribeVoicesOutcome PollyClient::DescribeVoices(const DescribeVoicesRequest& request) const
@@ -157,12 +155,10 @@ DescribeVoicesOutcomeCallable PollyClient::DescribeVoicesCallable(const Describe
 
 void PollyClient::DescribeVoicesAsync(const DescribeVoicesRequest& request, const DescribeVoicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeVoicesAsyncHelper( request, handler, context ); } );
-}
-
-void PollyClient::DescribeVoicesAsyncHelper(const DescribeVoicesRequest& request, const DescribeVoicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeVoices(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeVoices(request), context);
+    } );
 }
 
 GetLexiconOutcome PollyClient::GetLexicon(const GetLexiconRequest& request) const
@@ -188,12 +184,10 @@ GetLexiconOutcomeCallable PollyClient::GetLexiconCallable(const GetLexiconReques
 
 void PollyClient::GetLexiconAsync(const GetLexiconRequest& request, const GetLexiconResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLexiconAsyncHelper( request, handler, context ); } );
-}
-
-void PollyClient::GetLexiconAsyncHelper(const GetLexiconRequest& request, const GetLexiconResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetLexicon(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetLexicon(request), context);
+    } );
 }
 
 GetSpeechSynthesisTaskOutcome PollyClient::GetSpeechSynthesisTask(const GetSpeechSynthesisTaskRequest& request) const
@@ -219,12 +213,10 @@ GetSpeechSynthesisTaskOutcomeCallable PollyClient::GetSpeechSynthesisTaskCallabl
 
 void PollyClient::GetSpeechSynthesisTaskAsync(const GetSpeechSynthesisTaskRequest& request, const GetSpeechSynthesisTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSpeechSynthesisTaskAsyncHelper( request, handler, context ); } );
-}
-
-void PollyClient::GetSpeechSynthesisTaskAsyncHelper(const GetSpeechSynthesisTaskRequest& request, const GetSpeechSynthesisTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetSpeechSynthesisTask(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetSpeechSynthesisTask(request), context);
+    } );
 }
 
 ListLexiconsOutcome PollyClient::ListLexicons(const ListLexiconsRequest& request) const
@@ -244,12 +236,10 @@ ListLexiconsOutcomeCallable PollyClient::ListLexiconsCallable(const ListLexicons
 
 void PollyClient::ListLexiconsAsync(const ListLexiconsRequest& request, const ListLexiconsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLexiconsAsyncHelper( request, handler, context ); } );
-}
-
-void PollyClient::ListLexiconsAsyncHelper(const ListLexiconsRequest& request, const ListLexiconsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListLexicons(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListLexicons(request), context);
+    } );
 }
 
 ListSpeechSynthesisTasksOutcome PollyClient::ListSpeechSynthesisTasks(const ListSpeechSynthesisTasksRequest& request) const
@@ -269,12 +259,10 @@ ListSpeechSynthesisTasksOutcomeCallable PollyClient::ListSpeechSynthesisTasksCal
 
 void PollyClient::ListSpeechSynthesisTasksAsync(const ListSpeechSynthesisTasksRequest& request, const ListSpeechSynthesisTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSpeechSynthesisTasksAsyncHelper( request, handler, context ); } );
-}
-
-void PollyClient::ListSpeechSynthesisTasksAsyncHelper(const ListSpeechSynthesisTasksRequest& request, const ListSpeechSynthesisTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListSpeechSynthesisTasks(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListSpeechSynthesisTasks(request), context);
+    } );
 }
 
 PutLexiconOutcome PollyClient::PutLexicon(const PutLexiconRequest& request) const
@@ -300,12 +288,10 @@ PutLexiconOutcomeCallable PollyClient::PutLexiconCallable(const PutLexiconReques
 
 void PollyClient::PutLexiconAsync(const PutLexiconRequest& request, const PutLexiconResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutLexiconAsyncHelper( request, handler, context ); } );
-}
-
-void PollyClient::PutLexiconAsyncHelper(const PutLexiconRequest& request, const PutLexiconResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutLexicon(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutLexicon(request), context);
+    } );
 }
 
 StartSpeechSynthesisTaskOutcome PollyClient::StartSpeechSynthesisTask(const StartSpeechSynthesisTaskRequest& request) const
@@ -325,12 +311,10 @@ StartSpeechSynthesisTaskOutcomeCallable PollyClient::StartSpeechSynthesisTaskCal
 
 void PollyClient::StartSpeechSynthesisTaskAsync(const StartSpeechSynthesisTaskRequest& request, const StartSpeechSynthesisTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartSpeechSynthesisTaskAsyncHelper( request, handler, context ); } );
-}
-
-void PollyClient::StartSpeechSynthesisTaskAsyncHelper(const StartSpeechSynthesisTaskRequest& request, const StartSpeechSynthesisTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartSpeechSynthesisTask(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartSpeechSynthesisTask(request), context);
+    } );
 }
 
 SynthesizeSpeechOutcome PollyClient::SynthesizeSpeech(const SynthesizeSpeechRequest& request) const
@@ -350,11 +334,9 @@ SynthesizeSpeechOutcomeCallable PollyClient::SynthesizeSpeechCallable(const Synt
 
 void PollyClient::SynthesizeSpeechAsync(const SynthesizeSpeechRequest& request, const SynthesizeSpeechResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SynthesizeSpeechAsyncHelper( request, handler, context ); } );
-}
-
-void PollyClient::SynthesizeSpeechAsyncHelper(const SynthesizeSpeechRequest& request, const SynthesizeSpeechResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SynthesizeSpeech(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SynthesizeSpeech(request), context);
+    } );
 }
 

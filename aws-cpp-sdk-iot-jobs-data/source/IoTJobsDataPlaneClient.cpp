@@ -134,12 +134,10 @@ DescribeJobExecutionOutcomeCallable IoTJobsDataPlaneClient::DescribeJobExecution
 
 void IoTJobsDataPlaneClient::DescribeJobExecutionAsync(const DescribeJobExecutionRequest& request, const DescribeJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeJobExecutionAsyncHelper( request, handler, context ); } );
-}
-
-void IoTJobsDataPlaneClient::DescribeJobExecutionAsyncHelper(const DescribeJobExecutionRequest& request, const DescribeJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeJobExecution(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeJobExecution(request), context);
+    } );
 }
 
 GetPendingJobExecutionsOutcome IoTJobsDataPlaneClient::GetPendingJobExecutions(const GetPendingJobExecutionsRequest& request) const
@@ -166,12 +164,10 @@ GetPendingJobExecutionsOutcomeCallable IoTJobsDataPlaneClient::GetPendingJobExec
 
 void IoTJobsDataPlaneClient::GetPendingJobExecutionsAsync(const GetPendingJobExecutionsRequest& request, const GetPendingJobExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPendingJobExecutionsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTJobsDataPlaneClient::GetPendingJobExecutionsAsyncHelper(const GetPendingJobExecutionsRequest& request, const GetPendingJobExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetPendingJobExecutions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetPendingJobExecutions(request), context);
+    } );
 }
 
 StartNextPendingJobExecutionOutcome IoTJobsDataPlaneClient::StartNextPendingJobExecution(const StartNextPendingJobExecutionRequest& request) const
@@ -198,12 +194,10 @@ StartNextPendingJobExecutionOutcomeCallable IoTJobsDataPlaneClient::StartNextPen
 
 void IoTJobsDataPlaneClient::StartNextPendingJobExecutionAsync(const StartNextPendingJobExecutionRequest& request, const StartNextPendingJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartNextPendingJobExecutionAsyncHelper( request, handler, context ); } );
-}
-
-void IoTJobsDataPlaneClient::StartNextPendingJobExecutionAsyncHelper(const StartNextPendingJobExecutionRequest& request, const StartNextPendingJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartNextPendingJobExecution(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartNextPendingJobExecution(request), context);
+    } );
 }
 
 UpdateJobExecutionOutcome IoTJobsDataPlaneClient::UpdateJobExecution(const UpdateJobExecutionRequest& request) const
@@ -236,11 +230,9 @@ UpdateJobExecutionOutcomeCallable IoTJobsDataPlaneClient::UpdateJobExecutionCall
 
 void IoTJobsDataPlaneClient::UpdateJobExecutionAsync(const UpdateJobExecutionRequest& request, const UpdateJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateJobExecutionAsyncHelper( request, handler, context ); } );
-}
-
-void IoTJobsDataPlaneClient::UpdateJobExecutionAsyncHelper(const UpdateJobExecutionRequest& request, const UpdateJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateJobExecution(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateJobExecution(request), context);
+    } );
 }
 

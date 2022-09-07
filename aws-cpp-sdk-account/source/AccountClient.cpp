@@ -122,12 +122,10 @@ DeleteAlternateContactOutcomeCallable AccountClient::DeleteAlternateContactCalla
 
 void AccountClient::DeleteAlternateContactAsync(const DeleteAlternateContactRequest& request, const DeleteAlternateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAlternateContactAsyncHelper( request, handler, context ); } );
-}
-
-void AccountClient::DeleteAlternateContactAsyncHelper(const DeleteAlternateContactRequest& request, const DeleteAlternateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteAlternateContact(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteAlternateContact(request), context);
+    } );
 }
 
 GetAlternateContactOutcome AccountClient::GetAlternateContact(const GetAlternateContactRequest& request) const
@@ -147,12 +145,10 @@ GetAlternateContactOutcomeCallable AccountClient::GetAlternateContactCallable(co
 
 void AccountClient::GetAlternateContactAsync(const GetAlternateContactRequest& request, const GetAlternateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAlternateContactAsyncHelper( request, handler, context ); } );
-}
-
-void AccountClient::GetAlternateContactAsyncHelper(const GetAlternateContactRequest& request, const GetAlternateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetAlternateContact(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAlternateContact(request), context);
+    } );
 }
 
 GetContactInformationOutcome AccountClient::GetContactInformation(const GetContactInformationRequest& request) const
@@ -172,12 +168,10 @@ GetContactInformationOutcomeCallable AccountClient::GetContactInformationCallabl
 
 void AccountClient::GetContactInformationAsync(const GetContactInformationRequest& request, const GetContactInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetContactInformationAsyncHelper( request, handler, context ); } );
-}
-
-void AccountClient::GetContactInformationAsyncHelper(const GetContactInformationRequest& request, const GetContactInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetContactInformation(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetContactInformation(request), context);
+    } );
 }
 
 PutAlternateContactOutcome AccountClient::PutAlternateContact(const PutAlternateContactRequest& request) const
@@ -197,12 +191,10 @@ PutAlternateContactOutcomeCallable AccountClient::PutAlternateContactCallable(co
 
 void AccountClient::PutAlternateContactAsync(const PutAlternateContactRequest& request, const PutAlternateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutAlternateContactAsyncHelper( request, handler, context ); } );
-}
-
-void AccountClient::PutAlternateContactAsyncHelper(const PutAlternateContactRequest& request, const PutAlternateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutAlternateContact(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutAlternateContact(request), context);
+    } );
 }
 
 PutContactInformationOutcome AccountClient::PutContactInformation(const PutContactInformationRequest& request) const
@@ -222,11 +214,9 @@ PutContactInformationOutcomeCallable AccountClient::PutContactInformationCallabl
 
 void AccountClient::PutContactInformationAsync(const PutContactInformationRequest& request, const PutContactInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutContactInformationAsyncHelper( request, handler, context ); } );
-}
-
-void AccountClient::PutContactInformationAsyncHelper(const PutContactInformationRequest& request, const PutContactInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutContactInformation(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutContactInformation(request), context);
+    } );
 }
 

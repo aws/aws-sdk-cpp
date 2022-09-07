@@ -149,12 +149,10 @@ CreateCellOutcomeCallable Route53RecoveryReadinessClient::CreateCellCallable(con
 
 void Route53RecoveryReadinessClient::CreateCellAsync(const CreateCellRequest& request, const CreateCellResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCellAsyncHelper( request, handler, context ); } );
-}
-
-void Route53RecoveryReadinessClient::CreateCellAsyncHelper(const CreateCellRequest& request, const CreateCellResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateCell(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateCell(request), context);
+    } );
 }
 
 CreateCrossAccountAuthorizationOutcome Route53RecoveryReadinessClient::CreateCrossAccountAuthorization(const CreateCrossAccountAuthorizationRequest& request) const
@@ -174,12 +172,10 @@ CreateCrossAccountAuthorizationOutcomeCallable Route53RecoveryReadinessClient::C
 
 void Route53RecoveryReadinessClient::CreateCrossAccountAuthorizationAsync(const CreateCrossAccountAuthorizationRequest& request, const CreateCrossAccountAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCrossAccountAuthorizationAsyncHelper( request, handler, context ); } );
-}
-
-void Route53RecoveryReadinessClient::CreateCrossAccountAuthorizationAsyncHelper(const CreateCrossAccountAuthorizationRequest& request, const CreateCrossAccountAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateCrossAccountAuthorization(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateCrossAccountAuthorization(request), context);
+    } );
 }
 
 CreateReadinessCheckOutcome Route53RecoveryReadinessClient::CreateReadinessCheck(const CreateReadinessCheckRequest& request) const
@@ -199,12 +195,10 @@ CreateReadinessCheckOutcomeCallable Route53RecoveryReadinessClient::CreateReadin
 
 void Route53RecoveryReadinessClient::CreateReadinessCheckAsync(const CreateReadinessCheckRequest& request, const CreateReadinessCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateReadinessCheckAsyncHelper( request, handler, context ); } );
-}
-
-void Route53RecoveryReadinessClient::CreateReadinessCheckAsyncHelper(const CreateReadinessCheckRequest& request, const CreateReadinessCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateReadinessCheck(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateReadinessCheck(request), context);
+    } );
 }
 
 CreateRecoveryGroupOutcome Route53RecoveryReadinessClient::CreateRecoveryGroup(const CreateRecoveryGroupRequest& request) const
@@ -224,12 +218,10 @@ CreateRecoveryGroupOutcomeCallable Route53RecoveryReadinessClient::CreateRecover
 
 void Route53RecoveryReadinessClient::CreateRecoveryGroupAsync(const CreateRecoveryGroupRequest& request, const CreateRecoveryGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRecoveryGroupAsyncHelper( request, handler, context ); } );
-}
-
-void Route53RecoveryReadinessClient::CreateRecoveryGroupAsyncHelper(const CreateRecoveryGroupRequest& request, const CreateRecoveryGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateRecoveryGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateRecoveryGroup(request), context);
+    } );
 }
 
 CreateResourceSetOutcome Route53RecoveryReadinessClient::CreateResourceSet(const CreateResourceSetRequest& request) const
@@ -249,12 +241,10 @@ CreateResourceSetOutcomeCallable Route53RecoveryReadinessClient::CreateResourceS
 
 void Route53RecoveryReadinessClient::CreateResourceSetAsync(const CreateResourceSetRequest& request, const CreateResourceSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateResourceSetAsyncHelper( request, handler, context ); } );
-}
-
-void Route53RecoveryReadinessClient::CreateResourceSetAsyncHelper(const CreateResourceSetRequest& request, const CreateResourceSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateResourceSet(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateResourceSet(request), context);
+    } );
 }
 
 DeleteCellOutcome Route53RecoveryReadinessClient::DeleteCell(const DeleteCellRequest& request) const
@@ -280,12 +270,10 @@ DeleteCellOutcomeCallable Route53RecoveryReadinessClient::DeleteCellCallable(con
 
 void Route53RecoveryReadinessClient::DeleteCellAsync(const DeleteCellRequest& request, const DeleteCellResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCellAsyncHelper( request, handler, context ); } );
-}
-
-void Route53RecoveryReadinessClient::DeleteCellAsyncHelper(const DeleteCellRequest& request, const DeleteCellResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteCell(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteCell(request), context);
+    } );
 }
 
 DeleteCrossAccountAuthorizationOutcome Route53RecoveryReadinessClient::DeleteCrossAccountAuthorization(const DeleteCrossAccountAuthorizationRequest& request) const
@@ -311,12 +299,10 @@ DeleteCrossAccountAuthorizationOutcomeCallable Route53RecoveryReadinessClient::D
 
 void Route53RecoveryReadinessClient::DeleteCrossAccountAuthorizationAsync(const DeleteCrossAccountAuthorizationRequest& request, const DeleteCrossAccountAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCrossAccountAuthorizationAsyncHelper( request, handler, context ); } );
-}
-
-void Route53RecoveryReadinessClient::DeleteCrossAccountAuthorizationAsyncHelper(const DeleteCrossAccountAuthorizationRequest& request, const DeleteCrossAccountAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteCrossAccountAuthorization(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteCrossAccountAuthorization(request), context);
+    } );
 }
 
 DeleteReadinessCheckOutcome Route53RecoveryReadinessClient::DeleteReadinessCheck(const DeleteReadinessCheckRequest& request) const
@@ -342,12 +328,10 @@ DeleteReadinessCheckOutcomeCallable Route53RecoveryReadinessClient::DeleteReadin
 
 void Route53RecoveryReadinessClient::DeleteReadinessCheckAsync(const DeleteReadinessCheckRequest& request, const DeleteReadinessCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteReadinessCheckAsyncHelper( request, handler, context ); } );
-}
-
-void Route53RecoveryReadinessClient::DeleteReadinessCheckAsyncHelper(const DeleteReadinessCheckRequest& request, const DeleteReadinessCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteReadinessCheck(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteReadinessCheck(request), context);
+    } );
 }
 
 DeleteRecoveryGroupOutcome Route53RecoveryReadinessClient::DeleteRecoveryGroup(const DeleteRecoveryGroupRequest& request) const
@@ -373,12 +357,10 @@ DeleteRecoveryGroupOutcomeCallable Route53RecoveryReadinessClient::DeleteRecover
 
 void Route53RecoveryReadinessClient::DeleteRecoveryGroupAsync(const DeleteRecoveryGroupRequest& request, const DeleteRecoveryGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRecoveryGroupAsyncHelper( request, handler, context ); } );
-}
-
-void Route53RecoveryReadinessClient::DeleteRecoveryGroupAsyncHelper(const DeleteRecoveryGroupRequest& request, const DeleteRecoveryGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteRecoveryGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteRecoveryGroup(request), context);
+    } );
 }
 
 DeleteResourceSetOutcome Route53RecoveryReadinessClient::DeleteResourceSet(const DeleteResourceSetRequest& request) const
@@ -404,12 +386,10 @@ DeleteResourceSetOutcomeCallable Route53RecoveryReadinessClient::DeleteResourceS
 
 void Route53RecoveryReadinessClient::DeleteResourceSetAsync(const DeleteResourceSetRequest& request, const DeleteResourceSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteResourceSetAsyncHelper( request, handler, context ); } );
-}
-
-void Route53RecoveryReadinessClient::DeleteResourceSetAsyncHelper(const DeleteResourceSetRequest& request, const DeleteResourceSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteResourceSet(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteResourceSet(request), context);
+    } );
 }
 
 GetArchitectureRecommendationsOutcome Route53RecoveryReadinessClient::GetArchitectureRecommendations(const GetArchitectureRecommendationsRequest& request) const
@@ -436,12 +416,10 @@ GetArchitectureRecommendationsOutcomeCallable Route53RecoveryReadinessClient::Ge
 
 void Route53RecoveryReadinessClient::GetArchitectureRecommendationsAsync(const GetArchitectureRecommendationsRequest& request, const GetArchitectureRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetArchitectureRecommendationsAsyncHelper( request, handler, context ); } );
-}
-
-void Route53RecoveryReadinessClient::GetArchitectureRecommendationsAsyncHelper(const GetArchitectureRecommendationsRequest& request, const GetArchitectureRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetArchitectureRecommendations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetArchitectureRecommendations(request), context);
+    } );
 }
 
 GetCellOutcome Route53RecoveryReadinessClient::GetCell(const GetCellRequest& request) const
@@ -467,12 +445,10 @@ GetCellOutcomeCallable Route53RecoveryReadinessClient::GetCellCallable(const Get
 
 void Route53RecoveryReadinessClient::GetCellAsync(const GetCellRequest& request, const GetCellResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCellAsyncHelper( request, handler, context ); } );
-}
-
-void Route53RecoveryReadinessClient::GetCellAsyncHelper(const GetCellRequest& request, const GetCellResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetCell(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetCell(request), context);
+    } );
 }
 
 GetCellReadinessSummaryOutcome Route53RecoveryReadinessClient::GetCellReadinessSummary(const GetCellReadinessSummaryRequest& request) const
@@ -498,12 +474,10 @@ GetCellReadinessSummaryOutcomeCallable Route53RecoveryReadinessClient::GetCellRe
 
 void Route53RecoveryReadinessClient::GetCellReadinessSummaryAsync(const GetCellReadinessSummaryRequest& request, const GetCellReadinessSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCellReadinessSummaryAsyncHelper( request, handler, context ); } );
-}
-
-void Route53RecoveryReadinessClient::GetCellReadinessSummaryAsyncHelper(const GetCellReadinessSummaryRequest& request, const GetCellReadinessSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetCellReadinessSummary(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetCellReadinessSummary(request), context);
+    } );
 }
 
 GetReadinessCheckOutcome Route53RecoveryReadinessClient::GetReadinessCheck(const GetReadinessCheckRequest& request) const
@@ -529,12 +503,10 @@ GetReadinessCheckOutcomeCallable Route53RecoveryReadinessClient::GetReadinessChe
 
 void Route53RecoveryReadinessClient::GetReadinessCheckAsync(const GetReadinessCheckRequest& request, const GetReadinessCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetReadinessCheckAsyncHelper( request, handler, context ); } );
-}
-
-void Route53RecoveryReadinessClient::GetReadinessCheckAsyncHelper(const GetReadinessCheckRequest& request, const GetReadinessCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetReadinessCheck(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetReadinessCheck(request), context);
+    } );
 }
 
 GetReadinessCheckResourceStatusOutcome Route53RecoveryReadinessClient::GetReadinessCheckResourceStatus(const GetReadinessCheckResourceStatusRequest& request) const
@@ -568,12 +540,10 @@ GetReadinessCheckResourceStatusOutcomeCallable Route53RecoveryReadinessClient::G
 
 void Route53RecoveryReadinessClient::GetReadinessCheckResourceStatusAsync(const GetReadinessCheckResourceStatusRequest& request, const GetReadinessCheckResourceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetReadinessCheckResourceStatusAsyncHelper( request, handler, context ); } );
-}
-
-void Route53RecoveryReadinessClient::GetReadinessCheckResourceStatusAsyncHelper(const GetReadinessCheckResourceStatusRequest& request, const GetReadinessCheckResourceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetReadinessCheckResourceStatus(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetReadinessCheckResourceStatus(request), context);
+    } );
 }
 
 GetReadinessCheckStatusOutcome Route53RecoveryReadinessClient::GetReadinessCheckStatus(const GetReadinessCheckStatusRequest& request) const
@@ -600,12 +570,10 @@ GetReadinessCheckStatusOutcomeCallable Route53RecoveryReadinessClient::GetReadin
 
 void Route53RecoveryReadinessClient::GetReadinessCheckStatusAsync(const GetReadinessCheckStatusRequest& request, const GetReadinessCheckStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetReadinessCheckStatusAsyncHelper( request, handler, context ); } );
-}
-
-void Route53RecoveryReadinessClient::GetReadinessCheckStatusAsyncHelper(const GetReadinessCheckStatusRequest& request, const GetReadinessCheckStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetReadinessCheckStatus(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetReadinessCheckStatus(request), context);
+    } );
 }
 
 GetRecoveryGroupOutcome Route53RecoveryReadinessClient::GetRecoveryGroup(const GetRecoveryGroupRequest& request) const
@@ -631,12 +599,10 @@ GetRecoveryGroupOutcomeCallable Route53RecoveryReadinessClient::GetRecoveryGroup
 
 void Route53RecoveryReadinessClient::GetRecoveryGroupAsync(const GetRecoveryGroupRequest& request, const GetRecoveryGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRecoveryGroupAsyncHelper( request, handler, context ); } );
-}
-
-void Route53RecoveryReadinessClient::GetRecoveryGroupAsyncHelper(const GetRecoveryGroupRequest& request, const GetRecoveryGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetRecoveryGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetRecoveryGroup(request), context);
+    } );
 }
 
 GetRecoveryGroupReadinessSummaryOutcome Route53RecoveryReadinessClient::GetRecoveryGroupReadinessSummary(const GetRecoveryGroupReadinessSummaryRequest& request) const
@@ -662,12 +628,10 @@ GetRecoveryGroupReadinessSummaryOutcomeCallable Route53RecoveryReadinessClient::
 
 void Route53RecoveryReadinessClient::GetRecoveryGroupReadinessSummaryAsync(const GetRecoveryGroupReadinessSummaryRequest& request, const GetRecoveryGroupReadinessSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRecoveryGroupReadinessSummaryAsyncHelper( request, handler, context ); } );
-}
-
-void Route53RecoveryReadinessClient::GetRecoveryGroupReadinessSummaryAsyncHelper(const GetRecoveryGroupReadinessSummaryRequest& request, const GetRecoveryGroupReadinessSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetRecoveryGroupReadinessSummary(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetRecoveryGroupReadinessSummary(request), context);
+    } );
 }
 
 GetResourceSetOutcome Route53RecoveryReadinessClient::GetResourceSet(const GetResourceSetRequest& request) const
@@ -693,12 +657,10 @@ GetResourceSetOutcomeCallable Route53RecoveryReadinessClient::GetResourceSetCall
 
 void Route53RecoveryReadinessClient::GetResourceSetAsync(const GetResourceSetRequest& request, const GetResourceSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResourceSetAsyncHelper( request, handler, context ); } );
-}
-
-void Route53RecoveryReadinessClient::GetResourceSetAsyncHelper(const GetResourceSetRequest& request, const GetResourceSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetResourceSet(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetResourceSet(request), context);
+    } );
 }
 
 ListCellsOutcome Route53RecoveryReadinessClient::ListCells(const ListCellsRequest& request) const
@@ -718,12 +680,10 @@ ListCellsOutcomeCallable Route53RecoveryReadinessClient::ListCellsCallable(const
 
 void Route53RecoveryReadinessClient::ListCellsAsync(const ListCellsRequest& request, const ListCellsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCellsAsyncHelper( request, handler, context ); } );
-}
-
-void Route53RecoveryReadinessClient::ListCellsAsyncHelper(const ListCellsRequest& request, const ListCellsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListCells(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListCells(request), context);
+    } );
 }
 
 ListCrossAccountAuthorizationsOutcome Route53RecoveryReadinessClient::ListCrossAccountAuthorizations(const ListCrossAccountAuthorizationsRequest& request) const
@@ -743,12 +703,10 @@ ListCrossAccountAuthorizationsOutcomeCallable Route53RecoveryReadinessClient::Li
 
 void Route53RecoveryReadinessClient::ListCrossAccountAuthorizationsAsync(const ListCrossAccountAuthorizationsRequest& request, const ListCrossAccountAuthorizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCrossAccountAuthorizationsAsyncHelper( request, handler, context ); } );
-}
-
-void Route53RecoveryReadinessClient::ListCrossAccountAuthorizationsAsyncHelper(const ListCrossAccountAuthorizationsRequest& request, const ListCrossAccountAuthorizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListCrossAccountAuthorizations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListCrossAccountAuthorizations(request), context);
+    } );
 }
 
 ListReadinessChecksOutcome Route53RecoveryReadinessClient::ListReadinessChecks(const ListReadinessChecksRequest& request) const
@@ -768,12 +726,10 @@ ListReadinessChecksOutcomeCallable Route53RecoveryReadinessClient::ListReadiness
 
 void Route53RecoveryReadinessClient::ListReadinessChecksAsync(const ListReadinessChecksRequest& request, const ListReadinessChecksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListReadinessChecksAsyncHelper( request, handler, context ); } );
-}
-
-void Route53RecoveryReadinessClient::ListReadinessChecksAsyncHelper(const ListReadinessChecksRequest& request, const ListReadinessChecksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListReadinessChecks(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListReadinessChecks(request), context);
+    } );
 }
 
 ListRecoveryGroupsOutcome Route53RecoveryReadinessClient::ListRecoveryGroups(const ListRecoveryGroupsRequest& request) const
@@ -793,12 +749,10 @@ ListRecoveryGroupsOutcomeCallable Route53RecoveryReadinessClient::ListRecoveryGr
 
 void Route53RecoveryReadinessClient::ListRecoveryGroupsAsync(const ListRecoveryGroupsRequest& request, const ListRecoveryGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRecoveryGroupsAsyncHelper( request, handler, context ); } );
-}
-
-void Route53RecoveryReadinessClient::ListRecoveryGroupsAsyncHelper(const ListRecoveryGroupsRequest& request, const ListRecoveryGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListRecoveryGroups(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListRecoveryGroups(request), context);
+    } );
 }
 
 ListResourceSetsOutcome Route53RecoveryReadinessClient::ListResourceSets(const ListResourceSetsRequest& request) const
@@ -818,12 +772,10 @@ ListResourceSetsOutcomeCallable Route53RecoveryReadinessClient::ListResourceSets
 
 void Route53RecoveryReadinessClient::ListResourceSetsAsync(const ListResourceSetsRequest& request, const ListResourceSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListResourceSetsAsyncHelper( request, handler, context ); } );
-}
-
-void Route53RecoveryReadinessClient::ListResourceSetsAsyncHelper(const ListResourceSetsRequest& request, const ListResourceSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListResourceSets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListResourceSets(request), context);
+    } );
 }
 
 ListRulesOutcome Route53RecoveryReadinessClient::ListRules(const ListRulesRequest& request) const
@@ -843,12 +795,10 @@ ListRulesOutcomeCallable Route53RecoveryReadinessClient::ListRulesCallable(const
 
 void Route53RecoveryReadinessClient::ListRulesAsync(const ListRulesRequest& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRulesAsyncHelper( request, handler, context ); } );
-}
-
-void Route53RecoveryReadinessClient::ListRulesAsyncHelper(const ListRulesRequest& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListRules(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListRules(request), context);
+    } );
 }
 
 ListTagsForResourcesOutcome Route53RecoveryReadinessClient::ListTagsForResources(const ListTagsForResourcesRequest& request) const
@@ -874,12 +824,10 @@ ListTagsForResourcesOutcomeCallable Route53RecoveryReadinessClient::ListTagsForR
 
 void Route53RecoveryReadinessClient::ListTagsForResourcesAsync(const ListTagsForResourcesRequest& request, const ListTagsForResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourcesAsyncHelper( request, handler, context ); } );
-}
-
-void Route53RecoveryReadinessClient::ListTagsForResourcesAsyncHelper(const ListTagsForResourcesRequest& request, const ListTagsForResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResources(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResources(request), context);
+    } );
 }
 
 TagResourceOutcome Route53RecoveryReadinessClient::TagResource(const TagResourceRequest& request) const
@@ -905,12 +853,10 @@ TagResourceOutcomeCallable Route53RecoveryReadinessClient::TagResourceCallable(c
 
 void Route53RecoveryReadinessClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void Route53RecoveryReadinessClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome Route53RecoveryReadinessClient::UntagResource(const UntagResourceRequest& request) const
@@ -941,12 +887,10 @@ UntagResourceOutcomeCallable Route53RecoveryReadinessClient::UntagResourceCallab
 
 void Route53RecoveryReadinessClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void Route53RecoveryReadinessClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateCellOutcome Route53RecoveryReadinessClient::UpdateCell(const UpdateCellRequest& request) const
@@ -972,12 +916,10 @@ UpdateCellOutcomeCallable Route53RecoveryReadinessClient::UpdateCellCallable(con
 
 void Route53RecoveryReadinessClient::UpdateCellAsync(const UpdateCellRequest& request, const UpdateCellResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateCellAsyncHelper( request, handler, context ); } );
-}
-
-void Route53RecoveryReadinessClient::UpdateCellAsyncHelper(const UpdateCellRequest& request, const UpdateCellResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateCell(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateCell(request), context);
+    } );
 }
 
 UpdateReadinessCheckOutcome Route53RecoveryReadinessClient::UpdateReadinessCheck(const UpdateReadinessCheckRequest& request) const
@@ -1003,12 +945,10 @@ UpdateReadinessCheckOutcomeCallable Route53RecoveryReadinessClient::UpdateReadin
 
 void Route53RecoveryReadinessClient::UpdateReadinessCheckAsync(const UpdateReadinessCheckRequest& request, const UpdateReadinessCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateReadinessCheckAsyncHelper( request, handler, context ); } );
-}
-
-void Route53RecoveryReadinessClient::UpdateReadinessCheckAsyncHelper(const UpdateReadinessCheckRequest& request, const UpdateReadinessCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateReadinessCheck(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateReadinessCheck(request), context);
+    } );
 }
 
 UpdateRecoveryGroupOutcome Route53RecoveryReadinessClient::UpdateRecoveryGroup(const UpdateRecoveryGroupRequest& request) const
@@ -1034,12 +974,10 @@ UpdateRecoveryGroupOutcomeCallable Route53RecoveryReadinessClient::UpdateRecover
 
 void Route53RecoveryReadinessClient::UpdateRecoveryGroupAsync(const UpdateRecoveryGroupRequest& request, const UpdateRecoveryGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRecoveryGroupAsyncHelper( request, handler, context ); } );
-}
-
-void Route53RecoveryReadinessClient::UpdateRecoveryGroupAsyncHelper(const UpdateRecoveryGroupRequest& request, const UpdateRecoveryGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateRecoveryGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateRecoveryGroup(request), context);
+    } );
 }
 
 UpdateResourceSetOutcome Route53RecoveryReadinessClient::UpdateResourceSet(const UpdateResourceSetRequest& request) const
@@ -1065,11 +1003,9 @@ UpdateResourceSetOutcomeCallable Route53RecoveryReadinessClient::UpdateResourceS
 
 void Route53RecoveryReadinessClient::UpdateResourceSetAsync(const UpdateResourceSetRequest& request, const UpdateResourceSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateResourceSetAsyncHelper( request, handler, context ); } );
-}
-
-void Route53RecoveryReadinessClient::UpdateResourceSetAsyncHelper(const UpdateResourceSetRequest& request, const UpdateResourceSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateResourceSet(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateResourceSet(request), context);
+    } );
 }
 

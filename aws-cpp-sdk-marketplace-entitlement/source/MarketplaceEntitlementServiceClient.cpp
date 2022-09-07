@@ -117,11 +117,9 @@ GetEntitlementsOutcomeCallable MarketplaceEntitlementServiceClient::GetEntitleme
 
 void MarketplaceEntitlementServiceClient::GetEntitlementsAsync(const GetEntitlementsRequest& request, const GetEntitlementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEntitlementsAsyncHelper( request, handler, context ); } );
-}
-
-void MarketplaceEntitlementServiceClient::GetEntitlementsAsyncHelper(const GetEntitlementsRequest& request, const GetEntitlementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetEntitlements(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetEntitlements(request), context);
+    } );
 }
 
