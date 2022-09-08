@@ -86,7 +86,7 @@ ScheduledInstanceAvailability& ScheduledInstanceAvailability::operator =(const X
     XmlNode firstSlotStartTimeNode = resultNode.FirstChild("firstSlotStartTime");
     if(!firstSlotStartTimeNode.IsNull())
     {
-      m_firstSlotStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(firstSlotStartTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_firstSlotStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(firstSlotStartTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_firstSlotStartTimeHasBeenSet = true;
     }
     XmlNode hourlyPriceNode = resultNode.FirstChild("hourlyPrice");
@@ -168,7 +168,7 @@ void ScheduledInstanceAvailability::OutputToStream(Aws::OStream& oStream, const 
 
   if(m_firstSlotStartTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".FirstSlotStartTime=" << StringUtils::URLEncode(m_firstSlotStartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".FirstSlotStartTime=" << StringUtils::URLEncode(m_firstSlotStartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_hourlyPriceHasBeenSet)
@@ -237,7 +237,7 @@ void ScheduledInstanceAvailability::OutputToStream(Aws::OStream& oStream, const 
   }
   if(m_firstSlotStartTimeHasBeenSet)
   {
-      oStream << location << ".FirstSlotStartTime=" << StringUtils::URLEncode(m_firstSlotStartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".FirstSlotStartTime=" << StringUtils::URLEncode(m_firstSlotStartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_hourlyPriceHasBeenSet)
   {

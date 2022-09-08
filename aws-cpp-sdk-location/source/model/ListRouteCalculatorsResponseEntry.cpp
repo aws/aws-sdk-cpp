@@ -89,7 +89,7 @@ JsonValue ListRouteCalculatorsResponseEntry::Jsonize() const
 
   if(m_createTimeHasBeenSet)
   {
-   payload.WithString("CreateTime", m_createTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("CreateTime", m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_dataSourceHasBeenSet)
@@ -106,7 +106,7 @@ JsonValue ListRouteCalculatorsResponseEntry::Jsonize() const
 
   if(m_updateTimeHasBeenSet)
   {
-   payload.WithString("UpdateTime", m_updateTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("UpdateTime", m_updateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

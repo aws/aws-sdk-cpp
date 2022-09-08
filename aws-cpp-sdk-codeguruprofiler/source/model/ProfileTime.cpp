@@ -47,7 +47,7 @@ JsonValue ProfileTime::Jsonize() const
 
   if(m_startHasBeenSet)
   {
-   payload.WithString("start", m_start.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("start", m_start.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

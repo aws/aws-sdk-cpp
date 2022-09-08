@@ -43,14 +43,14 @@ void ListReportJobsRequest::AddQueryStringParameters(URI& uri) const
 
     if(m_byCreationBeforeHasBeenSet)
     {
-      ss << m_byCreationBefore.ToGmtString(DateFormat::ISO_8601);
+      ss << m_byCreationBefore.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
       uri.AddQueryStringParameter("CreationBefore", ss.str());
       ss.str("");
     }
 
     if(m_byCreationAfterHasBeenSet)
     {
-      ss << m_byCreationAfter.ToGmtString(DateFormat::ISO_8601);
+      ss << m_byCreationAfter.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
       uri.AddQueryStringParameter("CreationAfter", ss.str());
       ss.str("");
     }

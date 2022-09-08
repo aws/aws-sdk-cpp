@@ -120,13 +120,13 @@ IpamAddressHistoryRecord& IpamAddressHistoryRecord::operator =(const XmlNode& xm
     XmlNode sampledStartTimeNode = resultNode.FirstChild("sampledStartTime");
     if(!sampledStartTimeNode.IsNull())
     {
-      m_sampledStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sampledStartTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_sampledStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sampledStartTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_sampledStartTimeHasBeenSet = true;
     }
     XmlNode sampledEndTimeNode = resultNode.FirstChild("sampledEndTime");
     if(!sampledEndTimeNode.IsNull())
     {
-      m_sampledEndTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sampledEndTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_sampledEndTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sampledEndTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_sampledEndTimeHasBeenSet = true;
     }
   }
@@ -183,12 +183,12 @@ void IpamAddressHistoryRecord::OutputToStream(Aws::OStream& oStream, const char*
 
   if(m_sampledStartTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SampledStartTime=" << StringUtils::URLEncode(m_sampledStartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".SampledStartTime=" << StringUtils::URLEncode(m_sampledStartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_sampledEndTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SampledEndTime=" << StringUtils::URLEncode(m_sampledEndTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".SampledEndTime=" << StringUtils::URLEncode(m_sampledEndTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
 }
@@ -233,11 +233,11 @@ void IpamAddressHistoryRecord::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_sampledStartTimeHasBeenSet)
   {
-      oStream << location << ".SampledStartTime=" << StringUtils::URLEncode(m_sampledStartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".SampledStartTime=" << StringUtils::URLEncode(m_sampledStartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_sampledEndTimeHasBeenSet)
   {
-      oStream << location << ".SampledEndTime=" << StringUtils::URLEncode(m_sampledEndTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".SampledEndTime=" << StringUtils::URLEncode(m_sampledEndTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

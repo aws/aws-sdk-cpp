@@ -84,7 +84,7 @@ DescribeEnvironmentHealthResult& DescribeEnvironmentHealthResult::operator =(con
     XmlNode refreshedAtNode = resultNode.FirstChild("RefreshedAt");
     if(!refreshedAtNode.IsNull())
     {
-      m_refreshedAt = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(refreshedAtNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_refreshedAt = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(refreshedAtNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
     }
   }
 

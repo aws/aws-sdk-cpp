@@ -77,7 +77,7 @@ GetObjectAttributesResult& GetObjectAttributesResult::operator =(const Aws::Amaz
   const auto& lastModifiedIter = headers.find("last-modified");
   if(lastModifiedIter != headers.end())
   {
-    m_lastModified = DateTime(lastModifiedIter->second, DateFormat::RFC822);
+    m_lastModified = DateTime(lastModifiedIter->second, Aws::Utils::DateFormat::RFC822);
   }
 
   const auto& versionIdIter = headers.find("x-amz-version-id");

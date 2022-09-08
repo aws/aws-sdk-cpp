@@ -292,7 +292,7 @@ JsonValue BucketMetadata::Jsonize() const
 
   if(m_bucketCreatedAtHasBeenSet)
   {
-   payload.WithString("bucketCreatedAt", m_bucketCreatedAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("bucketCreatedAt", m_bucketCreatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_bucketNameHasBeenSet)
@@ -332,7 +332,7 @@ JsonValue BucketMetadata::Jsonize() const
 
   if(m_lastUpdatedHasBeenSet)
   {
-   payload.WithString("lastUpdated", m_lastUpdated.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("lastUpdated", m_lastUpdated.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_objectCountHasBeenSet)

@@ -98,31 +98,31 @@ EnableFastSnapshotRestoreSuccessItem& EnableFastSnapshotRestoreSuccessItem::oper
     XmlNode enablingTimeNode = resultNode.FirstChild("enablingTime");
     if(!enablingTimeNode.IsNull())
     {
-      m_enablingTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enablingTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_enablingTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enablingTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_enablingTimeHasBeenSet = true;
     }
     XmlNode optimizingTimeNode = resultNode.FirstChild("optimizingTime");
     if(!optimizingTimeNode.IsNull())
     {
-      m_optimizingTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(optimizingTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_optimizingTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(optimizingTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_optimizingTimeHasBeenSet = true;
     }
     XmlNode enabledTimeNode = resultNode.FirstChild("enabledTime");
     if(!enabledTimeNode.IsNull())
     {
-      m_enabledTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_enabledTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_enabledTimeHasBeenSet = true;
     }
     XmlNode disablingTimeNode = resultNode.FirstChild("disablingTime");
     if(!disablingTimeNode.IsNull())
     {
-      m_disablingTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(disablingTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_disablingTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(disablingTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_disablingTimeHasBeenSet = true;
     }
     XmlNode disabledTimeNode = resultNode.FirstChild("disabledTime");
     if(!disabledTimeNode.IsNull())
     {
-      m_disabledTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(disabledTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_disabledTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(disabledTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_disabledTimeHasBeenSet = true;
     }
   }
@@ -164,27 +164,27 @@ void EnableFastSnapshotRestoreSuccessItem::OutputToStream(Aws::OStream& oStream,
 
   if(m_enablingTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EnablingTime=" << StringUtils::URLEncode(m_enablingTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".EnablingTime=" << StringUtils::URLEncode(m_enablingTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_optimizingTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".OptimizingTime=" << StringUtils::URLEncode(m_optimizingTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".OptimizingTime=" << StringUtils::URLEncode(m_optimizingTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_enabledTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EnabledTime=" << StringUtils::URLEncode(m_enabledTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".EnabledTime=" << StringUtils::URLEncode(m_enabledTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_disablingTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DisablingTime=" << StringUtils::URLEncode(m_disablingTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".DisablingTime=" << StringUtils::URLEncode(m_disablingTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_disabledTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DisabledTime=" << StringUtils::URLEncode(m_disabledTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".DisabledTime=" << StringUtils::URLEncode(m_disabledTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
 }
@@ -217,23 +217,23 @@ void EnableFastSnapshotRestoreSuccessItem::OutputToStream(Aws::OStream& oStream,
   }
   if(m_enablingTimeHasBeenSet)
   {
-      oStream << location << ".EnablingTime=" << StringUtils::URLEncode(m_enablingTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".EnablingTime=" << StringUtils::URLEncode(m_enablingTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_optimizingTimeHasBeenSet)
   {
-      oStream << location << ".OptimizingTime=" << StringUtils::URLEncode(m_optimizingTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".OptimizingTime=" << StringUtils::URLEncode(m_optimizingTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_enabledTimeHasBeenSet)
   {
-      oStream << location << ".EnabledTime=" << StringUtils::URLEncode(m_enabledTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".EnabledTime=" << StringUtils::URLEncode(m_enabledTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_disablingTimeHasBeenSet)
   {
-      oStream << location << ".DisablingTime=" << StringUtils::URLEncode(m_disablingTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".DisablingTime=" << StringUtils::URLEncode(m_disablingTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_disabledTimeHasBeenSet)
   {
-      oStream << location << ".DisabledTime=" << StringUtils::URLEncode(m_disabledTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".DisabledTime=" << StringUtils::URLEncode(m_disabledTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

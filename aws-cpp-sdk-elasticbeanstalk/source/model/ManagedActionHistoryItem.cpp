@@ -96,13 +96,13 @@ ManagedActionHistoryItem& ManagedActionHistoryItem::operator =(const XmlNode& xm
     XmlNode executedTimeNode = resultNode.FirstChild("ExecutedTime");
     if(!executedTimeNode.IsNull())
     {
-      m_executedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(executedTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_executedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(executedTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_executedTimeHasBeenSet = true;
     }
     XmlNode finishedTimeNode = resultNode.FirstChild("FinishedTime");
     if(!finishedTimeNode.IsNull())
     {
-      m_finishedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(finishedTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_finishedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(finishedTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_finishedTimeHasBeenSet = true;
     }
   }
@@ -144,12 +144,12 @@ void ManagedActionHistoryItem::OutputToStream(Aws::OStream& oStream, const char*
 
   if(m_executedTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ExecutedTime=" << StringUtils::URLEncode(m_executedTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".ExecutedTime=" << StringUtils::URLEncode(m_executedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_finishedTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".FinishedTime=" << StringUtils::URLEncode(m_finishedTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".FinishedTime=" << StringUtils::URLEncode(m_finishedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
 }
@@ -182,11 +182,11 @@ void ManagedActionHistoryItem::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_executedTimeHasBeenSet)
   {
-      oStream << location << ".ExecutedTime=" << StringUtils::URLEncode(m_executedTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".ExecutedTime=" << StringUtils::URLEncode(m_executedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_finishedTimeHasBeenSet)
   {
-      oStream << location << ".FinishedTime=" << StringUtils::URLEncode(m_finishedTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".FinishedTime=" << StringUtils::URLEncode(m_finishedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

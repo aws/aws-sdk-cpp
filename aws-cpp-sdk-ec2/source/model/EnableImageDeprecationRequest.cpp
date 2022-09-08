@@ -29,7 +29,7 @@ Aws::String EnableImageDeprecationRequest::SerializePayload() const
 
   if(m_deprecateAtHasBeenSet)
   {
-    ss << "DeprecateAt=" << StringUtils::URLEncode(m_deprecateAt.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+    ss << "DeprecateAt=" << StringUtils::URLEncode(m_deprecateAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_dryRunHasBeenSet)

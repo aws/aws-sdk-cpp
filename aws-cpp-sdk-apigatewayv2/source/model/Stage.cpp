@@ -201,7 +201,7 @@ JsonValue Stage::Jsonize() const
 
   if(m_createdDateHasBeenSet)
   {
-   payload.WithString("createdDate", m_createdDate.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("createdDate", m_createdDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_defaultRouteSettingsHasBeenSet)
@@ -230,7 +230,7 @@ JsonValue Stage::Jsonize() const
 
   if(m_lastUpdatedDateHasBeenSet)
   {
-   payload.WithString("lastUpdatedDate", m_lastUpdatedDate.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("lastUpdatedDate", m_lastUpdatedDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_routeSettingsHasBeenSet)

@@ -88,7 +88,7 @@ TypeVersionSummary& TypeVersionSummary::operator =(const XmlNode& xmlNode)
     XmlNode timeCreatedNode = resultNode.FirstChild("TimeCreated");
     if(!timeCreatedNode.IsNull())
     {
-      m_timeCreated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timeCreatedNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_timeCreated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timeCreatedNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_timeCreatedHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
@@ -137,7 +137,7 @@ void TypeVersionSummary::OutputToStream(Aws::OStream& oStream, const char* locat
 
   if(m_timeCreatedHasBeenSet)
   {
-      oStream << location << index << locationValue << ".TimeCreated=" << StringUtils::URLEncode(m_timeCreated.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".TimeCreated=" << StringUtils::URLEncode(m_timeCreated.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_descriptionHasBeenSet)
@@ -176,7 +176,7 @@ void TypeVersionSummary::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_timeCreatedHasBeenSet)
   {
-      oStream << location << ".TimeCreated=" << StringUtils::URLEncode(m_timeCreated.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".TimeCreated=" << StringUtils::URLEncode(m_timeCreated.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_descriptionHasBeenSet)
   {

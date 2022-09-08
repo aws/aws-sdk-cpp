@@ -64,7 +64,7 @@ JsonValue DatasourcePackageUsageInfo::Jsonize() const
 
   if(m_volumeUsageUpdateTimeHasBeenSet)
   {
-   payload.WithString("VolumeUsageUpdateTime", m_volumeUsageUpdateTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("VolumeUsageUpdateTime", m_volumeUsageUpdateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

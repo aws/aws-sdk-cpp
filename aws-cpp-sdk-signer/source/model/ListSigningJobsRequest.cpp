@@ -83,14 +83,14 @@ void ListSigningJobsRequest::AddQueryStringParameters(URI& uri) const
 
     if(m_signatureExpiresBeforeHasBeenSet)
     {
-      ss << m_signatureExpiresBefore.ToGmtString(DateFormat::ISO_8601);
+      ss << m_signatureExpiresBefore.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
       uri.AddQueryStringParameter("signatureExpiresBefore", ss.str());
       ss.str("");
     }
 
     if(m_signatureExpiresAfterHasBeenSet)
     {
-      ss << m_signatureExpiresAfter.ToGmtString(DateFormat::ISO_8601);
+      ss << m_signatureExpiresAfter.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
       uri.AddQueryStringParameter("signatureExpiresAfter", ss.str());
       ss.str("");
     }

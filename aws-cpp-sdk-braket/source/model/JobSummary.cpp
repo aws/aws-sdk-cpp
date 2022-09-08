@@ -115,7 +115,7 @@ JsonValue JobSummary::Jsonize() const
 
   if(m_createdAtHasBeenSet)
   {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_deviceHasBeenSet)
@@ -126,7 +126,7 @@ JsonValue JobSummary::Jsonize() const
 
   if(m_endedAtHasBeenSet)
   {
-   payload.WithString("endedAt", m_endedAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("endedAt", m_endedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_jobArnHasBeenSet)
@@ -143,7 +143,7 @@ JsonValue JobSummary::Jsonize() const
 
   if(m_startedAtHasBeenSet)
   {
-   payload.WithString("startedAt", m_startedAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("startedAt", m_startedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_statusHasBeenSet)

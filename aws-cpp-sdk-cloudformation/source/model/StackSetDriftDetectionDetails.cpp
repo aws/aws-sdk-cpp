@@ -80,7 +80,7 @@ StackSetDriftDetectionDetails& StackSetDriftDetectionDetails::operator =(const X
     XmlNode lastDriftCheckTimestampNode = resultNode.FirstChild("LastDriftCheckTimestamp");
     if(!lastDriftCheckTimestampNode.IsNull())
     {
-      m_lastDriftCheckTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastDriftCheckTimestampNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastDriftCheckTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastDriftCheckTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastDriftCheckTimestampHasBeenSet = true;
     }
     XmlNode totalStackInstancesCountNode = resultNode.FirstChild("TotalStackInstancesCount");
@@ -132,7 +132,7 @@ void StackSetDriftDetectionDetails::OutputToStream(Aws::OStream& oStream, const 
 
   if(m_lastDriftCheckTimestampHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LastDriftCheckTimestamp=" << StringUtils::URLEncode(m_lastDriftCheckTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".LastDriftCheckTimestamp=" << StringUtils::URLEncode(m_lastDriftCheckTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_totalStackInstancesCountHasBeenSet)
@@ -174,7 +174,7 @@ void StackSetDriftDetectionDetails::OutputToStream(Aws::OStream& oStream, const 
   }
   if(m_lastDriftCheckTimestampHasBeenSet)
   {
-      oStream << location << ".LastDriftCheckTimestamp=" << StringUtils::URLEncode(m_lastDriftCheckTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".LastDriftCheckTimestamp=" << StringUtils::URLEncode(m_lastDriftCheckTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_totalStackInstancesCountHasBeenSet)
   {

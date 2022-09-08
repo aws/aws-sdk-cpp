@@ -231,7 +231,7 @@ JsonValue StreamingSession::Jsonize() const
 
   if(m_createdAtHasBeenSet)
   {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_createdByHasBeenSet)
@@ -266,7 +266,7 @@ JsonValue StreamingSession::Jsonize() const
 
   if(m_startedAtHasBeenSet)
   {
-   payload.WithString("startedAt", m_startedAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("startedAt", m_startedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_startedByHasBeenSet)
@@ -293,12 +293,12 @@ JsonValue StreamingSession::Jsonize() const
 
   if(m_stopAtHasBeenSet)
   {
-   payload.WithString("stopAt", m_stopAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("stopAt", m_stopAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_stoppedAtHasBeenSet)
   {
-   payload.WithString("stoppedAt", m_stoppedAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("stoppedAt", m_stoppedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_stoppedByHasBeenSet)
@@ -326,12 +326,12 @@ JsonValue StreamingSession::Jsonize() const
 
   if(m_terminateAtHasBeenSet)
   {
-   payload.WithString("terminateAt", m_terminateAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("terminateAt", m_terminateAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_updatedAtHasBeenSet)
   {
-   payload.WithString("updatedAt", m_updatedAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_updatedByHasBeenSet)

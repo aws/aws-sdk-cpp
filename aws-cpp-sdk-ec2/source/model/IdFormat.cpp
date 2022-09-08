@@ -46,7 +46,7 @@ IdFormat& IdFormat::operator =(const XmlNode& xmlNode)
     XmlNode deadlineNode = resultNode.FirstChild("deadline");
     if(!deadlineNode.IsNull())
     {
-      m_deadline = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deadlineNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_deadline = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deadlineNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_deadlineHasBeenSet = true;
     }
     XmlNode resourceNode = resultNode.FirstChild("resource");
@@ -70,7 +70,7 @@ void IdFormat::OutputToStream(Aws::OStream& oStream, const char* location, unsig
 {
   if(m_deadlineHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Deadline=" << StringUtils::URLEncode(m_deadline.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".Deadline=" << StringUtils::URLEncode(m_deadline.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_resourceHasBeenSet)
@@ -89,7 +89,7 @@ void IdFormat::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
   if(m_deadlineHasBeenSet)
   {
-      oStream << location << ".Deadline=" << StringUtils::URLEncode(m_deadline.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".Deadline=" << StringUtils::URLEncode(m_deadline.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_resourceHasBeenSet)
   {

@@ -64,7 +64,7 @@ Credentials& Credentials::operator =(const XmlNode& xmlNode)
     XmlNode expirationNode = resultNode.FirstChild("Expiration");
     if(!expirationNode.IsNull())
     {
-      m_expiration = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(expirationNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_expiration = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(expirationNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_expirationHasBeenSet = true;
     }
   }
@@ -91,7 +91,7 @@ void Credentials::OutputToStream(Aws::OStream& oStream, const char* location, un
 
   if(m_expirationHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Expiration=" << StringUtils::URLEncode(m_expiration.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".Expiration=" << StringUtils::URLEncode(m_expiration.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
 }
@@ -112,7 +112,7 @@ void Credentials::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_expirationHasBeenSet)
   {
-      oStream << location << ".Expiration=" << StringUtils::URLEncode(m_expiration.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".Expiration=" << StringUtils::URLEncode(m_expiration.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

@@ -92,7 +92,7 @@ EndpointAccess& EndpointAccess::operator =(const XmlNode& xmlNode)
     XmlNode endpointCreateTimeNode = resultNode.FirstChild("EndpointCreateTime");
     if(!endpointCreateTimeNode.IsNull())
     {
-      m_endpointCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endpointCreateTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_endpointCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endpointCreateTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_endpointCreateTimeHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("Port");
@@ -159,7 +159,7 @@ void EndpointAccess::OutputToStream(Aws::OStream& oStream, const char* location,
 
   if(m_endpointCreateTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EndpointCreateTime=" << StringUtils::URLEncode(m_endpointCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".EndpointCreateTime=" << StringUtils::URLEncode(m_endpointCreateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_portHasBeenSet)
@@ -223,7 +223,7 @@ void EndpointAccess::OutputToStream(Aws::OStream& oStream, const char* location)
   }
   if(m_endpointCreateTimeHasBeenSet)
   {
-      oStream << location << ".EndpointCreateTime=" << StringUtils::URLEncode(m_endpointCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".EndpointCreateTime=" << StringUtils::URLEncode(m_endpointCreateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_portHasBeenSet)
   {

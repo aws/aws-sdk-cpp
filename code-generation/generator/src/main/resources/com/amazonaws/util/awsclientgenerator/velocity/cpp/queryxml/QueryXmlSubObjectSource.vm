@@ -72,7 +72,7 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
 #elseif($member.shape.string)
   ${spaces}oStream << location << index << locationValue << ".${memberName}=" << StringUtils::URLEncode(${memberVarName}.c_str()) << "&";
 #elseif($member.shape.timeStamp)
-  ${spaces}oStream << location << index << locationValue << ".${memberName}=" << StringUtils::URLEncode(${memberVarName}.ToGmtString(DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($member.shape)).c_str()) << "&";
+  ${spaces}oStream << location << index << locationValue << ".${memberName}=" << StringUtils::URLEncode(${memberVarName}.ToGmtString(Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($member.shape)).c_str()) << "&";
 #elseif($member.shape.blob)
   ${spaces}oStream << location << index << locationValue << ".${memberName}=" << StringUtils::URLEncode(HashingUtils::Base64Encode(${memberVarName}).c_str()) << "&";
 #elseif($member.shape.double)
@@ -109,7 +109,7 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
 #elseif($member.shape.listMember.shape.string)
   ${spaces}  oStream << location << index << locationValue << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
 #elseif($member.shape.listMember.shape.timeStamp)
-  ${spaces}  oStream << location << index << locationValue << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << StringUtils::URLEncode(item.ToGmtString(DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($member.shape.listMember.shape)).c_str()) << "&";
+  ${spaces}  oStream << location << index << locationValue << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << StringUtils::URLEncode(item.ToGmtString(Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($member.shape.listMember.shape)).c_str()) << "&";
 #elseif($member.shape.listMember.shape.blob)
   ${spaces}  oStream << location << index << locationValue << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << StringUtils::URLEncode(HashingUtils::Base64Encode(item).c_str()) << "&";
 #elseif($member.shape.listMember.shape.double)
@@ -145,7 +145,7 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
 #if($member.shape.mapKey.shape.string)
   ${spaces}      << StringUtils::URLEncode(item.first.c_str()) << "&";
 #elseif($member.shape.mapKey.shape.timeStamp)
-  ${spaces}      << StringUtils::URLEncode(item.first.ToGmtString(DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($member.shape.mapKey.shape)).c_str()) << "&";
+  ${spaces}      << StringUtils::URLEncode(item.first.ToGmtString(Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($member.shape.mapKey.shape)).c_str()) << "&";
 #elseif($member.shape.mapKey.shape.enum)
   ${spaces}      << StringUtils::URLEncode(${member.shape.mapKey.shape.name}Mapper::GetNameFor${member.shape.mapKey.shape.name}(item.first).c_str()) << "&";
 #elseif($member.shape.mapKey.shape.structure)
@@ -163,7 +163,7 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
 #if($member.shape.mapValue.shape.string)
   ${spaces}      << StringUtils::URLEncode(item.second.c_str()) << "&";
 #elseif($member.shape.mapValue.shape.timeStamp)
-  ${spaces}      << StringUtils::URLEncode(item.second.ToGmtString(DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($member.shape.mapValue.shape)).c_str()) << "&";
+  ${spaces}      << StringUtils::URLEncode(item.second.ToGmtString(Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($member.shape.mapValue.shape)).c_str()) << "&";
 #elseif($member.shape.mapValue.shape.enum)
   ${spaces}      << StringUtils::URLEncode(${member.shape.mapValue.shape.name}Mapper::GetNameFor${member.shape.mapValue.shape.name}(item.second).c_str()) << "&";
 #elseif($member.shape.mapValue.shape.structure)
@@ -212,7 +212,7 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
 #elseif($member.shape.string)
   ${spaces}oStream << location << ".${memberName}=" << StringUtils::URLEncode(${memberVarName}.c_str()) << "&";
 #elseif($member.shape.timeStamp)
-  ${spaces}oStream << location << ".${memberName}=" << StringUtils::URLEncode(${memberVarName}.ToGmtString(DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($member.shape)).c_str()) << "&";
+  ${spaces}oStream << location << ".${memberName}=" << StringUtils::URLEncode(${memberVarName}.ToGmtString(Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($member.shape)).c_str()) << "&";
 #elseif($member.shape.blob)
   ${spaces}oStream << location << ".${memberName}=" << StringUtils::URLEncode(HashingUtils::Base64Encode(${memberVarName}).c_str()) << "&";
 #elseif($member.shape.double)
@@ -250,7 +250,7 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
 #elseif($member.shape.listMember.shape.string)
   ${spaces}  oStream << location << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
 #elseif($member.shape.listMember.shape.timeStamp)
-  ${spaces}  oStream << location << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << StringUtils::URLEncode(item.ToGmtString(DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($member.shape.listMember.shape)).c_str()) << "&";
+  ${spaces}  oStream << location << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << StringUtils::URLEncode(item.ToGmtString(Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($member.shape.listMember.shape)).c_str()) << "&";
 #elseif($member.shape.listMember.shape.blob)
   ${spaces}  oStream << location << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << StringUtils::URLEncode(HashingUtils::Base64Encode(item).c_str()) << "&";
 #elseif($member.shape.listMember.shape.double)
@@ -286,7 +286,7 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
 #if($member.shape.mapKey.shape.string)
   ${spaces}      << StringUtils::URLEncode(item.first.c_str()) << "&";
 #elseif($member.shape.mapKey.shape.timeStamp)
-  ${spaces}      << StringUtils::URLEncode(item.first.ToGmtString(DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($member.shape.mapKey.shape)).c_str()) << "&";
+  ${spaces}      << StringUtils::URLEncode(item.first.ToGmtString(Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($member.shape.mapKey.shape)).c_str()) << "&";
 #elseif($member.shape.mapKey.shape.enum)
   ${spaces}      << StringUtils::URLEncode(${member.shape.mapKey.shape.name}Mapper::GetNameFor${member.shape.mapKey.shape.name}(item.first).c_str()) << "&";
 #elseif($member.shape.mapKey.shape.double)
@@ -302,7 +302,7 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
 #if($member.shape.mapValue.shape.string)
   ${spaces}      << StringUtils::URLEncode(item.second.c_str()) << "&";
 #elseif($member.shape.mapValue.shape.timeStamp)
-  ${spaces}      << StringUtils::URLEncode(item.second.ToGmtString(DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($member.shape.mapValue.shape)).c_str()) << "&";
+  ${spaces}      << StringUtils::URLEncode(item.second.ToGmtString(Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($member.shape.mapValue.shape)).c_str()) << "&";
 #elseif($member.shape.mapValue.shape.enum)
   ${spaces}      << StringUtils::URLEncode(${member.shape.mapValue.shape.name}Mapper::GetNameFor${member.shape.mapValue.shape.name}(item.second).c_str()) << "&";
 #elseif($member.shape.mapValue.shape.structure)

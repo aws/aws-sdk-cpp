@@ -68,7 +68,7 @@ DeleteEndpointAccessResult& DeleteEndpointAccessResult::operator =(const Aws::Am
     XmlNode endpointCreateTimeNode = resultNode.FirstChild("EndpointCreateTime");
     if(!endpointCreateTimeNode.IsNull())
     {
-      m_endpointCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endpointCreateTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_endpointCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endpointCreateTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
     }
     XmlNode portNode = resultNode.FirstChild("Port");
     if(!portNode.IsNull())

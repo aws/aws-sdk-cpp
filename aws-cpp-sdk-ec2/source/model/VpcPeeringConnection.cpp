@@ -56,7 +56,7 @@ VpcPeeringConnection& VpcPeeringConnection::operator =(const XmlNode& xmlNode)
     XmlNode expirationTimeNode = resultNode.FirstChild("expirationTime");
     if(!expirationTimeNode.IsNull())
     {
-      m_expirationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(expirationTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_expirationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(expirationTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_expirationTimeHasBeenSet = true;
     }
     XmlNode requesterVpcInfoNode = resultNode.FirstChild("requesterVpcInfo");
@@ -105,7 +105,7 @@ void VpcPeeringConnection::OutputToStream(Aws::OStream& oStream, const char* loc
 
   if(m_expirationTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ExpirationTime=" << StringUtils::URLEncode(m_expirationTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".ExpirationTime=" << StringUtils::URLEncode(m_expirationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_requesterVpcInfoHasBeenSet)
@@ -150,7 +150,7 @@ void VpcPeeringConnection::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_expirationTimeHasBeenSet)
   {
-      oStream << location << ".ExpirationTime=" << StringUtils::URLEncode(m_expirationTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".ExpirationTime=" << StringUtils::URLEncode(m_expirationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_requesterVpcInfoHasBeenSet)
   {

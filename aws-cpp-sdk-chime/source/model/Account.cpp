@@ -154,7 +154,7 @@ JsonValue Account::Jsonize() const
 
   if(m_createdTimestampHasBeenSet)
   {
-   payload.WithString("CreatedTimestamp", m_createdTimestamp.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("CreatedTimestamp", m_createdTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_defaultLicenseHasBeenSet)

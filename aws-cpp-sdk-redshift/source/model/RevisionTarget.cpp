@@ -56,7 +56,7 @@ RevisionTarget& RevisionTarget::operator =(const XmlNode& xmlNode)
     XmlNode databaseRevisionReleaseDateNode = resultNode.FirstChild("DatabaseRevisionReleaseDate");
     if(!databaseRevisionReleaseDateNode.IsNull())
     {
-      m_databaseRevisionReleaseDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(databaseRevisionReleaseDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_databaseRevisionReleaseDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(databaseRevisionReleaseDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_databaseRevisionReleaseDateHasBeenSet = true;
     }
   }
@@ -78,7 +78,7 @@ void RevisionTarget::OutputToStream(Aws::OStream& oStream, const char* location,
 
   if(m_databaseRevisionReleaseDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DatabaseRevisionReleaseDate=" << StringUtils::URLEncode(m_databaseRevisionReleaseDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".DatabaseRevisionReleaseDate=" << StringUtils::URLEncode(m_databaseRevisionReleaseDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
 }
@@ -95,7 +95,7 @@ void RevisionTarget::OutputToStream(Aws::OStream& oStream, const char* location)
   }
   if(m_databaseRevisionReleaseDateHasBeenSet)
   {
-      oStream << location << ".DatabaseRevisionReleaseDate=" << StringUtils::URLEncode(m_databaseRevisionReleaseDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".DatabaseRevisionReleaseDate=" << StringUtils::URLEncode(m_databaseRevisionReleaseDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

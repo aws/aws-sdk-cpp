@@ -94,7 +94,7 @@ JsonValue JobDetails::Jsonize() const
 
   if(m_lastJobRunTimeHasBeenSet)
   {
-   payload.WithString("lastJobRunTime", m_lastJobRunTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("lastJobRunTime", m_lastJobRunTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

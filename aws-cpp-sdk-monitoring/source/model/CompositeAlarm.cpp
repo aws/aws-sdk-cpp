@@ -110,7 +110,7 @@ CompositeAlarm& CompositeAlarm::operator =(const XmlNode& xmlNode)
     XmlNode alarmConfigurationUpdatedTimestampNode = resultNode.FirstChild("AlarmConfigurationUpdatedTimestamp");
     if(!alarmConfigurationUpdatedTimestampNode.IsNull())
     {
-      m_alarmConfigurationUpdatedTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(alarmConfigurationUpdatedTimestampNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_alarmConfigurationUpdatedTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(alarmConfigurationUpdatedTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_alarmConfigurationUpdatedTimestampHasBeenSet = true;
     }
     XmlNode alarmDescriptionNode = resultNode.FirstChild("AlarmDescription");
@@ -170,7 +170,7 @@ CompositeAlarm& CompositeAlarm::operator =(const XmlNode& xmlNode)
     XmlNode stateUpdatedTimestampNode = resultNode.FirstChild("StateUpdatedTimestamp");
     if(!stateUpdatedTimestampNode.IsNull())
     {
-      m_stateUpdatedTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateUpdatedTimestampNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_stateUpdatedTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateUpdatedTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_stateUpdatedTimestampHasBeenSet = true;
     }
     XmlNode stateValueNode = resultNode.FirstChild("StateValue");
@@ -182,7 +182,7 @@ CompositeAlarm& CompositeAlarm::operator =(const XmlNode& xmlNode)
     XmlNode stateTransitionedTimestampNode = resultNode.FirstChild("StateTransitionedTimestamp");
     if(!stateTransitionedTimestampNode.IsNull())
     {
-      m_stateTransitionedTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateTransitionedTimestampNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_stateTransitionedTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateTransitionedTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_stateTransitionedTimestampHasBeenSet = true;
     }
     XmlNode actionsSuppressedByNode = resultNode.FirstChild("ActionsSuppressedBy");
@@ -243,7 +243,7 @@ void CompositeAlarm::OutputToStream(Aws::OStream& oStream, const char* location,
 
   if(m_alarmConfigurationUpdatedTimestampHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AlarmConfigurationUpdatedTimestamp=" << StringUtils::URLEncode(m_alarmConfigurationUpdatedTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".AlarmConfigurationUpdatedTimestamp=" << StringUtils::URLEncode(m_alarmConfigurationUpdatedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_alarmDescriptionHasBeenSet)
@@ -291,7 +291,7 @@ void CompositeAlarm::OutputToStream(Aws::OStream& oStream, const char* location,
 
   if(m_stateUpdatedTimestampHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StateUpdatedTimestamp=" << StringUtils::URLEncode(m_stateUpdatedTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".StateUpdatedTimestamp=" << StringUtils::URLEncode(m_stateUpdatedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_stateValueHasBeenSet)
@@ -301,7 +301,7 @@ void CompositeAlarm::OutputToStream(Aws::OStream& oStream, const char* location,
 
   if(m_stateTransitionedTimestampHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StateTransitionedTimestamp=" << StringUtils::URLEncode(m_stateTransitionedTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".StateTransitionedTimestamp=" << StringUtils::URLEncode(m_stateTransitionedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_actionsSuppressedByHasBeenSet)
@@ -351,7 +351,7 @@ void CompositeAlarm::OutputToStream(Aws::OStream& oStream, const char* location)
   }
   if(m_alarmConfigurationUpdatedTimestampHasBeenSet)
   {
-      oStream << location << ".AlarmConfigurationUpdatedTimestamp=" << StringUtils::URLEncode(m_alarmConfigurationUpdatedTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".AlarmConfigurationUpdatedTimestamp=" << StringUtils::URLEncode(m_alarmConfigurationUpdatedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_alarmDescriptionHasBeenSet)
   {
@@ -391,7 +391,7 @@ void CompositeAlarm::OutputToStream(Aws::OStream& oStream, const char* location)
   }
   if(m_stateUpdatedTimestampHasBeenSet)
   {
-      oStream << location << ".StateUpdatedTimestamp=" << StringUtils::URLEncode(m_stateUpdatedTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".StateUpdatedTimestamp=" << StringUtils::URLEncode(m_stateUpdatedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_stateValueHasBeenSet)
   {
@@ -399,7 +399,7 @@ void CompositeAlarm::OutputToStream(Aws::OStream& oStream, const char* location)
   }
   if(m_stateTransitionedTimestampHasBeenSet)
   {
-      oStream << location << ".StateTransitionedTimestamp=" << StringUtils::URLEncode(m_stateTransitionedTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".StateTransitionedTimestamp=" << StringUtils::URLEncode(m_stateTransitionedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_actionsSuppressedByHasBeenSet)
   {

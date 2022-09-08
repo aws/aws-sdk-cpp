@@ -148,7 +148,7 @@ JsonValue EndpointAccess::Jsonize() const
 
   if(m_endpointCreateTimeHasBeenSet)
   {
-   payload.WithString("endpointCreateTime", m_endpointCreateTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("endpointCreateTime", m_endpointCreateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_endpointNameHasBeenSet)

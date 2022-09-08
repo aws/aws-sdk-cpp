@@ -76,7 +76,7 @@ AccessDetail& AccessDetail::operator =(const XmlNode& xmlNode)
     XmlNode lastAuthenticatedTimeNode = resultNode.FirstChild("LastAuthenticatedTime");
     if(!lastAuthenticatedTimeNode.IsNull())
     {
-      m_lastAuthenticatedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastAuthenticatedTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastAuthenticatedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastAuthenticatedTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastAuthenticatedTimeHasBeenSet = true;
     }
     XmlNode totalAuthenticatedEntitiesNode = resultNode.FirstChild("TotalAuthenticatedEntities");
@@ -114,7 +114,7 @@ void AccessDetail::OutputToStream(Aws::OStream& oStream, const char* location, u
 
   if(m_lastAuthenticatedTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LastAuthenticatedTime=" << StringUtils::URLEncode(m_lastAuthenticatedTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".LastAuthenticatedTime=" << StringUtils::URLEncode(m_lastAuthenticatedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_totalAuthenticatedEntitiesHasBeenSet)
@@ -144,7 +144,7 @@ void AccessDetail::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_lastAuthenticatedTimeHasBeenSet)
   {
-      oStream << location << ".LastAuthenticatedTime=" << StringUtils::URLEncode(m_lastAuthenticatedTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".LastAuthenticatedTime=" << StringUtils::URLEncode(m_lastAuthenticatedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_totalAuthenticatedEntitiesHasBeenSet)
   {

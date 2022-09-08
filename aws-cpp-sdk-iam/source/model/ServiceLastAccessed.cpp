@@ -60,7 +60,7 @@ ServiceLastAccessed& ServiceLastAccessed::operator =(const XmlNode& xmlNode)
     XmlNode lastAuthenticatedNode = resultNode.FirstChild("LastAuthenticated");
     if(!lastAuthenticatedNode.IsNull())
     {
-      m_lastAuthenticated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastAuthenticatedNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastAuthenticated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastAuthenticatedNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastAuthenticatedHasBeenSet = true;
     }
     XmlNode serviceNamespaceNode = resultNode.FirstChild("ServiceNamespace");
@@ -113,7 +113,7 @@ void ServiceLastAccessed::OutputToStream(Aws::OStream& oStream, const char* loca
 
   if(m_lastAuthenticatedHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LastAuthenticated=" << StringUtils::URLEncode(m_lastAuthenticated.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".LastAuthenticated=" << StringUtils::URLEncode(m_lastAuthenticated.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_serviceNamespaceHasBeenSet)
@@ -157,7 +157,7 @@ void ServiceLastAccessed::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_lastAuthenticatedHasBeenSet)
   {
-      oStream << location << ".LastAuthenticated=" << StringUtils::URLEncode(m_lastAuthenticated.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".LastAuthenticated=" << StringUtils::URLEncode(m_lastAuthenticated.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_serviceNamespaceHasBeenSet)
   {

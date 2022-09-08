@@ -65,7 +65,7 @@ JsonValue StreamEvent::Jsonize() const
 
   if(m_eventTimeHasBeenSet)
   {
-   payload.WithString("eventTime", m_eventTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("eventTime", m_eventTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_nameHasBeenSet)

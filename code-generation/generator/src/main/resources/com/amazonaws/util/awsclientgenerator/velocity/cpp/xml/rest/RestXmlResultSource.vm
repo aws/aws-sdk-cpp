@@ -66,7 +66,7 @@ ${typeInfo.className}& ${typeInfo.className}::operator =(const Aws::AmazonWebSer
 #if($memberEntry.value.shape.string)
     ${memberVarName} = ${varName}Iter->second;
 #elseif($memberEntry.value.shape.timeStamp)
-    ${memberVarName} = DateTime(${varName}Iter->second, DateFormat::$CppViewHelper.computeTimestampFormatInHeader($memberEntry.value.shape));
+    ${memberVarName} = DateTime(${varName}Iter->second, Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInHeader($memberEntry.value.shape));
 #elseif($memberEntry.value.shape.enum)
     ${memberVarName} = ${memberEntry.value.shape.name}Mapper::Get${memberEntry.value.shape.name}ForName(${varName}Iter->second);
 #elseif($memberEntry.value.shape.primitive)

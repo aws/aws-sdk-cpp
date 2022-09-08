@@ -88,7 +88,7 @@ SingleInstanceHealth& SingleInstanceHealth::operator =(const XmlNode& xmlNode)
     XmlNode launchedAtNode = resultNode.FirstChild("LaunchedAt");
     if(!launchedAtNode.IsNull())
     {
-      m_launchedAt = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(launchedAtNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_launchedAt = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(launchedAtNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_launchedAtHasBeenSet = true;
     }
     XmlNode applicationMetricsNode = resultNode.FirstChild("ApplicationMetrics");
@@ -154,7 +154,7 @@ void SingleInstanceHealth::OutputToStream(Aws::OStream& oStream, const char* loc
 
   if(m_launchedAtHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LaunchedAt=" << StringUtils::URLEncode(m_launchedAt.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".LaunchedAt=" << StringUtils::URLEncode(m_launchedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_applicationMetricsHasBeenSet)
@@ -214,7 +214,7 @@ void SingleInstanceHealth::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_launchedAtHasBeenSet)
   {
-      oStream << location << ".LaunchedAt=" << StringUtils::URLEncode(m_launchedAt.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".LaunchedAt=" << StringUtils::URLEncode(m_launchedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_applicationMetricsHasBeenSet)
   {

@@ -60,7 +60,7 @@ VgwTelemetry& VgwTelemetry::operator =(const XmlNode& xmlNode)
     XmlNode lastStatusChangeNode = resultNode.FirstChild("lastStatusChange");
     if(!lastStatusChangeNode.IsNull())
     {
-      m_lastStatusChange = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastStatusChangeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastStatusChange = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastStatusChangeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastStatusChangeHasBeenSet = true;
     }
     XmlNode outsideIpAddressNode = resultNode.FirstChild("outsideIpAddress");
@@ -101,7 +101,7 @@ void VgwTelemetry::OutputToStream(Aws::OStream& oStream, const char* location, u
 
   if(m_lastStatusChangeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LastStatusChange=" << StringUtils::URLEncode(m_lastStatusChange.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".LastStatusChange=" << StringUtils::URLEncode(m_lastStatusChange.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_outsideIpAddressHasBeenSet)
@@ -134,7 +134,7 @@ void VgwTelemetry::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_lastStatusChangeHasBeenSet)
   {
-      oStream << location << ".LastStatusChange=" << StringUtils::URLEncode(m_lastStatusChange.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".LastStatusChange=" << StringUtils::URLEncode(m_lastStatusChange.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_outsideIpAddressHasBeenSet)
   {

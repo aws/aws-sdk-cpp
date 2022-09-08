@@ -54,7 +54,7 @@ Aws::String DescribeFleetHistoryRequest::SerializePayload() const
 
   if(m_startTimeHasBeenSet)
   {
-    ss << "StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+    ss << "StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

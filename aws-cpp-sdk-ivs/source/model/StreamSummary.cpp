@@ -109,7 +109,7 @@ JsonValue StreamSummary::Jsonize() const
 
   if(m_startTimeHasBeenSet)
   {
-   payload.WithString("startTime", m_startTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("startTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_stateHasBeenSet)

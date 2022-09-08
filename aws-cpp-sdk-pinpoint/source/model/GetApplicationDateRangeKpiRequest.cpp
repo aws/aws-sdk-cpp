@@ -35,7 +35,7 @@ void GetApplicationDateRangeKpiRequest::AddQueryStringParameters(URI& uri) const
     Aws::StringStream ss;
     if(m_endTimeHasBeenSet)
     {
-      ss << m_endTime.ToGmtString(DateFormat::ISO_8601);
+      ss << m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
       uri.AddQueryStringParameter("end-time", ss.str());
       ss.str("");
     }
@@ -56,7 +56,7 @@ void GetApplicationDateRangeKpiRequest::AddQueryStringParameters(URI& uri) const
 
     if(m_startTimeHasBeenSet)
     {
-      ss << m_startTime.ToGmtString(DateFormat::ISO_8601);
+      ss << m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
       uri.AddQueryStringParameter("start-time", ss.str());
       ss.str("");
     }

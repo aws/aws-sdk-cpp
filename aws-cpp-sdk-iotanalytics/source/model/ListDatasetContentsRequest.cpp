@@ -49,14 +49,14 @@ void ListDatasetContentsRequest::AddQueryStringParameters(URI& uri) const
 
     if(m_scheduledOnOrAfterHasBeenSet)
     {
-      ss << m_scheduledOnOrAfter.ToGmtString(DateFormat::ISO_8601);
+      ss << m_scheduledOnOrAfter.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
       uri.AddQueryStringParameter("scheduledOnOrAfter", ss.str());
       ss.str("");
     }
 
     if(m_scheduledBeforeHasBeenSet)
     {
-      ss << m_scheduledBefore.ToGmtString(DateFormat::ISO_8601);
+      ss << m_scheduledBefore.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
       uri.AddQueryStringParameter("scheduledBefore", ss.str());
       ss.str("");
     }

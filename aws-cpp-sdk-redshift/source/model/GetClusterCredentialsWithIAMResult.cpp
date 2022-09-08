@@ -51,12 +51,12 @@ GetClusterCredentialsWithIAMResult& GetClusterCredentialsWithIAMResult::operator
     XmlNode expirationNode = resultNode.FirstChild("Expiration");
     if(!expirationNode.IsNull())
     {
-      m_expiration = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(expirationNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_expiration = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(expirationNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
     }
     XmlNode nextRefreshTimeNode = resultNode.FirstChild("NextRefreshTime");
     if(!nextRefreshTimeNode.IsNull())
     {
-      m_nextRefreshTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nextRefreshTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_nextRefreshTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nextRefreshTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
     }
   }
 

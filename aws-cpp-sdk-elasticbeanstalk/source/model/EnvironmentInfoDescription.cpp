@@ -60,7 +60,7 @@ EnvironmentInfoDescription& EnvironmentInfoDescription::operator =(const XmlNode
     XmlNode sampleTimestampNode = resultNode.FirstChild("SampleTimestamp");
     if(!sampleTimestampNode.IsNull())
     {
-      m_sampleTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sampleTimestampNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_sampleTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sampleTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_sampleTimestampHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("Message");
@@ -88,7 +88,7 @@ void EnvironmentInfoDescription::OutputToStream(Aws::OStream& oStream, const cha
 
   if(m_sampleTimestampHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SampleTimestamp=" << StringUtils::URLEncode(m_sampleTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".SampleTimestamp=" << StringUtils::URLEncode(m_sampleTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_messageHasBeenSet)
@@ -110,7 +110,7 @@ void EnvironmentInfoDescription::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_sampleTimestampHasBeenSet)
   {
-      oStream << location << ".SampleTimestamp=" << StringUtils::URLEncode(m_sampleTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".SampleTimestamp=" << StringUtils::URLEncode(m_sampleTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_messageHasBeenSet)
   {

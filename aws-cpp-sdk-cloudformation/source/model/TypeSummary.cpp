@@ -94,7 +94,7 @@ TypeSummary& TypeSummary::operator =(const XmlNode& xmlNode)
     XmlNode lastUpdatedNode = resultNode.FirstChild("LastUpdated");
     if(!lastUpdatedNode.IsNull())
     {
-      m_lastUpdated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastUpdatedNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastUpdated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastUpdatedNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastUpdatedHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
@@ -174,7 +174,7 @@ void TypeSummary::OutputToStream(Aws::OStream& oStream, const char* location, un
 
   if(m_lastUpdatedHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LastUpdated=" << StringUtils::URLEncode(m_lastUpdated.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".LastUpdated=" << StringUtils::URLEncode(m_lastUpdated.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_descriptionHasBeenSet)
@@ -239,7 +239,7 @@ void TypeSummary::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_lastUpdatedHasBeenSet)
   {
-      oStream << location << ".LastUpdated=" << StringUtils::URLEncode(m_lastUpdated.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".LastUpdated=" << StringUtils::URLEncode(m_lastUpdated.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_descriptionHasBeenSet)
   {

@@ -144,13 +144,13 @@ Host& Host::operator =(const XmlNode& xmlNode)
     XmlNode allocationTimeNode = resultNode.FirstChild("allocationTime");
     if(!allocationTimeNode.IsNull())
     {
-      m_allocationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allocationTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_allocationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allocationTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_allocationTimeHasBeenSet = true;
     }
     XmlNode releaseTimeNode = resultNode.FirstChild("releaseTime");
     if(!releaseTimeNode.IsNull())
     {
-      m_releaseTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(releaseTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_releaseTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(releaseTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_releaseTimeHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
@@ -265,12 +265,12 @@ void Host::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
 
   if(m_allocationTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AllocationTime=" << StringUtils::URLEncode(m_allocationTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".AllocationTime=" << StringUtils::URLEncode(m_allocationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_releaseTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ReleaseTime=" << StringUtils::URLEncode(m_releaseTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".ReleaseTime=" << StringUtils::URLEncode(m_releaseTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_tagsHasBeenSet)
@@ -366,11 +366,11 @@ void Host::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_allocationTimeHasBeenSet)
   {
-      oStream << location << ".AllocationTime=" << StringUtils::URLEncode(m_allocationTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".AllocationTime=" << StringUtils::URLEncode(m_allocationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_releaseTimeHasBeenSet)
   {
-      oStream << location << ".ReleaseTime=" << StringUtils::URLEncode(m_releaseTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".ReleaseTime=" << StringUtils::URLEncode(m_releaseTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_tagsHasBeenSet)
   {

@@ -207,7 +207,7 @@ JsonValue ConnectorSummary::Jsonize() const
 
   if(m_creationTimeHasBeenSet)
   {
-   payload.WithString("creationTime", m_creationTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("creationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_currentVersionHasBeenSet)

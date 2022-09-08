@@ -77,7 +77,7 @@ JsonValue Administrator::Jsonize() const
 
   if(m_delegationTimeHasBeenSet)
   {
-   payload.WithString("DelegationTime", m_delegationTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("DelegationTime", m_delegationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

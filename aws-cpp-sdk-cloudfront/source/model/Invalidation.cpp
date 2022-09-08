@@ -58,7 +58,7 @@ Invalidation& Invalidation::operator =(const XmlNode& xmlNode)
     XmlNode createTimeNode = resultNode.FirstChild("CreateTime");
     if(!createTimeNode.IsNull())
     {
-      m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createTimeHasBeenSet = true;
     }
     XmlNode invalidationBatchNode = resultNode.FirstChild("InvalidationBatch");
@@ -90,7 +90,7 @@ void Invalidation::AddToNode(XmlNode& parentNode) const
   if(m_createTimeHasBeenSet)
   {
    XmlNode createTimeNode = parentNode.CreateChildElement("CreateTime");
-   createTimeNode.SetText(m_createTime.ToGmtString(DateFormat::ISO_8601));
+   createTimeNode.SetText(m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_invalidationBatchHasBeenSet)

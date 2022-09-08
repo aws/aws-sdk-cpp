@@ -118,7 +118,7 @@ JsonValue StageDeploymentSummary::Jsonize() const
 
   if(m_lastUpdatedHasBeenSet)
   {
-   payload.WithString("LastUpdated", m_lastUpdated.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("LastUpdated", m_lastUpdated.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_snapshotIdHasBeenSet)

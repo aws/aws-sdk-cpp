@@ -88,7 +88,7 @@ JsonValue Invitation::Jsonize() const
 
   if(m_invitedAtHasBeenSet)
   {
-   payload.WithString("invitedAt", m_invitedAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("invitedAt", m_invitedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_relationshipStatusHasBeenSet)

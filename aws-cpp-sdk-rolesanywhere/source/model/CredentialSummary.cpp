@@ -114,7 +114,7 @@ JsonValue CredentialSummary::Jsonize() const
 
   if(m_seenAtHasBeenSet)
   {
-   payload.WithString("seenAt", m_seenAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("seenAt", m_seenAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_serialNumberHasBeenSet)

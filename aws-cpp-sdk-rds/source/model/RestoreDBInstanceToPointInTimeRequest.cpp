@@ -79,7 +79,7 @@ Aws::String RestoreDBInstanceToPointInTimeRequest::SerializePayload() const
 
   if(m_restoreTimeHasBeenSet)
   {
-    ss << "RestoreTime=" << StringUtils::URLEncode(m_restoreTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+    ss << "RestoreTime=" << StringUtils::URLEncode(m_restoreTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_useLatestRestorableTimeHasBeenSet)

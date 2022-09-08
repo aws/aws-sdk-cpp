@@ -78,7 +78,7 @@ JsonValue JobEventDetails::Jsonize() const
 
   if(m_timeOfEventHasBeenSet)
   {
-   payload.WithString("timeOfEvent", m_timeOfEvent.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("timeOfEvent", m_timeOfEvent.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

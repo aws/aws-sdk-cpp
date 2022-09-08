@@ -43,12 +43,12 @@ Aws::String ModifyClusterMaintenanceRequest::SerializePayload() const
 
   if(m_deferMaintenanceStartTimeHasBeenSet)
   {
-    ss << "DeferMaintenanceStartTime=" << StringUtils::URLEncode(m_deferMaintenanceStartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+    ss << "DeferMaintenanceStartTime=" << StringUtils::URLEncode(m_deferMaintenanceStartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_deferMaintenanceEndTimeHasBeenSet)
   {
-    ss << "DeferMaintenanceEndTime=" << StringUtils::URLEncode(m_deferMaintenanceEndTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+    ss << "DeferMaintenanceEndTime=" << StringUtils::URLEncode(m_deferMaintenanceEndTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_deferMaintenanceDurationHasBeenSet)

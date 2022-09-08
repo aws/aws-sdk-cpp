@@ -70,19 +70,19 @@ InstanceStatusEvent& InstanceStatusEvent::operator =(const XmlNode& xmlNode)
     XmlNode notAfterNode = resultNode.FirstChild("notAfter");
     if(!notAfterNode.IsNull())
     {
-      m_notAfter = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(notAfterNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_notAfter = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(notAfterNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_notAfterHasBeenSet = true;
     }
     XmlNode notBeforeNode = resultNode.FirstChild("notBefore");
     if(!notBeforeNode.IsNull())
     {
-      m_notBefore = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(notBeforeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_notBefore = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(notBeforeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_notBeforeHasBeenSet = true;
     }
     XmlNode notBeforeDeadlineNode = resultNode.FirstChild("notBeforeDeadline");
     if(!notBeforeDeadlineNode.IsNull())
     {
-      m_notBeforeDeadline = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(notBeforeDeadlineNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_notBeforeDeadline = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(notBeforeDeadlineNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_notBeforeDeadlineHasBeenSet = true;
     }
   }
@@ -109,17 +109,17 @@ void InstanceStatusEvent::OutputToStream(Aws::OStream& oStream, const char* loca
 
   if(m_notAfterHasBeenSet)
   {
-      oStream << location << index << locationValue << ".NotAfter=" << StringUtils::URLEncode(m_notAfter.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".NotAfter=" << StringUtils::URLEncode(m_notAfter.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_notBeforeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".NotBefore=" << StringUtils::URLEncode(m_notBefore.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".NotBefore=" << StringUtils::URLEncode(m_notBefore.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_notBeforeDeadlineHasBeenSet)
   {
-      oStream << location << index << locationValue << ".NotBeforeDeadline=" << StringUtils::URLEncode(m_notBeforeDeadline.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".NotBeforeDeadline=" << StringUtils::URLEncode(m_notBeforeDeadline.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
 }
@@ -140,15 +140,15 @@ void InstanceStatusEvent::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_notAfterHasBeenSet)
   {
-      oStream << location << ".NotAfter=" << StringUtils::URLEncode(m_notAfter.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".NotAfter=" << StringUtils::URLEncode(m_notAfter.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_notBeforeHasBeenSet)
   {
-      oStream << location << ".NotBefore=" << StringUtils::URLEncode(m_notBefore.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".NotBefore=" << StringUtils::URLEncode(m_notBefore.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_notBeforeDeadlineHasBeenSet)
   {
-      oStream << location << ".NotBeforeDeadline=" << StringUtils::URLEncode(m_notBeforeDeadline.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".NotBeforeDeadline=" << StringUtils::URLEncode(m_notBeforeDeadline.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

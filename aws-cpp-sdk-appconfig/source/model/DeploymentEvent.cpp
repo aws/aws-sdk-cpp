@@ -117,7 +117,7 @@ JsonValue DeploymentEvent::Jsonize() const
 
   if(m_occurredAtHasBeenSet)
   {
-   payload.WithString("OccurredAt", m_occurredAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("OccurredAt", m_occurredAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

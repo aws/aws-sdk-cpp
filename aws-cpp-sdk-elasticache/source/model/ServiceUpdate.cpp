@@ -76,13 +76,13 @@ ServiceUpdate& ServiceUpdate::operator =(const XmlNode& xmlNode)
     XmlNode serviceUpdateReleaseDateNode = resultNode.FirstChild("ServiceUpdateReleaseDate");
     if(!serviceUpdateReleaseDateNode.IsNull())
     {
-      m_serviceUpdateReleaseDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateReleaseDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_serviceUpdateReleaseDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateReleaseDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_serviceUpdateReleaseDateHasBeenSet = true;
     }
     XmlNode serviceUpdateEndDateNode = resultNode.FirstChild("ServiceUpdateEndDate");
     if(!serviceUpdateEndDateNode.IsNull())
     {
-      m_serviceUpdateEndDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateEndDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_serviceUpdateEndDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateEndDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_serviceUpdateEndDateHasBeenSet = true;
     }
     XmlNode serviceUpdateSeverityNode = resultNode.FirstChild("ServiceUpdateSeverity");
@@ -94,7 +94,7 @@ ServiceUpdate& ServiceUpdate::operator =(const XmlNode& xmlNode)
     XmlNode serviceUpdateRecommendedApplyByDateNode = resultNode.FirstChild("ServiceUpdateRecommendedApplyByDate");
     if(!serviceUpdateRecommendedApplyByDateNode.IsNull())
     {
-      m_serviceUpdateRecommendedApplyByDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateRecommendedApplyByDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_serviceUpdateRecommendedApplyByDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateRecommendedApplyByDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_serviceUpdateRecommendedApplyByDateHasBeenSet = true;
     }
     XmlNode serviceUpdateStatusNode = resultNode.FirstChild("ServiceUpdateStatus");
@@ -153,12 +153,12 @@ void ServiceUpdate::OutputToStream(Aws::OStream& oStream, const char* location, 
 
   if(m_serviceUpdateReleaseDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ServiceUpdateReleaseDate=" << StringUtils::URLEncode(m_serviceUpdateReleaseDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".ServiceUpdateReleaseDate=" << StringUtils::URLEncode(m_serviceUpdateReleaseDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_serviceUpdateEndDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ServiceUpdateEndDate=" << StringUtils::URLEncode(m_serviceUpdateEndDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".ServiceUpdateEndDate=" << StringUtils::URLEncode(m_serviceUpdateEndDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_serviceUpdateSeverityHasBeenSet)
@@ -168,7 +168,7 @@ void ServiceUpdate::OutputToStream(Aws::OStream& oStream, const char* location, 
 
   if(m_serviceUpdateRecommendedApplyByDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ServiceUpdateRecommendedApplyByDate=" << StringUtils::URLEncode(m_serviceUpdateRecommendedApplyByDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".ServiceUpdateRecommendedApplyByDate=" << StringUtils::URLEncode(m_serviceUpdateRecommendedApplyByDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_serviceUpdateStatusHasBeenSet)
@@ -216,11 +216,11 @@ void ServiceUpdate::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_serviceUpdateReleaseDateHasBeenSet)
   {
-      oStream << location << ".ServiceUpdateReleaseDate=" << StringUtils::URLEncode(m_serviceUpdateReleaseDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".ServiceUpdateReleaseDate=" << StringUtils::URLEncode(m_serviceUpdateReleaseDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_serviceUpdateEndDateHasBeenSet)
   {
-      oStream << location << ".ServiceUpdateEndDate=" << StringUtils::URLEncode(m_serviceUpdateEndDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".ServiceUpdateEndDate=" << StringUtils::URLEncode(m_serviceUpdateEndDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_serviceUpdateSeverityHasBeenSet)
   {
@@ -228,7 +228,7 @@ void ServiceUpdate::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_serviceUpdateRecommendedApplyByDateHasBeenSet)
   {
-      oStream << location << ".ServiceUpdateRecommendedApplyByDate=" << StringUtils::URLEncode(m_serviceUpdateRecommendedApplyByDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".ServiceUpdateRecommendedApplyByDate=" << StringUtils::URLEncode(m_serviceUpdateRecommendedApplyByDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_serviceUpdateStatusHasBeenSet)
   {

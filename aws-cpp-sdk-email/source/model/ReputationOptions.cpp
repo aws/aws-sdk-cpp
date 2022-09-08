@@ -60,7 +60,7 @@ ReputationOptions& ReputationOptions::operator =(const XmlNode& xmlNode)
     XmlNode lastFreshStartNode = resultNode.FirstChild("LastFreshStart");
     if(!lastFreshStartNode.IsNull())
     {
-      m_lastFreshStart = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastFreshStartNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastFreshStart = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastFreshStartNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastFreshStartHasBeenSet = true;
     }
   }
@@ -82,7 +82,7 @@ void ReputationOptions::OutputToStream(Aws::OStream& oStream, const char* locati
 
   if(m_lastFreshStartHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LastFreshStart=" << StringUtils::URLEncode(m_lastFreshStart.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".LastFreshStart=" << StringUtils::URLEncode(m_lastFreshStart.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
 }
@@ -99,7 +99,7 @@ void ReputationOptions::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_lastFreshStartHasBeenSet)
   {
-      oStream << location << ".LastFreshStart=" << StringUtils::URLEncode(m_lastFreshStart.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".LastFreshStart=" << StringUtils::URLEncode(m_lastFreshStart.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

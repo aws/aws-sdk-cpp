@@ -66,7 +66,7 @@ Deployment& Deployment::operator =(const XmlNode& xmlNode)
     XmlNode deploymentTimeNode = resultNode.FirstChild("DeploymentTime");
     if(!deploymentTimeNode.IsNull())
     {
-      m_deploymentTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deploymentTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_deploymentTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deploymentTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_deploymentTimeHasBeenSet = true;
     }
   }
@@ -93,7 +93,7 @@ void Deployment::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_deploymentTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DeploymentTime=" << StringUtils::URLEncode(m_deploymentTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".DeploymentTime=" << StringUtils::URLEncode(m_deploymentTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
 }
@@ -114,7 +114,7 @@ void Deployment::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_deploymentTimeHasBeenSet)
   {
-      oStream << location << ".DeploymentTime=" << StringUtils::URLEncode(m_deploymentTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".DeploymentTime=" << StringUtils::URLEncode(m_deploymentTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

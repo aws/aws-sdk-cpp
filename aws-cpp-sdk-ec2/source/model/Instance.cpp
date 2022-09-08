@@ -210,7 +210,7 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode launchTimeNode = resultNode.FirstChild("launchTime");
     if(!launchTimeNode.IsNull())
     {
-      m_launchTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(launchTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_launchTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(launchTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_launchTimeHasBeenSet = true;
     }
     XmlNode monitoringNode = resultNode.FirstChild("monitoring");
@@ -528,7 +528,7 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode usageOperationUpdateTimeNode = resultNode.FirstChild("usageOperationUpdateTime");
     if(!usageOperationUpdateTimeNode.IsNull())
     {
-      m_usageOperationUpdateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(usageOperationUpdateTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_usageOperationUpdateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(usageOperationUpdateTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_usageOperationUpdateTimeHasBeenSet = true;
     }
     XmlNode privateDnsNameOptionsNode = resultNode.FirstChild("privateDnsNameOptions");
@@ -594,7 +594,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
 
   if(m_launchTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LaunchTime=" << StringUtils::URLEncode(m_launchTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".LaunchTime=" << StringUtils::URLEncode(m_launchTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_monitoringHasBeenSet)
@@ -887,7 +887,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
 
   if(m_usageOperationUpdateTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".UsageOperationUpdateTime=" << StringUtils::URLEncode(m_usageOperationUpdateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".UsageOperationUpdateTime=" << StringUtils::URLEncode(m_usageOperationUpdateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_privateDnsNameOptionsHasBeenSet)
@@ -944,7 +944,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_launchTimeHasBeenSet)
   {
-      oStream << location << ".LaunchTime=" << StringUtils::URLEncode(m_launchTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".LaunchTime=" << StringUtils::URLEncode(m_launchTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_monitoringHasBeenSet)
   {
@@ -1192,7 +1192,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_usageOperationUpdateTimeHasBeenSet)
   {
-      oStream << location << ".UsageOperationUpdateTime=" << StringUtils::URLEncode(m_usageOperationUpdateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".UsageOperationUpdateTime=" << StringUtils::URLEncode(m_usageOperationUpdateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_privateDnsNameOptionsHasBeenSet)
   {

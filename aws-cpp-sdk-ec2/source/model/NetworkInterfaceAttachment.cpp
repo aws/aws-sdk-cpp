@@ -62,7 +62,7 @@ NetworkInterfaceAttachment& NetworkInterfaceAttachment::operator =(const XmlNode
     XmlNode attachTimeNode = resultNode.FirstChild("attachTime");
     if(!attachTimeNode.IsNull())
     {
-      m_attachTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(attachTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_attachTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(attachTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_attachTimeHasBeenSet = true;
     }
     XmlNode attachmentIdNode = resultNode.FirstChild("attachmentId");
@@ -116,7 +116,7 @@ void NetworkInterfaceAttachment::OutputToStream(Aws::OStream& oStream, const cha
 {
   if(m_attachTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AttachTime=" << StringUtils::URLEncode(m_attachTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".AttachTime=" << StringUtils::URLEncode(m_attachTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_attachmentIdHasBeenSet)
@@ -160,7 +160,7 @@ void NetworkInterfaceAttachment::OutputToStream(Aws::OStream& oStream, const cha
 {
   if(m_attachTimeHasBeenSet)
   {
-      oStream << location << ".AttachTime=" << StringUtils::URLEncode(m_attachTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".AttachTime=" << StringUtils::URLEncode(m_attachTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_attachmentIdHasBeenSet)
   {

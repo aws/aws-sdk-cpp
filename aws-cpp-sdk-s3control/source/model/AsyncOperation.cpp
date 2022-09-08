@@ -52,7 +52,7 @@ AsyncOperation& AsyncOperation::operator =(const XmlNode& xmlNode)
     XmlNode creationTimeNode = resultNode.FirstChild("CreationTime");
     if(!creationTimeNode.IsNull())
     {
-      m_creationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_creationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_creationTimeHasBeenSet = true;
     }
     XmlNode operationNode = resultNode.FirstChild("Operation");
@@ -96,7 +96,7 @@ void AsyncOperation::AddToNode(XmlNode& parentNode) const
   if(m_creationTimeHasBeenSet)
   {
    XmlNode creationTimeNode = parentNode.CreateChildElement("CreationTime");
-   creationTimeNode.SetText(m_creationTime.ToGmtString(DateFormat::ISO_8601));
+   creationTimeNode.SetText(m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_operationHasBeenSet)

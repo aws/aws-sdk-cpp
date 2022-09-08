@@ -85,7 +85,7 @@ JsonValue PolicyGeneration::Jsonize() const
 
   if(m_completedOnHasBeenSet)
   {
-   payload.WithString("completedOn", m_completedOn.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("completedOn", m_completedOn.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_jobIdHasBeenSet)
@@ -102,7 +102,7 @@ JsonValue PolicyGeneration::Jsonize() const
 
   if(m_startedOnHasBeenSet)
   {
-   payload.WithString("startedOn", m_startedOn.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("startedOn", m_startedOn.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_statusHasBeenSet)

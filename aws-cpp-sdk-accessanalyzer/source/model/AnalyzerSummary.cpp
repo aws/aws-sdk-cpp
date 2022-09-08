@@ -132,7 +132,7 @@ JsonValue AnalyzerSummary::Jsonize() const
 
   if(m_createdAtHasBeenSet)
   {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_lastResourceAnalyzedHasBeenSet)
@@ -143,7 +143,7 @@ JsonValue AnalyzerSummary::Jsonize() const
 
   if(m_lastResourceAnalyzedAtHasBeenSet)
   {
-   payload.WithString("lastResourceAnalyzedAt", m_lastResourceAnalyzedAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("lastResourceAnalyzedAt", m_lastResourceAnalyzedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_nameHasBeenSet)

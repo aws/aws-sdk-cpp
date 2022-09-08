@@ -94,7 +94,7 @@ JsonValue DialRequest::Jsonize() const
 
   if(m_expirationTimeHasBeenSet)
   {
-   payload.WithString("expirationTime", m_expirationTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("expirationTime", m_expirationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_phoneNumberHasBeenSet)

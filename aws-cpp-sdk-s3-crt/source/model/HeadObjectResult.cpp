@@ -92,7 +92,7 @@ HeadObjectResult& HeadObjectResult::operator =(const Aws::AmazonWebServiceResult
   const auto& lastModifiedIter = headers.find("last-modified");
   if(lastModifiedIter != headers.end())
   {
-    m_lastModified = DateTime(lastModifiedIter->second, DateFormat::RFC822);
+    m_lastModified = DateTime(lastModifiedIter->second, Aws::Utils::DateFormat::RFC822);
   }
 
   const auto& contentLengthIter = headers.find("content-length");
@@ -176,7 +176,7 @@ HeadObjectResult& HeadObjectResult::operator =(const Aws::AmazonWebServiceResult
   const auto& expiresIter = headers.find("expires");
   if(expiresIter != headers.end())
   {
-    m_expires = DateTime(expiresIter->second, DateFormat::RFC822);
+    m_expires = DateTime(expiresIter->second, Aws::Utils::DateFormat::RFC822);
   }
 
   const auto& websiteRedirectLocationIter = headers.find("x-amz-website-redirect-location");
@@ -259,7 +259,7 @@ HeadObjectResult& HeadObjectResult::operator =(const Aws::AmazonWebServiceResult
   const auto& objectLockRetainUntilDateIter = headers.find("x-amz-object-lock-retain-until-date");
   if(objectLockRetainUntilDateIter != headers.end())
   {
-    m_objectLockRetainUntilDate = DateTime(objectLockRetainUntilDateIter->second, DateFormat::ISO_8601);
+    m_objectLockRetainUntilDate = DateTime(objectLockRetainUntilDateIter->second, Aws::Utils::DateFormat::ISO_8601);
   }
 
   const auto& objectLockLegalHoldStatusIter = headers.find("x-amz-object-lock-legal-hold");

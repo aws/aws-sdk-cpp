@@ -87,7 +87,7 @@ DisableFastLaunchResponse& DisableFastLaunchResponse::operator =(const Aws::Amaz
     XmlNode stateTransitionTimeNode = resultNode.FirstChild("stateTransitionTime");
     if(!stateTransitionTimeNode.IsNull())
     {
-      m_stateTransitionTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateTransitionTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_stateTransitionTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateTransitionTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
     }
   }
 

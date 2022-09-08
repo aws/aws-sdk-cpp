@@ -175,7 +175,7 @@ JsonValue ImportAssetFromApiGatewayApiResponseDetails::Jsonize() const
 
   if(m_apiSpecificationUploadUrlExpiresAtHasBeenSet)
   {
-   payload.WithString("ApiSpecificationUploadUrlExpiresAt", m_apiSpecificationUploadUrlExpiresAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("ApiSpecificationUploadUrlExpiresAt", m_apiSpecificationUploadUrlExpiresAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_dataSetIdHasBeenSet)

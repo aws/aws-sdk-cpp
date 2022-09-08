@@ -50,7 +50,7 @@ MessageDsn& MessageDsn::operator =(const XmlNode& xmlNode)
     XmlNode arrivalDateNode = resultNode.FirstChild("ArrivalDate");
     if(!arrivalDateNode.IsNull())
     {
-      m_arrivalDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(arrivalDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_arrivalDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(arrivalDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_arrivalDateHasBeenSet = true;
     }
     XmlNode extensionFieldsNode = resultNode.FirstChild("ExtensionFields");
@@ -79,7 +79,7 @@ void MessageDsn::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_arrivalDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ArrivalDate=" << StringUtils::URLEncode(m_arrivalDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".ArrivalDate=" << StringUtils::URLEncode(m_arrivalDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_extensionFieldsHasBeenSet)
@@ -103,7 +103,7 @@ void MessageDsn::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_arrivalDateHasBeenSet)
   {
-      oStream << location << ".ArrivalDate=" << StringUtils::URLEncode(m_arrivalDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".ArrivalDate=" << StringUtils::URLEncode(m_arrivalDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_extensionFieldsHasBeenSet)
   {

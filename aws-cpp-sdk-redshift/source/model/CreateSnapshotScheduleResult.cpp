@@ -78,7 +78,7 @@ CreateSnapshotScheduleResult& CreateSnapshotScheduleResult::operator =(const Aws
       XmlNode nextInvocationsMember = nextInvocationsNode.FirstChild("SnapshotTime");
       while(!nextInvocationsMember.IsNull())
       {
-        m_nextInvocations.push_back(DateTime(StringUtils::Trim(nextInvocationsMember.GetText().c_str()).c_str(), DateFormat::ISO_8601));
+        m_nextInvocations.push_back(DateTime(StringUtils::Trim(nextInvocationsMember.GetText().c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601));
         nextInvocationsMember = nextInvocationsMember.NextNode("SnapshotTime");
       }
 

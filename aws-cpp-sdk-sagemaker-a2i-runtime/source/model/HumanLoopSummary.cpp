@@ -96,7 +96,7 @@ JsonValue HumanLoopSummary::Jsonize() const
 
   if(m_creationTimeHasBeenSet)
   {
-   payload.WithString("CreationTime", m_creationTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("CreationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_failureReasonHasBeenSet)

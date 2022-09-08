@@ -58,7 +58,7 @@ TrackedActionLastAccessed& TrackedActionLastAccessed::operator =(const XmlNode& 
     XmlNode lastAccessedTimeNode = resultNode.FirstChild("LastAccessedTime");
     if(!lastAccessedTimeNode.IsNull())
     {
-      m_lastAccessedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastAccessedTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastAccessedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastAccessedTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastAccessedTimeHasBeenSet = true;
     }
     XmlNode lastAccessedRegionNode = resultNode.FirstChild("LastAccessedRegion");
@@ -86,7 +86,7 @@ void TrackedActionLastAccessed::OutputToStream(Aws::OStream& oStream, const char
 
   if(m_lastAccessedTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LastAccessedTime=" << StringUtils::URLEncode(m_lastAccessedTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".LastAccessedTime=" << StringUtils::URLEncode(m_lastAccessedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_lastAccessedRegionHasBeenSet)
@@ -108,7 +108,7 @@ void TrackedActionLastAccessed::OutputToStream(Aws::OStream& oStream, const char
   }
   if(m_lastAccessedTimeHasBeenSet)
   {
-      oStream << location << ".LastAccessedTime=" << StringUtils::URLEncode(m_lastAccessedTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".LastAccessedTime=" << StringUtils::URLEncode(m_lastAccessedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_lastAccessedRegionHasBeenSet)
   {

@@ -78,13 +78,13 @@ User& User::operator =(const XmlNode& xmlNode)
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
     if(!createDateNode.IsNull())
     {
-      m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
     }
     XmlNode passwordLastUsedNode = resultNode.FirstChild("PasswordLastUsed");
     if(!passwordLastUsedNode.IsNull())
     {
-      m_passwordLastUsed = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(passwordLastUsedNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_passwordLastUsed = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(passwordLastUsedNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_passwordLastUsedHasBeenSet = true;
     }
     XmlNode permissionsBoundaryNode = resultNode.FirstChild("PermissionsBoundary");
@@ -134,12 +134,12 @@ void User::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
 
   if(m_createDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_passwordLastUsedHasBeenSet)
   {
-      oStream << location << index << locationValue << ".PasswordLastUsed=" << StringUtils::URLEncode(m_passwordLastUsed.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".PasswordLastUsed=" << StringUtils::URLEncode(m_passwordLastUsed.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_permissionsBoundaryHasBeenSet)
@@ -182,11 +182,11 @@ void User::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_createDateHasBeenSet)
   {
-      oStream << location << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_passwordLastUsedHasBeenSet)
   {
-      oStream << location << ".PasswordLastUsed=" << StringUtils::URLEncode(m_passwordLastUsed.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".PasswordLastUsed=" << StringUtils::URLEncode(m_passwordLastUsed.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_permissionsBoundaryHasBeenSet)
   {

@@ -60,7 +60,7 @@ DescribeObjectResult& DescribeObjectResult::operator =(const Aws::AmazonWebServi
   const auto& lastModifiedIter = headers.find("last-modified");
   if(lastModifiedIter != headers.end())
   {
-    m_lastModified = DateTime(lastModifiedIter->second.c_str(), DateFormat::RFC822);
+    m_lastModified = DateTime(lastModifiedIter->second.c_str(), Aws::Utils::DateFormat::RFC822);
   }
 
 

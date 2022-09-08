@@ -152,7 +152,7 @@ JsonValue StandardsControl::Jsonize() const
 
   if(m_controlStatusUpdatedAtHasBeenSet)
   {
-   payload.WithString("ControlStatusUpdatedAt", m_controlStatusUpdatedAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("ControlStatusUpdatedAt", m_controlStatusUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_controlIdHasBeenSet)

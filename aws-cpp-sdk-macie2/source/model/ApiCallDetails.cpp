@@ -86,12 +86,12 @@ JsonValue ApiCallDetails::Jsonize() const
 
   if(m_firstSeenHasBeenSet)
   {
-   payload.WithString("firstSeen", m_firstSeen.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("firstSeen", m_firstSeen.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_lastSeenHasBeenSet)
   {
-   payload.WithString("lastSeen", m_lastSeen.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("lastSeen", m_lastSeen.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

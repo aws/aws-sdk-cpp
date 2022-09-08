@@ -91,7 +91,7 @@ JsonValue RecoveryPoint::Jsonize() const
 
   if(m_recoveryPointCreateTimeHasBeenSet)
   {
-   payload.WithString("recoveryPointCreateTime", m_recoveryPointCreateTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("recoveryPointCreateTime", m_recoveryPointCreateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_recoveryPointIdHasBeenSet)

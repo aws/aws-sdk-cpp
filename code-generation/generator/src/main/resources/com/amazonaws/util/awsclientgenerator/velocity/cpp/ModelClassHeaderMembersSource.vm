@@ -29,7 +29,7 @@
   ${spaces}headers.emplace("${locationName}", ss.str());
   ${spaces}ss.str("");
 #elseif($member.shape.timeStamp)
-  ${spaces}headers.emplace("${locationName}", m_${lowerCaseVarName}.ToGmtString(DateFormat::$CppViewHelper.computeTimestampFormatInHeader($member.shape)));
+  ${spaces}headers.emplace("${locationName}", m_${lowerCaseVarName}.ToGmtString(Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInHeader($member.shape)));
 #elseif($member.shape.map)
   ${spaces}for(const auto& item : $memberVarName)
   ${spaces}{

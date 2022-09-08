@@ -98,19 +98,19 @@ ExportTask& ExportTask::operator =(const XmlNode& xmlNode)
     XmlNode snapshotTimeNode = resultNode.FirstChild("SnapshotTime");
     if(!snapshotTimeNode.IsNull())
     {
-      m_snapshotTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(snapshotTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_snapshotTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(snapshotTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_snapshotTimeHasBeenSet = true;
     }
     XmlNode taskStartTimeNode = resultNode.FirstChild("TaskStartTime");
     if(!taskStartTimeNode.IsNull())
     {
-      m_taskStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(taskStartTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_taskStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(taskStartTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_taskStartTimeHasBeenSet = true;
     }
     XmlNode taskEndTimeNode = resultNode.FirstChild("TaskEndTime");
     if(!taskEndTimeNode.IsNull())
     {
-      m_taskEndTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(taskEndTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_taskEndTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(taskEndTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_taskEndTimeHasBeenSet = true;
     }
     XmlNode s3BucketNode = resultNode.FirstChild("S3Bucket");
@@ -195,17 +195,17 @@ void ExportTask::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_snapshotTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SnapshotTime=" << StringUtils::URLEncode(m_snapshotTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".SnapshotTime=" << StringUtils::URLEncode(m_snapshotTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_taskStartTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".TaskStartTime=" << StringUtils::URLEncode(m_taskStartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".TaskStartTime=" << StringUtils::URLEncode(m_taskStartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_taskEndTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".TaskEndTime=" << StringUtils::URLEncode(m_taskEndTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".TaskEndTime=" << StringUtils::URLEncode(m_taskEndTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_s3BucketHasBeenSet)
@@ -282,15 +282,15 @@ void ExportTask::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_snapshotTimeHasBeenSet)
   {
-      oStream << location << ".SnapshotTime=" << StringUtils::URLEncode(m_snapshotTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".SnapshotTime=" << StringUtils::URLEncode(m_snapshotTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_taskStartTimeHasBeenSet)
   {
-      oStream << location << ".TaskStartTime=" << StringUtils::URLEncode(m_taskStartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".TaskStartTime=" << StringUtils::URLEncode(m_taskStartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_taskEndTimeHasBeenSet)
   {
-      oStream << location << ".TaskEndTime=" << StringUtils::URLEncode(m_taskEndTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".TaskEndTime=" << StringUtils::URLEncode(m_taskEndTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_s3BucketHasBeenSet)
   {

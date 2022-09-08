@@ -132,7 +132,7 @@ Aws::Http::HeaderValueCollection CreateMultipartUploadRequest::GetRequestSpecifi
 
   if(m_expiresHasBeenSet)
   {
-    headers.emplace("expires", m_expires.ToGmtString(DateFormat::RFC822));
+    headers.emplace("expires", m_expires.ToGmtString(Aws::Utils::DateFormat::RFC822));
   }
 
   if(m_grantFullControlHasBeenSet)
@@ -251,7 +251,7 @@ Aws::Http::HeaderValueCollection CreateMultipartUploadRequest::GetRequestSpecifi
 
   if(m_objectLockRetainUntilDateHasBeenSet)
   {
-    headers.emplace("x-amz-object-lock-retain-until-date", m_objectLockRetainUntilDate.ToGmtString(DateFormat::ISO_8601));
+    headers.emplace("x-amz-object-lock-retain-until-date", m_objectLockRetainUntilDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_objectLockLegalHoldStatusHasBeenSet)

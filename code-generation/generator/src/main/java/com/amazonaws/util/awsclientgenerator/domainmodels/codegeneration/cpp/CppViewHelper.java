@@ -10,12 +10,15 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Shape;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ShapeMember;
 import com.amazonaws.util.awsclientgenerator.transform.CoreErrors;
 import com.google.common.base.CaseFormat;
+import com.google.common.collect.ImmutableSet;
+
 import java.lang.RuntimeException;
 
 import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Queue;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -28,6 +31,11 @@ public class CppViewHelper {
     private static final Map<String, String> CORAL_PROTOCOL_TO_CONTENT_TYPE_MAPPING = new HashMap<>();
     private static final Map<String, String> CORAL_PROTOCOL_TO_PAYLOAD_TYPE_MAPPING = new HashMap<>();
     private static final Map<String, String> C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT = new HashMap<>();
+
+    private static final Set<String> FORBIDDEN_FUNCTION_NAMES =
+            ImmutableSet.<String>builder()
+                    .add("GetBody")
+                    .build();
 
     static {
         CORAL_TYPE_TO_CPP_TYPE_MAPPING.put("long", "long long");
@@ -137,11 +145,11 @@ public class CppViewHelper {
             }
 
             if(shape.getTimestampFormat().toLowerCase().equalsIgnoreCase("rfc822")) {
-                return memberAccessOp + "ToGmtString(DateFormat::RFC822)";
+                return memberAccessOp + "ToGmtString(Aws::Utils::DateFormat::RFC822)";
             }
 
             if(shape.getTimestampFormat().toLowerCase().equalsIgnoreCase("iso8601")) {
-                return memberAccessOp + "ToGmtString(DateFormat::ISO_8601)";
+                return memberAccessOp + "ToGmtString(Aws::Utils::DateFormat::ISO_8601)";
             }
         }
 
@@ -438,5 +446,16 @@ public class CppViewHelper {
     public static String computeChecksumLocation(String location)
     {
         return "Aws::Checksum::Location::" + location.toUpperCase();
+    }
+
+    public static String checkForCollision(
+            final String functionName,
+            final String prefix,
+            final String cppType
+    ) {
+        return Optional.of(functionName)
+                .filter(FORBIDDEN_FUNCTION_NAMES::contains)
+                .map(__ -> prefix + cppType)
+                .orElse(functionName);
     }
 }

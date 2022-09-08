@@ -213,12 +213,12 @@ JsonValue User::Jsonize() const
 
   if(m_registeredOnHasBeenSet)
   {
-   payload.WithString("RegisteredOn", m_registeredOn.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("RegisteredOn", m_registeredOn.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_invitedOnHasBeenSet)
   {
-   payload.WithString("InvitedOn", m_invitedOn.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("InvitedOn", m_invitedOn.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_alexaForBusinessMetadataHasBeenSet)

@@ -67,7 +67,7 @@ JsonValue SearchSchemaVersionSummary::Jsonize() const
 
   if(m_createdDateHasBeenSet)
   {
-   payload.WithString("CreatedDate", m_createdDate.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("CreatedDate", m_createdDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_schemaVersionHasBeenSet)

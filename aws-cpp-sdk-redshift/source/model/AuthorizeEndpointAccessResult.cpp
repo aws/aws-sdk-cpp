@@ -62,7 +62,7 @@ AuthorizeEndpointAccessResult& AuthorizeEndpointAccessResult::operator =(const A
     XmlNode authorizeTimeNode = resultNode.FirstChild("AuthorizeTime");
     if(!authorizeTimeNode.IsNull())
     {
-      m_authorizeTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(authorizeTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_authorizeTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(authorizeTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
     }
     XmlNode clusterStatusNode = resultNode.FirstChild("ClusterStatus");
     if(!clusterStatusNode.IsNull())

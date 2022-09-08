@@ -94,7 +94,7 @@ HostReservation& HostReservation::operator =(const XmlNode& xmlNode)
     XmlNode endNode = resultNode.FirstChild("end");
     if(!endNode.IsNull())
     {
-      m_end = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_end = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_endHasBeenSet = true;
     }
     XmlNode hostIdSetNode = resultNode.FirstChild("hostIdSet");
@@ -142,7 +142,7 @@ HostReservation& HostReservation::operator =(const XmlNode& xmlNode)
     XmlNode startNode = resultNode.FirstChild("start");
     if(!startNode.IsNull())
     {
-      m_start = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_start = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_startHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
@@ -193,7 +193,7 @@ void HostReservation::OutputToStream(Aws::OStream& oStream, const char* location
 
   if(m_endHasBeenSet)
   {
-      oStream << location << index << locationValue << ".End=" << StringUtils::URLEncode(m_end.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".End=" << StringUtils::URLEncode(m_end.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_hostIdSetHasBeenSet)
@@ -232,7 +232,7 @@ void HostReservation::OutputToStream(Aws::OStream& oStream, const char* location
 
   if(m_startHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Start=" << StringUtils::URLEncode(m_start.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".Start=" << StringUtils::URLEncode(m_start.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_stateHasBeenSet)
@@ -274,7 +274,7 @@ void HostReservation::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if(m_endHasBeenSet)
   {
-      oStream << location << ".End=" << StringUtils::URLEncode(m_end.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".End=" << StringUtils::URLEncode(m_end.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_hostIdSetHasBeenSet)
   {
@@ -306,7 +306,7 @@ void HostReservation::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if(m_startHasBeenSet)
   {
-      oStream << location << ".Start=" << StringUtils::URLEncode(m_start.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".Start=" << StringUtils::URLEncode(m_start.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_stateHasBeenSet)
   {

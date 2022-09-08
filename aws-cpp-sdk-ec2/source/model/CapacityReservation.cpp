@@ -178,13 +178,13 @@ CapacityReservation& CapacityReservation::operator =(const XmlNode& xmlNode)
     XmlNode startDateNode = resultNode.FirstChild("startDate");
     if(!startDateNode.IsNull())
     {
-      m_startDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_startDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_startDateHasBeenSet = true;
     }
     XmlNode endDateNode = resultNode.FirstChild("endDate");
     if(!endDateNode.IsNull())
     {
-      m_endDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_endDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_endDateHasBeenSet = true;
     }
     XmlNode endDateTypeNode = resultNode.FirstChild("endDateType");
@@ -202,7 +202,7 @@ CapacityReservation& CapacityReservation::operator =(const XmlNode& xmlNode)
     XmlNode createDateNode = resultNode.FirstChild("createDate");
     if(!createDateNode.IsNull())
     {
-      m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
@@ -309,12 +309,12 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
 
   if(m_startDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StartDate=" << StringUtils::URLEncode(m_startDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".StartDate=" << StringUtils::URLEncode(m_startDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_endDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EndDate=" << StringUtils::URLEncode(m_endDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".EndDate=" << StringUtils::URLEncode(m_endDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_endDateTypeHasBeenSet)
@@ -329,7 +329,7 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
 
   if(m_createDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_tagsHasBeenSet)
@@ -416,11 +416,11 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_startDateHasBeenSet)
   {
-      oStream << location << ".StartDate=" << StringUtils::URLEncode(m_startDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".StartDate=" << StringUtils::URLEncode(m_startDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_endDateHasBeenSet)
   {
-      oStream << location << ".EndDate=" << StringUtils::URLEncode(m_endDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".EndDate=" << StringUtils::URLEncode(m_endDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_endDateTypeHasBeenSet)
   {
@@ -432,7 +432,7 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_createDateHasBeenSet)
   {
-      oStream << location << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_tagsHasBeenSet)
   {

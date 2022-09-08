@@ -148,12 +148,12 @@ DescribeTypeResult& DescribeTypeResult::operator =(const Aws::AmazonWebServiceRe
     XmlNode lastUpdatedNode = resultNode.FirstChild("LastUpdated");
     if(!lastUpdatedNode.IsNull())
     {
-      m_lastUpdated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastUpdatedNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastUpdated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastUpdatedNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
     }
     XmlNode timeCreatedNode = resultNode.FirstChild("TimeCreated");
     if(!timeCreatedNode.IsNull())
     {
-      m_timeCreated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timeCreatedNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_timeCreated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timeCreatedNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
     }
     XmlNode configurationSchemaNode = resultNode.FirstChild("ConfigurationSchema");
     if(!configurationSchemaNode.IsNull())

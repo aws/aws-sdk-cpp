@@ -66,17 +66,17 @@ StartExportTaskResult& StartExportTaskResult::operator =(const Aws::AmazonWebSer
     XmlNode snapshotTimeNode = resultNode.FirstChild("SnapshotTime");
     if(!snapshotTimeNode.IsNull())
     {
-      m_snapshotTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(snapshotTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_snapshotTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(snapshotTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
     }
     XmlNode taskStartTimeNode = resultNode.FirstChild("TaskStartTime");
     if(!taskStartTimeNode.IsNull())
     {
-      m_taskStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(taskStartTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_taskStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(taskStartTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
     }
     XmlNode taskEndTimeNode = resultNode.FirstChild("TaskEndTime");
     if(!taskEndTimeNode.IsNull())
     {
-      m_taskEndTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(taskEndTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_taskEndTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(taskEndTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
     }
     XmlNode s3BucketNode = resultNode.FirstChild("S3Bucket");
     if(!s3BucketNode.IsNull())

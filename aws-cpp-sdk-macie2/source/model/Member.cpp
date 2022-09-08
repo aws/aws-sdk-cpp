@@ -148,7 +148,7 @@ JsonValue Member::Jsonize() const
 
   if(m_invitedAtHasBeenSet)
   {
-   payload.WithString("invitedAt", m_invitedAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("invitedAt", m_invitedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_masterAccountIdHasBeenSet)
@@ -175,7 +175,7 @@ JsonValue Member::Jsonize() const
 
   if(m_updatedAtHasBeenSet)
   {
-   payload.WithString("updatedAt", m_updatedAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

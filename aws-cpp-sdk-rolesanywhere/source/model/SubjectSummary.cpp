@@ -103,7 +103,7 @@ JsonValue SubjectSummary::Jsonize() const
 
   if(m_createdAtHasBeenSet)
   {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_enabledHasBeenSet)
@@ -114,7 +114,7 @@ JsonValue SubjectSummary::Jsonize() const
 
   if(m_lastSeenAtHasBeenSet)
   {
-   payload.WithString("lastSeenAt", m_lastSeenAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("lastSeenAt", m_lastSeenAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_subjectArnHasBeenSet)
@@ -131,7 +131,7 @@ JsonValue SubjectSummary::Jsonize() const
 
   if(m_updatedAtHasBeenSet)
   {
-   payload.WithString("updatedAt", m_updatedAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_x509SubjectHasBeenSet)

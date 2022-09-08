@@ -54,7 +54,7 @@ GetCredentialReportResult& GetCredentialReportResult::operator =(const Aws::Amaz
     XmlNode generatedTimeNode = resultNode.FirstChild("GeneratedTime");
     if(!generatedTimeNode.IsNull())
     {
-      m_generatedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(generatedTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_generatedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(generatedTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
     }
   }
 

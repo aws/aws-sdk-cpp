@@ -46,12 +46,12 @@ Aws::String DescribeNetworkInsightsAccessScopeAnalysesRequest::SerializePayload(
 
   if(m_analysisStartTimeBeginHasBeenSet)
   {
-    ss << "AnalysisStartTimeBegin=" << StringUtils::URLEncode(m_analysisStartTimeBegin.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+    ss << "AnalysisStartTimeBegin=" << StringUtils::URLEncode(m_analysisStartTimeBegin.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_analysisStartTimeEndHasBeenSet)
   {
-    ss << "AnalysisStartTimeEnd=" << StringUtils::URLEncode(m_analysisStartTimeEnd.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+    ss << "AnalysisStartTimeEnd=" << StringUtils::URLEncode(m_analysisStartTimeEnd.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_filtersHasBeenSet)

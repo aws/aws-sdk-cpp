@@ -125,7 +125,7 @@ Aws::Http::HeaderValueCollection UploadPartCopyRequest::GetRequestSpecificHeader
 
   if(m_copySourceIfModifiedSinceHasBeenSet)
   {
-    headers.emplace("x-amz-copy-source-if-modified-since", m_copySourceIfModifiedSince.ToGmtString(DateFormat::RFC822));
+    headers.emplace("x-amz-copy-source-if-modified-since", m_copySourceIfModifiedSince.ToGmtString(Aws::Utils::DateFormat::RFC822));
   }
 
   if(m_copySourceIfNoneMatchHasBeenSet)
@@ -137,7 +137,7 @@ Aws::Http::HeaderValueCollection UploadPartCopyRequest::GetRequestSpecificHeader
 
   if(m_copySourceIfUnmodifiedSinceHasBeenSet)
   {
-    headers.emplace("x-amz-copy-source-if-unmodified-since", m_copySourceIfUnmodifiedSince.ToGmtString(DateFormat::RFC822));
+    headers.emplace("x-amz-copy-source-if-unmodified-since", m_copySourceIfUnmodifiedSince.ToGmtString(Aws::Utils::DateFormat::RFC822));
   }
 
   if(m_copySourceRangeHasBeenSet)

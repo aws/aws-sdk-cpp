@@ -107,7 +107,7 @@ JsonValue ExportAssetToSignedUrlResponseDetails::Jsonize() const
 
   if(m_signedUrlExpiresAtHasBeenSet)
   {
-   payload.WithString("SignedUrlExpiresAt", m_signedUrlExpiresAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("SignedUrlExpiresAt", m_signedUrlExpiresAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

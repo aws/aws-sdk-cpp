@@ -48,7 +48,7 @@ ReceiptRuleSetMetadata& ReceiptRuleSetMetadata::operator =(const XmlNode& xmlNod
     XmlNode createdTimestampNode = resultNode.FirstChild("CreatedTimestamp");
     if(!createdTimestampNode.IsNull())
     {
-      m_createdTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdTimestampNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_createdTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createdTimestampHasBeenSet = true;
     }
   }
@@ -65,7 +65,7 @@ void ReceiptRuleSetMetadata::OutputToStream(Aws::OStream& oStream, const char* l
 
   if(m_createdTimestampHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreatedTimestamp=" << StringUtils::URLEncode(m_createdTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".CreatedTimestamp=" << StringUtils::URLEncode(m_createdTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
 }
@@ -78,7 +78,7 @@ void ReceiptRuleSetMetadata::OutputToStream(Aws::OStream& oStream, const char* l
   }
   if(m_createdTimestampHasBeenSet)
   {
-      oStream << location << ".CreatedTimestamp=" << StringUtils::URLEncode(m_createdTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".CreatedTimestamp=" << StringUtils::URLEncode(m_createdTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

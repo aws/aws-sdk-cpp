@@ -93,7 +93,7 @@ Aws::Http::HeaderValueCollection HeadObjectRequest::GetRequestSpecificHeaders() 
 
   if(m_ifModifiedSinceHasBeenSet)
   {
-    headers.emplace("if-modified-since", m_ifModifiedSince.ToGmtString(DateFormat::RFC822));
+    headers.emplace("if-modified-since", m_ifModifiedSince.ToGmtString(Aws::Utils::DateFormat::RFC822));
   }
 
   if(m_ifNoneMatchHasBeenSet)
@@ -105,7 +105,7 @@ Aws::Http::HeaderValueCollection HeadObjectRequest::GetRequestSpecificHeaders() 
 
   if(m_ifUnmodifiedSinceHasBeenSet)
   {
-    headers.emplace("if-unmodified-since", m_ifUnmodifiedSince.ToGmtString(DateFormat::RFC822));
+    headers.emplace("if-unmodified-since", m_ifUnmodifiedSince.ToGmtString(Aws::Utils::DateFormat::RFC822));
   }
 
   if(m_rangeHasBeenSet)

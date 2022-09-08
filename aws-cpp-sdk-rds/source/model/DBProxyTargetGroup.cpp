@@ -92,13 +92,13 @@ DBProxyTargetGroup& DBProxyTargetGroup::operator =(const XmlNode& xmlNode)
     XmlNode createdDateNode = resultNode.FirstChild("CreatedDate");
     if(!createdDateNode.IsNull())
     {
-      m_createdDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_createdDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createdDateHasBeenSet = true;
     }
     XmlNode updatedDateNode = resultNode.FirstChild("UpdatedDate");
     if(!updatedDateNode.IsNull())
     {
-      m_updatedDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updatedDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_updatedDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updatedDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_updatedDateHasBeenSet = true;
     }
   }
@@ -142,12 +142,12 @@ void DBProxyTargetGroup::OutputToStream(Aws::OStream& oStream, const char* locat
 
   if(m_createdDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreatedDate=" << StringUtils::URLEncode(m_createdDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".CreatedDate=" << StringUtils::URLEncode(m_createdDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_updatedDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".UpdatedDate=" << StringUtils::URLEncode(m_updatedDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".UpdatedDate=" << StringUtils::URLEncode(m_updatedDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
 }
@@ -182,11 +182,11 @@ void DBProxyTargetGroup::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_createdDateHasBeenSet)
   {
-      oStream << location << ".CreatedDate=" << StringUtils::URLEncode(m_createdDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".CreatedDate=" << StringUtils::URLEncode(m_createdDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_updatedDateHasBeenSet)
   {
-      oStream << location << ".UpdatedDate=" << StringUtils::URLEncode(m_updatedDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".UpdatedDate=" << StringUtils::URLEncode(m_updatedDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

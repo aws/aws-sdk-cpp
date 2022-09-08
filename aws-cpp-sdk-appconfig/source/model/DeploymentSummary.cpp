@@ -203,12 +203,12 @@ JsonValue DeploymentSummary::Jsonize() const
 
   if(m_startedAtHasBeenSet)
   {
-   payload.WithString("StartedAt", m_startedAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("StartedAt", m_startedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_completedAtHasBeenSet)
   {
-   payload.WithString("CompletedAt", m_completedAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("CompletedAt", m_completedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

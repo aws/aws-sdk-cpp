@@ -82,7 +82,7 @@ EndpointAuthorization& EndpointAuthorization::operator =(const XmlNode& xmlNode)
     XmlNode authorizeTimeNode = resultNode.FirstChild("AuthorizeTime");
     if(!authorizeTimeNode.IsNull())
     {
-      m_authorizeTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(authorizeTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_authorizeTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(authorizeTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_authorizeTimeHasBeenSet = true;
     }
     XmlNode clusterStatusNode = resultNode.FirstChild("ClusterStatus");
@@ -145,7 +145,7 @@ void EndpointAuthorization::OutputToStream(Aws::OStream& oStream, const char* lo
 
   if(m_authorizeTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AuthorizeTime=" << StringUtils::URLEncode(m_authorizeTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".AuthorizeTime=" << StringUtils::URLEncode(m_authorizeTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_clusterStatusHasBeenSet)
@@ -202,7 +202,7 @@ void EndpointAuthorization::OutputToStream(Aws::OStream& oStream, const char* lo
   }
   if(m_authorizeTimeHasBeenSet)
   {
-      oStream << location << ".AuthorizeTime=" << StringUtils::URLEncode(m_authorizeTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".AuthorizeTime=" << StringUtils::URLEncode(m_authorizeTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_clusterStatusHasBeenSet)
   {

@@ -50,12 +50,12 @@ GetServiceLastAccessedDetailsWithEntitiesResult& GetServiceLastAccessedDetailsWi
     XmlNode jobCreationDateNode = resultNode.FirstChild("JobCreationDate");
     if(!jobCreationDateNode.IsNull())
     {
-      m_jobCreationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(jobCreationDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_jobCreationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(jobCreationDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
     }
     XmlNode jobCompletionDateNode = resultNode.FirstChild("JobCompletionDate");
     if(!jobCompletionDateNode.IsNull())
     {
-      m_jobCompletionDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(jobCompletionDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_jobCompletionDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(jobCompletionDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
     }
     XmlNode entityDetailsListNode = resultNode.FirstChild("EntityDetailsList");
     if(!entityDetailsListNode.IsNull())

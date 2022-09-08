@@ -62,7 +62,7 @@ Object& Object::operator =(const XmlNode& xmlNode)
     XmlNode lastModifiedNode = resultNode.FirstChild("LastModified");
     if(!lastModifiedNode.IsNull())
     {
-      m_lastModified = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastModifiedNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastModified = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastModifiedNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastModifiedHasBeenSet = true;
     }
     XmlNode eTagNode = resultNode.FirstChild("ETag");
@@ -118,7 +118,7 @@ void Object::AddToNode(XmlNode& parentNode) const
   if(m_lastModifiedHasBeenSet)
   {
    XmlNode lastModifiedNode = parentNode.CreateChildElement("LastModified");
-   lastModifiedNode.SetText(m_lastModified.ToGmtString(DateFormat::ISO_8601));
+   lastModifiedNode.SetText(m_lastModified.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_eTagHasBeenSet)
