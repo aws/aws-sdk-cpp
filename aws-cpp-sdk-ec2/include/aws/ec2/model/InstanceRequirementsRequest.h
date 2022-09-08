@@ -1041,8 +1041,8 @@ namespace Model
      * <p>The minimum and maximum baseline bandwidth to Amazon EBS, in Mbps. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon
-     * EBS���optimized instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
-     * <p>Default: No minimum or maximum limits</p>
+     * EBS–optimized instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
+     * No minimum or maximum limits</p>
      */
     inline const BaselineEbsBandwidthMbpsRequest& GetBaselineEbsBandwidthMbps() const{ return m_baselineEbsBandwidthMbps; }
 
@@ -1050,8 +1050,8 @@ namespace Model
      * <p>The minimum and maximum baseline bandwidth to Amazon EBS, in Mbps. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon
-     * EBS���optimized instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
-     * <p>Default: No minimum or maximum limits</p>
+     * EBS–optimized instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
+     * No minimum or maximum limits</p>
      */
     inline bool BaselineEbsBandwidthMbpsHasBeenSet() const { return m_baselineEbsBandwidthMbpsHasBeenSet; }
 
@@ -1059,8 +1059,8 @@ namespace Model
      * <p>The minimum and maximum baseline bandwidth to Amazon EBS, in Mbps. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon
-     * EBS���optimized instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
-     * <p>Default: No minimum or maximum limits</p>
+     * EBS–optimized instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
+     * No minimum or maximum limits</p>
      */
     inline void SetBaselineEbsBandwidthMbps(const BaselineEbsBandwidthMbpsRequest& value) { m_baselineEbsBandwidthMbpsHasBeenSet = true; m_baselineEbsBandwidthMbps = value; }
 
@@ -1068,8 +1068,8 @@ namespace Model
      * <p>The minimum and maximum baseline bandwidth to Amazon EBS, in Mbps. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon
-     * EBS���optimized instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
-     * <p>Default: No minimum or maximum limits</p>
+     * EBS–optimized instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
+     * No minimum or maximum limits</p>
      */
     inline void SetBaselineEbsBandwidthMbps(BaselineEbsBandwidthMbpsRequest&& value) { m_baselineEbsBandwidthMbpsHasBeenSet = true; m_baselineEbsBandwidthMbps = std::move(value); }
 
@@ -1077,8 +1077,8 @@ namespace Model
      * <p>The minimum and maximum baseline bandwidth to Amazon EBS, in Mbps. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon
-     * EBS���optimized instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
-     * <p>Default: No minimum or maximum limits</p>
+     * EBS–optimized instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
+     * No minimum or maximum limits</p>
      */
     inline InstanceRequirementsRequest& WithBaselineEbsBandwidthMbps(const BaselineEbsBandwidthMbpsRequest& value) { SetBaselineEbsBandwidthMbps(value); return *this;}
 
@@ -1086,8 +1086,8 @@ namespace Model
      * <p>The minimum and maximum baseline bandwidth to Amazon EBS, in Mbps. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon
-     * EBS���optimized instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
-     * <p>Default: No minimum or maximum limits</p>
+     * EBS–optimized instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
+     * No minimum or maximum limits</p>
      */
     inline InstanceRequirementsRequest& WithBaselineEbsBandwidthMbps(BaselineEbsBandwidthMbpsRequest&& value) { SetBaselineEbsBandwidthMbps(std::move(value)); return *this;}
 

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/ColorSpacePassthroughSettings.h>
+#include <aws/medialive/model/DolbyVision81Settings.h>
 #include <aws/medialive/model/Hdr10Settings.h>
 #include <aws/medialive/model/Rec601Settings.h>
 #include <aws/medialive/model/Rec709Settings.h>
@@ -57,6 +58,25 @@ namespace Model
 
     
     inline H265ColorSpaceSettings& WithColorSpacePassthroughSettings(ColorSpacePassthroughSettings&& value) { SetColorSpacePassthroughSettings(std::move(value)); return *this;}
+
+
+    
+    inline const DolbyVision81Settings& GetDolbyVision81Settings() const{ return m_dolbyVision81Settings; }
+
+    
+    inline bool DolbyVision81SettingsHasBeenSet() const { return m_dolbyVision81SettingsHasBeenSet; }
+
+    
+    inline void SetDolbyVision81Settings(const DolbyVision81Settings& value) { m_dolbyVision81SettingsHasBeenSet = true; m_dolbyVision81Settings = value; }
+
+    
+    inline void SetDolbyVision81Settings(DolbyVision81Settings&& value) { m_dolbyVision81SettingsHasBeenSet = true; m_dolbyVision81Settings = std::move(value); }
+
+    
+    inline H265ColorSpaceSettings& WithDolbyVision81Settings(const DolbyVision81Settings& value) { SetDolbyVision81Settings(value); return *this;}
+
+    
+    inline H265ColorSpaceSettings& WithDolbyVision81Settings(DolbyVision81Settings&& value) { SetDolbyVision81Settings(std::move(value)); return *this;}
 
 
     
@@ -119,6 +139,9 @@ namespace Model
 
     ColorSpacePassthroughSettings m_colorSpacePassthroughSettings;
     bool m_colorSpacePassthroughSettingsHasBeenSet = false;
+
+    DolbyVision81Settings m_dolbyVision81Settings;
+    bool m_dolbyVision81SettingsHasBeenSet = false;
 
     Hdr10Settings m_hdr10Settings;
     bool m_hdr10SettingsHasBeenSet = false;

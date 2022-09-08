@@ -12,6 +12,7 @@
 #include <aws/lookoutmetrics/model/Frequency.h>
 #include <aws/lookoutmetrics/model/MetricSource.h>
 #include <aws/lookoutmetrics/model/Metric.h>
+#include <aws/lookoutmetrics/model/MetricSetDimensionFilter.h>
 #include <utility>
 
 namespace Aws
@@ -315,6 +316,79 @@ namespace Model
     
     inline UpdateMetricSetRequest& WithMetricSource(MetricSource&& value) { SetMetricSource(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Describes a list of filters for choosing specific dimensions and specific
+     * values. Each filter consists of the dimension and one of its values that you
+     * want to include. When multiple dimensions or values are specified, the
+     * dimensions are joined with an AND operation and the values are joined with an OR
+     * operation.</p>
+     */
+    inline const Aws::Vector<MetricSetDimensionFilter>& GetDimensionFilterList() const{ return m_dimensionFilterList; }
+
+    /**
+     * <p>Describes a list of filters for choosing specific dimensions and specific
+     * values. Each filter consists of the dimension and one of its values that you
+     * want to include. When multiple dimensions or values are specified, the
+     * dimensions are joined with an AND operation and the values are joined with an OR
+     * operation.</p>
+     */
+    inline bool DimensionFilterListHasBeenSet() const { return m_dimensionFilterListHasBeenSet; }
+
+    /**
+     * <p>Describes a list of filters for choosing specific dimensions and specific
+     * values. Each filter consists of the dimension and one of its values that you
+     * want to include. When multiple dimensions or values are specified, the
+     * dimensions are joined with an AND operation and the values are joined with an OR
+     * operation.</p>
+     */
+    inline void SetDimensionFilterList(const Aws::Vector<MetricSetDimensionFilter>& value) { m_dimensionFilterListHasBeenSet = true; m_dimensionFilterList = value; }
+
+    /**
+     * <p>Describes a list of filters for choosing specific dimensions and specific
+     * values. Each filter consists of the dimension and one of its values that you
+     * want to include. When multiple dimensions or values are specified, the
+     * dimensions are joined with an AND operation and the values are joined with an OR
+     * operation.</p>
+     */
+    inline void SetDimensionFilterList(Aws::Vector<MetricSetDimensionFilter>&& value) { m_dimensionFilterListHasBeenSet = true; m_dimensionFilterList = std::move(value); }
+
+    /**
+     * <p>Describes a list of filters for choosing specific dimensions and specific
+     * values. Each filter consists of the dimension and one of its values that you
+     * want to include. When multiple dimensions or values are specified, the
+     * dimensions are joined with an AND operation and the values are joined with an OR
+     * operation.</p>
+     */
+    inline UpdateMetricSetRequest& WithDimensionFilterList(const Aws::Vector<MetricSetDimensionFilter>& value) { SetDimensionFilterList(value); return *this;}
+
+    /**
+     * <p>Describes a list of filters for choosing specific dimensions and specific
+     * values. Each filter consists of the dimension and one of its values that you
+     * want to include. When multiple dimensions or values are specified, the
+     * dimensions are joined with an AND operation and the values are joined with an OR
+     * operation.</p>
+     */
+    inline UpdateMetricSetRequest& WithDimensionFilterList(Aws::Vector<MetricSetDimensionFilter>&& value) { SetDimensionFilterList(std::move(value)); return *this;}
+
+    /**
+     * <p>Describes a list of filters for choosing specific dimensions and specific
+     * values. Each filter consists of the dimension and one of its values that you
+     * want to include. When multiple dimensions or values are specified, the
+     * dimensions are joined with an AND operation and the values are joined with an OR
+     * operation.</p>
+     */
+    inline UpdateMetricSetRequest& AddDimensionFilterList(const MetricSetDimensionFilter& value) { m_dimensionFilterListHasBeenSet = true; m_dimensionFilterList.push_back(value); return *this; }
+
+    /**
+     * <p>Describes a list of filters for choosing specific dimensions and specific
+     * values. Each filter consists of the dimension and one of its values that you
+     * want to include. When multiple dimensions or values are specified, the
+     * dimensions are joined with an AND operation and the values are joined with an OR
+     * operation.</p>
+     */
+    inline UpdateMetricSetRequest& AddDimensionFilterList(MetricSetDimensionFilter&& value) { m_dimensionFilterListHasBeenSet = true; m_dimensionFilterList.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_metricSetArn;
@@ -340,6 +414,9 @@ namespace Model
 
     MetricSource m_metricSource;
     bool m_metricSourceHasBeenSet = false;
+
+    Aws::Vector<MetricSetDimensionFilter> m_dimensionFilterList;
+    bool m_dimensionFilterListHasBeenSet = false;
   };
 
 } // namespace Model

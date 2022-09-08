@@ -19,12 +19,14 @@ namespace Model
 {
 
 JobDriver::JobDriver() : 
-    m_sparkSubmitJobDriverHasBeenSet(false)
+    m_sparkSubmitJobDriverHasBeenSet(false),
+    m_sparkSqlJobDriverHasBeenSet(false)
 {
 }
 
 JobDriver::JobDriver(JsonView jsonValue) : 
-    m_sparkSubmitJobDriverHasBeenSet(false)
+    m_sparkSubmitJobDriverHasBeenSet(false),
+    m_sparkSqlJobDriverHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ JobDriver& JobDriver::operator =(JsonView jsonValue)
     m_sparkSubmitJobDriverHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("sparkSqlJobDriver"))
+  {
+    m_sparkSqlJobDriver = jsonValue.GetObject("sparkSqlJobDriver");
+
+    m_sparkSqlJobDriverHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue JobDriver::Jsonize() const
   if(m_sparkSubmitJobDriverHasBeenSet)
   {
    payload.WithObject("sparkSubmitJobDriver", m_sparkSubmitJobDriver.Jsonize());
+
+  }
+
+  if(m_sparkSqlJobDriverHasBeenSet)
+  {
+   payload.WithObject("sparkSqlJobDriver", m_sparkSqlJobDriver.Jsonize());
 
   }
 

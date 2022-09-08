@@ -21,6 +21,7 @@ namespace Model
 AudioCodecSettings::AudioCodecSettings() : 
     m_aacSettingsHasBeenSet(false),
     m_ac3SettingsHasBeenSet(false),
+    m_eac3AtmosSettingsHasBeenSet(false),
     m_eac3SettingsHasBeenSet(false),
     m_mp2SettingsHasBeenSet(false),
     m_passThroughSettingsHasBeenSet(false),
@@ -31,6 +32,7 @@ AudioCodecSettings::AudioCodecSettings() :
 AudioCodecSettings::AudioCodecSettings(JsonView jsonValue) : 
     m_aacSettingsHasBeenSet(false),
     m_ac3SettingsHasBeenSet(false),
+    m_eac3AtmosSettingsHasBeenSet(false),
     m_eac3SettingsHasBeenSet(false),
     m_mp2SettingsHasBeenSet(false),
     m_passThroughSettingsHasBeenSet(false),
@@ -53,6 +55,13 @@ AudioCodecSettings& AudioCodecSettings::operator =(JsonView jsonValue)
     m_ac3Settings = jsonValue.GetObject("ac3Settings");
 
     m_ac3SettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("eac3AtmosSettings"))
+  {
+    m_eac3AtmosSettings = jsonValue.GetObject("eac3AtmosSettings");
+
+    m_eac3AtmosSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("eac3Settings"))
@@ -99,6 +108,12 @@ JsonValue AudioCodecSettings::Jsonize() const
   if(m_ac3SettingsHasBeenSet)
   {
    payload.WithObject("ac3Settings", m_ac3Settings.Jsonize());
+
+  }
+
+  if(m_eac3AtmosSettingsHasBeenSet)
+  {
+   payload.WithObject("eac3AtmosSettings", m_eac3AtmosSettings.Jsonize());
 
   }
 

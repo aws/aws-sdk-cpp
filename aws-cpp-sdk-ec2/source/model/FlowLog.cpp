@@ -24,6 +24,7 @@ FlowLog::FlowLog() :
     m_creationTimeHasBeenSet(false),
     m_deliverLogsErrorMessageHasBeenSet(false),
     m_deliverLogsPermissionArnHasBeenSet(false),
+    m_deliverCrossAccountRoleHasBeenSet(false),
     m_deliverLogsStatusHasBeenSet(false),
     m_flowLogIdHasBeenSet(false),
     m_flowLogStatusHasBeenSet(false),
@@ -46,6 +47,7 @@ FlowLog::FlowLog(const XmlNode& xmlNode) :
     m_creationTimeHasBeenSet(false),
     m_deliverLogsErrorMessageHasBeenSet(false),
     m_deliverLogsPermissionArnHasBeenSet(false),
+    m_deliverCrossAccountRoleHasBeenSet(false),
     m_deliverLogsStatusHasBeenSet(false),
     m_flowLogIdHasBeenSet(false),
     m_flowLogStatusHasBeenSet(false),
@@ -88,6 +90,12 @@ FlowLog& FlowLog::operator =(const XmlNode& xmlNode)
     {
       m_deliverLogsPermissionArn = Aws::Utils::Xml::DecodeEscapedXmlText(deliverLogsPermissionArnNode.GetText());
       m_deliverLogsPermissionArnHasBeenSet = true;
+    }
+    XmlNode deliverCrossAccountRoleNode = resultNode.FirstChild("deliverCrossAccountRole");
+    if(!deliverCrossAccountRoleNode.IsNull())
+    {
+      m_deliverCrossAccountRole = Aws::Utils::Xml::DecodeEscapedXmlText(deliverCrossAccountRoleNode.GetText());
+      m_deliverCrossAccountRoleHasBeenSet = true;
     }
     XmlNode deliverLogsStatusNode = resultNode.FirstChild("deliverLogsStatus");
     if(!deliverLogsStatusNode.IsNull())
@@ -189,6 +197,11 @@ void FlowLog::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       oStream << location << index << locationValue << ".DeliverLogsPermissionArn=" << StringUtils::URLEncode(m_deliverLogsPermissionArn.c_str()) << "&";
   }
 
+  if(m_deliverCrossAccountRoleHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DeliverCrossAccountRole=" << StringUtils::URLEncode(m_deliverCrossAccountRole.c_str()) << "&";
+  }
+
   if(m_deliverLogsStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".DeliverLogsStatus=" << StringUtils::URLEncode(m_deliverLogsStatus.c_str()) << "&";
@@ -272,6 +285,10 @@ void FlowLog::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_deliverLogsPermissionArnHasBeenSet)
   {
       oStream << location << ".DeliverLogsPermissionArn=" << StringUtils::URLEncode(m_deliverLogsPermissionArn.c_str()) << "&";
+  }
+  if(m_deliverCrossAccountRoleHasBeenSet)
+  {
+      oStream << location << ".DeliverCrossAccountRole=" << StringUtils::URLEncode(m_deliverCrossAccountRole.c_str()) << "&";
   }
   if(m_deliverLogsStatusHasBeenSet)
   {

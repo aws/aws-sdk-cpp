@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/emr-containers/EMRContainers_EXPORTS.h>
 #include <aws/emr-containers/model/SparkSubmitJobDriver.h>
+#include <aws/emr-containers/model/SparkSqlJobDriver.h>
 #include <utility>
 
 namespace Aws
@@ -67,10 +68,44 @@ namespace Model
      */
     inline JobDriver& WithSparkSubmitJobDriver(SparkSubmitJobDriver&& value) { SetSparkSubmitJobDriver(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The job driver for job type.</p>
+     */
+    inline const SparkSqlJobDriver& GetSparkSqlJobDriver() const{ return m_sparkSqlJobDriver; }
+
+    /**
+     * <p>The job driver for job type.</p>
+     */
+    inline bool SparkSqlJobDriverHasBeenSet() const { return m_sparkSqlJobDriverHasBeenSet; }
+
+    /**
+     * <p>The job driver for job type.</p>
+     */
+    inline void SetSparkSqlJobDriver(const SparkSqlJobDriver& value) { m_sparkSqlJobDriverHasBeenSet = true; m_sparkSqlJobDriver = value; }
+
+    /**
+     * <p>The job driver for job type.</p>
+     */
+    inline void SetSparkSqlJobDriver(SparkSqlJobDriver&& value) { m_sparkSqlJobDriverHasBeenSet = true; m_sparkSqlJobDriver = std::move(value); }
+
+    /**
+     * <p>The job driver for job type.</p>
+     */
+    inline JobDriver& WithSparkSqlJobDriver(const SparkSqlJobDriver& value) { SetSparkSqlJobDriver(value); return *this;}
+
+    /**
+     * <p>The job driver for job type.</p>
+     */
+    inline JobDriver& WithSparkSqlJobDriver(SparkSqlJobDriver&& value) { SetSparkSqlJobDriver(std::move(value)); return *this;}
+
   private:
 
     SparkSubmitJobDriver m_sparkSubmitJobDriver;
     bool m_sparkSubmitJobDriverHasBeenSet = false;
+
+    SparkSqlJobDriver m_sparkSqlJobDriver;
+    bool m_sparkSqlJobDriverHasBeenSet = false;
   };
 
 } // namespace Model

@@ -15,6 +15,7 @@ CreateFlowLogsRequest::CreateFlowLogsRequest() :
     m_dryRunHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_deliverLogsPermissionArnHasBeenSet(false),
+    m_deliverCrossAccountRoleHasBeenSet(false),
     m_logGroupNameHasBeenSet(false),
     m_resourceIdsHasBeenSet(false),
     m_resourceType(FlowLogsResourceType::NOT_SET),
@@ -49,6 +50,11 @@ Aws::String CreateFlowLogsRequest::SerializePayload() const
   if(m_deliverLogsPermissionArnHasBeenSet)
   {
     ss << "DeliverLogsPermissionArn=" << StringUtils::URLEncode(m_deliverLogsPermissionArn.c_str()) << "&";
+  }
+
+  if(m_deliverCrossAccountRoleHasBeenSet)
+  {
+    ss << "DeliverCrossAccountRole=" << StringUtils::URLEncode(m_deliverCrossAccountRole.c_str()) << "&";
   }
 
   if(m_logGroupNameHasBeenSet)

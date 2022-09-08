@@ -382,61 +382,61 @@ namespace Model
 
 
     /**
-     * <p>The timeout value, in seconds, to download and extract customer model
-     * artifact from Amazon S3 to individual inference instance associated with this
-     * production variant.</p>
+     * <p>The timeout value, in seconds, to download and extract the model that you
+     * want to host from Amazon S3 to the individual inference instance associated with
+     * this production variant.</p>
      */
     inline int GetModelDataDownloadTimeoutInSeconds() const{ return m_modelDataDownloadTimeoutInSeconds; }
 
     /**
-     * <p>The timeout value, in seconds, to download and extract customer model
-     * artifact from Amazon S3 to individual inference instance associated with this
-     * production variant.</p>
+     * <p>The timeout value, in seconds, to download and extract the model that you
+     * want to host from Amazon S3 to the individual inference instance associated with
+     * this production variant.</p>
      */
     inline bool ModelDataDownloadTimeoutInSecondsHasBeenSet() const { return m_modelDataDownloadTimeoutInSecondsHasBeenSet; }
 
     /**
-     * <p>The timeout value, in seconds, to download and extract customer model
-     * artifact from Amazon S3 to individual inference instance associated with this
-     * production variant.</p>
+     * <p>The timeout value, in seconds, to download and extract the model that you
+     * want to host from Amazon S3 to the individual inference instance associated with
+     * this production variant.</p>
      */
     inline void SetModelDataDownloadTimeoutInSeconds(int value) { m_modelDataDownloadTimeoutInSecondsHasBeenSet = true; m_modelDataDownloadTimeoutInSeconds = value; }
 
     /**
-     * <p>The timeout value, in seconds, to download and extract customer model
-     * artifact from Amazon S3 to individual inference instance associated with this
-     * production variant.</p>
+     * <p>The timeout value, in seconds, to download and extract the model that you
+     * want to host from Amazon S3 to the individual inference instance associated with
+     * this production variant.</p>
      */
     inline ProductionVariant& WithModelDataDownloadTimeoutInSeconds(int value) { SetModelDataDownloadTimeoutInSeconds(value); return *this;}
 
 
     /**
-     * <p>The timeout value, in seconds, for the customer inference container to pass
-     * health check by SageMaker Hosting. For more information on health check, see <a
+     * <p>The timeout value, in seconds, for your inference container to pass health
+     * check by SageMaker Hosting. For more information about health check, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-inference-code.html#your-algorithms-inference-algo-ping-requests">How
      * Your Container Should Respond to Health Check (Ping) Requests</a>.</p>
      */
     inline int GetContainerStartupHealthCheckTimeoutInSeconds() const{ return m_containerStartupHealthCheckTimeoutInSeconds; }
 
     /**
-     * <p>The timeout value, in seconds, for the customer inference container to pass
-     * health check by SageMaker Hosting. For more information on health check, see <a
+     * <p>The timeout value, in seconds, for your inference container to pass health
+     * check by SageMaker Hosting. For more information about health check, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-inference-code.html#your-algorithms-inference-algo-ping-requests">How
      * Your Container Should Respond to Health Check (Ping) Requests</a>.</p>
      */
     inline bool ContainerStartupHealthCheckTimeoutInSecondsHasBeenSet() const { return m_containerStartupHealthCheckTimeoutInSecondsHasBeenSet; }
 
     /**
-     * <p>The timeout value, in seconds, for the customer inference container to pass
-     * health check by SageMaker Hosting. For more information on health check, see <a
+     * <p>The timeout value, in seconds, for your inference container to pass health
+     * check by SageMaker Hosting. For more information about health check, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-inference-code.html#your-algorithms-inference-algo-ping-requests">How
      * Your Container Should Respond to Health Check (Ping) Requests</a>.</p>
      */
     inline void SetContainerStartupHealthCheckTimeoutInSeconds(int value) { m_containerStartupHealthCheckTimeoutInSecondsHasBeenSet = true; m_containerStartupHealthCheckTimeoutInSeconds = value; }
 
     /**
-     * <p>The timeout value, in seconds, for the customer inference container to pass
-     * health check by SageMaker Hosting. For more information on health check, see <a
+     * <p>The timeout value, in seconds, for your inference container to pass health
+     * check by SageMaker Hosting. For more information about health check, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-inference-code.html#your-algorithms-inference-algo-ping-requests">How
      * Your Container Should Respond to Health Check (Ping) Requests</a>.</p>
      */

@@ -1050,56 +1050,96 @@ namespace Model
     /**
      * <p>The ARN of the Identity and Access Management (IAM) service role to use to
      * publish Amazon Simple Notification Service (Amazon SNS) notifications for Run
-     * Command commands.</p>
+     * Command commands.</p> <p>This role must provide the <code>sns:Publish</code>
+     * permission for your notification topic. For information about creating and using
+     * this service role, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the
+     * <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
 
     /**
      * <p>The ARN of the Identity and Access Management (IAM) service role to use to
      * publish Amazon Simple Notification Service (Amazon SNS) notifications for Run
-     * Command commands.</p>
+     * Command commands.</p> <p>This role must provide the <code>sns:Publish</code>
+     * permission for your notification topic. For information about creating and using
+     * this service role, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the
+     * <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
 
     /**
      * <p>The ARN of the Identity and Access Management (IAM) service role to use to
      * publish Amazon Simple Notification Service (Amazon SNS) notifications for Run
-     * Command commands.</p>
+     * Command commands.</p> <p>This role must provide the <code>sns:Publish</code>
+     * permission for your notification topic. For information about creating and using
+     * this service role, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the
+     * <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
     /**
      * <p>The ARN of the Identity and Access Management (IAM) service role to use to
      * publish Amazon Simple Notification Service (Amazon SNS) notifications for Run
-     * Command commands.</p>
+     * Command commands.</p> <p>This role must provide the <code>sns:Publish</code>
+     * permission for your notification topic. For information about creating and using
+     * this service role, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the
+     * <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
 
     /**
      * <p>The ARN of the Identity and Access Management (IAM) service role to use to
      * publish Amazon Simple Notification Service (Amazon SNS) notifications for Run
-     * Command commands.</p>
+     * Command commands.</p> <p>This role must provide the <code>sns:Publish</code>
+     * permission for your notification topic. For information about creating and using
+     * this service role, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the
+     * <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline void SetServiceRoleArn(const char* value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn.assign(value); }
 
     /**
      * <p>The ARN of the Identity and Access Management (IAM) service role to use to
      * publish Amazon Simple Notification Service (Amazon SNS) notifications for Run
-     * Command commands.</p>
+     * Command commands.</p> <p>This role must provide the <code>sns:Publish</code>
+     * permission for your notification topic. For information about creating and using
+     * this service role, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the
+     * <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline SendCommandRequest& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
 
     /**
      * <p>The ARN of the Identity and Access Management (IAM) service role to use to
      * publish Amazon Simple Notification Service (Amazon SNS) notifications for Run
-     * Command commands.</p>
+     * Command commands.</p> <p>This role must provide the <code>sns:Publish</code>
+     * permission for your notification topic. For information about creating and using
+     * this service role, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the
+     * <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline SendCommandRequest& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the Identity and Access Management (IAM) service role to use to
      * publish Amazon Simple Notification Service (Amazon SNS) notifications for Run
-     * Command commands.</p>
+     * Command commands.</p> <p>This role must provide the <code>sns:Publish</code>
+     * permission for your notification topic. For information about creating and using
+     * this service role, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the
+     * <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline SendCommandRequest& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
