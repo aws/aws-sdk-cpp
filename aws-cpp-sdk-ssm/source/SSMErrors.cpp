@@ -196,6 +196,7 @@ static const int DOCUMENT_ALREADY_EXISTS_HASH = HashingUtils::HashString("Docume
 static const int UNSUPPORTED_CALENDAR_HASH = HashingUtils::HashString("UnsupportedCalendarException");
 static const int INVALID_DOCUMENT_VERSION_HASH = HashingUtils::HashString("InvalidDocumentVersion");
 static const int INVALID_NOTIFICATION_CONFIG_HASH = HashingUtils::HashString("InvalidNotificationConfig");
+static const int INVALID_TAG_HASH = HashingUtils::HashString("InvalidTag");
 static const int INVALID_SCHEDULE_HASH = HashingUtils::HashString("InvalidSchedule");
 static const int INVALID_ACTIVATION_ID_HASH = HashingUtils::HashString("InvalidActivationId");
 static const int RESOURCE_DATA_SYNC_CONFLICT_HASH = HashingUtils::HashString("ResourceDataSyncConflictException");
@@ -756,6 +757,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_NOTIFICATION_CONFIG), false);
     return true;
   }
+  else if (hashCode == INVALID_TAG_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_TAG), false);
+    return true;
+  }
   else if (hashCode == INVALID_SCHEDULE_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_SCHEDULE), false);
@@ -826,7 +832,12 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::SERVICE_SETTING_NOT_FOUND), false);
     return true;
   }
-  else if (hashCode == DOCUMENT_PERMISSION_LIMIT_HASH)
+  return false;
+}
+
+static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
+{
+  if (hashCode == DOCUMENT_PERMISSION_LIMIT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DOCUMENT_PERMISSION_LIMIT), false);
     return true;
@@ -839,6 +850,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   int hashCode = HashingUtils::HashString(errorName);
   AWSError<CoreErrors> error;
   if (GetErrorForNameHelper0(hashCode, error))
+  {
+    return error;
+  }
+  else if (GetErrorForNameHelper1(hashCode, error))
   {
     return error;
   }

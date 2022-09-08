@@ -31,6 +31,7 @@ namespace Aws
         static const int eu_west_3_HASH = HashingUtils::HashString("eu-west-3");
         static const int ap_east_1_HASH = HashingUtils::HashString("ap-east-1");
         static const int me_south_1_HASH = HashingUtils::HashString("me-south-1");
+        static const int me_central_1_HASH = HashingUtils::HashString("me-central-1");
         static const int ap_south_1_HASH = HashingUtils::HashString("ap-south-1");
         static const int ap_southeast_1_HASH = HashingUtils::HashString("ap-southeast-1");
         static const int ap_southeast_2_HASH = HashingUtils::HashString("ap-southeast-2");
@@ -97,6 +98,10 @@ namespace Aws
           else if (hashCode == me_south_1_HASH)
           {
             return CloudWatchRegion::me_south_1;
+          }
+          else if (hashCode == me_central_1_HASH)
+          {
+            return CloudWatchRegion::me_central_1;
           }
           else if (hashCode == ap_south_1_HASH)
           {
@@ -206,6 +211,8 @@ namespace Aws
             return "ap-east-1";
           case CloudWatchRegion::me_south_1:
             return "me-south-1";
+          case CloudWatchRegion::me_central_1:
+            return "me-central-1";
           case CloudWatchRegion::ap_south_1:
             return "ap-south-1";
           case CloudWatchRegion::ap_southeast_1:

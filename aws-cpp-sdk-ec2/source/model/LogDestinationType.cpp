@@ -22,6 +22,7 @@ namespace Aws
 
         static const int cloud_watch_logs_HASH = HashingUtils::HashString("cloud-watch-logs");
         static const int s3_HASH = HashingUtils::HashString("s3");
+        static const int kinesis_data_firehose_HASH = HashingUtils::HashString("kinesis-data-firehose");
 
 
         LogDestinationType GetLogDestinationTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == s3_HASH)
           {
             return LogDestinationType::s3;
+          }
+          else if (hashCode == kinesis_data_firehose_HASH)
+          {
+            return LogDestinationType::kinesis_data_firehose;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "cloud-watch-logs";
           case LogDestinationType::s3:
             return "s3";
+          case LogDestinationType::kinesis_data_firehose:
+            return "kinesis-data-firehose";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

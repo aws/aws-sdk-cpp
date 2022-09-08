@@ -13,6 +13,7 @@
 #include <aws/lookoutmetrics/model/MetricSource.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/lookoutmetrics/model/Metric.h>
+#include <aws/lookoutmetrics/model/MetricSetDimensionFilter.h>
 #include <utility>
 
 namespace Aws
@@ -508,6 +509,47 @@ namespace Model
      */
     inline CreateMetricSetRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>A list of filters that specify which data is kept for anomaly detection.</p>
+     */
+    inline const Aws::Vector<MetricSetDimensionFilter>& GetDimensionFilterList() const{ return m_dimensionFilterList; }
+
+    /**
+     * <p>A list of filters that specify which data is kept for anomaly detection.</p>
+     */
+    inline bool DimensionFilterListHasBeenSet() const { return m_dimensionFilterListHasBeenSet; }
+
+    /**
+     * <p>A list of filters that specify which data is kept for anomaly detection.</p>
+     */
+    inline void SetDimensionFilterList(const Aws::Vector<MetricSetDimensionFilter>& value) { m_dimensionFilterListHasBeenSet = true; m_dimensionFilterList = value; }
+
+    /**
+     * <p>A list of filters that specify which data is kept for anomaly detection.</p>
+     */
+    inline void SetDimensionFilterList(Aws::Vector<MetricSetDimensionFilter>&& value) { m_dimensionFilterListHasBeenSet = true; m_dimensionFilterList = std::move(value); }
+
+    /**
+     * <p>A list of filters that specify which data is kept for anomaly detection.</p>
+     */
+    inline CreateMetricSetRequest& WithDimensionFilterList(const Aws::Vector<MetricSetDimensionFilter>& value) { SetDimensionFilterList(value); return *this;}
+
+    /**
+     * <p>A list of filters that specify which data is kept for anomaly detection.</p>
+     */
+    inline CreateMetricSetRequest& WithDimensionFilterList(Aws::Vector<MetricSetDimensionFilter>&& value) { SetDimensionFilterList(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of filters that specify which data is kept for anomaly detection.</p>
+     */
+    inline CreateMetricSetRequest& AddDimensionFilterList(const MetricSetDimensionFilter& value) { m_dimensionFilterListHasBeenSet = true; m_dimensionFilterList.push_back(value); return *this; }
+
+    /**
+     * <p>A list of filters that specify which data is kept for anomaly detection.</p>
+     */
+    inline CreateMetricSetRequest& AddDimensionFilterList(MetricSetDimensionFilter&& value) { m_dimensionFilterListHasBeenSet = true; m_dimensionFilterList.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_anomalyDetectorArn;
@@ -542,6 +584,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::Vector<MetricSetDimensionFilter> m_dimensionFilterList;
+    bool m_dimensionFilterListHasBeenSet = false;
   };
 
 } // namespace Model

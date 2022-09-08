@@ -1234,13 +1234,17 @@ namespace SageMaker
          * learning process. For a list of hyperparameters for each training algorithm
          * provided by SageMaker, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
-         * </p> </li> <li> <p> <code>InputDataConfig</code> - Describes the training
-         * dataset and the Amazon S3, EFS, or FSx location where it is stored.</p> </li>
-         * <li> <p> <code>OutputDataConfig</code> - Identifies the Amazon S3 bucket where
-         * you want SageMaker to save the results of model training. </p> </li> <li> <p>
-         * <code>ResourceConfig</code> - Identifies the resources, ML compute instances,
-         * and ML storage volumes to deploy for model training. In distributed training,
-         * you specify more than one instance. </p> </li> <li> <p>
+         * </p>  <p>You must not include any security-sensitive information,
+         * such as account access IDs, secrets, and tokens, in the dictionary for
+         * configuring hyperparameters. SageMaker rejects the training job request and
+         * returns an exception error for detected credentials, if such user input is
+         * found.</p>  </li> <li> <p> <code>InputDataConfig</code> - Describes
+         * the training dataset and the Amazon S3, EFS, or FSx location where it is
+         * stored.</p> </li> <li> <p> <code>OutputDataConfig</code> - Identifies the Amazon
+         * S3 bucket where you want SageMaker to save the results of model training. </p>
+         * </li> <li> <p> <code>ResourceConfig</code> - Identifies the resources, ML
+         * compute instances, and ML storage volumes to deploy for model training. In
+         * distributed training, you specify more than one instance. </p> </li> <li> <p>
          * <code>EnableManagedSpotTraining</code> - Optimize the cost of training machine
          * learning models by up to 80% by using Amazon EC2 Spot instances. For more
          * information, see <a

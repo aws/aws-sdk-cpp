@@ -7,6 +7,7 @@
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/AacSettings.h>
 #include <aws/medialive/model/Ac3Settings.h>
+#include <aws/medialive/model/Eac3AtmosSettings.h>
 #include <aws/medialive/model/Eac3Settings.h>
 #include <aws/medialive/model/Mp2Settings.h>
 #include <aws/medialive/model/PassThroughSettings.h>
@@ -78,6 +79,25 @@ namespace Model
 
     
     inline AudioCodecSettings& WithAc3Settings(Ac3Settings&& value) { SetAc3Settings(std::move(value)); return *this;}
+
+
+    
+    inline const Eac3AtmosSettings& GetEac3AtmosSettings() const{ return m_eac3AtmosSettings; }
+
+    
+    inline bool Eac3AtmosSettingsHasBeenSet() const { return m_eac3AtmosSettingsHasBeenSet; }
+
+    
+    inline void SetEac3AtmosSettings(const Eac3AtmosSettings& value) { m_eac3AtmosSettingsHasBeenSet = true; m_eac3AtmosSettings = value; }
+
+    
+    inline void SetEac3AtmosSettings(Eac3AtmosSettings&& value) { m_eac3AtmosSettingsHasBeenSet = true; m_eac3AtmosSettings = std::move(value); }
+
+    
+    inline AudioCodecSettings& WithEac3AtmosSettings(const Eac3AtmosSettings& value) { SetEac3AtmosSettings(value); return *this;}
+
+    
+    inline AudioCodecSettings& WithEac3AtmosSettings(Eac3AtmosSettings&& value) { SetEac3AtmosSettings(std::move(value)); return *this;}
 
 
     
@@ -162,6 +182,9 @@ namespace Model
 
     Ac3Settings m_ac3Settings;
     bool m_ac3SettingsHasBeenSet = false;
+
+    Eac3AtmosSettings m_eac3AtmosSettings;
+    bool m_eac3AtmosSettingsHasBeenSet = false;
 
     Eac3Settings m_eac3Settings;
     bool m_eac3SettingsHasBeenSet = false;

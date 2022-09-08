@@ -31,6 +31,7 @@ namespace Model
     us_iso_east_1,
     us_iso_west_1,
     us_isob_east_1,
+    me_central_1,
     ap_southeast_1,
     ap_southeast_2,
     ap_southeast_3,

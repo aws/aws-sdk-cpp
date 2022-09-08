@@ -120,7 +120,7 @@ namespace Model
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of managed
-     * nodes. You can filter based on tags applied to EC2 instances. Use this
+     * nodes. You can filter based on tags applied to your managed nodes. Use this
      * <code>Filters</code> data type instead of
      * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
      */
@@ -128,7 +128,7 @@ namespace Model
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of managed
-     * nodes. You can filter based on tags applied to EC2 instances. Use this
+     * nodes. You can filter based on tags applied to your managed nodes. Use this
      * <code>Filters</code> data type instead of
      * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
      */
@@ -136,7 +136,7 @@ namespace Model
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of managed
-     * nodes. You can filter based on tags applied to EC2 instances. Use this
+     * nodes. You can filter based on tags applied to your managed nodes. Use this
      * <code>Filters</code> data type instead of
      * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
      */
@@ -144,7 +144,7 @@ namespace Model
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of managed
-     * nodes. You can filter based on tags applied to EC2 instances. Use this
+     * nodes. You can filter based on tags applied to your managed nodes. Use this
      * <code>Filters</code> data type instead of
      * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
      */
@@ -152,7 +152,7 @@ namespace Model
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of managed
-     * nodes. You can filter based on tags applied to EC2 instances. Use this
+     * nodes. You can filter based on tags applied to your managed nodes. Use this
      * <code>Filters</code> data type instead of
      * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
      */
@@ -160,7 +160,7 @@ namespace Model
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of managed
-     * nodes. You can filter based on tags applied to EC2 instances. Use this
+     * nodes. You can filter based on tags applied to your managed nodes. Use this
      * <code>Filters</code> data type instead of
      * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
      */
@@ -168,7 +168,7 @@ namespace Model
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of managed
-     * nodes. You can filter based on tags applied to EC2 instances. Use this
+     * nodes. You can filter based on tags applied to your managed nodes. Use this
      * <code>Filters</code> data type instead of
      * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
      */
@@ -176,7 +176,7 @@ namespace Model
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of managed
-     * nodes. You can filter based on tags applied to EC2 instances. Use this
+     * nodes. You can filter based on tags applied to your managed nodes. Use this
      * <code>Filters</code> data type instead of
      * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
      */

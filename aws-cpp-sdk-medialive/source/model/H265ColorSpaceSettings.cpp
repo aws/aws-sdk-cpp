@@ -20,6 +20,7 @@ namespace Model
 
 H265ColorSpaceSettings::H265ColorSpaceSettings() : 
     m_colorSpacePassthroughSettingsHasBeenSet(false),
+    m_dolbyVision81SettingsHasBeenSet(false),
     m_hdr10SettingsHasBeenSet(false),
     m_rec601SettingsHasBeenSet(false),
     m_rec709SettingsHasBeenSet(false)
@@ -28,6 +29,7 @@ H265ColorSpaceSettings::H265ColorSpaceSettings() :
 
 H265ColorSpaceSettings::H265ColorSpaceSettings(JsonView jsonValue) : 
     m_colorSpacePassthroughSettingsHasBeenSet(false),
+    m_dolbyVision81SettingsHasBeenSet(false),
     m_hdr10SettingsHasBeenSet(false),
     m_rec601SettingsHasBeenSet(false),
     m_rec709SettingsHasBeenSet(false)
@@ -42,6 +44,13 @@ H265ColorSpaceSettings& H265ColorSpaceSettings::operator =(JsonView jsonValue)
     m_colorSpacePassthroughSettings = jsonValue.GetObject("colorSpacePassthroughSettings");
 
     m_colorSpacePassthroughSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dolbyVision81Settings"))
+  {
+    m_dolbyVision81Settings = jsonValue.GetObject("dolbyVision81Settings");
+
+    m_dolbyVision81SettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("hdr10Settings"))
@@ -75,6 +84,12 @@ JsonValue H265ColorSpaceSettings::Jsonize() const
   if(m_colorSpacePassthroughSettingsHasBeenSet)
   {
    payload.WithObject("colorSpacePassthroughSettings", m_colorSpacePassthroughSettings.Jsonize());
+
+  }
+
+  if(m_dolbyVision81SettingsHasBeenSet)
+  {
+   payload.WithObject("dolbyVision81Settings", m_dolbyVision81Settings.Jsonize());
 
   }
 

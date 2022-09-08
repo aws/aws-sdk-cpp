@@ -22,7 +22,8 @@ UpdateMetricSetRequest::UpdateMetricSetRequest() :
     m_dimensionListHasBeenSet(false),
     m_metricSetFrequency(Frequency::NOT_SET),
     m_metricSetFrequencyHasBeenSet(false),
-    m_metricSourceHasBeenSet(false)
+    m_metricSourceHasBeenSet(false),
+    m_dimensionFilterListHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,17 @@ Aws::String UpdateMetricSetRequest::SerializePayload() const
   if(m_metricSourceHasBeenSet)
   {
    payload.WithObject("MetricSource", m_metricSource.Jsonize());
+
+  }
+
+  if(m_dimensionFilterListHasBeenSet)
+  {
+   Array<JsonValue> dimensionFilterListJsonList(m_dimensionFilterList.size());
+   for(unsigned dimensionFilterListIndex = 0; dimensionFilterListIndex < dimensionFilterListJsonList.GetLength(); ++dimensionFilterListIndex)
+   {
+     dimensionFilterListJsonList[dimensionFilterListIndex].AsObject(m_dimensionFilterList[dimensionFilterListIndex].Jsonize());
+   }
+   payload.WithArray("DimensionFilterList", std::move(dimensionFilterListJsonList));
 
   }
 

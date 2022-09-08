@@ -22,7 +22,9 @@ AutoMLJobConfig::AutoMLJobConfig() :
     m_completionCriteriaHasBeenSet(false),
     m_securityConfigHasBeenSet(false),
     m_dataSplitConfigHasBeenSet(false),
-    m_candidateGenerationConfigHasBeenSet(false)
+    m_candidateGenerationConfigHasBeenSet(false),
+    m_mode(AutoMLMode::NOT_SET),
+    m_modeHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ AutoMLJobConfig::AutoMLJobConfig(JsonView jsonValue) :
     m_completionCriteriaHasBeenSet(false),
     m_securityConfigHasBeenSet(false),
     m_dataSplitConfigHasBeenSet(false),
-    m_candidateGenerationConfigHasBeenSet(false)
+    m_candidateGenerationConfigHasBeenSet(false),
+    m_mode(AutoMLMode::NOT_SET),
+    m_modeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +69,13 @@ AutoMLJobConfig& AutoMLJobConfig::operator =(JsonView jsonValue)
     m_candidateGenerationConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Mode"))
+  {
+    m_mode = AutoMLModeMapper::GetAutoMLModeForName(jsonValue.GetString("Mode"));
+
+    m_modeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -94,6 +105,11 @@ JsonValue AutoMLJobConfig::Jsonize() const
   {
    payload.WithObject("CandidateGenerationConfig", m_candidateGenerationConfig.Jsonize());
 
+  }
+
+  if(m_modeHasBeenSet)
+  {
+   payload.WithString("Mode", AutoMLModeMapper::GetNameForAutoMLMode(m_mode));
   }
 
   return payload;

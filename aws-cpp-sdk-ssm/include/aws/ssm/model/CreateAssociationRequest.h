@@ -14,6 +14,7 @@
 #include <aws/ssm/model/AssociationSyncCompliance.h>
 #include <aws/ssm/model/Target.h>
 #include <aws/ssm/model/TargetLocation.h>
+#include <aws/ssm/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -1371,6 +1372,79 @@ namespace Model
      */
     inline CreateAssociationRequest& AddTargetMaps(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_targetMapsHasBeenSet = true; m_targetMaps.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Adds or overwrites one or more tags for a State Manager association.
+     * <i>Tags</i> are metadata that you can assign to your Amazon Web Services
+     * resources. Tags enable you to categorize your resources in different ways, for
+     * example, by purpose, owner, or environment. Each tag consists of a key and an
+     * optional value, both of which you define. </p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Adds or overwrites one or more tags for a State Manager association.
+     * <i>Tags</i> are metadata that you can assign to your Amazon Web Services
+     * resources. Tags enable you to categorize your resources in different ways, for
+     * example, by purpose, owner, or environment. Each tag consists of a key and an
+     * optional value, both of which you define. </p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Adds or overwrites one or more tags for a State Manager association.
+     * <i>Tags</i> are metadata that you can assign to your Amazon Web Services
+     * resources. Tags enable you to categorize your resources in different ways, for
+     * example, by purpose, owner, or environment. Each tag consists of a key and an
+     * optional value, both of which you define. </p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Adds or overwrites one or more tags for a State Manager association.
+     * <i>Tags</i> are metadata that you can assign to your Amazon Web Services
+     * resources. Tags enable you to categorize your resources in different ways, for
+     * example, by purpose, owner, or environment. Each tag consists of a key and an
+     * optional value, both of which you define. </p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Adds or overwrites one or more tags for a State Manager association.
+     * <i>Tags</i> are metadata that you can assign to your Amazon Web Services
+     * resources. Tags enable you to categorize your resources in different ways, for
+     * example, by purpose, owner, or environment. Each tag consists of a key and an
+     * optional value, both of which you define. </p>
+     */
+    inline CreateAssociationRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Adds or overwrites one or more tags for a State Manager association.
+     * <i>Tags</i> are metadata that you can assign to your Amazon Web Services
+     * resources. Tags enable you to categorize your resources in different ways, for
+     * example, by purpose, owner, or environment. Each tag consists of a key and an
+     * optional value, both of which you define. </p>
+     */
+    inline CreateAssociationRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Adds or overwrites one or more tags for a State Manager association.
+     * <i>Tags</i> are metadata that you can assign to your Amazon Web Services
+     * resources. Tags enable you to categorize your resources in different ways, for
+     * example, by purpose, owner, or environment. Each tag consists of a key and an
+     * optional value, both of which you define. </p>
+     */
+    inline CreateAssociationRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Adds or overwrites one or more tags for a State Manager association.
+     * <i>Tags</i> are metadata that you can assign to your Amazon Web Services
+     * resources. Tags enable you to categorize your resources in different ways, for
+     * example, by purpose, owner, or environment. Each tag consists of a key and an
+     * optional value, both of which you define. </p>
+     */
+    inline CreateAssociationRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -1426,6 +1500,9 @@ namespace Model
 
     Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>> m_targetMaps;
     bool m_targetMapsHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

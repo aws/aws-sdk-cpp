@@ -310,7 +310,7 @@ namespace Model
     /**
      * <p>A name for the SSM document.</p>  <p>You can't use the following
      * strings as document name prefixes. These are reserved by Amazon Web Services for
-     * use as document name prefixes:</p> <ul> <li> <p> <code>aws-</code> </p> </li>
+     * use as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li>
      * <li> <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li>
      * </ul> 
      */
@@ -319,7 +319,7 @@ namespace Model
     /**
      * <p>A name for the SSM document.</p>  <p>You can't use the following
      * strings as document name prefixes. These are reserved by Amazon Web Services for
-     * use as document name prefixes:</p> <ul> <li> <p> <code>aws-</code> </p> </li>
+     * use as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li>
      * <li> <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li>
      * </ul> 
      */
@@ -328,7 +328,7 @@ namespace Model
     /**
      * <p>A name for the SSM document.</p>  <p>You can't use the following
      * strings as document name prefixes. These are reserved by Amazon Web Services for
-     * use as document name prefixes:</p> <ul> <li> <p> <code>aws-</code> </p> </li>
+     * use as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li>
      * <li> <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li>
      * </ul> 
      */
@@ -337,7 +337,7 @@ namespace Model
     /**
      * <p>A name for the SSM document.</p>  <p>You can't use the following
      * strings as document name prefixes. These are reserved by Amazon Web Services for
-     * use as document name prefixes:</p> <ul> <li> <p> <code>aws-</code> </p> </li>
+     * use as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li>
      * <li> <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li>
      * </ul> 
      */
@@ -346,7 +346,7 @@ namespace Model
     /**
      * <p>A name for the SSM document.</p>  <p>You can't use the following
      * strings as document name prefixes. These are reserved by Amazon Web Services for
-     * use as document name prefixes:</p> <ul> <li> <p> <code>aws-</code> </p> </li>
+     * use as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li>
      * <li> <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li>
      * </ul> 
      */
@@ -355,7 +355,7 @@ namespace Model
     /**
      * <p>A name for the SSM document.</p>  <p>You can't use the following
      * strings as document name prefixes. These are reserved by Amazon Web Services for
-     * use as document name prefixes:</p> <ul> <li> <p> <code>aws-</code> </p> </li>
+     * use as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li>
      * <li> <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li>
      * </ul> 
      */
@@ -364,7 +364,7 @@ namespace Model
     /**
      * <p>A name for the SSM document.</p>  <p>You can't use the following
      * strings as document name prefixes. These are reserved by Amazon Web Services for
-     * use as document name prefixes:</p> <ul> <li> <p> <code>aws-</code> </p> </li>
+     * use as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li>
      * <li> <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li>
      * </ul> 
      */
@@ -373,7 +373,7 @@ namespace Model
     /**
      * <p>A name for the SSM document.</p>  <p>You can't use the following
      * strings as document name prefixes. These are reserved by Amazon Web Services for
-     * use as document name prefixes:</p> <ul> <li> <p> <code>aws-</code> </p> </li>
+     * use as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li>
      * <li> <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li>
      * </ul> 
      */

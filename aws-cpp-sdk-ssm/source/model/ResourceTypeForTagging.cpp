@@ -28,6 +28,7 @@ namespace Aws
         static const int OpsItem_HASH = HashingUtils::HashString("OpsItem");
         static const int OpsMetadata_HASH = HashingUtils::HashString("OpsMetadata");
         static const int Automation_HASH = HashingUtils::HashString("Automation");
+        static const int Association_HASH = HashingUtils::HashString("Association");
 
 
         ResourceTypeForTagging GetResourceTypeForTaggingForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return ResourceTypeForTagging::Automation;
           }
+          else if (hashCode == Association_HASH)
+          {
+            return ResourceTypeForTagging::Association;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -95,6 +100,8 @@ namespace Aws
             return "OpsMetadata";
           case ResourceTypeForTagging::Automation:
             return "Automation";
+          case ResourceTypeForTagging::Association:
+            return "Association";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
