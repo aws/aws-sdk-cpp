@@ -152,7 +152,7 @@ JsonValue DomainNameConfiguration::Jsonize() const
 
   if(m_certificateUploadDateHasBeenSet)
   {
-   payload.WithString("certificateUploadDate", m_certificateUploadDate.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("certificateUploadDate", m_certificateUploadDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_domainNameStatusHasBeenSet)

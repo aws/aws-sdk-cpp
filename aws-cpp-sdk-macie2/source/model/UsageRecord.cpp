@@ -74,7 +74,7 @@ JsonValue UsageRecord::Jsonize() const
 
   if(m_freeTrialStartDateHasBeenSet)
   {
-   payload.WithString("freeTrialStartDate", m_freeTrialStartDate.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("freeTrialStartDate", m_freeTrialStartDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_usageHasBeenSet)

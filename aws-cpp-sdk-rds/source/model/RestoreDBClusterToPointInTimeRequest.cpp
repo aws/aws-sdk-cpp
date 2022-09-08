@@ -70,7 +70,7 @@ Aws::String RestoreDBClusterToPointInTimeRequest::SerializePayload() const
 
   if(m_restoreToTimeHasBeenSet)
   {
-    ss << "RestoreToTime=" << StringUtils::URLEncode(m_restoreToTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+    ss << "RestoreToTime=" << StringUtils::URLEncode(m_restoreToTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_useLatestRestorableTimeHasBeenSet)

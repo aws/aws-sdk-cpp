@@ -179,7 +179,7 @@ JsonValue S3Object::Jsonize() const
 
   if(m_lastModifiedHasBeenSet)
   {
-   payload.WithString("lastModified", m_lastModified.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("lastModified", m_lastModified.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_pathHasBeenSet)

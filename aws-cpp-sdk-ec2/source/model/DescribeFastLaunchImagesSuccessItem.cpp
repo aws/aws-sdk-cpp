@@ -110,7 +110,7 @@ DescribeFastLaunchImagesSuccessItem& DescribeFastLaunchImagesSuccessItem::operat
     XmlNode stateTransitionTimeNode = resultNode.FirstChild("stateTransitionTime");
     if(!stateTransitionTimeNode.IsNull())
     {
-      m_stateTransitionTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateTransitionTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_stateTransitionTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateTransitionTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_stateTransitionTimeHasBeenSet = true;
     }
   }
@@ -166,7 +166,7 @@ void DescribeFastLaunchImagesSuccessItem::OutputToStream(Aws::OStream& oStream, 
 
   if(m_stateTransitionTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StateTransitionTime=" << StringUtils::URLEncode(m_stateTransitionTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".StateTransitionTime=" << StringUtils::URLEncode(m_stateTransitionTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
 }
@@ -211,7 +211,7 @@ void DescribeFastLaunchImagesSuccessItem::OutputToStream(Aws::OStream& oStream, 
   }
   if(m_stateTransitionTimeHasBeenSet)
   {
-      oStream << location << ".StateTransitionTime=" << StringUtils::URLEncode(m_stateTransitionTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".StateTransitionTime=" << StringUtils::URLEncode(m_stateTransitionTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

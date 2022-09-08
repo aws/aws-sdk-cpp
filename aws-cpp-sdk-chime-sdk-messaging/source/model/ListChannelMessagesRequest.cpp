@@ -61,14 +61,14 @@ void ListChannelMessagesRequest::AddQueryStringParameters(URI& uri) const
 
     if(m_notBeforeHasBeenSet)
     {
-      ss << m_notBefore.ToGmtString(DateFormat::ISO_8601);
+      ss << m_notBefore.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
       uri.AddQueryStringParameter("not-before", ss.str());
       ss.str("");
     }
 
     if(m_notAfterHasBeenSet)
     {
-      ss << m_notAfter.ToGmtString(DateFormat::ISO_8601);
+      ss << m_notAfter.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
       uri.AddQueryStringParameter("not-after", ss.str());
       ss.str("");
     }

@@ -67,7 +67,7 @@ JsonValue ConfigurationRevision::Jsonize() const
 
   if(m_createdHasBeenSet)
   {
-   payload.WithString("created", m_created.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("created", m_created.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_descriptionHasBeenSet)

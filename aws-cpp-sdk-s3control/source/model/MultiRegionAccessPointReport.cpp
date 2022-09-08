@@ -64,7 +64,7 @@ MultiRegionAccessPointReport& MultiRegionAccessPointReport::operator =(const Xml
     XmlNode createdAtNode = resultNode.FirstChild("CreatedAt");
     if(!createdAtNode.IsNull())
     {
-      m_createdAt = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdAtNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_createdAt = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdAtNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createdAtHasBeenSet = true;
     }
     XmlNode publicAccessBlockNode = resultNode.FirstChild("PublicAccessBlock");
@@ -114,7 +114,7 @@ void MultiRegionAccessPointReport::AddToNode(XmlNode& parentNode) const
   if(m_createdAtHasBeenSet)
   {
    XmlNode createdAtNode = parentNode.CreateChildElement("CreatedAt");
-   createdAtNode.SetText(m_createdAt.ToGmtString(DateFormat::ISO_8601));
+   createdAtNode.SetText(m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_publicAccessBlockHasBeenSet)

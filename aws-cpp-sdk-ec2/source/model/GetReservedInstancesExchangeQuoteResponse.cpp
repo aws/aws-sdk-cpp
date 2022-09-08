@@ -53,7 +53,7 @@ GetReservedInstancesExchangeQuoteResponse& GetReservedInstancesExchangeQuoteResp
     XmlNode outputReservedInstancesWillExpireAtNode = resultNode.FirstChild("outputReservedInstancesWillExpireAt");
     if(!outputReservedInstancesWillExpireAtNode.IsNull())
     {
-      m_outputReservedInstancesWillExpireAt = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(outputReservedInstancesWillExpireAtNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_outputReservedInstancesWillExpireAt = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(outputReservedInstancesWillExpireAtNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
     }
     XmlNode paymentDueNode = resultNode.FirstChild("paymentDue");
     if(!paymentDueNode.IsNull())

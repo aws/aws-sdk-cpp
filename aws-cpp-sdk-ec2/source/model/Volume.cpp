@@ -106,7 +106,7 @@ Volume& Volume::operator =(const XmlNode& xmlNode)
     XmlNode createTimeNode = resultNode.FirstChild("createTime");
     if(!createTimeNode.IsNull())
     {
-      m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createTimeHasBeenSet = true;
     }
     XmlNode encryptedNode = resultNode.FirstChild("encrypted");
@@ -218,7 +218,7 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
 
   if(m_createTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_encryptedHasBeenSet)
@@ -319,7 +319,7 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_createTimeHasBeenSet)
   {
-      oStream << location << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_encryptedHasBeenSet)
   {

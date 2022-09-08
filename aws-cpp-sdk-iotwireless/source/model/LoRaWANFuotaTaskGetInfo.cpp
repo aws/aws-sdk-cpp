@@ -62,7 +62,7 @@ JsonValue LoRaWANFuotaTaskGetInfo::Jsonize() const
 
   if(m_startTimeHasBeenSet)
   {
-   payload.WithString("StartTime", m_startTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("StartTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

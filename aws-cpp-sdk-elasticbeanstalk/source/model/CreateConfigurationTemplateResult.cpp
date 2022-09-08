@@ -78,12 +78,12 @@ CreateConfigurationTemplateResult& CreateConfigurationTemplateResult::operator =
     XmlNode dateCreatedNode = resultNode.FirstChild("DateCreated");
     if(!dateCreatedNode.IsNull())
     {
-      m_dateCreated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dateCreatedNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_dateCreated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dateCreatedNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
     }
     XmlNode dateUpdatedNode = resultNode.FirstChild("DateUpdated");
     if(!dateUpdatedNode.IsNull())
     {
-      m_dateUpdated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dateUpdatedNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_dateUpdated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dateUpdatedNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
     }
     XmlNode optionSettingsNode = resultNode.FirstChild("OptionSettings");
     if(!optionSettingsNode.IsNull())

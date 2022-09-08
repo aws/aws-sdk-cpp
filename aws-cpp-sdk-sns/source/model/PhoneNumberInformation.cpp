@@ -52,7 +52,7 @@ PhoneNumberInformation& PhoneNumberInformation::operator =(const XmlNode& xmlNod
     XmlNode createdAtNode = resultNode.FirstChild("CreatedAt");
     if(!createdAtNode.IsNull())
     {
-      m_createdAt = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdAtNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_createdAt = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdAtNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createdAtHasBeenSet = true;
     }
     XmlNode phoneNumberNode = resultNode.FirstChild("PhoneNumber");
@@ -100,7 +100,7 @@ void PhoneNumberInformation::OutputToStream(Aws::OStream& oStream, const char* l
 {
   if(m_createdAtHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreatedAt=" << StringUtils::URLEncode(m_createdAt.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".CreatedAt=" << StringUtils::URLEncode(m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_phoneNumberHasBeenSet)
@@ -138,7 +138,7 @@ void PhoneNumberInformation::OutputToStream(Aws::OStream& oStream, const char* l
 {
   if(m_createdAtHasBeenSet)
   {
-      oStream << location << ".CreatedAt=" << StringUtils::URLEncode(m_createdAt.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".CreatedAt=" << StringUtils::URLEncode(m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_phoneNumberHasBeenSet)
   {

@@ -64,7 +64,7 @@ ElasticInferenceAcceleratorAssociation& ElasticInferenceAcceleratorAssociation::
     XmlNode elasticInferenceAcceleratorAssociationTimeNode = resultNode.FirstChild("elasticInferenceAcceleratorAssociationTime");
     if(!elasticInferenceAcceleratorAssociationTimeNode.IsNull())
     {
-      m_elasticInferenceAcceleratorAssociationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(elasticInferenceAcceleratorAssociationTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_elasticInferenceAcceleratorAssociationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(elasticInferenceAcceleratorAssociationTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_elasticInferenceAcceleratorAssociationTimeHasBeenSet = true;
     }
   }
@@ -91,7 +91,7 @@ void ElasticInferenceAcceleratorAssociation::OutputToStream(Aws::OStream& oStrea
 
   if(m_elasticInferenceAcceleratorAssociationTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ElasticInferenceAcceleratorAssociationTime=" << StringUtils::URLEncode(m_elasticInferenceAcceleratorAssociationTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".ElasticInferenceAcceleratorAssociationTime=" << StringUtils::URLEncode(m_elasticInferenceAcceleratorAssociationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
 }
@@ -112,7 +112,7 @@ void ElasticInferenceAcceleratorAssociation::OutputToStream(Aws::OStream& oStrea
   }
   if(m_elasticInferenceAcceleratorAssociationTimeHasBeenSet)
   {
-      oStream << location << ".ElasticInferenceAcceleratorAssociationTime=" << StringUtils::URLEncode(m_elasticInferenceAcceleratorAssociationTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".ElasticInferenceAcceleratorAssociationTime=" << StringUtils::URLEncode(m_elasticInferenceAcceleratorAssociationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

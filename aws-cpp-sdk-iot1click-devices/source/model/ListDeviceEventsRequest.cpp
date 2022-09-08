@@ -35,7 +35,7 @@ void ListDeviceEventsRequest::AddQueryStringParameters(URI& uri) const
     Aws::StringStream ss;
     if(m_fromTimeStampHasBeenSet)
     {
-      ss << m_fromTimeStamp.ToGmtString(DateFormat::ISO_8601);
+      ss << m_fromTimeStamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
       uri.AddQueryStringParameter("fromTimeStamp", ss.str());
       ss.str("");
     }
@@ -56,7 +56,7 @@ void ListDeviceEventsRequest::AddQueryStringParameters(URI& uri) const
 
     if(m_toTimeStampHasBeenSet)
     {
-      ss << m_toTimeStamp.ToGmtString(DateFormat::ISO_8601);
+      ss << m_toTimeStamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
       uri.AddQueryStringParameter("toTimeStamp", ss.str());
       ss.str("");
     }

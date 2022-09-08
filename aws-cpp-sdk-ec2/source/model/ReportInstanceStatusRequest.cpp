@@ -39,7 +39,7 @@ Aws::String ReportInstanceStatusRequest::SerializePayload() const
 
   if(m_endTimeHasBeenSet)
   {
-    ss << "EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+    ss << "EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_instancesHasBeenSet)
@@ -66,7 +66,7 @@ Aws::String ReportInstanceStatusRequest::SerializePayload() const
 
   if(m_startTimeHasBeenSet)
   {
-    ss << "StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+    ss << "StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_statusHasBeenSet)

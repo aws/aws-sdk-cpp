@@ -66,7 +66,7 @@ Event& Event::operator =(const XmlNode& xmlNode)
     XmlNode dateNode = resultNode.FirstChild("Date");
     if(!dateNode.IsNull())
     {
-      m_date = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_date = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_dateHasBeenSet = true;
     }
   }
@@ -93,7 +93,7 @@ void Event::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
 
   if(m_dateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Date=" << StringUtils::URLEncode(m_date.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".Date=" << StringUtils::URLEncode(m_date.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
 }
@@ -114,7 +114,7 @@ void Event::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_dateHasBeenSet)
   {
-      oStream << location << ".Date=" << StringUtils::URLEncode(m_date.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".Date=" << StringUtils::URLEncode(m_date.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

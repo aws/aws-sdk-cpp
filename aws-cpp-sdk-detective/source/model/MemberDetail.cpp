@@ -183,12 +183,12 @@ JsonValue MemberDetail::Jsonize() const
 
   if(m_invitedTimeHasBeenSet)
   {
-   payload.WithString("InvitedTime", m_invitedTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("InvitedTime", m_invitedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_updatedTimeHasBeenSet)
   {
-   payload.WithString("UpdatedTime", m_updatedTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("UpdatedTime", m_updatedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_invitationTypeHasBeenSet)

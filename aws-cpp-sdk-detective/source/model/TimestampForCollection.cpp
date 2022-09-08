@@ -47,7 +47,7 @@ JsonValue TimestampForCollection::Jsonize() const
 
   if(m_timestampHasBeenSet)
   {
-   payload.WithString("Timestamp", m_timestamp.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("Timestamp", m_timestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

@@ -86,7 +86,7 @@ JsonValue Resource::Jsonize() const
 
   if(m_associationTimeHasBeenSet)
   {
-   payload.WithString("associationTime", m_associationTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("associationTime", m_associationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_integrationsHasBeenSet)

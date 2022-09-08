@@ -330,7 +330,7 @@ JsonValue Snapshot::Jsonize() const
 
   if(m_snapshotCreateTimeHasBeenSet)
   {
-   payload.WithString("snapshotCreateTime", m_snapshotCreateTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("snapshotCreateTime", m_snapshotCreateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_snapshotNameHasBeenSet)
@@ -353,7 +353,7 @@ JsonValue Snapshot::Jsonize() const
 
   if(m_snapshotRetentionStartTimeHasBeenSet)
   {
-   payload.WithString("snapshotRetentionStartTime", m_snapshotRetentionStartTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("snapshotRetentionStartTime", m_snapshotRetentionStartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_statusHasBeenSet)

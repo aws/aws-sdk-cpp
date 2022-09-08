@@ -172,7 +172,7 @@ CacheCluster& CacheCluster::operator =(const XmlNode& xmlNode)
     XmlNode cacheClusterCreateTimeNode = resultNode.FirstChild("CacheClusterCreateTime");
     if(!cacheClusterCreateTimeNode.IsNull())
     {
-      m_cacheClusterCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(cacheClusterCreateTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_cacheClusterCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(cacheClusterCreateTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_cacheClusterCreateTimeHasBeenSet = true;
     }
     XmlNode preferredMaintenanceWindowNode = resultNode.FirstChild("PreferredMaintenanceWindow");
@@ -274,7 +274,7 @@ CacheCluster& CacheCluster::operator =(const XmlNode& xmlNode)
     XmlNode authTokenLastModifiedDateNode = resultNode.FirstChild("AuthTokenLastModifiedDate");
     if(!authTokenLastModifiedDateNode.IsNull())
     {
-      m_authTokenLastModifiedDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(authTokenLastModifiedDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_authTokenLastModifiedDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(authTokenLastModifiedDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_authTokenLastModifiedDateHasBeenSet = true;
     }
     XmlNode transitEncryptionEnabledNode = resultNode.FirstChild("TransitEncryptionEnabled");
@@ -374,7 +374,7 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location, u
 
   if(m_cacheClusterCreateTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CacheClusterCreateTime=" << StringUtils::URLEncode(m_cacheClusterCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".CacheClusterCreateTime=" << StringUtils::URLEncode(m_cacheClusterCreateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_preferredMaintenanceWindowHasBeenSet)
@@ -468,7 +468,7 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location, u
 
   if(m_authTokenLastModifiedDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AuthTokenLastModifiedDate=" << StringUtils::URLEncode(m_authTokenLastModifiedDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".AuthTokenLastModifiedDate=" << StringUtils::URLEncode(m_authTokenLastModifiedDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_transitEncryptionEnabledHasBeenSet)
@@ -550,7 +550,7 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_cacheClusterCreateTimeHasBeenSet)
   {
-      oStream << location << ".CacheClusterCreateTime=" << StringUtils::URLEncode(m_cacheClusterCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".CacheClusterCreateTime=" << StringUtils::URLEncode(m_cacheClusterCreateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_preferredMaintenanceWindowHasBeenSet)
   {
@@ -630,7 +630,7 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_authTokenLastModifiedDateHasBeenSet)
   {
-      oStream << location << ".AuthTokenLastModifiedDate=" << StringUtils::URLEncode(m_authTokenLastModifiedDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".AuthTokenLastModifiedDate=" << StringUtils::URLEncode(m_authTokenLastModifiedDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_transitEncryptionEnabledHasBeenSet)
   {

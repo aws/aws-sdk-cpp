@@ -100,12 +100,12 @@ JsonValue Invitation::Jsonize() const
 
   if(m_creationDateHasBeenSet)
   {
-   payload.WithString("CreationDate", m_creationDate.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("CreationDate", m_creationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_expirationDateHasBeenSet)
   {
-   payload.WithString("ExpirationDate", m_expirationDate.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("ExpirationDate", m_expirationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_statusHasBeenSet)

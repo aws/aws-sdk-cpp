@@ -164,7 +164,7 @@ DBInstanceAutomatedBackup& DBInstanceAutomatedBackup::operator =(const XmlNode& 
     XmlNode instanceCreateTimeNode = resultNode.FirstChild("InstanceCreateTime");
     if(!instanceCreateTimeNode.IsNull())
     {
-      m_instanceCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceCreateTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_instanceCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceCreateTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_instanceCreateTimeHasBeenSet = true;
     }
     XmlNode masterUsernameNode = resultNode.FirstChild("MasterUsername");
@@ -330,7 +330,7 @@ void DBInstanceAutomatedBackup::OutputToStream(Aws::OStream& oStream, const char
 
   if(m_instanceCreateTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstanceCreateTime=" << StringUtils::URLEncode(m_instanceCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".InstanceCreateTime=" << StringUtils::URLEncode(m_instanceCreateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_masterUsernameHasBeenSet)
@@ -467,7 +467,7 @@ void DBInstanceAutomatedBackup::OutputToStream(Aws::OStream& oStream, const char
   }
   if(m_instanceCreateTimeHasBeenSet)
   {
-      oStream << location << ".InstanceCreateTime=" << StringUtils::URLEncode(m_instanceCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".InstanceCreateTime=" << StringUtils::URLEncode(m_instanceCreateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_masterUsernameHasBeenSet)
   {

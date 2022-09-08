@@ -111,7 +111,7 @@ JsonValue Order::Jsonize() const
 
   if(m_createdAtHasBeenSet)
   {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_networkArnHasBeenSet)

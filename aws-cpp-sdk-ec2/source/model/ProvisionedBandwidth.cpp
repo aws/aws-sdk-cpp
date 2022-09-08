@@ -48,7 +48,7 @@ ProvisionedBandwidth& ProvisionedBandwidth::operator =(const XmlNode& xmlNode)
     XmlNode provisionTimeNode = resultNode.FirstChild("provisionTime");
     if(!provisionTimeNode.IsNull())
     {
-      m_provisionTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(provisionTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_provisionTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(provisionTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_provisionTimeHasBeenSet = true;
     }
     XmlNode provisionedNode = resultNode.FirstChild("provisioned");
@@ -60,7 +60,7 @@ ProvisionedBandwidth& ProvisionedBandwidth::operator =(const XmlNode& xmlNode)
     XmlNode requestTimeNode = resultNode.FirstChild("requestTime");
     if(!requestTimeNode.IsNull())
     {
-      m_requestTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(requestTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_requestTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(requestTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_requestTimeHasBeenSet = true;
     }
     XmlNode requestedNode = resultNode.FirstChild("requested");
@@ -84,7 +84,7 @@ void ProvisionedBandwidth::OutputToStream(Aws::OStream& oStream, const char* loc
 {
   if(m_provisionTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ProvisionTime=" << StringUtils::URLEncode(m_provisionTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".ProvisionTime=" << StringUtils::URLEncode(m_provisionTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_provisionedHasBeenSet)
@@ -94,7 +94,7 @@ void ProvisionedBandwidth::OutputToStream(Aws::OStream& oStream, const char* loc
 
   if(m_requestTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".RequestTime=" << StringUtils::URLEncode(m_requestTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".RequestTime=" << StringUtils::URLEncode(m_requestTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_requestedHasBeenSet)
@@ -113,7 +113,7 @@ void ProvisionedBandwidth::OutputToStream(Aws::OStream& oStream, const char* loc
 {
   if(m_provisionTimeHasBeenSet)
   {
-      oStream << location << ".ProvisionTime=" << StringUtils::URLEncode(m_provisionTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".ProvisionTime=" << StringUtils::URLEncode(m_provisionTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_provisionedHasBeenSet)
   {
@@ -121,7 +121,7 @@ void ProvisionedBandwidth::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_requestTimeHasBeenSet)
   {
-      oStream << location << ".RequestTime=" << StringUtils::URLEncode(m_requestTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".RequestTime=" << StringUtils::URLEncode(m_requestTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_requestedHasBeenSet)
   {

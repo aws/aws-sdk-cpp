@@ -152,12 +152,12 @@ JsonValue ClusterOperationInfo::Jsonize() const
 
   if(m_creationTimeHasBeenSet)
   {
-   payload.WithString("creationTime", m_creationTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("creationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_endTimeHasBeenSet)
   {
-   payload.WithString("endTime", m_endTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("endTime", m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_errorInfoHasBeenSet)
