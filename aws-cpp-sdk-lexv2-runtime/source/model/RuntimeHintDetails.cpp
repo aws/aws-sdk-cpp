@@ -19,12 +19,14 @@ namespace Model
 {
 
 RuntimeHintDetails::RuntimeHintDetails() : 
-    m_runtimeHintValuesHasBeenSet(false)
+    m_runtimeHintValuesHasBeenSet(false),
+    m_subSlotHintsHasBeenSet(false)
 {
 }
 
 RuntimeHintDetails::RuntimeHintDetails(JsonView jsonValue) : 
-    m_runtimeHintValuesHasBeenSet(false)
+    m_runtimeHintValuesHasBeenSet(false),
+    m_subSlotHintsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -39,6 +41,16 @@ RuntimeHintDetails& RuntimeHintDetails::operator =(JsonView jsonValue)
       m_runtimeHintValues.push_back(runtimeHintValuesJsonList[runtimeHintValuesIndex].AsObject());
     }
     m_runtimeHintValuesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("subSlotHints"))
+  {
+    Aws::Map<Aws::String, JsonView> subSlotHintsJsonMap = jsonValue.GetObject("subSlotHints").GetAllObjects();
+    for(auto& subSlotHintsItem : subSlotHintsJsonMap)
+    {
+      m_subSlotHints[subSlotHintsItem.first] = subSlotHintsItem.second.AsObject();
+    }
+    m_subSlotHintsHasBeenSet = true;
   }
 
   return *this;
@@ -56,6 +68,17 @@ JsonValue RuntimeHintDetails::Jsonize() const
      runtimeHintValuesJsonList[runtimeHintValuesIndex].AsObject(m_runtimeHintValues[runtimeHintValuesIndex].Jsonize());
    }
    payload.WithArray("runtimeHintValues", std::move(runtimeHintValuesJsonList));
+
+  }
+
+  if(m_subSlotHintsHasBeenSet)
+  {
+   JsonValue subSlotHintsJsonMap;
+   for(auto& subSlotHintsItem : m_subSlotHints)
+   {
+     subSlotHintsJsonMap.WithObject(subSlotHintsItem.first, subSlotHintsItem.second.Jsonize());
+   }
+   payload.WithObject("subSlotHints", std::move(subSlotHintsJsonMap));
 
   }
 

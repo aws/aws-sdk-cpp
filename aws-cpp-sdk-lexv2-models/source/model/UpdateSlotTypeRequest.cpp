@@ -22,7 +22,8 @@ UpdateSlotTypeRequest::UpdateSlotTypeRequest() :
     m_botIdHasBeenSet(false),
     m_botVersionHasBeenSet(false),
     m_localeIdHasBeenSet(false),
-    m_externalSourceSettingHasBeenSet(false)
+    m_externalSourceSettingHasBeenSet(false),
+    m_compositeSlotTypeSettingHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,12 @@ Aws::String UpdateSlotTypeRequest::SerializePayload() const
   if(m_externalSourceSettingHasBeenSet)
   {
    payload.WithObject("externalSourceSetting", m_externalSourceSetting.Jsonize());
+
+  }
+
+  if(m_compositeSlotTypeSettingHasBeenSet)
+  {
+   payload.WithObject("compositeSlotTypeSetting", m_compositeSlotTypeSetting.Jsonize());
 
   }
 

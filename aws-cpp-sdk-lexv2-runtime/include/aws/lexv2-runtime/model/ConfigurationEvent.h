@@ -305,42 +305,82 @@ namespace Model
 
 
     /**
-     * <p>A list of messages to send to the user.</p>
+     * <p>A list of messages to send to the user.</p> <p>If you set the
+     * <code>welcomeMessage</code> field, you must also set the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html">
+     * <code>DialogAction</code> </a> structure's <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html#lexv2-Type-runtime_DialogAction-type">
+     * <code>type</code> </a> field.</p>
      */
     inline const Aws::Vector<Message>& GetWelcomeMessages() const{ return m_welcomeMessages; }
 
     /**
-     * <p>A list of messages to send to the user.</p>
+     * <p>A list of messages to send to the user.</p> <p>If you set the
+     * <code>welcomeMessage</code> field, you must also set the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html">
+     * <code>DialogAction</code> </a> structure's <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html#lexv2-Type-runtime_DialogAction-type">
+     * <code>type</code> </a> field.</p>
      */
     inline bool WelcomeMessagesHasBeenSet() const { return m_welcomeMessagesHasBeenSet; }
 
     /**
-     * <p>A list of messages to send to the user.</p>
+     * <p>A list of messages to send to the user.</p> <p>If you set the
+     * <code>welcomeMessage</code> field, you must also set the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html">
+     * <code>DialogAction</code> </a> structure's <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html#lexv2-Type-runtime_DialogAction-type">
+     * <code>type</code> </a> field.</p>
      */
     inline void SetWelcomeMessages(const Aws::Vector<Message>& value) { m_welcomeMessagesHasBeenSet = true; m_welcomeMessages = value; }
 
     /**
-     * <p>A list of messages to send to the user.</p>
+     * <p>A list of messages to send to the user.</p> <p>If you set the
+     * <code>welcomeMessage</code> field, you must also set the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html">
+     * <code>DialogAction</code> </a> structure's <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html#lexv2-Type-runtime_DialogAction-type">
+     * <code>type</code> </a> field.</p>
      */
     inline void SetWelcomeMessages(Aws::Vector<Message>&& value) { m_welcomeMessagesHasBeenSet = true; m_welcomeMessages = std::move(value); }
 
     /**
-     * <p>A list of messages to send to the user.</p>
+     * <p>A list of messages to send to the user.</p> <p>If you set the
+     * <code>welcomeMessage</code> field, you must also set the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html">
+     * <code>DialogAction</code> </a> structure's <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html#lexv2-Type-runtime_DialogAction-type">
+     * <code>type</code> </a> field.</p>
      */
     inline ConfigurationEvent& WithWelcomeMessages(const Aws::Vector<Message>& value) { SetWelcomeMessages(value); return *this;}
 
     /**
-     * <p>A list of messages to send to the user.</p>
+     * <p>A list of messages to send to the user.</p> <p>If you set the
+     * <code>welcomeMessage</code> field, you must also set the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html">
+     * <code>DialogAction</code> </a> structure's <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html#lexv2-Type-runtime_DialogAction-type">
+     * <code>type</code> </a> field.</p>
      */
     inline ConfigurationEvent& WithWelcomeMessages(Aws::Vector<Message>&& value) { SetWelcomeMessages(std::move(value)); return *this;}
 
     /**
-     * <p>A list of messages to send to the user.</p>
+     * <p>A list of messages to send to the user.</p> <p>If you set the
+     * <code>welcomeMessage</code> field, you must also set the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html">
+     * <code>DialogAction</code> </a> structure's <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html#lexv2-Type-runtime_DialogAction-type">
+     * <code>type</code> </a> field.</p>
      */
     inline ConfigurationEvent& AddWelcomeMessages(const Message& value) { m_welcomeMessagesHasBeenSet = true; m_welcomeMessages.push_back(value); return *this; }
 
     /**
-     * <p>A list of messages to send to the user.</p>
+     * <p>A list of messages to send to the user.</p> <p>If you set the
+     * <code>welcomeMessage</code> field, you must also set the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html">
+     * <code>DialogAction</code> </a> structure's <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html#lexv2-Type-runtime_DialogAction-type">
+     * <code>type</code> </a> field.</p>
      */
     inline ConfigurationEvent& AddWelcomeMessages(Message&& value) { m_welcomeMessagesHasBeenSet = true; m_welcomeMessages.push_back(std::move(value)); return *this; }
 

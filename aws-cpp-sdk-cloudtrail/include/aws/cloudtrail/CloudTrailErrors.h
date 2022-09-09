@@ -47,7 +47,9 @@ enum class CloudTrailErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CLOUD_TRAIL_ACCESS_NOT_ENABLED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CHANNEL_A_R_N_INVALID= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CHANNEL_NOT_FOUND,
+  CLOUD_TRAIL_ACCESS_NOT_ENABLED,
   CLOUD_TRAIL_A_R_N_INVALID,
   CLOUD_TRAIL_INVALID_CLIENT_TOKEN_ID,
   CLOUD_WATCH_LOGS_DELIVERY_UNAVAILABLE,

@@ -22,6 +22,7 @@ namespace Aws
 
         static const int Scalar_HASH = HashingUtils::HashString("Scalar");
         static const int List_HASH = HashingUtils::HashString("List");
+        static const int Composite_HASH = HashingUtils::HashString("Composite");
 
 
         Shape GetShapeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == List_HASH)
           {
             return Shape::List;
+          }
+          else if (hashCode == Composite_HASH)
+          {
+            return Shape::Composite;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "Scalar";
           case Shape::List:
             return "List";
+          case Shape::Composite:
+            return "Composite";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

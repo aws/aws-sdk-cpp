@@ -103,6 +103,12 @@ DescribeSlotTypeResult& DescribeSlotTypeResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("compositeSlotTypeSetting"))
+  {
+    m_compositeSlotTypeSetting = jsonValue.GetObject("compositeSlotTypeSetting");
+
+  }
+
 
 
   return *this;

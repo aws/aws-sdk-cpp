@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     OriginalValue,
-    TopResolution
+    TopResolution,
+    Concatenation
   };
 
 namespace SlotValueResolutionStrategyMapper

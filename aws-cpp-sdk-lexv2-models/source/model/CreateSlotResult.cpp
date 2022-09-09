@@ -100,6 +100,12 @@ CreateSlotResult& CreateSlotResult::operator =(const Aws::AmazonWebServiceResult
 
   }
 
+  if(jsonValue.ValueExists("subSlotSetting"))
+  {
+    m_subSlotSetting = jsonValue.GetObject("subSlotSetting");
+
+  }
+
 
 
   return *this;

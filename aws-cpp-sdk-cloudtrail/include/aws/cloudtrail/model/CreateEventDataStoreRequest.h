@@ -195,25 +195,25 @@ namespace Model
 
     /**
      * <p>The retention period of the event data store, in days. You can set a
-     * retention period of up to 2555 days, the equivalent of seven years.</p>
+     * retention period of up to 2557 days, the equivalent of seven years.</p>
      */
     inline int GetRetentionPeriod() const{ return m_retentionPeriod; }
 
     /**
      * <p>The retention period of the event data store, in days. You can set a
-     * retention period of up to 2555 days, the equivalent of seven years.</p>
+     * retention period of up to 2557 days, the equivalent of seven years.</p>
      */
     inline bool RetentionPeriodHasBeenSet() const { return m_retentionPeriodHasBeenSet; }
 
     /**
      * <p>The retention period of the event data store, in days. You can set a
-     * retention period of up to 2555 days, the equivalent of seven years.</p>
+     * retention period of up to 2557 days, the equivalent of seven years.</p>
      */
     inline void SetRetentionPeriod(int value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = value; }
 
     /**
      * <p>The retention period of the event data store, in days. You can set a
-     * retention period of up to 2555 days, the equivalent of seven years.</p>
+     * retention period of up to 2557 days, the equivalent of seven years.</p>
      */
     inline CreateEventDataStoreRequest& WithRetentionPeriod(int value) { SetRetentionPeriod(value); return *this;}
 

@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lexv2-models/model/SlotValueSelectionSetting.h>
 #include <aws/lexv2-models/model/ExternalSourceSetting.h>
+#include <aws/lexv2-models/model/CompositeSlotTypeSetting.h>
 #include <aws/lexv2-models/model/SlotTypeValue.h>
 #include <utility>
 
@@ -467,6 +468,37 @@ namespace Model
     
     inline UpdateSlotTypeRequest& WithExternalSourceSetting(ExternalSourceSetting&& value) { SetExternalSourceSetting(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifications for a composite slot type.</p>
+     */
+    inline const CompositeSlotTypeSetting& GetCompositeSlotTypeSetting() const{ return m_compositeSlotTypeSetting; }
+
+    /**
+     * <p>Specifications for a composite slot type.</p>
+     */
+    inline bool CompositeSlotTypeSettingHasBeenSet() const { return m_compositeSlotTypeSettingHasBeenSet; }
+
+    /**
+     * <p>Specifications for a composite slot type.</p>
+     */
+    inline void SetCompositeSlotTypeSetting(const CompositeSlotTypeSetting& value) { m_compositeSlotTypeSettingHasBeenSet = true; m_compositeSlotTypeSetting = value; }
+
+    /**
+     * <p>Specifications for a composite slot type.</p>
+     */
+    inline void SetCompositeSlotTypeSetting(CompositeSlotTypeSetting&& value) { m_compositeSlotTypeSettingHasBeenSet = true; m_compositeSlotTypeSetting = std::move(value); }
+
+    /**
+     * <p>Specifications for a composite slot type.</p>
+     */
+    inline UpdateSlotTypeRequest& WithCompositeSlotTypeSetting(const CompositeSlotTypeSetting& value) { SetCompositeSlotTypeSetting(value); return *this;}
+
+    /**
+     * <p>Specifications for a composite slot type.</p>
+     */
+    inline UpdateSlotTypeRequest& WithCompositeSlotTypeSetting(CompositeSlotTypeSetting&& value) { SetCompositeSlotTypeSetting(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_slotTypeId;
@@ -498,6 +530,9 @@ namespace Model
 
     ExternalSourceSetting m_externalSourceSetting;
     bool m_externalSourceSettingHasBeenSet = false;
+
+    CompositeSlotTypeSetting m_compositeSlotTypeSetting;
+    bool m_compositeSlotTypeSettingHasBeenSet = false;
   };
 
 } // namespace Model

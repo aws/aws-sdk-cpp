@@ -1526,11 +1526,9 @@ namespace Model
 
 
     /**
-     * <p>The Elastic IP (EIP) address for the cluster. You don't have to specify the
-     * EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned
-     * on.</p> <p>Constraints: The cluster must be provisioned in EC2-VPC and
-     * publicly-accessible through an Internet gateway. For more information about
-     * provisioning clusters in EC2-VPC, go to <a
+     * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
+     * must be provisioned in EC2-VPC and publicly-accessible through an Internet
+     * gateway. For more information about provisioning clusters in EC2-VPC, go to <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>
@@ -1538,11 +1536,9 @@ namespace Model
     inline const Aws::String& GetElasticIp() const{ return m_elasticIp; }
 
     /**
-     * <p>The Elastic IP (EIP) address for the cluster. You don't have to specify the
-     * EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned
-     * on.</p> <p>Constraints: The cluster must be provisioned in EC2-VPC and
-     * publicly-accessible through an Internet gateway. For more information about
-     * provisioning clusters in EC2-VPC, go to <a
+     * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
+     * must be provisioned in EC2-VPC and publicly-accessible through an Internet
+     * gateway. For more information about provisioning clusters in EC2-VPC, go to <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>
@@ -1550,11 +1546,9 @@ namespace Model
     inline bool ElasticIpHasBeenSet() const { return m_elasticIpHasBeenSet; }
 
     /**
-     * <p>The Elastic IP (EIP) address for the cluster. You don't have to specify the
-     * EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned
-     * on.</p> <p>Constraints: The cluster must be provisioned in EC2-VPC and
-     * publicly-accessible through an Internet gateway. For more information about
-     * provisioning clusters in EC2-VPC, go to <a
+     * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
+     * must be provisioned in EC2-VPC and publicly-accessible through an Internet
+     * gateway. For more information about provisioning clusters in EC2-VPC, go to <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>
@@ -1562,11 +1556,9 @@ namespace Model
     inline void SetElasticIp(const Aws::String& value) { m_elasticIpHasBeenSet = true; m_elasticIp = value; }
 
     /**
-     * <p>The Elastic IP (EIP) address for the cluster. You don't have to specify the
-     * EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned
-     * on.</p> <p>Constraints: The cluster must be provisioned in EC2-VPC and
-     * publicly-accessible through an Internet gateway. For more information about
-     * provisioning clusters in EC2-VPC, go to <a
+     * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
+     * must be provisioned in EC2-VPC and publicly-accessible through an Internet
+     * gateway. For more information about provisioning clusters in EC2-VPC, go to <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>
@@ -1574,11 +1566,9 @@ namespace Model
     inline void SetElasticIp(Aws::String&& value) { m_elasticIpHasBeenSet = true; m_elasticIp = std::move(value); }
 
     /**
-     * <p>The Elastic IP (EIP) address for the cluster. You don't have to specify the
-     * EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned
-     * on.</p> <p>Constraints: The cluster must be provisioned in EC2-VPC and
-     * publicly-accessible through an Internet gateway. For more information about
-     * provisioning clusters in EC2-VPC, go to <a
+     * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
+     * must be provisioned in EC2-VPC and publicly-accessible through an Internet
+     * gateway. For more information about provisioning clusters in EC2-VPC, go to <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>
@@ -1586,11 +1576,9 @@ namespace Model
     inline void SetElasticIp(const char* value) { m_elasticIpHasBeenSet = true; m_elasticIp.assign(value); }
 
     /**
-     * <p>The Elastic IP (EIP) address for the cluster. You don't have to specify the
-     * EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned
-     * on.</p> <p>Constraints: The cluster must be provisioned in EC2-VPC and
-     * publicly-accessible through an Internet gateway. For more information about
-     * provisioning clusters in EC2-VPC, go to <a
+     * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
+     * must be provisioned in EC2-VPC and publicly-accessible through an Internet
+     * gateway. For more information about provisioning clusters in EC2-VPC, go to <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>
@@ -1598,11 +1586,9 @@ namespace Model
     inline CreateClusterRequest& WithElasticIp(const Aws::String& value) { SetElasticIp(value); return *this;}
 
     /**
-     * <p>The Elastic IP (EIP) address for the cluster. You don't have to specify the
-     * EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned
-     * on.</p> <p>Constraints: The cluster must be provisioned in EC2-VPC and
-     * publicly-accessible through an Internet gateway. For more information about
-     * provisioning clusters in EC2-VPC, go to <a
+     * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
+     * must be provisioned in EC2-VPC and publicly-accessible through an Internet
+     * gateway. For more information about provisioning clusters in EC2-VPC, go to <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>
@@ -1610,11 +1596,9 @@ namespace Model
     inline CreateClusterRequest& WithElasticIp(Aws::String&& value) { SetElasticIp(std::move(value)); return *this;}
 
     /**
-     * <p>The Elastic IP (EIP) address for the cluster. You don't have to specify the
-     * EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned
-     * on.</p> <p>Constraints: The cluster must be provisioned in EC2-VPC and
-     * publicly-accessible through an Internet gateway. For more information about
-     * provisioning clusters in EC2-VPC, go to <a
+     * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
+     * must be provisioned in EC2-VPC and publicly-accessible through an Internet
+     * gateway. For more information about provisioning clusters in EC2-VPC, go to <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>
@@ -2022,62 +2006,44 @@ namespace Model
 
 
     /**
-     * <p>The value represents how the cluster is configured to use AQUA (Advanced
-     * Query Accelerator) when it is created. Possible values include the
-     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
-     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
-     * determines whether to use AQUA.</p> </li> </ul>
+     * <p>This parameter is retired. It does not set the AQUA configuration status.
+     * Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     * Accelerator).</p>
      */
     inline const AquaConfigurationStatus& GetAquaConfigurationStatus() const{ return m_aquaConfigurationStatus; }
 
     /**
-     * <p>The value represents how the cluster is configured to use AQUA (Advanced
-     * Query Accelerator) when it is created. Possible values include the
-     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
-     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
-     * determines whether to use AQUA.</p> </li> </ul>
+     * <p>This parameter is retired. It does not set the AQUA configuration status.
+     * Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     * Accelerator).</p>
      */
     inline bool AquaConfigurationStatusHasBeenSet() const { return m_aquaConfigurationStatusHasBeenSet; }
 
     /**
-     * <p>The value represents how the cluster is configured to use AQUA (Advanced
-     * Query Accelerator) when it is created. Possible values include the
-     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
-     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
-     * determines whether to use AQUA.</p> </li> </ul>
+     * <p>This parameter is retired. It does not set the AQUA configuration status.
+     * Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     * Accelerator).</p>
      */
     inline void SetAquaConfigurationStatus(const AquaConfigurationStatus& value) { m_aquaConfigurationStatusHasBeenSet = true; m_aquaConfigurationStatus = value; }
 
     /**
-     * <p>The value represents how the cluster is configured to use AQUA (Advanced
-     * Query Accelerator) when it is created. Possible values include the
-     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
-     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
-     * determines whether to use AQUA.</p> </li> </ul>
+     * <p>This parameter is retired. It does not set the AQUA configuration status.
+     * Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     * Accelerator).</p>
      */
     inline void SetAquaConfigurationStatus(AquaConfigurationStatus&& value) { m_aquaConfigurationStatusHasBeenSet = true; m_aquaConfigurationStatus = std::move(value); }
 
     /**
-     * <p>The value represents how the cluster is configured to use AQUA (Advanced
-     * Query Accelerator) when it is created. Possible values include the
-     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
-     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
-     * determines whether to use AQUA.</p> </li> </ul>
+     * <p>This parameter is retired. It does not set the AQUA configuration status.
+     * Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     * Accelerator).</p>
      */
     inline CreateClusterRequest& WithAquaConfigurationStatus(const AquaConfigurationStatus& value) { SetAquaConfigurationStatus(value); return *this;}
 
     /**
-     * <p>The value represents how the cluster is configured to use AQUA (Advanced
-     * Query Accelerator) when it is created. Possible values include the
-     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
-     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
-     * determines whether to use AQUA.</p> </li> </ul>
+     * <p>This parameter is retired. It does not set the AQUA configuration status.
+     * Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     * Accelerator).</p>
      */
     inline CreateClusterRequest& WithAquaConfigurationStatus(AquaConfigurationStatus&& value) { SetAquaConfigurationStatus(std::move(value)); return *this;}
 
