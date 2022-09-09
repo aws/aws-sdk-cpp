@@ -233,6 +233,25 @@ namespace CloudTrail
         virtual void DescribeTrailsAsync(const Model::DescribeTrailsRequest& request, const DescribeTrailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Returns the specified CloudTrail service-linked channel. Amazon Web Services
+         * services create service-linked channels to view CloudTrail events.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetChannel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetChannelOutcome GetChannel(const Model::GetChannelRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetChannel that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetChannelOutcomeCallable GetChannelCallable(const Model::GetChannelRequest& request) const;
+
+        /**
+         * An Async wrapper for GetChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetChannelAsync(const Model::GetChannelRequest& request, const GetChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns information about an event data store specified as either an ARN or
          * the ID portion of the ARN.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventDataStore">AWS
@@ -359,6 +378,23 @@ namespace CloudTrail
          * An Async wrapper for GetTrailStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetTrailStatusAsync(const Model::GetTrailStatusRequest& request, const GetTrailStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Returns all CloudTrail channels. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListChannels">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListChannelsOutcome ListChannels(const Model::ListChannelsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListChannels that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListChannelsOutcomeCallable ListChannelsCallable(const Model::ListChannelsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListChannels that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListChannelsAsync(const Model::ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about all event data stores in the account, in the
@@ -674,7 +710,7 @@ namespace CloudTrail
          * is an ARN or the ID portion of the ARN. Other parameters are optional, but at
          * least one optional parameter must be specified, or CloudTrail throws an error.
          * <code>RetentionPeriod</code> is in days, and valid values are integers between
-         * 90 and 2555. By default, <code>TerminationProtection</code> is enabled.
+         * 90 and 2557. By default, <code>TerminationProtection</code> is enabled.
          * <code>AdvancedEventSelectors</code> includes or excludes management and data
          * events in your event data store; for more information about
          * <code>AdvancedEventSelectors</code>, see

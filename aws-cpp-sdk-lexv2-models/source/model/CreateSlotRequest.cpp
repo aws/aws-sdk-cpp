@@ -22,7 +22,8 @@ CreateSlotRequest::CreateSlotRequest() :
     m_botVersionHasBeenSet(false),
     m_localeIdHasBeenSet(false),
     m_intentIdHasBeenSet(false),
-    m_multipleValuesSettingHasBeenSet(false)
+    m_multipleValuesSettingHasBeenSet(false),
+    m_subSlotSettingHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,12 @@ Aws::String CreateSlotRequest::SerializePayload() const
   if(m_multipleValuesSettingHasBeenSet)
   {
    payload.WithObject("multipleValuesSetting", m_multipleValuesSetting.Jsonize());
+
+  }
+
+  if(m_subSlotSettingHasBeenSet)
+  {
+   payload.WithObject("subSlotSetting", m_subSlotSetting.Jsonize());
 
   }
 

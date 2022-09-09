@@ -2001,8 +2001,9 @@ namespace Redshift
         virtual void GetReservedNodeExchangeOfferingsAsync(const Model::GetReservedNodeExchangeOfferingsRequest& request, const GetReservedNodeExchangeOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies whether a cluster can use AQUA (Advanced Query Accelerator).
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>This operation is retired. Calling this operation does not change AQUA
+         * configuration. Amazon Redshift automatically determines whether to use AQUA
+         * (Advanced Query Accelerator). </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyAquaConfiguration">AWS
          * API Reference</a></p>
          */

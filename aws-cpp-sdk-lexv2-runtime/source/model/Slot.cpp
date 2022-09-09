@@ -22,7 +22,8 @@ Slot::Slot() :
     m_valueHasBeenSet(false),
     m_shape(Shape::NOT_SET),
     m_shapeHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+    m_valuesHasBeenSet(false),
+    m_subSlotsHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ Slot::Slot(JsonView jsonValue) :
     m_valueHasBeenSet(false),
     m_shape(Shape::NOT_SET),
     m_shapeHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+    m_valuesHasBeenSet(false),
+    m_subSlotsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -61,6 +63,16 @@ Slot& Slot::operator =(JsonView jsonValue)
     m_valuesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("subSlots"))
+  {
+    Aws::Map<Aws::String, JsonView> subSlotsJsonMap = jsonValue.GetObject("subSlots").GetAllObjects();
+    for(auto& subSlotsItem : subSlotsJsonMap)
+    {
+      m_subSlots[subSlotsItem.first] = subSlotsItem.second.AsObject();
+    }
+    m_subSlotsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -87,6 +99,17 @@ JsonValue Slot::Jsonize() const
      valuesJsonList[valuesIndex].AsObject(m_values[valuesIndex].Jsonize());
    }
    payload.WithArray("values", std::move(valuesJsonList));
+
+  }
+
+  if(m_subSlotsHasBeenSet)
+  {
+   JsonValue subSlotsJsonMap;
+   for(auto& subSlotsItem : m_subSlots)
+   {
+     subSlotsJsonMap.WithObject(subSlotsItem.first, subSlotsItem.second.Jsonize());
+   }
+   payload.WithObject("subSlots", std::move(subSlotsJsonMap));
 
   }
 

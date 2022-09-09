@@ -2238,32 +2238,38 @@ namespace Model
 
 
     /**
-     * <p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>
+     * <p>This field is retired. Amazon Redshift automatically determines whether to
+     * use AQUA (Advanced Query Accelerator).</p>
      */
     inline const AquaConfiguration& GetAquaConfiguration() const{ return m_aquaConfiguration; }
 
     /**
-     * <p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>
+     * <p>This field is retired. Amazon Redshift automatically determines whether to
+     * use AQUA (Advanced Query Accelerator).</p>
      */
     inline bool AquaConfigurationHasBeenSet() const { return m_aquaConfigurationHasBeenSet; }
 
     /**
-     * <p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>
+     * <p>This field is retired. Amazon Redshift automatically determines whether to
+     * use AQUA (Advanced Query Accelerator).</p>
      */
     inline void SetAquaConfiguration(const AquaConfiguration& value) { m_aquaConfigurationHasBeenSet = true; m_aquaConfiguration = value; }
 
     /**
-     * <p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>
+     * <p>This field is retired. Amazon Redshift automatically determines whether to
+     * use AQUA (Advanced Query Accelerator).</p>
      */
     inline void SetAquaConfiguration(AquaConfiguration&& value) { m_aquaConfigurationHasBeenSet = true; m_aquaConfiguration = std::move(value); }
 
     /**
-     * <p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>
+     * <p>This field is retired. Amazon Redshift automatically determines whether to
+     * use AQUA (Advanced Query Accelerator).</p>
      */
     inline Cluster& WithAquaConfiguration(const AquaConfiguration& value) { SetAquaConfiguration(value); return *this;}
 
     /**
-     * <p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>
+     * <p>This field is retired. Amazon Redshift automatically determines whether to
+     * use AQUA (Advanced Query Accelerator).</p>
      */
     inline Cluster& WithAquaConfiguration(AquaConfiguration&& value) { SetAquaConfiguration(std::move(value)); return *this;}
 

@@ -28,12 +28,14 @@
 #include <aws/cloudtrail/model/DeleteTrailRequest.h>
 #include <aws/cloudtrail/model/DescribeQueryRequest.h>
 #include <aws/cloudtrail/model/DescribeTrailsRequest.h>
+#include <aws/cloudtrail/model/GetChannelRequest.h>
 #include <aws/cloudtrail/model/GetEventDataStoreRequest.h>
 #include <aws/cloudtrail/model/GetEventSelectorsRequest.h>
 #include <aws/cloudtrail/model/GetInsightSelectorsRequest.h>
 #include <aws/cloudtrail/model/GetQueryResultsRequest.h>
 #include <aws/cloudtrail/model/GetTrailRequest.h>
 #include <aws/cloudtrail/model/GetTrailStatusRequest.h>
+#include <aws/cloudtrail/model/ListChannelsRequest.h>
 #include <aws/cloudtrail/model/ListEventDataStoresRequest.h>
 #include <aws/cloudtrail/model/ListPublicKeysRequest.h>
 #include <aws/cloudtrail/model/ListQueriesRequest.h>
@@ -305,6 +307,28 @@ void CloudTrailClient::DescribeTrailsAsync(const DescribeTrailsRequest& request,
     } );
 }
 
+GetChannelOutcome CloudTrailClient::GetChannel(const GetChannelRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetChannelOutcomeCallable CloudTrailClient::GetChannelCallable(const GetChannelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetChannel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudTrailClient::GetChannelAsync(const GetChannelRequest& request, const GetChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetChannel(request), context);
+    } );
+}
+
 GetEventDataStoreOutcome CloudTrailClient::GetEventDataStore(const GetEventDataStoreRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -434,6 +458,28 @@ void CloudTrailClient::GetTrailStatusAsync(const GetTrailStatusRequest& request,
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, GetTrailStatus(request), context);
+    } );
+}
+
+ListChannelsOutcome CloudTrailClient::ListChannels(const ListChannelsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListChannelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListChannelsOutcomeCallable CloudTrailClient::ListChannelsCallable(const ListChannelsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListChannelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListChannels(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudTrailClient::ListChannelsAsync(const ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListChannels(request), context);
     } );
 }
 

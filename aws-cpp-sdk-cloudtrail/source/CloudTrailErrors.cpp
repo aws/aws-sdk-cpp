@@ -42,11 +42,13 @@ static const int INVALID_DATE_RANGE_HASH = HashingUtils::HashString("InvalidDate
 static const int MAXIMUM_NUMBER_OF_TRAILS_EXCEEDED_HASH = HashingUtils::HashString("MaximumNumberOfTrailsExceededException");
 static const int INVALID_S3_PREFIX_HASH = HashingUtils::HashString("InvalidS3PrefixException");
 static const int RESOURCE_TYPE_NOT_SUPPORTED_HASH = HashingUtils::HashString("ResourceTypeNotSupportedException");
+static const int CHANNEL_NOT_FOUND_HASH = HashingUtils::HashString("ChannelNotFoundException");
 static const int INSIGHT_NOT_ENABLED_HASH = HashingUtils::HashString("InsightNotEnabledException");
 static const int KMS_KEY_DISABLED_HASH = HashingUtils::HashString("KmsKeyDisabledException");
 static const int INVALID_S3_BUCKET_NAME_HASH = HashingUtils::HashString("InvalidS3BucketNameException");
 static const int INVALID_HOME_REGION_HASH = HashingUtils::HashString("InvalidHomeRegionException");
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
+static const int CHANNEL_A_R_N_INVALID_HASH = HashingUtils::HashString("ChannelARNInvalidException");
 static const int INVALID_TOKEN_HASH = HashingUtils::HashString("InvalidTokenException");
 static const int INSUFFICIENT_DEPENDENCY_SERVICE_ACCESS_PERMISSION_HASH = HashingUtils::HashString("InsufficientDependencyServiceAccessPermissionException");
 static const int EVENT_DATA_STORE_TERMINATION_PROTECTED_HASH = HashingUtils::HashString("EventDataStoreTerminationProtectedException");
@@ -176,6 +178,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::RESOURCE_TYPE_NOT_SUPPORTED), false);
   }
+  else if (hashCode == CHANNEL_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CHANNEL_NOT_FOUND), false);
+  }
   else if (hashCode == INSIGHT_NOT_ENABLED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INSIGHT_NOT_ENABLED), false);
@@ -195,6 +201,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == CONFLICT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CONFLICT), false);
+  }
+  else if (hashCode == CHANNEL_A_R_N_INVALID_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CHANNEL_A_R_N_INVALID), false);
   }
   else if (hashCode == INVALID_TOKEN_HASH)
   {
