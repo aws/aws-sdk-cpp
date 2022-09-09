@@ -94,6 +94,9 @@ if(NOT USE_OPENSSL)
     message(WARNING "Turning off USE_OPENSSL will install AWS-LC as replacement of OpenSSL in the system default directory. This is an experimental feature. Do not use if you have an OpenSSL installation in your system already.")
 endif()
 
+# link USE_OPENSSL with ENABLE_OPENSSL_ENCRYPTION
+set(ENABLE_OPENSSL_ENCRYPTION ${USE_OPENSSL})
+
 # backwards compatibility with old command line params
 if("${STATIC_LINKING}" STREQUAL "1")
     set(BUILD_SHARED_LIBS OFF)
