@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>An object that represents the configuration for an OpenID Connect (OIDC)
+   * <p>An object representing the configuration for an OpenID Connect (OIDC)
    * identity provider. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/OidcIdentityProviderConfig">AWS
    * API Reference</a></p>

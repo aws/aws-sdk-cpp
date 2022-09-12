@@ -16,6 +16,8 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/eks/model/ConnectorConfigResponse.h>
+#include <aws/eks/model/ClusterHealth.h>
+#include <aws/eks/model/OutpostConfigResponse.h>
 #include <aws/eks/model/EncryptionConfig.h>
 #include <utility>
 
@@ -804,6 +806,149 @@ namespace Model
      */
     inline Cluster& WithConnectorConfig(ConnectorConfigResponse&& value) { SetConnectorConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The ID of your local Amazon EKS cluster on an Amazon Web Services Outpost.
+     * This property isn't available for an Amazon EKS cluster on the Amazon Web
+     * Services cloud.</p>
+     */
+    inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>The ID of your local Amazon EKS cluster on an Amazon Web Services Outpost.
+     * This property isn't available for an Amazon EKS cluster on the Amazon Web
+     * Services cloud.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID of your local Amazon EKS cluster on an Amazon Web Services Outpost.
+     * This property isn't available for an Amazon EKS cluster on the Amazon Web
+     * Services cloud.</p>
+     */
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /**
+     * <p>The ID of your local Amazon EKS cluster on an Amazon Web Services Outpost.
+     * This property isn't available for an Amazon EKS cluster on the Amazon Web
+     * Services cloud.</p>
+     */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
+
+    /**
+     * <p>The ID of your local Amazon EKS cluster on an Amazon Web Services Outpost.
+     * This property isn't available for an Amazon EKS cluster on the Amazon Web
+     * Services cloud.</p>
+     */
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
+
+    /**
+     * <p>The ID of your local Amazon EKS cluster on an Amazon Web Services Outpost.
+     * This property isn't available for an Amazon EKS cluster on the Amazon Web
+     * Services cloud.</p>
+     */
+    inline Cluster& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /**
+     * <p>The ID of your local Amazon EKS cluster on an Amazon Web Services Outpost.
+     * This property isn't available for an Amazon EKS cluster on the Amazon Web
+     * Services cloud.</p>
+     */
+    inline Cluster& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of your local Amazon EKS cluster on an Amazon Web Services Outpost.
+     * This property isn't available for an Amazon EKS cluster on the Amazon Web
+     * Services cloud.</p>
+     */
+    inline Cluster& WithId(const char* value) { SetId(value); return *this;}
+
+
+    /**
+     * <p>An object representing the health of your local Amazon EKS cluster on an
+     * Amazon Web Services Outpost. This object isn't available for clusters on the
+     * Amazon Web Services cloud.</p>
+     */
+    inline const ClusterHealth& GetHealth() const{ return m_health; }
+
+    /**
+     * <p>An object representing the health of your local Amazon EKS cluster on an
+     * Amazon Web Services Outpost. This object isn't available for clusters on the
+     * Amazon Web Services cloud.</p>
+     */
+    inline bool HealthHasBeenSet() const { return m_healthHasBeenSet; }
+
+    /**
+     * <p>An object representing the health of your local Amazon EKS cluster on an
+     * Amazon Web Services Outpost. This object isn't available for clusters on the
+     * Amazon Web Services cloud.</p>
+     */
+    inline void SetHealth(const ClusterHealth& value) { m_healthHasBeenSet = true; m_health = value; }
+
+    /**
+     * <p>An object representing the health of your local Amazon EKS cluster on an
+     * Amazon Web Services Outpost. This object isn't available for clusters on the
+     * Amazon Web Services cloud.</p>
+     */
+    inline void SetHealth(ClusterHealth&& value) { m_healthHasBeenSet = true; m_health = std::move(value); }
+
+    /**
+     * <p>An object representing the health of your local Amazon EKS cluster on an
+     * Amazon Web Services Outpost. This object isn't available for clusters on the
+     * Amazon Web Services cloud.</p>
+     */
+    inline Cluster& WithHealth(const ClusterHealth& value) { SetHealth(value); return *this;}
+
+    /**
+     * <p>An object representing the health of your local Amazon EKS cluster on an
+     * Amazon Web Services Outpost. This object isn't available for clusters on the
+     * Amazon Web Services cloud.</p>
+     */
+    inline Cluster& WithHealth(ClusterHealth&& value) { SetHealth(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An object representing the configuration of your local Amazon EKS cluster on
+     * an Amazon Web Services Outpost. This object isn't available for clusters on the
+     * Amazon Web Services cloud.</p>
+     */
+    inline const OutpostConfigResponse& GetOutpostConfig() const{ return m_outpostConfig; }
+
+    /**
+     * <p>An object representing the configuration of your local Amazon EKS cluster on
+     * an Amazon Web Services Outpost. This object isn't available for clusters on the
+     * Amazon Web Services cloud.</p>
+     */
+    inline bool OutpostConfigHasBeenSet() const { return m_outpostConfigHasBeenSet; }
+
+    /**
+     * <p>An object representing the configuration of your local Amazon EKS cluster on
+     * an Amazon Web Services Outpost. This object isn't available for clusters on the
+     * Amazon Web Services cloud.</p>
+     */
+    inline void SetOutpostConfig(const OutpostConfigResponse& value) { m_outpostConfigHasBeenSet = true; m_outpostConfig = value; }
+
+    /**
+     * <p>An object representing the configuration of your local Amazon EKS cluster on
+     * an Amazon Web Services Outpost. This object isn't available for clusters on the
+     * Amazon Web Services cloud.</p>
+     */
+    inline void SetOutpostConfig(OutpostConfigResponse&& value) { m_outpostConfigHasBeenSet = true; m_outpostConfig = std::move(value); }
+
+    /**
+     * <p>An object representing the configuration of your local Amazon EKS cluster on
+     * an Amazon Web Services Outpost. This object isn't available for clusters on the
+     * Amazon Web Services cloud.</p>
+     */
+    inline Cluster& WithOutpostConfig(const OutpostConfigResponse& value) { SetOutpostConfig(value); return *this;}
+
+    /**
+     * <p>An object representing the configuration of your local Amazon EKS cluster on
+     * an Amazon Web Services Outpost. This object isn't available for clusters on the
+     * Amazon Web Services cloud.</p>
+     */
+    inline Cluster& WithOutpostConfig(OutpostConfigResponse&& value) { SetOutpostConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -856,6 +1001,15 @@ namespace Model
 
     ConnectorConfigResponse m_connectorConfig;
     bool m_connectorConfigHasBeenSet = false;
+
+    Aws::String m_id;
+    bool m_idHasBeenSet = false;
+
+    ClusterHealth m_health;
+    bool m_healthHasBeenSet = false;
+
+    OutpostConfigResponse m_outpostConfig;
+    bool m_outpostConfigHasBeenSet = false;
   };
 
 } // namespace Model

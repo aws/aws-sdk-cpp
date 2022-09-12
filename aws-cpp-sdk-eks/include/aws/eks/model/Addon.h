@@ -198,32 +198,32 @@ namespace Model
 
 
     /**
-     * <p>An object that represents the health of the add-on.</p>
+     * <p>An object representing the health of the add-on.</p>
      */
     inline const AddonHealth& GetHealth() const{ return m_health; }
 
     /**
-     * <p>An object that represents the health of the add-on.</p>
+     * <p>An object representing the health of the add-on.</p>
      */
     inline bool HealthHasBeenSet() const { return m_healthHasBeenSet; }
 
     /**
-     * <p>An object that represents the health of the add-on.</p>
+     * <p>An object representing the health of the add-on.</p>
      */
     inline void SetHealth(const AddonHealth& value) { m_healthHasBeenSet = true; m_health = value; }
 
     /**
-     * <p>An object that represents the health of the add-on.</p>
+     * <p>An object representing the health of the add-on.</p>
      */
     inline void SetHealth(AddonHealth&& value) { m_healthHasBeenSet = true; m_health = std::move(value); }
 
     /**
-     * <p>An object that represents the health of the add-on.</p>
+     * <p>An object representing the health of the add-on.</p>
      */
     inline Addon& WithHealth(const AddonHealth& value) { SetHealth(value); return *this;}
 
     /**
-     * <p>An object that represents the health of the add-on.</p>
+     * <p>An object representing the health of the add-on.</p>
      */
     inline Addon& WithHealth(AddonHealth&& value) { SetHealth(std::move(value)); return *this;}
 
