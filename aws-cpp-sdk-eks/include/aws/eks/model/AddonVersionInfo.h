@@ -127,42 +127,42 @@ namespace Model
 
 
     /**
-     * <p>An object that represents the compatibilities of a version.</p>
+     * <p>An object representing the compatibilities of a version.</p>
      */
     inline const Aws::Vector<Compatibility>& GetCompatibilities() const{ return m_compatibilities; }
 
     /**
-     * <p>An object that represents the compatibilities of a version.</p>
+     * <p>An object representing the compatibilities of a version.</p>
      */
     inline bool CompatibilitiesHasBeenSet() const { return m_compatibilitiesHasBeenSet; }
 
     /**
-     * <p>An object that represents the compatibilities of a version.</p>
+     * <p>An object representing the compatibilities of a version.</p>
      */
     inline void SetCompatibilities(const Aws::Vector<Compatibility>& value) { m_compatibilitiesHasBeenSet = true; m_compatibilities = value; }
 
     /**
-     * <p>An object that represents the compatibilities of a version.</p>
+     * <p>An object representing the compatibilities of a version.</p>
      */
     inline void SetCompatibilities(Aws::Vector<Compatibility>&& value) { m_compatibilitiesHasBeenSet = true; m_compatibilities = std::move(value); }
 
     /**
-     * <p>An object that represents the compatibilities of a version.</p>
+     * <p>An object representing the compatibilities of a version.</p>
      */
     inline AddonVersionInfo& WithCompatibilities(const Aws::Vector<Compatibility>& value) { SetCompatibilities(value); return *this;}
 
     /**
-     * <p>An object that represents the compatibilities of a version.</p>
+     * <p>An object representing the compatibilities of a version.</p>
      */
     inline AddonVersionInfo& WithCompatibilities(Aws::Vector<Compatibility>&& value) { SetCompatibilities(std::move(value)); return *this;}
 
     /**
-     * <p>An object that represents the compatibilities of a version.</p>
+     * <p>An object representing the compatibilities of a version.</p>
      */
     inline AddonVersionInfo& AddCompatibilities(const Compatibility& value) { m_compatibilitiesHasBeenSet = true; m_compatibilities.push_back(value); return *this; }
 
     /**
-     * <p>An object that represents the compatibilities of a version.</p>
+     * <p>An object representing the compatibilities of a version.</p>
      */
     inline AddonVersionInfo& AddCompatibilities(Compatibility&& value) { m_compatibilitiesHasBeenSet = true; m_compatibilities.push_back(std::move(value)); return *this; }
 
