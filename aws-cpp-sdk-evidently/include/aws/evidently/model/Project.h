@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/evidently/CloudWatchEvidently_EXPORTS.h>
+#include <aws/evidently/model/ProjectAppConfigResource.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/evidently/model/ProjectDataDelivery.h>
@@ -83,6 +84,43 @@ namespace Model
      * <p>The number of ongoing launches currently in the project.</p>
      */
     inline Project& WithActiveLaunchCount(long long value) { SetActiveLaunchCount(value); return *this;}
+
+
+    /**
+     * <p>This structure defines the configuration of how your application integrates
+     * with AppConfig to run client-side evaluation.</p>
+     */
+    inline const ProjectAppConfigResource& GetAppConfigResource() const{ return m_appConfigResource; }
+
+    /**
+     * <p>This structure defines the configuration of how your application integrates
+     * with AppConfig to run client-side evaluation.</p>
+     */
+    inline bool AppConfigResourceHasBeenSet() const { return m_appConfigResourceHasBeenSet; }
+
+    /**
+     * <p>This structure defines the configuration of how your application integrates
+     * with AppConfig to run client-side evaluation.</p>
+     */
+    inline void SetAppConfigResource(const ProjectAppConfigResource& value) { m_appConfigResourceHasBeenSet = true; m_appConfigResource = value; }
+
+    /**
+     * <p>This structure defines the configuration of how your application integrates
+     * with AppConfig to run client-side evaluation.</p>
+     */
+    inline void SetAppConfigResource(ProjectAppConfigResource&& value) { m_appConfigResourceHasBeenSet = true; m_appConfigResource = std::move(value); }
+
+    /**
+     * <p>This structure defines the configuration of how your application integrates
+     * with AppConfig to run client-side evaluation.</p>
+     */
+    inline Project& WithAppConfigResource(const ProjectAppConfigResource& value) { SetAppConfigResource(value); return *this;}
+
+    /**
+     * <p>This structure defines the configuration of how your application integrates
+     * with AppConfig to run client-side evaluation.</p>
+     */
+    inline Project& WithAppConfigResource(ProjectAppConfigResource&& value) { SetAppConfigResource(std::move(value)); return *this;}
 
 
     /**
@@ -485,6 +523,9 @@ namespace Model
 
     long long m_activeLaunchCount;
     bool m_activeLaunchCountHasBeenSet = false;
+
+    ProjectAppConfigResource m_appConfigResource;
+    bool m_appConfigResourceHasBeenSet = false;
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;

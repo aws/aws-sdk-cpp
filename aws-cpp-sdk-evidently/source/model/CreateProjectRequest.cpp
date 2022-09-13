@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateProjectRequest::CreateProjectRequest() : 
+    m_appConfigResourceHasBeenSet(false),
     m_dataDeliveryHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -23,6 +24,12 @@ CreateProjectRequest::CreateProjectRequest() :
 Aws::String CreateProjectRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_appConfigResourceHasBeenSet)
+  {
+   payload.WithObject("appConfigResource", m_appConfigResource.Jsonize());
+
+  }
 
   if(m_dataDeliveryHasBeenSet)
   {

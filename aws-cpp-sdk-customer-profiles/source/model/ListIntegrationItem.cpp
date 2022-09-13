@@ -26,7 +26,9 @@ ListIntegrationItem::ListIntegrationItem() :
     m_lastUpdatedAtHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_objectTypeNamesHasBeenSet(false),
-    m_workflowIdHasBeenSet(false)
+    m_workflowIdHasBeenSet(false),
+    m_isUnstructured(false),
+    m_isUnstructuredHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,9 @@ ListIntegrationItem::ListIntegrationItem(JsonView jsonValue) :
     m_lastUpdatedAtHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_objectTypeNamesHasBeenSet(false),
-    m_workflowIdHasBeenSet(false)
+    m_workflowIdHasBeenSet(false),
+    m_isUnstructured(false),
+    m_isUnstructuredHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -107,6 +111,13 @@ ListIntegrationItem& ListIntegrationItem::operator =(JsonView jsonValue)
     m_workflowIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IsUnstructured"))
+  {
+    m_isUnstructured = jsonValue.GetBool("IsUnstructured");
+
+    m_isUnstructuredHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -167,6 +178,12 @@ JsonValue ListIntegrationItem::Jsonize() const
   if(m_workflowIdHasBeenSet)
   {
    payload.WithString("WorkflowId", m_workflowId);
+
+  }
+
+  if(m_isUnstructuredHasBeenSet)
+  {
+   payload.WithBool("IsUnstructured", m_isUnstructured);
 
   }
 

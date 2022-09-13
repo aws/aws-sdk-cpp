@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     SHAREPOINT_2013,
     SHAREPOINT_2016,
-    SHAREPOINT_ONLINE
+    SHAREPOINT_ONLINE,
+    SHAREPOINT_2019
   };
 
 namespace SharePointVersionMapper

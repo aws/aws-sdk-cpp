@@ -193,10 +193,10 @@ namespace CloudWatchEvidently
          * Europe who also fit other criteria that your application collects, such as
          * age.</p> <p>Using a segment in an experiment limits that experiment to evaluate
          * only the users who match the segment criteria. Using one or more segments in a
-         * launch allow you to define different traffic splits for the different audience
+         * launch allows you to define different traffic splits for the different audience
          * segments.</p> <pre><code> &lt;p&gt;For more information about segment pattern
          * syntax, see &lt;a
-         * href=&quot;https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments-syntax.html&quot;&gt;
+         * href=&quot;https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html#CloudWatch-Evidently-segments-syntax.html&quot;&gt;
          * Segment rule pattern syntax&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;The pattern that you
          * define for a segment is matched against the value of
          * &lt;code&gt;evaluationContext&lt;/code&gt;, which is passed into Evidently in
@@ -383,10 +383,13 @@ namespace CloudWatchEvidently
         /**
          * <p>Retrieves the results of a running or completed experiment. No results are
          * available until there have been 100 events for each variation and at least 10
-         * minutes have passed since the start of the experiment.</p> <p>Experiment results
-         * are available up to 63 days after the start of the experiment. They are not
-         * available after that because of CloudWatch data retention
-         * policies.</p><p><h3>See Also:</h3>   <a
+         * minutes have passed since the start of the experiment. To increase the
+         * statistical power, Evidently performs an additional offline p-value analysis at
+         * the end of the experiment. Offline p-value analysis can detect statistical
+         * significance in some cases where the anytime p-values used during the experiment
+         * do not find statistical significance.</p> <p>Experiment results are available up
+         * to 63 days after the start of the experiment. They are not available after that
+         * because of CloudWatch data retention policies.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetExperimentResults">AWS
          * API Reference</a></p>
          */

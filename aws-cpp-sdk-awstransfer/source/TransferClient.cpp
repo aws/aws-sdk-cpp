@@ -31,6 +31,7 @@
 #include <aws/awstransfer/model/DeleteAgreementRequest.h>
 #include <aws/awstransfer/model/DeleteCertificateRequest.h>
 #include <aws/awstransfer/model/DeleteConnectorRequest.h>
+#include <aws/awstransfer/model/DeleteHostKeyRequest.h>
 #include <aws/awstransfer/model/DeleteProfileRequest.h>
 #include <aws/awstransfer/model/DeleteServerRequest.h>
 #include <aws/awstransfer/model/DeleteSshPublicKeyRequest.h>
@@ -41,18 +42,21 @@
 #include <aws/awstransfer/model/DescribeCertificateRequest.h>
 #include <aws/awstransfer/model/DescribeConnectorRequest.h>
 #include <aws/awstransfer/model/DescribeExecutionRequest.h>
+#include <aws/awstransfer/model/DescribeHostKeyRequest.h>
 #include <aws/awstransfer/model/DescribeProfileRequest.h>
 #include <aws/awstransfer/model/DescribeSecurityPolicyRequest.h>
 #include <aws/awstransfer/model/DescribeServerRequest.h>
 #include <aws/awstransfer/model/DescribeUserRequest.h>
 #include <aws/awstransfer/model/DescribeWorkflowRequest.h>
 #include <aws/awstransfer/model/ImportCertificateRequest.h>
+#include <aws/awstransfer/model/ImportHostKeyRequest.h>
 #include <aws/awstransfer/model/ImportSshPublicKeyRequest.h>
 #include <aws/awstransfer/model/ListAccessesRequest.h>
 #include <aws/awstransfer/model/ListAgreementsRequest.h>
 #include <aws/awstransfer/model/ListCertificatesRequest.h>
 #include <aws/awstransfer/model/ListConnectorsRequest.h>
 #include <aws/awstransfer/model/ListExecutionsRequest.h>
+#include <aws/awstransfer/model/ListHostKeysRequest.h>
 #include <aws/awstransfer/model/ListProfilesRequest.h>
 #include <aws/awstransfer/model/ListSecurityPoliciesRequest.h>
 #include <aws/awstransfer/model/ListServersRequest.h>
@@ -70,6 +74,7 @@
 #include <aws/awstransfer/model/UpdateAgreementRequest.h>
 #include <aws/awstransfer/model/UpdateCertificateRequest.h>
 #include <aws/awstransfer/model/UpdateConnectorRequest.h>
+#include <aws/awstransfer/model/UpdateHostKeyRequest.h>
 #include <aws/awstransfer/model/UpdateProfileRequest.h>
 #include <aws/awstransfer/model/UpdateServerRequest.h>
 #include <aws/awstransfer/model/UpdateUserRequest.h>
@@ -395,6 +400,28 @@ void TransferClient::DeleteConnectorAsync(const DeleteConnectorRequest& request,
     } );
 }
 
+DeleteHostKeyOutcome TransferClient::DeleteHostKey(const DeleteHostKeyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteHostKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteHostKeyOutcomeCallable TransferClient::DeleteHostKeyCallable(const DeleteHostKeyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteHostKeyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteHostKey(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::DeleteHostKeyAsync(const DeleteHostKeyRequest& request, const DeleteHostKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteHostKey(request), context);
+    } );
+}
+
 DeleteProfileOutcome TransferClient::DeleteProfile(const DeleteProfileRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -615,6 +642,28 @@ void TransferClient::DescribeExecutionAsync(const DescribeExecutionRequest& requ
     } );
 }
 
+DescribeHostKeyOutcome TransferClient::DescribeHostKey(const DescribeHostKeyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeHostKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeHostKeyOutcomeCallable TransferClient::DescribeHostKeyCallable(const DescribeHostKeyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeHostKeyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeHostKey(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::DescribeHostKeyAsync(const DescribeHostKeyRequest& request, const DescribeHostKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeHostKey(request), context);
+    } );
+}
+
 DescribeProfileOutcome TransferClient::DescribeProfile(const DescribeProfileRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -747,6 +796,28 @@ void TransferClient::ImportCertificateAsync(const ImportCertificateRequest& requ
     } );
 }
 
+ImportHostKeyOutcome TransferClient::ImportHostKey(const ImportHostKeyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ImportHostKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ImportHostKeyOutcomeCallable TransferClient::ImportHostKeyCallable(const ImportHostKeyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ImportHostKeyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportHostKey(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::ImportHostKeyAsync(const ImportHostKeyRequest& request, const ImportHostKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ImportHostKey(request), context);
+    } );
+}
+
 ImportSshPublicKeyOutcome TransferClient::ImportSshPublicKey(const ImportSshPublicKeyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -876,6 +947,28 @@ void TransferClient::ListExecutionsAsync(const ListExecutionsRequest& request, c
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ListExecutions(request), context);
+    } );
+}
+
+ListHostKeysOutcome TransferClient::ListHostKeys(const ListHostKeysRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListHostKeysOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListHostKeysOutcomeCallable TransferClient::ListHostKeysCallable(const ListHostKeysRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListHostKeysOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListHostKeys(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::ListHostKeysAsync(const ListHostKeysRequest& request, const ListHostKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListHostKeys(request), context);
     } );
 }
 
@@ -1250,6 +1343,28 @@ void TransferClient::UpdateConnectorAsync(const UpdateConnectorRequest& request,
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, UpdateConnector(request), context);
+    } );
+}
+
+UpdateHostKeyOutcome TransferClient::UpdateHostKey(const UpdateHostKeyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateHostKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateHostKeyOutcomeCallable TransferClient::UpdateHostKeyCallable(const UpdateHostKeyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateHostKeyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateHostKey(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::UpdateHostKeyAsync(const UpdateHostKeyRequest& request, const UpdateHostKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateHostKey(request), context);
     } );
 }
 

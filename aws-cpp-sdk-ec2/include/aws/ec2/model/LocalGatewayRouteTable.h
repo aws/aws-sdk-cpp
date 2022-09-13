@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/LocalGatewayRouteTableMode.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
 
@@ -335,6 +336,37 @@ namespace Model
      */
     inline LocalGatewayRouteTable& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The mode of the local gateway route table.</p>
+     */
+    inline const LocalGatewayRouteTableMode& GetMode() const{ return m_mode; }
+
+    /**
+     * <p>The mode of the local gateway route table.</p>
+     */
+    inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
+
+    /**
+     * <p>The mode of the local gateway route table.</p>
+     */
+    inline void SetMode(const LocalGatewayRouteTableMode& value) { m_modeHasBeenSet = true; m_mode = value; }
+
+    /**
+     * <p>The mode of the local gateway route table.</p>
+     */
+    inline void SetMode(LocalGatewayRouteTableMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
+
+    /**
+     * <p>The mode of the local gateway route table.</p>
+     */
+    inline LocalGatewayRouteTable& WithMode(const LocalGatewayRouteTableMode& value) { SetMode(value); return *this;}
+
+    /**
+     * <p>The mode of the local gateway route table.</p>
+     */
+    inline LocalGatewayRouteTable& WithMode(LocalGatewayRouteTableMode&& value) { SetMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_localGatewayRouteTableId;
@@ -357,6 +389,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    LocalGatewayRouteTableMode m_mode;
+    bool m_modeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,6 +27,8 @@ namespace Aws
         static const int m60_HASH = HashingUtils::HashString("m60");
         static const int radeon_pro_v520_HASH = HashingUtils::HashString("radeon-pro-v520");
         static const int vu9p_HASH = HashingUtils::HashString("vu9p");
+        static const int inferentia_HASH = HashingUtils::HashString("inferentia");
+        static const int k520_HASH = HashingUtils::HashString("k520");
 
 
         AcceleratorName GetAcceleratorNameForName(const Aws::String& name)
@@ -60,6 +62,14 @@ namespace Aws
           {
             return AcceleratorName::vu9p;
           }
+          else if (hashCode == inferentia_HASH)
+          {
+            return AcceleratorName::inferentia;
+          }
+          else if (hashCode == k520_HASH)
+          {
+            return AcceleratorName::k520;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -88,6 +98,10 @@ namespace Aws
             return "radeon-pro-v520";
           case AcceleratorName::vu9p:
             return "vu9p";
+          case AcceleratorName::inferentia:
+            return "inferentia";
+          case AcceleratorName::k520:
+            return "k520";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

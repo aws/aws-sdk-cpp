@@ -474,6 +474,35 @@ namespace Model
      */
     inline ListIntegrationItem& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
 
+
+    /**
+     * <p>Boolean to indicate if the Flow associated with the Integration is created
+     * via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in
+     * flowDefinition</p>
+     */
+    inline bool GetIsUnstructured() const{ return m_isUnstructured; }
+
+    /**
+     * <p>Boolean to indicate if the Flow associated with the Integration is created
+     * via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in
+     * flowDefinition</p>
+     */
+    inline bool IsUnstructuredHasBeenSet() const { return m_isUnstructuredHasBeenSet; }
+
+    /**
+     * <p>Boolean to indicate if the Flow associated with the Integration is created
+     * via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in
+     * flowDefinition</p>
+     */
+    inline void SetIsUnstructured(bool value) { m_isUnstructuredHasBeenSet = true; m_isUnstructured = value; }
+
+    /**
+     * <p>Boolean to indicate if the Flow associated with the Integration is created
+     * via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in
+     * flowDefinition</p>
+     */
+    inline ListIntegrationItem& WithIsUnstructured(bool value) { SetIsUnstructured(value); return *this;}
+
   private:
 
     Aws::String m_domainName;
@@ -499,6 +528,9 @@ namespace Model
 
     Aws::String m_workflowId;
     bool m_workflowIdHasBeenSet = false;
+
+    bool m_isUnstructured;
+    bool m_isUnstructuredHasBeenSet = false;
   };
 
 } // namespace Model
