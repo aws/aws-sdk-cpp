@@ -1880,8 +1880,10 @@ namespace EC2
         virtual void CreateLaunchTemplateVersionAsync(const Model::CreateLaunchTemplateVersionRequest& request, const CreateLaunchTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a static route for the specified local gateway route
-         * table.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a static route for the specified local gateway route table. You must
+         * specify one of the following targets: </p> <ul> <li> <p>
+         * <code>LocalGatewayVirtualInterfaceGroupId</code> </p> </li> <li> <p>
+         * <code>NetworkInterfaceId</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRoute">AWS
          * API Reference</a></p>
          */
@@ -9980,6 +9982,23 @@ namespace EC2
          * An Async wrapper for ModifyLaunchTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ModifyLaunchTemplateAsync(const Model::ModifyLaunchTemplateRequest& request, const ModifyLaunchTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Modifies the specified local gateway route.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyLocalGatewayRoute">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyLocalGatewayRouteOutcome ModifyLocalGatewayRoute(const Model::ModifyLocalGatewayRouteRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyLocalGatewayRoute that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyLocalGatewayRouteOutcomeCallable ModifyLocalGatewayRouteCallable(const Model::ModifyLocalGatewayRouteRequest& request) const;
+
+        /**
+         * An Async wrapper for ModifyLocalGatewayRoute that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyLocalGatewayRouteAsync(const Model::ModifyLocalGatewayRouteRequest& request, const ModifyLocalGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the specified managed prefix list.</p> <p>Adding or removing entries

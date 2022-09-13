@@ -232,42 +232,42 @@ namespace Model
 
 
     /**
-     * <p>The customer��s first name.</p>
+     * <p>The customer’s first name.</p>
      */
     inline const Aws::String& GetFirstName() const{ return m_firstName; }
 
     /**
-     * <p>The customer��s first name.</p>
+     * <p>The customer’s first name.</p>
      */
     inline bool FirstNameHasBeenSet() const { return m_firstNameHasBeenSet; }
 
     /**
-     * <p>The customer��s first name.</p>
+     * <p>The customer’s first name.</p>
      */
     inline void SetFirstName(const Aws::String& value) { m_firstNameHasBeenSet = true; m_firstName = value; }
 
     /**
-     * <p>The customer��s first name.</p>
+     * <p>The customer’s first name.</p>
      */
     inline void SetFirstName(Aws::String&& value) { m_firstNameHasBeenSet = true; m_firstName = std::move(value); }
 
     /**
-     * <p>The customer��s first name.</p>
+     * <p>The customer’s first name.</p>
      */
     inline void SetFirstName(const char* value) { m_firstNameHasBeenSet = true; m_firstName.assign(value); }
 
     /**
-     * <p>The customer��s first name.</p>
+     * <p>The customer’s first name.</p>
      */
     inline CreateProfileRequest& WithFirstName(const Aws::String& value) { SetFirstName(value); return *this;}
 
     /**
-     * <p>The customer��s first name.</p>
+     * <p>The customer’s first name.</p>
      */
     inline CreateProfileRequest& WithFirstName(Aws::String&& value) { SetFirstName(std::move(value)); return *this;}
 
     /**
-     * <p>The customer��s first name.</p>
+     * <p>The customer’s first name.</p>
      */
     inline CreateProfileRequest& WithFirstName(const char* value) { SetFirstName(value); return *this;}
 
@@ -517,42 +517,42 @@ namespace Model
 
 
     /**
-     * <p>The customer��s home phone number.</p>
+     * <p>The customer’s home phone number.</p>
      */
     inline const Aws::String& GetHomePhoneNumber() const{ return m_homePhoneNumber; }
 
     /**
-     * <p>The customer��s home phone number.</p>
+     * <p>The customer’s home phone number.</p>
      */
     inline bool HomePhoneNumberHasBeenSet() const { return m_homePhoneNumberHasBeenSet; }
 
     /**
-     * <p>The customer��s home phone number.</p>
+     * <p>The customer’s home phone number.</p>
      */
     inline void SetHomePhoneNumber(const Aws::String& value) { m_homePhoneNumberHasBeenSet = true; m_homePhoneNumber = value; }
 
     /**
-     * <p>The customer��s home phone number.</p>
+     * <p>The customer’s home phone number.</p>
      */
     inline void SetHomePhoneNumber(Aws::String&& value) { m_homePhoneNumberHasBeenSet = true; m_homePhoneNumber = std::move(value); }
 
     /**
-     * <p>The customer��s home phone number.</p>
+     * <p>The customer’s home phone number.</p>
      */
     inline void SetHomePhoneNumber(const char* value) { m_homePhoneNumberHasBeenSet = true; m_homePhoneNumber.assign(value); }
 
     /**
-     * <p>The customer��s home phone number.</p>
+     * <p>The customer’s home phone number.</p>
      */
     inline CreateProfileRequest& WithHomePhoneNumber(const Aws::String& value) { SetHomePhoneNumber(value); return *this;}
 
     /**
-     * <p>The customer��s home phone number.</p>
+     * <p>The customer’s home phone number.</p>
      */
     inline CreateProfileRequest& WithHomePhoneNumber(Aws::String&& value) { SetHomePhoneNumber(std::move(value)); return *this;}
 
     /**
-     * <p>The customer��s home phone number.</p>
+     * <p>The customer’s home phone number.</p>
      */
     inline CreateProfileRequest& WithHomePhoneNumber(const char* value) { SetHomePhoneNumber(value); return *this;}
 

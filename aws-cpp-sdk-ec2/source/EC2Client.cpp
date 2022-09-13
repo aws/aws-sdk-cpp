@@ -459,6 +459,7 @@
 #include <aws/ec2/model/ModifyIpamResourceCidrRequest.h>
 #include <aws/ec2/model/ModifyIpamScopeRequest.h>
 #include <aws/ec2/model/ModifyLaunchTemplateRequest.h>
+#include <aws/ec2/model/ModifyLocalGatewayRouteRequest.h>
 #include <aws/ec2/model/ModifyManagedPrefixListRequest.h>
 #include <aws/ec2/model/ModifyNetworkInterfaceAttributeRequest.h>
 #include <aws/ec2/model/ModifyPrivateDnsNameOptionsRequest.h>
@@ -10289,6 +10290,28 @@ void EC2Client::ModifyLaunchTemplateAsync(const ModifyLaunchTemplateRequest& req
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ModifyLaunchTemplate(request), context);
+    } );
+}
+
+ModifyLocalGatewayRouteOutcome EC2Client::ModifyLocalGatewayRoute(const ModifyLocalGatewayRouteRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ModifyLocalGatewayRouteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+ModifyLocalGatewayRouteOutcomeCallable EC2Client::ModifyLocalGatewayRouteCallable(const ModifyLocalGatewayRouteRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyLocalGatewayRouteOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyLocalGatewayRoute(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::ModifyLocalGatewayRouteAsync(const ModifyLocalGatewayRouteRequest& request, const ModifyLocalGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ModifyLocalGatewayRoute(request), context);
     } );
 }
 

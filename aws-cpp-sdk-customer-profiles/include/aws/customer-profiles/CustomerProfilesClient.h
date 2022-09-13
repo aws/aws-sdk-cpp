@@ -57,10 +57,10 @@ namespace CustomerProfiles
 
 
         /**
-         * <p>Associates a new key value with a specific profile, such as a Contact Trace
-         * Record (CTR) ContactId.</p> <p>A profile object can have a single unique key and
-         * any number of additional keys that can be used to identify the profile that it
-         * belongs to.</p><p><h3>See Also:</h3>   <a
+         * <p>Associates a new key value with a specific profile, such as a Contact Record
+         * ContactId.</p> <p>A profile object can have a single unique key and any number
+         * of additional keys that can be used to identify the profile that it belongs
+         * to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/AddProfileKey">AWS
          * API Reference</a></p>
          */
@@ -673,7 +673,11 @@ namespace CustomerProfiles
         /**
          * <p>Adds an integration between the service and a third-party service, which
          * includes Amazon AppFlow and Amazon Connect.</p> <p>An integration can belong to
-         * only one domain.</p><p><h3>See Also:</h3>   <a
+         * only one domain.</p> <p>To add or remove tags on an existing Integration, see <a
+         * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html">
+         * TagResource </a>/<a
+         * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html">
+         * UntagResource</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/PutIntegration">AWS
          * API Reference</a></p>
          */
@@ -691,13 +695,13 @@ namespace CustomerProfiles
 
         /**
          * <p>Adds additional objects to customer profiles of a given ObjectType.</p>
-         * <p>When adding a specific profile object, like a Contact Trace Record (CTR), an
-         * inferred profile can get created if it is not mapped to an existing profile. The
+         * <p>When adding a specific profile object, like a Contact Record, an inferred
+         * profile can get created if it is not mapped to an existing profile. The
          * resulting profile will only have a phone number populated in the standard
-         * ProfileObject. Any additional CTRs with the same phone number will be mapped to
-         * the same inferred profile.</p> <p>When a ProfileObject is created and if a
-         * ProfileObjectType already exists for the ProfileObject, it will provide data to
-         * a standard profile depending on the ProfileObjectType definition.</p>
+         * ProfileObject. Any additional Contact Records with the same phone number will be
+         * mapped to the same inferred profile.</p> <p>When a ProfileObject is created and
+         * if a ProfileObjectType already exists for the ProfileObject, it will provide
+         * data to a standard profile depending on the ProfileObjectType definition.</p>
          * <p>PutProfileObject needs an ObjectType, which can be created using
          * PutProfileObjectType.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/PutProfileObject">AWS
@@ -716,7 +720,12 @@ namespace CustomerProfiles
         virtual void PutProfileObjectAsync(const Model::PutProfileObjectRequest& request, const PutProfileObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Defines a ProfileObjectType.</p><p><h3>See Also:</h3>   <a
+         * <p>Defines a ProfileObjectType.</p> <p>To add or remove tags on an existing
+         * ObjectType, see <a
+         * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html">
+         * TagResource</a>/<a
+         * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/PutProfileObjectType">AWS
          * API Reference</a></p>
          */
@@ -808,8 +817,11 @@ namespace CustomerProfiles
          * resolution</a>: set <code>Matching</code> to true. </p> <p>To prevent
          * cross-service impersonation when you call this API, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service
-         * confused deputy prevention</a> for sample policies that you should apply.
-         * </p><p><h3>See Also:</h3>   <a
+         * confused deputy prevention</a> for sample policies that you should apply. </p>
+         * <p>To add or remove tags on an existing Domain, see <a
+         * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html">TagResource</a>/<a
+         * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateDomain">AWS
          * API Reference</a></p>
          */

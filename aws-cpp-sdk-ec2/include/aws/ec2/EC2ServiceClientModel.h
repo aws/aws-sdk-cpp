@@ -415,6 +415,7 @@
 #include <aws/ec2/model/ModifyIpamResourceCidrResponse.h>
 #include <aws/ec2/model/ModifyIpamScopeResponse.h>
 #include <aws/ec2/model/ModifyLaunchTemplateResponse.h>
+#include <aws/ec2/model/ModifyLocalGatewayRouteResponse.h>
 #include <aws/ec2/model/ModifyManagedPrefixListResponse.h>
 #include <aws/ec2/model/ModifyPrivateDnsNameOptionsResponse.h>
 #include <aws/ec2/model/ModifyReservedInstancesResponse.h>
@@ -969,6 +970,7 @@ namespace Aws
       class ModifyIpamResourceCidrRequest;
       class ModifyIpamScopeRequest;
       class ModifyLaunchTemplateRequest;
+      class ModifyLocalGatewayRouteRequest;
       class ModifyManagedPrefixListRequest;
       class ModifyNetworkInterfaceAttributeRequest;
       class ModifyPrivateDnsNameOptionsRequest;
@@ -1505,6 +1507,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ModifyIpamResourceCidrResponse, EC2Error> ModifyIpamResourceCidrOutcome;
       typedef Aws::Utils::Outcome<ModifyIpamScopeResponse, EC2Error> ModifyIpamScopeOutcome;
       typedef Aws::Utils::Outcome<ModifyLaunchTemplateResponse, EC2Error> ModifyLaunchTemplateOutcome;
+      typedef Aws::Utils::Outcome<ModifyLocalGatewayRouteResponse, EC2Error> ModifyLocalGatewayRouteOutcome;
       typedef Aws::Utils::Outcome<ModifyManagedPrefixListResponse, EC2Error> ModifyManagedPrefixListOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> ModifyNetworkInterfaceAttributeOutcome;
       typedef Aws::Utils::Outcome<ModifyPrivateDnsNameOptionsResponse, EC2Error> ModifyPrivateDnsNameOptionsOutcome;
@@ -2041,6 +2044,7 @@ namespace Aws
       typedef std::future<ModifyIpamResourceCidrOutcome> ModifyIpamResourceCidrOutcomeCallable;
       typedef std::future<ModifyIpamScopeOutcome> ModifyIpamScopeOutcomeCallable;
       typedef std::future<ModifyLaunchTemplateOutcome> ModifyLaunchTemplateOutcomeCallable;
+      typedef std::future<ModifyLocalGatewayRouteOutcome> ModifyLocalGatewayRouteOutcomeCallable;
       typedef std::future<ModifyManagedPrefixListOutcome> ModifyManagedPrefixListOutcomeCallable;
       typedef std::future<ModifyNetworkInterfaceAttributeOutcome> ModifyNetworkInterfaceAttributeOutcomeCallable;
       typedef std::future<ModifyPrivateDnsNameOptionsOutcome> ModifyPrivateDnsNameOptionsOutcomeCallable;
@@ -2580,6 +2584,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::ModifyIpamResourceCidrRequest&, const Model::ModifyIpamResourceCidrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyIpamResourceCidrResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyIpamScopeRequest&, const Model::ModifyIpamScopeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyIpamScopeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyLaunchTemplateRequest&, const Model::ModifyLaunchTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyLaunchTemplateResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ModifyLocalGatewayRouteRequest&, const Model::ModifyLocalGatewayRouteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyLocalGatewayRouteResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyManagedPrefixListRequest&, const Model::ModifyManagedPrefixListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyManagedPrefixListResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyNetworkInterfaceAttributeRequest&, const Model::ModifyNetworkInterfaceAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyNetworkInterfaceAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyPrivateDnsNameOptionsRequest&, const Model::ModifyPrivateDnsNameOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyPrivateDnsNameOptionsResponseReceivedHandler;
