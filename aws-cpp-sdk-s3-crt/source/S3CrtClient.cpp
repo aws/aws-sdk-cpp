@@ -600,6 +600,10 @@ void S3CrtClient::PutObjectAsync(const PutObjectRequest& request, const PutObjec
   userData->putResponseHandler = handler;
   userData->asyncCallerContext = handlerContext;
   InitCommonCrtRequestOption(userData, &options, &request, endpointResolutionOutcome.GetResult().GetURI(), Aws::Http::HttpMethod::HTTP_PUT);
+  if (userData->request->GetContentBody()->fail())
+  {
+    return handler(this, request, PutObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER_VALUE", "Input stream in bad state", false)), context);
+  }
   options.shutdown_callback = PutObjectRequestShutdownCallback;
   options.type = AWS_S3_META_REQUEST_TYPE_PUT_OBJECT;
   struct aws_signing_config_aws signing_config_override = m_s3CrtSigningConfig;
