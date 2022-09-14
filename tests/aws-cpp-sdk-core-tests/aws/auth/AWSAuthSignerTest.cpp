@@ -176,12 +176,15 @@ static Standard::StandardHttpRequest ParseHttpRequest(Aws::IOStream& inputStream
 static Aws::String MakeSigV4ResourceFilePath(const Aws::String& testName, const Aws::String& fileSuffix)
 {
     Aws::StringStream fileName;
-    #ifdef __ANDROID__
-        fileName << Aws::Platform::GetCacheDirectory() << "resources" << Aws::FileSystem::PATH_DELIM;
-    #else
-        fileName << "./aws4_testsuite/aws4_testsuite/";
-    #endif
-
+  #ifdef NON_LEGACY_BUILD
+    fileName << GTEST_STRINGIFY_(TEST_RESOURCES_PATH) "/aws4_testsuite/aws4_testsuite/";
+  #else
+      #ifdef __ANDROID__
+          fileName << Aws::Platform::GetCacheDirectory() << "resources" << Aws::FileSystem::PATH_DELIM;
+      #else
+          fileName << "./aws4_testsuite/aws4_testsuite/";
+      #endif
+  #endif
     fileName << testName << Aws::FileSystem::PATH_DELIM << testName << "." << fileSuffix;
 
     return fileName.str();

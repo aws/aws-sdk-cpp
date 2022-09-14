@@ -14,13 +14,20 @@ if (NOT LEGACY_BUILD)
             ${CMAKE_CURRENT_SOURCE_DIR}/RunTests.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/VersionTests.cpp
     )
+    target_compile_definitions(
+            aws-sdk-cpp-core-test
+            PRIVATE "TEST_RESOURCES_PATH=${CMAKE_CURRENT_LIST_DIR}/resources"
+    )
 
     add_subdirectory(aws)
     add_subdirectory(http)
     add_subdirectory(monitoring)
     add_subdirectory(utils)
 
-    gtest_discover_tests(aws-sdk-cpp-core-test)
+    gtest_discover_tests(
+            aws-sdk-cpp-core-test
+            TEST_PREFIX "core."
+    )
 else ()
     add_project(aws-cpp-sdk-core-tests
             "Tests for the AWS Core C++ Library"

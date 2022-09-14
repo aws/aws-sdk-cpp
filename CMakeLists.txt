@@ -83,19 +83,19 @@ else ()
     # Options definition
     option(BUILD_TESTING "If enabled, the SDK will include tests in the build" OFF)
 
+    # -- Dependencies --
+    include(dependencies)
+
     # TODO: redefine below as option with proper defaults per platform
-    if (CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+    if (OpenSSL_FOUND)
+        set(ENABLE_OPENSSL_ENCRYPTION ON)
+    elseif (CMAKE_SYSTEM_NAME STREQUAL "Darwin")
         set(ENABLE_COMMONCRYPTO_ENCRYPTION ON)
     elseif (CMAKE_SYSTEM_NAME "Windows")
         set(ENABLE_BCRYPT_ENCRYPTION ON)
-    elseif (CMAKE_SYSTEM_NAME "Linux")
-        set(ENABLE_OPENSSL_ENCRYPTION ON)
     else ()
         message(FATAL_ERROR "Platform not yet supported by new build scripts")
     endif ()
-
-    # -- Dependencies --
-    include(dependencies)
 
     # -- main build targets --
     add_subdirectory(src)

@@ -20,6 +20,7 @@ if (NOT LEGACY_BUILD)
             ${CJSON_LIBRARIES}
             tinyxml2::tinyxml2
             CURL::libcurl
+            OpenSSL::Crypto
     )
 
     include(GenerateExportHeader)

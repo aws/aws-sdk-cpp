@@ -13,7 +13,10 @@ if (NOT LEGACY_BUILD)
             ${CMAKE_CURRENT_SOURCE_DIR}/RunTests.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/TableOperationTest.cpp
     )
-    gtest_discover_tests(aws-cpp-sdk-dynamodb-integration-tests)
+    gtest_discover_tests(
+            aws-cpp-sdk-dynamodb-integration-tests
+            TEST_PREFIX "dynamodb."
+    )
 
 else()
     add_project(aws-cpp-sdk-dynamodb-integration-tests
