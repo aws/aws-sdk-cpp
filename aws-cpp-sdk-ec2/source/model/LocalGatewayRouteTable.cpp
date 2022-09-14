@@ -29,7 +29,8 @@ LocalGatewayRouteTable::LocalGatewayRouteTable() :
     m_stateHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_mode(LocalGatewayRouteTableMode::NOT_SET),
-    m_modeHasBeenSet(false)
+    m_modeHasBeenSet(false),
+    m_stateReasonHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ LocalGatewayRouteTable::LocalGatewayRouteTable(const XmlNode& xmlNode) :
     m_stateHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_mode(LocalGatewayRouteTableMode::NOT_SET),
-    m_modeHasBeenSet(false)
+    m_modeHasBeenSet(false),
+    m_stateReasonHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -107,6 +109,12 @@ LocalGatewayRouteTable& LocalGatewayRouteTable::operator =(const XmlNode& xmlNod
       m_mode = LocalGatewayRouteTableModeMapper::GetLocalGatewayRouteTableModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(modeNode.GetText()).c_str()).c_str());
       m_modeHasBeenSet = true;
     }
+    XmlNode stateReasonNode = resultNode.FirstChild("stateReason");
+    if(!stateReasonNode.IsNull())
+    {
+      m_stateReason = stateReasonNode;
+      m_stateReasonHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -160,6 +168,13 @@ void LocalGatewayRouteTable::OutputToStream(Aws::OStream& oStream, const char* l
       oStream << location << index << locationValue << ".Mode=" << LocalGatewayRouteTableModeMapper::GetNameForLocalGatewayRouteTableMode(m_mode) << "&";
   }
 
+  if(m_stateReasonHasBeenSet)
+  {
+      Aws::StringStream stateReasonLocationAndMemberSs;
+      stateReasonLocationAndMemberSs << location << index << locationValue << ".StateReason";
+      m_stateReason.OutputToStream(oStream, stateReasonLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void LocalGatewayRouteTable::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -201,6 +216,12 @@ void LocalGatewayRouteTable::OutputToStream(Aws::OStream& oStream, const char* l
   if(m_modeHasBeenSet)
   {
       oStream << location << ".Mode=" << LocalGatewayRouteTableModeMapper::GetNameForLocalGatewayRouteTableMode(m_mode) << "&";
+  }
+  if(m_stateReasonHasBeenSet)
+  {
+      Aws::String stateReasonLocationAndMember(location);
+      stateReasonLocationAndMember += ".StateReason";
+      m_stateReason.OutputToStream(oStream, stateReasonLocationAndMember.c_str());
   }
 }
 

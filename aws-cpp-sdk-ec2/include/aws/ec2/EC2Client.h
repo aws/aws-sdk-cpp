@@ -1376,6 +1376,42 @@ namespace EC2
         virtual void CreateClientVpnRouteAsync(const Model::CreateClientVpnRouteRequest& request, const CreateClientVpnRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Creates a range of customer-owned IP addresses. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCoipCidr">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateCoipCidrOutcome CreateCoipCidr(const Model::CreateCoipCidrRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateCoipCidr that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateCoipCidrOutcomeCallable CreateCoipCidrCallable(const Model::CreateCoipCidrRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateCoipCidr that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateCoipCidrAsync(const Model::CreateCoipCidrRequest& request, const CreateCoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Creates a pool of customer-owned IP (CoIP) addresses. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCoipPool">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateCoipPoolOutcome CreateCoipPool(const Model::CreateCoipPoolRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateCoipPool that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateCoipPoolOutcomeCallable CreateCoipPoolCallable(const Model::CreateCoipPoolRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateCoipPool that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateCoipPoolAsync(const Model::CreateCoipPoolRequest& request, const CreateCoipPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Provides information to Amazon Web Services about your customer gateway
          * device. The customer gateway device is the appliance at your end of the VPN
          * connection. You must provide the IP address of the customer gateway device’s
@@ -1898,6 +1934,41 @@ namespace EC2
          * An Async wrapper for CreateLocalGatewayRoute that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateLocalGatewayRouteAsync(const Model::CreateLocalGatewayRouteRequest& request, const CreateLocalGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Creates a local gateway route table. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRouteTable">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateLocalGatewayRouteTableOutcome CreateLocalGatewayRouteTable(const Model::CreateLocalGatewayRouteTableRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateLocalGatewayRouteTable that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateLocalGatewayRouteTableOutcomeCallable CreateLocalGatewayRouteTableCallable(const Model::CreateLocalGatewayRouteTableRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateLocalGatewayRouteTable that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateLocalGatewayRouteTableAsync(const Model::CreateLocalGatewayRouteTableRequest& request, const CreateLocalGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Creates a local gateway route table virtual interface group association.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation(const Model::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcomeCallable CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationCallable(const Model::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationAsync(const Model::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest& request, const CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates the specified VPC with the specified local gateway route
@@ -3172,6 +3243,42 @@ namespace EC2
         virtual void DeleteClientVpnRouteAsync(const Model::DeleteClientVpnRouteRequest& request, const DeleteClientVpnRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Deletes a range of customer-owned IP addresses. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCoipCidr">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteCoipCidrOutcome DeleteCoipCidr(const Model::DeleteCoipCidrRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteCoipCidr that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteCoipCidrOutcomeCallable DeleteCoipCidrCallable(const Model::DeleteCoipCidrRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteCoipCidr that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteCoipCidrAsync(const Model::DeleteCoipCidrRequest& request, const DeleteCoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a pool of customer-owned IP (CoIP) addresses. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCoipPool">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteCoipPoolOutcome DeleteCoipPool(const Model::DeleteCoipPoolRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteCoipPool that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteCoipPoolOutcomeCallable DeleteCoipPoolCallable(const Model::DeleteCoipPoolRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteCoipPool that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteCoipPoolAsync(const Model::DeleteCoipPoolRequest& request, const DeleteCoipPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes the specified customer gateway. You must delete the VPN connection
          * before you can delete the customer gateway.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCustomerGateway">AWS
@@ -3473,6 +3580,41 @@ namespace EC2
          * An Async wrapper for DeleteLocalGatewayRoute that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteLocalGatewayRouteAsync(const Model::DeleteLocalGatewayRouteRequest& request, const DeleteLocalGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Deletes a local gateway route table. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRouteTable">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteLocalGatewayRouteTableOutcome DeleteLocalGatewayRouteTable(const Model::DeleteLocalGatewayRouteTableRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteLocalGatewayRouteTable that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteLocalGatewayRouteTableOutcomeCallable DeleteLocalGatewayRouteTableCallable(const Model::DeleteLocalGatewayRouteTableRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteLocalGatewayRouteTable that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteLocalGatewayRouteTableAsync(const Model::DeleteLocalGatewayRouteTableRequest& request, const DeleteLocalGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Deletes a local gateway route table virtual interface group association.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation(const Model::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcomeCallable DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationCallable(const Model::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationAsync(const Model::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest& request, const DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified association between a VPC and local gateway route

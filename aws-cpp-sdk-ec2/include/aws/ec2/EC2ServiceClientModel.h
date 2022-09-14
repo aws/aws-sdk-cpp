@@ -65,6 +65,8 @@
 #include <aws/ec2/model/CreateCarrierGatewayResponse.h>
 #include <aws/ec2/model/CreateClientVpnEndpointResponse.h>
 #include <aws/ec2/model/CreateClientVpnRouteResponse.h>
+#include <aws/ec2/model/CreateCoipCidrResponse.h>
+#include <aws/ec2/model/CreateCoipPoolResponse.h>
 #include <aws/ec2/model/CreateCustomerGatewayResponse.h>
 #include <aws/ec2/model/CreateDefaultSubnetResponse.h>
 #include <aws/ec2/model/CreateDefaultVpcResponse.h>
@@ -84,6 +86,8 @@
 #include <aws/ec2/model/CreateLaunchTemplateResponse.h>
 #include <aws/ec2/model/CreateLaunchTemplateVersionResponse.h>
 #include <aws/ec2/model/CreateLocalGatewayRouteResponse.h>
+#include <aws/ec2/model/CreateLocalGatewayRouteTableResponse.h>
+#include <aws/ec2/model/CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse.h>
 #include <aws/ec2/model/CreateLocalGatewayRouteTableVpcAssociationResponse.h>
 #include <aws/ec2/model/CreateManagedPrefixListResponse.h>
 #include <aws/ec2/model/CreateNatGatewayResponse.h>
@@ -132,6 +136,8 @@
 #include <aws/ec2/model/DeleteCarrierGatewayResponse.h>
 #include <aws/ec2/model/DeleteClientVpnEndpointResponse.h>
 #include <aws/ec2/model/DeleteClientVpnRouteResponse.h>
+#include <aws/ec2/model/DeleteCoipCidrResponse.h>
+#include <aws/ec2/model/DeleteCoipPoolResponse.h>
 #include <aws/ec2/model/DeleteEgressOnlyInternetGatewayResponse.h>
 #include <aws/ec2/model/DeleteFleetsResponse.h>
 #include <aws/ec2/model/DeleteFlowLogsResponse.h>
@@ -143,6 +149,8 @@
 #include <aws/ec2/model/DeleteLaunchTemplateResponse.h>
 #include <aws/ec2/model/DeleteLaunchTemplateVersionsResponse.h>
 #include <aws/ec2/model/DeleteLocalGatewayRouteResponse.h>
+#include <aws/ec2/model/DeleteLocalGatewayRouteTableResponse.h>
+#include <aws/ec2/model/DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse.h>
 #include <aws/ec2/model/DeleteLocalGatewayRouteTableVpcAssociationResponse.h>
 #include <aws/ec2/model/DeleteManagedPrefixListResponse.h>
 #include <aws/ec2/model/DeleteNatGatewayResponse.h>
@@ -584,6 +592,8 @@ namespace Aws
       class CreateCarrierGatewayRequest;
       class CreateClientVpnEndpointRequest;
       class CreateClientVpnRouteRequest;
+      class CreateCoipCidrRequest;
+      class CreateCoipPoolRequest;
       class CreateCustomerGatewayRequest;
       class CreateDefaultSubnetRequest;
       class CreateDefaultVpcRequest;
@@ -603,6 +613,8 @@ namespace Aws
       class CreateLaunchTemplateRequest;
       class CreateLaunchTemplateVersionRequest;
       class CreateLocalGatewayRouteRequest;
+      class CreateLocalGatewayRouteTableRequest;
+      class CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest;
       class CreateLocalGatewayRouteTableVpcAssociationRequest;
       class CreateManagedPrefixListRequest;
       class CreateNatGatewayRequest;
@@ -654,6 +666,8 @@ namespace Aws
       class DeleteCarrierGatewayRequest;
       class DeleteClientVpnEndpointRequest;
       class DeleteClientVpnRouteRequest;
+      class DeleteCoipCidrRequest;
+      class DeleteCoipPoolRequest;
       class DeleteCustomerGatewayRequest;
       class DeleteDhcpOptionsRequest;
       class DeleteEgressOnlyInternetGatewayRequest;
@@ -669,6 +683,8 @@ namespace Aws
       class DeleteLaunchTemplateRequest;
       class DeleteLaunchTemplateVersionsRequest;
       class DeleteLocalGatewayRouteRequest;
+      class DeleteLocalGatewayRouteTableRequest;
+      class DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest;
       class DeleteLocalGatewayRouteTableVpcAssociationRequest;
       class DeleteManagedPrefixListRequest;
       class DeleteNatGatewayRequest;
@@ -1121,6 +1137,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateCarrierGatewayResponse, EC2Error> CreateCarrierGatewayOutcome;
       typedef Aws::Utils::Outcome<CreateClientVpnEndpointResponse, EC2Error> CreateClientVpnEndpointOutcome;
       typedef Aws::Utils::Outcome<CreateClientVpnRouteResponse, EC2Error> CreateClientVpnRouteOutcome;
+      typedef Aws::Utils::Outcome<CreateCoipCidrResponse, EC2Error> CreateCoipCidrOutcome;
+      typedef Aws::Utils::Outcome<CreateCoipPoolResponse, EC2Error> CreateCoipPoolOutcome;
       typedef Aws::Utils::Outcome<CreateCustomerGatewayResponse, EC2Error> CreateCustomerGatewayOutcome;
       typedef Aws::Utils::Outcome<CreateDefaultSubnetResponse, EC2Error> CreateDefaultSubnetOutcome;
       typedef Aws::Utils::Outcome<CreateDefaultVpcResponse, EC2Error> CreateDefaultVpcOutcome;
@@ -1140,6 +1158,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateLaunchTemplateResponse, EC2Error> CreateLaunchTemplateOutcome;
       typedef Aws::Utils::Outcome<CreateLaunchTemplateVersionResponse, EC2Error> CreateLaunchTemplateVersionOutcome;
       typedef Aws::Utils::Outcome<CreateLocalGatewayRouteResponse, EC2Error> CreateLocalGatewayRouteOutcome;
+      typedef Aws::Utils::Outcome<CreateLocalGatewayRouteTableResponse, EC2Error> CreateLocalGatewayRouteTableOutcome;
+      typedef Aws::Utils::Outcome<CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse, EC2Error> CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome;
       typedef Aws::Utils::Outcome<CreateLocalGatewayRouteTableVpcAssociationResponse, EC2Error> CreateLocalGatewayRouteTableVpcAssociationOutcome;
       typedef Aws::Utils::Outcome<CreateManagedPrefixListResponse, EC2Error> CreateManagedPrefixListOutcome;
       typedef Aws::Utils::Outcome<CreateNatGatewayResponse, EC2Error> CreateNatGatewayOutcome;
@@ -1191,6 +1211,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteCarrierGatewayResponse, EC2Error> DeleteCarrierGatewayOutcome;
       typedef Aws::Utils::Outcome<DeleteClientVpnEndpointResponse, EC2Error> DeleteClientVpnEndpointOutcome;
       typedef Aws::Utils::Outcome<DeleteClientVpnRouteResponse, EC2Error> DeleteClientVpnRouteOutcome;
+      typedef Aws::Utils::Outcome<DeleteCoipCidrResponse, EC2Error> DeleteCoipCidrOutcome;
+      typedef Aws::Utils::Outcome<DeleteCoipPoolResponse, EC2Error> DeleteCoipPoolOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteCustomerGatewayOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteDhcpOptionsOutcome;
       typedef Aws::Utils::Outcome<DeleteEgressOnlyInternetGatewayResponse, EC2Error> DeleteEgressOnlyInternetGatewayOutcome;
@@ -1206,6 +1228,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteLaunchTemplateResponse, EC2Error> DeleteLaunchTemplateOutcome;
       typedef Aws::Utils::Outcome<DeleteLaunchTemplateVersionsResponse, EC2Error> DeleteLaunchTemplateVersionsOutcome;
       typedef Aws::Utils::Outcome<DeleteLocalGatewayRouteResponse, EC2Error> DeleteLocalGatewayRouteOutcome;
+      typedef Aws::Utils::Outcome<DeleteLocalGatewayRouteTableResponse, EC2Error> DeleteLocalGatewayRouteTableOutcome;
+      typedef Aws::Utils::Outcome<DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse, EC2Error> DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome;
       typedef Aws::Utils::Outcome<DeleteLocalGatewayRouteTableVpcAssociationResponse, EC2Error> DeleteLocalGatewayRouteTableVpcAssociationOutcome;
       typedef Aws::Utils::Outcome<DeleteManagedPrefixListResponse, EC2Error> DeleteManagedPrefixListOutcome;
       typedef Aws::Utils::Outcome<DeleteNatGatewayResponse, EC2Error> DeleteNatGatewayOutcome;
@@ -1658,6 +1682,8 @@ namespace Aws
       typedef std::future<CreateCarrierGatewayOutcome> CreateCarrierGatewayOutcomeCallable;
       typedef std::future<CreateClientVpnEndpointOutcome> CreateClientVpnEndpointOutcomeCallable;
       typedef std::future<CreateClientVpnRouteOutcome> CreateClientVpnRouteOutcomeCallable;
+      typedef std::future<CreateCoipCidrOutcome> CreateCoipCidrOutcomeCallable;
+      typedef std::future<CreateCoipPoolOutcome> CreateCoipPoolOutcomeCallable;
       typedef std::future<CreateCustomerGatewayOutcome> CreateCustomerGatewayOutcomeCallable;
       typedef std::future<CreateDefaultSubnetOutcome> CreateDefaultSubnetOutcomeCallable;
       typedef std::future<CreateDefaultVpcOutcome> CreateDefaultVpcOutcomeCallable;
@@ -1677,6 +1703,8 @@ namespace Aws
       typedef std::future<CreateLaunchTemplateOutcome> CreateLaunchTemplateOutcomeCallable;
       typedef std::future<CreateLaunchTemplateVersionOutcome> CreateLaunchTemplateVersionOutcomeCallable;
       typedef std::future<CreateLocalGatewayRouteOutcome> CreateLocalGatewayRouteOutcomeCallable;
+      typedef std::future<CreateLocalGatewayRouteTableOutcome> CreateLocalGatewayRouteTableOutcomeCallable;
+      typedef std::future<CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome> CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcomeCallable;
       typedef std::future<CreateLocalGatewayRouteTableVpcAssociationOutcome> CreateLocalGatewayRouteTableVpcAssociationOutcomeCallable;
       typedef std::future<CreateManagedPrefixListOutcome> CreateManagedPrefixListOutcomeCallable;
       typedef std::future<CreateNatGatewayOutcome> CreateNatGatewayOutcomeCallable;
@@ -1728,6 +1756,8 @@ namespace Aws
       typedef std::future<DeleteCarrierGatewayOutcome> DeleteCarrierGatewayOutcomeCallable;
       typedef std::future<DeleteClientVpnEndpointOutcome> DeleteClientVpnEndpointOutcomeCallable;
       typedef std::future<DeleteClientVpnRouteOutcome> DeleteClientVpnRouteOutcomeCallable;
+      typedef std::future<DeleteCoipCidrOutcome> DeleteCoipCidrOutcomeCallable;
+      typedef std::future<DeleteCoipPoolOutcome> DeleteCoipPoolOutcomeCallable;
       typedef std::future<DeleteCustomerGatewayOutcome> DeleteCustomerGatewayOutcomeCallable;
       typedef std::future<DeleteDhcpOptionsOutcome> DeleteDhcpOptionsOutcomeCallable;
       typedef std::future<DeleteEgressOnlyInternetGatewayOutcome> DeleteEgressOnlyInternetGatewayOutcomeCallable;
@@ -1743,6 +1773,8 @@ namespace Aws
       typedef std::future<DeleteLaunchTemplateOutcome> DeleteLaunchTemplateOutcomeCallable;
       typedef std::future<DeleteLaunchTemplateVersionsOutcome> DeleteLaunchTemplateVersionsOutcomeCallable;
       typedef std::future<DeleteLocalGatewayRouteOutcome> DeleteLocalGatewayRouteOutcomeCallable;
+      typedef std::future<DeleteLocalGatewayRouteTableOutcome> DeleteLocalGatewayRouteTableOutcomeCallable;
+      typedef std::future<DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome> DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcomeCallable;
       typedef std::future<DeleteLocalGatewayRouteTableVpcAssociationOutcome> DeleteLocalGatewayRouteTableVpcAssociationOutcomeCallable;
       typedef std::future<DeleteManagedPrefixListOutcome> DeleteManagedPrefixListOutcomeCallable;
       typedef std::future<DeleteNatGatewayOutcome> DeleteNatGatewayOutcomeCallable;
@@ -2198,6 +2230,8 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::CreateCarrierGatewayRequest&, const Model::CreateCarrierGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCarrierGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateClientVpnEndpointRequest&, const Model::CreateClientVpnEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateClientVpnEndpointResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateClientVpnRouteRequest&, const Model::CreateClientVpnRouteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateClientVpnRouteResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CreateCoipCidrRequest&, const Model::CreateCoipCidrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCoipCidrResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CreateCoipPoolRequest&, const Model::CreateCoipPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCoipPoolResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateCustomerGatewayRequest&, const Model::CreateCustomerGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCustomerGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateDefaultSubnetRequest&, const Model::CreateDefaultSubnetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDefaultSubnetResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateDefaultVpcRequest&, const Model::CreateDefaultVpcOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDefaultVpcResponseReceivedHandler;
@@ -2217,6 +2251,8 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::CreateLaunchTemplateRequest&, const Model::CreateLaunchTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLaunchTemplateResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateLaunchTemplateVersionRequest&, const Model::CreateLaunchTemplateVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLaunchTemplateVersionResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateLocalGatewayRouteRequest&, const Model::CreateLocalGatewayRouteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLocalGatewayRouteResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CreateLocalGatewayRouteTableRequest&, const Model::CreateLocalGatewayRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLocalGatewayRouteTableResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest&, const Model::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateLocalGatewayRouteTableVpcAssociationRequest&, const Model::CreateLocalGatewayRouteTableVpcAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLocalGatewayRouteTableVpcAssociationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateManagedPrefixListRequest&, const Model::CreateManagedPrefixListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateManagedPrefixListResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateNatGatewayRequest&, const Model::CreateNatGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNatGatewayResponseReceivedHandler;
@@ -2268,6 +2304,8 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::DeleteCarrierGatewayRequest&, const Model::DeleteCarrierGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCarrierGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteClientVpnEndpointRequest&, const Model::DeleteClientVpnEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteClientVpnEndpointResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteClientVpnRouteRequest&, const Model::DeleteClientVpnRouteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteClientVpnRouteResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DeleteCoipCidrRequest&, const Model::DeleteCoipCidrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCoipCidrResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DeleteCoipPoolRequest&, const Model::DeleteCoipPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCoipPoolResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteCustomerGatewayRequest&, const Model::DeleteCustomerGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCustomerGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteDhcpOptionsRequest&, const Model::DeleteDhcpOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDhcpOptionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteEgressOnlyInternetGatewayRequest&, const Model::DeleteEgressOnlyInternetGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEgressOnlyInternetGatewayResponseReceivedHandler;
@@ -2283,6 +2321,8 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::DeleteLaunchTemplateRequest&, const Model::DeleteLaunchTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLaunchTemplateResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteLaunchTemplateVersionsRequest&, const Model::DeleteLaunchTemplateVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLaunchTemplateVersionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteLocalGatewayRouteRequest&, const Model::DeleteLocalGatewayRouteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLocalGatewayRouteResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DeleteLocalGatewayRouteTableRequest&, const Model::DeleteLocalGatewayRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLocalGatewayRouteTableResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest&, const Model::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteLocalGatewayRouteTableVpcAssociationRequest&, const Model::DeleteLocalGatewayRouteTableVpcAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLocalGatewayRouteTableVpcAssociationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteManagedPrefixListRequest&, const Model::DeleteManagedPrefixListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteManagedPrefixListResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteNatGatewayRequest&, const Model::DeleteNatGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNatGatewayResponseReceivedHandler;

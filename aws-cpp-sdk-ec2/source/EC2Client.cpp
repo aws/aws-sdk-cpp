@@ -73,6 +73,8 @@
 #include <aws/ec2/model/CreateCarrierGatewayRequest.h>
 #include <aws/ec2/model/CreateClientVpnEndpointRequest.h>
 #include <aws/ec2/model/CreateClientVpnRouteRequest.h>
+#include <aws/ec2/model/CreateCoipCidrRequest.h>
+#include <aws/ec2/model/CreateCoipPoolRequest.h>
 #include <aws/ec2/model/CreateCustomerGatewayRequest.h>
 #include <aws/ec2/model/CreateDefaultSubnetRequest.h>
 #include <aws/ec2/model/CreateDefaultVpcRequest.h>
@@ -92,6 +94,8 @@
 #include <aws/ec2/model/CreateLaunchTemplateRequest.h>
 #include <aws/ec2/model/CreateLaunchTemplateVersionRequest.h>
 #include <aws/ec2/model/CreateLocalGatewayRouteRequest.h>
+#include <aws/ec2/model/CreateLocalGatewayRouteTableRequest.h>
+#include <aws/ec2/model/CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest.h>
 #include <aws/ec2/model/CreateLocalGatewayRouteTableVpcAssociationRequest.h>
 #include <aws/ec2/model/CreateManagedPrefixListRequest.h>
 #include <aws/ec2/model/CreateNatGatewayRequest.h>
@@ -143,6 +147,8 @@
 #include <aws/ec2/model/DeleteCarrierGatewayRequest.h>
 #include <aws/ec2/model/DeleteClientVpnEndpointRequest.h>
 #include <aws/ec2/model/DeleteClientVpnRouteRequest.h>
+#include <aws/ec2/model/DeleteCoipCidrRequest.h>
+#include <aws/ec2/model/DeleteCoipPoolRequest.h>
 #include <aws/ec2/model/DeleteCustomerGatewayRequest.h>
 #include <aws/ec2/model/DeleteDhcpOptionsRequest.h>
 #include <aws/ec2/model/DeleteEgressOnlyInternetGatewayRequest.h>
@@ -158,6 +164,8 @@
 #include <aws/ec2/model/DeleteLaunchTemplateRequest.h>
 #include <aws/ec2/model/DeleteLaunchTemplateVersionsRequest.h>
 #include <aws/ec2/model/DeleteLocalGatewayRouteRequest.h>
+#include <aws/ec2/model/DeleteLocalGatewayRouteTableRequest.h>
+#include <aws/ec2/model/DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest.h>
 #include <aws/ec2/model/DeleteLocalGatewayRouteTableVpcAssociationRequest.h>
 #include <aws/ec2/model/DeleteManagedPrefixListRequest.h>
 #include <aws/ec2/model/DeleteNatGatewayRequest.h>
@@ -1801,6 +1809,50 @@ void EC2Client::CreateClientVpnRouteAsync(const CreateClientVpnRouteRequest& req
     } );
 }
 
+CreateCoipCidrOutcome EC2Client::CreateCoipCidr(const CreateCoipCidrRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateCoipCidrOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+CreateCoipCidrOutcomeCallable EC2Client::CreateCoipCidrCallable(const CreateCoipCidrRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateCoipCidrOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCoipCidr(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::CreateCoipCidrAsync(const CreateCoipCidrRequest& request, const CreateCoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateCoipCidr(request), context);
+    } );
+}
+
+CreateCoipPoolOutcome EC2Client::CreateCoipPool(const CreateCoipPoolRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateCoipPoolOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+CreateCoipPoolOutcomeCallable EC2Client::CreateCoipPoolCallable(const CreateCoipPoolRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateCoipPoolOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCoipPool(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::CreateCoipPoolAsync(const CreateCoipPoolRequest& request, const CreateCoipPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateCoipPool(request), context);
+    } );
+}
+
 CreateCustomerGatewayOutcome EC2Client::CreateCustomerGateway(const CreateCustomerGatewayRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -2216,6 +2268,50 @@ void EC2Client::CreateLocalGatewayRouteAsync(const CreateLocalGatewayRouteReques
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, CreateLocalGatewayRoute(request), context);
+    } );
+}
+
+CreateLocalGatewayRouteTableOutcome EC2Client::CreateLocalGatewayRouteTable(const CreateLocalGatewayRouteTableRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateLocalGatewayRouteTableOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+CreateLocalGatewayRouteTableOutcomeCallable EC2Client::CreateLocalGatewayRouteTableCallable(const CreateLocalGatewayRouteTableRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateLocalGatewayRouteTableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLocalGatewayRouteTable(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::CreateLocalGatewayRouteTableAsync(const CreateLocalGatewayRouteTableRequest& request, const CreateLocalGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateLocalGatewayRouteTable(request), context);
+    } );
+}
+
+CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome EC2Client::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation(const CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcomeCallable EC2Client::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationCallable(const CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationAsync(const CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest& request, const CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation(request), context);
     } );
 }
 
@@ -3341,6 +3437,50 @@ void EC2Client::DeleteClientVpnRouteAsync(const DeleteClientVpnRouteRequest& req
     } );
 }
 
+DeleteCoipCidrOutcome EC2Client::DeleteCoipCidr(const DeleteCoipCidrRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteCoipCidrOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DeleteCoipCidrOutcomeCallable EC2Client::DeleteCoipCidrCallable(const DeleteCoipCidrRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteCoipCidrOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCoipCidr(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DeleteCoipCidrAsync(const DeleteCoipCidrRequest& request, const DeleteCoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteCoipCidr(request), context);
+    } );
+}
+
+DeleteCoipPoolOutcome EC2Client::DeleteCoipPool(const DeleteCoipPoolRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteCoipPoolOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DeleteCoipPoolOutcomeCallable EC2Client::DeleteCoipPoolCallable(const DeleteCoipPoolRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteCoipPoolOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCoipPool(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DeleteCoipPoolAsync(const DeleteCoipPoolRequest& request, const DeleteCoipPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteCoipPool(request), context);
+    } );
+}
+
 DeleteCustomerGatewayOutcome EC2Client::DeleteCustomerGateway(const DeleteCustomerGatewayRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -3668,6 +3808,50 @@ void EC2Client::DeleteLocalGatewayRouteAsync(const DeleteLocalGatewayRouteReques
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DeleteLocalGatewayRoute(request), context);
+    } );
+}
+
+DeleteLocalGatewayRouteTableOutcome EC2Client::DeleteLocalGatewayRouteTable(const DeleteLocalGatewayRouteTableRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteLocalGatewayRouteTableOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DeleteLocalGatewayRouteTableOutcomeCallable EC2Client::DeleteLocalGatewayRouteTableCallable(const DeleteLocalGatewayRouteTableRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteLocalGatewayRouteTableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLocalGatewayRouteTable(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DeleteLocalGatewayRouteTableAsync(const DeleteLocalGatewayRouteTableRequest& request, const DeleteLocalGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteLocalGatewayRouteTable(request), context);
+    } );
+}
+
+DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome EC2Client::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation(const DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcomeCallable EC2Client::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationCallable(const DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationAsync(const DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest& request, const DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation(request), context);
     } );
 }
 

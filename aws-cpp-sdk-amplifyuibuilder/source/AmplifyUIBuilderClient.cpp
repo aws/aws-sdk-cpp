@@ -21,18 +21,26 @@
 #include <aws/amplifyuibuilder/AmplifyUIBuilderEndpoint.h>
 #include <aws/amplifyuibuilder/AmplifyUIBuilderErrorMarshaller.h>
 #include <aws/amplifyuibuilder/model/CreateComponentRequest.h>
+#include <aws/amplifyuibuilder/model/CreateFormRequest.h>
 #include <aws/amplifyuibuilder/model/CreateThemeRequest.h>
 #include <aws/amplifyuibuilder/model/DeleteComponentRequest.h>
+#include <aws/amplifyuibuilder/model/DeleteFormRequest.h>
 #include <aws/amplifyuibuilder/model/DeleteThemeRequest.h>
 #include <aws/amplifyuibuilder/model/ExchangeCodeForTokenRequest.h>
 #include <aws/amplifyuibuilder/model/ExportComponentsRequest.h>
+#include <aws/amplifyuibuilder/model/ExportFormsRequest.h>
 #include <aws/amplifyuibuilder/model/ExportThemesRequest.h>
 #include <aws/amplifyuibuilder/model/GetComponentRequest.h>
+#include <aws/amplifyuibuilder/model/GetFormRequest.h>
+#include <aws/amplifyuibuilder/model/GetMetadataRequest.h>
 #include <aws/amplifyuibuilder/model/GetThemeRequest.h>
 #include <aws/amplifyuibuilder/model/ListComponentsRequest.h>
+#include <aws/amplifyuibuilder/model/ListFormsRequest.h>
 #include <aws/amplifyuibuilder/model/ListThemesRequest.h>
+#include <aws/amplifyuibuilder/model/PutMetadataFlagRequest.h>
 #include <aws/amplifyuibuilder/model/RefreshTokenRequest.h>
 #include <aws/amplifyuibuilder/model/UpdateComponentRequest.h>
+#include <aws/amplifyuibuilder/model/UpdateFormRequest.h>
 #include <aws/amplifyuibuilder/model/UpdateThemeRequest.h>
 
 using namespace Aws;
@@ -151,6 +159,43 @@ void AmplifyUIBuilderClient::CreateComponentAsync(const CreateComponentRequest& 
     } );
 }
 
+CreateFormOutcome AmplifyUIBuilderClient::CreateForm(const CreateFormRequest& request) const
+{
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateForm", "Required field: AppId, is not set");
+    return CreateFormOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.EnvironmentNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateForm", "Required field: EnvironmentName, is not set");
+    return CreateFormOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/app/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/environment/");
+  uri.AddPathSegment(request.GetEnvironmentName());
+  uri.AddPathSegments("/forms");
+  return CreateFormOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateFormOutcomeCallable AmplifyUIBuilderClient::CreateFormCallable(const CreateFormRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateFormOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateForm(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyUIBuilderClient::CreateFormAsync(const CreateFormRequest& request, const CreateFormResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateForm(request), context);
+    } );
+}
+
 CreateThemeOutcome AmplifyUIBuilderClient::CreateTheme(const CreateThemeRequest& request) const
 {
   if (!request.AppIdHasBeenSet())
@@ -228,6 +273,49 @@ void AmplifyUIBuilderClient::DeleteComponentAsync(const DeleteComponentRequest& 
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DeleteComponent(request), context);
+    } );
+}
+
+DeleteFormOutcome AmplifyUIBuilderClient::DeleteForm(const DeleteFormRequest& request) const
+{
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteForm", "Required field: AppId, is not set");
+    return DeleteFormOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.EnvironmentNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteForm", "Required field: EnvironmentName, is not set");
+    return DeleteFormOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentName]", false));
+  }
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteForm", "Required field: Id, is not set");
+    return DeleteFormOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/app/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/environment/");
+  uri.AddPathSegment(request.GetEnvironmentName());
+  uri.AddPathSegments("/forms/");
+  uri.AddPathSegment(request.GetId());
+  return DeleteFormOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteFormOutcomeCallable AmplifyUIBuilderClient::DeleteFormCallable(const DeleteFormRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteFormOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteForm(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyUIBuilderClient::DeleteFormAsync(const DeleteFormRequest& request, const DeleteFormResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteForm(request), context);
     } );
 }
 
@@ -340,6 +428,43 @@ void AmplifyUIBuilderClient::ExportComponentsAsync(const ExportComponentsRequest
     } );
 }
 
+ExportFormsOutcome AmplifyUIBuilderClient::ExportForms(const ExportFormsRequest& request) const
+{
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ExportForms", "Required field: AppId, is not set");
+    return ExportFormsOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.EnvironmentNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ExportForms", "Required field: EnvironmentName, is not set");
+    return ExportFormsOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/export/app/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/environment/");
+  uri.AddPathSegment(request.GetEnvironmentName());
+  uri.AddPathSegments("/forms");
+  return ExportFormsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ExportFormsOutcomeCallable AmplifyUIBuilderClient::ExportFormsCallable(const ExportFormsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ExportFormsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExportForms(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyUIBuilderClient::ExportFormsAsync(const ExportFormsRequest& request, const ExportFormsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ExportForms(request), context);
+    } );
+}
+
 ExportThemesOutcome AmplifyUIBuilderClient::ExportThemes(const ExportThemesRequest& request) const
 {
   if (!request.AppIdHasBeenSet())
@@ -417,6 +542,86 @@ void AmplifyUIBuilderClient::GetComponentAsync(const GetComponentRequest& reques
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, GetComponent(request), context);
+    } );
+}
+
+GetFormOutcome AmplifyUIBuilderClient::GetForm(const GetFormRequest& request) const
+{
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetForm", "Required field: AppId, is not set");
+    return GetFormOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.EnvironmentNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetForm", "Required field: EnvironmentName, is not set");
+    return GetFormOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentName]", false));
+  }
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetForm", "Required field: Id, is not set");
+    return GetFormOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/app/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/environment/");
+  uri.AddPathSegment(request.GetEnvironmentName());
+  uri.AddPathSegments("/forms/");
+  uri.AddPathSegment(request.GetId());
+  return GetFormOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetFormOutcomeCallable AmplifyUIBuilderClient::GetFormCallable(const GetFormRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetFormOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetForm(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyUIBuilderClient::GetFormAsync(const GetFormRequest& request, const GetFormResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetForm(request), context);
+    } );
+}
+
+GetMetadataOutcome AmplifyUIBuilderClient::GetMetadata(const GetMetadataRequest& request) const
+{
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetMetadata", "Required field: AppId, is not set");
+    return GetMetadataOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.EnvironmentNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetMetadata", "Required field: EnvironmentName, is not set");
+    return GetMetadataOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/app/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/environment/");
+  uri.AddPathSegment(request.GetEnvironmentName());
+  uri.AddPathSegments("/metadata");
+  return GetMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetMetadataOutcomeCallable AmplifyUIBuilderClient::GetMetadataCallable(const GetMetadataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMetadata(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyUIBuilderClient::GetMetadataAsync(const GetMetadataRequest& request, const GetMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetMetadata(request), context);
     } );
 }
 
@@ -500,6 +705,43 @@ void AmplifyUIBuilderClient::ListComponentsAsync(const ListComponentsRequest& re
     } );
 }
 
+ListFormsOutcome AmplifyUIBuilderClient::ListForms(const ListFormsRequest& request) const
+{
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListForms", "Required field: AppId, is not set");
+    return ListFormsOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.EnvironmentNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListForms", "Required field: EnvironmentName, is not set");
+    return ListFormsOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/app/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/environment/");
+  uri.AddPathSegment(request.GetEnvironmentName());
+  uri.AddPathSegments("/forms");
+  return ListFormsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListFormsOutcomeCallable AmplifyUIBuilderClient::ListFormsCallable(const ListFormsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListFormsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListForms(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyUIBuilderClient::ListFormsAsync(const ListFormsRequest& request, const ListFormsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListForms(request), context);
+    } );
+}
+
 ListThemesOutcome AmplifyUIBuilderClient::ListThemes(const ListThemesRequest& request) const
 {
   if (!request.AppIdHasBeenSet())
@@ -534,6 +776,49 @@ void AmplifyUIBuilderClient::ListThemesAsync(const ListThemesRequest& request, c
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ListThemes(request), context);
+    } );
+}
+
+PutMetadataFlagOutcome AmplifyUIBuilderClient::PutMetadataFlag(const PutMetadataFlagRequest& request) const
+{
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutMetadataFlag", "Required field: AppId, is not set");
+    return PutMetadataFlagOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.EnvironmentNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutMetadataFlag", "Required field: EnvironmentName, is not set");
+    return PutMetadataFlagOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentName]", false));
+  }
+  if (!request.FeatureNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutMetadataFlag", "Required field: FeatureName, is not set");
+    return PutMetadataFlagOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FeatureName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/app/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/environment/");
+  uri.AddPathSegment(request.GetEnvironmentName());
+  uri.AddPathSegments("/metadata/features/");
+  uri.AddPathSegment(request.GetFeatureName());
+  return PutMetadataFlagOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutMetadataFlagOutcomeCallable AmplifyUIBuilderClient::PutMetadataFlagCallable(const PutMetadataFlagRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutMetadataFlagOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutMetadataFlag(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyUIBuilderClient::PutMetadataFlagAsync(const PutMetadataFlagRequest& request, const PutMetadataFlagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutMetadataFlag(request), context);
     } );
 }
 
@@ -607,6 +892,49 @@ void AmplifyUIBuilderClient::UpdateComponentAsync(const UpdateComponentRequest& 
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, UpdateComponent(request), context);
+    } );
+}
+
+UpdateFormOutcome AmplifyUIBuilderClient::UpdateForm(const UpdateFormRequest& request) const
+{
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateForm", "Required field: AppId, is not set");
+    return UpdateFormOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.EnvironmentNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateForm", "Required field: EnvironmentName, is not set");
+    return UpdateFormOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentName]", false));
+  }
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateForm", "Required field: Id, is not set");
+    return UpdateFormOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/app/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/environment/");
+  uri.AddPathSegment(request.GetEnvironmentName());
+  uri.AddPathSegments("/forms/");
+  uri.AddPathSegment(request.GetId());
+  return UpdateFormOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateFormOutcomeCallable AmplifyUIBuilderClient::UpdateFormCallable(const UpdateFormRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateFormOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateForm(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyUIBuilderClient::UpdateFormAsync(const UpdateFormRequest& request, const UpdateFormResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateForm(request), context);
     } );
 }
 

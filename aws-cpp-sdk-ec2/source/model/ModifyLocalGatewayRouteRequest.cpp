@@ -13,6 +13,7 @@ using namespace Aws::Utils;
 ModifyLocalGatewayRouteRequest::ModifyLocalGatewayRouteRequest() : 
     m_destinationCidrBlockHasBeenSet(false),
     m_localGatewayRouteTableIdHasBeenSet(false),
+    m_localGatewayVirtualInterfaceGroupIdHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false)
@@ -31,6 +32,11 @@ Aws::String ModifyLocalGatewayRouteRequest::SerializePayload() const
   if(m_localGatewayRouteTableIdHasBeenSet)
   {
     ss << "LocalGatewayRouteTableId=" << StringUtils::URLEncode(m_localGatewayRouteTableId.c_str()) << "&";
+  }
+
+  if(m_localGatewayVirtualInterfaceGroupIdHasBeenSet)
+  {
+    ss << "LocalGatewayVirtualInterfaceGroupId=" << StringUtils::URLEncode(m_localGatewayVirtualInterfaceGroupId.c_str()) << "&";
   }
 
   if(m_networkInterfaceIdHasBeenSet)

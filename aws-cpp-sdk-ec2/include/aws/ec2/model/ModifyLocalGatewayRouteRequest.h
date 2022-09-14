@@ -127,6 +127,47 @@ namespace Model
 
 
     /**
+     * <p> The ID of the virtual interface group. </p>
+     */
+    inline const Aws::String& GetLocalGatewayVirtualInterfaceGroupId() const{ return m_localGatewayVirtualInterfaceGroupId; }
+
+    /**
+     * <p> The ID of the virtual interface group. </p>
+     */
+    inline bool LocalGatewayVirtualInterfaceGroupIdHasBeenSet() const { return m_localGatewayVirtualInterfaceGroupIdHasBeenSet; }
+
+    /**
+     * <p> The ID of the virtual interface group. </p>
+     */
+    inline void SetLocalGatewayVirtualInterfaceGroupId(const Aws::String& value) { m_localGatewayVirtualInterfaceGroupIdHasBeenSet = true; m_localGatewayVirtualInterfaceGroupId = value; }
+
+    /**
+     * <p> The ID of the virtual interface group. </p>
+     */
+    inline void SetLocalGatewayVirtualInterfaceGroupId(Aws::String&& value) { m_localGatewayVirtualInterfaceGroupIdHasBeenSet = true; m_localGatewayVirtualInterfaceGroupId = std::move(value); }
+
+    /**
+     * <p> The ID of the virtual interface group. </p>
+     */
+    inline void SetLocalGatewayVirtualInterfaceGroupId(const char* value) { m_localGatewayVirtualInterfaceGroupIdHasBeenSet = true; m_localGatewayVirtualInterfaceGroupId.assign(value); }
+
+    /**
+     * <p> The ID of the virtual interface group. </p>
+     */
+    inline ModifyLocalGatewayRouteRequest& WithLocalGatewayVirtualInterfaceGroupId(const Aws::String& value) { SetLocalGatewayVirtualInterfaceGroupId(value); return *this;}
+
+    /**
+     * <p> The ID of the virtual interface group. </p>
+     */
+    inline ModifyLocalGatewayRouteRequest& WithLocalGatewayVirtualInterfaceGroupId(Aws::String&& value) { SetLocalGatewayVirtualInterfaceGroupId(std::move(value)); return *this;}
+
+    /**
+     * <p> The ID of the virtual interface group. </p>
+     */
+    inline ModifyLocalGatewayRouteRequest& WithLocalGatewayVirtualInterfaceGroupId(const char* value) { SetLocalGatewayVirtualInterfaceGroupId(value); return *this;}
+
+
+    /**
      * <p>The ID of the network interface.</p>
      */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
@@ -206,6 +247,9 @@ namespace Model
 
     Aws::String m_localGatewayRouteTableId;
     bool m_localGatewayRouteTableIdHasBeenSet = false;
+
+    Aws::String m_localGatewayVirtualInterfaceGroupId;
+    bool m_localGatewayVirtualInterfaceGroupIdHasBeenSet = false;
 
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet = false;
