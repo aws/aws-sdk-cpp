@@ -8,7 +8,7 @@ function(obtain_project_version resultVarVersion resultVarGitHash)
                 OUTPUT_STRIP_TRAILING_WHITESPACE
         )
         execute_process(
-                COMMAND ${GIT_EXECUTABLE} rev-parse HEAD
+                COMMAND ${GIT_EXECUTABLE} --git-dir=${CMAKE_CURRENT_SOURCE_DIR}/.git rev-parse HEAD
                 RESULT_VARIABLE git_result
                 OUTPUT_VARIABLE GIT_HASH
                 OUTPUT_STRIP_TRAILING_WHITESPACE
