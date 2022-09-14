@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/LocalGatewayRouteTableMode.h>
+#include <aws/ec2/model/StateReason.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
 
@@ -367,6 +368,25 @@ namespace Model
      */
     inline LocalGatewayRouteTable& WithMode(LocalGatewayRouteTableMode&& value) { SetMode(std::move(value)); return *this;}
 
+
+    
+    inline const StateReason& GetStateReason() const{ return m_stateReason; }
+
+    
+    inline bool StateReasonHasBeenSet() const { return m_stateReasonHasBeenSet; }
+
+    
+    inline void SetStateReason(const StateReason& value) { m_stateReasonHasBeenSet = true; m_stateReason = value; }
+
+    
+    inline void SetStateReason(StateReason&& value) { m_stateReasonHasBeenSet = true; m_stateReason = std::move(value); }
+
+    
+    inline LocalGatewayRouteTable& WithStateReason(const StateReason& value) { SetStateReason(value); return *this;}
+
+    
+    inline LocalGatewayRouteTable& WithStateReason(StateReason&& value) { SetStateReason(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_localGatewayRouteTableId;
@@ -392,6 +412,9 @@ namespace Model
 
     LocalGatewayRouteTableMode m_mode;
     bool m_modeHasBeenSet = false;
+
+    StateReason m_stateReason;
+    bool m_stateReasonHasBeenSet = false;
   };
 
 } // namespace Model

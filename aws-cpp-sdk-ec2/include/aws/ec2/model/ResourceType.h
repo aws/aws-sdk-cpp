@@ -20,6 +20,7 @@ namespace Model
     client_vpn_endpoint,
     customer_gateway,
     carrier_gateway,
+    coip_pool,
     dedicated_host,
     dhcp_options,
     egress_only_internet_gateway,

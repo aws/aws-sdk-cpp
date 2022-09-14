@@ -76,6 +76,23 @@ namespace AmplifyUIBuilder
         virtual void CreateComponentAsync(const Model::CreateComponentRequest& request, const CreateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a new form for an Amplify app.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/CreateForm">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateFormOutcome CreateForm(const Model::CreateFormRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateForm that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateFormOutcomeCallable CreateFormCallable(const Model::CreateFormRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateForm that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateFormAsync(const Model::CreateFormRequest& request, const CreateFormResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a theme to apply to the components in an Amplify app.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/CreateTheme">AWS
@@ -109,6 +126,23 @@ namespace AmplifyUIBuilder
          * An Async wrapper for DeleteComponent that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteComponentAsync(const Model::DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a form from an Amplify app.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/DeleteForm">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteFormOutcome DeleteForm(const Model::DeleteFormRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteForm that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteFormOutcomeCallable DeleteFormCallable(const Model::DeleteFormRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteForm that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteFormAsync(const Model::DeleteFormRequest& request, const DeleteFormResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a theme from an Amplify app.</p><p><h3>See Also:</h3>   <a
@@ -163,6 +197,24 @@ namespace AmplifyUIBuilder
         virtual void ExportComponentsAsync(const Model::ExportComponentsRequest& request, const ExportComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Exports form configurations to code that is ready to integrate into an
+         * Amplify app.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ExportForms">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ExportFormsOutcome ExportForms(const Model::ExportFormsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ExportForms that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ExportFormsOutcomeCallable ExportFormsCallable(const Model::ExportFormsRequest& request) const;
+
+        /**
+         * An Async wrapper for ExportForms that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ExportFormsAsync(const Model::ExportFormsRequest& request, const ExportFormsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Exports theme configurations to code that is ready to integrate into an
          * Amplify app.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ExportThemes">AWS
@@ -197,6 +249,40 @@ namespace AmplifyUIBuilder
          * An Async wrapper for GetComponent that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetComponentAsync(const Model::GetComponentRequest& request, const GetComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns an existing form for an Amplify app.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetForm">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetFormOutcome GetForm(const Model::GetFormRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetForm that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetFormOutcomeCallable GetFormCallable(const Model::GetFormRequest& request) const;
+
+        /**
+         * An Async wrapper for GetForm that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetFormAsync(const Model::GetFormRequest& request, const GetFormResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns existing metadata for an Amplify app.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetMetadata">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMetadataOutcome GetMetadata(const Model::GetMetadataRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetMetadataOutcomeCallable GetMetadataCallable(const Model::GetMetadataRequest& request) const;
+
+        /**
+         * An Async wrapper for GetMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetMetadataAsync(const Model::GetMetadataRequest& request, const GetMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns an existing theme for an Amplify app.</p><p><h3>See Also:</h3>   <a
@@ -234,6 +320,24 @@ namespace AmplifyUIBuilder
         virtual void ListComponentsAsync(const Model::ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves a list of forms for a specified Amplify app and backend
+         * environment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListForms">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListFormsOutcome ListForms(const Model::ListFormsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListForms that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListFormsOutcomeCallable ListFormsCallable(const Model::ListFormsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListForms that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListFormsAsync(const Model::ListFormsRequest& request, const ListFormsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves a list of themes for a specified Amplify app and backend
          * environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListThemes">AWS
@@ -250,6 +354,24 @@ namespace AmplifyUIBuilder
          * An Async wrapper for ListThemes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListThemesAsync(const Model::ListThemesRequest& request, const ListThemesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Stores the metadata information about a feature on a form or
+         * view.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/PutMetadataFlag">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutMetadataFlagOutcome PutMetadataFlag(const Model::PutMetadataFlagRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutMetadataFlag that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutMetadataFlagOutcomeCallable PutMetadataFlagCallable(const Model::PutMetadataFlagRequest& request) const;
+
+        /**
+         * An Async wrapper for PutMetadataFlag that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutMetadataFlagAsync(const Model::PutMetadataFlagRequest& request, const PutMetadataFlagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Refreshes a previously issued access token that might have
@@ -285,6 +407,23 @@ namespace AmplifyUIBuilder
          * An Async wrapper for UpdateComponent that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateComponentAsync(const Model::UpdateComponentRequest& request, const UpdateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates an existing form.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/UpdateForm">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateFormOutcome UpdateForm(const Model::UpdateFormRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateForm that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateFormOutcomeCallable UpdateFormCallable(const Model::UpdateFormRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateForm that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateFormAsync(const Model::UpdateFormRequest& request, const UpdateFormResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing theme.</p><p><h3>See Also:</h3>   <a

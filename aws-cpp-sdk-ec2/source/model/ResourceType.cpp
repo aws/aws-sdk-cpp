@@ -24,6 +24,7 @@ namespace Aws
         static const int client_vpn_endpoint_HASH = HashingUtils::HashString("client-vpn-endpoint");
         static const int customer_gateway_HASH = HashingUtils::HashString("customer-gateway");
         static const int carrier_gateway_HASH = HashingUtils::HashString("carrier-gateway");
+        static const int coip_pool_HASH = HashingUtils::HashString("coip-pool");
         static const int dedicated_host_HASH = HashingUtils::HashString("dedicated-host");
         static const int dhcp_options_HASH = HashingUtils::HashString("dhcp-options");
         static const int egress_only_internet_gateway_HASH = HashingUtils::HashString("egress-only-internet-gateway");
@@ -114,6 +115,10 @@ namespace Aws
           else if (hashCode == carrier_gateway_HASH)
           {
             return ResourceType::carrier_gateway;
+          }
+          else if (hashCode == coip_pool_HASH)
+          {
+            return ResourceType::coip_pool;
           }
           else if (hashCode == dedicated_host_HASH)
           {
@@ -417,6 +422,8 @@ namespace Aws
             return "customer-gateway";
           case ResourceType::carrier_gateway:
             return "carrier-gateway";
+          case ResourceType::coip_pool:
+            return "coip-pool";
           case ResourceType::dedicated_host:
             return "dedicated-host";
           case ResourceType::dhcp_options:

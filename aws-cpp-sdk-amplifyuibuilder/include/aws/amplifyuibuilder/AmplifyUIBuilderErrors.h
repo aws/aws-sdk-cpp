@@ -50,7 +50,8 @@ enum class AmplifyUIBuilderErrors
   INTERNAL_SERVER= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_PARAMETER,
   RESOURCE_CONFLICT,
-  SERVICE_QUOTA_EXCEEDED
+  SERVICE_QUOTA_EXCEEDED,
+  UNAUTHORIZED
 };
 
 class AWS_AMPLIFYUIBUILDER_API AmplifyUIBuilderError : public Aws::Client::AWSError<AmplifyUIBuilderErrors>
