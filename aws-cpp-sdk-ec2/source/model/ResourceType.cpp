@@ -86,7 +86,9 @@ namespace Aws
         static const int volume_HASH = HashingUtils::HashString("volume");
         static const int vpc_HASH = HashingUtils::HashString("vpc");
         static const int vpc_endpoint_HASH = HashingUtils::HashString("vpc-endpoint");
+        static const int vpc_endpoint_connection_HASH = HashingUtils::HashString("vpc-endpoint-connection");
         static const int vpc_endpoint_service_HASH = HashingUtils::HashString("vpc-endpoint-service");
+        static const int vpc_endpoint_service_permission_HASH = HashingUtils::HashString("vpc-endpoint-service-permission");
         static const int vpc_peering_connection_HASH = HashingUtils::HashString("vpc-peering-connection");
         static const int vpn_connection_HASH = HashingUtils::HashString("vpn-connection");
         static const int vpn_gateway_HASH = HashingUtils::HashString("vpn-gateway");
@@ -364,9 +366,17 @@ namespace Aws
           {
             return ResourceType::vpc_endpoint;
           }
+          else if (hashCode == vpc_endpoint_connection_HASH)
+          {
+            return ResourceType::vpc_endpoint_connection;
+          }
           else if (hashCode == vpc_endpoint_service_HASH)
           {
             return ResourceType::vpc_endpoint_service;
+          }
+          else if (hashCode == vpc_endpoint_service_permission_HASH)
+          {
+            return ResourceType::vpc_endpoint_service_permission;
           }
           else if (hashCode == vpc_peering_connection_HASH)
           {
@@ -546,8 +556,12 @@ namespace Aws
             return "vpc";
           case ResourceType::vpc_endpoint:
             return "vpc-endpoint";
+          case ResourceType::vpc_endpoint_connection:
+            return "vpc-endpoint-connection";
           case ResourceType::vpc_endpoint_service:
             return "vpc-endpoint-service";
+          case ResourceType::vpc_endpoint_service_permission:
+            return "vpc-endpoint-service-permission";
           case ResourceType::vpc_peering_connection:
             return "vpc-peering-connection";
           case ResourceType::vpn_connection:

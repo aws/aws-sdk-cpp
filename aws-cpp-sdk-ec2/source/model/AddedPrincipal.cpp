@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/AllowedPrincipal.h>
+#include <aws/ec2/model/AddedPrincipal.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -20,28 +20,26 @@ namespace EC2
 namespace Model
 {
 
-AllowedPrincipal::AllowedPrincipal() : 
+AddedPrincipal::AddedPrincipal() : 
     m_principalType(PrincipalType::NOT_SET),
     m_principalTypeHasBeenSet(false),
     m_principalHasBeenSet(false),
     m_servicePermissionIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
     m_serviceIdHasBeenSet(false)
 {
 }
 
-AllowedPrincipal::AllowedPrincipal(const XmlNode& xmlNode) : 
+AddedPrincipal::AddedPrincipal(const XmlNode& xmlNode) : 
     m_principalType(PrincipalType::NOT_SET),
     m_principalTypeHasBeenSet(false),
     m_principalHasBeenSet(false),
     m_servicePermissionIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
     m_serviceIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
 
-AllowedPrincipal& AllowedPrincipal::operator =(const XmlNode& xmlNode)
+AddedPrincipal& AddedPrincipal::operator =(const XmlNode& xmlNode)
 {
   XmlNode resultNode = xmlNode;
 
@@ -65,18 +63,6 @@ AllowedPrincipal& AllowedPrincipal::operator =(const XmlNode& xmlNode)
       m_servicePermissionId = Aws::Utils::Xml::DecodeEscapedXmlText(servicePermissionIdNode.GetText());
       m_servicePermissionIdHasBeenSet = true;
     }
-    XmlNode tagsNode = resultNode.FirstChild("tagSet");
-    if(!tagsNode.IsNull())
-    {
-      XmlNode tagsMember = tagsNode.FirstChild("item");
-      while(!tagsMember.IsNull())
-      {
-        m_tags.push_back(tagsMember);
-        tagsMember = tagsMember.NextNode("item");
-      }
-
-      m_tagsHasBeenSet = true;
-    }
     XmlNode serviceIdNode = resultNode.FirstChild("serviceId");
     if(!serviceIdNode.IsNull())
     {
@@ -88,7 +74,7 @@ AllowedPrincipal& AllowedPrincipal::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void AllowedPrincipal::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
+void AddedPrincipal::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
   if(m_principalTypeHasBeenSet)
   {
@@ -105,17 +91,6 @@ void AllowedPrincipal::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".ServicePermissionId=" << StringUtils::URLEncode(m_servicePermissionId.c_str()) << "&";
   }
 
-  if(m_tagsHasBeenSet)
-  {
-      unsigned tagsIdx = 1;
-      for(auto& item : m_tags)
-      {
-        Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
-        item.OutputToStream(oStream, tagsSs.str().c_str());
-      }
-  }
-
   if(m_serviceIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".ServiceId=" << StringUtils::URLEncode(m_serviceId.c_str()) << "&";
@@ -123,7 +98,7 @@ void AllowedPrincipal::OutputToStream(Aws::OStream& oStream, const char* locatio
 
 }
 
-void AllowedPrincipal::OutputToStream(Aws::OStream& oStream, const char* location) const
+void AddedPrincipal::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
   if(m_principalTypeHasBeenSet)
   {
@@ -136,16 +111,6 @@ void AllowedPrincipal::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_servicePermissionIdHasBeenSet)
   {
       oStream << location << ".ServicePermissionId=" << StringUtils::URLEncode(m_servicePermissionId.c_str()) << "&";
-  }
-  if(m_tagsHasBeenSet)
-  {
-      unsigned tagsIdx = 1;
-      for(auto& item : m_tags)
-      {
-        Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
-        item.OutputToStream(oStream, tagsSs.str().c_str());
-      }
   }
   if(m_serviceIdHasBeenSet)
   {

@@ -40,6 +40,17 @@ ModifyVpcEndpointServicePermissionsResponse& ModifyVpcEndpointServicePermissions
 
   if(!resultNode.IsNull())
   {
+    XmlNode addedPrincipalsNode = resultNode.FirstChild("addedPrincipalSet");
+    if(!addedPrincipalsNode.IsNull())
+    {
+      XmlNode addedPrincipalsMember = addedPrincipalsNode.FirstChild("item");
+      while(!addedPrincipalsMember.IsNull())
+      {
+        m_addedPrincipals.push_back(addedPrincipalsMember);
+        addedPrincipalsMember = addedPrincipalsMember.NextNode("item");
+      }
+
+    }
     XmlNode returnValueNode = resultNode.FirstChild("return");
     if(!returnValueNode.IsNull())
     {

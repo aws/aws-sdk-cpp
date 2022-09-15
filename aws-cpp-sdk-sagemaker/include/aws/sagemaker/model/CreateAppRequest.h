@@ -121,38 +121,32 @@ namespace Model
 
 
     /**
-     * <p>The type of app. Supported apps are <code>JupyterServer</code> and
-     * <code>KernelGateway</code>. <code>TensorBoard</code> is not supported.</p>
+     * <p>The type of app.</p>
      */
     inline const AppType& GetAppType() const{ return m_appType; }
 
     /**
-     * <p>The type of app. Supported apps are <code>JupyterServer</code> and
-     * <code>KernelGateway</code>. <code>TensorBoard</code> is not supported.</p>
+     * <p>The type of app.</p>
      */
     inline bool AppTypeHasBeenSet() const { return m_appTypeHasBeenSet; }
 
     /**
-     * <p>The type of app. Supported apps are <code>JupyterServer</code> and
-     * <code>KernelGateway</code>. <code>TensorBoard</code> is not supported.</p>
+     * <p>The type of app.</p>
      */
     inline void SetAppType(const AppType& value) { m_appTypeHasBeenSet = true; m_appType = value; }
 
     /**
-     * <p>The type of app. Supported apps are <code>JupyterServer</code> and
-     * <code>KernelGateway</code>. <code>TensorBoard</code> is not supported.</p>
+     * <p>The type of app.</p>
      */
     inline void SetAppType(AppType&& value) { m_appTypeHasBeenSet = true; m_appType = std::move(value); }
 
     /**
-     * <p>The type of app. Supported apps are <code>JupyterServer</code> and
-     * <code>KernelGateway</code>. <code>TensorBoard</code> is not supported.</p>
+     * <p>The type of app.</p>
      */
     inline CreateAppRequest& WithAppType(const AppType& value) { SetAppType(value); return *this;}
 
     /**
-     * <p>The type of app. Supported apps are <code>JupyterServer</code> and
-     * <code>KernelGateway</code>. <code>TensorBoard</code> is not supported.</p>
+     * <p>The type of app.</p>
      */
     inline CreateAppRequest& WithAppType(AppType&& value) { SetAppType(std::move(value)); return *this;}
 
