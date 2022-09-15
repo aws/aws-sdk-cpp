@@ -190,8 +190,7 @@ namespace SageMaker
         virtual void CreateAlgorithmAsync(const Model::CreateAlgorithmRequest& request, const CreateAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a running app for the specified UserProfile. Supported apps are
-         * <code>JupyterServer</code> and <code>KernelGateway</code>. This operation is
+         * <p>Creates a running app for the specified UserProfile. This operation is
          * automatically invoked by Amazon SageMaker Studio upon access to the associated
          * Domain, and when new kernel configurations are selected by the user. A user may
          * have multiple Apps active simultaneously.</p><p><h3>See Also:</h3>   <a

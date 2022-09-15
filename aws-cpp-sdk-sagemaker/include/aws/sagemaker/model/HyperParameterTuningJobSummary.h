@@ -159,43 +159,37 @@ namespace Model
 
     /**
      * <p>Specifies the search strategy hyperparameter tuning uses to choose which
-     * hyperparameters to use for each iteration. Currently, the only valid value is
-     * Bayesian.</p>
+     * hyperparameters to evaluate at each iteration.</p>
      */
     inline const HyperParameterTuningJobStrategyType& GetStrategy() const{ return m_strategy; }
 
     /**
      * <p>Specifies the search strategy hyperparameter tuning uses to choose which
-     * hyperparameters to use for each iteration. Currently, the only valid value is
-     * Bayesian.</p>
+     * hyperparameters to evaluate at each iteration.</p>
      */
     inline bool StrategyHasBeenSet() const { return m_strategyHasBeenSet; }
 
     /**
      * <p>Specifies the search strategy hyperparameter tuning uses to choose which
-     * hyperparameters to use for each iteration. Currently, the only valid value is
-     * Bayesian.</p>
+     * hyperparameters to evaluate at each iteration.</p>
      */
     inline void SetStrategy(const HyperParameterTuningJobStrategyType& value) { m_strategyHasBeenSet = true; m_strategy = value; }
 
     /**
      * <p>Specifies the search strategy hyperparameter tuning uses to choose which
-     * hyperparameters to use for each iteration. Currently, the only valid value is
-     * Bayesian.</p>
+     * hyperparameters to evaluate at each iteration.</p>
      */
     inline void SetStrategy(HyperParameterTuningJobStrategyType&& value) { m_strategyHasBeenSet = true; m_strategy = std::move(value); }
 
     /**
      * <p>Specifies the search strategy hyperparameter tuning uses to choose which
-     * hyperparameters to use for each iteration. Currently, the only valid value is
-     * Bayesian.</p>
+     * hyperparameters to evaluate at each iteration.</p>
      */
     inline HyperParameterTuningJobSummary& WithStrategy(const HyperParameterTuningJobStrategyType& value) { SetStrategy(value); return *this;}
 
     /**
      * <p>Specifies the search strategy hyperparameter tuning uses to choose which
-     * hyperparameters to use for each iteration. Currently, the only valid value is
-     * Bayesian.</p>
+     * hyperparameters to evaluate at each iteration.</p>
      */
     inline HyperParameterTuningJobSummary& WithStrategy(HyperParameterTuningJobStrategyType&& value) { SetStrategy(std::move(value)); return *this;}
 

@@ -146,48 +146,48 @@ namespace Model
     /**
      * <p>The configuration for attaching a SageMaker user profile name to the
      * execution role as a <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">
-     * <code>sts:SourceIdentity</code> key</a>.</p>
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity
+     * key</a>.</p>
      */
     inline const ExecutionRoleIdentityConfig& GetExecutionRoleIdentityConfig() const{ return m_executionRoleIdentityConfig; }
 
     /**
      * <p>The configuration for attaching a SageMaker user profile name to the
      * execution role as a <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">
-     * <code>sts:SourceIdentity</code> key</a>.</p>
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity
+     * key</a>.</p>
      */
     inline bool ExecutionRoleIdentityConfigHasBeenSet() const { return m_executionRoleIdentityConfigHasBeenSet; }
 
     /**
      * <p>The configuration for attaching a SageMaker user profile name to the
      * execution role as a <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">
-     * <code>sts:SourceIdentity</code> key</a>.</p>
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity
+     * key</a>.</p>
      */
     inline void SetExecutionRoleIdentityConfig(const ExecutionRoleIdentityConfig& value) { m_executionRoleIdentityConfigHasBeenSet = true; m_executionRoleIdentityConfig = value; }
 
     /**
      * <p>The configuration for attaching a SageMaker user profile name to the
      * execution role as a <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">
-     * <code>sts:SourceIdentity</code> key</a>.</p>
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity
+     * key</a>.</p>
      */
     inline void SetExecutionRoleIdentityConfig(ExecutionRoleIdentityConfig&& value) { m_executionRoleIdentityConfigHasBeenSet = true; m_executionRoleIdentityConfig = std::move(value); }
 
     /**
      * <p>The configuration for attaching a SageMaker user profile name to the
      * execution role as a <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">
-     * <code>sts:SourceIdentity</code> key</a>.</p>
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity
+     * key</a>.</p>
      */
     inline DomainSettings& WithExecutionRoleIdentityConfig(const ExecutionRoleIdentityConfig& value) { SetExecutionRoleIdentityConfig(value); return *this;}
 
     /**
      * <p>The configuration for attaching a SageMaker user profile name to the
      * execution role as a <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">
-     * <code>sts:SourceIdentity</code> key</a>.</p>
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity
+     * key</a>.</p>
      */
     inline DomainSettings& WithExecutionRoleIdentityConfig(ExecutionRoleIdentityConfig&& value) { SetExecutionRoleIdentityConfig(std::move(value)); return *this;}
 
