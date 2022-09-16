@@ -74,42 +74,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the SNS topic to unsubscribe from the notification rule.</p>
+     * <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
      */
     inline const Aws::String& GetTargetAddress() const{ return m_targetAddress; }
 
     /**
-     * <p>The ARN of the SNS topic to unsubscribe from the notification rule.</p>
+     * <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
      */
     inline bool TargetAddressHasBeenSet() const { return m_targetAddressHasBeenSet; }
 
     /**
-     * <p>The ARN of the SNS topic to unsubscribe from the notification rule.</p>
+     * <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
      */
     inline void SetTargetAddress(const Aws::String& value) { m_targetAddressHasBeenSet = true; m_targetAddress = value; }
 
     /**
-     * <p>The ARN of the SNS topic to unsubscribe from the notification rule.</p>
+     * <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
      */
     inline void SetTargetAddress(Aws::String&& value) { m_targetAddressHasBeenSet = true; m_targetAddress = std::move(value); }
 
     /**
-     * <p>The ARN of the SNS topic to unsubscribe from the notification rule.</p>
+     * <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
      */
     inline void SetTargetAddress(const char* value) { m_targetAddressHasBeenSet = true; m_targetAddress.assign(value); }
 
     /**
-     * <p>The ARN of the SNS topic to unsubscribe from the notification rule.</p>
+     * <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
      */
     inline UnsubscribeRequest& WithTargetAddress(const Aws::String& value) { SetTargetAddress(value); return *this;}
 
     /**
-     * <p>The ARN of the SNS topic to unsubscribe from the notification rule.</p>
+     * <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
      */
     inline UnsubscribeRequest& WithTargetAddress(Aws::String&& value) { SetTargetAddress(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the SNS topic to unsubscribe from the notification rule.</p>
+     * <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
      */
     inline UnsubscribeRequest& WithTargetAddress(const char* value) { SetTargetAddress(value); return *this;}
 
