@@ -156,47 +156,74 @@ namespace Model
 
 
     /**
-     * <p>A list of event types associated with this notification rule.</p>
+     * <p>A list of event types associated with this notification rule. For a complete
+     * list of event types and IDs, see <a
+     * href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification
+     * concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEventTypeIds() const{ return m_eventTypeIds; }
 
     /**
-     * <p>A list of event types associated with this notification rule.</p>
+     * <p>A list of event types associated with this notification rule. For a complete
+     * list of event types and IDs, see <a
+     * href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification
+     * concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
      */
     inline bool EventTypeIdsHasBeenSet() const { return m_eventTypeIdsHasBeenSet; }
 
     /**
-     * <p>A list of event types associated with this notification rule.</p>
+     * <p>A list of event types associated with this notification rule. For a complete
+     * list of event types and IDs, see <a
+     * href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification
+     * concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
      */
     inline void SetEventTypeIds(const Aws::Vector<Aws::String>& value) { m_eventTypeIdsHasBeenSet = true; m_eventTypeIds = value; }
 
     /**
-     * <p>A list of event types associated with this notification rule.</p>
+     * <p>A list of event types associated with this notification rule. For a complete
+     * list of event types and IDs, see <a
+     * href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification
+     * concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
      */
     inline void SetEventTypeIds(Aws::Vector<Aws::String>&& value) { m_eventTypeIdsHasBeenSet = true; m_eventTypeIds = std::move(value); }
 
     /**
-     * <p>A list of event types associated with this notification rule.</p>
+     * <p>A list of event types associated with this notification rule. For a complete
+     * list of event types and IDs, see <a
+     * href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification
+     * concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
      */
     inline UpdateNotificationRuleRequest& WithEventTypeIds(const Aws::Vector<Aws::String>& value) { SetEventTypeIds(value); return *this;}
 
     /**
-     * <p>A list of event types associated with this notification rule.</p>
+     * <p>A list of event types associated with this notification rule. For a complete
+     * list of event types and IDs, see <a
+     * href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification
+     * concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
      */
     inline UpdateNotificationRuleRequest& WithEventTypeIds(Aws::Vector<Aws::String>&& value) { SetEventTypeIds(std::move(value)); return *this;}
 
     /**
-     * <p>A list of event types associated with this notification rule.</p>
+     * <p>A list of event types associated with this notification rule. For a complete
+     * list of event types and IDs, see <a
+     * href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification
+     * concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
      */
     inline UpdateNotificationRuleRequest& AddEventTypeIds(const Aws::String& value) { m_eventTypeIdsHasBeenSet = true; m_eventTypeIds.push_back(value); return *this; }
 
     /**
-     * <p>A list of event types associated with this notification rule.</p>
+     * <p>A list of event types associated with this notification rule. For a complete
+     * list of event types and IDs, see <a
+     * href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification
+     * concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
      */
     inline UpdateNotificationRuleRequest& AddEventTypeIds(Aws::String&& value) { m_eventTypeIdsHasBeenSet = true; m_eventTypeIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of event types associated with this notification rule.</p>
+     * <p>A list of event types associated with this notification rule. For a complete
+     * list of event types and IDs, see <a
+     * href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification
+     * concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
      */
     inline UpdateNotificationRuleRequest& AddEventTypeIds(const char* value) { m_eventTypeIdsHasBeenSet = true; m_eventTypeIds.push_back(value); return *this; }
 
@@ -252,7 +279,7 @@ namespace Model
 
     /**
      * <p>The level of detail to include in the notifications for this resource. BASIC
-     * will include only the contents of the event as it would appear in AWS
+     * will include only the contents of the event as it would appear in Amazon
      * CloudWatch. FULL will include any supplemental information provided by AWS
      * CodeStar Notifications and/or the service for the resource for which the
      * notification is created.</p>
@@ -261,7 +288,7 @@ namespace Model
 
     /**
      * <p>The level of detail to include in the notifications for this resource. BASIC
-     * will include only the contents of the event as it would appear in AWS
+     * will include only the contents of the event as it would appear in Amazon
      * CloudWatch. FULL will include any supplemental information provided by AWS
      * CodeStar Notifications and/or the service for the resource for which the
      * notification is created.</p>
@@ -270,7 +297,7 @@ namespace Model
 
     /**
      * <p>The level of detail to include in the notifications for this resource. BASIC
-     * will include only the contents of the event as it would appear in AWS
+     * will include only the contents of the event as it would appear in Amazon
      * CloudWatch. FULL will include any supplemental information provided by AWS
      * CodeStar Notifications and/or the service for the resource for which the
      * notification is created.</p>
@@ -279,7 +306,7 @@ namespace Model
 
     /**
      * <p>The level of detail to include in the notifications for this resource. BASIC
-     * will include only the contents of the event as it would appear in AWS
+     * will include only the contents of the event as it would appear in Amazon
      * CloudWatch. FULL will include any supplemental information provided by AWS
      * CodeStar Notifications and/or the service for the resource for which the
      * notification is created.</p>
@@ -288,7 +315,7 @@ namespace Model
 
     /**
      * <p>The level of detail to include in the notifications for this resource. BASIC
-     * will include only the contents of the event as it would appear in AWS
+     * will include only the contents of the event as it would appear in Amazon
      * CloudWatch. FULL will include any supplemental information provided by AWS
      * CodeStar Notifications and/or the service for the resource for which the
      * notification is created.</p>
@@ -297,7 +324,7 @@ namespace Model
 
     /**
      * <p>The level of detail to include in the notifications for this resource. BASIC
-     * will include only the contents of the event as it would appear in AWS
+     * will include only the contents of the event as it would appear in Amazon
      * CloudWatch. FULL will include any supplemental information provided by AWS
      * CodeStar Notifications and/or the service for the resource for which the
      * notification is created.</p>

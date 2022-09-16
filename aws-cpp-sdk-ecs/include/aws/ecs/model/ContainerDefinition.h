@@ -777,8 +777,10 @@ namespace Model
      * of 300 MiB. This configuration would allow the container to only reserve 128 MiB
      * of memory from the remaining resources on the container instance, but also allow
      * the container to consume more memory resources when needed.</p> <p>The Docker
-     * daemon reserves a minimum of 4 MiB of memory for a container. Therefore, we
-     * recommend that you specify fewer than 4 MiB of memory for your containers. </p>
+     * 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container.
+     * So, don't specify less than 6 MiB of memory for your containers. </p> <p>The
+     * Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a
+     * container. So, don't specify less than 4 MiB of memory for your containers.</p>
      */
     inline int GetMemoryReservation() const{ return m_memoryReservation; }
 
@@ -808,8 +810,10 @@ namespace Model
      * of 300 MiB. This configuration would allow the container to only reserve 128 MiB
      * of memory from the remaining resources on the container instance, but also allow
      * the container to consume more memory resources when needed.</p> <p>The Docker
-     * daemon reserves a minimum of 4 MiB of memory for a container. Therefore, we
-     * recommend that you specify fewer than 4 MiB of memory for your containers. </p>
+     * 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container.
+     * So, don't specify less than 6 MiB of memory for your containers. </p> <p>The
+     * Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a
+     * container. So, don't specify less than 4 MiB of memory for your containers.</p>
      */
     inline bool MemoryReservationHasBeenSet() const { return m_memoryReservationHasBeenSet; }
 
@@ -839,8 +843,10 @@ namespace Model
      * of 300 MiB. This configuration would allow the container to only reserve 128 MiB
      * of memory from the remaining resources on the container instance, but also allow
      * the container to consume more memory resources when needed.</p> <p>The Docker
-     * daemon reserves a minimum of 4 MiB of memory for a container. Therefore, we
-     * recommend that you specify fewer than 4 MiB of memory for your containers. </p>
+     * 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container.
+     * So, don't specify less than 6 MiB of memory for your containers. </p> <p>The
+     * Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a
+     * container. So, don't specify less than 4 MiB of memory for your containers.</p>
      */
     inline void SetMemoryReservation(int value) { m_memoryReservationHasBeenSet = true; m_memoryReservation = value; }
 
@@ -870,8 +876,10 @@ namespace Model
      * of 300 MiB. This configuration would allow the container to only reserve 128 MiB
      * of memory from the remaining resources on the container instance, but also allow
      * the container to consume more memory resources when needed.</p> <p>The Docker
-     * daemon reserves a minimum of 4 MiB of memory for a container. Therefore, we
-     * recommend that you specify fewer than 4 MiB of memory for your containers. </p>
+     * 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container.
+     * So, don't specify less than 6 MiB of memory for your containers. </p> <p>The
+     * Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a
+     * container. So, don't specify less than 4 MiB of memory for your containers.</p>
      */
     inline ContainerDefinition& WithMemoryReservation(int value) { SetMemoryReservation(value); return *this;}
 
@@ -2270,12 +2278,13 @@ namespace Model
 
     /**
      * <p>The dependencies defined for container startup and shutdown. A container can
-     * contain multiple dependencies. When a dependency is defined for container
-     * startup, for container shutdown it is reversed.</p> <p>For tasks using the EC2
-     * launch type, the container instances require at least version 1.26.0 of the
-     * container agent to turn on container dependencies. However, we recommend using
-     * the latest container agent version. For information about checking your agent
-     * version and updating to the latest version, see <a
+     * contain multiple dependencies on other containers in a task definition. When a
+     * dependency is defined for container startup, for container shutdown it is
+     * reversed.</p> <p>For tasks using the EC2 launch type, the container instances
+     * require at least version 1.26.0 of the container agent to turn on container
+     * dependencies. However, we recommend using the latest container agent version.
+     * For information about checking your agent version and updating to the latest
+     * version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your
@@ -2294,12 +2303,13 @@ namespace Model
 
     /**
      * <p>The dependencies defined for container startup and shutdown. A container can
-     * contain multiple dependencies. When a dependency is defined for container
-     * startup, for container shutdown it is reversed.</p> <p>For tasks using the EC2
-     * launch type, the container instances require at least version 1.26.0 of the
-     * container agent to turn on container dependencies. However, we recommend using
-     * the latest container agent version. For information about checking your agent
-     * version and updating to the latest version, see <a
+     * contain multiple dependencies on other containers in a task definition. When a
+     * dependency is defined for container startup, for container shutdown it is
+     * reversed.</p> <p>For tasks using the EC2 launch type, the container instances
+     * require at least version 1.26.0 of the container agent to turn on container
+     * dependencies. However, we recommend using the latest container agent version.
+     * For information about checking your agent version and updating to the latest
+     * version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your
@@ -2318,12 +2328,13 @@ namespace Model
 
     /**
      * <p>The dependencies defined for container startup and shutdown. A container can
-     * contain multiple dependencies. When a dependency is defined for container
-     * startup, for container shutdown it is reversed.</p> <p>For tasks using the EC2
-     * launch type, the container instances require at least version 1.26.0 of the
-     * container agent to turn on container dependencies. However, we recommend using
-     * the latest container agent version. For information about checking your agent
-     * version and updating to the latest version, see <a
+     * contain multiple dependencies on other containers in a task definition. When a
+     * dependency is defined for container startup, for container shutdown it is
+     * reversed.</p> <p>For tasks using the EC2 launch type, the container instances
+     * require at least version 1.26.0 of the container agent to turn on container
+     * dependencies. However, we recommend using the latest container agent version.
+     * For information about checking your agent version and updating to the latest
+     * version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your
@@ -2342,12 +2353,13 @@ namespace Model
 
     /**
      * <p>The dependencies defined for container startup and shutdown. A container can
-     * contain multiple dependencies. When a dependency is defined for container
-     * startup, for container shutdown it is reversed.</p> <p>For tasks using the EC2
-     * launch type, the container instances require at least version 1.26.0 of the
-     * container agent to turn on container dependencies. However, we recommend using
-     * the latest container agent version. For information about checking your agent
-     * version and updating to the latest version, see <a
+     * contain multiple dependencies on other containers in a task definition. When a
+     * dependency is defined for container startup, for container shutdown it is
+     * reversed.</p> <p>For tasks using the EC2 launch type, the container instances
+     * require at least version 1.26.0 of the container agent to turn on container
+     * dependencies. However, we recommend using the latest container agent version.
+     * For information about checking your agent version and updating to the latest
+     * version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your
@@ -2366,12 +2378,13 @@ namespace Model
 
     /**
      * <p>The dependencies defined for container startup and shutdown. A container can
-     * contain multiple dependencies. When a dependency is defined for container
-     * startup, for container shutdown it is reversed.</p> <p>For tasks using the EC2
-     * launch type, the container instances require at least version 1.26.0 of the
-     * container agent to turn on container dependencies. However, we recommend using
-     * the latest container agent version. For information about checking your agent
-     * version and updating to the latest version, see <a
+     * contain multiple dependencies on other containers in a task definition. When a
+     * dependency is defined for container startup, for container shutdown it is
+     * reversed.</p> <p>For tasks using the EC2 launch type, the container instances
+     * require at least version 1.26.0 of the container agent to turn on container
+     * dependencies. However, we recommend using the latest container agent version.
+     * For information about checking your agent version and updating to the latest
+     * version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your
@@ -2390,12 +2403,13 @@ namespace Model
 
     /**
      * <p>The dependencies defined for container startup and shutdown. A container can
-     * contain multiple dependencies. When a dependency is defined for container
-     * startup, for container shutdown it is reversed.</p> <p>For tasks using the EC2
-     * launch type, the container instances require at least version 1.26.0 of the
-     * container agent to turn on container dependencies. However, we recommend using
-     * the latest container agent version. For information about checking your agent
-     * version and updating to the latest version, see <a
+     * contain multiple dependencies on other containers in a task definition. When a
+     * dependency is defined for container startup, for container shutdown it is
+     * reversed.</p> <p>For tasks using the EC2 launch type, the container instances
+     * require at least version 1.26.0 of the container agent to turn on container
+     * dependencies. However, we recommend using the latest container agent version.
+     * For information about checking your agent version and updating to the latest
+     * version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your
@@ -2414,12 +2428,13 @@ namespace Model
 
     /**
      * <p>The dependencies defined for container startup and shutdown. A container can
-     * contain multiple dependencies. When a dependency is defined for container
-     * startup, for container shutdown it is reversed.</p> <p>For tasks using the EC2
-     * launch type, the container instances require at least version 1.26.0 of the
-     * container agent to turn on container dependencies. However, we recommend using
-     * the latest container agent version. For information about checking your agent
-     * version and updating to the latest version, see <a
+     * contain multiple dependencies on other containers in a task definition. When a
+     * dependency is defined for container startup, for container shutdown it is
+     * reversed.</p> <p>For tasks using the EC2 launch type, the container instances
+     * require at least version 1.26.0 of the container agent to turn on container
+     * dependencies. However, we recommend using the latest container agent version.
+     * For information about checking your agent version and updating to the latest
+     * version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your
@@ -2438,12 +2453,13 @@ namespace Model
 
     /**
      * <p>The dependencies defined for container startup and shutdown. A container can
-     * contain multiple dependencies. When a dependency is defined for container
-     * startup, for container shutdown it is reversed.</p> <p>For tasks using the EC2
-     * launch type, the container instances require at least version 1.26.0 of the
-     * container agent to turn on container dependencies. However, we recommend using
-     * the latest container agent version. For information about checking your agent
-     * version and updating to the latest version, see <a
+     * contain multiple dependencies on other containers in a task definition. When a
+     * dependency is defined for container startup, for container shutdown it is
+     * reversed.</p> <p>For tasks using the EC2 launch type, the container instances
+     * require at least version 1.26.0 of the container agent to turn on container
+     * dependencies. However, we recommend using the latest container agent version.
+     * For information about checking your agent version and updating to the latest
+     * version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your

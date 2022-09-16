@@ -368,8 +368,19 @@ void CodeStarNotificationsClient::UnsubscribeAsync(const UnsubscribeRequest& req
 
 UntagResourceOutcome CodeStarNotificationsClient::UntagResource(const UntagResourceRequest& request) const
 {
+  if (!request.ArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: Arn, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<CodeStarNotificationsErrors>(CodeStarNotificationsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Arn]", false));
+  }
+  if (!request.TagKeysHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: TagKeys, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<CodeStarNotificationsErrors>(CodeStarNotificationsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/untagResource");
+  uri.AddPathSegments("/untagResource/");
+  uri.AddPathSegment(request.GetArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

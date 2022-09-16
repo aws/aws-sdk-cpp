@@ -192,21 +192,11 @@ namespace ECS
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
          * ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>When the service scheduler launches new tasks, it determines
-         * task placement in your cluster using the following logic:</p> <ul> <li>
-         * <p>Determine which of the container instances in your cluster can support the
-         * task definition of your service. For example, they have the required CPU,
-         * memory, ports, and container instance attributes.</p> </li> <li> <p>By default,
-         * the service scheduler attempts to balance tasks across Availability Zones in
-         * this manner. This is the case even if you can choose a different placement
-         * strategy with the <code>placementStrategy</code> parameter.</p> <ul> <li>
-         * <p>Sort the valid container instances, giving priority to instances that have
-         * the fewest number of running tasks for this service in their respective
-         * Availability Zone. For example, if zone A has one running service task and zones
-         * B and C each have zero, valid container instances in either zone B or C are
-         * considered optimal for placement.</p> </li> <li> <p>Place the new service task
-         * on a valid container instance in an optimal Availability Zone based on the
-         * previous steps, favoring container instances with the fewest number of running
-         * tasks for this service.</p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * task placement. For information about task placement and task placement
+         * strategies, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement.html">Amazon
+         * ECS task placement</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService">AWS
          * API Reference</a></p>
          */
