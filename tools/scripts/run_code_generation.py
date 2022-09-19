@@ -14,6 +14,7 @@ import sys
 import zipfile
 from concurrent.futures import ProcessPoolExecutor, wait, FIRST_COMPLETED, ALL_COMPLETED
 from pathlib import Path
+from typing import Optional
 
 
 # Default configuration variables
@@ -123,7 +124,7 @@ def run_generator_once(service_name: str, run_command: list, output_filename: st
     return output_zip_file
 
 
-def extract_zip(zip_bytes: io.BytesIO, service_name: str, output_dir: str, dir_to_delete: str):
+def extract_zip(zip_bytes: io.BytesIO, service_name: str, output_dir: str, dir_to_delete: Optional[str]):
     """Extract bytes containing zip file to output_dir
 
     :param zip_bytes: raw bytes containing zip (opened file or io.BytesIO)
