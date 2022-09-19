@@ -44,11 +44,11 @@ namespace Model
   /**
    * <p>The attributes for the instance types. When you specify instance attributes,
    * Amazon EC2 will identify instance types with these attributes.</p> <p>When you
-   * specify multiple parameters, you get instance types that satisfy all of the
-   * specified parameters. If you specify multiple values for a parameter, you get
+   * specify multiple attributes, you get instance types that satisfy all of the
+   * specified attributes. If you specify multiple values for an attribute, you get
    * instance types that satisfy any of the specified values.</p>  <p>You must
-   * specify <code>VCpuCount</code> and <code>MemoryMiB</code>. All other parameters
-   * are optional. Any unspecified optional parameter is set to its default.</p>
+   * specify <code>VCpuCount</code> and <code>MemoryMiB</code>. All other attributes
+   * are optional. Any unspecified optional attribute is set to its default.</p>
    *  <p>For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html">Attribute-based
    * instance type selection for EC2 Fleet</a>, <a
@@ -268,9 +268,9 @@ namespace Model
 
 
     /**
-     * <p>The instance types to exclude. You can use strings with one or more wild
-     * cards, represented by an asterisk (<code>*</code>), to exclude an instance type,
-     * size, or generation. The following are examples: <code>m5.8xlarge</code>,
+     * <p>The instance types to exclude.</p> <p>You can use strings with one or more
+     * wild cards, represented by an asterisk (<code>*</code>), to exclude an instance
+     * type, size, or generation. The following are examples: <code>m5.8xlarge</code>,
      * <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.</p>
      * <p>For example, if you specify <code>c5*</code>,Amazon EC2 will exclude the
      * entire C5 instance family, which includes all C5a and C5n instance types. If you
@@ -280,9 +280,9 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetExcludedInstanceTypes() const{ return m_excludedInstanceTypes; }
 
     /**
-     * <p>The instance types to exclude. You can use strings with one or more wild
-     * cards, represented by an asterisk (<code>*</code>), to exclude an instance type,
-     * size, or generation. The following are examples: <code>m5.8xlarge</code>,
+     * <p>The instance types to exclude.</p> <p>You can use strings with one or more
+     * wild cards, represented by an asterisk (<code>*</code>), to exclude an instance
+     * type, size, or generation. The following are examples: <code>m5.8xlarge</code>,
      * <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.</p>
      * <p>For example, if you specify <code>c5*</code>,Amazon EC2 will exclude the
      * entire C5 instance family, which includes all C5a and C5n instance types. If you
@@ -292,9 +292,9 @@ namespace Model
     inline bool ExcludedInstanceTypesHasBeenSet() const { return m_excludedInstanceTypesHasBeenSet; }
 
     /**
-     * <p>The instance types to exclude. You can use strings with one or more wild
-     * cards, represented by an asterisk (<code>*</code>), to exclude an instance type,
-     * size, or generation. The following are examples: <code>m5.8xlarge</code>,
+     * <p>The instance types to exclude.</p> <p>You can use strings with one or more
+     * wild cards, represented by an asterisk (<code>*</code>), to exclude an instance
+     * type, size, or generation. The following are examples: <code>m5.8xlarge</code>,
      * <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.</p>
      * <p>For example, if you specify <code>c5*</code>,Amazon EC2 will exclude the
      * entire C5 instance family, which includes all C5a and C5n instance types. If you
@@ -304,9 +304,9 @@ namespace Model
     inline void SetExcludedInstanceTypes(const Aws::Vector<Aws::String>& value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes = value; }
 
     /**
-     * <p>The instance types to exclude. You can use strings with one or more wild
-     * cards, represented by an asterisk (<code>*</code>), to exclude an instance type,
-     * size, or generation. The following are examples: <code>m5.8xlarge</code>,
+     * <p>The instance types to exclude.</p> <p>You can use strings with one or more
+     * wild cards, represented by an asterisk (<code>*</code>), to exclude an instance
+     * type, size, or generation. The following are examples: <code>m5.8xlarge</code>,
      * <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.</p>
      * <p>For example, if you specify <code>c5*</code>,Amazon EC2 will exclude the
      * entire C5 instance family, which includes all C5a and C5n instance types. If you
@@ -316,9 +316,9 @@ namespace Model
     inline void SetExcludedInstanceTypes(Aws::Vector<Aws::String>&& value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes = std::move(value); }
 
     /**
-     * <p>The instance types to exclude. You can use strings with one or more wild
-     * cards, represented by an asterisk (<code>*</code>), to exclude an instance type,
-     * size, or generation. The following are examples: <code>m5.8xlarge</code>,
+     * <p>The instance types to exclude.</p> <p>You can use strings with one or more
+     * wild cards, represented by an asterisk (<code>*</code>), to exclude an instance
+     * type, size, or generation. The following are examples: <code>m5.8xlarge</code>,
      * <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.</p>
      * <p>For example, if you specify <code>c5*</code>,Amazon EC2 will exclude the
      * entire C5 instance family, which includes all C5a and C5n instance types. If you
@@ -328,9 +328,9 @@ namespace Model
     inline InstanceRequirements& WithExcludedInstanceTypes(const Aws::Vector<Aws::String>& value) { SetExcludedInstanceTypes(value); return *this;}
 
     /**
-     * <p>The instance types to exclude. You can use strings with one or more wild
-     * cards, represented by an asterisk (<code>*</code>), to exclude an instance type,
-     * size, or generation. The following are examples: <code>m5.8xlarge</code>,
+     * <p>The instance types to exclude.</p> <p>You can use strings with one or more
+     * wild cards, represented by an asterisk (<code>*</code>), to exclude an instance
+     * type, size, or generation. The following are examples: <code>m5.8xlarge</code>,
      * <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.</p>
      * <p>For example, if you specify <code>c5*</code>,Amazon EC2 will exclude the
      * entire C5 instance family, which includes all C5a and C5n instance types. If you
@@ -340,9 +340,9 @@ namespace Model
     inline InstanceRequirements& WithExcludedInstanceTypes(Aws::Vector<Aws::String>&& value) { SetExcludedInstanceTypes(std::move(value)); return *this;}
 
     /**
-     * <p>The instance types to exclude. You can use strings with one or more wild
-     * cards, represented by an asterisk (<code>*</code>), to exclude an instance type,
-     * size, or generation. The following are examples: <code>m5.8xlarge</code>,
+     * <p>The instance types to exclude.</p> <p>You can use strings with one or more
+     * wild cards, represented by an asterisk (<code>*</code>), to exclude an instance
+     * type, size, or generation. The following are examples: <code>m5.8xlarge</code>,
      * <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.</p>
      * <p>For example, if you specify <code>c5*</code>,Amazon EC2 will exclude the
      * entire C5 instance family, which includes all C5a and C5n instance types. If you
@@ -352,9 +352,9 @@ namespace Model
     inline InstanceRequirements& AddExcludedInstanceTypes(const Aws::String& value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes.push_back(value); return *this; }
 
     /**
-     * <p>The instance types to exclude. You can use strings with one or more wild
-     * cards, represented by an asterisk (<code>*</code>), to exclude an instance type,
-     * size, or generation. The following are examples: <code>m5.8xlarge</code>,
+     * <p>The instance types to exclude.</p> <p>You can use strings with one or more
+     * wild cards, represented by an asterisk (<code>*</code>), to exclude an instance
+     * type, size, or generation. The following are examples: <code>m5.8xlarge</code>,
      * <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.</p>
      * <p>For example, if you specify <code>c5*</code>,Amazon EC2 will exclude the
      * entire C5 instance family, which includes all C5a and C5n instance types. If you
@@ -364,9 +364,9 @@ namespace Model
     inline InstanceRequirements& AddExcludedInstanceTypes(Aws::String&& value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The instance types to exclude. You can use strings with one or more wild
-     * cards, represented by an asterisk (<code>*</code>), to exclude an instance type,
-     * size, or generation. The following are examples: <code>m5.8xlarge</code>,
+     * <p>The instance types to exclude.</p> <p>You can use strings with one or more
+     * wild cards, represented by an asterisk (<code>*</code>), to exclude an instance
+     * type, size, or generation. The following are examples: <code>m5.8xlarge</code>,
      * <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.</p>
      * <p>For example, if you specify <code>c5*</code>,Amazon EC2 will exclude the
      * entire C5 instance family, which includes all C5a and C5n instance types. If you
@@ -1304,7 +1304,10 @@ namespace Model
      * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
      * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
      * <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p>
-     * </li> </ul> <p>Default: Any accelerator</p>
+     * </li> <li> <p>For instance types with Amazon Web Services Inferentia GPUs,
+     * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
+     * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
+     * Any accelerator</p>
      */
     inline const Aws::Vector<AcceleratorName>& GetAcceleratorNames() const{ return m_acceleratorNames; }
 
@@ -1318,7 +1321,10 @@ namespace Model
      * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
      * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
      * <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p>
-     * </li> </ul> <p>Default: Any accelerator</p>
+     * </li> <li> <p>For instance types with Amazon Web Services Inferentia GPUs,
+     * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
+     * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
+     * Any accelerator</p>
      */
     inline bool AcceleratorNamesHasBeenSet() const { return m_acceleratorNamesHasBeenSet; }
 
@@ -1332,7 +1338,10 @@ namespace Model
      * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
      * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
      * <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p>
-     * </li> </ul> <p>Default: Any accelerator</p>
+     * </li> <li> <p>For instance types with Amazon Web Services Inferentia GPUs,
+     * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
+     * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
+     * Any accelerator</p>
      */
     inline void SetAcceleratorNames(const Aws::Vector<AcceleratorName>& value) { m_acceleratorNamesHasBeenSet = true; m_acceleratorNames = value; }
 
@@ -1346,7 +1355,10 @@ namespace Model
      * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
      * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
      * <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p>
-     * </li> </ul> <p>Default: Any accelerator</p>
+     * </li> <li> <p>For instance types with Amazon Web Services Inferentia GPUs,
+     * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
+     * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
+     * Any accelerator</p>
      */
     inline void SetAcceleratorNames(Aws::Vector<AcceleratorName>&& value) { m_acceleratorNamesHasBeenSet = true; m_acceleratorNames = std::move(value); }
 
@@ -1360,7 +1372,10 @@ namespace Model
      * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
      * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
      * <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p>
-     * </li> </ul> <p>Default: Any accelerator</p>
+     * </li> <li> <p>For instance types with Amazon Web Services Inferentia GPUs,
+     * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
+     * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
+     * Any accelerator</p>
      */
     inline InstanceRequirements& WithAcceleratorNames(const Aws::Vector<AcceleratorName>& value) { SetAcceleratorNames(value); return *this;}
 
@@ -1374,7 +1389,10 @@ namespace Model
      * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
      * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
      * <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p>
-     * </li> </ul> <p>Default: Any accelerator</p>
+     * </li> <li> <p>For instance types with Amazon Web Services Inferentia GPUs,
+     * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
+     * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
+     * Any accelerator</p>
      */
     inline InstanceRequirements& WithAcceleratorNames(Aws::Vector<AcceleratorName>&& value) { SetAcceleratorNames(std::move(value)); return *this;}
 
@@ -1388,7 +1406,10 @@ namespace Model
      * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
      * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
      * <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p>
-     * </li> </ul> <p>Default: Any accelerator</p>
+     * </li> <li> <p>For instance types with Amazon Web Services Inferentia GPUs,
+     * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
+     * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
+     * Any accelerator</p>
      */
     inline InstanceRequirements& AddAcceleratorNames(const AcceleratorName& value) { m_acceleratorNamesHasBeenSet = true; m_acceleratorNames.push_back(value); return *this; }
 
@@ -1402,7 +1423,10 @@ namespace Model
      * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
      * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
      * <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p>
-     * </li> </ul> <p>Default: Any accelerator</p>
+     * </li> <li> <p>For instance types with Amazon Web Services Inferentia GPUs,
+     * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
+     * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
+     * Any accelerator</p>
      */
     inline InstanceRequirements& AddAcceleratorNames(AcceleratorName&& value) { m_acceleratorNamesHasBeenSet = true; m_acceleratorNames.push_back(std::move(value)); return *this; }
 

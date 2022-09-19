@@ -250,37 +250,49 @@ namespace Model
 
     /**
      * <p>A value that indicates whether the DB proxy endpoint can be used for
-     * read/write or read-only operations. The default is <code>READ_WRITE</code>.</p>
+     * read/write or read-only operations. The default is <code>READ_WRITE</code>. The
+     * only role that proxies for RDS for Microsoft SQL Server support is
+     * <code>READ_WRITE</code>.</p>
      */
     inline const DBProxyEndpointTargetRole& GetTargetRole() const{ return m_targetRole; }
 
     /**
      * <p>A value that indicates whether the DB proxy endpoint can be used for
-     * read/write or read-only operations. The default is <code>READ_WRITE</code>.</p>
+     * read/write or read-only operations. The default is <code>READ_WRITE</code>. The
+     * only role that proxies for RDS for Microsoft SQL Server support is
+     * <code>READ_WRITE</code>.</p>
      */
     inline bool TargetRoleHasBeenSet() const { return m_targetRoleHasBeenSet; }
 
     /**
      * <p>A value that indicates whether the DB proxy endpoint can be used for
-     * read/write or read-only operations. The default is <code>READ_WRITE</code>.</p>
+     * read/write or read-only operations. The default is <code>READ_WRITE</code>. The
+     * only role that proxies for RDS for Microsoft SQL Server support is
+     * <code>READ_WRITE</code>.</p>
      */
     inline void SetTargetRole(const DBProxyEndpointTargetRole& value) { m_targetRoleHasBeenSet = true; m_targetRole = value; }
 
     /**
      * <p>A value that indicates whether the DB proxy endpoint can be used for
-     * read/write or read-only operations. The default is <code>READ_WRITE</code>.</p>
+     * read/write or read-only operations. The default is <code>READ_WRITE</code>. The
+     * only role that proxies for RDS for Microsoft SQL Server support is
+     * <code>READ_WRITE</code>.</p>
      */
     inline void SetTargetRole(DBProxyEndpointTargetRole&& value) { m_targetRoleHasBeenSet = true; m_targetRole = std::move(value); }
 
     /**
      * <p>A value that indicates whether the DB proxy endpoint can be used for
-     * read/write or read-only operations. The default is <code>READ_WRITE</code>.</p>
+     * read/write or read-only operations. The default is <code>READ_WRITE</code>. The
+     * only role that proxies for RDS for Microsoft SQL Server support is
+     * <code>READ_WRITE</code>.</p>
      */
     inline CreateDBProxyEndpointRequest& WithTargetRole(const DBProxyEndpointTargetRole& value) { SetTargetRole(value); return *this;}
 
     /**
      * <p>A value that indicates whether the DB proxy endpoint can be used for
-     * read/write or read-only operations. The default is <code>READ_WRITE</code>.</p>
+     * read/write or read-only operations. The default is <code>READ_WRITE</code>. The
+     * only role that proxies for RDS for Microsoft SQL Server support is
+     * <code>READ_WRITE</code>.</p>
      */
     inline CreateDBProxyEndpointRequest& WithTargetRole(DBProxyEndpointTargetRole&& value) { SetTargetRole(std::move(value)); return *this;}
 

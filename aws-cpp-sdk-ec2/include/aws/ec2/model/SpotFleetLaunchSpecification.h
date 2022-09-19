@@ -38,12 +38,8 @@ namespace Model
    * include On-Demand capacity in your fleet request or want to specify an EFA
    * network device, you can't use <code>SpotFleetLaunchSpecification</code>; you
    * must use <a
-   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
-   *  <p>We are retiring EC2-Classic on August 15, 2022. We recommend that you
-   * migrate from EC2-Classic to a VPC. For more information, see <a
-   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-   * from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide for Linux
-   * Instances</i>.</p> <p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SpotFleetLaunchSpecification">AWS
    * API Reference</a></p>
    */
@@ -924,7 +920,7 @@ namespace Model
      * <p>The attributes for the instance types. When you specify instance attributes,
      * Amazon EC2 will identify instance types with those attributes.</p>  <p>If
      * you specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p> 
+     * <code>InstanceType</code>.</p> 
      */
     inline const InstanceRequirements& GetInstanceRequirements() const{ return m_instanceRequirements; }
 
@@ -932,7 +928,7 @@ namespace Model
      * <p>The attributes for the instance types. When you specify instance attributes,
      * Amazon EC2 will identify instance types with those attributes.</p>  <p>If
      * you specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p> 
+     * <code>InstanceType</code>.</p> 
      */
     inline bool InstanceRequirementsHasBeenSet() const { return m_instanceRequirementsHasBeenSet; }
 
@@ -940,7 +936,7 @@ namespace Model
      * <p>The attributes for the instance types. When you specify instance attributes,
      * Amazon EC2 will identify instance types with those attributes.</p>  <p>If
      * you specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p> 
+     * <code>InstanceType</code>.</p> 
      */
     inline void SetInstanceRequirements(const InstanceRequirements& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = value; }
 
@@ -948,7 +944,7 @@ namespace Model
      * <p>The attributes for the instance types. When you specify instance attributes,
      * Amazon EC2 will identify instance types with those attributes.</p>  <p>If
      * you specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p> 
+     * <code>InstanceType</code>.</p> 
      */
     inline void SetInstanceRequirements(InstanceRequirements&& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = std::move(value); }
 
@@ -956,7 +952,7 @@ namespace Model
      * <p>The attributes for the instance types. When you specify instance attributes,
      * Amazon EC2 will identify instance types with those attributes.</p>  <p>If
      * you specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p> 
+     * <code>InstanceType</code>.</p> 
      */
     inline SpotFleetLaunchSpecification& WithInstanceRequirements(const InstanceRequirements& value) { SetInstanceRequirements(value); return *this;}
 
@@ -964,7 +960,7 @@ namespace Model
      * <p>The attributes for the instance types. When you specify instance attributes,
      * Amazon EC2 will identify instance types with those attributes.</p>  <p>If
      * you specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p> 
+     * <code>InstanceType</code>.</p> 
      */
     inline SpotFleetLaunchSpecification& WithInstanceRequirements(InstanceRequirements&& value) { SetInstanceRequirements(std::move(value)); return *this;}
 

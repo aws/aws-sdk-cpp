@@ -1539,7 +1539,7 @@ namespace Model
      * <p>The attributes for the instance types. When you specify instance attributes,
      * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
      * specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p>
+     * <code>InstanceType</code>.</p>
      */
     inline const InstanceRequirementsRequest& GetInstanceRequirements() const{ return m_instanceRequirements; }
 
@@ -1547,7 +1547,7 @@ namespace Model
      * <p>The attributes for the instance types. When you specify instance attributes,
      * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
      * specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p>
+     * <code>InstanceType</code>.</p>
      */
     inline bool InstanceRequirementsHasBeenSet() const { return m_instanceRequirementsHasBeenSet; }
 
@@ -1555,7 +1555,7 @@ namespace Model
      * <p>The attributes for the instance types. When you specify instance attributes,
      * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
      * specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p>
+     * <code>InstanceType</code>.</p>
      */
     inline void SetInstanceRequirements(const InstanceRequirementsRequest& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = value; }
 
@@ -1563,7 +1563,7 @@ namespace Model
      * <p>The attributes for the instance types. When you specify instance attributes,
      * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
      * specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p>
+     * <code>InstanceType</code>.</p>
      */
     inline void SetInstanceRequirements(InstanceRequirementsRequest&& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = std::move(value); }
 
@@ -1571,7 +1571,7 @@ namespace Model
      * <p>The attributes for the instance types. When you specify instance attributes,
      * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
      * specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p>
+     * <code>InstanceType</code>.</p>
      */
     inline RequestLaunchTemplateData& WithInstanceRequirements(const InstanceRequirementsRequest& value) { SetInstanceRequirements(value); return *this;}
 
@@ -1579,7 +1579,7 @@ namespace Model
      * <p>The attributes for the instance types. When you specify instance attributes,
      * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
      * specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p>
+     * <code>InstanceType</code>.</p>
      */
     inline RequestLaunchTemplateData& WithInstanceRequirements(InstanceRequirementsRequest&& value) { SetInstanceRequirements(std::move(value)); return *this;}
 

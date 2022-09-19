@@ -127,49 +127,57 @@ namespace Model
 
 
     /**
-     * <p>The advanced event selectors used to select events for the event data
+     * <p>The advanced event selectors used to select events for the event data store.
+     * You can configure up to five advanced event selectors for each event data
      * store.</p>
      */
     inline const Aws::Vector<AdvancedEventSelector>& GetAdvancedEventSelectors() const{ return m_advancedEventSelectors; }
 
     /**
-     * <p>The advanced event selectors used to select events for the event data
+     * <p>The advanced event selectors used to select events for the event data store.
+     * You can configure up to five advanced event selectors for each event data
      * store.</p>
      */
     inline bool AdvancedEventSelectorsHasBeenSet() const { return m_advancedEventSelectorsHasBeenSet; }
 
     /**
-     * <p>The advanced event selectors used to select events for the event data
+     * <p>The advanced event selectors used to select events for the event data store.
+     * You can configure up to five advanced event selectors for each event data
      * store.</p>
      */
     inline void SetAdvancedEventSelectors(const Aws::Vector<AdvancedEventSelector>& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors = value; }
 
     /**
-     * <p>The advanced event selectors used to select events for the event data
+     * <p>The advanced event selectors used to select events for the event data store.
+     * You can configure up to five advanced event selectors for each event data
      * store.</p>
      */
     inline void SetAdvancedEventSelectors(Aws::Vector<AdvancedEventSelector>&& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors = std::move(value); }
 
     /**
-     * <p>The advanced event selectors used to select events for the event data
+     * <p>The advanced event selectors used to select events for the event data store.
+     * You can configure up to five advanced event selectors for each event data
      * store.</p>
      */
     inline UpdateEventDataStoreRequest& WithAdvancedEventSelectors(const Aws::Vector<AdvancedEventSelector>& value) { SetAdvancedEventSelectors(value); return *this;}
 
     /**
-     * <p>The advanced event selectors used to select events for the event data
+     * <p>The advanced event selectors used to select events for the event data store.
+     * You can configure up to five advanced event selectors for each event data
      * store.</p>
      */
     inline UpdateEventDataStoreRequest& WithAdvancedEventSelectors(Aws::Vector<AdvancedEventSelector>&& value) { SetAdvancedEventSelectors(std::move(value)); return *this;}
 
     /**
-     * <p>The advanced event selectors used to select events for the event data
+     * <p>The advanced event selectors used to select events for the event data store.
+     * You can configure up to five advanced event selectors for each event data
      * store.</p>
      */
     inline UpdateEventDataStoreRequest& AddAdvancedEventSelectors(const AdvancedEventSelector& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors.push_back(value); return *this; }
 
     /**
-     * <p>The advanced event selectors used to select events for the event data
+     * <p>The advanced event selectors used to select events for the event data store.
+     * You can configure up to five advanced event selectors for each event data
      * store.</p>
      */
     inline UpdateEventDataStoreRequest& AddAdvancedEventSelectors(AdvancedEventSelector&& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors.push_back(std::move(value)); return *this; }

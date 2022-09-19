@@ -51,7 +51,8 @@ CapacityReservation::CapacityReservation() :
     m_tagsHasBeenSet(false),
     m_outpostArnHasBeenSet(false),
     m_capacityReservationFleetIdHasBeenSet(false),
-    m_placementGroupArnHasBeenSet(false)
+    m_placementGroupArnHasBeenSet(false),
+    m_capacityAllocationsHasBeenSet(false)
 {
 }
 
@@ -86,7 +87,8 @@ CapacityReservation::CapacityReservation(const XmlNode& xmlNode) :
     m_tagsHasBeenSet(false),
     m_outpostArnHasBeenSet(false),
     m_capacityReservationFleetIdHasBeenSet(false),
-    m_placementGroupArnHasBeenSet(false)
+    m_placementGroupArnHasBeenSet(false),
+    m_capacityAllocationsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -235,6 +237,18 @@ CapacityReservation& CapacityReservation::operator =(const XmlNode& xmlNode)
       m_placementGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(placementGroupArnNode.GetText());
       m_placementGroupArnHasBeenSet = true;
     }
+    XmlNode capacityAllocationsNode = resultNode.FirstChild("capacityAllocationSet");
+    if(!capacityAllocationsNode.IsNull())
+    {
+      XmlNode capacityAllocationsMember = capacityAllocationsNode.FirstChild("item");
+      while(!capacityAllocationsMember.IsNull())
+      {
+        m_capacityAllocations.push_back(capacityAllocationsMember);
+        capacityAllocationsMember = capacityAllocationsMember.NextNode("item");
+      }
+
+      m_capacityAllocationsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -358,6 +372,17 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << index << locationValue << ".PlacementGroupArn=" << StringUtils::URLEncode(m_placementGroupArn.c_str()) << "&";
   }
 
+  if(m_capacityAllocationsHasBeenSet)
+  {
+      unsigned capacityAllocationsIdx = 1;
+      for(auto& item : m_capacityAllocations)
+      {
+        Aws::StringStream capacityAllocationsSs;
+        capacityAllocationsSs << location << index << locationValue << ".CapacityAllocationSet." << capacityAllocationsIdx++;
+        item.OutputToStream(oStream, capacityAllocationsSs.str().c_str());
+      }
+  }
+
 }
 
 void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -455,6 +480,16 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
   if(m_placementGroupArnHasBeenSet)
   {
       oStream << location << ".PlacementGroupArn=" << StringUtils::URLEncode(m_placementGroupArn.c_str()) << "&";
+  }
+  if(m_capacityAllocationsHasBeenSet)
+  {
+      unsigned capacityAllocationsIdx = 1;
+      for(auto& item : m_capacityAllocations)
+      {
+        Aws::StringStream capacityAllocationsSs;
+        capacityAllocationsSs << location <<  ".CapacityAllocationSet." << capacityAllocationsIdx++;
+        item.OutputToStream(oStream, capacityAllocationsSs.str().c_str());
+      }
   }
 }
 

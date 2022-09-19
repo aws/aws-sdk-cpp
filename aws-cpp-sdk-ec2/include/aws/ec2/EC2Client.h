@@ -5759,12 +5759,7 @@ namespace EC2
          * experiencing a service disruption and you specify instance IDs that are in the
          * affected zone, or do not specify any instance IDs at all, the call fails. If you
          * describe instances and specify only instance IDs that are in an unaffected zone,
-         * the call works normally.</p>  <p>We are retiring EC2-Classic on August 15,
-         * 2022. We recommend that you migrate from EC2-Classic to a VPC. For more
-         * information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-         * from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.</p>
-         * <p><h3>See Also:</h3>   <a
+         * the call works normally.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstances">AWS
          * API Reference</a></p>
          */
@@ -6379,12 +6374,7 @@ namespace EC2
          * <p>Describes one or more of the Reserved Instances that you purchased.</p>
          * <p>For more information about Reserved Instances, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
-         * Instances</a> in the <i>Amazon EC2 User Guide</i>.</p>  <p>We are retiring
-         * EC2-Classic on August 15, 2022. We recommend that you migrate from EC2-Classic
-         * to a VPC. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * Instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstances">AWS
          * API Reference</a></p>
          */
@@ -6439,12 +6429,8 @@ namespace EC2
          * requests is returned. If a modification ID is specified, only information about
          * the specific modification is returned.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
-         * Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.</p>  <p>We are
-         * retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
-         * EC2-Classic to a VPC. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesModifications">AWS
          * API Reference</a></p>
          */
@@ -6470,12 +6456,8 @@ namespace EC2
          * results. This is to ensure that you do not purchase your own Reserved
          * Instances.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-         * Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p>  <p>We
-         * are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
-         * EC2-Classic to a VPC. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesOfferings">AWS
          * API Reference</a></p>
          */
@@ -6522,12 +6504,7 @@ namespace EC2
          * daily schedule is 4 hours, the minimum weekly schedule is 24 hours, and the
          * minimum monthly schedule is 100 hours.</p> <p>After you find a schedule that
          * meets your needs, call <a>PurchaseScheduledInstances</a> to purchase Scheduled
-         * Instances with that schedule.</p>  <p>We are retiring EC2-Classic on
-         * August 15, 2022. We recommend that you migrate from EC2-Classic to a VPC. For
-         * more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * Instances with that schedule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeScheduledInstanceAvailability">AWS
          * API Reference</a></p>
          */
@@ -6545,12 +6522,7 @@ namespace EC2
 
         /**
          * <p>Describes the specified Scheduled Instances or all your Scheduled
-         * Instances.</p>  <p>We are retiring EC2-Classic on August 15, 2022. We
-         * recommend that you migrate from EC2-Classic to a VPC. For more information, see
-         * <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * Instances.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeScheduledInstances">AWS
          * API Reference</a></p>
          */
@@ -10201,14 +10173,14 @@ namespace EC2
         virtual void ModifyPrivateDnsNameOptionsAsync(const Model::ModifyPrivateDnsNameOptionsRequest& request, const ModifyPrivateDnsNameOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the Availability Zone, instance count, instance type, or network
-         * platform (EC2-Classic or EC2-VPC) of your Reserved Instances. The Reserved
-         * Instances to be modified must be identical, except for Availability Zone,
-         * network platform, and instance type.</p> <p>For more information, see <a
+         * <p>Modifies the configuration of your Reserved Instances, such as the
+         * Availability Zone, instance count, or instance type. The Reserved Instances to
+         * be modified must be identical, except for Availability Zone, network platform,
+         * and instance type.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
          * Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.</p>  <p>We are
-         * retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
-         * EC2-Classic to a VPC. For more information, see <a
+         * retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
          * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -11021,8 +10993,12 @@ namespace EC2
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
          * Instances</a> and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-         * Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p>  <p>We
+         * are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a
+         * VPC. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseReservedInstancesOffering">AWS
          * API Reference</a></p>
          */
@@ -11039,6 +11015,7 @@ namespace EC2
         virtual void PurchaseReservedInstancesOfferingAsync(const Model::PurchaseReservedInstancesOfferingRequest& request, const PurchaseReservedInstancesOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         *  <p>You can no longer purchase Scheduled Instances.</p> 
          * <p>Purchases the Scheduled Instances with the specified schedule.</p>
          * <p>Scheduled Instances enable you to purchase Amazon EC2 compute capacity by the
          * hour for a one-year term. Before you can purchase a Scheduled Instance, you must
@@ -11605,9 +11582,9 @@ namespace EC2
          * For options for requesting Spot Instances, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html#which-spot-request-method-to-use">Which
          * is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide for
-         * Linux Instances</i>.</p>   <p>We are retiring EC2-Classic on
-         * August 15, 2022. We recommend that you migrate from EC2-Classic to a VPC. For
-         * more information, see <a
+         * Linux Instances</i>.</p>   <p>We are retiring EC2-Classic. We
+         * recommend that you migrate from EC2-Classic to a VPC. For more information, see
+         * <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
          * from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p> <p><h3>See Also:</h3>   <a
@@ -12009,9 +11986,9 @@ namespace EC2
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What
          * to do if an instance immediately terminates</a>, and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
-         * connecting to your instance</a>.</p>  <p>We are retiring EC2-Classic on
-         * August 15, 2022. We recommend that you migrate from EC2-Classic to a VPC. For
-         * more information, see <a
+         * connecting to your instance</a>.</p>  <p>We are retiring EC2-Classic. We
+         * recommend that you migrate from EC2-Classic to a VPC. For more information, see
+         * <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
          * from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.</p>
          * <p><h3>See Also:</h3>   <a

@@ -22,6 +22,7 @@ namespace Aws
 
         static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
         static const int REQUIRED_HASH = HashingUtils::HashString("REQUIRED");
+        static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
 
 
         IAMAuthMode GetIAMAuthModeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == REQUIRED_HASH)
           {
             return IAMAuthMode::REQUIRED;
+          }
+          else if (hashCode == ENABLED_HASH)
+          {
+            return IAMAuthMode::ENABLED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "DISABLED";
           case IAMAuthMode::REQUIRED:
             return "REQUIRED";
+          case IAMAuthMode::ENABLED:
+            return "ENABLED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

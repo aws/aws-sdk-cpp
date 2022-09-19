@@ -1478,8 +1478,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB
-     * cluster, for example db.m6g.xlarge. Not all DB instance classes are available in
-     * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
+     * cluster, for example db.m6gd.xlarge. Not all DB instance classes are available
+     * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
@@ -1489,8 +1489,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB
-     * cluster, for example db.m6g.xlarge. Not all DB instance classes are available in
-     * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
+     * cluster, for example db.m6gd.xlarge. Not all DB instance classes are available
+     * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
@@ -1500,8 +1500,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB
-     * cluster, for example db.m6g.xlarge. Not all DB instance classes are available in
-     * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
+     * cluster, for example db.m6gd.xlarge. Not all DB instance classes are available
+     * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
@@ -1511,8 +1511,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB
-     * cluster, for example db.m6g.xlarge. Not all DB instance classes are available in
-     * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
+     * cluster, for example db.m6gd.xlarge. Not all DB instance classes are available
+     * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
@@ -1522,8 +1522,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB
-     * cluster, for example db.m6g.xlarge. Not all DB instance classes are available in
-     * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
+     * cluster, for example db.m6gd.xlarge. Not all DB instance classes are available
+     * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
@@ -1533,8 +1533,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB
-     * cluster, for example db.m6g.xlarge. Not all DB instance classes are available in
-     * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
+     * cluster, for example db.m6gd.xlarge. Not all DB instance classes are available
+     * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
@@ -1544,8 +1544,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB
-     * cluster, for example db.m6g.xlarge. Not all DB instance classes are available in
-     * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
+     * cluster, for example db.m6gd.xlarge. Not all DB instance classes are available
+     * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
@@ -1555,8 +1555,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB
-     * cluster, for example db.m6g.xlarge. Not all DB instance classes are available in
-     * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
+     * cluster, for example db.m6gd.xlarge. Not all DB instance classes are available
+     * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
