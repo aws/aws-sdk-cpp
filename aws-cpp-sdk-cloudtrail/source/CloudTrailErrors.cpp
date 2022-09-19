@@ -33,9 +33,12 @@ static const int NOT_ORGANIZATION_MASTER_ACCOUNT_HASH = HashingUtils::HashString
 static const int INVALID_TAG_PARAMETER_HASH = HashingUtils::HashString("InvalidTagParameterException");
 static const int INACTIVE_QUERY_HASH = HashingUtils::HashString("InactiveQueryException");
 static const int INSUFFICIENT_ENCRYPTION_POLICY_HASH = HashingUtils::HashString("InsufficientEncryptionPolicyException");
+static const int INVALID_IMPORT_SOURCE_HASH = HashingUtils::HashString("InvalidImportSourceException");
 static const int CLOUD_TRAIL_INVALID_CLIENT_TOKEN_ID_HASH = HashingUtils::HashString("CloudTrailInvalidClientTokenIdException");
 static const int INVALID_INSIGHT_SELECTORS_HASH = HashingUtils::HashString("InvalidInsightSelectorsException");
+static const int ACCOUNT_HAS_ONGOING_IMPORT_HASH = HashingUtils::HashString("AccountHasOngoingImportException");
 static const int INSUFFICIENT_S3_BUCKET_POLICY_HASH = HashingUtils::HashString("InsufficientS3BucketPolicyException");
+static const int EVENT_DATA_STORE_HAS_ONGOING_IMPORT_HASH = HashingUtils::HashString("EventDataStoreHasOngoingImportException");
 static const int EVENT_DATA_STORE_NOT_FOUND_HASH = HashingUtils::HashString("EventDataStoreNotFoundException");
 static const int INVALID_LOOKUP_ATTRIBUTES_HASH = HashingUtils::HashString("InvalidLookupAttributesException");
 static const int INVALID_DATE_RANGE_HASH = HashingUtils::HashString("InvalidDateRangeException");
@@ -70,11 +73,13 @@ static const int TRAIL_NOT_PROVIDED_HASH = HashingUtils::HashString("TrailNotPro
 static const int INVALID_QUERY_STATUS_HASH = HashingUtils::HashString("InvalidQueryStatusException");
 static const int INACTIVE_EVENT_DATA_STORE_HASH = HashingUtils::HashString("InactiveEventDataStoreException");
 static const int ORGANIZATION_NOT_IN_ALL_FEATURES_MODE_HASH = HashingUtils::HashString("OrganizationNotInAllFeaturesModeException");
+static const int INVALID_EVENT_DATA_STORE_CATEGORY_HASH = HashingUtils::HashString("InvalidEventDataStoreCategoryException");
 static const int INVALID_CLOUD_WATCH_LOGS_LOG_GROUP_ARN_HASH = HashingUtils::HashString("InvalidCloudWatchLogsLogGroupArnException");
 static const int S3_BUCKET_DOES_NOT_EXIST_HASH = HashingUtils::HashString("S3BucketDoesNotExistException");
 static const int KMS_HASH = HashingUtils::HashString("KmsException");
 static const int INVALID_EVENT_CATEGORY_HASH = HashingUtils::HashString("InvalidEventCategoryException");
 static const int CLOUD_TRAIL_A_R_N_INVALID_HASH = HashingUtils::HashString("CloudTrailARNInvalidException");
+static const int IMPORT_NOT_FOUND_HASH = HashingUtils::HashString("ImportNotFoundException");
 static const int EVENT_DATA_STORE_ALREADY_EXISTS_HASH = HashingUtils::HashString("EventDataStoreAlreadyExistsException");
 
 
@@ -142,6 +147,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INSUFFICIENT_ENCRYPTION_POLICY), false);
   }
+  else if (hashCode == INVALID_IMPORT_SOURCE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_IMPORT_SOURCE), false);
+  }
   else if (hashCode == CLOUD_TRAIL_INVALID_CLIENT_TOKEN_ID_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CLOUD_TRAIL_INVALID_CLIENT_TOKEN_ID), false);
@@ -150,9 +159,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_INSIGHT_SELECTORS), false);
   }
+  else if (hashCode == ACCOUNT_HAS_ONGOING_IMPORT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::ACCOUNT_HAS_ONGOING_IMPORT), false);
+  }
   else if (hashCode == INSUFFICIENT_S3_BUCKET_POLICY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INSUFFICIENT_S3_BUCKET_POLICY), false);
+  }
+  else if (hashCode == EVENT_DATA_STORE_HAS_ONGOING_IMPORT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::EVENT_DATA_STORE_HAS_ONGOING_IMPORT), false);
   }
   else if (hashCode == EVENT_DATA_STORE_NOT_FOUND_HASH)
   {
@@ -290,6 +307,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::ORGANIZATION_NOT_IN_ALL_FEATURES_MODE), false);
   }
+  else if (hashCode == INVALID_EVENT_DATA_STORE_CATEGORY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_EVENT_DATA_STORE_CATEGORY), false);
+  }
   else if (hashCode == INVALID_CLOUD_WATCH_LOGS_LOG_GROUP_ARN_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_CLOUD_WATCH_LOGS_LOG_GROUP_ARN), false);
@@ -309,6 +330,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == CLOUD_TRAIL_A_R_N_INVALID_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CLOUD_TRAIL_A_R_N_INVALID), false);
+  }
+  else if (hashCode == IMPORT_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::IMPORT_NOT_FOUND), false);
   }
   else if (hashCode == EVENT_DATA_STORE_ALREADY_EXISTS_HASH)
   {

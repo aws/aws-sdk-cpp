@@ -44,54 +44,54 @@ namespace Model
     /**
      * <p>The type of resource. Currently, the only resource type that is supported is
      * <code>instance</code>. To tag the Spot Fleet request on creation, use the
-     * <code>TagSpecifications</code> parameter in <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetRequestConfigData.html">
-     * <code>SpotFleetRequestConfigData</code> </a>.</p>
+     * <code>TagSpecifications</code> parameter in <code> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetRequestConfigData.html">SpotFleetRequestConfigData</a>
+     * </code>.</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
      * <p>The type of resource. Currently, the only resource type that is supported is
      * <code>instance</code>. To tag the Spot Fleet request on creation, use the
-     * <code>TagSpecifications</code> parameter in <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetRequestConfigData.html">
-     * <code>SpotFleetRequestConfigData</code> </a>.</p>
+     * <code>TagSpecifications</code> parameter in <code> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetRequestConfigData.html">SpotFleetRequestConfigData</a>
+     * </code>.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>The type of resource. Currently, the only resource type that is supported is
      * <code>instance</code>. To tag the Spot Fleet request on creation, use the
-     * <code>TagSpecifications</code> parameter in <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetRequestConfigData.html">
-     * <code>SpotFleetRequestConfigData</code> </a>.</p>
+     * <code>TagSpecifications</code> parameter in <code> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetRequestConfigData.html">SpotFleetRequestConfigData</a>
+     * </code>.</p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
      * <p>The type of resource. Currently, the only resource type that is supported is
      * <code>instance</code>. To tag the Spot Fleet request on creation, use the
-     * <code>TagSpecifications</code> parameter in <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetRequestConfigData.html">
-     * <code>SpotFleetRequestConfigData</code> </a>.</p>
+     * <code>TagSpecifications</code> parameter in <code> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetRequestConfigData.html">SpotFleetRequestConfigData</a>
+     * </code>.</p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>The type of resource. Currently, the only resource type that is supported is
      * <code>instance</code>. To tag the Spot Fleet request on creation, use the
-     * <code>TagSpecifications</code> parameter in <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetRequestConfigData.html">
-     * <code>SpotFleetRequestConfigData</code> </a>.</p>
+     * <code>TagSpecifications</code> parameter in <code> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetRequestConfigData.html">SpotFleetRequestConfigData</a>
+     * </code>.</p>
      */
     inline SpotFleetTagSpecification& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
      * <p>The type of resource. Currently, the only resource type that is supported is
      * <code>instance</code>. To tag the Spot Fleet request on creation, use the
-     * <code>TagSpecifications</code> parameter in <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetRequestConfigData.html">
-     * <code>SpotFleetRequestConfigData</code> </a>.</p>
+     * <code>TagSpecifications</code> parameter in <code> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetRequestConfigData.html">SpotFleetRequestConfigData</a>
+     * </code>.</p>
      */
     inline SpotFleetTagSpecification& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 

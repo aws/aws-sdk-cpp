@@ -24,6 +24,7 @@ namespace Model
     st2110_jpegxs,
     cdi,
     srt_listener,
+    srt_caller,
     fujitsu_qos
   };
 

@@ -34,6 +34,9 @@ UpdateFlowSourceRequest::UpdateFlowSourceRequest() :
     m_senderControlPortHasBeenSet(false),
     m_senderIpAddressHasBeenSet(false),
     m_sourceArnHasBeenSet(false),
+    m_sourceListenerAddressHasBeenSet(false),
+    m_sourceListenerPort(0),
+    m_sourceListenerPortHasBeenSet(false),
     m_streamIdHasBeenSet(false),
     m_vpcInterfaceNameHasBeenSet(false),
     m_whitelistCidrHasBeenSet(false)
@@ -117,6 +120,18 @@ Aws::String UpdateFlowSourceRequest::SerializePayload() const
   if(m_senderIpAddressHasBeenSet)
   {
    payload.WithString("senderIpAddress", m_senderIpAddress);
+
+  }
+
+  if(m_sourceListenerAddressHasBeenSet)
+  {
+   payload.WithString("sourceListenerAddress", m_sourceListenerAddress);
+
+  }
+
+  if(m_sourceListenerPortHasBeenSet)
+  {
+   payload.WithInteger("sourceListenerPort", m_sourceListenerPort);
 
   }
 

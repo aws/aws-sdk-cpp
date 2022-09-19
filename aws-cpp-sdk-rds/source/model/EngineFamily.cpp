@@ -22,6 +22,7 @@ namespace Aws
 
         static const int MYSQL_HASH = HashingUtils::HashString("MYSQL");
         static const int POSTGRESQL_HASH = HashingUtils::HashString("POSTGRESQL");
+        static const int SQLSERVER_HASH = HashingUtils::HashString("SQLSERVER");
 
 
         EngineFamily GetEngineFamilyForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == POSTGRESQL_HASH)
           {
             return EngineFamily::POSTGRESQL;
+          }
+          else if (hashCode == SQLSERVER_HASH)
+          {
+            return EngineFamily::SQLSERVER;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "MYSQL";
           case EngineFamily::POSTGRESQL:
             return "POSTGRESQL";
+          case EngineFamily::SQLSERVER:
+            return "SQLSERVER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

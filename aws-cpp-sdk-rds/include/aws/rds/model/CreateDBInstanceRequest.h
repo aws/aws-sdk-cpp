@@ -85,10 +85,9 @@ namespace Model
      * PostgreSQL DB cluster is created. If this parameter isn't specified for an
      * Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created
      * in the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 63
-     * alphanumeric characters.</p> </li> <li> <p>It must begin with a letter or an
-     * underscore. Subsequent characters can be letters, underscores, or digits (0 to
-     * 9).</p> </li> <li> <p>It can't be a word reserved by the database engine.</p>
-     * </li> </ul>
+     * alphanumeric characters.</p> </li> <li> <p>It must begin with a letter.
+     * Subsequent characters can be letters, underscores, or digits (0 to 9).</p> </li>
+     * <li> <p>It can't be a word reserved by the database engine.</p> </li> </ul>
      */
     inline const Aws::String& GetDBName() const{ return m_dBName; }
 
@@ -135,10 +134,9 @@ namespace Model
      * PostgreSQL DB cluster is created. If this parameter isn't specified for an
      * Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created
      * in the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 63
-     * alphanumeric characters.</p> </li> <li> <p>It must begin with a letter or an
-     * underscore. Subsequent characters can be letters, underscores, or digits (0 to
-     * 9).</p> </li> <li> <p>It can't be a word reserved by the database engine.</p>
-     * </li> </ul>
+     * alphanumeric characters.</p> </li> <li> <p>It must begin with a letter.
+     * Subsequent characters can be letters, underscores, or digits (0 to 9).</p> </li>
+     * <li> <p>It can't be a word reserved by the database engine.</p> </li> </ul>
      */
     inline bool DBNameHasBeenSet() const { return m_dBNameHasBeenSet; }
 
@@ -185,10 +183,9 @@ namespace Model
      * PostgreSQL DB cluster is created. If this parameter isn't specified for an
      * Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created
      * in the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 63
-     * alphanumeric characters.</p> </li> <li> <p>It must begin with a letter or an
-     * underscore. Subsequent characters can be letters, underscores, or digits (0 to
-     * 9).</p> </li> <li> <p>It can't be a word reserved by the database engine.</p>
-     * </li> </ul>
+     * alphanumeric characters.</p> </li> <li> <p>It must begin with a letter.
+     * Subsequent characters can be letters, underscores, or digits (0 to 9).</p> </li>
+     * <li> <p>It can't be a word reserved by the database engine.</p> </li> </ul>
      */
     inline void SetDBName(const Aws::String& value) { m_dBNameHasBeenSet = true; m_dBName = value; }
 
@@ -235,10 +232,9 @@ namespace Model
      * PostgreSQL DB cluster is created. If this parameter isn't specified for an
      * Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created
      * in the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 63
-     * alphanumeric characters.</p> </li> <li> <p>It must begin with a letter or an
-     * underscore. Subsequent characters can be letters, underscores, or digits (0 to
-     * 9).</p> </li> <li> <p>It can't be a word reserved by the database engine.</p>
-     * </li> </ul>
+     * alphanumeric characters.</p> </li> <li> <p>It must begin with a letter.
+     * Subsequent characters can be letters, underscores, or digits (0 to 9).</p> </li>
+     * <li> <p>It can't be a word reserved by the database engine.</p> </li> </ul>
      */
     inline void SetDBName(Aws::String&& value) { m_dBNameHasBeenSet = true; m_dBName = std::move(value); }
 
@@ -285,10 +281,9 @@ namespace Model
      * PostgreSQL DB cluster is created. If this parameter isn't specified for an
      * Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created
      * in the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 63
-     * alphanumeric characters.</p> </li> <li> <p>It must begin with a letter or an
-     * underscore. Subsequent characters can be letters, underscores, or digits (0 to
-     * 9).</p> </li> <li> <p>It can't be a word reserved by the database engine.</p>
-     * </li> </ul>
+     * alphanumeric characters.</p> </li> <li> <p>It must begin with a letter.
+     * Subsequent characters can be letters, underscores, or digits (0 to 9).</p> </li>
+     * <li> <p>It can't be a word reserved by the database engine.</p> </li> </ul>
      */
     inline void SetDBName(const char* value) { m_dBNameHasBeenSet = true; m_dBName.assign(value); }
 
@@ -335,10 +330,9 @@ namespace Model
      * PostgreSQL DB cluster is created. If this parameter isn't specified for an
      * Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created
      * in the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 63
-     * alphanumeric characters.</p> </li> <li> <p>It must begin with a letter or an
-     * underscore. Subsequent characters can be letters, underscores, or digits (0 to
-     * 9).</p> </li> <li> <p>It can't be a word reserved by the database engine.</p>
-     * </li> </ul>
+     * alphanumeric characters.</p> </li> <li> <p>It must begin with a letter.
+     * Subsequent characters can be letters, underscores, or digits (0 to 9).</p> </li>
+     * <li> <p>It can't be a word reserved by the database engine.</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithDBName(const Aws::String& value) { SetDBName(value); return *this;}
 
@@ -385,10 +379,9 @@ namespace Model
      * PostgreSQL DB cluster is created. If this parameter isn't specified for an
      * Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created
      * in the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 63
-     * alphanumeric characters.</p> </li> <li> <p>It must begin with a letter or an
-     * underscore. Subsequent characters can be letters, underscores, or digits (0 to
-     * 9).</p> </li> <li> <p>It can't be a word reserved by the database engine.</p>
-     * </li> </ul>
+     * alphanumeric characters.</p> </li> <li> <p>It must begin with a letter.
+     * Subsequent characters can be letters, underscores, or digits (0 to 9).</p> </li>
+     * <li> <p>It can't be a word reserved by the database engine.</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithDBName(Aws::String&& value) { SetDBName(std::move(value)); return *this;}
 
@@ -435,10 +428,9 @@ namespace Model
      * PostgreSQL DB cluster is created. If this parameter isn't specified for an
      * Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created
      * in the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 63
-     * alphanumeric characters.</p> </li> <li> <p>It must begin with a letter or an
-     * underscore. Subsequent characters can be letters, underscores, or digits (0 to
-     * 9).</p> </li> <li> <p>It can't be a word reserved by the database engine.</p>
-     * </li> </ul>
+     * alphanumeric characters.</p> </li> <li> <p>It must begin with a letter.
+     * Subsequent characters can be letters, underscores, or digits (0 to 9).</p> </li>
+     * <li> <p>It can't be a word reserved by the database engine.</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithDBName(const char* value) { SetDBName(value); return *this;}
 
@@ -1590,9 +1582,10 @@ namespace Model
      * <p>The name of the DB parameter group to associate with this DB instance. If you
      * do not specify a value, then the default DB parameter group for the specified DB
      * engine and version is used.</p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
-     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>It must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>The first character must be a letter.</p> </li> <li>
+     * <p>It can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+     * </ul>
      */
     inline const Aws::String& GetDBParameterGroupName() const{ return m_dBParameterGroupName; }
 
@@ -1600,9 +1593,10 @@ namespace Model
      * <p>The name of the DB parameter group to associate with this DB instance. If you
      * do not specify a value, then the default DB parameter group for the specified DB
      * engine and version is used.</p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
-     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>It must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>The first character must be a letter.</p> </li> <li>
+     * <p>It can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+     * </ul>
      */
     inline bool DBParameterGroupNameHasBeenSet() const { return m_dBParameterGroupNameHasBeenSet; }
 
@@ -1610,9 +1604,10 @@ namespace Model
      * <p>The name of the DB parameter group to associate with this DB instance. If you
      * do not specify a value, then the default DB parameter group for the specified DB
      * engine and version is used.</p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
-     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>It must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>The first character must be a letter.</p> </li> <li>
+     * <p>It can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+     * </ul>
      */
     inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
 
@@ -1620,9 +1615,10 @@ namespace Model
      * <p>The name of the DB parameter group to associate with this DB instance. If you
      * do not specify a value, then the default DB parameter group for the specified DB
      * engine and version is used.</p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
-     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>It must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>The first character must be a letter.</p> </li> <li>
+     * <p>It can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+     * </ul>
      */
     inline void SetDBParameterGroupName(Aws::String&& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = std::move(value); }
 
@@ -1630,9 +1626,10 @@ namespace Model
      * <p>The name of the DB parameter group to associate with this DB instance. If you
      * do not specify a value, then the default DB parameter group for the specified DB
      * engine and version is used.</p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
-     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>It must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>The first character must be a letter.</p> </li> <li>
+     * <p>It can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+     * </ul>
      */
     inline void SetDBParameterGroupName(const char* value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName.assign(value); }
 
@@ -1640,9 +1637,10 @@ namespace Model
      * <p>The name of the DB parameter group to associate with this DB instance. If you
      * do not specify a value, then the default DB parameter group for the specified DB
      * engine and version is used.</p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
-     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>It must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>The first character must be a letter.</p> </li> <li>
+     * <p>It can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+     * </ul>
      */
     inline CreateDBInstanceRequest& WithDBParameterGroupName(const Aws::String& value) { SetDBParameterGroupName(value); return *this;}
 
@@ -1650,9 +1648,10 @@ namespace Model
      * <p>The name of the DB parameter group to associate with this DB instance. If you
      * do not specify a value, then the default DB parameter group for the specified DB
      * engine and version is used.</p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
-     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>It must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>The first character must be a letter.</p> </li> <li>
+     * <p>It can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+     * </ul>
      */
     inline CreateDBInstanceRequest& WithDBParameterGroupName(Aws::String&& value) { SetDBParameterGroupName(std::move(value)); return *this;}
 
@@ -1660,9 +1659,10 @@ namespace Model
      * <p>The name of the DB parameter group to associate with this DB instance. If you
      * do not specify a value, then the default DB parameter group for the specified DB
      * engine and version is used.</p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
-     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>It must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>The first character must be a letter.</p> </li> <li>
+     * <p>It can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+     * </ul>
      */
     inline CreateDBInstanceRequest& WithDBParameterGroupName(const char* value) { SetDBParameterGroupName(value); return *this;}
 

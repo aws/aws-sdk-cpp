@@ -239,14 +239,14 @@ namespace Model
      * <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the
      * specified objects.</p> <ul> <li> <p>To log data events for all objects in all S3
      * buckets in your Amazon Web Services account, specify the prefix as
-     * <code>arn:aws:s3:::</code>.</p>  <p>This also enables logging of data
-     * event activity performed by any user or role in your Amazon Web Services
-     * account, even if that activity is performed on a bucket that belongs to another
-     * Amazon Web Services account.</p>  </li> <li> <p>To log data events for
-     * all objects in an S3 bucket, specify the bucket and an empty object prefix such
-     * as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all
-     * objects in this S3 bucket.</p> </li> <li> <p>To log data events for specific
-     * objects, specify the S3 bucket and object prefix such as
+     * <code>arn:aws:s3</code>.</p>  <p>This also enables logging of data event
+     * activity performed by any user or role in your Amazon Web Services account, even
+     * if that activity is performed on a bucket that belongs to another Amazon Web
+     * Services account.</p>  </li> <li> <p>To log data events for all objects
+     * in an S3 bucket, specify the bucket and an empty object prefix such as
+     * <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects
+     * in this S3 bucket.</p> </li> <li> <p>To log data events for specific objects,
+     * specify the S3 bucket and object prefix such as
      * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events
      * for objects in this S3 bucket that match the prefix.</p> </li> <li> <p>To log
      * data events for all Lambda functions in your Amazon Web Services account,
@@ -271,14 +271,14 @@ namespace Model
      * <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the
      * specified objects.</p> <ul> <li> <p>To log data events for all objects in all S3
      * buckets in your Amazon Web Services account, specify the prefix as
-     * <code>arn:aws:s3:::</code>.</p>  <p>This also enables logging of data
-     * event activity performed by any user or role in your Amazon Web Services
-     * account, even if that activity is performed on a bucket that belongs to another
-     * Amazon Web Services account.</p>  </li> <li> <p>To log data events for
-     * all objects in an S3 bucket, specify the bucket and an empty object prefix such
-     * as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all
-     * objects in this S3 bucket.</p> </li> <li> <p>To log data events for specific
-     * objects, specify the S3 bucket and object prefix such as
+     * <code>arn:aws:s3</code>.</p>  <p>This also enables logging of data event
+     * activity performed by any user or role in your Amazon Web Services account, even
+     * if that activity is performed on a bucket that belongs to another Amazon Web
+     * Services account.</p>  </li> <li> <p>To log data events for all objects
+     * in an S3 bucket, specify the bucket and an empty object prefix such as
+     * <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects
+     * in this S3 bucket.</p> </li> <li> <p>To log data events for specific objects,
+     * specify the S3 bucket and object prefix such as
      * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events
      * for objects in this S3 bucket that match the prefix.</p> </li> <li> <p>To log
      * data events for all Lambda functions in your Amazon Web Services account,
@@ -303,14 +303,14 @@ namespace Model
      * <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the
      * specified objects.</p> <ul> <li> <p>To log data events for all objects in all S3
      * buckets in your Amazon Web Services account, specify the prefix as
-     * <code>arn:aws:s3:::</code>.</p>  <p>This also enables logging of data
-     * event activity performed by any user or role in your Amazon Web Services
-     * account, even if that activity is performed on a bucket that belongs to another
-     * Amazon Web Services account.</p>  </li> <li> <p>To log data events for
-     * all objects in an S3 bucket, specify the bucket and an empty object prefix such
-     * as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all
-     * objects in this S3 bucket.</p> </li> <li> <p>To log data events for specific
-     * objects, specify the S3 bucket and object prefix such as
+     * <code>arn:aws:s3</code>.</p>  <p>This also enables logging of data event
+     * activity performed by any user or role in your Amazon Web Services account, even
+     * if that activity is performed on a bucket that belongs to another Amazon Web
+     * Services account.</p>  </li> <li> <p>To log data events for all objects
+     * in an S3 bucket, specify the bucket and an empty object prefix such as
+     * <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects
+     * in this S3 bucket.</p> </li> <li> <p>To log data events for specific objects,
+     * specify the S3 bucket and object prefix such as
      * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events
      * for objects in this S3 bucket that match the prefix.</p> </li> <li> <p>To log
      * data events for all Lambda functions in your Amazon Web Services account,
@@ -335,14 +335,14 @@ namespace Model
      * <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the
      * specified objects.</p> <ul> <li> <p>To log data events for all objects in all S3
      * buckets in your Amazon Web Services account, specify the prefix as
-     * <code>arn:aws:s3:::</code>.</p>  <p>This also enables logging of data
-     * event activity performed by any user or role in your Amazon Web Services
-     * account, even if that activity is performed on a bucket that belongs to another
-     * Amazon Web Services account.</p>  </li> <li> <p>To log data events for
-     * all objects in an S3 bucket, specify the bucket and an empty object prefix such
-     * as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all
-     * objects in this S3 bucket.</p> </li> <li> <p>To log data events for specific
-     * objects, specify the S3 bucket and object prefix such as
+     * <code>arn:aws:s3</code>.</p>  <p>This also enables logging of data event
+     * activity performed by any user or role in your Amazon Web Services account, even
+     * if that activity is performed on a bucket that belongs to another Amazon Web
+     * Services account.</p>  </li> <li> <p>To log data events for all objects
+     * in an S3 bucket, specify the bucket and an empty object prefix such as
+     * <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects
+     * in this S3 bucket.</p> </li> <li> <p>To log data events for specific objects,
+     * specify the S3 bucket and object prefix such as
      * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events
      * for objects in this S3 bucket that match the prefix.</p> </li> <li> <p>To log
      * data events for all Lambda functions in your Amazon Web Services account,
@@ -367,14 +367,14 @@ namespace Model
      * <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the
      * specified objects.</p> <ul> <li> <p>To log data events for all objects in all S3
      * buckets in your Amazon Web Services account, specify the prefix as
-     * <code>arn:aws:s3:::</code>.</p>  <p>This also enables logging of data
-     * event activity performed by any user or role in your Amazon Web Services
-     * account, even if that activity is performed on a bucket that belongs to another
-     * Amazon Web Services account.</p>  </li> <li> <p>To log data events for
-     * all objects in an S3 bucket, specify the bucket and an empty object prefix such
-     * as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all
-     * objects in this S3 bucket.</p> </li> <li> <p>To log data events for specific
-     * objects, specify the S3 bucket and object prefix such as
+     * <code>arn:aws:s3</code>.</p>  <p>This also enables logging of data event
+     * activity performed by any user or role in your Amazon Web Services account, even
+     * if that activity is performed on a bucket that belongs to another Amazon Web
+     * Services account.</p>  </li> <li> <p>To log data events for all objects
+     * in an S3 bucket, specify the bucket and an empty object prefix such as
+     * <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects
+     * in this S3 bucket.</p> </li> <li> <p>To log data events for specific objects,
+     * specify the S3 bucket and object prefix such as
      * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events
      * for objects in this S3 bucket that match the prefix.</p> </li> <li> <p>To log
      * data events for all Lambda functions in your Amazon Web Services account,
@@ -399,14 +399,14 @@ namespace Model
      * <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the
      * specified objects.</p> <ul> <li> <p>To log data events for all objects in all S3
      * buckets in your Amazon Web Services account, specify the prefix as
-     * <code>arn:aws:s3:::</code>.</p>  <p>This also enables logging of data
-     * event activity performed by any user or role in your Amazon Web Services
-     * account, even if that activity is performed on a bucket that belongs to another
-     * Amazon Web Services account.</p>  </li> <li> <p>To log data events for
-     * all objects in an S3 bucket, specify the bucket and an empty object prefix such
-     * as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all
-     * objects in this S3 bucket.</p> </li> <li> <p>To log data events for specific
-     * objects, specify the S3 bucket and object prefix such as
+     * <code>arn:aws:s3</code>.</p>  <p>This also enables logging of data event
+     * activity performed by any user or role in your Amazon Web Services account, even
+     * if that activity is performed on a bucket that belongs to another Amazon Web
+     * Services account.</p>  </li> <li> <p>To log data events for all objects
+     * in an S3 bucket, specify the bucket and an empty object prefix such as
+     * <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects
+     * in this S3 bucket.</p> </li> <li> <p>To log data events for specific objects,
+     * specify the S3 bucket and object prefix such as
      * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events
      * for objects in this S3 bucket that match the prefix.</p> </li> <li> <p>To log
      * data events for all Lambda functions in your Amazon Web Services account,
@@ -431,14 +431,14 @@ namespace Model
      * <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the
      * specified objects.</p> <ul> <li> <p>To log data events for all objects in all S3
      * buckets in your Amazon Web Services account, specify the prefix as
-     * <code>arn:aws:s3:::</code>.</p>  <p>This also enables logging of data
-     * event activity performed by any user or role in your Amazon Web Services
-     * account, even if that activity is performed on a bucket that belongs to another
-     * Amazon Web Services account.</p>  </li> <li> <p>To log data events for
-     * all objects in an S3 bucket, specify the bucket and an empty object prefix such
-     * as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all
-     * objects in this S3 bucket.</p> </li> <li> <p>To log data events for specific
-     * objects, specify the S3 bucket and object prefix such as
+     * <code>arn:aws:s3</code>.</p>  <p>This also enables logging of data event
+     * activity performed by any user or role in your Amazon Web Services account, even
+     * if that activity is performed on a bucket that belongs to another Amazon Web
+     * Services account.</p>  </li> <li> <p>To log data events for all objects
+     * in an S3 bucket, specify the bucket and an empty object prefix such as
+     * <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects
+     * in this S3 bucket.</p> </li> <li> <p>To log data events for specific objects,
+     * specify the S3 bucket and object prefix such as
      * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events
      * for objects in this S3 bucket that match the prefix.</p> </li> <li> <p>To log
      * data events for all Lambda functions in your Amazon Web Services account,
@@ -463,14 +463,14 @@ namespace Model
      * <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the
      * specified objects.</p> <ul> <li> <p>To log data events for all objects in all S3
      * buckets in your Amazon Web Services account, specify the prefix as
-     * <code>arn:aws:s3:::</code>.</p>  <p>This also enables logging of data
-     * event activity performed by any user or role in your Amazon Web Services
-     * account, even if that activity is performed on a bucket that belongs to another
-     * Amazon Web Services account.</p>  </li> <li> <p>To log data events for
-     * all objects in an S3 bucket, specify the bucket and an empty object prefix such
-     * as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all
-     * objects in this S3 bucket.</p> </li> <li> <p>To log data events for specific
-     * objects, specify the S3 bucket and object prefix such as
+     * <code>arn:aws:s3</code>.</p>  <p>This also enables logging of data event
+     * activity performed by any user or role in your Amazon Web Services account, even
+     * if that activity is performed on a bucket that belongs to another Amazon Web
+     * Services account.</p>  </li> <li> <p>To log data events for all objects
+     * in an S3 bucket, specify the bucket and an empty object prefix such as
+     * <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects
+     * in this S3 bucket.</p> </li> <li> <p>To log data events for specific objects,
+     * specify the S3 bucket and object prefix such as
      * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events
      * for objects in this S3 bucket that match the prefix.</p> </li> <li> <p>To log
      * data events for all Lambda functions in your Amazon Web Services account,
@@ -495,14 +495,14 @@ namespace Model
      * <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the
      * specified objects.</p> <ul> <li> <p>To log data events for all objects in all S3
      * buckets in your Amazon Web Services account, specify the prefix as
-     * <code>arn:aws:s3:::</code>.</p>  <p>This also enables logging of data
-     * event activity performed by any user or role in your Amazon Web Services
-     * account, even if that activity is performed on a bucket that belongs to another
-     * Amazon Web Services account.</p>  </li> <li> <p>To log data events for
-     * all objects in an S3 bucket, specify the bucket and an empty object prefix such
-     * as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all
-     * objects in this S3 bucket.</p> </li> <li> <p>To log data events for specific
-     * objects, specify the S3 bucket and object prefix such as
+     * <code>arn:aws:s3</code>.</p>  <p>This also enables logging of data event
+     * activity performed by any user or role in your Amazon Web Services account, even
+     * if that activity is performed on a bucket that belongs to another Amazon Web
+     * Services account.</p>  </li> <li> <p>To log data events for all objects
+     * in an S3 bucket, specify the bucket and an empty object prefix such as
+     * <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects
+     * in this S3 bucket.</p> </li> <li> <p>To log data events for specific objects,
+     * specify the S3 bucket and object prefix such as
      * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events
      * for objects in this S3 bucket that match the prefix.</p> </li> <li> <p>To log
      * data events for all Lambda functions in your Amazon Web Services account,

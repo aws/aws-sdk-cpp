@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     DISABLED,
-    REQUIRED
+    REQUIRED,
+    ENABLED
   };
 
 namespace IAMAuthModeMapper
