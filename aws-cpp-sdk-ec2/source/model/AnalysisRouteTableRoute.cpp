@@ -30,7 +30,8 @@ AnalysisRouteTableRoute::AnalysisRouteTableRoute() :
     m_networkInterfaceIdHasBeenSet(false),
     m_originHasBeenSet(false),
     m_transitGatewayIdHasBeenSet(false),
-    m_vpcPeeringConnectionIdHasBeenSet(false)
+    m_vpcPeeringConnectionIdHasBeenSet(false),
+    m_stateHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ AnalysisRouteTableRoute::AnalysisRouteTableRoute(const XmlNode& xmlNode) :
     m_networkInterfaceIdHasBeenSet(false),
     m_originHasBeenSet(false),
     m_transitGatewayIdHasBeenSet(false),
-    m_vpcPeeringConnectionIdHasBeenSet(false)
+    m_vpcPeeringConnectionIdHasBeenSet(false),
+    m_stateHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -115,6 +117,12 @@ AnalysisRouteTableRoute& AnalysisRouteTableRoute::operator =(const XmlNode& xmlN
       m_vpcPeeringConnectionId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcPeeringConnectionIdNode.GetText());
       m_vpcPeeringConnectionIdHasBeenSet = true;
     }
+    XmlNode stateNode = resultNode.FirstChild("state");
+    if(!stateNode.IsNull())
+    {
+      m_state = Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText());
+      m_stateHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -172,6 +180,11 @@ void AnalysisRouteTableRoute::OutputToStream(Aws::OStream& oStream, const char* 
       oStream << location << index << locationValue << ".VpcPeeringConnectionId=" << StringUtils::URLEncode(m_vpcPeeringConnectionId.c_str()) << "&";
   }
 
+  if(m_stateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(m_state.c_str()) << "&";
+  }
+
 }
 
 void AnalysisRouteTableRoute::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -215,6 +228,10 @@ void AnalysisRouteTableRoute::OutputToStream(Aws::OStream& oStream, const char* 
   if(m_vpcPeeringConnectionIdHasBeenSet)
   {
       oStream << location << ".VpcPeeringConnectionId=" << StringUtils::URLEncode(m_vpcPeeringConnectionId.c_str()) << "&";
+  }
+  if(m_stateHasBeenSet)
+  {
+      oStream << location << ".State=" << StringUtils::URLEncode(m_state.c_str()) << "&";
   }
 }
 

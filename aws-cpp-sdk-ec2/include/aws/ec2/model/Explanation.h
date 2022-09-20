@@ -1707,6 +1707,88 @@ namespace Model
      */
     inline Explanation& WithTransitGatewayAttachment(AnalysisComponent&& value) { SetTransitGatewayAttachment(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon Web Services account for the component.</p>
+     */
+    inline const Aws::String& GetComponentAccount() const{ return m_componentAccount; }
+
+    /**
+     * <p>The Amazon Web Services account for the component.</p>
+     */
+    inline bool ComponentAccountHasBeenSet() const { return m_componentAccountHasBeenSet; }
+
+    /**
+     * <p>The Amazon Web Services account for the component.</p>
+     */
+    inline void SetComponentAccount(const Aws::String& value) { m_componentAccountHasBeenSet = true; m_componentAccount = value; }
+
+    /**
+     * <p>The Amazon Web Services account for the component.</p>
+     */
+    inline void SetComponentAccount(Aws::String&& value) { m_componentAccountHasBeenSet = true; m_componentAccount = std::move(value); }
+
+    /**
+     * <p>The Amazon Web Services account for the component.</p>
+     */
+    inline void SetComponentAccount(const char* value) { m_componentAccountHasBeenSet = true; m_componentAccount.assign(value); }
+
+    /**
+     * <p>The Amazon Web Services account for the component.</p>
+     */
+    inline Explanation& WithComponentAccount(const Aws::String& value) { SetComponentAccount(value); return *this;}
+
+    /**
+     * <p>The Amazon Web Services account for the component.</p>
+     */
+    inline Explanation& WithComponentAccount(Aws::String&& value) { SetComponentAccount(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Web Services account for the component.</p>
+     */
+    inline Explanation& WithComponentAccount(const char* value) { SetComponentAccount(value); return *this;}
+
+
+    /**
+     * <p>The Region for the component.</p>
+     */
+    inline const Aws::String& GetComponentRegion() const{ return m_componentRegion; }
+
+    /**
+     * <p>The Region for the component.</p>
+     */
+    inline bool ComponentRegionHasBeenSet() const { return m_componentRegionHasBeenSet; }
+
+    /**
+     * <p>The Region for the component.</p>
+     */
+    inline void SetComponentRegion(const Aws::String& value) { m_componentRegionHasBeenSet = true; m_componentRegion = value; }
+
+    /**
+     * <p>The Region for the component.</p>
+     */
+    inline void SetComponentRegion(Aws::String&& value) { m_componentRegionHasBeenSet = true; m_componentRegion = std::move(value); }
+
+    /**
+     * <p>The Region for the component.</p>
+     */
+    inline void SetComponentRegion(const char* value) { m_componentRegionHasBeenSet = true; m_componentRegion.assign(value); }
+
+    /**
+     * <p>The Region for the component.</p>
+     */
+    inline Explanation& WithComponentRegion(const Aws::String& value) { SetComponentRegion(value); return *this;}
+
+    /**
+     * <p>The Region for the component.</p>
+     */
+    inline Explanation& WithComponentRegion(Aws::String&& value) { SetComponentRegion(std::move(value)); return *this;}
+
+    /**
+     * <p>The Region for the component.</p>
+     */
+    inline Explanation& WithComponentRegion(const char* value) { SetComponentRegion(value); return *this;}
+
   private:
 
     AnalysisComponent m_acl;
@@ -1855,6 +1937,12 @@ namespace Model
 
     AnalysisComponent m_transitGatewayAttachment;
     bool m_transitGatewayAttachmentHasBeenSet = false;
+
+    Aws::String m_componentAccount;
+    bool m_componentAccountHasBeenSet = false;
+
+    Aws::String m_componentRegion;
+    bool m_componentRegionHasBeenSet = false;
   };
 
 } // namespace Model
