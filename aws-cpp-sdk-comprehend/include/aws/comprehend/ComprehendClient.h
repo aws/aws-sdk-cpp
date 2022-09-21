@@ -70,8 +70,9 @@ namespace Comprehend
 
         /**
          * <p>Inspects the text of a batch of documents for named entities and returns
-         * information about them. For more information about named entities, see
-         * <a>how-entities</a> </p><p><h3>See Also:</h3>   <a
+         * information about them. For more information about named entities, see <a
+         * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a>
+         * in the Comprehend Developer Guide. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectEntities">AWS
          * API Reference</a></p>
          */
@@ -127,7 +128,9 @@ namespace Comprehend
         /**
          * <p>Inspects the text of a batch of documents for the syntax and part of speech
          * of the words in the document and returns information about them. For more
-         * information, see <a>how-syntax</a>.</p><p><h3>See Also:</h3>   <a
+         * information, see <a
+         * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a>
+         * in the Comprehend Developer Guide. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectSyntax">AWS
          * API Reference</a></p>
          */
@@ -142,6 +145,27 @@ namespace Comprehend
          * An Async wrapper for BatchDetectSyntax that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BatchDetectSyntaxAsync(const Model::BatchDetectSyntaxRequest& request, const BatchDetectSyntaxResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Inspects a batch of documents and returns a sentiment analysis for each
+         * entity identified in the documents.</p> <p>For more information about targeted
+         * sentiment, see <a
+         * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted
+         * sentiment</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectTargetedSentiment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchDetectTargetedSentimentOutcome BatchDetectTargetedSentiment(const Model::BatchDetectTargetedSentimentRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchDetectTargetedSentiment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchDetectTargetedSentimentOutcomeCallable BatchDetectTargetedSentimentCallable(const Model::BatchDetectTargetedSentimentRequest& request) const;
+
+        /**
+         * An Async wrapper for BatchDetectTargetedSentiment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchDetectTargetedSentimentAsync(const Model::BatchDetectTargetedSentimentRequest& request, const BatchDetectTargetedSentimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new document classification request to analyze a single document in
@@ -186,8 +210,10 @@ namespace Comprehend
          * To create a classifier, you provide a set of training documents that labeled
          * with the categories that you want to use. After the classifier is trained you
          * can use it to categorize a set of labeled documents into the categories. For
-         * more information, see <a>how-document-classification</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-document-classification.html">Document
+         * Classification</a> in the Comprehend Developer Guide. </p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateDocumentClassifier">AWS
          * API Reference</a></p>
          */
@@ -589,8 +615,9 @@ namespace Comprehend
 
         /**
          * <p>Inspects text for named entities, and returns information about them. For
-         * more information, about named entities, see <a>how-entities</a>. </p><p><h3>See
-         * Also:</h3>   <a
+         * more information, about named entities, see <a
+         * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a>
+         * in the Comprehend Developer Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectEntities">AWS
          * API Reference</a></p>
          */
@@ -664,7 +691,9 @@ namespace Comprehend
 
         /**
          * <p>Inspects text for syntax and the part of speech of words in the document. For
-         * more information, <a>how-syntax</a>.</p><p><h3>See Also:</h3>   <a
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a>
+         * in the Comprehend Developer Guide. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectSyntax">AWS
          * API Reference</a></p>
          */
@@ -679,6 +708,27 @@ namespace Comprehend
          * An Async wrapper for DetectSyntax that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DetectSyntaxAsync(const Model::DetectSyntaxRequest& request, const DetectSyntaxResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Inspects the input text and returns a sentiment analysis for each entity
+         * identified in the text.</p> <p>For more information about targeted sentiment,
+         * see <a
+         * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted
+         * sentiment</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectTargetedSentiment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DetectTargetedSentimentOutcome DetectTargetedSentiment(const Model::DetectTargetedSentimentRequest& request) const;
+
+        /**
+         * A Callable wrapper for DetectTargetedSentiment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DetectTargetedSentimentOutcomeCallable DetectTargetedSentimentCallable(const Model::DetectTargetedSentimentRequest& request) const;
+
+        /**
+         * An Async wrapper for DetectTargetedSentiment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DetectTargetedSentimentAsync(const Model::DetectTargetedSentimentRequest& request, const DetectTargetedSentimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new custom model that replicates a source custom model that you

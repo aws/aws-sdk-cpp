@@ -21,6 +21,7 @@
 #include <aws/comprehend/model/BatchDetectKeyPhrasesResult.h>
 #include <aws/comprehend/model/BatchDetectSentimentResult.h>
 #include <aws/comprehend/model/BatchDetectSyntaxResult.h>
+#include <aws/comprehend/model/BatchDetectTargetedSentimentResult.h>
 #include <aws/comprehend/model/ClassifyDocumentResult.h>
 #include <aws/comprehend/model/ContainsPiiEntitiesResult.h>
 #include <aws/comprehend/model/CreateDocumentClassifierResult.h>
@@ -49,6 +50,7 @@
 #include <aws/comprehend/model/DetectPiiEntitiesResult.h>
 #include <aws/comprehend/model/DetectSentimentResult.h>
 #include <aws/comprehend/model/DetectSyntaxResult.h>
+#include <aws/comprehend/model/DetectTargetedSentimentResult.h>
 #include <aws/comprehend/model/ImportModelResult.h>
 #include <aws/comprehend/model/ListDocumentClassificationJobsResult.h>
 #include <aws/comprehend/model/ListDocumentClassifierSummariesResult.h>
@@ -128,6 +130,7 @@ namespace Aws
       class BatchDetectKeyPhrasesRequest;
       class BatchDetectSentimentRequest;
       class BatchDetectSyntaxRequest;
+      class BatchDetectTargetedSentimentRequest;
       class ClassifyDocumentRequest;
       class ContainsPiiEntitiesRequest;
       class CreateDocumentClassifierRequest;
@@ -156,6 +159,7 @@ namespace Aws
       class DetectPiiEntitiesRequest;
       class DetectSentimentRequest;
       class DetectSyntaxRequest;
+      class DetectTargetedSentimentRequest;
       class ImportModelRequest;
       class ListDocumentClassificationJobsRequest;
       class ListDocumentClassifierSummariesRequest;
@@ -202,6 +206,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<BatchDetectKeyPhrasesResult, ComprehendError> BatchDetectKeyPhrasesOutcome;
       typedef Aws::Utils::Outcome<BatchDetectSentimentResult, ComprehendError> BatchDetectSentimentOutcome;
       typedef Aws::Utils::Outcome<BatchDetectSyntaxResult, ComprehendError> BatchDetectSyntaxOutcome;
+      typedef Aws::Utils::Outcome<BatchDetectTargetedSentimentResult, ComprehendError> BatchDetectTargetedSentimentOutcome;
       typedef Aws::Utils::Outcome<ClassifyDocumentResult, ComprehendError> ClassifyDocumentOutcome;
       typedef Aws::Utils::Outcome<ContainsPiiEntitiesResult, ComprehendError> ContainsPiiEntitiesOutcome;
       typedef Aws::Utils::Outcome<CreateDocumentClassifierResult, ComprehendError> CreateDocumentClassifierOutcome;
@@ -230,6 +235,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DetectPiiEntitiesResult, ComprehendError> DetectPiiEntitiesOutcome;
       typedef Aws::Utils::Outcome<DetectSentimentResult, ComprehendError> DetectSentimentOutcome;
       typedef Aws::Utils::Outcome<DetectSyntaxResult, ComprehendError> DetectSyntaxOutcome;
+      typedef Aws::Utils::Outcome<DetectTargetedSentimentResult, ComprehendError> DetectTargetedSentimentOutcome;
       typedef Aws::Utils::Outcome<ImportModelResult, ComprehendError> ImportModelOutcome;
       typedef Aws::Utils::Outcome<ListDocumentClassificationJobsResult, ComprehendError> ListDocumentClassificationJobsOutcome;
       typedef Aws::Utils::Outcome<ListDocumentClassifierSummariesResult, ComprehendError> ListDocumentClassifierSummariesOutcome;
@@ -276,6 +282,7 @@ namespace Aws
       typedef std::future<BatchDetectKeyPhrasesOutcome> BatchDetectKeyPhrasesOutcomeCallable;
       typedef std::future<BatchDetectSentimentOutcome> BatchDetectSentimentOutcomeCallable;
       typedef std::future<BatchDetectSyntaxOutcome> BatchDetectSyntaxOutcomeCallable;
+      typedef std::future<BatchDetectTargetedSentimentOutcome> BatchDetectTargetedSentimentOutcomeCallable;
       typedef std::future<ClassifyDocumentOutcome> ClassifyDocumentOutcomeCallable;
       typedef std::future<ContainsPiiEntitiesOutcome> ContainsPiiEntitiesOutcomeCallable;
       typedef std::future<CreateDocumentClassifierOutcome> CreateDocumentClassifierOutcomeCallable;
@@ -304,6 +311,7 @@ namespace Aws
       typedef std::future<DetectPiiEntitiesOutcome> DetectPiiEntitiesOutcomeCallable;
       typedef std::future<DetectSentimentOutcome> DetectSentimentOutcomeCallable;
       typedef std::future<DetectSyntaxOutcome> DetectSyntaxOutcomeCallable;
+      typedef std::future<DetectTargetedSentimentOutcome> DetectTargetedSentimentOutcomeCallable;
       typedef std::future<ImportModelOutcome> ImportModelOutcomeCallable;
       typedef std::future<ListDocumentClassificationJobsOutcome> ListDocumentClassificationJobsOutcomeCallable;
       typedef std::future<ListDocumentClassifierSummariesOutcome> ListDocumentClassifierSummariesOutcomeCallable;
@@ -353,6 +361,7 @@ namespace Aws
     typedef std::function<void(const ComprehendClient*, const Model::BatchDetectKeyPhrasesRequest&, const Model::BatchDetectKeyPhrasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDetectKeyPhrasesResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::BatchDetectSentimentRequest&, const Model::BatchDetectSentimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDetectSentimentResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::BatchDetectSyntaxRequest&, const Model::BatchDetectSyntaxOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDetectSyntaxResponseReceivedHandler;
+    typedef std::function<void(const ComprehendClient*, const Model::BatchDetectTargetedSentimentRequest&, const Model::BatchDetectTargetedSentimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDetectTargetedSentimentResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::ClassifyDocumentRequest&, const Model::ClassifyDocumentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ClassifyDocumentResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::ContainsPiiEntitiesRequest&, const Model::ContainsPiiEntitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ContainsPiiEntitiesResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::CreateDocumentClassifierRequest&, const Model::CreateDocumentClassifierOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDocumentClassifierResponseReceivedHandler;
@@ -381,6 +390,7 @@ namespace Aws
     typedef std::function<void(const ComprehendClient*, const Model::DetectPiiEntitiesRequest&, const Model::DetectPiiEntitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectPiiEntitiesResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::DetectSentimentRequest&, const Model::DetectSentimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectSentimentResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::DetectSyntaxRequest&, const Model::DetectSyntaxOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectSyntaxResponseReceivedHandler;
+    typedef std::function<void(const ComprehendClient*, const Model::DetectTargetedSentimentRequest&, const Model::DetectTargetedSentimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectTargetedSentimentResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::ImportModelRequest&, const Model::ImportModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportModelResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::ListDocumentClassificationJobsRequest&, const Model::ListDocumentClassificationJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDocumentClassificationJobsResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::ListDocumentClassifierSummariesRequest&, const Model::ListDocumentClassifierSummariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDocumentClassifierSummariesResponseReceivedHandler;
