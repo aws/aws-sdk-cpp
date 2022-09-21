@@ -34,8 +34,10 @@ namespace Model
 {
 
   /**
-   * <p>An entity having characteristics over which a user can search for a
-   * hyperparameter tuning job.</p><p><h3>See Also:</h3>   <a
+   * <p>An entity returned by the <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SearchRecord.html">SearchRecord</a>
+   * API containing the properties of a hyperparameter tuning job.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/HyperParameterTuningJobSearchEntity">AWS
    * API Reference</a></p>
    */

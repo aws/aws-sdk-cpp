@@ -53,6 +53,7 @@
 #include <aws/s3control/model/GetBucketLifecycleConfigurationRequest.h>
 #include <aws/s3control/model/GetBucketPolicyRequest.h>
 #include <aws/s3control/model/GetBucketTaggingRequest.h>
+#include <aws/s3control/model/GetBucketVersioningRequest.h>
 #include <aws/s3control/model/GetJobTaggingRequest.h>
 #include <aws/s3control/model/GetMultiRegionAccessPointRequest.h>
 #include <aws/s3control/model/GetMultiRegionAccessPointPolicyRequest.h>
@@ -72,6 +73,7 @@
 #include <aws/s3control/model/PutBucketLifecycleConfigurationRequest.h>
 #include <aws/s3control/model/PutBucketPolicyRequest.h>
 #include <aws/s3control/model/PutBucketTaggingRequest.h>
+#include <aws/s3control/model/PutBucketVersioningRequest.h>
 #include <aws/s3control/model/PutJobTaggingRequest.h>
 #include <aws/s3control/model/PutMultiRegionAccessPointPolicyRequest.h>
 #include <aws/s3control/model/PutPublicAccessBlockRequest.h>
@@ -1880,6 +1882,64 @@ void S3ControlClient::GetBucketTaggingAsync(const GetBucketTaggingRequest& reque
     } );
 }
 
+GetBucketVersioningOutcome S3ControlClient::GetBucketVersioning(const GetBucketVersioningRequest& request) const
+{
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBucketVersioning", "Required field: Bucket, is not set");
+    return GetBucketVersioningOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  S3ControlARN arn(request.GetBucket());
+  if (!arn && request.GetAccountId().empty())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+          "Account ID should be specified via either accountId field or an ARN", false));
+  }
+  if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket(), false, "/v20180820/bucket/");
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetBucketVersioningOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection && !S3ControlARN(request.GetBucket()))
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("GetBucketVersioning", "HostPrefix required field: AccountId, is empty");
+      return GetBucketVersioningOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("GetBucketVersioning", "Invalid DNS host: " << uri.GetAuthority());
+      return GetBucketVersioningOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/versioning");
+  return GetBucketVersioningOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+GetBucketVersioningOutcomeCallable S3ControlClient::GetBucketVersioningCallable(const GetBucketVersioningRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetBucketVersioningOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBucketVersioning(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::GetBucketVersioningAsync(const GetBucketVersioningRequest& request, const GetBucketVersioningResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetBucketVersioning(request), context);
+    } );
+}
+
 GetJobTaggingOutcome S3ControlClient::GetJobTagging(const GetJobTaggingRequest& request) const
 {
   if (!request.AccountIdHasBeenSet())
@@ -2894,6 +2954,64 @@ void S3ControlClient::PutBucketTaggingAsync(const PutBucketTaggingRequest& reque
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, PutBucketTagging(request), context);
+    } );
+}
+
+PutBucketVersioningOutcome S3ControlClient::PutBucketVersioning(const PutBucketVersioningRequest& request) const
+{
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutBucketVersioning", "Required field: Bucket, is not set");
+    return PutBucketVersioningOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  S3ControlARN arn(request.GetBucket());
+  if (!arn && request.GetAccountId().empty())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+          "Account ID should be specified via either accountId field or an ARN", false));
+  }
+  if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket(), false, "/v20180820/bucket/");
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return PutBucketVersioningOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection && !S3ControlARN(request.GetBucket()))
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("PutBucketVersioning", "HostPrefix required field: AccountId, is empty");
+      return PutBucketVersioningOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("PutBucketVersioning", "Invalid DNS host: " << uri.GetAuthority());
+      return PutBucketVersioningOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/versioning");
+  return PutBucketVersioningOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+PutBucketVersioningOutcomeCallable S3ControlClient::PutBucketVersioningCallable(const PutBucketVersioningRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutBucketVersioningOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutBucketVersioning(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::PutBucketVersioningAsync(const PutBucketVersioningRequest& request, const PutBucketVersioningResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutBucketVersioning(request), context);
     } );
 }
 

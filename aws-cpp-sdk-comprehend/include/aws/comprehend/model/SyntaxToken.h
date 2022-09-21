@@ -155,42 +155,54 @@ namespace Model
     /**
      * <p>Provides the part of speech label and the confidence level that Amazon
      * Comprehend has that the part of speech was correctly identified. For more
-     * information, see <a>how-syntax</a>.</p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a>
+     * in the Comprehend Developer Guide. </p>
      */
     inline const PartOfSpeechTag& GetPartOfSpeech() const{ return m_partOfSpeech; }
 
     /**
      * <p>Provides the part of speech label and the confidence level that Amazon
      * Comprehend has that the part of speech was correctly identified. For more
-     * information, see <a>how-syntax</a>.</p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a>
+     * in the Comprehend Developer Guide. </p>
      */
     inline bool PartOfSpeechHasBeenSet() const { return m_partOfSpeechHasBeenSet; }
 
     /**
      * <p>Provides the part of speech label and the confidence level that Amazon
      * Comprehend has that the part of speech was correctly identified. For more
-     * information, see <a>how-syntax</a>.</p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a>
+     * in the Comprehend Developer Guide. </p>
      */
     inline void SetPartOfSpeech(const PartOfSpeechTag& value) { m_partOfSpeechHasBeenSet = true; m_partOfSpeech = value; }
 
     /**
      * <p>Provides the part of speech label and the confidence level that Amazon
      * Comprehend has that the part of speech was correctly identified. For more
-     * information, see <a>how-syntax</a>.</p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a>
+     * in the Comprehend Developer Guide. </p>
      */
     inline void SetPartOfSpeech(PartOfSpeechTag&& value) { m_partOfSpeechHasBeenSet = true; m_partOfSpeech = std::move(value); }
 
     /**
      * <p>Provides the part of speech label and the confidence level that Amazon
      * Comprehend has that the part of speech was correctly identified. For more
-     * information, see <a>how-syntax</a>.</p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a>
+     * in the Comprehend Developer Guide. </p>
      */
     inline SyntaxToken& WithPartOfSpeech(const PartOfSpeechTag& value) { SetPartOfSpeech(value); return *this;}
 
     /**
      * <p>Provides the part of speech label and the confidence level that Amazon
      * Comprehend has that the part of speech was correctly identified. For more
-     * information, see <a>how-syntax</a>.</p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a>
+     * in the Comprehend Developer Guide. </p>
      */
     inline SyntaxToken& WithPartOfSpeech(PartOfSpeechTag&& value) { SetPartOfSpeech(std::move(value)); return *this;}
 

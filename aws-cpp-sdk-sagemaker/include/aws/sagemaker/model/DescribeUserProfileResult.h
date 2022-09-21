@@ -301,73 +301,73 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Web Services SSO user identifier.</p>
+     * <p>The IAM Identity Center user identifier.</p>
      */
     inline const Aws::String& GetSingleSignOnUserIdentifier() const{ return m_singleSignOnUserIdentifier; }
 
     /**
-     * <p>The Amazon Web Services SSO user identifier.</p>
+     * <p>The IAM Identity Center user identifier.</p>
      */
     inline void SetSingleSignOnUserIdentifier(const Aws::String& value) { m_singleSignOnUserIdentifier = value; }
 
     /**
-     * <p>The Amazon Web Services SSO user identifier.</p>
+     * <p>The IAM Identity Center user identifier.</p>
      */
     inline void SetSingleSignOnUserIdentifier(Aws::String&& value) { m_singleSignOnUserIdentifier = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services SSO user identifier.</p>
+     * <p>The IAM Identity Center user identifier.</p>
      */
     inline void SetSingleSignOnUserIdentifier(const char* value) { m_singleSignOnUserIdentifier.assign(value); }
 
     /**
-     * <p>The Amazon Web Services SSO user identifier.</p>
+     * <p>The IAM Identity Center user identifier.</p>
      */
     inline DescribeUserProfileResult& WithSingleSignOnUserIdentifier(const Aws::String& value) { SetSingleSignOnUserIdentifier(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services SSO user identifier.</p>
+     * <p>The IAM Identity Center user identifier.</p>
      */
     inline DescribeUserProfileResult& WithSingleSignOnUserIdentifier(Aws::String&& value) { SetSingleSignOnUserIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services SSO user identifier.</p>
+     * <p>The IAM Identity Center user identifier.</p>
      */
     inline DescribeUserProfileResult& WithSingleSignOnUserIdentifier(const char* value) { SetSingleSignOnUserIdentifier(value); return *this;}
 
 
     /**
-     * <p>The Amazon Web Services SSO user value.</p>
+     * <p>The IAM Identity Center user value.</p>
      */
     inline const Aws::String& GetSingleSignOnUserValue() const{ return m_singleSignOnUserValue; }
 
     /**
-     * <p>The Amazon Web Services SSO user value.</p>
+     * <p>The IAM Identity Center user value.</p>
      */
     inline void SetSingleSignOnUserValue(const Aws::String& value) { m_singleSignOnUserValue = value; }
 
     /**
-     * <p>The Amazon Web Services SSO user value.</p>
+     * <p>The IAM Identity Center user value.</p>
      */
     inline void SetSingleSignOnUserValue(Aws::String&& value) { m_singleSignOnUserValue = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services SSO user value.</p>
+     * <p>The IAM Identity Center user value.</p>
      */
     inline void SetSingleSignOnUserValue(const char* value) { m_singleSignOnUserValue.assign(value); }
 
     /**
-     * <p>The Amazon Web Services SSO user value.</p>
+     * <p>The IAM Identity Center user value.</p>
      */
     inline DescribeUserProfileResult& WithSingleSignOnUserValue(const Aws::String& value) { SetSingleSignOnUserValue(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services SSO user value.</p>
+     * <p>The IAM Identity Center user value.</p>
      */
     inline DescribeUserProfileResult& WithSingleSignOnUserValue(Aws::String&& value) { SetSingleSignOnUserValue(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services SSO user value.</p>
+     * <p>The IAM Identity Center user value.</p>
      */
     inline DescribeUserProfileResult& WithSingleSignOnUserValue(const char* value) { SetSingleSignOnUserValue(value); return *this;}
 

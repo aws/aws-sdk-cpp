@@ -25,6 +25,7 @@
 #include <aws/comprehend/model/BatchDetectKeyPhrasesRequest.h>
 #include <aws/comprehend/model/BatchDetectSentimentRequest.h>
 #include <aws/comprehend/model/BatchDetectSyntaxRequest.h>
+#include <aws/comprehend/model/BatchDetectTargetedSentimentRequest.h>
 #include <aws/comprehend/model/ClassifyDocumentRequest.h>
 #include <aws/comprehend/model/ContainsPiiEntitiesRequest.h>
 #include <aws/comprehend/model/CreateDocumentClassifierRequest.h>
@@ -53,6 +54,7 @@
 #include <aws/comprehend/model/DetectPiiEntitiesRequest.h>
 #include <aws/comprehend/model/DetectSentimentRequest.h>
 #include <aws/comprehend/model/DetectSyntaxRequest.h>
+#include <aws/comprehend/model/DetectTargetedSentimentRequest.h>
 #include <aws/comprehend/model/ImportModelRequest.h>
 #include <aws/comprehend/model/ListDocumentClassificationJobsRequest.h>
 #include <aws/comprehend/model/ListDocumentClassifierSummariesRequest.h>
@@ -278,6 +280,28 @@ void ComprehendClient::BatchDetectSyntaxAsync(const BatchDetectSyntaxRequest& re
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, BatchDetectSyntax(request), context);
+    } );
+}
+
+BatchDetectTargetedSentimentOutcome ComprehendClient::BatchDetectTargetedSentiment(const BatchDetectTargetedSentimentRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return BatchDetectTargetedSentimentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchDetectTargetedSentimentOutcomeCallable ComprehendClient::BatchDetectTargetedSentimentCallable(const BatchDetectTargetedSentimentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchDetectTargetedSentimentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchDetectTargetedSentiment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComprehendClient::BatchDetectTargetedSentimentAsync(const BatchDetectTargetedSentimentRequest& request, const BatchDetectTargetedSentimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchDetectTargetedSentiment(request), context);
     } );
 }
 
@@ -894,6 +918,28 @@ void ComprehendClient::DetectSyntaxAsync(const DetectSyntaxRequest& request, con
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DetectSyntax(request), context);
+    } );
+}
+
+DetectTargetedSentimentOutcome ComprehendClient::DetectTargetedSentiment(const DetectTargetedSentimentRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DetectTargetedSentimentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DetectTargetedSentimentOutcomeCallable ComprehendClient::DetectTargetedSentimentCallable(const DetectTargetedSentimentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DetectTargetedSentimentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DetectTargetedSentiment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComprehendClient::DetectTargetedSentimentAsync(const DetectTargetedSentimentRequest& request, const DetectTargetedSentimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DetectTargetedSentiment(request), context);
     } );
 }
 
