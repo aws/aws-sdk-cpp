@@ -21,14 +21,18 @@ namespace Model
 CatalogTarget::CatalogTarget() : 
     m_databaseNameHasBeenSet(false),
     m_tablesHasBeenSet(false),
-    m_connectionNameHasBeenSet(false)
+    m_connectionNameHasBeenSet(false),
+    m_eventQueueArnHasBeenSet(false),
+    m_dlqEventQueueArnHasBeenSet(false)
 {
 }
 
 CatalogTarget::CatalogTarget(JsonView jsonValue) : 
     m_databaseNameHasBeenSet(false),
     m_tablesHasBeenSet(false),
-    m_connectionNameHasBeenSet(false)
+    m_connectionNameHasBeenSet(false),
+    m_eventQueueArnHasBeenSet(false),
+    m_dlqEventQueueArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +63,20 @@ CatalogTarget& CatalogTarget::operator =(JsonView jsonValue)
     m_connectionNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EventQueueArn"))
+  {
+    m_eventQueueArn = jsonValue.GetString("EventQueueArn");
+
+    m_eventQueueArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DlqEventQueueArn"))
+  {
+    m_dlqEventQueueArn = jsonValue.GetString("DlqEventQueueArn");
+
+    m_dlqEventQueueArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -86,6 +104,18 @@ JsonValue CatalogTarget::Jsonize() const
   if(m_connectionNameHasBeenSet)
   {
    payload.WithString("ConnectionName", m_connectionName);
+
+  }
+
+  if(m_eventQueueArnHasBeenSet)
+  {
+   payload.WithString("EventQueueArn", m_eventQueueArn);
+
+  }
+
+  if(m_dlqEventQueueArnHasBeenSet)
+  {
+   payload.WithString("DlqEventQueueArn", m_dlqEventQueueArn);
 
   }
 

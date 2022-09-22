@@ -25,6 +25,7 @@ GatewayDetails::GatewayDetails() :
     m_gatewayTypeHasBeenSet(false),
     m_hypervisorIdHasBeenSet(false),
     m_lastSeenTimeHasBeenSet(false),
+    m_maintenanceStartTimeHasBeenSet(false),
     m_nextUpdateAvailabilityTimeHasBeenSet(false),
     m_vpcEndpointHasBeenSet(false)
 {
@@ -37,6 +38,7 @@ GatewayDetails::GatewayDetails(JsonView jsonValue) :
     m_gatewayTypeHasBeenSet(false),
     m_hypervisorIdHasBeenSet(false),
     m_lastSeenTimeHasBeenSet(false),
+    m_maintenanceStartTimeHasBeenSet(false),
     m_nextUpdateAvailabilityTimeHasBeenSet(false),
     m_vpcEndpointHasBeenSet(false)
 {
@@ -78,6 +80,13 @@ GatewayDetails& GatewayDetails::operator =(JsonView jsonValue)
     m_lastSeenTime = jsonValue.GetDouble("LastSeenTime");
 
     m_lastSeenTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MaintenanceStartTime"))
+  {
+    m_maintenanceStartTime = jsonValue.GetObject("MaintenanceStartTime");
+
+    m_maintenanceStartTimeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("NextUpdateAvailabilityTime"))
@@ -127,6 +136,12 @@ JsonValue GatewayDetails::Jsonize() const
   if(m_lastSeenTimeHasBeenSet)
   {
    payload.WithDouble("LastSeenTime", m_lastSeenTime.SecondsWithMSPrecision());
+  }
+
+  if(m_maintenanceStartTimeHasBeenSet)
+  {
+   payload.WithObject("MaintenanceStartTime", m_maintenanceStartTime.Jsonize());
+
   }
 
   if(m_nextUpdateAvailabilityTimeHasBeenSet)

@@ -7,6 +7,7 @@
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/devicefarm/DeviceFarmRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/devicefarm/model/VpcConfig.h>
 #include <utility>
 
 namespace Aws
@@ -107,6 +108,37 @@ namespace Model
      */
     inline CreateProjectRequest& WithDefaultJobTimeoutMinutes(int value) { SetDefaultJobTimeoutMinutes(value); return *this;}
 
+
+    /**
+     * <p>The VPC security groups and subnets that are attached to a project.</p>
+     */
+    inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+
+    /**
+     * <p>The VPC security groups and subnets that are attached to a project.</p>
+     */
+    inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
+
+    /**
+     * <p>The VPC security groups and subnets that are attached to a project.</p>
+     */
+    inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
+
+    /**
+     * <p>The VPC security groups and subnets that are attached to a project.</p>
+     */
+    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
+
+    /**
+     * <p>The VPC security groups and subnets that are attached to a project.</p>
+     */
+    inline CreateProjectRequest& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
+
+    /**
+     * <p>The VPC security groups and subnets that are attached to a project.</p>
+     */
+    inline CreateProjectRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -114,6 +146,9 @@ namespace Model
 
     int m_defaultJobTimeoutMinutes;
     bool m_defaultJobTimeoutMinutesHasBeenSet = false;
+
+    VpcConfig m_vpcConfig;
+    bool m_vpcConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -200,49 +200,57 @@ namespace Model
 
     /**
      * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
-     * either the security group ID or the security group name in the request.</p>
+     * either the security group ID or the security group name in the request. For
+     * security groups in a nondefault VPC, you must specify the security group ID.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
 
     /**
      * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
-     * either the security group ID or the security group name in the request.</p>
+     * either the security group ID or the security group name in the request. For
+     * security groups in a nondefault VPC, you must specify the security group ID.</p>
      */
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
 
     /**
      * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
-     * either the security group ID or the security group name in the request.</p>
+     * either the security group ID or the security group name in the request. For
+     * security groups in a nondefault VPC, you must specify the security group ID.</p>
      */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
      * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
-     * either the security group ID or the security group name in the request.</p>
+     * either the security group ID or the security group name in the request. For
+     * security groups in a nondefault VPC, you must specify the security group ID.</p>
      */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
      * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
-     * either the security group ID or the security group name in the request.</p>
+     * either the security group ID or the security group name in the request. For
+     * security groups in a nondefault VPC, you must specify the security group ID.</p>
      */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
     /**
      * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
-     * either the security group ID or the security group name in the request.</p>
+     * either the security group ID or the security group name in the request. For
+     * security groups in a nondefault VPC, you must specify the security group ID.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
 
     /**
      * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
-     * either the security group ID or the security group name in the request.</p>
+     * either the security group ID or the security group name in the request. For
+     * security groups in a nondefault VPC, you must specify the security group ID.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
-     * either the security group ID or the security group name in the request.</p>
+     * either the security group ID or the security group name in the request. For
+     * security groups in a nondefault VPC, you must specify the security group ID.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 

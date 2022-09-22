@@ -749,55 +749,55 @@ namespace Model
 
 
     /**
-     * <p>One or more network interface IDs.</p> <p>Default: Describes all your network
+     * <p>The network interface IDs.</p> <p>Default: Describes all your network
      * interfaces.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNetworkInterfaceIds() const{ return m_networkInterfaceIds; }
 
     /**
-     * <p>One or more network interface IDs.</p> <p>Default: Describes all your network
+     * <p>The network interface IDs.</p> <p>Default: Describes all your network
      * interfaces.</p>
      */
     inline bool NetworkInterfaceIdsHasBeenSet() const { return m_networkInterfaceIdsHasBeenSet; }
 
     /**
-     * <p>One or more network interface IDs.</p> <p>Default: Describes all your network
+     * <p>The network interface IDs.</p> <p>Default: Describes all your network
      * interfaces.</p>
      */
     inline void SetNetworkInterfaceIds(const Aws::Vector<Aws::String>& value) { m_networkInterfaceIdsHasBeenSet = true; m_networkInterfaceIds = value; }
 
     /**
-     * <p>One or more network interface IDs.</p> <p>Default: Describes all your network
+     * <p>The network interface IDs.</p> <p>Default: Describes all your network
      * interfaces.</p>
      */
     inline void SetNetworkInterfaceIds(Aws::Vector<Aws::String>&& value) { m_networkInterfaceIdsHasBeenSet = true; m_networkInterfaceIds = std::move(value); }
 
     /**
-     * <p>One or more network interface IDs.</p> <p>Default: Describes all your network
+     * <p>The network interface IDs.</p> <p>Default: Describes all your network
      * interfaces.</p>
      */
     inline DescribeNetworkInterfacesRequest& WithNetworkInterfaceIds(const Aws::Vector<Aws::String>& value) { SetNetworkInterfaceIds(value); return *this;}
 
     /**
-     * <p>One or more network interface IDs.</p> <p>Default: Describes all your network
+     * <p>The network interface IDs.</p> <p>Default: Describes all your network
      * interfaces.</p>
      */
     inline DescribeNetworkInterfacesRequest& WithNetworkInterfaceIds(Aws::Vector<Aws::String>&& value) { SetNetworkInterfaceIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more network interface IDs.</p> <p>Default: Describes all your network
+     * <p>The network interface IDs.</p> <p>Default: Describes all your network
      * interfaces.</p>
      */
     inline DescribeNetworkInterfacesRequest& AddNetworkInterfaceIds(const Aws::String& value) { m_networkInterfaceIdsHasBeenSet = true; m_networkInterfaceIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more network interface IDs.</p> <p>Default: Describes all your network
+     * <p>The network interface IDs.</p> <p>Default: Describes all your network
      * interfaces.</p>
      */
     inline DescribeNetworkInterfacesRequest& AddNetworkInterfaceIds(Aws::String&& value) { m_networkInterfaceIdsHasBeenSet = true; m_networkInterfaceIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more network interface IDs.</p> <p>Default: Describes all your network
+     * <p>The network interface IDs.</p> <p>Default: Describes all your network
      * interfaces.</p>
      */
     inline DescribeNetworkInterfacesRequest& AddNetworkInterfaceIds(const char* value) { m_networkInterfaceIdsHasBeenSet = true; m_networkInterfaceIds.push_back(value); return *this; }

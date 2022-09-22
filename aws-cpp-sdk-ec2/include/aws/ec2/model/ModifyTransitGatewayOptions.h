@@ -398,28 +398,40 @@ namespace Model
     /**
      * <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP
      * session. The range is 64512 to 65534 for 16-bit ASNs and 4200000000 to
-     * 4294967294 for 32-bit ASNs.</p>
+     * 4294967294 for 32-bit ASNs.</p> <p>The modify ASN operation is not allowed on a
+     * transit gateway with active BGP sessions. You must first delete all transit
+     * gateway attachments that have BGP configured prior to modifying the ASN on the
+     * transit gateway.</p>
      */
     inline long long GetAmazonSideAsn() const{ return m_amazonSideAsn; }
 
     /**
      * <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP
      * session. The range is 64512 to 65534 for 16-bit ASNs and 4200000000 to
-     * 4294967294 for 32-bit ASNs.</p>
+     * 4294967294 for 32-bit ASNs.</p> <p>The modify ASN operation is not allowed on a
+     * transit gateway with active BGP sessions. You must first delete all transit
+     * gateway attachments that have BGP configured prior to modifying the ASN on the
+     * transit gateway.</p>
      */
     inline bool AmazonSideAsnHasBeenSet() const { return m_amazonSideAsnHasBeenSet; }
 
     /**
      * <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP
      * session. The range is 64512 to 65534 for 16-bit ASNs and 4200000000 to
-     * 4294967294 for 32-bit ASNs.</p>
+     * 4294967294 for 32-bit ASNs.</p> <p>The modify ASN operation is not allowed on a
+     * transit gateway with active BGP sessions. You must first delete all transit
+     * gateway attachments that have BGP configured prior to modifying the ASN on the
+     * transit gateway.</p>
      */
     inline void SetAmazonSideAsn(long long value) { m_amazonSideAsnHasBeenSet = true; m_amazonSideAsn = value; }
 
     /**
      * <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP
      * session. The range is 64512 to 65534 for 16-bit ASNs and 4200000000 to
-     * 4294967294 for 32-bit ASNs.</p>
+     * 4294967294 for 32-bit ASNs.</p> <p>The modify ASN operation is not allowed on a
+     * transit gateway with active BGP sessions. You must first delete all transit
+     * gateway attachments that have BGP configured prior to modifying the ASN on the
+     * transit gateway.</p>
      */
     inline ModifyTransitGatewayOptions& WithAmazonSideAsn(long long value) { SetAmazonSideAsn(value); return *this;}
 

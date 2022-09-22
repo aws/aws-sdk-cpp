@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/backup-gateway/BackupGatewayErrors.h>
 #include <aws/backup-gateway/model/ConflictException.h>
+#include <aws/backup-gateway/model/ThrottlingException.h>
 #include <aws/backup-gateway/model/InternalServerException.h>
 #include <aws/backup-gateway/model/ResourceNotFoundException.h>
 #include <aws/backup-gateway/model/ValidationException.h>
@@ -25,6 +26,12 @@ template<> AWS_BACKUPGATEWAY_API ConflictException BackupGatewayError::GetModele
 {
   assert(this->GetErrorType() == BackupGatewayErrors::CONFLICT);
   return ConflictException(this->GetJsonPayload().View());
+}
+
+template<> AWS_BACKUPGATEWAY_API ThrottlingException BackupGatewayError::GetModeledError()
+{
+  assert(this->GetErrorType() == BackupGatewayErrors::THROTTLING);
+  return ThrottlingException(this->GetJsonPayload().View());
 }
 
 template<> AWS_BACKUPGATEWAY_API InternalServerException BackupGatewayError::GetModeledError()

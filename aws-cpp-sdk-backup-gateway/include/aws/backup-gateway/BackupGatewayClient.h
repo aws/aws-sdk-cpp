@@ -165,6 +165,24 @@ namespace BackupGateway
         virtual void GetGatewayAsync(const Model::GetGatewayRequest& request, const GetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>By providing the ARN (Amazon Resource Name), this API returns the virtual
+         * machine.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetVirtualMachine">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetVirtualMachineOutcome GetVirtualMachine(const Model::GetVirtualMachineRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetVirtualMachine that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetVirtualMachineOutcomeCallable GetVirtualMachineCallable(const Model::GetVirtualMachineRequest& request) const;
+
+        /**
+         * An Async wrapper for GetVirtualMachine that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetVirtualMachineAsync(const Model::GetVirtualMachineRequest& request, const GetVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Connect to a hypervisor by importing its configuration.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/ImportHypervisorConfiguration">AWS

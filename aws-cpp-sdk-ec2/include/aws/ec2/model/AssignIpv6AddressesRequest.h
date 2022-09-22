@@ -75,56 +75,56 @@ namespace Model
 
 
     /**
-     * <p>One or more specific IPv6 addresses to be assigned to the network interface.
-     * You can't use this option if you're specifying a number of IPv6 addresses.</p>
+     * <p>The IPv6 addresses to be assigned to the network interface. You can't use
+     * this option if you're specifying a number of IPv6 addresses.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIpv6Addresses() const{ return m_ipv6Addresses; }
 
     /**
-     * <p>One or more specific IPv6 addresses to be assigned to the network interface.
-     * You can't use this option if you're specifying a number of IPv6 addresses.</p>
+     * <p>The IPv6 addresses to be assigned to the network interface. You can't use
+     * this option if you're specifying a number of IPv6 addresses.</p>
      */
     inline bool Ipv6AddressesHasBeenSet() const { return m_ipv6AddressesHasBeenSet; }
 
     /**
-     * <p>One or more specific IPv6 addresses to be assigned to the network interface.
-     * You can't use this option if you're specifying a number of IPv6 addresses.</p>
+     * <p>The IPv6 addresses to be assigned to the network interface. You can't use
+     * this option if you're specifying a number of IPv6 addresses.</p>
      */
     inline void SetIpv6Addresses(const Aws::Vector<Aws::String>& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = value; }
 
     /**
-     * <p>One or more specific IPv6 addresses to be assigned to the network interface.
-     * You can't use this option if you're specifying a number of IPv6 addresses.</p>
+     * <p>The IPv6 addresses to be assigned to the network interface. You can't use
+     * this option if you're specifying a number of IPv6 addresses.</p>
      */
     inline void SetIpv6Addresses(Aws::Vector<Aws::String>&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = std::move(value); }
 
     /**
-     * <p>One or more specific IPv6 addresses to be assigned to the network interface.
-     * You can't use this option if you're specifying a number of IPv6 addresses.</p>
+     * <p>The IPv6 addresses to be assigned to the network interface. You can't use
+     * this option if you're specifying a number of IPv6 addresses.</p>
      */
     inline AssignIpv6AddressesRequest& WithIpv6Addresses(const Aws::Vector<Aws::String>& value) { SetIpv6Addresses(value); return *this;}
 
     /**
-     * <p>One or more specific IPv6 addresses to be assigned to the network interface.
-     * You can't use this option if you're specifying a number of IPv6 addresses.</p>
+     * <p>The IPv6 addresses to be assigned to the network interface. You can't use
+     * this option if you're specifying a number of IPv6 addresses.</p>
      */
     inline AssignIpv6AddressesRequest& WithIpv6Addresses(Aws::Vector<Aws::String>&& value) { SetIpv6Addresses(std::move(value)); return *this;}
 
     /**
-     * <p>One or more specific IPv6 addresses to be assigned to the network interface.
-     * You can't use this option if you're specifying a number of IPv6 addresses.</p>
+     * <p>The IPv6 addresses to be assigned to the network interface. You can't use
+     * this option if you're specifying a number of IPv6 addresses.</p>
      */
     inline AssignIpv6AddressesRequest& AddIpv6Addresses(const Aws::String& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
 
     /**
-     * <p>One or more specific IPv6 addresses to be assigned to the network interface.
-     * You can't use this option if you're specifying a number of IPv6 addresses.</p>
+     * <p>The IPv6 addresses to be assigned to the network interface. You can't use
+     * this option if you're specifying a number of IPv6 addresses.</p>
      */
     inline AssignIpv6AddressesRequest& AddIpv6Addresses(Aws::String&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more specific IPv6 addresses to be assigned to the network interface.
-     * You can't use this option if you're specifying a number of IPv6 addresses.</p>
+     * <p>The IPv6 addresses to be assigned to the network interface. You can't use
+     * this option if you're specifying a number of IPv6 addresses.</p>
      */
     inline AssignIpv6AddressesRequest& AddIpv6Addresses(const char* value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
 

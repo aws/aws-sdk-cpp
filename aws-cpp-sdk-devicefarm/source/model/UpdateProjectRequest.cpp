@@ -16,7 +16,8 @@ UpdateProjectRequest::UpdateProjectRequest() :
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_defaultJobTimeoutMinutes(0),
-    m_defaultJobTimeoutMinutesHasBeenSet(false)
+    m_defaultJobTimeoutMinutesHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false)
 {
 }
 
@@ -39,6 +40,12 @@ Aws::String UpdateProjectRequest::SerializePayload() const
   if(m_defaultJobTimeoutMinutesHasBeenSet)
   {
    payload.WithInteger("defaultJobTimeoutMinutes", m_defaultJobTimeoutMinutes);
+
+  }
+
+  if(m_vpcConfigHasBeenSet)
+  {
+   payload.WithObject("vpcConfig", m_vpcConfig.Jsonize());
 
   }
 

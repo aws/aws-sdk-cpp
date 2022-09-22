@@ -77,38 +77,50 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for an identity resource that is not the primary
-     * identifier.</p>
+     * <p>A unique identifier for a user or group that is not the primary identifier.
+     * This value can be an identifier from an external identity provider (IdP) that is
+     * associated with the user, the group, or a unique attribute. For example, a
+     * unique <code>UserDisplayName</code>.</p>
      */
     inline const AlternateIdentifier& GetAlternateIdentifier() const{ return m_alternateIdentifier; }
 
     /**
-     * <p>A unique identifier for an identity resource that is not the primary
-     * identifier.</p>
+     * <p>A unique identifier for a user or group that is not the primary identifier.
+     * This value can be an identifier from an external identity provider (IdP) that is
+     * associated with the user, the group, or a unique attribute. For example, a
+     * unique <code>UserDisplayName</code>.</p>
      */
     inline bool AlternateIdentifierHasBeenSet() const { return m_alternateIdentifierHasBeenSet; }
 
     /**
-     * <p>A unique identifier for an identity resource that is not the primary
-     * identifier.</p>
+     * <p>A unique identifier for a user or group that is not the primary identifier.
+     * This value can be an identifier from an external identity provider (IdP) that is
+     * associated with the user, the group, or a unique attribute. For example, a
+     * unique <code>UserDisplayName</code>.</p>
      */
     inline void SetAlternateIdentifier(const AlternateIdentifier& value) { m_alternateIdentifierHasBeenSet = true; m_alternateIdentifier = value; }
 
     /**
-     * <p>A unique identifier for an identity resource that is not the primary
-     * identifier.</p>
+     * <p>A unique identifier for a user or group that is not the primary identifier.
+     * This value can be an identifier from an external identity provider (IdP) that is
+     * associated with the user, the group, or a unique attribute. For example, a
+     * unique <code>UserDisplayName</code>.</p>
      */
     inline void SetAlternateIdentifier(AlternateIdentifier&& value) { m_alternateIdentifierHasBeenSet = true; m_alternateIdentifier = std::move(value); }
 
     /**
-     * <p>A unique identifier for an identity resource that is not the primary
-     * identifier.</p>
+     * <p>A unique identifier for a user or group that is not the primary identifier.
+     * This value can be an identifier from an external identity provider (IdP) that is
+     * associated with the user, the group, or a unique attribute. For example, a
+     * unique <code>UserDisplayName</code>.</p>
      */
     inline GetUserIdRequest& WithAlternateIdentifier(const AlternateIdentifier& value) { SetAlternateIdentifier(value); return *this;}
 
     /**
-     * <p>A unique identifier for an identity resource that is not the primary
-     * identifier.</p>
+     * <p>A unique identifier for a user or group that is not the primary identifier.
+     * This value can be an identifier from an external identity provider (IdP) that is
+     * associated with the user, the group, or a unique attribute. For example, a
+     * unique <code>UserDisplayName</code>.</p>
      */
     inline GetUserIdRequest& WithAlternateIdentifier(AlternateIdentifier&& value) { SetAlternateIdentifier(std::move(value)); return *this;}
 

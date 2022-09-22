@@ -66,42 +66,42 @@ namespace Model
 
 
     /**
-     * <p>The private IPv4 addresses.</p>
+     * <p>The private IPv4 address.</p>
      */
     inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
 
     /**
-     * <p>The private IPv4 addresses.</p>
+     * <p>The private IPv4 address.</p>
      */
     inline bool PrivateIpAddressHasBeenSet() const { return m_privateIpAddressHasBeenSet; }
 
     /**
-     * <p>The private IPv4 addresses.</p>
+     * <p>The private IPv4 address.</p>
      */
     inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
 
     /**
-     * <p>The private IPv4 addresses.</p>
+     * <p>The private IPv4 address.</p>
      */
     inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::move(value); }
 
     /**
-     * <p>The private IPv4 addresses.</p>
+     * <p>The private IPv4 address.</p>
      */
     inline void SetPrivateIpAddress(const char* value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress.assign(value); }
 
     /**
-     * <p>The private IPv4 addresses.</p>
+     * <p>The private IPv4 address.</p>
      */
     inline PrivateIpAddressSpecification& WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
 
     /**
-     * <p>The private IPv4 addresses.</p>
+     * <p>The private IPv4 address.</p>
      */
     inline PrivateIpAddressSpecification& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(std::move(value)); return *this;}
 
     /**
-     * <p>The private IPv4 addresses.</p>
+     * <p>The private IPv4 address.</p>
      */
     inline PrivateIpAddressSpecification& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
 

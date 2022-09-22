@@ -281,66 +281,66 @@ namespace Model
 
 
     /**
-     * <p>One or more IPv6 addresses to assign to the network interface. You cannot
-     * specify this option and the option to assign a number of IPv6 addresses in the
-     * same request. You cannot specify this option if you've specified a minimum
-     * number of instances to launch.</p>
+     * <p>The IPv6 addresses to assign to the network interface. You cannot specify
+     * this option and the option to assign a number of IPv6 addresses in the same
+     * request. You cannot specify this option if you've specified a minimum number of
+     * instances to launch.</p>
      */
     inline const Aws::Vector<InstanceIpv6Address>& GetIpv6Addresses() const{ return m_ipv6Addresses; }
 
     /**
-     * <p>One or more IPv6 addresses to assign to the network interface. You cannot
-     * specify this option and the option to assign a number of IPv6 addresses in the
-     * same request. You cannot specify this option if you've specified a minimum
-     * number of instances to launch.</p>
+     * <p>The IPv6 addresses to assign to the network interface. You cannot specify
+     * this option and the option to assign a number of IPv6 addresses in the same
+     * request. You cannot specify this option if you've specified a minimum number of
+     * instances to launch.</p>
      */
     inline bool Ipv6AddressesHasBeenSet() const { return m_ipv6AddressesHasBeenSet; }
 
     /**
-     * <p>One or more IPv6 addresses to assign to the network interface. You cannot
-     * specify this option and the option to assign a number of IPv6 addresses in the
-     * same request. You cannot specify this option if you've specified a minimum
-     * number of instances to launch.</p>
+     * <p>The IPv6 addresses to assign to the network interface. You cannot specify
+     * this option and the option to assign a number of IPv6 addresses in the same
+     * request. You cannot specify this option if you've specified a minimum number of
+     * instances to launch.</p>
      */
     inline void SetIpv6Addresses(const Aws::Vector<InstanceIpv6Address>& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = value; }
 
     /**
-     * <p>One or more IPv6 addresses to assign to the network interface. You cannot
-     * specify this option and the option to assign a number of IPv6 addresses in the
-     * same request. You cannot specify this option if you've specified a minimum
-     * number of instances to launch.</p>
+     * <p>The IPv6 addresses to assign to the network interface. You cannot specify
+     * this option and the option to assign a number of IPv6 addresses in the same
+     * request. You cannot specify this option if you've specified a minimum number of
+     * instances to launch.</p>
      */
     inline void SetIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = std::move(value); }
 
     /**
-     * <p>One or more IPv6 addresses to assign to the network interface. You cannot
-     * specify this option and the option to assign a number of IPv6 addresses in the
-     * same request. You cannot specify this option if you've specified a minimum
-     * number of instances to launch.</p>
+     * <p>The IPv6 addresses to assign to the network interface. You cannot specify
+     * this option and the option to assign a number of IPv6 addresses in the same
+     * request. You cannot specify this option if you've specified a minimum number of
+     * instances to launch.</p>
      */
     inline InstanceNetworkInterfaceSpecification& WithIpv6Addresses(const Aws::Vector<InstanceIpv6Address>& value) { SetIpv6Addresses(value); return *this;}
 
     /**
-     * <p>One or more IPv6 addresses to assign to the network interface. You cannot
-     * specify this option and the option to assign a number of IPv6 addresses in the
-     * same request. You cannot specify this option if you've specified a minimum
-     * number of instances to launch.</p>
+     * <p>The IPv6 addresses to assign to the network interface. You cannot specify
+     * this option and the option to assign a number of IPv6 addresses in the same
+     * request. You cannot specify this option if you've specified a minimum number of
+     * instances to launch.</p>
      */
     inline InstanceNetworkInterfaceSpecification& WithIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { SetIpv6Addresses(std::move(value)); return *this;}
 
     /**
-     * <p>One or more IPv6 addresses to assign to the network interface. You cannot
-     * specify this option and the option to assign a number of IPv6 addresses in the
-     * same request. You cannot specify this option if you've specified a minimum
-     * number of instances to launch.</p>
+     * <p>The IPv6 addresses to assign to the network interface. You cannot specify
+     * this option and the option to assign a number of IPv6 addresses in the same
+     * request. You cannot specify this option if you've specified a minimum number of
+     * instances to launch.</p>
      */
     inline InstanceNetworkInterfaceSpecification& AddIpv6Addresses(const InstanceIpv6Address& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
 
     /**
-     * <p>One or more IPv6 addresses to assign to the network interface. You cannot
-     * specify this option and the option to assign a number of IPv6 addresses in the
-     * same request. You cannot specify this option if you've specified a minimum
-     * number of instances to launch.</p>
+     * <p>The IPv6 addresses to assign to the network interface. You cannot specify
+     * this option and the option to assign a number of IPv6 addresses in the same
+     * request. You cannot specify this option if you've specified a minimum number of
+     * instances to launch.</p>
      */
     inline InstanceNetworkInterfaceSpecification& AddIpv6Addresses(InstanceIpv6Address&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(std::move(value)); return *this; }
 
@@ -476,8 +476,8 @@ namespace Model
 
 
     /**
-     * <p>One or more private IPv4 addresses to assign to the network interface. Only
-     * one private IPv4 address can be designated as primary. You cannot specify this
+     * <p>The private IPv4 addresses to assign to the network interface. Only one
+     * private IPv4 address can be designated as primary. You cannot specify this
      * option if you're launching more than one instance in a <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
      * request.</p>
@@ -485,8 +485,8 @@ namespace Model
     inline const Aws::Vector<PrivateIpAddressSpecification>& GetPrivateIpAddresses() const{ return m_privateIpAddresses; }
 
     /**
-     * <p>One or more private IPv4 addresses to assign to the network interface. Only
-     * one private IPv4 address can be designated as primary. You cannot specify this
+     * <p>The private IPv4 addresses to assign to the network interface. Only one
+     * private IPv4 address can be designated as primary. You cannot specify this
      * option if you're launching more than one instance in a <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
      * request.</p>
@@ -494,8 +494,8 @@ namespace Model
     inline bool PrivateIpAddressesHasBeenSet() const { return m_privateIpAddressesHasBeenSet; }
 
     /**
-     * <p>One or more private IPv4 addresses to assign to the network interface. Only
-     * one private IPv4 address can be designated as primary. You cannot specify this
+     * <p>The private IPv4 addresses to assign to the network interface. Only one
+     * private IPv4 address can be designated as primary. You cannot specify this
      * option if you're launching more than one instance in a <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
      * request.</p>
@@ -503,8 +503,8 @@ namespace Model
     inline void SetPrivateIpAddresses(const Aws::Vector<PrivateIpAddressSpecification>& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses = value; }
 
     /**
-     * <p>One or more private IPv4 addresses to assign to the network interface. Only
-     * one private IPv4 address can be designated as primary. You cannot specify this
+     * <p>The private IPv4 addresses to assign to the network interface. Only one
+     * private IPv4 address can be designated as primary. You cannot specify this
      * option if you're launching more than one instance in a <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
      * request.</p>
@@ -512,8 +512,8 @@ namespace Model
     inline void SetPrivateIpAddresses(Aws::Vector<PrivateIpAddressSpecification>&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses = std::move(value); }
 
     /**
-     * <p>One or more private IPv4 addresses to assign to the network interface. Only
-     * one private IPv4 address can be designated as primary. You cannot specify this
+     * <p>The private IPv4 addresses to assign to the network interface. Only one
+     * private IPv4 address can be designated as primary. You cannot specify this
      * option if you're launching more than one instance in a <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
      * request.</p>
@@ -521,8 +521,8 @@ namespace Model
     inline InstanceNetworkInterfaceSpecification& WithPrivateIpAddresses(const Aws::Vector<PrivateIpAddressSpecification>& value) { SetPrivateIpAddresses(value); return *this;}
 
     /**
-     * <p>One or more private IPv4 addresses to assign to the network interface. Only
-     * one private IPv4 address can be designated as primary. You cannot specify this
+     * <p>The private IPv4 addresses to assign to the network interface. Only one
+     * private IPv4 address can be designated as primary. You cannot specify this
      * option if you're launching more than one instance in a <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
      * request.</p>
@@ -530,8 +530,8 @@ namespace Model
     inline InstanceNetworkInterfaceSpecification& WithPrivateIpAddresses(Aws::Vector<PrivateIpAddressSpecification>&& value) { SetPrivateIpAddresses(std::move(value)); return *this;}
 
     /**
-     * <p>One or more private IPv4 addresses to assign to the network interface. Only
-     * one private IPv4 address can be designated as primary. You cannot specify this
+     * <p>The private IPv4 addresses to assign to the network interface. Only one
+     * private IPv4 address can be designated as primary. You cannot specify this
      * option if you're launching more than one instance in a <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
      * request.</p>
@@ -539,8 +539,8 @@ namespace Model
     inline InstanceNetworkInterfaceSpecification& AddPrivateIpAddresses(const PrivateIpAddressSpecification& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(value); return *this; }
 
     /**
-     * <p>One or more private IPv4 addresses to assign to the network interface. Only
-     * one private IPv4 address can be designated as primary. You cannot specify this
+     * <p>The private IPv4 addresses to assign to the network interface. Only one
+     * private IPv4 address can be designated as primary. You cannot specify this
      * option if you're launching more than one instance in a <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
      * request.</p>
@@ -778,58 +778,50 @@ namespace Model
 
 
     /**
-     * <p>One or more IPv4 delegated prefixes to be assigned to the network interface.
-     * You cannot use this option if you use the <code>Ipv4PrefixCount</code>
-     * option.</p>
+     * <p>The IPv4 delegated prefixes to be assigned to the network interface. You
+     * cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
      */
     inline const Aws::Vector<Ipv4PrefixSpecificationRequest>& GetIpv4Prefixes() const{ return m_ipv4Prefixes; }
 
     /**
-     * <p>One or more IPv4 delegated prefixes to be assigned to the network interface.
-     * You cannot use this option if you use the <code>Ipv4PrefixCount</code>
-     * option.</p>
+     * <p>The IPv4 delegated prefixes to be assigned to the network interface. You
+     * cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
      */
     inline bool Ipv4PrefixesHasBeenSet() const { return m_ipv4PrefixesHasBeenSet; }
 
     /**
-     * <p>One or more IPv4 delegated prefixes to be assigned to the network interface.
-     * You cannot use this option if you use the <code>Ipv4PrefixCount</code>
-     * option.</p>
+     * <p>The IPv4 delegated prefixes to be assigned to the network interface. You
+     * cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
      */
     inline void SetIpv4Prefixes(const Aws::Vector<Ipv4PrefixSpecificationRequest>& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes = value; }
 
     /**
-     * <p>One or more IPv4 delegated prefixes to be assigned to the network interface.
-     * You cannot use this option if you use the <code>Ipv4PrefixCount</code>
-     * option.</p>
+     * <p>The IPv4 delegated prefixes to be assigned to the network interface. You
+     * cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
      */
     inline void SetIpv4Prefixes(Aws::Vector<Ipv4PrefixSpecificationRequest>&& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes = std::move(value); }
 
     /**
-     * <p>One or more IPv4 delegated prefixes to be assigned to the network interface.
-     * You cannot use this option if you use the <code>Ipv4PrefixCount</code>
-     * option.</p>
+     * <p>The IPv4 delegated prefixes to be assigned to the network interface. You
+     * cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
      */
     inline InstanceNetworkInterfaceSpecification& WithIpv4Prefixes(const Aws::Vector<Ipv4PrefixSpecificationRequest>& value) { SetIpv4Prefixes(value); return *this;}
 
     /**
-     * <p>One or more IPv4 delegated prefixes to be assigned to the network interface.
-     * You cannot use this option if you use the <code>Ipv4PrefixCount</code>
-     * option.</p>
+     * <p>The IPv4 delegated prefixes to be assigned to the network interface. You
+     * cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
      */
     inline InstanceNetworkInterfaceSpecification& WithIpv4Prefixes(Aws::Vector<Ipv4PrefixSpecificationRequest>&& value) { SetIpv4Prefixes(std::move(value)); return *this;}
 
     /**
-     * <p>One or more IPv4 delegated prefixes to be assigned to the network interface.
-     * You cannot use this option if you use the <code>Ipv4PrefixCount</code>
-     * option.</p>
+     * <p>The IPv4 delegated prefixes to be assigned to the network interface. You
+     * cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
      */
     inline InstanceNetworkInterfaceSpecification& AddIpv4Prefixes(const Ipv4PrefixSpecificationRequest& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes.push_back(value); return *this; }
 
     /**
-     * <p>One or more IPv4 delegated prefixes to be assigned to the network interface.
-     * You cannot use this option if you use the <code>Ipv4PrefixCount</code>
-     * option.</p>
+     * <p>The IPv4 delegated prefixes to be assigned to the network interface. You
+     * cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
      */
     inline InstanceNetworkInterfaceSpecification& AddIpv4Prefixes(Ipv4PrefixSpecificationRequest&& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes.push_back(std::move(value)); return *this; }
 
@@ -864,58 +856,50 @@ namespace Model
 
 
     /**
-     * <p>One or more IPv6 delegated prefixes to be assigned to the network interface.
-     * You cannot use this option if you use the <code>Ipv6PrefixCount</code>
-     * option.</p>
+     * <p>The IPv6 delegated prefixes to be assigned to the network interface. You
+     * cannot use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
      */
     inline const Aws::Vector<Ipv6PrefixSpecificationRequest>& GetIpv6Prefixes() const{ return m_ipv6Prefixes; }
 
     /**
-     * <p>One or more IPv6 delegated prefixes to be assigned to the network interface.
-     * You cannot use this option if you use the <code>Ipv6PrefixCount</code>
-     * option.</p>
+     * <p>The IPv6 delegated prefixes to be assigned to the network interface. You
+     * cannot use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
      */
     inline bool Ipv6PrefixesHasBeenSet() const { return m_ipv6PrefixesHasBeenSet; }
 
     /**
-     * <p>One or more IPv6 delegated prefixes to be assigned to the network interface.
-     * You cannot use this option if you use the <code>Ipv6PrefixCount</code>
-     * option.</p>
+     * <p>The IPv6 delegated prefixes to be assigned to the network interface. You
+     * cannot use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
      */
     inline void SetIpv6Prefixes(const Aws::Vector<Ipv6PrefixSpecificationRequest>& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes = value; }
 
     /**
-     * <p>One or more IPv6 delegated prefixes to be assigned to the network interface.
-     * You cannot use this option if you use the <code>Ipv6PrefixCount</code>
-     * option.</p>
+     * <p>The IPv6 delegated prefixes to be assigned to the network interface. You
+     * cannot use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
      */
     inline void SetIpv6Prefixes(Aws::Vector<Ipv6PrefixSpecificationRequest>&& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes = std::move(value); }
 
     /**
-     * <p>One or more IPv6 delegated prefixes to be assigned to the network interface.
-     * You cannot use this option if you use the <code>Ipv6PrefixCount</code>
-     * option.</p>
+     * <p>The IPv6 delegated prefixes to be assigned to the network interface. You
+     * cannot use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
      */
     inline InstanceNetworkInterfaceSpecification& WithIpv6Prefixes(const Aws::Vector<Ipv6PrefixSpecificationRequest>& value) { SetIpv6Prefixes(value); return *this;}
 
     /**
-     * <p>One or more IPv6 delegated prefixes to be assigned to the network interface.
-     * You cannot use this option if you use the <code>Ipv6PrefixCount</code>
-     * option.</p>
+     * <p>The IPv6 delegated prefixes to be assigned to the network interface. You
+     * cannot use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
      */
     inline InstanceNetworkInterfaceSpecification& WithIpv6Prefixes(Aws::Vector<Ipv6PrefixSpecificationRequest>&& value) { SetIpv6Prefixes(std::move(value)); return *this;}
 
     /**
-     * <p>One or more IPv6 delegated prefixes to be assigned to the network interface.
-     * You cannot use this option if you use the <code>Ipv6PrefixCount</code>
-     * option.</p>
+     * <p>The IPv6 delegated prefixes to be assigned to the network interface. You
+     * cannot use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
      */
     inline InstanceNetworkInterfaceSpecification& AddIpv6Prefixes(const Ipv6PrefixSpecificationRequest& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes.push_back(value); return *this; }
 
     /**
-     * <p>One or more IPv6 delegated prefixes to be assigned to the network interface.
-     * You cannot use this option if you use the <code>Ipv6PrefixCount</code>
-     * option.</p>
+     * <p>The IPv6 delegated prefixes to be assigned to the network interface. You
+     * cannot use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
      */
     inline InstanceNetworkInterfaceSpecification& AddIpv6Prefixes(Ipv6PrefixSpecificationRequest&& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes.push_back(std::move(value)); return *this; }
 

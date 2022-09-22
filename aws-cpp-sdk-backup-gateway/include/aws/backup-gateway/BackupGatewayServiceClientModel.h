@@ -22,6 +22,7 @@
 #include <aws/backup-gateway/model/DeleteHypervisorResult.h>
 #include <aws/backup-gateway/model/DisassociateGatewayFromServerResult.h>
 #include <aws/backup-gateway/model/GetGatewayResult.h>
+#include <aws/backup-gateway/model/GetVirtualMachineResult.h>
 #include <aws/backup-gateway/model/ImportHypervisorConfigurationResult.h>
 #include <aws/backup-gateway/model/ListGatewaysResult.h>
 #include <aws/backup-gateway/model/ListHypervisorsResult.h>
@@ -76,6 +77,7 @@ namespace Aws
       class DeleteHypervisorRequest;
       class DisassociateGatewayFromServerRequest;
       class GetGatewayRequest;
+      class GetVirtualMachineRequest;
       class ImportHypervisorConfigurationRequest;
       class ListGatewaysRequest;
       class ListHypervisorsRequest;
@@ -97,6 +99,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteHypervisorResult, BackupGatewayError> DeleteHypervisorOutcome;
       typedef Aws::Utils::Outcome<DisassociateGatewayFromServerResult, BackupGatewayError> DisassociateGatewayFromServerOutcome;
       typedef Aws::Utils::Outcome<GetGatewayResult, BackupGatewayError> GetGatewayOutcome;
+      typedef Aws::Utils::Outcome<GetVirtualMachineResult, BackupGatewayError> GetVirtualMachineOutcome;
       typedef Aws::Utils::Outcome<ImportHypervisorConfigurationResult, BackupGatewayError> ImportHypervisorConfigurationOutcome;
       typedef Aws::Utils::Outcome<ListGatewaysResult, BackupGatewayError> ListGatewaysOutcome;
       typedef Aws::Utils::Outcome<ListHypervisorsResult, BackupGatewayError> ListHypervisorsOutcome;
@@ -118,6 +121,7 @@ namespace Aws
       typedef std::future<DeleteHypervisorOutcome> DeleteHypervisorOutcomeCallable;
       typedef std::future<DisassociateGatewayFromServerOutcome> DisassociateGatewayFromServerOutcomeCallable;
       typedef std::future<GetGatewayOutcome> GetGatewayOutcomeCallable;
+      typedef std::future<GetVirtualMachineOutcome> GetVirtualMachineOutcomeCallable;
       typedef std::future<ImportHypervisorConfigurationOutcome> ImportHypervisorConfigurationOutcomeCallable;
       typedef std::future<ListGatewaysOutcome> ListGatewaysOutcomeCallable;
       typedef std::future<ListHypervisorsOutcome> ListHypervisorsOutcomeCallable;
@@ -142,6 +146,7 @@ namespace Aws
     typedef std::function<void(const BackupGatewayClient*, const Model::DeleteHypervisorRequest&, const Model::DeleteHypervisorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHypervisorResponseReceivedHandler;
     typedef std::function<void(const BackupGatewayClient*, const Model::DisassociateGatewayFromServerRequest&, const Model::DisassociateGatewayFromServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateGatewayFromServerResponseReceivedHandler;
     typedef std::function<void(const BackupGatewayClient*, const Model::GetGatewayRequest&, const Model::GetGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGatewayResponseReceivedHandler;
+    typedef std::function<void(const BackupGatewayClient*, const Model::GetVirtualMachineRequest&, const Model::GetVirtualMachineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVirtualMachineResponseReceivedHandler;
     typedef std::function<void(const BackupGatewayClient*, const Model::ImportHypervisorConfigurationRequest&, const Model::ImportHypervisorConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportHypervisorConfigurationResponseReceivedHandler;
     typedef std::function<void(const BackupGatewayClient*, const Model::ListGatewaysRequest&, const Model::ListGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGatewaysResponseReceivedHandler;
     typedef std::function<void(const BackupGatewayClient*, const Model::ListHypervisorsRequest&, const Model::ListHypervisorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHypervisorsResponseReceivedHandler;

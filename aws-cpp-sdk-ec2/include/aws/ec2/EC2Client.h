@@ -237,8 +237,8 @@ namespace EC2
          * <p>You can allocate a carrier IP address which is a public IP address from a
          * telecommunication carrier, to a network interface which resides in a subnet in a
          * Wavelength Zone (for example an EC2 instance). </p>  <p>We are retiring
-         * EC2-Classic on August 15, 2022. We recommend that you migrate from EC2-Classic
-         * to a VPC. For more information, see <a
+         * EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
          * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -417,9 +417,8 @@ namespace EC2
          * each time the Elastic IP address is remapped to the same instance. For more
          * information, see the <i>Elastic IP Addresses</i> section of <a
          * href="http://aws.amazon.com/ec2/pricing/">Amazon EC2 Pricing</a>.</p>
-         *   <p>We are retiring EC2-Classic on August 15, 2022. We
-         * recommend that you migrate from EC2-Classic to a VPC. For more information, see
-         * <a
+         *   <p>We are retiring EC2-Classic. We recommend that you
+         * migrate from EC2-Classic to a VPC. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
          * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -498,7 +497,7 @@ namespace EC2
          * Manager for Nitro Enclaves</a> in the <i>Amazon Web Services Nitro Enclaves User
          * Guide</i>.</p> <p>When the IAM role is associated with the ACM certificate, the
          * certificate, certificate chain, and encrypted private key are placed in an
-         * Amazon S3 bucket that only the associated IAM role can access. The private key
+         * Amazon S3 location that only the associated IAM role can access. The private key
          * of the certificate is encrypted with an Amazon Web Services managed key that has
          * an attached attestation-based key policy.</p> <p>To enable the IAM role to
          * access the Amazon S3 object, you must grant it permission to call
@@ -907,9 +906,8 @@ namespace EC2
          * within the security group as quickly as possible. However, a small delay might
          * occur.</p> <p>For more information about VPC security group quotas, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
-         * VPC quotas</a>.</p>  <p>We are retiring EC2-Classic on August 15, 2022. We
-         * recommend that you migrate from EC2-Classic to a VPC. For more information, see
-         * <a
+         * VPC quotas</a>.</p>  <p>We are retiring EC2-Classic. We recommend that you
+         * migrate from EC2-Classic to a VPC. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
          * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -2134,10 +2132,14 @@ namespace EC2
         virtual void CreateNetworkInsightsPathAsync(const Model::CreateNetworkInsightsPathRequest& request, const CreateNetworkInsightsPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a network interface in the specified subnet.</p> <p>For more
-         * information about network interfaces, see <a
+         * <p>Creates a network interface in the specified subnet.</p> <p>The number of IP
+         * addresses you can assign to a network interface varies by instance type. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP
+         * Addresses Per ENI Per Instance Type</a> in the <i>Amazon Virtual Private Cloud
+         * User Guide</i>.</p> <p>For more information about network interfaces, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
-         * Network Interfaces</a> in the <i>Amazon Virtual Private Cloud User
+         * network interfaces</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterface">AWS
          * API Reference</a></p>
@@ -2385,9 +2387,8 @@ namespace EC2
          * <a>RevokeSecurityGroupIngress</a>, and <a>RevokeSecurityGroupEgress</a>.</p>
          * <p>For more information about VPC security group limits, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
-         * VPC Limits</a>.</p>  <p>We are retiring EC2-Classic on August 15, 2022. We
-         * recommend that you migrate from EC2-Classic to a VPC. For more information, see
-         * <a
+         * VPC Limits</a>.</p>  <p>We are retiring EC2-Classic. We recommend that you
+         * migrate from EC2-Classic to a VPC. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
          * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -2457,13 +2458,15 @@ namespace EC2
         /**
          * <p>Creates crash-consistent snapshots of multiple EBS volumes and stores the
          * data in S3. Volumes are chosen by specifying an instance. Any attached volumes
-         * will produce one snapshot each that is crash-consistent across the instance.
-         * Boot volumes can be excluded by changing the parameters. </p> <p>You can create
-         * multi-volume snapshots of instances in a Region and instances on an Outpost. If
-         * you create snapshots from an instance in a Region, the snapshots must be stored
-         * in the same Region as the instance. If you create snapshots from an instance on
-         * an Outpost, the snapshots can be stored on the same Outpost as the instance, or
-         * in the Region for that Outpost.</p><p><h3>See Also:</h3>   <a
+         * will produce one snapshot each that is crash-consistent across the instance.</p>
+         * <p>You can include all of the volumes currently attached to the instance, or you
+         * can exclude the root volume or specific data (non-root) volumes from the
+         * multi-volume snapshot set.</p> <p>You can create multi-volume snapshots of
+         * instances in a Region and instances on an Outpost. If you create snapshots from
+         * an instance in a Region, the snapshots must be stored in the same Region as the
+         * instance. If you create snapshots from an instance on an Outpost, the snapshots
+         * can be stored on the same Outpost as the instance, or in the Region for that
+         * Outpost.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshots">AWS
          * API Reference</a></p>
          */
@@ -3918,8 +3921,8 @@ namespace EC2
          * that is associated with an instance, or is referenced by another security group,
          * the operation fails with <code>InvalidGroup.InUse</code> in EC2-Classic or
          * <code>DependencyViolation</code> in EC2-VPC.</p>  <p>We are retiring
-         * EC2-Classic on August 15, 2022. We recommend that you migrate from EC2-Classic
-         * to a VPC. For more information, see <a
+         * EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
          * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -4695,8 +4698,8 @@ namespace EC2
          * platform or in a VPC. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
          * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         *  <p>We are retiring EC2-Classic on August 15, 2022. We recommend that you
-         * migrate from EC2-Classic to a VPC. For more information, see <a
+         *  <p>We are retiring EC2-Classic. We recommend that you migrate from
+         * EC2-Classic to a VPC. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
          * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -6584,9 +6587,8 @@ namespace EC2
          * and <a
          * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
          * groups for your VPC</a> in the <i>Amazon Virtual Private Cloud User
-         * Guide</i>.</p>  <p>We are retiring EC2-Classic on August 15, 2022. We
-         * recommend that you migrate from EC2-Classic to a VPC. For more information, see
-         * <a
+         * Guide</i>.</p>  <p>We are retiring EC2-Classic. We recommend that you
+         * migrate from EC2-Classic to a VPC. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
          * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -7901,8 +7903,8 @@ namespace EC2
          * EC2-Classic platform or in a VPC. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
          * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         *  <p>We are retiring EC2-Classic on August 15, 2022. We recommend that you
-         * migrate from EC2-Classic to a VPC. For more information, see <a
+         *  <p>We are retiring EC2-Classic. We recommend that you migrate from
+         * EC2-Classic to a VPC. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
          * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p>  <p>This is an idempotent operation. If you perform the
@@ -9288,7 +9290,12 @@ namespace EC2
 
         /**
          * <p>Import single or multi-volume disk images or EBS snapshots into an Amazon
-         * Machine Image (AMI).</p> <p>For more information, see <a
+         * Machine Image (AMI).</p>  <p>Amazon Web Services VM Import/Export
+         * strongly recommends specifying a value for either the
+         * <code>--license-type</code> or <code>--usage-operation</code> parameter when you
+         * create a new VM Import task. This ensures your operating system is licensed
+         * appropriately and your billing is optimized.</p>  <p>For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing
          * a VM as an image using VM Import/Export</a> in the <i>VM Import/Export User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -10842,8 +10849,8 @@ namespace EC2
          * unless you move it back using the <a>RestoreAddressToClassic</a> request. You
          * cannot move an Elastic IP address that was originally allocated for use in the
          * EC2-VPC platform to the EC2-Classic platform.</p>  <p>We are retiring
-         * EC2-Classic on August 15, 2022. We recommend that you migrate from EC2-Classic
-         * to a VPC. For more information, see <a
+         * EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
          * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -11297,8 +11304,8 @@ namespace EC2
          * Releasing an Elastic IP address automatically disassociates it from any instance
          * that it's associated with. To disassociate an Elastic IP address without
          * releasing it, use <a>DisassociateAddress</a>.</p>  <p>We are retiring
-         * EC2-Classic on August 15, 2022. We recommend that you migrate from EC2-Classic
-         * to a VPC. For more information, see <a
+         * EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
          * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p>  <p>[Nondefault VPC] You must use
@@ -11753,8 +11760,8 @@ namespace EC2
          * platform back to the EC2-Classic platform. You cannot move an Elastic IP address
          * that was originally allocated for use in EC2-VPC. The Elastic IP address must
          * not be associated with an instance or network interface.</p>  <p>We are
-         * retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
-         * EC2-Classic to a VPC. For more information, see <a
+         * retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
          * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -11921,9 +11928,8 @@ namespace EC2
          * revoked.</p> <p>Amazon Web Services recommends that you describe the security
          * group to verify that the rules were removed.</p> <p>Rule changes are propagated
          * to instances within the security group as quickly as possible. However, a small
-         * delay might occur.</p>  <p>We are retiring EC2-Classic on August 15, 2022.
-         * We recommend that you migrate from EC2-Classic to a VPC. For more information,
-         * see <a
+         * delay might occur.</p>  <p>We are retiring EC2-Classic. We recommend that
+         * you migrate from EC2-Classic to a VPC. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
          * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p><h3>See Also:</h3>   <a

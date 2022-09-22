@@ -61,7 +61,8 @@ Run::Run() :
     m_skipAppResign(false),
     m_skipAppResignHasBeenSet(false),
     m_testSpecArnHasBeenSet(false),
-    m_deviceSelectionResultHasBeenSet(false)
+    m_deviceSelectionResultHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false)
 {
 }
 
@@ -108,7 +109,8 @@ Run::Run(JsonView jsonValue) :
     m_skipAppResign(false),
     m_skipAppResignHasBeenSet(false),
     m_testSpecArnHasBeenSet(false),
-    m_deviceSelectionResultHasBeenSet(false)
+    m_deviceSelectionResultHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -332,6 +334,13 @@ Run& Run::operator =(JsonView jsonValue)
     m_deviceSelectionResultHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("vpcConfig"))
+  {
+    m_vpcConfig = jsonValue.GetObject("vpcConfig");
+
+    m_vpcConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -513,6 +522,12 @@ JsonValue Run::Jsonize() const
   if(m_deviceSelectionResultHasBeenSet)
   {
    payload.WithObject("deviceSelectionResult", m_deviceSelectionResult.Jsonize());
+
+  }
+
+  if(m_vpcConfigHasBeenSet)
+  {
+   payload.WithObject("vpcConfig", m_vpcConfig.Jsonize());
 
   }
 

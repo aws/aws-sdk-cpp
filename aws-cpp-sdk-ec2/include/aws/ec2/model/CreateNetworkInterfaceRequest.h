@@ -25,10 +25,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for CreateNetworkInterface.</p><p><h3>See Also:</h3> 
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterfaceRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_EC2_API CreateNetworkInterfaceRequest : public EC2Request
   {
@@ -170,94 +166,110 @@ namespace Model
 
     /**
      * <p>The number of IPv6 addresses to assign to a network interface. Amazon EC2
-     * automatically selects the IPv6 addresses from the subnet range. You can't use
-     * this option if specifying specific IPv6 addresses. If your subnet has the
-     * <code>AssignIpv6AddressOnCreation</code> attribute set to <code>true</code>, you
-     * can specify <code>0</code> to override this setting.</p>
+     * automatically selects the IPv6 addresses from the subnet range.</p> <p>You can't
+     * specify a count of IPv6 addresses using this parameter if you've specified one
+     * of the following: specific IPv6 addresses, specific IPv6 prefixes, or a count of
+     * IPv6 prefixes.</p> <p>If your subnet has the
+     * <code>AssignIpv6AddressOnCreation</code> attribute set, you can override that
+     * setting by specifying 0 as the IPv6 address count.</p>
      */
     inline int GetIpv6AddressCount() const{ return m_ipv6AddressCount; }
 
     /**
      * <p>The number of IPv6 addresses to assign to a network interface. Amazon EC2
-     * automatically selects the IPv6 addresses from the subnet range. You can't use
-     * this option if specifying specific IPv6 addresses. If your subnet has the
-     * <code>AssignIpv6AddressOnCreation</code> attribute set to <code>true</code>, you
-     * can specify <code>0</code> to override this setting.</p>
+     * automatically selects the IPv6 addresses from the subnet range.</p> <p>You can't
+     * specify a count of IPv6 addresses using this parameter if you've specified one
+     * of the following: specific IPv6 addresses, specific IPv6 prefixes, or a count of
+     * IPv6 prefixes.</p> <p>If your subnet has the
+     * <code>AssignIpv6AddressOnCreation</code> attribute set, you can override that
+     * setting by specifying 0 as the IPv6 address count.</p>
      */
     inline bool Ipv6AddressCountHasBeenSet() const { return m_ipv6AddressCountHasBeenSet; }
 
     /**
      * <p>The number of IPv6 addresses to assign to a network interface. Amazon EC2
-     * automatically selects the IPv6 addresses from the subnet range. You can't use
-     * this option if specifying specific IPv6 addresses. If your subnet has the
-     * <code>AssignIpv6AddressOnCreation</code> attribute set to <code>true</code>, you
-     * can specify <code>0</code> to override this setting.</p>
+     * automatically selects the IPv6 addresses from the subnet range.</p> <p>You can't
+     * specify a count of IPv6 addresses using this parameter if you've specified one
+     * of the following: specific IPv6 addresses, specific IPv6 prefixes, or a count of
+     * IPv6 prefixes.</p> <p>If your subnet has the
+     * <code>AssignIpv6AddressOnCreation</code> attribute set, you can override that
+     * setting by specifying 0 as the IPv6 address count.</p>
      */
     inline void SetIpv6AddressCount(int value) { m_ipv6AddressCountHasBeenSet = true; m_ipv6AddressCount = value; }
 
     /**
      * <p>The number of IPv6 addresses to assign to a network interface. Amazon EC2
-     * automatically selects the IPv6 addresses from the subnet range. You can't use
-     * this option if specifying specific IPv6 addresses. If your subnet has the
-     * <code>AssignIpv6AddressOnCreation</code> attribute set to <code>true</code>, you
-     * can specify <code>0</code> to override this setting.</p>
+     * automatically selects the IPv6 addresses from the subnet range.</p> <p>You can't
+     * specify a count of IPv6 addresses using this parameter if you've specified one
+     * of the following: specific IPv6 addresses, specific IPv6 prefixes, or a count of
+     * IPv6 prefixes.</p> <p>If your subnet has the
+     * <code>AssignIpv6AddressOnCreation</code> attribute set, you can override that
+     * setting by specifying 0 as the IPv6 address count.</p>
      */
     inline CreateNetworkInterfaceRequest& WithIpv6AddressCount(int value) { SetIpv6AddressCount(value); return *this;}
 
 
     /**
-     * <p>One or more specific IPv6 addresses from the IPv6 CIDR block range of your
-     * subnet. You can't use this option if you're specifying a number of IPv6
-     * addresses.</p>
+     * <p>The IPv6 addresses from the IPv6 CIDR block range of your subnet.</p> <p>You
+     * can't specify IPv6 addresses using this parameter if you've specified one of the
+     * following: a count of IPv6 addresses, specific IPv6 prefixes, or a count of IPv6
+     * prefixes.</p>
      */
     inline const Aws::Vector<InstanceIpv6Address>& GetIpv6Addresses() const{ return m_ipv6Addresses; }
 
     /**
-     * <p>One or more specific IPv6 addresses from the IPv6 CIDR block range of your
-     * subnet. You can't use this option if you're specifying a number of IPv6
-     * addresses.</p>
+     * <p>The IPv6 addresses from the IPv6 CIDR block range of your subnet.</p> <p>You
+     * can't specify IPv6 addresses using this parameter if you've specified one of the
+     * following: a count of IPv6 addresses, specific IPv6 prefixes, or a count of IPv6
+     * prefixes.</p>
      */
     inline bool Ipv6AddressesHasBeenSet() const { return m_ipv6AddressesHasBeenSet; }
 
     /**
-     * <p>One or more specific IPv6 addresses from the IPv6 CIDR block range of your
-     * subnet. You can't use this option if you're specifying a number of IPv6
-     * addresses.</p>
+     * <p>The IPv6 addresses from the IPv6 CIDR block range of your subnet.</p> <p>You
+     * can't specify IPv6 addresses using this parameter if you've specified one of the
+     * following: a count of IPv6 addresses, specific IPv6 prefixes, or a count of IPv6
+     * prefixes.</p>
      */
     inline void SetIpv6Addresses(const Aws::Vector<InstanceIpv6Address>& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = value; }
 
     /**
-     * <p>One or more specific IPv6 addresses from the IPv6 CIDR block range of your
-     * subnet. You can't use this option if you're specifying a number of IPv6
-     * addresses.</p>
+     * <p>The IPv6 addresses from the IPv6 CIDR block range of your subnet.</p> <p>You
+     * can't specify IPv6 addresses using this parameter if you've specified one of the
+     * following: a count of IPv6 addresses, specific IPv6 prefixes, or a count of IPv6
+     * prefixes.</p>
      */
     inline void SetIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = std::move(value); }
 
     /**
-     * <p>One or more specific IPv6 addresses from the IPv6 CIDR block range of your
-     * subnet. You can't use this option if you're specifying a number of IPv6
-     * addresses.</p>
+     * <p>The IPv6 addresses from the IPv6 CIDR block range of your subnet.</p> <p>You
+     * can't specify IPv6 addresses using this parameter if you've specified one of the
+     * following: a count of IPv6 addresses, specific IPv6 prefixes, or a count of IPv6
+     * prefixes.</p>
      */
     inline CreateNetworkInterfaceRequest& WithIpv6Addresses(const Aws::Vector<InstanceIpv6Address>& value) { SetIpv6Addresses(value); return *this;}
 
     /**
-     * <p>One or more specific IPv6 addresses from the IPv6 CIDR block range of your
-     * subnet. You can't use this option if you're specifying a number of IPv6
-     * addresses.</p>
+     * <p>The IPv6 addresses from the IPv6 CIDR block range of your subnet.</p> <p>You
+     * can't specify IPv6 addresses using this parameter if you've specified one of the
+     * following: a count of IPv6 addresses, specific IPv6 prefixes, or a count of IPv6
+     * prefixes.</p>
      */
     inline CreateNetworkInterfaceRequest& WithIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { SetIpv6Addresses(std::move(value)); return *this;}
 
     /**
-     * <p>One or more specific IPv6 addresses from the IPv6 CIDR block range of your
-     * subnet. You can't use this option if you're specifying a number of IPv6
-     * addresses.</p>
+     * <p>The IPv6 addresses from the IPv6 CIDR block range of your subnet.</p> <p>You
+     * can't specify IPv6 addresses using this parameter if you've specified one of the
+     * following: a count of IPv6 addresses, specific IPv6 prefixes, or a count of IPv6
+     * prefixes.</p>
      */
     inline CreateNetworkInterfaceRequest& AddIpv6Addresses(const InstanceIpv6Address& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
 
     /**
-     * <p>One or more specific IPv6 addresses from the IPv6 CIDR block range of your
-     * subnet. You can't use this option if you're specifying a number of IPv6
-     * addresses.</p>
+     * <p>The IPv6 addresses from the IPv6 CIDR block range of your subnet.</p> <p>You
+     * can't specify IPv6 addresses using this parameter if you've specified one of the
+     * following: a count of IPv6 addresses, specific IPv6 prefixes, or a count of IPv6
+     * prefixes.</p>
      */
     inline CreateNetworkInterfaceRequest& AddIpv6Addresses(InstanceIpv6Address&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(std::move(value)); return *this; }
 
@@ -336,42 +348,58 @@ namespace Model
 
 
     /**
-     * <p>One or more private IPv4 addresses.</p>
+     * <p>The private IPv4 addresses.</p> <p>You can't specify private IPv4 addresses
+     * if you've specified one of the following: a count of private IPv4 addresses,
+     * specific IPv4 prefixes, or a count of IPv4 prefixes.</p>
      */
     inline const Aws::Vector<PrivateIpAddressSpecification>& GetPrivateIpAddresses() const{ return m_privateIpAddresses; }
 
     /**
-     * <p>One or more private IPv4 addresses.</p>
+     * <p>The private IPv4 addresses.</p> <p>You can't specify private IPv4 addresses
+     * if you've specified one of the following: a count of private IPv4 addresses,
+     * specific IPv4 prefixes, or a count of IPv4 prefixes.</p>
      */
     inline bool PrivateIpAddressesHasBeenSet() const { return m_privateIpAddressesHasBeenSet; }
 
     /**
-     * <p>One or more private IPv4 addresses.</p>
+     * <p>The private IPv4 addresses.</p> <p>You can't specify private IPv4 addresses
+     * if you've specified one of the following: a count of private IPv4 addresses,
+     * specific IPv4 prefixes, or a count of IPv4 prefixes.</p>
      */
     inline void SetPrivateIpAddresses(const Aws::Vector<PrivateIpAddressSpecification>& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses = value; }
 
     /**
-     * <p>One or more private IPv4 addresses.</p>
+     * <p>The private IPv4 addresses.</p> <p>You can't specify private IPv4 addresses
+     * if you've specified one of the following: a count of private IPv4 addresses,
+     * specific IPv4 prefixes, or a count of IPv4 prefixes.</p>
      */
     inline void SetPrivateIpAddresses(Aws::Vector<PrivateIpAddressSpecification>&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses = std::move(value); }
 
     /**
-     * <p>One or more private IPv4 addresses.</p>
+     * <p>The private IPv4 addresses.</p> <p>You can't specify private IPv4 addresses
+     * if you've specified one of the following: a count of private IPv4 addresses,
+     * specific IPv4 prefixes, or a count of IPv4 prefixes.</p>
      */
     inline CreateNetworkInterfaceRequest& WithPrivateIpAddresses(const Aws::Vector<PrivateIpAddressSpecification>& value) { SetPrivateIpAddresses(value); return *this;}
 
     /**
-     * <p>One or more private IPv4 addresses.</p>
+     * <p>The private IPv4 addresses.</p> <p>You can't specify private IPv4 addresses
+     * if you've specified one of the following: a count of private IPv4 addresses,
+     * specific IPv4 prefixes, or a count of IPv4 prefixes.</p>
      */
     inline CreateNetworkInterfaceRequest& WithPrivateIpAddresses(Aws::Vector<PrivateIpAddressSpecification>&& value) { SetPrivateIpAddresses(std::move(value)); return *this;}
 
     /**
-     * <p>One or more private IPv4 addresses.</p>
+     * <p>The private IPv4 addresses.</p> <p>You can't specify private IPv4 addresses
+     * if you've specified one of the following: a count of private IPv4 addresses,
+     * specific IPv4 prefixes, or a count of IPv4 prefixes.</p>
      */
     inline CreateNetworkInterfaceRequest& AddPrivateIpAddresses(const PrivateIpAddressSpecification& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(value); return *this; }
 
     /**
-     * <p>One or more private IPv4 addresses.</p>
+     * <p>The private IPv4 addresses.</p> <p>You can't specify private IPv4 addresses
+     * if you've specified one of the following: a count of private IPv4 addresses,
+     * specific IPv4 prefixes, or a count of IPv4 prefixes.</p>
      */
     inline CreateNetworkInterfaceRequest& AddPrivateIpAddresses(PrivateIpAddressSpecification&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(std::move(value)); return *this; }
 
@@ -381,12 +409,9 @@ namespace Model
      * interface. When you specify a number of secondary IPv4 addresses, Amazon EC2
      * selects these IP addresses within the subnet's IPv4 CIDR range. You can't
      * specify this option and specify more than one private IP address using
-     * <code>privateIpAddresses</code>.</p> <p>The number of IP addresses you can
-     * assign to a network interface varies by instance type. For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP
-     * Addresses Per ENI Per Instance Type</a> in the <i>Amazon Virtual Private Cloud
-     * User Guide</i>.</p>
+     * <code>privateIpAddresses</code>.</p> <p>You can't specify a count of private
+     * IPv4 addresses if you've specified one of the following: specific private IPv4
+     * addresses, specific IPv4 prefixes, or a count of IPv4 prefixes.</p>
      */
     inline int GetSecondaryPrivateIpAddressCount() const{ return m_secondaryPrivateIpAddressCount; }
 
@@ -395,12 +420,9 @@ namespace Model
      * interface. When you specify a number of secondary IPv4 addresses, Amazon EC2
      * selects these IP addresses within the subnet's IPv4 CIDR range. You can't
      * specify this option and specify more than one private IP address using
-     * <code>privateIpAddresses</code>.</p> <p>The number of IP addresses you can
-     * assign to a network interface varies by instance type. For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP
-     * Addresses Per ENI Per Instance Type</a> in the <i>Amazon Virtual Private Cloud
-     * User Guide</i>.</p>
+     * <code>privateIpAddresses</code>.</p> <p>You can't specify a count of private
+     * IPv4 addresses if you've specified one of the following: specific private IPv4
+     * addresses, specific IPv4 prefixes, or a count of IPv4 prefixes.</p>
      */
     inline bool SecondaryPrivateIpAddressCountHasBeenSet() const { return m_secondaryPrivateIpAddressCountHasBeenSet; }
 
@@ -409,12 +431,9 @@ namespace Model
      * interface. When you specify a number of secondary IPv4 addresses, Amazon EC2
      * selects these IP addresses within the subnet's IPv4 CIDR range. You can't
      * specify this option and specify more than one private IP address using
-     * <code>privateIpAddresses</code>.</p> <p>The number of IP addresses you can
-     * assign to a network interface varies by instance type. For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP
-     * Addresses Per ENI Per Instance Type</a> in the <i>Amazon Virtual Private Cloud
-     * User Guide</i>.</p>
+     * <code>privateIpAddresses</code>.</p> <p>You can't specify a count of private
+     * IPv4 addresses if you've specified one of the following: specific private IPv4
+     * addresses, specific IPv4 prefixes, or a count of IPv4 prefixes.</p>
      */
     inline void SetSecondaryPrivateIpAddressCount(int value) { m_secondaryPrivateIpAddressCountHasBeenSet = true; m_secondaryPrivateIpAddressCount = value; }
 
@@ -423,168 +442,197 @@ namespace Model
      * interface. When you specify a number of secondary IPv4 addresses, Amazon EC2
      * selects these IP addresses within the subnet's IPv4 CIDR range. You can't
      * specify this option and specify more than one private IP address using
-     * <code>privateIpAddresses</code>.</p> <p>The number of IP addresses you can
-     * assign to a network interface varies by instance type. For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP
-     * Addresses Per ENI Per Instance Type</a> in the <i>Amazon Virtual Private Cloud
-     * User Guide</i>.</p>
+     * <code>privateIpAddresses</code>.</p> <p>You can't specify a count of private
+     * IPv4 addresses if you've specified one of the following: specific private IPv4
+     * addresses, specific IPv4 prefixes, or a count of IPv4 prefixes.</p>
      */
     inline CreateNetworkInterfaceRequest& WithSecondaryPrivateIpAddressCount(int value) { SetSecondaryPrivateIpAddressCount(value); return *this;}
 
 
     /**
-     * <p>One or more IPv4 prefixes assigned to the network interface. You cannot use
-     * this option if you use the <code>Ipv4PrefixCount</code> option.</p>
+     * <p>The IPv4 prefixes assigned to the network interface.</p> <p>You can't specify
+     * IPv4 prefixes if you've specified one of the following: a count of IPv4
+     * prefixes, specific private IPv4 addresses, or a count of private IPv4
+     * addresses.</p>
      */
     inline const Aws::Vector<Ipv4PrefixSpecificationRequest>& GetIpv4Prefixes() const{ return m_ipv4Prefixes; }
 
     /**
-     * <p>One or more IPv4 prefixes assigned to the network interface. You cannot use
-     * this option if you use the <code>Ipv4PrefixCount</code> option.</p>
+     * <p>The IPv4 prefixes assigned to the network interface.</p> <p>You can't specify
+     * IPv4 prefixes if you've specified one of the following: a count of IPv4
+     * prefixes, specific private IPv4 addresses, or a count of private IPv4
+     * addresses.</p>
      */
     inline bool Ipv4PrefixesHasBeenSet() const { return m_ipv4PrefixesHasBeenSet; }
 
     /**
-     * <p>One or more IPv4 prefixes assigned to the network interface. You cannot use
-     * this option if you use the <code>Ipv4PrefixCount</code> option.</p>
+     * <p>The IPv4 prefixes assigned to the network interface.</p> <p>You can't specify
+     * IPv4 prefixes if you've specified one of the following: a count of IPv4
+     * prefixes, specific private IPv4 addresses, or a count of private IPv4
+     * addresses.</p>
      */
     inline void SetIpv4Prefixes(const Aws::Vector<Ipv4PrefixSpecificationRequest>& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes = value; }
 
     /**
-     * <p>One or more IPv4 prefixes assigned to the network interface. You cannot use
-     * this option if you use the <code>Ipv4PrefixCount</code> option.</p>
+     * <p>The IPv4 prefixes assigned to the network interface.</p> <p>You can't specify
+     * IPv4 prefixes if you've specified one of the following: a count of IPv4
+     * prefixes, specific private IPv4 addresses, or a count of private IPv4
+     * addresses.</p>
      */
     inline void SetIpv4Prefixes(Aws::Vector<Ipv4PrefixSpecificationRequest>&& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes = std::move(value); }
 
     /**
-     * <p>One or more IPv4 prefixes assigned to the network interface. You cannot use
-     * this option if you use the <code>Ipv4PrefixCount</code> option.</p>
+     * <p>The IPv4 prefixes assigned to the network interface.</p> <p>You can't specify
+     * IPv4 prefixes if you've specified one of the following: a count of IPv4
+     * prefixes, specific private IPv4 addresses, or a count of private IPv4
+     * addresses.</p>
      */
     inline CreateNetworkInterfaceRequest& WithIpv4Prefixes(const Aws::Vector<Ipv4PrefixSpecificationRequest>& value) { SetIpv4Prefixes(value); return *this;}
 
     /**
-     * <p>One or more IPv4 prefixes assigned to the network interface. You cannot use
-     * this option if you use the <code>Ipv4PrefixCount</code> option.</p>
+     * <p>The IPv4 prefixes assigned to the network interface.</p> <p>You can't specify
+     * IPv4 prefixes if you've specified one of the following: a count of IPv4
+     * prefixes, specific private IPv4 addresses, or a count of private IPv4
+     * addresses.</p>
      */
     inline CreateNetworkInterfaceRequest& WithIpv4Prefixes(Aws::Vector<Ipv4PrefixSpecificationRequest>&& value) { SetIpv4Prefixes(std::move(value)); return *this;}
 
     /**
-     * <p>One or more IPv4 prefixes assigned to the network interface. You cannot use
-     * this option if you use the <code>Ipv4PrefixCount</code> option.</p>
+     * <p>The IPv4 prefixes assigned to the network interface.</p> <p>You can't specify
+     * IPv4 prefixes if you've specified one of the following: a count of IPv4
+     * prefixes, specific private IPv4 addresses, or a count of private IPv4
+     * addresses.</p>
      */
     inline CreateNetworkInterfaceRequest& AddIpv4Prefixes(const Ipv4PrefixSpecificationRequest& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes.push_back(value); return *this; }
 
     /**
-     * <p>One or more IPv4 prefixes assigned to the network interface. You cannot use
-     * this option if you use the <code>Ipv4PrefixCount</code> option.</p>
+     * <p>The IPv4 prefixes assigned to the network interface.</p> <p>You can't specify
+     * IPv4 prefixes if you've specified one of the following: a count of IPv4
+     * prefixes, specific private IPv4 addresses, or a count of private IPv4
+     * addresses.</p>
      */
     inline CreateNetworkInterfaceRequest& AddIpv4Prefixes(Ipv4PrefixSpecificationRequest&& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to
-     * the network interface. You cannot use this option if you use the <code>Ipv4
-     * Prefixes</code> option.</p>
+     * the network interface.</p> <p>You can't specify a count of IPv4 prefixes if
+     * you've specified one of the following: specific IPv4 prefixes, specific private
+     * IPv4 addresses, or a count of private IPv4 addresses.</p>
      */
     inline int GetIpv4PrefixCount() const{ return m_ipv4PrefixCount; }
 
     /**
      * <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to
-     * the network interface. You cannot use this option if you use the <code>Ipv4
-     * Prefixes</code> option.</p>
+     * the network interface.</p> <p>You can't specify a count of IPv4 prefixes if
+     * you've specified one of the following: specific IPv4 prefixes, specific private
+     * IPv4 addresses, or a count of private IPv4 addresses.</p>
      */
     inline bool Ipv4PrefixCountHasBeenSet() const { return m_ipv4PrefixCountHasBeenSet; }
 
     /**
      * <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to
-     * the network interface. You cannot use this option if you use the <code>Ipv4
-     * Prefixes</code> option.</p>
+     * the network interface.</p> <p>You can't specify a count of IPv4 prefixes if
+     * you've specified one of the following: specific IPv4 prefixes, specific private
+     * IPv4 addresses, or a count of private IPv4 addresses.</p>
      */
     inline void SetIpv4PrefixCount(int value) { m_ipv4PrefixCountHasBeenSet = true; m_ipv4PrefixCount = value; }
 
     /**
      * <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to
-     * the network interface. You cannot use this option if you use the <code>Ipv4
-     * Prefixes</code> option.</p>
+     * the network interface.</p> <p>You can't specify a count of IPv4 prefixes if
+     * you've specified one of the following: specific IPv4 prefixes, specific private
+     * IPv4 addresses, or a count of private IPv4 addresses.</p>
      */
     inline CreateNetworkInterfaceRequest& WithIpv4PrefixCount(int value) { SetIpv4PrefixCount(value); return *this;}
 
 
     /**
-     * <p>One or more IPv6 prefixes assigned to the network interface. You cannot use
-     * this option if you use the <code>Ipv6PrefixCount</code> option.</p>
+     * <p>The IPv6 prefixes assigned to the network interface.</p> <p>You can't specify
+     * IPv6 prefixes if you've specified one of the following: a count of IPv6
+     * prefixes, specific IPv6 addresses, or a count of IPv6 addresses.</p>
      */
     inline const Aws::Vector<Ipv6PrefixSpecificationRequest>& GetIpv6Prefixes() const{ return m_ipv6Prefixes; }
 
     /**
-     * <p>One or more IPv6 prefixes assigned to the network interface. You cannot use
-     * this option if you use the <code>Ipv6PrefixCount</code> option.</p>
+     * <p>The IPv6 prefixes assigned to the network interface.</p> <p>You can't specify
+     * IPv6 prefixes if you've specified one of the following: a count of IPv6
+     * prefixes, specific IPv6 addresses, or a count of IPv6 addresses.</p>
      */
     inline bool Ipv6PrefixesHasBeenSet() const { return m_ipv6PrefixesHasBeenSet; }
 
     /**
-     * <p>One or more IPv6 prefixes assigned to the network interface. You cannot use
-     * this option if you use the <code>Ipv6PrefixCount</code> option.</p>
+     * <p>The IPv6 prefixes assigned to the network interface.</p> <p>You can't specify
+     * IPv6 prefixes if you've specified one of the following: a count of IPv6
+     * prefixes, specific IPv6 addresses, or a count of IPv6 addresses.</p>
      */
     inline void SetIpv6Prefixes(const Aws::Vector<Ipv6PrefixSpecificationRequest>& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes = value; }
 
     /**
-     * <p>One or more IPv6 prefixes assigned to the network interface. You cannot use
-     * this option if you use the <code>Ipv6PrefixCount</code> option.</p>
+     * <p>The IPv6 prefixes assigned to the network interface.</p> <p>You can't specify
+     * IPv6 prefixes if you've specified one of the following: a count of IPv6
+     * prefixes, specific IPv6 addresses, or a count of IPv6 addresses.</p>
      */
     inline void SetIpv6Prefixes(Aws::Vector<Ipv6PrefixSpecificationRequest>&& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes = std::move(value); }
 
     /**
-     * <p>One or more IPv6 prefixes assigned to the network interface. You cannot use
-     * this option if you use the <code>Ipv6PrefixCount</code> option.</p>
+     * <p>The IPv6 prefixes assigned to the network interface.</p> <p>You can't specify
+     * IPv6 prefixes if you've specified one of the following: a count of IPv6
+     * prefixes, specific IPv6 addresses, or a count of IPv6 addresses.</p>
      */
     inline CreateNetworkInterfaceRequest& WithIpv6Prefixes(const Aws::Vector<Ipv6PrefixSpecificationRequest>& value) { SetIpv6Prefixes(value); return *this;}
 
     /**
-     * <p>One or more IPv6 prefixes assigned to the network interface. You cannot use
-     * this option if you use the <code>Ipv6PrefixCount</code> option.</p>
+     * <p>The IPv6 prefixes assigned to the network interface.</p> <p>You can't specify
+     * IPv6 prefixes if you've specified one of the following: a count of IPv6
+     * prefixes, specific IPv6 addresses, or a count of IPv6 addresses.</p>
      */
     inline CreateNetworkInterfaceRequest& WithIpv6Prefixes(Aws::Vector<Ipv6PrefixSpecificationRequest>&& value) { SetIpv6Prefixes(std::move(value)); return *this;}
 
     /**
-     * <p>One or more IPv6 prefixes assigned to the network interface. You cannot use
-     * this option if you use the <code>Ipv6PrefixCount</code> option.</p>
+     * <p>The IPv6 prefixes assigned to the network interface.</p> <p>You can't specify
+     * IPv6 prefixes if you've specified one of the following: a count of IPv6
+     * prefixes, specific IPv6 addresses, or a count of IPv6 addresses.</p>
      */
     inline CreateNetworkInterfaceRequest& AddIpv6Prefixes(const Ipv6PrefixSpecificationRequest& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes.push_back(value); return *this; }
 
     /**
-     * <p>One or more IPv6 prefixes assigned to the network interface. You cannot use
-     * this option if you use the <code>Ipv6PrefixCount</code> option.</p>
+     * <p>The IPv6 prefixes assigned to the network interface.</p> <p>You can't specify
+     * IPv6 prefixes if you've specified one of the following: a count of IPv6
+     * prefixes, specific IPv6 addresses, or a count of IPv6 addresses.</p>
      */
     inline CreateNetworkInterfaceRequest& AddIpv6Prefixes(Ipv6PrefixSpecificationRequest&& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>The number of IPv6 prefixes that Amazon Web Services automatically assigns to
-     * the network interface. You cannot use this option if you use the
-     * <code>Ipv6Prefixes</code> option.</p>
+     * the network interface.</p> <p>You can't specify a count of IPv6 prefixes if
+     * you've specified one of the following: specific IPv6 prefixes, specific IPv6
+     * addresses, or a count of IPv6 addresses.</p>
      */
     inline int GetIpv6PrefixCount() const{ return m_ipv6PrefixCount; }
 
     /**
      * <p>The number of IPv6 prefixes that Amazon Web Services automatically assigns to
-     * the network interface. You cannot use this option if you use the
-     * <code>Ipv6Prefixes</code> option.</p>
+     * the network interface.</p> <p>You can't specify a count of IPv6 prefixes if
+     * you've specified one of the following: specific IPv6 prefixes, specific IPv6
+     * addresses, or a count of IPv6 addresses.</p>
      */
     inline bool Ipv6PrefixCountHasBeenSet() const { return m_ipv6PrefixCountHasBeenSet; }
 
     /**
      * <p>The number of IPv6 prefixes that Amazon Web Services automatically assigns to
-     * the network interface. You cannot use this option if you use the
-     * <code>Ipv6Prefixes</code> option.</p>
+     * the network interface.</p> <p>You can't specify a count of IPv6 prefixes if
+     * you've specified one of the following: specific IPv6 prefixes, specific IPv6
+     * addresses, or a count of IPv6 addresses.</p>
      */
     inline void SetIpv6PrefixCount(int value) { m_ipv6PrefixCountHasBeenSet = true; m_ipv6PrefixCount = value; }
 
     /**
      * <p>The number of IPv6 prefixes that Amazon Web Services automatically assigns to
-     * the network interface. You cannot use this option if you use the
-     * <code>Ipv6Prefixes</code> option.</p>
+     * the network interface.</p> <p>You can't specify a count of IPv6 prefixes if
+     * you've specified one of the following: specific IPv6 prefixes, specific IPv6
+     * addresses, or a count of IPv6 addresses.</p>
      */
     inline CreateNetworkInterfaceRequest& WithIpv6PrefixCount(int value) { SetIpv6PrefixCount(value); return *this;}
 

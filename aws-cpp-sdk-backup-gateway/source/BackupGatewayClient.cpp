@@ -26,6 +26,7 @@
 #include <aws/backup-gateway/model/DeleteHypervisorRequest.h>
 #include <aws/backup-gateway/model/DisassociateGatewayFromServerRequest.h>
 #include <aws/backup-gateway/model/GetGatewayRequest.h>
+#include <aws/backup-gateway/model/GetVirtualMachineRequest.h>
 #include <aws/backup-gateway/model/ImportHypervisorConfigurationRequest.h>
 #include <aws/backup-gateway/model/ListGatewaysRequest.h>
 #include <aws/backup-gateway/model/ListHypervisorsRequest.h>
@@ -247,6 +248,28 @@ void BackupGatewayClient::GetGatewayAsync(const GetGatewayRequest& request, cons
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, GetGateway(request), context);
+    } );
+}
+
+GetVirtualMachineOutcome BackupGatewayClient::GetVirtualMachine(const GetVirtualMachineRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetVirtualMachineOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetVirtualMachineOutcomeCallable BackupGatewayClient::GetVirtualMachineCallable(const GetVirtualMachineRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetVirtualMachineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetVirtualMachine(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupGatewayClient::GetVirtualMachineAsync(const GetVirtualMachineRequest& request, const GetVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetVirtualMachine(request), context);
     } );
 }
 
