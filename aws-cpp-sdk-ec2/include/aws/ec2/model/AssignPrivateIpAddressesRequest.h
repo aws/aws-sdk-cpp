@@ -112,72 +112,72 @@ namespace Model
 
 
     /**
-     * <p>One or more IP addresses to be assigned as a secondary private IP address to
-     * the network interface. You can't specify this parameter when also specifying a
+     * <p>The IP addresses to be assigned as a secondary private IP address to the
+     * network interface. You can't specify this parameter when also specifying a
      * number of secondary IP addresses.</p> <p>If you don't specify an IP address,
      * Amazon EC2 automatically selects an IP address within the subnet range.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPrivateIpAddresses() const{ return m_privateIpAddresses; }
 
     /**
-     * <p>One or more IP addresses to be assigned as a secondary private IP address to
-     * the network interface. You can't specify this parameter when also specifying a
+     * <p>The IP addresses to be assigned as a secondary private IP address to the
+     * network interface. You can't specify this parameter when also specifying a
      * number of secondary IP addresses.</p> <p>If you don't specify an IP address,
      * Amazon EC2 automatically selects an IP address within the subnet range.</p>
      */
     inline bool PrivateIpAddressesHasBeenSet() const { return m_privateIpAddressesHasBeenSet; }
 
     /**
-     * <p>One or more IP addresses to be assigned as a secondary private IP address to
-     * the network interface. You can't specify this parameter when also specifying a
+     * <p>The IP addresses to be assigned as a secondary private IP address to the
+     * network interface. You can't specify this parameter when also specifying a
      * number of secondary IP addresses.</p> <p>If you don't specify an IP address,
      * Amazon EC2 automatically selects an IP address within the subnet range.</p>
      */
     inline void SetPrivateIpAddresses(const Aws::Vector<Aws::String>& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses = value; }
 
     /**
-     * <p>One or more IP addresses to be assigned as a secondary private IP address to
-     * the network interface. You can't specify this parameter when also specifying a
+     * <p>The IP addresses to be assigned as a secondary private IP address to the
+     * network interface. You can't specify this parameter when also specifying a
      * number of secondary IP addresses.</p> <p>If you don't specify an IP address,
      * Amazon EC2 automatically selects an IP address within the subnet range.</p>
      */
     inline void SetPrivateIpAddresses(Aws::Vector<Aws::String>&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses = std::move(value); }
 
     /**
-     * <p>One or more IP addresses to be assigned as a secondary private IP address to
-     * the network interface. You can't specify this parameter when also specifying a
+     * <p>The IP addresses to be assigned as a secondary private IP address to the
+     * network interface. You can't specify this parameter when also specifying a
      * number of secondary IP addresses.</p> <p>If you don't specify an IP address,
      * Amazon EC2 automatically selects an IP address within the subnet range.</p>
      */
     inline AssignPrivateIpAddressesRequest& WithPrivateIpAddresses(const Aws::Vector<Aws::String>& value) { SetPrivateIpAddresses(value); return *this;}
 
     /**
-     * <p>One or more IP addresses to be assigned as a secondary private IP address to
-     * the network interface. You can't specify this parameter when also specifying a
+     * <p>The IP addresses to be assigned as a secondary private IP address to the
+     * network interface. You can't specify this parameter when also specifying a
      * number of secondary IP addresses.</p> <p>If you don't specify an IP address,
      * Amazon EC2 automatically selects an IP address within the subnet range.</p>
      */
     inline AssignPrivateIpAddressesRequest& WithPrivateIpAddresses(Aws::Vector<Aws::String>&& value) { SetPrivateIpAddresses(std::move(value)); return *this;}
 
     /**
-     * <p>One or more IP addresses to be assigned as a secondary private IP address to
-     * the network interface. You can't specify this parameter when also specifying a
+     * <p>The IP addresses to be assigned as a secondary private IP address to the
+     * network interface. You can't specify this parameter when also specifying a
      * number of secondary IP addresses.</p> <p>If you don't specify an IP address,
      * Amazon EC2 automatically selects an IP address within the subnet range.</p>
      */
     inline AssignPrivateIpAddressesRequest& AddPrivateIpAddresses(const Aws::String& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(value); return *this; }
 
     /**
-     * <p>One or more IP addresses to be assigned as a secondary private IP address to
-     * the network interface. You can't specify this parameter when also specifying a
+     * <p>The IP addresses to be assigned as a secondary private IP address to the
+     * network interface. You can't specify this parameter when also specifying a
      * number of secondary IP addresses.</p> <p>If you don't specify an IP address,
      * Amazon EC2 automatically selects an IP address within the subnet range.</p>
      */
     inline AssignPrivateIpAddressesRequest& AddPrivateIpAddresses(Aws::String&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more IP addresses to be assigned as a secondary private IP address to
-     * the network interface. You can't specify this parameter when also specifying a
+     * <p>The IP addresses to be assigned as a secondary private IP address to the
+     * network interface. You can't specify this parameter when also specifying a
      * number of secondary IP addresses.</p> <p>If you don't specify an IP address,
      * Amazon EC2 automatically selects an IP address within the subnet range.</p>
      */

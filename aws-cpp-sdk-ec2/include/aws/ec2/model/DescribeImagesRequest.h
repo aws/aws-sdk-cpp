@@ -856,41 +856,33 @@ namespace Model
 
 
     /**
-     * <p>If <code>true</code>, all deprecated AMIs are included in the response. If
-     * <code>false</code>, no deprecated AMIs are included in the response. If no value
-     * is specified, the default value is <code>false</code>.</p>  <p>If you are
-     * the AMI owner, all deprecated AMIs appear in the response regardless of the
-     * value (<code>true</code> or <code>false</code>) that you set for this
+     * <p>Specifies whether to include deprecated AMIs.</p> <p>Default: No deprecated
+     * AMIs are included in the response.</p>  <p>If you are the AMI owner, all
+     * deprecated AMIs appear in the response regardless of what you specify for this
      * parameter.</p> 
      */
     inline bool GetIncludeDeprecated() const{ return m_includeDeprecated; }
 
     /**
-     * <p>If <code>true</code>, all deprecated AMIs are included in the response. If
-     * <code>false</code>, no deprecated AMIs are included in the response. If no value
-     * is specified, the default value is <code>false</code>.</p>  <p>If you are
-     * the AMI owner, all deprecated AMIs appear in the response regardless of the
-     * value (<code>true</code> or <code>false</code>) that you set for this
+     * <p>Specifies whether to include deprecated AMIs.</p> <p>Default: No deprecated
+     * AMIs are included in the response.</p>  <p>If you are the AMI owner, all
+     * deprecated AMIs appear in the response regardless of what you specify for this
      * parameter.</p> 
      */
     inline bool IncludeDeprecatedHasBeenSet() const { return m_includeDeprecatedHasBeenSet; }
 
     /**
-     * <p>If <code>true</code>, all deprecated AMIs are included in the response. If
-     * <code>false</code>, no deprecated AMIs are included in the response. If no value
-     * is specified, the default value is <code>false</code>.</p>  <p>If you are
-     * the AMI owner, all deprecated AMIs appear in the response regardless of the
-     * value (<code>true</code> or <code>false</code>) that you set for this
+     * <p>Specifies whether to include deprecated AMIs.</p> <p>Default: No deprecated
+     * AMIs are included in the response.</p>  <p>If you are the AMI owner, all
+     * deprecated AMIs appear in the response regardless of what you specify for this
      * parameter.</p> 
      */
     inline void SetIncludeDeprecated(bool value) { m_includeDeprecatedHasBeenSet = true; m_includeDeprecated = value; }
 
     /**
-     * <p>If <code>true</code>, all deprecated AMIs are included in the response. If
-     * <code>false</code>, no deprecated AMIs are included in the response. If no value
-     * is specified, the default value is <code>false</code>.</p>  <p>If you are
-     * the AMI owner, all deprecated AMIs appear in the response regardless of the
-     * value (<code>true</code> or <code>false</code>) that you set for this
+     * <p>Specifies whether to include deprecated AMIs.</p> <p>Default: No deprecated
+     * AMIs are included in the response.</p>  <p>If you are the AMI owner, all
+     * deprecated AMIs appear in the response regardless of what you specify for this
      * parameter.</p> 
      */
     inline DescribeImagesRequest& WithIncludeDeprecated(bool value) { SetIncludeDeprecated(value); return *this;}

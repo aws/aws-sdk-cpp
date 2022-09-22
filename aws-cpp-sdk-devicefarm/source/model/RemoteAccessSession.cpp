@@ -46,7 +46,8 @@ RemoteAccessSession::RemoteAccessSession() :
     m_interactionMode(InteractionMode::NOT_SET),
     m_interactionModeHasBeenSet(false),
     m_skipAppResign(false),
-    m_skipAppResignHasBeenSet(false)
+    m_skipAppResignHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false)
 {
 }
 
@@ -78,7 +79,8 @@ RemoteAccessSession::RemoteAccessSession(JsonView jsonValue) :
     m_interactionMode(InteractionMode::NOT_SET),
     m_interactionModeHasBeenSet(false),
     m_skipAppResign(false),
-    m_skipAppResignHasBeenSet(false)
+    m_skipAppResignHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -232,6 +234,13 @@ RemoteAccessSession& RemoteAccessSession::operator =(JsonView jsonValue)
     m_skipAppResignHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("vpcConfig"))
+  {
+    m_vpcConfig = jsonValue.GetObject("vpcConfig");
+
+    m_vpcConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -355,6 +364,12 @@ JsonValue RemoteAccessSession::Jsonize() const
   if(m_skipAppResignHasBeenSet)
   {
    payload.WithBool("skipAppResign", m_skipAppResign);
+
+  }
+
+  if(m_vpcConfigHasBeenSet)
+  {
+   payload.WithObject("vpcConfig", m_vpcConfig.Jsonize());
 
   }
 

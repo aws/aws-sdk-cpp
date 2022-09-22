@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 CreateProjectRequest::CreateProjectRequest() : 
     m_nameHasBeenSet(false),
     m_defaultJobTimeoutMinutes(0),
-    m_defaultJobTimeoutMinutesHasBeenSet(false)
+    m_defaultJobTimeoutMinutesHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false)
 {
 }
 
@@ -32,6 +33,12 @@ Aws::String CreateProjectRequest::SerializePayload() const
   if(m_defaultJobTimeoutMinutesHasBeenSet)
   {
    payload.WithInteger("defaultJobTimeoutMinutes", m_defaultJobTimeoutMinutes);
+
+  }
+
+  if(m_vpcConfigHasBeenSet)
+  {
+   payload.WithObject("vpcConfig", m_vpcConfig.Jsonize());
 
   }
 
