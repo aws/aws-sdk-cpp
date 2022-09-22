@@ -9,6 +9,7 @@
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/MemorySystemInterface.h>
 
+#include <assert.h>
 #include <memory>
 #include <cstdlib>
 #include <algorithm>
@@ -246,7 +247,33 @@ namespace Aws
         }
     };
 
-    template< typename T > using UniquePtr = std::unique_ptr< T, Deleter< T > >;
+    template< typename T, typename D = Deleter< T > > using UniquePtr = std::unique_ptr< T, D >;
+
+    template<typename T>
+    class StaticUniquePtrDeleter : public Deleter<T>
+    {
+    public:
+        StaticUniquePtrDeleter(UniquePtr<T, StaticUniquePtrDeleter<T> >* staticUniquePtr)
+                : Deleter<T>(),
+                  m_sUniquePtr(staticUniquePtr)
+        {}
+
+        void operator()(T *pointerToT)
+        {
+            Deleter<T>::operator()(pointerToT);
+            if(m_sUniquePtr && m_sUniquePtr->get())
+            {
+                m_sUniquePtr->release();
+                *m_sUniquePtr = nullptr;
+                T volatile* newVal = m_sUniquePtr->get();  // volatile to prohibit optimizing out setting ptr to null
+                AWS_UNREFERENCED_PARAM(newVal);
+                // issue happens in Release where asserts are not enabled, so the next statement is for you, my dear reader
+                assert(newVal == nullptr && m_sUniquePtr->get() == nullptr);
+            }
+        }
+    private:
+        UniquePtr<T, StaticUniquePtrDeleter<T> >* m_sUniquePtr;
+    };
 
     /**
      * ::new, ::delete, ::malloc, ::free, std::make_shared, and std::make_unique should not be used in SDK code
@@ -255,7 +282,17 @@ namespace Aws
     template<typename T, typename ...ArgTypes>
     UniquePtr<T> MakeUnique(const char* allocationTag, ArgTypes&&... args)
     {
+        static_assert(!std::is_array<T>::value || std::is_trivial<T>::value,
+                "This wrapper/function is not designed to support non-trivial arrays.");
         return UniquePtr<T>(Aws::New<T>(allocationTag, std::forward<ArgTypes>(args)...));
+    }
+
+    template<typename T, typename D = StaticUniquePtrDeleter<T>, typename ...ArgTypes>
+    UniquePtr<T, D> MakeUniqueWithDeleter(const char* allocationTag, D&& deleter, ArgTypes&&... args)
+    {
+        static_assert(!std::is_array<T>::value || std::is_trivial<T>::value,
+                      "This wrapper/function is not designed to support non-trivial arrays.");
+        return UniquePtr<T, D>(Aws::New<T>(allocationTag, std::forward<ArgTypes>(args)...), std::forward<D>(deleter));
     }
 
     template<typename T>

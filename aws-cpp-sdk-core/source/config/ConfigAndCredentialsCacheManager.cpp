@@ -15,14 +15,16 @@ namespace Aws
     {
         using namespace Aws::Utils;
         using namespace Aws::Auth;
+        using CACCacheManagerUniquePtrDeleter = Aws::StaticUniquePtrDeleter<ConfigAndCredentialsCacheManager>;
+        using ConfigAndCredsCacheManagerUniquePtr = Aws::UniquePtr<ConfigAndCredentialsCacheManager, CACCacheManagerUniquePtrDeleter>;
 
         #ifdef _MSC_VER
             // VS2015 compiler's bug, warning s_CoreErrorsMapper: symbol will be dynamically initialized (implementation limitation)
             AWS_SUPPRESS_WARNING(4592,
-                static Aws::UniquePtr<ConfigAndCredentialsCacheManager> s_configManager(nullptr);
+                static ConfigAndCredsCacheManagerUniquePtr s_configManager(nullptr, CACCacheManagerUniquePtrDeleter(nullptr));
             )
         #else
-            static Aws::UniquePtr<ConfigAndCredentialsCacheManager> s_configManager(nullptr);
+            static ConfigAndCredsCacheManagerUniquePtr s_configManager(nullptr, CACCacheManagerUniquePtrDeleter(nullptr));
         #endif
 
         static const char CONFIG_CREDENTIALS_CACHE_MANAGER_TAG[] = "ConfigAndCredentialsCacheManager";
@@ -128,7 +130,8 @@ namespace Aws
             {
                 return;
             }
-            s_configManager = Aws::MakeUnique<ConfigAndCredentialsCacheManager>(CONFIG_CREDENTIALS_CACHE_MANAGER_TAG);
+            s_configManager = Aws::MakeUniqueWithDeleter<ConfigAndCredentialsCacheManager>(
+                    CONFIG_CREDENTIALS_CACHE_MANAGER_TAG, CACCacheManagerUniquePtrDeleter(&s_configManager));
         }
 
         void CleanupConfigAndCredentialsCacheManager()
