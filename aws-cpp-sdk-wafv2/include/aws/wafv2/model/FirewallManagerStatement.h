@@ -47,7 +47,12 @@ namespace Model
      * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You cannot nest a
      * <code>ManagedRuleGroupStatement</code>, for example for use inside a
      * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>
+     * as a top-level statement within a rule.</p>  <p>You are charged additional
+     * fees when you use the WAF Bot Control managed rule group
+     * <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account
+     * takeover prevention (ATP) managed rule group
+     * <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a
+     * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
      */
     inline const ManagedRuleGroupStatement& GetManagedRuleGroupStatement() const{ return m_managedRuleGroupStatement; }
 
@@ -58,7 +63,12 @@ namespace Model
      * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You cannot nest a
      * <code>ManagedRuleGroupStatement</code>, for example for use inside a
      * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>
+     * as a top-level statement within a rule.</p>  <p>You are charged additional
+     * fees when you use the WAF Bot Control managed rule group
+     * <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account
+     * takeover prevention (ATP) managed rule group
+     * <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a
+     * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
      */
     inline bool ManagedRuleGroupStatementHasBeenSet() const { return m_managedRuleGroupStatementHasBeenSet; }
 
@@ -69,7 +79,12 @@ namespace Model
      * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You cannot nest a
      * <code>ManagedRuleGroupStatement</code>, for example for use inside a
      * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>
+     * as a top-level statement within a rule.</p>  <p>You are charged additional
+     * fees when you use the WAF Bot Control managed rule group
+     * <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account
+     * takeover prevention (ATP) managed rule group
+     * <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a
+     * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
      */
     inline void SetManagedRuleGroupStatement(const ManagedRuleGroupStatement& value) { m_managedRuleGroupStatementHasBeenSet = true; m_managedRuleGroupStatement = value; }
 
@@ -80,7 +95,12 @@ namespace Model
      * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You cannot nest a
      * <code>ManagedRuleGroupStatement</code>, for example for use inside a
      * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>
+     * as a top-level statement within a rule.</p>  <p>You are charged additional
+     * fees when you use the WAF Bot Control managed rule group
+     * <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account
+     * takeover prevention (ATP) managed rule group
+     * <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a
+     * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
      */
     inline void SetManagedRuleGroupStatement(ManagedRuleGroupStatement&& value) { m_managedRuleGroupStatementHasBeenSet = true; m_managedRuleGroupStatement = std::move(value); }
 
@@ -91,7 +111,12 @@ namespace Model
      * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You cannot nest a
      * <code>ManagedRuleGroupStatement</code>, for example for use inside a
      * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>
+     * as a top-level statement within a rule.</p>  <p>You are charged additional
+     * fees when you use the WAF Bot Control managed rule group
+     * <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account
+     * takeover prevention (ATP) managed rule group
+     * <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a
+     * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
      */
     inline FirewallManagerStatement& WithManagedRuleGroupStatement(const ManagedRuleGroupStatement& value) { SetManagedRuleGroupStatement(value); return *this;}
 
@@ -102,7 +127,12 @@ namespace Model
      * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You cannot nest a
      * <code>ManagedRuleGroupStatement</code>, for example for use inside a
      * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>
+     * as a top-level statement within a rule.</p>  <p>You are charged additional
+     * fees when you use the WAF Bot Control managed rule group
+     * <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account
+     * takeover prevention (ATP) managed rule group
+     * <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a
+     * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
      */
     inline FirewallManagerStatement& WithManagedRuleGroupStatement(ManagedRuleGroupStatement&& value) { SetManagedRuleGroupStatement(std::move(value)); return *this;}
 

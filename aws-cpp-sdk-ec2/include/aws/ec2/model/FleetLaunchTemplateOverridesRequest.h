@@ -431,6 +431,55 @@ namespace Model
      */
     inline FleetLaunchTemplateOverridesRequest& WithInstanceRequirements(InstanceRequirementsRequest&& value) { SetInstanceRequirements(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The ID of the AMI. An AMI is required to launch an instance. The AMI ID must
+     * be specified here or in the launch template.</p>
+     */
+    inline const Aws::String& GetImageId() const{ return m_imageId; }
+
+    /**
+     * <p>The ID of the AMI. An AMI is required to launch an instance. The AMI ID must
+     * be specified here or in the launch template.</p>
+     */
+    inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the AMI. An AMI is required to launch an instance. The AMI ID must
+     * be specified here or in the launch template.</p>
+     */
+    inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
+
+    /**
+     * <p>The ID of the AMI. An AMI is required to launch an instance. The AMI ID must
+     * be specified here or in the launch template.</p>
+     */
+    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
+
+    /**
+     * <p>The ID of the AMI. An AMI is required to launch an instance. The AMI ID must
+     * be specified here or in the launch template.</p>
+     */
+    inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
+
+    /**
+     * <p>The ID of the AMI. An AMI is required to launch an instance. The AMI ID must
+     * be specified here or in the launch template.</p>
+     */
+    inline FleetLaunchTemplateOverridesRequest& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
+
+    /**
+     * <p>The ID of the AMI. An AMI is required to launch an instance. The AMI ID must
+     * be specified here or in the launch template.</p>
+     */
+    inline FleetLaunchTemplateOverridesRequest& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the AMI. An AMI is required to launch an instance. The AMI ID must
+     * be specified here or in the launch template.</p>
+     */
+    inline FleetLaunchTemplateOverridesRequest& WithImageId(const char* value) { SetImageId(value); return *this;}
+
   private:
 
     InstanceType m_instanceType;
@@ -456,6 +505,9 @@ namespace Model
 
     InstanceRequirementsRequest m_instanceRequirements;
     bool m_instanceRequirementsHasBeenSet = false;
+
+    Aws::String m_imageId;
+    bool m_imageIdHasBeenSet = false;
   };
 
 } // namespace Model

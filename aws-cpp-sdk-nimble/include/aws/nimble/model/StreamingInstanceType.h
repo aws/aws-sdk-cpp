@@ -21,7 +21,14 @@ namespace Model
     g4dn_4xlarge,
     g4dn_8xlarge,
     g4dn_12xlarge,
-    g4dn_16xlarge
+    g4dn_16xlarge,
+    g3_4xlarge,
+    g3s_xlarge,
+    g5_xlarge,
+    g5_2xlarge,
+    g5_4xlarge,
+    g5_8xlarge,
+    g5_16xlarge
   };
 
 namespace StreamingInstanceTypeMapper

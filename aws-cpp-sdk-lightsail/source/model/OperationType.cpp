@@ -99,6 +99,7 @@ namespace Aws
         static const int UpdateBucketBundle_HASH = HashingUtils::HashString("UpdateBucketBundle");
         static const int UpdateBucket_HASH = HashingUtils::HashString("UpdateBucket");
         static const int SetResourceAccessForBucket_HASH = HashingUtils::HashString("SetResourceAccessForBucket");
+        static const int UpdateInstanceMetadataOptions_HASH = HashingUtils::HashString("UpdateInstanceMetadataOptions");
 
 
         OperationType GetOperationTypeForName(const Aws::String& name)
@@ -420,6 +421,10 @@ namespace Aws
           {
             return OperationType::SetResourceAccessForBucket;
           }
+          else if (hashCode == UpdateInstanceMetadataOptions_HASH)
+          {
+            return OperationType::UpdateInstanceMetadataOptions;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -592,6 +597,8 @@ namespace Aws
             return "UpdateBucket";
           case OperationType::SetResourceAccessForBucket:
             return "SetResourceAccessForBucket";
+          case OperationType::UpdateInstanceMetadataOptions:
+            return "UpdateInstanceMetadataOptions";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

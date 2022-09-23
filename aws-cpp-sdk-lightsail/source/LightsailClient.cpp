@@ -171,6 +171,7 @@
 #include <aws/lightsail/model/UpdateDistributionRequest.h>
 #include <aws/lightsail/model/UpdateDistributionBundleRequest.h>
 #include <aws/lightsail/model/UpdateDomainEntryRequest.h>
+#include <aws/lightsail/model/UpdateInstanceMetadataOptionsRequest.h>
 #include <aws/lightsail/model/UpdateLoadBalancerAttributeRequest.h>
 #include <aws/lightsail/model/UpdateRelationalDatabaseRequest.h>
 #include <aws/lightsail/model/UpdateRelationalDatabaseParametersRequest.h>
@@ -3573,6 +3574,28 @@ void LightsailClient::UpdateDomainEntryAsync(const UpdateDomainEntryRequest& req
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, UpdateDomainEntry(request), context);
+    } );
+}
+
+UpdateInstanceMetadataOptionsOutcome LightsailClient::UpdateInstanceMetadataOptions(const UpdateInstanceMetadataOptionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateInstanceMetadataOptionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateInstanceMetadataOptionsOutcomeCallable LightsailClient::UpdateInstanceMetadataOptionsCallable(const UpdateInstanceMetadataOptionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateInstanceMetadataOptionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateInstanceMetadataOptions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::UpdateInstanceMetadataOptionsAsync(const UpdateInstanceMetadataOptionsRequest& request, const UpdateInstanceMetadataOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateInstanceMetadataOptions(request), context);
     } );
 }
 

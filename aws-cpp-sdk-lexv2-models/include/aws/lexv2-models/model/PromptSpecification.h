@@ -7,7 +7,10 @@
 #include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lexv2-models/model/MessageSelectionStrategy.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/lexv2-models/model/MessageGroup.h>
+#include <aws/lexv2-models/model/PromptAttempt.h>
+#include <aws/lexv2-models/model/PromptAttemptSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -165,6 +168,57 @@ namespace Model
      */
     inline PromptSpecification& WithMessageSelectionStrategy(MessageSelectionStrategy&& value) { SetMessageSelectionStrategy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies the advanced settings on each attempt of the prompt.</p>
+     */
+    inline const Aws::Map<PromptAttempt, PromptAttemptSpecification>& GetPromptAttemptsSpecification() const{ return m_promptAttemptsSpecification; }
+
+    /**
+     * <p>Specifies the advanced settings on each attempt of the prompt.</p>
+     */
+    inline bool PromptAttemptsSpecificationHasBeenSet() const { return m_promptAttemptsSpecificationHasBeenSet; }
+
+    /**
+     * <p>Specifies the advanced settings on each attempt of the prompt.</p>
+     */
+    inline void SetPromptAttemptsSpecification(const Aws::Map<PromptAttempt, PromptAttemptSpecification>& value) { m_promptAttemptsSpecificationHasBeenSet = true; m_promptAttemptsSpecification = value; }
+
+    /**
+     * <p>Specifies the advanced settings on each attempt of the prompt.</p>
+     */
+    inline void SetPromptAttemptsSpecification(Aws::Map<PromptAttempt, PromptAttemptSpecification>&& value) { m_promptAttemptsSpecificationHasBeenSet = true; m_promptAttemptsSpecification = std::move(value); }
+
+    /**
+     * <p>Specifies the advanced settings on each attempt of the prompt.</p>
+     */
+    inline PromptSpecification& WithPromptAttemptsSpecification(const Aws::Map<PromptAttempt, PromptAttemptSpecification>& value) { SetPromptAttemptsSpecification(value); return *this;}
+
+    /**
+     * <p>Specifies the advanced settings on each attempt of the prompt.</p>
+     */
+    inline PromptSpecification& WithPromptAttemptsSpecification(Aws::Map<PromptAttempt, PromptAttemptSpecification>&& value) { SetPromptAttemptsSpecification(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the advanced settings on each attempt of the prompt.</p>
+     */
+    inline PromptSpecification& AddPromptAttemptsSpecification(const PromptAttempt& key, const PromptAttemptSpecification& value) { m_promptAttemptsSpecificationHasBeenSet = true; m_promptAttemptsSpecification.emplace(key, value); return *this; }
+
+    /**
+     * <p>Specifies the advanced settings on each attempt of the prompt.</p>
+     */
+    inline PromptSpecification& AddPromptAttemptsSpecification(PromptAttempt&& key, const PromptAttemptSpecification& value) { m_promptAttemptsSpecificationHasBeenSet = true; m_promptAttemptsSpecification.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Specifies the advanced settings on each attempt of the prompt.</p>
+     */
+    inline PromptSpecification& AddPromptAttemptsSpecification(const PromptAttempt& key, PromptAttemptSpecification&& value) { m_promptAttemptsSpecificationHasBeenSet = true; m_promptAttemptsSpecification.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Specifies the advanced settings on each attempt of the prompt.</p>
+     */
+    inline PromptSpecification& AddPromptAttemptsSpecification(PromptAttempt&& key, PromptAttemptSpecification&& value) { m_promptAttemptsSpecificationHasBeenSet = true; m_promptAttemptsSpecification.emplace(std::move(key), std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<MessageGroup> m_messageGroups;
@@ -178,6 +232,9 @@ namespace Model
 
     MessageSelectionStrategy m_messageSelectionStrategy;
     bool m_messageSelectionStrategyHasBeenSet = false;
+
+    Aws::Map<PromptAttempt, PromptAttemptSpecification> m_promptAttemptsSpecification;
+    bool m_promptAttemptsSpecificationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,6 +32,8 @@ namespace Aws
         static const int Automation_ChangeTemplate_HASH = HashingUtils::HashString("Automation.ChangeTemplate");
         static const int ProblemAnalysis_HASH = HashingUtils::HashString("ProblemAnalysis");
         static const int ProblemAnalysisTemplate_HASH = HashingUtils::HashString("ProblemAnalysisTemplate");
+        static const int CloudFormation_HASH = HashingUtils::HashString("CloudFormation");
+        static const int ConformancePackTemplate_HASH = HashingUtils::HashString("ConformancePackTemplate");
 
 
         DocumentType GetDocumentTypeForName(const Aws::String& name)
@@ -85,6 +87,14 @@ namespace Aws
           {
             return DocumentType::ProblemAnalysisTemplate;
           }
+          else if (hashCode == CloudFormation_HASH)
+          {
+            return DocumentType::CloudFormation;
+          }
+          else if (hashCode == ConformancePackTemplate_HASH)
+          {
+            return DocumentType::ConformancePackTemplate;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -123,6 +133,10 @@ namespace Aws
             return "ProblemAnalysis";
           case DocumentType::ProblemAnalysisTemplate:
             return "ProblemAnalysisTemplate";
+          case DocumentType::CloudFormation:
+            return "CloudFormation";
+          case DocumentType::ConformancePackTemplate:
+            return "ConformancePackTemplate";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

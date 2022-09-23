@@ -3359,6 +3359,32 @@ namespace Lightsail
         virtual void UpdateDomainEntryAsync(const Model::UpdateDomainEntryRequest& request, const UpdateDomainEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Modifies the Amazon Lightsail instance metadata parameters on a running or
+         * stopped instance. When you modify the parameters on a running instance, the
+         * <code>GetInstance</code> or <code>GetInstances</code> API operation initially
+         * responds with a state of <code>pending</code>. After the parameter modifications
+         * are successfully applied, the state changes to <code>applied</code> in
+         * subsequent <code>GetInstance</code> or <code>GetInstances</code> API calls. For
+         * more information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-instance-metadata-service">Use
+         * IMDSv2 with an Amazon Lightsail instance</a> in the <i>Amazon Lightsail
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateInstanceMetadataOptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateInstanceMetadataOptionsOutcome UpdateInstanceMetadataOptions(const Model::UpdateInstanceMetadataOptionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateInstanceMetadataOptions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateInstanceMetadataOptionsOutcomeCallable UpdateInstanceMetadataOptionsCallable(const Model::UpdateInstanceMetadataOptionsRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateInstanceMetadataOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateInstanceMetadataOptionsAsync(const Model::UpdateInstanceMetadataOptionsRequest& request, const UpdateInstanceMetadataOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the specified attribute for a load balancer. You can only update one
          * attribute at a time.</p> <p>The <code>update load balancer attribute</code>
          * operation supports tag-based access control via resource tags applied to the

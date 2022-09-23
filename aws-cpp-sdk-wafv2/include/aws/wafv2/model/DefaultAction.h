@@ -27,8 +27,7 @@ namespace Model
   /**
    * <p>In a <a>WebACL</a>, this is the action that you want WAF to perform when a
    * web request doesn't match any of the rules in the <code>WebACL</code>. The
-   * default action must be a terminating action, so you can't use
-   * count.</p><p><h3>See Also:</h3>   <a
+   * default action must be a terminating action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DefaultAction">AWS
    * API Reference</a></p>
    */

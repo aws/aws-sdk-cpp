@@ -42,7 +42,8 @@ Instance::Instance() :
     m_networkingHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_usernameHasBeenSet(false),
-    m_sshKeyNameHasBeenSet(false)
+    m_sshKeyNameHasBeenSet(false),
+    m_metadataOptionsHasBeenSet(false)
 {
 }
 
@@ -70,7 +71,8 @@ Instance::Instance(JsonView jsonValue) :
     m_networkingHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_usernameHasBeenSet(false),
-    m_sshKeyNameHasBeenSet(false)
+    m_sshKeyNameHasBeenSet(false),
+    m_metadataOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -233,6 +235,13 @@ Instance& Instance::operator =(JsonView jsonValue)
     m_sshKeyNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("metadataOptions"))
+  {
+    m_metadataOptions = jsonValue.GetObject("metadataOptions");
+
+    m_metadataOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -375,6 +384,12 @@ JsonValue Instance::Jsonize() const
   if(m_sshKeyNameHasBeenSet)
   {
    payload.WithString("sshKeyName", m_sshKeyName);
+
+  }
+
+  if(m_metadataOptionsHasBeenSet)
+  {
+   payload.WithObject("metadataOptions", m_metadataOptions.Jsonize());
 
   }
 

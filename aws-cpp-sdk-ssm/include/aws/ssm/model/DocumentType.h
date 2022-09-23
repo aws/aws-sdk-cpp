@@ -27,7 +27,9 @@ namespace Model
     ChangeCalendar,
     Automation_ChangeTemplate,
     ProblemAnalysis,
-    ProblemAnalysisTemplate
+    ProblemAnalysisTemplate,
+    CloudFormation,
+    ConformancePackTemplate
   };
 
 namespace DocumentTypeMapper

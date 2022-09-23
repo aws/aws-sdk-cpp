@@ -26,6 +26,13 @@ namespace Aws
         static const int g4dn_8xlarge_HASH = HashingUtils::HashString("g4dn.8xlarge");
         static const int g4dn_12xlarge_HASH = HashingUtils::HashString("g4dn.12xlarge");
         static const int g4dn_16xlarge_HASH = HashingUtils::HashString("g4dn.16xlarge");
+        static const int g3_4xlarge_HASH = HashingUtils::HashString("g3.4xlarge");
+        static const int g3s_xlarge_HASH = HashingUtils::HashString("g3s.xlarge");
+        static const int g5_xlarge_HASH = HashingUtils::HashString("g5.xlarge");
+        static const int g5_2xlarge_HASH = HashingUtils::HashString("g5.2xlarge");
+        static const int g5_4xlarge_HASH = HashingUtils::HashString("g5.4xlarge");
+        static const int g5_8xlarge_HASH = HashingUtils::HashString("g5.8xlarge");
+        static const int g5_16xlarge_HASH = HashingUtils::HashString("g5.16xlarge");
 
 
         StreamingInstanceType GetStreamingInstanceTypeForName(const Aws::String& name)
@@ -55,6 +62,34 @@ namespace Aws
           {
             return StreamingInstanceType::g4dn_16xlarge;
           }
+          else if (hashCode == g3_4xlarge_HASH)
+          {
+            return StreamingInstanceType::g3_4xlarge;
+          }
+          else if (hashCode == g3s_xlarge_HASH)
+          {
+            return StreamingInstanceType::g3s_xlarge;
+          }
+          else if (hashCode == g5_xlarge_HASH)
+          {
+            return StreamingInstanceType::g5_xlarge;
+          }
+          else if (hashCode == g5_2xlarge_HASH)
+          {
+            return StreamingInstanceType::g5_2xlarge;
+          }
+          else if (hashCode == g5_4xlarge_HASH)
+          {
+            return StreamingInstanceType::g5_4xlarge;
+          }
+          else if (hashCode == g5_8xlarge_HASH)
+          {
+            return StreamingInstanceType::g5_8xlarge;
+          }
+          else if (hashCode == g5_16xlarge_HASH)
+          {
+            return StreamingInstanceType::g5_16xlarge;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +116,20 @@ namespace Aws
             return "g4dn.12xlarge";
           case StreamingInstanceType::g4dn_16xlarge:
             return "g4dn.16xlarge";
+          case StreamingInstanceType::g3_4xlarge:
+            return "g3.4xlarge";
+          case StreamingInstanceType::g3s_xlarge:
+            return "g3s.xlarge";
+          case StreamingInstanceType::g5_xlarge:
+            return "g5.xlarge";
+          case StreamingInstanceType::g5_2xlarge:
+            return "g5.2xlarge";
+          case StreamingInstanceType::g5_4xlarge:
+            return "g5.4xlarge";
+          case StreamingInstanceType::g5_8xlarge:
+            return "g5.8xlarge";
+          case StreamingInstanceType::g5_16xlarge:
+            return "g5.16xlarge";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

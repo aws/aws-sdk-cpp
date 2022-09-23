@@ -167,6 +167,7 @@
 #include <aws/lightsail/model/UpdateDistributionResult.h>
 #include <aws/lightsail/model/UpdateDistributionBundleResult.h>
 #include <aws/lightsail/model/UpdateDomainEntryResult.h>
+#include <aws/lightsail/model/UpdateInstanceMetadataOptionsResult.h>
 #include <aws/lightsail/model/UpdateLoadBalancerAttributeResult.h>
 #include <aws/lightsail/model/UpdateRelationalDatabaseResult.h>
 #include <aws/lightsail/model/UpdateRelationalDatabaseParametersResult.h>
@@ -357,6 +358,7 @@ namespace Aws
       class UpdateDistributionRequest;
       class UpdateDistributionBundleRequest;
       class UpdateDomainEntryRequest;
+      class UpdateInstanceMetadataOptionsRequest;
       class UpdateLoadBalancerAttributeRequest;
       class UpdateRelationalDatabaseRequest;
       class UpdateRelationalDatabaseParametersRequest;
@@ -514,6 +516,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateDistributionResult, LightsailError> UpdateDistributionOutcome;
       typedef Aws::Utils::Outcome<UpdateDistributionBundleResult, LightsailError> UpdateDistributionBundleOutcome;
       typedef Aws::Utils::Outcome<UpdateDomainEntryResult, LightsailError> UpdateDomainEntryOutcome;
+      typedef Aws::Utils::Outcome<UpdateInstanceMetadataOptionsResult, LightsailError> UpdateInstanceMetadataOptionsOutcome;
       typedef Aws::Utils::Outcome<UpdateLoadBalancerAttributeResult, LightsailError> UpdateLoadBalancerAttributeOutcome;
       typedef Aws::Utils::Outcome<UpdateRelationalDatabaseResult, LightsailError> UpdateRelationalDatabaseOutcome;
       typedef Aws::Utils::Outcome<UpdateRelationalDatabaseParametersResult, LightsailError> UpdateRelationalDatabaseParametersOutcome;
@@ -671,6 +674,7 @@ namespace Aws
       typedef std::future<UpdateDistributionOutcome> UpdateDistributionOutcomeCallable;
       typedef std::future<UpdateDistributionBundleOutcome> UpdateDistributionBundleOutcomeCallable;
       typedef std::future<UpdateDomainEntryOutcome> UpdateDomainEntryOutcomeCallable;
+      typedef std::future<UpdateInstanceMetadataOptionsOutcome> UpdateInstanceMetadataOptionsOutcomeCallable;
       typedef std::future<UpdateLoadBalancerAttributeOutcome> UpdateLoadBalancerAttributeOutcomeCallable;
       typedef std::future<UpdateRelationalDatabaseOutcome> UpdateRelationalDatabaseOutcomeCallable;
       typedef std::future<UpdateRelationalDatabaseParametersOutcome> UpdateRelationalDatabaseParametersOutcomeCallable;
@@ -831,6 +835,7 @@ namespace Aws
     typedef std::function<void(const LightsailClient*, const Model::UpdateDistributionRequest&, const Model::UpdateDistributionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDistributionResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::UpdateDistributionBundleRequest&, const Model::UpdateDistributionBundleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDistributionBundleResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::UpdateDomainEntryRequest&, const Model::UpdateDomainEntryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDomainEntryResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::UpdateInstanceMetadataOptionsRequest&, const Model::UpdateInstanceMetadataOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInstanceMetadataOptionsResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::UpdateLoadBalancerAttributeRequest&, const Model::UpdateLoadBalancerAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLoadBalancerAttributeResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::UpdateRelationalDatabaseRequest&, const Model::UpdateRelationalDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRelationalDatabaseResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::UpdateRelationalDatabaseParametersRequest&, const Model::UpdateRelationalDatabaseParametersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRelationalDatabaseParametersResponseReceivedHandler;

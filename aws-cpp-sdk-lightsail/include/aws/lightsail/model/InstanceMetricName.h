@@ -23,7 +23,8 @@ namespace Model
     StatusCheckFailed_Instance,
     StatusCheckFailed_System,
     BurstCapacityTime,
-    BurstCapacityPercentage
+    BurstCapacityPercentage,
+    MetadataNoToken
   };
 
 namespace InstanceMetricNameMapper

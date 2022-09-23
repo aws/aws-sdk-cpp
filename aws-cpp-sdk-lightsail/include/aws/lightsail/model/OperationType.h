@@ -94,7 +94,8 @@ namespace Model
     DeleteBucketAccessKey,
     UpdateBucketBundle,
     UpdateBucket,
-    SetResourceAccessForBucket
+    SetResourceAccessForBucket,
+    UpdateInstanceMetadataOptions
   };
 
 namespace OperationTypeMapper
