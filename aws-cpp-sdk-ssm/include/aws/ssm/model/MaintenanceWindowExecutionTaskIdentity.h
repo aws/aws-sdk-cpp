@@ -9,6 +9,9 @@
 #include <aws/ssm/model/MaintenanceWindowExecutionStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/ssm/model/MaintenanceWindowTaskType.h>
+#include <aws/ssm/model/AlarmConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ssm/model/AlarmStateInformation.h>
 #include <utility>
 
 namespace Aws
@@ -344,6 +347,84 @@ namespace Model
      */
     inline MaintenanceWindowExecutionTaskIdentity& WithTaskType(MaintenanceWindowTaskType&& value) { SetTaskType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The details for the CloudWatch alarm applied to your maintenance window
+     * task.</p>
+     */
+    inline const AlarmConfiguration& GetAlarmConfiguration() const{ return m_alarmConfiguration; }
+
+    /**
+     * <p>The details for the CloudWatch alarm applied to your maintenance window
+     * task.</p>
+     */
+    inline bool AlarmConfigurationHasBeenSet() const { return m_alarmConfigurationHasBeenSet; }
+
+    /**
+     * <p>The details for the CloudWatch alarm applied to your maintenance window
+     * task.</p>
+     */
+    inline void SetAlarmConfiguration(const AlarmConfiguration& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = value; }
+
+    /**
+     * <p>The details for the CloudWatch alarm applied to your maintenance window
+     * task.</p>
+     */
+    inline void SetAlarmConfiguration(AlarmConfiguration&& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = std::move(value); }
+
+    /**
+     * <p>The details for the CloudWatch alarm applied to your maintenance window
+     * task.</p>
+     */
+    inline MaintenanceWindowExecutionTaskIdentity& WithAlarmConfiguration(const AlarmConfiguration& value) { SetAlarmConfiguration(value); return *this;}
+
+    /**
+     * <p>The details for the CloudWatch alarm applied to your maintenance window
+     * task.</p>
+     */
+    inline MaintenanceWindowExecutionTaskIdentity& WithAlarmConfiguration(AlarmConfiguration&& value) { SetAlarmConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the maintenance window task.</p>
+     */
+    inline const Aws::Vector<AlarmStateInformation>& GetTriggeredAlarms() const{ return m_triggeredAlarms; }
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the maintenance window task.</p>
+     */
+    inline bool TriggeredAlarmsHasBeenSet() const { return m_triggeredAlarmsHasBeenSet; }
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the maintenance window task.</p>
+     */
+    inline void SetTriggeredAlarms(const Aws::Vector<AlarmStateInformation>& value) { m_triggeredAlarmsHasBeenSet = true; m_triggeredAlarms = value; }
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the maintenance window task.</p>
+     */
+    inline void SetTriggeredAlarms(Aws::Vector<AlarmStateInformation>&& value) { m_triggeredAlarmsHasBeenSet = true; m_triggeredAlarms = std::move(value); }
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the maintenance window task.</p>
+     */
+    inline MaintenanceWindowExecutionTaskIdentity& WithTriggeredAlarms(const Aws::Vector<AlarmStateInformation>& value) { SetTriggeredAlarms(value); return *this;}
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the maintenance window task.</p>
+     */
+    inline MaintenanceWindowExecutionTaskIdentity& WithTriggeredAlarms(Aws::Vector<AlarmStateInformation>&& value) { SetTriggeredAlarms(std::move(value)); return *this;}
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the maintenance window task.</p>
+     */
+    inline MaintenanceWindowExecutionTaskIdentity& AddTriggeredAlarms(const AlarmStateInformation& value) { m_triggeredAlarmsHasBeenSet = true; m_triggeredAlarms.push_back(value); return *this; }
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the maintenance window task.</p>
+     */
+    inline MaintenanceWindowExecutionTaskIdentity& AddTriggeredAlarms(AlarmStateInformation&& value) { m_triggeredAlarmsHasBeenSet = true; m_triggeredAlarms.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_windowExecutionId;
@@ -369,6 +450,12 @@ namespace Model
 
     MaintenanceWindowTaskType m_taskType;
     bool m_taskTypeHasBeenSet = false;
+
+    AlarmConfiguration m_alarmConfiguration;
+    bool m_alarmConfigurationHasBeenSet = false;
+
+    Aws::Vector<AlarmStateInformation> m_triggeredAlarms;
+    bool m_triggeredAlarmsHasBeenSet = false;
   };
 
 } // namespace Model

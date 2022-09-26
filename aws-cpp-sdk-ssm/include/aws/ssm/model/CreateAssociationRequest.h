@@ -12,6 +12,7 @@
 #include <aws/ssm/model/InstanceAssociationOutputLocation.h>
 #include <aws/ssm/model/AssociationComplianceSeverity.h>
 #include <aws/ssm/model/AssociationSyncCompliance.h>
+#include <aws/ssm/model/AlarmConfiguration.h>
 #include <aws/ssm/model/Target.h>
 #include <aws/ssm/model/TargetLocation.h>
 #include <aws/ssm/model/Tag.h>
@@ -1374,76 +1375,95 @@ namespace Model
 
 
     /**
-     * <p>Adds or overwrites one or more tags for a State Manager association.
-     * <i>Tags</i> are metadata that you can assign to your Amazon Web Services
-     * resources. Tags enable you to categorize your resources in different ways, for
-     * example, by purpose, owner, or environment. Each tag consists of a key and an
-     * optional value, both of which you define. </p>
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag an association to identify the
+     * type of resource to which it applies, the environment, or the purpose of the
+     * association.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Adds or overwrites one or more tags for a State Manager association.
-     * <i>Tags</i> are metadata that you can assign to your Amazon Web Services
-     * resources. Tags enable you to categorize your resources in different ways, for
-     * example, by purpose, owner, or environment. Each tag consists of a key and an
-     * optional value, both of which you define. </p>
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag an association to identify the
+     * type of resource to which it applies, the environment, or the purpose of the
+     * association.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Adds or overwrites one or more tags for a State Manager association.
-     * <i>Tags</i> are metadata that you can assign to your Amazon Web Services
-     * resources. Tags enable you to categorize your resources in different ways, for
-     * example, by purpose, owner, or environment. Each tag consists of a key and an
-     * optional value, both of which you define. </p>
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag an association to identify the
+     * type of resource to which it applies, the environment, or the purpose of the
+     * association.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Adds or overwrites one or more tags for a State Manager association.
-     * <i>Tags</i> are metadata that you can assign to your Amazon Web Services
-     * resources. Tags enable you to categorize your resources in different ways, for
-     * example, by purpose, owner, or environment. Each tag consists of a key and an
-     * optional value, both of which you define. </p>
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag an association to identify the
+     * type of resource to which it applies, the environment, or the purpose of the
+     * association.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Adds or overwrites one or more tags for a State Manager association.
-     * <i>Tags</i> are metadata that you can assign to your Amazon Web Services
-     * resources. Tags enable you to categorize your resources in different ways, for
-     * example, by purpose, owner, or environment. Each tag consists of a key and an
-     * optional value, both of which you define. </p>
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag an association to identify the
+     * type of resource to which it applies, the environment, or the purpose of the
+     * association.</p>
      */
     inline CreateAssociationRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Adds or overwrites one or more tags for a State Manager association.
-     * <i>Tags</i> are metadata that you can assign to your Amazon Web Services
-     * resources. Tags enable you to categorize your resources in different ways, for
-     * example, by purpose, owner, or environment. Each tag consists of a key and an
-     * optional value, both of which you define. </p>
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag an association to identify the
+     * type of resource to which it applies, the environment, or the purpose of the
+     * association.</p>
      */
     inline CreateAssociationRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Adds or overwrites one or more tags for a State Manager association.
-     * <i>Tags</i> are metadata that you can assign to your Amazon Web Services
-     * resources. Tags enable you to categorize your resources in different ways, for
-     * example, by purpose, owner, or environment. Each tag consists of a key and an
-     * optional value, both of which you define. </p>
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag an association to identify the
+     * type of resource to which it applies, the environment, or the purpose of the
+     * association.</p>
      */
     inline CreateAssociationRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Adds or overwrites one or more tags for a State Manager association.
-     * <i>Tags</i> are metadata that you can assign to your Amazon Web Services
-     * resources. Tags enable you to categorize your resources in different ways, for
-     * example, by purpose, owner, or environment. Each tag consists of a key and an
-     * optional value, both of which you define. </p>
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag an association to identify the
+     * type of resource to which it applies, the environment, or the purpose of the
+     * association.</p>
      */
     inline CreateAssociationRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    
+    inline const AlarmConfiguration& GetAlarmConfiguration() const{ return m_alarmConfiguration; }
+
+    
+    inline bool AlarmConfigurationHasBeenSet() const { return m_alarmConfigurationHasBeenSet; }
+
+    
+    inline void SetAlarmConfiguration(const AlarmConfiguration& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = value; }
+
+    
+    inline void SetAlarmConfiguration(AlarmConfiguration&& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = std::move(value); }
+
+    
+    inline CreateAssociationRequest& WithAlarmConfiguration(const AlarmConfiguration& value) { SetAlarmConfiguration(value); return *this;}
+
+    
+    inline CreateAssociationRequest& WithAlarmConfiguration(AlarmConfiguration&& value) { SetAlarmConfiguration(std::move(value)); return *this;}
 
   private:
 
@@ -1503,6 +1523,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    AlarmConfiguration m_alarmConfiguration;
+    bool m_alarmConfigurationHasBeenSet = false;
   };
 
 } // namespace Model
