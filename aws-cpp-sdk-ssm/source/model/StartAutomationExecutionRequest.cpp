@@ -25,7 +25,8 @@ StartAutomationExecutionRequest::StartAutomationExecutionRequest() :
     m_maxConcurrencyHasBeenSet(false),
     m_maxErrorsHasBeenSet(false),
     m_targetLocationsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_alarmConfigurationHasBeenSet(false)
 {
 }
 
@@ -141,6 +142,12 @@ Aws::String StartAutomationExecutionRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_alarmConfigurationHasBeenSet)
+  {
+   payload.WithObject("AlarmConfiguration", m_alarmConfiguration.Jsonize());
 
   }
 

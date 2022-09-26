@@ -12,7 +12,9 @@
 #include <aws/ssm/model/CommandStatus.h>
 #include <aws/ssm/model/NotificationConfig.h>
 #include <aws/ssm/model/CloudWatchOutputConfig.h>
+#include <aws/ssm/model/AlarmConfiguration.h>
 #include <aws/ssm/model/Target.h>
+#include <aws/ssm/model/AlarmStateInformation.h>
 #include <utility>
 
 namespace Aws
@@ -1350,6 +1352,78 @@ namespace Model
      */
     inline Command& WithTimeoutSeconds(int value) { SetTimeoutSeconds(value); return *this;}
 
+
+    /**
+     * <p>The details for the CloudWatch alarm applied to your command.</p>
+     */
+    inline const AlarmConfiguration& GetAlarmConfiguration() const{ return m_alarmConfiguration; }
+
+    /**
+     * <p>The details for the CloudWatch alarm applied to your command.</p>
+     */
+    inline bool AlarmConfigurationHasBeenSet() const { return m_alarmConfigurationHasBeenSet; }
+
+    /**
+     * <p>The details for the CloudWatch alarm applied to your command.</p>
+     */
+    inline void SetAlarmConfiguration(const AlarmConfiguration& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = value; }
+
+    /**
+     * <p>The details for the CloudWatch alarm applied to your command.</p>
+     */
+    inline void SetAlarmConfiguration(AlarmConfiguration&& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = std::move(value); }
+
+    /**
+     * <p>The details for the CloudWatch alarm applied to your command.</p>
+     */
+    inline Command& WithAlarmConfiguration(const AlarmConfiguration& value) { SetAlarmConfiguration(value); return *this;}
+
+    /**
+     * <p>The details for the CloudWatch alarm applied to your command.</p>
+     */
+    inline Command& WithAlarmConfiguration(AlarmConfiguration&& value) { SetAlarmConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the command.</p>
+     */
+    inline const Aws::Vector<AlarmStateInformation>& GetTriggeredAlarms() const{ return m_triggeredAlarms; }
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the command.</p>
+     */
+    inline bool TriggeredAlarmsHasBeenSet() const { return m_triggeredAlarmsHasBeenSet; }
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the command.</p>
+     */
+    inline void SetTriggeredAlarms(const Aws::Vector<AlarmStateInformation>& value) { m_triggeredAlarmsHasBeenSet = true; m_triggeredAlarms = value; }
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the command.</p>
+     */
+    inline void SetTriggeredAlarms(Aws::Vector<AlarmStateInformation>&& value) { m_triggeredAlarmsHasBeenSet = true; m_triggeredAlarms = std::move(value); }
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the command.</p>
+     */
+    inline Command& WithTriggeredAlarms(const Aws::Vector<AlarmStateInformation>& value) { SetTriggeredAlarms(value); return *this;}
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the command.</p>
+     */
+    inline Command& WithTriggeredAlarms(Aws::Vector<AlarmStateInformation>&& value) { SetTriggeredAlarms(std::move(value)); return *this;}
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the command.</p>
+     */
+    inline Command& AddTriggeredAlarms(const AlarmStateInformation& value) { m_triggeredAlarmsHasBeenSet = true; m_triggeredAlarms.push_back(value); return *this; }
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the command.</p>
+     */
+    inline Command& AddTriggeredAlarms(AlarmStateInformation&& value) { m_triggeredAlarmsHasBeenSet = true; m_triggeredAlarms.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_commandId;
@@ -1423,6 +1497,12 @@ namespace Model
 
     int m_timeoutSeconds;
     bool m_timeoutSecondsHasBeenSet = false;
+
+    AlarmConfiguration m_alarmConfiguration;
+    bool m_alarmConfigurationHasBeenSet = false;
+
+    Aws::Vector<AlarmStateInformation> m_triggeredAlarms;
+    bool m_triggeredAlarmsHasBeenSet = false;
   };
 
 } // namespace Model

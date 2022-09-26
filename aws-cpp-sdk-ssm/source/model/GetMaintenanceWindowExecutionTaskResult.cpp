@@ -121,6 +121,21 @@ GetMaintenanceWindowExecutionTaskResult& GetMaintenanceWindowExecutionTaskResult
 
   }
 
+  if(jsonValue.ValueExists("AlarmConfiguration"))
+  {
+    m_alarmConfiguration = jsonValue.GetObject("AlarmConfiguration");
+
+  }
+
+  if(jsonValue.ValueExists("TriggeredAlarms"))
+  {
+    Array<JsonView> triggeredAlarmsJsonList = jsonValue.GetArray("TriggeredAlarms");
+    for(unsigned triggeredAlarmsIndex = 0; triggeredAlarmsIndex < triggeredAlarmsJsonList.GetLength(); ++triggeredAlarmsIndex)
+    {
+      m_triggeredAlarms.push_back(triggeredAlarmsJsonList[triggeredAlarmsIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

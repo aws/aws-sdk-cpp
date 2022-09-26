@@ -44,6 +44,8 @@ AutomationExecutionMetadata::AutomationExecutionMetadata() :
     m_targetHasBeenSet(false),
     m_automationType(AutomationType::NOT_SET),
     m_automationTypeHasBeenSet(false),
+    m_alarmConfigurationHasBeenSet(false),
+    m_triggeredAlarmsHasBeenSet(false),
     m_automationSubtype(AutomationSubtype::NOT_SET),
     m_automationSubtypeHasBeenSet(false),
     m_scheduledTimeHasBeenSet(false),
@@ -80,6 +82,8 @@ AutomationExecutionMetadata::AutomationExecutionMetadata(JsonView jsonValue) :
     m_targetHasBeenSet(false),
     m_automationType(AutomationType::NOT_SET),
     m_automationTypeHasBeenSet(false),
+    m_alarmConfigurationHasBeenSet(false),
+    m_triggeredAlarmsHasBeenSet(false),
     m_automationSubtype(AutomationSubtype::NOT_SET),
     m_automationSubtypeHasBeenSet(false),
     m_scheduledTimeHasBeenSet(false),
@@ -274,6 +278,23 @@ AutomationExecutionMetadata& AutomationExecutionMetadata::operator =(JsonView js
     m_automationType = AutomationTypeMapper::GetAutomationTypeForName(jsonValue.GetString("AutomationType"));
 
     m_automationTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AlarmConfiguration"))
+  {
+    m_alarmConfiguration = jsonValue.GetObject("AlarmConfiguration");
+
+    m_alarmConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TriggeredAlarms"))
+  {
+    Array<JsonView> triggeredAlarmsJsonList = jsonValue.GetArray("TriggeredAlarms");
+    for(unsigned triggeredAlarmsIndex = 0; triggeredAlarmsIndex < triggeredAlarmsJsonList.GetLength(); ++triggeredAlarmsIndex)
+    {
+      m_triggeredAlarms.push_back(triggeredAlarmsJsonList[triggeredAlarmsIndex].AsObject());
+    }
+    m_triggeredAlarmsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AutomationSubtype"))
@@ -483,6 +504,23 @@ JsonValue AutomationExecutionMetadata::Jsonize() const
   if(m_automationTypeHasBeenSet)
   {
    payload.WithString("AutomationType", AutomationTypeMapper::GetNameForAutomationType(m_automationType));
+  }
+
+  if(m_alarmConfigurationHasBeenSet)
+  {
+   payload.WithObject("AlarmConfiguration", m_alarmConfiguration.Jsonize());
+
+  }
+
+  if(m_triggeredAlarmsHasBeenSet)
+  {
+   Array<JsonValue> triggeredAlarmsJsonList(m_triggeredAlarms.size());
+   for(unsigned triggeredAlarmsIndex = 0; triggeredAlarmsIndex < triggeredAlarmsJsonList.GetLength(); ++triggeredAlarmsIndex)
+   {
+     triggeredAlarmsJsonList[triggeredAlarmsIndex].AsObject(m_triggeredAlarms[triggeredAlarmsIndex].Jsonize());
+   }
+   payload.WithArray("TriggeredAlarms", std::move(triggeredAlarmsJsonList));
+
   }
 
   if(m_automationSubtypeHasBeenSet)

@@ -12,6 +12,7 @@
 #include <aws/ssm/model/MaintenanceWindowTaskInvocationParameters.h>
 #include <aws/ssm/model/LoggingInfo.h>
 #include <aws/ssm/model/MaintenanceWindowTaskCutoffBehavior.h>
+#include <aws/ssm/model/AlarmConfiguration.h>
 #include <aws/ssm/model/Target.h>
 #include <aws/ssm/model/MaintenanceWindowTaskParameterValueExpression.h>
 #include <utility>
@@ -1187,6 +1188,37 @@ namespace Model
      */
     inline UpdateMaintenanceWindowTaskRequest& WithCutoffBehavior(MaintenanceWindowTaskCutoffBehavior&& value) { SetCutoffBehavior(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The CloudWatch alarm you want to apply to your maintenance window task.</p>
+     */
+    inline const AlarmConfiguration& GetAlarmConfiguration() const{ return m_alarmConfiguration; }
+
+    /**
+     * <p>The CloudWatch alarm you want to apply to your maintenance window task.</p>
+     */
+    inline bool AlarmConfigurationHasBeenSet() const { return m_alarmConfigurationHasBeenSet; }
+
+    /**
+     * <p>The CloudWatch alarm you want to apply to your maintenance window task.</p>
+     */
+    inline void SetAlarmConfiguration(const AlarmConfiguration& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = value; }
+
+    /**
+     * <p>The CloudWatch alarm you want to apply to your maintenance window task.</p>
+     */
+    inline void SetAlarmConfiguration(AlarmConfiguration&& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = std::move(value); }
+
+    /**
+     * <p>The CloudWatch alarm you want to apply to your maintenance window task.</p>
+     */
+    inline UpdateMaintenanceWindowTaskRequest& WithAlarmConfiguration(const AlarmConfiguration& value) { SetAlarmConfiguration(value); return *this;}
+
+    /**
+     * <p>The CloudWatch alarm you want to apply to your maintenance window task.</p>
+     */
+    inline UpdateMaintenanceWindowTaskRequest& WithAlarmConfiguration(AlarmConfiguration&& value) { SetAlarmConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_windowId;
@@ -1233,6 +1265,9 @@ namespace Model
 
     MaintenanceWindowTaskCutoffBehavior m_cutoffBehavior;
     bool m_cutoffBehaviorHasBeenSet = false;
+
+    AlarmConfiguration m_alarmConfiguration;
+    bool m_alarmConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

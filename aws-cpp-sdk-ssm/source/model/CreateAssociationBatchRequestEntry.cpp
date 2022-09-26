@@ -40,7 +40,8 @@ CreateAssociationBatchRequestEntry::CreateAssociationBatchRequestEntry() :
     m_targetLocationsHasBeenSet(false),
     m_scheduleOffset(0),
     m_scheduleOffsetHasBeenSet(false),
-    m_targetMapsHasBeenSet(false)
+    m_targetMapsHasBeenSet(false),
+    m_alarmConfigurationHasBeenSet(false)
 {
 }
 
@@ -66,7 +67,8 @@ CreateAssociationBatchRequestEntry::CreateAssociationBatchRequestEntry(JsonView 
     m_targetLocationsHasBeenSet(false),
     m_scheduleOffset(0),
     m_scheduleOffsetHasBeenSet(false),
-    m_targetMapsHasBeenSet(false)
+    m_targetMapsHasBeenSet(false),
+    m_alarmConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -234,6 +236,13 @@ CreateAssociationBatchRequestEntry& CreateAssociationBatchRequestEntry::operator
     m_targetMapsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AlarmConfiguration"))
+  {
+    m_alarmConfiguration = jsonValue.GetObject("AlarmConfiguration");
+
+    m_alarmConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -384,6 +393,12 @@ JsonValue CreateAssociationBatchRequestEntry::Jsonize() const
      targetMapsJsonList[targetMapsIndex].AsObject(std::move(targetMapJsonMap));
    }
    payload.WithArray("TargetMaps", std::move(targetMapsJsonList));
+
+  }
+
+  if(m_alarmConfigurationHasBeenSet)
+  {
+   payload.WithObject("AlarmConfiguration", m_alarmConfiguration.Jsonize());
 
   }
 

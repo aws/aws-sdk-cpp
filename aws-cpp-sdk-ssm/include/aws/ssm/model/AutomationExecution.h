@@ -13,10 +13,12 @@
 #include <aws/ssm/model/ExecutionMode.h>
 #include <aws/ssm/model/ResolvedTargets.h>
 #include <aws/ssm/model/ProgressCounters.h>
+#include <aws/ssm/model/AlarmConfiguration.h>
 #include <aws/ssm/model/AutomationSubtype.h>
 #include <aws/ssm/model/StepExecution.h>
 #include <aws/ssm/model/Target.h>
 #include <aws/ssm/model/TargetLocation.h>
+#include <aws/ssm/model/AlarmStateInformation.h>
 #include <aws/ssm/model/Runbook.h>
 #include <utility>
 
@@ -1116,6 +1118,78 @@ namespace Model
 
 
     /**
+     * <p>The details for the CloudWatch alarm applied to your automation.</p>
+     */
+    inline const AlarmConfiguration& GetAlarmConfiguration() const{ return m_alarmConfiguration; }
+
+    /**
+     * <p>The details for the CloudWatch alarm applied to your automation.</p>
+     */
+    inline bool AlarmConfigurationHasBeenSet() const { return m_alarmConfigurationHasBeenSet; }
+
+    /**
+     * <p>The details for the CloudWatch alarm applied to your automation.</p>
+     */
+    inline void SetAlarmConfiguration(const AlarmConfiguration& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = value; }
+
+    /**
+     * <p>The details for the CloudWatch alarm applied to your automation.</p>
+     */
+    inline void SetAlarmConfiguration(AlarmConfiguration&& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = std::move(value); }
+
+    /**
+     * <p>The details for the CloudWatch alarm applied to your automation.</p>
+     */
+    inline AutomationExecution& WithAlarmConfiguration(const AlarmConfiguration& value) { SetAlarmConfiguration(value); return *this;}
+
+    /**
+     * <p>The details for the CloudWatch alarm applied to your automation.</p>
+     */
+    inline AutomationExecution& WithAlarmConfiguration(AlarmConfiguration&& value) { SetAlarmConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the automation.</p>
+     */
+    inline const Aws::Vector<AlarmStateInformation>& GetTriggeredAlarms() const{ return m_triggeredAlarms; }
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the automation.</p>
+     */
+    inline bool TriggeredAlarmsHasBeenSet() const { return m_triggeredAlarmsHasBeenSet; }
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the automation.</p>
+     */
+    inline void SetTriggeredAlarms(const Aws::Vector<AlarmStateInformation>& value) { m_triggeredAlarmsHasBeenSet = true; m_triggeredAlarms = value; }
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the automation.</p>
+     */
+    inline void SetTriggeredAlarms(Aws::Vector<AlarmStateInformation>&& value) { m_triggeredAlarmsHasBeenSet = true; m_triggeredAlarms = std::move(value); }
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the automation.</p>
+     */
+    inline AutomationExecution& WithTriggeredAlarms(const Aws::Vector<AlarmStateInformation>& value) { SetTriggeredAlarms(value); return *this;}
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the automation.</p>
+     */
+    inline AutomationExecution& WithTriggeredAlarms(Aws::Vector<AlarmStateInformation>&& value) { SetTriggeredAlarms(std::move(value)); return *this;}
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the automation.</p>
+     */
+    inline AutomationExecution& AddTriggeredAlarms(const AlarmStateInformation& value) { m_triggeredAlarmsHasBeenSet = true; m_triggeredAlarms.push_back(value); return *this; }
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the automation.</p>
+     */
+    inline AutomationExecution& AddTriggeredAlarms(AlarmStateInformation&& value) { m_triggeredAlarmsHasBeenSet = true; m_triggeredAlarms.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The subtype of the Automation operation. Currently, the only supported value
      * is <code>ChangeRequest</code>.</p>
      */
@@ -1454,6 +1528,12 @@ namespace Model
 
     ProgressCounters m_progressCounters;
     bool m_progressCountersHasBeenSet = false;
+
+    AlarmConfiguration m_alarmConfiguration;
+    bool m_alarmConfigurationHasBeenSet = false;
+
+    Aws::Vector<AlarmStateInformation> m_triggeredAlarms;
+    bool m_triggeredAlarmsHasBeenSet = false;
 
     AutomationSubtype m_automationSubtype;
     bool m_automationSubtypeHasBeenSet = false;

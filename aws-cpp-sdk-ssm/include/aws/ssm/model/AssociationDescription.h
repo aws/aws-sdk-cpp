@@ -14,8 +14,10 @@
 #include <aws/ssm/model/InstanceAssociationOutputLocation.h>
 #include <aws/ssm/model/AssociationComplianceSeverity.h>
 #include <aws/ssm/model/AssociationSyncCompliance.h>
+#include <aws/ssm/model/AlarmConfiguration.h>
 #include <aws/ssm/model/Target.h>
 #include <aws/ssm/model/TargetLocation.h>
+#include <aws/ssm/model/AlarmStateInformation.h>
 #include <utility>
 
 namespace Aws
@@ -1311,6 +1313,66 @@ namespace Model
      */
     inline AssociationDescription& AddTargetMaps(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_targetMapsHasBeenSet = true; m_targetMaps.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const AlarmConfiguration& GetAlarmConfiguration() const{ return m_alarmConfiguration; }
+
+    
+    inline bool AlarmConfigurationHasBeenSet() const { return m_alarmConfigurationHasBeenSet; }
+
+    
+    inline void SetAlarmConfiguration(const AlarmConfiguration& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = value; }
+
+    
+    inline void SetAlarmConfiguration(AlarmConfiguration&& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = std::move(value); }
+
+    
+    inline AssociationDescription& WithAlarmConfiguration(const AlarmConfiguration& value) { SetAlarmConfiguration(value); return *this;}
+
+    
+    inline AssociationDescription& WithAlarmConfiguration(AlarmConfiguration&& value) { SetAlarmConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The CloudWatch alarm that was invoked during the association.</p>
+     */
+    inline const Aws::Vector<AlarmStateInformation>& GetTriggeredAlarms() const{ return m_triggeredAlarms; }
+
+    /**
+     * <p>The CloudWatch alarm that was invoked during the association.</p>
+     */
+    inline bool TriggeredAlarmsHasBeenSet() const { return m_triggeredAlarmsHasBeenSet; }
+
+    /**
+     * <p>The CloudWatch alarm that was invoked during the association.</p>
+     */
+    inline void SetTriggeredAlarms(const Aws::Vector<AlarmStateInformation>& value) { m_triggeredAlarmsHasBeenSet = true; m_triggeredAlarms = value; }
+
+    /**
+     * <p>The CloudWatch alarm that was invoked during the association.</p>
+     */
+    inline void SetTriggeredAlarms(Aws::Vector<AlarmStateInformation>&& value) { m_triggeredAlarmsHasBeenSet = true; m_triggeredAlarms = std::move(value); }
+
+    /**
+     * <p>The CloudWatch alarm that was invoked during the association.</p>
+     */
+    inline AssociationDescription& WithTriggeredAlarms(const Aws::Vector<AlarmStateInformation>& value) { SetTriggeredAlarms(value); return *this;}
+
+    /**
+     * <p>The CloudWatch alarm that was invoked during the association.</p>
+     */
+    inline AssociationDescription& WithTriggeredAlarms(Aws::Vector<AlarmStateInformation>&& value) { SetTriggeredAlarms(std::move(value)); return *this;}
+
+    /**
+     * <p>The CloudWatch alarm that was invoked during the association.</p>
+     */
+    inline AssociationDescription& AddTriggeredAlarms(const AlarmStateInformation& value) { m_triggeredAlarmsHasBeenSet = true; m_triggeredAlarms.push_back(value); return *this; }
+
+    /**
+     * <p>The CloudWatch alarm that was invoked during the association.</p>
+     */
+    inline AssociationDescription& AddTriggeredAlarms(AlarmStateInformation&& value) { m_triggeredAlarmsHasBeenSet = true; m_triggeredAlarms.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -1390,6 +1452,12 @@ namespace Model
 
     Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>> m_targetMaps;
     bool m_targetMapsHasBeenSet = false;
+
+    AlarmConfiguration m_alarmConfiguration;
+    bool m_alarmConfigurationHasBeenSet = false;
+
+    Aws::Vector<AlarmStateInformation> m_triggeredAlarms;
+    bool m_triggeredAlarmsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,7 +35,8 @@ MaintenanceWindowTask::MaintenanceWindowTask() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_cutoffBehavior(MaintenanceWindowTaskCutoffBehavior::NOT_SET),
-    m_cutoffBehaviorHasBeenSet(false)
+    m_cutoffBehaviorHasBeenSet(false),
+    m_alarmConfigurationHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ MaintenanceWindowTask::MaintenanceWindowTask(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_cutoffBehavior(MaintenanceWindowTaskCutoffBehavior::NOT_SET),
-    m_cutoffBehaviorHasBeenSet(false)
+    m_cutoffBehaviorHasBeenSet(false),
+    m_alarmConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -167,6 +169,13 @@ MaintenanceWindowTask& MaintenanceWindowTask::operator =(JsonView jsonValue)
     m_cutoffBehaviorHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AlarmConfiguration"))
+  {
+    m_alarmConfiguration = jsonValue.GetObject("AlarmConfiguration");
+
+    m_alarmConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -264,6 +273,12 @@ JsonValue MaintenanceWindowTask::Jsonize() const
   if(m_cutoffBehaviorHasBeenSet)
   {
    payload.WithString("CutoffBehavior", MaintenanceWindowTaskCutoffBehaviorMapper::GetNameForMaintenanceWindowTaskCutoffBehavior(m_cutoffBehavior));
+  }
+
+  if(m_alarmConfigurationHasBeenSet)
+  {
+   payload.WithObject("AlarmConfiguration", m_alarmConfiguration.Jsonize());
+
   }
 
   return payload;

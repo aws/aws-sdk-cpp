@@ -25,6 +25,7 @@ namespace Aws
         static const int ap_south_1_HASH = HashingUtils::HashString("ap-south-1");
         static const int ap_southeast_1_HASH = HashingUtils::HashString("ap-southeast-1");
         static const int ap_southeast_2_HASH = HashingUtils::HashString("ap-southeast-2");
+        static const int ap_southeast_3_HASH = HashingUtils::HashString("ap-southeast-3");
         static const int ap_northeast_1_HASH = HashingUtils::HashString("ap-northeast-1");
         static const int ap_northeast_2_HASH = HashingUtils::HashString("ap-northeast-2");
         static const int ap_northeast_3_HASH = HashingUtils::HashString("ap-northeast-3");
@@ -35,6 +36,8 @@ namespace Aws
         static const int eu_west_3_HASH = HashingUtils::HashString("eu-west-3");
         static const int eu_north_1_HASH = HashingUtils::HashString("eu-north-1");
         static const int eu_south_1_HASH = HashingUtils::HashString("eu-south-1");
+        static const int eu_south_2_HASH = HashingUtils::HashString("eu-south-2");
+        static const int me_central_1_HASH = HashingUtils::HashString("me-central-1");
         static const int me_south_1_HASH = HashingUtils::HashString("me-south-1");
         static const int sa_east_1_HASH = HashingUtils::HashString("sa-east-1");
         static const int us_east_1_HASH = HashingUtils::HashString("us-east-1");
@@ -67,6 +70,10 @@ namespace Aws
           else if (hashCode == ap_southeast_2_HASH)
           {
             return AWSRegion::ap_southeast_2;
+          }
+          else if (hashCode == ap_southeast_3_HASH)
+          {
+            return AWSRegion::ap_southeast_3;
           }
           else if (hashCode == ap_northeast_1_HASH)
           {
@@ -107,6 +114,14 @@ namespace Aws
           else if (hashCode == eu_south_1_HASH)
           {
             return AWSRegion::eu_south_1;
+          }
+          else if (hashCode == eu_south_2_HASH)
+          {
+            return AWSRegion::eu_south_2;
+          }
+          else if (hashCode == me_central_1_HASH)
+          {
+            return AWSRegion::me_central_1;
           }
           else if (hashCode == me_south_1_HASH)
           {
@@ -164,6 +179,8 @@ namespace Aws
             return "ap-southeast-1";
           case AWSRegion::ap_southeast_2:
             return "ap-southeast-2";
+          case AWSRegion::ap_southeast_3:
+            return "ap-southeast-3";
           case AWSRegion::ap_northeast_1:
             return "ap-northeast-1";
           case AWSRegion::ap_northeast_2:
@@ -184,6 +201,10 @@ namespace Aws
             return "eu-north-1";
           case AWSRegion::eu_south_1:
             return "eu-south-1";
+          case AWSRegion::eu_south_2:
+            return "eu-south-2";
+          case AWSRegion::me_central_1:
+            return "me-central-1";
           case AWSRegion::me_south_1:
             return "me-south-1";
           case AWSRegion::sa_east_1:
