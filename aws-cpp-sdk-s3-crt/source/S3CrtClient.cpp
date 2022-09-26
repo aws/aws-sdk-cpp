@@ -367,8 +367,7 @@ static void S3CrtRequestFinishCallback(struct aws_s3_meta_request *meta_request,
     bodyStream.write(reinterpret_cast<char*>(meta_request_result->error_response_body->buffer), static_cast<std::streamsize>(meta_request_result->error_response_body->len));
   }
 
-  std::lock_guard<std::mutex> lockRequest{userData->underlyingS3RequestMutex};
-  aws_s3_meta_request_release(userData->underlyingS3Request);
+  aws_s3_meta_request_release(meta_request);
 }
 
 Aws::Client::XmlOutcome S3CrtClient::GenerateXmlOutcome(const std::shared_ptr<HttpResponse>& response) const
@@ -507,9 +506,10 @@ void S3CrtClient::GetObjectAsync(const GetObjectRequest& request, const GetObjec
   options.message= crtHttpRequest->GetUnderlyingMessage();
   userData->crtHttpRequest = crtHttpRequest;
 
-  std::lock_guard<std::mutex> lockRequest{userData->underlyingS3RequestMutex};
-  aws_s3_meta_request *rawRequest = aws_s3_client_make_meta_request(m_s3CrtClient, &options);
-  userData->underlyingS3Request = rawRequest;
+  if (aws_s3_client_make_meta_request(m_s3CrtClient, &options) == nullptr)
+  {
+    return handler(this, request, GetObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Unable to create s3 meta request", false)), context);
+  }
 }
 
 GetObjectOutcome S3CrtClient::GetObject(const GetObjectRequest& request) const
@@ -577,9 +577,10 @@ void S3CrtClient::PutObjectAsync(const PutObjectRequest& request, const PutObjec
   options.message= crtHttpRequest->GetUnderlyingMessage();
   userData->crtHttpRequest = crtHttpRequest;
 
-  std::lock_guard<std::mutex> lockRequest{userData->underlyingS3RequestMutex};
-  aws_s3_meta_request *rawRequest = aws_s3_client_make_meta_request(m_s3CrtClient, &options);
-  userData->underlyingS3Request = rawRequest;
+  if (aws_s3_client_make_meta_request(m_s3CrtClient, &options) == nullptr)
+  {
+    return handler(this, request, PutObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Unable to create s3 meta request", false)), context);
+  }
 }
 
 PutObjectOutcome S3CrtClient::PutObject(const PutObjectRequest& request) const
