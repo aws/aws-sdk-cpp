@@ -161,8 +161,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access
      * <code>Query</code> API, <code>QuerySuggestions</code> API,
-     * <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
-     * user and group information. For more information, see <a
+     * <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
+     * and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p>
      */
@@ -171,8 +171,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access
      * <code>Query</code> API, <code>QuerySuggestions</code> API,
-     * <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
-     * user and group information. For more information, see <a
+     * <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
+     * and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p>
      */
@@ -181,8 +181,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access
      * <code>Query</code> API, <code>QuerySuggestions</code> API,
-     * <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
-     * user and group information. For more information, see <a
+     * <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
+     * and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p>
      */
@@ -191,8 +191,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access
      * <code>Query</code> API, <code>QuerySuggestions</code> API,
-     * <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
-     * user and group information. For more information, see <a
+     * <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
+     * and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p>
      */
@@ -201,8 +201,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access
      * <code>Query</code> API, <code>QuerySuggestions</code> API,
-     * <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
-     * user and group information. For more information, see <a
+     * <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
+     * and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p>
      */
@@ -211,8 +211,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access
      * <code>Query</code> API, <code>QuerySuggestions</code> API,
-     * <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
-     * user and group information. For more information, see <a
+     * <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
+     * and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p>
      */
@@ -221,8 +221,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access
      * <code>Query</code> API, <code>QuerySuggestions</code> API,
-     * <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
-     * user and group information. For more information, see <a
+     * <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
+     * and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p>
      */
@@ -231,8 +231,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access
      * <code>Query</code> API, <code>QuerySuggestions</code> API,
-     * <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
-     * user and group information. For more information, see <a
+     * <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
+     * and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p>
      */

@@ -39,56 +39,50 @@ namespace Model
 
 
     /**
-     * <p>The template schema used for the data source.</p> <p>The following links to
-     * the template schema for data sources where templates are supported:</p> <ul>
-     * <li> <p> <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-zendesk.html#zendesk-template-schema">Zendesk
-     * template schema</a> </p> </li> </ul>
+     * <p>The template schema used for the data source, where templates schemas are
+     * supported.</p> <p>See <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/ds-schemas.html">Data source
+     * template schemas</a>.</p>
      */
     inline Aws::Utils::DocumentView GetTemplate() const{ return m_template; }
 
     /**
-     * <p>The template schema used for the data source.</p> <p>The following links to
-     * the template schema for data sources where templates are supported:</p> <ul>
-     * <li> <p> <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-zendesk.html#zendesk-template-schema">Zendesk
-     * template schema</a> </p> </li> </ul>
+     * <p>The template schema used for the data source, where templates schemas are
+     * supported.</p> <p>See <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/ds-schemas.html">Data source
+     * template schemas</a>.</p>
      */
     inline bool TemplateHasBeenSet() const { return m_templateHasBeenSet; }
 
     /**
-     * <p>The template schema used for the data source.</p> <p>The following links to
-     * the template schema for data sources where templates are supported:</p> <ul>
-     * <li> <p> <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-zendesk.html#zendesk-template-schema">Zendesk
-     * template schema</a> </p> </li> </ul>
+     * <p>The template schema used for the data source, where templates schemas are
+     * supported.</p> <p>See <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/ds-schemas.html">Data source
+     * template schemas</a>.</p>
      */
     inline void SetTemplate(const Aws::Utils::Document& value) { m_templateHasBeenSet = true; m_template = value; }
 
     /**
-     * <p>The template schema used for the data source.</p> <p>The following links to
-     * the template schema for data sources where templates are supported:</p> <ul>
-     * <li> <p> <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-zendesk.html#zendesk-template-schema">Zendesk
-     * template schema</a> </p> </li> </ul>
+     * <p>The template schema used for the data source, where templates schemas are
+     * supported.</p> <p>See <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/ds-schemas.html">Data source
+     * template schemas</a>.</p>
      */
     inline void SetTemplate(Aws::Utils::Document&& value) { m_templateHasBeenSet = true; m_template = std::move(value); }
 
     /**
-     * <p>The template schema used for the data source.</p> <p>The following links to
-     * the template schema for data sources where templates are supported:</p> <ul>
-     * <li> <p> <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-zendesk.html#zendesk-template-schema">Zendesk
-     * template schema</a> </p> </li> </ul>
+     * <p>The template schema used for the data source, where templates schemas are
+     * supported.</p> <p>See <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/ds-schemas.html">Data source
+     * template schemas</a>.</p>
      */
     inline TemplateConfiguration& WithTemplate(const Aws::Utils::Document& value) { SetTemplate(value); return *this;}
 
     /**
-     * <p>The template schema used for the data source.</p> <p>The following links to
-     * the template schema for data sources where templates are supported:</p> <ul>
-     * <li> <p> <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-zendesk.html#zendesk-template-schema">Zendesk
-     * template schema</a> </p> </li> </ul>
+     * <p>The template schema used for the data source, where templates schemas are
+     * supported.</p> <p>See <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/ds-schemas.html">Data source
+     * template schemas</a>.</p>
      */
     inline TemplateConfiguration& WithTemplate(Aws::Utils::Document&& value) { SetTemplate(std::move(value)); return *this;}
 
