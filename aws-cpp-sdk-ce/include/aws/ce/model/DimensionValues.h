@@ -44,37 +44,55 @@ namespace Model
 
     /**
      * <p>The names of the metadata types that you can use to filter and group your
-     * results. For example, <code>AZ</code> returns a list of Availability Zones.</p>
+     * results. For example, <code>AZ</code> returns a list of Availability Zones.
+     * <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in
+     * <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">CostCategoryRule</a>.</p>
      */
     inline const Dimension& GetKey() const{ return m_key; }
 
     /**
      * <p>The names of the metadata types that you can use to filter and group your
-     * results. For example, <code>AZ</code> returns a list of Availability Zones.</p>
+     * results. For example, <code>AZ</code> returns a list of Availability Zones.
+     * <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in
+     * <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">CostCategoryRule</a>.</p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
      * <p>The names of the metadata types that you can use to filter and group your
-     * results. For example, <code>AZ</code> returns a list of Availability Zones.</p>
+     * results. For example, <code>AZ</code> returns a list of Availability Zones.
+     * <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in
+     * <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">CostCategoryRule</a>.</p>
      */
     inline void SetKey(const Dimension& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
      * <p>The names of the metadata types that you can use to filter and group your
-     * results. For example, <code>AZ</code> returns a list of Availability Zones.</p>
+     * results. For example, <code>AZ</code> returns a list of Availability Zones.
+     * <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in
+     * <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">CostCategoryRule</a>.</p>
      */
     inline void SetKey(Dimension&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>The names of the metadata types that you can use to filter and group your
-     * results. For example, <code>AZ</code> returns a list of Availability Zones.</p>
+     * results. For example, <code>AZ</code> returns a list of Availability Zones.
+     * <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in
+     * <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">CostCategoryRule</a>.</p>
      */
     inline DimensionValues& WithKey(const Dimension& value) { SetKey(value); return *this;}
 
     /**
      * <p>The names of the metadata types that you can use to filter and group your
-     * results. For example, <code>AZ</code> returns a list of Availability Zones.</p>
+     * results. For example, <code>AZ</code> returns a list of Availability Zones.
+     * <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in
+     * <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">CostCategoryRule</a>.</p>
      */
     inline DimensionValues& WithKey(Dimension&& value) { SetKey(std::move(value)); return *this;}
 

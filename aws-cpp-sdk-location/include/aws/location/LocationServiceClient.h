@@ -750,6 +750,28 @@ namespace LocationService
         virtual void GetMapTileAsync(const Model::GetMapTileRequest& request, const GetMapTileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Finds a place by its unique ID. A <code>PlaceId</code> is returned by other
+         * search operations.</p>  <p>A PlaceId is valid only if all of the following
+         * are the same in the original search request and the call to
+         * <code>GetPlace</code>.</p> <ul> <li> <p>Customer AWS account</p> </li> <li>
+         * <p>AWS Region</p> </li> <li> <p>Data provider specified in the place index
+         * resource</p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/GetPlace">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPlaceOutcome GetPlace(const Model::GetPlaceRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetPlace that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetPlaceOutcomeCallable GetPlaceCallable(const Model::GetPlaceRequest& request) const;
+
+        /**
+         * An Async wrapper for GetPlace that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetPlaceAsync(const Model::GetPlaceRequest& request, const GetPlaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>A batch request to retrieve all device positions.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListDevicePositions">AWS

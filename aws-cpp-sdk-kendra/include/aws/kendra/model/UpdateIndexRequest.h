@@ -397,43 +397,43 @@ namespace Model
 
 
     /**
-     * <p>Enables fetching access levels of groups and users from an Amazon Web
-     * Services Single Sign On identity source. To configure this, see <a
+     * <p>Enables fetching access levels of groups and users from an IAM Identity
+     * Center (successor to Single Sign-On) identity source. To configure this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
      */
     inline const UserGroupResolutionConfiguration& GetUserGroupResolutionConfiguration() const{ return m_userGroupResolutionConfiguration; }
 
     /**
-     * <p>Enables fetching access levels of groups and users from an Amazon Web
-     * Services Single Sign On identity source. To configure this, see <a
+     * <p>Enables fetching access levels of groups and users from an IAM Identity
+     * Center (successor to Single Sign-On) identity source. To configure this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
      */
     inline bool UserGroupResolutionConfigurationHasBeenSet() const { return m_userGroupResolutionConfigurationHasBeenSet; }
 
     /**
-     * <p>Enables fetching access levels of groups and users from an Amazon Web
-     * Services Single Sign On identity source. To configure this, see <a
+     * <p>Enables fetching access levels of groups and users from an IAM Identity
+     * Center (successor to Single Sign-On) identity source. To configure this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
      */
     inline void SetUserGroupResolutionConfiguration(const UserGroupResolutionConfiguration& value) { m_userGroupResolutionConfigurationHasBeenSet = true; m_userGroupResolutionConfiguration = value; }
 
     /**
-     * <p>Enables fetching access levels of groups and users from an Amazon Web
-     * Services Single Sign On identity source. To configure this, see <a
+     * <p>Enables fetching access levels of groups and users from an IAM Identity
+     * Center (successor to Single Sign-On) identity source. To configure this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
      */
     inline void SetUserGroupResolutionConfiguration(UserGroupResolutionConfiguration&& value) { m_userGroupResolutionConfigurationHasBeenSet = true; m_userGroupResolutionConfiguration = std::move(value); }
 
     /**
-     * <p>Enables fetching access levels of groups and users from an Amazon Web
-     * Services Single Sign On identity source. To configure this, see <a
+     * <p>Enables fetching access levels of groups and users from an IAM Identity
+     * Center (successor to Single Sign-On) identity source. To configure this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
      */
     inline UpdateIndexRequest& WithUserGroupResolutionConfiguration(const UserGroupResolutionConfiguration& value) { SetUserGroupResolutionConfiguration(value); return *this;}
 
     /**
-     * <p>Enables fetching access levels of groups and users from an Amazon Web
-     * Services Single Sign On identity source. To configure this, see <a
+     * <p>Enables fetching access levels of groups and users from an IAM Identity
+     * Center (successor to Single Sign-On) identity source. To configure this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
      */
     inline UpdateIndexRequest& WithUserGroupResolutionConfiguration(UserGroupResolutionConfiguration&& value) { SetUserGroupResolutionConfiguration(std::move(value)); return *this;}

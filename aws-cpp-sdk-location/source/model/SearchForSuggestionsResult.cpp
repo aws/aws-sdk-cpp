@@ -19,11 +19,13 @@ namespace Model
 {
 
 SearchForSuggestionsResult::SearchForSuggestionsResult() : 
+    m_placeIdHasBeenSet(false),
     m_textHasBeenSet(false)
 {
 }
 
 SearchForSuggestionsResult::SearchForSuggestionsResult(JsonView jsonValue) : 
+    m_placeIdHasBeenSet(false),
     m_textHasBeenSet(false)
 {
   *this = jsonValue;
@@ -31,6 +33,13 @@ SearchForSuggestionsResult::SearchForSuggestionsResult(JsonView jsonValue) :
 
 SearchForSuggestionsResult& SearchForSuggestionsResult::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("PlaceId"))
+  {
+    m_placeId = jsonValue.GetString("PlaceId");
+
+    m_placeIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Text"))
   {
     m_text = jsonValue.GetString("Text");
@@ -44,6 +53,12 @@ SearchForSuggestionsResult& SearchForSuggestionsResult::operator =(JsonView json
 JsonValue SearchForSuggestionsResult::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_placeIdHasBeenSet)
+  {
+   payload.WithString("PlaceId", m_placeId);
+
+  }
 
   if(m_textHasBeenSet)
   {

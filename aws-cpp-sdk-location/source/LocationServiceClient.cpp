@@ -52,6 +52,7 @@
 #include <aws/location/model/GetMapSpritesRequest.h>
 #include <aws/location/model/GetMapStyleDescriptorRequest.h>
 #include <aws/location/model/GetMapTileRequest.h>
+#include <aws/location/model/GetPlaceRequest.h>
 #include <aws/location/model/ListDevicePositionsRequest.h>
 #include <aws/location/model/ListGeofenceCollectionsRequest.h>
 #include <aws/location/model/ListGeofencesRequest.h>
@@ -1423,6 +1424,51 @@ void LocationServiceClient::GetMapTileAsync(const GetMapTileRequest& request, co
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, GetMapTile(request), context);
+    } );
+}
+
+GetPlaceOutcome LocationServiceClient::GetPlace(const GetPlaceRequest& request) const
+{
+  if (!request.IndexNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetPlace", "Required field: IndexName, is not set");
+    return GetPlaceOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IndexName]", false));
+  }
+  if (!request.PlaceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetPlace", "Required field: PlaceId, is not set");
+    return GetPlaceOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PlaceId]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("places." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("GetPlace", "Invalid DNS host: " << uri.GetAuthority());
+      return GetPlaceOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/places/v0/indexes/");
+  uri.AddPathSegment(request.GetIndexName());
+  uri.AddPathSegments("/places/");
+  uri.AddPathSegment(request.GetPlaceId());
+  return GetPlaceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetPlaceOutcomeCallable LocationServiceClient::GetPlaceCallable(const GetPlaceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetPlaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPlace(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LocationServiceClient::GetPlaceAsync(const GetPlaceRequest& request, const GetPlaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetPlace(request), context);
     } );
 }
 

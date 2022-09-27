@@ -574,6 +574,120 @@ namespace Model
      */
     inline Place& WithTimeZone(TimeZone&& value) { SetTimeZone(std::move(value)); return *this;}
 
+
+    /**
+     * <p>For addresses with multiple units, the unit identifier. Can include numbers
+     * and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> 
+     * <p>Returned only for a place index that uses Esri as a data provider. Is not
+     * returned for <code>SearchPlaceIndexForPosition</code>.</p> 
+     */
+    inline const Aws::String& GetUnitNumber() const{ return m_unitNumber; }
+
+    /**
+     * <p>For addresses with multiple units, the unit identifier. Can include numbers
+     * and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> 
+     * <p>Returned only for a place index that uses Esri as a data provider. Is not
+     * returned for <code>SearchPlaceIndexForPosition</code>.</p> 
+     */
+    inline bool UnitNumberHasBeenSet() const { return m_unitNumberHasBeenSet; }
+
+    /**
+     * <p>For addresses with multiple units, the unit identifier. Can include numbers
+     * and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> 
+     * <p>Returned only for a place index that uses Esri as a data provider. Is not
+     * returned for <code>SearchPlaceIndexForPosition</code>.</p> 
+     */
+    inline void SetUnitNumber(const Aws::String& value) { m_unitNumberHasBeenSet = true; m_unitNumber = value; }
+
+    /**
+     * <p>For addresses with multiple units, the unit identifier. Can include numbers
+     * and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> 
+     * <p>Returned only for a place index that uses Esri as a data provider. Is not
+     * returned for <code>SearchPlaceIndexForPosition</code>.</p> 
+     */
+    inline void SetUnitNumber(Aws::String&& value) { m_unitNumberHasBeenSet = true; m_unitNumber = std::move(value); }
+
+    /**
+     * <p>For addresses with multiple units, the unit identifier. Can include numbers
+     * and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> 
+     * <p>Returned only for a place index that uses Esri as a data provider. Is not
+     * returned for <code>SearchPlaceIndexForPosition</code>.</p> 
+     */
+    inline void SetUnitNumber(const char* value) { m_unitNumberHasBeenSet = true; m_unitNumber.assign(value); }
+
+    /**
+     * <p>For addresses with multiple units, the unit identifier. Can include numbers
+     * and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> 
+     * <p>Returned only for a place index that uses Esri as a data provider. Is not
+     * returned for <code>SearchPlaceIndexForPosition</code>.</p> 
+     */
+    inline Place& WithUnitNumber(const Aws::String& value) { SetUnitNumber(value); return *this;}
+
+    /**
+     * <p>For addresses with multiple units, the unit identifier. Can include numbers
+     * and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> 
+     * <p>Returned only for a place index that uses Esri as a data provider. Is not
+     * returned for <code>SearchPlaceIndexForPosition</code>.</p> 
+     */
+    inline Place& WithUnitNumber(Aws::String&& value) { SetUnitNumber(std::move(value)); return *this;}
+
+    /**
+     * <p>For addresses with multiple units, the unit identifier. Can include numbers
+     * and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> 
+     * <p>Returned only for a place index that uses Esri as a data provider. Is not
+     * returned for <code>SearchPlaceIndexForPosition</code>.</p> 
+     */
+    inline Place& WithUnitNumber(const char* value) { SetUnitNumber(value); return *this;}
+
+
+    /**
+     * <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example,
+     * <code>Apartment</code>.</p>
+     */
+    inline const Aws::String& GetUnitType() const{ return m_unitType; }
+
+    /**
+     * <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example,
+     * <code>Apartment</code>.</p>
+     */
+    inline bool UnitTypeHasBeenSet() const { return m_unitTypeHasBeenSet; }
+
+    /**
+     * <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example,
+     * <code>Apartment</code>.</p>
+     */
+    inline void SetUnitType(const Aws::String& value) { m_unitTypeHasBeenSet = true; m_unitType = value; }
+
+    /**
+     * <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example,
+     * <code>Apartment</code>.</p>
+     */
+    inline void SetUnitType(Aws::String&& value) { m_unitTypeHasBeenSet = true; m_unitType = std::move(value); }
+
+    /**
+     * <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example,
+     * <code>Apartment</code>.</p>
+     */
+    inline void SetUnitType(const char* value) { m_unitTypeHasBeenSet = true; m_unitType.assign(value); }
+
+    /**
+     * <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example,
+     * <code>Apartment</code>.</p>
+     */
+    inline Place& WithUnitType(const Aws::String& value) { SetUnitType(value); return *this;}
+
+    /**
+     * <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example,
+     * <code>Apartment</code>.</p>
+     */
+    inline Place& WithUnitType(Aws::String&& value) { SetUnitType(std::move(value)); return *this;}
+
+    /**
+     * <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example,
+     * <code>Apartment</code>.</p>
+     */
+    inline Place& WithUnitType(const char* value) { SetUnitType(value); return *this;}
+
   private:
 
     Aws::String m_addressNumber;
@@ -611,6 +725,12 @@ namespace Model
 
     TimeZone m_timeZone;
     bool m_timeZoneHasBeenSet = false;
+
+    Aws::String m_unitNumber;
+    bool m_unitNumberHasBeenSet = false;
+
+    Aws::String m_unitType;
+    bool m_unitTypeHasBeenSet = false;
   };
 
 } // namespace Model

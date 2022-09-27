@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 CreateCostCategoryDefinitionRequest::CreateCostCategoryDefinitionRequest() : 
     m_nameHasBeenSet(false),
+    m_effectiveStartHasBeenSet(false),
     m_ruleVersion(CostCategoryRuleVersion::NOT_SET),
     m_ruleVersionHasBeenSet(false),
     m_rulesHasBeenSet(false),
@@ -30,6 +31,12 @@ Aws::String CreateCostCategoryDefinitionRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_effectiveStartHasBeenSet)
+  {
+   payload.WithString("EffectiveStart", m_effectiveStart);
 
   }
 

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/location/model/Place.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -107,6 +108,71 @@ namespace Model
 
 
     /**
+     * <p>The unique identifier of the place. You can use this with the
+     * <code>GetPlace</code> operation to find the place again later.</p>  <p>For
+     * <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is
+     * returned only by place indexes that use HERE as a data provider.</p> 
+     */
+    inline const Aws::String& GetPlaceId() const{ return m_placeId; }
+
+    /**
+     * <p>The unique identifier of the place. You can use this with the
+     * <code>GetPlace</code> operation to find the place again later.</p>  <p>For
+     * <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is
+     * returned only by place indexes that use HERE as a data provider.</p> 
+     */
+    inline bool PlaceIdHasBeenSet() const { return m_placeIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier of the place. You can use this with the
+     * <code>GetPlace</code> operation to find the place again later.</p>  <p>For
+     * <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is
+     * returned only by place indexes that use HERE as a data provider.</p> 
+     */
+    inline void SetPlaceId(const Aws::String& value) { m_placeIdHasBeenSet = true; m_placeId = value; }
+
+    /**
+     * <p>The unique identifier of the place. You can use this with the
+     * <code>GetPlace</code> operation to find the place again later.</p>  <p>For
+     * <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is
+     * returned only by place indexes that use HERE as a data provider.</p> 
+     */
+    inline void SetPlaceId(Aws::String&& value) { m_placeIdHasBeenSet = true; m_placeId = std::move(value); }
+
+    /**
+     * <p>The unique identifier of the place. You can use this with the
+     * <code>GetPlace</code> operation to find the place again later.</p>  <p>For
+     * <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is
+     * returned only by place indexes that use HERE as a data provider.</p> 
+     */
+    inline void SetPlaceId(const char* value) { m_placeIdHasBeenSet = true; m_placeId.assign(value); }
+
+    /**
+     * <p>The unique identifier of the place. You can use this with the
+     * <code>GetPlace</code> operation to find the place again later.</p>  <p>For
+     * <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is
+     * returned only by place indexes that use HERE as a data provider.</p> 
+     */
+    inline SearchForTextResult& WithPlaceId(const Aws::String& value) { SetPlaceId(value); return *this;}
+
+    /**
+     * <p>The unique identifier of the place. You can use this with the
+     * <code>GetPlace</code> operation to find the place again later.</p>  <p>For
+     * <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is
+     * returned only by place indexes that use HERE as a data provider.</p> 
+     */
+    inline SearchForTextResult& WithPlaceId(Aws::String&& value) { SetPlaceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique identifier of the place. You can use this with the
+     * <code>GetPlace</code> operation to find the place again later.</p>  <p>For
+     * <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is
+     * returned only by place indexes that use HERE as a data provider.</p> 
+     */
+    inline SearchForTextResult& WithPlaceId(const char* value) { SetPlaceId(value); return *this;}
+
+
+    /**
      * <p>The relative confidence in the match for a result among the results returned.
      * For example, if more fields for an address match (including house number,
      * street, city, country/region, and postal code), the relevance score is closer to
@@ -145,6 +211,9 @@ namespace Model
 
     Place m_place;
     bool m_placeHasBeenSet = false;
+
+    Aws::String m_placeId;
+    bool m_placeIdHasBeenSet = false;
 
     double m_relevance;
     bool m_relevanceHasBeenSet = false;

@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 UpdateCostCategoryDefinitionRequest::UpdateCostCategoryDefinitionRequest() : 
     m_costCategoryArnHasBeenSet(false),
+    m_effectiveStartHasBeenSet(false),
     m_ruleVersion(CostCategoryRuleVersion::NOT_SET),
     m_ruleVersionHasBeenSet(false),
     m_rulesHasBeenSet(false),
@@ -29,6 +30,12 @@ Aws::String UpdateCostCategoryDefinitionRequest::SerializePayload() const
   if(m_costCategoryArnHasBeenSet)
   {
    payload.WithString("CostCategoryArn", m_costCategoryArn);
+
+  }
+
+  if(m_effectiveStartHasBeenSet)
+  {
+   payload.WithString("EffectiveStart", m_effectiveStart);
 
   }
 
