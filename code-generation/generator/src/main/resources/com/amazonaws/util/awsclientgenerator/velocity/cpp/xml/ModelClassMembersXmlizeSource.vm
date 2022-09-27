@@ -106,7 +106,7 @@
 #elseif($member.shape.list)
 #if($member.flattened)
   ${spaces}XmlNode ${lowerCaseVarName}ParentNode = parentNode.CreateChildElement("${memberName}");
-#elseif(!$member.shape.flattened)
+#elseif(!($member.locationName && $member.shape.flattened))
   ${spaces}XmlNode ${lowerCaseVarName}ParentNode = parentNode.CreateChildElement("${serializationName}");
 #end
   ${spaces}for(const auto& item : $memberVarName)

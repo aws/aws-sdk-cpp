@@ -27,6 +27,8 @@ HlsGroupSettings::HlsGroupSettings() :
     m_captionLanguageMappingsHasBeenSet(false),
     m_captionLanguageSetting(HlsCaptionLanguageSetting::NOT_SET),
     m_captionLanguageSettingHasBeenSet(false),
+    m_captionSegmentLengthControl(HlsCaptionSegmentLengthControl::NOT_SET),
+    m_captionSegmentLengthControlHasBeenSet(false),
     m_clientCache(HlsClientCache::NOT_SET),
     m_clientCacheHasBeenSet(false),
     m_codecSpecification(HlsCodecSpecification::NOT_SET),
@@ -83,6 +85,8 @@ HlsGroupSettings::HlsGroupSettings(JsonView jsonValue) :
     m_captionLanguageMappingsHasBeenSet(false),
     m_captionLanguageSetting(HlsCaptionLanguageSetting::NOT_SET),
     m_captionLanguageSettingHasBeenSet(false),
+    m_captionSegmentLengthControl(HlsCaptionSegmentLengthControl::NOT_SET),
+    m_captionSegmentLengthControlHasBeenSet(false),
     m_clientCache(HlsClientCache::NOT_SET),
     m_clientCacheHasBeenSet(false),
     m_codecSpecification(HlsCodecSpecification::NOT_SET),
@@ -182,6 +186,13 @@ HlsGroupSettings& HlsGroupSettings::operator =(JsonView jsonValue)
     m_captionLanguageSetting = HlsCaptionLanguageSettingMapper::GetHlsCaptionLanguageSettingForName(jsonValue.GetString("captionLanguageSetting"));
 
     m_captionLanguageSettingHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("captionSegmentLengthControl"))
+  {
+    m_captionSegmentLengthControl = HlsCaptionSegmentLengthControlMapper::GetHlsCaptionSegmentLengthControlForName(jsonValue.GetString("captionSegmentLengthControl"));
+
+    m_captionSegmentLengthControlHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("clientCache"))
@@ -406,6 +417,11 @@ JsonValue HlsGroupSettings::Jsonize() const
   if(m_captionLanguageSettingHasBeenSet)
   {
    payload.WithString("captionLanguageSetting", HlsCaptionLanguageSettingMapper::GetNameForHlsCaptionLanguageSetting(m_captionLanguageSetting));
+  }
+
+  if(m_captionSegmentLengthControlHasBeenSet)
+  {
+   payload.WithString("captionSegmentLengthControl", HlsCaptionSegmentLengthControlMapper::GetNameForHlsCaptionSegmentLengthControl(m_captionSegmentLengthControl));
   }
 
   if(m_clientCacheHasBeenSet)

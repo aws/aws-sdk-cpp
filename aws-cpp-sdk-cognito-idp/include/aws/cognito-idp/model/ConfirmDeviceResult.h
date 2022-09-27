@@ -36,20 +36,17 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the user confirmation is necessary to confirm the device
-     * response.</p>
+     * <p>Indicates whether the user confirmation must confirm the device response.</p>
      */
     inline bool GetUserConfirmationNecessary() const{ return m_userConfirmationNecessary; }
 
     /**
-     * <p>Indicates whether the user confirmation is necessary to confirm the device
-     * response.</p>
+     * <p>Indicates whether the user confirmation must confirm the device response.</p>
      */
     inline void SetUserConfirmationNecessary(bool value) { m_userConfirmationNecessary = value; }
 
     /**
-     * <p>Indicates whether the user confirmation is necessary to confirm the device
-     * response.</p>
+     * <p>Indicates whether the user confirmation must confirm the device response.</p>
      */
     inline ConfirmDeviceResult& WithUserConfirmationNecessary(bool value) { SetUserConfirmationNecessary(value); return *this;}
 

@@ -308,6 +308,47 @@ namespace Model
      */
     inline CreateTrafficMirrorTargetRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
+    /**
+     * <p>The ID of the Gateway Load Balancer endpoint.</p>
+     */
+    inline const Aws::String& GetGatewayLoadBalancerEndpointId() const{ return m_gatewayLoadBalancerEndpointId; }
+
+    /**
+     * <p>The ID of the Gateway Load Balancer endpoint.</p>
+     */
+    inline bool GatewayLoadBalancerEndpointIdHasBeenSet() const { return m_gatewayLoadBalancerEndpointIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Gateway Load Balancer endpoint.</p>
+     */
+    inline void SetGatewayLoadBalancerEndpointId(const Aws::String& value) { m_gatewayLoadBalancerEndpointIdHasBeenSet = true; m_gatewayLoadBalancerEndpointId = value; }
+
+    /**
+     * <p>The ID of the Gateway Load Balancer endpoint.</p>
+     */
+    inline void SetGatewayLoadBalancerEndpointId(Aws::String&& value) { m_gatewayLoadBalancerEndpointIdHasBeenSet = true; m_gatewayLoadBalancerEndpointId = std::move(value); }
+
+    /**
+     * <p>The ID of the Gateway Load Balancer endpoint.</p>
+     */
+    inline void SetGatewayLoadBalancerEndpointId(const char* value) { m_gatewayLoadBalancerEndpointIdHasBeenSet = true; m_gatewayLoadBalancerEndpointId.assign(value); }
+
+    /**
+     * <p>The ID of the Gateway Load Balancer endpoint.</p>
+     */
+    inline CreateTrafficMirrorTargetRequest& WithGatewayLoadBalancerEndpointId(const Aws::String& value) { SetGatewayLoadBalancerEndpointId(value); return *this;}
+
+    /**
+     * <p>The ID of the Gateway Load Balancer endpoint.</p>
+     */
+    inline CreateTrafficMirrorTargetRequest& WithGatewayLoadBalancerEndpointId(Aws::String&& value) { SetGatewayLoadBalancerEndpointId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the Gateway Load Balancer endpoint.</p>
+     */
+    inline CreateTrafficMirrorTargetRequest& WithGatewayLoadBalancerEndpointId(const char* value) { SetGatewayLoadBalancerEndpointId(value); return *this;}
+
   private:
 
     Aws::String m_networkInterfaceId;
@@ -327,6 +368,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
+    Aws::String m_gatewayLoadBalancerEndpointId;
+    bool m_gatewayLoadBalancerEndpointIdHasBeenSet;
   };
 
 } // namespace Model

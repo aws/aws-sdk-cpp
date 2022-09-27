@@ -27,6 +27,7 @@ namespace Aws
         static const int nodejs10_x_HASH = HashingUtils::HashString("nodejs10.x");
         static const int nodejs12_x_HASH = HashingUtils::HashString("nodejs12.x");
         static const int nodejs14_x_HASH = HashingUtils::HashString("nodejs14.x");
+        static const int nodejs16_x_HASH = HashingUtils::HashString("nodejs16.x");
         static const int java8_HASH = HashingUtils::HashString("java8");
         static const int java8_al2_HASH = HashingUtils::HashString("java8.al2");
         static const int java11_HASH = HashingUtils::HashString("java11");
@@ -39,6 +40,7 @@ namespace Aws
         static const int dotnetcore2_0_HASH = HashingUtils::HashString("dotnetcore2.0");
         static const int dotnetcore2_1_HASH = HashingUtils::HashString("dotnetcore2.1");
         static const int dotnetcore3_1_HASH = HashingUtils::HashString("dotnetcore3.1");
+        static const int dotnet6_HASH = HashingUtils::HashString("dotnet6");
         static const int nodejs4_3_edge_HASH = HashingUtils::HashString("nodejs4.3-edge");
         static const int go1_x_HASH = HashingUtils::HashString("go1.x");
         static const int ruby2_5_HASH = HashingUtils::HashString("ruby2.5");
@@ -77,6 +79,10 @@ namespace Aws
           else if (hashCode == nodejs14_x_HASH)
           {
             return Runtime::nodejs14_x;
+          }
+          else if (hashCode == nodejs16_x_HASH)
+          {
+            return Runtime::nodejs16_x;
           }
           else if (hashCode == java8_HASH)
           {
@@ -125,6 +131,10 @@ namespace Aws
           else if (hashCode == dotnetcore3_1_HASH)
           {
             return Runtime::dotnetcore3_1;
+          }
+          else if (hashCode == dotnet6_HASH)
+          {
+            return Runtime::dotnet6;
           }
           else if (hashCode == nodejs4_3_edge_HASH)
           {
@@ -178,6 +188,8 @@ namespace Aws
             return "nodejs12.x";
           case Runtime::nodejs14_x:
             return "nodejs14.x";
+          case Runtime::nodejs16_x:
+            return "nodejs16.x";
           case Runtime::java8:
             return "java8";
           case Runtime::java8_al2:
@@ -202,6 +214,8 @@ namespace Aws
             return "dotnetcore2.1";
           case Runtime::dotnetcore3_1:
             return "dotnetcore3.1";
+          case Runtime::dotnet6:
+            return "dotnet6";
           case Runtime::nodejs4_3_edge:
             return "nodejs4.3-edge";
           case Runtime::go1_x:

@@ -169,10 +169,11 @@ namespace Model
 
     /**
      * <p>The start position for the route. Defined in <a
-     * href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     * <code>[longitude, latitude]</code>.</p> <ul> <li> <p>For example,
-     * <code>[-123.115, 49.285]</code> </p> </li> </ul>  <p>If you specify a
-     * departure that's not located on a road, Amazon Location <a
+     * href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World
+     * Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
+     * <ul> <li> <p>For example, <code>[-123.115, 49.285]</code> </p> </li> </ul>
+     *  <p>If you specify a departure that's not located on a road, Amazon
+     * Location <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. If Esri is the provider for your route
      * calculator, specifying a route that is longer than 400 km returns a <code>400
@@ -183,10 +184,11 @@ namespace Model
 
     /**
      * <p>The start position for the route. Defined in <a
-     * href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     * <code>[longitude, latitude]</code>.</p> <ul> <li> <p>For example,
-     * <code>[-123.115, 49.285]</code> </p> </li> </ul>  <p>If you specify a
-     * departure that's not located on a road, Amazon Location <a
+     * href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World
+     * Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
+     * <ul> <li> <p>For example, <code>[-123.115, 49.285]</code> </p> </li> </ul>
+     *  <p>If you specify a departure that's not located on a road, Amazon
+     * Location <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. If Esri is the provider for your route
      * calculator, specifying a route that is longer than 400 km returns a <code>400
@@ -197,10 +199,11 @@ namespace Model
 
     /**
      * <p>The start position for the route. Defined in <a
-     * href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     * <code>[longitude, latitude]</code>.</p> <ul> <li> <p>For example,
-     * <code>[-123.115, 49.285]</code> </p> </li> </ul>  <p>If you specify a
-     * departure that's not located on a road, Amazon Location <a
+     * href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World
+     * Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
+     * <ul> <li> <p>For example, <code>[-123.115, 49.285]</code> </p> </li> </ul>
+     *  <p>If you specify a departure that's not located on a road, Amazon
+     * Location <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. If Esri is the provider for your route
      * calculator, specifying a route that is longer than 400 km returns a <code>400
@@ -211,10 +214,11 @@ namespace Model
 
     /**
      * <p>The start position for the route. Defined in <a
-     * href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     * <code>[longitude, latitude]</code>.</p> <ul> <li> <p>For example,
-     * <code>[-123.115, 49.285]</code> </p> </li> </ul>  <p>If you specify a
-     * departure that's not located on a road, Amazon Location <a
+     * href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World
+     * Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
+     * <ul> <li> <p>For example, <code>[-123.115, 49.285]</code> </p> </li> </ul>
+     *  <p>If you specify a departure that's not located on a road, Amazon
+     * Location <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. If Esri is the provider for your route
      * calculator, specifying a route that is longer than 400 km returns a <code>400
@@ -225,10 +229,11 @@ namespace Model
 
     /**
      * <p>The start position for the route. Defined in <a
-     * href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     * <code>[longitude, latitude]</code>.</p> <ul> <li> <p>For example,
-     * <code>[-123.115, 49.285]</code> </p> </li> </ul>  <p>If you specify a
-     * departure that's not located on a road, Amazon Location <a
+     * href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World
+     * Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
+     * <ul> <li> <p>For example, <code>[-123.115, 49.285]</code> </p> </li> </ul>
+     *  <p>If you specify a departure that's not located on a road, Amazon
+     * Location <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. If Esri is the provider for your route
      * calculator, specifying a route that is longer than 400 km returns a <code>400
@@ -239,10 +244,11 @@ namespace Model
 
     /**
      * <p>The start position for the route. Defined in <a
-     * href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     * <code>[longitude, latitude]</code>.</p> <ul> <li> <p>For example,
-     * <code>[-123.115, 49.285]</code> </p> </li> </ul>  <p>If you specify a
-     * departure that's not located on a road, Amazon Location <a
+     * href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World
+     * Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
+     * <ul> <li> <p>For example, <code>[-123.115, 49.285]</code> </p> </li> </ul>
+     *  <p>If you specify a departure that's not located on a road, Amazon
+     * Location <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. If Esri is the provider for your route
      * calculator, specifying a route that is longer than 400 km returns a <code>400
@@ -253,10 +259,11 @@ namespace Model
 
     /**
      * <p>The start position for the route. Defined in <a
-     * href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     * <code>[longitude, latitude]</code>.</p> <ul> <li> <p>For example,
-     * <code>[-123.115, 49.285]</code> </p> </li> </ul>  <p>If you specify a
-     * departure that's not located on a road, Amazon Location <a
+     * href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World
+     * Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
+     * <ul> <li> <p>For example, <code>[-123.115, 49.285]</code> </p> </li> </ul>
+     *  <p>If you specify a departure that's not located on a road, Amazon
+     * Location <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. If Esri is the provider for your route
      * calculator, specifying a route that is longer than 400 km returns a <code>400
@@ -341,10 +348,11 @@ namespace Model
 
     /**
      * <p>The finish position for the route. Defined in <a
-     * href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     * <code>[longitude, latitude]</code>.</p> <ul> <li> <p> For example,
-     * <code>[-122.339, 47.615]</code> </p> </li> </ul>  <p>If you specify a
-     * destination that's not located on a road, Amazon Location <a
+     * href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World
+     * Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
+     * <ul> <li> <p> For example, <code>[-122.339, 47.615]</code> </p> </li> </ul>
+     *  <p>If you specify a destination that's not located on a road, Amazon
+     * Location <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. </p>  <p>Valid Values: <code>[-180
      * to 180,-90 to 90]</code> </p>
@@ -353,10 +361,11 @@ namespace Model
 
     /**
      * <p>The finish position for the route. Defined in <a
-     * href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     * <code>[longitude, latitude]</code>.</p> <ul> <li> <p> For example,
-     * <code>[-122.339, 47.615]</code> </p> </li> </ul>  <p>If you specify a
-     * destination that's not located on a road, Amazon Location <a
+     * href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World
+     * Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
+     * <ul> <li> <p> For example, <code>[-122.339, 47.615]</code> </p> </li> </ul>
+     *  <p>If you specify a destination that's not located on a road, Amazon
+     * Location <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. </p>  <p>Valid Values: <code>[-180
      * to 180,-90 to 90]</code> </p>
@@ -365,10 +374,11 @@ namespace Model
 
     /**
      * <p>The finish position for the route. Defined in <a
-     * href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     * <code>[longitude, latitude]</code>.</p> <ul> <li> <p> For example,
-     * <code>[-122.339, 47.615]</code> </p> </li> </ul>  <p>If you specify a
-     * destination that's not located on a road, Amazon Location <a
+     * href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World
+     * Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
+     * <ul> <li> <p> For example, <code>[-122.339, 47.615]</code> </p> </li> </ul>
+     *  <p>If you specify a destination that's not located on a road, Amazon
+     * Location <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. </p>  <p>Valid Values: <code>[-180
      * to 180,-90 to 90]</code> </p>
@@ -377,10 +387,11 @@ namespace Model
 
     /**
      * <p>The finish position for the route. Defined in <a
-     * href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     * <code>[longitude, latitude]</code>.</p> <ul> <li> <p> For example,
-     * <code>[-122.339, 47.615]</code> </p> </li> </ul>  <p>If you specify a
-     * destination that's not located on a road, Amazon Location <a
+     * href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World
+     * Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
+     * <ul> <li> <p> For example, <code>[-122.339, 47.615]</code> </p> </li> </ul>
+     *  <p>If you specify a destination that's not located on a road, Amazon
+     * Location <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. </p>  <p>Valid Values: <code>[-180
      * to 180,-90 to 90]</code> </p>
@@ -389,10 +400,11 @@ namespace Model
 
     /**
      * <p>The finish position for the route. Defined in <a
-     * href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     * <code>[longitude, latitude]</code>.</p> <ul> <li> <p> For example,
-     * <code>[-122.339, 47.615]</code> </p> </li> </ul>  <p>If you specify a
-     * destination that's not located on a road, Amazon Location <a
+     * href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World
+     * Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
+     * <ul> <li> <p> For example, <code>[-122.339, 47.615]</code> </p> </li> </ul>
+     *  <p>If you specify a destination that's not located on a road, Amazon
+     * Location <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. </p>  <p>Valid Values: <code>[-180
      * to 180,-90 to 90]</code> </p>
@@ -401,10 +413,11 @@ namespace Model
 
     /**
      * <p>The finish position for the route. Defined in <a
-     * href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     * <code>[longitude, latitude]</code>.</p> <ul> <li> <p> For example,
-     * <code>[-122.339, 47.615]</code> </p> </li> </ul>  <p>If you specify a
-     * destination that's not located on a road, Amazon Location <a
+     * href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World
+     * Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
+     * <ul> <li> <p> For example, <code>[-122.339, 47.615]</code> </p> </li> </ul>
+     *  <p>If you specify a destination that's not located on a road, Amazon
+     * Location <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. </p>  <p>Valid Values: <code>[-180
      * to 180,-90 to 90]</code> </p>
@@ -413,10 +426,11 @@ namespace Model
 
     /**
      * <p>The finish position for the route. Defined in <a
-     * href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     * <code>[longitude, latitude]</code>.</p> <ul> <li> <p> For example,
-     * <code>[-122.339, 47.615]</code> </p> </li> </ul>  <p>If you specify a
-     * destination that's not located on a road, Amazon Location <a
+     * href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World
+     * Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
+     * <ul> <li> <p> For example, <code>[-122.339, 47.615]</code> </p> </li> </ul>
+     *  <p>If you specify a destination that's not located on a road, Amazon
+     * Location <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. </p>  <p>Valid Values: <code>[-180
      * to 180,-90 to 90]</code> </p>

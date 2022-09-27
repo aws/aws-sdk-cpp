@@ -33,47 +33,6 @@ namespace Model
 
 
     /**
-     * <p>The device's ID.</p>
-     */
-    inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
-
-    /**
-     * <p>The device's ID.</p>
-     */
-    inline bool DeviceIdHasBeenSet() const { return m_deviceIdHasBeenSet; }
-
-    /**
-     * <p>The device's ID.</p>
-     */
-    inline void SetDeviceId(const Aws::String& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
-
-    /**
-     * <p>The device's ID.</p>
-     */
-    inline void SetDeviceId(Aws::String&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::move(value); }
-
-    /**
-     * <p>The device's ID.</p>
-     */
-    inline void SetDeviceId(const char* value) { m_deviceIdHasBeenSet = true; m_deviceId.assign(value); }
-
-    /**
-     * <p>The device's ID.</p>
-     */
-    inline UpdateDeviceMetadataRequest& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
-
-    /**
-     * <p>The device's ID.</p>
-     */
-    inline UpdateDeviceMetadataRequest& WithDeviceId(Aws::String&& value) { SetDeviceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The device's ID.</p>
-     */
-    inline UpdateDeviceMetadataRequest& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
-
-
-    /**
      * <p>A description for the device.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -113,13 +72,54 @@ namespace Model
      */
     inline UpdateDeviceMetadataRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
-  private:
 
-    Aws::String m_deviceId;
-    bool m_deviceIdHasBeenSet;
+    /**
+     * <p>The device's ID.</p>
+     */
+    inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
+
+    /**
+     * <p>The device's ID.</p>
+     */
+    inline bool DeviceIdHasBeenSet() const { return m_deviceIdHasBeenSet; }
+
+    /**
+     * <p>The device's ID.</p>
+     */
+    inline void SetDeviceId(const Aws::String& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
+
+    /**
+     * <p>The device's ID.</p>
+     */
+    inline void SetDeviceId(Aws::String&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::move(value); }
+
+    /**
+     * <p>The device's ID.</p>
+     */
+    inline void SetDeviceId(const char* value) { m_deviceIdHasBeenSet = true; m_deviceId.assign(value); }
+
+    /**
+     * <p>The device's ID.</p>
+     */
+    inline UpdateDeviceMetadataRequest& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
+
+    /**
+     * <p>The device's ID.</p>
+     */
+    inline UpdateDeviceMetadataRequest& WithDeviceId(Aws::String&& value) { SetDeviceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The device's ID.</p>
+     */
+    inline UpdateDeviceMetadataRequest& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
+
+  private:
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
+    Aws::String m_deviceId;
+    bool m_deviceIdHasBeenSet;
   };
 
 } // namespace Model

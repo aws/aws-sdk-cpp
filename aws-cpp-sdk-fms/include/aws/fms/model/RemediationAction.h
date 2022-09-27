@@ -13,6 +13,7 @@
 #include <aws/fms/model/EC2ReplaceRouteTableAssociationAction.h>
 #include <aws/fms/model/EC2AssociateRouteTableAction.h>
 #include <aws/fms/model/EC2CreateRouteTableAction.h>
+#include <aws/fms/model/FMSPolicyUpdateFirewallCreationConfigAction.h>
 #include <utility>
 
 namespace Aws
@@ -308,6 +309,37 @@ namespace Model
      */
     inline RemediationAction& WithEC2CreateRouteTableAction(EC2CreateRouteTableAction&& value) { SetEC2CreateRouteTableAction(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The remedial action to take when updating a firewall configuration.</p>
+     */
+    inline const FMSPolicyUpdateFirewallCreationConfigAction& GetFMSPolicyUpdateFirewallCreationConfigAction() const{ return m_fMSPolicyUpdateFirewallCreationConfigAction; }
+
+    /**
+     * <p>The remedial action to take when updating a firewall configuration.</p>
+     */
+    inline bool FMSPolicyUpdateFirewallCreationConfigActionHasBeenSet() const { return m_fMSPolicyUpdateFirewallCreationConfigActionHasBeenSet; }
+
+    /**
+     * <p>The remedial action to take when updating a firewall configuration.</p>
+     */
+    inline void SetFMSPolicyUpdateFirewallCreationConfigAction(const FMSPolicyUpdateFirewallCreationConfigAction& value) { m_fMSPolicyUpdateFirewallCreationConfigActionHasBeenSet = true; m_fMSPolicyUpdateFirewallCreationConfigAction = value; }
+
+    /**
+     * <p>The remedial action to take when updating a firewall configuration.</p>
+     */
+    inline void SetFMSPolicyUpdateFirewallCreationConfigAction(FMSPolicyUpdateFirewallCreationConfigAction&& value) { m_fMSPolicyUpdateFirewallCreationConfigActionHasBeenSet = true; m_fMSPolicyUpdateFirewallCreationConfigAction = std::move(value); }
+
+    /**
+     * <p>The remedial action to take when updating a firewall configuration.</p>
+     */
+    inline RemediationAction& WithFMSPolicyUpdateFirewallCreationConfigAction(const FMSPolicyUpdateFirewallCreationConfigAction& value) { SetFMSPolicyUpdateFirewallCreationConfigAction(value); return *this;}
+
+    /**
+     * <p>The remedial action to take when updating a firewall configuration.</p>
+     */
+    inline RemediationAction& WithFMSPolicyUpdateFirewallCreationConfigAction(FMSPolicyUpdateFirewallCreationConfigAction&& value) { SetFMSPolicyUpdateFirewallCreationConfigAction(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_description;
@@ -333,6 +365,9 @@ namespace Model
 
     EC2CreateRouteTableAction m_eC2CreateRouteTableAction;
     bool m_eC2CreateRouteTableActionHasBeenSet;
+
+    FMSPolicyUpdateFirewallCreationConfigAction m_fMSPolicyUpdateFirewallCreationConfigAction;
+    bool m_fMSPolicyUpdateFirewallCreationConfigActionHasBeenSet;
   };
 
 } // namespace Model

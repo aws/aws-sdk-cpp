@@ -6,8 +6,8 @@
 #include <aws/appconfigdata/model/GetLatestConfigurationResult.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/HashingUtils.h>
 
 #include <utility>
 
@@ -22,10 +22,10 @@ GetLatestConfigurationResult::GetLatestConfigurationResult() :
 }
 
 GetLatestConfigurationResult::GetLatestConfigurationResult(GetLatestConfigurationResult&& toMove) : 
-    m_configuration(std::move(toMove.m_configuration)),
-    m_contentType(std::move(toMove.m_contentType)),
     m_nextPollConfigurationToken(std::move(toMove.m_nextPollConfigurationToken)),
-    m_nextPollIntervalInSeconds(toMove.m_nextPollIntervalInSeconds)
+    m_nextPollIntervalInSeconds(toMove.m_nextPollIntervalInSeconds),
+    m_contentType(std::move(toMove.m_contentType)),
+    m_configuration(std::move(toMove.m_configuration))
 {
 }
 
@@ -36,10 +36,10 @@ GetLatestConfigurationResult& GetLatestConfigurationResult::operator=(GetLatestC
       return *this;
    }
 
-   m_configuration = std::move(toMove.m_configuration);
-   m_contentType = std::move(toMove.m_contentType);
    m_nextPollConfigurationToken = std::move(toMove.m_nextPollConfigurationToken);
    m_nextPollIntervalInSeconds = toMove.m_nextPollIntervalInSeconds;
+   m_contentType = std::move(toMove.m_contentType);
+   m_configuration = std::move(toMove.m_configuration);
 
    return *this;
 }
@@ -55,12 +55,6 @@ GetLatestConfigurationResult& GetLatestConfigurationResult::operator =(Aws::Amaz
   m_configuration = result.TakeOwnershipOfPayload();
 
   const auto& headers = result.GetHeaderValueCollection();
-  const auto& contentTypeIter = headers.find("content-type");
-  if(contentTypeIter != headers.end())
-  {
-    m_contentType = contentTypeIter->second;
-  }
-
   const auto& nextPollConfigurationTokenIter = headers.find("next-poll-configuration-token");
   if(nextPollConfigurationTokenIter != headers.end())
   {
@@ -71,6 +65,12 @@ GetLatestConfigurationResult& GetLatestConfigurationResult::operator =(Aws::Amaz
   if(nextPollIntervalInSecondsIter != headers.end())
   {
      m_nextPollIntervalInSeconds = StringUtils::ConvertToInt32(nextPollIntervalInSecondsIter->second.c_str());
+  }
+
+  const auto& contentTypeIter = headers.find("content-type");
+  if(contentTypeIter != headers.end())
+  {
+    m_contentType = contentTypeIter->second;
   }
 
    return *this;

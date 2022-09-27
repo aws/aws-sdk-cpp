@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/evidently/CloudWatchEvidently_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/evidently/model/ExperimentReport.h>
 #include <aws/evidently/model/ExperimentResultsData.h>
@@ -33,6 +34,63 @@ namespace Model
     GetExperimentResultsResult();
     GetExperimentResultsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetExperimentResultsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>If the experiment doesn't yet have enough events to provide valid results,
+     * this field is returned with the message <code>Not enough events to generate
+     * results</code>. If there are enough events to provide valid results, this field
+     * is not returned.</p>
+     */
+    inline const Aws::String& GetDetails() const{ return m_details; }
+
+    /**
+     * <p>If the experiment doesn't yet have enough events to provide valid results,
+     * this field is returned with the message <code>Not enough events to generate
+     * results</code>. If there are enough events to provide valid results, this field
+     * is not returned.</p>
+     */
+    inline void SetDetails(const Aws::String& value) { m_details = value; }
+
+    /**
+     * <p>If the experiment doesn't yet have enough events to provide valid results,
+     * this field is returned with the message <code>Not enough events to generate
+     * results</code>. If there are enough events to provide valid results, this field
+     * is not returned.</p>
+     */
+    inline void SetDetails(Aws::String&& value) { m_details = std::move(value); }
+
+    /**
+     * <p>If the experiment doesn't yet have enough events to provide valid results,
+     * this field is returned with the message <code>Not enough events to generate
+     * results</code>. If there are enough events to provide valid results, this field
+     * is not returned.</p>
+     */
+    inline void SetDetails(const char* value) { m_details.assign(value); }
+
+    /**
+     * <p>If the experiment doesn't yet have enough events to provide valid results,
+     * this field is returned with the message <code>Not enough events to generate
+     * results</code>. If there are enough events to provide valid results, this field
+     * is not returned.</p>
+     */
+    inline GetExperimentResultsResult& WithDetails(const Aws::String& value) { SetDetails(value); return *this;}
+
+    /**
+     * <p>If the experiment doesn't yet have enough events to provide valid results,
+     * this field is returned with the message <code>Not enough events to generate
+     * results</code>. If there are enough events to provide valid results, this field
+     * is not returned.</p>
+     */
+    inline GetExperimentResultsResult& WithDetails(Aws::String&& value) { SetDetails(std::move(value)); return *this;}
+
+    /**
+     * <p>If the experiment doesn't yet have enough events to provide valid results,
+     * this field is returned with the message <code>Not enough events to generate
+     * results</code>. If there are enough events to provide valid results, this field
+     * is not returned.</p>
+     */
+    inline GetExperimentResultsResult& WithDetails(const char* value) { SetDetails(value); return *this;}
 
 
     /**
@@ -150,6 +208,8 @@ namespace Model
     inline GetExperimentResultsResult& AddTimestamps(Aws::Utils::DateTime&& value) { m_timestamps.push_back(std::move(value)); return *this; }
 
   private:
+
+    Aws::String m_details;
 
     Aws::Vector<ExperimentReport> m_reports;
 

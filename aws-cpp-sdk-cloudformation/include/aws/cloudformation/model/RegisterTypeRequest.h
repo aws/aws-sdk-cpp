@@ -70,126 +70,134 @@ namespace Model
 
 
     /**
-     * <p>The name of the extension being registered.</p> <p>We recommend that
-     * extension names adhere to the following patterns: </p> <ul> <li> <p>For resource
-     * types, <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> </li>
-     * <li> <p>For modules,
+     * <p>The name of the extension being registered.</p> <p>We suggest that extension
+     * names adhere to the following patterns:</p> <ul> <li> <p>For resource types,
+     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> </li> <li>
+     * <p>For modules,
      * <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p> </li>
-     * </ul>  <p>The following organization namespaces are reserved and cannot be
-     * used in your extension names:</p> <ul> <li> <p> <code>Alexa</code> </p> </li>
-     * <li> <p> <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p> </li>
-     * <li> <p> <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p> </li>
-     * <li> <p> <code>Dev</code> </p> </li> </ul> 
+     * <li> <p>For hooks, <i>MyCompany</i>::<i>Testing</i>::<i>MyTestHook</i>.</p>
+     * </li> </ul>  <p>The following organization namespaces are reserved and
+     * can't be used in your extension names:</p> <ul> <li> <p> <code>Alexa</code> </p>
+     * </li> <li> <p> <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p>
+     * </li> <li> <p> <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p>
+     * </li> <li> <p> <code>Dev</code> </p> </li> </ul> 
      */
     inline const Aws::String& GetTypeName() const{ return m_typeName; }
 
     /**
-     * <p>The name of the extension being registered.</p> <p>We recommend that
-     * extension names adhere to the following patterns: </p> <ul> <li> <p>For resource
-     * types, <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> </li>
-     * <li> <p>For modules,
+     * <p>The name of the extension being registered.</p> <p>We suggest that extension
+     * names adhere to the following patterns:</p> <ul> <li> <p>For resource types,
+     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> </li> <li>
+     * <p>For modules,
      * <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p> </li>
-     * </ul>  <p>The following organization namespaces are reserved and cannot be
-     * used in your extension names:</p> <ul> <li> <p> <code>Alexa</code> </p> </li>
-     * <li> <p> <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p> </li>
-     * <li> <p> <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p> </li>
-     * <li> <p> <code>Dev</code> </p> </li> </ul> 
+     * <li> <p>For hooks, <i>MyCompany</i>::<i>Testing</i>::<i>MyTestHook</i>.</p>
+     * </li> </ul>  <p>The following organization namespaces are reserved and
+     * can't be used in your extension names:</p> <ul> <li> <p> <code>Alexa</code> </p>
+     * </li> <li> <p> <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p>
+     * </li> <li> <p> <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p>
+     * </li> <li> <p> <code>Dev</code> </p> </li> </ul> 
      */
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
 
     /**
-     * <p>The name of the extension being registered.</p> <p>We recommend that
-     * extension names adhere to the following patterns: </p> <ul> <li> <p>For resource
-     * types, <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> </li>
-     * <li> <p>For modules,
+     * <p>The name of the extension being registered.</p> <p>We suggest that extension
+     * names adhere to the following patterns:</p> <ul> <li> <p>For resource types,
+     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> </li> <li>
+     * <p>For modules,
      * <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p> </li>
-     * </ul>  <p>The following organization namespaces are reserved and cannot be
-     * used in your extension names:</p> <ul> <li> <p> <code>Alexa</code> </p> </li>
-     * <li> <p> <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p> </li>
-     * <li> <p> <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p> </li>
-     * <li> <p> <code>Dev</code> </p> </li> </ul> 
+     * <li> <p>For hooks, <i>MyCompany</i>::<i>Testing</i>::<i>MyTestHook</i>.</p>
+     * </li> </ul>  <p>The following organization namespaces are reserved and
+     * can't be used in your extension names:</p> <ul> <li> <p> <code>Alexa</code> </p>
+     * </li> <li> <p> <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p>
+     * </li> <li> <p> <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p>
+     * </li> <li> <p> <code>Dev</code> </p> </li> </ul> 
      */
     inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
 
     /**
-     * <p>The name of the extension being registered.</p> <p>We recommend that
-     * extension names adhere to the following patterns: </p> <ul> <li> <p>For resource
-     * types, <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> </li>
-     * <li> <p>For modules,
+     * <p>The name of the extension being registered.</p> <p>We suggest that extension
+     * names adhere to the following patterns:</p> <ul> <li> <p>For resource types,
+     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> </li> <li>
+     * <p>For modules,
      * <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p> </li>
-     * </ul>  <p>The following organization namespaces are reserved and cannot be
-     * used in your extension names:</p> <ul> <li> <p> <code>Alexa</code> </p> </li>
-     * <li> <p> <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p> </li>
-     * <li> <p> <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p> </li>
-     * <li> <p> <code>Dev</code> </p> </li> </ul> 
+     * <li> <p>For hooks, <i>MyCompany</i>::<i>Testing</i>::<i>MyTestHook</i>.</p>
+     * </li> </ul>  <p>The following organization namespaces are reserved and
+     * can't be used in your extension names:</p> <ul> <li> <p> <code>Alexa</code> </p>
+     * </li> <li> <p> <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p>
+     * </li> <li> <p> <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p>
+     * </li> <li> <p> <code>Dev</code> </p> </li> </ul> 
      */
     inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
 
     /**
-     * <p>The name of the extension being registered.</p> <p>We recommend that
-     * extension names adhere to the following patterns: </p> <ul> <li> <p>For resource
-     * types, <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> </li>
-     * <li> <p>For modules,
+     * <p>The name of the extension being registered.</p> <p>We suggest that extension
+     * names adhere to the following patterns:</p> <ul> <li> <p>For resource types,
+     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> </li> <li>
+     * <p>For modules,
      * <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p> </li>
-     * </ul>  <p>The following organization namespaces are reserved and cannot be
-     * used in your extension names:</p> <ul> <li> <p> <code>Alexa</code> </p> </li>
-     * <li> <p> <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p> </li>
-     * <li> <p> <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p> </li>
-     * <li> <p> <code>Dev</code> </p> </li> </ul> 
+     * <li> <p>For hooks, <i>MyCompany</i>::<i>Testing</i>::<i>MyTestHook</i>.</p>
+     * </li> </ul>  <p>The following organization namespaces are reserved and
+     * can't be used in your extension names:</p> <ul> <li> <p> <code>Alexa</code> </p>
+     * </li> <li> <p> <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p>
+     * </li> <li> <p> <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p>
+     * </li> <li> <p> <code>Dev</code> </p> </li> </ul> 
      */
     inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
 
     /**
-     * <p>The name of the extension being registered.</p> <p>We recommend that
-     * extension names adhere to the following patterns: </p> <ul> <li> <p>For resource
-     * types, <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> </li>
-     * <li> <p>For modules,
+     * <p>The name of the extension being registered.</p> <p>We suggest that extension
+     * names adhere to the following patterns:</p> <ul> <li> <p>For resource types,
+     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> </li> <li>
+     * <p>For modules,
      * <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p> </li>
-     * </ul>  <p>The following organization namespaces are reserved and cannot be
-     * used in your extension names:</p> <ul> <li> <p> <code>Alexa</code> </p> </li>
-     * <li> <p> <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p> </li>
-     * <li> <p> <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p> </li>
-     * <li> <p> <code>Dev</code> </p> </li> </ul> 
+     * <li> <p>For hooks, <i>MyCompany</i>::<i>Testing</i>::<i>MyTestHook</i>.</p>
+     * </li> </ul>  <p>The following organization namespaces are reserved and
+     * can't be used in your extension names:</p> <ul> <li> <p> <code>Alexa</code> </p>
+     * </li> <li> <p> <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p>
+     * </li> <li> <p> <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p>
+     * </li> <li> <p> <code>Dev</code> </p> </li> </ul> 
      */
     inline RegisterTypeRequest& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
 
     /**
-     * <p>The name of the extension being registered.</p> <p>We recommend that
-     * extension names adhere to the following patterns: </p> <ul> <li> <p>For resource
-     * types, <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> </li>
-     * <li> <p>For modules,
+     * <p>The name of the extension being registered.</p> <p>We suggest that extension
+     * names adhere to the following patterns:</p> <ul> <li> <p>For resource types,
+     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> </li> <li>
+     * <p>For modules,
      * <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p> </li>
-     * </ul>  <p>The following organization namespaces are reserved and cannot be
-     * used in your extension names:</p> <ul> <li> <p> <code>Alexa</code> </p> </li>
-     * <li> <p> <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p> </li>
-     * <li> <p> <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p> </li>
-     * <li> <p> <code>Dev</code> </p> </li> </ul> 
+     * <li> <p>For hooks, <i>MyCompany</i>::<i>Testing</i>::<i>MyTestHook</i>.</p>
+     * </li> </ul>  <p>The following organization namespaces are reserved and
+     * can't be used in your extension names:</p> <ul> <li> <p> <code>Alexa</code> </p>
+     * </li> <li> <p> <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p>
+     * </li> <li> <p> <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p>
+     * </li> <li> <p> <code>Dev</code> </p> </li> </ul> 
      */
     inline RegisterTypeRequest& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the extension being registered.</p> <p>We recommend that
-     * extension names adhere to the following patterns: </p> <ul> <li> <p>For resource
-     * types, <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> </li>
-     * <li> <p>For modules,
+     * <p>The name of the extension being registered.</p> <p>We suggest that extension
+     * names adhere to the following patterns:</p> <ul> <li> <p>For resource types,
+     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> </li> <li>
+     * <p>For modules,
      * <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p> </li>
-     * </ul>  <p>The following organization namespaces are reserved and cannot be
-     * used in your extension names:</p> <ul> <li> <p> <code>Alexa</code> </p> </li>
-     * <li> <p> <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p> </li>
-     * <li> <p> <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p> </li>
-     * <li> <p> <code>Dev</code> </p> </li> </ul> 
+     * <li> <p>For hooks, <i>MyCompany</i>::<i>Testing</i>::<i>MyTestHook</i>.</p>
+     * </li> </ul>  <p>The following organization namespaces are reserved and
+     * can't be used in your extension names:</p> <ul> <li> <p> <code>Alexa</code> </p>
+     * </li> <li> <p> <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p>
+     * </li> <li> <p> <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p>
+     * </li> <li> <p> <code>Dev</code> </p> </li> </ul> 
      */
     inline RegisterTypeRequest& WithTypeName(const char* value) { SetTypeName(value); return *this;}
 
 
     /**
-     * <p>A url to the S3 bucket containing the extension project package that contains
-     * the neccessary files for the extension you want to register.</p> <p>For
-     * information on generating a schema handler package for the extension you want to
-     * register, see <a
+     * <p>A URL to the S3 bucket containing the extension project package that contains
+     * the necessary files for the extension you want to register.</p> <p>For
+     * information about generating a schema handler package for the extension you want
+     * to register, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
      * in the <i>CloudFormation CLI User Guide</i>.</p>  <p>The user registering
-     * the extension must be able to access the package in the S3 bucket. That is, the
+     * the extension must be able to access the package in the S3 bucket. That's, the
      * user needs to have <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
      * permissions for the schema handler package. For more information, see <a
@@ -200,13 +208,13 @@ namespace Model
     inline const Aws::String& GetSchemaHandlerPackage() const{ return m_schemaHandlerPackage; }
 
     /**
-     * <p>A url to the S3 bucket containing the extension project package that contains
-     * the neccessary files for the extension you want to register.</p> <p>For
-     * information on generating a schema handler package for the extension you want to
-     * register, see <a
+     * <p>A URL to the S3 bucket containing the extension project package that contains
+     * the necessary files for the extension you want to register.</p> <p>For
+     * information about generating a schema handler package for the extension you want
+     * to register, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
      * in the <i>CloudFormation CLI User Guide</i>.</p>  <p>The user registering
-     * the extension must be able to access the package in the S3 bucket. That is, the
+     * the extension must be able to access the package in the S3 bucket. That's, the
      * user needs to have <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
      * permissions for the schema handler package. For more information, see <a
@@ -217,13 +225,13 @@ namespace Model
     inline bool SchemaHandlerPackageHasBeenSet() const { return m_schemaHandlerPackageHasBeenSet; }
 
     /**
-     * <p>A url to the S3 bucket containing the extension project package that contains
-     * the neccessary files for the extension you want to register.</p> <p>For
-     * information on generating a schema handler package for the extension you want to
-     * register, see <a
+     * <p>A URL to the S3 bucket containing the extension project package that contains
+     * the necessary files for the extension you want to register.</p> <p>For
+     * information about generating a schema handler package for the extension you want
+     * to register, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
      * in the <i>CloudFormation CLI User Guide</i>.</p>  <p>The user registering
-     * the extension must be able to access the package in the S3 bucket. That is, the
+     * the extension must be able to access the package in the S3 bucket. That's, the
      * user needs to have <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
      * permissions for the schema handler package. For more information, see <a
@@ -234,13 +242,13 @@ namespace Model
     inline void SetSchemaHandlerPackage(const Aws::String& value) { m_schemaHandlerPackageHasBeenSet = true; m_schemaHandlerPackage = value; }
 
     /**
-     * <p>A url to the S3 bucket containing the extension project package that contains
-     * the neccessary files for the extension you want to register.</p> <p>For
-     * information on generating a schema handler package for the extension you want to
-     * register, see <a
+     * <p>A URL to the S3 bucket containing the extension project package that contains
+     * the necessary files for the extension you want to register.</p> <p>For
+     * information about generating a schema handler package for the extension you want
+     * to register, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
      * in the <i>CloudFormation CLI User Guide</i>.</p>  <p>The user registering
-     * the extension must be able to access the package in the S3 bucket. That is, the
+     * the extension must be able to access the package in the S3 bucket. That's, the
      * user needs to have <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
      * permissions for the schema handler package. For more information, see <a
@@ -251,13 +259,13 @@ namespace Model
     inline void SetSchemaHandlerPackage(Aws::String&& value) { m_schemaHandlerPackageHasBeenSet = true; m_schemaHandlerPackage = std::move(value); }
 
     /**
-     * <p>A url to the S3 bucket containing the extension project package that contains
-     * the neccessary files for the extension you want to register.</p> <p>For
-     * information on generating a schema handler package for the extension you want to
-     * register, see <a
+     * <p>A URL to the S3 bucket containing the extension project package that contains
+     * the necessary files for the extension you want to register.</p> <p>For
+     * information about generating a schema handler package for the extension you want
+     * to register, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
      * in the <i>CloudFormation CLI User Guide</i>.</p>  <p>The user registering
-     * the extension must be able to access the package in the S3 bucket. That is, the
+     * the extension must be able to access the package in the S3 bucket. That's, the
      * user needs to have <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
      * permissions for the schema handler package. For more information, see <a
@@ -268,13 +276,13 @@ namespace Model
     inline void SetSchemaHandlerPackage(const char* value) { m_schemaHandlerPackageHasBeenSet = true; m_schemaHandlerPackage.assign(value); }
 
     /**
-     * <p>A url to the S3 bucket containing the extension project package that contains
-     * the neccessary files for the extension you want to register.</p> <p>For
-     * information on generating a schema handler package for the extension you want to
-     * register, see <a
+     * <p>A URL to the S3 bucket containing the extension project package that contains
+     * the necessary files for the extension you want to register.</p> <p>For
+     * information about generating a schema handler package for the extension you want
+     * to register, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
      * in the <i>CloudFormation CLI User Guide</i>.</p>  <p>The user registering
-     * the extension must be able to access the package in the S3 bucket. That is, the
+     * the extension must be able to access the package in the S3 bucket. That's, the
      * user needs to have <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
      * permissions for the schema handler package. For more information, see <a
@@ -285,13 +293,13 @@ namespace Model
     inline RegisterTypeRequest& WithSchemaHandlerPackage(const Aws::String& value) { SetSchemaHandlerPackage(value); return *this;}
 
     /**
-     * <p>A url to the S3 bucket containing the extension project package that contains
-     * the neccessary files for the extension you want to register.</p> <p>For
-     * information on generating a schema handler package for the extension you want to
-     * register, see <a
+     * <p>A URL to the S3 bucket containing the extension project package that contains
+     * the necessary files for the extension you want to register.</p> <p>For
+     * information about generating a schema handler package for the extension you want
+     * to register, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
      * in the <i>CloudFormation CLI User Guide</i>.</p>  <p>The user registering
-     * the extension must be able to access the package in the S3 bucket. That is, the
+     * the extension must be able to access the package in the S3 bucket. That's, the
      * user needs to have <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
      * permissions for the schema handler package. For more information, see <a
@@ -302,13 +310,13 @@ namespace Model
     inline RegisterTypeRequest& WithSchemaHandlerPackage(Aws::String&& value) { SetSchemaHandlerPackage(std::move(value)); return *this;}
 
     /**
-     * <p>A url to the S3 bucket containing the extension project package that contains
-     * the neccessary files for the extension you want to register.</p> <p>For
-     * information on generating a schema handler package for the extension you want to
-     * register, see <a
+     * <p>A URL to the S3 bucket containing the extension project package that contains
+     * the necessary files for the extension you want to register.</p> <p>For
+     * information about generating a schema handler package for the extension you want
+     * to register, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
      * in the <i>CloudFormation CLI User Guide</i>.</p>  <p>The user registering
-     * the extension must be able to access the package in the S3 bucket. That is, the
+     * the extension must be able to access the package in the S3 bucket. That's, the
      * user needs to have <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
      * permissions for the schema handler package. For more information, see <a
@@ -355,8 +363,8 @@ namespace Model
      * when invoking the extension.</p> <p>For CloudFormation to assume the specified
      * execution role, the role must contain a trust relationship with the
      * CloudFormation service principle
-     * (<code>resources.cloudformation.amazonaws.com</code>). For more information on
-     * adding trust relationships, see <a
+     * (<code>resources.cloudformation.amazonaws.com</code>). For more information
+     * about adding trust relationships, see <a
      * href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying
      * a role trust policy</a> in the <i>Identity and Access Management User
      * Guide</i>.</p> <p>If your extension calls Amazon Web Services APIs in any of its
@@ -376,8 +384,8 @@ namespace Model
      * when invoking the extension.</p> <p>For CloudFormation to assume the specified
      * execution role, the role must contain a trust relationship with the
      * CloudFormation service principle
-     * (<code>resources.cloudformation.amazonaws.com</code>). For more information on
-     * adding trust relationships, see <a
+     * (<code>resources.cloudformation.amazonaws.com</code>). For more information
+     * about adding trust relationships, see <a
      * href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying
      * a role trust policy</a> in the <i>Identity and Access Management User
      * Guide</i>.</p> <p>If your extension calls Amazon Web Services APIs in any of its
@@ -397,8 +405,8 @@ namespace Model
      * when invoking the extension.</p> <p>For CloudFormation to assume the specified
      * execution role, the role must contain a trust relationship with the
      * CloudFormation service principle
-     * (<code>resources.cloudformation.amazonaws.com</code>). For more information on
-     * adding trust relationships, see <a
+     * (<code>resources.cloudformation.amazonaws.com</code>). For more information
+     * about adding trust relationships, see <a
      * href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying
      * a role trust policy</a> in the <i>Identity and Access Management User
      * Guide</i>.</p> <p>If your extension calls Amazon Web Services APIs in any of its
@@ -418,8 +426,8 @@ namespace Model
      * when invoking the extension.</p> <p>For CloudFormation to assume the specified
      * execution role, the role must contain a trust relationship with the
      * CloudFormation service principle
-     * (<code>resources.cloudformation.amazonaws.com</code>). For more information on
-     * adding trust relationships, see <a
+     * (<code>resources.cloudformation.amazonaws.com</code>). For more information
+     * about adding trust relationships, see <a
      * href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying
      * a role trust policy</a> in the <i>Identity and Access Management User
      * Guide</i>.</p> <p>If your extension calls Amazon Web Services APIs in any of its
@@ -439,8 +447,8 @@ namespace Model
      * when invoking the extension.</p> <p>For CloudFormation to assume the specified
      * execution role, the role must contain a trust relationship with the
      * CloudFormation service principle
-     * (<code>resources.cloudformation.amazonaws.com</code>). For more information on
-     * adding trust relationships, see <a
+     * (<code>resources.cloudformation.amazonaws.com</code>). For more information
+     * about adding trust relationships, see <a
      * href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying
      * a role trust policy</a> in the <i>Identity and Access Management User
      * Guide</i>.</p> <p>If your extension calls Amazon Web Services APIs in any of its
@@ -460,8 +468,8 @@ namespace Model
      * when invoking the extension.</p> <p>For CloudFormation to assume the specified
      * execution role, the role must contain a trust relationship with the
      * CloudFormation service principle
-     * (<code>resources.cloudformation.amazonaws.com</code>). For more information on
-     * adding trust relationships, see <a
+     * (<code>resources.cloudformation.amazonaws.com</code>). For more information
+     * about adding trust relationships, see <a
      * href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying
      * a role trust policy</a> in the <i>Identity and Access Management User
      * Guide</i>.</p> <p>If your extension calls Amazon Web Services APIs in any of its
@@ -481,8 +489,8 @@ namespace Model
      * when invoking the extension.</p> <p>For CloudFormation to assume the specified
      * execution role, the role must contain a trust relationship with the
      * CloudFormation service principle
-     * (<code>resources.cloudformation.amazonaws.com</code>). For more information on
-     * adding trust relationships, see <a
+     * (<code>resources.cloudformation.amazonaws.com</code>). For more information
+     * about adding trust relationships, see <a
      * href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying
      * a role trust policy</a> in the <i>Identity and Access Management User
      * Guide</i>.</p> <p>If your extension calls Amazon Web Services APIs in any of its
@@ -502,8 +510,8 @@ namespace Model
      * when invoking the extension.</p> <p>For CloudFormation to assume the specified
      * execution role, the role must contain a trust relationship with the
      * CloudFormation service principle
-     * (<code>resources.cloudformation.amazonaws.com</code>). For more information on
-     * adding trust relationships, see <a
+     * (<code>resources.cloudformation.amazonaws.com</code>). For more information
+     * about adding trust relationships, see <a
      * href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying
      * a role trust policy</a> in the <i>Identity and Access Management User
      * Guide</i>.</p> <p>If your extension calls Amazon Web Services APIs in any of its
@@ -522,64 +530,64 @@ namespace Model
     /**
      * <p>A unique identifier that acts as an idempotency key for this registration
      * request. Specifying a client request token prevents CloudFormation from
-     * generating more than one version of an extension from the same registeration
-     * request, even if the request is submitted multiple times. </p>
+     * generating more than one version of an extension from the same registration
+     * request, even if the request is submitted multiple times.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
      * <p>A unique identifier that acts as an idempotency key for this registration
      * request. Specifying a client request token prevents CloudFormation from
-     * generating more than one version of an extension from the same registeration
-     * request, even if the request is submitted multiple times. </p>
+     * generating more than one version of an extension from the same registration
+     * request, even if the request is submitted multiple times.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>A unique identifier that acts as an idempotency key for this registration
      * request. Specifying a client request token prevents CloudFormation from
-     * generating more than one version of an extension from the same registeration
-     * request, even if the request is submitted multiple times. </p>
+     * generating more than one version of an extension from the same registration
+     * request, even if the request is submitted multiple times.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
      * <p>A unique identifier that acts as an idempotency key for this registration
      * request. Specifying a client request token prevents CloudFormation from
-     * generating more than one version of an extension from the same registeration
-     * request, even if the request is submitted multiple times. </p>
+     * generating more than one version of an extension from the same registration
+     * request, even if the request is submitted multiple times.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
      * <p>A unique identifier that acts as an idempotency key for this registration
      * request. Specifying a client request token prevents CloudFormation from
-     * generating more than one version of an extension from the same registeration
-     * request, even if the request is submitted multiple times. </p>
+     * generating more than one version of an extension from the same registration
+     * request, even if the request is submitted multiple times.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
      * <p>A unique identifier that acts as an idempotency key for this registration
      * request. Specifying a client request token prevents CloudFormation from
-     * generating more than one version of an extension from the same registeration
-     * request, even if the request is submitted multiple times. </p>
+     * generating more than one version of an extension from the same registration
+     * request, even if the request is submitted multiple times.</p>
      */
     inline RegisterTypeRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
      * <p>A unique identifier that acts as an idempotency key for this registration
      * request. Specifying a client request token prevents CloudFormation from
-     * generating more than one version of an extension from the same registeration
-     * request, even if the request is submitted multiple times. </p>
+     * generating more than one version of an extension from the same registration
+     * request, even if the request is submitted multiple times.</p>
      */
     inline RegisterTypeRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier that acts as an idempotency key for this registration
      * request. Specifying a client request token prevents CloudFormation from
-     * generating more than one version of an extension from the same registeration
-     * request, even if the request is submitted multiple times. </p>
+     * generating more than one version of an extension from the same registration
+     * request, even if the request is submitted multiple times.</p>
      */
     inline RegisterTypeRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 

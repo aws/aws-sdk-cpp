@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     GP2,
-    ST1
+    ST1,
+    GP3
   };
 
 namespace ReplicationConfigurationDefaultLargeStagingDiskTypeMapper

@@ -12,6 +12,7 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <fstream>
+#include <random>
 
 namespace Aws
 {
@@ -21,6 +22,10 @@ namespace Aws
         using namespace Aws::Auth;
 
         static const char* const CONFIG_LOADER_TAG = "Aws::Config::AWSProfileConfigLoader";
+        static const char* const INTERNAL_EXCEPTION_PHRASE = "InternalServiceException";
+        static const int64_t FIVE_MINUTE_MILLIS = 60000 * 5;
+        static const int64_t TEN_MINUTE_MILLIS = 60000 * 10;
+
         #ifdef _MSC_VER
             // VS2015 compiler's bug, warning s_CoreErrorsMapper: symbol will be dynamically initialized (implementation limitation)
             AWS_SUPPRESS_WARNING(4592,
@@ -372,6 +377,14 @@ namespace Aws
 
         bool EC2InstanceProfileConfigLoader::LoadInternal()
         {
+            // re-use old credentials until we need to call IMDS again.
+            if (DateTime::Now().Millis() < this->credentialsValidUntilMillis) {
+                AWS_LOGSTREAM_ERROR(EC2_INSTANCE_PROFILE_LOG_TAG,
+                                    "Skipping IMDS call until " << this->credentialsValidUntilMillis);
+                return true;
+            }
+            this->credentialsValidUntilMillis = DateTime::Now().Millis();
+
             auto credentialsStr = m_ec2metadataClient->GetDefaultCredentialsSecurely();
             if(credentialsStr.empty()) return false;
 
@@ -382,11 +395,27 @@ namespace Aws
                         "Failed to parse output from EC2MetadataService.");
                 return false;
             }
+
             const char* accessKeyId = "AccessKeyId";
             const char* secretAccessKey = "SecretAccessKey";
+            const char* expiration = "Expiration";
+            const char* code = "Code";
             Aws::String accessKey, secretKey, token;
 
             auto credentialsView = credentialsDoc.View();
+            DateTime expirationTime(credentialsView.GetString(expiration), Aws::Utils::DateFormat::ISO_8601);
+            // re-use old credentials and not block if the IMDS call failed or if the lastest credential is in the past
+            if (expirationTime.WasParseSuccessful() && DateTime::Now() > expirationTime) {
+                AWS_LOGSTREAM_ERROR(EC2_INSTANCE_PROFILE_LOG_TAG,
+                                    "Expiration Time of Credentials in the past, refusing to update credentials");
+                this->credentialsValidUntilMillis = DateTime::Now().Millis() + calculateRetryTime();
+                return true;
+            } else if (credentialsView.GetString(code) == INTERNAL_EXCEPTION_PHRASE) {
+                AWS_LOGSTREAM_ERROR(EC2_INSTANCE_PROFILE_LOG_TAG,
+                                    "IMDS call failed, refusing to update credentials");
+                this->credentialsValidUntilMillis = DateTime::Now().Millis() + calculateRetryTime();
+                return true;
+            }
             accessKey = credentialsView.GetString(accessKeyId);
             AWS_LOGSTREAM_INFO(EC2_INSTANCE_PROFILE_LOG_TAG,
                     "Successfully pulled credentials from metadata service with access key " << accessKey);
@@ -404,6 +433,13 @@ namespace Aws
             m_profiles[INSTANCE_PROFILE_KEY] = profile;
 
             return true;
+        }
+
+        int64_t EC2InstanceProfileConfigLoader::calculateRetryTime() const {
+            std::random_device rd;
+            std::mt19937_64 gen(rd());
+            std::uniform_int_distribution<int64_t> dist(FIVE_MINUTE_MILLIS, TEN_MINUTE_MILLIS);
+            return dist(gen);
         }
 
         ConfigAndCredentialsCacheManager::ConfigAndCredentialsCacheManager() :

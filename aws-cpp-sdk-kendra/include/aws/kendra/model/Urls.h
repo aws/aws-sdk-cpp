@@ -47,99 +47,99 @@ namespace Model
 
 
     /**
-     * <p>Provides the configuration of the seed or starting point URLs of the websites
-     * you want to crawl.</p> <p>You can choose to crawl only the website host names,
-     * or the website host names with subdomains, or the website host names with
-     * subdomains and other domains that the webpages link to.</p> <p>You can list up
-     * to 100 seed URLs.</p>
+     * <p>Configuration of the seed or starting point URLs of the websites you want to
+     * crawl.</p> <p>You can choose to crawl only the website host names, or the
+     * website host names with subdomains, or the website host names with subdomains
+     * and other domains that the webpages link to.</p> <p>You can list up to 100 seed
+     * URLs.</p>
      */
     inline const SeedUrlConfiguration& GetSeedUrlConfiguration() const{ return m_seedUrlConfiguration; }
 
     /**
-     * <p>Provides the configuration of the seed or starting point URLs of the websites
-     * you want to crawl.</p> <p>You can choose to crawl only the website host names,
-     * or the website host names with subdomains, or the website host names with
-     * subdomains and other domains that the webpages link to.</p> <p>You can list up
-     * to 100 seed URLs.</p>
+     * <p>Configuration of the seed or starting point URLs of the websites you want to
+     * crawl.</p> <p>You can choose to crawl only the website host names, or the
+     * website host names with subdomains, or the website host names with subdomains
+     * and other domains that the webpages link to.</p> <p>You can list up to 100 seed
+     * URLs.</p>
      */
     inline bool SeedUrlConfigurationHasBeenSet() const { return m_seedUrlConfigurationHasBeenSet; }
 
     /**
-     * <p>Provides the configuration of the seed or starting point URLs of the websites
-     * you want to crawl.</p> <p>You can choose to crawl only the website host names,
-     * or the website host names with subdomains, or the website host names with
-     * subdomains and other domains that the webpages link to.</p> <p>You can list up
-     * to 100 seed URLs.</p>
+     * <p>Configuration of the seed or starting point URLs of the websites you want to
+     * crawl.</p> <p>You can choose to crawl only the website host names, or the
+     * website host names with subdomains, or the website host names with subdomains
+     * and other domains that the webpages link to.</p> <p>You can list up to 100 seed
+     * URLs.</p>
      */
     inline void SetSeedUrlConfiguration(const SeedUrlConfiguration& value) { m_seedUrlConfigurationHasBeenSet = true; m_seedUrlConfiguration = value; }
 
     /**
-     * <p>Provides the configuration of the seed or starting point URLs of the websites
-     * you want to crawl.</p> <p>You can choose to crawl only the website host names,
-     * or the website host names with subdomains, or the website host names with
-     * subdomains and other domains that the webpages link to.</p> <p>You can list up
-     * to 100 seed URLs.</p>
+     * <p>Configuration of the seed or starting point URLs of the websites you want to
+     * crawl.</p> <p>You can choose to crawl only the website host names, or the
+     * website host names with subdomains, or the website host names with subdomains
+     * and other domains that the webpages link to.</p> <p>You can list up to 100 seed
+     * URLs.</p>
      */
     inline void SetSeedUrlConfiguration(SeedUrlConfiguration&& value) { m_seedUrlConfigurationHasBeenSet = true; m_seedUrlConfiguration = std::move(value); }
 
     /**
-     * <p>Provides the configuration of the seed or starting point URLs of the websites
-     * you want to crawl.</p> <p>You can choose to crawl only the website host names,
-     * or the website host names with subdomains, or the website host names with
-     * subdomains and other domains that the webpages link to.</p> <p>You can list up
-     * to 100 seed URLs.</p>
+     * <p>Configuration of the seed or starting point URLs of the websites you want to
+     * crawl.</p> <p>You can choose to crawl only the website host names, or the
+     * website host names with subdomains, or the website host names with subdomains
+     * and other domains that the webpages link to.</p> <p>You can list up to 100 seed
+     * URLs.</p>
      */
     inline Urls& WithSeedUrlConfiguration(const SeedUrlConfiguration& value) { SetSeedUrlConfiguration(value); return *this;}
 
     /**
-     * <p>Provides the configuration of the seed or starting point URLs of the websites
-     * you want to crawl.</p> <p>You can choose to crawl only the website host names,
-     * or the website host names with subdomains, or the website host names with
-     * subdomains and other domains that the webpages link to.</p> <p>You can list up
-     * to 100 seed URLs.</p>
+     * <p>Configuration of the seed or starting point URLs of the websites you want to
+     * crawl.</p> <p>You can choose to crawl only the website host names, or the
+     * website host names with subdomains, or the website host names with subdomains
+     * and other domains that the webpages link to.</p> <p>You can list up to 100 seed
+     * URLs.</p>
      */
     inline Urls& WithSeedUrlConfiguration(SeedUrlConfiguration&& value) { SetSeedUrlConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>Provides the configuration of the sitemap URLs of the websites you want to
-     * crawl.</p> <p>Only URLs belonging to the same website host names are crawled.
-     * You can list up to three sitemap URLs.</p>
+     * <p>Configuration of the sitemap URLs of the websites you want to crawl.</p>
+     * <p>Only URLs belonging to the same website host names are crawled. You can list
+     * up to three sitemap URLs.</p>
      */
     inline const SiteMapsConfiguration& GetSiteMapsConfiguration() const{ return m_siteMapsConfiguration; }
 
     /**
-     * <p>Provides the configuration of the sitemap URLs of the websites you want to
-     * crawl.</p> <p>Only URLs belonging to the same website host names are crawled.
-     * You can list up to three sitemap URLs.</p>
+     * <p>Configuration of the sitemap URLs of the websites you want to crawl.</p>
+     * <p>Only URLs belonging to the same website host names are crawled. You can list
+     * up to three sitemap URLs.</p>
      */
     inline bool SiteMapsConfigurationHasBeenSet() const { return m_siteMapsConfigurationHasBeenSet; }
 
     /**
-     * <p>Provides the configuration of the sitemap URLs of the websites you want to
-     * crawl.</p> <p>Only URLs belonging to the same website host names are crawled.
-     * You can list up to three sitemap URLs.</p>
+     * <p>Configuration of the sitemap URLs of the websites you want to crawl.</p>
+     * <p>Only URLs belonging to the same website host names are crawled. You can list
+     * up to three sitemap URLs.</p>
      */
     inline void SetSiteMapsConfiguration(const SiteMapsConfiguration& value) { m_siteMapsConfigurationHasBeenSet = true; m_siteMapsConfiguration = value; }
 
     /**
-     * <p>Provides the configuration of the sitemap URLs of the websites you want to
-     * crawl.</p> <p>Only URLs belonging to the same website host names are crawled.
-     * You can list up to three sitemap URLs.</p>
+     * <p>Configuration of the sitemap URLs of the websites you want to crawl.</p>
+     * <p>Only URLs belonging to the same website host names are crawled. You can list
+     * up to three sitemap URLs.</p>
      */
     inline void SetSiteMapsConfiguration(SiteMapsConfiguration&& value) { m_siteMapsConfigurationHasBeenSet = true; m_siteMapsConfiguration = std::move(value); }
 
     /**
-     * <p>Provides the configuration of the sitemap URLs of the websites you want to
-     * crawl.</p> <p>Only URLs belonging to the same website host names are crawled.
-     * You can list up to three sitemap URLs.</p>
+     * <p>Configuration of the sitemap URLs of the websites you want to crawl.</p>
+     * <p>Only URLs belonging to the same website host names are crawled. You can list
+     * up to three sitemap URLs.</p>
      */
     inline Urls& WithSiteMapsConfiguration(const SiteMapsConfiguration& value) { SetSiteMapsConfiguration(value); return *this;}
 
     /**
-     * <p>Provides the configuration of the sitemap URLs of the websites you want to
-     * crawl.</p> <p>Only URLs belonging to the same website host names are crawled.
-     * You can list up to three sitemap URLs.</p>
+     * <p>Configuration of the sitemap URLs of the websites you want to crawl.</p>
+     * <p>Only URLs belonging to the same website host names are crawled. You can list
+     * up to three sitemap URLs.</p>
      */
     inline Urls& WithSiteMapsConfiguration(SiteMapsConfiguration&& value) { SetSiteMapsConfiguration(std::move(value)); return *this;}
 

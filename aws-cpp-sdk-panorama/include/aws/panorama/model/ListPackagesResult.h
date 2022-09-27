@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/panorama/Panorama_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/panorama/model/PackageListItem.h>
 #include <utility>
 
@@ -32,42 +32,6 @@ namespace Model
     ListPackagesResult();
     ListPackagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     ListPackagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>A list of packages.</p>
-     */
-    inline const Aws::Vector<PackageListItem>& GetPackages() const{ return m_packages; }
-
-    /**
-     * <p>A list of packages.</p>
-     */
-    inline void SetPackages(const Aws::Vector<PackageListItem>& value) { m_packages = value; }
-
-    /**
-     * <p>A list of packages.</p>
-     */
-    inline void SetPackages(Aws::Vector<PackageListItem>&& value) { m_packages = std::move(value); }
-
-    /**
-     * <p>A list of packages.</p>
-     */
-    inline ListPackagesResult& WithPackages(const Aws::Vector<PackageListItem>& value) { SetPackages(value); return *this;}
-
-    /**
-     * <p>A list of packages.</p>
-     */
-    inline ListPackagesResult& WithPackages(Aws::Vector<PackageListItem>&& value) { SetPackages(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of packages.</p>
-     */
-    inline ListPackagesResult& AddPackages(const PackageListItem& value) { m_packages.push_back(value); return *this; }
-
-    /**
-     * <p>A list of packages.</p>
-     */
-    inline ListPackagesResult& AddPackages(PackageListItem&& value) { m_packages.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -105,11 +69,47 @@ namespace Model
      */
     inline ListPackagesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>A list of packages.</p>
+     */
+    inline const Aws::Vector<PackageListItem>& GetPackages() const{ return m_packages; }
+
+    /**
+     * <p>A list of packages.</p>
+     */
+    inline void SetPackages(const Aws::Vector<PackageListItem>& value) { m_packages = value; }
+
+    /**
+     * <p>A list of packages.</p>
+     */
+    inline void SetPackages(Aws::Vector<PackageListItem>&& value) { m_packages = std::move(value); }
+
+    /**
+     * <p>A list of packages.</p>
+     */
+    inline ListPackagesResult& WithPackages(const Aws::Vector<PackageListItem>& value) { SetPackages(value); return *this;}
+
+    /**
+     * <p>A list of packages.</p>
+     */
+    inline ListPackagesResult& WithPackages(Aws::Vector<PackageListItem>&& value) { SetPackages(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of packages.</p>
+     */
+    inline ListPackagesResult& AddPackages(const PackageListItem& value) { m_packages.push_back(value); return *this; }
+
+    /**
+     * <p>A list of packages.</p>
+     */
+    inline ListPackagesResult& AddPackages(PackageListItem&& value) { m_packages.push_back(std::move(value)); return *this; }
+
   private:
 
-    Aws::Vector<PackageListItem> m_packages;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<PackageListItem> m_packages;
   };
 
 } // namespace Model

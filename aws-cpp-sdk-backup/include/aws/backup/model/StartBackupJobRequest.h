@@ -293,37 +293,37 @@ namespace Model
 
     /**
      * <p>A value in minutes during which a successfully started backup must complete,
-     * or else AWS Backup will cancel the job. This value is optional. This value
-     * begins counting down from when the backup was scheduled. It does not add
-     * additional time for <code>StartWindowMinutes</code>, or if the backup started
-     * later than scheduled.</p>
+     * or else Backup will cancel the job. This value is optional. This value begins
+     * counting down from when the backup was scheduled. It does not add additional
+     * time for <code>StartWindowMinutes</code>, or if the backup started later than
+     * scheduled.</p>
      */
     inline long long GetCompleteWindowMinutes() const{ return m_completeWindowMinutes; }
 
     /**
      * <p>A value in minutes during which a successfully started backup must complete,
-     * or else AWS Backup will cancel the job. This value is optional. This value
-     * begins counting down from when the backup was scheduled. It does not add
-     * additional time for <code>StartWindowMinutes</code>, or if the backup started
-     * later than scheduled.</p>
+     * or else Backup will cancel the job. This value is optional. This value begins
+     * counting down from when the backup was scheduled. It does not add additional
+     * time for <code>StartWindowMinutes</code>, or if the backup started later than
+     * scheduled.</p>
      */
     inline bool CompleteWindowMinutesHasBeenSet() const { return m_completeWindowMinutesHasBeenSet; }
 
     /**
      * <p>A value in minutes during which a successfully started backup must complete,
-     * or else AWS Backup will cancel the job. This value is optional. This value
-     * begins counting down from when the backup was scheduled. It does not add
-     * additional time for <code>StartWindowMinutes</code>, or if the backup started
-     * later than scheduled.</p>
+     * or else Backup will cancel the job. This value is optional. This value begins
+     * counting down from when the backup was scheduled. It does not add additional
+     * time for <code>StartWindowMinutes</code>, or if the backup started later than
+     * scheduled.</p>
      */
     inline void SetCompleteWindowMinutes(long long value) { m_completeWindowMinutesHasBeenSet = true; m_completeWindowMinutes = value; }
 
     /**
      * <p>A value in minutes during which a successfully started backup must complete,
-     * or else AWS Backup will cancel the job. This value is optional. This value
-     * begins counting down from when the backup was scheduled. It does not add
-     * additional time for <code>StartWindowMinutes</code>, or if the backup started
-     * later than scheduled.</p>
+     * or else Backup will cancel the job. This value is optional. This value begins
+     * counting down from when the backup was scheduled. It does not add additional
+     * time for <code>StartWindowMinutes</code>, or if the backup started later than
+     * scheduled.</p>
      */
     inline StartBackupJobRequest& WithCompleteWindowMinutes(long long value) { SetCompleteWindowMinutes(value); return *this;}
 
@@ -333,10 +333,15 @@ namespace Model
      * storage and when it expires. Backup will transition and expire backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
-     * days. Therefore, the “expire after days” setting must be 90 days greater than
-     * the “transition to cold after days” setting. The “transition to cold after days”
+     * days. Therefore, the “retention” setting must be 90 days greater than the
+     * ���transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
-     * <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
+     * <p>Only resource types that support full Backup management can transition their
+     * backups to cold storage. Those resource types are listed in the "Full Backup
+     * management" section of the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+     * Feature availability by resource</a> table. Backup ignores this expression for
+     * other resource types.</p>
      */
     inline const Lifecycle& GetLifecycle() const{ return m_lifecycle; }
 
@@ -345,10 +350,15 @@ namespace Model
      * storage and when it expires. Backup will transition and expire backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
-     * days. Therefore, the “expire after days” setting must be 90 days greater than
-     * the “transition to cold after days” setting. The “transition to cold after days”
+     * days. Therefore, the “retention” setting must be 90 days greater than the
+     * ���transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
-     * <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
+     * <p>Only resource types that support full Backup management can transition their
+     * backups to cold storage. Those resource types are listed in the "Full Backup
+     * management" section of the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+     * Feature availability by resource</a> table. Backup ignores this expression for
+     * other resource types.</p>
      */
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
 
@@ -357,10 +367,15 @@ namespace Model
      * storage and when it expires. Backup will transition and expire backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
-     * days. Therefore, the “expire after days” setting must be 90 days greater than
-     * the “transition to cold after days” setting. The “transition to cold after days”
+     * days. Therefore, the “retention” setting must be 90 days greater than the
+     * ���transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
-     * <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
+     * <p>Only resource types that support full Backup management can transition their
+     * backups to cold storage. Those resource types are listed in the "Full Backup
+     * management" section of the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+     * Feature availability by resource</a> table. Backup ignores this expression for
+     * other resource types.</p>
      */
     inline void SetLifecycle(const Lifecycle& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
 
@@ -369,10 +384,15 @@ namespace Model
      * storage and when it expires. Backup will transition and expire backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
-     * days. Therefore, the “expire after days” setting must be 90 days greater than
-     * the “transition to cold after days” setting. The “transition to cold after days”
+     * days. Therefore, the “retention” setting must be 90 days greater than the
+     * ���transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
-     * <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
+     * <p>Only resource types that support full Backup management can transition their
+     * backups to cold storage. Those resource types are listed in the "Full Backup
+     * management" section of the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+     * Feature availability by resource</a> table. Backup ignores this expression for
+     * other resource types.</p>
      */
     inline void SetLifecycle(Lifecycle&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::move(value); }
 
@@ -381,10 +401,15 @@ namespace Model
      * storage and when it expires. Backup will transition and expire backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
-     * days. Therefore, the “expire after days” setting must be 90 days greater than
-     * the “transition to cold after days” setting. The “transition to cold after days”
+     * days. Therefore, the “retention” setting must be 90 days greater than the
+     * ���transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
-     * <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
+     * <p>Only resource types that support full Backup management can transition their
+     * backups to cold storage. Those resource types are listed in the "Full Backup
+     * management" section of the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+     * Feature availability by resource</a> table. Backup ignores this expression for
+     * other resource types.</p>
      */
     inline StartBackupJobRequest& WithLifecycle(const Lifecycle& value) { SetLifecycle(value); return *this;}
 
@@ -393,10 +418,15 @@ namespace Model
      * storage and when it expires. Backup will transition and expire backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
-     * days. Therefore, the “expire after days” setting must be 90 days greater than
-     * the “transition to cold after days” setting. The “transition to cold after days”
+     * days. Therefore, the “retention” setting must be 90 days greater than the
+     * ���transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
-     * <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
+     * <p>Only resource types that support full Backup management can transition their
+     * backups to cold storage. Those resource types are listed in the "Full Backup
+     * management" section of the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+     * Feature availability by resource</a> table. Backup ignores this expression for
+     * other resource types.</p>
      */
     inline StartBackupJobRequest& WithLifecycle(Lifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
 

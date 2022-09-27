@@ -76,49 +76,57 @@ namespace Model
 
 
     /**
-     * <p>The ID of the access key to delete.</p> <p>Use the <a>GetBucketAccessKeys</a>
+     * <p>The ID of the access key to delete.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketAccessKeys.html">GetBucketAccessKeys</a>
      * action to get a list of access key IDs that you can specify.</p>
      */
     inline const Aws::String& GetAccessKeyId() const{ return m_accessKeyId; }
 
     /**
-     * <p>The ID of the access key to delete.</p> <p>Use the <a>GetBucketAccessKeys</a>
+     * <p>The ID of the access key to delete.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketAccessKeys.html">GetBucketAccessKeys</a>
      * action to get a list of access key IDs that you can specify.</p>
      */
     inline bool AccessKeyIdHasBeenSet() const { return m_accessKeyIdHasBeenSet; }
 
     /**
-     * <p>The ID of the access key to delete.</p> <p>Use the <a>GetBucketAccessKeys</a>
+     * <p>The ID of the access key to delete.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketAccessKeys.html">GetBucketAccessKeys</a>
      * action to get a list of access key IDs that you can specify.</p>
      */
     inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
 
     /**
-     * <p>The ID of the access key to delete.</p> <p>Use the <a>GetBucketAccessKeys</a>
+     * <p>The ID of the access key to delete.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketAccessKeys.html">GetBucketAccessKeys</a>
      * action to get a list of access key IDs that you can specify.</p>
      */
     inline void SetAccessKeyId(Aws::String&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = std::move(value); }
 
     /**
-     * <p>The ID of the access key to delete.</p> <p>Use the <a>GetBucketAccessKeys</a>
+     * <p>The ID of the access key to delete.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketAccessKeys.html">GetBucketAccessKeys</a>
      * action to get a list of access key IDs that you can specify.</p>
      */
     inline void SetAccessKeyId(const char* value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId.assign(value); }
 
     /**
-     * <p>The ID of the access key to delete.</p> <p>Use the <a>GetBucketAccessKeys</a>
+     * <p>The ID of the access key to delete.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketAccessKeys.html">GetBucketAccessKeys</a>
      * action to get a list of access key IDs that you can specify.</p>
      */
     inline DeleteBucketAccessKeyRequest& WithAccessKeyId(const Aws::String& value) { SetAccessKeyId(value); return *this;}
 
     /**
-     * <p>The ID of the access key to delete.</p> <p>Use the <a>GetBucketAccessKeys</a>
+     * <p>The ID of the access key to delete.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketAccessKeys.html">GetBucketAccessKeys</a>
      * action to get a list of access key IDs that you can specify.</p>
      */
     inline DeleteBucketAccessKeyRequest& WithAccessKeyId(Aws::String&& value) { SetAccessKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the access key to delete.</p> <p>Use the <a>GetBucketAccessKeys</a>
+     * <p>The ID of the access key to delete.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketAccessKeys.html">GetBucketAccessKeys</a>
      * action to get a list of access key IDs that you can specify.</p>
      */
     inline DeleteBucketAccessKeyRequest& WithAccessKeyId(const char* value) { SetAccessKeyId(value); return *this;}

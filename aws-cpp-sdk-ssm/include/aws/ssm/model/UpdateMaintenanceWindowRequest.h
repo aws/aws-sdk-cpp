@@ -158,74 +158,58 @@ namespace Model
 
 
     /**
-     * <p>The time zone that the scheduled maintenance window executions are based on,
-     * in Internet Assigned Numbers Authority (IANA) format. For example:
-     * "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a
-     * href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
-     * website.</p>
+     * <p>The date and time, in ISO-8601 Extended format, for when you want the
+     * maintenance window to become active. <code>StartDate</code> allows you to delay
+     * activation of the maintenance window until the specified future date.</p>
      */
     inline const Aws::String& GetStartDate() const{ return m_startDate; }
 
     /**
-     * <p>The time zone that the scheduled maintenance window executions are based on,
-     * in Internet Assigned Numbers Authority (IANA) format. For example:
-     * "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a
-     * href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
-     * website.</p>
+     * <p>The date and time, in ISO-8601 Extended format, for when you want the
+     * maintenance window to become active. <code>StartDate</code> allows you to delay
+     * activation of the maintenance window until the specified future date.</p>
      */
     inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
 
     /**
-     * <p>The time zone that the scheduled maintenance window executions are based on,
-     * in Internet Assigned Numbers Authority (IANA) format. For example:
-     * "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a
-     * href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
-     * website.</p>
+     * <p>The date and time, in ISO-8601 Extended format, for when you want the
+     * maintenance window to become active. <code>StartDate</code> allows you to delay
+     * activation of the maintenance window until the specified future date.</p>
      */
     inline void SetStartDate(const Aws::String& value) { m_startDateHasBeenSet = true; m_startDate = value; }
 
     /**
-     * <p>The time zone that the scheduled maintenance window executions are based on,
-     * in Internet Assigned Numbers Authority (IANA) format. For example:
-     * "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a
-     * href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
-     * website.</p>
+     * <p>The date and time, in ISO-8601 Extended format, for when you want the
+     * maintenance window to become active. <code>StartDate</code> allows you to delay
+     * activation of the maintenance window until the specified future date.</p>
      */
     inline void SetStartDate(Aws::String&& value) { m_startDateHasBeenSet = true; m_startDate = std::move(value); }
 
     /**
-     * <p>The time zone that the scheduled maintenance window executions are based on,
-     * in Internet Assigned Numbers Authority (IANA) format. For example:
-     * "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a
-     * href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
-     * website.</p>
+     * <p>The date and time, in ISO-8601 Extended format, for when you want the
+     * maintenance window to become active. <code>StartDate</code> allows you to delay
+     * activation of the maintenance window until the specified future date.</p>
      */
     inline void SetStartDate(const char* value) { m_startDateHasBeenSet = true; m_startDate.assign(value); }
 
     /**
-     * <p>The time zone that the scheduled maintenance window executions are based on,
-     * in Internet Assigned Numbers Authority (IANA) format. For example:
-     * "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a
-     * href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
-     * website.</p>
+     * <p>The date and time, in ISO-8601 Extended format, for when you want the
+     * maintenance window to become active. <code>StartDate</code> allows you to delay
+     * activation of the maintenance window until the specified future date.</p>
      */
     inline UpdateMaintenanceWindowRequest& WithStartDate(const Aws::String& value) { SetStartDate(value); return *this;}
 
     /**
-     * <p>The time zone that the scheduled maintenance window executions are based on,
-     * in Internet Assigned Numbers Authority (IANA) format. For example:
-     * "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a
-     * href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
-     * website.</p>
+     * <p>The date and time, in ISO-8601 Extended format, for when you want the
+     * maintenance window to become active. <code>StartDate</code> allows you to delay
+     * activation of the maintenance window until the specified future date.</p>
      */
     inline UpdateMaintenanceWindowRequest& WithStartDate(Aws::String&& value) { SetStartDate(std::move(value)); return *this;}
 
     /**
-     * <p>The time zone that the scheduled maintenance window executions are based on,
-     * in Internet Assigned Numbers Authority (IANA) format. For example:
-     * "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a
-     * href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
-     * website.</p>
+     * <p>The date and time, in ISO-8601 Extended format, for when you want the
+     * maintenance window to become active. <code>StartDate</code> allows you to delay
+     * activation of the maintenance window until the specified future date.</p>
      */
     inline UpdateMaintenanceWindowRequest& WithStartDate(const char* value) { SetStartDate(value); return *this;}
 

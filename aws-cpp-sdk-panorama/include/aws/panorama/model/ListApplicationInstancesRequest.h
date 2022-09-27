@@ -81,37 +81,6 @@ namespace Model
 
 
     /**
-     * <p>Only include instances with a specific status.</p>
-     */
-    inline const StatusFilter& GetStatusFilter() const{ return m_statusFilter; }
-
-    /**
-     * <p>Only include instances with a specific status.</p>
-     */
-    inline bool StatusFilterHasBeenSet() const { return m_statusFilterHasBeenSet; }
-
-    /**
-     * <p>Only include instances with a specific status.</p>
-     */
-    inline void SetStatusFilter(const StatusFilter& value) { m_statusFilterHasBeenSet = true; m_statusFilter = value; }
-
-    /**
-     * <p>Only include instances with a specific status.</p>
-     */
-    inline void SetStatusFilter(StatusFilter&& value) { m_statusFilterHasBeenSet = true; m_statusFilter = std::move(value); }
-
-    /**
-     * <p>Only include instances with a specific status.</p>
-     */
-    inline ListApplicationInstancesRequest& WithStatusFilter(const StatusFilter& value) { SetStatusFilter(value); return *this;}
-
-    /**
-     * <p>Only include instances with a specific status.</p>
-     */
-    inline ListApplicationInstancesRequest& WithStatusFilter(StatusFilter&& value) { SetStatusFilter(std::move(value)); return *this;}
-
-
-    /**
      * <p>The maximum number of application instances to return in one page of
      * results.</p>
      */
@@ -184,19 +153,50 @@ namespace Model
      */
     inline ListApplicationInstancesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>Only include instances with a specific status.</p>
+     */
+    inline const StatusFilter& GetStatusFilter() const{ return m_statusFilter; }
+
+    /**
+     * <p>Only include instances with a specific status.</p>
+     */
+    inline bool StatusFilterHasBeenSet() const { return m_statusFilterHasBeenSet; }
+
+    /**
+     * <p>Only include instances with a specific status.</p>
+     */
+    inline void SetStatusFilter(const StatusFilter& value) { m_statusFilterHasBeenSet = true; m_statusFilter = value; }
+
+    /**
+     * <p>Only include instances with a specific status.</p>
+     */
+    inline void SetStatusFilter(StatusFilter&& value) { m_statusFilterHasBeenSet = true; m_statusFilter = std::move(value); }
+
+    /**
+     * <p>Only include instances with a specific status.</p>
+     */
+    inline ListApplicationInstancesRequest& WithStatusFilter(const StatusFilter& value) { SetStatusFilter(value); return *this;}
+
+    /**
+     * <p>Only include instances with a specific status.</p>
+     */
+    inline ListApplicationInstancesRequest& WithStatusFilter(StatusFilter&& value) { SetStatusFilter(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_deviceId;
     bool m_deviceIdHasBeenSet;
-
-    StatusFilter m_statusFilter;
-    bool m_statusFilterHasBeenSet;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
+    StatusFilter m_statusFilter;
+    bool m_statusFilterHasBeenSet;
   };
 
 } // namespace Model

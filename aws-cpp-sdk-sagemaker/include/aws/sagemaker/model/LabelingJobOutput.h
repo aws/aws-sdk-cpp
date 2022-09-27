@@ -80,50 +80,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the most recent Amazon SageMaker model
-     * trained as part of automated data labeling. </p>
+     * <p>The Amazon Resource Name (ARN) for the most recent SageMaker model trained as
+     * part of automated data labeling. </p>
      */
     inline const Aws::String& GetFinalActiveLearningModelArn() const{ return m_finalActiveLearningModelArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the most recent Amazon SageMaker model
-     * trained as part of automated data labeling. </p>
+     * <p>The Amazon Resource Name (ARN) for the most recent SageMaker model trained as
+     * part of automated data labeling. </p>
      */
     inline bool FinalActiveLearningModelArnHasBeenSet() const { return m_finalActiveLearningModelArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the most recent Amazon SageMaker model
-     * trained as part of automated data labeling. </p>
+     * <p>The Amazon Resource Name (ARN) for the most recent SageMaker model trained as
+     * part of automated data labeling. </p>
      */
     inline void SetFinalActiveLearningModelArn(const Aws::String& value) { m_finalActiveLearningModelArnHasBeenSet = true; m_finalActiveLearningModelArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the most recent Amazon SageMaker model
-     * trained as part of automated data labeling. </p>
+     * <p>The Amazon Resource Name (ARN) for the most recent SageMaker model trained as
+     * part of automated data labeling. </p>
      */
     inline void SetFinalActiveLearningModelArn(Aws::String&& value) { m_finalActiveLearningModelArnHasBeenSet = true; m_finalActiveLearningModelArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the most recent Amazon SageMaker model
-     * trained as part of automated data labeling. </p>
+     * <p>The Amazon Resource Name (ARN) for the most recent SageMaker model trained as
+     * part of automated data labeling. </p>
      */
     inline void SetFinalActiveLearningModelArn(const char* value) { m_finalActiveLearningModelArnHasBeenSet = true; m_finalActiveLearningModelArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the most recent Amazon SageMaker model
-     * trained as part of automated data labeling. </p>
+     * <p>The Amazon Resource Name (ARN) for the most recent SageMaker model trained as
+     * part of automated data labeling. </p>
      */
     inline LabelingJobOutput& WithFinalActiveLearningModelArn(const Aws::String& value) { SetFinalActiveLearningModelArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the most recent Amazon SageMaker model
-     * trained as part of automated data labeling. </p>
+     * <p>The Amazon Resource Name (ARN) for the most recent SageMaker model trained as
+     * part of automated data labeling. </p>
      */
     inline LabelingJobOutput& WithFinalActiveLearningModelArn(Aws::String&& value) { SetFinalActiveLearningModelArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the most recent Amazon SageMaker model
-     * trained as part of automated data labeling. </p>
+     * <p>The Amazon Resource Name (ARN) for the most recent SageMaker model trained as
+     * part of automated data labeling. </p>
      */
     inline LabelingJobOutput& WithFinalActiveLearningModelArn(const char* value) { SetFinalActiveLearningModelArn(value); return *this;}
 

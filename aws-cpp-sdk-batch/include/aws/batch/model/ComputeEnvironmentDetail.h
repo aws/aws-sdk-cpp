@@ -11,6 +11,7 @@
 #include <aws/batch/model/CEState.h>
 #include <aws/batch/model/CEStatus.h>
 #include <aws/batch/model/ComputeResource.h>
+#include <aws/batch/model/UpdatePolicy.h>
 #include <utility>
 
 namespace Aws
@@ -285,7 +286,7 @@ namespace Model
      * <p>The type of the compute environment: <code>MANAGED</code> or
      * <code>UNMANAGED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-     * Environments</a> in the <i>Batch User Guide</i>.</p>
+     * environments</a> in the <i>Batch User Guide</i>.</p>
      */
     inline const CEType& GetType() const{ return m_type; }
 
@@ -293,7 +294,7 @@ namespace Model
      * <p>The type of the compute environment: <code>MANAGED</code> or
      * <code>UNMANAGED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-     * Environments</a> in the <i>Batch User Guide</i>.</p>
+     * environments</a> in the <i>Batch User Guide</i>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -301,7 +302,7 @@ namespace Model
      * <p>The type of the compute environment: <code>MANAGED</code> or
      * <code>UNMANAGED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-     * Environments</a> in the <i>Batch User Guide</i>.</p>
+     * environments</a> in the <i>Batch User Guide</i>.</p>
      */
     inline void SetType(const CEType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -309,7 +310,7 @@ namespace Model
      * <p>The type of the compute environment: <code>MANAGED</code> or
      * <code>UNMANAGED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-     * Environments</a> in the <i>Batch User Guide</i>.</p>
+     * environments</a> in the <i>Batch User Guide</i>.</p>
      */
     inline void SetType(CEType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -317,7 +318,7 @@ namespace Model
      * <p>The type of the compute environment: <code>MANAGED</code> or
      * <code>UNMANAGED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-     * Environments</a> in the <i>Batch User Guide</i>.</p>
+     * environments</a> in the <i>Batch User Guide</i>.</p>
      */
     inline ComputeEnvironmentDetail& WithType(const CEType& value) { SetType(value); return *this;}
 
@@ -325,7 +326,7 @@ namespace Model
      * <p>The type of the compute environment: <code>MANAGED</code> or
      * <code>UNMANAGED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-     * Environments</a> in the <i>Batch User Guide</i>.</p>
+     * environments</a> in the <i>Batch User Guide</i>.</p>
      */
     inline ComputeEnvironmentDetail& WithType(CEType&& value) { SetType(std::move(value)); return *this;}
 
@@ -511,7 +512,7 @@ namespace Model
      * <p>The compute resources defined for the compute environment. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-     * Environments</a> in the <i>Batch User Guide</i>.</p>
+     * environments</a> in the <i>Batch User Guide</i>.</p>
      */
     inline const ComputeResource& GetComputeResources() const{ return m_computeResources; }
 
@@ -519,7 +520,7 @@ namespace Model
      * <p>The compute resources defined for the compute environment. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-     * Environments</a> in the <i>Batch User Guide</i>.</p>
+     * environments</a> in the <i>Batch User Guide</i>.</p>
      */
     inline bool ComputeResourcesHasBeenSet() const { return m_computeResourcesHasBeenSet; }
 
@@ -527,7 +528,7 @@ namespace Model
      * <p>The compute resources defined for the compute environment. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-     * Environments</a> in the <i>Batch User Guide</i>.</p>
+     * environments</a> in the <i>Batch User Guide</i>.</p>
      */
     inline void SetComputeResources(const ComputeResource& value) { m_computeResourcesHasBeenSet = true; m_computeResources = value; }
 
@@ -535,7 +536,7 @@ namespace Model
      * <p>The compute resources defined for the compute environment. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-     * Environments</a> in the <i>Batch User Guide</i>.</p>
+     * environments</a> in the <i>Batch User Guide</i>.</p>
      */
     inline void SetComputeResources(ComputeResource&& value) { m_computeResourcesHasBeenSet = true; m_computeResources = std::move(value); }
 
@@ -543,7 +544,7 @@ namespace Model
      * <p>The compute resources defined for the compute environment. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-     * Environments</a> in the <i>Batch User Guide</i>.</p>
+     * environments</a> in the <i>Batch User Guide</i>.</p>
      */
     inline ComputeEnvironmentDetail& WithComputeResources(const ComputeResource& value) { SetComputeResources(value); return *this;}
 
@@ -551,7 +552,7 @@ namespace Model
      * <p>The compute resources defined for the compute environment. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-     * Environments</a> in the <i>Batch User Guide</i>.</p>
+     * environments</a> in the <i>Batch User Guide</i>.</p>
      */
     inline ComputeEnvironmentDetail& WithComputeResources(ComputeResource&& value) { SetComputeResources(std::move(value)); return *this;}
 
@@ -628,6 +629,55 @@ namespace Model
      */
     inline ComputeEnvironmentDetail& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
 
+
+    /**
+     * <p>Specifies the infrastructure update policy for the compute environment. For
+     * more information about infrastructure updates, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>.</p>
+     */
+    inline const UpdatePolicy& GetUpdatePolicy() const{ return m_updatePolicy; }
+
+    /**
+     * <p>Specifies the infrastructure update policy for the compute environment. For
+     * more information about infrastructure updates, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>.</p>
+     */
+    inline bool UpdatePolicyHasBeenSet() const { return m_updatePolicyHasBeenSet; }
+
+    /**
+     * <p>Specifies the infrastructure update policy for the compute environment. For
+     * more information about infrastructure updates, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>.</p>
+     */
+    inline void SetUpdatePolicy(const UpdatePolicy& value) { m_updatePolicyHasBeenSet = true; m_updatePolicy = value; }
+
+    /**
+     * <p>Specifies the infrastructure update policy for the compute environment. For
+     * more information about infrastructure updates, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>.</p>
+     */
+    inline void SetUpdatePolicy(UpdatePolicy&& value) { m_updatePolicyHasBeenSet = true; m_updatePolicy = std::move(value); }
+
+    /**
+     * <p>Specifies the infrastructure update policy for the compute environment. For
+     * more information about infrastructure updates, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>.</p>
+     */
+    inline ComputeEnvironmentDetail& WithUpdatePolicy(const UpdatePolicy& value) { SetUpdatePolicy(value); return *this;}
+
+    /**
+     * <p>Specifies the infrastructure update policy for the compute environment. For
+     * more information about infrastructure updates, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>.</p>
+     */
+    inline ComputeEnvironmentDetail& WithUpdatePolicy(UpdatePolicy&& value) { SetUpdatePolicy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_computeEnvironmentName;
@@ -662,6 +712,9 @@ namespace Model
 
     Aws::String m_serviceRole;
     bool m_serviceRoleHasBeenSet;
+
+    UpdatePolicy m_updatePolicy;
+    bool m_updatePolicyHasBeenSet;
   };
 
 } // namespace Model

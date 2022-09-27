@@ -148,82 +148,100 @@ namespace Model
 
     /**
      * <p>The types of metrics to return in the response. Valid values in the array
-     * include the following:</p> <ul> <li> <p> <code>os</code> (OS counter
-     * metrics)</p> </li> <li> <p> <code>db</code> (DB load metrics)</p> </li> <li> <p>
-     * <code>db.sql.stats</code> (per-SQL metrics)</p> </li> <li> <p>
-     * <code>db.sql_tokenized.stats</code> (per-SQL digest metrics)</p> </li> </ul>
+     * include the following:</p> <ul> <li> <p> <code>os</code> (OS counter metrics) -
+     * All engines</p> </li> <li> <p> <code>db</code> (DB load metrics) - All engines
+     * except for Amazon DocumentDB</p> </li> <li> <p> <code>db.sql.stats</code>
+     * (per-SQL metrics) - All engines except for Amazon DocumentDB</p> </li> <li> <p>
+     * <code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines
+     * except for Amazon DocumentDB</p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetMetricTypes() const{ return m_metricTypes; }
 
     /**
      * <p>The types of metrics to return in the response. Valid values in the array
-     * include the following:</p> <ul> <li> <p> <code>os</code> (OS counter
-     * metrics)</p> </li> <li> <p> <code>db</code> (DB load metrics)</p> </li> <li> <p>
-     * <code>db.sql.stats</code> (per-SQL metrics)</p> </li> <li> <p>
-     * <code>db.sql_tokenized.stats</code> (per-SQL digest metrics)</p> </li> </ul>
+     * include the following:</p> <ul> <li> <p> <code>os</code> (OS counter metrics) -
+     * All engines</p> </li> <li> <p> <code>db</code> (DB load metrics) - All engines
+     * except for Amazon DocumentDB</p> </li> <li> <p> <code>db.sql.stats</code>
+     * (per-SQL metrics) - All engines except for Amazon DocumentDB</p> </li> <li> <p>
+     * <code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines
+     * except for Amazon DocumentDB</p> </li> </ul>
      */
     inline bool MetricTypesHasBeenSet() const { return m_metricTypesHasBeenSet; }
 
     /**
      * <p>The types of metrics to return in the response. Valid values in the array
-     * include the following:</p> <ul> <li> <p> <code>os</code> (OS counter
-     * metrics)</p> </li> <li> <p> <code>db</code> (DB load metrics)</p> </li> <li> <p>
-     * <code>db.sql.stats</code> (per-SQL metrics)</p> </li> <li> <p>
-     * <code>db.sql_tokenized.stats</code> (per-SQL digest metrics)</p> </li> </ul>
+     * include the following:</p> <ul> <li> <p> <code>os</code> (OS counter metrics) -
+     * All engines</p> </li> <li> <p> <code>db</code> (DB load metrics) - All engines
+     * except for Amazon DocumentDB</p> </li> <li> <p> <code>db.sql.stats</code>
+     * (per-SQL metrics) - All engines except for Amazon DocumentDB</p> </li> <li> <p>
+     * <code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines
+     * except for Amazon DocumentDB</p> </li> </ul>
      */
     inline void SetMetricTypes(const Aws::Vector<Aws::String>& value) { m_metricTypesHasBeenSet = true; m_metricTypes = value; }
 
     /**
      * <p>The types of metrics to return in the response. Valid values in the array
-     * include the following:</p> <ul> <li> <p> <code>os</code> (OS counter
-     * metrics)</p> </li> <li> <p> <code>db</code> (DB load metrics)</p> </li> <li> <p>
-     * <code>db.sql.stats</code> (per-SQL metrics)</p> </li> <li> <p>
-     * <code>db.sql_tokenized.stats</code> (per-SQL digest metrics)</p> </li> </ul>
+     * include the following:</p> <ul> <li> <p> <code>os</code> (OS counter metrics) -
+     * All engines</p> </li> <li> <p> <code>db</code> (DB load metrics) - All engines
+     * except for Amazon DocumentDB</p> </li> <li> <p> <code>db.sql.stats</code>
+     * (per-SQL metrics) - All engines except for Amazon DocumentDB</p> </li> <li> <p>
+     * <code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines
+     * except for Amazon DocumentDB</p> </li> </ul>
      */
     inline void SetMetricTypes(Aws::Vector<Aws::String>&& value) { m_metricTypesHasBeenSet = true; m_metricTypes = std::move(value); }
 
     /**
      * <p>The types of metrics to return in the response. Valid values in the array
-     * include the following:</p> <ul> <li> <p> <code>os</code> (OS counter
-     * metrics)</p> </li> <li> <p> <code>db</code> (DB load metrics)</p> </li> <li> <p>
-     * <code>db.sql.stats</code> (per-SQL metrics)</p> </li> <li> <p>
-     * <code>db.sql_tokenized.stats</code> (per-SQL digest metrics)</p> </li> </ul>
+     * include the following:</p> <ul> <li> <p> <code>os</code> (OS counter metrics) -
+     * All engines</p> </li> <li> <p> <code>db</code> (DB load metrics) - All engines
+     * except for Amazon DocumentDB</p> </li> <li> <p> <code>db.sql.stats</code>
+     * (per-SQL metrics) - All engines except for Amazon DocumentDB</p> </li> <li> <p>
+     * <code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines
+     * except for Amazon DocumentDB</p> </li> </ul>
      */
     inline ListAvailableResourceMetricsRequest& WithMetricTypes(const Aws::Vector<Aws::String>& value) { SetMetricTypes(value); return *this;}
 
     /**
      * <p>The types of metrics to return in the response. Valid values in the array
-     * include the following:</p> <ul> <li> <p> <code>os</code> (OS counter
-     * metrics)</p> </li> <li> <p> <code>db</code> (DB load metrics)</p> </li> <li> <p>
-     * <code>db.sql.stats</code> (per-SQL metrics)</p> </li> <li> <p>
-     * <code>db.sql_tokenized.stats</code> (per-SQL digest metrics)</p> </li> </ul>
+     * include the following:</p> <ul> <li> <p> <code>os</code> (OS counter metrics) -
+     * All engines</p> </li> <li> <p> <code>db</code> (DB load metrics) - All engines
+     * except for Amazon DocumentDB</p> </li> <li> <p> <code>db.sql.stats</code>
+     * (per-SQL metrics) - All engines except for Amazon DocumentDB</p> </li> <li> <p>
+     * <code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines
+     * except for Amazon DocumentDB</p> </li> </ul>
      */
     inline ListAvailableResourceMetricsRequest& WithMetricTypes(Aws::Vector<Aws::String>&& value) { SetMetricTypes(std::move(value)); return *this;}
 
     /**
      * <p>The types of metrics to return in the response. Valid values in the array
-     * include the following:</p> <ul> <li> <p> <code>os</code> (OS counter
-     * metrics)</p> </li> <li> <p> <code>db</code> (DB load metrics)</p> </li> <li> <p>
-     * <code>db.sql.stats</code> (per-SQL metrics)</p> </li> <li> <p>
-     * <code>db.sql_tokenized.stats</code> (per-SQL digest metrics)</p> </li> </ul>
+     * include the following:</p> <ul> <li> <p> <code>os</code> (OS counter metrics) -
+     * All engines</p> </li> <li> <p> <code>db</code> (DB load metrics) - All engines
+     * except for Amazon DocumentDB</p> </li> <li> <p> <code>db.sql.stats</code>
+     * (per-SQL metrics) - All engines except for Amazon DocumentDB</p> </li> <li> <p>
+     * <code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines
+     * except for Amazon DocumentDB</p> </li> </ul>
      */
     inline ListAvailableResourceMetricsRequest& AddMetricTypes(const Aws::String& value) { m_metricTypesHasBeenSet = true; m_metricTypes.push_back(value); return *this; }
 
     /**
      * <p>The types of metrics to return in the response. Valid values in the array
-     * include the following:</p> <ul> <li> <p> <code>os</code> (OS counter
-     * metrics)</p> </li> <li> <p> <code>db</code> (DB load metrics)</p> </li> <li> <p>
-     * <code>db.sql.stats</code> (per-SQL metrics)</p> </li> <li> <p>
-     * <code>db.sql_tokenized.stats</code> (per-SQL digest metrics)</p> </li> </ul>
+     * include the following:</p> <ul> <li> <p> <code>os</code> (OS counter metrics) -
+     * All engines</p> </li> <li> <p> <code>db</code> (DB load metrics) - All engines
+     * except for Amazon DocumentDB</p> </li> <li> <p> <code>db.sql.stats</code>
+     * (per-SQL metrics) - All engines except for Amazon DocumentDB</p> </li> <li> <p>
+     * <code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines
+     * except for Amazon DocumentDB</p> </li> </ul>
      */
     inline ListAvailableResourceMetricsRequest& AddMetricTypes(Aws::String&& value) { m_metricTypesHasBeenSet = true; m_metricTypes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The types of metrics to return in the response. Valid values in the array
-     * include the following:</p> <ul> <li> <p> <code>os</code> (OS counter
-     * metrics)</p> </li> <li> <p> <code>db</code> (DB load metrics)</p> </li> <li> <p>
-     * <code>db.sql.stats</code> (per-SQL metrics)</p> </li> <li> <p>
-     * <code>db.sql_tokenized.stats</code> (per-SQL digest metrics)</p> </li> </ul>
+     * include the following:</p> <ul> <li> <p> <code>os</code> (OS counter metrics) -
+     * All engines</p> </li> <li> <p> <code>db</code> (DB load metrics) - All engines
+     * except for Amazon DocumentDB</p> </li> <li> <p> <code>db.sql.stats</code>
+     * (per-SQL metrics) - All engines except for Amazon DocumentDB</p> </li> <li> <p>
+     * <code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines
+     * except for Amazon DocumentDB</p> </li> </ul>
      */
     inline ListAvailableResourceMetricsRequest& AddMetricTypes(const char* value) { m_metricTypesHasBeenSet = true; m_metricTypes.push_back(value); return *this; }
 

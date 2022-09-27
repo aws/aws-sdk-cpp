@@ -21,6 +21,7 @@ import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
 import org.apache.velocity.runtime.RuntimeConstants;
 import org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader;
+import org.slf4j.helpers.NOPLoggerFactory;
 
 import java.io.IOException;
 import java.io.StringWriter;
@@ -33,10 +34,14 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
     public CppClientGenerator() throws Exception {
         velocityEngine = new VelocityEngine();
-        velocityEngine.setProperty(RuntimeConstants.RESOURCE_LOADER, "classpath");
-        velocityEngine.setProperty("classpath.resource.loader.class", ClasspathResourceLoader.class.getName());
-        velocityEngine.setProperty(RuntimeConstants.RUNTIME_LOG_LOGSYSTEM_CLASS, "org.apache.velocity.runtime.log.NullLogChute");
-        velocityEngine.setProperty("template.provide.scope.control", true);
+        velocityEngine.setProperty(RuntimeConstants.RESOURCE_LOADERS, "classpath");
+        velocityEngine.setProperty("resource.loader.classpath.class", ClasspathResourceLoader.class.getName());
+        velocityEngine.addProperty(RuntimeConstants.RUNTIME_LOG_INSTANCE, new NOPLoggerFactory().getLogger(""));
+        velocityEngine.setProperty("context.scope_control.template", true);
+        // Migration from 1.7 to 2.3:: https://velocity.apache.org/engine/2.3/upgrading.html
+        // # Use backward compatible space gobbling
+        velocityEngine.setProperty(RuntimeConstants.SPACE_GOBBLING, RuntimeConstants.SpaceGobbling.BC.toString());
+
         velocityEngine.init();
     }
 

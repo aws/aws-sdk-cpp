@@ -33,8 +33,7 @@ namespace Model
    * type that your distribution will cache. Alternately, if the distribution's
    * <code>cacheBehavior</code> is <code>dont-cache</code>, then a per-path cache
    * behavior can be used to specify a directory, file, or file type that your
-   * distribution will not cache.</p> <p>if the cacheBehavior's behavior is set to
-   * 'cache', then</p><p><h3>See Also:</h3>   <a
+   * distribution will not cache.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CacheBehaviorPerPath">AWS
    * API Reference</a></p>
    */

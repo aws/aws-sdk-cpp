@@ -33,42 +33,42 @@ namespace Model
 
 
     /**
-     * <p>Request to get Replication Configuaration by Source Server ID.</p>
+     * <p>Request to get Replication Configuration by Source Server ID.</p>
      */
     inline const Aws::String& GetSourceServerID() const{ return m_sourceServerID; }
 
     /**
-     * <p>Request to get Replication Configuaration by Source Server ID.</p>
+     * <p>Request to get Replication Configuration by Source Server ID.</p>
      */
     inline bool SourceServerIDHasBeenSet() const { return m_sourceServerIDHasBeenSet; }
 
     /**
-     * <p>Request to get Replication Configuaration by Source Server ID.</p>
+     * <p>Request to get Replication Configuration by Source Server ID.</p>
      */
     inline void SetSourceServerID(const Aws::String& value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID = value; }
 
     /**
-     * <p>Request to get Replication Configuaration by Source Server ID.</p>
+     * <p>Request to get Replication Configuration by Source Server ID.</p>
      */
     inline void SetSourceServerID(Aws::String&& value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID = std::move(value); }
 
     /**
-     * <p>Request to get Replication Configuaration by Source Server ID.</p>
+     * <p>Request to get Replication Configuration by Source Server ID.</p>
      */
     inline void SetSourceServerID(const char* value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID.assign(value); }
 
     /**
-     * <p>Request to get Replication Configuaration by Source Server ID.</p>
+     * <p>Request to get Replication Configuration by Source Server ID.</p>
      */
     inline GetReplicationConfigurationRequest& WithSourceServerID(const Aws::String& value) { SetSourceServerID(value); return *this;}
 
     /**
-     * <p>Request to get Replication Configuaration by Source Server ID.</p>
+     * <p>Request to get Replication Configuration by Source Server ID.</p>
      */
     inline GetReplicationConfigurationRequest& WithSourceServerID(Aws::String&& value) { SetSourceServerID(std::move(value)); return *this;}
 
     /**
-     * <p>Request to get Replication Configuaration by Source Server ID.</p>
+     * <p>Request to get Replication Configuration by Source Server ID.</p>
      */
     inline GetReplicationConfigurationRequest& WithSourceServerID(const char* value) { SetSourceServerID(value); return *this;}
 

@@ -6,7 +6,6 @@
 #pragma once
 #include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/iottwinmaker/model/DataType.h>
 #include <aws/iottwinmaker/model/Relationship.h>
 #include <aws/iottwinmaker/model/Type.h>
 #include <aws/core/utils/memory/stl/AWSString.h>

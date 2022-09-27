@@ -103,7 +103,7 @@ namespace Model
     /**
      * <p>Algorithm-specific parameters that influence the quality of the model. You
      * set hyperparameters before you start the learning process. For a list of
-     * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
+     * hyperparameters for each training algorithm provided by SageMaker, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
@@ -114,7 +114,7 @@ namespace Model
     /**
      * <p>Algorithm-specific parameters that influence the quality of the model. You
      * set hyperparameters before you start the learning process. For a list of
-     * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
+     * hyperparameters for each training algorithm provided by SageMaker, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
@@ -125,7 +125,7 @@ namespace Model
     /**
      * <p>Algorithm-specific parameters that influence the quality of the model. You
      * set hyperparameters before you start the learning process. For a list of
-     * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
+     * hyperparameters for each training algorithm provided by SageMaker, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
@@ -136,7 +136,7 @@ namespace Model
     /**
      * <p>Algorithm-specific parameters that influence the quality of the model. You
      * set hyperparameters before you start the learning process. For a list of
-     * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
+     * hyperparameters for each training algorithm provided by SageMaker, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
@@ -147,7 +147,7 @@ namespace Model
     /**
      * <p>Algorithm-specific parameters that influence the quality of the model. You
      * set hyperparameters before you start the learning process. For a list of
-     * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
+     * hyperparameters for each training algorithm provided by SageMaker, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
@@ -158,7 +158,7 @@ namespace Model
     /**
      * <p>Algorithm-specific parameters that influence the quality of the model. You
      * set hyperparameters before you start the learning process. For a list of
-     * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
+     * hyperparameters for each training algorithm provided by SageMaker, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
@@ -169,7 +169,7 @@ namespace Model
     /**
      * <p>Algorithm-specific parameters that influence the quality of the model. You
      * set hyperparameters before you start the learning process. For a list of
-     * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
+     * hyperparameters for each training algorithm provided by SageMaker, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
@@ -180,7 +180,7 @@ namespace Model
     /**
      * <p>Algorithm-specific parameters that influence the quality of the model. You
      * set hyperparameters before you start the learning process. For a list of
-     * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
+     * hyperparameters for each training algorithm provided by SageMaker, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
@@ -191,7 +191,7 @@ namespace Model
     /**
      * <p>Algorithm-specific parameters that influence the quality of the model. You
      * set hyperparameters before you start the learning process. For a list of
-     * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
+     * hyperparameters for each training algorithm provided by SageMaker, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
@@ -202,7 +202,7 @@ namespace Model
     /**
      * <p>Algorithm-specific parameters that influence the quality of the model. You
      * set hyperparameters before you start the learning process. For a list of
-     * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
+     * hyperparameters for each training algorithm provided by SageMaker, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
@@ -213,7 +213,7 @@ namespace Model
     /**
      * <p>Algorithm-specific parameters that influence the quality of the model. You
      * set hyperparameters before you start the learning process. For a list of
-     * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
+     * hyperparameters for each training algorithm provided by SageMaker, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
@@ -224,7 +224,7 @@ namespace Model
     /**
      * <p>Algorithm-specific parameters that influence the quality of the model. You
      * set hyperparameters before you start the learning process. For a list of
-     * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
+     * hyperparameters for each training algorithm provided by SageMaker, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
@@ -235,7 +235,7 @@ namespace Model
     /**
      * <p>Algorithm-specific parameters that influence the quality of the model. You
      * set hyperparameters before you start the learning process. For a list of
-     * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
+     * hyperparameters for each training algorithm provided by SageMaker, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
@@ -247,7 +247,7 @@ namespace Model
     /**
      * <p>The registry path of the Docker image that contains the training algorithm
      * and algorithm-specific metadata, including the input mode. For more information
-     * about algorithms provided by Amazon SageMaker, see <a
+     * about algorithms provided by SageMaker, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * For information about providing your own algorithms, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
@@ -258,7 +258,7 @@ namespace Model
     /**
      * <p>The registry path of the Docker image that contains the training algorithm
      * and algorithm-specific metadata, including the input mode. For more information
-     * about algorithms provided by Amazon SageMaker, see <a
+     * about algorithms provided by SageMaker, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * For information about providing your own algorithms, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
@@ -269,7 +269,7 @@ namespace Model
     /**
      * <p>The registry path of the Docker image that contains the training algorithm
      * and algorithm-specific metadata, including the input mode. For more information
-     * about algorithms provided by Amazon SageMaker, see <a
+     * about algorithms provided by SageMaker, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * For information about providing your own algorithms, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
@@ -280,7 +280,7 @@ namespace Model
     /**
      * <p>The registry path of the Docker image that contains the training algorithm
      * and algorithm-specific metadata, including the input mode. For more information
-     * about algorithms provided by Amazon SageMaker, see <a
+     * about algorithms provided by SageMaker, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * For information about providing your own algorithms, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
@@ -291,7 +291,7 @@ namespace Model
     /**
      * <p>The registry path of the Docker image that contains the training algorithm
      * and algorithm-specific metadata, including the input mode. For more information
-     * about algorithms provided by Amazon SageMaker, see <a
+     * about algorithms provided by SageMaker, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * For information about providing your own algorithms, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
@@ -302,7 +302,7 @@ namespace Model
     /**
      * <p>The registry path of the Docker image that contains the training algorithm
      * and algorithm-specific metadata, including the input mode. For more information
-     * about algorithms provided by Amazon SageMaker, see <a
+     * about algorithms provided by SageMaker, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * For information about providing your own algorithms, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
@@ -312,122 +312,106 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can
-     * assume to perform tasks on your behalf. </p> <p>During model training, Amazon
-     * SageMaker needs your permission to read input data from an S3 bucket, download a
-     * Docker image that contains training code, write model artifacts to an S3 bucket,
-     * write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch.
-     * You grant permissions for all of these tasks to an IAM role. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
-     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> 
+     * <p>The Amazon Resource Name (ARN) of an IAM role that SageMaker can assume to
+     * perform tasks on your behalf. </p> <p>During model training, SageMaker needs
+     * your permission to read input data from an S3 bucket, download a Docker image
+     * that contains training code, write model artifacts to an S3 bucket, write logs
+     * to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You grant
+     * permissions for all of these tasks to an IAM role. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to SageMaker, the caller
+     * of this API must have the <code>iam:PassRole</code> permission.</p> 
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can
-     * assume to perform tasks on your behalf. </p> <p>During model training, Amazon
-     * SageMaker needs your permission to read input data from an S3 bucket, download a
-     * Docker image that contains training code, write model artifacts to an S3 bucket,
-     * write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch.
-     * You grant permissions for all of these tasks to an IAM role. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
-     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> 
+     * <p>The Amazon Resource Name (ARN) of an IAM role that SageMaker can assume to
+     * perform tasks on your behalf. </p> <p>During model training, SageMaker needs
+     * your permission to read input data from an S3 bucket, download a Docker image
+     * that contains training code, write model artifacts to an S3 bucket, write logs
+     * to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You grant
+     * permissions for all of these tasks to an IAM role. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to SageMaker, the caller
+     * of this API must have the <code>iam:PassRole</code> permission.</p> 
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can
-     * assume to perform tasks on your behalf. </p> <p>During model training, Amazon
-     * SageMaker needs your permission to read input data from an S3 bucket, download a
-     * Docker image that contains training code, write model artifacts to an S3 bucket,
-     * write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch.
-     * You grant permissions for all of these tasks to an IAM role. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
-     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> 
+     * <p>The Amazon Resource Name (ARN) of an IAM role that SageMaker can assume to
+     * perform tasks on your behalf. </p> <p>During model training, SageMaker needs
+     * your permission to read input data from an S3 bucket, download a Docker image
+     * that contains training code, write model artifacts to an S3 bucket, write logs
+     * to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You grant
+     * permissions for all of these tasks to an IAM role. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to SageMaker, the caller
+     * of this API must have the <code>iam:PassRole</code> permission.</p> 
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can
-     * assume to perform tasks on your behalf. </p> <p>During model training, Amazon
-     * SageMaker needs your permission to read input data from an S3 bucket, download a
-     * Docker image that contains training code, write model artifacts to an S3 bucket,
-     * write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch.
-     * You grant permissions for all of these tasks to an IAM role. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
-     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> 
+     * <p>The Amazon Resource Name (ARN) of an IAM role that SageMaker can assume to
+     * perform tasks on your behalf. </p> <p>During model training, SageMaker needs
+     * your permission to read input data from an S3 bucket, download a Docker image
+     * that contains training code, write model artifacts to an S3 bucket, write logs
+     * to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You grant
+     * permissions for all of these tasks to an IAM role. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to SageMaker, the caller
+     * of this API must have the <code>iam:PassRole</code> permission.</p> 
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can
-     * assume to perform tasks on your behalf. </p> <p>During model training, Amazon
-     * SageMaker needs your permission to read input data from an S3 bucket, download a
-     * Docker image that contains training code, write model artifacts to an S3 bucket,
-     * write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch.
-     * You grant permissions for all of these tasks to an IAM role. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
-     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> 
+     * <p>The Amazon Resource Name (ARN) of an IAM role that SageMaker can assume to
+     * perform tasks on your behalf. </p> <p>During model training, SageMaker needs
+     * your permission to read input data from an S3 bucket, download a Docker image
+     * that contains training code, write model artifacts to an S3 bucket, write logs
+     * to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You grant
+     * permissions for all of these tasks to an IAM role. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to SageMaker, the caller
+     * of this API must have the <code>iam:PassRole</code> permission.</p> 
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can
-     * assume to perform tasks on your behalf. </p> <p>During model training, Amazon
-     * SageMaker needs your permission to read input data from an S3 bucket, download a
-     * Docker image that contains training code, write model artifacts to an S3 bucket,
-     * write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch.
-     * You grant permissions for all of these tasks to an IAM role. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
-     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> 
+     * <p>The Amazon Resource Name (ARN) of an IAM role that SageMaker can assume to
+     * perform tasks on your behalf. </p> <p>During model training, SageMaker needs
+     * your permission to read input data from an S3 bucket, download a Docker image
+     * that contains training code, write model artifacts to an S3 bucket, write logs
+     * to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You grant
+     * permissions for all of these tasks to an IAM role. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to SageMaker, the caller
+     * of this API must have the <code>iam:PassRole</code> permission.</p> 
      */
     inline CreateTrainingJobRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can
-     * assume to perform tasks on your behalf. </p> <p>During model training, Amazon
-     * SageMaker needs your permission to read input data from an S3 bucket, download a
-     * Docker image that contains training code, write model artifacts to an S3 bucket,
-     * write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch.
-     * You grant permissions for all of these tasks to an IAM role. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
-     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> 
+     * <p>The Amazon Resource Name (ARN) of an IAM role that SageMaker can assume to
+     * perform tasks on your behalf. </p> <p>During model training, SageMaker needs
+     * your permission to read input data from an S3 bucket, download a Docker image
+     * that contains training code, write model artifacts to an S3 bucket, write logs
+     * to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You grant
+     * permissions for all of these tasks to an IAM role. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to SageMaker, the caller
+     * of this API must have the <code>iam:PassRole</code> permission.</p> 
      */
     inline CreateTrainingJobRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can
-     * assume to perform tasks on your behalf. </p> <p>During model training, Amazon
-     * SageMaker needs your permission to read input data from an S3 bucket, download a
-     * Docker image that contains training code, write model artifacts to an S3 bucket,
-     * write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch.
-     * You grant permissions for all of these tasks to an IAM role. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
-     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> 
+     * <p>The Amazon Resource Name (ARN) of an IAM role that SageMaker can assume to
+     * perform tasks on your behalf. </p> <p>During model training, SageMaker needs
+     * your permission to read input data from an S3 bucket, download a Docker image
+     * that contains training code, write model artifacts to an S3 bucket, write logs
+     * to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You grant
+     * permissions for all of these tasks to an IAM role. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to SageMaker, the caller
+     * of this API must have the <code>iam:PassRole</code> permission.</p> 
      */
     inline CreateTrainingJobRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
@@ -441,11 +425,10 @@ namespace Model
      * the S3, EFS, or FSx location where the input data is stored. It also provides
      * information about the stored data: the MIME type, compression method, and
      * whether the data is wrapped in RecordIO format. </p> <p>Depending on the input
-     * mode that the algorithm supports, Amazon SageMaker either copies input data
-     * files from an S3 bucket to a local directory in the Docker container, or makes
-     * it available as input streams. For example, if you specify an EFS location,
-     * input data files will be made available as input streams. They do not need to be
-     * downloaded.</p>
+     * mode that the algorithm supports, SageMaker either copies input data files from
+     * an S3 bucket to a local directory in the Docker container, or makes it available
+     * as input streams. For example, if you specify an EFS location, input data files
+     * are available as input streams. They do not need to be downloaded.</p>
      */
     inline const Aws::Vector<Channel>& GetInputDataConfig() const{ return m_inputDataConfig; }
 
@@ -458,11 +441,10 @@ namespace Model
      * the S3, EFS, or FSx location where the input data is stored. It also provides
      * information about the stored data: the MIME type, compression method, and
      * whether the data is wrapped in RecordIO format. </p> <p>Depending on the input
-     * mode that the algorithm supports, Amazon SageMaker either copies input data
-     * files from an S3 bucket to a local directory in the Docker container, or makes
-     * it available as input streams. For example, if you specify an EFS location,
-     * input data files will be made available as input streams. They do not need to be
-     * downloaded.</p>
+     * mode that the algorithm supports, SageMaker either copies input data files from
+     * an S3 bucket to a local directory in the Docker container, or makes it available
+     * as input streams. For example, if you specify an EFS location, input data files
+     * are available as input streams. They do not need to be downloaded.</p>
      */
     inline bool InputDataConfigHasBeenSet() const { return m_inputDataConfigHasBeenSet; }
 
@@ -475,11 +457,10 @@ namespace Model
      * the S3, EFS, or FSx location where the input data is stored. It also provides
      * information about the stored data: the MIME type, compression method, and
      * whether the data is wrapped in RecordIO format. </p> <p>Depending on the input
-     * mode that the algorithm supports, Amazon SageMaker either copies input data
-     * files from an S3 bucket to a local directory in the Docker container, or makes
-     * it available as input streams. For example, if you specify an EFS location,
-     * input data files will be made available as input streams. They do not need to be
-     * downloaded.</p>
+     * mode that the algorithm supports, SageMaker either copies input data files from
+     * an S3 bucket to a local directory in the Docker container, or makes it available
+     * as input streams. For example, if you specify an EFS location, input data files
+     * are available as input streams. They do not need to be downloaded.</p>
      */
     inline void SetInputDataConfig(const Aws::Vector<Channel>& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = value; }
 
@@ -492,11 +473,10 @@ namespace Model
      * the S3, EFS, or FSx location where the input data is stored. It also provides
      * information about the stored data: the MIME type, compression method, and
      * whether the data is wrapped in RecordIO format. </p> <p>Depending on the input
-     * mode that the algorithm supports, Amazon SageMaker either copies input data
-     * files from an S3 bucket to a local directory in the Docker container, or makes
-     * it available as input streams. For example, if you specify an EFS location,
-     * input data files will be made available as input streams. They do not need to be
-     * downloaded.</p>
+     * mode that the algorithm supports, SageMaker either copies input data files from
+     * an S3 bucket to a local directory in the Docker container, or makes it available
+     * as input streams. For example, if you specify an EFS location, input data files
+     * are available as input streams. They do not need to be downloaded.</p>
      */
     inline void SetInputDataConfig(Aws::Vector<Channel>&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = std::move(value); }
 
@@ -509,11 +489,10 @@ namespace Model
      * the S3, EFS, or FSx location where the input data is stored. It also provides
      * information about the stored data: the MIME type, compression method, and
      * whether the data is wrapped in RecordIO format. </p> <p>Depending on the input
-     * mode that the algorithm supports, Amazon SageMaker either copies input data
-     * files from an S3 bucket to a local directory in the Docker container, or makes
-     * it available as input streams. For example, if you specify an EFS location,
-     * input data files will be made available as input streams. They do not need to be
-     * downloaded.</p>
+     * mode that the algorithm supports, SageMaker either copies input data files from
+     * an S3 bucket to a local directory in the Docker container, or makes it available
+     * as input streams. For example, if you specify an EFS location, input data files
+     * are available as input streams. They do not need to be downloaded.</p>
      */
     inline CreateTrainingJobRequest& WithInputDataConfig(const Aws::Vector<Channel>& value) { SetInputDataConfig(value); return *this;}
 
@@ -526,11 +505,10 @@ namespace Model
      * the S3, EFS, or FSx location where the input data is stored. It also provides
      * information about the stored data: the MIME type, compression method, and
      * whether the data is wrapped in RecordIO format. </p> <p>Depending on the input
-     * mode that the algorithm supports, Amazon SageMaker either copies input data
-     * files from an S3 bucket to a local directory in the Docker container, or makes
-     * it available as input streams. For example, if you specify an EFS location,
-     * input data files will be made available as input streams. They do not need to be
-     * downloaded.</p>
+     * mode that the algorithm supports, SageMaker either copies input data files from
+     * an S3 bucket to a local directory in the Docker container, or makes it available
+     * as input streams. For example, if you specify an EFS location, input data files
+     * are available as input streams. They do not need to be downloaded.</p>
      */
     inline CreateTrainingJobRequest& WithInputDataConfig(Aws::Vector<Channel>&& value) { SetInputDataConfig(std::move(value)); return *this;}
 
@@ -543,11 +521,10 @@ namespace Model
      * the S3, EFS, or FSx location where the input data is stored. It also provides
      * information about the stored data: the MIME type, compression method, and
      * whether the data is wrapped in RecordIO format. </p> <p>Depending on the input
-     * mode that the algorithm supports, Amazon SageMaker either copies input data
-     * files from an S3 bucket to a local directory in the Docker container, or makes
-     * it available as input streams. For example, if you specify an EFS location,
-     * input data files will be made available as input streams. They do not need to be
-     * downloaded.</p>
+     * mode that the algorithm supports, SageMaker either copies input data files from
+     * an S3 bucket to a local directory in the Docker container, or makes it available
+     * as input streams. For example, if you specify an EFS location, input data files
+     * are available as input streams. They do not need to be downloaded.</p>
      */
     inline CreateTrainingJobRequest& AddInputDataConfig(const Channel& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig.push_back(value); return *this; }
 
@@ -560,48 +537,47 @@ namespace Model
      * the S3, EFS, or FSx location where the input data is stored. It also provides
      * information about the stored data: the MIME type, compression method, and
      * whether the data is wrapped in RecordIO format. </p> <p>Depending on the input
-     * mode that the algorithm supports, Amazon SageMaker either copies input data
-     * files from an S3 bucket to a local directory in the Docker container, or makes
-     * it available as input streams. For example, if you specify an EFS location,
-     * input data files will be made available as input streams. They do not need to be
-     * downloaded.</p>
+     * mode that the algorithm supports, SageMaker either copies input data files from
+     * an S3 bucket to a local directory in the Docker container, or makes it available
+     * as input streams. For example, if you specify an EFS location, input data files
+     * are available as input streams. They do not need to be downloaded.</p>
      */
     inline CreateTrainingJobRequest& AddInputDataConfig(Channel&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>Specifies the path to the S3 location where you want to store model
-     * artifacts. Amazon SageMaker creates subfolders for the artifacts. </p>
+     * artifacts. SageMaker creates subfolders for the artifacts. </p>
      */
     inline const OutputDataConfig& GetOutputDataConfig() const{ return m_outputDataConfig; }
 
     /**
      * <p>Specifies the path to the S3 location where you want to store model
-     * artifacts. Amazon SageMaker creates subfolders for the artifacts. </p>
+     * artifacts. SageMaker creates subfolders for the artifacts. </p>
      */
     inline bool OutputDataConfigHasBeenSet() const { return m_outputDataConfigHasBeenSet; }
 
     /**
      * <p>Specifies the path to the S3 location where you want to store model
-     * artifacts. Amazon SageMaker creates subfolders for the artifacts. </p>
+     * artifacts. SageMaker creates subfolders for the artifacts. </p>
      */
     inline void SetOutputDataConfig(const OutputDataConfig& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = value; }
 
     /**
      * <p>Specifies the path to the S3 location where you want to store model
-     * artifacts. Amazon SageMaker creates subfolders for the artifacts. </p>
+     * artifacts. SageMaker creates subfolders for the artifacts. </p>
      */
     inline void SetOutputDataConfig(OutputDataConfig&& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = std::move(value); }
 
     /**
      * <p>Specifies the path to the S3 location where you want to store model
-     * artifacts. Amazon SageMaker creates subfolders for the artifacts. </p>
+     * artifacts. SageMaker creates subfolders for the artifacts. </p>
      */
     inline CreateTrainingJobRequest& WithOutputDataConfig(const OutputDataConfig& value) { SetOutputDataConfig(value); return *this;}
 
     /**
      * <p>Specifies the path to the S3 location where you want to store model
-     * artifacts. Amazon SageMaker creates subfolders for the artifacts. </p>
+     * artifacts. SageMaker creates subfolders for the artifacts. </p>
      */
     inline CreateTrainingJobRequest& WithOutputDataConfig(OutputDataConfig&& value) { SetOutputDataConfig(std::move(value)); return *this;}
 
@@ -610,10 +586,10 @@ namespace Model
      * <p>The resources, including the ML compute instances and ML storage volumes, to
      * use for model training. </p> <p>ML storage volumes store model artifacts and
      * incremental states. Training algorithms might also use ML storage volumes for
-     * scratch space. If you want Amazon SageMaker to use the ML storage volume to
-     * store the training data, choose <code>File</code> as the
-     * <code>TrainingInputMode</code> in the algorithm specification. For distributed
-     * training algorithms, specify an instance count greater than 1.</p>
+     * scratch space. If you want SageMaker to use the ML storage volume to store the
+     * training data, choose <code>File</code> as the <code>TrainingInputMode</code> in
+     * the algorithm specification. For distributed training algorithms, specify an
+     * instance count greater than 1.</p>
      */
     inline const ResourceConfig& GetResourceConfig() const{ return m_resourceConfig; }
 
@@ -621,10 +597,10 @@ namespace Model
      * <p>The resources, including the ML compute instances and ML storage volumes, to
      * use for model training. </p> <p>ML storage volumes store model artifacts and
      * incremental states. Training algorithms might also use ML storage volumes for
-     * scratch space. If you want Amazon SageMaker to use the ML storage volume to
-     * store the training data, choose <code>File</code> as the
-     * <code>TrainingInputMode</code> in the algorithm specification. For distributed
-     * training algorithms, specify an instance count greater than 1.</p>
+     * scratch space. If you want SageMaker to use the ML storage volume to store the
+     * training data, choose <code>File</code> as the <code>TrainingInputMode</code> in
+     * the algorithm specification. For distributed training algorithms, specify an
+     * instance count greater than 1.</p>
      */
     inline bool ResourceConfigHasBeenSet() const { return m_resourceConfigHasBeenSet; }
 
@@ -632,10 +608,10 @@ namespace Model
      * <p>The resources, including the ML compute instances and ML storage volumes, to
      * use for model training. </p> <p>ML storage volumes store model artifacts and
      * incremental states. Training algorithms might also use ML storage volumes for
-     * scratch space. If you want Amazon SageMaker to use the ML storage volume to
-     * store the training data, choose <code>File</code> as the
-     * <code>TrainingInputMode</code> in the algorithm specification. For distributed
-     * training algorithms, specify an instance count greater than 1.</p>
+     * scratch space. If you want SageMaker to use the ML storage volume to store the
+     * training data, choose <code>File</code> as the <code>TrainingInputMode</code> in
+     * the algorithm specification. For distributed training algorithms, specify an
+     * instance count greater than 1.</p>
      */
     inline void SetResourceConfig(const ResourceConfig& value) { m_resourceConfigHasBeenSet = true; m_resourceConfig = value; }
 
@@ -643,10 +619,10 @@ namespace Model
      * <p>The resources, including the ML compute instances and ML storage volumes, to
      * use for model training. </p> <p>ML storage volumes store model artifacts and
      * incremental states. Training algorithms might also use ML storage volumes for
-     * scratch space. If you want Amazon SageMaker to use the ML storage volume to
-     * store the training data, choose <code>File</code> as the
-     * <code>TrainingInputMode</code> in the algorithm specification. For distributed
-     * training algorithms, specify an instance count greater than 1.</p>
+     * scratch space. If you want SageMaker to use the ML storage volume to store the
+     * training data, choose <code>File</code> as the <code>TrainingInputMode</code> in
+     * the algorithm specification. For distributed training algorithms, specify an
+     * instance count greater than 1.</p>
      */
     inline void SetResourceConfig(ResourceConfig&& value) { m_resourceConfigHasBeenSet = true; m_resourceConfig = std::move(value); }
 
@@ -654,10 +630,10 @@ namespace Model
      * <p>The resources, including the ML compute instances and ML storage volumes, to
      * use for model training. </p> <p>ML storage volumes store model artifacts and
      * incremental states. Training algorithms might also use ML storage volumes for
-     * scratch space. If you want Amazon SageMaker to use the ML storage volume to
-     * store the training data, choose <code>File</code> as the
-     * <code>TrainingInputMode</code> in the algorithm specification. For distributed
-     * training algorithms, specify an instance count greater than 1.</p>
+     * scratch space. If you want SageMaker to use the ML storage volume to store the
+     * training data, choose <code>File</code> as the <code>TrainingInputMode</code> in
+     * the algorithm specification. For distributed training algorithms, specify an
+     * instance count greater than 1.</p>
      */
     inline CreateTrainingJobRequest& WithResourceConfig(const ResourceConfig& value) { SetResourceConfig(value); return *this;}
 
@@ -665,10 +641,10 @@ namespace Model
      * <p>The resources, including the ML compute instances and ML storage volumes, to
      * use for model training. </p> <p>ML storage volumes store model artifacts and
      * incremental states. Training algorithms might also use ML storage volumes for
-     * scratch space. If you want Amazon SageMaker to use the ML storage volume to
-     * store the training data, choose <code>File</code> as the
-     * <code>TrainingInputMode</code> in the algorithm specification. For distributed
-     * training algorithms, specify an instance count greater than 1.</p>
+     * scratch space. If you want SageMaker to use the ML storage volume to store the
+     * training data, choose <code>File</code> as the <code>TrainingInputMode</code> in
+     * the algorithm specification. For distributed training algorithms, specify an
+     * instance count greater than 1.</p>
      */
     inline CreateTrainingJobRequest& WithResourceConfig(ResourceConfig&& value) { SetResourceConfig(std::move(value)); return *this;}
 
@@ -731,8 +707,8 @@ namespace Model
     /**
      * <p>Specifies a limit to how long a model training job can run. It also specifies
      * how long a managed Spot training job has to complete. When the job reaches the
-     * time limit, Amazon SageMaker ends the training job. Use this API to cap model
-     * training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the
+     * time limit, SageMaker ends the training job. Use this API to cap model training
+     * costs.</p> <p>To stop a job, SageMaker sends the algorithm the
      * <code>SIGTERM</code> signal, which delays job termination for 120 seconds.
      * Algorithms can use this 120-second window to save the model artifacts, so the
      * results of training are not lost. </p>
@@ -742,8 +718,8 @@ namespace Model
     /**
      * <p>Specifies a limit to how long a model training job can run. It also specifies
      * how long a managed Spot training job has to complete. When the job reaches the
-     * time limit, Amazon SageMaker ends the training job. Use this API to cap model
-     * training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the
+     * time limit, SageMaker ends the training job. Use this API to cap model training
+     * costs.</p> <p>To stop a job, SageMaker sends the algorithm the
      * <code>SIGTERM</code> signal, which delays job termination for 120 seconds.
      * Algorithms can use this 120-second window to save the model artifacts, so the
      * results of training are not lost. </p>
@@ -753,8 +729,8 @@ namespace Model
     /**
      * <p>Specifies a limit to how long a model training job can run. It also specifies
      * how long a managed Spot training job has to complete. When the job reaches the
-     * time limit, Amazon SageMaker ends the training job. Use this API to cap model
-     * training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the
+     * time limit, SageMaker ends the training job. Use this API to cap model training
+     * costs.</p> <p>To stop a job, SageMaker sends the algorithm the
      * <code>SIGTERM</code> signal, which delays job termination for 120 seconds.
      * Algorithms can use this 120-second window to save the model artifacts, so the
      * results of training are not lost. </p>
@@ -764,8 +740,8 @@ namespace Model
     /**
      * <p>Specifies a limit to how long a model training job can run. It also specifies
      * how long a managed Spot training job has to complete. When the job reaches the
-     * time limit, Amazon SageMaker ends the training job. Use this API to cap model
-     * training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the
+     * time limit, SageMaker ends the training job. Use this API to cap model training
+     * costs.</p> <p>To stop a job, SageMaker sends the algorithm the
      * <code>SIGTERM</code> signal, which delays job termination for 120 seconds.
      * Algorithms can use this 120-second window to save the model artifacts, so the
      * results of training are not lost. </p>
@@ -775,8 +751,8 @@ namespace Model
     /**
      * <p>Specifies a limit to how long a model training job can run. It also specifies
      * how long a managed Spot training job has to complete. When the job reaches the
-     * time limit, Amazon SageMaker ends the training job. Use this API to cap model
-     * training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the
+     * time limit, SageMaker ends the training job. Use this API to cap model training
+     * costs.</p> <p>To stop a job, SageMaker sends the algorithm the
      * <code>SIGTERM</code> signal, which delays job termination for 120 seconds.
      * Algorithms can use this 120-second window to save the model artifacts, so the
      * results of training are not lost. </p>
@@ -786,8 +762,8 @@ namespace Model
     /**
      * <p>Specifies a limit to how long a model training job can run. It also specifies
      * how long a managed Spot training job has to complete. When the job reaches the
-     * time limit, Amazon SageMaker ends the training job. Use this API to cap model
-     * training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the
+     * time limit, SageMaker ends the training job. Use this API to cap model training
+     * costs.</p> <p>To stop a job, SageMaker sends the algorithm the
      * <code>SIGTERM</code> signal, which delays job termination for 120 seconds.
      * Algorithms can use this 120-second window to save the model artifacts, so the
      * results of training are not lost. </p>
@@ -872,9 +848,9 @@ namespace Model
      * <p>Isolates the training container. No inbound or outbound network calls can be
      * made, except for calls between peers within a training cluster for distributed
      * training. If you enable network isolation for training jobs that are configured
-     * to use a VPC, Amazon SageMaker downloads and uploads customer data and model
-     * artifacts through the specified VPC, but the training container does not have
-     * network access.</p>
+     * to use a VPC, SageMaker downloads and uploads customer data and model artifacts
+     * through the specified VPC, but the training container does not have network
+     * access.</p>
      */
     inline bool GetEnableNetworkIsolation() const{ return m_enableNetworkIsolation; }
 
@@ -882,9 +858,9 @@ namespace Model
      * <p>Isolates the training container. No inbound or outbound network calls can be
      * made, except for calls between peers within a training cluster for distributed
      * training. If you enable network isolation for training jobs that are configured
-     * to use a VPC, Amazon SageMaker downloads and uploads customer data and model
-     * artifacts through the specified VPC, but the training container does not have
-     * network access.</p>
+     * to use a VPC, SageMaker downloads and uploads customer data and model artifacts
+     * through the specified VPC, but the training container does not have network
+     * access.</p>
      */
     inline bool EnableNetworkIsolationHasBeenSet() const { return m_enableNetworkIsolationHasBeenSet; }
 
@@ -892,9 +868,9 @@ namespace Model
      * <p>Isolates the training container. No inbound or outbound network calls can be
      * made, except for calls between peers within a training cluster for distributed
      * training. If you enable network isolation for training jobs that are configured
-     * to use a VPC, Amazon SageMaker downloads and uploads customer data and model
-     * artifacts through the specified VPC, but the training container does not have
-     * network access.</p>
+     * to use a VPC, SageMaker downloads and uploads customer data and model artifacts
+     * through the specified VPC, but the training container does not have network
+     * access.</p>
      */
     inline void SetEnableNetworkIsolation(bool value) { m_enableNetworkIsolationHasBeenSet = true; m_enableNetworkIsolation = value; }
 
@@ -902,9 +878,9 @@ namespace Model
      * <p>Isolates the training container. No inbound or outbound network calls can be
      * made, except for calls between peers within a training cluster for distributed
      * training. If you enable network isolation for training jobs that are configured
-     * to use a VPC, Amazon SageMaker downloads and uploads customer data and model
-     * artifacts through the specified VPC, but the training container does not have
-     * network access.</p>
+     * to use a VPC, SageMaker downloads and uploads customer data and model artifacts
+     * through the specified VPC, but the training container does not have network
+     * access.</p>
      */
     inline CreateTrainingJobRequest& WithEnableNetworkIsolation(bool value) { SetEnableNetworkIsolation(value); return *this;}
 

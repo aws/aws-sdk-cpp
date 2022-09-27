@@ -618,147 +618,195 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of targets this task can be run for in parallel.</p>
-     *  <p>For maintenance window tasks without a target specified, you can't
-     * supply a value for this option. Instead, the system inserts a placeholder value
-     * of <code>1</code>. This value doesn't affect the running of your task.</p>
-     * 
+     * <p>The maximum number of targets this task can be run for, in parallel.</p>
+     *  <p>Although this element is listed as "Required: No", a value can be
+     * omitted only when you are registering or updating a <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+     * task</a> You must provide a value in all other cases.</p> <p>For maintenance
+     * window tasks without a target specified, you can't supply a value for this
+     * option. Instead, the system inserts a placeholder value of <code>1</code>. This
+     * value doesn't affect the running of your task.</p> 
      */
     inline const Aws::String& GetMaxConcurrency() const{ return m_maxConcurrency; }
 
     /**
-     * <p>The maximum number of targets this task can be run for in parallel.</p>
-     *  <p>For maintenance window tasks without a target specified, you can't
-     * supply a value for this option. Instead, the system inserts a placeholder value
-     * of <code>1</code>. This value doesn't affect the running of your task.</p>
-     * 
+     * <p>The maximum number of targets this task can be run for, in parallel.</p>
+     *  <p>Although this element is listed as "Required: No", a value can be
+     * omitted only when you are registering or updating a <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+     * task</a> You must provide a value in all other cases.</p> <p>For maintenance
+     * window tasks without a target specified, you can't supply a value for this
+     * option. Instead, the system inserts a placeholder value of <code>1</code>. This
+     * value doesn't affect the running of your task.</p> 
      */
     inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
 
     /**
-     * <p>The maximum number of targets this task can be run for in parallel.</p>
-     *  <p>For maintenance window tasks without a target specified, you can't
-     * supply a value for this option. Instead, the system inserts a placeholder value
-     * of <code>1</code>. This value doesn't affect the running of your task.</p>
-     * 
+     * <p>The maximum number of targets this task can be run for, in parallel.</p>
+     *  <p>Although this element is listed as "Required: No", a value can be
+     * omitted only when you are registering or updating a <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+     * task</a> You must provide a value in all other cases.</p> <p>For maintenance
+     * window tasks without a target specified, you can't supply a value for this
+     * option. Instead, the system inserts a placeholder value of <code>1</code>. This
+     * value doesn't affect the running of your task.</p> 
      */
     inline void SetMaxConcurrency(const Aws::String& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = value; }
 
     /**
-     * <p>The maximum number of targets this task can be run for in parallel.</p>
-     *  <p>For maintenance window tasks without a target specified, you can't
-     * supply a value for this option. Instead, the system inserts a placeholder value
-     * of <code>1</code>. This value doesn't affect the running of your task.</p>
-     * 
+     * <p>The maximum number of targets this task can be run for, in parallel.</p>
+     *  <p>Although this element is listed as "Required: No", a value can be
+     * omitted only when you are registering or updating a <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+     * task</a> You must provide a value in all other cases.</p> <p>For maintenance
+     * window tasks without a target specified, you can't supply a value for this
+     * option. Instead, the system inserts a placeholder value of <code>1</code>. This
+     * value doesn't affect the running of your task.</p> 
      */
     inline void SetMaxConcurrency(Aws::String&& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = std::move(value); }
 
     /**
-     * <p>The maximum number of targets this task can be run for in parallel.</p>
-     *  <p>For maintenance window tasks without a target specified, you can't
-     * supply a value for this option. Instead, the system inserts a placeholder value
-     * of <code>1</code>. This value doesn't affect the running of your task.</p>
-     * 
+     * <p>The maximum number of targets this task can be run for, in parallel.</p>
+     *  <p>Although this element is listed as "Required: No", a value can be
+     * omitted only when you are registering or updating a <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+     * task</a> You must provide a value in all other cases.</p> <p>For maintenance
+     * window tasks without a target specified, you can't supply a value for this
+     * option. Instead, the system inserts a placeholder value of <code>1</code>. This
+     * value doesn't affect the running of your task.</p> 
      */
     inline void SetMaxConcurrency(const char* value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency.assign(value); }
 
     /**
-     * <p>The maximum number of targets this task can be run for in parallel.</p>
-     *  <p>For maintenance window tasks without a target specified, you can't
-     * supply a value for this option. Instead, the system inserts a placeholder value
-     * of <code>1</code>. This value doesn't affect the running of your task.</p>
-     * 
+     * <p>The maximum number of targets this task can be run for, in parallel.</p>
+     *  <p>Although this element is listed as "Required: No", a value can be
+     * omitted only when you are registering or updating a <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+     * task</a> You must provide a value in all other cases.</p> <p>For maintenance
+     * window tasks without a target specified, you can't supply a value for this
+     * option. Instead, the system inserts a placeholder value of <code>1</code>. This
+     * value doesn't affect the running of your task.</p> 
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithMaxConcurrency(const Aws::String& value) { SetMaxConcurrency(value); return *this;}
 
     /**
-     * <p>The maximum number of targets this task can be run for in parallel.</p>
-     *  <p>For maintenance window tasks without a target specified, you can't
-     * supply a value for this option. Instead, the system inserts a placeholder value
-     * of <code>1</code>. This value doesn't affect the running of your task.</p>
-     * 
+     * <p>The maximum number of targets this task can be run for, in parallel.</p>
+     *  <p>Although this element is listed as "Required: No", a value can be
+     * omitted only when you are registering or updating a <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+     * task</a> You must provide a value in all other cases.</p> <p>For maintenance
+     * window tasks without a target specified, you can't supply a value for this
+     * option. Instead, the system inserts a placeholder value of <code>1</code>. This
+     * value doesn't affect the running of your task.</p> 
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithMaxConcurrency(Aws::String&& value) { SetMaxConcurrency(std::move(value)); return *this;}
 
     /**
-     * <p>The maximum number of targets this task can be run for in parallel.</p>
-     *  <p>For maintenance window tasks without a target specified, you can't
-     * supply a value for this option. Instead, the system inserts a placeholder value
-     * of <code>1</code>. This value doesn't affect the running of your task.</p>
-     * 
+     * <p>The maximum number of targets this task can be run for, in parallel.</p>
+     *  <p>Although this element is listed as "Required: No", a value can be
+     * omitted only when you are registering or updating a <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+     * task</a> You must provide a value in all other cases.</p> <p>For maintenance
+     * window tasks without a target specified, you can't supply a value for this
+     * option. Instead, the system inserts a placeholder value of <code>1</code>. This
+     * value doesn't affect the running of your task.</p> 
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithMaxConcurrency(const char* value) { SetMaxConcurrency(value); return *this;}
 
 
     /**
      * <p>The maximum number of errors allowed before this task stops being
-     * scheduled.</p>  <p>For maintenance window tasks without a target
-     * specified, you can't supply a value for this option. Instead, the system inserts
-     * a placeholder value of <code>1</code>. This value doesn't affect the running of
-     * your task.</p> 
+     * scheduled.</p>  <p>Although this element is listed as "Required: No", a
+     * value can be omitted only when you are registering or updating a <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+     * task</a> You must provide a value in all other cases.</p> <p>For maintenance
+     * window tasks without a target specified, you can't supply a value for this
+     * option. Instead, the system inserts a placeholder value of <code>1</code>. This
+     * value doesn't affect the running of your task.</p> 
      */
     inline const Aws::String& GetMaxErrors() const{ return m_maxErrors; }
 
     /**
      * <p>The maximum number of errors allowed before this task stops being
-     * scheduled.</p>  <p>For maintenance window tasks without a target
-     * specified, you can't supply a value for this option. Instead, the system inserts
-     * a placeholder value of <code>1</code>. This value doesn't affect the running of
-     * your task.</p> 
+     * scheduled.</p>  <p>Although this element is listed as "Required: No", a
+     * value can be omitted only when you are registering or updating a <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+     * task</a> You must provide a value in all other cases.</p> <p>For maintenance
+     * window tasks without a target specified, you can't supply a value for this
+     * option. Instead, the system inserts a placeholder value of <code>1</code>. This
+     * value doesn't affect the running of your task.</p> 
      */
     inline bool MaxErrorsHasBeenSet() const { return m_maxErrorsHasBeenSet; }
 
     /**
      * <p>The maximum number of errors allowed before this task stops being
-     * scheduled.</p>  <p>For maintenance window tasks without a target
-     * specified, you can't supply a value for this option. Instead, the system inserts
-     * a placeholder value of <code>1</code>. This value doesn't affect the running of
-     * your task.</p> 
+     * scheduled.</p>  <p>Although this element is listed as "Required: No", a
+     * value can be omitted only when you are registering or updating a <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+     * task</a> You must provide a value in all other cases.</p> <p>For maintenance
+     * window tasks without a target specified, you can't supply a value for this
+     * option. Instead, the system inserts a placeholder value of <code>1</code>. This
+     * value doesn't affect the running of your task.</p> 
      */
     inline void SetMaxErrors(const Aws::String& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = value; }
 
     /**
      * <p>The maximum number of errors allowed before this task stops being
-     * scheduled.</p>  <p>For maintenance window tasks without a target
-     * specified, you can't supply a value for this option. Instead, the system inserts
-     * a placeholder value of <code>1</code>. This value doesn't affect the running of
-     * your task.</p> 
+     * scheduled.</p>  <p>Although this element is listed as "Required: No", a
+     * value can be omitted only when you are registering or updating a <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+     * task</a> You must provide a value in all other cases.</p> <p>For maintenance
+     * window tasks without a target specified, you can't supply a value for this
+     * option. Instead, the system inserts a placeholder value of <code>1</code>. This
+     * value doesn't affect the running of your task.</p> 
      */
     inline void SetMaxErrors(Aws::String&& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = std::move(value); }
 
     /**
      * <p>The maximum number of errors allowed before this task stops being
-     * scheduled.</p>  <p>For maintenance window tasks without a target
-     * specified, you can't supply a value for this option. Instead, the system inserts
-     * a placeholder value of <code>1</code>. This value doesn't affect the running of
-     * your task.</p> 
+     * scheduled.</p>  <p>Although this element is listed as "Required: No", a
+     * value can be omitted only when you are registering or updating a <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+     * task</a> You must provide a value in all other cases.</p> <p>For maintenance
+     * window tasks without a target specified, you can't supply a value for this
+     * option. Instead, the system inserts a placeholder value of <code>1</code>. This
+     * value doesn't affect the running of your task.</p> 
      */
     inline void SetMaxErrors(const char* value) { m_maxErrorsHasBeenSet = true; m_maxErrors.assign(value); }
 
     /**
      * <p>The maximum number of errors allowed before this task stops being
-     * scheduled.</p>  <p>For maintenance window tasks without a target
-     * specified, you can't supply a value for this option. Instead, the system inserts
-     * a placeholder value of <code>1</code>. This value doesn't affect the running of
-     * your task.</p> 
+     * scheduled.</p>  <p>Although this element is listed as "Required: No", a
+     * value can be omitted only when you are registering or updating a <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+     * task</a> You must provide a value in all other cases.</p> <p>For maintenance
+     * window tasks without a target specified, you can't supply a value for this
+     * option. Instead, the system inserts a placeholder value of <code>1</code>. This
+     * value doesn't affect the running of your task.</p> 
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithMaxErrors(const Aws::String& value) { SetMaxErrors(value); return *this;}
 
     /**
      * <p>The maximum number of errors allowed before this task stops being
-     * scheduled.</p>  <p>For maintenance window tasks without a target
-     * specified, you can't supply a value for this option. Instead, the system inserts
-     * a placeholder value of <code>1</code>. This value doesn't affect the running of
-     * your task.</p> 
+     * scheduled.</p>  <p>Although this element is listed as "Required: No", a
+     * value can be omitted only when you are registering or updating a <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+     * task</a> You must provide a value in all other cases.</p> <p>For maintenance
+     * window tasks without a target specified, you can't supply a value for this
+     * option. Instead, the system inserts a placeholder value of <code>1</code>. This
+     * value doesn't affect the running of your task.</p> 
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithMaxErrors(Aws::String&& value) { SetMaxErrors(std::move(value)); return *this;}
 
     /**
      * <p>The maximum number of errors allowed before this task stops being
-     * scheduled.</p>  <p>For maintenance window tasks without a target
-     * specified, you can't supply a value for this option. Instead, the system inserts
-     * a placeholder value of <code>1</code>. This value doesn't affect the running of
-     * your task.</p> 
+     * scheduled.</p>  <p>Although this element is listed as "Required: No", a
+     * value can be omitted only when you are registering or updating a <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+     * task</a> You must provide a value in all other cases.</p> <p>For maintenance
+     * window tasks without a target specified, you can't supply a value for this
+     * option. Instead, the system inserts a placeholder value of <code>1</code>. This
+     * value doesn't affect the running of your task.</p> 
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithMaxErrors(const char* value) { SetMaxErrors(value); return *this;}
 

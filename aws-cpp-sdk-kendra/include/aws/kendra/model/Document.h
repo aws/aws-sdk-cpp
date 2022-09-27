@@ -45,42 +45,82 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier of the document in the index.</p>
+     * <p>A unique identifier of the document in the index.</p> <p>Note, each document
+     * ID must be unique per index. You cannot create a data source to index your
+     * documents with their unique IDs and then use the <code>BatchPutDocument</code>
+     * API to index the same documents, or vice versa. You can delete a data source and
+     * then use the <code>BatchPutDocument</code> API to index the same documents, or
+     * vice versa.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>A unique identifier of the document in the index.</p>
+     * <p>A unique identifier of the document in the index.</p> <p>Note, each document
+     * ID must be unique per index. You cannot create a data source to index your
+     * documents with their unique IDs and then use the <code>BatchPutDocument</code>
+     * API to index the same documents, or vice versa. You can delete a data source and
+     * then use the <code>BatchPutDocument</code> API to index the same documents, or
+     * vice versa.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>A unique identifier of the document in the index.</p>
+     * <p>A unique identifier of the document in the index.</p> <p>Note, each document
+     * ID must be unique per index. You cannot create a data source to index your
+     * documents with their unique IDs and then use the <code>BatchPutDocument</code>
+     * API to index the same documents, or vice versa. You can delete a data source and
+     * then use the <code>BatchPutDocument</code> API to index the same documents, or
+     * vice versa.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>A unique identifier of the document in the index.</p>
+     * <p>A unique identifier of the document in the index.</p> <p>Note, each document
+     * ID must be unique per index. You cannot create a data source to index your
+     * documents with their unique IDs and then use the <code>BatchPutDocument</code>
+     * API to index the same documents, or vice versa. You can delete a data source and
+     * then use the <code>BatchPutDocument</code> API to index the same documents, or
+     * vice versa.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>A unique identifier of the document in the index.</p>
+     * <p>A unique identifier of the document in the index.</p> <p>Note, each document
+     * ID must be unique per index. You cannot create a data source to index your
+     * documents with their unique IDs and then use the <code>BatchPutDocument</code>
+     * API to index the same documents, or vice versa. You can delete a data source and
+     * then use the <code>BatchPutDocument</code> API to index the same documents, or
+     * vice versa.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>A unique identifier of the document in the index.</p>
+     * <p>A unique identifier of the document in the index.</p> <p>Note, each document
+     * ID must be unique per index. You cannot create a data source to index your
+     * documents with their unique IDs and then use the <code>BatchPutDocument</code>
+     * API to index the same documents, or vice versa. You can delete a data source and
+     * then use the <code>BatchPutDocument</code> API to index the same documents, or
+     * vice versa.</p>
      */
     inline Document& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>A unique identifier of the document in the index.</p>
+     * <p>A unique identifier of the document in the index.</p> <p>Note, each document
+     * ID must be unique per index. You cannot create a data source to index your
+     * documents with their unique IDs and then use the <code>BatchPutDocument</code>
+     * API to index the same documents, or vice versa. You can delete a data source and
+     * then use the <code>BatchPutDocument</code> API to index the same documents, or
+     * vice versa.</p>
      */
     inline Document& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier of the document in the index.</p>
+     * <p>A unique identifier of the document in the index.</p> <p>Note, each document
+     * ID must be unique per index. You cannot create a data source to index your
+     * documents with their unique IDs and then use the <code>BatchPutDocument</code>
+     * API to index the same documents, or vice versa. You can delete a data source and
+     * then use the <code>BatchPutDocument</code> API to index the same documents, or
+     * vice versa.</p>
      */
     inline Document& WithId(const char* value) { SetId(value); return *this;}
 
@@ -130,8 +170,8 @@ namespace Model
      * <p>The contents of the document. </p> <p>Documents passed to the
      * <code>Blob</code> parameter must be base64 encoded. Your code might not need to
      * encode the document file bytes if you're using an Amazon Web Services SDK to
-     * call Amazon Kendra operations. If you are calling the Amazon Kendra endpoint
-     * directly using REST, you must base64 encode the contents before sending.</p>
+     * call Amazon Kendra APIs. If you are calling the Amazon Kendra endpoint directly
+     * using REST, you must base64 encode the contents before sending.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetBlob() const{ return m_blob; }
 
@@ -139,8 +179,8 @@ namespace Model
      * <p>The contents of the document. </p> <p>Documents passed to the
      * <code>Blob</code> parameter must be base64 encoded. Your code might not need to
      * encode the document file bytes if you're using an Amazon Web Services SDK to
-     * call Amazon Kendra operations. If you are calling the Amazon Kendra endpoint
-     * directly using REST, you must base64 encode the contents before sending.</p>
+     * call Amazon Kendra APIs. If you are calling the Amazon Kendra endpoint directly
+     * using REST, you must base64 encode the contents before sending.</p>
      */
     inline bool BlobHasBeenSet() const { return m_blobHasBeenSet; }
 
@@ -148,8 +188,8 @@ namespace Model
      * <p>The contents of the document. </p> <p>Documents passed to the
      * <code>Blob</code> parameter must be base64 encoded. Your code might not need to
      * encode the document file bytes if you're using an Amazon Web Services SDK to
-     * call Amazon Kendra operations. If you are calling the Amazon Kendra endpoint
-     * directly using REST, you must base64 encode the contents before sending.</p>
+     * call Amazon Kendra APIs. If you are calling the Amazon Kendra endpoint directly
+     * using REST, you must base64 encode the contents before sending.</p>
      */
     inline void SetBlob(const Aws::Utils::ByteBuffer& value) { m_blobHasBeenSet = true; m_blob = value; }
 
@@ -157,8 +197,8 @@ namespace Model
      * <p>The contents of the document. </p> <p>Documents passed to the
      * <code>Blob</code> parameter must be base64 encoded. Your code might not need to
      * encode the document file bytes if you're using an Amazon Web Services SDK to
-     * call Amazon Kendra operations. If you are calling the Amazon Kendra endpoint
-     * directly using REST, you must base64 encode the contents before sending.</p>
+     * call Amazon Kendra APIs. If you are calling the Amazon Kendra endpoint directly
+     * using REST, you must base64 encode the contents before sending.</p>
      */
     inline void SetBlob(Aws::Utils::ByteBuffer&& value) { m_blobHasBeenSet = true; m_blob = std::move(value); }
 
@@ -166,8 +206,8 @@ namespace Model
      * <p>The contents of the document. </p> <p>Documents passed to the
      * <code>Blob</code> parameter must be base64 encoded. Your code might not need to
      * encode the document file bytes if you're using an Amazon Web Services SDK to
-     * call Amazon Kendra operations. If you are calling the Amazon Kendra endpoint
-     * directly using REST, you must base64 encode the contents before sending.</p>
+     * call Amazon Kendra APIs. If you are calling the Amazon Kendra endpoint directly
+     * using REST, you must base64 encode the contents before sending.</p>
      */
     inline Document& WithBlob(const Aws::Utils::ByteBuffer& value) { SetBlob(value); return *this;}
 
@@ -175,8 +215,8 @@ namespace Model
      * <p>The contents of the document. </p> <p>Documents passed to the
      * <code>Blob</code> parameter must be base64 encoded. Your code might not need to
      * encode the document file bytes if you're using an Amazon Web Services SDK to
-     * call Amazon Kendra operations. If you are calling the Amazon Kendra endpoint
-     * directly using REST, you must base64 encode the contents before sending.</p>
+     * call Amazon Kendra APIs. If you are calling the Amazon Kendra endpoint directly
+     * using REST, you must base64 encode the contents before sending.</p>
      */
     inline Document& WithBlob(Aws::Utils::ByteBuffer&& value) { SetBlob(std::move(value)); return *this;}
 
@@ -204,6 +244,10 @@ namespace Model
      * <p>Custom attributes to apply to the document. Use the custom attributes to
      * provide additional information for searching, to provide facets for refining
      * searches, and to provide additional information in the query response.</p>
+     * <p>For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom attributes
+     * that provide information on the synchronization of documents running on a data
+     * source. Note, 'DataSourceSyncJobId' could be an optional custom attribute as
+     * Amazon Kendra will use the ID of a running sync job.</p>
      */
     inline const Aws::Vector<DocumentAttribute>& GetAttributes() const{ return m_attributes; }
 
@@ -211,6 +255,10 @@ namespace Model
      * <p>Custom attributes to apply to the document. Use the custom attributes to
      * provide additional information for searching, to provide facets for refining
      * searches, and to provide additional information in the query response.</p>
+     * <p>For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom attributes
+     * that provide information on the synchronization of documents running on a data
+     * source. Note, 'DataSourceSyncJobId' could be an optional custom attribute as
+     * Amazon Kendra will use the ID of a running sync job.</p>
      */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
@@ -218,6 +266,10 @@ namespace Model
      * <p>Custom attributes to apply to the document. Use the custom attributes to
      * provide additional information for searching, to provide facets for refining
      * searches, and to provide additional information in the query response.</p>
+     * <p>For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom attributes
+     * that provide information on the synchronization of documents running on a data
+     * source. Note, 'DataSourceSyncJobId' could be an optional custom attribute as
+     * Amazon Kendra will use the ID of a running sync job.</p>
      */
     inline void SetAttributes(const Aws::Vector<DocumentAttribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
@@ -225,6 +277,10 @@ namespace Model
      * <p>Custom attributes to apply to the document. Use the custom attributes to
      * provide additional information for searching, to provide facets for refining
      * searches, and to provide additional information in the query response.</p>
+     * <p>For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom attributes
+     * that provide information on the synchronization of documents running on a data
+     * source. Note, 'DataSourceSyncJobId' could be an optional custom attribute as
+     * Amazon Kendra will use the ID of a running sync job.</p>
      */
     inline void SetAttributes(Aws::Vector<DocumentAttribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
@@ -232,6 +288,10 @@ namespace Model
      * <p>Custom attributes to apply to the document. Use the custom attributes to
      * provide additional information for searching, to provide facets for refining
      * searches, and to provide additional information in the query response.</p>
+     * <p>For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom attributes
+     * that provide information on the synchronization of documents running on a data
+     * source. Note, 'DataSourceSyncJobId' could be an optional custom attribute as
+     * Amazon Kendra will use the ID of a running sync job.</p>
      */
     inline Document& WithAttributes(const Aws::Vector<DocumentAttribute>& value) { SetAttributes(value); return *this;}
 
@@ -239,6 +299,10 @@ namespace Model
      * <p>Custom attributes to apply to the document. Use the custom attributes to
      * provide additional information for searching, to provide facets for refining
      * searches, and to provide additional information in the query response.</p>
+     * <p>For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom attributes
+     * that provide information on the synchronization of documents running on a data
+     * source. Note, 'DataSourceSyncJobId' could be an optional custom attribute as
+     * Amazon Kendra will use the ID of a running sync job.</p>
      */
     inline Document& WithAttributes(Aws::Vector<DocumentAttribute>&& value) { SetAttributes(std::move(value)); return *this;}
 
@@ -246,6 +310,10 @@ namespace Model
      * <p>Custom attributes to apply to the document. Use the custom attributes to
      * provide additional information for searching, to provide facets for refining
      * searches, and to provide additional information in the query response.</p>
+     * <p>For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom attributes
+     * that provide information on the synchronization of documents running on a data
+     * source. Note, 'DataSourceSyncJobId' could be an optional custom attribute as
+     * Amazon Kendra will use the ID of a running sync job.</p>
      */
     inline Document& AddAttributes(const DocumentAttribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 
@@ -253,6 +321,10 @@ namespace Model
      * <p>Custom attributes to apply to the document. Use the custom attributes to
      * provide additional information for searching, to provide facets for refining
      * searches, and to provide additional information in the query response.</p>
+     * <p>For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom attributes
+     * that provide information on the synchronization of documents running on a data
+     * source. Note, 'DataSourceSyncJobId' could be an optional custom attribute as
+     * Amazon Kendra will use the ID of a running sync job.</p>
      */
     inline Document& AddAttributes(DocumentAttribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 

@@ -38,47 +38,6 @@ namespace Model
 
 
     /**
-     * <p>The bucket's Region.</p>
-     */
-    inline const Aws::String& GetRegion() const{ return m_region; }
-
-    /**
-     * <p>The bucket's Region.</p>
-     */
-    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-
-    /**
-     * <p>The bucket's Region.</p>
-     */
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-
-    /**
-     * <p>The bucket's Region.</p>
-     */
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-
-    /**
-     * <p>The bucket's Region.</p>
-     */
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-
-    /**
-     * <p>The bucket's Region.</p>
-     */
-    inline S3Location& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-
-    /**
-     * <p>The bucket's Region.</p>
-     */
-    inline S3Location& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-
-    /**
-     * <p>The bucket's Region.</p>
-     */
-    inline S3Location& WithRegion(const char* value) { SetRegion(value); return *this;}
-
-
-    /**
      * <p>A bucket name.</p>
      */
     inline const Aws::String& GetBucketName() const{ return m_bucketName; }
@@ -159,16 +118,57 @@ namespace Model
      */
     inline S3Location& WithObjectKey(const char* value) { SetObjectKey(value); return *this;}
 
-  private:
 
-    Aws::String m_region;
-    bool m_regionHasBeenSet;
+    /**
+     * <p>The bucket's Region.</p>
+     */
+    inline const Aws::String& GetRegion() const{ return m_region; }
+
+    /**
+     * <p>The bucket's Region.</p>
+     */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
+
+    /**
+     * <p>The bucket's Region.</p>
+     */
+    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
+
+    /**
+     * <p>The bucket's Region.</p>
+     */
+    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
+
+    /**
+     * <p>The bucket's Region.</p>
+     */
+    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
+
+    /**
+     * <p>The bucket's Region.</p>
+     */
+    inline S3Location& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
+
+    /**
+     * <p>The bucket's Region.</p>
+     */
+    inline S3Location& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
+
+    /**
+     * <p>The bucket's Region.</p>
+     */
+    inline S3Location& WithRegion(const char* value) { SetRegion(value); return *this;}
+
+  private:
 
     Aws::String m_bucketName;
     bool m_bucketNameHasBeenSet;
 
     Aws::String m_objectKey;
     bool m_objectKeyHasBeenSet;
+
+    Aws::String m_region;
+    bool m_regionHasBeenSet;
   };
 
 } // namespace Model

@@ -40,6 +40,9 @@
 #include <aws/access-management/AccessManagementClient.h>
 #include <aws/iam/IAMClient.h>
 #include <aws/cognito-identity/CognitoIdentityClient.h>
+#include <aws/sts/STSClient.h>
+#include <aws/sts/model/AssumeRoleRequest.h>
+#include <thread>
 
 using namespace Aws;
 using namespace Aws::Http;
@@ -80,15 +83,19 @@ namespace
             config.connectTimeoutMs = 30000;
             config.requestTimeoutMs = 30000;
             m_client = S3ControlClient(config);
-            m_s3Client = S3::S3Client(config);
+            m_s3Client = createS3Client(config);
             m_httpClient = Aws::Http::CreateHttpClient(config);
 
             // IAM client has to use us-east-1 in its signer.
-            config.region = Aws::Region::US_EAST_1;
-            auto iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, config);
-            auto cognitoClient = Aws::MakeShared<Aws::CognitoIdentity::CognitoIdentityClient>(ALLOCATION_TAG, config);
-            Aws::AccessManagement::AccessManagementClient accessManagementClient(iamClient, cognitoClient);
-            m_accountId = accessManagementClient.GetAccountId();
+            auto accountId = Aws::Environment::GetEnv("CATAPULT_TEST_ACCOUNT");
+            if(accountId.empty()) {
+                config.region = Aws::Region::US_EAST_1;
+                auto iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, config);
+                auto cognitoClient = Aws::MakeShared<Aws::CognitoIdentity::CognitoIdentityClient>(ALLOCATION_TAG, config);
+                Aws::AccessManagement::AccessManagementClient accessManagementClient(iamClient, cognitoClient);
+                accountId = accessManagementClient.GetAccountId();
+            }
+            m_accountId = accountId;
         }
 
     protected:
@@ -113,6 +120,25 @@ namespace
         {
             static const Aws::Utils::UUID resourceUUID = Aws::Utils::UUID::RandomUUID();
             return resourceUUID;
+        }
+
+        static S3::S3Client createS3Client(const ClientConfiguration &configuration) {
+            Aws::String testAccount(Aws::Environment::GetEnv("CATAPULT_TEST_ACCOUNT"));
+            if (!testAccount.empty()) {
+                Aws::String testRoleArn("arn:aws:iam::" + testAccount + ":role/IntegrationTest");
+                STS::STSClient stsClient(configuration);
+                STS::Model::AssumeRoleRequest assumeRoleRequest;
+                assumeRoleRequest.SetRoleArn(testRoleArn);
+                assumeRoleRequest.SetRoleSessionName("s3-control-cpp-integ-test");
+                STS::Model::AssumeRoleOutcome outcome = stsClient.AssumeRole(assumeRoleRequest);
+                STS::Model::Credentials creds = outcome.GetResult().GetCredentials();
+                Auth::AWSCredentials awsCredentials(creds.GetAccessKeyId(),
+                                                    creds.GetSecretAccessKey(),
+                                                    creds.GetSessionToken(),
+                                                    creds.GetExpiration());
+                return {awsCredentials, configuration};
+            }
+            return {configuration};
         }
 
         static bool WaitForBucketToPropagate(const Aws::String& bucketName, const S3::S3Client& client)
@@ -213,7 +239,7 @@ namespace
 
                 Aws::Client::ClientConfiguration config;
                 config.region = region;
-                Aws::S3::S3Client s3Client(config);
+                Aws::S3::S3Client s3Client = createS3Client(config);
 
                 S3::Model::CreateBucketRequest createBucketRequest;
                 S3::Model::CreateBucketConfiguration bucketConfiguration;
@@ -284,7 +310,7 @@ namespace
             {
                 Aws::Client::ClientConfiguration config;
                 config.region = region;
-                Aws::S3::S3Client s3Client(config);
+                Aws::S3::S3Client s3Client = createS3Client(config);
 
                 Aws::String regionalBucket = bucketName + "-" + region;
                 S3::Model::DeleteBucketRequest deleteBucketRequest;
@@ -687,7 +713,7 @@ namespace
 
         Aws::Client::ClientConfiguration config;
         config.region = Aws::Region::US_WEST_2;
-        Aws::S3::S3Client s3Client(config);
+        Aws::S3::S3Client s3Client = createS3Client(config);
 
         Aws::Vector<Aws::String> objectKeys;
         objectKeys.push_back(TEST_OBJECT_KEY);

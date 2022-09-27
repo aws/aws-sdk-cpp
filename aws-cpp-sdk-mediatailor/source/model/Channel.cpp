@@ -27,7 +27,8 @@ Channel::Channel() :
     m_lastModifiedTimeHasBeenSet(false),
     m_outputsHasBeenSet(false),
     m_playbackModeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_tierHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ Channel::Channel(JsonView jsonValue) :
     m_lastModifiedTimeHasBeenSet(false),
     m_outputsHasBeenSet(false),
     m_playbackModeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_tierHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -116,6 +118,13 @@ Channel& Channel::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Tier"))
+  {
+    m_tier = jsonValue.GetString("Tier");
+
+    m_tierHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -182,6 +191,12 @@ JsonValue Channel::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_tierHasBeenSet)
+  {
+   payload.WithString("Tier", m_tier);
 
   }
 

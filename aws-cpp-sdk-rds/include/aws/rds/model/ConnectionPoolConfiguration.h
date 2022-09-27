@@ -76,45 +76,45 @@ namespace Model
 
 
     /**
-     * <p> Controls how actively the proxy closes idle database connections in the
+     * <p>Controls how actively the proxy closes idle database connections in the
      * connection pool. The value is expressed as a percentage of the
      * <code>max_connections</code> setting for the RDS DB instance or Aurora DB
      * cluster used by the target group. With a high value, the proxy leaves a high
      * percentage of idle database connections open. A low value causes the proxy to
-     * close more idle connections and return them to the database. </p> <p>Default:
+     * close more idle connections and return them to the database.</p> <p>Default:
      * 50</p> <p>Constraints: between 0 and <code>MaxConnectionsPercent</code> </p>
      */
     inline int GetMaxIdleConnectionsPercent() const{ return m_maxIdleConnectionsPercent; }
 
     /**
-     * <p> Controls how actively the proxy closes idle database connections in the
+     * <p>Controls how actively the proxy closes idle database connections in the
      * connection pool. The value is expressed as a percentage of the
      * <code>max_connections</code> setting for the RDS DB instance or Aurora DB
      * cluster used by the target group. With a high value, the proxy leaves a high
      * percentage of idle database connections open. A low value causes the proxy to
-     * close more idle connections and return them to the database. </p> <p>Default:
+     * close more idle connections and return them to the database.</p> <p>Default:
      * 50</p> <p>Constraints: between 0 and <code>MaxConnectionsPercent</code> </p>
      */
     inline bool MaxIdleConnectionsPercentHasBeenSet() const { return m_maxIdleConnectionsPercentHasBeenSet; }
 
     /**
-     * <p> Controls how actively the proxy closes idle database connections in the
+     * <p>Controls how actively the proxy closes idle database connections in the
      * connection pool. The value is expressed as a percentage of the
      * <code>max_connections</code> setting for the RDS DB instance or Aurora DB
      * cluster used by the target group. With a high value, the proxy leaves a high
      * percentage of idle database connections open. A low value causes the proxy to
-     * close more idle connections and return them to the database. </p> <p>Default:
+     * close more idle connections and return them to the database.</p> <p>Default:
      * 50</p> <p>Constraints: between 0 and <code>MaxConnectionsPercent</code> </p>
      */
     inline void SetMaxIdleConnectionsPercent(int value) { m_maxIdleConnectionsPercentHasBeenSet = true; m_maxIdleConnectionsPercent = value; }
 
     /**
-     * <p> Controls how actively the proxy closes idle database connections in the
+     * <p>Controls how actively the proxy closes idle database connections in the
      * connection pool. The value is expressed as a percentage of the
      * <code>max_connections</code> setting for the RDS DB instance or Aurora DB
      * cluster used by the target group. With a high value, the proxy leaves a high
      * percentage of idle database connections open. A low value causes the proxy to
-     * close more idle connections and return them to the database. </p> <p>Default:
+     * close more idle connections and return them to the database.</p> <p>Default:
      * 50</p> <p>Constraints: between 0 and <code>MaxConnectionsPercent</code> </p>
      */
     inline ConnectionPoolConfiguration& WithMaxIdleConnectionsPercent(int value) { SetMaxIdleConnectionsPercent(value); return *this;}
@@ -240,82 +240,82 @@ namespace Model
 
 
     /**
-     * <p> One or more SQL statements for the proxy to run when opening each new
+     * <p>One or more SQL statements for the proxy to run when opening each new
      * database connection. Typically used with <code>SET</code> statements to make
      * sure that each connection has identical settings such as time zone and character
      * set. For multiple statements, use semicolons as the separator. You can also
      * include multiple variables in a single <code>SET</code> statement, such as
-     * <code>SET x=1, y=2</code>. </p> <p>Default: no initialization query</p>
+     * <code>SET x=1, y=2</code>.</p> <p>Default: no initialization query</p>
      */
     inline const Aws::String& GetInitQuery() const{ return m_initQuery; }
 
     /**
-     * <p> One or more SQL statements for the proxy to run when opening each new
+     * <p>One or more SQL statements for the proxy to run when opening each new
      * database connection. Typically used with <code>SET</code> statements to make
      * sure that each connection has identical settings such as time zone and character
      * set. For multiple statements, use semicolons as the separator. You can also
      * include multiple variables in a single <code>SET</code> statement, such as
-     * <code>SET x=1, y=2</code>. </p> <p>Default: no initialization query</p>
+     * <code>SET x=1, y=2</code>.</p> <p>Default: no initialization query</p>
      */
     inline bool InitQueryHasBeenSet() const { return m_initQueryHasBeenSet; }
 
     /**
-     * <p> One or more SQL statements for the proxy to run when opening each new
+     * <p>One or more SQL statements for the proxy to run when opening each new
      * database connection. Typically used with <code>SET</code> statements to make
      * sure that each connection has identical settings such as time zone and character
      * set. For multiple statements, use semicolons as the separator. You can also
      * include multiple variables in a single <code>SET</code> statement, such as
-     * <code>SET x=1, y=2</code>. </p> <p>Default: no initialization query</p>
+     * <code>SET x=1, y=2</code>.</p> <p>Default: no initialization query</p>
      */
     inline void SetInitQuery(const Aws::String& value) { m_initQueryHasBeenSet = true; m_initQuery = value; }
 
     /**
-     * <p> One or more SQL statements for the proxy to run when opening each new
+     * <p>One or more SQL statements for the proxy to run when opening each new
      * database connection. Typically used with <code>SET</code> statements to make
      * sure that each connection has identical settings such as time zone and character
      * set. For multiple statements, use semicolons as the separator. You can also
      * include multiple variables in a single <code>SET</code> statement, such as
-     * <code>SET x=1, y=2</code>. </p> <p>Default: no initialization query</p>
+     * <code>SET x=1, y=2</code>.</p> <p>Default: no initialization query</p>
      */
     inline void SetInitQuery(Aws::String&& value) { m_initQueryHasBeenSet = true; m_initQuery = std::move(value); }
 
     /**
-     * <p> One or more SQL statements for the proxy to run when opening each new
+     * <p>One or more SQL statements for the proxy to run when opening each new
      * database connection. Typically used with <code>SET</code> statements to make
      * sure that each connection has identical settings such as time zone and character
      * set. For multiple statements, use semicolons as the separator. You can also
      * include multiple variables in a single <code>SET</code> statement, such as
-     * <code>SET x=1, y=2</code>. </p> <p>Default: no initialization query</p>
+     * <code>SET x=1, y=2</code>.</p> <p>Default: no initialization query</p>
      */
     inline void SetInitQuery(const char* value) { m_initQueryHasBeenSet = true; m_initQuery.assign(value); }
 
     /**
-     * <p> One or more SQL statements for the proxy to run when opening each new
+     * <p>One or more SQL statements for the proxy to run when opening each new
      * database connection. Typically used with <code>SET</code> statements to make
      * sure that each connection has identical settings such as time zone and character
      * set. For multiple statements, use semicolons as the separator. You can also
      * include multiple variables in a single <code>SET</code> statement, such as
-     * <code>SET x=1, y=2</code>. </p> <p>Default: no initialization query</p>
+     * <code>SET x=1, y=2</code>.</p> <p>Default: no initialization query</p>
      */
     inline ConnectionPoolConfiguration& WithInitQuery(const Aws::String& value) { SetInitQuery(value); return *this;}
 
     /**
-     * <p> One or more SQL statements for the proxy to run when opening each new
+     * <p>One or more SQL statements for the proxy to run when opening each new
      * database connection. Typically used with <code>SET</code> statements to make
      * sure that each connection has identical settings such as time zone and character
      * set. For multiple statements, use semicolons as the separator. You can also
      * include multiple variables in a single <code>SET</code> statement, such as
-     * <code>SET x=1, y=2</code>. </p> <p>Default: no initialization query</p>
+     * <code>SET x=1, y=2</code>.</p> <p>Default: no initialization query</p>
      */
     inline ConnectionPoolConfiguration& WithInitQuery(Aws::String&& value) { SetInitQuery(std::move(value)); return *this;}
 
     /**
-     * <p> One or more SQL statements for the proxy to run when opening each new
+     * <p>One or more SQL statements for the proxy to run when opening each new
      * database connection. Typically used with <code>SET</code> statements to make
      * sure that each connection has identical settings such as time zone and character
      * set. For multiple statements, use semicolons as the separator. You can also
      * include multiple variables in a single <code>SET</code> statement, such as
-     * <code>SET x=1, y=2</code>. </p> <p>Default: no initialization query</p>
+     * <code>SET x=1, y=2</code>.</p> <p>Default: no initialization query</p>
      */
     inline ConnectionPoolConfiguration& WithInitQuery(const char* value) { SetInitQuery(value); return *this;}
 

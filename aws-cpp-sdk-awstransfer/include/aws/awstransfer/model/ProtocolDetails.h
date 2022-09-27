@@ -7,6 +7,7 @@
 #include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/awstransfer/model/TlsSessionResumptionMode.h>
+#include <aws/awstransfer/model/SetStatOption.h>
 #include <utility>
 
 namespace Aws
@@ -316,6 +317,127 @@ namespace Model
      */
     inline ProtocolDetails& WithTlsSessionResumptionMode(TlsSessionResumptionMode&& value) { SetTlsSessionResumptionMode(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Use the <code>SetStatOption</code> to ignore the error that is generated when
+     * the client attempts to use SETSTAT on a file you are uploading to an S3
+     * bucket.</p> <p>Some SFTP file transfer clients can attempt to change the
+     * attributes of remote files, including timestamp and permissions, using commands,
+     * such as SETSTAT when uploading the file. However, these commands are not
+     * compatible with object storage systems, such as Amazon S3. Due to this
+     * incompatibility, file uploads from these clients can result in errors even when
+     * the file is otherwise successfully uploaded.</p> <p>Set the value to
+     * <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT
+     * command, and upload files without needing to make any changes to your SFTP
+     * client. While the <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting
+     * ignores the error, it does generate a log entry in CloudWatch Logs, so you can
+     * determine when the client is making a SETSTAT call.</p>  <p>If you want to
+     * preserve the original timestamp for your file, and modify other file attributes
+     * using SETSTAT, you can use Amazon EFS as backend storage with Transfer
+     * Family.</p> 
+     */
+    inline const SetStatOption& GetSetStatOption() const{ return m_setStatOption; }
+
+    /**
+     * <p>Use the <code>SetStatOption</code> to ignore the error that is generated when
+     * the client attempts to use SETSTAT on a file you are uploading to an S3
+     * bucket.</p> <p>Some SFTP file transfer clients can attempt to change the
+     * attributes of remote files, including timestamp and permissions, using commands,
+     * such as SETSTAT when uploading the file. However, these commands are not
+     * compatible with object storage systems, such as Amazon S3. Due to this
+     * incompatibility, file uploads from these clients can result in errors even when
+     * the file is otherwise successfully uploaded.</p> <p>Set the value to
+     * <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT
+     * command, and upload files without needing to make any changes to your SFTP
+     * client. While the <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting
+     * ignores the error, it does generate a log entry in CloudWatch Logs, so you can
+     * determine when the client is making a SETSTAT call.</p>  <p>If you want to
+     * preserve the original timestamp for your file, and modify other file attributes
+     * using SETSTAT, you can use Amazon EFS as backend storage with Transfer
+     * Family.</p> 
+     */
+    inline bool SetStatOptionHasBeenSet() const { return m_setStatOptionHasBeenSet; }
+
+    /**
+     * <p>Use the <code>SetStatOption</code> to ignore the error that is generated when
+     * the client attempts to use SETSTAT on a file you are uploading to an S3
+     * bucket.</p> <p>Some SFTP file transfer clients can attempt to change the
+     * attributes of remote files, including timestamp and permissions, using commands,
+     * such as SETSTAT when uploading the file. However, these commands are not
+     * compatible with object storage systems, such as Amazon S3. Due to this
+     * incompatibility, file uploads from these clients can result in errors even when
+     * the file is otherwise successfully uploaded.</p> <p>Set the value to
+     * <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT
+     * command, and upload files without needing to make any changes to your SFTP
+     * client. While the <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting
+     * ignores the error, it does generate a log entry in CloudWatch Logs, so you can
+     * determine when the client is making a SETSTAT call.</p>  <p>If you want to
+     * preserve the original timestamp for your file, and modify other file attributes
+     * using SETSTAT, you can use Amazon EFS as backend storage with Transfer
+     * Family.</p> 
+     */
+    inline void SetSetStatOption(const SetStatOption& value) { m_setStatOptionHasBeenSet = true; m_setStatOption = value; }
+
+    /**
+     * <p>Use the <code>SetStatOption</code> to ignore the error that is generated when
+     * the client attempts to use SETSTAT on a file you are uploading to an S3
+     * bucket.</p> <p>Some SFTP file transfer clients can attempt to change the
+     * attributes of remote files, including timestamp and permissions, using commands,
+     * such as SETSTAT when uploading the file. However, these commands are not
+     * compatible with object storage systems, such as Amazon S3. Due to this
+     * incompatibility, file uploads from these clients can result in errors even when
+     * the file is otherwise successfully uploaded.</p> <p>Set the value to
+     * <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT
+     * command, and upload files without needing to make any changes to your SFTP
+     * client. While the <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting
+     * ignores the error, it does generate a log entry in CloudWatch Logs, so you can
+     * determine when the client is making a SETSTAT call.</p>  <p>If you want to
+     * preserve the original timestamp for your file, and modify other file attributes
+     * using SETSTAT, you can use Amazon EFS as backend storage with Transfer
+     * Family.</p> 
+     */
+    inline void SetSetStatOption(SetStatOption&& value) { m_setStatOptionHasBeenSet = true; m_setStatOption = std::move(value); }
+
+    /**
+     * <p>Use the <code>SetStatOption</code> to ignore the error that is generated when
+     * the client attempts to use SETSTAT on a file you are uploading to an S3
+     * bucket.</p> <p>Some SFTP file transfer clients can attempt to change the
+     * attributes of remote files, including timestamp and permissions, using commands,
+     * such as SETSTAT when uploading the file. However, these commands are not
+     * compatible with object storage systems, such as Amazon S3. Due to this
+     * incompatibility, file uploads from these clients can result in errors even when
+     * the file is otherwise successfully uploaded.</p> <p>Set the value to
+     * <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT
+     * command, and upload files without needing to make any changes to your SFTP
+     * client. While the <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting
+     * ignores the error, it does generate a log entry in CloudWatch Logs, so you can
+     * determine when the client is making a SETSTAT call.</p>  <p>If you want to
+     * preserve the original timestamp for your file, and modify other file attributes
+     * using SETSTAT, you can use Amazon EFS as backend storage with Transfer
+     * Family.</p> 
+     */
+    inline ProtocolDetails& WithSetStatOption(const SetStatOption& value) { SetSetStatOption(value); return *this;}
+
+    /**
+     * <p>Use the <code>SetStatOption</code> to ignore the error that is generated when
+     * the client attempts to use SETSTAT on a file you are uploading to an S3
+     * bucket.</p> <p>Some SFTP file transfer clients can attempt to change the
+     * attributes of remote files, including timestamp and permissions, using commands,
+     * such as SETSTAT when uploading the file. However, these commands are not
+     * compatible with object storage systems, such as Amazon S3. Due to this
+     * incompatibility, file uploads from these clients can result in errors even when
+     * the file is otherwise successfully uploaded.</p> <p>Set the value to
+     * <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT
+     * command, and upload files without needing to make any changes to your SFTP
+     * client. While the <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting
+     * ignores the error, it does generate a log entry in CloudWatch Logs, so you can
+     * determine when the client is making a SETSTAT call.</p>  <p>If you want to
+     * preserve the original timestamp for your file, and modify other file attributes
+     * using SETSTAT, you can use Amazon EFS as backend storage with Transfer
+     * Family.</p> 
+     */
+    inline ProtocolDetails& WithSetStatOption(SetStatOption&& value) { SetSetStatOption(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_passiveIp;
@@ -323,6 +445,9 @@ namespace Model
 
     TlsSessionResumptionMode m_tlsSessionResumptionMode;
     bool m_tlsSessionResumptionModeHasBeenSet;
+
+    SetStatOption m_setStatOption;
+    bool m_setStatOptionHasBeenSet;
   };
 
 } // namespace Model

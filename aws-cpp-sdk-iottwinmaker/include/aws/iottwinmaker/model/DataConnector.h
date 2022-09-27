@@ -38,25 +38,25 @@ namespace Model
 
 
     /**
-     * <p>A Boolean value that specifies whether the data connector is native to
+     * <p>A Boolean value that specifies whether the data connector is native to IoT
      * TwinMaker.</p>
      */
     inline bool GetIsNative() const{ return m_isNative; }
 
     /**
-     * <p>A Boolean value that specifies whether the data connector is native to
+     * <p>A Boolean value that specifies whether the data connector is native to IoT
      * TwinMaker.</p>
      */
     inline bool IsNativeHasBeenSet() const { return m_isNativeHasBeenSet; }
 
     /**
-     * <p>A Boolean value that specifies whether the data connector is native to
+     * <p>A Boolean value that specifies whether the data connector is native to IoT
      * TwinMaker.</p>
      */
     inline void SetIsNative(bool value) { m_isNativeHasBeenSet = true; m_isNative = value; }
 
     /**
-     * <p>A Boolean value that specifies whether the data connector is native to
+     * <p>A Boolean value that specifies whether the data connector is native to IoT
      * TwinMaker.</p>
      */
     inline DataConnector& WithIsNative(bool value) { SetIsNative(value); return *this;}

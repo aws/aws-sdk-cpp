@@ -319,7 +319,7 @@ TEST(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientReturnsGoodDat
 {
     auto mockClient = Aws::MakeShared<MockEC2MetadataClient>(AllocationTag);
 
-    const char* validCredentials = "{ \"AccessKeyId\": \"goodAccessKey\", \"SecretAccessKey\": \"goodSecretKey\", \"Token\": \"goodToken\" }";
+    const char* validCredentials = R"({ "AccessKeyId": "goodAccessKey", "SecretAccessKey": "goodSecretKey", "Token": "goodToken", "Code": "Success", "Expiration": "2047-04-19T00:00:00Z" })";
     mockClient->SetMockedCredentialsValue(validCredentials);
 
     InstanceProfileCredentialsProvider provider(Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(AllocationTag, mockClient), 1000 * 60 * 15);
@@ -332,19 +332,68 @@ TEST(InstanceProfileCredentialsProviderTest, TestThatProviderRefreshes)
 {
     auto mockClient = Aws::MakeShared<MockEC2MetadataClient>(AllocationTag);
 
-    const char* validCredentials = "{ \"AccessKeyId\": \"goodAccessKey\", \"SecretAccessKey\": \"goodSecretKey\", \"Token\": \"goodToken\" }";
+    const char* validCredentials = R"({ "AccessKeyId": "goodAccessKey", "SecretAccessKey": "goodSecretKey", "Token": "goodToken", "Code": "Success", "Expiration": "2047-04-19T00:00:00Z" })";
     mockClient->SetMockedCredentialsValue(validCredentials);
 
     InstanceProfileCredentialsProvider provider(Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(AllocationTag, mockClient), 10);
     ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
 
-    const char* nextSetOfCredentials = "{ \"AccessKeyId\": \"betterAccessKey\", \"SecretAccessKey\": \"betterSecretKey\", \"Token\": \"betterToken\" }";
+    const char* nextSetOfCredentials = R"({ "AccessKeyId": "betterAccessKey", "SecretAccessKey": "betterSecretKey", "Token": "betterToken", "Code": "Success", "Expiration": "2047-04-19T00:00:00Z" })";
     mockClient->SetMockedCredentialsValue(nextSetOfCredentials);
-
     std::this_thread::sleep_for(std::chrono::milliseconds(100));
     ASSERT_EQ("betterAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("betterSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
+}
+
+TEST(InstanceProfileCredentialsProviderTest, TestCredentialsDontRefreshForCredentialsInPast)
+{
+    auto mockClient = Aws::MakeShared<MockEC2MetadataClient>(AllocationTag);
+
+    const char* validCredentials = R"({ "AccessKeyId": "goodAccessKey", "SecretAccessKey": "goodSecretKey", "Token": "goodToken", "Code": "Success", "Expiration": "2047-04-19T00:00:00Z" })";
+    mockClient->SetMockedCredentialsValue(validCredentials);
+
+    InstanceProfileCredentialsProvider provider(Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(AllocationTag, mockClient), 10);
+    ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
+    ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
+
+    const char* nextSetOfCredentials = R"({ "AccessKeyId": "betterAccessKey", "SecretAccessKey": "betterSecretKey", "Token": "betterToken", "Code": "Success", "Expiration": "2019-04-19T00:00:00Z" })";
+    mockClient->SetMockedCredentialsValue(nextSetOfCredentials);
+
+    std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
+    ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());;
+}
+
+TEST(InstanceProfileCredentialsProviderTest, TestCredentialsDontRefreshForFailedCall)
+{
+    auto mockClient = Aws::MakeShared<MockEC2MetadataClient>(AllocationTag);
+
+    const char* validCredentials = R"({ "AccessKeyId": "goodAccessKey", "SecretAccessKey": "goodSecretKey", "Token": "goodToken", "Code": "Success", "Expiration": "2047-04-19T00:00:00Z" })";
+    mockClient->SetMockedCredentialsValue(validCredentials);
+
+    InstanceProfileCredentialsProvider provider(Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(AllocationTag, mockClient), 10);
+    ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
+    ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
+
+    const char* nextSetOfCredentials = R"({ "Code": "InternalServiceException", "Message": "Unable to process request" })";
+    mockClient->SetMockedCredentialsValue(nextSetOfCredentials);
+
+    std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
+    ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());;
+}
+
+TEST(InstanceProfileCredentialsProviderTest, TestCredentialsWhenExpirationAndCodeAreMissing)
+{
+    auto mockClient = Aws::MakeShared<MockEC2MetadataClient>(AllocationTag);
+
+    const char* validCredentials = R"({ "AccessKeyId": "goodAccessKey", "SecretAccessKey": "goodSecretKey", "Token": "goodToken" })";
+    mockClient->SetMockedCredentialsValue(validCredentials);
+
+    InstanceProfileCredentialsProvider provider(Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(AllocationTag, mockClient), 10);
+    ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
+    ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
 }
 
 TEST(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientCouldntFindCredentials)

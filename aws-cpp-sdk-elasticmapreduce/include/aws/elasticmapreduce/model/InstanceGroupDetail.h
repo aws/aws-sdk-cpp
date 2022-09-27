@@ -334,38 +334,38 @@ namespace Model
 
 
     /**
-     * <p>State of instance group. The following values are deprecated: STARTING,
-     * TERMINATED, and FAILED.</p>
+     * <p>State of instance group. The following values are no longer supported:
+     * STARTING, TERMINATED, and FAILED.</p>
      */
     inline const InstanceGroupState& GetState() const{ return m_state; }
 
     /**
-     * <p>State of instance group. The following values are deprecated: STARTING,
-     * TERMINATED, and FAILED.</p>
+     * <p>State of instance group. The following values are no longer supported:
+     * STARTING, TERMINATED, and FAILED.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>State of instance group. The following values are deprecated: STARTING,
-     * TERMINATED, and FAILED.</p>
+     * <p>State of instance group. The following values are no longer supported:
+     * STARTING, TERMINATED, and FAILED.</p>
      */
     inline void SetState(const InstanceGroupState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>State of instance group. The following values are deprecated: STARTING,
-     * TERMINATED, and FAILED.</p>
+     * <p>State of instance group. The following values are no longer supported:
+     * STARTING, TERMINATED, and FAILED.</p>
      */
     inline void SetState(InstanceGroupState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>State of instance group. The following values are deprecated: STARTING,
-     * TERMINATED, and FAILED.</p>
+     * <p>State of instance group. The following values are no longer supported:
+     * STARTING, TERMINATED, and FAILED.</p>
      */
     inline InstanceGroupDetail& WithState(const InstanceGroupState& value) { SetState(value); return *this;}
 
     /**
-     * <p>State of instance group. The following values are deprecated: STARTING,
-     * TERMINATED, and FAILED.</p>
+     * <p>State of instance group. The following values are no longer supported:
+     * STARTING, TERMINATED, and FAILED.</p>
      */
     inline InstanceGroupDetail& WithState(InstanceGroupState&& value) { SetState(std::move(value)); return *this;}
 

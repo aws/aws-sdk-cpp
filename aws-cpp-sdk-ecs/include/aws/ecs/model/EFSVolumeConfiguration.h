@@ -174,66 +174,60 @@ namespace Model
 
 
     /**
-     * <p>Determines whether to enable encryption for Amazon EFS data in transit
-     * between the Amazon ECS host and the Amazon EFS server. Transit encryption must
-     * be enabled if Amazon EFS IAM authorization is used. If this parameter is
-     * omitted, the default value of <code>DISABLED</code> is used. For more
-     * information, see <a
+     * <p>Determines whether to use encryption for Amazon EFS data in transit between
+     * the Amazon ECS host and the Amazon EFS server. Transit encryption must be
+     * enabled if Amazon EFS IAM authorization is used. If this parameter is omitted,
+     * the default value of <code>DISABLED</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting
      * Data in Transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
      */
     inline const EFSTransitEncryption& GetTransitEncryption() const{ return m_transitEncryption; }
 
     /**
-     * <p>Determines whether to enable encryption for Amazon EFS data in transit
-     * between the Amazon ECS host and the Amazon EFS server. Transit encryption must
-     * be enabled if Amazon EFS IAM authorization is used. If this parameter is
-     * omitted, the default value of <code>DISABLED</code> is used. For more
-     * information, see <a
+     * <p>Determines whether to use encryption for Amazon EFS data in transit between
+     * the Amazon ECS host and the Amazon EFS server. Transit encryption must be
+     * enabled if Amazon EFS IAM authorization is used. If this parameter is omitted,
+     * the default value of <code>DISABLED</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting
      * Data in Transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
      */
     inline bool TransitEncryptionHasBeenSet() const { return m_transitEncryptionHasBeenSet; }
 
     /**
-     * <p>Determines whether to enable encryption for Amazon EFS data in transit
-     * between the Amazon ECS host and the Amazon EFS server. Transit encryption must
-     * be enabled if Amazon EFS IAM authorization is used. If this parameter is
-     * omitted, the default value of <code>DISABLED</code> is used. For more
-     * information, see <a
+     * <p>Determines whether to use encryption for Amazon EFS data in transit between
+     * the Amazon ECS host and the Amazon EFS server. Transit encryption must be
+     * enabled if Amazon EFS IAM authorization is used. If this parameter is omitted,
+     * the default value of <code>DISABLED</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting
      * Data in Transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
      */
     inline void SetTransitEncryption(const EFSTransitEncryption& value) { m_transitEncryptionHasBeenSet = true; m_transitEncryption = value; }
 
     /**
-     * <p>Determines whether to enable encryption for Amazon EFS data in transit
-     * between the Amazon ECS host and the Amazon EFS server. Transit encryption must
-     * be enabled if Amazon EFS IAM authorization is used. If this parameter is
-     * omitted, the default value of <code>DISABLED</code> is used. For more
-     * information, see <a
+     * <p>Determines whether to use encryption for Amazon EFS data in transit between
+     * the Amazon ECS host and the Amazon EFS server. Transit encryption must be
+     * enabled if Amazon EFS IAM authorization is used. If this parameter is omitted,
+     * the default value of <code>DISABLED</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting
      * Data in Transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
      */
     inline void SetTransitEncryption(EFSTransitEncryption&& value) { m_transitEncryptionHasBeenSet = true; m_transitEncryption = std::move(value); }
 
     /**
-     * <p>Determines whether to enable encryption for Amazon EFS data in transit
-     * between the Amazon ECS host and the Amazon EFS server. Transit encryption must
-     * be enabled if Amazon EFS IAM authorization is used. If this parameter is
-     * omitted, the default value of <code>DISABLED</code> is used. For more
-     * information, see <a
+     * <p>Determines whether to use encryption for Amazon EFS data in transit between
+     * the Amazon ECS host and the Amazon EFS server. Transit encryption must be
+     * enabled if Amazon EFS IAM authorization is used. If this parameter is omitted,
+     * the default value of <code>DISABLED</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting
      * Data in Transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
      */
     inline EFSVolumeConfiguration& WithTransitEncryption(const EFSTransitEncryption& value) { SetTransitEncryption(value); return *this;}
 
     /**
-     * <p>Determines whether to enable encryption for Amazon EFS data in transit
-     * between the Amazon ECS host and the Amazon EFS server. Transit encryption must
-     * be enabled if Amazon EFS IAM authorization is used. If this parameter is
-     * omitted, the default value of <code>DISABLED</code> is used. For more
-     * information, see <a
+     * <p>Determines whether to use encryption for Amazon EFS data in transit between
+     * the Amazon ECS host and the Amazon EFS server. Transit encryption must be
+     * enabled if Amazon EFS IAM authorization is used. If this parameter is omitted,
+     * the default value of <code>DISABLED</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting
      * Data in Transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
      */

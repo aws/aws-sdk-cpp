@@ -21,13 +21,34 @@
       "output":{"shape":"BatchCreateAttendeeResponse"},
       "errors":[
         {"shape":"BadRequestException"},
-        {"shape":"UnauthorizedException"},
-        {"shape":"ServiceUnavailableException"},
-        {"shape":"NotFoundException"},
         {"shape":"ForbiddenException"},
-        {"shape":"LimitExceededException"}
+        {"shape":"NotFoundException"},
+        {"shape":"UnauthorizedException"},
+        {"shape":"UnprocessableEntityException"},
+        {"shape":"LimitExceededException"},
+        {"shape":"ServiceUnavailableException"},
+        {"shape":"ServiceFailureException"},
+        {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Creates up to 100 attendees for an active Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html\">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>"
+    },
+    "BatchUpdateAttendeeCapabilitiesExcept":{
+      "name":"BatchUpdateAttendeeCapabilitiesExcept",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/meetings/{MeetingId}/attendees/capabilities?operation=batch-update-except",
+        "responseCode":200
+      },
+      "input":{"shape":"BatchUpdateAttendeeCapabilitiesExceptRequest"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"ConflictException"},
+        {"shape":"UnauthorizedException"},
+        {"shape":"NotFoundException"},
+        {"shape":"ForbiddenException"},
+        {"shape":"ServiceUnavailableException"}
+      ],
+      "documentation":"<p>Updates <code>AttendeeCapabilities</code> except the capabilities listed in an <code>ExcludedAttendeeIds</code> table.</p>"
     },
     "CreateAttendee":{
       "name":"CreateAttendee",
@@ -40,11 +61,13 @@
       "errors":[
         {"shape":"BadRequestException"},
         {"shape":"ForbiddenException"},
+        {"shape":"NotFoundException"},
         {"shape":"UnauthorizedException"},
         {"shape":"UnprocessableEntityException"},
+        {"shape":"LimitExceededException"},
         {"shape":"ServiceUnavailableException"},
-        {"shape":"NotFoundException"},
-        {"shape":"LimitExceededException"}
+        {"shape":"ServiceFailureException"},
+        {"shape":"ThrottlingException"}
       ],
       "documentation":"<p> Creates a new attendee for an active Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html\">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p>"
     },
@@ -58,8 +81,11 @@
       "output":{"shape":"CreateMeetingResponse"},
       "errors":[
         {"shape":"BadRequestException"},
-        {"shape":"ServiceUnavailableException"},
+        {"shape":"ForbiddenException"},
         {"shape":"UnauthorizedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ServiceFailureException"},
+        {"shape":"ServiceUnavailableException"},
         {"shape":"LimitExceededException"}
       ],
       "documentation":"<p>Creates a new Amazon Chime SDK meeting in the specified media Region with no initial attendees. For more information about specifying media Regions, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html\">Amazon Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more information about the Amazon Chime SDK, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html\">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p>"
@@ -74,8 +100,11 @@
       "output":{"shape":"CreateMeetingWithAttendeesResponse"},
       "errors":[
         {"shape":"BadRequestException"},
-        {"shape":"ServiceUnavailableException"},
+        {"shape":"ForbiddenException"},
         {"shape":"UnauthorizedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ServiceFailureException"},
+        {"shape":"ServiceUnavailableException"},
         {"shape":"LimitExceededException"}
       ],
       "documentation":"<p> Creates a new Amazon Chime SDK meeting in the specified media Region, with attendees. For more information about specifying media Regions, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html\">Amazon Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more information about the Amazon Chime SDK, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html\">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p>"
@@ -89,8 +118,13 @@
       },
       "input":{"shape":"DeleteAttendeeRequest"},
       "errors":[
+        {"shape":"BadRequestException"},
         {"shape":"ForbiddenException"},
-        {"shape":"NotFoundException"}
+        {"shape":"NotFoundException"},
+        {"shape":"UnauthorizedException"},
+        {"shape":"ServiceUnavailableException"},
+        {"shape":"ServiceFailureException"},
+        {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Deletes an attendee from the specified Amazon Chime SDK meeting and deletes their <code>JoinToken</code>. Attendees are automatically deleted when a Amazon Chime SDK meeting is deleted. For more information about the Amazon Chime SDK, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html\">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>"
     },
@@ -104,7 +138,12 @@
       "input":{"shape":"DeleteMeetingRequest"},
       "errors":[
         {"shape":"BadRequestException"},
-        {"shape":"ForbiddenException"}
+        {"shape":"ForbiddenException"},
+        {"shape":"UnauthorizedException"},
+        {"shape":"NotFoundException"},
+        {"shape":"ServiceUnavailableException"},
+        {"shape":"ServiceFailureException"},
+        {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Deletes the specified Amazon Chime SDK meeting. The operation deletes all attendees, disconnects all clients, and prevents new clients from joining the meeting. For more information about the Amazon Chime SDK, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html\">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>"
     },
@@ -118,8 +157,12 @@
       "output":{"shape":"GetAttendeeResponse"},
       "errors":[
         {"shape":"BadRequestException"},
+        {"shape":"ForbiddenException"},
         {"shape":"NotFoundException"},
-        {"shape":"ForbiddenException"}
+        {"shape":"UnauthorizedException"},
+        {"shape":"ServiceUnavailableException"},
+        {"shape":"ServiceFailureException"},
+        {"shape":"ThrottlingException"}
       ],
       "documentation":"<p> Gets the Amazon Chime SDK attendee details for a specified meeting ID and attendee ID. For more information about the Amazon Chime SDK, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html\">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p>"
     },
@@ -134,7 +177,11 @@
       "errors":[
         {"shape":"NotFoundException"},
         {"shape":"BadRequestException"},
-        {"shape":"ForbiddenException"}
+        {"shape":"ForbiddenException"},
+        {"shape":"UnauthorizedException"},
+        {"shape":"ServiceUnavailableException"},
+        {"shape":"ServiceFailureException"},
+        {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Gets the Amazon Chime SDK meeting details for the specified meeting ID. For more information about the Amazon Chime SDK, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html\">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>"
     },
@@ -149,8 +196,12 @@
       "output":{"shape":"ListAttendeesResponse"},
       "errors":[
         {"shape":"BadRequestException"},
+        {"shape":"ForbiddenException"},
         {"shape":"NotFoundException"},
-        {"shape":"ForbiddenException"}
+        {"shape":"UnauthorizedException"},
+        {"shape":"ServiceUnavailableException"},
+        {"shape":"ServiceFailureException"},
+        {"shape":"ThrottlingException"}
       ],
       "documentation":"<p> Lists the attendees for the specified Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see <a href=\"https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html\">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p>"
     },
@@ -169,7 +220,9 @@
         {"shape":"UnauthorizedException"},
         {"shape":"LimitExceededException"},
         {"shape":"UnprocessableEntityException"},
-        {"shape":"ServiceUnavailableException"}
+        {"shape":"ThrottlingException"},
+        {"shape":"ServiceUnavailableException"},
+        {"shape":"ServiceFailureException"}
       ],
       "documentation":"<p>Starts transcription for the specified <code>meetingId</code>.</p>"
     },
@@ -187,9 +240,29 @@
         {"shape":"BadRequestException"},
         {"shape":"UnauthorizedException"},
         {"shape":"UnprocessableEntityException"},
-        {"shape":"ServiceUnavailableException"}
+        {"shape":"ThrottlingException"},
+        {"shape":"ServiceUnavailableException"},
+        {"shape":"ServiceFailureException"}
       ],
       "documentation":"<p>Stops transcription for the specified <code>meetingId</code>.</p>"
+    },
+    "UpdateAttendeeCapabilities":{
+      "name":"UpdateAttendeeCapabilities",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/meetings/{MeetingId}/attendees/{AttendeeId}/capabilities"
+      },
+      "input":{"shape":"UpdateAttendeeCapabilitiesRequest"},
+      "output":{"shape":"UpdateAttendeeCapabilitiesResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"ConflictException"},
+        {"shape":"UnauthorizedException"},
+        {"shape":"NotFoundException"},
+        {"shape":"ForbiddenException"},
+        {"shape":"ServiceUnavailableException"}
+      ],
+      "documentation":"<p>The capabilties that you want to update.</p>"
     }
   },
   "shapes":{
@@ -214,9 +287,53 @@
         "JoinToken":{
           "shape":"JoinTokenString",
           "documentation":"<p>The join token used by the Amazon Chime SDK attendee.</p>"
+        },
+        "Capabilities":{
+          "shape":"AttendeeCapabilities",
+          "documentation":"<p>The capabilities (audio, video, or content) assigned to an attendee.</p>"
         }
       },
       "documentation":"<p>An Amazon Chime SDK meeting attendee. Includes a unique <code>AttendeeId</code> and <code>JoinToken</code>. The <code>JoinToken</code> allows a client to authenticate and join as the specified attendee. The <code>JoinToken</code> expires when the meeting ends, or when <a>DeleteAttendee</a> is called. After that, the attendee is unable to join the meeting. </p> <p>We recommend securely transferring each <code>JoinToken</code> from your server application to the client so that no other client has access to the token except for the one authorized to represent the attendee.</p>"
+    },
+    "AttendeeCapabilities":{
+      "type":"structure",
+      "required":[
+        "Audio",
+        "Video",
+        "Content"
+      ],
+      "members":{
+        "Audio":{
+          "shape":"MediaCapabilities",
+          "documentation":"<p>The audio capability assigned to an attendee.</p>"
+        },
+        "Video":{
+          "shape":"MediaCapabilities",
+          "documentation":"<p>The video capability assigned to an attendee.</p>"
+        },
+        "Content":{
+          "shape":"MediaCapabilities",
+          "documentation":"<p>The content capability assigned to an attendee.</p>"
+        }
+      },
+      "documentation":"<p>The media capabilities of an attendee, including audio, video and content. </p>"
+    },
+    "AttendeeIdItem":{
+      "type":"structure",
+      "required":["AttendeeId"],
+      "members":{
+        "AttendeeId":{
+          "shape":"GuidString",
+          "documentation":"<p>A list of one or more attendee IDs.</p>"
+        }
+      },
+      "documentation":"<p>A structure that contains one or more attendee IDs.</p>"
+    },
+    "AttendeeIdsList":{
+      "type":"list",
+      "member":{"shape":"AttendeeIdItem"},
+      "max":250,
+      "min":1
     },
     "AttendeeList":{
       "type":"list",
@@ -230,7 +347,7 @@
           "documentation":"<p>Makes echo reduction available to clients who connect to the meeting.</p>"
         }
       },
-      "documentation":"<p>An optional category of meeting features that contains audio-specific configurations, such as operating parameters for Amazon Voice Focus.</p>"
+      "documentation":"<p>An optional category of meeting features that contains audio-specific configurations, such as operating parameters for Amazon Voice Focus. </p>"
     },
     "BadRequestException":{
       "type":"structure",
@@ -282,6 +399,30 @@
         }
       }
     },
+    "BatchUpdateAttendeeCapabilitiesExceptRequest":{
+      "type":"structure",
+      "required":[
+        "MeetingId",
+        "ExcludedAttendeeIds",
+        "Capabilities"
+      ],
+      "members":{
+        "MeetingId":{
+          "shape":"GuidString",
+          "documentation":"<p>The ID of the meeting associated with the update request.</p>",
+          "location":"uri",
+          "locationName":"MeetingId"
+        },
+        "ExcludedAttendeeIds":{
+          "shape":"AttendeeIdsList",
+          "documentation":"<p>The <code>AttendeeIDs</code> that you want to exclude from one or more capabilities.</p>"
+        },
+        "Capabilities":{
+          "shape":"AttendeeCapabilities",
+          "documentation":"<p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to update.</p>"
+        }
+      }
+    },
     "Boolean":{"type":"boolean"},
     "ClientRequestToken":{
       "type":"string",
@@ -289,6 +430,17 @@
       "min":2,
       "pattern":"[-_a-zA-Z0-9]*",
       "sensitive":true
+    },
+    "ConflictException":{
+      "type":"structure",
+      "members":{
+        "Code":{"shape":"String"},
+        "Message":{"shape":"String"},
+        "RequestId":{"shape":"String"}
+      },
+      "documentation":"<p>Multiple instances of the same request have been made simultaneously.</p>",
+      "error":{"httpStatusCode":409},
+      "exception":true
     },
     "CreateAttendeeError":{
       "type":"structure",
@@ -324,6 +476,10 @@
         "ExternalUserId":{
           "shape":"ExternalUserId",
           "documentation":"<p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>"
+        },
+        "Capabilities":{
+          "shape":"AttendeeCapabilities",
+          "documentation":"<p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels by default.</p>"
         }
       }
     },
@@ -334,6 +490,10 @@
         "ExternalUserId":{
           "shape":"ExternalUserId",
           "documentation":"<p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>"
+        },
+        "Capabilities":{
+          "shape":"AttendeeCapabilities",
+          "documentation":"<p>A list of one or more capabilities.</p>"
         }
       },
       "documentation":"<p>The Amazon Chime SDK attendee fields to create, used with the BatchCreateAttendee action.</p>"
@@ -368,7 +528,7 @@
         },
         "MediaRegion":{
           "shape":"MediaRegion",
-          "documentation":"<p>The Region in which to create the meeting.</p> <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>"
+          "documentation":"<p>The Region in which to create the meeting.</p> <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p> <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>"
         },
         "MeetingHostId":{
           "shape":"ExternalUserId",
@@ -385,6 +545,10 @@
         "MeetingFeatures":{
           "shape":"MeetingFeaturesConfiguration",
           "documentation":"<p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>"
+        },
+        "PrimaryMeetingId":{
+          "shape":"PrimaryMeetingId",
+          "documentation":"<p>When specified, replicates the media from the primary meeting to the new meeting.</p>"
         }
       }
     },
@@ -413,7 +577,7 @@
         },
         "MediaRegion":{
           "shape":"MediaRegion",
-          "documentation":"<p>The Region in which to create the meeting.</p>"
+          "documentation":"<p>The Region in which to create the meeting.</p> <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p> <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>"
         },
         "MeetingHostId":{
           "shape":"ExternalUserId",
@@ -434,6 +598,10 @@
         "Attendees":{
           "shape":"CreateMeetingWithAttendeesRequestItemList",
           "documentation":"<p>The attendee information, including attendees' IDs and join tokens.</p>"
+        },
+        "PrimaryMeetingId":{
+          "shape":"PrimaryMeetingId",
+          "documentation":"<p>When specified, replicates the media from the primary meeting to the new meeting.</p>"
         }
       }
     },
@@ -530,7 +698,6 @@
     },
     "EngineTranscribeSettings":{
       "type":"structure",
-      "required":["LanguageCode"],
       "members":{
         "LanguageCode":{
           "shape":"TranscribeLanguageCode",
@@ -570,11 +737,23 @@
         },
         "PiiEntityTypes":{
           "shape":"TranscribePiiEntityTypes",
-          "documentation":"<p>Lists the PII entity types you want to identify or redact. To specify entity types, you must enable <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p> <p>PIIEntityTypes must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p> <p> <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>"
+          "documentation":"<p>Lists the PII entity types you want to identify or redact. To specify entity types, you must enable <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p> <p> <code>PIIEntityTypes</code> must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p> <p> <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>"
         },
         "LanguageModelName":{
           "shape":"TranscribeLanguageModelName",
           "documentation":"<p>The name of the language model used during transcription.</p>"
+        },
+        "IdentifyLanguage":{
+          "shape":"Boolean",
+          "documentation":"<p>Automatically identifies the language spoken in media files.</p>"
+        },
+        "LanguageOptions":{
+          "shape":"TranscribeLanguageOptions",
+          "documentation":"<p>Language codes for the languages that you want to identify. You must provide at least 2 codes.</p>"
+        },
+        "PreferredLanguage":{
+          "shape":"TranscribeLanguageCode",
+          "documentation":"<p>Language code for the preferred language.</p>"
         }
       },
       "documentation":"<p>Settings specific to the Amazon Transcribe engine.</p>"
@@ -717,6 +896,15 @@
         }
       }
     },
+    "MediaCapabilities":{
+      "type":"string",
+      "enum":[
+        "SendReceive",
+        "Send",
+        "Receive",
+        "None"
+      ]
+    },
     "MediaPlacement":{
       "type":"structure",
       "members":{
@@ -777,7 +965,7 @@
         },
         "MediaRegion":{
           "shape":"MediaRegion",
-          "documentation":"<p>The Region in which you create the meeting. Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>"
+          "documentation":"<p>The Region in which you create the meeting. Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p> <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>"
         },
         "MediaPlacement":{
           "shape":"MediaPlacement",
@@ -786,6 +974,10 @@
         "MeetingFeatures":{
           "shape":"MeetingFeaturesConfiguration",
           "documentation":"<p>The features available to a meeting, such as Amazon Voice Focus.</p>"
+        },
+        "PrimaryMeetingId":{
+          "shape":"PrimaryMeetingId",
+          "documentation":"<p>When specified, replicates the media from the primary meeting to this meeting.</p>"
         }
       },
       "documentation":"<p>A meeting created using the Amazon Chime SDK.</p>"
@@ -805,7 +997,7 @@
           "documentation":"<p>The configuration settings for the audio features available to a meeting. </p>"
         }
       },
-      "documentation":"<p>The configuration settings of the features available to a meeting.</p>"
+      "documentation":"<p>The configuration settings of the features available to a meeting.&gt;</p>"
     },
     "NotFoundException":{
       "type":"structure",
@@ -814,7 +1006,7 @@
         "Message":{"shape":"String"},
         "RequestId":{
           "shape":"String",
-          "documentation":"<p>The request id associated with the call responsible for the exception.</p>"
+          "documentation":"<p>The request ID associated with the call responsible for the exception.</p>"
         }
       },
       "documentation":"<p>One or more of the resources in the request does not exist in the system.</p>",
@@ -839,12 +1031,29 @@
       },
       "documentation":"<p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>"
     },
+    "PrimaryMeetingId":{
+      "type":"string",
+      "max":64,
+      "min":2
+    },
     "ResultMax":{
       "type":"integer",
       "max":100,
       "min":1
     },
     "RetryAfterSeconds":{"type":"string"},
+    "ServiceFailureException":{
+      "type":"structure",
+      "members":{
+        "Code":{"shape":"String"},
+        "Message":{"shape":"String"},
+        "RequestId":{"shape":"String"}
+      },
+      "documentation":"<p>The service is currently unavailable.</p>",
+      "error":{"httpStatusCode":500},
+      "exception":true,
+      "fault":true
+    },
     "ServiceUnavailableException":{
       "type":"structure",
       "members":{
@@ -901,6 +1110,17 @@
       "type":"string",
       "max":4096
     },
+    "ThrottlingException":{
+      "type":"structure",
+      "members":{
+        "Code":{"shape":"String"},
+        "Message":{"shape":"String"},
+        "RequestId":{"shape":"String"}
+      },
+      "documentation":"<p>The number of requests exceeds the limit.</p>",
+      "error":{"httpStatusCode":429},
+      "exception":true
+    },
     "TranscribeContentIdentificationType":{
       "type":"string",
       "enum":["PII"]
@@ -931,6 +1151,12 @@
       "max":200,
       "min":1,
       "pattern":"^[0-9a-zA-Z._-]+"
+    },
+    "TranscribeLanguageOptions":{
+      "type":"string",
+      "max":200,
+      "min":1,
+      "pattern":"^[a-zA-Z-,]+"
     },
     "TranscribeMedicalContentIdentificationType":{
       "type":"string",
@@ -1050,7 +1276,39 @@
       "documentation":"<p>The request was well-formed but was unable to be followed due to semantic errors.</p>",
       "error":{"httpStatusCode":422},
       "exception":true
+    },
+    "UpdateAttendeeCapabilitiesRequest":{
+      "type":"structure",
+      "required":[
+        "MeetingId",
+        "AttendeeId",
+        "Capabilities"
+      ],
+      "members":{
+        "MeetingId":{
+          "shape":"GuidString",
+          "documentation":"<p>The ID of the meeting associated with the update request.</p>",
+          "location":"uri",
+          "locationName":"MeetingId"
+        },
+        "AttendeeId":{
+          "shape":"GuidString",
+          "documentation":"<p>The ID of the attendee associated with the update request.</p>",
+          "location":"uri",
+          "locationName":"AttendeeId"
+        },
+        "Capabilities":{
+          "shape":"AttendeeCapabilities",
+          "documentation":"<p>The capabilties that you want to update.</p>"
+        }
+      }
+    },
+    "UpdateAttendeeCapabilitiesResponse":{
+      "type":"structure",
+      "members":{
+        "Attendee":{"shape":"Attendee"}
+      }
     }
   },
-  "documentation":"<p>The Amazon Chime SDK meetings APIs in this section allow software developers to create Amazon Chime SDK meetings, set the AWS Regions for meetings, create and manage users, and send and receive meeting notifications. For more information about the meeting APIs, see <a href=\"http://amazonaws.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_meetings\">Amazon Chime SDK meetings</a>.</p>"
+  "documentation":"<p>The Amazon Chime SDK meetings APIs in this section allow software developers to create Amazon Chime SDK meetings, set the AWS Regions for meetings, create and manage users, and send and receive meeting notifications. For more information about the meeting APIs, see <a href=\"https://docs.aws.amazon.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_Meetings.html\">Amazon Chime SDK meetings</a>.</p>"
 }

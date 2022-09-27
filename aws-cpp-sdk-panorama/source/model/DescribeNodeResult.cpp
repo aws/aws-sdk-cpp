@@ -30,15 +30,9 @@ DescribeNodeResult::DescribeNodeResult(const Aws::AmazonWebServiceResult<JsonVal
 DescribeNodeResult& DescribeNodeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NodeId"))
+  if(jsonValue.ValueExists("AssetName"))
   {
-    m_nodeId = jsonValue.GetString("NodeId");
-
-  }
-
-  if(jsonValue.ValueExists("Name"))
-  {
-    m_name = jsonValue.GetString("Name");
+    m_assetName = jsonValue.GetString("AssetName");
 
   }
 
@@ -48,15 +42,51 @@ DescribeNodeResult& DescribeNodeResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("CreatedTime"))
+  {
+    m_createdTime = jsonValue.GetDouble("CreatedTime");
+
+  }
+
+  if(jsonValue.ValueExists("Description"))
+  {
+    m_description = jsonValue.GetString("Description");
+
+  }
+
+  if(jsonValue.ValueExists("LastUpdatedTime"))
+  {
+    m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
+
+  }
+
+  if(jsonValue.ValueExists("Name"))
+  {
+    m_name = jsonValue.GetString("Name");
+
+  }
+
+  if(jsonValue.ValueExists("NodeId"))
+  {
+    m_nodeId = jsonValue.GetString("NodeId");
+
+  }
+
+  if(jsonValue.ValueExists("NodeInterface"))
+  {
+    m_nodeInterface = jsonValue.GetObject("NodeInterface");
+
+  }
+
   if(jsonValue.ValueExists("OwnerAccount"))
   {
     m_ownerAccount = jsonValue.GetString("OwnerAccount");
 
   }
 
-  if(jsonValue.ValueExists("PackageName"))
+  if(jsonValue.ValueExists("PackageArn"))
   {
-    m_packageName = jsonValue.GetString("PackageName");
+    m_packageArn = jsonValue.GetString("PackageArn");
 
   }
 
@@ -66,9 +96,9 @@ DescribeNodeResult& DescribeNodeResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
-  if(jsonValue.ValueExists("PackageArn"))
+  if(jsonValue.ValueExists("PackageName"))
   {
-    m_packageArn = jsonValue.GetString("PackageArn");
+    m_packageName = jsonValue.GetString("PackageName");
 
   }
 
@@ -81,36 +111,6 @@ DescribeNodeResult& DescribeNodeResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("PatchVersion"))
   {
     m_patchVersion = jsonValue.GetString("PatchVersion");
-
-  }
-
-  if(jsonValue.ValueExists("NodeInterface"))
-  {
-    m_nodeInterface = jsonValue.GetObject("NodeInterface");
-
-  }
-
-  if(jsonValue.ValueExists("AssetName"))
-  {
-    m_assetName = jsonValue.GetString("AssetName");
-
-  }
-
-  if(jsonValue.ValueExists("Description"))
-  {
-    m_description = jsonValue.GetString("Description");
-
-  }
-
-  if(jsonValue.ValueExists("CreatedTime"))
-  {
-    m_createdTime = jsonValue.GetDouble("CreatedTime");
-
-  }
-
-  if(jsonValue.ValueExists("LastUpdatedTime"))
-  {
-    m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
 
   }
 

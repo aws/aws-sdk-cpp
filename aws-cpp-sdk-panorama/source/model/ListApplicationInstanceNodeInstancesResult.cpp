@@ -28,6 +28,12 @@ ListApplicationInstanceNodeInstancesResult::ListApplicationInstanceNodeInstances
 ListApplicationInstanceNodeInstancesResult& ListApplicationInstanceNodeInstancesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+
+  }
+
   if(jsonValue.ValueExists("NodeInstances"))
   {
     Array<JsonView> nodeInstancesJsonList = jsonValue.GetArray("NodeInstances");
@@ -35,12 +41,6 @@ ListApplicationInstanceNodeInstancesResult& ListApplicationInstanceNodeInstances
     {
       m_nodeInstances.push_back(nodeInstancesJsonList[nodeInstancesIndex].AsObject());
     }
-  }
-
-  if(jsonValue.ValueExists("NextToken"))
-  {
-    m_nextToken = jsonValue.GetString("NextToken");
-
   }
 
 

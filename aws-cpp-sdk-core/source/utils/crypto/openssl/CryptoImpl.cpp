@@ -169,6 +169,22 @@ namespace Aws
                 EVP_MD_CTX *m_ctx;
             };
 
+            MD5OpenSSLImpl::MD5OpenSSLImpl()
+            {
+                m_ctx = EVP_MD_CTX_create();
+                assert(m_ctx != nullptr);
+#if !defined(OPENSSL_IS_BORINGSSL)
+                EVP_MD_CTX_set_flags(m_ctx, EVP_MD_CTX_FLAG_NON_FIPS_ALLOW);
+#endif
+                EVP_DigestInit_ex(m_ctx, EVP_md5(), nullptr);
+            }
+
+            MD5OpenSSLImpl::~MD5OpenSSLImpl()
+            {
+                EVP_MD_CTX_destroy(m_ctx);
+                m_ctx = nullptr;
+            }
+
             HashResult MD5OpenSSLImpl::Calculate(const Aws::String& str)
             {
                 OpensslCtxRAIIGuard guard;
@@ -223,6 +239,34 @@ namespace Aws
                 return HashResult(std::move(hash));
             }
 
+            void MD5OpenSSLImpl::Update(unsigned char* buffer, size_t bufferSize)
+            {
+                EVP_DigestUpdate(m_ctx, buffer, bufferSize);
+            }
+
+            HashResult MD5OpenSSLImpl::GetHash()
+            {
+                ByteBuffer hash(EVP_MD_size(EVP_md5()));
+                EVP_DigestFinal(m_ctx, hash.GetUnderlyingData(), nullptr);
+                return HashResult(std::move(hash));
+            }
+
+            Sha1OpenSSLImpl::Sha1OpenSSLImpl()
+            {
+                m_ctx = EVP_MD_CTX_create();
+                assert(m_ctx != nullptr);
+#if !defined(OPENSSL_IS_BORINGSSL)
+                EVP_MD_CTX_set_flags(m_ctx, EVP_MD_CTX_FLAG_NON_FIPS_ALLOW);
+#endif
+                EVP_DigestInit_ex(m_ctx, EVP_sha1(), nullptr);
+            }
+
+            Sha1OpenSSLImpl::~Sha1OpenSSLImpl()
+            {
+                EVP_MD_CTX_destroy(m_ctx);
+                m_ctx = nullptr;
+            }
+
             HashResult Sha1OpenSSLImpl::Calculate(const Aws::String& str)
             {
                 OpensslCtxRAIIGuard guard;
@@ -273,6 +317,34 @@ namespace Aws
                 return HashResult(std::move(hash));
             }
 
+            void Sha1OpenSSLImpl::Update(unsigned char* buffer, size_t bufferSize)
+            {
+                EVP_DigestUpdate(m_ctx, buffer, bufferSize);
+            }
+
+            HashResult Sha1OpenSSLImpl::GetHash()
+            {
+                ByteBuffer hash(EVP_MD_size(EVP_sha1()));
+                EVP_DigestFinal(m_ctx, hash.GetUnderlyingData(), nullptr);
+                return HashResult(std::move(hash));
+            }
+
+            Sha256OpenSSLImpl::Sha256OpenSSLImpl()
+            {
+                m_ctx = EVP_MD_CTX_create();
+                assert(m_ctx != nullptr);
+#if !defined(OPENSSL_IS_BORINGSSL)
+                EVP_MD_CTX_set_flags(m_ctx, EVP_MD_CTX_FLAG_NON_FIPS_ALLOW);
+#endif
+                EVP_DigestInit_ex(m_ctx, EVP_sha256(), nullptr);
+            }
+
+            Sha256OpenSSLImpl::~Sha256OpenSSLImpl()
+            {
+                EVP_MD_CTX_destroy(m_ctx);
+                m_ctx = nullptr;
+            }
+
             HashResult Sha256OpenSSLImpl::Calculate(const Aws::String& str)
             {
                 OpensslCtxRAIIGuard guard;
@@ -320,6 +392,18 @@ namespace Aws
                 ByteBuffer hash(EVP_MD_size(EVP_sha256()));
                 EVP_DigestFinal(ctx, hash.GetUnderlyingData(), nullptr);
 
+                return HashResult(std::move(hash));
+            }
+
+            void Sha256OpenSSLImpl::Update(unsigned char* buffer, size_t bufferSize)
+            {
+                EVP_DigestUpdate(m_ctx, buffer, bufferSize);
+            }
+
+            HashResult Sha256OpenSSLImpl::GetHash()
+            {
+                ByteBuffer hash(EVP_MD_size(EVP_sha256()));
+                EVP_DigestFinal(m_ctx, hash.GetUnderlyingData(), nullptr);
                 return HashResult(std::move(hash));
             }
 

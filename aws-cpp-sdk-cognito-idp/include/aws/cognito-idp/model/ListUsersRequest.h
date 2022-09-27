@@ -241,8 +241,20 @@ namespace Model
      * </p> </li> <li> <p> <code>cognito:user_status</code> (called <b>Status</b> in
      * the Console) (case-insensitive)</p> </li> <li> <p> <code>status (called
      * <b>Enabled</b> in the Console) (case-sensitive)</code> </p> </li> <li> <p>
-     * <code>sub</code> </p> </li> </ul> <p>Custom attributes are not searchable.</p>
-     * <p>For more information, see <a
+     * <code>sub</code> </p> </li> </ul> <p>Custom attributes aren't searchable.</p>
+     *  <p>You can also list users with a client-side filter. The server-side
+     * filter matches no more than one attribute. For an advanced search, use a
+     * client-side filter with the <code>--query</code> parameter of the
+     * <code>list-users</code> action in the CLI. When you use a client-side filter,
+     * ListUsers returns a paginated list of zero or more users. You can receive
+     * multiple pages in a row with zero results. Repeat the query with each pagination
+     * token that is returned until you receive a null pagination token value, and then
+     * review the combined result. </p> <p>For more information about server-side and
+     * client-side filtering, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">FilteringCLI
+     * output</a> in the <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Command
+     * Line Interface User Guide</a>. </p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching
      * for Users Using the ListUsers API</a> and <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples
@@ -270,8 +282,20 @@ namespace Model
      * </p> </li> <li> <p> <code>cognito:user_status</code> (called <b>Status</b> in
      * the Console) (case-insensitive)</p> </li> <li> <p> <code>status (called
      * <b>Enabled</b> in the Console) (case-sensitive)</code> </p> </li> <li> <p>
-     * <code>sub</code> </p> </li> </ul> <p>Custom attributes are not searchable.</p>
-     * <p>For more information, see <a
+     * <code>sub</code> </p> </li> </ul> <p>Custom attributes aren't searchable.</p>
+     *  <p>You can also list users with a client-side filter. The server-side
+     * filter matches no more than one attribute. For an advanced search, use a
+     * client-side filter with the <code>--query</code> parameter of the
+     * <code>list-users</code> action in the CLI. When you use a client-side filter,
+     * ListUsers returns a paginated list of zero or more users. You can receive
+     * multiple pages in a row with zero results. Repeat the query with each pagination
+     * token that is returned until you receive a null pagination token value, and then
+     * review the combined result. </p> <p>For more information about server-side and
+     * client-side filtering, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">FilteringCLI
+     * output</a> in the <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Command
+     * Line Interface User Guide</a>. </p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching
      * for Users Using the ListUsers API</a> and <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples
@@ -299,8 +323,20 @@ namespace Model
      * </p> </li> <li> <p> <code>cognito:user_status</code> (called <b>Status</b> in
      * the Console) (case-insensitive)</p> </li> <li> <p> <code>status (called
      * <b>Enabled</b> in the Console) (case-sensitive)</code> </p> </li> <li> <p>
-     * <code>sub</code> </p> </li> </ul> <p>Custom attributes are not searchable.</p>
-     * <p>For more information, see <a
+     * <code>sub</code> </p> </li> </ul> <p>Custom attributes aren't searchable.</p>
+     *  <p>You can also list users with a client-side filter. The server-side
+     * filter matches no more than one attribute. For an advanced search, use a
+     * client-side filter with the <code>--query</code> parameter of the
+     * <code>list-users</code> action in the CLI. When you use a client-side filter,
+     * ListUsers returns a paginated list of zero or more users. You can receive
+     * multiple pages in a row with zero results. Repeat the query with each pagination
+     * token that is returned until you receive a null pagination token value, and then
+     * review the combined result. </p> <p>For more information about server-side and
+     * client-side filtering, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">FilteringCLI
+     * output</a> in the <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Command
+     * Line Interface User Guide</a>. </p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching
      * for Users Using the ListUsers API</a> and <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples
@@ -328,8 +364,20 @@ namespace Model
      * </p> </li> <li> <p> <code>cognito:user_status</code> (called <b>Status</b> in
      * the Console) (case-insensitive)</p> </li> <li> <p> <code>status (called
      * <b>Enabled</b> in the Console) (case-sensitive)</code> </p> </li> <li> <p>
-     * <code>sub</code> </p> </li> </ul> <p>Custom attributes are not searchable.</p>
-     * <p>For more information, see <a
+     * <code>sub</code> </p> </li> </ul> <p>Custom attributes aren't searchable.</p>
+     *  <p>You can also list users with a client-side filter. The server-side
+     * filter matches no more than one attribute. For an advanced search, use a
+     * client-side filter with the <code>--query</code> parameter of the
+     * <code>list-users</code> action in the CLI. When you use a client-side filter,
+     * ListUsers returns a paginated list of zero or more users. You can receive
+     * multiple pages in a row with zero results. Repeat the query with each pagination
+     * token that is returned until you receive a null pagination token value, and then
+     * review the combined result. </p> <p>For more information about server-side and
+     * client-side filtering, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">FilteringCLI
+     * output</a> in the <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Command
+     * Line Interface User Guide</a>. </p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching
      * for Users Using the ListUsers API</a> and <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples
@@ -357,8 +405,20 @@ namespace Model
      * </p> </li> <li> <p> <code>cognito:user_status</code> (called <b>Status</b> in
      * the Console) (case-insensitive)</p> </li> <li> <p> <code>status (called
      * <b>Enabled</b> in the Console) (case-sensitive)</code> </p> </li> <li> <p>
-     * <code>sub</code> </p> </li> </ul> <p>Custom attributes are not searchable.</p>
-     * <p>For more information, see <a
+     * <code>sub</code> </p> </li> </ul> <p>Custom attributes aren't searchable.</p>
+     *  <p>You can also list users with a client-side filter. The server-side
+     * filter matches no more than one attribute. For an advanced search, use a
+     * client-side filter with the <code>--query</code> parameter of the
+     * <code>list-users</code> action in the CLI. When you use a client-side filter,
+     * ListUsers returns a paginated list of zero or more users. You can receive
+     * multiple pages in a row with zero results. Repeat the query with each pagination
+     * token that is returned until you receive a null pagination token value, and then
+     * review the combined result. </p> <p>For more information about server-side and
+     * client-side filtering, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">FilteringCLI
+     * output</a> in the <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Command
+     * Line Interface User Guide</a>. </p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching
      * for Users Using the ListUsers API</a> and <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples
@@ -386,8 +446,20 @@ namespace Model
      * </p> </li> <li> <p> <code>cognito:user_status</code> (called <b>Status</b> in
      * the Console) (case-insensitive)</p> </li> <li> <p> <code>status (called
      * <b>Enabled</b> in the Console) (case-sensitive)</code> </p> </li> <li> <p>
-     * <code>sub</code> </p> </li> </ul> <p>Custom attributes are not searchable.</p>
-     * <p>For more information, see <a
+     * <code>sub</code> </p> </li> </ul> <p>Custom attributes aren't searchable.</p>
+     *  <p>You can also list users with a client-side filter. The server-side
+     * filter matches no more than one attribute. For an advanced search, use a
+     * client-side filter with the <code>--query</code> parameter of the
+     * <code>list-users</code> action in the CLI. When you use a client-side filter,
+     * ListUsers returns a paginated list of zero or more users. You can receive
+     * multiple pages in a row with zero results. Repeat the query with each pagination
+     * token that is returned until you receive a null pagination token value, and then
+     * review the combined result. </p> <p>For more information about server-side and
+     * client-side filtering, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">FilteringCLI
+     * output</a> in the <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Command
+     * Line Interface User Guide</a>. </p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching
      * for Users Using the ListUsers API</a> and <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples
@@ -415,8 +487,20 @@ namespace Model
      * </p> </li> <li> <p> <code>cognito:user_status</code> (called <b>Status</b> in
      * the Console) (case-insensitive)</p> </li> <li> <p> <code>status (called
      * <b>Enabled</b> in the Console) (case-sensitive)</code> </p> </li> <li> <p>
-     * <code>sub</code> </p> </li> </ul> <p>Custom attributes are not searchable.</p>
-     * <p>For more information, see <a
+     * <code>sub</code> </p> </li> </ul> <p>Custom attributes aren't searchable.</p>
+     *  <p>You can also list users with a client-side filter. The server-side
+     * filter matches no more than one attribute. For an advanced search, use a
+     * client-side filter with the <code>--query</code> parameter of the
+     * <code>list-users</code> action in the CLI. When you use a client-side filter,
+     * ListUsers returns a paginated list of zero or more users. You can receive
+     * multiple pages in a row with zero results. Repeat the query with each pagination
+     * token that is returned until you receive a null pagination token value, and then
+     * review the combined result. </p> <p>For more information about server-side and
+     * client-side filtering, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">FilteringCLI
+     * output</a> in the <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Command
+     * Line Interface User Guide</a>. </p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching
      * for Users Using the ListUsers API</a> and <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples
@@ -444,8 +528,20 @@ namespace Model
      * </p> </li> <li> <p> <code>cognito:user_status</code> (called <b>Status</b> in
      * the Console) (case-insensitive)</p> </li> <li> <p> <code>status (called
      * <b>Enabled</b> in the Console) (case-sensitive)</code> </p> </li> <li> <p>
-     * <code>sub</code> </p> </li> </ul> <p>Custom attributes are not searchable.</p>
-     * <p>For more information, see <a
+     * <code>sub</code> </p> </li> </ul> <p>Custom attributes aren't searchable.</p>
+     *  <p>You can also list users with a client-side filter. The server-side
+     * filter matches no more than one attribute. For an advanced search, use a
+     * client-side filter with the <code>--query</code> parameter of the
+     * <code>list-users</code> action in the CLI. When you use a client-side filter,
+     * ListUsers returns a paginated list of zero or more users. You can receive
+     * multiple pages in a row with zero results. Repeat the query with each pagination
+     * token that is returned until you receive a null pagination token value, and then
+     * review the combined result. </p> <p>For more information about server-side and
+     * client-side filtering, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">FilteringCLI
+     * output</a> in the <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Command
+     * Line Interface User Guide</a>. </p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching
      * for Users Using the ListUsers API</a> and <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples

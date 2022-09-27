@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the model created in Amazon SageMaker.</p>
+     * <p>The ARN of the model created in SageMaker.</p>
      */
     inline const Aws::String& GetModelArn() const{ return m_modelArn; }
 
     /**
-     * <p>The ARN of the model created in Amazon SageMaker.</p>
+     * <p>The ARN of the model created in SageMaker.</p>
      */
     inline void SetModelArn(const Aws::String& value) { m_modelArn = value; }
 
     /**
-     * <p>The ARN of the model created in Amazon SageMaker.</p>
+     * <p>The ARN of the model created in SageMaker.</p>
      */
     inline void SetModelArn(Aws::String&& value) { m_modelArn = std::move(value); }
 
     /**
-     * <p>The ARN of the model created in Amazon SageMaker.</p>
+     * <p>The ARN of the model created in SageMaker.</p>
      */
     inline void SetModelArn(const char* value) { m_modelArn.assign(value); }
 
     /**
-     * <p>The ARN of the model created in Amazon SageMaker.</p>
+     * <p>The ARN of the model created in SageMaker.</p>
      */
     inline CreateModelResult& WithModelArn(const Aws::String& value) { SetModelArn(value); return *this;}
 
     /**
-     * <p>The ARN of the model created in Amazon SageMaker.</p>
+     * <p>The ARN of the model created in SageMaker.</p>
      */
     inline CreateModelResult& WithModelArn(Aws::String&& value) { SetModelArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the model created in Amazon SageMaker.</p>
+     * <p>The ARN of the model created in SageMaker.</p>
      */
     inline CreateModelResult& WithModelArn(const char* value) { SetModelArn(value); return *this;}
 

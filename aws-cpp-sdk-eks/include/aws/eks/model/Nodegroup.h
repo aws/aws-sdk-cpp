@@ -826,7 +826,9 @@ namespace Model
      * are created. Effect is one of <code>No_Schedule</code>,
      * <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints
      * can be used together with tolerations to control how workloads are scheduled to
-     * your nodes.</p>
+     * your nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
      */
     inline const Aws::Vector<Taint>& GetTaints() const{ return m_taints; }
 
@@ -835,7 +837,9 @@ namespace Model
      * are created. Effect is one of <code>No_Schedule</code>,
      * <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints
      * can be used together with tolerations to control how workloads are scheduled to
-     * your nodes.</p>
+     * your nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
      */
     inline bool TaintsHasBeenSet() const { return m_taintsHasBeenSet; }
 
@@ -844,7 +848,9 @@ namespace Model
      * are created. Effect is one of <code>No_Schedule</code>,
      * <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints
      * can be used together with tolerations to control how workloads are scheduled to
-     * your nodes.</p>
+     * your nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
      */
     inline void SetTaints(const Aws::Vector<Taint>& value) { m_taintsHasBeenSet = true; m_taints = value; }
 
@@ -853,7 +859,9 @@ namespace Model
      * are created. Effect is one of <code>No_Schedule</code>,
      * <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints
      * can be used together with tolerations to control how workloads are scheduled to
-     * your nodes.</p>
+     * your nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
      */
     inline void SetTaints(Aws::Vector<Taint>&& value) { m_taintsHasBeenSet = true; m_taints = std::move(value); }
 
@@ -862,7 +870,9 @@ namespace Model
      * are created. Effect is one of <code>No_Schedule</code>,
      * <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints
      * can be used together with tolerations to control how workloads are scheduled to
-     * your nodes.</p>
+     * your nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
      */
     inline Nodegroup& WithTaints(const Aws::Vector<Taint>& value) { SetTaints(value); return *this;}
 
@@ -871,7 +881,9 @@ namespace Model
      * are created. Effect is one of <code>No_Schedule</code>,
      * <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints
      * can be used together with tolerations to control how workloads are scheduled to
-     * your nodes.</p>
+     * your nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
      */
     inline Nodegroup& WithTaints(Aws::Vector<Taint>&& value) { SetTaints(std::move(value)); return *this;}
 
@@ -880,7 +892,9 @@ namespace Model
      * are created. Effect is one of <code>No_Schedule</code>,
      * <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints
      * can be used together with tolerations to control how workloads are scheduled to
-     * your nodes.</p>
+     * your nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
      */
     inline Nodegroup& AddTaints(const Taint& value) { m_taintsHasBeenSet = true; m_taints.push_back(value); return *this; }
 
@@ -889,7 +903,9 @@ namespace Model
      * are created. Effect is one of <code>No_Schedule</code>,
      * <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints
      * can be used together with tolerations to control how workloads are scheduled to
-     * your nodes.</p>
+     * your nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
      */
     inline Nodegroup& AddTaints(Taint&& value) { m_taintsHasBeenSet = true; m_taints.push_back(std::move(value)); return *this; }
 

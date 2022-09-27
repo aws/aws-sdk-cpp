@@ -298,38 +298,38 @@ namespace Model
 
 
     /**
-     * <p>Set this field to <code>PII</code> to identify personal health information in
-     * the transcription output.</p>
+     * <p>Set this field to <code>PII</code> to identify personally identifiable
+     * information in the transcription output.</p>
      */
     inline const TranscribeContentIdentificationType& GetContentIdentificationType() const{ return m_contentIdentificationType; }
 
     /**
-     * <p>Set this field to <code>PII</code> to identify personal health information in
-     * the transcription output.</p>
+     * <p>Set this field to <code>PII</code> to identify personally identifiable
+     * information in the transcription output.</p>
      */
     inline bool ContentIdentificationTypeHasBeenSet() const { return m_contentIdentificationTypeHasBeenSet; }
 
     /**
-     * <p>Set this field to <code>PII</code> to identify personal health information in
-     * the transcription output.</p>
+     * <p>Set this field to <code>PII</code> to identify personally identifiable
+     * information in the transcription output.</p>
      */
     inline void SetContentIdentificationType(const TranscribeContentIdentificationType& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = value; }
 
     /**
-     * <p>Set this field to <code>PII</code> to identify personal health information in
-     * the transcription output.</p>
+     * <p>Set this field to <code>PII</code> to identify personally identifiable
+     * information in the transcription output.</p>
      */
     inline void SetContentIdentificationType(TranscribeContentIdentificationType&& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = std::move(value); }
 
     /**
-     * <p>Set this field to <code>PII</code> to identify personal health information in
-     * the transcription output.</p>
+     * <p>Set this field to <code>PII</code> to identify personally identifiable
+     * information in the transcription output.</p>
      */
     inline EngineTranscribeSettings& WithContentIdentificationType(const TranscribeContentIdentificationType& value) { SetContentIdentificationType(value); return *this;}
 
     /**
-     * <p>Set this field to <code>PII</code> to identify personal health information in
-     * the transcription output.</p>
+     * <p>Set this field to <code>PII</code> to identify personally identifiable
+     * information in the transcription output.</p>
      */
     inline EngineTranscribeSettings& WithContentIdentificationType(TranscribeContentIdentificationType&& value) { SetContentIdentificationType(std::move(value)); return *this;}
 

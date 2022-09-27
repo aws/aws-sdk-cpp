@@ -21,14 +21,16 @@ namespace Model
 DeleteFileSystemOpenZFSConfiguration::DeleteFileSystemOpenZFSConfiguration() : 
     m_skipFinalBackup(false),
     m_skipFinalBackupHasBeenSet(false),
-    m_finalBackupTagsHasBeenSet(false)
+    m_finalBackupTagsHasBeenSet(false),
+    m_optionsHasBeenSet(false)
 {
 }
 
 DeleteFileSystemOpenZFSConfiguration::DeleteFileSystemOpenZFSConfiguration(JsonView jsonValue) : 
     m_skipFinalBackup(false),
     m_skipFinalBackupHasBeenSet(false),
-    m_finalBackupTagsHasBeenSet(false)
+    m_finalBackupTagsHasBeenSet(false),
+    m_optionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -52,6 +54,16 @@ DeleteFileSystemOpenZFSConfiguration& DeleteFileSystemOpenZFSConfiguration::oper
     m_finalBackupTagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Options"))
+  {
+    Array<JsonView> optionsJsonList = jsonValue.GetArray("Options");
+    for(unsigned optionsIndex = 0; optionsIndex < optionsJsonList.GetLength(); ++optionsIndex)
+    {
+      m_options.push_back(DeleteFileSystemOpenZFSOptionMapper::GetDeleteFileSystemOpenZFSOptionForName(optionsJsonList[optionsIndex].AsString()));
+    }
+    m_optionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -73,6 +85,17 @@ JsonValue DeleteFileSystemOpenZFSConfiguration::Jsonize() const
      finalBackupTagsJsonList[finalBackupTagsIndex].AsObject(m_finalBackupTags[finalBackupTagsIndex].Jsonize());
    }
    payload.WithArray("FinalBackupTags", std::move(finalBackupTagsJsonList));
+
+  }
+
+  if(m_optionsHasBeenSet)
+  {
+   Array<JsonValue> optionsJsonList(m_options.size());
+   for(unsigned optionsIndex = 0; optionsIndex < optionsJsonList.GetLength(); ++optionsIndex)
+   {
+     optionsJsonList[optionsIndex].AsString(DeleteFileSystemOpenZFSOptionMapper::GetNameForDeleteFileSystemOpenZFSOption(m_options[optionsIndex]));
+   }
+   payload.WithArray("Options", std::move(optionsJsonList));
 
   }
 

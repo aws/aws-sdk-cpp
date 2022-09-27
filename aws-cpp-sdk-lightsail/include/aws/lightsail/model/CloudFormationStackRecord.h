@@ -170,38 +170,38 @@ namespace Model
 
 
     /**
-     * <p>A list of objects describing the Availability Zone and AWS Region of the
-     * CloudFormation stack record.</p>
+     * <p>A list of objects describing the Availability Zone and Amazon Web Services
+     * Region of the CloudFormation stack record.</p>
      */
     inline const ResourceLocation& GetLocation() const{ return m_location; }
 
     /**
-     * <p>A list of objects describing the Availability Zone and AWS Region of the
-     * CloudFormation stack record.</p>
+     * <p>A list of objects describing the Availability Zone and Amazon Web Services
+     * Region of the CloudFormation stack record.</p>
      */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
-     * <p>A list of objects describing the Availability Zone and AWS Region of the
-     * CloudFormation stack record.</p>
+     * <p>A list of objects describing the Availability Zone and Amazon Web Services
+     * Region of the CloudFormation stack record.</p>
      */
     inline void SetLocation(const ResourceLocation& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
-     * <p>A list of objects describing the Availability Zone and AWS Region of the
-     * CloudFormation stack record.</p>
+     * <p>A list of objects describing the Availability Zone and Amazon Web Services
+     * Region of the CloudFormation stack record.</p>
      */
     inline void SetLocation(ResourceLocation&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
-     * <p>A list of objects describing the Availability Zone and AWS Region of the
-     * CloudFormation stack record.</p>
+     * <p>A list of objects describing the Availability Zone and Amazon Web Services
+     * Region of the CloudFormation stack record.</p>
      */
     inline CloudFormationStackRecord& WithLocation(const ResourceLocation& value) { SetLocation(value); return *this;}
 
     /**
-     * <p>A list of objects describing the Availability Zone and AWS Region of the
-     * CloudFormation stack record.</p>
+     * <p>A list of objects describing the Availability Zone and Amazon Web Services
+     * Region of the CloudFormation stack record.</p>
      */
     inline CloudFormationStackRecord& WithLocation(ResourceLocation&& value) { SetLocation(std::move(value)); return *this;}
 

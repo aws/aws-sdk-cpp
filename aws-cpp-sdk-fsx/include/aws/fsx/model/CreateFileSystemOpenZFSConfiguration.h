@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>The OpenZFS configuration properties for the file system that you are
-   * creating.</p><p><h3>See Also:</h3>   <a
+   * <p>The Amazon FSx for OpenZFS configuration properties for the file system that
+   * you are creating.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystemOpenZFSConfiguration">AWS
    * API Reference</a></p>
    */
@@ -175,43 +175,43 @@ namespace Model
 
     /**
      * <p>Specifies the file system deployment type. Amazon FSx for OpenZFS supports
-     * <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> is a file system configured
-     * for a single Availability Zone (AZ) of redundancy.</p>
+     * <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> deployment type is configured
+     * for redundancy within a single Availability Zone.</p>
      */
     inline const OpenZFSDeploymentType& GetDeploymentType() const{ return m_deploymentType; }
 
     /**
      * <p>Specifies the file system deployment type. Amazon FSx for OpenZFS supports
-     * <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> is a file system configured
-     * for a single Availability Zone (AZ) of redundancy.</p>
+     * <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> deployment type is configured
+     * for redundancy within a single Availability Zone.</p>
      */
     inline bool DeploymentTypeHasBeenSet() const { return m_deploymentTypeHasBeenSet; }
 
     /**
      * <p>Specifies the file system deployment type. Amazon FSx for OpenZFS supports
-     * <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> is a file system configured
-     * for a single Availability Zone (AZ) of redundancy.</p>
+     * <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> deployment type is configured
+     * for redundancy within a single Availability Zone.</p>
      */
     inline void SetDeploymentType(const OpenZFSDeploymentType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
 
     /**
      * <p>Specifies the file system deployment type. Amazon FSx for OpenZFS supports
-     * <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> is a file system configured
-     * for a single Availability Zone (AZ) of redundancy.</p>
+     * <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> deployment type is configured
+     * for redundancy within a single Availability Zone.</p>
      */
     inline void SetDeploymentType(OpenZFSDeploymentType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
 
     /**
      * <p>Specifies the file system deployment type. Amazon FSx for OpenZFS supports
-     * <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> is a file system configured
-     * for a single Availability Zone (AZ) of redundancy.</p>
+     * <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> deployment type is configured
+     * for redundancy within a single Availability Zone.</p>
      */
     inline CreateFileSystemOpenZFSConfiguration& WithDeploymentType(const OpenZFSDeploymentType& value) { SetDeploymentType(value); return *this;}
 
     /**
      * <p>Specifies the file system deployment type. Amazon FSx for OpenZFS supports
-     * <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> is a file system configured
-     * for a single Availability Zone (AZ) of redundancy.</p>
+     * <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> deployment type is configured
+     * for redundancy within a single Availability Zone.</p>
      */
     inline CreateFileSystemOpenZFSConfiguration& WithDeploymentType(OpenZFSDeploymentType&& value) { SetDeploymentType(std::move(value)); return *this;}
 

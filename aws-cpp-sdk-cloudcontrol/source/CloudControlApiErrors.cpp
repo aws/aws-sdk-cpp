@@ -21,14 +21,14 @@ namespace CloudControlApiErrorMapper
 static const int HANDLER_INTERNAL_FAILURE_HASH = HashingUtils::HashString("HandlerInternalFailureException");
 static const int NETWORK_FAILURE_HASH = HashingUtils::HashString("NetworkFailureException");
 static const int HANDLER_FAILURE_HASH = HashingUtils::HashString("HandlerFailureException");
-static const int CONCURRENT_OPERATION_HASH = HashingUtils::HashString("ConcurrentOperationException");
 static const int GENERAL_SERVICE_HASH = HashingUtils::HashString("GeneralServiceException");
+static const int CONCURRENT_OPERATION_HASH = HashingUtils::HashString("ConcurrentOperationException");
 static const int PRIVATE_TYPE_HASH = HashingUtils::HashString("PrivateTypeException");
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsException");
 static const int SERVICE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ServiceLimitExceededException");
-static const int TYPE_NOT_FOUND_HASH = HashingUtils::HashString("TypeNotFoundException");
 static const int NOT_UPDATABLE_HASH = HashingUtils::HashString("NotUpdatableException");
+static const int TYPE_NOT_FOUND_HASH = HashingUtils::HashString("TypeNotFoundException");
 static const int UNSUPPORTED_ACTION_HASH = HashingUtils::HashString("UnsupportedActionException");
 static const int NOT_STABILIZED_HASH = HashingUtils::HashString("NotStabilizedException");
 static const int RESOURCE_CONFLICT_HASH = HashingUtils::HashString("ResourceConflictException");
@@ -55,13 +55,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::HANDLER_FAILURE), false);
   }
-  else if (hashCode == CONCURRENT_OPERATION_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::CONCURRENT_OPERATION), false);
-  }
   else if (hashCode == GENERAL_SERVICE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::GENERAL_SERVICE), false);
+  }
+  else if (hashCode == CONCURRENT_OPERATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::CONCURRENT_OPERATION), false);
   }
   else if (hashCode == PRIVATE_TYPE_HASH)
   {
@@ -79,13 +79,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::SERVICE_LIMIT_EXCEEDED), false);
   }
-  else if (hashCode == TYPE_NOT_FOUND_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::TYPE_NOT_FOUND), false);
-  }
   else if (hashCode == NOT_UPDATABLE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::NOT_UPDATABLE), false);
+  }
+  else if (hashCode == TYPE_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::TYPE_NOT_FOUND), false);
   }
   else if (hashCode == UNSUPPORTED_ACTION_HASH)
   {

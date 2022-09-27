@@ -25,8 +25,8 @@ namespace Model
 
   /**
    * <p>An optional category of meeting features that contains audio-specific
-   * configurations, such as operating parameters for Amazon Voice
-   * Focus.</p><p><h3>See Also:</h3>   <a
+   * configurations, such as operating parameters for Amazon Voice Focus.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/AudioFeatures">AWS
    * API Reference</a></p>
    */

@@ -41,7 +41,8 @@ ContainerService::ContainerService() :
     m_principalArnHasBeenSet(false),
     m_privateDomainNameHasBeenSet(false),
     m_publicDomainNamesHasBeenSet(false),
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_privateRegistryAccessHasBeenSet(false)
 {
 }
 
@@ -68,7 +69,8 @@ ContainerService::ContainerService(JsonView jsonValue) :
     m_principalArnHasBeenSet(false),
     m_privateDomainNameHasBeenSet(false),
     m_publicDomainNamesHasBeenSet(false),
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_privateRegistryAccessHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -214,6 +216,13 @@ ContainerService& ContainerService::operator =(JsonView jsonValue)
     m_urlHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("privateRegistryAccess"))
+  {
+    m_privateRegistryAccess = jsonValue.GetObject("privateRegistryAccess");
+
+    m_privateRegistryAccessHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -337,6 +346,12 @@ JsonValue ContainerService::Jsonize() const
   if(m_urlHasBeenSet)
   {
    payload.WithString("url", m_url);
+
+  }
+
+  if(m_privateRegistryAccessHasBeenSet)
+  {
+   payload.WithObject("privateRegistryAccess", m_privateRegistryAccess.Jsonize());
 
   }
 

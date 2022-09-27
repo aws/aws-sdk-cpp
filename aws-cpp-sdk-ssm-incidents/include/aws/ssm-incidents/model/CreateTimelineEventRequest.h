@@ -84,50 +84,42 @@ namespace Model
 
 
     /**
-     * <p>A short description of the event as a valid JSON string. There is no other
-     * schema imposed.</p>
+     * <p>A short description of the event.</p>
      */
     inline const Aws::String& GetEventData() const{ return m_eventData; }
 
     /**
-     * <p>A short description of the event as a valid JSON string. There is no other
-     * schema imposed.</p>
+     * <p>A short description of the event.</p>
      */
     inline bool EventDataHasBeenSet() const { return m_eventDataHasBeenSet; }
 
     /**
-     * <p>A short description of the event as a valid JSON string. There is no other
-     * schema imposed.</p>
+     * <p>A short description of the event.</p>
      */
     inline void SetEventData(const Aws::String& value) { m_eventDataHasBeenSet = true; m_eventData = value; }
 
     /**
-     * <p>A short description of the event as a valid JSON string. There is no other
-     * schema imposed.</p>
+     * <p>A short description of the event.</p>
      */
     inline void SetEventData(Aws::String&& value) { m_eventDataHasBeenSet = true; m_eventData = std::move(value); }
 
     /**
-     * <p>A short description of the event as a valid JSON string. There is no other
-     * schema imposed.</p>
+     * <p>A short description of the event.</p>
      */
     inline void SetEventData(const char* value) { m_eventDataHasBeenSet = true; m_eventData.assign(value); }
 
     /**
-     * <p>A short description of the event as a valid JSON string. There is no other
-     * schema imposed.</p>
+     * <p>A short description of the event.</p>
      */
     inline CreateTimelineEventRequest& WithEventData(const Aws::String& value) { SetEventData(value); return *this;}
 
     /**
-     * <p>A short description of the event as a valid JSON string. There is no other
-     * schema imposed.</p>
+     * <p>A short description of the event.</p>
      */
     inline CreateTimelineEventRequest& WithEventData(Aws::String&& value) { SetEventData(std::move(value)); return *this;}
 
     /**
-     * <p>A short description of the event as a valid JSON string. There is no other
-     * schema imposed.</p>
+     * <p>A short description of the event.</p>
      */
     inline CreateTimelineEventRequest& WithEventData(const char* value) { SetEventData(value); return *this;}
 

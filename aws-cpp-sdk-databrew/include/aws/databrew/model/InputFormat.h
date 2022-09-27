@@ -19,7 +19,8 @@ namespace Model
     CSV,
     JSON,
     PARQUET,
-    EXCEL
+    EXCEL,
+    ORC
   };
 
 namespace InputFormatMapper

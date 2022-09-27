@@ -51,10 +51,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the input data to pass to the algorithm.
      * Use the <code>InputFilter</code> parameter to exclude fields, such as an ID
-     * column, from the input. If you want Amazon SageMaker to pass the entire input
-     * dataset to the algorithm, accept the default value <code>$</code>.</p>
-     * <p>Examples: <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code>
-     * </p>
+     * column, from the input. If you want SageMaker to pass the entire input dataset
+     * to the algorithm, accept the default value <code>$</code>.</p> <p>Examples:
+     * <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code> </p>
      */
     inline const Aws::String& GetInputFilter() const{ return m_inputFilter; }
 
@@ -63,10 +62,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the input data to pass to the algorithm.
      * Use the <code>InputFilter</code> parameter to exclude fields, such as an ID
-     * column, from the input. If you want Amazon SageMaker to pass the entire input
-     * dataset to the algorithm, accept the default value <code>$</code>.</p>
-     * <p>Examples: <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code>
-     * </p>
+     * column, from the input. If you want SageMaker to pass the entire input dataset
+     * to the algorithm, accept the default value <code>$</code>.</p> <p>Examples:
+     * <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code> </p>
      */
     inline bool InputFilterHasBeenSet() const { return m_inputFilterHasBeenSet; }
 
@@ -75,10 +73,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the input data to pass to the algorithm.
      * Use the <code>InputFilter</code> parameter to exclude fields, such as an ID
-     * column, from the input. If you want Amazon SageMaker to pass the entire input
-     * dataset to the algorithm, accept the default value <code>$</code>.</p>
-     * <p>Examples: <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code>
-     * </p>
+     * column, from the input. If you want SageMaker to pass the entire input dataset
+     * to the algorithm, accept the default value <code>$</code>.</p> <p>Examples:
+     * <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code> </p>
      */
     inline void SetInputFilter(const Aws::String& value) { m_inputFilterHasBeenSet = true; m_inputFilter = value; }
 
@@ -87,10 +84,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the input data to pass to the algorithm.
      * Use the <code>InputFilter</code> parameter to exclude fields, such as an ID
-     * column, from the input. If you want Amazon SageMaker to pass the entire input
-     * dataset to the algorithm, accept the default value <code>$</code>.</p>
-     * <p>Examples: <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code>
-     * </p>
+     * column, from the input. If you want SageMaker to pass the entire input dataset
+     * to the algorithm, accept the default value <code>$</code>.</p> <p>Examples:
+     * <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code> </p>
      */
     inline void SetInputFilter(Aws::String&& value) { m_inputFilterHasBeenSet = true; m_inputFilter = std::move(value); }
 
@@ -99,10 +95,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the input data to pass to the algorithm.
      * Use the <code>InputFilter</code> parameter to exclude fields, such as an ID
-     * column, from the input. If you want Amazon SageMaker to pass the entire input
-     * dataset to the algorithm, accept the default value <code>$</code>.</p>
-     * <p>Examples: <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code>
-     * </p>
+     * column, from the input. If you want SageMaker to pass the entire input dataset
+     * to the algorithm, accept the default value <code>$</code>.</p> <p>Examples:
+     * <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code> </p>
      */
     inline void SetInputFilter(const char* value) { m_inputFilterHasBeenSet = true; m_inputFilter.assign(value); }
 
@@ -111,10 +106,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the input data to pass to the algorithm.
      * Use the <code>InputFilter</code> parameter to exclude fields, such as an ID
-     * column, from the input. If you want Amazon SageMaker to pass the entire input
-     * dataset to the algorithm, accept the default value <code>$</code>.</p>
-     * <p>Examples: <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code>
-     * </p>
+     * column, from the input. If you want SageMaker to pass the entire input dataset
+     * to the algorithm, accept the default value <code>$</code>.</p> <p>Examples:
+     * <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code> </p>
      */
     inline DataProcessing& WithInputFilter(const Aws::String& value) { SetInputFilter(value); return *this;}
 
@@ -123,10 +117,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the input data to pass to the algorithm.
      * Use the <code>InputFilter</code> parameter to exclude fields, such as an ID
-     * column, from the input. If you want Amazon SageMaker to pass the entire input
-     * dataset to the algorithm, accept the default value <code>$</code>.</p>
-     * <p>Examples: <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code>
-     * </p>
+     * column, from the input. If you want SageMaker to pass the entire input dataset
+     * to the algorithm, accept the default value <code>$</code>.</p> <p>Examples:
+     * <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code> </p>
      */
     inline DataProcessing& WithInputFilter(Aws::String&& value) { SetInputFilter(std::move(value)); return *this;}
 
@@ -135,10 +128,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the input data to pass to the algorithm.
      * Use the <code>InputFilter</code> parameter to exclude fields, such as an ID
-     * column, from the input. If you want Amazon SageMaker to pass the entire input
-     * dataset to the algorithm, accept the default value <code>$</code>.</p>
-     * <p>Examples: <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code>
-     * </p>
+     * column, from the input. If you want SageMaker to pass the entire input dataset
+     * to the algorithm, accept the default value <code>$</code>.</p> <p>Examples:
+     * <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code> </p>
      */
     inline DataProcessing& WithInputFilter(const char* value) { SetInputFilter(value); return *this;}
 
@@ -147,10 +139,10 @@ namespace Model
      * <p>A <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the joined dataset to save in the output
-     * file for a batch transform job. If you want Amazon SageMaker to store the entire
-     * input dataset in the output file, leave the default value, <code>$</code>. If
-     * you specify indexes that aren't within the dimension size of the joined dataset,
-     * you get an error.</p> <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>,
+     * file for a batch transform job. If you want SageMaker to store the entire input
+     * dataset in the output file, leave the default value, <code>$</code>. If you
+     * specify indexes that aren't within the dimension size of the joined dataset, you
+     * get an error.</p> <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>,
      * <code>"$['id','SageMakerOutput']"</code> </p>
      */
     inline const Aws::String& GetOutputFilter() const{ return m_outputFilter; }
@@ -159,10 +151,10 @@ namespace Model
      * <p>A <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the joined dataset to save in the output
-     * file for a batch transform job. If you want Amazon SageMaker to store the entire
-     * input dataset in the output file, leave the default value, <code>$</code>. If
-     * you specify indexes that aren't within the dimension size of the joined dataset,
-     * you get an error.</p> <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>,
+     * file for a batch transform job. If you want SageMaker to store the entire input
+     * dataset in the output file, leave the default value, <code>$</code>. If you
+     * specify indexes that aren't within the dimension size of the joined dataset, you
+     * get an error.</p> <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>,
      * <code>"$['id','SageMakerOutput']"</code> </p>
      */
     inline bool OutputFilterHasBeenSet() const { return m_outputFilterHasBeenSet; }
@@ -171,10 +163,10 @@ namespace Model
      * <p>A <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the joined dataset to save in the output
-     * file for a batch transform job. If you want Amazon SageMaker to store the entire
-     * input dataset in the output file, leave the default value, <code>$</code>. If
-     * you specify indexes that aren't within the dimension size of the joined dataset,
-     * you get an error.</p> <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>,
+     * file for a batch transform job. If you want SageMaker to store the entire input
+     * dataset in the output file, leave the default value, <code>$</code>. If you
+     * specify indexes that aren't within the dimension size of the joined dataset, you
+     * get an error.</p> <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>,
      * <code>"$['id','SageMakerOutput']"</code> </p>
      */
     inline void SetOutputFilter(const Aws::String& value) { m_outputFilterHasBeenSet = true; m_outputFilter = value; }
@@ -183,10 +175,10 @@ namespace Model
      * <p>A <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the joined dataset to save in the output
-     * file for a batch transform job. If you want Amazon SageMaker to store the entire
-     * input dataset in the output file, leave the default value, <code>$</code>. If
-     * you specify indexes that aren't within the dimension size of the joined dataset,
-     * you get an error.</p> <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>,
+     * file for a batch transform job. If you want SageMaker to store the entire input
+     * dataset in the output file, leave the default value, <code>$</code>. If you
+     * specify indexes that aren't within the dimension size of the joined dataset, you
+     * get an error.</p> <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>,
      * <code>"$['id','SageMakerOutput']"</code> </p>
      */
     inline void SetOutputFilter(Aws::String&& value) { m_outputFilterHasBeenSet = true; m_outputFilter = std::move(value); }
@@ -195,10 +187,10 @@ namespace Model
      * <p>A <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the joined dataset to save in the output
-     * file for a batch transform job. If you want Amazon SageMaker to store the entire
-     * input dataset in the output file, leave the default value, <code>$</code>. If
-     * you specify indexes that aren't within the dimension size of the joined dataset,
-     * you get an error.</p> <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>,
+     * file for a batch transform job. If you want SageMaker to store the entire input
+     * dataset in the output file, leave the default value, <code>$</code>. If you
+     * specify indexes that aren't within the dimension size of the joined dataset, you
+     * get an error.</p> <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>,
      * <code>"$['id','SageMakerOutput']"</code> </p>
      */
     inline void SetOutputFilter(const char* value) { m_outputFilterHasBeenSet = true; m_outputFilter.assign(value); }
@@ -207,10 +199,10 @@ namespace Model
      * <p>A <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the joined dataset to save in the output
-     * file for a batch transform job. If you want Amazon SageMaker to store the entire
-     * input dataset in the output file, leave the default value, <code>$</code>. If
-     * you specify indexes that aren't within the dimension size of the joined dataset,
-     * you get an error.</p> <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>,
+     * file for a batch transform job. If you want SageMaker to store the entire input
+     * dataset in the output file, leave the default value, <code>$</code>. If you
+     * specify indexes that aren't within the dimension size of the joined dataset, you
+     * get an error.</p> <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>,
      * <code>"$['id','SageMakerOutput']"</code> </p>
      */
     inline DataProcessing& WithOutputFilter(const Aws::String& value) { SetOutputFilter(value); return *this;}
@@ -219,10 +211,10 @@ namespace Model
      * <p>A <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the joined dataset to save in the output
-     * file for a batch transform job. If you want Amazon SageMaker to store the entire
-     * input dataset in the output file, leave the default value, <code>$</code>. If
-     * you specify indexes that aren't within the dimension size of the joined dataset,
-     * you get an error.</p> <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>,
+     * file for a batch transform job. If you want SageMaker to store the entire input
+     * dataset in the output file, leave the default value, <code>$</code>. If you
+     * specify indexes that aren't within the dimension size of the joined dataset, you
+     * get an error.</p> <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>,
      * <code>"$['id','SageMakerOutput']"</code> </p>
      */
     inline DataProcessing& WithOutputFilter(Aws::String&& value) { SetOutputFilter(std::move(value)); return *this;}
@@ -231,10 +223,10 @@ namespace Model
      * <p>A <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the joined dataset to save in the output
-     * file for a batch transform job. If you want Amazon SageMaker to store the entire
-     * input dataset in the output file, leave the default value, <code>$</code>. If
-     * you specify indexes that aren't within the dimension size of the joined dataset,
-     * you get an error.</p> <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>,
+     * file for a batch transform job. If you want SageMaker to store the entire input
+     * dataset in the output file, leave the default value, <code>$</code>. If you
+     * specify indexes that aren't within the dimension size of the joined dataset, you
+     * get an error.</p> <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>,
      * <code>"$['id','SageMakerOutput']"</code> </p>
      */
     inline DataProcessing& WithOutputFilter(const char* value) { SetOutputFilter(value); return *this;}

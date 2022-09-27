@@ -16,6 +16,7 @@ import com.amazonaws.util.awsclientgenerator.generators.cpp.apigatewayv2.APIGate
 import com.amazonaws.util.awsclientgenerator.generators.cpp.docdb.DocDBCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.dynamodb.DynamoDBJsonCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.ec2.Ec2CppClientGenerator;
+import com.amazonaws.util.awsclientgenerator.generators.cpp.eventbridge.EventBridgeCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.glacier.GlacierRestJsonCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.lambda.LambdaRestJsonCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.machinelearning.MachineLearningJsonCppClientGenerator;
@@ -62,6 +63,7 @@ public class ServiceGeneratorConfig {
             SPEC_OVERRIDE_MAPPING.put("cpp-rds", new RDSCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-docdb", new DocDBCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-neptune", new NeptuneCppClientGenerator());
+            SPEC_OVERRIDE_MAPPING.put("cpp-eventbridge", new EventBridgeCppClientGenerator());
 
         } catch (Exception e) {
             e.printStackTrace();

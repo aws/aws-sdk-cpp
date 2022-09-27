@@ -28,6 +28,18 @@ DescribePackageResult::DescribePackageResult(const Aws::AmazonWebServiceResult<J
 DescribePackageResult& DescribePackageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("Arn"))
+  {
+    m_arn = jsonValue.GetString("Arn");
+
+  }
+
+  if(jsonValue.ValueExists("CreatedTime"))
+  {
+    m_createdTime = jsonValue.GetDouble("CreatedTime");
+
+  }
+
   if(jsonValue.ValueExists("PackageId"))
   {
     m_packageId = jsonValue.GetString("PackageId");
@@ -40,18 +52,6 @@ DescribePackageResult& DescribePackageResult::operator =(const Aws::AmazonWebSer
 
   }
 
-  if(jsonValue.ValueExists("Arn"))
-  {
-    m_arn = jsonValue.GetString("Arn");
-
-  }
-
-  if(jsonValue.ValueExists("StorageLocation"))
-  {
-    m_storageLocation = jsonValue.GetObject("StorageLocation");
-
-  }
-
   if(jsonValue.ValueExists("ReadAccessPrincipalArns"))
   {
     Array<JsonView> readAccessPrincipalArnsJsonList = jsonValue.GetArray("ReadAccessPrincipalArns");
@@ -61,18 +61,9 @@ DescribePackageResult& DescribePackageResult::operator =(const Aws::AmazonWebSer
     }
   }
 
-  if(jsonValue.ValueExists("WriteAccessPrincipalArns"))
+  if(jsonValue.ValueExists("StorageLocation"))
   {
-    Array<JsonView> writeAccessPrincipalArnsJsonList = jsonValue.GetArray("WriteAccessPrincipalArns");
-    for(unsigned writeAccessPrincipalArnsIndex = 0; writeAccessPrincipalArnsIndex < writeAccessPrincipalArnsJsonList.GetLength(); ++writeAccessPrincipalArnsIndex)
-    {
-      m_writeAccessPrincipalArns.push_back(writeAccessPrincipalArnsJsonList[writeAccessPrincipalArnsIndex].AsString());
-    }
-  }
-
-  if(jsonValue.ValueExists("CreatedTime"))
-  {
-    m_createdTime = jsonValue.GetDouble("CreatedTime");
+    m_storageLocation = jsonValue.GetObject("StorageLocation");
 
   }
 
@@ -82,6 +73,15 @@ DescribePackageResult& DescribePackageResult::operator =(const Aws::AmazonWebSer
     for(auto& tagsItem : tagsJsonMap)
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+  }
+
+  if(jsonValue.ValueExists("WriteAccessPrincipalArns"))
+  {
+    Array<JsonView> writeAccessPrincipalArnsJsonList = jsonValue.GetArray("WriteAccessPrincipalArns");
+    for(unsigned writeAccessPrincipalArnsIndex = 0; writeAccessPrincipalArnsIndex < writeAccessPrincipalArnsJsonList.GetLength(); ++writeAccessPrincipalArnsIndex)
+    {
+      m_writeAccessPrincipalArns.push_back(writeAccessPrincipalArnsJsonList[writeAccessPrincipalArnsIndex].AsString());
     }
   }
 

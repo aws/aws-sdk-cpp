@@ -120,9 +120,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access
-     * <code>Query</code> operations, <code>QuerySuggestions</code> operations,
-     * <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores
-     * your user and group information. For more information, see <a
+     * <code>Query</code> API, <code>QuerySuggestions</code> API,
+     * <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
+     * user and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p>
      */
@@ -130,9 +130,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access
-     * <code>Query</code> operations, <code>QuerySuggestions</code> operations,
-     * <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores
-     * your user and group information. For more information, see <a
+     * <code>Query</code> API, <code>QuerySuggestions</code> API,
+     * <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
+     * user and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p>
      */
@@ -140,9 +140,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access
-     * <code>Query</code> operations, <code>QuerySuggestions</code> operations,
-     * <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores
-     * your user and group information. For more information, see <a
+     * <code>Query</code> API, <code>QuerySuggestions</code> API,
+     * <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
+     * user and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p>
      */
@@ -150,9 +150,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access
-     * <code>Query</code> operations, <code>QuerySuggestions</code> operations,
-     * <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores
-     * your user and group information. For more information, see <a
+     * <code>Query</code> API, <code>QuerySuggestions</code> API,
+     * <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
+     * user and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p>
      */
@@ -160,9 +160,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access
-     * <code>Query</code> operations, <code>QuerySuggestions</code> operations,
-     * <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores
-     * your user and group information. For more information, see <a
+     * <code>Query</code> API, <code>QuerySuggestions</code> API,
+     * <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
+     * user and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p>
      */
@@ -170,9 +170,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access
-     * <code>Query</code> operations, <code>QuerySuggestions</code> operations,
-     * <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores
-     * your user and group information. For more information, see <a
+     * <code>Query</code> API, <code>QuerySuggestions</code> API,
+     * <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
+     * user and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p>
      */
@@ -180,9 +180,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access
-     * <code>Query</code> operations, <code>QuerySuggestions</code> operations,
-     * <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores
-     * your user and group information. For more information, see <a
+     * <code>Query</code> API, <code>QuerySuggestions</code> API,
+     * <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
+     * user and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p>
      */
@@ -190,9 +190,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access
-     * <code>Query</code> operations, <code>QuerySuggestions</code> operations,
-     * <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores
-     * your user and group information. For more information, see <a
+     * <code>Query</code> API, <code>QuerySuggestions</code> API,
+     * <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
+     * user and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p>
      */
@@ -200,56 +200,50 @@ namespace Model
 
 
     /**
-     * <p>Provides the configuration information for your Amazon Kendra experience.
-     * This includes <code>ContentSourceConfiguration</code>, which specifies the data
-     * source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which
-     * specifies the user or group information to grant access to your Amazon Kendra
-     * experience.</p>
+     * <p>Configuration information for your Amazon Kendra experience. This includes
+     * <code>ContentSourceConfiguration</code>, which specifies the data source IDs
+     * and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the
+     * user or group information to grant access to your Amazon Kendra experience.</p>
      */
     inline const ExperienceConfiguration& GetConfiguration() const{ return m_configuration; }
 
     /**
-     * <p>Provides the configuration information for your Amazon Kendra experience.
-     * This includes <code>ContentSourceConfiguration</code>, which specifies the data
-     * source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which
-     * specifies the user or group information to grant access to your Amazon Kendra
-     * experience.</p>
+     * <p>Configuration information for your Amazon Kendra experience. This includes
+     * <code>ContentSourceConfiguration</code>, which specifies the data source IDs
+     * and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the
+     * user or group information to grant access to your Amazon Kendra experience.</p>
      */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
-     * <p>Provides the configuration information for your Amazon Kendra experience.
-     * This includes <code>ContentSourceConfiguration</code>, which specifies the data
-     * source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which
-     * specifies the user or group information to grant access to your Amazon Kendra
-     * experience.</p>
+     * <p>Configuration information for your Amazon Kendra experience. This includes
+     * <code>ContentSourceConfiguration</code>, which specifies the data source IDs
+     * and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the
+     * user or group information to grant access to your Amazon Kendra experience.</p>
      */
     inline void SetConfiguration(const ExperienceConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
     /**
-     * <p>Provides the configuration information for your Amazon Kendra experience.
-     * This includes <code>ContentSourceConfiguration</code>, which specifies the data
-     * source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which
-     * specifies the user or group information to grant access to your Amazon Kendra
-     * experience.</p>
+     * <p>Configuration information for your Amazon Kendra experience. This includes
+     * <code>ContentSourceConfiguration</code>, which specifies the data source IDs
+     * and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the
+     * user or group information to grant access to your Amazon Kendra experience.</p>
      */
     inline void SetConfiguration(ExperienceConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
 
     /**
-     * <p>Provides the configuration information for your Amazon Kendra experience.
-     * This includes <code>ContentSourceConfiguration</code>, which specifies the data
-     * source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which
-     * specifies the user or group information to grant access to your Amazon Kendra
-     * experience.</p>
+     * <p>Configuration information for your Amazon Kendra experience. This includes
+     * <code>ContentSourceConfiguration</code>, which specifies the data source IDs
+     * and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the
+     * user or group information to grant access to your Amazon Kendra experience.</p>
      */
     inline CreateExperienceRequest& WithConfiguration(const ExperienceConfiguration& value) { SetConfiguration(value); return *this;}
 
     /**
-     * <p>Provides the configuration information for your Amazon Kendra experience.
-     * This includes <code>ContentSourceConfiguration</code>, which specifies the data
-     * source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which
-     * specifies the user or group information to grant access to your Amazon Kendra
-     * experience.</p>
+     * <p>Configuration information for your Amazon Kendra experience. This includes
+     * <code>ContentSourceConfiguration</code>, which specifies the data source IDs
+     * and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the
+     * user or group information to grant access to your Amazon Kendra experience.</p>
      */
     inline CreateExperienceRequest& WithConfiguration(ExperienceConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 
@@ -297,57 +291,57 @@ namespace Model
 
     /**
      * <p>A token that you provide to identify the request to create your Amazon Kendra
-     * experience. Multiple calls to the <code>CreateExperience</code> operation with
-     * the same client token creates only one Amazon Kendra experience.</p>
+     * experience. Multiple calls to the <code>CreateExperience</code> API with the
+     * same client token creates only one Amazon Kendra experience.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
      * <p>A token that you provide to identify the request to create your Amazon Kendra
-     * experience. Multiple calls to the <code>CreateExperience</code> operation with
-     * the same client token creates only one Amazon Kendra experience.</p>
+     * experience. Multiple calls to the <code>CreateExperience</code> API with the
+     * same client token creates only one Amazon Kendra experience.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>A token that you provide to identify the request to create your Amazon Kendra
-     * experience. Multiple calls to the <code>CreateExperience</code> operation with
-     * the same client token creates only one Amazon Kendra experience.</p>
+     * experience. Multiple calls to the <code>CreateExperience</code> API with the
+     * same client token creates only one Amazon Kendra experience.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
      * <p>A token that you provide to identify the request to create your Amazon Kendra
-     * experience. Multiple calls to the <code>CreateExperience</code> operation with
-     * the same client token creates only one Amazon Kendra experience.</p>
+     * experience. Multiple calls to the <code>CreateExperience</code> API with the
+     * same client token creates only one Amazon Kendra experience.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>A token that you provide to identify the request to create your Amazon Kendra
-     * experience. Multiple calls to the <code>CreateExperience</code> operation with
-     * the same client token creates only one Amazon Kendra experience.</p>
+     * experience. Multiple calls to the <code>CreateExperience</code> API with the
+     * same client token creates only one Amazon Kendra experience.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
      * <p>A token that you provide to identify the request to create your Amazon Kendra
-     * experience. Multiple calls to the <code>CreateExperience</code> operation with
-     * the same client token creates only one Amazon Kendra experience.</p>
+     * experience. Multiple calls to the <code>CreateExperience</code> API with the
+     * same client token creates only one Amazon Kendra experience.</p>
      */
     inline CreateExperienceRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
      * <p>A token that you provide to identify the request to create your Amazon Kendra
-     * experience. Multiple calls to the <code>CreateExperience</code> operation with
-     * the same client token creates only one Amazon Kendra experience.</p>
+     * experience. Multiple calls to the <code>CreateExperience</code> API with the
+     * same client token creates only one Amazon Kendra experience.</p>
      */
     inline CreateExperienceRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>A token that you provide to identify the request to create your Amazon Kendra
-     * experience. Multiple calls to the <code>CreateExperience</code> operation with
-     * the same client token creates only one Amazon Kendra experience.</p>
+     * experience. Multiple calls to the <code>CreateExperience</code> API with the
+     * same client token creates only one Amazon Kendra experience.</p>
      */
     inline CreateExperienceRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

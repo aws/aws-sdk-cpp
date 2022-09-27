@@ -398,7 +398,7 @@ namespace Model
     /**
      * <p>Lists the PII entity types you want to identify or redact. To specify entity
      * types, you must enable <code>ContentIdentificationType</code> or
-     * <code>ContentRedactionType</code>.</p> <p>PIIEntityTypes must be
+     * <code>ContentRedactionType</code>.</p> <p> <code>PIIEntityTypes</code> must be
      * comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>,
      * <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
      * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
@@ -411,7 +411,7 @@ namespace Model
     /**
      * <p>Lists the PII entity types you want to identify or redact. To specify entity
      * types, you must enable <code>ContentIdentificationType</code> or
-     * <code>ContentRedactionType</code>.</p> <p>PIIEntityTypes must be
+     * <code>ContentRedactionType</code>.</p> <p> <code>PIIEntityTypes</code> must be
      * comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>,
      * <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
      * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
@@ -424,7 +424,7 @@ namespace Model
     /**
      * <p>Lists the PII entity types you want to identify or redact. To specify entity
      * types, you must enable <code>ContentIdentificationType</code> or
-     * <code>ContentRedactionType</code>.</p> <p>PIIEntityTypes must be
+     * <code>ContentRedactionType</code>.</p> <p> <code>PIIEntityTypes</code> must be
      * comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>,
      * <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
      * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
@@ -437,7 +437,7 @@ namespace Model
     /**
      * <p>Lists the PII entity types you want to identify or redact. To specify entity
      * types, you must enable <code>ContentIdentificationType</code> or
-     * <code>ContentRedactionType</code>.</p> <p>PIIEntityTypes must be
+     * <code>ContentRedactionType</code>.</p> <p> <code>PIIEntityTypes</code> must be
      * comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>,
      * <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
      * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
@@ -450,7 +450,7 @@ namespace Model
     /**
      * <p>Lists the PII entity types you want to identify or redact. To specify entity
      * types, you must enable <code>ContentIdentificationType</code> or
-     * <code>ContentRedactionType</code>.</p> <p>PIIEntityTypes must be
+     * <code>ContentRedactionType</code>.</p> <p> <code>PIIEntityTypes</code> must be
      * comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>,
      * <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
      * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
@@ -463,7 +463,7 @@ namespace Model
     /**
      * <p>Lists the PII entity types you want to identify or redact. To specify entity
      * types, you must enable <code>ContentIdentificationType</code> or
-     * <code>ContentRedactionType</code>.</p> <p>PIIEntityTypes must be
+     * <code>ContentRedactionType</code>.</p> <p> <code>PIIEntityTypes</code> must be
      * comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>,
      * <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
      * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
@@ -476,7 +476,7 @@ namespace Model
     /**
      * <p>Lists the PII entity types you want to identify or redact. To specify entity
      * types, you must enable <code>ContentIdentificationType</code> or
-     * <code>ContentRedactionType</code>.</p> <p>PIIEntityTypes must be
+     * <code>ContentRedactionType</code>.</p> <p> <code>PIIEntityTypes</code> must be
      * comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>,
      * <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
      * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
@@ -489,7 +489,7 @@ namespace Model
     /**
      * <p>Lists the PII entity types you want to identify or redact. To specify entity
      * types, you must enable <code>ContentIdentificationType</code> or
-     * <code>ContentRedactionType</code>.</p> <p>PIIEntityTypes must be
+     * <code>ContentRedactionType</code>.</p> <p> <code>PIIEntityTypes</code> must be
      * comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>,
      * <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
      * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
@@ -540,6 +540,107 @@ namespace Model
      */
     inline EngineTranscribeSettings& WithLanguageModelName(const char* value) { SetLanguageModelName(value); return *this;}
 
+
+    /**
+     * <p>Automatically identifies the language spoken in media files.</p>
+     */
+    inline bool GetIdentifyLanguage() const{ return m_identifyLanguage; }
+
+    /**
+     * <p>Automatically identifies the language spoken in media files.</p>
+     */
+    inline bool IdentifyLanguageHasBeenSet() const { return m_identifyLanguageHasBeenSet; }
+
+    /**
+     * <p>Automatically identifies the language spoken in media files.</p>
+     */
+    inline void SetIdentifyLanguage(bool value) { m_identifyLanguageHasBeenSet = true; m_identifyLanguage = value; }
+
+    /**
+     * <p>Automatically identifies the language spoken in media files.</p>
+     */
+    inline EngineTranscribeSettings& WithIdentifyLanguage(bool value) { SetIdentifyLanguage(value); return *this;}
+
+
+    /**
+     * <p>Language codes for the languages that you want to identify. You must provide
+     * at least 2 codes.</p>
+     */
+    inline const Aws::String& GetLanguageOptions() const{ return m_languageOptions; }
+
+    /**
+     * <p>Language codes for the languages that you want to identify. You must provide
+     * at least 2 codes.</p>
+     */
+    inline bool LanguageOptionsHasBeenSet() const { return m_languageOptionsHasBeenSet; }
+
+    /**
+     * <p>Language codes for the languages that you want to identify. You must provide
+     * at least 2 codes.</p>
+     */
+    inline void SetLanguageOptions(const Aws::String& value) { m_languageOptionsHasBeenSet = true; m_languageOptions = value; }
+
+    /**
+     * <p>Language codes for the languages that you want to identify. You must provide
+     * at least 2 codes.</p>
+     */
+    inline void SetLanguageOptions(Aws::String&& value) { m_languageOptionsHasBeenSet = true; m_languageOptions = std::move(value); }
+
+    /**
+     * <p>Language codes for the languages that you want to identify. You must provide
+     * at least 2 codes.</p>
+     */
+    inline void SetLanguageOptions(const char* value) { m_languageOptionsHasBeenSet = true; m_languageOptions.assign(value); }
+
+    /**
+     * <p>Language codes for the languages that you want to identify. You must provide
+     * at least 2 codes.</p>
+     */
+    inline EngineTranscribeSettings& WithLanguageOptions(const Aws::String& value) { SetLanguageOptions(value); return *this;}
+
+    /**
+     * <p>Language codes for the languages that you want to identify. You must provide
+     * at least 2 codes.</p>
+     */
+    inline EngineTranscribeSettings& WithLanguageOptions(Aws::String&& value) { SetLanguageOptions(std::move(value)); return *this;}
+
+    /**
+     * <p>Language codes for the languages that you want to identify. You must provide
+     * at least 2 codes.</p>
+     */
+    inline EngineTranscribeSettings& WithLanguageOptions(const char* value) { SetLanguageOptions(value); return *this;}
+
+
+    /**
+     * <p>Language code for the preferred language.</p>
+     */
+    inline const TranscribeLanguageCode& GetPreferredLanguage() const{ return m_preferredLanguage; }
+
+    /**
+     * <p>Language code for the preferred language.</p>
+     */
+    inline bool PreferredLanguageHasBeenSet() const { return m_preferredLanguageHasBeenSet; }
+
+    /**
+     * <p>Language code for the preferred language.</p>
+     */
+    inline void SetPreferredLanguage(const TranscribeLanguageCode& value) { m_preferredLanguageHasBeenSet = true; m_preferredLanguage = value; }
+
+    /**
+     * <p>Language code for the preferred language.</p>
+     */
+    inline void SetPreferredLanguage(TranscribeLanguageCode&& value) { m_preferredLanguageHasBeenSet = true; m_preferredLanguage = std::move(value); }
+
+    /**
+     * <p>Language code for the preferred language.</p>
+     */
+    inline EngineTranscribeSettings& WithPreferredLanguage(const TranscribeLanguageCode& value) { SetPreferredLanguage(value); return *this;}
+
+    /**
+     * <p>Language code for the preferred language.</p>
+     */
+    inline EngineTranscribeSettings& WithPreferredLanguage(TranscribeLanguageCode&& value) { SetPreferredLanguage(std::move(value)); return *this;}
+
   private:
 
     TranscribeLanguageCode m_languageCode;
@@ -574,6 +675,15 @@ namespace Model
 
     Aws::String m_languageModelName;
     bool m_languageModelNameHasBeenSet;
+
+    bool m_identifyLanguage;
+    bool m_identifyLanguageHasBeenSet;
+
+    Aws::String m_languageOptions;
+    bool m_languageOptionsHasBeenSet;
+
+    TranscribeLanguageCode m_preferredLanguage;
+    bool m_preferredLanguageHasBeenSet;
   };
 
 } // namespace Model

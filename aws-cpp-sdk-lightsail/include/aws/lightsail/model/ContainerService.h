@@ -15,6 +15,7 @@
 #include <aws/lightsail/model/ContainerServiceStateDetail.h>
 #include <aws/lightsail/model/ContainerServiceDeployment.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/lightsail/model/PrivateRegistryAccess.h>
 #include <aws/lightsail/model/Tag.h>
 #include <utility>
 
@@ -163,37 +164,37 @@ namespace Model
 
     /**
      * <p>An object that describes the location of the container service, such as the
-     * AWS Region and Availability Zone.</p>
+     * Amazon Web Services Region and Availability Zone.</p>
      */
     inline const ResourceLocation& GetLocation() const{ return m_location; }
 
     /**
      * <p>An object that describes the location of the container service, such as the
-     * AWS Region and Availability Zone.</p>
+     * Amazon Web Services Region and Availability Zone.</p>
      */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
      * <p>An object that describes the location of the container service, such as the
-     * AWS Region and Availability Zone.</p>
+     * Amazon Web Services Region and Availability Zone.</p>
      */
     inline void SetLocation(const ResourceLocation& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
      * <p>An object that describes the location of the container service, such as the
-     * AWS Region and Availability Zone.</p>
+     * Amazon Web Services Region and Availability Zone.</p>
      */
     inline void SetLocation(ResourceLocation&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
      * <p>An object that describes the location of the container service, such as the
-     * AWS Region and Availability Zone.</p>
+     * Amazon Web Services Region and Availability Zone.</p>
      */
     inline ContainerService& WithLocation(const ResourceLocation& value) { SetLocation(value); return *this;}
 
     /**
      * <p>An object that describes the location of the container service, such as the
-     * AWS Region and Availability Zone.</p>
+     * Amazon Web Services Region and Availability Zone.</p>
      */
     inline ContainerService& WithLocation(ResourceLocation&& value) { SetLocation(std::move(value)); return *this;}
 
@@ -658,65 +659,73 @@ namespace Model
 
     /**
      * <p>The principal ARN of the container service.</p> <p>The principal ARN can be
-     * used to create a trust relationship between your standard AWS account and your
-     * Lightsail container service. This allows you to give your service permission to
-     * access resources in your standard AWS account.</p>
+     * used to create a trust relationship between your standard Amazon Web Services
+     * account and your Lightsail container service. This allows you to give your
+     * service permission to access resources in your standard Amazon Web Services
+     * account.</p>
      */
     inline const Aws::String& GetPrincipalArn() const{ return m_principalArn; }
 
     /**
      * <p>The principal ARN of the container service.</p> <p>The principal ARN can be
-     * used to create a trust relationship between your standard AWS account and your
-     * Lightsail container service. This allows you to give your service permission to
-     * access resources in your standard AWS account.</p>
+     * used to create a trust relationship between your standard Amazon Web Services
+     * account and your Lightsail container service. This allows you to give your
+     * service permission to access resources in your standard Amazon Web Services
+     * account.</p>
      */
     inline bool PrincipalArnHasBeenSet() const { return m_principalArnHasBeenSet; }
 
     /**
      * <p>The principal ARN of the container service.</p> <p>The principal ARN can be
-     * used to create a trust relationship between your standard AWS account and your
-     * Lightsail container service. This allows you to give your service permission to
-     * access resources in your standard AWS account.</p>
+     * used to create a trust relationship between your standard Amazon Web Services
+     * account and your Lightsail container service. This allows you to give your
+     * service permission to access resources in your standard Amazon Web Services
+     * account.</p>
      */
     inline void SetPrincipalArn(const Aws::String& value) { m_principalArnHasBeenSet = true; m_principalArn = value; }
 
     /**
      * <p>The principal ARN of the container service.</p> <p>The principal ARN can be
-     * used to create a trust relationship between your standard AWS account and your
-     * Lightsail container service. This allows you to give your service permission to
-     * access resources in your standard AWS account.</p>
+     * used to create a trust relationship between your standard Amazon Web Services
+     * account and your Lightsail container service. This allows you to give your
+     * service permission to access resources in your standard Amazon Web Services
+     * account.</p>
      */
     inline void SetPrincipalArn(Aws::String&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::move(value); }
 
     /**
      * <p>The principal ARN of the container service.</p> <p>The principal ARN can be
-     * used to create a trust relationship between your standard AWS account and your
-     * Lightsail container service. This allows you to give your service permission to
-     * access resources in your standard AWS account.</p>
+     * used to create a trust relationship between your standard Amazon Web Services
+     * account and your Lightsail container service. This allows you to give your
+     * service permission to access resources in your standard Amazon Web Services
+     * account.</p>
      */
     inline void SetPrincipalArn(const char* value) { m_principalArnHasBeenSet = true; m_principalArn.assign(value); }
 
     /**
      * <p>The principal ARN of the container service.</p> <p>The principal ARN can be
-     * used to create a trust relationship between your standard AWS account and your
-     * Lightsail container service. This allows you to give your service permission to
-     * access resources in your standard AWS account.</p>
+     * used to create a trust relationship between your standard Amazon Web Services
+     * account and your Lightsail container service. This allows you to give your
+     * service permission to access resources in your standard Amazon Web Services
+     * account.</p>
      */
     inline ContainerService& WithPrincipalArn(const Aws::String& value) { SetPrincipalArn(value); return *this;}
 
     /**
      * <p>The principal ARN of the container service.</p> <p>The principal ARN can be
-     * used to create a trust relationship between your standard AWS account and your
-     * Lightsail container service. This allows you to give your service permission to
-     * access resources in your standard AWS account.</p>
+     * used to create a trust relationship between your standard Amazon Web Services
+     * account and your Lightsail container service. This allows you to give your
+     * service permission to access resources in your standard Amazon Web Services
+     * account.</p>
      */
     inline ContainerService& WithPrincipalArn(Aws::String&& value) { SetPrincipalArn(std::move(value)); return *this;}
 
     /**
      * <p>The principal ARN of the container service.</p> <p>The principal ARN can be
-     * used to create a trust relationship between your standard AWS account and your
-     * Lightsail container service. This allows you to give your service permission to
-     * access resources in your standard AWS account.</p>
+     * used to create a trust relationship between your standard Amazon Web Services
+     * account and your Lightsail container service. This allows you to give your
+     * service permission to access resources in your standard Amazon Web Services
+     * account.</p>
      */
     inline ContainerService& WithPrincipalArn(const char* value) { SetPrincipalArn(value); return *this;}
 
@@ -1039,6 +1048,67 @@ namespace Model
      */
     inline ContainerService& WithUrl(const char* value) { SetUrl(value); return *this;}
 
+
+    /**
+     * <p>An object that describes the configuration for the container service to
+     * access private container image repositories, such as Amazon Elastic Container
+     * Registry (Amazon ECR) private repositories.</p> <p>For more information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring
+     * access to an Amazon ECR private repository for an Amazon Lightsail container
+     * service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline const PrivateRegistryAccess& GetPrivateRegistryAccess() const{ return m_privateRegistryAccess; }
+
+    /**
+     * <p>An object that describes the configuration for the container service to
+     * access private container image repositories, such as Amazon Elastic Container
+     * Registry (Amazon ECR) private repositories.</p> <p>For more information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring
+     * access to an Amazon ECR private repository for an Amazon Lightsail container
+     * service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline bool PrivateRegistryAccessHasBeenSet() const { return m_privateRegistryAccessHasBeenSet; }
+
+    /**
+     * <p>An object that describes the configuration for the container service to
+     * access private container image repositories, such as Amazon Elastic Container
+     * Registry (Amazon ECR) private repositories.</p> <p>For more information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring
+     * access to an Amazon ECR private repository for an Amazon Lightsail container
+     * service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline void SetPrivateRegistryAccess(const PrivateRegistryAccess& value) { m_privateRegistryAccessHasBeenSet = true; m_privateRegistryAccess = value; }
+
+    /**
+     * <p>An object that describes the configuration for the container service to
+     * access private container image repositories, such as Amazon Elastic Container
+     * Registry (Amazon ECR) private repositories.</p> <p>For more information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring
+     * access to an Amazon ECR private repository for an Amazon Lightsail container
+     * service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline void SetPrivateRegistryAccess(PrivateRegistryAccess&& value) { m_privateRegistryAccessHasBeenSet = true; m_privateRegistryAccess = std::move(value); }
+
+    /**
+     * <p>An object that describes the configuration for the container service to
+     * access private container image repositories, such as Amazon Elastic Container
+     * Registry (Amazon ECR) private repositories.</p> <p>For more information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring
+     * access to an Amazon ECR private repository for an Amazon Lightsail container
+     * service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline ContainerService& WithPrivateRegistryAccess(const PrivateRegistryAccess& value) { SetPrivateRegistryAccess(value); return *this;}
+
+    /**
+     * <p>An object that describes the configuration for the container service to
+     * access private container image repositories, such as Amazon Elastic Container
+     * Registry (Amazon ECR) private repositories.</p> <p>For more information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring
+     * access to an Amazon ECR private repository for an Amazon Lightsail container
+     * service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline ContainerService& WithPrivateRegistryAccess(PrivateRegistryAccess&& value) { SetPrivateRegistryAccess(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_containerServiceName;
@@ -1094,6 +1164,9 @@ namespace Model
 
     Aws::String m_url;
     bool m_urlHasBeenSet;
+
+    PrivateRegistryAccess m_privateRegistryAccess;
+    bool m_privateRegistryAccessHasBeenSet;
   };
 
 } // namespace Model

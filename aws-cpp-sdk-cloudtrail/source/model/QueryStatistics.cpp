@@ -22,7 +22,9 @@ QueryStatistics::QueryStatistics() :
     m_resultsCount(0),
     m_resultsCountHasBeenSet(false),
     m_totalResultsCount(0),
-    m_totalResultsCountHasBeenSet(false)
+    m_totalResultsCountHasBeenSet(false),
+    m_bytesScanned(0),
+    m_bytesScannedHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ QueryStatistics::QueryStatistics(JsonView jsonValue) :
     m_resultsCount(0),
     m_resultsCountHasBeenSet(false),
     m_totalResultsCount(0),
-    m_totalResultsCountHasBeenSet(false)
+    m_totalResultsCountHasBeenSet(false),
+    m_bytesScanned(0),
+    m_bytesScannedHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +55,13 @@ QueryStatistics& QueryStatistics::operator =(JsonView jsonValue)
     m_totalResultsCountHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("BytesScanned"))
+  {
+    m_bytesScanned = jsonValue.GetInt64("BytesScanned");
+
+    m_bytesScannedHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -67,6 +78,12 @@ JsonValue QueryStatistics::Jsonize() const
   if(m_totalResultsCountHasBeenSet)
   {
    payload.WithInteger("TotalResultsCount", m_totalResultsCount);
+
+  }
+
+  if(m_bytesScannedHasBeenSet)
+  {
+   payload.WithInt64("BytesScanned", m_bytesScanned);
 
   }
 

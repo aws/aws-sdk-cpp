@@ -151,6 +151,139 @@ namespace Model
     
     inline ExecuteStatementResult& WithConsumedCapacity(ConsumedCapacity&& value) { SetConsumedCapacity(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The primary key of the item where the operation stopped, inclusive of the
+     * previous result set. Use this value to start a new operation, excluding this
+     * value in the new request. If <code>LastEvaluatedKey</code> is empty, then the
+     * "last page" of results has been processed and there is no more data to be
+     * retrieved. If <code>LastEvaluatedKey</code> is not empty, it does not
+     * necessarily mean that there is more data in the result set. The only way to know
+     * when you have reached the end of the result set is when
+     * <code>LastEvaluatedKey</code> is empty. </p>
+     */
+    inline const Aws::Map<Aws::String, AttributeValue>& GetLastEvaluatedKey() const{ return m_lastEvaluatedKey; }
+
+    /**
+     * <p>The primary key of the item where the operation stopped, inclusive of the
+     * previous result set. Use this value to start a new operation, excluding this
+     * value in the new request. If <code>LastEvaluatedKey</code> is empty, then the
+     * "last page" of results has been processed and there is no more data to be
+     * retrieved. If <code>LastEvaluatedKey</code> is not empty, it does not
+     * necessarily mean that there is more data in the result set. The only way to know
+     * when you have reached the end of the result set is when
+     * <code>LastEvaluatedKey</code> is empty. </p>
+     */
+    inline void SetLastEvaluatedKey(const Aws::Map<Aws::String, AttributeValue>& value) { m_lastEvaluatedKey = value; }
+
+    /**
+     * <p>The primary key of the item where the operation stopped, inclusive of the
+     * previous result set. Use this value to start a new operation, excluding this
+     * value in the new request. If <code>LastEvaluatedKey</code> is empty, then the
+     * "last page" of results has been processed and there is no more data to be
+     * retrieved. If <code>LastEvaluatedKey</code> is not empty, it does not
+     * necessarily mean that there is more data in the result set. The only way to know
+     * when you have reached the end of the result set is when
+     * <code>LastEvaluatedKey</code> is empty. </p>
+     */
+    inline void SetLastEvaluatedKey(Aws::Map<Aws::String, AttributeValue>&& value) { m_lastEvaluatedKey = std::move(value); }
+
+    /**
+     * <p>The primary key of the item where the operation stopped, inclusive of the
+     * previous result set. Use this value to start a new operation, excluding this
+     * value in the new request. If <code>LastEvaluatedKey</code> is empty, then the
+     * "last page" of results has been processed and there is no more data to be
+     * retrieved. If <code>LastEvaluatedKey</code> is not empty, it does not
+     * necessarily mean that there is more data in the result set. The only way to know
+     * when you have reached the end of the result set is when
+     * <code>LastEvaluatedKey</code> is empty. </p>
+     */
+    inline ExecuteStatementResult& WithLastEvaluatedKey(const Aws::Map<Aws::String, AttributeValue>& value) { SetLastEvaluatedKey(value); return *this;}
+
+    /**
+     * <p>The primary key of the item where the operation stopped, inclusive of the
+     * previous result set. Use this value to start a new operation, excluding this
+     * value in the new request. If <code>LastEvaluatedKey</code> is empty, then the
+     * "last page" of results has been processed and there is no more data to be
+     * retrieved. If <code>LastEvaluatedKey</code> is not empty, it does not
+     * necessarily mean that there is more data in the result set. The only way to know
+     * when you have reached the end of the result set is when
+     * <code>LastEvaluatedKey</code> is empty. </p>
+     */
+    inline ExecuteStatementResult& WithLastEvaluatedKey(Aws::Map<Aws::String, AttributeValue>&& value) { SetLastEvaluatedKey(std::move(value)); return *this;}
+
+    /**
+     * <p>The primary key of the item where the operation stopped, inclusive of the
+     * previous result set. Use this value to start a new operation, excluding this
+     * value in the new request. If <code>LastEvaluatedKey</code> is empty, then the
+     * "last page" of results has been processed and there is no more data to be
+     * retrieved. If <code>LastEvaluatedKey</code> is not empty, it does not
+     * necessarily mean that there is more data in the result set. The only way to know
+     * when you have reached the end of the result set is when
+     * <code>LastEvaluatedKey</code> is empty. </p>
+     */
+    inline ExecuteStatementResult& AddLastEvaluatedKey(const Aws::String& key, const AttributeValue& value) { m_lastEvaluatedKey.emplace(key, value); return *this; }
+
+    /**
+     * <p>The primary key of the item where the operation stopped, inclusive of the
+     * previous result set. Use this value to start a new operation, excluding this
+     * value in the new request. If <code>LastEvaluatedKey</code> is empty, then the
+     * "last page" of results has been processed and there is no more data to be
+     * retrieved. If <code>LastEvaluatedKey</code> is not empty, it does not
+     * necessarily mean that there is more data in the result set. The only way to know
+     * when you have reached the end of the result set is when
+     * <code>LastEvaluatedKey</code> is empty. </p>
+     */
+    inline ExecuteStatementResult& AddLastEvaluatedKey(Aws::String&& key, const AttributeValue& value) { m_lastEvaluatedKey.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The primary key of the item where the operation stopped, inclusive of the
+     * previous result set. Use this value to start a new operation, excluding this
+     * value in the new request. If <code>LastEvaluatedKey</code> is empty, then the
+     * "last page" of results has been processed and there is no more data to be
+     * retrieved. If <code>LastEvaluatedKey</code> is not empty, it does not
+     * necessarily mean that there is more data in the result set. The only way to know
+     * when you have reached the end of the result set is when
+     * <code>LastEvaluatedKey</code> is empty. </p>
+     */
+    inline ExecuteStatementResult& AddLastEvaluatedKey(const Aws::String& key, AttributeValue&& value) { m_lastEvaluatedKey.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The primary key of the item where the operation stopped, inclusive of the
+     * previous result set. Use this value to start a new operation, excluding this
+     * value in the new request. If <code>LastEvaluatedKey</code> is empty, then the
+     * "last page" of results has been processed and there is no more data to be
+     * retrieved. If <code>LastEvaluatedKey</code> is not empty, it does not
+     * necessarily mean that there is more data in the result set. The only way to know
+     * when you have reached the end of the result set is when
+     * <code>LastEvaluatedKey</code> is empty. </p>
+     */
+    inline ExecuteStatementResult& AddLastEvaluatedKey(Aws::String&& key, AttributeValue&& value) { m_lastEvaluatedKey.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The primary key of the item where the operation stopped, inclusive of the
+     * previous result set. Use this value to start a new operation, excluding this
+     * value in the new request. If <code>LastEvaluatedKey</code> is empty, then the
+     * "last page" of results has been processed and there is no more data to be
+     * retrieved. If <code>LastEvaluatedKey</code> is not empty, it does not
+     * necessarily mean that there is more data in the result set. The only way to know
+     * when you have reached the end of the result set is when
+     * <code>LastEvaluatedKey</code> is empty. </p>
+     */
+    inline ExecuteStatementResult& AddLastEvaluatedKey(const char* key, AttributeValue&& value) { m_lastEvaluatedKey.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The primary key of the item where the operation stopped, inclusive of the
+     * previous result set. Use this value to start a new operation, excluding this
+     * value in the new request. If <code>LastEvaluatedKey</code> is empty, then the
+     * "last page" of results has been processed and there is no more data to be
+     * retrieved. If <code>LastEvaluatedKey</code> is not empty, it does not
+     * necessarily mean that there is more data in the result set. The only way to know
+     * when you have reached the end of the result set is when
+     * <code>LastEvaluatedKey</code> is empty. </p>
+     */
+    inline ExecuteStatementResult& AddLastEvaluatedKey(const char* key, const AttributeValue& value) { m_lastEvaluatedKey.emplace(key, value); return *this; }
+
   private:
 
     Aws::Vector<Aws::Map<Aws::String, AttributeValue>> m_items;
@@ -158,6 +291,8 @@ namespace Model
     Aws::String m_nextToken;
 
     ConsumedCapacity m_consumedCapacity;
+
+    Aws::Map<Aws::String, AttributeValue> m_lastEvaluatedKey;
   };
 
 } // namespace Model

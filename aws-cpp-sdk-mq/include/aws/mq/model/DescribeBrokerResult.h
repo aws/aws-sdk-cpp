@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/mq/MQ_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mq/model/AuthenticationStrategy.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mq/model/BrokerState.h>
 #include <aws/mq/model/Configurations.h>
 #include <aws/core/utils/DateTime.h>
@@ -19,6 +19,7 @@
 #include <aws/mq/model/WeeklyStartTime.h>
 #include <aws/mq/model/BrokerStorageType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/mq/model/ActionRequired.h>
 #include <aws/mq/model/BrokerInstance.h>
 #include <aws/mq/model/UserSummary.h>
 #include <utility>
@@ -45,6 +46,42 @@ namespace Model
     DescribeBrokerResult();
     DescribeBrokerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeBrokerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>A list of actions required for a broker.</p>
+     */
+    inline const Aws::Vector<ActionRequired>& GetActionsRequired() const{ return m_actionsRequired; }
+
+    /**
+     * <p>A list of actions required for a broker.</p>
+     */
+    inline void SetActionsRequired(const Aws::Vector<ActionRequired>& value) { m_actionsRequired = value; }
+
+    /**
+     * <p>A list of actions required for a broker.</p>
+     */
+    inline void SetActionsRequired(Aws::Vector<ActionRequired>&& value) { m_actionsRequired = std::move(value); }
+
+    /**
+     * <p>A list of actions required for a broker.</p>
+     */
+    inline DescribeBrokerResult& WithActionsRequired(const Aws::Vector<ActionRequired>& value) { SetActionsRequired(value); return *this;}
+
+    /**
+     * <p>A list of actions required for a broker.</p>
+     */
+    inline DescribeBrokerResult& WithActionsRequired(Aws::Vector<ActionRequired>&& value) { SetActionsRequired(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of actions required for a broker.</p>
+     */
+    inline DescribeBrokerResult& AddActionsRequired(const ActionRequired& value) { m_actionsRequired.push_back(value); return *this; }
+
+    /**
+     * <p>A list of actions required for a broker.</p>
+     */
+    inline DescribeBrokerResult& AddActionsRequired(ActionRequired&& value) { m_actionsRequired.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -1057,6 +1094,8 @@ namespace Model
     inline DescribeBrokerResult& AddUsers(UserSummary&& value) { m_users.push_back(std::move(value)); return *this; }
 
   private:
+
+    Aws::Vector<ActionRequired> m_actionsRequired;
 
     AuthenticationStrategy m_authenticationStrategy;
 

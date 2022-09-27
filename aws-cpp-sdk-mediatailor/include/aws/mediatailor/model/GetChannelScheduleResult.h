@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>An array of schedule entries for the channel.</p>
+     * <p>A list of schedule entries for the channel.</p>
      */
     inline const Aws::Vector<ScheduleEntry>& GetItems() const{ return m_items; }
 
     /**
-     * <p>An array of schedule entries for the channel.</p>
+     * <p>A list of schedule entries for the channel.</p>
      */
     inline void SetItems(const Aws::Vector<ScheduleEntry>& value) { m_items = value; }
 
     /**
-     * <p>An array of schedule entries for the channel.</p>
+     * <p>A list of schedule entries for the channel.</p>
      */
     inline void SetItems(Aws::Vector<ScheduleEntry>&& value) { m_items = std::move(value); }
 
     /**
-     * <p>An array of schedule entries for the channel.</p>
+     * <p>A list of schedule entries for the channel.</p>
      */
     inline GetChannelScheduleResult& WithItems(const Aws::Vector<ScheduleEntry>& value) { SetItems(value); return *this;}
 
     /**
-     * <p>An array of schedule entries for the channel.</p>
+     * <p>A list of schedule entries for the channel.</p>
      */
     inline GetChannelScheduleResult& WithItems(Aws::Vector<ScheduleEntry>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * <p>An array of schedule entries for the channel.</p>
+     * <p>A list of schedule entries for the channel.</p>
      */
     inline GetChannelScheduleResult& AddItems(const ScheduleEntry& value) { m_items.push_back(value); return *this; }
 
     /**
-     * <p>An array of schedule entries for the channel.</p>
+     * <p>A list of schedule entries for the channel.</p>
      */
     inline GetChannelScheduleResult& AddItems(ScheduleEntry&& value) { m_items.push_back(std::move(value)); return *this; }
 

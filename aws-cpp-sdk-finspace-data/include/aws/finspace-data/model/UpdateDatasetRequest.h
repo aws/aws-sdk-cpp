@@ -163,48 +163,48 @@ namespace Model
 
     /**
      * <p>The format in which the Dataset data is structured.</p> <ul> <li> <p>
-     * <code>TABULAR</code> - Data is structured in a tabular format.</p> </li> <li>
-     * <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
+     * <code>TABULAR</code> – Data is structured in a tabular format.</p> </li> <li>
+     * <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p>
      * </li> </ul>
      */
     inline const DatasetKind& GetKind() const{ return m_kind; }
 
     /**
      * <p>The format in which the Dataset data is structured.</p> <ul> <li> <p>
-     * <code>TABULAR</code> - Data is structured in a tabular format.</p> </li> <li>
-     * <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
+     * <code>TABULAR</code> – Data is structured in a tabular format.</p> </li> <li>
+     * <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p>
      * </li> </ul>
      */
     inline bool KindHasBeenSet() const { return m_kindHasBeenSet; }
 
     /**
      * <p>The format in which the Dataset data is structured.</p> <ul> <li> <p>
-     * <code>TABULAR</code> - Data is structured in a tabular format.</p> </li> <li>
-     * <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
+     * <code>TABULAR</code> – Data is structured in a tabular format.</p> </li> <li>
+     * <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p>
      * </li> </ul>
      */
     inline void SetKind(const DatasetKind& value) { m_kindHasBeenSet = true; m_kind = value; }
 
     /**
      * <p>The format in which the Dataset data is structured.</p> <ul> <li> <p>
-     * <code>TABULAR</code> - Data is structured in a tabular format.</p> </li> <li>
-     * <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
+     * <code>TABULAR</code> – Data is structured in a tabular format.</p> </li> <li>
+     * <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p>
      * </li> </ul>
      */
     inline void SetKind(DatasetKind&& value) { m_kindHasBeenSet = true; m_kind = std::move(value); }
 
     /**
      * <p>The format in which the Dataset data is structured.</p> <ul> <li> <p>
-     * <code>TABULAR</code> - Data is structured in a tabular format.</p> </li> <li>
-     * <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
+     * <code>TABULAR</code> – Data is structured in a tabular format.</p> </li> <li>
+     * <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p>
      * </li> </ul>
      */
     inline UpdateDatasetRequest& WithKind(const DatasetKind& value) { SetKind(value); return *this;}
 
     /**
      * <p>The format in which the Dataset data is structured.</p> <ul> <li> <p>
-     * <code>TABULAR</code> - Data is structured in a tabular format.</p> </li> <li>
-     * <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
+     * <code>TABULAR</code> – Data is structured in a tabular format.</p> </li> <li>
+     * <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p>
      * </li> </ul>
      */
     inline UpdateDatasetRequest& WithKind(DatasetKind&& value) { SetKind(std::move(value)); return *this;}

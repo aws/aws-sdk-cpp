@@ -17,6 +17,10 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for
+   * <code>ListSchedulingPolicies</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListSchedulingPoliciesRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_BATCH_API ListSchedulingPoliciesRequest : public BatchRequest
   {

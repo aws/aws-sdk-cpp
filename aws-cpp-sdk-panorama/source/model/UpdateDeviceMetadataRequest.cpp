@@ -13,8 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateDeviceMetadataRequest::UpdateDeviceMetadataRequest() : 
-    m_deviceIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_deviceIdHasBeenSet(false)
 {
 }
 

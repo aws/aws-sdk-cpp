@@ -35,50 +35,50 @@ namespace Model
 
 
     /**
-     * <p>A token to indicate the location of the next environment output in the array
-     * of environment outputs, after the current requested list of environment
+     * <p>A token that indicates the location of the next environment output in the
+     * array of environment outputs, after the current requested list of environment
      * outputs.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>A token to indicate the location of the next environment output in the array
-     * of environment outputs, after the current requested list of environment
+     * <p>A token that indicates the location of the next environment output in the
+     * array of environment outputs, after the current requested list of environment
      * outputs.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>A token to indicate the location of the next environment output in the array
-     * of environment outputs, after the current requested list of environment
+     * <p>A token that indicates the location of the next environment output in the
+     * array of environment outputs, after the current requested list of environment
      * outputs.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>A token to indicate the location of the next environment output in the array
-     * of environment outputs, after the current requested list of environment
+     * <p>A token that indicates the location of the next environment output in the
+     * array of environment outputs, after the current requested list of environment
      * outputs.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>A token to indicate the location of the next environment output in the array
-     * of environment outputs, after the current requested list of environment
+     * <p>A token that indicates the location of the next environment output in the
+     * array of environment outputs, after the current requested list of environment
      * outputs.</p>
      */
     inline ListEnvironmentOutputsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>A token to indicate the location of the next environment output in the array
-     * of environment outputs, after the current requested list of environment
+     * <p>A token that indicates the location of the next environment output in the
+     * array of environment outputs, after the current requested list of environment
      * outputs.</p>
      */
     inline ListEnvironmentOutputsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token to indicate the location of the next environment output in the array
-     * of environment outputs, after the current requested list of environment
+     * <p>A token that indicates the location of the next environment output in the
+     * array of environment outputs, after the current requested list of environment
      * outputs.</p>
      */
     inline ListEnvironmentOutputsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}

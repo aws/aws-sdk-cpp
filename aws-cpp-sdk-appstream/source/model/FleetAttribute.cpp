@@ -25,6 +25,7 @@ namespace Aws
         static const int DOMAIN_JOIN_INFO_HASH = HashingUtils::HashString("DOMAIN_JOIN_INFO");
         static const int IAM_ROLE_ARN_HASH = HashingUtils::HashString("IAM_ROLE_ARN");
         static const int USB_DEVICE_FILTER_STRINGS_HASH = HashingUtils::HashString("USB_DEVICE_FILTER_STRINGS");
+        static const int SESSION_SCRIPT_S3_LOCATION_HASH = HashingUtils::HashString("SESSION_SCRIPT_S3_LOCATION");
 
 
         FleetAttribute GetFleetAttributeForName(const Aws::String& name)
@@ -50,6 +51,10 @@ namespace Aws
           {
             return FleetAttribute::USB_DEVICE_FILTER_STRINGS;
           }
+          else if (hashCode == SESSION_SCRIPT_S3_LOCATION_HASH)
+          {
+            return FleetAttribute::SESSION_SCRIPT_S3_LOCATION;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
             return "IAM_ROLE_ARN";
           case FleetAttribute::USB_DEVICE_FILTER_STRINGS:
             return "USB_DEVICE_FILTER_STRINGS";
+          case FleetAttribute::SESSION_SCRIPT_S3_LOCATION:
+            return "SESSION_SCRIPT_S3_LOCATION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -433,7 +433,7 @@ namespace Model
      * <dt>psuRuPatchFileNames</dt> <dd> <p>The PSU and RU patches for this CEV.</p>
      * </dd> <dt>OtherPatchFileNames</dt> <dd> <p>The patches that are not in the list
      * of PSU and RU patches. Amazon RDS applies these patches after applying the PSU
-     * and RU patches. </p> </dd> </dl> <p>For more information, see <a
+     * and RU patches.</p> </dd> </dl> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest">
      * Creating the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
@@ -452,7 +452,7 @@ namespace Model
      * <dt>psuRuPatchFileNames</dt> <dd> <p>The PSU and RU patches for this CEV.</p>
      * </dd> <dt>OtherPatchFileNames</dt> <dd> <p>The patches that are not in the list
      * of PSU and RU patches. Amazon RDS applies these patches after applying the PSU
-     * and RU patches. </p> </dd> </dl> <p>For more information, see <a
+     * and RU patches.</p> </dd> </dl> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest">
      * Creating the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
@@ -471,7 +471,7 @@ namespace Model
      * <dt>psuRuPatchFileNames</dt> <dd> <p>The PSU and RU patches for this CEV.</p>
      * </dd> <dt>OtherPatchFileNames</dt> <dd> <p>The patches that are not in the list
      * of PSU and RU patches. Amazon RDS applies these patches after applying the PSU
-     * and RU patches. </p> </dd> </dl> <p>For more information, see <a
+     * and RU patches.</p> </dd> </dl> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest">
      * Creating the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
@@ -490,7 +490,7 @@ namespace Model
      * <dt>psuRuPatchFileNames</dt> <dd> <p>The PSU and RU patches for this CEV.</p>
      * </dd> <dt>OtherPatchFileNames</dt> <dd> <p>The patches that are not in the list
      * of PSU and RU patches. Amazon RDS applies these patches after applying the PSU
-     * and RU patches. </p> </dd> </dl> <p>For more information, see <a
+     * and RU patches.</p> </dd> </dl> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest">
      * Creating the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
@@ -509,7 +509,7 @@ namespace Model
      * <dt>psuRuPatchFileNames</dt> <dd> <p>The PSU and RU patches for this CEV.</p>
      * </dd> <dt>OtherPatchFileNames</dt> <dd> <p>The patches that are not in the list
      * of PSU and RU patches. Amazon RDS applies these patches after applying the PSU
-     * and RU patches. </p> </dd> </dl> <p>For more information, see <a
+     * and RU patches.</p> </dd> </dl> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest">
      * Creating the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
@@ -528,7 +528,7 @@ namespace Model
      * <dt>psuRuPatchFileNames</dt> <dd> <p>The PSU and RU patches for this CEV.</p>
      * </dd> <dt>OtherPatchFileNames</dt> <dd> <p>The patches that are not in the list
      * of PSU and RU patches. Amazon RDS applies these patches after applying the PSU
-     * and RU patches. </p> </dd> </dl> <p>For more information, see <a
+     * and RU patches.</p> </dd> </dl> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest">
      * Creating the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
@@ -547,7 +547,7 @@ namespace Model
      * <dt>psuRuPatchFileNames</dt> <dd> <p>The PSU and RU patches for this CEV.</p>
      * </dd> <dt>OtherPatchFileNames</dt> <dd> <p>The patches that are not in the list
      * of PSU and RU patches. Amazon RDS applies these patches after applying the PSU
-     * and RU patches. </p> </dd> </dl> <p>For more information, see <a
+     * and RU patches.</p> </dd> </dl> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest">
      * Creating the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
@@ -566,7 +566,7 @@ namespace Model
      * <dt>psuRuPatchFileNames</dt> <dd> <p>The PSU and RU patches for this CEV.</p>
      * </dd> <dt>OtherPatchFileNames</dt> <dd> <p>The patches that are not in the list
      * of PSU and RU patches. Amazon RDS applies these patches after applying the PSU
-     * and RU patches. </p> </dd> </dl> <p>For more information, see <a
+     * and RU patches.</p> </dd> </dl> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest">
      * Creating the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
      */

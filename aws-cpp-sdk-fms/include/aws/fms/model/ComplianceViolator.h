@@ -7,6 +7,7 @@
 #include <aws/fms/FMS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fms/model/ViolationReason.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -191,6 +192,72 @@ namespace Model
      */
     inline ComplianceViolator& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
+
+    /**
+     * <p>Metadata about the resource that doesn't comply with the policy scope.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const{ return m_metadata; }
+
+    /**
+     * <p>Metadata about the resource that doesn't comply with the policy scope.</p>
+     */
+    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+
+    /**
+     * <p>Metadata about the resource that doesn't comply with the policy scope.</p>
+     */
+    inline void SetMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_metadataHasBeenSet = true; m_metadata = value; }
+
+    /**
+     * <p>Metadata about the resource that doesn't comply with the policy scope.</p>
+     */
+    inline void SetMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
+
+    /**
+     * <p>Metadata about the resource that doesn't comply with the policy scope.</p>
+     */
+    inline ComplianceViolator& WithMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetMetadata(value); return *this;}
+
+    /**
+     * <p>Metadata about the resource that doesn't comply with the policy scope.</p>
+     */
+    inline ComplianceViolator& WithMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetMetadata(std::move(value)); return *this;}
+
+    /**
+     * <p>Metadata about the resource that doesn't comply with the policy scope.</p>
+     */
+    inline ComplianceViolator& AddMetadata(const Aws::String& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
+
+    /**
+     * <p>Metadata about the resource that doesn't comply with the policy scope.</p>
+     */
+    inline ComplianceViolator& AddMetadata(Aws::String&& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Metadata about the resource that doesn't comply with the policy scope.</p>
+     */
+    inline ComplianceViolator& AddMetadata(const Aws::String& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Metadata about the resource that doesn't comply with the policy scope.</p>
+     */
+    inline ComplianceViolator& AddMetadata(Aws::String&& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Metadata about the resource that doesn't comply with the policy scope.</p>
+     */
+    inline ComplianceViolator& AddMetadata(const char* key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Metadata about the resource that doesn't comply with the policy scope.</p>
+     */
+    inline ComplianceViolator& AddMetadata(Aws::String&& key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Metadata about the resource that doesn't comply with the policy scope.</p>
+     */
+    inline ComplianceViolator& AddMetadata(const char* key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_resourceId;
@@ -201,6 +268,9 @@ namespace Model
 
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_metadata;
+    bool m_metadataHasBeenSet;
   };
 
 } // namespace Model

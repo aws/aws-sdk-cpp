@@ -161,51 +161,47 @@ namespace Model
 
     /**
      * <p>A Boolean value that, if true, creates an encrypted file system. When
-     * creating an encrypted file system, you have the option of specifying
-     * <a>CreateFileSystemRequest$KmsKeyId</a> for an existing Key Management Service
-     * (KMS customer master key (CMK). If you don't specify a CMK, then the default CMK
-     * for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the
-     * encrypted file system. </p>
+     * creating an encrypted file system, you have the option of specifying an existing
+     * Key Management Service key (KMS key). If you don't specify a KMS key, then the
+     * default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to
+     * protect the encrypted file system. </p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
 
     /**
      * <p>A Boolean value that, if true, creates an encrypted file system. When
-     * creating an encrypted file system, you have the option of specifying
-     * <a>CreateFileSystemRequest$KmsKeyId</a> for an existing Key Management Service
-     * (KMS customer master key (CMK). If you don't specify a CMK, then the default CMK
-     * for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the
-     * encrypted file system. </p>
+     * creating an encrypted file system, you have the option of specifying an existing
+     * Key Management Service key (KMS key). If you don't specify a KMS key, then the
+     * default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to
+     * protect the encrypted file system. </p>
      */
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
 
     /**
      * <p>A Boolean value that, if true, creates an encrypted file system. When
-     * creating an encrypted file system, you have the option of specifying
-     * <a>CreateFileSystemRequest$KmsKeyId</a> for an existing Key Management Service
-     * (KMS customer master key (CMK). If you don't specify a CMK, then the default CMK
-     * for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the
-     * encrypted file system. </p>
+     * creating an encrypted file system, you have the option of specifying an existing
+     * Key Management Service key (KMS key). If you don't specify a KMS key, then the
+     * default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to
+     * protect the encrypted file system. </p>
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
     /**
      * <p>A Boolean value that, if true, creates an encrypted file system. When
-     * creating an encrypted file system, you have the option of specifying
-     * <a>CreateFileSystemRequest$KmsKeyId</a> for an existing Key Management Service
-     * (KMS customer master key (CMK). If you don't specify a CMK, then the default CMK
-     * for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the
-     * encrypted file system. </p>
+     * creating an encrypted file system, you have the option of specifying an existing
+     * Key Management Service key (KMS key). If you don't specify a KMS key, then the
+     * default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to
+     * protect the encrypted file system. </p>
      */
     inline CreateFileSystemRequest& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 
 
     /**
-     * <p>The ID of the KMS CMK that you want to use to protect the encrypted file
-     * system. This parameter is only required if you want to use a non-default KMS
-     * key. If this parameter is not specified, the default CMK for Amazon EFS is used.
-     * This ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - A
-     * unique identifier of the key, for example
+     * <p>The ID of the KMS key that you want to use to protect the encrypted file
+     * system. This parameter is required only if you want to use a non-default KMS
+     * key. If this parameter is not specified, the default KMS key for Amazon EFS is
+     * used. You can specify a KMS key ID using the following formats:</p> <ul> <li>
+     * <p>Key ID - A unique identifier of the key, for example
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>ARN - An
      * Amazon Resource Name (ARN) for the key, for example
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
@@ -213,19 +209,19 @@ namespace Model
      * example <code>alias/projectKey1</code>.</p> </li> <li> <p>Key alias ARN - An ARN
      * for a key alias, for example
      * <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
-     * </ul> <p>If <code>KmsKeyId</code> is specified, the
-     * <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
-     *  <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric
-     * KMS keys with EFS file systems.</p> 
+     * </ul> <p>If you use <code>KmsKeyId</code>, you must set the
+     * <a>CreateFileSystemRequest$Encrypted</a> parameter to true.</p> 
+     * <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with
+     * Amazon EFS file systems.</p> 
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The ID of the KMS CMK that you want to use to protect the encrypted file
-     * system. This parameter is only required if you want to use a non-default KMS
-     * key. If this parameter is not specified, the default CMK for Amazon EFS is used.
-     * This ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - A
-     * unique identifier of the key, for example
+     * <p>The ID of the KMS key that you want to use to protect the encrypted file
+     * system. This parameter is required only if you want to use a non-default KMS
+     * key. If this parameter is not specified, the default KMS key for Amazon EFS is
+     * used. You can specify a KMS key ID using the following formats:</p> <ul> <li>
+     * <p>Key ID - A unique identifier of the key, for example
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>ARN - An
      * Amazon Resource Name (ARN) for the key, for example
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
@@ -233,19 +229,19 @@ namespace Model
      * example <code>alias/projectKey1</code>.</p> </li> <li> <p>Key alias ARN - An ARN
      * for a key alias, for example
      * <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
-     * </ul> <p>If <code>KmsKeyId</code> is specified, the
-     * <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
-     *  <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric
-     * KMS keys with EFS file systems.</p> 
+     * </ul> <p>If you use <code>KmsKeyId</code>, you must set the
+     * <a>CreateFileSystemRequest$Encrypted</a> parameter to true.</p> 
+     * <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with
+     * Amazon EFS file systems.</p> 
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The ID of the KMS CMK that you want to use to protect the encrypted file
-     * system. This parameter is only required if you want to use a non-default KMS
-     * key. If this parameter is not specified, the default CMK for Amazon EFS is used.
-     * This ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - A
-     * unique identifier of the key, for example
+     * <p>The ID of the KMS key that you want to use to protect the encrypted file
+     * system. This parameter is required only if you want to use a non-default KMS
+     * key. If this parameter is not specified, the default KMS key for Amazon EFS is
+     * used. You can specify a KMS key ID using the following formats:</p> <ul> <li>
+     * <p>Key ID - A unique identifier of the key, for example
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>ARN - An
      * Amazon Resource Name (ARN) for the key, for example
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
@@ -253,19 +249,19 @@ namespace Model
      * example <code>alias/projectKey1</code>.</p> </li> <li> <p>Key alias ARN - An ARN
      * for a key alias, for example
      * <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
-     * </ul> <p>If <code>KmsKeyId</code> is specified, the
-     * <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
-     *  <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric
-     * KMS keys with EFS file systems.</p> 
+     * </ul> <p>If you use <code>KmsKeyId</code>, you must set the
+     * <a>CreateFileSystemRequest$Encrypted</a> parameter to true.</p> 
+     * <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with
+     * Amazon EFS file systems.</p> 
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The ID of the KMS CMK that you want to use to protect the encrypted file
-     * system. This parameter is only required if you want to use a non-default KMS
-     * key. If this parameter is not specified, the default CMK for Amazon EFS is used.
-     * This ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - A
-     * unique identifier of the key, for example
+     * <p>The ID of the KMS key that you want to use to protect the encrypted file
+     * system. This parameter is required only if you want to use a non-default KMS
+     * key. If this parameter is not specified, the default KMS key for Amazon EFS is
+     * used. You can specify a KMS key ID using the following formats:</p> <ul> <li>
+     * <p>Key ID - A unique identifier of the key, for example
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>ARN - An
      * Amazon Resource Name (ARN) for the key, for example
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
@@ -273,19 +269,19 @@ namespace Model
      * example <code>alias/projectKey1</code>.</p> </li> <li> <p>Key alias ARN - An ARN
      * for a key alias, for example
      * <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
-     * </ul> <p>If <code>KmsKeyId</code> is specified, the
-     * <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
-     *  <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric
-     * KMS keys with EFS file systems.</p> 
+     * </ul> <p>If you use <code>KmsKeyId</code>, you must set the
+     * <a>CreateFileSystemRequest$Encrypted</a> parameter to true.</p> 
+     * <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with
+     * Amazon EFS file systems.</p> 
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The ID of the KMS CMK that you want to use to protect the encrypted file
-     * system. This parameter is only required if you want to use a non-default KMS
-     * key. If this parameter is not specified, the default CMK for Amazon EFS is used.
-     * This ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - A
-     * unique identifier of the key, for example
+     * <p>The ID of the KMS key that you want to use to protect the encrypted file
+     * system. This parameter is required only if you want to use a non-default KMS
+     * key. If this parameter is not specified, the default KMS key for Amazon EFS is
+     * used. You can specify a KMS key ID using the following formats:</p> <ul> <li>
+     * <p>Key ID - A unique identifier of the key, for example
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>ARN - An
      * Amazon Resource Name (ARN) for the key, for example
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
@@ -293,19 +289,19 @@ namespace Model
      * example <code>alias/projectKey1</code>.</p> </li> <li> <p>Key alias ARN - An ARN
      * for a key alias, for example
      * <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
-     * </ul> <p>If <code>KmsKeyId</code> is specified, the
-     * <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
-     *  <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric
-     * KMS keys with EFS file systems.</p> 
+     * </ul> <p>If you use <code>KmsKeyId</code>, you must set the
+     * <a>CreateFileSystemRequest$Encrypted</a> parameter to true.</p> 
+     * <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with
+     * Amazon EFS file systems.</p> 
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The ID of the KMS CMK that you want to use to protect the encrypted file
-     * system. This parameter is only required if you want to use a non-default KMS
-     * key. If this parameter is not specified, the default CMK for Amazon EFS is used.
-     * This ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - A
-     * unique identifier of the key, for example
+     * <p>The ID of the KMS key that you want to use to protect the encrypted file
+     * system. This parameter is required only if you want to use a non-default KMS
+     * key. If this parameter is not specified, the default KMS key for Amazon EFS is
+     * used. You can specify a KMS key ID using the following formats:</p> <ul> <li>
+     * <p>Key ID - A unique identifier of the key, for example
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>ARN - An
      * Amazon Resource Name (ARN) for the key, for example
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
@@ -313,19 +309,19 @@ namespace Model
      * example <code>alias/projectKey1</code>.</p> </li> <li> <p>Key alias ARN - An ARN
      * for a key alias, for example
      * <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
-     * </ul> <p>If <code>KmsKeyId</code> is specified, the
-     * <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
-     *  <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric
-     * KMS keys with EFS file systems.</p> 
+     * </ul> <p>If you use <code>KmsKeyId</code>, you must set the
+     * <a>CreateFileSystemRequest$Encrypted</a> parameter to true.</p> 
+     * <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with
+     * Amazon EFS file systems.</p> 
      */
     inline CreateFileSystemRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The ID of the KMS CMK that you want to use to protect the encrypted file
-     * system. This parameter is only required if you want to use a non-default KMS
-     * key. If this parameter is not specified, the default CMK for Amazon EFS is used.
-     * This ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - A
-     * unique identifier of the key, for example
+     * <p>The ID of the KMS key that you want to use to protect the encrypted file
+     * system. This parameter is required only if you want to use a non-default KMS
+     * key. If this parameter is not specified, the default KMS key for Amazon EFS is
+     * used. You can specify a KMS key ID using the following formats:</p> <ul> <li>
+     * <p>Key ID - A unique identifier of the key, for example
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>ARN - An
      * Amazon Resource Name (ARN) for the key, for example
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
@@ -333,19 +329,19 @@ namespace Model
      * example <code>alias/projectKey1</code>.</p> </li> <li> <p>Key alias ARN - An ARN
      * for a key alias, for example
      * <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
-     * </ul> <p>If <code>KmsKeyId</code> is specified, the
-     * <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
-     *  <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric
-     * KMS keys with EFS file systems.</p> 
+     * </ul> <p>If you use <code>KmsKeyId</code>, you must set the
+     * <a>CreateFileSystemRequest$Encrypted</a> parameter to true.</p> 
+     * <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with
+     * Amazon EFS file systems.</p> 
      */
     inline CreateFileSystemRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the KMS CMK that you want to use to protect the encrypted file
-     * system. This parameter is only required if you want to use a non-default KMS
-     * key. If this parameter is not specified, the default CMK for Amazon EFS is used.
-     * This ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - A
-     * unique identifier of the key, for example
+     * <p>The ID of the KMS key that you want to use to protect the encrypted file
+     * system. This parameter is required only if you want to use a non-default KMS
+     * key. If this parameter is not specified, the default KMS key for Amazon EFS is
+     * used. You can specify a KMS key ID using the following formats:</p> <ul> <li>
+     * <p>Key ID - A unique identifier of the key, for example
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>ARN - An
      * Amazon Resource Name (ARN) for the key, for example
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
@@ -353,10 +349,10 @@ namespace Model
      * example <code>alias/projectKey1</code>.</p> </li> <li> <p>Key alias ARN - An ARN
      * for a key alias, for example
      * <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
-     * </ul> <p>If <code>KmsKeyId</code> is specified, the
-     * <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
-     *  <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric
-     * KMS keys with EFS file systems.</p> 
+     * </ul> <p>If you use <code>KmsKeyId</code>, you must set the
+     * <a>CreateFileSystemRequest$Encrypted</a> parameter to true.</p> 
+     * <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with
+     * Amazon EFS file systems.</p> 
      */
     inline CreateFileSystemRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -603,8 +599,8 @@ namespace Model
      * backups</a> in the <i>Amazon EFS User Guide</i>.</p> <p>Default is
      * <code>false</code>. However, if you specify an
      * <code>AvailabilityZoneName</code>, the default is <code>true</code>.</p> 
-     * <p>Backup is not available in all Amazon Web Services Regionswhere Amazon EFS is
-     * available.</p> 
+     * <p>Backup is not available in all Amazon Web Services Regions where Amazon EFS
+     * is available.</p> 
      */
     inline bool GetBackup() const{ return m_backup; }
 
@@ -617,8 +613,8 @@ namespace Model
      * backups</a> in the <i>Amazon EFS User Guide</i>.</p> <p>Default is
      * <code>false</code>. However, if you specify an
      * <code>AvailabilityZoneName</code>, the default is <code>true</code>.</p> 
-     * <p>Backup is not available in all Amazon Web Services Regionswhere Amazon EFS is
-     * available.</p> 
+     * <p>Backup is not available in all Amazon Web Services Regions where Amazon EFS
+     * is available.</p> 
      */
     inline bool BackupHasBeenSet() const { return m_backupHasBeenSet; }
 
@@ -631,8 +627,8 @@ namespace Model
      * backups</a> in the <i>Amazon EFS User Guide</i>.</p> <p>Default is
      * <code>false</code>. However, if you specify an
      * <code>AvailabilityZoneName</code>, the default is <code>true</code>.</p> 
-     * <p>Backup is not available in all Amazon Web Services Regionswhere Amazon EFS is
-     * available.</p> 
+     * <p>Backup is not available in all Amazon Web Services Regions where Amazon EFS
+     * is available.</p> 
      */
     inline void SetBackup(bool value) { m_backupHasBeenSet = true; m_backup = value; }
 
@@ -645,8 +641,8 @@ namespace Model
      * backups</a> in the <i>Amazon EFS User Guide</i>.</p> <p>Default is
      * <code>false</code>. However, if you specify an
      * <code>AvailabilityZoneName</code>, the default is <code>true</code>.</p> 
-     * <p>Backup is not available in all Amazon Web Services Regionswhere Amazon EFS is
-     * available.</p> 
+     * <p>Backup is not available in all Amazon Web Services Regions where Amazon EFS
+     * is available.</p> 
      */
     inline CreateFileSystemRequest& WithBackup(bool value) { SetBackup(value); return *this;}
 

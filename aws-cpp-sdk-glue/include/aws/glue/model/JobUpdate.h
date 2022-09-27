@@ -12,6 +12,7 @@
 #include <aws/glue/model/ConnectionsList.h>
 #include <aws/glue/model/WorkerType.h>
 #include <aws/glue/model/NotificationProperty.h>
+#include <aws/glue/model/CodeGenConfigurationNode.h>
 #include <utility>
 
 namespace Aws
@@ -914,6 +915,79 @@ namespace Model
      */
     inline JobUpdate& WithGlueVersion(const char* value) { SetGlueVersion(value); return *this;}
 
+
+    /**
+     * <p>The representation of a directed acyclic graph on which both the Glue Studio
+     * visual component and Glue Studio code generation is based.</p>
+     */
+    inline const Aws::Map<Aws::String, CodeGenConfigurationNode>& GetCodeGenConfigurationNodes() const{ return m_codeGenConfigurationNodes; }
+
+    /**
+     * <p>The representation of a directed acyclic graph on which both the Glue Studio
+     * visual component and Glue Studio code generation is based.</p>
+     */
+    inline bool CodeGenConfigurationNodesHasBeenSet() const { return m_codeGenConfigurationNodesHasBeenSet; }
+
+    /**
+     * <p>The representation of a directed acyclic graph on which both the Glue Studio
+     * visual component and Glue Studio code generation is based.</p>
+     */
+    inline void SetCodeGenConfigurationNodes(const Aws::Map<Aws::String, CodeGenConfigurationNode>& value) { m_codeGenConfigurationNodesHasBeenSet = true; m_codeGenConfigurationNodes = value; }
+
+    /**
+     * <p>The representation of a directed acyclic graph on which both the Glue Studio
+     * visual component and Glue Studio code generation is based.</p>
+     */
+    inline void SetCodeGenConfigurationNodes(Aws::Map<Aws::String, CodeGenConfigurationNode>&& value) { m_codeGenConfigurationNodesHasBeenSet = true; m_codeGenConfigurationNodes = std::move(value); }
+
+    /**
+     * <p>The representation of a directed acyclic graph on which both the Glue Studio
+     * visual component and Glue Studio code generation is based.</p>
+     */
+    inline JobUpdate& WithCodeGenConfigurationNodes(const Aws::Map<Aws::String, CodeGenConfigurationNode>& value) { SetCodeGenConfigurationNodes(value); return *this;}
+
+    /**
+     * <p>The representation of a directed acyclic graph on which both the Glue Studio
+     * visual component and Glue Studio code generation is based.</p>
+     */
+    inline JobUpdate& WithCodeGenConfigurationNodes(Aws::Map<Aws::String, CodeGenConfigurationNode>&& value) { SetCodeGenConfigurationNodes(std::move(value)); return *this;}
+
+    /**
+     * <p>The representation of a directed acyclic graph on which both the Glue Studio
+     * visual component and Glue Studio code generation is based.</p>
+     */
+    inline JobUpdate& AddCodeGenConfigurationNodes(const Aws::String& key, const CodeGenConfigurationNode& value) { m_codeGenConfigurationNodesHasBeenSet = true; m_codeGenConfigurationNodes.emplace(key, value); return *this; }
+
+    /**
+     * <p>The representation of a directed acyclic graph on which both the Glue Studio
+     * visual component and Glue Studio code generation is based.</p>
+     */
+    inline JobUpdate& AddCodeGenConfigurationNodes(Aws::String&& key, const CodeGenConfigurationNode& value) { m_codeGenConfigurationNodesHasBeenSet = true; m_codeGenConfigurationNodes.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The representation of a directed acyclic graph on which both the Glue Studio
+     * visual component and Glue Studio code generation is based.</p>
+     */
+    inline JobUpdate& AddCodeGenConfigurationNodes(const Aws::String& key, CodeGenConfigurationNode&& value) { m_codeGenConfigurationNodesHasBeenSet = true; m_codeGenConfigurationNodes.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The representation of a directed acyclic graph on which both the Glue Studio
+     * visual component and Glue Studio code generation is based.</p>
+     */
+    inline JobUpdate& AddCodeGenConfigurationNodes(Aws::String&& key, CodeGenConfigurationNode&& value) { m_codeGenConfigurationNodesHasBeenSet = true; m_codeGenConfigurationNodes.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The representation of a directed acyclic graph on which both the Glue Studio
+     * visual component and Glue Studio code generation is based.</p>
+     */
+    inline JobUpdate& AddCodeGenConfigurationNodes(const char* key, CodeGenConfigurationNode&& value) { m_codeGenConfigurationNodesHasBeenSet = true; m_codeGenConfigurationNodes.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The representation of a directed acyclic graph on which both the Glue Studio
+     * visual component and Glue Studio code generation is based.</p>
+     */
+    inline JobUpdate& AddCodeGenConfigurationNodes(const char* key, const CodeGenConfigurationNode& value) { m_codeGenConfigurationNodesHasBeenSet = true; m_codeGenConfigurationNodes.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_description;
@@ -963,6 +1037,9 @@ namespace Model
 
     Aws::String m_glueVersion;
     bool m_glueVersionHasBeenSet;
+
+    Aws::Map<Aws::String, CodeGenConfigurationNode> m_codeGenConfigurationNodes;
+    bool m_codeGenConfigurationNodesHasBeenSet;
   };
 
 } // namespace Model

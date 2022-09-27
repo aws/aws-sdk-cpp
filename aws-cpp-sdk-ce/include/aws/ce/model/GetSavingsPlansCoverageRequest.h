@@ -195,7 +195,8 @@ namespace Model
      * </p> </li> </ul> <p> <code>GetSavingsPlansCoverage</code> uses the same <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
-     * each dimension.</p> <p>Cost category is supported. Tags are not supported.</p>
+     * each dimension. If there are multiple values for a dimension, they are OR'd
+     * together.</p> <p>Cost category is also supported.</p>
      */
     inline const Expression& GetFilter() const{ return m_filter; }
 
@@ -207,7 +208,8 @@ namespace Model
      * </p> </li> </ul> <p> <code>GetSavingsPlansCoverage</code> uses the same <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
-     * each dimension.</p> <p>Cost category is supported. Tags are not supported.</p>
+     * each dimension. If there are multiple values for a dimension, they are OR'd
+     * together.</p> <p>Cost category is also supported.</p>
      */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
@@ -219,7 +221,8 @@ namespace Model
      * </p> </li> </ul> <p> <code>GetSavingsPlansCoverage</code> uses the same <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
-     * each dimension.</p> <p>Cost category is supported. Tags are not supported.</p>
+     * each dimension. If there are multiple values for a dimension, they are OR'd
+     * together.</p> <p>Cost category is also supported.</p>
      */
     inline void SetFilter(const Expression& value) { m_filterHasBeenSet = true; m_filter = value; }
 
@@ -231,7 +234,8 @@ namespace Model
      * </p> </li> </ul> <p> <code>GetSavingsPlansCoverage</code> uses the same <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
-     * each dimension.</p> <p>Cost category is supported. Tags are not supported.</p>
+     * each dimension. If there are multiple values for a dimension, they are OR'd
+     * together.</p> <p>Cost category is also supported.</p>
      */
     inline void SetFilter(Expression&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
@@ -243,7 +247,8 @@ namespace Model
      * </p> </li> </ul> <p> <code>GetSavingsPlansCoverage</code> uses the same <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
-     * each dimension.</p> <p>Cost category is supported. Tags are not supported.</p>
+     * each dimension. If there are multiple values for a dimension, they are OR'd
+     * together.</p> <p>Cost category is also supported.</p>
      */
     inline GetSavingsPlansCoverageRequest& WithFilter(const Expression& value) { SetFilter(value); return *this;}
 
@@ -255,7 +260,8 @@ namespace Model
      * </p> </li> </ul> <p> <code>GetSavingsPlansCoverage</code> uses the same <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
-     * each dimension.</p> <p>Cost category is supported. Tags are not supported.</p>
+     * each dimension. If there are multiple values for a dimension, they are OR'd
+     * together.</p> <p>Cost category is also supported.</p>
      */
     inline GetSavingsPlansCoverageRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
 
@@ -398,79 +404,79 @@ namespace Model
 
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
      * supported for <code>Key</code>:</p> <ul> <li> <p>
      * <code>SpendCoveredBySavingsPlan</code> </p> </li> <li> <p>
      * <code>OnDemandCost</code> </p> </li> <li> <p> <code>CoveragePercentage</code>
      * </p> </li> <li> <p> <code>TotalCost</code> </p> </li> <li> <p>
      * <code>InstanceFamily</code> </p> </li> <li> <p> <code>Region</code> </p> </li>
-     * <li> <p> <code>Service</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <li> <p> <code>Service</code> </p> </li> </ul> <p>The supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> and
      * <code>DESCENDING</code>.</p>
      */
     inline const SortDefinition& GetSortBy() const{ return m_sortBy; }
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
      * supported for <code>Key</code>:</p> <ul> <li> <p>
      * <code>SpendCoveredBySavingsPlan</code> </p> </li> <li> <p>
      * <code>OnDemandCost</code> </p> </li> <li> <p> <code>CoveragePercentage</code>
      * </p> </li> <li> <p> <code>TotalCost</code> </p> </li> <li> <p>
      * <code>InstanceFamily</code> </p> </li> <li> <p> <code>Region</code> </p> </li>
-     * <li> <p> <code>Service</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <li> <p> <code>Service</code> </p> </li> </ul> <p>The supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> and
      * <code>DESCENDING</code>.</p>
      */
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
      * supported for <code>Key</code>:</p> <ul> <li> <p>
      * <code>SpendCoveredBySavingsPlan</code> </p> </li> <li> <p>
      * <code>OnDemandCost</code> </p> </li> <li> <p> <code>CoveragePercentage</code>
      * </p> </li> <li> <p> <code>TotalCost</code> </p> </li> <li> <p>
      * <code>InstanceFamily</code> </p> </li> <li> <p> <code>Region</code> </p> </li>
-     * <li> <p> <code>Service</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <li> <p> <code>Service</code> </p> </li> </ul> <p>The supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> and
      * <code>DESCENDING</code>.</p>
      */
     inline void SetSortBy(const SortDefinition& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
      * supported for <code>Key</code>:</p> <ul> <li> <p>
      * <code>SpendCoveredBySavingsPlan</code> </p> </li> <li> <p>
      * <code>OnDemandCost</code> </p> </li> <li> <p> <code>CoveragePercentage</code>
      * </p> </li> <li> <p> <code>TotalCost</code> </p> </li> <li> <p>
      * <code>InstanceFamily</code> </p> </li> <li> <p> <code>Region</code> </p> </li>
-     * <li> <p> <code>Service</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <li> <p> <code>Service</code> </p> </li> </ul> <p>The supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> and
      * <code>DESCENDING</code>.</p>
      */
     inline void SetSortBy(SortDefinition&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
      * supported for <code>Key</code>:</p> <ul> <li> <p>
      * <code>SpendCoveredBySavingsPlan</code> </p> </li> <li> <p>
      * <code>OnDemandCost</code> </p> </li> <li> <p> <code>CoveragePercentage</code>
      * </p> </li> <li> <p> <code>TotalCost</code> </p> </li> <li> <p>
      * <code>InstanceFamily</code> </p> </li> <li> <p> <code>Region</code> </p> </li>
-     * <li> <p> <code>Service</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <li> <p> <code>Service</code> </p> </li> </ul> <p>The supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> and
      * <code>DESCENDING</code>.</p>
      */
     inline GetSavingsPlansCoverageRequest& WithSortBy(const SortDefinition& value) { SetSortBy(value); return *this;}
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
      * supported for <code>Key</code>:</p> <ul> <li> <p>
      * <code>SpendCoveredBySavingsPlan</code> </p> </li> <li> <p>
      * <code>OnDemandCost</code> </p> </li> <li> <p> <code>CoveragePercentage</code>
      * </p> </li> <li> <p> <code>TotalCost</code> </p> </li> <li> <p>
      * <code>InstanceFamily</code> </p> </li> <li> <p> <code>Region</code> </p> </li>
-     * <li> <p> <code>Service</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <li> <p> <code>Service</code> </p> </li> </ul> <p>The supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> and
      * <code>DESCENDING</code>.</p>
      */
     inline GetSavingsPlansCoverageRequest& WithSortBy(SortDefinition&& value) { SetSortBy(std::move(value)); return *this;}

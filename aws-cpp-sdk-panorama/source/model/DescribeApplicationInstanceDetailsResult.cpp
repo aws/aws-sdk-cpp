@@ -28,33 +28,9 @@ DescribeApplicationInstanceDetailsResult::DescribeApplicationInstanceDetailsResu
 DescribeApplicationInstanceDetailsResult& DescribeApplicationInstanceDetailsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Name"))
+  if(jsonValue.ValueExists("ApplicationInstanceId"))
   {
-    m_name = jsonValue.GetString("Name");
-
-  }
-
-  if(jsonValue.ValueExists("Description"))
-  {
-    m_description = jsonValue.GetString("Description");
-
-  }
-
-  if(jsonValue.ValueExists("DefaultRuntimeContextDevice"))
-  {
-    m_defaultRuntimeContextDevice = jsonValue.GetString("DefaultRuntimeContextDevice");
-
-  }
-
-  if(jsonValue.ValueExists("ManifestPayload"))
-  {
-    m_manifestPayload = jsonValue.GetObject("ManifestPayload");
-
-  }
-
-  if(jsonValue.ValueExists("ManifestOverridesPayload"))
-  {
-    m_manifestOverridesPayload = jsonValue.GetObject("ManifestOverridesPayload");
+    m_applicationInstanceId = jsonValue.GetString("ApplicationInstanceId");
 
   }
 
@@ -70,9 +46,33 @@ DescribeApplicationInstanceDetailsResult& DescribeApplicationInstanceDetailsResu
 
   }
 
-  if(jsonValue.ValueExists("ApplicationInstanceId"))
+  if(jsonValue.ValueExists("DefaultRuntimeContextDevice"))
   {
-    m_applicationInstanceId = jsonValue.GetString("ApplicationInstanceId");
+    m_defaultRuntimeContextDevice = jsonValue.GetString("DefaultRuntimeContextDevice");
+
+  }
+
+  if(jsonValue.ValueExists("Description"))
+  {
+    m_description = jsonValue.GetString("Description");
+
+  }
+
+  if(jsonValue.ValueExists("ManifestOverridesPayload"))
+  {
+    m_manifestOverridesPayload = jsonValue.GetObject("ManifestOverridesPayload");
+
+  }
+
+  if(jsonValue.ValueExists("ManifestPayload"))
+  {
+    m_manifestPayload = jsonValue.GetObject("ManifestPayload");
+
+  }
+
+  if(jsonValue.ValueExists("Name"))
+  {
+    m_name = jsonValue.GetString("Name");
 
   }
 

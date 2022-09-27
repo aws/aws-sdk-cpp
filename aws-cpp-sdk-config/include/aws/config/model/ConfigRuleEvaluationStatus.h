@@ -25,10 +25,11 @@ namespace Model
 {
 
   /**
-   * <p>Status information for your Config managed rules. The status includes
-   * information such as the last time the rule ran, the last time it failed, and the
-   * related error for the last failure.</p> <p>This action does not return status
-   * information about custom Config rules.</p><p><h3>See Also:</h3>   <a
+   * <p>Status information for your Config Managed rules and Config Custom Policy
+   * rules. The status includes information such as the last time the rule ran, the
+   * last time it failed, and the related error for the last failure.</p> <p>This
+   * action does not return status information about Config Custom Lambda
+   * rules.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConfigRuleEvaluationStatus">AWS
    * API Reference</a></p>
    */
@@ -460,8 +461,8 @@ namespace Model
      * <p>Indicates whether Config has evaluated your resources against the rule at
      * least once.</p> <ul> <li> <p> <code>true</code> - Config has evaluated your
      * Amazon Web Services resources against the rule at least once.</p> </li> <li> <p>
-     * <code>false</code> - Config has not once finished evaluating your Amazon Web
-     * Services resources against the rule.</p> </li> </ul>
+     * <code>false</code> - Config has not finished evaluating your Amazon Web Services
+     * resources against the rule at least once.</p> </li> </ul>
      */
     inline bool GetFirstEvaluationStarted() const{ return m_firstEvaluationStarted; }
 
@@ -469,8 +470,8 @@ namespace Model
      * <p>Indicates whether Config has evaluated your resources against the rule at
      * least once.</p> <ul> <li> <p> <code>true</code> - Config has evaluated your
      * Amazon Web Services resources against the rule at least once.</p> </li> <li> <p>
-     * <code>false</code> - Config has not once finished evaluating your Amazon Web
-     * Services resources against the rule.</p> </li> </ul>
+     * <code>false</code> - Config has not finished evaluating your Amazon Web Services
+     * resources against the rule at least once.</p> </li> </ul>
      */
     inline bool FirstEvaluationStartedHasBeenSet() const { return m_firstEvaluationStartedHasBeenSet; }
 
@@ -478,8 +479,8 @@ namespace Model
      * <p>Indicates whether Config has evaluated your resources against the rule at
      * least once.</p> <ul> <li> <p> <code>true</code> - Config has evaluated your
      * Amazon Web Services resources against the rule at least once.</p> </li> <li> <p>
-     * <code>false</code> - Config has not once finished evaluating your Amazon Web
-     * Services resources against the rule.</p> </li> </ul>
+     * <code>false</code> - Config has not finished evaluating your Amazon Web Services
+     * resources against the rule at least once.</p> </li> </ul>
      */
     inline void SetFirstEvaluationStarted(bool value) { m_firstEvaluationStartedHasBeenSet = true; m_firstEvaluationStarted = value; }
 
@@ -487,10 +488,145 @@ namespace Model
      * <p>Indicates whether Config has evaluated your resources against the rule at
      * least once.</p> <ul> <li> <p> <code>true</code> - Config has evaluated your
      * Amazon Web Services resources against the rule at least once.</p> </li> <li> <p>
-     * <code>false</code> - Config has not once finished evaluating your Amazon Web
-     * Services resources against the rule.</p> </li> </ul>
+     * <code>false</code> - Config has not finished evaluating your Amazon Web Services
+     * resources against the rule at least once.</p> </li> </ul>
      */
     inline ConfigRuleEvaluationStatus& WithFirstEvaluationStarted(bool value) { SetFirstEvaluationStarted(value); return *this;}
+
+
+    /**
+     * <p>The status of the last attempted delivery of a debug log for your Config
+     * Custom Policy rules. Either <code>Successful</code> or <code>Failed</code>.</p>
+     */
+    inline const Aws::String& GetLastDebugLogDeliveryStatus() const{ return m_lastDebugLogDeliveryStatus; }
+
+    /**
+     * <p>The status of the last attempted delivery of a debug log for your Config
+     * Custom Policy rules. Either <code>Successful</code> or <code>Failed</code>.</p>
+     */
+    inline bool LastDebugLogDeliveryStatusHasBeenSet() const { return m_lastDebugLogDeliveryStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the last attempted delivery of a debug log for your Config
+     * Custom Policy rules. Either <code>Successful</code> or <code>Failed</code>.</p>
+     */
+    inline void SetLastDebugLogDeliveryStatus(const Aws::String& value) { m_lastDebugLogDeliveryStatusHasBeenSet = true; m_lastDebugLogDeliveryStatus = value; }
+
+    /**
+     * <p>The status of the last attempted delivery of a debug log for your Config
+     * Custom Policy rules. Either <code>Successful</code> or <code>Failed</code>.</p>
+     */
+    inline void SetLastDebugLogDeliveryStatus(Aws::String&& value) { m_lastDebugLogDeliveryStatusHasBeenSet = true; m_lastDebugLogDeliveryStatus = std::move(value); }
+
+    /**
+     * <p>The status of the last attempted delivery of a debug log for your Config
+     * Custom Policy rules. Either <code>Successful</code> or <code>Failed</code>.</p>
+     */
+    inline void SetLastDebugLogDeliveryStatus(const char* value) { m_lastDebugLogDeliveryStatusHasBeenSet = true; m_lastDebugLogDeliveryStatus.assign(value); }
+
+    /**
+     * <p>The status of the last attempted delivery of a debug log for your Config
+     * Custom Policy rules. Either <code>Successful</code> or <code>Failed</code>.</p>
+     */
+    inline ConfigRuleEvaluationStatus& WithLastDebugLogDeliveryStatus(const Aws::String& value) { SetLastDebugLogDeliveryStatus(value); return *this;}
+
+    /**
+     * <p>The status of the last attempted delivery of a debug log for your Config
+     * Custom Policy rules. Either <code>Successful</code> or <code>Failed</code>.</p>
+     */
+    inline ConfigRuleEvaluationStatus& WithLastDebugLogDeliveryStatus(Aws::String&& value) { SetLastDebugLogDeliveryStatus(std::move(value)); return *this;}
+
+    /**
+     * <p>The status of the last attempted delivery of a debug log for your Config
+     * Custom Policy rules. Either <code>Successful</code> or <code>Failed</code>.</p>
+     */
+    inline ConfigRuleEvaluationStatus& WithLastDebugLogDeliveryStatus(const char* value) { SetLastDebugLogDeliveryStatus(value); return *this;}
+
+
+    /**
+     * <p>The reason Config was not able to deliver a debug log. This is for the last
+     * failed attempt to retrieve a debug log for your Config Custom Policy rules.</p>
+     */
+    inline const Aws::String& GetLastDebugLogDeliveryStatusReason() const{ return m_lastDebugLogDeliveryStatusReason; }
+
+    /**
+     * <p>The reason Config was not able to deliver a debug log. This is for the last
+     * failed attempt to retrieve a debug log for your Config Custom Policy rules.</p>
+     */
+    inline bool LastDebugLogDeliveryStatusReasonHasBeenSet() const { return m_lastDebugLogDeliveryStatusReasonHasBeenSet; }
+
+    /**
+     * <p>The reason Config was not able to deliver a debug log. This is for the last
+     * failed attempt to retrieve a debug log for your Config Custom Policy rules.</p>
+     */
+    inline void SetLastDebugLogDeliveryStatusReason(const Aws::String& value) { m_lastDebugLogDeliveryStatusReasonHasBeenSet = true; m_lastDebugLogDeliveryStatusReason = value; }
+
+    /**
+     * <p>The reason Config was not able to deliver a debug log. This is for the last
+     * failed attempt to retrieve a debug log for your Config Custom Policy rules.</p>
+     */
+    inline void SetLastDebugLogDeliveryStatusReason(Aws::String&& value) { m_lastDebugLogDeliveryStatusReasonHasBeenSet = true; m_lastDebugLogDeliveryStatusReason = std::move(value); }
+
+    /**
+     * <p>The reason Config was not able to deliver a debug log. This is for the last
+     * failed attempt to retrieve a debug log for your Config Custom Policy rules.</p>
+     */
+    inline void SetLastDebugLogDeliveryStatusReason(const char* value) { m_lastDebugLogDeliveryStatusReasonHasBeenSet = true; m_lastDebugLogDeliveryStatusReason.assign(value); }
+
+    /**
+     * <p>The reason Config was not able to deliver a debug log. This is for the last
+     * failed attempt to retrieve a debug log for your Config Custom Policy rules.</p>
+     */
+    inline ConfigRuleEvaluationStatus& WithLastDebugLogDeliveryStatusReason(const Aws::String& value) { SetLastDebugLogDeliveryStatusReason(value); return *this;}
+
+    /**
+     * <p>The reason Config was not able to deliver a debug log. This is for the last
+     * failed attempt to retrieve a debug log for your Config Custom Policy rules.</p>
+     */
+    inline ConfigRuleEvaluationStatus& WithLastDebugLogDeliveryStatusReason(Aws::String&& value) { SetLastDebugLogDeliveryStatusReason(std::move(value)); return *this;}
+
+    /**
+     * <p>The reason Config was not able to deliver a debug log. This is for the last
+     * failed attempt to retrieve a debug log for your Config Custom Policy rules.</p>
+     */
+    inline ConfigRuleEvaluationStatus& WithLastDebugLogDeliveryStatusReason(const char* value) { SetLastDebugLogDeliveryStatusReason(value); return *this;}
+
+
+    /**
+     * <p>The time Config last attempted to deliver a debug log for your Config Custom
+     * Policy rules.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastDebugLogDeliveryTime() const{ return m_lastDebugLogDeliveryTime; }
+
+    /**
+     * <p>The time Config last attempted to deliver a debug log for your Config Custom
+     * Policy rules.</p>
+     */
+    inline bool LastDebugLogDeliveryTimeHasBeenSet() const { return m_lastDebugLogDeliveryTimeHasBeenSet; }
+
+    /**
+     * <p>The time Config last attempted to deliver a debug log for your Config Custom
+     * Policy rules.</p>
+     */
+    inline void SetLastDebugLogDeliveryTime(const Aws::Utils::DateTime& value) { m_lastDebugLogDeliveryTimeHasBeenSet = true; m_lastDebugLogDeliveryTime = value; }
+
+    /**
+     * <p>The time Config last attempted to deliver a debug log for your Config Custom
+     * Policy rules.</p>
+     */
+    inline void SetLastDebugLogDeliveryTime(Aws::Utils::DateTime&& value) { m_lastDebugLogDeliveryTimeHasBeenSet = true; m_lastDebugLogDeliveryTime = std::move(value); }
+
+    /**
+     * <p>The time Config last attempted to deliver a debug log for your Config Custom
+     * Policy rules.</p>
+     */
+    inline ConfigRuleEvaluationStatus& WithLastDebugLogDeliveryTime(const Aws::Utils::DateTime& value) { SetLastDebugLogDeliveryTime(value); return *this;}
+
+    /**
+     * <p>The time Config last attempted to deliver a debug log for your Config Custom
+     * Policy rules.</p>
+     */
+    inline ConfigRuleEvaluationStatus& WithLastDebugLogDeliveryTime(Aws::Utils::DateTime&& value) { SetLastDebugLogDeliveryTime(std::move(value)); return *this;}
 
   private:
 
@@ -529,6 +665,15 @@ namespace Model
 
     bool m_firstEvaluationStarted;
     bool m_firstEvaluationStartedHasBeenSet;
+
+    Aws::String m_lastDebugLogDeliveryStatus;
+    bool m_lastDebugLogDeliveryStatusHasBeenSet;
+
+    Aws::String m_lastDebugLogDeliveryStatusReason;
+    bool m_lastDebugLogDeliveryStatusReasonHasBeenSet;
+
+    Aws::Utils::DateTime m_lastDebugLogDeliveryTime;
+    bool m_lastDebugLogDeliveryTimeHasBeenSet;
   };
 
 } // namespace Model

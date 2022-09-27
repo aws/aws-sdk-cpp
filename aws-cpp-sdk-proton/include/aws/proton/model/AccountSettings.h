@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>The Proton pipeline service role and repository data.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The Proton pipeline service role and repository data shared across the Amazon
+   * Web Services account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/AccountSettings">AWS
    * API Reference</a></p>
    */
@@ -40,97 +40,109 @@ namespace Model
 
 
     /**
-     * <p>The repository that you provide with pull request provisioning.</p>
-     *  <p>Provisioning by pull request is currently in feature preview and
-     * is only usable with Terraform based Proton Templates. To learn more about <a
-     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
-     * terms</a>, see section 2 on Beta and Previews.</p> 
+     * <p>The repository configured in the Amazon Web Services account for pipeline
+     * provisioning. Required it if you have environments configured for self-managed
+     * provisioning with services that include pipelines.</p>
      */
     inline const RepositoryBranch& GetPipelineProvisioningRepository() const{ return m_pipelineProvisioningRepository; }
 
     /**
-     * <p>The repository that you provide with pull request provisioning.</p>
-     *  <p>Provisioning by pull request is currently in feature preview and
-     * is only usable with Terraform based Proton Templates. To learn more about <a
-     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
-     * terms</a>, see section 2 on Beta and Previews.</p> 
+     * <p>The repository configured in the Amazon Web Services account for pipeline
+     * provisioning. Required it if you have environments configured for self-managed
+     * provisioning with services that include pipelines.</p>
      */
     inline bool PipelineProvisioningRepositoryHasBeenSet() const { return m_pipelineProvisioningRepositoryHasBeenSet; }
 
     /**
-     * <p>The repository that you provide with pull request provisioning.</p>
-     *  <p>Provisioning by pull request is currently in feature preview and
-     * is only usable with Terraform based Proton Templates. To learn more about <a
-     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
-     * terms</a>, see section 2 on Beta and Previews.</p> 
+     * <p>The repository configured in the Amazon Web Services account for pipeline
+     * provisioning. Required it if you have environments configured for self-managed
+     * provisioning with services that include pipelines.</p>
      */
     inline void SetPipelineProvisioningRepository(const RepositoryBranch& value) { m_pipelineProvisioningRepositoryHasBeenSet = true; m_pipelineProvisioningRepository = value; }
 
     /**
-     * <p>The repository that you provide with pull request provisioning.</p>
-     *  <p>Provisioning by pull request is currently in feature preview and
-     * is only usable with Terraform based Proton Templates. To learn more about <a
-     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
-     * terms</a>, see section 2 on Beta and Previews.</p> 
+     * <p>The repository configured in the Amazon Web Services account for pipeline
+     * provisioning. Required it if you have environments configured for self-managed
+     * provisioning with services that include pipelines.</p>
      */
     inline void SetPipelineProvisioningRepository(RepositoryBranch&& value) { m_pipelineProvisioningRepositoryHasBeenSet = true; m_pipelineProvisioningRepository = std::move(value); }
 
     /**
-     * <p>The repository that you provide with pull request provisioning.</p>
-     *  <p>Provisioning by pull request is currently in feature preview and
-     * is only usable with Terraform based Proton Templates. To learn more about <a
-     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
-     * terms</a>, see section 2 on Beta and Previews.</p> 
+     * <p>The repository configured in the Amazon Web Services account for pipeline
+     * provisioning. Required it if you have environments configured for self-managed
+     * provisioning with services that include pipelines.</p>
      */
     inline AccountSettings& WithPipelineProvisioningRepository(const RepositoryBranch& value) { SetPipelineProvisioningRepository(value); return *this;}
 
     /**
-     * <p>The repository that you provide with pull request provisioning.</p>
-     *  <p>Provisioning by pull request is currently in feature preview and
-     * is only usable with Terraform based Proton Templates. To learn more about <a
-     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
-     * terms</a>, see section 2 on Beta and Previews.</p> 
+     * <p>The repository configured in the Amazon Web Services account for pipeline
+     * provisioning. Required it if you have environments configured for self-managed
+     * provisioning with services that include pipelines.</p>
      */
     inline AccountSettings& WithPipelineProvisioningRepository(RepositoryBranch&& value) { SetPipelineProvisioningRepository(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Proton pipeline service role.</p>
+     * <p>The Amazon Resource Name (ARN) of the service role you want to use for
+     * provisioning pipelines. Assumed by Proton for Amazon Web Services-managed
+     * provisioning, and by customer-owned automation for self-managed
+     * provisioning.</p>
      */
     inline const Aws::String& GetPipelineServiceRoleArn() const{ return m_pipelineServiceRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Proton pipeline service role.</p>
+     * <p>The Amazon Resource Name (ARN) of the service role you want to use for
+     * provisioning pipelines. Assumed by Proton for Amazon Web Services-managed
+     * provisioning, and by customer-owned automation for self-managed
+     * provisioning.</p>
      */
     inline bool PipelineServiceRoleArnHasBeenSet() const { return m_pipelineServiceRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Proton pipeline service role.</p>
+     * <p>The Amazon Resource Name (ARN) of the service role you want to use for
+     * provisioning pipelines. Assumed by Proton for Amazon Web Services-managed
+     * provisioning, and by customer-owned automation for self-managed
+     * provisioning.</p>
      */
     inline void SetPipelineServiceRoleArn(const Aws::String& value) { m_pipelineServiceRoleArnHasBeenSet = true; m_pipelineServiceRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Proton pipeline service role.</p>
+     * <p>The Amazon Resource Name (ARN) of the service role you want to use for
+     * provisioning pipelines. Assumed by Proton for Amazon Web Services-managed
+     * provisioning, and by customer-owned automation for self-managed
+     * provisioning.</p>
      */
     inline void SetPipelineServiceRoleArn(Aws::String&& value) { m_pipelineServiceRoleArnHasBeenSet = true; m_pipelineServiceRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Proton pipeline service role.</p>
+     * <p>The Amazon Resource Name (ARN) of the service role you want to use for
+     * provisioning pipelines. Assumed by Proton for Amazon Web Services-managed
+     * provisioning, and by customer-owned automation for self-managed
+     * provisioning.</p>
      */
     inline void SetPipelineServiceRoleArn(const char* value) { m_pipelineServiceRoleArnHasBeenSet = true; m_pipelineServiceRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Proton pipeline service role.</p>
+     * <p>The Amazon Resource Name (ARN) of the service role you want to use for
+     * provisioning pipelines. Assumed by Proton for Amazon Web Services-managed
+     * provisioning, and by customer-owned automation for self-managed
+     * provisioning.</p>
      */
     inline AccountSettings& WithPipelineServiceRoleArn(const Aws::String& value) { SetPipelineServiceRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Proton pipeline service role.</p>
+     * <p>The Amazon Resource Name (ARN) of the service role you want to use for
+     * provisioning pipelines. Assumed by Proton for Amazon Web Services-managed
+     * provisioning, and by customer-owned automation for self-managed
+     * provisioning.</p>
      */
     inline AccountSettings& WithPipelineServiceRoleArn(Aws::String&& value) { SetPipelineServiceRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Proton pipeline service role.</p>
+     * <p>The Amazon Resource Name (ARN) of the service role you want to use for
+     * provisioning pipelines. Assumed by Proton for Amazon Web Services-managed
+     * provisioning, and by customer-owned automation for self-managed
+     * provisioning.</p>
      */
     inline AccountSettings& WithPipelineServiceRoleArn(const char* value) { SetPipelineServiceRoleArn(value); return *this;}
 

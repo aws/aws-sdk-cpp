@@ -30,7 +30,8 @@ namespace Model
     ebsOptimized,
     sriovNetSupport,
     enaSupport,
-    enclaveOptions
+    enclaveOptions,
+    disableApiStop
   };
 
 namespace InstanceAttributeNameMapper

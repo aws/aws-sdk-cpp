@@ -62,7 +62,9 @@ AutoScalingGroup::AutoScalingGroup() :
     m_warmPoolSize(0),
     m_warmPoolSizeHasBeenSet(false),
     m_contextHasBeenSet(false),
-    m_desiredCapacityTypeHasBeenSet(false)
+    m_desiredCapacityTypeHasBeenSet(false),
+    m_defaultInstanceWarmup(0),
+    m_defaultInstanceWarmupHasBeenSet(false)
 {
 }
 
@@ -108,7 +110,9 @@ AutoScalingGroup::AutoScalingGroup(const XmlNode& xmlNode) :
     m_warmPoolSize(0),
     m_warmPoolSizeHasBeenSet(false),
     m_contextHasBeenSet(false),
-    m_desiredCapacityTypeHasBeenSet(false)
+    m_desiredCapacityTypeHasBeenSet(false),
+    m_defaultInstanceWarmup(0),
+    m_defaultInstanceWarmupHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -359,6 +363,12 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
       m_desiredCapacityType = Aws::Utils::Xml::DecodeEscapedXmlText(desiredCapacityTypeNode.GetText());
       m_desiredCapacityTypeHasBeenSet = true;
     }
+    XmlNode defaultInstanceWarmupNode = resultNode.FirstChild("DefaultInstanceWarmup");
+    if(!defaultInstanceWarmupNode.IsNull())
+    {
+      m_defaultInstanceWarmup = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultInstanceWarmupNode.GetText()).c_str()).c_str());
+      m_defaultInstanceWarmupHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -572,6 +582,11 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".DesiredCapacityType=" << StringUtils::URLEncode(m_desiredCapacityType.c_str()) << "&";
   }
 
+  if(m_defaultInstanceWarmupHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DefaultInstanceWarmup=" << m_defaultInstanceWarmup << "&";
+  }
+
 }
 
 void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -749,6 +764,10 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_desiredCapacityTypeHasBeenSet)
   {
       oStream << location << ".DesiredCapacityType=" << StringUtils::URLEncode(m_desiredCapacityType.c_str()) << "&";
+  }
+  if(m_defaultInstanceWarmupHasBeenSet)
+  {
+      oStream << location << ".DefaultInstanceWarmup=" << m_defaultInstanceWarmup << "&";
   }
 }
 

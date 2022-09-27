@@ -172,37 +172,32 @@ namespace Model
 
 
     /**
-     * <p>Information that describes where the data source is located and how the data
-     * source is configured. The specific information in the description depends on the
-     * data source provider.</p>
+     * <p>Describes how the data source is configured. The specific information in the
+     * description depends on the data source provider.</p>
      */
     inline const DataSourceConfiguration& GetConfiguration() const{ return m_configuration; }
 
     /**
-     * <p>Information that describes where the data source is located and how the data
-     * source is configured. The specific information in the description depends on the
-     * data source provider.</p>
+     * <p>Describes how the data source is configured. The specific information in the
+     * description depends on the data source provider.</p>
      */
     inline void SetConfiguration(const DataSourceConfiguration& value) { m_configuration = value; }
 
     /**
-     * <p>Information that describes where the data source is located and how the data
-     * source is configured. The specific information in the description depends on the
-     * data source provider.</p>
+     * <p>Describes how the data source is configured. The specific information in the
+     * description depends on the data source provider.</p>
      */
     inline void SetConfiguration(DataSourceConfiguration&& value) { m_configuration = std::move(value); }
 
     /**
-     * <p>Information that describes where the data source is located and how the data
-     * source is configured. The specific information in the description depends on the
-     * data source provider.</p>
+     * <p>Describes how the data source is configured. The specific information in the
+     * description depends on the data source provider.</p>
      */
     inline DescribeDataSourceResult& WithConfiguration(const DataSourceConfiguration& value) { SetConfiguration(value); return *this;}
 
     /**
-     * <p>Information that describes where the data source is located and how the data
-     * source is configured. The specific information in the description depends on the
-     * data source provider.</p>
+     * <p>Describes how the data source is configured. The specific information in the
+     * description depends on the data source provider.</p>
      */
     inline DescribeDataSourceResult& WithConfiguration(DataSourceConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 
@@ -337,37 +332,37 @@ namespace Model
 
 
     /**
-     * <p>The schedule that Amazon Kendra will update the data source.</p>
+     * <p>The schedule for Amazon Kendra to update the index.</p>
      */
     inline const Aws::String& GetSchedule() const{ return m_schedule; }
 
     /**
-     * <p>The schedule that Amazon Kendra will update the data source.</p>
+     * <p>The schedule for Amazon Kendra to update the index.</p>
      */
     inline void SetSchedule(const Aws::String& value) { m_schedule = value; }
 
     /**
-     * <p>The schedule that Amazon Kendra will update the data source.</p>
+     * <p>The schedule for Amazon Kendra to update the index.</p>
      */
     inline void SetSchedule(Aws::String&& value) { m_schedule = std::move(value); }
 
     /**
-     * <p>The schedule that Amazon Kendra will update the data source.</p>
+     * <p>The schedule for Amazon Kendra to update the index.</p>
      */
     inline void SetSchedule(const char* value) { m_schedule.assign(value); }
 
     /**
-     * <p>The schedule that Amazon Kendra will update the data source.</p>
+     * <p>The schedule for Amazon Kendra to update the index.</p>
      */
     inline DescribeDataSourceResult& WithSchedule(const Aws::String& value) { SetSchedule(value); return *this;}
 
     /**
-     * <p>The schedule that Amazon Kendra will update the data source.</p>
+     * <p>The schedule for Amazon Kendra to update the index.</p>
      */
     inline DescribeDataSourceResult& WithSchedule(Aws::String&& value) { SetSchedule(std::move(value)); return *this;}
 
     /**
-     * <p>The schedule that Amazon Kendra will update the data source.</p>
+     * <p>The schedule for Amazon Kendra to update the index.</p>
      */
     inline DescribeDataSourceResult& WithSchedule(const char* value) { SetSchedule(value); return *this;}
 

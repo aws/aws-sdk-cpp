@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p> Data source information for user context filtering. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Data source information for user context filtering.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DataSourceGroup">AWS
    * API Reference</a></p>
    */

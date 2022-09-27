@@ -25,10 +25,12 @@
 #include <aws/elasticfilesystem/model/AccessPointLimitExceeded.h>
 #include <aws/elasticfilesystem/model/IpAddressInUse.h>
 #include <aws/elasticfilesystem/model/IncorrectMountTargetState.h>
+#include <aws/elasticfilesystem/model/ReplicationNotFound.h>
 #include <aws/elasticfilesystem/model/AvailabilityZonesMismatch.h>
 #include <aws/elasticfilesystem/model/MountTargetConflict.h>
 #include <aws/elasticfilesystem/model/InvalidPolicyException.h>
 #include <aws/elasticfilesystem/model/ThroughputLimitExceeded.h>
+#include <aws/elasticfilesystem/model/ThrottlingException.h>
 #include <aws/elasticfilesystem/model/FileSystemInUse.h>
 #include <aws/elasticfilesystem/model/NetworkInterfaceLimitExceeded.h>
 #include <aws/elasticfilesystem/model/TooManyRequests.h>
@@ -158,6 +160,12 @@ template<> AWS_EFS_API IncorrectMountTargetState EFSError::GetModeledError()
   return IncorrectMountTargetState(this->GetJsonPayload().View());
 }
 
+template<> AWS_EFS_API ReplicationNotFound EFSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EFSErrors::REPLICATION_NOT_FOUND);
+  return ReplicationNotFound(this->GetJsonPayload().View());
+}
+
 template<> AWS_EFS_API AvailabilityZonesMismatch EFSError::GetModeledError()
 {
   assert(this->GetErrorType() == EFSErrors::AVAILABILITY_ZONES_MISMATCH);
@@ -180,6 +188,12 @@ template<> AWS_EFS_API ThroughputLimitExceeded EFSError::GetModeledError()
 {
   assert(this->GetErrorType() == EFSErrors::THROUGHPUT_LIMIT_EXCEEDED);
   return ThroughputLimitExceeded(this->GetJsonPayload().View());
+}
+
+template<> AWS_EFS_API ThrottlingException EFSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EFSErrors::THROTTLING);
+  return ThrottlingException(this->GetJsonPayload().View());
 }
 
 template<> AWS_EFS_API FileSystemInUse EFSError::GetModeledError()
@@ -232,6 +246,7 @@ static const int ACCESS_POINT_NOT_FOUND_HASH = HashingUtils::HashString("AccessP
 static const int ACCESS_POINT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AccessPointLimitExceeded");
 static const int IP_ADDRESS_IN_USE_HASH = HashingUtils::HashString("IpAddressInUse");
 static const int INCORRECT_MOUNT_TARGET_STATE_HASH = HashingUtils::HashString("IncorrectMountTargetState");
+static const int REPLICATION_NOT_FOUND_HASH = HashingUtils::HashString("ReplicationNotFound");
 static const int AVAILABILITY_ZONES_MISMATCH_HASH = HashingUtils::HashString("AvailabilityZonesMismatch");
 static const int MOUNT_TARGET_CONFLICT_HASH = HashingUtils::HashString("MountTargetConflict");
 static const int INVALID_POLICY_HASH = HashingUtils::HashString("InvalidPolicyException");
@@ -314,6 +329,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INCORRECT_MOUNT_TARGET_STATE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::INCORRECT_MOUNT_TARGET_STATE), false);
+  }
+  else if (hashCode == REPLICATION_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::REPLICATION_NOT_FOUND), false);
   }
   else if (hashCode == AVAILABILITY_ZONES_MISMATCH_HASH)
   {

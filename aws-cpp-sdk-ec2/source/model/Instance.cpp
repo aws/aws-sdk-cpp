@@ -86,7 +86,9 @@ Instance::Instance() :
     m_usageOperationHasBeenSet(false),
     m_usageOperationUpdateTimeHasBeenSet(false),
     m_privateDnsNameOptionsHasBeenSet(false),
-    m_ipv6AddressHasBeenSet(false)
+    m_ipv6AddressHasBeenSet(false),
+    m_tpmSupportHasBeenSet(false),
+    m_maintenanceOptionsHasBeenSet(false)
 {
 }
 
@@ -156,7 +158,9 @@ Instance::Instance(const XmlNode& xmlNode) :
     m_usageOperationHasBeenSet(false),
     m_usageOperationUpdateTimeHasBeenSet(false),
     m_privateDnsNameOptionsHasBeenSet(false),
-    m_ipv6AddressHasBeenSet(false)
+    m_ipv6AddressHasBeenSet(false),
+    m_tpmSupportHasBeenSet(false),
+    m_maintenanceOptionsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -539,6 +543,18 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
       m_ipv6Address = Aws::Utils::Xml::DecodeEscapedXmlText(ipv6AddressNode.GetText());
       m_ipv6AddressHasBeenSet = true;
     }
+    XmlNode tpmSupportNode = resultNode.FirstChild("tpmSupport");
+    if(!tpmSupportNode.IsNull())
+    {
+      m_tpmSupport = Aws::Utils::Xml::DecodeEscapedXmlText(tpmSupportNode.GetText());
+      m_tpmSupportHasBeenSet = true;
+    }
+    XmlNode maintenanceOptionsNode = resultNode.FirstChild("maintenanceOptions");
+    if(!maintenanceOptionsNode.IsNull())
+    {
+      m_maintenanceOptions = maintenanceOptionsNode;
+      m_maintenanceOptionsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -886,6 +902,18 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       oStream << location << index << locationValue << ".Ipv6Address=" << StringUtils::URLEncode(m_ipv6Address.c_str()) << "&";
   }
 
+  if(m_tpmSupportHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TpmSupport=" << StringUtils::URLEncode(m_tpmSupport.c_str()) << "&";
+  }
+
+  if(m_maintenanceOptionsHasBeenSet)
+  {
+      Aws::StringStream maintenanceOptionsLocationAndMemberSs;
+      maintenanceOptionsLocationAndMemberSs << location << index << locationValue << ".MaintenanceOptions";
+      m_maintenanceOptions.OutputToStream(oStream, maintenanceOptionsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1175,6 +1203,16 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_ipv6AddressHasBeenSet)
   {
       oStream << location << ".Ipv6Address=" << StringUtils::URLEncode(m_ipv6Address.c_str()) << "&";
+  }
+  if(m_tpmSupportHasBeenSet)
+  {
+      oStream << location << ".TpmSupport=" << StringUtils::URLEncode(m_tpmSupport.c_str()) << "&";
+  }
+  if(m_maintenanceOptionsHasBeenSet)
+  {
+      Aws::String maintenanceOptionsLocationAndMember(location);
+      maintenanceOptionsLocationAndMember += ".MaintenanceOptions";
+      m_maintenanceOptions.OutputToStream(oStream, maintenanceOptionsLocationAndMember.c_str());
   }
 }
 

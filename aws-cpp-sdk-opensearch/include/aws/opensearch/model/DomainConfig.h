@@ -19,6 +19,7 @@
 #include <aws/opensearch/model/DomainEndpointOptionsStatus.h>
 #include <aws/opensearch/model/AdvancedSecurityOptionsStatus.h>
 #include <aws/opensearch/model/AutoTuneOptionsStatus.h>
+#include <aws/opensearch/model/ChangeProgressDetails.h>
 #include <utility>
 
 namespace Aws
@@ -549,6 +550,37 @@ namespace Model
      */
     inline DomainConfig& WithAutoTuneOptions(AutoTuneOptionsStatus&& value) { SetAutoTuneOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies change details of the domain configuration change.</p>
+     */
+    inline const ChangeProgressDetails& GetChangeProgressDetails() const{ return m_changeProgressDetails; }
+
+    /**
+     * <p>Specifies change details of the domain configuration change.</p>
+     */
+    inline bool ChangeProgressDetailsHasBeenSet() const { return m_changeProgressDetailsHasBeenSet; }
+
+    /**
+     * <p>Specifies change details of the domain configuration change.</p>
+     */
+    inline void SetChangeProgressDetails(const ChangeProgressDetails& value) { m_changeProgressDetailsHasBeenSet = true; m_changeProgressDetails = value; }
+
+    /**
+     * <p>Specifies change details of the domain configuration change.</p>
+     */
+    inline void SetChangeProgressDetails(ChangeProgressDetails&& value) { m_changeProgressDetailsHasBeenSet = true; m_changeProgressDetails = std::move(value); }
+
+    /**
+     * <p>Specifies change details of the domain configuration change.</p>
+     */
+    inline DomainConfig& WithChangeProgressDetails(const ChangeProgressDetails& value) { SetChangeProgressDetails(value); return *this;}
+
+    /**
+     * <p>Specifies change details of the domain configuration change.</p>
+     */
+    inline DomainConfig& WithChangeProgressDetails(ChangeProgressDetails&& value) { SetChangeProgressDetails(std::move(value)); return *this;}
+
   private:
 
     VersionStatus m_engineVersion;
@@ -592,6 +624,9 @@ namespace Model
 
     AutoTuneOptionsStatus m_autoTuneOptions;
     bool m_autoTuneOptionsHasBeenSet;
+
+    ChangeProgressDetails m_changeProgressDetails;
+    bool m_changeProgressDetailsHasBeenSet;
   };
 
 } // namespace Model

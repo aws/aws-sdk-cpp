@@ -22,8 +22,10 @@ namespace Aws
         const char AUTHORIZATION_HEADER[] = "authorization";
         const char AWS_AUTHORIZATION_HEADER[] = "authorization";
         const char COOKIE_HEADER[] = "cookie";
+        const char DECODED_CONTENT_LENGTH_HEADER[] = "x-amz-decoded-content-length";
         const char CONTENT_LENGTH_HEADER[] = "content-length";
         const char CONTENT_TYPE_HEADER[] = "content-type";
+        const char CONTENT_ENCODING_HEADER[] = "content-encoding";
         const char TRANSFER_ENCODING_HEADER[] = "transfer-encoding";
         const char USER_AGENT_HEADER[] = "user-agent";
         const char VIA_HEADER[] = "via";
@@ -32,9 +34,12 @@ namespace Aws
         const char X_AMZ_EXPIRES_HEADER[] = "X-Amz-Expires";
         const char CONTENT_MD5_HEADER[] = "content-md5";
         const char API_VERSION_HEADER[] = "x-amz-api-version";
+        const char AWS_TRAILER_HEADER[] = "x-amz-trailer";
         const char SDK_INVOCATION_ID_HEADER[] = "amz-sdk-invocation-id";
         const char SDK_REQUEST_HEADER[] = "amz-sdk-request";
         const char CHUNKED_VALUE[] = "chunked";
+        const char AWS_CHUNKED_VALUE[] = "aws-chunked";
+        const char X_AMZN_TRACE_ID_HEADER[] = "X-Amzn-Trace-Id";
 
         std::shared_ptr<Aws::Crt::Http::HttpRequest> HttpRequest::ToCrtHttpRequest()
         {

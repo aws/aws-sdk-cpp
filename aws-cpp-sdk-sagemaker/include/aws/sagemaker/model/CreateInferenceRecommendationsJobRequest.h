@@ -10,6 +10,7 @@
 #include <aws/sagemaker/model/RecommendationJobType.h>
 #include <aws/sagemaker/model/RecommendationJobInputConfig.h>
 #include <aws/sagemaker/model/RecommendationJobStoppingConditions.h>
+#include <aws/sagemaker/model/RecommendationJobOutputConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
@@ -302,6 +303,43 @@ namespace Model
 
 
     /**
+     * <p>Provides information about the output artifacts and the KMS key to use for
+     * Amazon S3 server-side encryption.</p>
+     */
+    inline const RecommendationJobOutputConfig& GetOutputConfig() const{ return m_outputConfig; }
+
+    /**
+     * <p>Provides information about the output artifacts and the KMS key to use for
+     * Amazon S3 server-side encryption.</p>
+     */
+    inline bool OutputConfigHasBeenSet() const { return m_outputConfigHasBeenSet; }
+
+    /**
+     * <p>Provides information about the output artifacts and the KMS key to use for
+     * Amazon S3 server-side encryption.</p>
+     */
+    inline void SetOutputConfig(const RecommendationJobOutputConfig& value) { m_outputConfigHasBeenSet = true; m_outputConfig = value; }
+
+    /**
+     * <p>Provides information about the output artifacts and the KMS key to use for
+     * Amazon S3 server-side encryption.</p>
+     */
+    inline void SetOutputConfig(RecommendationJobOutputConfig&& value) { m_outputConfigHasBeenSet = true; m_outputConfig = std::move(value); }
+
+    /**
+     * <p>Provides information about the output artifacts and the KMS key to use for
+     * Amazon S3 server-side encryption.</p>
+     */
+    inline CreateInferenceRecommendationsJobRequest& WithOutputConfig(const RecommendationJobOutputConfig& value) { SetOutputConfig(value); return *this;}
+
+    /**
+     * <p>Provides information about the output artifacts and the KMS key to use for
+     * Amazon S3 server-side encryption.</p>
+     */
+    inline CreateInferenceRecommendationsJobRequest& WithOutputConfig(RecommendationJobOutputConfig&& value) { SetOutputConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>The metadata that you apply to Amazon Web Services resources to help you
      * categorize and organize them. Each tag consists of a key and a value, both of
      * which you define. For more information, see <a
@@ -400,6 +438,9 @@ namespace Model
 
     RecommendationJobStoppingConditions m_stoppingConditions;
     bool m_stoppingConditionsHasBeenSet;
+
+    RecommendationJobOutputConfig m_outputConfig;
+    bool m_outputConfigHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

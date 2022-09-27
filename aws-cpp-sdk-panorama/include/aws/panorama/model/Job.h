@@ -38,47 +38,6 @@ namespace Model
 
 
     /**
-     * <p>The job's ID.</p>
-     */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
-
-    /**
-     * <p>The job's ID.</p>
-     */
-    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-
-    /**
-     * <p>The job's ID.</p>
-     */
-    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-
-    /**
-     * <p>The job's ID.</p>
-     */
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-
-    /**
-     * <p>The job's ID.</p>
-     */
-    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-
-    /**
-     * <p>The job's ID.</p>
-     */
-    inline Job& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-
-    /**
-     * <p>The job's ID.</p>
-     */
-    inline Job& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-
-    /**
-     * <p>The job's ID.</p>
-     */
-    inline Job& WithJobId(const char* value) { SetJobId(value); return *this;}
-
-
-    /**
      * <p>The target device's ID.</p>
      */
     inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
@@ -118,13 +77,54 @@ namespace Model
      */
     inline Job& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
 
-  private:
 
-    Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    /**
+     * <p>The job's ID.</p>
+     */
+    inline const Aws::String& GetJobId() const{ return m_jobId; }
+
+    /**
+     * <p>The job's ID.</p>
+     */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    /**
+     * <p>The job's ID.</p>
+     */
+    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
+
+    /**
+     * <p>The job's ID.</p>
+     */
+    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
+
+    /**
+     * <p>The job's ID.</p>
+     */
+    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
+
+    /**
+     * <p>The job's ID.</p>
+     */
+    inline Job& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
+
+    /**
+     * <p>The job's ID.</p>
+     */
+    inline Job& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
+
+    /**
+     * <p>The job's ID.</p>
+     */
+    inline Job& WithJobId(const char* value) { SetJobId(value); return *this;}
+
+  private:
 
     Aws::String m_deviceId;
     bool m_deviceIdHasBeenSet;
+
+    Aws::String m_jobId;
+    bool m_jobIdHasBeenSet;
   };
 
 } // namespace Model

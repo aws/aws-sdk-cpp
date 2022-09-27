@@ -18,6 +18,7 @@
 #include <aws/lambda/model/LastUpdateStatusReasonCode.h>
 #include <aws/lambda/model/PackageType.h>
 #include <aws/lambda/model/ImageConfigResponse.h>
+#include <aws/lambda/model/EphemeralStorage.h>
 #include <aws/lambda/model/Layer.h>
 #include <aws/lambda/model/FileSystemConfig.h>
 #include <aws/lambda/model/Architecture.h>
@@ -1129,6 +1130,37 @@ namespace Model
      */
     inline GetFunctionConfigurationResult& AddArchitectures(Architecture&& value) { m_architectures.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The size of the function’s /tmp directory in MB. The default value is 512,
+     * but can be any whole number between 512 and 10240 MB.</p>
+     */
+    inline const EphemeralStorage& GetEphemeralStorage() const{ return m_ephemeralStorage; }
+
+    /**
+     * <p>The size of the function’s /tmp directory in MB. The default value is 512,
+     * but can be any whole number between 512 and 10240 MB.</p>
+     */
+    inline void SetEphemeralStorage(const EphemeralStorage& value) { m_ephemeralStorage = value; }
+
+    /**
+     * <p>The size of the function’s /tmp directory in MB. The default value is 512,
+     * but can be any whole number between 512 and 10240 MB.</p>
+     */
+    inline void SetEphemeralStorage(EphemeralStorage&& value) { m_ephemeralStorage = std::move(value); }
+
+    /**
+     * <p>The size of the function’s /tmp directory in MB. The default value is 512,
+     * but can be any whole number between 512 and 10240 MB.</p>
+     */
+    inline GetFunctionConfigurationResult& WithEphemeralStorage(const EphemeralStorage& value) { SetEphemeralStorage(value); return *this;}
+
+    /**
+     * <p>The size of the function’s /tmp directory in MB. The default value is 512,
+     * but can be any whole number between 512 and 10240 MB.</p>
+     */
+    inline GetFunctionConfigurationResult& WithEphemeralStorage(EphemeralStorage&& value) { SetEphemeralStorage(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_functionName;
@@ -1194,6 +1226,8 @@ namespace Model
     Aws::String m_signingJobArn;
 
     Aws::Vector<Architecture> m_architectures;
+
+    EphemeralStorage m_ephemeralStorage;
   };
 
 } // namespace Model

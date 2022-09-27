@@ -19,29 +19,29 @@ namespace Model
 {
 
 DeviceJob::DeviceJob() : 
-    m_deviceNameHasBeenSet(false),
+    m_createdTimeHasBeenSet(false),
     m_deviceIdHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_deviceNameHasBeenSet(false),
+    m_jobIdHasBeenSet(false)
 {
 }
 
 DeviceJob::DeviceJob(JsonView jsonValue) : 
-    m_deviceNameHasBeenSet(false),
+    m_createdTimeHasBeenSet(false),
     m_deviceIdHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_deviceNameHasBeenSet(false),
+    m_jobIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 DeviceJob& DeviceJob::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("DeviceName"))
+  if(jsonValue.ValueExists("CreatedTime"))
   {
-    m_deviceName = jsonValue.GetString("DeviceName");
+    m_createdTime = jsonValue.GetDouble("CreatedTime");
 
-    m_deviceNameHasBeenSet = true;
+    m_createdTimeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DeviceId"))
@@ -51,18 +51,18 @@ DeviceJob& DeviceJob::operator =(JsonView jsonValue)
     m_deviceIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DeviceName"))
+  {
+    m_deviceName = jsonValue.GetString("DeviceName");
+
+    m_deviceNameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("JobId"))
   {
     m_jobId = jsonValue.GetString("JobId");
 
     m_jobIdHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("CreatedTime"))
-  {
-    m_createdTime = jsonValue.GetDouble("CreatedTime");
-
-    m_createdTimeHasBeenSet = true;
   }
 
   return *this;
@@ -72,10 +72,9 @@ JsonValue DeviceJob::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_deviceNameHasBeenSet)
+  if(m_createdTimeHasBeenSet)
   {
-   payload.WithString("DeviceName", m_deviceName);
-
+   payload.WithDouble("CreatedTime", m_createdTime.SecondsWithMSPrecision());
   }
 
   if(m_deviceIdHasBeenSet)
@@ -84,15 +83,16 @@ JsonValue DeviceJob::Jsonize() const
 
   }
 
+  if(m_deviceNameHasBeenSet)
+  {
+   payload.WithString("DeviceName", m_deviceName);
+
+  }
+
   if(m_jobIdHasBeenSet)
   {
    payload.WithString("JobId", m_jobId);
 
-  }
-
-  if(m_createdTimeHasBeenSet)
-  {
-   payload.WithDouble("CreatedTime", m_createdTime.SecondsWithMSPrecision());
   }
 
   return payload;

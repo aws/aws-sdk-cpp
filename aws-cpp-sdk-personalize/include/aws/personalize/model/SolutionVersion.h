@@ -28,8 +28,9 @@ namespace Model
 {
 
   /**
-   * <p>An object that provides information about a specific version of a
-   * <a>Solution</a> in a Custom dataset group.</p><p><h3>See Also:</h3>   <a
+   * <p>An object that provides information about a specific version of a <a
+   * href="https://docs.aws.amazon.com/personalize/latest/dg/API_Solution.html">Solution</a>
+   * in a Custom dataset group.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/SolutionVersion">AWS
    * API Reference</a></p>
    */

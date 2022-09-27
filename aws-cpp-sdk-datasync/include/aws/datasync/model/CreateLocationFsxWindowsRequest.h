@@ -151,56 +151,56 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the security groups that are used to
-     * configure the FSx for Windows File Server file system.</p>
+     * <p>The ARNs of the security groups that are used to configure the FSx for
+     * Windows File Server file system.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupArns() const{ return m_securityGroupArns; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the security groups that are used to
-     * configure the FSx for Windows File Server file system.</p>
+     * <p>The ARNs of the security groups that are used to configure the FSx for
+     * Windows File Server file system.</p>
      */
     inline bool SecurityGroupArnsHasBeenSet() const { return m_securityGroupArnsHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the security groups that are used to
-     * configure the FSx for Windows File Server file system.</p>
+     * <p>The ARNs of the security groups that are used to configure the FSx for
+     * Windows File Server file system.</p>
      */
     inline void SetSecurityGroupArns(const Aws::Vector<Aws::String>& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns = value; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the security groups that are used to
-     * configure the FSx for Windows File Server file system.</p>
+     * <p>The ARNs of the security groups that are used to configure the FSx for
+     * Windows File Server file system.</p>
      */
     inline void SetSecurityGroupArns(Aws::Vector<Aws::String>&& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the security groups that are used to
-     * configure the FSx for Windows File Server file system.</p>
+     * <p>The ARNs of the security groups that are used to configure the FSx for
+     * Windows File Server file system.</p>
      */
     inline CreateLocationFsxWindowsRequest& WithSecurityGroupArns(const Aws::Vector<Aws::String>& value) { SetSecurityGroupArns(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the security groups that are used to
-     * configure the FSx for Windows File Server file system.</p>
+     * <p>The ARNs of the security groups that are used to configure the FSx for
+     * Windows File Server file system.</p>
      */
     inline CreateLocationFsxWindowsRequest& WithSecurityGroupArns(Aws::Vector<Aws::String>&& value) { SetSecurityGroupArns(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the security groups that are used to
-     * configure the FSx for Windows File Server file system.</p>
+     * <p>The ARNs of the security groups that are used to configure the FSx for
+     * Windows File Server file system.</p>
      */
     inline CreateLocationFsxWindowsRequest& AddSecurityGroupArns(const Aws::String& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the security groups that are used to
-     * configure the FSx for Windows File Server file system.</p>
+     * <p>The ARNs of the security groups that are used to configure the FSx for
+     * Windows File Server file system.</p>
      */
     inline CreateLocationFsxWindowsRequest& AddSecurityGroupArns(Aws::String&& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the security groups that are used to
-     * configure the FSx for Windows File Server file system.</p>
+     * <p>The ARNs of the security groups that are used to configure the FSx for
+     * Windows File Server file system.</p>
      */
     inline CreateLocationFsxWindowsRequest& AddSecurityGroupArns(const char* value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns.push_back(value); return *this; }
 

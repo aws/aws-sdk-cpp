@@ -17,6 +17,7 @@
 #include <aws/mediaconvert/model/M2tsEbpPlacement.h>
 #include <aws/mediaconvert/model/M2tsEsRateInPes.h>
 #include <aws/mediaconvert/model/M2tsForceTsVideoEbpOrder.h>
+#include <aws/mediaconvert/model/M2tsKlvMetadata.h>
 #include <aws/mediaconvert/model/M2tsNielsenId3.h>
 #include <aws/mediaconvert/model/M2tsPcrControl.h>
 #include <aws/mediaconvert/model/M2tsRateMode.h>
@@ -817,6 +818,55 @@ namespace Model
 
 
     /**
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and passes
+     * it through to the output transport stream. To exclude this KLV metadata: Set KLV
+     * metadata insertion to None or leave blank.
+     */
+    inline const M2tsKlvMetadata& GetKlvMetadata() const{ return m_klvMetadata; }
+
+    /**
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and passes
+     * it through to the output transport stream. To exclude this KLV metadata: Set KLV
+     * metadata insertion to None or leave blank.
+     */
+    inline bool KlvMetadataHasBeenSet() const { return m_klvMetadataHasBeenSet; }
+
+    /**
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and passes
+     * it through to the output transport stream. To exclude this KLV metadata: Set KLV
+     * metadata insertion to None or leave blank.
+     */
+    inline void SetKlvMetadata(const M2tsKlvMetadata& value) { m_klvMetadataHasBeenSet = true; m_klvMetadata = value; }
+
+    /**
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and passes
+     * it through to the output transport stream. To exclude this KLV metadata: Set KLV
+     * metadata insertion to None or leave blank.
+     */
+    inline void SetKlvMetadata(M2tsKlvMetadata&& value) { m_klvMetadataHasBeenSet = true; m_klvMetadata = std::move(value); }
+
+    /**
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and passes
+     * it through to the output transport stream. To exclude this KLV metadata: Set KLV
+     * metadata insertion to None or leave blank.
+     */
+    inline M2tsSettings& WithKlvMetadata(const M2tsKlvMetadata& value) { SetKlvMetadata(value); return *this;}
+
+    /**
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and passes
+     * it through to the output transport stream. To exclude this KLV metadata: Set KLV
+     * metadata insertion to None or leave blank.
+     */
+    inline M2tsSettings& WithKlvMetadata(M2tsKlvMetadata&& value) { SetKlvMetadata(std::move(value)); return *this;}
+
+
+    /**
      * Specify the maximum time, in milliseconds, between Program Clock References
      * (PCRs) inserted into the transport stream.
      */
@@ -1509,26 +1559,22 @@ namespace Model
 
 
     /**
-     * Specify the packet identifier (PID) for timed metadata in this output. Default
-     * is 502.
+     * Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
      */
     inline int GetTimedMetadataPid() const{ return m_timedMetadataPid; }
 
     /**
-     * Specify the packet identifier (PID) for timed metadata in this output. Default
-     * is 502.
+     * Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
      */
     inline bool TimedMetadataPidHasBeenSet() const { return m_timedMetadataPidHasBeenSet; }
 
     /**
-     * Specify the packet identifier (PID) for timed metadata in this output. Default
-     * is 502.
+     * Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
      */
     inline void SetTimedMetadataPid(int value) { m_timedMetadataPidHasBeenSet = true; m_timedMetadataPid = value; }
 
     /**
-     * Specify the packet identifier (PID) for timed metadata in this output. Default
-     * is 502.
+     * Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
      */
     inline M2tsSettings& WithTimedMetadataPid(int value) { SetTimedMetadataPid(value); return *this;}
 
@@ -1638,6 +1684,9 @@ namespace Model
 
     double m_fragmentTime;
     bool m_fragmentTimeHasBeenSet;
+
+    M2tsKlvMetadata m_klvMetadata;
+    bool m_klvMetadataHasBeenSet;
 
     int m_maxPcrInterval;
     bool m_maxPcrIntervalHasBeenSet;

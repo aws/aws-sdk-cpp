@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * Guidance for improving Recovery Group resilliancy<p><h3>See Also:</h3>   <a
+   * <p>Recommendations that are provided to make an application more recovery
+   * resilient.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/Recommendation">AWS
    * API Reference</a></p>
    */
@@ -38,42 +39,50 @@ namespace Model
 
 
     /**
-     * Guidance text for recommendation
+     * <p>Text of the recommendations that are provided to make an application more
+     * recovery resilient.</p>
      */
     inline const Aws::String& GetRecommendationText() const{ return m_recommendationText; }
 
     /**
-     * Guidance text for recommendation
+     * <p>Text of the recommendations that are provided to make an application more
+     * recovery resilient.</p>
      */
     inline bool RecommendationTextHasBeenSet() const { return m_recommendationTextHasBeenSet; }
 
     /**
-     * Guidance text for recommendation
+     * <p>Text of the recommendations that are provided to make an application more
+     * recovery resilient.</p>
      */
     inline void SetRecommendationText(const Aws::String& value) { m_recommendationTextHasBeenSet = true; m_recommendationText = value; }
 
     /**
-     * Guidance text for recommendation
+     * <p>Text of the recommendations that are provided to make an application more
+     * recovery resilient.</p>
      */
     inline void SetRecommendationText(Aws::String&& value) { m_recommendationTextHasBeenSet = true; m_recommendationText = std::move(value); }
 
     /**
-     * Guidance text for recommendation
+     * <p>Text of the recommendations that are provided to make an application more
+     * recovery resilient.</p>
      */
     inline void SetRecommendationText(const char* value) { m_recommendationTextHasBeenSet = true; m_recommendationText.assign(value); }
 
     /**
-     * Guidance text for recommendation
+     * <p>Text of the recommendations that are provided to make an application more
+     * recovery resilient.</p>
      */
     inline Recommendation& WithRecommendationText(const Aws::String& value) { SetRecommendationText(value); return *this;}
 
     /**
-     * Guidance text for recommendation
+     * <p>Text of the recommendations that are provided to make an application more
+     * recovery resilient.</p>
      */
     inline Recommendation& WithRecommendationText(Aws::String&& value) { SetRecommendationText(std::move(value)); return *this;}
 
     /**
-     * Guidance text for recommendation
+     * <p>Text of the recommendations that are provided to make an application more
+     * recovery resilient.</p>
      */
     inline Recommendation& WithRecommendationText(const char* value) { SetRecommendationText(value); return *this;}
 

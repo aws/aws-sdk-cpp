@@ -35,80 +35,80 @@ namespace Model
 
 
     /**
-     * <p>A token to indicate the location of the next resource tag in the array of
+     * <p>A token that indicates the location of the next resource tag in the array of
      * resource tags, after the current requested list of resource tags.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>A token to indicate the location of the next resource tag in the array of
+     * <p>A token that indicates the location of the next resource tag in the array of
      * resource tags, after the current requested list of resource tags.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>A token to indicate the location of the next resource tag in the array of
+     * <p>A token that indicates the location of the next resource tag in the array of
      * resource tags, after the current requested list of resource tags.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>A token to indicate the location of the next resource tag in the array of
+     * <p>A token that indicates the location of the next resource tag in the array of
      * resource tags, after the current requested list of resource tags.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>A token to indicate the location of the next resource tag in the array of
+     * <p>A token that indicates the location of the next resource tag in the array of
      * resource tags, after the current requested list of resource tags.</p>
      */
     inline ListTagsForResourceResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>A token to indicate the location of the next resource tag in the array of
+     * <p>A token that indicates the location of the next resource tag in the array of
      * resource tags, after the current requested list of resource tags.</p>
      */
     inline ListTagsForResourceResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token to indicate the location of the next resource tag in the array of
+     * <p>A token that indicates the location of the next resource tag in the array of
      * resource tags, after the current requested list of resource tags.</p>
      */
     inline ListTagsForResourceResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * <p>An array of resource tags with detail data.</p>
+     * <p>A list of resource tags with detail data.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>An array of resource tags with detail data.</p>
+     * <p>A list of resource tags with detail data.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
 
     /**
-     * <p>An array of resource tags with detail data.</p>
+     * <p>A list of resource tags with detail data.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p>An array of resource tags with detail data.</p>
+     * <p>A list of resource tags with detail data.</p>
      */
     inline ListTagsForResourceResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>An array of resource tags with detail data.</p>
+     * <p>A list of resource tags with detail data.</p>
      */
     inline ListTagsForResourceResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>An array of resource tags with detail data.</p>
+     * <p>A list of resource tags with detail data.</p>
      */
     inline ListTagsForResourceResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
 
     /**
-     * <p>An array of resource tags with detail data.</p>
+     * <p>A list of resource tags with detail data.</p>
      */
     inline ListTagsForResourceResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 

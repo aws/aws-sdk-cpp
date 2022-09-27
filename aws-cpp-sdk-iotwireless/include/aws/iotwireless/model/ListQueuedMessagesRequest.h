@@ -40,42 +40,50 @@ namespace Model
 
 
     /**
-     * <p>Id of a given wireless device which the downlink packets are targeted </p>
+     * <p>The ID of a given wireless device which the downlink message packets are
+     * being sent.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>Id of a given wireless device which the downlink packets are targeted </p>
+     * <p>The ID of a given wireless device which the downlink message packets are
+     * being sent.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>Id of a given wireless device which the downlink packets are targeted </p>
+     * <p>The ID of a given wireless device which the downlink message packets are
+     * being sent.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>Id of a given wireless device which the downlink packets are targeted </p>
+     * <p>The ID of a given wireless device which the downlink message packets are
+     * being sent.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>Id of a given wireless device which the downlink packets are targeted </p>
+     * <p>The ID of a given wireless device which the downlink message packets are
+     * being sent.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>Id of a given wireless device which the downlink packets are targeted </p>
+     * <p>The ID of a given wireless device which the downlink message packets are
+     * being sent.</p>
      */
     inline ListQueuedMessagesRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>Id of a given wireless device which the downlink packets are targeted </p>
+     * <p>The ID of a given wireless device which the downlink message packets are
+     * being sent.</p>
      */
     inline ListQueuedMessagesRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>Id of a given wireless device which the downlink packets are targeted </p>
+     * <p>The ID of a given wireless device which the downlink message packets are
+     * being sent.</p>
      */
     inline ListQueuedMessagesRequest& WithId(const char* value) { SetId(value); return *this;}
 
@@ -159,32 +167,32 @@ namespace Model
 
 
     /**
-     * <p>The wireless device type, it is either Sidewalk or LoRaWAN.</p>
+     * <p>The wireless device type, whic can be either Sidewalk or LoRaWAN.</p>
      */
     inline const WirelessDeviceType& GetWirelessDeviceType() const{ return m_wirelessDeviceType; }
 
     /**
-     * <p>The wireless device type, it is either Sidewalk or LoRaWAN.</p>
+     * <p>The wireless device type, whic can be either Sidewalk or LoRaWAN.</p>
      */
     inline bool WirelessDeviceTypeHasBeenSet() const { return m_wirelessDeviceTypeHasBeenSet; }
 
     /**
-     * <p>The wireless device type, it is either Sidewalk or LoRaWAN.</p>
+     * <p>The wireless device type, whic can be either Sidewalk or LoRaWAN.</p>
      */
     inline void SetWirelessDeviceType(const WirelessDeviceType& value) { m_wirelessDeviceTypeHasBeenSet = true; m_wirelessDeviceType = value; }
 
     /**
-     * <p>The wireless device type, it is either Sidewalk or LoRaWAN.</p>
+     * <p>The wireless device type, whic can be either Sidewalk or LoRaWAN.</p>
      */
     inline void SetWirelessDeviceType(WirelessDeviceType&& value) { m_wirelessDeviceTypeHasBeenSet = true; m_wirelessDeviceType = std::move(value); }
 
     /**
-     * <p>The wireless device type, it is either Sidewalk or LoRaWAN.</p>
+     * <p>The wireless device type, whic can be either Sidewalk or LoRaWAN.</p>
      */
     inline ListQueuedMessagesRequest& WithWirelessDeviceType(const WirelessDeviceType& value) { SetWirelessDeviceType(value); return *this;}
 
     /**
-     * <p>The wireless device type, it is either Sidewalk or LoRaWAN.</p>
+     * <p>The wireless device type, whic can be either Sidewalk or LoRaWAN.</p>
      */
     inline ListQueuedMessagesRequest& WithWirelessDeviceType(WirelessDeviceType&& value) { SetWirelessDeviceType(std::move(value)); return *this;}
 

@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Configuration information for your content sources, such as data sources,
-   * FAQs, and content indexed directly via <a
+   * <p>Provides the configuration information for your content sources, such as data
+   * sources, FAQs, and content indexed directly via <a
    * href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html">BatchPutDocument</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ContentSourceConfiguration">AWS
@@ -153,25 +153,25 @@ namespace Model
 
     /**
      * <p> <code>TRUE</code> to use documents you indexed directly using the
-     * <code>BatchPutDocument</code> operation.</p>
+     * <code>BatchPutDocument</code> API.</p>
      */
     inline bool GetDirectPutContent() const{ return m_directPutContent; }
 
     /**
      * <p> <code>TRUE</code> to use documents you indexed directly using the
-     * <code>BatchPutDocument</code> operation.</p>
+     * <code>BatchPutDocument</code> API.</p>
      */
     inline bool DirectPutContentHasBeenSet() const { return m_directPutContentHasBeenSet; }
 
     /**
      * <p> <code>TRUE</code> to use documents you indexed directly using the
-     * <code>BatchPutDocument</code> operation.</p>
+     * <code>BatchPutDocument</code> API.</p>
      */
     inline void SetDirectPutContent(bool value) { m_directPutContentHasBeenSet = true; m_directPutContent = value; }
 
     /**
      * <p> <code>TRUE</code> to use documents you indexed directly using the
-     * <code>BatchPutDocument</code> operation.</p>
+     * <code>BatchPutDocument</code> API.</p>
      */
     inline ContentSourceConfiguration& WithDirectPutContent(bool value) { SetDirectPutContent(value); return *this;}
 

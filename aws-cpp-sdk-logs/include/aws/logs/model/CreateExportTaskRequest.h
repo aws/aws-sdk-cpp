@@ -195,30 +195,30 @@ namespace Model
 
 
     /**
-     * <p>The end time of the range for the request, expreswatchlogsdocused as the
-     * number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp
-     * later than this time are not exported.</p>
+     * <p>The end time of the range for the request, expressed as the number of
+     * milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than
+     * this time are not exported.</p>
      */
     inline long long GetTo() const{ return m_to; }
 
     /**
-     * <p>The end time of the range for the request, expreswatchlogsdocused as the
-     * number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp
-     * later than this time are not exported.</p>
+     * <p>The end time of the range for the request, expressed as the number of
+     * milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than
+     * this time are not exported.</p>
      */
     inline bool ToHasBeenSet() const { return m_toHasBeenSet; }
 
     /**
-     * <p>The end time of the range for the request, expreswatchlogsdocused as the
-     * number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp
-     * later than this time are not exported.</p>
+     * <p>The end time of the range for the request, expressed as the number of
+     * milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than
+     * this time are not exported.</p>
      */
     inline void SetTo(long long value) { m_toHasBeenSet = true; m_to = value; }
 
     /**
-     * <p>The end time of the range for the request, expreswatchlogsdocused as the
-     * number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp
-     * later than this time are not exported.</p>
+     * <p>The end time of the range for the request, expressed as the number of
+     * milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than
+     * this time are not exported.</p>
      */
     inline CreateExportTaskRequest& WithTo(long long value) { SetTo(value); return *this;}
 

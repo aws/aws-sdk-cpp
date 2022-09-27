@@ -42,68 +42,133 @@ namespace Model
 
 
     /**
-     * <p>Specifies the method used to compress the data on the volume. Unless the
-     * compression type is specified, volumes inherit the
-     * <code>DataCompressionType</code> value of their parent volume.</p> <ul> <li> <p>
-     * <code>NONE</code> - Doesn't compress the data on the volume.</p> </li> <li> <p>
-     * <code>ZSTD</code> - Compresses the data in the volume using the ZStandard (ZSTD)
-     * compression algorithm. This algorithm reduces the amount of space used on your
-     * volume and has very little impact on compute resources.</p> </li> </ul>
+     * <p>Specifies the record size of an OpenZFS root volume, in kibibytes (KiB).
+     * Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is
+     * 128 KiB. Most workloads should use the default record size. Database workflows
+     * can benefit from a smaller record size, while streaming workflows can benefit
+     * from a larger record size. For additional guidance on setting a custom record
+     * size, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs">
+     * Tips for maximizing performance</a> in the <i>Amazon FSx for OpenZFS User
+     * Guide</i>.</p>
+     */
+    inline int GetRecordSizeKiB() const{ return m_recordSizeKiB; }
+
+    /**
+     * <p>Specifies the record size of an OpenZFS root volume, in kibibytes (KiB).
+     * Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is
+     * 128 KiB. Most workloads should use the default record size. Database workflows
+     * can benefit from a smaller record size, while streaming workflows can benefit
+     * from a larger record size. For additional guidance on setting a custom record
+     * size, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs">
+     * Tips for maximizing performance</a> in the <i>Amazon FSx for OpenZFS User
+     * Guide</i>.</p>
+     */
+    inline bool RecordSizeKiBHasBeenSet() const { return m_recordSizeKiBHasBeenSet; }
+
+    /**
+     * <p>Specifies the record size of an OpenZFS root volume, in kibibytes (KiB).
+     * Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is
+     * 128 KiB. Most workloads should use the default record size. Database workflows
+     * can benefit from a smaller record size, while streaming workflows can benefit
+     * from a larger record size. For additional guidance on setting a custom record
+     * size, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs">
+     * Tips for maximizing performance</a> in the <i>Amazon FSx for OpenZFS User
+     * Guide</i>.</p>
+     */
+    inline void SetRecordSizeKiB(int value) { m_recordSizeKiBHasBeenSet = true; m_recordSizeKiB = value; }
+
+    /**
+     * <p>Specifies the record size of an OpenZFS root volume, in kibibytes (KiB).
+     * Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is
+     * 128 KiB. Most workloads should use the default record size. Database workflows
+     * can benefit from a smaller record size, while streaming workflows can benefit
+     * from a larger record size. For additional guidance on setting a custom record
+     * size, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs">
+     * Tips for maximizing performance</a> in the <i>Amazon FSx for OpenZFS User
+     * Guide</i>.</p>
+     */
+    inline OpenZFSCreateRootVolumeConfiguration& WithRecordSizeKiB(int value) { SetRecordSizeKiB(value); return *this;}
+
+
+    /**
+     * <p>Specifies the method used to compress the data on the volume. The compression
+     * type is <code>NONE</code> by default.</p> <ul> <li> <p> <code>NONE</code> -
+     * Doesn't compress the data on the volume. <code>NONE</code> is the default.</p>
+     * </li> <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the
+     * Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a
+     * better compression ratio to minimize on-disk storage utilization.</p> </li> <li>
+     * <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4
+     * compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and
+     * delivers higher write throughput speeds.</p> </li> </ul>
      */
     inline const OpenZFSDataCompressionType& GetDataCompressionType() const{ return m_dataCompressionType; }
 
     /**
-     * <p>Specifies the method used to compress the data on the volume. Unless the
-     * compression type is specified, volumes inherit the
-     * <code>DataCompressionType</code> value of their parent volume.</p> <ul> <li> <p>
-     * <code>NONE</code> - Doesn't compress the data on the volume.</p> </li> <li> <p>
-     * <code>ZSTD</code> - Compresses the data in the volume using the ZStandard (ZSTD)
-     * compression algorithm. This algorithm reduces the amount of space used on your
-     * volume and has very little impact on compute resources.</p> </li> </ul>
+     * <p>Specifies the method used to compress the data on the volume. The compression
+     * type is <code>NONE</code> by default.</p> <ul> <li> <p> <code>NONE</code> -
+     * Doesn't compress the data on the volume. <code>NONE</code> is the default.</p>
+     * </li> <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the
+     * Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a
+     * better compression ratio to minimize on-disk storage utilization.</p> </li> <li>
+     * <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4
+     * compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and
+     * delivers higher write throughput speeds.</p> </li> </ul>
      */
     inline bool DataCompressionTypeHasBeenSet() const { return m_dataCompressionTypeHasBeenSet; }
 
     /**
-     * <p>Specifies the method used to compress the data on the volume. Unless the
-     * compression type is specified, volumes inherit the
-     * <code>DataCompressionType</code> value of their parent volume.</p> <ul> <li> <p>
-     * <code>NONE</code> - Doesn't compress the data on the volume.</p> </li> <li> <p>
-     * <code>ZSTD</code> - Compresses the data in the volume using the ZStandard (ZSTD)
-     * compression algorithm. This algorithm reduces the amount of space used on your
-     * volume and has very little impact on compute resources.</p> </li> </ul>
+     * <p>Specifies the method used to compress the data on the volume. The compression
+     * type is <code>NONE</code> by default.</p> <ul> <li> <p> <code>NONE</code> -
+     * Doesn't compress the data on the volume. <code>NONE</code> is the default.</p>
+     * </li> <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the
+     * Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a
+     * better compression ratio to minimize on-disk storage utilization.</p> </li> <li>
+     * <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4
+     * compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and
+     * delivers higher write throughput speeds.</p> </li> </ul>
      */
     inline void SetDataCompressionType(const OpenZFSDataCompressionType& value) { m_dataCompressionTypeHasBeenSet = true; m_dataCompressionType = value; }
 
     /**
-     * <p>Specifies the method used to compress the data on the volume. Unless the
-     * compression type is specified, volumes inherit the
-     * <code>DataCompressionType</code> value of their parent volume.</p> <ul> <li> <p>
-     * <code>NONE</code> - Doesn't compress the data on the volume.</p> </li> <li> <p>
-     * <code>ZSTD</code> - Compresses the data in the volume using the ZStandard (ZSTD)
-     * compression algorithm. This algorithm reduces the amount of space used on your
-     * volume and has very little impact on compute resources.</p> </li> </ul>
+     * <p>Specifies the method used to compress the data on the volume. The compression
+     * type is <code>NONE</code> by default.</p> <ul> <li> <p> <code>NONE</code> -
+     * Doesn't compress the data on the volume. <code>NONE</code> is the default.</p>
+     * </li> <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the
+     * Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a
+     * better compression ratio to minimize on-disk storage utilization.</p> </li> <li>
+     * <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4
+     * compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and
+     * delivers higher write throughput speeds.</p> </li> </ul>
      */
     inline void SetDataCompressionType(OpenZFSDataCompressionType&& value) { m_dataCompressionTypeHasBeenSet = true; m_dataCompressionType = std::move(value); }
 
     /**
-     * <p>Specifies the method used to compress the data on the volume. Unless the
-     * compression type is specified, volumes inherit the
-     * <code>DataCompressionType</code> value of their parent volume.</p> <ul> <li> <p>
-     * <code>NONE</code> - Doesn't compress the data on the volume.</p> </li> <li> <p>
-     * <code>ZSTD</code> - Compresses the data in the volume using the ZStandard (ZSTD)
-     * compression algorithm. This algorithm reduces the amount of space used on your
-     * volume and has very little impact on compute resources.</p> </li> </ul>
+     * <p>Specifies the method used to compress the data on the volume. The compression
+     * type is <code>NONE</code> by default.</p> <ul> <li> <p> <code>NONE</code> -
+     * Doesn't compress the data on the volume. <code>NONE</code> is the default.</p>
+     * </li> <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the
+     * Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a
+     * better compression ratio to minimize on-disk storage utilization.</p> </li> <li>
+     * <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4
+     * compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and
+     * delivers higher write throughput speeds.</p> </li> </ul>
      */
     inline OpenZFSCreateRootVolumeConfiguration& WithDataCompressionType(const OpenZFSDataCompressionType& value) { SetDataCompressionType(value); return *this;}
 
     /**
-     * <p>Specifies the method used to compress the data on the volume. Unless the
-     * compression type is specified, volumes inherit the
-     * <code>DataCompressionType</code> value of their parent volume.</p> <ul> <li> <p>
-     * <code>NONE</code> - Doesn't compress the data on the volume.</p> </li> <li> <p>
-     * <code>ZSTD</code> - Compresses the data in the volume using the ZStandard (ZSTD)
-     * compression algorithm. This algorithm reduces the amount of space used on your
-     * volume and has very little impact on compute resources.</p> </li> </ul>
+     * <p>Specifies the method used to compress the data on the volume. The compression
+     * type is <code>NONE</code> by default.</p> <ul> <li> <p> <code>NONE</code> -
+     * Doesn't compress the data on the volume. <code>NONE</code> is the default.</p>
+     * </li> <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the
+     * Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a
+     * better compression ratio to minimize on-disk storage utilization.</p> </li> <li>
+     * <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4
+     * compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and
+     * delivers higher write throughput speeds.</p> </li> </ul>
      */
     inline OpenZFSCreateRootVolumeConfiguration& WithDataCompressionType(OpenZFSDataCompressionType&& value) { SetDataCompressionType(std::move(value)); return *this;}
 
@@ -200,8 +265,8 @@ namespace Model
 
     /**
      * <p>A Boolean value indicating whether tags for the volume should be copied to
-     * snapshots. This value defaults to <code>false</code>. If it's set to
-     * <code>true</code>, all tags for the volume are copied to snapshots where the
+     * snapshots of the volume. This value defaults to <code>false</code>. If it's set
+     * to <code>true</code>, all tags for the volume are copied to snapshots where the
      * user doesn't specify tags. If this value is <code>true</code> and you specify
      * one or more tags, only the specified tags are copied to snapshots. If you
      * specify one or more tags when creating the snapshot, no tags are copied from the
@@ -211,8 +276,8 @@ namespace Model
 
     /**
      * <p>A Boolean value indicating whether tags for the volume should be copied to
-     * snapshots. This value defaults to <code>false</code>. If it's set to
-     * <code>true</code>, all tags for the volume are copied to snapshots where the
+     * snapshots of the volume. This value defaults to <code>false</code>. If it's set
+     * to <code>true</code>, all tags for the volume are copied to snapshots where the
      * user doesn't specify tags. If this value is <code>true</code> and you specify
      * one or more tags, only the specified tags are copied to snapshots. If you
      * specify one or more tags when creating the snapshot, no tags are copied from the
@@ -222,8 +287,8 @@ namespace Model
 
     /**
      * <p>A Boolean value indicating whether tags for the volume should be copied to
-     * snapshots. This value defaults to <code>false</code>. If it's set to
-     * <code>true</code>, all tags for the volume are copied to snapshots where the
+     * snapshots of the volume. This value defaults to <code>false</code>. If it's set
+     * to <code>true</code>, all tags for the volume are copied to snapshots where the
      * user doesn't specify tags. If this value is <code>true</code> and you specify
      * one or more tags, only the specified tags are copied to snapshots. If you
      * specify one or more tags when creating the snapshot, no tags are copied from the
@@ -233,8 +298,8 @@ namespace Model
 
     /**
      * <p>A Boolean value indicating whether tags for the volume should be copied to
-     * snapshots. This value defaults to <code>false</code>. If it's set to
-     * <code>true</code>, all tags for the volume are copied to snapshots where the
+     * snapshots of the volume. This value defaults to <code>false</code>. If it's set
+     * to <code>true</code>, all tags for the volume are copied to snapshots where the
      * user doesn't specify tags. If this value is <code>true</code> and you specify
      * one or more tags, only the specified tags are copied to snapshots. If you
      * specify one or more tags when creating the snapshot, no tags are copied from the
@@ -272,6 +337,9 @@ namespace Model
     inline OpenZFSCreateRootVolumeConfiguration& WithReadOnly(bool value) { SetReadOnly(value); return *this;}
 
   private:
+
+    int m_recordSizeKiB;
+    bool m_recordSizeKiBHasBeenSet;
 
     OpenZFSDataCompressionType m_dataCompressionType;
     bool m_dataCompressionTypeHasBeenSet;

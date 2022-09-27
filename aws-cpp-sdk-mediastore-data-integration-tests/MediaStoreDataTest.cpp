@@ -26,6 +26,7 @@
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/testing/TestingEnvironment.h>
 #include <fstream>
+#include <thread>
 
 using namespace Aws;
 using namespace Aws::Utils;

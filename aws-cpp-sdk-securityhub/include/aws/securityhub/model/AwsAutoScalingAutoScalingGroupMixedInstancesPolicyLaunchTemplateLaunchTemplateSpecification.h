@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Details about the launch template to use.</p><p><h3>See Also:</h3>   <a
+   * <p>Details about the launch template to use for a mixed instances
+   * policy.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification">AWS
    * API Reference</a></p>
    */

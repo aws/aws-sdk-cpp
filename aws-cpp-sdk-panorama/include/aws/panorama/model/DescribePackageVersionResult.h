@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/panorama/Panorama_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/panorama/model/PackageVersionStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/panorama/model/PackageVersionStatus.h>
 #include <utility>
 
 namespace Aws
@@ -32,6 +32,22 @@ namespace Model
     DescribePackageVersionResult();
     DescribePackageVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribePackageVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>Whether the version is the latest available.</p>
+     */
+    inline bool GetIsLatestPatch() const{ return m_isLatestPatch; }
+
+    /**
+     * <p>Whether the version is the latest available.</p>
+     */
+    inline void SetIsLatestPatch(bool value) { m_isLatestPatch = value; }
+
+    /**
+     * <p>Whether the version is the latest available.</p>
+     */
+    inline DescribePackageVersionResult& WithIsLatestPatch(bool value) { SetIsLatestPatch(value); return *this;}
 
 
     /**
@@ -71,42 +87,6 @@ namespace Model
 
 
     /**
-     * <p>The version's ID.</p>
-     */
-    inline const Aws::String& GetPackageId() const{ return m_packageId; }
-
-    /**
-     * <p>The version's ID.</p>
-     */
-    inline void SetPackageId(const Aws::String& value) { m_packageId = value; }
-
-    /**
-     * <p>The version's ID.</p>
-     */
-    inline void SetPackageId(Aws::String&& value) { m_packageId = std::move(value); }
-
-    /**
-     * <p>The version's ID.</p>
-     */
-    inline void SetPackageId(const char* value) { m_packageId.assign(value); }
-
-    /**
-     * <p>The version's ID.</p>
-     */
-    inline DescribePackageVersionResult& WithPackageId(const Aws::String& value) { SetPackageId(value); return *this;}
-
-    /**
-     * <p>The version's ID.</p>
-     */
-    inline DescribePackageVersionResult& WithPackageId(Aws::String&& value) { SetPackageId(std::move(value)); return *this;}
-
-    /**
-     * <p>The version's ID.</p>
-     */
-    inline DescribePackageVersionResult& WithPackageId(const char* value) { SetPackageId(value); return *this;}
-
-
-    /**
      * <p>The ARN of the package.</p>
      */
     inline const Aws::String& GetPackageArn() const{ return m_packageArn; }
@@ -140,6 +120,42 @@ namespace Model
      * <p>The ARN of the package.</p>
      */
     inline DescribePackageVersionResult& WithPackageArn(const char* value) { SetPackageArn(value); return *this;}
+
+
+    /**
+     * <p>The version's ID.</p>
+     */
+    inline const Aws::String& GetPackageId() const{ return m_packageId; }
+
+    /**
+     * <p>The version's ID.</p>
+     */
+    inline void SetPackageId(const Aws::String& value) { m_packageId = value; }
+
+    /**
+     * <p>The version's ID.</p>
+     */
+    inline void SetPackageId(Aws::String&& value) { m_packageId = std::move(value); }
+
+    /**
+     * <p>The version's ID.</p>
+     */
+    inline void SetPackageId(const char* value) { m_packageId.assign(value); }
+
+    /**
+     * <p>The version's ID.</p>
+     */
+    inline DescribePackageVersionResult& WithPackageId(const Aws::String& value) { SetPackageId(value); return *this;}
+
+    /**
+     * <p>The version's ID.</p>
+     */
+    inline DescribePackageVersionResult& WithPackageId(Aws::String&& value) { SetPackageId(std::move(value)); return *this;}
+
+    /**
+     * <p>The version's ID.</p>
+     */
+    inline DescribePackageVersionResult& WithPackageId(const char* value) { SetPackageId(value); return *this;}
 
 
     /**
@@ -251,19 +267,29 @@ namespace Model
 
 
     /**
-     * <p>Whether the version is the latest available.</p>
+     * <p>The version's registered time.</p>
      */
-    inline bool GetIsLatestPatch() const{ return m_isLatestPatch; }
+    inline const Aws::Utils::DateTime& GetRegisteredTime() const{ return m_registeredTime; }
 
     /**
-     * <p>Whether the version is the latest available.</p>
+     * <p>The version's registered time.</p>
      */
-    inline void SetIsLatestPatch(bool value) { m_isLatestPatch = value; }
+    inline void SetRegisteredTime(const Aws::Utils::DateTime& value) { m_registeredTime = value; }
 
     /**
-     * <p>Whether the version is the latest available.</p>
+     * <p>The version's registered time.</p>
      */
-    inline DescribePackageVersionResult& WithIsLatestPatch(bool value) { SetIsLatestPatch(value); return *this;}
+    inline void SetRegisteredTime(Aws::Utils::DateTime&& value) { m_registeredTime = std::move(value); }
+
+    /**
+     * <p>The version's registered time.</p>
+     */
+    inline DescribePackageVersionResult& WithRegisteredTime(const Aws::Utils::DateTime& value) { SetRegisteredTime(value); return *this;}
+
+    /**
+     * <p>The version's registered time.</p>
+     */
+    inline DescribePackageVersionResult& WithRegisteredTime(Aws::Utils::DateTime&& value) { SetRegisteredTime(std::move(value)); return *this;}
 
 
     /**
@@ -327,39 +353,15 @@ namespace Model
      */
     inline DescribePackageVersionResult& WithStatusDescription(const char* value) { SetStatusDescription(value); return *this;}
 
-
-    /**
-     * <p>The version's registered time.</p>
-     */
-    inline const Aws::Utils::DateTime& GetRegisteredTime() const{ return m_registeredTime; }
-
-    /**
-     * <p>The version's registered time.</p>
-     */
-    inline void SetRegisteredTime(const Aws::Utils::DateTime& value) { m_registeredTime = value; }
-
-    /**
-     * <p>The version's registered time.</p>
-     */
-    inline void SetRegisteredTime(Aws::Utils::DateTime&& value) { m_registeredTime = std::move(value); }
-
-    /**
-     * <p>The version's registered time.</p>
-     */
-    inline DescribePackageVersionResult& WithRegisteredTime(const Aws::Utils::DateTime& value) { SetRegisteredTime(value); return *this;}
-
-    /**
-     * <p>The version's registered time.</p>
-     */
-    inline DescribePackageVersionResult& WithRegisteredTime(Aws::Utils::DateTime&& value) { SetRegisteredTime(std::move(value)); return *this;}
-
   private:
+
+    bool m_isLatestPatch;
 
     Aws::String m_ownerAccount;
 
-    Aws::String m_packageId;
-
     Aws::String m_packageArn;
+
+    Aws::String m_packageId;
 
     Aws::String m_packageName;
 
@@ -367,13 +369,11 @@ namespace Model
 
     Aws::String m_patchVersion;
 
-    bool m_isLatestPatch;
+    Aws::Utils::DateTime m_registeredTime;
 
     PackageVersionStatus m_status;
 
     Aws::String m_statusDescription;
-
-    Aws::Utils::DateTime m_registeredTime;
   };
 
 } // namespace Model

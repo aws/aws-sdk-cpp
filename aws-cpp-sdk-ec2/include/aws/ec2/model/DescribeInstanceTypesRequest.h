@@ -174,9 +174,9 @@ namespace Model
      * size of each instance storage disk, in GB.</p> </li> <li> <p>
      * <code>instance-storage-info.disk.type</code> - The storage technology for the
      * local instance storage disks (<code>hdd</code> | <code>ssd</code>).</p> </li>
-     * <li> <p> <code>instance-storage-info.encryption-supported</code> - Indicates
+     * <li> <p> <code>instance-storage-info.encryption-support</code> - Indicates
      * whether data is encrypted at rest (<code>required</code> |
-     * <code>unsupported</code>).</p> </li> <li> <p>
+     * <code>supported</code> | <code>unsupported</code>).</p> </li> <li> <p>
      * <code>instance-storage-info.nvme-support</code> - Indicates whether non-volatile
      * memory express (NVMe) is supported for instance store (<code>required</code> |
      * <code>supported</code> | <code>unsupported</code>).</p> </li> <li> <p>
@@ -203,6 +203,8 @@ namespace Model
      * private IPv6 addresses per network interface.</p> </li> <li> <p>
      * <code>network-info.ipv6-supported</code> - Indicates whether the instance type
      * supports IPv6 (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
+     * <code>network-info.maximum-network-cards</code> - The maximum number of network
+     * cards per instance.</p> </li> <li> <p>
      * <code>network-info.maximum-network-interfaces</code> - The maximum number of
      * network interfaces per instance.</p> </li> <li> <p>
      * <code>network-info.network-performance</code> - The network performance (for
@@ -276,9 +278,9 @@ namespace Model
      * size of each instance storage disk, in GB.</p> </li> <li> <p>
      * <code>instance-storage-info.disk.type</code> - The storage technology for the
      * local instance storage disks (<code>hdd</code> | <code>ssd</code>).</p> </li>
-     * <li> <p> <code>instance-storage-info.encryption-supported</code> - Indicates
+     * <li> <p> <code>instance-storage-info.encryption-support</code> - Indicates
      * whether data is encrypted at rest (<code>required</code> |
-     * <code>unsupported</code>).</p> </li> <li> <p>
+     * <code>supported</code> | <code>unsupported</code>).</p> </li> <li> <p>
      * <code>instance-storage-info.nvme-support</code> - Indicates whether non-volatile
      * memory express (NVMe) is supported for instance store (<code>required</code> |
      * <code>supported</code> | <code>unsupported</code>).</p> </li> <li> <p>
@@ -305,6 +307,8 @@ namespace Model
      * private IPv6 addresses per network interface.</p> </li> <li> <p>
      * <code>network-info.ipv6-supported</code> - Indicates whether the instance type
      * supports IPv6 (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
+     * <code>network-info.maximum-network-cards</code> - The maximum number of network
+     * cards per instance.</p> </li> <li> <p>
      * <code>network-info.maximum-network-interfaces</code> - The maximum number of
      * network interfaces per instance.</p> </li> <li> <p>
      * <code>network-info.network-performance</code> - The network performance (for
@@ -378,9 +382,9 @@ namespace Model
      * size of each instance storage disk, in GB.</p> </li> <li> <p>
      * <code>instance-storage-info.disk.type</code> - The storage technology for the
      * local instance storage disks (<code>hdd</code> | <code>ssd</code>).</p> </li>
-     * <li> <p> <code>instance-storage-info.encryption-supported</code> - Indicates
+     * <li> <p> <code>instance-storage-info.encryption-support</code> - Indicates
      * whether data is encrypted at rest (<code>required</code> |
-     * <code>unsupported</code>).</p> </li> <li> <p>
+     * <code>supported</code> | <code>unsupported</code>).</p> </li> <li> <p>
      * <code>instance-storage-info.nvme-support</code> - Indicates whether non-volatile
      * memory express (NVMe) is supported for instance store (<code>required</code> |
      * <code>supported</code> | <code>unsupported</code>).</p> </li> <li> <p>
@@ -407,6 +411,8 @@ namespace Model
      * private IPv6 addresses per network interface.</p> </li> <li> <p>
      * <code>network-info.ipv6-supported</code> - Indicates whether the instance type
      * supports IPv6 (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
+     * <code>network-info.maximum-network-cards</code> - The maximum number of network
+     * cards per instance.</p> </li> <li> <p>
      * <code>network-info.maximum-network-interfaces</code> - The maximum number of
      * network interfaces per instance.</p> </li> <li> <p>
      * <code>network-info.network-performance</code> - The network performance (for
@@ -480,9 +486,9 @@ namespace Model
      * size of each instance storage disk, in GB.</p> </li> <li> <p>
      * <code>instance-storage-info.disk.type</code> - The storage technology for the
      * local instance storage disks (<code>hdd</code> | <code>ssd</code>).</p> </li>
-     * <li> <p> <code>instance-storage-info.encryption-supported</code> - Indicates
+     * <li> <p> <code>instance-storage-info.encryption-support</code> - Indicates
      * whether data is encrypted at rest (<code>required</code> |
-     * <code>unsupported</code>).</p> </li> <li> <p>
+     * <code>supported</code> | <code>unsupported</code>).</p> </li> <li> <p>
      * <code>instance-storage-info.nvme-support</code> - Indicates whether non-volatile
      * memory express (NVMe) is supported for instance store (<code>required</code> |
      * <code>supported</code> | <code>unsupported</code>).</p> </li> <li> <p>
@@ -509,6 +515,8 @@ namespace Model
      * private IPv6 addresses per network interface.</p> </li> <li> <p>
      * <code>network-info.ipv6-supported</code> - Indicates whether the instance type
      * supports IPv6 (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
+     * <code>network-info.maximum-network-cards</code> - The maximum number of network
+     * cards per instance.</p> </li> <li> <p>
      * <code>network-info.maximum-network-interfaces</code> - The maximum number of
      * network interfaces per instance.</p> </li> <li> <p>
      * <code>network-info.network-performance</code> - The network performance (for
@@ -582,9 +590,9 @@ namespace Model
      * size of each instance storage disk, in GB.</p> </li> <li> <p>
      * <code>instance-storage-info.disk.type</code> - The storage technology for the
      * local instance storage disks (<code>hdd</code> | <code>ssd</code>).</p> </li>
-     * <li> <p> <code>instance-storage-info.encryption-supported</code> - Indicates
+     * <li> <p> <code>instance-storage-info.encryption-support</code> - Indicates
      * whether data is encrypted at rest (<code>required</code> |
-     * <code>unsupported</code>).</p> </li> <li> <p>
+     * <code>supported</code> | <code>unsupported</code>).</p> </li> <li> <p>
      * <code>instance-storage-info.nvme-support</code> - Indicates whether non-volatile
      * memory express (NVMe) is supported for instance store (<code>required</code> |
      * <code>supported</code> | <code>unsupported</code>).</p> </li> <li> <p>
@@ -611,6 +619,8 @@ namespace Model
      * private IPv6 addresses per network interface.</p> </li> <li> <p>
      * <code>network-info.ipv6-supported</code> - Indicates whether the instance type
      * supports IPv6 (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
+     * <code>network-info.maximum-network-cards</code> - The maximum number of network
+     * cards per instance.</p> </li> <li> <p>
      * <code>network-info.maximum-network-interfaces</code> - The maximum number of
      * network interfaces per instance.</p> </li> <li> <p>
      * <code>network-info.network-performance</code> - The network performance (for
@@ -684,9 +694,9 @@ namespace Model
      * size of each instance storage disk, in GB.</p> </li> <li> <p>
      * <code>instance-storage-info.disk.type</code> - The storage technology for the
      * local instance storage disks (<code>hdd</code> | <code>ssd</code>).</p> </li>
-     * <li> <p> <code>instance-storage-info.encryption-supported</code> - Indicates
+     * <li> <p> <code>instance-storage-info.encryption-support</code> - Indicates
      * whether data is encrypted at rest (<code>required</code> |
-     * <code>unsupported</code>).</p> </li> <li> <p>
+     * <code>supported</code> | <code>unsupported</code>).</p> </li> <li> <p>
      * <code>instance-storage-info.nvme-support</code> - Indicates whether non-volatile
      * memory express (NVMe) is supported for instance store (<code>required</code> |
      * <code>supported</code> | <code>unsupported</code>).</p> </li> <li> <p>
@@ -713,6 +723,8 @@ namespace Model
      * private IPv6 addresses per network interface.</p> </li> <li> <p>
      * <code>network-info.ipv6-supported</code> - Indicates whether the instance type
      * supports IPv6 (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
+     * <code>network-info.maximum-network-cards</code> - The maximum number of network
+     * cards per instance.</p> </li> <li> <p>
      * <code>network-info.maximum-network-interfaces</code> - The maximum number of
      * network interfaces per instance.</p> </li> <li> <p>
      * <code>network-info.network-performance</code> - The network performance (for
@@ -786,9 +798,9 @@ namespace Model
      * size of each instance storage disk, in GB.</p> </li> <li> <p>
      * <code>instance-storage-info.disk.type</code> - The storage technology for the
      * local instance storage disks (<code>hdd</code> | <code>ssd</code>).</p> </li>
-     * <li> <p> <code>instance-storage-info.encryption-supported</code> - Indicates
+     * <li> <p> <code>instance-storage-info.encryption-support</code> - Indicates
      * whether data is encrypted at rest (<code>required</code> |
-     * <code>unsupported</code>).</p> </li> <li> <p>
+     * <code>supported</code> | <code>unsupported</code>).</p> </li> <li> <p>
      * <code>instance-storage-info.nvme-support</code> - Indicates whether non-volatile
      * memory express (NVMe) is supported for instance store (<code>required</code> |
      * <code>supported</code> | <code>unsupported</code>).</p> </li> <li> <p>
@@ -815,6 +827,8 @@ namespace Model
      * private IPv6 addresses per network interface.</p> </li> <li> <p>
      * <code>network-info.ipv6-supported</code> - Indicates whether the instance type
      * supports IPv6 (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
+     * <code>network-info.maximum-network-cards</code> - The maximum number of network
+     * cards per instance.</p> </li> <li> <p>
      * <code>network-info.maximum-network-interfaces</code> - The maximum number of
      * network interfaces per instance.</p> </li> <li> <p>
      * <code>network-info.network-performance</code> - The network performance (for
@@ -888,9 +902,9 @@ namespace Model
      * size of each instance storage disk, in GB.</p> </li> <li> <p>
      * <code>instance-storage-info.disk.type</code> - The storage technology for the
      * local instance storage disks (<code>hdd</code> | <code>ssd</code>).</p> </li>
-     * <li> <p> <code>instance-storage-info.encryption-supported</code> - Indicates
+     * <li> <p> <code>instance-storage-info.encryption-support</code> - Indicates
      * whether data is encrypted at rest (<code>required</code> |
-     * <code>unsupported</code>).</p> </li> <li> <p>
+     * <code>supported</code> | <code>unsupported</code>).</p> </li> <li> <p>
      * <code>instance-storage-info.nvme-support</code> - Indicates whether non-volatile
      * memory express (NVMe) is supported for instance store (<code>required</code> |
      * <code>supported</code> | <code>unsupported</code>).</p> </li> <li> <p>
@@ -917,6 +931,8 @@ namespace Model
      * private IPv6 addresses per network interface.</p> </li> <li> <p>
      * <code>network-info.ipv6-supported</code> - Indicates whether the instance type
      * supports IPv6 (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
+     * <code>network-info.maximum-network-cards</code> - The maximum number of network
+     * cards per instance.</p> </li> <li> <p>
      * <code>network-info.maximum-network-interfaces</code> - The maximum number of
      * network interfaces per instance.</p> </li> <li> <p>
      * <code>network-info.network-performance</code> - The network performance (for

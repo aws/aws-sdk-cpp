@@ -113,37 +113,43 @@ namespace Model
 
     /**
      * <p>Configuration for building and running the service from a source code
-     * repository.</p>
+     * repository.</p>  <p> <code>CodeConfiguration</code> is required only for
+     * <code>CreateService</code> request.</p> 
      */
     inline const CodeConfiguration& GetCodeConfiguration() const{ return m_codeConfiguration; }
 
     /**
      * <p>Configuration for building and running the service from a source code
-     * repository.</p>
+     * repository.</p>  <p> <code>CodeConfiguration</code> is required only for
+     * <code>CreateService</code> request.</p> 
      */
     inline bool CodeConfigurationHasBeenSet() const { return m_codeConfigurationHasBeenSet; }
 
     /**
      * <p>Configuration for building and running the service from a source code
-     * repository.</p>
+     * repository.</p>  <p> <code>CodeConfiguration</code> is required only for
+     * <code>CreateService</code> request.</p> 
      */
     inline void SetCodeConfiguration(const CodeConfiguration& value) { m_codeConfigurationHasBeenSet = true; m_codeConfiguration = value; }
 
     /**
      * <p>Configuration for building and running the service from a source code
-     * repository.</p>
+     * repository.</p>  <p> <code>CodeConfiguration</code> is required only for
+     * <code>CreateService</code> request.</p> 
      */
     inline void SetCodeConfiguration(CodeConfiguration&& value) { m_codeConfigurationHasBeenSet = true; m_codeConfiguration = std::move(value); }
 
     /**
      * <p>Configuration for building and running the service from a source code
-     * repository.</p>
+     * repository.</p>  <p> <code>CodeConfiguration</code> is required only for
+     * <code>CreateService</code> request.</p> 
      */
     inline CodeRepository& WithCodeConfiguration(const CodeConfiguration& value) { SetCodeConfiguration(value); return *this;}
 
     /**
      * <p>Configuration for building and running the service from a source code
-     * repository.</p>
+     * repository.</p>  <p> <code>CodeConfiguration</code> is required only for
+     * <code>CreateService</code> request.</p> 
      */
     inline CodeRepository& WithCodeConfiguration(CodeConfiguration&& value) { SetCodeConfiguration(std::move(value)); return *this;}
 

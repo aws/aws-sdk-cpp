@@ -339,56 +339,56 @@ namespace Model
 
 
     /**
-     * <p>The type of hostnames to assign to instances in the subnet at launch. For
-     * IPv4 only subnets, an instance DNS name must be based on the instance IPv4
-     * address. For IPv6 only subnets, an instance DNS name must be based on the
-     * instance ID. For dual-stack subnets, you can specify whether DNS names use the
-     * instance IPv4 address or the instance ID.</p>
+     * <p>The type of hostname to assign to instances in the subnet at launch. For
+     * IPv4-only and dual-stack (IPv4 and IPv6) subnets, an instance DNS name can be
+     * based on the instance IPv4 address (ip-name) or the instance ID (resource-name).
+     * For IPv6 only subnets, an instance DNS name must be based on the instance ID
+     * (resource-name).</p>
      */
     inline const HostnameType& GetPrivateDnsHostnameTypeOnLaunch() const{ return m_privateDnsHostnameTypeOnLaunch; }
 
     /**
-     * <p>The type of hostnames to assign to instances in the subnet at launch. For
-     * IPv4 only subnets, an instance DNS name must be based on the instance IPv4
-     * address. For IPv6 only subnets, an instance DNS name must be based on the
-     * instance ID. For dual-stack subnets, you can specify whether DNS names use the
-     * instance IPv4 address or the instance ID.</p>
+     * <p>The type of hostname to assign to instances in the subnet at launch. For
+     * IPv4-only and dual-stack (IPv4 and IPv6) subnets, an instance DNS name can be
+     * based on the instance IPv4 address (ip-name) or the instance ID (resource-name).
+     * For IPv6 only subnets, an instance DNS name must be based on the instance ID
+     * (resource-name).</p>
      */
     inline bool PrivateDnsHostnameTypeOnLaunchHasBeenSet() const { return m_privateDnsHostnameTypeOnLaunchHasBeenSet; }
 
     /**
-     * <p>The type of hostnames to assign to instances in the subnet at launch. For
-     * IPv4 only subnets, an instance DNS name must be based on the instance IPv4
-     * address. For IPv6 only subnets, an instance DNS name must be based on the
-     * instance ID. For dual-stack subnets, you can specify whether DNS names use the
-     * instance IPv4 address or the instance ID.</p>
+     * <p>The type of hostname to assign to instances in the subnet at launch. For
+     * IPv4-only and dual-stack (IPv4 and IPv6) subnets, an instance DNS name can be
+     * based on the instance IPv4 address (ip-name) or the instance ID (resource-name).
+     * For IPv6 only subnets, an instance DNS name must be based on the instance ID
+     * (resource-name).</p>
      */
     inline void SetPrivateDnsHostnameTypeOnLaunch(const HostnameType& value) { m_privateDnsHostnameTypeOnLaunchHasBeenSet = true; m_privateDnsHostnameTypeOnLaunch = value; }
 
     /**
-     * <p>The type of hostnames to assign to instances in the subnet at launch. For
-     * IPv4 only subnets, an instance DNS name must be based on the instance IPv4
-     * address. For IPv6 only subnets, an instance DNS name must be based on the
-     * instance ID. For dual-stack subnets, you can specify whether DNS names use the
-     * instance IPv4 address or the instance ID.</p>
+     * <p>The type of hostname to assign to instances in the subnet at launch. For
+     * IPv4-only and dual-stack (IPv4 and IPv6) subnets, an instance DNS name can be
+     * based on the instance IPv4 address (ip-name) or the instance ID (resource-name).
+     * For IPv6 only subnets, an instance DNS name must be based on the instance ID
+     * (resource-name).</p>
      */
     inline void SetPrivateDnsHostnameTypeOnLaunch(HostnameType&& value) { m_privateDnsHostnameTypeOnLaunchHasBeenSet = true; m_privateDnsHostnameTypeOnLaunch = std::move(value); }
 
     /**
-     * <p>The type of hostnames to assign to instances in the subnet at launch. For
-     * IPv4 only subnets, an instance DNS name must be based on the instance IPv4
-     * address. For IPv6 only subnets, an instance DNS name must be based on the
-     * instance ID. For dual-stack subnets, you can specify whether DNS names use the
-     * instance IPv4 address or the instance ID.</p>
+     * <p>The type of hostname to assign to instances in the subnet at launch. For
+     * IPv4-only and dual-stack (IPv4 and IPv6) subnets, an instance DNS name can be
+     * based on the instance IPv4 address (ip-name) or the instance ID (resource-name).
+     * For IPv6 only subnets, an instance DNS name must be based on the instance ID
+     * (resource-name).</p>
      */
     inline ModifySubnetAttributeRequest& WithPrivateDnsHostnameTypeOnLaunch(const HostnameType& value) { SetPrivateDnsHostnameTypeOnLaunch(value); return *this;}
 
     /**
-     * <p>The type of hostnames to assign to instances in the subnet at launch. For
-     * IPv4 only subnets, an instance DNS name must be based on the instance IPv4
-     * address. For IPv6 only subnets, an instance DNS name must be based on the
-     * instance ID. For dual-stack subnets, you can specify whether DNS names use the
-     * instance IPv4 address or the instance ID.</p>
+     * <p>The type of hostname to assign to instances in the subnet at launch. For
+     * IPv4-only and dual-stack (IPv4 and IPv6) subnets, an instance DNS name can be
+     * based on the instance IPv4 address (ip-name) or the instance ID (resource-name).
+     * For IPv6 only subnets, an instance DNS name must be based on the instance ID
+     * (resource-name).</p>
      */
     inline ModifySubnetAttributeRequest& WithPrivateDnsHostnameTypeOnLaunch(HostnameType&& value) { SetPrivateDnsHostnameTypeOnLaunch(std::move(value)); return *this;}
 

@@ -123,6 +123,7 @@
 #include <aws/lightsail/model/GetLoadBalancerRequest.h>
 #include <aws/lightsail/model/GetLoadBalancerMetricDataRequest.h>
 #include <aws/lightsail/model/GetLoadBalancerTlsCertificatesRequest.h>
+#include <aws/lightsail/model/GetLoadBalancerTlsPoliciesRequest.h>
 #include <aws/lightsail/model/GetLoadBalancersRequest.h>
 #include <aws/lightsail/model/GetOperationRequest.h>
 #include <aws/lightsail/model/GetOperationsRequest.h>
@@ -2717,6 +2718,30 @@ void LightsailClient::GetLoadBalancerTlsCertificatesAsync(const GetLoadBalancerT
 void LightsailClient::GetLoadBalancerTlsCertificatesAsyncHelper(const GetLoadBalancerTlsCertificatesRequest& request, const GetLoadBalancerTlsCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetLoadBalancerTlsCertificates(request), context);
+}
+
+GetLoadBalancerTlsPoliciesOutcome LightsailClient::GetLoadBalancerTlsPolicies(const GetLoadBalancerTlsPoliciesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetLoadBalancerTlsPoliciesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetLoadBalancerTlsPoliciesOutcomeCallable LightsailClient::GetLoadBalancerTlsPoliciesCallable(const GetLoadBalancerTlsPoliciesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetLoadBalancerTlsPoliciesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLoadBalancerTlsPolicies(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::GetLoadBalancerTlsPoliciesAsync(const GetLoadBalancerTlsPoliciesRequest& request, const GetLoadBalancerTlsPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetLoadBalancerTlsPoliciesAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::GetLoadBalancerTlsPoliciesAsyncHelper(const GetLoadBalancerTlsPoliciesRequest& request, const GetLoadBalancerTlsPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetLoadBalancerTlsPolicies(request), context);
 }
 
 GetLoadBalancersOutcome LightsailClient::GetLoadBalancers(const GetLoadBalancersRequest& request) const

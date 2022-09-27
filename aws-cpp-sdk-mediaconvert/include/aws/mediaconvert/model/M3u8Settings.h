@@ -609,59 +609,77 @@ namespace Model
 
 
     /**
-     * Applies to HLS outputs. Use this setting to specify whether the service inserts
-     * the ID3 timed metadata from the input in this output.
+     * Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3
+     * metadata in this output. This includes ID3 metadata from the following features:
+     * ID3 timestamp period (timedMetadataId3Period), and Custom ID3 metadata inserter
+     * (timedMetadataInsertion). To exclude this ID3 metadata in this output: set ID3
+     * metadata to None (NONE) or leave blank.
      */
     inline const TimedMetadata& GetTimedMetadata() const{ return m_timedMetadata; }
 
     /**
-     * Applies to HLS outputs. Use this setting to specify whether the service inserts
-     * the ID3 timed metadata from the input in this output.
+     * Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3
+     * metadata in this output. This includes ID3 metadata from the following features:
+     * ID3 timestamp period (timedMetadataId3Period), and Custom ID3 metadata inserter
+     * (timedMetadataInsertion). To exclude this ID3 metadata in this output: set ID3
+     * metadata to None (NONE) or leave blank.
      */
     inline bool TimedMetadataHasBeenSet() const { return m_timedMetadataHasBeenSet; }
 
     /**
-     * Applies to HLS outputs. Use this setting to specify whether the service inserts
-     * the ID3 timed metadata from the input in this output.
+     * Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3
+     * metadata in this output. This includes ID3 metadata from the following features:
+     * ID3 timestamp period (timedMetadataId3Period), and Custom ID3 metadata inserter
+     * (timedMetadataInsertion). To exclude this ID3 metadata in this output: set ID3
+     * metadata to None (NONE) or leave blank.
      */
     inline void SetTimedMetadata(const TimedMetadata& value) { m_timedMetadataHasBeenSet = true; m_timedMetadata = value; }
 
     /**
-     * Applies to HLS outputs. Use this setting to specify whether the service inserts
-     * the ID3 timed metadata from the input in this output.
+     * Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3
+     * metadata in this output. This includes ID3 metadata from the following features:
+     * ID3 timestamp period (timedMetadataId3Period), and Custom ID3 metadata inserter
+     * (timedMetadataInsertion). To exclude this ID3 metadata in this output: set ID3
+     * metadata to None (NONE) or leave blank.
      */
     inline void SetTimedMetadata(TimedMetadata&& value) { m_timedMetadataHasBeenSet = true; m_timedMetadata = std::move(value); }
 
     /**
-     * Applies to HLS outputs. Use this setting to specify whether the service inserts
-     * the ID3 timed metadata from the input in this output.
+     * Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3
+     * metadata in this output. This includes ID3 metadata from the following features:
+     * ID3 timestamp period (timedMetadataId3Period), and Custom ID3 metadata inserter
+     * (timedMetadataInsertion). To exclude this ID3 metadata in this output: set ID3
+     * metadata to None (NONE) or leave blank.
      */
     inline M3u8Settings& WithTimedMetadata(const TimedMetadata& value) { SetTimedMetadata(value); return *this;}
 
     /**
-     * Applies to HLS outputs. Use this setting to specify whether the service inserts
-     * the ID3 timed metadata from the input in this output.
+     * Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3
+     * metadata in this output. This includes ID3 metadata from the following features:
+     * ID3 timestamp period (timedMetadataId3Period), and Custom ID3 metadata inserter
+     * (timedMetadataInsertion). To exclude this ID3 metadata in this output: set ID3
+     * metadata to None (NONE) or leave blank.
      */
     inline M3u8Settings& WithTimedMetadata(TimedMetadata&& value) { SetTimedMetadata(std::move(value)); return *this;}
 
 
     /**
-     * Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     * Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
      */
     inline int GetTimedMetadataPid() const{ return m_timedMetadataPid; }
 
     /**
-     * Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     * Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
      */
     inline bool TimedMetadataPidHasBeenSet() const { return m_timedMetadataPidHasBeenSet; }
 
     /**
-     * Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     * Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
      */
     inline void SetTimedMetadataPid(int value) { m_timedMetadataPidHasBeenSet = true; m_timedMetadataPid = value; }
 
     /**
-     * Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     * Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
      */
     inline M3u8Settings& WithTimedMetadataPid(int value) { SetTimedMetadataPid(value); return *this;}
 

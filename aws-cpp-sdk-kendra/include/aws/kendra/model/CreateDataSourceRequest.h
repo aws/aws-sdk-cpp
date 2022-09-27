@@ -170,7 +170,7 @@ namespace Model
 
 
     /**
-     * <p>The connector configuration information that is required to access the
+     * <p>Configuration information that is required to access the data source
      * repository.</p> <p>You can't specify the <code>Configuration</code> parameter
      * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
      * you receive a <code>ValidationException</code> exception.</p> <p>The
@@ -179,7 +179,7 @@ namespace Model
     inline const DataSourceConfiguration& GetConfiguration() const{ return m_configuration; }
 
     /**
-     * <p>The connector configuration information that is required to access the
+     * <p>Configuration information that is required to access the data source
      * repository.</p> <p>You can't specify the <code>Configuration</code> parameter
      * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
      * you receive a <code>ValidationException</code> exception.</p> <p>The
@@ -188,7 +188,7 @@ namespace Model
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
-     * <p>The connector configuration information that is required to access the
+     * <p>Configuration information that is required to access the data source
      * repository.</p> <p>You can't specify the <code>Configuration</code> parameter
      * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
      * you receive a <code>ValidationException</code> exception.</p> <p>The
@@ -197,7 +197,7 @@ namespace Model
     inline void SetConfiguration(const DataSourceConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
     /**
-     * <p>The connector configuration information that is required to access the
+     * <p>Configuration information that is required to access the data source
      * repository.</p> <p>You can't specify the <code>Configuration</code> parameter
      * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
      * you receive a <code>ValidationException</code> exception.</p> <p>The
@@ -206,7 +206,7 @@ namespace Model
     inline void SetConfiguration(DataSourceConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
 
     /**
-     * <p>The connector configuration information that is required to access the
+     * <p>Configuration information that is required to access the data source
      * repository.</p> <p>You can't specify the <code>Configuration</code> parameter
      * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
      * you receive a <code>ValidationException</code> exception.</p> <p>The
@@ -215,7 +215,7 @@ namespace Model
     inline CreateDataSourceRequest& WithConfiguration(const DataSourceConfiguration& value) { SetConfiguration(value); return *this;}
 
     /**
-     * <p>The connector configuration information that is required to access the
+     * <p>Configuration information that is required to access the data source
      * repository.</p> <p>You can't specify the <code>Configuration</code> parameter
      * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
      * you receive a <code>ValidationException</code> exception.</p> <p>The
@@ -266,89 +266,89 @@ namespace Model
 
 
     /**
-     * <p>Sets the frequency that Amazon Kendra will check the documents in your
+     * <p>Sets the frequency for Amazon Kendra to check the documents in your
      * repository and update the index. If you don't set a schedule Amazon Kendra will
      * not periodically update the index. You can call the
-     * <code>StartDataSourceSyncJob</code> operation to update the index.</p> <p>You
-     * can't specify the <code>Schedule</code> parameter when the <code>Type</code>
-     * parameter is set to <code>CUSTOM</code>. If you do, you receive a
+     * <code>StartDataSourceSyncJob</code> API to update the index.</p> <p>You can't
+     * specify the <code>Schedule</code> parameter when the <code>Type</code> parameter
+     * is set to <code>CUSTOM</code>. If you do, you receive a
      * <code>ValidationException</code> exception.</p>
      */
     inline const Aws::String& GetSchedule() const{ return m_schedule; }
 
     /**
-     * <p>Sets the frequency that Amazon Kendra will check the documents in your
+     * <p>Sets the frequency for Amazon Kendra to check the documents in your
      * repository and update the index. If you don't set a schedule Amazon Kendra will
      * not periodically update the index. You can call the
-     * <code>StartDataSourceSyncJob</code> operation to update the index.</p> <p>You
-     * can't specify the <code>Schedule</code> parameter when the <code>Type</code>
-     * parameter is set to <code>CUSTOM</code>. If you do, you receive a
+     * <code>StartDataSourceSyncJob</code> API to update the index.</p> <p>You can't
+     * specify the <code>Schedule</code> parameter when the <code>Type</code> parameter
+     * is set to <code>CUSTOM</code>. If you do, you receive a
      * <code>ValidationException</code> exception.</p>
      */
     inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
 
     /**
-     * <p>Sets the frequency that Amazon Kendra will check the documents in your
+     * <p>Sets the frequency for Amazon Kendra to check the documents in your
      * repository and update the index. If you don't set a schedule Amazon Kendra will
      * not periodically update the index. You can call the
-     * <code>StartDataSourceSyncJob</code> operation to update the index.</p> <p>You
-     * can't specify the <code>Schedule</code> parameter when the <code>Type</code>
-     * parameter is set to <code>CUSTOM</code>. If you do, you receive a
+     * <code>StartDataSourceSyncJob</code> API to update the index.</p> <p>You can't
+     * specify the <code>Schedule</code> parameter when the <code>Type</code> parameter
+     * is set to <code>CUSTOM</code>. If you do, you receive a
      * <code>ValidationException</code> exception.</p>
      */
     inline void SetSchedule(const Aws::String& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
 
     /**
-     * <p>Sets the frequency that Amazon Kendra will check the documents in your
+     * <p>Sets the frequency for Amazon Kendra to check the documents in your
      * repository and update the index. If you don't set a schedule Amazon Kendra will
      * not periodically update the index. You can call the
-     * <code>StartDataSourceSyncJob</code> operation to update the index.</p> <p>You
-     * can't specify the <code>Schedule</code> parameter when the <code>Type</code>
-     * parameter is set to <code>CUSTOM</code>. If you do, you receive a
+     * <code>StartDataSourceSyncJob</code> API to update the index.</p> <p>You can't
+     * specify the <code>Schedule</code> parameter when the <code>Type</code> parameter
+     * is set to <code>CUSTOM</code>. If you do, you receive a
      * <code>ValidationException</code> exception.</p>
      */
     inline void SetSchedule(Aws::String&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
 
     /**
-     * <p>Sets the frequency that Amazon Kendra will check the documents in your
+     * <p>Sets the frequency for Amazon Kendra to check the documents in your
      * repository and update the index. If you don't set a schedule Amazon Kendra will
      * not periodically update the index. You can call the
-     * <code>StartDataSourceSyncJob</code> operation to update the index.</p> <p>You
-     * can't specify the <code>Schedule</code> parameter when the <code>Type</code>
-     * parameter is set to <code>CUSTOM</code>. If you do, you receive a
+     * <code>StartDataSourceSyncJob</code> API to update the index.</p> <p>You can't
+     * specify the <code>Schedule</code> parameter when the <code>Type</code> parameter
+     * is set to <code>CUSTOM</code>. If you do, you receive a
      * <code>ValidationException</code> exception.</p>
      */
     inline void SetSchedule(const char* value) { m_scheduleHasBeenSet = true; m_schedule.assign(value); }
 
     /**
-     * <p>Sets the frequency that Amazon Kendra will check the documents in your
+     * <p>Sets the frequency for Amazon Kendra to check the documents in your
      * repository and update the index. If you don't set a schedule Amazon Kendra will
      * not periodically update the index. You can call the
-     * <code>StartDataSourceSyncJob</code> operation to update the index.</p> <p>You
-     * can't specify the <code>Schedule</code> parameter when the <code>Type</code>
-     * parameter is set to <code>CUSTOM</code>. If you do, you receive a
+     * <code>StartDataSourceSyncJob</code> API to update the index.</p> <p>You can't
+     * specify the <code>Schedule</code> parameter when the <code>Type</code> parameter
+     * is set to <code>CUSTOM</code>. If you do, you receive a
      * <code>ValidationException</code> exception.</p>
      */
     inline CreateDataSourceRequest& WithSchedule(const Aws::String& value) { SetSchedule(value); return *this;}
 
     /**
-     * <p>Sets the frequency that Amazon Kendra will check the documents in your
+     * <p>Sets the frequency for Amazon Kendra to check the documents in your
      * repository and update the index. If you don't set a schedule Amazon Kendra will
      * not periodically update the index. You can call the
-     * <code>StartDataSourceSyncJob</code> operation to update the index.</p> <p>You
-     * can't specify the <code>Schedule</code> parameter when the <code>Type</code>
-     * parameter is set to <code>CUSTOM</code>. If you do, you receive a
+     * <code>StartDataSourceSyncJob</code> API to update the index.</p> <p>You can't
+     * specify the <code>Schedule</code> parameter when the <code>Type</code> parameter
+     * is set to <code>CUSTOM</code>. If you do, you receive a
      * <code>ValidationException</code> exception.</p>
      */
     inline CreateDataSourceRequest& WithSchedule(Aws::String&& value) { SetSchedule(std::move(value)); return *this;}
 
     /**
-     * <p>Sets the frequency that Amazon Kendra will check the documents in your
+     * <p>Sets the frequency for Amazon Kendra to check the documents in your
      * repository and update the index. If you don't set a schedule Amazon Kendra will
      * not periodically update the index. You can call the
-     * <code>StartDataSourceSyncJob</code> operation to update the index.</p> <p>You
-     * can't specify the <code>Schedule</code> parameter when the <code>Type</code>
-     * parameter is set to <code>CUSTOM</code>. If you do, you receive a
+     * <code>StartDataSourceSyncJob</code> API to update the index.</p> <p>You can't
+     * specify the <code>Schedule</code> parameter when the <code>Type</code> parameter
+     * is set to <code>CUSTOM</code>. If you do, you receive a
      * <code>ValidationException</code> exception.</p>
      */
     inline CreateDataSourceRequest& WithSchedule(const char* value) { SetSchedule(value); return *this;}
@@ -494,57 +494,57 @@ namespace Model
 
     /**
      * <p>A token that you provide to identify the request to create a data source.
-     * Multiple calls to the <code>CreateDataSource</code> operation with the same
-     * client token will create only one data source.</p>
+     * Multiple calls to the <code>CreateDataSource</code> API with the same client
+     * token will create only one data source.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
      * <p>A token that you provide to identify the request to create a data source.
-     * Multiple calls to the <code>CreateDataSource</code> operation with the same
-     * client token will create only one data source.</p>
+     * Multiple calls to the <code>CreateDataSource</code> API with the same client
+     * token will create only one data source.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>A token that you provide to identify the request to create a data source.
-     * Multiple calls to the <code>CreateDataSource</code> operation with the same
-     * client token will create only one data source.</p>
+     * Multiple calls to the <code>CreateDataSource</code> API with the same client
+     * token will create only one data source.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
      * <p>A token that you provide to identify the request to create a data source.
-     * Multiple calls to the <code>CreateDataSource</code> operation with the same
-     * client token will create only one data source.</p>
+     * Multiple calls to the <code>CreateDataSource</code> API with the same client
+     * token will create only one data source.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>A token that you provide to identify the request to create a data source.
-     * Multiple calls to the <code>CreateDataSource</code> operation with the same
-     * client token will create only one data source.</p>
+     * Multiple calls to the <code>CreateDataSource</code> API with the same client
+     * token will create only one data source.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
      * <p>A token that you provide to identify the request to create a data source.
-     * Multiple calls to the <code>CreateDataSource</code> operation with the same
-     * client token will create only one data source.</p>
+     * Multiple calls to the <code>CreateDataSource</code> API with the same client
+     * token will create only one data source.</p>
      */
     inline CreateDataSourceRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
      * <p>A token that you provide to identify the request to create a data source.
-     * Multiple calls to the <code>CreateDataSource</code> operation with the same
-     * client token will create only one data source.</p>
+     * Multiple calls to the <code>CreateDataSource</code> API with the same client
+     * token will create only one data source.</p>
      */
     inline CreateDataSourceRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>A token that you provide to identify the request to create a data source.
-     * Multiple calls to the <code>CreateDataSource</code> operation with the same
-     * client token will create only one data source.</p>
+     * Multiple calls to the <code>CreateDataSource</code> API with the same client
+     * token will create only one data source.</p>
      */
     inline CreateDataSourceRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

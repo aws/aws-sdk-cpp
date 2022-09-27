@@ -5,12 +5,12 @@
 
 #pragma once
 #include <aws/panorama/Panorama_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/panorama/model/NodeFromTemplateJobStatus.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/panorama/model/TemplateType.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/panorama/model/NodeFromTemplateJobStatus.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/panorama/model/TemplateType.h>
 #include <aws/panorama/model/JobResourceTags.h>
 #include <utility>
 
@@ -36,6 +36,32 @@ namespace Model
     DescribeNodeFromTemplateJobResult();
     DescribeNodeFromTemplateJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeNodeFromTemplateJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTime = value; }
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTime = std::move(value); }
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline DescribeNodeFromTemplateJobResult& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline DescribeNodeFromTemplateJobResult& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 
 
     /**
@@ -75,91 +101,39 @@ namespace Model
 
 
     /**
-     * <p>The job's status.</p>
+     * <p>The job's tags.</p>
      */
-    inline const NodeFromTemplateJobStatus& GetStatus() const{ return m_status; }
+    inline const Aws::Vector<JobResourceTags>& GetJobTags() const{ return m_jobTags; }
 
     /**
-     * <p>The job's status.</p>
+     * <p>The job's tags.</p>
      */
-    inline void SetStatus(const NodeFromTemplateJobStatus& value) { m_status = value; }
+    inline void SetJobTags(const Aws::Vector<JobResourceTags>& value) { m_jobTags = value; }
 
     /**
-     * <p>The job's status.</p>
+     * <p>The job's tags.</p>
      */
-    inline void SetStatus(NodeFromTemplateJobStatus&& value) { m_status = std::move(value); }
+    inline void SetJobTags(Aws::Vector<JobResourceTags>&& value) { m_jobTags = std::move(value); }
 
     /**
-     * <p>The job's status.</p>
+     * <p>The job's tags.</p>
      */
-    inline DescribeNodeFromTemplateJobResult& WithStatus(const NodeFromTemplateJobStatus& value) { SetStatus(value); return *this;}
+    inline DescribeNodeFromTemplateJobResult& WithJobTags(const Aws::Vector<JobResourceTags>& value) { SetJobTags(value); return *this;}
 
     /**
-     * <p>The job's status.</p>
+     * <p>The job's tags.</p>
      */
-    inline DescribeNodeFromTemplateJobResult& WithStatus(NodeFromTemplateJobStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    inline DescribeNodeFromTemplateJobResult& WithJobTags(Aws::Vector<JobResourceTags>&& value) { SetJobTags(std::move(value)); return *this;}
 
     /**
-     * <p>The job's status message.</p>
+     * <p>The job's tags.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline DescribeNodeFromTemplateJobResult& AddJobTags(const JobResourceTags& value) { m_jobTags.push_back(value); return *this; }
 
     /**
-     * <p>The job's status message.</p>
+     * <p>The job's tags.</p>
      */
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessage = value; }
-
-    /**
-     * <p>The job's status message.</p>
-     */
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = std::move(value); }
-
-    /**
-     * <p>The job's status message.</p>
-     */
-    inline void SetStatusMessage(const char* value) { m_statusMessage.assign(value); }
-
-    /**
-     * <p>The job's status message.</p>
-     */
-    inline DescribeNodeFromTemplateJobResult& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-
-    /**
-     * <p>The job's status message.</p>
-     */
-    inline DescribeNodeFromTemplateJobResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The job's status message.</p>
-     */
-    inline DescribeNodeFromTemplateJobResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
-
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTime = value; }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTime = std::move(value); }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline DescribeNodeFromTemplateJobResult& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline DescribeNodeFromTemplateJobResult& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+    inline DescribeNodeFromTemplateJobResult& AddJobTags(JobResourceTags&& value) { m_jobTags.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -186,6 +160,78 @@ namespace Model
      * <p>When the job was updated.</p>
      */
     inline DescribeNodeFromTemplateJobResult& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The node's description.</p>
+     */
+    inline const Aws::String& GetNodeDescription() const{ return m_nodeDescription; }
+
+    /**
+     * <p>The node's description.</p>
+     */
+    inline void SetNodeDescription(const Aws::String& value) { m_nodeDescription = value; }
+
+    /**
+     * <p>The node's description.</p>
+     */
+    inline void SetNodeDescription(Aws::String&& value) { m_nodeDescription = std::move(value); }
+
+    /**
+     * <p>The node's description.</p>
+     */
+    inline void SetNodeDescription(const char* value) { m_nodeDescription.assign(value); }
+
+    /**
+     * <p>The node's description.</p>
+     */
+    inline DescribeNodeFromTemplateJobResult& WithNodeDescription(const Aws::String& value) { SetNodeDescription(value); return *this;}
+
+    /**
+     * <p>The node's description.</p>
+     */
+    inline DescribeNodeFromTemplateJobResult& WithNodeDescription(Aws::String&& value) { SetNodeDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>The node's description.</p>
+     */
+    inline DescribeNodeFromTemplateJobResult& WithNodeDescription(const char* value) { SetNodeDescription(value); return *this;}
+
+
+    /**
+     * <p>The node's name.</p>
+     */
+    inline const Aws::String& GetNodeName() const{ return m_nodeName; }
+
+    /**
+     * <p>The node's name.</p>
+     */
+    inline void SetNodeName(const Aws::String& value) { m_nodeName = value; }
+
+    /**
+     * <p>The node's name.</p>
+     */
+    inline void SetNodeName(Aws::String&& value) { m_nodeName = std::move(value); }
+
+    /**
+     * <p>The node's name.</p>
+     */
+    inline void SetNodeName(const char* value) { m_nodeName.assign(value); }
+
+    /**
+     * <p>The node's name.</p>
+     */
+    inline DescribeNodeFromTemplateJobResult& WithNodeName(const Aws::String& value) { SetNodeName(value); return *this;}
+
+    /**
+     * <p>The node's name.</p>
+     */
+    inline DescribeNodeFromTemplateJobResult& WithNodeName(Aws::String&& value) { SetNodeName(std::move(value)); return *this;}
+
+    /**
+     * <p>The node's name.</p>
+     */
+    inline DescribeNodeFromTemplateJobResult& WithNodeName(const char* value) { SetNodeName(value); return *this;}
 
 
     /**
@@ -261,101 +307,65 @@ namespace Model
 
 
     /**
-     * <p>The node's name.</p>
+     * <p>The job's status.</p>
      */
-    inline const Aws::String& GetNodeName() const{ return m_nodeName; }
+    inline const NodeFromTemplateJobStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The node's name.</p>
+     * <p>The job's status.</p>
      */
-    inline void SetNodeName(const Aws::String& value) { m_nodeName = value; }
+    inline void SetStatus(const NodeFromTemplateJobStatus& value) { m_status = value; }
 
     /**
-     * <p>The node's name.</p>
+     * <p>The job's status.</p>
      */
-    inline void SetNodeName(Aws::String&& value) { m_nodeName = std::move(value); }
+    inline void SetStatus(NodeFromTemplateJobStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>The node's name.</p>
+     * <p>The job's status.</p>
      */
-    inline void SetNodeName(const char* value) { m_nodeName.assign(value); }
+    inline DescribeNodeFromTemplateJobResult& WithStatus(const NodeFromTemplateJobStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The node's name.</p>
+     * <p>The job's status.</p>
      */
-    inline DescribeNodeFromTemplateJobResult& WithNodeName(const Aws::String& value) { SetNodeName(value); return *this;}
-
-    /**
-     * <p>The node's name.</p>
-     */
-    inline DescribeNodeFromTemplateJobResult& WithNodeName(Aws::String&& value) { SetNodeName(std::move(value)); return *this;}
-
-    /**
-     * <p>The node's name.</p>
-     */
-    inline DescribeNodeFromTemplateJobResult& WithNodeName(const char* value) { SetNodeName(value); return *this;}
+    inline DescribeNodeFromTemplateJobResult& WithStatus(NodeFromTemplateJobStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>The node's description.</p>
+     * <p>The job's status message.</p>
      */
-    inline const Aws::String& GetNodeDescription() const{ return m_nodeDescription; }
+    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
 
     /**
-     * <p>The node's description.</p>
+     * <p>The job's status message.</p>
      */
-    inline void SetNodeDescription(const Aws::String& value) { m_nodeDescription = value; }
+    inline void SetStatusMessage(const Aws::String& value) { m_statusMessage = value; }
 
     /**
-     * <p>The node's description.</p>
+     * <p>The job's status message.</p>
      */
-    inline void SetNodeDescription(Aws::String&& value) { m_nodeDescription = std::move(value); }
+    inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = std::move(value); }
 
     /**
-     * <p>The node's description.</p>
+     * <p>The job's status message.</p>
      */
-    inline void SetNodeDescription(const char* value) { m_nodeDescription.assign(value); }
+    inline void SetStatusMessage(const char* value) { m_statusMessage.assign(value); }
 
     /**
-     * <p>The node's description.</p>
+     * <p>The job's status message.</p>
      */
-    inline DescribeNodeFromTemplateJobResult& WithNodeDescription(const Aws::String& value) { SetNodeDescription(value); return *this;}
+    inline DescribeNodeFromTemplateJobResult& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
 
     /**
-     * <p>The node's description.</p>
+     * <p>The job's status message.</p>
      */
-    inline DescribeNodeFromTemplateJobResult& WithNodeDescription(Aws::String&& value) { SetNodeDescription(std::move(value)); return *this;}
+    inline DescribeNodeFromTemplateJobResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
 
     /**
-     * <p>The node's description.</p>
+     * <p>The job's status message.</p>
      */
-    inline DescribeNodeFromTemplateJobResult& WithNodeDescription(const char* value) { SetNodeDescription(value); return *this;}
-
-
-    /**
-     * <p>The job's template type.</p>
-     */
-    inline const TemplateType& GetTemplateType() const{ return m_templateType; }
-
-    /**
-     * <p>The job's template type.</p>
-     */
-    inline void SetTemplateType(const TemplateType& value) { m_templateType = value; }
-
-    /**
-     * <p>The job's template type.</p>
-     */
-    inline void SetTemplateType(TemplateType&& value) { m_templateType = std::move(value); }
-
-    /**
-     * <p>The job's template type.</p>
-     */
-    inline DescribeNodeFromTemplateJobResult& WithTemplateType(const TemplateType& value) { SetTemplateType(value); return *this;}
-
-    /**
-     * <p>The job's template type.</p>
-     */
-    inline DescribeNodeFromTemplateJobResult& WithTemplateType(TemplateType&& value) { SetTemplateType(std::move(value)); return *this;}
+    inline DescribeNodeFromTemplateJobResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
 
     /**
@@ -420,65 +430,55 @@ namespace Model
 
 
     /**
-     * <p>The job's tags.</p>
+     * <p>The job's template type.</p>
      */
-    inline const Aws::Vector<JobResourceTags>& GetJobTags() const{ return m_jobTags; }
+    inline const TemplateType& GetTemplateType() const{ return m_templateType; }
 
     /**
-     * <p>The job's tags.</p>
+     * <p>The job's template type.</p>
      */
-    inline void SetJobTags(const Aws::Vector<JobResourceTags>& value) { m_jobTags = value; }
+    inline void SetTemplateType(const TemplateType& value) { m_templateType = value; }
 
     /**
-     * <p>The job's tags.</p>
+     * <p>The job's template type.</p>
      */
-    inline void SetJobTags(Aws::Vector<JobResourceTags>&& value) { m_jobTags = std::move(value); }
+    inline void SetTemplateType(TemplateType&& value) { m_templateType = std::move(value); }
 
     /**
-     * <p>The job's tags.</p>
+     * <p>The job's template type.</p>
      */
-    inline DescribeNodeFromTemplateJobResult& WithJobTags(const Aws::Vector<JobResourceTags>& value) { SetJobTags(value); return *this;}
+    inline DescribeNodeFromTemplateJobResult& WithTemplateType(const TemplateType& value) { SetTemplateType(value); return *this;}
 
     /**
-     * <p>The job's tags.</p>
+     * <p>The job's template type.</p>
      */
-    inline DescribeNodeFromTemplateJobResult& WithJobTags(Aws::Vector<JobResourceTags>&& value) { SetJobTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The job's tags.</p>
-     */
-    inline DescribeNodeFromTemplateJobResult& AddJobTags(const JobResourceTags& value) { m_jobTags.push_back(value); return *this; }
-
-    /**
-     * <p>The job's tags.</p>
-     */
-    inline DescribeNodeFromTemplateJobResult& AddJobTags(JobResourceTags&& value) { m_jobTags.push_back(std::move(value)); return *this; }
+    inline DescribeNodeFromTemplateJobResult& WithTemplateType(TemplateType&& value) { SetTemplateType(std::move(value)); return *this;}
 
   private:
 
-    Aws::String m_jobId;
-
-    NodeFromTemplateJobStatus m_status;
-
-    Aws::String m_statusMessage;
-
     Aws::Utils::DateTime m_createdTime;
 
+    Aws::String m_jobId;
+
+    Aws::Vector<JobResourceTags> m_jobTags;
+
     Aws::Utils::DateTime m_lastUpdatedTime;
+
+    Aws::String m_nodeDescription;
+
+    Aws::String m_nodeName;
 
     Aws::String m_outputPackageName;
 
     Aws::String m_outputPackageVersion;
 
-    Aws::String m_nodeName;
+    NodeFromTemplateJobStatus m_status;
 
-    Aws::String m_nodeDescription;
-
-    TemplateType m_templateType;
+    Aws::String m_statusMessage;
 
     Aws::Map<Aws::String, Aws::String> m_templateParameters;
 
-    Aws::Vector<JobResourceTags> m_jobTags;
+    TemplateType m_templateType;
   };
 
 } // namespace Model

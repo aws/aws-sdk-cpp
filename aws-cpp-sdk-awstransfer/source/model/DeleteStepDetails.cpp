@@ -19,12 +19,14 @@ namespace Model
 {
 
 DeleteStepDetails::DeleteStepDetails() : 
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_sourceFileLocationHasBeenSet(false)
 {
 }
 
 DeleteStepDetails::DeleteStepDetails(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_sourceFileLocationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ DeleteStepDetails& DeleteStepDetails::operator =(JsonView jsonValue)
     m_nameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SourceFileLocation"))
+  {
+    m_sourceFileLocation = jsonValue.GetString("SourceFileLocation");
+
+    m_sourceFileLocationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue DeleteStepDetails::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_sourceFileLocationHasBeenSet)
+  {
+   payload.WithString("SourceFileLocation", m_sourceFileLocation);
 
   }
 

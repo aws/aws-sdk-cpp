@@ -13,7 +13,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 GetKeyPairsRequest::GetKeyPairsRequest() : 
-    m_pageTokenHasBeenSet(false)
+    m_pageTokenHasBeenSet(false),
+    m_includeDefaultKeyPair(false),
+    m_includeDefaultKeyPairHasBeenSet(false)
 {
 }
 
@@ -24,6 +26,12 @@ Aws::String GetKeyPairsRequest::SerializePayload() const
   if(m_pageTokenHasBeenSet)
   {
    payload.WithString("pageToken", m_pageToken);
+
+  }
+
+  if(m_includeDefaultKeyPairHasBeenSet)
+  {
+   payload.WithBool("includeDefaultKeyPair", m_includeDefaultKeyPair);
 
   }
 

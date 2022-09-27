@@ -192,38 +192,38 @@ namespace Model
 
 
     /**
-     * <p>The part of a web request that you want WAF to inspect. For more information,
-     * see <a>FieldToMatch</a>. </p>
+     * <p>The part of the web request that you want WAF to inspect. For more
+     * information, see <a>FieldToMatch</a>. </p>
      */
     inline const FieldToMatch& GetFieldToMatch() const{ return m_fieldToMatch; }
 
     /**
-     * <p>The part of a web request that you want WAF to inspect. For more information,
-     * see <a>FieldToMatch</a>. </p>
+     * <p>The part of the web request that you want WAF to inspect. For more
+     * information, see <a>FieldToMatch</a>. </p>
      */
     inline bool FieldToMatchHasBeenSet() const { return m_fieldToMatchHasBeenSet; }
 
     /**
-     * <p>The part of a web request that you want WAF to inspect. For more information,
-     * see <a>FieldToMatch</a>. </p>
+     * <p>The part of the web request that you want WAF to inspect. For more
+     * information, see <a>FieldToMatch</a>. </p>
      */
     inline void SetFieldToMatch(const FieldToMatch& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = value; }
 
     /**
-     * <p>The part of a web request that you want WAF to inspect. For more information,
-     * see <a>FieldToMatch</a>. </p>
+     * <p>The part of the web request that you want WAF to inspect. For more
+     * information, see <a>FieldToMatch</a>. </p>
      */
     inline void SetFieldToMatch(FieldToMatch&& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = std::move(value); }
 
     /**
-     * <p>The part of a web request that you want WAF to inspect. For more information,
-     * see <a>FieldToMatch</a>. </p>
+     * <p>The part of the web request that you want WAF to inspect. For more
+     * information, see <a>FieldToMatch</a>. </p>
      */
     inline ByteMatchStatement& WithFieldToMatch(const FieldToMatch& value) { SetFieldToMatch(value); return *this;}
 
     /**
-     * <p>The part of a web request that you want WAF to inspect. For more information,
-     * see <a>FieldToMatch</a>. </p>
+     * <p>The part of the web request that you want WAF to inspect. For more
+     * information, see <a>FieldToMatch</a>. </p>
      */
     inline ByteMatchStatement& WithFieldToMatch(FieldToMatch&& value) { SetFieldToMatch(std::move(value)); return *this;}
 
@@ -310,8 +310,8 @@ namespace Model
 
 
     /**
-     * <p>The area within the portion of a web request that you want WAF to search for
-     * <code>SearchString</code>. Valid values include the following:</p> <p>
+     * <p>The area within the portion of the web request that you want WAF to search
+     * for <code>SearchString</code>. Valid values include the following:</p> <p>
      * <b>CONTAINS</b> </p> <p>The specified part of the web request must include the
      * value of <code>SearchString</code>, but the location doesn't matter.</p> <p>
      * <b>CONTAINS_WORD</b> </p> <p>The specified part of the web request must include
@@ -335,8 +335,8 @@ namespace Model
     inline const PositionalConstraint& GetPositionalConstraint() const{ return m_positionalConstraint; }
 
     /**
-     * <p>The area within the portion of a web request that you want WAF to search for
-     * <code>SearchString</code>. Valid values include the following:</p> <p>
+     * <p>The area within the portion of the web request that you want WAF to search
+     * for <code>SearchString</code>. Valid values include the following:</p> <p>
      * <b>CONTAINS</b> </p> <p>The specified part of the web request must include the
      * value of <code>SearchString</code>, but the location doesn't matter.</p> <p>
      * <b>CONTAINS_WORD</b> </p> <p>The specified part of the web request must include
@@ -360,8 +360,8 @@ namespace Model
     inline bool PositionalConstraintHasBeenSet() const { return m_positionalConstraintHasBeenSet; }
 
     /**
-     * <p>The area within the portion of a web request that you want WAF to search for
-     * <code>SearchString</code>. Valid values include the following:</p> <p>
+     * <p>The area within the portion of the web request that you want WAF to search
+     * for <code>SearchString</code>. Valid values include the following:</p> <p>
      * <b>CONTAINS</b> </p> <p>The specified part of the web request must include the
      * value of <code>SearchString</code>, but the location doesn't matter.</p> <p>
      * <b>CONTAINS_WORD</b> </p> <p>The specified part of the web request must include
@@ -385,8 +385,8 @@ namespace Model
     inline void SetPositionalConstraint(const PositionalConstraint& value) { m_positionalConstraintHasBeenSet = true; m_positionalConstraint = value; }
 
     /**
-     * <p>The area within the portion of a web request that you want WAF to search for
-     * <code>SearchString</code>. Valid values include the following:</p> <p>
+     * <p>The area within the portion of the web request that you want WAF to search
+     * for <code>SearchString</code>. Valid values include the following:</p> <p>
      * <b>CONTAINS</b> </p> <p>The specified part of the web request must include the
      * value of <code>SearchString</code>, but the location doesn't matter.</p> <p>
      * <b>CONTAINS_WORD</b> </p> <p>The specified part of the web request must include
@@ -410,8 +410,8 @@ namespace Model
     inline void SetPositionalConstraint(PositionalConstraint&& value) { m_positionalConstraintHasBeenSet = true; m_positionalConstraint = std::move(value); }
 
     /**
-     * <p>The area within the portion of a web request that you want WAF to search for
-     * <code>SearchString</code>. Valid values include the following:</p> <p>
+     * <p>The area within the portion of the web request that you want WAF to search
+     * for <code>SearchString</code>. Valid values include the following:</p> <p>
      * <b>CONTAINS</b> </p> <p>The specified part of the web request must include the
      * value of <code>SearchString</code>, but the location doesn't matter.</p> <p>
      * <b>CONTAINS_WORD</b> </p> <p>The specified part of the web request must include
@@ -435,8 +435,8 @@ namespace Model
     inline ByteMatchStatement& WithPositionalConstraint(const PositionalConstraint& value) { SetPositionalConstraint(value); return *this;}
 
     /**
-     * <p>The area within the portion of a web request that you want WAF to search for
-     * <code>SearchString</code>. Valid values include the following:</p> <p>
+     * <p>The area within the portion of the web request that you want WAF to search
+     * for <code>SearchString</code>. Valid values include the following:</p> <p>
      * <b>CONTAINS</b> </p> <p>The specified part of the web request must include the
      * value of <code>SearchString</code>, but the location doesn't matter.</p> <p>
      * <b>CONTAINS_WORD</b> </p> <p>The specified part of the web request must include

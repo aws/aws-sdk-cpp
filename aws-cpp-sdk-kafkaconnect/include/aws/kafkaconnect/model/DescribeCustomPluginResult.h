@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kafkaconnect/model/CustomPluginState.h>
 #include <aws/kafkaconnect/model/CustomPluginRevisionSummary.h>
+#include <aws/kafkaconnect/model/StateDescription.h>
 #include <utility>
 
 namespace Aws
@@ -225,6 +226,32 @@ namespace Model
      */
     inline DescribeCustomPluginResult& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * <p>Details about the state of a custom plugin.</p>
+     */
+    inline const StateDescription& GetStateDescription() const{ return m_stateDescription; }
+
+    /**
+     * <p>Details about the state of a custom plugin.</p>
+     */
+    inline void SetStateDescription(const StateDescription& value) { m_stateDescription = value; }
+
+    /**
+     * <p>Details about the state of a custom plugin.</p>
+     */
+    inline void SetStateDescription(StateDescription&& value) { m_stateDescription = std::move(value); }
+
+    /**
+     * <p>Details about the state of a custom plugin.</p>
+     */
+    inline DescribeCustomPluginResult& WithStateDescription(const StateDescription& value) { SetStateDescription(value); return *this;}
+
+    /**
+     * <p>Details about the state of a custom plugin.</p>
+     */
+    inline DescribeCustomPluginResult& WithStateDescription(StateDescription&& value) { SetStateDescription(std::move(value)); return *this;}
+
   private:
 
     Aws::Utils::DateTime m_creationTime;
@@ -238,6 +265,8 @@ namespace Model
     CustomPluginRevisionSummary m_latestRevision;
 
     Aws::String m_name;
+
+    StateDescription m_stateDescription;
   };
 
 } // namespace Model

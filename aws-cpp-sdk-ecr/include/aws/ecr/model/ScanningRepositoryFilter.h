@@ -25,7 +25,11 @@ namespace Model
 {
 
   /**
-   * <p>The details of a scanning repository filter.</p><p><h3>See Also:</h3>   <a
+   * <p>The details of a scanning repository filter. For more information on how to
+   * use filters, see <a
+   * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html#image-scanning-filters">Using
+   * filters</a> in the <i>Amazon Elastic Container Registry User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ScanningRepositoryFilter">AWS
    * API Reference</a></p>
    */

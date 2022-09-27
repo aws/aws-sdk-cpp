@@ -21,6 +21,8 @@ namespace Model
 MetricsSummary::MetricsSummary() : 
     m_meteredLinesOfCodeCount(0),
     m_meteredLinesOfCodeCountHasBeenSet(false),
+    m_suppressedLinesOfCodeCount(0),
+    m_suppressedLinesOfCodeCountHasBeenSet(false),
     m_findingsCount(0),
     m_findingsCountHasBeenSet(false)
 {
@@ -29,6 +31,8 @@ MetricsSummary::MetricsSummary() :
 MetricsSummary::MetricsSummary(JsonView jsonValue) : 
     m_meteredLinesOfCodeCount(0),
     m_meteredLinesOfCodeCountHasBeenSet(false),
+    m_suppressedLinesOfCodeCount(0),
+    m_suppressedLinesOfCodeCountHasBeenSet(false),
     m_findingsCount(0),
     m_findingsCountHasBeenSet(false)
 {
@@ -42,6 +46,13 @@ MetricsSummary& MetricsSummary::operator =(JsonView jsonValue)
     m_meteredLinesOfCodeCount = jsonValue.GetInt64("MeteredLinesOfCodeCount");
 
     m_meteredLinesOfCodeCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SuppressedLinesOfCodeCount"))
+  {
+    m_suppressedLinesOfCodeCount = jsonValue.GetInt64("SuppressedLinesOfCodeCount");
+
+    m_suppressedLinesOfCodeCountHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("FindingsCount"))
@@ -61,6 +72,12 @@ JsonValue MetricsSummary::Jsonize() const
   if(m_meteredLinesOfCodeCountHasBeenSet)
   {
    payload.WithInt64("MeteredLinesOfCodeCount", m_meteredLinesOfCodeCount);
+
+  }
+
+  if(m_suppressedLinesOfCodeCountHasBeenSet)
+  {
+   payload.WithInt64("SuppressedLinesOfCodeCount", m_suppressedLinesOfCodeCount);
 
   }
 

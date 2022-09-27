@@ -25,8 +25,9 @@ namespace Model
 
   /**
    * <p>Provides statistics for each data field imported into to an Amazon Forecast
-   * dataset with the <a>CreateDatasetImportJob</a> operation.</p><p><h3>See
-   * Also:</h3>   <a
+   * dataset with the <a
+   * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/Statistics">AWS
    * API Reference</a></p>
    */

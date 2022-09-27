@@ -71,6 +71,7 @@ namespace Aws
         static const int spot_fleet_request_HASH = HashingUtils::HashString("spot-fleet-request");
         static const int spot_instances_request_HASH = HashingUtils::HashString("spot-instances-request");
         static const int subnet_HASH = HashingUtils::HashString("subnet");
+        static const int subnet_cidr_reservation_HASH = HashingUtils::HashString("subnet-cidr-reservation");
         static const int traffic_mirror_filter_HASH = HashingUtils::HashString("traffic-mirror-filter");
         static const int traffic_mirror_session_HASH = HashingUtils::HashString("traffic-mirror-session");
         static const int traffic_mirror_target_HASH = HashingUtils::HashString("traffic-mirror-target");
@@ -296,6 +297,10 @@ namespace Aws
           {
             return ResourceType::subnet;
           }
+          else if (hashCode == subnet_cidr_reservation_HASH)
+          {
+            return ResourceType::subnet_cidr_reservation;
+          }
           else if (hashCode == traffic_mirror_filter_HASH)
           {
             return ResourceType::traffic_mirror_filter;
@@ -476,6 +481,8 @@ namespace Aws
             return "spot-instances-request";
           case ResourceType::subnet:
             return "subnet";
+          case ResourceType::subnet_cidr_reservation:
+            return "subnet-cidr-reservation";
           case ResourceType::traffic_mirror_filter:
             return "traffic-mirror-filter";
           case ResourceType::traffic_mirror_session:

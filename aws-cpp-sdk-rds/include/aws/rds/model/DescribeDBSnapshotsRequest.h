@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>The ID of the DB instance to retrieve the list of DB snapshots for. This
      * parameter can't be used in conjunction with <code>DBSnapshotIdentifier</code>.
-     * This parameter isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If
+     * This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBInstance.</p> </li> </ul>
      */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
@@ -52,7 +52,7 @@ namespace Model
     /**
      * <p>The ID of the DB instance to retrieve the list of DB snapshots for. This
      * parameter can't be used in conjunction with <code>DBSnapshotIdentifier</code>.
-     * This parameter isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If
+     * This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBInstance.</p> </li> </ul>
      */
     inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
@@ -60,7 +60,7 @@ namespace Model
     /**
      * <p>The ID of the DB instance to retrieve the list of DB snapshots for. This
      * parameter can't be used in conjunction with <code>DBSnapshotIdentifier</code>.
-     * This parameter isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If
+     * This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBInstance.</p> </li> </ul>
      */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
@@ -68,7 +68,7 @@ namespace Model
     /**
      * <p>The ID of the DB instance to retrieve the list of DB snapshots for. This
      * parameter can't be used in conjunction with <code>DBSnapshotIdentifier</code>.
-     * This parameter isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If
+     * This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBInstance.</p> </li> </ul>
      */
     inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::move(value); }
@@ -76,7 +76,7 @@ namespace Model
     /**
      * <p>The ID of the DB instance to retrieve the list of DB snapshots for. This
      * parameter can't be used in conjunction with <code>DBSnapshotIdentifier</code>.
-     * This parameter isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If
+     * This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBInstance.</p> </li> </ul>
      */
     inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
@@ -84,7 +84,7 @@ namespace Model
     /**
      * <p>The ID of the DB instance to retrieve the list of DB snapshots for. This
      * parameter can't be used in conjunction with <code>DBSnapshotIdentifier</code>.
-     * This parameter isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If
+     * This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBInstance.</p> </li> </ul>
      */
     inline DescribeDBSnapshotsRequest& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
@@ -92,7 +92,7 @@ namespace Model
     /**
      * <p>The ID of the DB instance to retrieve the list of DB snapshots for. This
      * parameter can't be used in conjunction with <code>DBSnapshotIdentifier</code>.
-     * This parameter isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If
+     * This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBInstance.</p> </li> </ul>
      */
     inline DescribeDBSnapshotsRequest& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(std::move(value)); return *this;}
@@ -100,16 +100,16 @@ namespace Model
     /**
      * <p>The ID of the DB instance to retrieve the list of DB snapshots for. This
      * parameter can't be used in conjunction with <code>DBSnapshotIdentifier</code>.
-     * This parameter isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If
+     * This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBInstance.</p> </li> </ul>
      */
     inline DescribeDBSnapshotsRequest& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
 
 
     /**
-     * <p> A specific DB snapshot identifier to describe. This parameter can't be used
+     * <p>A specific DB snapshot identifier to describe. This parameter can't be used
      * in conjunction with <code>DBInstanceIdentifier</code>. This value is stored as a
-     * lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
      * the identifier of an existing DBSnapshot.</p> </li> <li> <p>If this identifier
      * is for an automated snapshot, the <code>SnapshotType</code> parameter must also
      * be specified.</p> </li> </ul>
@@ -117,9 +117,9 @@ namespace Model
     inline const Aws::String& GetDBSnapshotIdentifier() const{ return m_dBSnapshotIdentifier; }
 
     /**
-     * <p> A specific DB snapshot identifier to describe. This parameter can't be used
+     * <p>A specific DB snapshot identifier to describe. This parameter can't be used
      * in conjunction with <code>DBInstanceIdentifier</code>. This value is stored as a
-     * lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
      * the identifier of an existing DBSnapshot.</p> </li> <li> <p>If this identifier
      * is for an automated snapshot, the <code>SnapshotType</code> parameter must also
      * be specified.</p> </li> </ul>
@@ -127,9 +127,9 @@ namespace Model
     inline bool DBSnapshotIdentifierHasBeenSet() const { return m_dBSnapshotIdentifierHasBeenSet; }
 
     /**
-     * <p> A specific DB snapshot identifier to describe. This parameter can't be used
+     * <p>A specific DB snapshot identifier to describe. This parameter can't be used
      * in conjunction with <code>DBInstanceIdentifier</code>. This value is stored as a
-     * lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
      * the identifier of an existing DBSnapshot.</p> </li> <li> <p>If this identifier
      * is for an automated snapshot, the <code>SnapshotType</code> parameter must also
      * be specified.</p> </li> </ul>
@@ -137,9 +137,9 @@ namespace Model
     inline void SetDBSnapshotIdentifier(const Aws::String& value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier = value; }
 
     /**
-     * <p> A specific DB snapshot identifier to describe. This parameter can't be used
+     * <p>A specific DB snapshot identifier to describe. This parameter can't be used
      * in conjunction with <code>DBInstanceIdentifier</code>. This value is stored as a
-     * lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
      * the identifier of an existing DBSnapshot.</p> </li> <li> <p>If this identifier
      * is for an automated snapshot, the <code>SnapshotType</code> parameter must also
      * be specified.</p> </li> </ul>
@@ -147,9 +147,9 @@ namespace Model
     inline void SetDBSnapshotIdentifier(Aws::String&& value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier = std::move(value); }
 
     /**
-     * <p> A specific DB snapshot identifier to describe. This parameter can't be used
+     * <p>A specific DB snapshot identifier to describe. This parameter can't be used
      * in conjunction with <code>DBInstanceIdentifier</code>. This value is stored as a
-     * lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
      * the identifier of an existing DBSnapshot.</p> </li> <li> <p>If this identifier
      * is for an automated snapshot, the <code>SnapshotType</code> parameter must also
      * be specified.</p> </li> </ul>
@@ -157,9 +157,9 @@ namespace Model
     inline void SetDBSnapshotIdentifier(const char* value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier.assign(value); }
 
     /**
-     * <p> A specific DB snapshot identifier to describe. This parameter can't be used
+     * <p>A specific DB snapshot identifier to describe. This parameter can't be used
      * in conjunction with <code>DBInstanceIdentifier</code>. This value is stored as a
-     * lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
      * the identifier of an existing DBSnapshot.</p> </li> <li> <p>If this identifier
      * is for an automated snapshot, the <code>SnapshotType</code> parameter must also
      * be specified.</p> </li> </ul>
@@ -167,9 +167,9 @@ namespace Model
     inline DescribeDBSnapshotsRequest& WithDBSnapshotIdentifier(const Aws::String& value) { SetDBSnapshotIdentifier(value); return *this;}
 
     /**
-     * <p> A specific DB snapshot identifier to describe. This parameter can't be used
+     * <p>A specific DB snapshot identifier to describe. This parameter can't be used
      * in conjunction with <code>DBInstanceIdentifier</code>. This value is stored as a
-     * lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
      * the identifier of an existing DBSnapshot.</p> </li> <li> <p>If this identifier
      * is for an automated snapshot, the <code>SnapshotType</code> parameter must also
      * be specified.</p> </li> </ul>
@@ -177,9 +177,9 @@ namespace Model
     inline DescribeDBSnapshotsRequest& WithDBSnapshotIdentifier(Aws::String&& value) { SetDBSnapshotIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p> A specific DB snapshot identifier to describe. This parameter can't be used
+     * <p>A specific DB snapshot identifier to describe. This parameter can't be used
      * in conjunction with <code>DBInstanceIdentifier</code>. This value is stored as a
-     * lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
      * the identifier of an existing DBSnapshot.</p> </li> <li> <p>If this identifier
      * is for an automated snapshot, the <code>SnapshotType</code> parameter must also
      * be specified.</p> </li> </ul>
@@ -518,103 +518,103 @@ namespace Model
 
 
     /**
-     * <p> The maximum number of records to include in the response. If more records
+     * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
-     * remaining results. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
+     * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
      * 100.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
 
     /**
-     * <p> The maximum number of records to include in the response. If more records
+     * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
-     * remaining results. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
+     * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
      * 100.</p>
      */
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
 
     /**
-     * <p> The maximum number of records to include in the response. If more records
+     * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
-     * remaining results. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
+     * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
      * 100.</p>
      */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
-     * <p> The maximum number of records to include in the response. If more records
+     * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
-     * remaining results. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
+     * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
      * 100.</p>
      */
     inline DescribeDBSnapshotsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeDBSnapshots</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>. </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeDBSnapshots</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>. </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeDBSnapshots</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>. </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeDBSnapshots</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>. </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeDBSnapshots</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>. </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeDBSnapshots</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>. </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline DescribeDBSnapshotsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeDBSnapshots</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>. </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline DescribeDBSnapshotsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeDBSnapshots</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>. </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline DescribeDBSnapshotsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 

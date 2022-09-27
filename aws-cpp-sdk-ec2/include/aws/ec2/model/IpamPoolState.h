@@ -24,7 +24,10 @@ namespace Model
     modify_failed,
     delete_in_progress,
     delete_complete,
-    delete_failed
+    delete_failed,
+    isolate_in_progress,
+    isolate_complete,
+    restore_in_progress
   };
 
 namespace IpamPoolStateMapper

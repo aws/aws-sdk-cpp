@@ -249,7 +249,7 @@ namespace Model
      * new share identifiers. If this parameter isn't provided for a fair share job
      * queue, no vCPU capacity is reserved.</p>  <p>This parameter is only
      * supported when the <code>type</code> parameter is set to
-     * <code>UNMANAGED</code>/</p> 
+     * <code>UNMANAGED</code>.</p> 
      */
     inline int GetUnmanagedvCpus() const{ return m_unmanagedvCpus; }
 
@@ -259,7 +259,7 @@ namespace Model
      * new share identifiers. If this parameter isn't provided for a fair share job
      * queue, no vCPU capacity is reserved.</p>  <p>This parameter is only
      * supported when the <code>type</code> parameter is set to
-     * <code>UNMANAGED</code>/</p> 
+     * <code>UNMANAGED</code>.</p> 
      */
     inline bool UnmanagedvCpusHasBeenSet() const { return m_unmanagedvCpusHasBeenSet; }
 
@@ -269,7 +269,7 @@ namespace Model
      * new share identifiers. If this parameter isn't provided for a fair share job
      * queue, no vCPU capacity is reserved.</p>  <p>This parameter is only
      * supported when the <code>type</code> parameter is set to
-     * <code>UNMANAGED</code>/</p> 
+     * <code>UNMANAGED</code>.</p> 
      */
     inline void SetUnmanagedvCpus(int value) { m_unmanagedvCpusHasBeenSet = true; m_unmanagedvCpus = value; }
 
@@ -279,7 +279,7 @@ namespace Model
      * new share identifiers. If this parameter isn't provided for a fair share job
      * queue, no vCPU capacity is reserved.</p>  <p>This parameter is only
      * supported when the <code>type</code> parameter is set to
-     * <code>UNMANAGED</code>/</p> 
+     * <code>UNMANAGED</code>.</p> 
      */
     inline CreateComputeEnvironmentRequest& WithUnmanagedvCpus(int value) { SetUnmanagedvCpus(value); return *this;}
 

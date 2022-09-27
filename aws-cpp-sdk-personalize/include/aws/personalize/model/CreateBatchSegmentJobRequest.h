@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/personalize/model/BatchSegmentJobInput.h>
 #include <aws/personalize/model/BatchSegmentJobOutput.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/personalize/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -128,49 +130,65 @@ namespace Model
 
     /**
      * <p>The ARN of the filter to apply to the batch segment job. For more information
-     * on using filters, see <a>filter-batch</a>.</p>
+     * on using filters, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering
+     * batch recommendations</a>.</p>
      */
     inline const Aws::String& GetFilterArn() const{ return m_filterArn; }
 
     /**
      * <p>The ARN of the filter to apply to the batch segment job. For more information
-     * on using filters, see <a>filter-batch</a>.</p>
+     * on using filters, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering
+     * batch recommendations</a>.</p>
      */
     inline bool FilterArnHasBeenSet() const { return m_filterArnHasBeenSet; }
 
     /**
      * <p>The ARN of the filter to apply to the batch segment job. For more information
-     * on using filters, see <a>filter-batch</a>.</p>
+     * on using filters, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering
+     * batch recommendations</a>.</p>
      */
     inline void SetFilterArn(const Aws::String& value) { m_filterArnHasBeenSet = true; m_filterArn = value; }
 
     /**
      * <p>The ARN of the filter to apply to the batch segment job. For more information
-     * on using filters, see <a>filter-batch</a>.</p>
+     * on using filters, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering
+     * batch recommendations</a>.</p>
      */
     inline void SetFilterArn(Aws::String&& value) { m_filterArnHasBeenSet = true; m_filterArn = std::move(value); }
 
     /**
      * <p>The ARN of the filter to apply to the batch segment job. For more information
-     * on using filters, see <a>filter-batch</a>.</p>
+     * on using filters, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering
+     * batch recommendations</a>.</p>
      */
     inline void SetFilterArn(const char* value) { m_filterArnHasBeenSet = true; m_filterArn.assign(value); }
 
     /**
      * <p>The ARN of the filter to apply to the batch segment job. For more information
-     * on using filters, see <a>filter-batch</a>.</p>
+     * on using filters, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering
+     * batch recommendations</a>.</p>
      */
     inline CreateBatchSegmentJobRequest& WithFilterArn(const Aws::String& value) { SetFilterArn(value); return *this;}
 
     /**
      * <p>The ARN of the filter to apply to the batch segment job. For more information
-     * on using filters, see <a>filter-batch</a>.</p>
+     * on using filters, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering
+     * batch recommendations</a>.</p>
      */
     inline CreateBatchSegmentJobRequest& WithFilterArn(Aws::String&& value) { SetFilterArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the filter to apply to the batch segment job. For more information
-     * on using filters, see <a>filter-batch</a>.</p>
+     * on using filters, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering
+     * batch recommendations</a>.</p>
      */
     inline CreateBatchSegmentJobRequest& WithFilterArn(const char* value) { SetFilterArn(value); return *this;}
 
@@ -324,6 +342,63 @@ namespace Model
      */
     inline CreateBatchSegmentJobRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the batch segment job.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the batch segment job.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the batch segment job.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the batch segment job.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the batch segment job.</p>
+     */
+    inline CreateBatchSegmentJobRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the batch segment job.</p>
+     */
+    inline CreateBatchSegmentJobRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the batch segment job.</p>
+     */
+    inline CreateBatchSegmentJobRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the batch segment job.</p>
+     */
+    inline CreateBatchSegmentJobRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_jobName;
@@ -346,6 +421,9 @@ namespace Model
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

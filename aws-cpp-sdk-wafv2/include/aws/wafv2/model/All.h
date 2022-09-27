@@ -23,10 +23,9 @@ namespace Model
 
   /**
    * <p>Inspect all of the elements that WAF has parsed and extracted from the web
-   * request JSON body that are within the <a>JsonBody</a> <code>MatchScope</code>.
-   * This is used with the <a>FieldToMatch</a> option <code>JsonBody</code>. </p>
-   * <p>This is used only to indicate the web request component for WAF to inspect,
-   * in the <a>FieldToMatch</a> specification. </p> <p>JSON specification:
+   * request component that you've identified in your <a>FieldToMatch</a>
+   * specifications. </p> <p>This is used only in the <a>FieldToMatch</a>
+   * specification for some web request component types. </p> <p>JSON specification:
    * <code>"All": {}</code> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/All">AWS API
    * Reference</a></p>

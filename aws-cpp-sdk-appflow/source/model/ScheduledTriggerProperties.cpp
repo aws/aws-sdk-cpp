@@ -27,7 +27,9 @@ ScheduledTriggerProperties::ScheduledTriggerProperties() :
     m_timezoneHasBeenSet(false),
     m_scheduleOffset(0),
     m_scheduleOffsetHasBeenSet(false),
-    m_firstExecutionFromHasBeenSet(false)
+    m_firstExecutionFromHasBeenSet(false),
+    m_flowErrorDeactivationThreshold(0),
+    m_flowErrorDeactivationThresholdHasBeenSet(false)
 {
 }
 
@@ -40,7 +42,9 @@ ScheduledTriggerProperties::ScheduledTriggerProperties(JsonView jsonValue) :
     m_timezoneHasBeenSet(false),
     m_scheduleOffset(0),
     m_scheduleOffsetHasBeenSet(false),
-    m_firstExecutionFromHasBeenSet(false)
+    m_firstExecutionFromHasBeenSet(false),
+    m_flowErrorDeactivationThreshold(0),
+    m_flowErrorDeactivationThresholdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -96,6 +100,13 @@ ScheduledTriggerProperties& ScheduledTriggerProperties::operator =(JsonView json
     m_firstExecutionFromHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("flowErrorDeactivationThreshold"))
+  {
+    m_flowErrorDeactivationThreshold = jsonValue.GetInteger("flowErrorDeactivationThreshold");
+
+    m_flowErrorDeactivationThresholdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -139,6 +150,12 @@ JsonValue ScheduledTriggerProperties::Jsonize() const
   if(m_firstExecutionFromHasBeenSet)
   {
    payload.WithDouble("firstExecutionFrom", m_firstExecutionFrom.SecondsWithMSPrecision());
+  }
+
+  if(m_flowErrorDeactivationThresholdHasBeenSet)
+  {
+   payload.WithInteger("flowErrorDeactivationThreshold", m_flowErrorDeactivationThreshold);
+
   }
 
   return payload;

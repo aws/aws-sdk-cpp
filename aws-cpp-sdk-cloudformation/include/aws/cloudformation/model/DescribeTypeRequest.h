@@ -38,37 +38,37 @@ namespace Model
   public:
 
     /**
-     * <p>The kind of extension. </p> <p>Conditional: You must specify either
+     * <p>The kind of extension.</p> <p>Conditional: You must specify either
      * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline const RegistryType& GetType() const{ return m_type; }
 
     /**
-     * <p>The kind of extension. </p> <p>Conditional: You must specify either
+     * <p>The kind of extension.</p> <p>Conditional: You must specify either
      * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The kind of extension. </p> <p>Conditional: You must specify either
+     * <p>The kind of extension.</p> <p>Conditional: You must specify either
      * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline void SetType(const RegistryType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The kind of extension. </p> <p>Conditional: You must specify either
+     * <p>The kind of extension.</p> <p>Conditional: You must specify either
      * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline void SetType(RegistryType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The kind of extension. </p> <p>Conditional: You must specify either
+     * <p>The kind of extension.</p> <p>Conditional: You must specify either
      * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline DescribeTypeRequest& WithType(const RegistryType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The kind of extension. </p> <p>Conditional: You must specify either
+     * <p>The kind of extension.</p> <p>Conditional: You must specify either
      * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline DescribeTypeRequest& WithType(RegistryType&& value) { SetType(std::move(value)); return *this;}
@@ -263,49 +263,49 @@ namespace Model
 
     /**
      * <p>The publisher ID of the extension publisher.</p> <p>Extensions provided by
-     * Amazon are not assigned a publisher ID.</p>
+     * Amazon Web Services are not assigned a publisher ID.</p>
      */
     inline const Aws::String& GetPublisherId() const{ return m_publisherId; }
 
     /**
      * <p>The publisher ID of the extension publisher.</p> <p>Extensions provided by
-     * Amazon are not assigned a publisher ID.</p>
+     * Amazon Web Services are not assigned a publisher ID.</p>
      */
     inline bool PublisherIdHasBeenSet() const { return m_publisherIdHasBeenSet; }
 
     /**
      * <p>The publisher ID of the extension publisher.</p> <p>Extensions provided by
-     * Amazon are not assigned a publisher ID.</p>
+     * Amazon Web Services are not assigned a publisher ID.</p>
      */
     inline void SetPublisherId(const Aws::String& value) { m_publisherIdHasBeenSet = true; m_publisherId = value; }
 
     /**
      * <p>The publisher ID of the extension publisher.</p> <p>Extensions provided by
-     * Amazon are not assigned a publisher ID.</p>
+     * Amazon Web Services are not assigned a publisher ID.</p>
      */
     inline void SetPublisherId(Aws::String&& value) { m_publisherIdHasBeenSet = true; m_publisherId = std::move(value); }
 
     /**
      * <p>The publisher ID of the extension publisher.</p> <p>Extensions provided by
-     * Amazon are not assigned a publisher ID.</p>
+     * Amazon Web Services are not assigned a publisher ID.</p>
      */
     inline void SetPublisherId(const char* value) { m_publisherIdHasBeenSet = true; m_publisherId.assign(value); }
 
     /**
      * <p>The publisher ID of the extension publisher.</p> <p>Extensions provided by
-     * Amazon are not assigned a publisher ID.</p>
+     * Amazon Web Services are not assigned a publisher ID.</p>
      */
     inline DescribeTypeRequest& WithPublisherId(const Aws::String& value) { SetPublisherId(value); return *this;}
 
     /**
      * <p>The publisher ID of the extension publisher.</p> <p>Extensions provided by
-     * Amazon are not assigned a publisher ID.</p>
+     * Amazon Web Services are not assigned a publisher ID.</p>
      */
     inline DescribeTypeRequest& WithPublisherId(Aws::String&& value) { SetPublisherId(std::move(value)); return *this;}
 
     /**
      * <p>The publisher ID of the extension publisher.</p> <p>Extensions provided by
-     * Amazon are not assigned a publisher ID.</p>
+     * Amazon Web Services are not assigned a publisher ID.</p>
      */
     inline DescribeTypeRequest& WithPublisherId(const char* value) { SetPublisherId(value); return *this;}
 

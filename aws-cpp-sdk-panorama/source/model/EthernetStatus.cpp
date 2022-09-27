@@ -19,31 +19,24 @@ namespace Model
 {
 
 EthernetStatus::EthernetStatus() : 
-    m_ipAddressHasBeenSet(false),
     m_connectionStatus(NetworkConnectionStatus::NOT_SET),
     m_connectionStatusHasBeenSet(false),
-    m_hwAddressHasBeenSet(false)
+    m_hwAddressHasBeenSet(false),
+    m_ipAddressHasBeenSet(false)
 {
 }
 
 EthernetStatus::EthernetStatus(JsonView jsonValue) : 
-    m_ipAddressHasBeenSet(false),
     m_connectionStatus(NetworkConnectionStatus::NOT_SET),
     m_connectionStatusHasBeenSet(false),
-    m_hwAddressHasBeenSet(false)
+    m_hwAddressHasBeenSet(false),
+    m_ipAddressHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 EthernetStatus& EthernetStatus::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("IpAddress"))
-  {
-    m_ipAddress = jsonValue.GetString("IpAddress");
-
-    m_ipAddressHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("ConnectionStatus"))
   {
     m_connectionStatus = NetworkConnectionStatusMapper::GetNetworkConnectionStatusForName(jsonValue.GetString("ConnectionStatus"));
@@ -58,18 +51,19 @@ EthernetStatus& EthernetStatus::operator =(JsonView jsonValue)
     m_hwAddressHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IpAddress"))
+  {
+    m_ipAddress = jsonValue.GetString("IpAddress");
+
+    m_ipAddressHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue EthernetStatus::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_ipAddressHasBeenSet)
-  {
-   payload.WithString("IpAddress", m_ipAddress);
-
-  }
 
   if(m_connectionStatusHasBeenSet)
   {
@@ -79,6 +73,12 @@ JsonValue EthernetStatus::Jsonize() const
   if(m_hwAddressHasBeenSet)
   {
    payload.WithString("HwAddress", m_hwAddress);
+
+  }
+
+  if(m_ipAddressHasBeenSet)
+  {
+   payload.WithString("IpAddress", m_ipAddress);
 
   }
 

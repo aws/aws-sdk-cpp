@@ -130,7 +130,12 @@ namespace Model
     AWS_Kinesis_StreamConsumer,
     AWS_CodeDeploy_Application,
     AWS_CodeDeploy_DeploymentConfig,
-    AWS_CodeDeploy_DeploymentGroup
+    AWS_CodeDeploy_DeploymentGroup,
+    AWS_EC2_LaunchTemplate,
+    AWS_ECR_PublicRepository,
+    AWS_GuardDuty_Detector,
+    AWS_EMR_SecurityConfiguration,
+    AWS_SageMaker_CodeRepository
   };
 
 namespace ResourceTypeMapper

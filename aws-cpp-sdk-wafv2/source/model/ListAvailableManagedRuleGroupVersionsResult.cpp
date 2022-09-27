@@ -43,6 +43,12 @@ ListAvailableManagedRuleGroupVersionsResult& ListAvailableManagedRuleGroupVersio
     }
   }
 
+  if(jsonValue.ValueExists("CurrentDefaultVersion"))
+  {
+    m_currentDefaultVersion = jsonValue.GetString("CurrentDefaultVersion");
+
+  }
+
 
 
   return *this;

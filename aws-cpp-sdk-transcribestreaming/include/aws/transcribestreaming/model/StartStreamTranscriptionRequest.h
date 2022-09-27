@@ -99,30 +99,34 @@ namespace Model
 
 
     /**
-     * <p>The sample rate, in Hertz (Hz), of the input audio. We suggest that you use
-     * 8,000 Hz for low quality audio and 16,000 Hz or higher for high quality
-     * audio.</p>
+     * <p>The sample rate of the input audio (in Hertz). Low-quality audio, such as
+     * telephone audio, is typically around 8,000 Hz. High-quality audio typically
+     * ranges from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must
+     * match that of your audio.</p>
      */
     inline int GetMediaSampleRateHertz() const{ return m_mediaSampleRateHertz; }
 
     /**
-     * <p>The sample rate, in Hertz (Hz), of the input audio. We suggest that you use
-     * 8,000 Hz for low quality audio and 16,000 Hz or higher for high quality
-     * audio.</p>
+     * <p>The sample rate of the input audio (in Hertz). Low-quality audio, such as
+     * telephone audio, is typically around 8,000 Hz. High-quality audio typically
+     * ranges from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must
+     * match that of your audio.</p>
      */
     inline bool MediaSampleRateHertzHasBeenSet() const { return m_mediaSampleRateHertzHasBeenSet; }
 
     /**
-     * <p>The sample rate, in Hertz (Hz), of the input audio. We suggest that you use
-     * 8,000 Hz for low quality audio and 16,000 Hz or higher for high quality
-     * audio.</p>
+     * <p>The sample rate of the input audio (in Hertz). Low-quality audio, such as
+     * telephone audio, is typically around 8,000 Hz. High-quality audio typically
+     * ranges from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must
+     * match that of your audio.</p>
      */
     inline void SetMediaSampleRateHertz(int value) { m_mediaSampleRateHertzHasBeenSet = true; m_mediaSampleRateHertz = value; }
 
     /**
-     * <p>The sample rate, in Hertz (Hz), of the input audio. We suggest that you use
-     * 8,000 Hz for low quality audio and 16,000 Hz or higher for high quality
-     * audio.</p>
+     * <p>The sample rate of the input audio (in Hertz). Low-quality audio, such as
+     * telephone audio, is typically around 8,000 Hz. High-quality audio typically
+     * ranges from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must
+     * match that of your audio.</p>
      */
     inline StartStreamTranscriptionRequest& WithMediaSampleRateHertz(int value) { SetMediaSampleRateHertz(value); return *this;}
 
@@ -159,42 +163,82 @@ namespace Model
 
 
     /**
-     * <p>The name of the vocabulary to use when processing the transcription job.</p>
+     * <p>The name of the custom vocabulary you want to use with your
+     * transcription.</p> <p>This operation is not intended for use in conjunction with
+     * the <code>IdentifyLanguage</code> operation. If you're using
+     * <code>IdentifyLanguage</code> in your request and want to use one or more custom
+     * vocabularies with your transcription, use the <code>VocabularyNames</code>
+     * operation instead.</p>
      */
     inline const Aws::String& GetVocabularyName() const{ return m_vocabularyName; }
 
     /**
-     * <p>The name of the vocabulary to use when processing the transcription job.</p>
+     * <p>The name of the custom vocabulary you want to use with your
+     * transcription.</p> <p>This operation is not intended for use in conjunction with
+     * the <code>IdentifyLanguage</code> operation. If you're using
+     * <code>IdentifyLanguage</code> in your request and want to use one or more custom
+     * vocabularies with your transcription, use the <code>VocabularyNames</code>
+     * operation instead.</p>
      */
     inline bool VocabularyNameHasBeenSet() const { return m_vocabularyNameHasBeenSet; }
 
     /**
-     * <p>The name of the vocabulary to use when processing the transcription job.</p>
+     * <p>The name of the custom vocabulary you want to use with your
+     * transcription.</p> <p>This operation is not intended for use in conjunction with
+     * the <code>IdentifyLanguage</code> operation. If you're using
+     * <code>IdentifyLanguage</code> in your request and want to use one or more custom
+     * vocabularies with your transcription, use the <code>VocabularyNames</code>
+     * operation instead.</p>
      */
     inline void SetVocabularyName(const Aws::String& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = value; }
 
     /**
-     * <p>The name of the vocabulary to use when processing the transcription job.</p>
+     * <p>The name of the custom vocabulary you want to use with your
+     * transcription.</p> <p>This operation is not intended for use in conjunction with
+     * the <code>IdentifyLanguage</code> operation. If you're using
+     * <code>IdentifyLanguage</code> in your request and want to use one or more custom
+     * vocabularies with your transcription, use the <code>VocabularyNames</code>
+     * operation instead.</p>
      */
     inline void SetVocabularyName(Aws::String&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::move(value); }
 
     /**
-     * <p>The name of the vocabulary to use when processing the transcription job.</p>
+     * <p>The name of the custom vocabulary you want to use with your
+     * transcription.</p> <p>This operation is not intended for use in conjunction with
+     * the <code>IdentifyLanguage</code> operation. If you're using
+     * <code>IdentifyLanguage</code> in your request and want to use one or more custom
+     * vocabularies with your transcription, use the <code>VocabularyNames</code>
+     * operation instead.</p>
      */
     inline void SetVocabularyName(const char* value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName.assign(value); }
 
     /**
-     * <p>The name of the vocabulary to use when processing the transcription job.</p>
+     * <p>The name of the custom vocabulary you want to use with your
+     * transcription.</p> <p>This operation is not intended for use in conjunction with
+     * the <code>IdentifyLanguage</code> operation. If you're using
+     * <code>IdentifyLanguage</code> in your request and want to use one or more custom
+     * vocabularies with your transcription, use the <code>VocabularyNames</code>
+     * operation instead.</p>
      */
     inline StartStreamTranscriptionRequest& WithVocabularyName(const Aws::String& value) { SetVocabularyName(value); return *this;}
 
     /**
-     * <p>The name of the vocabulary to use when processing the transcription job.</p>
+     * <p>The name of the custom vocabulary you want to use with your
+     * transcription.</p> <p>This operation is not intended for use in conjunction with
+     * the <code>IdentifyLanguage</code> operation. If you're using
+     * <code>IdentifyLanguage</code> in your request and want to use one or more custom
+     * vocabularies with your transcription, use the <code>VocabularyNames</code>
+     * operation instead.</p>
      */
     inline StartStreamTranscriptionRequest& WithVocabularyName(Aws::String&& value) { SetVocabularyName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the vocabulary to use when processing the transcription job.</p>
+     * <p>The name of the custom vocabulary you want to use with your
+     * transcription.</p> <p>This operation is not intended for use in conjunction with
+     * the <code>IdentifyLanguage</code> operation. If you're using
+     * <code>IdentifyLanguage</code> in your request and want to use one or more custom
+     * vocabularies with your transcription, use the <code>VocabularyNames</code>
+     * operation instead.</p>
      */
     inline StartStreamTranscriptionRequest& WithVocabularyName(const char* value) { SetVocabularyName(value); return *this;}
 
@@ -276,50 +320,82 @@ namespace Model
 
 
     /**
-     * <p>The name of the vocabulary filter you've created that is unique to your
-     * account. Provide the name in this field to successfully use it in a stream.</p>
+     * <p>The name of the vocabulary filter you want to use with your
+     * transcription.</p> <p>This operation is not intended for use in conjunction with
+     * the <code>IdentifyLanguage</code> operation. If you're using
+     * <code>IdentifyLanguage</code> in your request and want to use one or more
+     * vocabulary filters with your transcription, use the
+     * <code>VocabularyFilterNames</code> operation instead.</p>
      */
     inline const Aws::String& GetVocabularyFilterName() const{ return m_vocabularyFilterName; }
 
     /**
-     * <p>The name of the vocabulary filter you've created that is unique to your
-     * account. Provide the name in this field to successfully use it in a stream.</p>
+     * <p>The name of the vocabulary filter you want to use with your
+     * transcription.</p> <p>This operation is not intended for use in conjunction with
+     * the <code>IdentifyLanguage</code> operation. If you're using
+     * <code>IdentifyLanguage</code> in your request and want to use one or more
+     * vocabulary filters with your transcription, use the
+     * <code>VocabularyFilterNames</code> operation instead.</p>
      */
     inline bool VocabularyFilterNameHasBeenSet() const { return m_vocabularyFilterNameHasBeenSet; }
 
     /**
-     * <p>The name of the vocabulary filter you've created that is unique to your
-     * account. Provide the name in this field to successfully use it in a stream.</p>
+     * <p>The name of the vocabulary filter you want to use with your
+     * transcription.</p> <p>This operation is not intended for use in conjunction with
+     * the <code>IdentifyLanguage</code> operation. If you're using
+     * <code>IdentifyLanguage</code> in your request and want to use one or more
+     * vocabulary filters with your transcription, use the
+     * <code>VocabularyFilterNames</code> operation instead.</p>
      */
     inline void SetVocabularyFilterName(const Aws::String& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = value; }
 
     /**
-     * <p>The name of the vocabulary filter you've created that is unique to your
-     * account. Provide the name in this field to successfully use it in a stream.</p>
+     * <p>The name of the vocabulary filter you want to use with your
+     * transcription.</p> <p>This operation is not intended for use in conjunction with
+     * the <code>IdentifyLanguage</code> operation. If you're using
+     * <code>IdentifyLanguage</code> in your request and want to use one or more
+     * vocabulary filters with your transcription, use the
+     * <code>VocabularyFilterNames</code> operation instead.</p>
      */
     inline void SetVocabularyFilterName(Aws::String&& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = std::move(value); }
 
     /**
-     * <p>The name of the vocabulary filter you've created that is unique to your
-     * account. Provide the name in this field to successfully use it in a stream.</p>
+     * <p>The name of the vocabulary filter you want to use with your
+     * transcription.</p> <p>This operation is not intended for use in conjunction with
+     * the <code>IdentifyLanguage</code> operation. If you're using
+     * <code>IdentifyLanguage</code> in your request and want to use one or more
+     * vocabulary filters with your transcription, use the
+     * <code>VocabularyFilterNames</code> operation instead.</p>
      */
     inline void SetVocabularyFilterName(const char* value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName.assign(value); }
 
     /**
-     * <p>The name of the vocabulary filter you've created that is unique to your
-     * account. Provide the name in this field to successfully use it in a stream.</p>
+     * <p>The name of the vocabulary filter you want to use with your
+     * transcription.</p> <p>This operation is not intended for use in conjunction with
+     * the <code>IdentifyLanguage</code> operation. If you're using
+     * <code>IdentifyLanguage</code> in your request and want to use one or more
+     * vocabulary filters with your transcription, use the
+     * <code>VocabularyFilterNames</code> operation instead.</p>
      */
     inline StartStreamTranscriptionRequest& WithVocabularyFilterName(const Aws::String& value) { SetVocabularyFilterName(value); return *this;}
 
     /**
-     * <p>The name of the vocabulary filter you've created that is unique to your
-     * account. Provide the name in this field to successfully use it in a stream.</p>
+     * <p>The name of the vocabulary filter you want to use with your
+     * transcription.</p> <p>This operation is not intended for use in conjunction with
+     * the <code>IdentifyLanguage</code> operation. If you're using
+     * <code>IdentifyLanguage</code> in your request and want to use one or more
+     * vocabulary filters with your transcription, use the
+     * <code>VocabularyFilterNames</code> operation instead.</p>
      */
     inline StartStreamTranscriptionRequest& WithVocabularyFilterName(Aws::String&& value) { SetVocabularyFilterName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the vocabulary filter you've created that is unique to your
-     * account. Provide the name in this field to successfully use it in a stream.</p>
+     * <p>The name of the vocabulary filter you want to use with your
+     * transcription.</p> <p>This operation is not intended for use in conjunction with
+     * the <code>IdentifyLanguage</code> operation. If you're using
+     * <code>IdentifyLanguage</code> in your request and want to use one or more
+     * vocabulary filters with your transcription, use the
+     * <code>VocabularyFilterNames</code> operation instead.</p>
      */
     inline StartStreamTranscriptionRequest& WithVocabularyFilterName(const char* value) { SetVocabularyFilterName(value); return *this;}
 
@@ -415,9 +491,7 @@ namespace Model
      * channel separately, then merges the transcription output of each channel into a
      * single transcription.</p> <p>Amazon Transcribe also produces a transcription of
      * each item. An item includes the start time, end time, and any alternative
-     * transcriptions.</p> <p>You can't set both <code>ShowSpeakerLabel</code> and
-     * <code>EnableChannelIdentification</code> in the same request. If you set both,
-     * your request returns a <code>BadRequestException</code>.</p>
+     * transcriptions.</p>
      */
     inline bool GetEnableChannelIdentification() const{ return m_enableChannelIdentification; }
 
@@ -426,9 +500,7 @@ namespace Model
      * channel separately, then merges the transcription output of each channel into a
      * single transcription.</p> <p>Amazon Transcribe also produces a transcription of
      * each item. An item includes the start time, end time, and any alternative
-     * transcriptions.</p> <p>You can't set both <code>ShowSpeakerLabel</code> and
-     * <code>EnableChannelIdentification</code> in the same request. If you set both,
-     * your request returns a <code>BadRequestException</code>.</p>
+     * transcriptions.</p>
      */
     inline bool EnableChannelIdentificationHasBeenSet() const { return m_enableChannelIdentificationHasBeenSet; }
 
@@ -437,9 +509,7 @@ namespace Model
      * channel separately, then merges the transcription output of each channel into a
      * single transcription.</p> <p>Amazon Transcribe also produces a transcription of
      * each item. An item includes the start time, end time, and any alternative
-     * transcriptions.</p> <p>You can't set both <code>ShowSpeakerLabel</code> and
-     * <code>EnableChannelIdentification</code> in the same request. If you set both,
-     * your request returns a <code>BadRequestException</code>.</p>
+     * transcriptions.</p>
      */
     inline void SetEnableChannelIdentification(bool value) { m_enableChannelIdentificationHasBeenSet = true; m_enableChannelIdentification = value; }
 
@@ -448,9 +518,7 @@ namespace Model
      * channel separately, then merges the transcription output of each channel into a
      * single transcription.</p> <p>Amazon Transcribe also produces a transcription of
      * each item. An item includes the start time, end time, and any alternative
-     * transcriptions.</p> <p>You can't set both <code>ShowSpeakerLabel</code> and
-     * <code>EnableChannelIdentification</code> in the same request. If you set both,
-     * your request returns a <code>BadRequestException</code>.</p>
+     * transcriptions.</p>
      */
     inline StartStreamTranscriptionRequest& WithEnableChannelIdentification(bool value) { SetEnableChannelIdentification(value); return *this;}
 
@@ -1000,6 +1068,200 @@ namespace Model
      */
     inline StartStreamTranscriptionRequest& WithPreferredLanguage(LanguageCode&& value) { SetPreferredLanguage(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The names of the custom vocabularies you want to use with your
+     * transcription.</p> <p>Note that if the custom vocabularies you specify are in
+     * languages that don't match the language identified in your media, your job
+     * fails.</p> <p>This operation is only intended for use in conjunction with the
+     * <code>IdentifyLanguage</code> operation. If you're not using
+     * <code>IdentifyLanguage</code> in your request and want to use a custom
+     * vocabulary with your transcription, use the <code>VocabularyName</code>
+     * operation instead.</p>
+     */
+    inline const Aws::String& GetVocabularyNames() const{ return m_vocabularyNames; }
+
+    /**
+     * <p>The names of the custom vocabularies you want to use with your
+     * transcription.</p> <p>Note that if the custom vocabularies you specify are in
+     * languages that don't match the language identified in your media, your job
+     * fails.</p> <p>This operation is only intended for use in conjunction with the
+     * <code>IdentifyLanguage</code> operation. If you're not using
+     * <code>IdentifyLanguage</code> in your request and want to use a custom
+     * vocabulary with your transcription, use the <code>VocabularyName</code>
+     * operation instead.</p>
+     */
+    inline bool VocabularyNamesHasBeenSet() const { return m_vocabularyNamesHasBeenSet; }
+
+    /**
+     * <p>The names of the custom vocabularies you want to use with your
+     * transcription.</p> <p>Note that if the custom vocabularies you specify are in
+     * languages that don't match the language identified in your media, your job
+     * fails.</p> <p>This operation is only intended for use in conjunction with the
+     * <code>IdentifyLanguage</code> operation. If you're not using
+     * <code>IdentifyLanguage</code> in your request and want to use a custom
+     * vocabulary with your transcription, use the <code>VocabularyName</code>
+     * operation instead.</p>
+     */
+    inline void SetVocabularyNames(const Aws::String& value) { m_vocabularyNamesHasBeenSet = true; m_vocabularyNames = value; }
+
+    /**
+     * <p>The names of the custom vocabularies you want to use with your
+     * transcription.</p> <p>Note that if the custom vocabularies you specify are in
+     * languages that don't match the language identified in your media, your job
+     * fails.</p> <p>This operation is only intended for use in conjunction with the
+     * <code>IdentifyLanguage</code> operation. If you're not using
+     * <code>IdentifyLanguage</code> in your request and want to use a custom
+     * vocabulary with your transcription, use the <code>VocabularyName</code>
+     * operation instead.</p>
+     */
+    inline void SetVocabularyNames(Aws::String&& value) { m_vocabularyNamesHasBeenSet = true; m_vocabularyNames = std::move(value); }
+
+    /**
+     * <p>The names of the custom vocabularies you want to use with your
+     * transcription.</p> <p>Note that if the custom vocabularies you specify are in
+     * languages that don't match the language identified in your media, your job
+     * fails.</p> <p>This operation is only intended for use in conjunction with the
+     * <code>IdentifyLanguage</code> operation. If you're not using
+     * <code>IdentifyLanguage</code> in your request and want to use a custom
+     * vocabulary with your transcription, use the <code>VocabularyName</code>
+     * operation instead.</p>
+     */
+    inline void SetVocabularyNames(const char* value) { m_vocabularyNamesHasBeenSet = true; m_vocabularyNames.assign(value); }
+
+    /**
+     * <p>The names of the custom vocabularies you want to use with your
+     * transcription.</p> <p>Note that if the custom vocabularies you specify are in
+     * languages that don't match the language identified in your media, your job
+     * fails.</p> <p>This operation is only intended for use in conjunction with the
+     * <code>IdentifyLanguage</code> operation. If you're not using
+     * <code>IdentifyLanguage</code> in your request and want to use a custom
+     * vocabulary with your transcription, use the <code>VocabularyName</code>
+     * operation instead.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithVocabularyNames(const Aws::String& value) { SetVocabularyNames(value); return *this;}
+
+    /**
+     * <p>The names of the custom vocabularies you want to use with your
+     * transcription.</p> <p>Note that if the custom vocabularies you specify are in
+     * languages that don't match the language identified in your media, your job
+     * fails.</p> <p>This operation is only intended for use in conjunction with the
+     * <code>IdentifyLanguage</code> operation. If you're not using
+     * <code>IdentifyLanguage</code> in your request and want to use a custom
+     * vocabulary with your transcription, use the <code>VocabularyName</code>
+     * operation instead.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithVocabularyNames(Aws::String&& value) { SetVocabularyNames(std::move(value)); return *this;}
+
+    /**
+     * <p>The names of the custom vocabularies you want to use with your
+     * transcription.</p> <p>Note that if the custom vocabularies you specify are in
+     * languages that don't match the language identified in your media, your job
+     * fails.</p> <p>This operation is only intended for use in conjunction with the
+     * <code>IdentifyLanguage</code> operation. If you're not using
+     * <code>IdentifyLanguage</code> in your request and want to use a custom
+     * vocabulary with your transcription, use the <code>VocabularyName</code>
+     * operation instead.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithVocabularyNames(const char* value) { SetVocabularyNames(value); return *this;}
+
+
+    /**
+     * <p>The names of the vocabulary filters you want to use with your
+     * transcription.</p> <p>Note that if the vocabulary filters you specify are in
+     * languages that don't match the language identified in your media, your job
+     * fails.</p> <p>This operation is only intended for use in conjunction with the
+     * <code>IdentifyLanguage</code> operation. If you're not using
+     * <code>IdentifyLanguage</code> in your request and want to use a vocabulary
+     * filter with your transcription, use the <code>VocabularyFilterName</code>
+     * operation instead.</p>
+     */
+    inline const Aws::String& GetVocabularyFilterNames() const{ return m_vocabularyFilterNames; }
+
+    /**
+     * <p>The names of the vocabulary filters you want to use with your
+     * transcription.</p> <p>Note that if the vocabulary filters you specify are in
+     * languages that don't match the language identified in your media, your job
+     * fails.</p> <p>This operation is only intended for use in conjunction with the
+     * <code>IdentifyLanguage</code> operation. If you're not using
+     * <code>IdentifyLanguage</code> in your request and want to use a vocabulary
+     * filter with your transcription, use the <code>VocabularyFilterName</code>
+     * operation instead.</p>
+     */
+    inline bool VocabularyFilterNamesHasBeenSet() const { return m_vocabularyFilterNamesHasBeenSet; }
+
+    /**
+     * <p>The names of the vocabulary filters you want to use with your
+     * transcription.</p> <p>Note that if the vocabulary filters you specify are in
+     * languages that don't match the language identified in your media, your job
+     * fails.</p> <p>This operation is only intended for use in conjunction with the
+     * <code>IdentifyLanguage</code> operation. If you're not using
+     * <code>IdentifyLanguage</code> in your request and want to use a vocabulary
+     * filter with your transcription, use the <code>VocabularyFilterName</code>
+     * operation instead.</p>
+     */
+    inline void SetVocabularyFilterNames(const Aws::String& value) { m_vocabularyFilterNamesHasBeenSet = true; m_vocabularyFilterNames = value; }
+
+    /**
+     * <p>The names of the vocabulary filters you want to use with your
+     * transcription.</p> <p>Note that if the vocabulary filters you specify are in
+     * languages that don't match the language identified in your media, your job
+     * fails.</p> <p>This operation is only intended for use in conjunction with the
+     * <code>IdentifyLanguage</code> operation. If you're not using
+     * <code>IdentifyLanguage</code> in your request and want to use a vocabulary
+     * filter with your transcription, use the <code>VocabularyFilterName</code>
+     * operation instead.</p>
+     */
+    inline void SetVocabularyFilterNames(Aws::String&& value) { m_vocabularyFilterNamesHasBeenSet = true; m_vocabularyFilterNames = std::move(value); }
+
+    /**
+     * <p>The names of the vocabulary filters you want to use with your
+     * transcription.</p> <p>Note that if the vocabulary filters you specify are in
+     * languages that don't match the language identified in your media, your job
+     * fails.</p> <p>This operation is only intended for use in conjunction with the
+     * <code>IdentifyLanguage</code> operation. If you're not using
+     * <code>IdentifyLanguage</code> in your request and want to use a vocabulary
+     * filter with your transcription, use the <code>VocabularyFilterName</code>
+     * operation instead.</p>
+     */
+    inline void SetVocabularyFilterNames(const char* value) { m_vocabularyFilterNamesHasBeenSet = true; m_vocabularyFilterNames.assign(value); }
+
+    /**
+     * <p>The names of the vocabulary filters you want to use with your
+     * transcription.</p> <p>Note that if the vocabulary filters you specify are in
+     * languages that don't match the language identified in your media, your job
+     * fails.</p> <p>This operation is only intended for use in conjunction with the
+     * <code>IdentifyLanguage</code> operation. If you're not using
+     * <code>IdentifyLanguage</code> in your request and want to use a vocabulary
+     * filter with your transcription, use the <code>VocabularyFilterName</code>
+     * operation instead.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithVocabularyFilterNames(const Aws::String& value) { SetVocabularyFilterNames(value); return *this;}
+
+    /**
+     * <p>The names of the vocabulary filters you want to use with your
+     * transcription.</p> <p>Note that if the vocabulary filters you specify are in
+     * languages that don't match the language identified in your media, your job
+     * fails.</p> <p>This operation is only intended for use in conjunction with the
+     * <code>IdentifyLanguage</code> operation. If you're not using
+     * <code>IdentifyLanguage</code> in your request and want to use a vocabulary
+     * filter with your transcription, use the <code>VocabularyFilterName</code>
+     * operation instead.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithVocabularyFilterNames(Aws::String&& value) { SetVocabularyFilterNames(std::move(value)); return *this;}
+
+    /**
+     * <p>The names of the vocabulary filters you want to use with your
+     * transcription.</p> <p>Note that if the vocabulary filters you specify are in
+     * languages that don't match the language identified in your media, your job
+     * fails.</p> <p>This operation is only intended for use in conjunction with the
+     * <code>IdentifyLanguage</code> operation. If you're not using
+     * <code>IdentifyLanguage</code> in your request and want to use a vocabulary
+     * filter with your transcription, use the <code>VocabularyFilterName</code>
+     * operation instead.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithVocabularyFilterNames(const char* value) { SetVocabularyFilterNames(value); return *this;}
+
   private:
 
     LanguageCode m_languageCode;
@@ -1060,6 +1322,12 @@ namespace Model
 
     LanguageCode m_preferredLanguage;
     bool m_preferredLanguageHasBeenSet;
+
+    Aws::String m_vocabularyNames;
+    bool m_vocabularyNamesHasBeenSet;
+
+    Aws::String m_vocabularyFilterNames;
+    bool m_vocabularyFilterNamesHasBeenSet;
     Aws::Utils::Event::EventStreamDecoder m_decoder;
     StartStreamTranscriptionHandler m_handler;
 

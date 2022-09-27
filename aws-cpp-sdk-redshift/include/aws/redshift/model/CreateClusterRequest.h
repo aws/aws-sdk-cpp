@@ -541,8 +541,9 @@ namespace Model
      * characters in length.</p> </li> <li> <p>Must contain at least one uppercase
      * letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li>
      * <li> <p>Must contain one number.</p> </li> <li> <p>Can be any printable ASCII
-     * character (ASCII code 33 to 126) except ' (single quote), " (double quote), \,
-     * /, @, or space.</p> </li> </ul>
+     * character (ASCII code 33-126) except <code>'</code> (single quote),
+     * <code>"</code> (double quote), <code>\</code>, <code>/</code>, or
+     * <code>@</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
@@ -552,8 +553,9 @@ namespace Model
      * characters in length.</p> </li> <li> <p>Must contain at least one uppercase
      * letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li>
      * <li> <p>Must contain one number.</p> </li> <li> <p>Can be any printable ASCII
-     * character (ASCII code 33 to 126) except ' (single quote), " (double quote), \,
-     * /, @, or space.</p> </li> </ul>
+     * character (ASCII code 33-126) except <code>'</code> (single quote),
+     * <code>"</code> (double quote), <code>\</code>, <code>/</code>, or
+     * <code>@</code>.</p> </li> </ul>
      */
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
 
@@ -563,8 +565,9 @@ namespace Model
      * characters in length.</p> </li> <li> <p>Must contain at least one uppercase
      * letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li>
      * <li> <p>Must contain one number.</p> </li> <li> <p>Can be any printable ASCII
-     * character (ASCII code 33 to 126) except ' (single quote), " (double quote), \,
-     * /, @, or space.</p> </li> </ul>
+     * character (ASCII code 33-126) except <code>'</code> (single quote),
+     * <code>"</code> (double quote), <code>\</code>, <code>/</code>, or
+     * <code>@</code>.</p> </li> </ul>
      */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
@@ -574,8 +577,9 @@ namespace Model
      * characters in length.</p> </li> <li> <p>Must contain at least one uppercase
      * letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li>
      * <li> <p>Must contain one number.</p> </li> <li> <p>Can be any printable ASCII
-     * character (ASCII code 33 to 126) except ' (single quote), " (double quote), \,
-     * /, @, or space.</p> </li> </ul>
+     * character (ASCII code 33-126) except <code>'</code> (single quote),
+     * <code>"</code> (double quote), <code>\</code>, <code>/</code>, or
+     * <code>@</code>.</p> </li> </ul>
      */
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
@@ -585,8 +589,9 @@ namespace Model
      * characters in length.</p> </li> <li> <p>Must contain at least one uppercase
      * letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li>
      * <li> <p>Must contain one number.</p> </li> <li> <p>Can be any printable ASCII
-     * character (ASCII code 33 to 126) except ' (single quote), " (double quote), \,
-     * /, @, or space.</p> </li> </ul>
+     * character (ASCII code 33-126) except <code>'</code> (single quote),
+     * <code>"</code> (double quote), <code>\</code>, <code>/</code>, or
+     * <code>@</code>.</p> </li> </ul>
      */
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
@@ -596,8 +601,9 @@ namespace Model
      * characters in length.</p> </li> <li> <p>Must contain at least one uppercase
      * letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li>
      * <li> <p>Must contain one number.</p> </li> <li> <p>Can be any printable ASCII
-     * character (ASCII code 33 to 126) except ' (single quote), " (double quote), \,
-     * /, @, or space.</p> </li> </ul>
+     * character (ASCII code 33-126) except <code>'</code> (single quote),
+     * <code>"</code> (double quote), <code>\</code>, <code>/</code>, or
+     * <code>@</code>.</p> </li> </ul>
      */
     inline CreateClusterRequest& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
@@ -607,8 +613,9 @@ namespace Model
      * characters in length.</p> </li> <li> <p>Must contain at least one uppercase
      * letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li>
      * <li> <p>Must contain one number.</p> </li> <li> <p>Can be any printable ASCII
-     * character (ASCII code 33 to 126) except ' (single quote), " (double quote), \,
-     * /, @, or space.</p> </li> </ul>
+     * character (ASCII code 33-126) except <code>'</code> (single quote),
+     * <code>"</code> (double quote), <code>\</code>, <code>/</code>, or
+     * <code>@</code>.</p> </li> </ul>
      */
     inline CreateClusterRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
@@ -618,8 +625,9 @@ namespace Model
      * characters in length.</p> </li> <li> <p>Must contain at least one uppercase
      * letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li>
      * <li> <p>Must contain one number.</p> </li> <li> <p>Can be any printable ASCII
-     * character (ASCII code 33 to 126) except ' (single quote), " (double quote), \,
-     * /, @, or space.</p> </li> </ul>
+     * character (ASCII code 33-126) except <code>'</code> (single quote),
+     * <code>"</code> (double quote), <code>\</code>, <code>/</code>, or
+     * <code>@</code>.</p> </li> </ul>
      */
     inline CreateClusterRequest& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 
@@ -1777,81 +1785,99 @@ namespace Model
     /**
      * <p>A list of Identity and Access Management (IAM) roles that can be used by the
      * cluster to access other Amazon Web Services services. You must supply the IAM
-     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
-     * associated with it at any time.</p>
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIamRoles() const{ return m_iamRoles; }
 
     /**
      * <p>A list of Identity and Access Management (IAM) roles that can be used by the
      * cluster to access other Amazon Web Services services. You must supply the IAM
-     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
-     * associated with it at any time.</p>
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline bool IamRolesHasBeenSet() const { return m_iamRolesHasBeenSet; }
 
     /**
      * <p>A list of Identity and Access Management (IAM) roles that can be used by the
      * cluster to access other Amazon Web Services services. You must supply the IAM
-     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
-     * associated with it at any time.</p>
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline void SetIamRoles(const Aws::Vector<Aws::String>& value) { m_iamRolesHasBeenSet = true; m_iamRoles = value; }
 
     /**
      * <p>A list of Identity and Access Management (IAM) roles that can be used by the
      * cluster to access other Amazon Web Services services. You must supply the IAM
-     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
-     * associated with it at any time.</p>
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline void SetIamRoles(Aws::Vector<Aws::String>&& value) { m_iamRolesHasBeenSet = true; m_iamRoles = std::move(value); }
 
     /**
      * <p>A list of Identity and Access Management (IAM) roles that can be used by the
      * cluster to access other Amazon Web Services services. You must supply the IAM
-     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
-     * associated with it at any time.</p>
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline CreateClusterRequest& WithIamRoles(const Aws::Vector<Aws::String>& value) { SetIamRoles(value); return *this;}
 
     /**
      * <p>A list of Identity and Access Management (IAM) roles that can be used by the
      * cluster to access other Amazon Web Services services. You must supply the IAM
-     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
-     * associated with it at any time.</p>
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline CreateClusterRequest& WithIamRoles(Aws::Vector<Aws::String>&& value) { SetIamRoles(std::move(value)); return *this;}
 
     /**
      * <p>A list of Identity and Access Management (IAM) roles that can be used by the
      * cluster to access other Amazon Web Services services. You must supply the IAM
-     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
-     * associated with it at any time.</p>
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline CreateClusterRequest& AddIamRoles(const Aws::String& value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(value); return *this; }
 
     /**
      * <p>A list of Identity and Access Management (IAM) roles that can be used by the
      * cluster to access other Amazon Web Services services. You must supply the IAM
-     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
-     * associated with it at any time.</p>
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline CreateClusterRequest& AddIamRoles(Aws::String&& value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of Identity and Access Management (IAM) roles that can be used by the
      * cluster to access other Amazon Web Services services. You must supply the IAM
-     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
-     * associated with it at any time.</p>
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline CreateClusterRequest& AddIamRoles(const char* value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(value); return *this; }
 
@@ -2088,6 +2114,55 @@ namespace Model
      */
     inline CreateClusterRequest& WithDefaultIamRoleArn(const char* value) { SetDefaultIamRoleArn(value); return *this;}
 
+
+    /**
+     * <p>A flag that specifies whether to load sample data once the cluster is
+     * created.</p>
+     */
+    inline const Aws::String& GetLoadSampleData() const{ return m_loadSampleData; }
+
+    /**
+     * <p>A flag that specifies whether to load sample data once the cluster is
+     * created.</p>
+     */
+    inline bool LoadSampleDataHasBeenSet() const { return m_loadSampleDataHasBeenSet; }
+
+    /**
+     * <p>A flag that specifies whether to load sample data once the cluster is
+     * created.</p>
+     */
+    inline void SetLoadSampleData(const Aws::String& value) { m_loadSampleDataHasBeenSet = true; m_loadSampleData = value; }
+
+    /**
+     * <p>A flag that specifies whether to load sample data once the cluster is
+     * created.</p>
+     */
+    inline void SetLoadSampleData(Aws::String&& value) { m_loadSampleDataHasBeenSet = true; m_loadSampleData = std::move(value); }
+
+    /**
+     * <p>A flag that specifies whether to load sample data once the cluster is
+     * created.</p>
+     */
+    inline void SetLoadSampleData(const char* value) { m_loadSampleDataHasBeenSet = true; m_loadSampleData.assign(value); }
+
+    /**
+     * <p>A flag that specifies whether to load sample data once the cluster is
+     * created.</p>
+     */
+    inline CreateClusterRequest& WithLoadSampleData(const Aws::String& value) { SetLoadSampleData(value); return *this;}
+
+    /**
+     * <p>A flag that specifies whether to load sample data once the cluster is
+     * created.</p>
+     */
+    inline CreateClusterRequest& WithLoadSampleData(Aws::String&& value) { SetLoadSampleData(std::move(value)); return *this;}
+
+    /**
+     * <p>A flag that specifies whether to load sample data once the cluster is
+     * created.</p>
+     */
+    inline CreateClusterRequest& WithLoadSampleData(const char* value) { SetLoadSampleData(value); return *this;}
+
   private:
 
     Aws::String m_dBName;
@@ -2188,6 +2263,9 @@ namespace Model
 
     Aws::String m_defaultIamRoleArn;
     bool m_defaultIamRoleArnHasBeenSet;
+
+    Aws::String m_loadSampleData;
+    bool m_loadSampleDataHasBeenSet;
   };
 
 } // namespace Model

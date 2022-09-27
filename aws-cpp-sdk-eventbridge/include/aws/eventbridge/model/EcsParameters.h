@@ -124,7 +124,7 @@ namespace Model
      * <p>Specifies the launch type on which your task is running. The launch type that
      * you specify here must match one of the launch type (compatibilities) of the
      * target task. The <code>FARGATE</code> value is supported only in the Regions
-     * where Fargate witt Amazon ECS is supported. For more information, see <a
+     * where Fargate with Amazon ECS is supported. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">Fargate
      * on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -135,7 +135,7 @@ namespace Model
      * <p>Specifies the launch type on which your task is running. The launch type that
      * you specify here must match one of the launch type (compatibilities) of the
      * target task. The <code>FARGATE</code> value is supported only in the Regions
-     * where Fargate witt Amazon ECS is supported. For more information, see <a
+     * where Fargate with Amazon ECS is supported. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">Fargate
      * on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -146,7 +146,7 @@ namespace Model
      * <p>Specifies the launch type on which your task is running. The launch type that
      * you specify here must match one of the launch type (compatibilities) of the
      * target task. The <code>FARGATE</code> value is supported only in the Regions
-     * where Fargate witt Amazon ECS is supported. For more information, see <a
+     * where Fargate with Amazon ECS is supported. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">Fargate
      * on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -157,7 +157,7 @@ namespace Model
      * <p>Specifies the launch type on which your task is running. The launch type that
      * you specify here must match one of the launch type (compatibilities) of the
      * target task. The <code>FARGATE</code> value is supported only in the Regions
-     * where Fargate witt Amazon ECS is supported. For more information, see <a
+     * where Fargate with Amazon ECS is supported. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">Fargate
      * on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -168,7 +168,7 @@ namespace Model
      * <p>Specifies the launch type on which your task is running. The launch type that
      * you specify here must match one of the launch type (compatibilities) of the
      * target task. The <code>FARGATE</code> value is supported only in the Regions
-     * where Fargate witt Amazon ECS is supported. For more information, see <a
+     * where Fargate with Amazon ECS is supported. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">Fargate
      * on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -179,7 +179,7 @@ namespace Model
      * <p>Specifies the launch type on which your task is running. The launch type that
      * you specify here must match one of the launch type (compatibilities) of the
      * target task. The <code>FARGATE</code> value is supported only in the Regions
-     * where Fargate witt Amazon ECS is supported. For more information, see <a
+     * where Fargate with Amazon ECS is supported. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">Fargate
      * on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>

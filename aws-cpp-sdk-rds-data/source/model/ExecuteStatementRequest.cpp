@@ -16,6 +16,8 @@ ExecuteStatementRequest::ExecuteStatementRequest() :
     m_continueAfterTimeout(false),
     m_continueAfterTimeoutHasBeenSet(false),
     m_databaseHasBeenSet(false),
+    m_formatRecordsAs(RecordsFormatType::NOT_SET),
+    m_formatRecordsAsHasBeenSet(false),
     m_includeResultMetadata(false),
     m_includeResultMetadataHasBeenSet(false),
     m_parametersHasBeenSet(false),
@@ -42,6 +44,11 @@ Aws::String ExecuteStatementRequest::SerializePayload() const
   {
    payload.WithString("database", m_database);
 
+  }
+
+  if(m_formatRecordsAsHasBeenSet)
+  {
+   payload.WithString("formatRecordsAs", RecordsFormatTypeMapper::GetNameForRecordsFormatType(m_formatRecordsAs));
   }
 
   if(m_includeResultMetadataHasBeenSet)

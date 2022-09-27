@@ -31,7 +31,6 @@
 #include <aws/appconfig/model/DeleteEnvironmentRequest.h>
 #include <aws/appconfig/model/DeleteHostedConfigurationVersionRequest.h>
 #include <aws/appconfig/model/GetApplicationRequest.h>
-#include <aws/appconfig/model/GetConfigurationRequest.h>
 #include <aws/appconfig/model/GetConfigurationProfileRequest.h>
 #include <aws/appconfig/model/GetDeploymentRequest.h>
 #include <aws/appconfig/model/GetDeploymentStrategyRequest.h>
@@ -492,56 +491,6 @@ void AppConfigClient::GetApplicationAsync(const GetApplicationRequest& request, 
 void AppConfigClient::GetApplicationAsyncHelper(const GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetApplication(request), context);
-}
-
-GetConfigurationOutcome AppConfigClient::GetConfiguration(const GetConfigurationRequest& request) const
-{
-  if (!request.ApplicationHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetConfiguration", "Required field: Application, is not set");
-    return GetConfigurationOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Application]", false));
-  }
-  if (!request.EnvironmentHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetConfiguration", "Required field: Environment, is not set");
-    return GetConfigurationOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Environment]", false));
-  }
-  if (!request.ConfigurationHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetConfiguration", "Required field: Configuration, is not set");
-    return GetConfigurationOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Configuration]", false));
-  }
-  if (!request.ClientIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetConfiguration", "Required field: ClientId, is not set");
-    return GetConfigurationOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClientId]", false));
-  }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/applications/");
-  uri.AddPathSegment(request.GetApplication());
-  uri.AddPathSegments("/environments/");
-  uri.AddPathSegment(request.GetEnvironment());
-  uri.AddPathSegments("/configurations/");
-  uri.AddPathSegment(request.GetConfiguration());
-  return GetConfigurationOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
-}
-
-GetConfigurationOutcomeCallable AppConfigClient::GetConfigurationCallable(const GetConfigurationRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< GetConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void AppConfigClient::GetConfigurationAsync(const GetConfigurationRequest& request, const GetConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->GetConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void AppConfigClient::GetConfigurationAsyncHelper(const GetConfigurationRequest& request, const GetConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetConfiguration(request), context);
 }
 
 GetConfigurationProfileOutcome AppConfigClient::GetConfigurationProfile(const GetConfigurationProfileRequest& request) const

@@ -198,7 +198,7 @@ namespace Model
      * <p>If you have a configuration file, you can then use the following OpenSSL
      * command. The <code>usr_cert</code> block in the configuration file contains your
      * X509 version 3 extensions. </p> <p> <code>openssl req -new -config
-     * openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days -365 -keyout
+     * openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days 365 -keyout
      * private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p> <p>Note: A
      * CSR must provide either a <i>subject name</i> or a <i>subject alternative
      * name</i> or the request will be rejected. </p>
@@ -213,7 +213,7 @@ namespace Model
      * <p>If you have a configuration file, you can then use the following OpenSSL
      * command. The <code>usr_cert</code> block in the configuration file contains your
      * X509 version 3 extensions. </p> <p> <code>openssl req -new -config
-     * openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days -365 -keyout
+     * openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days 365 -keyout
      * private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p> <p>Note: A
      * CSR must provide either a <i>subject name</i> or a <i>subject alternative
      * name</i> or the request will be rejected. </p>
@@ -228,7 +228,7 @@ namespace Model
      * <p>If you have a configuration file, you can then use the following OpenSSL
      * command. The <code>usr_cert</code> block in the configuration file contains your
      * X509 version 3 extensions. </p> <p> <code>openssl req -new -config
-     * openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days -365 -keyout
+     * openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days 365 -keyout
      * private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p> <p>Note: A
      * CSR must provide either a <i>subject name</i> or a <i>subject alternative
      * name</i> or the request will be rejected. </p>
@@ -243,7 +243,7 @@ namespace Model
      * <p>If you have a configuration file, you can then use the following OpenSSL
      * command. The <code>usr_cert</code> block in the configuration file contains your
      * X509 version 3 extensions. </p> <p> <code>openssl req -new -config
-     * openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days -365 -keyout
+     * openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days 365 -keyout
      * private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p> <p>Note: A
      * CSR must provide either a <i>subject name</i> or a <i>subject alternative
      * name</i> or the request will be rejected. </p>
@@ -258,7 +258,7 @@ namespace Model
      * <p>If you have a configuration file, you can then use the following OpenSSL
      * command. The <code>usr_cert</code> block in the configuration file contains your
      * X509 version 3 extensions. </p> <p> <code>openssl req -new -config
-     * openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days -365 -keyout
+     * openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days 365 -keyout
      * private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p> <p>Note: A
      * CSR must provide either a <i>subject name</i> or a <i>subject alternative
      * name</i> or the request will be rejected. </p>
@@ -273,7 +273,7 @@ namespace Model
      * <p>If you have a configuration file, you can then use the following OpenSSL
      * command. The <code>usr_cert</code> block in the configuration file contains your
      * X509 version 3 extensions. </p> <p> <code>openssl req -new -config
-     * openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days -365 -keyout
+     * openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days 365 -keyout
      * private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p> <p>Note: A
      * CSR must provide either a <i>subject name</i> or a <i>subject alternative
      * name</i> or the request will be rejected. </p>
@@ -285,7 +285,9 @@ namespace Model
      * <p>The name of the algorithm that will be used to sign the certificate to be
      * issued. </p> <p>This parameter should not be confused with the
      * <code>SigningAlgorithm</code> parameter used to sign a CSR in the
-     * <code>CreateCertificateAuthority</code> action.</p>
+     * <code>CreateCertificateAuthority</code> action.</p>  <p>The specified
+     * signing algorithm family (RSA or ECDSA) much match the algorithm family of the
+     * CA's secret key.</p> 
      */
     inline const SigningAlgorithm& GetSigningAlgorithm() const{ return m_signingAlgorithm; }
 
@@ -293,7 +295,9 @@ namespace Model
      * <p>The name of the algorithm that will be used to sign the certificate to be
      * issued. </p> <p>This parameter should not be confused with the
      * <code>SigningAlgorithm</code> parameter used to sign a CSR in the
-     * <code>CreateCertificateAuthority</code> action.</p>
+     * <code>CreateCertificateAuthority</code> action.</p>  <p>The specified
+     * signing algorithm family (RSA or ECDSA) much match the algorithm family of the
+     * CA's secret key.</p> 
      */
     inline bool SigningAlgorithmHasBeenSet() const { return m_signingAlgorithmHasBeenSet; }
 
@@ -301,7 +305,9 @@ namespace Model
      * <p>The name of the algorithm that will be used to sign the certificate to be
      * issued. </p> <p>This parameter should not be confused with the
      * <code>SigningAlgorithm</code> parameter used to sign a CSR in the
-     * <code>CreateCertificateAuthority</code> action.</p>
+     * <code>CreateCertificateAuthority</code> action.</p>  <p>The specified
+     * signing algorithm family (RSA or ECDSA) much match the algorithm family of the
+     * CA's secret key.</p> 
      */
     inline void SetSigningAlgorithm(const SigningAlgorithm& value) { m_signingAlgorithmHasBeenSet = true; m_signingAlgorithm = value; }
 
@@ -309,7 +315,9 @@ namespace Model
      * <p>The name of the algorithm that will be used to sign the certificate to be
      * issued. </p> <p>This parameter should not be confused with the
      * <code>SigningAlgorithm</code> parameter used to sign a CSR in the
-     * <code>CreateCertificateAuthority</code> action.</p>
+     * <code>CreateCertificateAuthority</code> action.</p>  <p>The specified
+     * signing algorithm family (RSA or ECDSA) much match the algorithm family of the
+     * CA's secret key.</p> 
      */
     inline void SetSigningAlgorithm(SigningAlgorithm&& value) { m_signingAlgorithmHasBeenSet = true; m_signingAlgorithm = std::move(value); }
 
@@ -317,7 +325,9 @@ namespace Model
      * <p>The name of the algorithm that will be used to sign the certificate to be
      * issued. </p> <p>This parameter should not be confused with the
      * <code>SigningAlgorithm</code> parameter used to sign a CSR in the
-     * <code>CreateCertificateAuthority</code> action.</p>
+     * <code>CreateCertificateAuthority</code> action.</p>  <p>The specified
+     * signing algorithm family (RSA or ECDSA) much match the algorithm family of the
+     * CA's secret key.</p> 
      */
     inline IssueCertificateRequest& WithSigningAlgorithm(const SigningAlgorithm& value) { SetSigningAlgorithm(value); return *this;}
 
@@ -325,7 +335,9 @@ namespace Model
      * <p>The name of the algorithm that will be used to sign the certificate to be
      * issued. </p> <p>This parameter should not be confused with the
      * <code>SigningAlgorithm</code> parameter used to sign a CSR in the
-     * <code>CreateCertificateAuthority</code> action.</p>
+     * <code>CreateCertificateAuthority</code> action.</p>  <p>The specified
+     * signing algorithm family (RSA or ECDSA) much match the algorithm family of the
+     * CA's secret key.</p> 
      */
     inline IssueCertificateRequest& WithSigningAlgorithm(SigningAlgorithm&& value) { SetSigningAlgorithm(std::move(value)); return *this;}
 
@@ -458,10 +470,11 @@ namespace Model
      * be expressed as an explicit date and time when the certificate expires, or as a
      * span of time after issuance, stated in days, months, or years. For more
      * information, see <a
-     * href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC
-     * 5280. </p> <p>This value is unaffected when <code>ValidityNotBefore</code> is
-     * also specified. For example, if <code>Validity</code> is set to 20 days in the
-     * future, the certificate will expire 20 days from issuance time regardless of the
+     * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a>
+     * in RFC 5280. </p> <p>This value is unaffected when
+     * <code>ValidityNotBefore</code> is also specified. For example, if
+     * <code>Validity</code> is set to 20 days in the future, the certificate will
+     * expire 20 days from issuance time regardless of the
      * <code>ValidityNotBefore</code> value.</p> <p>The end of the validity period
      * configured on a certificate must not exceed the limit set on its parents in the
      * CA hierarchy.</p>
@@ -475,10 +488,11 @@ namespace Model
      * be expressed as an explicit date and time when the certificate expires, or as a
      * span of time after issuance, stated in days, months, or years. For more
      * information, see <a
-     * href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC
-     * 5280. </p> <p>This value is unaffected when <code>ValidityNotBefore</code> is
-     * also specified. For example, if <code>Validity</code> is set to 20 days in the
-     * future, the certificate will expire 20 days from issuance time regardless of the
+     * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a>
+     * in RFC 5280. </p> <p>This value is unaffected when
+     * <code>ValidityNotBefore</code> is also specified. For example, if
+     * <code>Validity</code> is set to 20 days in the future, the certificate will
+     * expire 20 days from issuance time regardless of the
      * <code>ValidityNotBefore</code> value.</p> <p>The end of the validity period
      * configured on a certificate must not exceed the limit set on its parents in the
      * CA hierarchy.</p>
@@ -492,10 +506,11 @@ namespace Model
      * be expressed as an explicit date and time when the certificate expires, or as a
      * span of time after issuance, stated in days, months, or years. For more
      * information, see <a
-     * href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC
-     * 5280. </p> <p>This value is unaffected when <code>ValidityNotBefore</code> is
-     * also specified. For example, if <code>Validity</code> is set to 20 days in the
-     * future, the certificate will expire 20 days from issuance time regardless of the
+     * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a>
+     * in RFC 5280. </p> <p>This value is unaffected when
+     * <code>ValidityNotBefore</code> is also specified. For example, if
+     * <code>Validity</code> is set to 20 days in the future, the certificate will
+     * expire 20 days from issuance time regardless of the
      * <code>ValidityNotBefore</code> value.</p> <p>The end of the validity period
      * configured on a certificate must not exceed the limit set on its parents in the
      * CA hierarchy.</p>
@@ -509,10 +524,11 @@ namespace Model
      * be expressed as an explicit date and time when the certificate expires, or as a
      * span of time after issuance, stated in days, months, or years. For more
      * information, see <a
-     * href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC
-     * 5280. </p> <p>This value is unaffected when <code>ValidityNotBefore</code> is
-     * also specified. For example, if <code>Validity</code> is set to 20 days in the
-     * future, the certificate will expire 20 days from issuance time regardless of the
+     * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a>
+     * in RFC 5280. </p> <p>This value is unaffected when
+     * <code>ValidityNotBefore</code> is also specified. For example, if
+     * <code>Validity</code> is set to 20 days in the future, the certificate will
+     * expire 20 days from issuance time regardless of the
      * <code>ValidityNotBefore</code> value.</p> <p>The end of the validity period
      * configured on a certificate must not exceed the limit set on its parents in the
      * CA hierarchy.</p>
@@ -526,10 +542,11 @@ namespace Model
      * be expressed as an explicit date and time when the certificate expires, or as a
      * span of time after issuance, stated in days, months, or years. For more
      * information, see <a
-     * href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC
-     * 5280. </p> <p>This value is unaffected when <code>ValidityNotBefore</code> is
-     * also specified. For example, if <code>Validity</code> is set to 20 days in the
-     * future, the certificate will expire 20 days from issuance time regardless of the
+     * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a>
+     * in RFC 5280. </p> <p>This value is unaffected when
+     * <code>ValidityNotBefore</code> is also specified. For example, if
+     * <code>Validity</code> is set to 20 days in the future, the certificate will
+     * expire 20 days from issuance time regardless of the
      * <code>ValidityNotBefore</code> value.</p> <p>The end of the validity period
      * configured on a certificate must not exceed the limit set on its parents in the
      * CA hierarchy.</p>
@@ -543,10 +560,11 @@ namespace Model
      * be expressed as an explicit date and time when the certificate expires, or as a
      * span of time after issuance, stated in days, months, or years. For more
      * information, see <a
-     * href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC
-     * 5280. </p> <p>This value is unaffected when <code>ValidityNotBefore</code> is
-     * also specified. For example, if <code>Validity</code> is set to 20 days in the
-     * future, the certificate will expire 20 days from issuance time regardless of the
+     * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a>
+     * in RFC 5280. </p> <p>This value is unaffected when
+     * <code>ValidityNotBefore</code> is also specified. For example, if
+     * <code>Validity</code> is set to 20 days in the future, the certificate will
+     * expire 20 days from issuance time regardless of the
      * <code>ValidityNotBefore</code> value.</p> <p>The end of the validity period
      * configured on a certificate must not exceed the limit set on its parents in the
      * CA hierarchy.</p>
@@ -567,8 +585,8 @@ namespace Model
      * <code>ABSOLUTE</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a>
      * in this API reference and <a
-     * href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC
-     * 5280.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a>
+     * in RFC 5280.</p>
      */
     inline const Validity& GetValidityNotBefore() const{ return m_validityNotBefore; }
 
@@ -585,8 +603,8 @@ namespace Model
      * <code>ABSOLUTE</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a>
      * in this API reference and <a
-     * href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC
-     * 5280.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a>
+     * in RFC 5280.</p>
      */
     inline bool ValidityNotBeforeHasBeenSet() const { return m_validityNotBeforeHasBeenSet; }
 
@@ -603,8 +621,8 @@ namespace Model
      * <code>ABSOLUTE</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a>
      * in this API reference and <a
-     * href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC
-     * 5280.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a>
+     * in RFC 5280.</p>
      */
     inline void SetValidityNotBefore(const Validity& value) { m_validityNotBeforeHasBeenSet = true; m_validityNotBefore = value; }
 
@@ -621,8 +639,8 @@ namespace Model
      * <code>ABSOLUTE</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a>
      * in this API reference and <a
-     * href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC
-     * 5280.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a>
+     * in RFC 5280.</p>
      */
     inline void SetValidityNotBefore(Validity&& value) { m_validityNotBeforeHasBeenSet = true; m_validityNotBefore = std::move(value); }
 
@@ -639,8 +657,8 @@ namespace Model
      * <code>ABSOLUTE</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a>
      * in this API reference and <a
-     * href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC
-     * 5280.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a>
+     * in RFC 5280.</p>
      */
     inline IssueCertificateRequest& WithValidityNotBefore(const Validity& value) { SetValidityNotBefore(value); return *this;}
 
@@ -657,8 +675,8 @@ namespace Model
      * <code>ABSOLUTE</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a>
      * in this API reference and <a
-     * href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC
-     * 5280.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a>
+     * in RFC 5280.</p>
      */
     inline IssueCertificateRequest& WithValidityNotBefore(Validity&& value) { SetValidityNotBefore(std::move(value)); return *this;}
 

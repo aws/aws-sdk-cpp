@@ -37,42 +37,82 @@ namespace Model
 
 
     /**
-     * <p>The ID of the snapshot.</p>
+     * <p>The ID of the snapshot.</p>  <p>If the specified snapshot is
+     * encrypted, you must have permission to use the KMS key that was used to encrypt
+     * the snapshot. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
+     * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>..</p>
+     * 
      */
     inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
 
     /**
-     * <p>The ID of the snapshot.</p>
+     * <p>The ID of the snapshot.</p>  <p>If the specified snapshot is
+     * encrypted, you must have permission to use the KMS key that was used to encrypt
+     * the snapshot. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
+     * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>..</p>
+     * 
      */
     inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
 
     /**
-     * <p>The ID of the snapshot.</p>
+     * <p>The ID of the snapshot.</p>  <p>If the specified snapshot is
+     * encrypted, you must have permission to use the KMS key that was used to encrypt
+     * the snapshot. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
+     * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>..</p>
+     * 
      */
     inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
 
     /**
-     * <p>The ID of the snapshot.</p>
+     * <p>The ID of the snapshot.</p>  <p>If the specified snapshot is
+     * encrypted, you must have permission to use the KMS key that was used to encrypt
+     * the snapshot. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
+     * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>..</p>
+     * 
      */
     inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
 
     /**
-     * <p>The ID of the snapshot.</p>
+     * <p>The ID of the snapshot.</p>  <p>If the specified snapshot is
+     * encrypted, you must have permission to use the KMS key that was used to encrypt
+     * the snapshot. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
+     * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>..</p>
+     * 
      */
     inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
 
     /**
-     * <p>The ID of the snapshot.</p>
+     * <p>The ID of the snapshot.</p>  <p>If the specified snapshot is
+     * encrypted, you must have permission to use the KMS key that was used to encrypt
+     * the snapshot. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
+     * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>..</p>
+     * 
      */
     inline PutSnapshotBlockRequest& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
 
     /**
-     * <p>The ID of the snapshot.</p>
+     * <p>The ID of the snapshot.</p>  <p>If the specified snapshot is
+     * encrypted, you must have permission to use the KMS key that was used to encrypt
+     * the snapshot. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
+     * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>..</p>
+     * 
      */
     inline PutSnapshotBlockRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the snapshot.</p>
+     * <p>The ID of the snapshot.</p>  <p>If the specified snapshot is
+     * encrypted, you must have permission to use the KMS key that was used to encrypt
+     * the snapshot. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
+     * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>..</p>
+     * 
      */
     inline PutSnapshotBlockRequest& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 

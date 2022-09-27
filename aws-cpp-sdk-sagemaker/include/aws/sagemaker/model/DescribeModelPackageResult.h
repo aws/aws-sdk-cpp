@@ -483,27 +483,27 @@ namespace Model
 
 
     /**
-     * <p>The last time the model package was modified.</p>
+     * <p>The last time that the model package was modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * <p>The last time the model package was modified.</p>
+     * <p>The last time that the model package was modified.</p>
      */
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
 
     /**
-     * <p>The last time the model package was modified.</p>
+     * <p>The last time that the model package was modified.</p>
      */
     inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
 
     /**
-     * <p>The last time the model package was modified.</p>
+     * <p>The last time that the model package was modified.</p>
      */
     inline DescribeModelPackageResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
 
     /**
-     * <p>The last time the model package was modified.</p>
+     * <p>The last time that the model package was modified.</p>
      */
     inline DescribeModelPackageResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 

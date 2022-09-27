@@ -38,6 +38,27 @@ namespace Model
 
 
     /**
+     * <p>Indicates that the version is recommended for all users.</p>
+     */
+    inline bool GetMarkLatest() const{ return m_markLatest; }
+
+    /**
+     * <p>Indicates that the version is recommended for all users.</p>
+     */
+    inline bool MarkLatestHasBeenSet() const { return m_markLatestHasBeenSet; }
+
+    /**
+     * <p>Indicates that the version is recommended for all users.</p>
+     */
+    inline void SetMarkLatest(bool value) { m_markLatestHasBeenSet = true; m_markLatest = value; }
+
+    /**
+     * <p>Indicates that the version is recommended for all users.</p>
+     */
+    inline PackageVersionOutputConfig& WithMarkLatest(bool value) { SetMarkLatest(value); return *this;}
+
+
+    /**
      * <p>The output's package name.</p>
      */
     inline const Aws::String& GetPackageName() const{ return m_packageName; }
@@ -118,37 +139,16 @@ namespace Model
      */
     inline PackageVersionOutputConfig& WithPackageVersion(const char* value) { SetPackageVersion(value); return *this;}
 
-
-    /**
-     * <p>Indicates that the version is recommended for all users.</p>
-     */
-    inline bool GetMarkLatest() const{ return m_markLatest; }
-
-    /**
-     * <p>Indicates that the version is recommended for all users.</p>
-     */
-    inline bool MarkLatestHasBeenSet() const { return m_markLatestHasBeenSet; }
-
-    /**
-     * <p>Indicates that the version is recommended for all users.</p>
-     */
-    inline void SetMarkLatest(bool value) { m_markLatestHasBeenSet = true; m_markLatest = value; }
-
-    /**
-     * <p>Indicates that the version is recommended for all users.</p>
-     */
-    inline PackageVersionOutputConfig& WithMarkLatest(bool value) { SetMarkLatest(value); return *this;}
-
   private:
+
+    bool m_markLatest;
+    bool m_markLatestHasBeenSet;
 
     Aws::String m_packageName;
     bool m_packageNameHasBeenSet;
 
     Aws::String m_packageVersion;
     bool m_packageVersionHasBeenSet;
-
-    bool m_markLatest;
-    bool m_markLatestHasBeenSet;
   };
 
 } // namespace Model

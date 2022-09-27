@@ -82,50 +82,50 @@ namespace Model
 
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline const Aws::String& GetDomainOwner() const{ return m_domainOwner; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline bool DomainOwnerHasBeenSet() const { return m_domainOwnerHasBeenSet; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline void SetDomainOwner(const Aws::String& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = value; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline void SetDomainOwner(Aws::String&& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = std::move(value); }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline void SetDomainOwner(const char* value) { m_domainOwnerHasBeenSet = true; m_domainOwner.assign(value); }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline UpdateRepositoryRequest& WithDomainOwner(const Aws::String& value) { SetDomainOwner(value); return *this;}
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline UpdateRepositoryRequest& WithDomainOwner(Aws::String&& value) { SetDomainOwner(std::move(value)); return *this;}
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline UpdateRepositoryRequest& WithDomainOwner(const char* value) { SetDomainOwner(value); return *this;}
 
@@ -215,8 +215,7 @@ namespace Model
     /**
      * <p> A list of upstream repositories to associate with the repository. The order
      * of the upstream repositories in the list determines their priority order when
-     * AWS CodeArtifact looks for a requested package version. For more information,
-     * see <a
+     * CodeArtifact looks for a requested package version. For more information, see <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working
      * with upstream repositories</a>. </p>
      */
@@ -225,8 +224,7 @@ namespace Model
     /**
      * <p> A list of upstream repositories to associate with the repository. The order
      * of the upstream repositories in the list determines their priority order when
-     * AWS CodeArtifact looks for a requested package version. For more information,
-     * see <a
+     * CodeArtifact looks for a requested package version. For more information, see <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working
      * with upstream repositories</a>. </p>
      */
@@ -235,8 +233,7 @@ namespace Model
     /**
      * <p> A list of upstream repositories to associate with the repository. The order
      * of the upstream repositories in the list determines their priority order when
-     * AWS CodeArtifact looks for a requested package version. For more information,
-     * see <a
+     * CodeArtifact looks for a requested package version. For more information, see <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working
      * with upstream repositories</a>. </p>
      */
@@ -245,8 +242,7 @@ namespace Model
     /**
      * <p> A list of upstream repositories to associate with the repository. The order
      * of the upstream repositories in the list determines their priority order when
-     * AWS CodeArtifact looks for a requested package version. For more information,
-     * see <a
+     * CodeArtifact looks for a requested package version. For more information, see <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working
      * with upstream repositories</a>. </p>
      */
@@ -255,8 +251,7 @@ namespace Model
     /**
      * <p> A list of upstream repositories to associate with the repository. The order
      * of the upstream repositories in the list determines their priority order when
-     * AWS CodeArtifact looks for a requested package version. For more information,
-     * see <a
+     * CodeArtifact looks for a requested package version. For more information, see <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working
      * with upstream repositories</a>. </p>
      */
@@ -265,8 +260,7 @@ namespace Model
     /**
      * <p> A list of upstream repositories to associate with the repository. The order
      * of the upstream repositories in the list determines their priority order when
-     * AWS CodeArtifact looks for a requested package version. For more information,
-     * see <a
+     * CodeArtifact looks for a requested package version. For more information, see <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working
      * with upstream repositories</a>. </p>
      */
@@ -275,8 +269,7 @@ namespace Model
     /**
      * <p> A list of upstream repositories to associate with the repository. The order
      * of the upstream repositories in the list determines their priority order when
-     * AWS CodeArtifact looks for a requested package version. For more information,
-     * see <a
+     * CodeArtifact looks for a requested package version. For more information, see <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working
      * with upstream repositories</a>. </p>
      */
@@ -285,8 +278,7 @@ namespace Model
     /**
      * <p> A list of upstream repositories to associate with the repository. The order
      * of the upstream repositories in the list determines their priority order when
-     * AWS CodeArtifact looks for a requested package version. For more information,
-     * see <a
+     * CodeArtifact looks for a requested package version. For more information, see <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working
      * with upstream repositories</a>. </p>
      */

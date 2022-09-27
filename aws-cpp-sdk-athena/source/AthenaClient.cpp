@@ -52,6 +52,7 @@
 #include <aws/athena/model/TagResourceRequest.h>
 #include <aws/athena/model/UntagResourceRequest.h>
 #include <aws/athena/model/UpdateDataCatalogRequest.h>
+#include <aws/athena/model/UpdateNamedQueryRequest.h>
 #include <aws/athena/model/UpdatePreparedStatementRequest.h>
 #include <aws/athena/model/UpdateWorkGroupRequest.h>
 
@@ -894,6 +895,30 @@ void AthenaClient::UpdateDataCatalogAsync(const UpdateDataCatalogRequest& reques
 void AthenaClient::UpdateDataCatalogAsyncHelper(const UpdateDataCatalogRequest& request, const UpdateDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateDataCatalog(request), context);
+}
+
+UpdateNamedQueryOutcome AthenaClient::UpdateNamedQuery(const UpdateNamedQueryRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateNamedQueryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateNamedQueryOutcomeCallable AthenaClient::UpdateNamedQueryCallable(const UpdateNamedQueryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateNamedQueryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateNamedQuery(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::UpdateNamedQueryAsync(const UpdateNamedQueryRequest& request, const UpdateNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateNamedQueryAsyncHelper( request, handler, context ); } );
+}
+
+void AthenaClient::UpdateNamedQueryAsyncHelper(const UpdateNamedQueryRequest& request, const UpdateNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateNamedQuery(request), context);
 }
 
 UpdatePreparedStatementOutcome AthenaClient::UpdatePreparedStatement(const UpdatePreparedStatementRequest& request) const

@@ -15,6 +15,7 @@ using namespace Aws::Utils;
 CreateProgramRequest::CreateProgramRequest() : 
     m_adBreaksHasBeenSet(false),
     m_channelNameHasBeenSet(false),
+    m_liveSourceNameHasBeenSet(false),
     m_programNameHasBeenSet(false),
     m_scheduleConfigurationHasBeenSet(false),
     m_sourceLocationNameHasBeenSet(false),
@@ -34,6 +35,12 @@ Aws::String CreateProgramRequest::SerializePayload() const
      adBreaksJsonList[adBreaksIndex].AsObject(m_adBreaks[adBreaksIndex].Jsonize());
    }
    payload.WithArray("AdBreaks", std::move(adBreaksJsonList));
+
+  }
+
+  if(m_liveSourceNameHasBeenSet)
+  {
+   payload.WithString("LiveSourceName", m_liveSourceName);
 
   }
 

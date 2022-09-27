@@ -6,7 +6,6 @@
 #pragma once
 #include <aws/kendra/Kendra_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/kendra/model/AttributeFilter.h>
 #include <aws/kendra/model/DocumentAttribute.h>
 #include <utility>
 

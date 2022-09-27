@@ -25,7 +25,8 @@ namespace Model
     REMOVAL_REQUESTED,
     REMOVAL_IN_PROGRESS,
     REMOVAL_FAILED,
-    REMOVAL_SUCCEEDED
+    REMOVAL_SUCCEEDED,
+    DEPLOYMENT_FAILED
   };
 
 namespace ApplicationInstanceStatusMapper

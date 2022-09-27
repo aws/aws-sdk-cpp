@@ -22,8 +22,10 @@
 #include <aws/route53/Route53ErrorMarshaller.h>
 #include <aws/route53/model/ActivateKeySigningKeyRequest.h>
 #include <aws/route53/model/AssociateVPCWithHostedZoneRequest.h>
+#include <aws/route53/model/ChangeCidrCollectionRequest.h>
 #include <aws/route53/model/ChangeResourceRecordSetsRequest.h>
 #include <aws/route53/model/ChangeTagsForResourceRequest.h>
+#include <aws/route53/model/CreateCidrCollectionRequest.h>
 #include <aws/route53/model/CreateHealthCheckRequest.h>
 #include <aws/route53/model/CreateHostedZoneRequest.h>
 #include <aws/route53/model/CreateKeySigningKeyRequest.h>
@@ -34,6 +36,7 @@
 #include <aws/route53/model/CreateTrafficPolicyVersionRequest.h>
 #include <aws/route53/model/CreateVPCAssociationAuthorizationRequest.h>
 #include <aws/route53/model/DeactivateKeySigningKeyRequest.h>
+#include <aws/route53/model/DeleteCidrCollectionRequest.h>
 #include <aws/route53/model/DeleteHealthCheckRequest.h>
 #include <aws/route53/model/DeleteHostedZoneRequest.h>
 #include <aws/route53/model/DeleteKeySigningKeyRequest.h>
@@ -63,6 +66,9 @@
 #include <aws/route53/model/GetTrafficPolicyRequest.h>
 #include <aws/route53/model/GetTrafficPolicyInstanceRequest.h>
 #include <aws/route53/model/GetTrafficPolicyInstanceCountRequest.h>
+#include <aws/route53/model/ListCidrBlocksRequest.h>
+#include <aws/route53/model/ListCidrCollectionsRequest.h>
+#include <aws/route53/model/ListCidrLocationsRequest.h>
 #include <aws/route53/model/ListGeoLocationsRequest.h>
 #include <aws/route53/model/ListHealthChecksRequest.h>
 #include <aws/route53/model/ListHostedZonesRequest.h>
@@ -229,6 +235,37 @@ void Route53Client::AssociateVPCWithHostedZoneAsyncHelper(const AssociateVPCWith
   handler(this, request, AssociateVPCWithHostedZone(request), context);
 }
 
+ChangeCidrCollectionOutcome Route53Client::ChangeCidrCollection(const ChangeCidrCollectionRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ChangeCidrCollection", "Required field: Id, is not set");
+    return ChangeCidrCollectionOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2013-04-01/cidrcollection/");
+  uri.AddPathSegment(request.GetId());
+  return ChangeCidrCollectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+ChangeCidrCollectionOutcomeCallable Route53Client::ChangeCidrCollectionCallable(const ChangeCidrCollectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ChangeCidrCollectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ChangeCidrCollection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53Client::ChangeCidrCollectionAsync(const ChangeCidrCollectionRequest& request, const ChangeCidrCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ChangeCidrCollectionAsyncHelper( request, handler, context ); } );
+}
+
+void Route53Client::ChangeCidrCollectionAsyncHelper(const ChangeCidrCollectionRequest& request, const ChangeCidrCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ChangeCidrCollection(request), context);
+}
+
 ChangeResourceRecordSetsOutcome Route53Client::ChangeResourceRecordSets(const ChangeResourceRecordSetsRequest& request) const
 {
   if (!request.HostedZoneIdHasBeenSet())
@@ -296,6 +333,31 @@ void Route53Client::ChangeTagsForResourceAsync(const ChangeTagsForResourceReques
 void Route53Client::ChangeTagsForResourceAsyncHelper(const ChangeTagsForResourceRequest& request, const ChangeTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ChangeTagsForResource(request), context);
+}
+
+CreateCidrCollectionOutcome Route53Client::CreateCidrCollection(const CreateCidrCollectionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2013-04-01/cidrcollection");
+  return CreateCidrCollectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+CreateCidrCollectionOutcomeCallable Route53Client::CreateCidrCollectionCallable(const CreateCidrCollectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateCidrCollectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCidrCollection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53Client::CreateCidrCollectionAsync(const CreateCidrCollectionRequest& request, const CreateCidrCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateCidrCollectionAsyncHelper( request, handler, context ); } );
+}
+
+void Route53Client::CreateCidrCollectionAsyncHelper(const CreateCidrCollectionRequest& request, const CreateCidrCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateCidrCollection(request), context);
 }
 
 CreateHealthCheckOutcome Route53Client::CreateHealthCheck(const CreateHealthCheckRequest& request) const
@@ -572,6 +634,37 @@ void Route53Client::DeactivateKeySigningKeyAsync(const DeactivateKeySigningKeyRe
 void Route53Client::DeactivateKeySigningKeyAsyncHelper(const DeactivateKeySigningKeyRequest& request, const DeactivateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeactivateKeySigningKey(request), context);
+}
+
+DeleteCidrCollectionOutcome Route53Client::DeleteCidrCollection(const DeleteCidrCollectionRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteCidrCollection", "Required field: Id, is not set");
+    return DeleteCidrCollectionOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2013-04-01/cidrcollection/");
+  uri.AddPathSegment(request.GetId());
+  return DeleteCidrCollectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
+}
+
+DeleteCidrCollectionOutcomeCallable Route53Client::DeleteCidrCollectionCallable(const DeleteCidrCollectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteCidrCollectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCidrCollection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53Client::DeleteCidrCollectionAsync(const DeleteCidrCollectionRequest& request, const DeleteCidrCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteCidrCollectionAsyncHelper( request, handler, context ); } );
+}
+
+void Route53Client::DeleteCidrCollectionAsyncHelper(const DeleteCidrCollectionRequest& request, const DeleteCidrCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteCidrCollection(request), context);
 }
 
 DeleteHealthCheckOutcome Route53Client::DeleteHealthCheck(const DeleteHealthCheckRequest& request) const
@@ -1478,6 +1571,94 @@ void Route53Client::GetTrafficPolicyInstanceCountAsync(const GetTrafficPolicyIns
 void Route53Client::GetTrafficPolicyInstanceCountAsyncHelper(const GetTrafficPolicyInstanceCountRequest& request, const GetTrafficPolicyInstanceCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetTrafficPolicyInstanceCount(request), context);
+}
+
+ListCidrBlocksOutcome Route53Client::ListCidrBlocks(const ListCidrBlocksRequest& request) const
+{
+  if (!request.CollectionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListCidrBlocks", "Required field: CollectionId, is not set");
+    return ListCidrBlocksOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CollectionId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2013-04-01/cidrcollection/");
+  uri.AddPathSegment(request.GetCollectionId());
+  uri.AddPathSegments("/cidrblocks");
+  return ListCidrBlocksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+}
+
+ListCidrBlocksOutcomeCallable Route53Client::ListCidrBlocksCallable(const ListCidrBlocksRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListCidrBlocksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCidrBlocks(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53Client::ListCidrBlocksAsync(const ListCidrBlocksRequest& request, const ListCidrBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListCidrBlocksAsyncHelper( request, handler, context ); } );
+}
+
+void Route53Client::ListCidrBlocksAsyncHelper(const ListCidrBlocksRequest& request, const ListCidrBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListCidrBlocks(request), context);
+}
+
+ListCidrCollectionsOutcome Route53Client::ListCidrCollections(const ListCidrCollectionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2013-04-01/cidrcollection");
+  return ListCidrCollectionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+}
+
+ListCidrCollectionsOutcomeCallable Route53Client::ListCidrCollectionsCallable(const ListCidrCollectionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListCidrCollectionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCidrCollections(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53Client::ListCidrCollectionsAsync(const ListCidrCollectionsRequest& request, const ListCidrCollectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListCidrCollectionsAsyncHelper( request, handler, context ); } );
+}
+
+void Route53Client::ListCidrCollectionsAsyncHelper(const ListCidrCollectionsRequest& request, const ListCidrCollectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListCidrCollections(request), context);
+}
+
+ListCidrLocationsOutcome Route53Client::ListCidrLocations(const ListCidrLocationsRequest& request) const
+{
+  if (!request.CollectionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListCidrLocations", "Required field: CollectionId, is not set");
+    return ListCidrLocationsOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CollectionId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2013-04-01/cidrcollection/");
+  uri.AddPathSegment(request.GetCollectionId());
+  return ListCidrLocationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+}
+
+ListCidrLocationsOutcomeCallable Route53Client::ListCidrLocationsCallable(const ListCidrLocationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListCidrLocationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCidrLocations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53Client::ListCidrLocationsAsync(const ListCidrLocationsRequest& request, const ListCidrLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListCidrLocationsAsyncHelper( request, handler, context ); } );
+}
+
+void Route53Client::ListCidrLocationsAsyncHelper(const ListCidrLocationsRequest& request, const ListCidrLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListCidrLocations(request), context);
 }
 
 ListGeoLocationsOutcome Route53Client::ListGeoLocations(const ListGeoLocationsRequest& request) const

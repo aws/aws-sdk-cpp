@@ -23,17 +23,28 @@
 #include <aws/finspace-data/model/CreateChangesetRequest.h>
 #include <aws/finspace-data/model/CreateDataViewRequest.h>
 #include <aws/finspace-data/model/CreateDatasetRequest.h>
+#include <aws/finspace-data/model/CreatePermissionGroupRequest.h>
+#include <aws/finspace-data/model/CreateUserRequest.h>
 #include <aws/finspace-data/model/DeleteDatasetRequest.h>
+#include <aws/finspace-data/model/DeletePermissionGroupRequest.h>
+#include <aws/finspace-data/model/DisableUserRequest.h>
+#include <aws/finspace-data/model/EnableUserRequest.h>
 #include <aws/finspace-data/model/GetChangesetRequest.h>
 #include <aws/finspace-data/model/GetDataViewRequest.h>
 #include <aws/finspace-data/model/GetDatasetRequest.h>
 #include <aws/finspace-data/model/GetProgrammaticAccessCredentialsRequest.h>
+#include <aws/finspace-data/model/GetUserRequest.h>
 #include <aws/finspace-data/model/GetWorkingLocationRequest.h>
 #include <aws/finspace-data/model/ListChangesetsRequest.h>
 #include <aws/finspace-data/model/ListDataViewsRequest.h>
 #include <aws/finspace-data/model/ListDatasetsRequest.h>
+#include <aws/finspace-data/model/ListPermissionGroupsRequest.h>
+#include <aws/finspace-data/model/ListUsersRequest.h>
+#include <aws/finspace-data/model/ResetUserPasswordRequest.h>
 #include <aws/finspace-data/model/UpdateChangesetRequest.h>
 #include <aws/finspace-data/model/UpdateDatasetRequest.h>
+#include <aws/finspace-data/model/UpdatePermissionGroupRequest.h>
+#include <aws/finspace-data/model/UpdateUserRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -197,6 +208,56 @@ void FinSpaceDataClient::CreateDatasetAsyncHelper(const CreateDatasetRequest& re
   handler(this, request, CreateDataset(request), context);
 }
 
+CreatePermissionGroupOutcome FinSpaceDataClient::CreatePermissionGroup(const CreatePermissionGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/permission-group");
+  return CreatePermissionGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreatePermissionGroupOutcomeCallable FinSpaceDataClient::CreatePermissionGroupCallable(const CreatePermissionGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreatePermissionGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePermissionGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FinSpaceDataClient::CreatePermissionGroupAsync(const CreatePermissionGroupRequest& request, const CreatePermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreatePermissionGroupAsyncHelper( request, handler, context ); } );
+}
+
+void FinSpaceDataClient::CreatePermissionGroupAsyncHelper(const CreatePermissionGroupRequest& request, const CreatePermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreatePermissionGroup(request), context);
+}
+
+CreateUserOutcome FinSpaceDataClient::CreateUser(const CreateUserRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/user");
+  return CreateUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateUserOutcomeCallable FinSpaceDataClient::CreateUserCallable(const CreateUserRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateUser(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FinSpaceDataClient::CreateUserAsync(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateUserAsyncHelper( request, handler, context ); } );
+}
+
+void FinSpaceDataClient::CreateUserAsyncHelper(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateUser(request), context);
+}
+
 DeleteDatasetOutcome FinSpaceDataClient::DeleteDataset(const DeleteDatasetRequest& request) const
 {
   if (!request.DatasetIdHasBeenSet())
@@ -226,6 +287,101 @@ void FinSpaceDataClient::DeleteDatasetAsync(const DeleteDatasetRequest& request,
 void FinSpaceDataClient::DeleteDatasetAsyncHelper(const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteDataset(request), context);
+}
+
+DeletePermissionGroupOutcome FinSpaceDataClient::DeletePermissionGroup(const DeletePermissionGroupRequest& request) const
+{
+  if (!request.PermissionGroupIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeletePermissionGroup", "Required field: PermissionGroupId, is not set");
+    return DeletePermissionGroupOutcome(Aws::Client::AWSError<FinSpaceDataErrors>(FinSpaceDataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PermissionGroupId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/permission-group/");
+  uri.AddPathSegment(request.GetPermissionGroupId());
+  return DeletePermissionGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeletePermissionGroupOutcomeCallable FinSpaceDataClient::DeletePermissionGroupCallable(const DeletePermissionGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeletePermissionGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePermissionGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FinSpaceDataClient::DeletePermissionGroupAsync(const DeletePermissionGroupRequest& request, const DeletePermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeletePermissionGroupAsyncHelper( request, handler, context ); } );
+}
+
+void FinSpaceDataClient::DeletePermissionGroupAsyncHelper(const DeletePermissionGroupRequest& request, const DeletePermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeletePermissionGroup(request), context);
+}
+
+DisableUserOutcome FinSpaceDataClient::DisableUser(const DisableUserRequest& request) const
+{
+  if (!request.UserIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisableUser", "Required field: UserId, is not set");
+    return DisableUserOutcome(Aws::Client::AWSError<FinSpaceDataErrors>(FinSpaceDataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/user/");
+  uri.AddPathSegment(request.GetUserId());
+  uri.AddPathSegments("/disable");
+  return DisableUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisableUserOutcomeCallable FinSpaceDataClient::DisableUserCallable(const DisableUserRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisableUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisableUser(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FinSpaceDataClient::DisableUserAsync(const DisableUserRequest& request, const DisableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisableUserAsyncHelper( request, handler, context ); } );
+}
+
+void FinSpaceDataClient::DisableUserAsyncHelper(const DisableUserRequest& request, const DisableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisableUser(request), context);
+}
+
+EnableUserOutcome FinSpaceDataClient::EnableUser(const EnableUserRequest& request) const
+{
+  if (!request.UserIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("EnableUser", "Required field: UserId, is not set");
+    return EnableUserOutcome(Aws::Client::AWSError<FinSpaceDataErrors>(FinSpaceDataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/user/");
+  uri.AddPathSegment(request.GetUserId());
+  uri.AddPathSegments("/enable");
+  return EnableUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+EnableUserOutcomeCallable FinSpaceDataClient::EnableUserCallable(const EnableUserRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< EnableUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EnableUser(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FinSpaceDataClient::EnableUserAsync(const EnableUserRequest& request, const EnableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->EnableUserAsyncHelper( request, handler, context ); } );
+}
+
+void FinSpaceDataClient::EnableUserAsyncHelper(const EnableUserRequest& request, const EnableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, EnableUser(request), context);
 }
 
 GetChangesetOutcome FinSpaceDataClient::GetChangeset(const GetChangesetRequest& request) const
@@ -365,6 +521,37 @@ void FinSpaceDataClient::GetProgrammaticAccessCredentialsAsyncHelper(const GetPr
   handler(this, request, GetProgrammaticAccessCredentials(request), context);
 }
 
+GetUserOutcome FinSpaceDataClient::GetUser(const GetUserRequest& request) const
+{
+  if (!request.UserIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetUser", "Required field: UserId, is not set");
+    return GetUserOutcome(Aws::Client::AWSError<FinSpaceDataErrors>(FinSpaceDataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/user/");
+  uri.AddPathSegment(request.GetUserId());
+  return GetUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetUserOutcomeCallable FinSpaceDataClient::GetUserCallable(const GetUserRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetUser(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FinSpaceDataClient::GetUserAsync(const GetUserRequest& request, const GetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetUserAsyncHelper( request, handler, context ); } );
+}
+
+void FinSpaceDataClient::GetUserAsyncHelper(const GetUserRequest& request, const GetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetUser(request), context);
+}
+
 GetWorkingLocationOutcome FinSpaceDataClient::GetWorkingLocation(const GetWorkingLocationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -479,6 +666,98 @@ void FinSpaceDataClient::ListDatasetsAsyncHelper(const ListDatasetsRequest& requ
   handler(this, request, ListDatasets(request), context);
 }
 
+ListPermissionGroupsOutcome FinSpaceDataClient::ListPermissionGroups(const ListPermissionGroupsRequest& request) const
+{
+  if (!request.MaxResultsHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListPermissionGroups", "Required field: MaxResults, is not set");
+    return ListPermissionGroupsOutcome(Aws::Client::AWSError<FinSpaceDataErrors>(FinSpaceDataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MaxResults]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/permission-group");
+  return ListPermissionGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListPermissionGroupsOutcomeCallable FinSpaceDataClient::ListPermissionGroupsCallable(const ListPermissionGroupsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListPermissionGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPermissionGroups(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FinSpaceDataClient::ListPermissionGroupsAsync(const ListPermissionGroupsRequest& request, const ListPermissionGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListPermissionGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void FinSpaceDataClient::ListPermissionGroupsAsyncHelper(const ListPermissionGroupsRequest& request, const ListPermissionGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListPermissionGroups(request), context);
+}
+
+ListUsersOutcome FinSpaceDataClient::ListUsers(const ListUsersRequest& request) const
+{
+  if (!request.MaxResultsHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListUsers", "Required field: MaxResults, is not set");
+    return ListUsersOutcome(Aws::Client::AWSError<FinSpaceDataErrors>(FinSpaceDataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MaxResults]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/user");
+  return ListUsersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListUsersOutcomeCallable FinSpaceDataClient::ListUsersCallable(const ListUsersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListUsersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListUsers(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FinSpaceDataClient::ListUsersAsync(const ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListUsersAsyncHelper( request, handler, context ); } );
+}
+
+void FinSpaceDataClient::ListUsersAsyncHelper(const ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListUsers(request), context);
+}
+
+ResetUserPasswordOutcome FinSpaceDataClient::ResetUserPassword(const ResetUserPasswordRequest& request) const
+{
+  if (!request.UserIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ResetUserPassword", "Required field: UserId, is not set");
+    return ResetUserPasswordOutcome(Aws::Client::AWSError<FinSpaceDataErrors>(FinSpaceDataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/user/");
+  uri.AddPathSegment(request.GetUserId());
+  uri.AddPathSegments("/password");
+  return ResetUserPasswordOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ResetUserPasswordOutcomeCallable FinSpaceDataClient::ResetUserPasswordCallable(const ResetUserPasswordRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ResetUserPasswordOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ResetUserPassword(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FinSpaceDataClient::ResetUserPasswordAsync(const ResetUserPasswordRequest& request, const ResetUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ResetUserPasswordAsyncHelper( request, handler, context ); } );
+}
+
+void FinSpaceDataClient::ResetUserPasswordAsyncHelper(const ResetUserPasswordRequest& request, const ResetUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ResetUserPassword(request), context);
+}
+
 UpdateChangesetOutcome FinSpaceDataClient::UpdateChangeset(const UpdateChangesetRequest& request) const
 {
   if (!request.DatasetIdHasBeenSet())
@@ -546,5 +825,67 @@ void FinSpaceDataClient::UpdateDatasetAsync(const UpdateDatasetRequest& request,
 void FinSpaceDataClient::UpdateDatasetAsyncHelper(const UpdateDatasetRequest& request, const UpdateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateDataset(request), context);
+}
+
+UpdatePermissionGroupOutcome FinSpaceDataClient::UpdatePermissionGroup(const UpdatePermissionGroupRequest& request) const
+{
+  if (!request.PermissionGroupIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdatePermissionGroup", "Required field: PermissionGroupId, is not set");
+    return UpdatePermissionGroupOutcome(Aws::Client::AWSError<FinSpaceDataErrors>(FinSpaceDataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PermissionGroupId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/permission-group/");
+  uri.AddPathSegment(request.GetPermissionGroupId());
+  return UpdatePermissionGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdatePermissionGroupOutcomeCallable FinSpaceDataClient::UpdatePermissionGroupCallable(const UpdatePermissionGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdatePermissionGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePermissionGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FinSpaceDataClient::UpdatePermissionGroupAsync(const UpdatePermissionGroupRequest& request, const UpdatePermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdatePermissionGroupAsyncHelper( request, handler, context ); } );
+}
+
+void FinSpaceDataClient::UpdatePermissionGroupAsyncHelper(const UpdatePermissionGroupRequest& request, const UpdatePermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdatePermissionGroup(request), context);
+}
+
+UpdateUserOutcome FinSpaceDataClient::UpdateUser(const UpdateUserRequest& request) const
+{
+  if (!request.UserIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateUser", "Required field: UserId, is not set");
+    return UpdateUserOutcome(Aws::Client::AWSError<FinSpaceDataErrors>(FinSpaceDataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/user/");
+  uri.AddPathSegment(request.GetUserId());
+  return UpdateUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateUserOutcomeCallable FinSpaceDataClient::UpdateUserCallable(const UpdateUserRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateUser(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FinSpaceDataClient::UpdateUserAsync(const UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateUserAsyncHelper( request, handler, context ); } );
+}
+
+void FinSpaceDataClient::UpdateUserAsyncHelper(const UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateUser(request), context);
 }
 

@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     AVRO,
-    JSON
+    JSON,
+    PROTOBUF
   };
 
 namespace DataFormatMapper

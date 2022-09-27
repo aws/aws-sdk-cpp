@@ -365,10 +365,15 @@ namespace Model
      * <p>The preferred language used to return results. The value must be a valid <a
      * href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
      * <code>en</code> for English.</p> <p>This setting affects the languages used in
-     * the results. It does not change which results are returned. If the language is
-     * not specified, or not supported for a particular result, the partner
-     * automatically chooses a language for the result.</p> <p>Used only when the
-     * partner selected is Here.</p>
+     * the results. If no language is specified, or not supported for a particular
+     * result, the partner automatically chooses a language for the result.</p> <p>For
+     * an example, we'll use the Greek language. You search for <code>Athens, Gr</code>
+     * to get suggestions with the <code>language</code> parameter set to
+     * <code>en</code>. The results found will most likely be returned as <code>Athens,
+     * Greece</code>.</p> <p>If you set the <code>language</code> parameter to
+     * <code>el</code>, for Greek, then the result found will more likely be returned
+     * as <code>Αθήνα, Ελλάδα</code>.</p> <p>If the data provider does not have a value
+     * for Greek, the result will be in a language that the provider does support.</p>
      */
     inline const Aws::String& GetLanguage() const{ return m_language; }
 
@@ -376,10 +381,15 @@ namespace Model
      * <p>The preferred language used to return results. The value must be a valid <a
      * href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
      * <code>en</code> for English.</p> <p>This setting affects the languages used in
-     * the results. It does not change which results are returned. If the language is
-     * not specified, or not supported for a particular result, the partner
-     * automatically chooses a language for the result.</p> <p>Used only when the
-     * partner selected is Here.</p>
+     * the results. If no language is specified, or not supported for a particular
+     * result, the partner automatically chooses a language for the result.</p> <p>For
+     * an example, we'll use the Greek language. You search for <code>Athens, Gr</code>
+     * to get suggestions with the <code>language</code> parameter set to
+     * <code>en</code>. The results found will most likely be returned as <code>Athens,
+     * Greece</code>.</p> <p>If you set the <code>language</code> parameter to
+     * <code>el</code>, for Greek, then the result found will more likely be returned
+     * as <code>Αθήνα, Ελλάδα</code>.</p> <p>If the data provider does not have a value
+     * for Greek, the result will be in a language that the provider does support.</p>
      */
     inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
 
@@ -387,10 +397,15 @@ namespace Model
      * <p>The preferred language used to return results. The value must be a valid <a
      * href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
      * <code>en</code> for English.</p> <p>This setting affects the languages used in
-     * the results. It does not change which results are returned. If the language is
-     * not specified, or not supported for a particular result, the partner
-     * automatically chooses a language for the result.</p> <p>Used only when the
-     * partner selected is Here.</p>
+     * the results. If no language is specified, or not supported for a particular
+     * result, the partner automatically chooses a language for the result.</p> <p>For
+     * an example, we'll use the Greek language. You search for <code>Athens, Gr</code>
+     * to get suggestions with the <code>language</code> parameter set to
+     * <code>en</code>. The results found will most likely be returned as <code>Athens,
+     * Greece</code>.</p> <p>If you set the <code>language</code> parameter to
+     * <code>el</code>, for Greek, then the result found will more likely be returned
+     * as <code>Αθήνα, Ελλάδα</code>.</p> <p>If the data provider does not have a value
+     * for Greek, the result will be in a language that the provider does support.</p>
      */
     inline void SetLanguage(const Aws::String& value) { m_languageHasBeenSet = true; m_language = value; }
 
@@ -398,10 +413,15 @@ namespace Model
      * <p>The preferred language used to return results. The value must be a valid <a
      * href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
      * <code>en</code> for English.</p> <p>This setting affects the languages used in
-     * the results. It does not change which results are returned. If the language is
-     * not specified, or not supported for a particular result, the partner
-     * automatically chooses a language for the result.</p> <p>Used only when the
-     * partner selected is Here.</p>
+     * the results. If no language is specified, or not supported for a particular
+     * result, the partner automatically chooses a language for the result.</p> <p>For
+     * an example, we'll use the Greek language. You search for <code>Athens, Gr</code>
+     * to get suggestions with the <code>language</code> parameter set to
+     * <code>en</code>. The results found will most likely be returned as <code>Athens,
+     * Greece</code>.</p> <p>If you set the <code>language</code> parameter to
+     * <code>el</code>, for Greek, then the result found will more likely be returned
+     * as <code>Αθήνα, Ελλάδα</code>.</p> <p>If the data provider does not have a value
+     * for Greek, the result will be in a language that the provider does support.</p>
      */
     inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
 
@@ -409,10 +429,15 @@ namespace Model
      * <p>The preferred language used to return results. The value must be a valid <a
      * href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
      * <code>en</code> for English.</p> <p>This setting affects the languages used in
-     * the results. It does not change which results are returned. If the language is
-     * not specified, or not supported for a particular result, the partner
-     * automatically chooses a language for the result.</p> <p>Used only when the
-     * partner selected is Here.</p>
+     * the results. If no language is specified, or not supported for a particular
+     * result, the partner automatically chooses a language for the result.</p> <p>For
+     * an example, we'll use the Greek language. You search for <code>Athens, Gr</code>
+     * to get suggestions with the <code>language</code> parameter set to
+     * <code>en</code>. The results found will most likely be returned as <code>Athens,
+     * Greece</code>.</p> <p>If you set the <code>language</code> parameter to
+     * <code>el</code>, for Greek, then the result found will more likely be returned
+     * as <code>Αθήνα, Ελλάδα</code>.</p> <p>If the data provider does not have a value
+     * for Greek, the result will be in a language that the provider does support.</p>
      */
     inline void SetLanguage(const char* value) { m_languageHasBeenSet = true; m_language.assign(value); }
 
@@ -420,10 +445,15 @@ namespace Model
      * <p>The preferred language used to return results. The value must be a valid <a
      * href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
      * <code>en</code> for English.</p> <p>This setting affects the languages used in
-     * the results. It does not change which results are returned. If the language is
-     * not specified, or not supported for a particular result, the partner
-     * automatically chooses a language for the result.</p> <p>Used only when the
-     * partner selected is Here.</p>
+     * the results. If no language is specified, or not supported for a particular
+     * result, the partner automatically chooses a language for the result.</p> <p>For
+     * an example, we'll use the Greek language. You search for <code>Athens, Gr</code>
+     * to get suggestions with the <code>language</code> parameter set to
+     * <code>en</code>. The results found will most likely be returned as <code>Athens,
+     * Greece</code>.</p> <p>If you set the <code>language</code> parameter to
+     * <code>el</code>, for Greek, then the result found will more likely be returned
+     * as <code>Αθήνα, Ελλάδα</code>.</p> <p>If the data provider does not have a value
+     * for Greek, the result will be in a language that the provider does support.</p>
      */
     inline SearchPlaceIndexForSuggestionsRequest& WithLanguage(const Aws::String& value) { SetLanguage(value); return *this;}
 
@@ -431,10 +461,15 @@ namespace Model
      * <p>The preferred language used to return results. The value must be a valid <a
      * href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
      * <code>en</code> for English.</p> <p>This setting affects the languages used in
-     * the results. It does not change which results are returned. If the language is
-     * not specified, or not supported for a particular result, the partner
-     * automatically chooses a language for the result.</p> <p>Used only when the
-     * partner selected is Here.</p>
+     * the results. If no language is specified, or not supported for a particular
+     * result, the partner automatically chooses a language for the result.</p> <p>For
+     * an example, we'll use the Greek language. You search for <code>Athens, Gr</code>
+     * to get suggestions with the <code>language</code> parameter set to
+     * <code>en</code>. The results found will most likely be returned as <code>Athens,
+     * Greece</code>.</p> <p>If you set the <code>language</code> parameter to
+     * <code>el</code>, for Greek, then the result found will more likely be returned
+     * as <code>Αθήνα, Ελλάδα</code>.</p> <p>If the data provider does not have a value
+     * for Greek, the result will be in a language that the provider does support.</p>
      */
     inline SearchPlaceIndexForSuggestionsRequest& WithLanguage(Aws::String&& value) { SetLanguage(std::move(value)); return *this;}
 
@@ -442,10 +477,15 @@ namespace Model
      * <p>The preferred language used to return results. The value must be a valid <a
      * href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
      * <code>en</code> for English.</p> <p>This setting affects the languages used in
-     * the results. It does not change which results are returned. If the language is
-     * not specified, or not supported for a particular result, the partner
-     * automatically chooses a language for the result.</p> <p>Used only when the
-     * partner selected is Here.</p>
+     * the results. If no language is specified, or not supported for a particular
+     * result, the partner automatically chooses a language for the result.</p> <p>For
+     * an example, we'll use the Greek language. You search for <code>Athens, Gr</code>
+     * to get suggestions with the <code>language</code> parameter set to
+     * <code>en</code>. The results found will most likely be returned as <code>Athens,
+     * Greece</code>.</p> <p>If you set the <code>language</code> parameter to
+     * <code>el</code>, for Greek, then the result found will more likely be returned
+     * as <code>Αθήνα, Ελλάδα</code>.</p> <p>If the data provider does not have a value
+     * for Greek, the result will be in a language that the provider does support.</p>
      */
     inline SearchPlaceIndexForSuggestionsRequest& WithLanguage(const char* value) { SetLanguage(value); return *this;}
 

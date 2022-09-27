@@ -114,24 +114,12 @@ namespace Model
         virtual Model::PutEventsOutcome PutEvents(const Model::PutEventsRequest& request) const;
 
         /**
-         * <p>Records user interaction event data. For more information see <a
-         * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html">Recording
-         * Events</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutEvents">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for PutEvents that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutEventsOutcomeCallable PutEventsCallable(const Model::PutEventsRequest& request) const;
 
         /**
-         * <p>Records user interaction event data. For more information see <a
-         * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html">Recording
-         * Events</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutEvents">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for PutEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutEventsAsync(const Model::PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -145,24 +133,12 @@ namespace Model
         virtual Model::PutItemsOutcome PutItems(const Model::PutItemsRequest& request) const;
 
         /**
-         * <p>Adds one or more items to an Items dataset. For more information see <a
-         * href="https://docs.aws.amazon.com/personalize/latest/dg/importing-items.html">Importing
-         * Items Incrementally</a>. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutItems">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for PutItems that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutItemsOutcomeCallable PutItemsCallable(const Model::PutItemsRequest& request) const;
 
         /**
-         * <p>Adds one or more items to an Items dataset. For more information see <a
-         * href="https://docs.aws.amazon.com/personalize/latest/dg/importing-items.html">Importing
-         * Items Incrementally</a>. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutItems">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for PutItems that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutItemsAsync(const Model::PutItemsRequest& request, const PutItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -176,24 +152,12 @@ namespace Model
         virtual Model::PutUsersOutcome PutUsers(const Model::PutUsersRequest& request) const;
 
         /**
-         * <p>Adds one or more users to a Users dataset. For more information see <a
-         * href="https://docs.aws.amazon.com/personalize/latest/dg/importing-users.html">Importing
-         * Users Incrementally</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutUsers">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for PutUsers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutUsersOutcomeCallable PutUsersCallable(const Model::PutUsersRequest& request) const;
 
         /**
-         * <p>Adds one or more users to a Users dataset. For more information see <a
-         * href="https://docs.aws.amazon.com/personalize/latest/dg/importing-users.html">Importing
-         * Users Incrementally</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutUsers">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for PutUsers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutUsersAsync(const Model::PutUsersRequest& request, const PutUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

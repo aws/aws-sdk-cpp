@@ -44,7 +44,7 @@ namespace Model
      * provided to the rule engine as Suricata compatible strings, and Suricata
      * evaluates them based on certain settings. For more information, see <a
      * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
-     * order for stateful rules</a> in the <i>AWS Network Firewall Developer Guide</i>.
+     * order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.
      * </p>
      */
     inline const RuleOrder& GetRuleOrder() const{ return m_ruleOrder; }
@@ -55,7 +55,7 @@ namespace Model
      * provided to the rule engine as Suricata compatible strings, and Suricata
      * evaluates them based on certain settings. For more information, see <a
      * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
-     * order for stateful rules</a> in the <i>AWS Network Firewall Developer Guide</i>.
+     * order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.
      * </p>
      */
     inline bool RuleOrderHasBeenSet() const { return m_ruleOrderHasBeenSet; }
@@ -66,7 +66,7 @@ namespace Model
      * provided to the rule engine as Suricata compatible strings, and Suricata
      * evaluates them based on certain settings. For more information, see <a
      * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
-     * order for stateful rules</a> in the <i>AWS Network Firewall Developer Guide</i>.
+     * order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.
      * </p>
      */
     inline void SetRuleOrder(const RuleOrder& value) { m_ruleOrderHasBeenSet = true; m_ruleOrder = value; }
@@ -77,7 +77,7 @@ namespace Model
      * provided to the rule engine as Suricata compatible strings, and Suricata
      * evaluates them based on certain settings. For more information, see <a
      * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
-     * order for stateful rules</a> in the <i>AWS Network Firewall Developer Guide</i>.
+     * order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.
      * </p>
      */
     inline void SetRuleOrder(RuleOrder&& value) { m_ruleOrderHasBeenSet = true; m_ruleOrder = std::move(value); }
@@ -88,7 +88,7 @@ namespace Model
      * provided to the rule engine as Suricata compatible strings, and Suricata
      * evaluates them based on certain settings. For more information, see <a
      * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
-     * order for stateful rules</a> in the <i>AWS Network Firewall Developer Guide</i>.
+     * order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.
      * </p>
      */
     inline StatefulRuleOptions& WithRuleOrder(const RuleOrder& value) { SetRuleOrder(value); return *this;}
@@ -99,7 +99,7 @@ namespace Model
      * provided to the rule engine as Suricata compatible strings, and Suricata
      * evaluates them based on certain settings. For more information, see <a
      * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
-     * order for stateful rules</a> in the <i>AWS Network Firewall Developer Guide</i>.
+     * order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.
      * </p>
      */
     inline StatefulRuleOptions& WithRuleOrder(RuleOrder&& value) { SetRuleOrder(std::move(value)); return *this;}

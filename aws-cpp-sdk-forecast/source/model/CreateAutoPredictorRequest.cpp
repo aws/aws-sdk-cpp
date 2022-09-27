@@ -26,7 +26,9 @@ CreateAutoPredictorRequest::CreateAutoPredictorRequest() :
     m_optimizationMetricHasBeenSet(false),
     m_explainPredictor(false),
     m_explainPredictorHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_monitorConfigHasBeenSet(false),
+    m_timeAlignmentBoundaryHasBeenSet(false)
 {
 }
 
@@ -111,6 +113,18 @@ Aws::String CreateAutoPredictorRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_monitorConfigHasBeenSet)
+  {
+   payload.WithObject("MonitorConfig", m_monitorConfig.Jsonize());
+
+  }
+
+  if(m_timeAlignmentBoundaryHasBeenSet)
+  {
+   payload.WithObject("TimeAlignmentBoundary", m_timeAlignmentBoundary.Jsonize());
 
   }
 

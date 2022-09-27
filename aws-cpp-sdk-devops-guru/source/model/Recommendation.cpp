@@ -24,7 +24,8 @@ Recommendation::Recommendation() :
     m_nameHasBeenSet(false),
     m_reasonHasBeenSet(false),
     m_relatedEventsHasBeenSet(false),
-    m_relatedAnomaliesHasBeenSet(false)
+    m_relatedAnomaliesHasBeenSet(false),
+    m_categoryHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ Recommendation::Recommendation(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_reasonHasBeenSet(false),
     m_relatedEventsHasBeenSet(false),
-    m_relatedAnomaliesHasBeenSet(false)
+    m_relatedAnomaliesHasBeenSet(false),
+    m_categoryHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -89,6 +91,13 @@ Recommendation& Recommendation::operator =(JsonView jsonValue)
     m_relatedAnomaliesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Category"))
+  {
+    m_category = jsonValue.GetString("Category");
+
+    m_categoryHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -139,6 +148,12 @@ JsonValue Recommendation::Jsonize() const
      relatedAnomaliesJsonList[relatedAnomaliesIndex].AsObject(m_relatedAnomalies[relatedAnomaliesIndex].Jsonize());
    }
    payload.WithArray("RelatedAnomalies", std::move(relatedAnomaliesJsonList));
+
+  }
+
+  if(m_categoryHasBeenSet)
+  {
+   payload.WithString("Category", m_category);
 
   }
 

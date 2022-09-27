@@ -404,49 +404,57 @@ namespace Model
 
     /**
      * <p>The name of the endpoint database. For a MySQL source or target endpoint, do
-     * not specify DatabaseName.</p>
+     * not specify DatabaseName. To migrate to a specific database, use this setting
+     * and <code>targetDbType</code>.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
 
     /**
      * <p>The name of the endpoint database. For a MySQL source or target endpoint, do
-     * not specify DatabaseName.</p>
+     * not specify DatabaseName. To migrate to a specific database, use this setting
+     * and <code>targetDbType</code>.</p>
      */
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
 
     /**
      * <p>The name of the endpoint database. For a MySQL source or target endpoint, do
-     * not specify DatabaseName.</p>
+     * not specify DatabaseName. To migrate to a specific database, use this setting
+     * and <code>targetDbType</code>.</p>
      */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     /**
      * <p>The name of the endpoint database. For a MySQL source or target endpoint, do
-     * not specify DatabaseName.</p>
+     * not specify DatabaseName. To migrate to a specific database, use this setting
+     * and <code>targetDbType</code>.</p>
      */
     inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
 
     /**
      * <p>The name of the endpoint database. For a MySQL source or target endpoint, do
-     * not specify DatabaseName.</p>
+     * not specify DatabaseName. To migrate to a specific database, use this setting
+     * and <code>targetDbType</code>.</p>
      */
     inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
 
     /**
      * <p>The name of the endpoint database. For a MySQL source or target endpoint, do
-     * not specify DatabaseName.</p>
+     * not specify DatabaseName. To migrate to a specific database, use this setting
+     * and <code>targetDbType</code>.</p>
      */
     inline CreateEndpointRequest& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
 
     /**
      * <p>The name of the endpoint database. For a MySQL source or target endpoint, do
-     * not specify DatabaseName.</p>
+     * not specify DatabaseName. To migrate to a specific database, use this setting
+     * and <code>targetDbType</code>.</p>
      */
     inline CreateEndpointRequest& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the endpoint database. For a MySQL source or target endpoint, do
-     * not specify DatabaseName.</p>
+     * not specify DatabaseName. To migrate to a specific database, use this setting
+     * and <code>targetDbType</code>.</p>
      */
     inline CreateEndpointRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
 

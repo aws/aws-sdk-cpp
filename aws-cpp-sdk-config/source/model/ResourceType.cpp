@@ -135,6 +135,11 @@ namespace Aws
         static const int AWS_CodeDeploy_Application_HASH = HashingUtils::HashString("AWS::CodeDeploy::Application");
         static const int AWS_CodeDeploy_DeploymentConfig_HASH = HashingUtils::HashString("AWS::CodeDeploy::DeploymentConfig");
         static const int AWS_CodeDeploy_DeploymentGroup_HASH = HashingUtils::HashString("AWS::CodeDeploy::DeploymentGroup");
+        static const int AWS_EC2_LaunchTemplate_HASH = HashingUtils::HashString("AWS::EC2::LaunchTemplate");
+        static const int AWS_ECR_PublicRepository_HASH = HashingUtils::HashString("AWS::ECR::PublicRepository");
+        static const int AWS_GuardDuty_Detector_HASH = HashingUtils::HashString("AWS::GuardDuty::Detector");
+        static const int AWS_EMR_SecurityConfiguration_HASH = HashingUtils::HashString("AWS::EMR::SecurityConfiguration");
+        static const int AWS_SageMaker_CodeRepository_HASH = HashingUtils::HashString("AWS::SageMaker::CodeRepository");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -600,6 +605,26 @@ namespace Aws
           {
             return ResourceType::AWS_CodeDeploy_DeploymentGroup;
           }
+          else if (hashCode == AWS_EC2_LaunchTemplate_HASH)
+          {
+            return ResourceType::AWS_EC2_LaunchTemplate;
+          }
+          else if (hashCode == AWS_ECR_PublicRepository_HASH)
+          {
+            return ResourceType::AWS_ECR_PublicRepository;
+          }
+          else if (hashCode == AWS_GuardDuty_Detector_HASH)
+          {
+            return ResourceType::AWS_GuardDuty_Detector;
+          }
+          else if (hashCode == AWS_EMR_SecurityConfiguration_HASH)
+          {
+            return ResourceType::AWS_EMR_SecurityConfiguration;
+          }
+          else if (hashCode == AWS_SageMaker_CodeRepository_HASH)
+          {
+            return ResourceType::AWS_SageMaker_CodeRepository;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -844,6 +869,16 @@ namespace Aws
             return "AWS::CodeDeploy::DeploymentConfig";
           case ResourceType::AWS_CodeDeploy_DeploymentGroup:
             return "AWS::CodeDeploy::DeploymentGroup";
+          case ResourceType::AWS_EC2_LaunchTemplate:
+            return "AWS::EC2::LaunchTemplate";
+          case ResourceType::AWS_ECR_PublicRepository:
+            return "AWS::ECR::PublicRepository";
+          case ResourceType::AWS_GuardDuty_Detector:
+            return "AWS::GuardDuty::Detector";
+          case ResourceType::AWS_EMR_SecurityConfiguration:
+            return "AWS::EMR::SecurityConfiguration";
+          case ResourceType::AWS_SageMaker_CodeRepository:
+            return "AWS::SageMaker::CodeRepository";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

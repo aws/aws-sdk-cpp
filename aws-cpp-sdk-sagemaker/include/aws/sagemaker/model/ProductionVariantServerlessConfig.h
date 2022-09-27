@@ -22,10 +22,8 @@ namespace Model
 {
 
   /**
-   *  <p>Serverless Inference is in preview release for Amazon SageMaker
-   * and is subject to change. We do not recommend using this feature in production
-   * environments.</p>  <p>Specifies the serverless configuration for an
-   * endpoint variant.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies the serverless configuration for an endpoint variant.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProductionVariantServerlessConfig">AWS
    * API Reference</a></p>
    */

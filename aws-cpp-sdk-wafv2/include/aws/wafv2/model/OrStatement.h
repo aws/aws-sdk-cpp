@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/wafv2/WAFV2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wafv2/model/Statement.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -23,6 +23,7 @@ namespace WAFV2
 {
 namespace Model
 {
+  class Statement;
 
   /**
    * <p>A logical rule statement used to combine other rule statements with OR logic.

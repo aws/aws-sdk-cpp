@@ -176,32 +176,38 @@ namespace Model
 
 
     /**
-     * <p>Configuration information for an Amazon Kendra data source.</p>
+     * <p>Configuration information for an Amazon Kendra data source you want to
+     * update.</p>
      */
     inline const DataSourceConfiguration& GetConfiguration() const{ return m_configuration; }
 
     /**
-     * <p>Configuration information for an Amazon Kendra data source.</p>
+     * <p>Configuration information for an Amazon Kendra data source you want to
+     * update.</p>
      */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
-     * <p>Configuration information for an Amazon Kendra data source.</p>
+     * <p>Configuration information for an Amazon Kendra data source you want to
+     * update.</p>
      */
     inline void SetConfiguration(const DataSourceConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
     /**
-     * <p>Configuration information for an Amazon Kendra data source.</p>
+     * <p>Configuration information for an Amazon Kendra data source you want to
+     * update.</p>
      */
     inline void SetConfiguration(DataSourceConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
 
     /**
-     * <p>Configuration information for an Amazon Kendra data source.</p>
+     * <p>Configuration information for an Amazon Kendra data source you want to
+     * update.</p>
      */
     inline UpdateDataSourceRequest& WithConfiguration(const DataSourceConfiguration& value) { SetConfiguration(value); return *this;}
 
     /**
-     * <p>Configuration information for an Amazon Kendra data source.</p>
+     * <p>Configuration information for an Amazon Kendra data source you want to
+     * update.</p>
      */
     inline UpdateDataSourceRequest& WithConfiguration(DataSourceConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 

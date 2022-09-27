@@ -18,24 +18,61 @@ namespace SageMaker
 namespace Model
 {
 
-RSessionAppSettings::RSessionAppSettings()
+RSessionAppSettings::RSessionAppSettings() : 
+    m_defaultResourceSpecHasBeenSet(false),
+    m_customImagesHasBeenSet(false)
 {
 }
 
-RSessionAppSettings::RSessionAppSettings(JsonView jsonValue)
+RSessionAppSettings::RSessionAppSettings(JsonView jsonValue) : 
+    m_defaultResourceSpecHasBeenSet(false),
+    m_customImagesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 RSessionAppSettings& RSessionAppSettings::operator =(JsonView jsonValue)
 {
-  AWS_UNREFERENCED_PARAM(jsonValue);
+  if(jsonValue.ValueExists("DefaultResourceSpec"))
+  {
+    m_defaultResourceSpec = jsonValue.GetObject("DefaultResourceSpec");
+
+    m_defaultResourceSpecHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CustomImages"))
+  {
+    Array<JsonView> customImagesJsonList = jsonValue.GetArray("CustomImages");
+    for(unsigned customImagesIndex = 0; customImagesIndex < customImagesJsonList.GetLength(); ++customImagesIndex)
+    {
+      m_customImages.push_back(customImagesJsonList[customImagesIndex].AsObject());
+    }
+    m_customImagesHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue RSessionAppSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_defaultResourceSpecHasBeenSet)
+  {
+   payload.WithObject("DefaultResourceSpec", m_defaultResourceSpec.Jsonize());
+
+  }
+
+  if(m_customImagesHasBeenSet)
+  {
+   Array<JsonValue> customImagesJsonList(m_customImages.size());
+   for(unsigned customImagesIndex = 0; customImagesIndex < customImagesJsonList.GetLength(); ++customImagesIndex)
+   {
+     customImagesJsonList[customImagesIndex].AsObject(m_customImages[customImagesIndex].Jsonize());
+   }
+   payload.WithArray("CustomImages", std::move(customImagesJsonList));
+
+  }
 
   return payload;
 }

@@ -35,42 +35,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the vocabulary that you want to delete.</p>
+     * <p>The name of the custom medical vocabulary you want to delete. Vocabulary
+     * names are case sensitive.</p>
      */
     inline const Aws::String& GetVocabularyName() const{ return m_vocabularyName; }
 
     /**
-     * <p>The name of the vocabulary that you want to delete.</p>
+     * <p>The name of the custom medical vocabulary you want to delete. Vocabulary
+     * names are case sensitive.</p>
      */
     inline bool VocabularyNameHasBeenSet() const { return m_vocabularyNameHasBeenSet; }
 
     /**
-     * <p>The name of the vocabulary that you want to delete.</p>
+     * <p>The name of the custom medical vocabulary you want to delete. Vocabulary
+     * names are case sensitive.</p>
      */
     inline void SetVocabularyName(const Aws::String& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = value; }
 
     /**
-     * <p>The name of the vocabulary that you want to delete.</p>
+     * <p>The name of the custom medical vocabulary you want to delete. Vocabulary
+     * names are case sensitive.</p>
      */
     inline void SetVocabularyName(Aws::String&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::move(value); }
 
     /**
-     * <p>The name of the vocabulary that you want to delete.</p>
+     * <p>The name of the custom medical vocabulary you want to delete. Vocabulary
+     * names are case sensitive.</p>
      */
     inline void SetVocabularyName(const char* value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName.assign(value); }
 
     /**
-     * <p>The name of the vocabulary that you want to delete.</p>
+     * <p>The name of the custom medical vocabulary you want to delete. Vocabulary
+     * names are case sensitive.</p>
      */
     inline DeleteMedicalVocabularyRequest& WithVocabularyName(const Aws::String& value) { SetVocabularyName(value); return *this;}
 
     /**
-     * <p>The name of the vocabulary that you want to delete.</p>
+     * <p>The name of the custom medical vocabulary you want to delete. Vocabulary
+     * names are case sensitive.</p>
      */
     inline DeleteMedicalVocabularyRequest& WithVocabularyName(Aws::String&& value) { SetVocabularyName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the vocabulary that you want to delete.</p>
+     * <p>The name of the custom medical vocabulary you want to delete. Vocabulary
+     * names are case sensitive.</p>
      */
     inline DeleteMedicalVocabularyRequest& WithVocabularyName(const char* value) { SetVocabularyName(value); return *this;}
 

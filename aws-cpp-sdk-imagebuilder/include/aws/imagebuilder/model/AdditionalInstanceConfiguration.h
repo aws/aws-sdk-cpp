@@ -75,81 +75,105 @@ namespace Model
 
     /**
      * <p>Use this property to provide commands or a command script to run when you
-     * launch your build instance.</p>  <p>The userDataOverride property replaces
-     * any commands that Image Builder might have added to ensure that Systems Manager
-     * is installed on your Linux build instance. If you override the user data, make
-     * sure that you add commands to install Systems Manager, if it is not
-     * pre-installed on your base image.</p> 
+     * launch your build instance.</p> <p>The userDataOverride property replaces any
+     * commands that Image Builder might have added to ensure that Systems Manager is
+     * installed on your Linux build instance. If you override the user data, make sure
+     * that you add commands to install Systems Manager, if it is not pre-installed on
+     * your base image.</p>  <p>The user data is always base 64 encoded. For
+     * example, the following commands are encoded as
+     * <code>IyEvYmluL2Jhc2gKbWtkaXIgLXAgL3Zhci9iYi8KdG91Y2ggL3Zhci$</code>:</p> <p>
+     * <i>#!/bin/bash</i> </p> <p>mkdir -p /var/bb/</p> <p>touch /var</p> 
      */
     inline const Aws::String& GetUserDataOverride() const{ return m_userDataOverride; }
 
     /**
      * <p>Use this property to provide commands or a command script to run when you
-     * launch your build instance.</p>  <p>The userDataOverride property replaces
-     * any commands that Image Builder might have added to ensure that Systems Manager
-     * is installed on your Linux build instance. If you override the user data, make
-     * sure that you add commands to install Systems Manager, if it is not
-     * pre-installed on your base image.</p> 
+     * launch your build instance.</p> <p>The userDataOverride property replaces any
+     * commands that Image Builder might have added to ensure that Systems Manager is
+     * installed on your Linux build instance. If you override the user data, make sure
+     * that you add commands to install Systems Manager, if it is not pre-installed on
+     * your base image.</p>  <p>The user data is always base 64 encoded. For
+     * example, the following commands are encoded as
+     * <code>IyEvYmluL2Jhc2gKbWtkaXIgLXAgL3Zhci9iYi8KdG91Y2ggL3Zhci$</code>:</p> <p>
+     * <i>#!/bin/bash</i> </p> <p>mkdir -p /var/bb/</p> <p>touch /var</p> 
      */
     inline bool UserDataOverrideHasBeenSet() const { return m_userDataOverrideHasBeenSet; }
 
     /**
      * <p>Use this property to provide commands or a command script to run when you
-     * launch your build instance.</p>  <p>The userDataOverride property replaces
-     * any commands that Image Builder might have added to ensure that Systems Manager
-     * is installed on your Linux build instance. If you override the user data, make
-     * sure that you add commands to install Systems Manager, if it is not
-     * pre-installed on your base image.</p> 
+     * launch your build instance.</p> <p>The userDataOverride property replaces any
+     * commands that Image Builder might have added to ensure that Systems Manager is
+     * installed on your Linux build instance. If you override the user data, make sure
+     * that you add commands to install Systems Manager, if it is not pre-installed on
+     * your base image.</p>  <p>The user data is always base 64 encoded. For
+     * example, the following commands are encoded as
+     * <code>IyEvYmluL2Jhc2gKbWtkaXIgLXAgL3Zhci9iYi8KdG91Y2ggL3Zhci$</code>:</p> <p>
+     * <i>#!/bin/bash</i> </p> <p>mkdir -p /var/bb/</p> <p>touch /var</p> 
      */
     inline void SetUserDataOverride(const Aws::String& value) { m_userDataOverrideHasBeenSet = true; m_userDataOverride = value; }
 
     /**
      * <p>Use this property to provide commands or a command script to run when you
-     * launch your build instance.</p>  <p>The userDataOverride property replaces
-     * any commands that Image Builder might have added to ensure that Systems Manager
-     * is installed on your Linux build instance. If you override the user data, make
-     * sure that you add commands to install Systems Manager, if it is not
-     * pre-installed on your base image.</p> 
+     * launch your build instance.</p> <p>The userDataOverride property replaces any
+     * commands that Image Builder might have added to ensure that Systems Manager is
+     * installed on your Linux build instance. If you override the user data, make sure
+     * that you add commands to install Systems Manager, if it is not pre-installed on
+     * your base image.</p>  <p>The user data is always base 64 encoded. For
+     * example, the following commands are encoded as
+     * <code>IyEvYmluL2Jhc2gKbWtkaXIgLXAgL3Zhci9iYi8KdG91Y2ggL3Zhci$</code>:</p> <p>
+     * <i>#!/bin/bash</i> </p> <p>mkdir -p /var/bb/</p> <p>touch /var</p> 
      */
     inline void SetUserDataOverride(Aws::String&& value) { m_userDataOverrideHasBeenSet = true; m_userDataOverride = std::move(value); }
 
     /**
      * <p>Use this property to provide commands or a command script to run when you
-     * launch your build instance.</p>  <p>The userDataOverride property replaces
-     * any commands that Image Builder might have added to ensure that Systems Manager
-     * is installed on your Linux build instance. If you override the user data, make
-     * sure that you add commands to install Systems Manager, if it is not
-     * pre-installed on your base image.</p> 
+     * launch your build instance.</p> <p>The userDataOverride property replaces any
+     * commands that Image Builder might have added to ensure that Systems Manager is
+     * installed on your Linux build instance. If you override the user data, make sure
+     * that you add commands to install Systems Manager, if it is not pre-installed on
+     * your base image.</p>  <p>The user data is always base 64 encoded. For
+     * example, the following commands are encoded as
+     * <code>IyEvYmluL2Jhc2gKbWtkaXIgLXAgL3Zhci9iYi8KdG91Y2ggL3Zhci$</code>:</p> <p>
+     * <i>#!/bin/bash</i> </p> <p>mkdir -p /var/bb/</p> <p>touch /var</p> 
      */
     inline void SetUserDataOverride(const char* value) { m_userDataOverrideHasBeenSet = true; m_userDataOverride.assign(value); }
 
     /**
      * <p>Use this property to provide commands or a command script to run when you
-     * launch your build instance.</p>  <p>The userDataOverride property replaces
-     * any commands that Image Builder might have added to ensure that Systems Manager
-     * is installed on your Linux build instance. If you override the user data, make
-     * sure that you add commands to install Systems Manager, if it is not
-     * pre-installed on your base image.</p> 
+     * launch your build instance.</p> <p>The userDataOverride property replaces any
+     * commands that Image Builder might have added to ensure that Systems Manager is
+     * installed on your Linux build instance. If you override the user data, make sure
+     * that you add commands to install Systems Manager, if it is not pre-installed on
+     * your base image.</p>  <p>The user data is always base 64 encoded. For
+     * example, the following commands are encoded as
+     * <code>IyEvYmluL2Jhc2gKbWtkaXIgLXAgL3Zhci9iYi8KdG91Y2ggL3Zhci$</code>:</p> <p>
+     * <i>#!/bin/bash</i> </p> <p>mkdir -p /var/bb/</p> <p>touch /var</p> 
      */
     inline AdditionalInstanceConfiguration& WithUserDataOverride(const Aws::String& value) { SetUserDataOverride(value); return *this;}
 
     /**
      * <p>Use this property to provide commands or a command script to run when you
-     * launch your build instance.</p>  <p>The userDataOverride property replaces
-     * any commands that Image Builder might have added to ensure that Systems Manager
-     * is installed on your Linux build instance. If you override the user data, make
-     * sure that you add commands to install Systems Manager, if it is not
-     * pre-installed on your base image.</p> 
+     * launch your build instance.</p> <p>The userDataOverride property replaces any
+     * commands that Image Builder might have added to ensure that Systems Manager is
+     * installed on your Linux build instance. If you override the user data, make sure
+     * that you add commands to install Systems Manager, if it is not pre-installed on
+     * your base image.</p>  <p>The user data is always base 64 encoded. For
+     * example, the following commands are encoded as
+     * <code>IyEvYmluL2Jhc2gKbWtkaXIgLXAgL3Zhci9iYi8KdG91Y2ggL3Zhci$</code>:</p> <p>
+     * <i>#!/bin/bash</i> </p> <p>mkdir -p /var/bb/</p> <p>touch /var</p> 
      */
     inline AdditionalInstanceConfiguration& WithUserDataOverride(Aws::String&& value) { SetUserDataOverride(std::move(value)); return *this;}
 
     /**
      * <p>Use this property to provide commands or a command script to run when you
-     * launch your build instance.</p>  <p>The userDataOverride property replaces
-     * any commands that Image Builder might have added to ensure that Systems Manager
-     * is installed on your Linux build instance. If you override the user data, make
-     * sure that you add commands to install Systems Manager, if it is not
-     * pre-installed on your base image.</p> 
+     * launch your build instance.</p> <p>The userDataOverride property replaces any
+     * commands that Image Builder might have added to ensure that Systems Manager is
+     * installed on your Linux build instance. If you override the user data, make sure
+     * that you add commands to install Systems Manager, if it is not pre-installed on
+     * your base image.</p>  <p>The user data is always base 64 encoded. For
+     * example, the following commands are encoded as
+     * <code>IyEvYmluL2Jhc2gKbWtkaXIgLXAgL3Zhci9iYi8KdG91Y2ggL3Zhci$</code>:</p> <p>
+     * <i>#!/bin/bash</i> </p> <p>mkdir -p /var/bb/</p> <p>touch /var</p> 
      */
     inline AdditionalInstanceConfiguration& WithUserDataOverride(const char* value) { SetUserDataOverride(value); return *this;}
 

@@ -69,28 +69,28 @@ namespace Model
 
 
     /**
-     * <p>Avoids ferries when calculating routes.</p> <p>Default Value:
+     * <p>Avoids tolls when calculating routes.</p> <p>Default Value:
      * <code>false</code> </p> <p>Valid Values: <code>false</code> | <code>true</code>
      * </p>
      */
     inline bool GetAvoidTolls() const{ return m_avoidTolls; }
 
     /**
-     * <p>Avoids ferries when calculating routes.</p> <p>Default Value:
+     * <p>Avoids tolls when calculating routes.</p> <p>Default Value:
      * <code>false</code> </p> <p>Valid Values: <code>false</code> | <code>true</code>
      * </p>
      */
     inline bool AvoidTollsHasBeenSet() const { return m_avoidTollsHasBeenSet; }
 
     /**
-     * <p>Avoids ferries when calculating routes.</p> <p>Default Value:
+     * <p>Avoids tolls when calculating routes.</p> <p>Default Value:
      * <code>false</code> </p> <p>Valid Values: <code>false</code> | <code>true</code>
      * </p>
      */
     inline void SetAvoidTolls(bool value) { m_avoidTollsHasBeenSet = true; m_avoidTolls = value; }
 
     /**
-     * <p>Avoids ferries when calculating routes.</p> <p>Default Value:
+     * <p>Avoids tolls when calculating routes.</p> <p>Default Value:
      * <code>false</code> </p> <p>Valid Values: <code>false</code> | <code>true</code>
      * </p>
      */

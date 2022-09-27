@@ -42,6 +42,12 @@ GetRoutingControlStateResult& GetRoutingControlStateResult::operator =(const Aws
 
   }
 
+  if(jsonValue.ValueExists("RoutingControlName"))
+  {
+    m_routingControlName = jsonValue.GetString("RoutingControlName");
+
+  }
+
 
 
   return *this;

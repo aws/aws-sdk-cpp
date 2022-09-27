@@ -259,60 +259,60 @@ namespace Model
     /**
      * <p>A data object containing your Realtime scripts and dependencies as a zip
      * file. The zip file can have one or multiple files. Maximum size of a zip file is
-     * 5 MB.</p> <p>When using the AWS CLI tool to create a script, this parameter is
-     * set to the zip file name. It must be prepended with the string "fileb://" to
-     * indicate that the file data is a binary object. For example: <code>--zip-file
-     * fileb://myRealtimeScript.zip</code>.</p>
+     * 5 MB.</p> <p>When using the Amazon Web Services CLI tool to create a script,
+     * this parameter is set to the zip file name. It must be prepended with the string
+     * "fileb://" to indicate that the file data is a binary object. For example:
+     * <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetZipFile() const{ return m_zipFile; }
 
     /**
      * <p>A data object containing your Realtime scripts and dependencies as a zip
      * file. The zip file can have one or multiple files. Maximum size of a zip file is
-     * 5 MB.</p> <p>When using the AWS CLI tool to create a script, this parameter is
-     * set to the zip file name. It must be prepended with the string "fileb://" to
-     * indicate that the file data is a binary object. For example: <code>--zip-file
-     * fileb://myRealtimeScript.zip</code>.</p>
+     * 5 MB.</p> <p>When using the Amazon Web Services CLI tool to create a script,
+     * this parameter is set to the zip file name. It must be prepended with the string
+     * "fileb://" to indicate that the file data is a binary object. For example:
+     * <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
      */
     inline bool ZipFileHasBeenSet() const { return m_zipFileHasBeenSet; }
 
     /**
      * <p>A data object containing your Realtime scripts and dependencies as a zip
      * file. The zip file can have one or multiple files. Maximum size of a zip file is
-     * 5 MB.</p> <p>When using the AWS CLI tool to create a script, this parameter is
-     * set to the zip file name. It must be prepended with the string "fileb://" to
-     * indicate that the file data is a binary object. For example: <code>--zip-file
-     * fileb://myRealtimeScript.zip</code>.</p>
+     * 5 MB.</p> <p>When using the Amazon Web Services CLI tool to create a script,
+     * this parameter is set to the zip file name. It must be prepended with the string
+     * "fileb://" to indicate that the file data is a binary object. For example:
+     * <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
      */
     inline void SetZipFile(const Aws::Utils::ByteBuffer& value) { m_zipFileHasBeenSet = true; m_zipFile = value; }
 
     /**
      * <p>A data object containing your Realtime scripts and dependencies as a zip
      * file. The zip file can have one or multiple files. Maximum size of a zip file is
-     * 5 MB.</p> <p>When using the AWS CLI tool to create a script, this parameter is
-     * set to the zip file name. It must be prepended with the string "fileb://" to
-     * indicate that the file data is a binary object. For example: <code>--zip-file
-     * fileb://myRealtimeScript.zip</code>.</p>
+     * 5 MB.</p> <p>When using the Amazon Web Services CLI tool to create a script,
+     * this parameter is set to the zip file name. It must be prepended with the string
+     * "fileb://" to indicate that the file data is a binary object. For example:
+     * <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
      */
     inline void SetZipFile(Aws::Utils::ByteBuffer&& value) { m_zipFileHasBeenSet = true; m_zipFile = std::move(value); }
 
     /**
      * <p>A data object containing your Realtime scripts and dependencies as a zip
      * file. The zip file can have one or multiple files. Maximum size of a zip file is
-     * 5 MB.</p> <p>When using the AWS CLI tool to create a script, this parameter is
-     * set to the zip file name. It must be prepended with the string "fileb://" to
-     * indicate that the file data is a binary object. For example: <code>--zip-file
-     * fileb://myRealtimeScript.zip</code>.</p>
+     * 5 MB.</p> <p>When using the Amazon Web Services CLI tool to create a script,
+     * this parameter is set to the zip file name. It must be prepended with the string
+     * "fileb://" to indicate that the file data is a binary object. For example:
+     * <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
      */
     inline UpdateScriptRequest& WithZipFile(const Aws::Utils::ByteBuffer& value) { SetZipFile(value); return *this;}
 
     /**
      * <p>A data object containing your Realtime scripts and dependencies as a zip
      * file. The zip file can have one or multiple files. Maximum size of a zip file is
-     * 5 MB.</p> <p>When using the AWS CLI tool to create a script, this parameter is
-     * set to the zip file name. It must be prepended with the string "fileb://" to
-     * indicate that the file data is a binary object. For example: <code>--zip-file
-     * fileb://myRealtimeScript.zip</code>.</p>
+     * 5 MB.</p> <p>When using the Amazon Web Services CLI tool to create a script,
+     * this parameter is set to the zip file name. It must be prepended with the string
+     * "fileb://" to indicate that the file data is a binary object. For example:
+     * <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
      */
     inline UpdateScriptRequest& WithZipFile(Aws::Utils::ByteBuffer&& value) { SetZipFile(std::move(value)); return *this;}
 

@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Unitialized account exception.</p><p><h3>See Also:</h3>   <a
+   * <p>Uninitialized account exception.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UninitializedAccountException">AWS
    * API Reference</a></p>
    */

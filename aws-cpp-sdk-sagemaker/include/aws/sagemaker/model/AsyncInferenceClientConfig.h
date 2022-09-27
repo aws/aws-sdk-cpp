@@ -22,9 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>Configures the behavior of the client used by Amazon SageMaker to interact
-   * with the model container during asynchronous inference.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Configures the behavior of the client used by SageMaker to interact with the
+   * model container during asynchronous inference.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AsyncInferenceClientConfig">AWS
    * API Reference</a></p>
    */
@@ -39,29 +38,29 @@ namespace Model
 
     /**
      * <p>The maximum number of concurrent requests sent by the SageMaker client to the
-     * model container. If no value is provided, Amazon SageMaker will choose an
-     * optimal value for you.</p>
+     * model container. If no value is provided, SageMaker chooses an optimal
+     * value.</p>
      */
     inline int GetMaxConcurrentInvocationsPerInstance() const{ return m_maxConcurrentInvocationsPerInstance; }
 
     /**
      * <p>The maximum number of concurrent requests sent by the SageMaker client to the
-     * model container. If no value is provided, Amazon SageMaker will choose an
-     * optimal value for you.</p>
+     * model container. If no value is provided, SageMaker chooses an optimal
+     * value.</p>
      */
     inline bool MaxConcurrentInvocationsPerInstanceHasBeenSet() const { return m_maxConcurrentInvocationsPerInstanceHasBeenSet; }
 
     /**
      * <p>The maximum number of concurrent requests sent by the SageMaker client to the
-     * model container. If no value is provided, Amazon SageMaker will choose an
-     * optimal value for you.</p>
+     * model container. If no value is provided, SageMaker chooses an optimal
+     * value.</p>
      */
     inline void SetMaxConcurrentInvocationsPerInstance(int value) { m_maxConcurrentInvocationsPerInstanceHasBeenSet = true; m_maxConcurrentInvocationsPerInstance = value; }
 
     /**
      * <p>The maximum number of concurrent requests sent by the SageMaker client to the
-     * model container. If no value is provided, Amazon SageMaker will choose an
-     * optimal value for you.</p>
+     * model container. If no value is provided, SageMaker chooses an optimal
+     * value.</p>
      */
     inline AsyncInferenceClientConfig& WithMaxConcurrentInvocationsPerInstance(int value) { SetMaxConcurrentInvocationsPerInstance(value); return *this;}
 

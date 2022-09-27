@@ -27,7 +27,8 @@ CreateJobRequest::CreateJobRequest() :
     m_priority(0),
     m_priorityHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_manifestGeneratorHasBeenSet(false)
 {
 }
 
@@ -99,6 +100,12 @@ Aws::String CreateJobRequest::SerializePayload() const
      XmlNode tagsNode = tagsParentNode.CreateChildElement("S3Tag");
      item.AddToNode(tagsNode);
    }
+  }
+
+  if(m_manifestGeneratorHasBeenSet)
+  {
+   XmlNode manifestGeneratorNode = parentNode.CreateChildElement("ManifestGenerator");
+   m_manifestGenerator.AddToNode(manifestGeneratorNode);
   }
 
   return payloadDoc.ConvertToString();

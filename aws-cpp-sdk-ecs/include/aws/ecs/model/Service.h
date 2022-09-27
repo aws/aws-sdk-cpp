@@ -1245,7 +1245,7 @@ namespace Model
      * spreads tasks across Availability Zones. You can use task placement strategies
      * and constraints to customize task placement decisions.</p> </li> <li> <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
-     * each active container instance. This taskmeets all of the task placement
+     * each active container instance. This task meets all of the task placement
      * constraints that you specify in your cluster. The service scheduler also
      * evaluates the task placement constraints for running tasks. It stop tasks that
      * don't meet the placement constraints.</p>  <p>Fargate tasks don't support
@@ -1262,7 +1262,7 @@ namespace Model
      * spreads tasks across Availability Zones. You can use task placement strategies
      * and constraints to customize task placement decisions.</p> </li> <li> <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
-     * each active container instance. This taskmeets all of the task placement
+     * each active container instance. This task meets all of the task placement
      * constraints that you specify in your cluster. The service scheduler also
      * evaluates the task placement constraints for running tasks. It stop tasks that
      * don't meet the placement constraints.</p>  <p>Fargate tasks don't support
@@ -1279,7 +1279,7 @@ namespace Model
      * spreads tasks across Availability Zones. You can use task placement strategies
      * and constraints to customize task placement decisions.</p> </li> <li> <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
-     * each active container instance. This taskmeets all of the task placement
+     * each active container instance. This task meets all of the task placement
      * constraints that you specify in your cluster. The service scheduler also
      * evaluates the task placement constraints for running tasks. It stop tasks that
      * don't meet the placement constraints.</p>  <p>Fargate tasks don't support
@@ -1296,7 +1296,7 @@ namespace Model
      * spreads tasks across Availability Zones. You can use task placement strategies
      * and constraints to customize task placement decisions.</p> </li> <li> <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
-     * each active container instance. This taskmeets all of the task placement
+     * each active container instance. This task meets all of the task placement
      * constraints that you specify in your cluster. The service scheduler also
      * evaluates the task placement constraints for running tasks. It stop tasks that
      * don't meet the placement constraints.</p>  <p>Fargate tasks don't support
@@ -1313,7 +1313,7 @@ namespace Model
      * spreads tasks across Availability Zones. You can use task placement strategies
      * and constraints to customize task placement decisions.</p> </li> <li> <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
-     * each active container instance. This taskmeets all of the task placement
+     * each active container instance. This task meets all of the task placement
      * constraints that you specify in your cluster. The service scheduler also
      * evaluates the task placement constraints for running tasks. It stop tasks that
      * don't meet the placement constraints.</p>  <p>Fargate tasks don't support
@@ -1330,7 +1330,7 @@ namespace Model
      * spreads tasks across Availability Zones. You can use task placement strategies
      * and constraints to customize task placement decisions.</p> </li> <li> <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
-     * each active container instance. This taskmeets all of the task placement
+     * each active container instance. This task meets all of the task placement
      * constraints that you specify in your cluster. The service scheduler also
      * evaluates the task placement constraints for running tasks. It stop tasks that
      * don't meet the placement constraints.</p>  <p>Fargate tasks don't support
@@ -1593,7 +1593,7 @@ namespace Model
 
 
     /**
-     * <p>Determines whether to enable Amazon ECS managed tags for the tasks in the
+     * <p>Determines whether to use Amazon ECS managed tags for the tasks in the
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
@@ -1602,7 +1602,7 @@ namespace Model
     inline bool GetEnableECSManagedTags() const{ return m_enableECSManagedTags; }
 
     /**
-     * <p>Determines whether to enable Amazon ECS managed tags for the tasks in the
+     * <p>Determines whether to use Amazon ECS managed tags for the tasks in the
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
@@ -1611,7 +1611,7 @@ namespace Model
     inline bool EnableECSManagedTagsHasBeenSet() const { return m_enableECSManagedTagsHasBeenSet; }
 
     /**
-     * <p>Determines whether to enable Amazon ECS managed tags for the tasks in the
+     * <p>Determines whether to use Amazon ECS managed tags for the tasks in the
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
@@ -1620,7 +1620,7 @@ namespace Model
     inline void SetEnableECSManagedTags(bool value) { m_enableECSManagedTagsHasBeenSet = true; m_enableECSManagedTags = value; }
 
     /**
-     * <p>Determines whether to enable Amazon ECS managed tags for the tasks in the
+     * <p>Determines whether to use Amazon ECS managed tags for the tasks in the
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service

@@ -9,6 +9,7 @@
 #include <aws/cloudfront/model/ResponseHeadersPolicyCorsConfig.h>
 #include <aws/cloudfront/model/ResponseHeadersPolicySecurityHeadersConfig.h>
 #include <aws/cloudfront/model/ResponseHeadersPolicyCustomHeadersConfig.h>
+#include <aws/cloudfront/model/ResponseHeadersPolicyServerTimingHeadersConfig.h>
 #include <utility>
 
 namespace Aws
@@ -240,6 +241,43 @@ namespace Model
      */
     inline ResponseHeadersPolicyConfig& WithCustomHeadersConfig(ResponseHeadersPolicyCustomHeadersConfig&& value) { SetCustomHeadersConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A configuration for enabling the <code>Server-Timing</code> header in HTTP
+     * responses sent from CloudFront.</p>
+     */
+    inline const ResponseHeadersPolicyServerTimingHeadersConfig& GetServerTimingHeadersConfig() const{ return m_serverTimingHeadersConfig; }
+
+    /**
+     * <p>A configuration for enabling the <code>Server-Timing</code> header in HTTP
+     * responses sent from CloudFront.</p>
+     */
+    inline bool ServerTimingHeadersConfigHasBeenSet() const { return m_serverTimingHeadersConfigHasBeenSet; }
+
+    /**
+     * <p>A configuration for enabling the <code>Server-Timing</code> header in HTTP
+     * responses sent from CloudFront.</p>
+     */
+    inline void SetServerTimingHeadersConfig(const ResponseHeadersPolicyServerTimingHeadersConfig& value) { m_serverTimingHeadersConfigHasBeenSet = true; m_serverTimingHeadersConfig = value; }
+
+    /**
+     * <p>A configuration for enabling the <code>Server-Timing</code> header in HTTP
+     * responses sent from CloudFront.</p>
+     */
+    inline void SetServerTimingHeadersConfig(ResponseHeadersPolicyServerTimingHeadersConfig&& value) { m_serverTimingHeadersConfigHasBeenSet = true; m_serverTimingHeadersConfig = std::move(value); }
+
+    /**
+     * <p>A configuration for enabling the <code>Server-Timing</code> header in HTTP
+     * responses sent from CloudFront.</p>
+     */
+    inline ResponseHeadersPolicyConfig& WithServerTimingHeadersConfig(const ResponseHeadersPolicyServerTimingHeadersConfig& value) { SetServerTimingHeadersConfig(value); return *this;}
+
+    /**
+     * <p>A configuration for enabling the <code>Server-Timing</code> header in HTTP
+     * responses sent from CloudFront.</p>
+     */
+    inline ResponseHeadersPolicyConfig& WithServerTimingHeadersConfig(ResponseHeadersPolicyServerTimingHeadersConfig&& value) { SetServerTimingHeadersConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_comment;
@@ -256,6 +294,9 @@ namespace Model
 
     ResponseHeadersPolicyCustomHeadersConfig m_customHeadersConfig;
     bool m_customHeadersConfigHasBeenSet;
+
+    ResponseHeadersPolicyServerTimingHeadersConfig m_serverTimingHeadersConfig;
+    bool m_serverTimingHeadersConfigHasBeenSet;
   };
 
 } // namespace Model

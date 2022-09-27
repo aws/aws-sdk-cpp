@@ -24,6 +24,7 @@ ScheduleEntry::ScheduleEntry() :
     m_approximateStartTimeHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_channelNameHasBeenSet(false),
+    m_liveSourceNameHasBeenSet(false),
     m_programNameHasBeenSet(false),
     m_scheduleAdBreaksHasBeenSet(false),
     m_scheduleEntryType(ScheduleEntryType::NOT_SET),
@@ -39,6 +40,7 @@ ScheduleEntry::ScheduleEntry(JsonView jsonValue) :
     m_approximateStartTimeHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_channelNameHasBeenSet(false),
+    m_liveSourceNameHasBeenSet(false),
     m_programNameHasBeenSet(false),
     m_scheduleAdBreaksHasBeenSet(false),
     m_scheduleEntryType(ScheduleEntryType::NOT_SET),
@@ -77,6 +79,13 @@ ScheduleEntry& ScheduleEntry::operator =(JsonView jsonValue)
     m_channelName = jsonValue.GetString("ChannelName");
 
     m_channelNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LiveSourceName"))
+  {
+    m_liveSourceName = jsonValue.GetString("LiveSourceName");
+
+    m_liveSourceNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ProgramName"))
@@ -144,6 +153,12 @@ JsonValue ScheduleEntry::Jsonize() const
   if(m_channelNameHasBeenSet)
   {
    payload.WithString("ChannelName", m_channelName);
+
+  }
+
+  if(m_liveSourceNameHasBeenSet)
+  {
+   payload.WithString("LiveSourceName", m_liveSourceName);
 
   }
 

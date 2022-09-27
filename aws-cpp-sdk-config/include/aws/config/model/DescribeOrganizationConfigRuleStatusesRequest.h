@@ -36,63 +36,63 @@ namespace Model
 
 
     /**
-     * <p>The names of organization config rules for which you want status details. If
+     * <p>The names of organization Config rules for which you want status details. If
      * you do not specify any names, Config returns details for all your organization
      * Config rules.</p>
      */
     inline const Aws::Vector<Aws::String>& GetOrganizationConfigRuleNames() const{ return m_organizationConfigRuleNames; }
 
     /**
-     * <p>The names of organization config rules for which you want status details. If
+     * <p>The names of organization Config rules for which you want status details. If
      * you do not specify any names, Config returns details for all your organization
      * Config rules.</p>
      */
     inline bool OrganizationConfigRuleNamesHasBeenSet() const { return m_organizationConfigRuleNamesHasBeenSet; }
 
     /**
-     * <p>The names of organization config rules for which you want status details. If
+     * <p>The names of organization Config rules for which you want status details. If
      * you do not specify any names, Config returns details for all your organization
      * Config rules.</p>
      */
     inline void SetOrganizationConfigRuleNames(const Aws::Vector<Aws::String>& value) { m_organizationConfigRuleNamesHasBeenSet = true; m_organizationConfigRuleNames = value; }
 
     /**
-     * <p>The names of organization config rules for which you want status details. If
+     * <p>The names of organization Config rules for which you want status details. If
      * you do not specify any names, Config returns details for all your organization
      * Config rules.</p>
      */
     inline void SetOrganizationConfigRuleNames(Aws::Vector<Aws::String>&& value) { m_organizationConfigRuleNamesHasBeenSet = true; m_organizationConfigRuleNames = std::move(value); }
 
     /**
-     * <p>The names of organization config rules for which you want status details. If
+     * <p>The names of organization Config rules for which you want status details. If
      * you do not specify any names, Config returns details for all your organization
      * Config rules.</p>
      */
     inline DescribeOrganizationConfigRuleStatusesRequest& WithOrganizationConfigRuleNames(const Aws::Vector<Aws::String>& value) { SetOrganizationConfigRuleNames(value); return *this;}
 
     /**
-     * <p>The names of organization config rules for which you want status details. If
+     * <p>The names of organization Config rules for which you want status details. If
      * you do not specify any names, Config returns details for all your organization
      * Config rules.</p>
      */
     inline DescribeOrganizationConfigRuleStatusesRequest& WithOrganizationConfigRuleNames(Aws::Vector<Aws::String>&& value) { SetOrganizationConfigRuleNames(std::move(value)); return *this;}
 
     /**
-     * <p>The names of organization config rules for which you want status details. If
+     * <p>The names of organization Config rules for which you want status details. If
      * you do not specify any names, Config returns details for all your organization
      * Config rules.</p>
      */
     inline DescribeOrganizationConfigRuleStatusesRequest& AddOrganizationConfigRuleNames(const Aws::String& value) { m_organizationConfigRuleNamesHasBeenSet = true; m_organizationConfigRuleNames.push_back(value); return *this; }
 
     /**
-     * <p>The names of organization config rules for which you want status details. If
+     * <p>The names of organization Config rules for which you want status details. If
      * you do not specify any names, Config returns details for all your organization
      * Config rules.</p>
      */
     inline DescribeOrganizationConfigRuleStatusesRequest& AddOrganizationConfigRuleNames(Aws::String&& value) { m_organizationConfigRuleNamesHasBeenSet = true; m_organizationConfigRuleNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The names of organization config rules for which you want status details. If
+     * <p>The names of organization Config rules for which you want status details. If
      * you do not specify any names, Config returns details for all your organization
      * Config rules.</p>
      */

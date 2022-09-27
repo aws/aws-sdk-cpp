@@ -22,6 +22,7 @@ namespace Aws
 
         static const int CONNECTED_HASH = HashingUtils::HashString("CONNECTED");
         static const int NOT_CONNECTED_HASH = HashingUtils::HashString("NOT_CONNECTED");
+        static const int CONNECTING_HASH = HashingUtils::HashString("CONNECTING");
 
 
         NetworkConnectionStatus GetNetworkConnectionStatusForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == NOT_CONNECTED_HASH)
           {
             return NetworkConnectionStatus::NOT_CONNECTED;
+          }
+          else if (hashCode == CONNECTING_HASH)
+          {
+            return NetworkConnectionStatus::CONNECTING;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "CONNECTED";
           case NetworkConnectionStatus::NOT_CONNECTED:
             return "NOT_CONNECTED";
+          case NetworkConnectionStatus::CONNECTING:
+            return "CONNECTING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

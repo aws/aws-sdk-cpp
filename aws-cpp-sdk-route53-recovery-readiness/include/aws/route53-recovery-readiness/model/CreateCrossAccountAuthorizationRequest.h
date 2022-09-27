@@ -17,9 +17,6 @@ namespace Model
 {
 
   /**
-   * The cross account authorization<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/CreateCrossAccountAuthorizationRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_ROUTE53RECOVERYREADINESS_API CreateCrossAccountAuthorizationRequest : public Route53RecoveryReadinessRequest
   {
@@ -36,42 +33,42 @@ namespace Model
 
 
     /**
-     * The cross account authorization
+     * <p>The cross-account authorization.</p>
      */
     inline const Aws::String& GetCrossAccountAuthorization() const{ return m_crossAccountAuthorization; }
 
     /**
-     * The cross account authorization
+     * <p>The cross-account authorization.</p>
      */
     inline bool CrossAccountAuthorizationHasBeenSet() const { return m_crossAccountAuthorizationHasBeenSet; }
 
     /**
-     * The cross account authorization
+     * <p>The cross-account authorization.</p>
      */
     inline void SetCrossAccountAuthorization(const Aws::String& value) { m_crossAccountAuthorizationHasBeenSet = true; m_crossAccountAuthorization = value; }
 
     /**
-     * The cross account authorization
+     * <p>The cross-account authorization.</p>
      */
     inline void SetCrossAccountAuthorization(Aws::String&& value) { m_crossAccountAuthorizationHasBeenSet = true; m_crossAccountAuthorization = std::move(value); }
 
     /**
-     * The cross account authorization
+     * <p>The cross-account authorization.</p>
      */
     inline void SetCrossAccountAuthorization(const char* value) { m_crossAccountAuthorizationHasBeenSet = true; m_crossAccountAuthorization.assign(value); }
 
     /**
-     * The cross account authorization
+     * <p>The cross-account authorization.</p>
      */
     inline CreateCrossAccountAuthorizationRequest& WithCrossAccountAuthorization(const Aws::String& value) { SetCrossAccountAuthorization(value); return *this;}
 
     /**
-     * The cross account authorization
+     * <p>The cross-account authorization.</p>
      */
     inline CreateCrossAccountAuthorizationRequest& WithCrossAccountAuthorization(Aws::String&& value) { SetCrossAccountAuthorization(std::move(value)); return *this;}
 
     /**
-     * The cross account authorization
+     * <p>The cross-account authorization.</p>
      */
     inline CreateCrossAccountAuthorizationRequest& WithCrossAccountAuthorization(const char* value) { SetCrossAccountAuthorization(value); return *this;}
 

@@ -22,14 +22,10 @@
 #include <aws/robomaker/RoboMakerErrorMarshaller.h>
 #include <aws/robomaker/model/BatchDeleteWorldsRequest.h>
 #include <aws/robomaker/model/BatchDescribeSimulationJobRequest.h>
-#include <aws/robomaker/model/CancelDeploymentJobRequest.h>
 #include <aws/robomaker/model/CancelSimulationJobRequest.h>
 #include <aws/robomaker/model/CancelSimulationJobBatchRequest.h>
 #include <aws/robomaker/model/CancelWorldExportJobRequest.h>
 #include <aws/robomaker/model/CancelWorldGenerationJobRequest.h>
-#include <aws/robomaker/model/CreateDeploymentJobRequest.h>
-#include <aws/robomaker/model/CreateFleetRequest.h>
-#include <aws/robomaker/model/CreateRobotRequest.h>
 #include <aws/robomaker/model/CreateRobotApplicationRequest.h>
 #include <aws/robomaker/model/CreateRobotApplicationVersionRequest.h>
 #include <aws/robomaker/model/CreateSimulationApplicationRequest.h>
@@ -38,15 +34,9 @@
 #include <aws/robomaker/model/CreateWorldExportJobRequest.h>
 #include <aws/robomaker/model/CreateWorldGenerationJobRequest.h>
 #include <aws/robomaker/model/CreateWorldTemplateRequest.h>
-#include <aws/robomaker/model/DeleteFleetRequest.h>
-#include <aws/robomaker/model/DeleteRobotRequest.h>
 #include <aws/robomaker/model/DeleteRobotApplicationRequest.h>
 #include <aws/robomaker/model/DeleteSimulationApplicationRequest.h>
 #include <aws/robomaker/model/DeleteWorldTemplateRequest.h>
-#include <aws/robomaker/model/DeregisterRobotRequest.h>
-#include <aws/robomaker/model/DescribeDeploymentJobRequest.h>
-#include <aws/robomaker/model/DescribeFleetRequest.h>
-#include <aws/robomaker/model/DescribeRobotRequest.h>
 #include <aws/robomaker/model/DescribeRobotApplicationRequest.h>
 #include <aws/robomaker/model/DescribeSimulationApplicationRequest.h>
 #include <aws/robomaker/model/DescribeSimulationJobRequest.h>
@@ -56,10 +46,7 @@
 #include <aws/robomaker/model/DescribeWorldGenerationJobRequest.h>
 #include <aws/robomaker/model/DescribeWorldTemplateRequest.h>
 #include <aws/robomaker/model/GetWorldTemplateBodyRequest.h>
-#include <aws/robomaker/model/ListDeploymentJobsRequest.h>
-#include <aws/robomaker/model/ListFleetsRequest.h>
 #include <aws/robomaker/model/ListRobotApplicationsRequest.h>
-#include <aws/robomaker/model/ListRobotsRequest.h>
 #include <aws/robomaker/model/ListSimulationApplicationsRequest.h>
 #include <aws/robomaker/model/ListSimulationJobBatchesRequest.h>
 #include <aws/robomaker/model/ListSimulationJobsRequest.h>
@@ -68,10 +55,8 @@
 #include <aws/robomaker/model/ListWorldGenerationJobsRequest.h>
 #include <aws/robomaker/model/ListWorldTemplatesRequest.h>
 #include <aws/robomaker/model/ListWorldsRequest.h>
-#include <aws/robomaker/model/RegisterRobotRequest.h>
 #include <aws/robomaker/model/RestartSimulationJobRequest.h>
 #include <aws/robomaker/model/StartSimulationJobBatchRequest.h>
-#include <aws/robomaker/model/SyncDeploymentJobRequest.h>
 #include <aws/robomaker/model/TagResourceRequest.h>
 #include <aws/robomaker/model/UntagResourceRequest.h>
 #include <aws/robomaker/model/UpdateRobotApplicationRequest.h>
@@ -201,31 +186,6 @@ void RoboMakerClient::BatchDescribeSimulationJobAsyncHelper(const BatchDescribeS
   handler(this, request, BatchDescribeSimulationJob(request), context);
 }
 
-CancelDeploymentJobOutcome RoboMakerClient::CancelDeploymentJob(const CancelDeploymentJobRequest& request) const
-{
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/cancelDeploymentJob");
-  return CancelDeploymentJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-}
-
-CancelDeploymentJobOutcomeCallable RoboMakerClient::CancelDeploymentJobCallable(const CancelDeploymentJobRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< CancelDeploymentJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelDeploymentJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void RoboMakerClient::CancelDeploymentJobAsync(const CancelDeploymentJobRequest& request, const CancelDeploymentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->CancelDeploymentJobAsyncHelper( request, handler, context ); } );
-}
-
-void RoboMakerClient::CancelDeploymentJobAsyncHelper(const CancelDeploymentJobRequest& request, const CancelDeploymentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CancelDeploymentJob(request), context);
-}
-
 CancelSimulationJobOutcome RoboMakerClient::CancelSimulationJob(const CancelSimulationJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -324,81 +284,6 @@ void RoboMakerClient::CancelWorldGenerationJobAsync(const CancelWorldGenerationJ
 void RoboMakerClient::CancelWorldGenerationJobAsyncHelper(const CancelWorldGenerationJobRequest& request, const CancelWorldGenerationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CancelWorldGenerationJob(request), context);
-}
-
-CreateDeploymentJobOutcome RoboMakerClient::CreateDeploymentJob(const CreateDeploymentJobRequest& request) const
-{
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/createDeploymentJob");
-  return CreateDeploymentJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-}
-
-CreateDeploymentJobOutcomeCallable RoboMakerClient::CreateDeploymentJobCallable(const CreateDeploymentJobRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< CreateDeploymentJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDeploymentJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void RoboMakerClient::CreateDeploymentJobAsync(const CreateDeploymentJobRequest& request, const CreateDeploymentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDeploymentJobAsyncHelper( request, handler, context ); } );
-}
-
-void RoboMakerClient::CreateDeploymentJobAsyncHelper(const CreateDeploymentJobRequest& request, const CreateDeploymentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateDeploymentJob(request), context);
-}
-
-CreateFleetOutcome RoboMakerClient::CreateFleet(const CreateFleetRequest& request) const
-{
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/createFleet");
-  return CreateFleetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-}
-
-CreateFleetOutcomeCallable RoboMakerClient::CreateFleetCallable(const CreateFleetRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< CreateFleetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFleet(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void RoboMakerClient::CreateFleetAsync(const CreateFleetRequest& request, const CreateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFleetAsyncHelper( request, handler, context ); } );
-}
-
-void RoboMakerClient::CreateFleetAsyncHelper(const CreateFleetRequest& request, const CreateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateFleet(request), context);
-}
-
-CreateRobotOutcome RoboMakerClient::CreateRobot(const CreateRobotRequest& request) const
-{
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/createRobot");
-  return CreateRobotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-}
-
-CreateRobotOutcomeCallable RoboMakerClient::CreateRobotCallable(const CreateRobotRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< CreateRobotOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRobot(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void RoboMakerClient::CreateRobotAsync(const CreateRobotRequest& request, const CreateRobotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRobotAsyncHelper( request, handler, context ); } );
-}
-
-void RoboMakerClient::CreateRobotAsyncHelper(const CreateRobotRequest& request, const CreateRobotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateRobot(request), context);
 }
 
 CreateRobotApplicationOutcome RoboMakerClient::CreateRobotApplication(const CreateRobotApplicationRequest& request) const
@@ -601,56 +486,6 @@ void RoboMakerClient::CreateWorldTemplateAsyncHelper(const CreateWorldTemplateRe
   handler(this, request, CreateWorldTemplate(request), context);
 }
 
-DeleteFleetOutcome RoboMakerClient::DeleteFleet(const DeleteFleetRequest& request) const
-{
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/deleteFleet");
-  return DeleteFleetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-}
-
-DeleteFleetOutcomeCallable RoboMakerClient::DeleteFleetCallable(const DeleteFleetRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< DeleteFleetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFleet(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void RoboMakerClient::DeleteFleetAsync(const DeleteFleetRequest& request, const DeleteFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFleetAsyncHelper( request, handler, context ); } );
-}
-
-void RoboMakerClient::DeleteFleetAsyncHelper(const DeleteFleetRequest& request, const DeleteFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteFleet(request), context);
-}
-
-DeleteRobotOutcome RoboMakerClient::DeleteRobot(const DeleteRobotRequest& request) const
-{
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/deleteRobot");
-  return DeleteRobotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-}
-
-DeleteRobotOutcomeCallable RoboMakerClient::DeleteRobotCallable(const DeleteRobotRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< DeleteRobotOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRobot(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void RoboMakerClient::DeleteRobotAsync(const DeleteRobotRequest& request, const DeleteRobotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRobotAsyncHelper( request, handler, context ); } );
-}
-
-void RoboMakerClient::DeleteRobotAsyncHelper(const DeleteRobotRequest& request, const DeleteRobotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteRobot(request), context);
-}
-
 DeleteRobotApplicationOutcome RoboMakerClient::DeleteRobotApplication(const DeleteRobotApplicationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -724,106 +559,6 @@ void RoboMakerClient::DeleteWorldTemplateAsync(const DeleteWorldTemplateRequest&
 void RoboMakerClient::DeleteWorldTemplateAsyncHelper(const DeleteWorldTemplateRequest& request, const DeleteWorldTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteWorldTemplate(request), context);
-}
-
-DeregisterRobotOutcome RoboMakerClient::DeregisterRobot(const DeregisterRobotRequest& request) const
-{
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/deregisterRobot");
-  return DeregisterRobotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-}
-
-DeregisterRobotOutcomeCallable RoboMakerClient::DeregisterRobotCallable(const DeregisterRobotRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< DeregisterRobotOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeregisterRobot(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void RoboMakerClient::DeregisterRobotAsync(const DeregisterRobotRequest& request, const DeregisterRobotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->DeregisterRobotAsyncHelper( request, handler, context ); } );
-}
-
-void RoboMakerClient::DeregisterRobotAsyncHelper(const DeregisterRobotRequest& request, const DeregisterRobotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeregisterRobot(request), context);
-}
-
-DescribeDeploymentJobOutcome RoboMakerClient::DescribeDeploymentJob(const DescribeDeploymentJobRequest& request) const
-{
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/describeDeploymentJob");
-  return DescribeDeploymentJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-}
-
-DescribeDeploymentJobOutcomeCallable RoboMakerClient::DescribeDeploymentJobCallable(const DescribeDeploymentJobRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDeploymentJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDeploymentJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void RoboMakerClient::DescribeDeploymentJobAsync(const DescribeDeploymentJobRequest& request, const DescribeDeploymentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDeploymentJobAsyncHelper( request, handler, context ); } );
-}
-
-void RoboMakerClient::DescribeDeploymentJobAsyncHelper(const DescribeDeploymentJobRequest& request, const DescribeDeploymentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeDeploymentJob(request), context);
-}
-
-DescribeFleetOutcome RoboMakerClient::DescribeFleet(const DescribeFleetRequest& request) const
-{
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/describeFleet");
-  return DescribeFleetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-}
-
-DescribeFleetOutcomeCallable RoboMakerClient::DescribeFleetCallable(const DescribeFleetRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< DescribeFleetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFleet(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void RoboMakerClient::DescribeFleetAsync(const DescribeFleetRequest& request, const DescribeFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFleetAsyncHelper( request, handler, context ); } );
-}
-
-void RoboMakerClient::DescribeFleetAsyncHelper(const DescribeFleetRequest& request, const DescribeFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeFleet(request), context);
-}
-
-DescribeRobotOutcome RoboMakerClient::DescribeRobot(const DescribeRobotRequest& request) const
-{
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/describeRobot");
-  return DescribeRobotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-}
-
-DescribeRobotOutcomeCallable RoboMakerClient::DescribeRobotCallable(const DescribeRobotRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< DescribeRobotOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRobot(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void RoboMakerClient::DescribeRobotAsync(const DescribeRobotRequest& request, const DescribeRobotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRobotAsyncHelper( request, handler, context ); } );
-}
-
-void RoboMakerClient::DescribeRobotAsyncHelper(const DescribeRobotRequest& request, const DescribeRobotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeRobot(request), context);
 }
 
 DescribeRobotApplicationOutcome RoboMakerClient::DescribeRobotApplication(const DescribeRobotApplicationRequest& request) const
@@ -1051,56 +786,6 @@ void RoboMakerClient::GetWorldTemplateBodyAsyncHelper(const GetWorldTemplateBody
   handler(this, request, GetWorldTemplateBody(request), context);
 }
 
-ListDeploymentJobsOutcome RoboMakerClient::ListDeploymentJobs(const ListDeploymentJobsRequest& request) const
-{
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/listDeploymentJobs");
-  return ListDeploymentJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-}
-
-ListDeploymentJobsOutcomeCallable RoboMakerClient::ListDeploymentJobsCallable(const ListDeploymentJobsRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< ListDeploymentJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDeploymentJobs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void RoboMakerClient::ListDeploymentJobsAsync(const ListDeploymentJobsRequest& request, const ListDeploymentJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->ListDeploymentJobsAsyncHelper( request, handler, context ); } );
-}
-
-void RoboMakerClient::ListDeploymentJobsAsyncHelper(const ListDeploymentJobsRequest& request, const ListDeploymentJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDeploymentJobs(request), context);
-}
-
-ListFleetsOutcome RoboMakerClient::ListFleets(const ListFleetsRequest& request) const
-{
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/listFleets");
-  return ListFleetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-}
-
-ListFleetsOutcomeCallable RoboMakerClient::ListFleetsCallable(const ListFleetsRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< ListFleetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFleets(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void RoboMakerClient::ListFleetsAsync(const ListFleetsRequest& request, const ListFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->ListFleetsAsyncHelper( request, handler, context ); } );
-}
-
-void RoboMakerClient::ListFleetsAsyncHelper(const ListFleetsRequest& request, const ListFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListFleets(request), context);
-}
-
 ListRobotApplicationsOutcome RoboMakerClient::ListRobotApplications(const ListRobotApplicationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1124,31 +809,6 @@ void RoboMakerClient::ListRobotApplicationsAsync(const ListRobotApplicationsRequ
 void RoboMakerClient::ListRobotApplicationsAsyncHelper(const ListRobotApplicationsRequest& request, const ListRobotApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListRobotApplications(request), context);
-}
-
-ListRobotsOutcome RoboMakerClient::ListRobots(const ListRobotsRequest& request) const
-{
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/listRobots");
-  return ListRobotsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-}
-
-ListRobotsOutcomeCallable RoboMakerClient::ListRobotsCallable(const ListRobotsRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< ListRobotsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRobots(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void RoboMakerClient::ListRobotsAsync(const ListRobotsRequest& request, const ListRobotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->ListRobotsAsyncHelper( request, handler, context ); } );
-}
-
-void RoboMakerClient::ListRobotsAsyncHelper(const ListRobotsRequest& request, const ListRobotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListRobots(request), context);
 }
 
 ListSimulationApplicationsOutcome RoboMakerClient::ListSimulationApplications(const ListSimulationApplicationsRequest& request) const
@@ -1357,31 +1017,6 @@ void RoboMakerClient::ListWorldsAsyncHelper(const ListWorldsRequest& request, co
   handler(this, request, ListWorlds(request), context);
 }
 
-RegisterRobotOutcome RoboMakerClient::RegisterRobot(const RegisterRobotRequest& request) const
-{
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/registerRobot");
-  return RegisterRobotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-}
-
-RegisterRobotOutcomeCallable RoboMakerClient::RegisterRobotCallable(const RegisterRobotRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< RegisterRobotOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterRobot(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void RoboMakerClient::RegisterRobotAsync(const RegisterRobotRequest& request, const RegisterRobotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterRobotAsyncHelper( request, handler, context ); } );
-}
-
-void RoboMakerClient::RegisterRobotAsyncHelper(const RegisterRobotRequest& request, const RegisterRobotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RegisterRobot(request), context);
-}
-
 RestartSimulationJobOutcome RoboMakerClient::RestartSimulationJob(const RestartSimulationJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1430,31 +1065,6 @@ void RoboMakerClient::StartSimulationJobBatchAsync(const StartSimulationJobBatch
 void RoboMakerClient::StartSimulationJobBatchAsyncHelper(const StartSimulationJobBatchRequest& request, const StartSimulationJobBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StartSimulationJobBatch(request), context);
-}
-
-SyncDeploymentJobOutcome RoboMakerClient::SyncDeploymentJob(const SyncDeploymentJobRequest& request) const
-{
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/syncDeploymentJob");
-  return SyncDeploymentJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-}
-
-SyncDeploymentJobOutcomeCallable RoboMakerClient::SyncDeploymentJobCallable(const SyncDeploymentJobRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< SyncDeploymentJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SyncDeploymentJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void RoboMakerClient::SyncDeploymentJobAsync(const SyncDeploymentJobRequest& request, const SyncDeploymentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->SyncDeploymentJobAsyncHelper( request, handler, context ); } );
-}
-
-void RoboMakerClient::SyncDeploymentJobAsyncHelper(const SyncDeploymentJobRequest& request, const SyncDeploymentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SyncDeploymentJob(request), context);
 }
 
 TagResourceOutcome RoboMakerClient::TagResource(const TagResourceRequest& request) const

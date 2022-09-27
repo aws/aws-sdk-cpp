@@ -19,6 +19,7 @@ UpdateServiceTemplateVersionRequest::UpdateServiceTemplateVersionRequest() :
     m_minorVersionHasBeenSet(false),
     m_status(TemplateVersionStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_supportedComponentSourcesHasBeenSet(false),
     m_templateNameHasBeenSet(false)
 {
 }
@@ -59,6 +60,17 @@ Aws::String UpdateServiceTemplateVersionRequest::SerializePayload() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", TemplateVersionStatusMapper::GetNameForTemplateVersionStatus(m_status));
+  }
+
+  if(m_supportedComponentSourcesHasBeenSet)
+  {
+   Array<JsonValue> supportedComponentSourcesJsonList(m_supportedComponentSources.size());
+   for(unsigned supportedComponentSourcesIndex = 0; supportedComponentSourcesIndex < supportedComponentSourcesJsonList.GetLength(); ++supportedComponentSourcesIndex)
+   {
+     supportedComponentSourcesJsonList[supportedComponentSourcesIndex].AsString(ServiceTemplateSupportedComponentSourceTypeMapper::GetNameForServiceTemplateSupportedComponentSourceType(m_supportedComponentSources[supportedComponentSourcesIndex]));
+   }
+   payload.WithArray("supportedComponentSources", std::move(supportedComponentSourcesJsonList));
+
   }
 
   if(m_templateNameHasBeenSet)

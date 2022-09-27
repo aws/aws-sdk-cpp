@@ -17,7 +17,10 @@ namespace Model
   {
     NOT_SET,
     PYTHON_3,
-    NODEJS_12
+    NODEJS_12,
+    NODEJS_14,
+    CORRETTO_8,
+    CORRETTO_11
   };
 
 namespace RuntimeMapper

@@ -59,7 +59,8 @@ FunctionConfiguration::FunctionConfiguration() :
     m_imageConfigResponseHasBeenSet(false),
     m_signingProfileVersionArnHasBeenSet(false),
     m_signingJobArnHasBeenSet(false),
-    m_architecturesHasBeenSet(false)
+    m_architecturesHasBeenSet(false),
+    m_ephemeralStorageHasBeenSet(false)
 {
 }
 
@@ -104,7 +105,8 @@ FunctionConfiguration::FunctionConfiguration(JsonView jsonValue) :
     m_imageConfigResponseHasBeenSet(false),
     m_signingProfileVersionArnHasBeenSet(false),
     m_signingJobArnHasBeenSet(false),
-    m_architecturesHasBeenSet(false)
+    m_architecturesHasBeenSet(false),
+    m_ephemeralStorageHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -344,6 +346,13 @@ FunctionConfiguration& FunctionConfiguration::operator =(JsonView jsonValue)
     m_architecturesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EphemeralStorage"))
+  {
+    m_ephemeralStorage = jsonValue.GetObject("EphemeralStorage");
+
+    m_ephemeralStorageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -549,6 +558,12 @@ JsonValue FunctionConfiguration::Jsonize() const
      architecturesJsonList[architecturesIndex].AsString(ArchitectureMapper::GetNameForArchitecture(m_architectures[architecturesIndex]));
    }
    payload.WithArray("Architectures", std::move(architecturesJsonList));
+
+  }
+
+  if(m_ephemeralStorageHasBeenSet)
+  {
+   payload.WithObject("EphemeralStorage", m_ephemeralStorage.Jsonize());
 
   }
 

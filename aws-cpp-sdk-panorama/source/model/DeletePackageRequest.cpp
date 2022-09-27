@@ -16,9 +16,9 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 DeletePackageRequest::DeletePackageRequest() : 
-    m_packageIdHasBeenSet(false),
     m_forceDelete(false),
-    m_forceDeleteHasBeenSet(false)
+    m_forceDeleteHasBeenSet(false),
+    m_packageIdHasBeenSet(false)
 {
 }
 

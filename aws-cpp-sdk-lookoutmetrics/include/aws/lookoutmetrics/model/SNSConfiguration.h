@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/lookoutmetrics/LookoutMetrics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lookoutmetrics/model/SnsFormat.h>
 #include <utility>
 
 namespace Aws
@@ -120,6 +121,37 @@ namespace Model
      */
     inline SNSConfiguration& WithSnsTopicArn(const char* value) { SetSnsTopicArn(value); return *this;}
 
+
+    /**
+     * <p>The format of the SNS topic.</p>
+     */
+    inline const SnsFormat& GetSnsFormat() const{ return m_snsFormat; }
+
+    /**
+     * <p>The format of the SNS topic.</p>
+     */
+    inline bool SnsFormatHasBeenSet() const { return m_snsFormatHasBeenSet; }
+
+    /**
+     * <p>The format of the SNS topic.</p>
+     */
+    inline void SetSnsFormat(const SnsFormat& value) { m_snsFormatHasBeenSet = true; m_snsFormat = value; }
+
+    /**
+     * <p>The format of the SNS topic.</p>
+     */
+    inline void SetSnsFormat(SnsFormat&& value) { m_snsFormatHasBeenSet = true; m_snsFormat = std::move(value); }
+
+    /**
+     * <p>The format of the SNS topic.</p>
+     */
+    inline SNSConfiguration& WithSnsFormat(const SnsFormat& value) { SetSnsFormat(value); return *this;}
+
+    /**
+     * <p>The format of the SNS topic.</p>
+     */
+    inline SNSConfiguration& WithSnsFormat(SnsFormat&& value) { SetSnsFormat(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_roleArn;
@@ -127,6 +159,9 @@ namespace Model
 
     Aws::String m_snsTopicArn;
     bool m_snsTopicArnHasBeenSet;
+
+    SnsFormat m_snsFormat;
+    bool m_snsFormatHasBeenSet;
   };
 
 } // namespace Model

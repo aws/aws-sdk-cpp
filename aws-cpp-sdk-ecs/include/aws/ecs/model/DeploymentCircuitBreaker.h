@@ -27,7 +27,7 @@ namespace Model
    * Load Balancer.</p>  <p>The <b>deployment circuit breaker</b> determines
    * whether a service deployment will fail if the service can't reach a steady
    * state. If enabled, a service deployment will transition to a failed state and
-   * stop launching new tasks. You can also enable Amazon ECS to roll back your
+   * stop launching new tasks. You can also configure Amazon ECS to roll back your
    * service to the last completed deployment after a failure. For more information,
    * see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling
@@ -46,55 +46,59 @@ namespace Model
 
 
     /**
-     * <p>Determines whether to enable the deployment circuit breaker logic for the
+     * <p>Determines whether to use the deployment circuit breaker logic for the
      * service.</p>
      */
     inline bool GetEnable() const{ return m_enable; }
 
     /**
-     * <p>Determines whether to enable the deployment circuit breaker logic for the
+     * <p>Determines whether to use the deployment circuit breaker logic for the
      * service.</p>
      */
     inline bool EnableHasBeenSet() const { return m_enableHasBeenSet; }
 
     /**
-     * <p>Determines whether to enable the deployment circuit breaker logic for the
+     * <p>Determines whether to use the deployment circuit breaker logic for the
      * service.</p>
      */
     inline void SetEnable(bool value) { m_enableHasBeenSet = true; m_enable = value; }
 
     /**
-     * <p>Determines whether to enable the deployment circuit breaker logic for the
+     * <p>Determines whether to use the deployment circuit breaker logic for the
      * service.</p>
      */
     inline DeploymentCircuitBreaker& WithEnable(bool value) { SetEnable(value); return *this;}
 
 
     /**
-     * <p>Determines whether to enable Amazon ECS to roll back the service if a service
-     * deployment fails. If rollback is enabled, when a service deployment fails, the
-     * service is rolled back to the last deployment that completed successfully.</p>
+     * <p>Determines whether to configure Amazon ECS to roll back the service if a
+     * service deployment fails. If rollback is enabled, when a service deployment
+     * fails, the service is rolled back to the last deployment that completed
+     * successfully.</p>
      */
     inline bool GetRollback() const{ return m_rollback; }
 
     /**
-     * <p>Determines whether to enable Amazon ECS to roll back the service if a service
-     * deployment fails. If rollback is enabled, when a service deployment fails, the
-     * service is rolled back to the last deployment that completed successfully.</p>
+     * <p>Determines whether to configure Amazon ECS to roll back the service if a
+     * service deployment fails. If rollback is enabled, when a service deployment
+     * fails, the service is rolled back to the last deployment that completed
+     * successfully.</p>
      */
     inline bool RollbackHasBeenSet() const { return m_rollbackHasBeenSet; }
 
     /**
-     * <p>Determines whether to enable Amazon ECS to roll back the service if a service
-     * deployment fails. If rollback is enabled, when a service deployment fails, the
-     * service is rolled back to the last deployment that completed successfully.</p>
+     * <p>Determines whether to configure Amazon ECS to roll back the service if a
+     * service deployment fails. If rollback is enabled, when a service deployment
+     * fails, the service is rolled back to the last deployment that completed
+     * successfully.</p>
      */
     inline void SetRollback(bool value) { m_rollbackHasBeenSet = true; m_rollback = value; }
 
     /**
-     * <p>Determines whether to enable Amazon ECS to roll back the service if a service
-     * deployment fails. If rollback is enabled, when a service deployment fails, the
-     * service is rolled back to the last deployment that completed successfully.</p>
+     * <p>Determines whether to configure Amazon ECS to roll back the service if a
+     * service deployment fails. If rollback is enabled, when a service deployment
+     * fails, the service is rolled back to the last deployment that completed
+     * successfully.</p>
      */
     inline DeploymentCircuitBreaker& WithRollback(bool value) { SetRollback(value); return *this;}
 

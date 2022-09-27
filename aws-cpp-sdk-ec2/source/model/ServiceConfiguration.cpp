@@ -33,6 +33,7 @@ ServiceConfiguration::ServiceConfiguration() :
     m_managesVpcEndpointsHasBeenSet(false),
     m_networkLoadBalancerArnsHasBeenSet(false),
     m_gatewayLoadBalancerArnsHasBeenSet(false),
+    m_supportedIpAddressTypesHasBeenSet(false),
     m_baseEndpointDnsNamesHasBeenSet(false),
     m_privateDnsNameHasBeenSet(false),
     m_privateDnsNameConfigurationHasBeenSet(false),
@@ -55,6 +56,7 @@ ServiceConfiguration::ServiceConfiguration(const XmlNode& xmlNode) :
     m_managesVpcEndpointsHasBeenSet(false),
     m_networkLoadBalancerArnsHasBeenSet(false),
     m_gatewayLoadBalancerArnsHasBeenSet(false),
+    m_supportedIpAddressTypesHasBeenSet(false),
     m_baseEndpointDnsNamesHasBeenSet(false),
     m_privateDnsNameHasBeenSet(false),
     m_privateDnsNameConfigurationHasBeenSet(false),
@@ -148,6 +150,18 @@ ServiceConfiguration& ServiceConfiguration::operator =(const XmlNode& xmlNode)
       }
 
       m_gatewayLoadBalancerArnsHasBeenSet = true;
+    }
+    XmlNode supportedIpAddressTypesNode = resultNode.FirstChild("supportedIpAddressTypeSet");
+    if(!supportedIpAddressTypesNode.IsNull())
+    {
+      XmlNode supportedIpAddressTypesMember = supportedIpAddressTypesNode.FirstChild("item");
+      while(!supportedIpAddressTypesMember.IsNull())
+      {
+        m_supportedIpAddressTypes.push_back(ServiceConnectivityTypeMapper::GetServiceConnectivityTypeForName(StringUtils::Trim(supportedIpAddressTypesMember.GetText().c_str())));
+        supportedIpAddressTypesMember = supportedIpAddressTypesMember.NextNode("item");
+      }
+
+      m_supportedIpAddressTypesHasBeenSet = true;
     }
     XmlNode baseEndpointDnsNamesNode = resultNode.FirstChild("baseEndpointDnsNameSet");
     if(!baseEndpointDnsNamesNode.IsNull())
@@ -261,6 +275,15 @@ void ServiceConfiguration::OutputToStream(Aws::OStream& oStream, const char* loc
       }
   }
 
+  if(m_supportedIpAddressTypesHasBeenSet)
+  {
+      unsigned supportedIpAddressTypesIdx = 1;
+      for(auto& item : m_supportedIpAddressTypes)
+      {
+        oStream << location << index << locationValue << ".SupportedIpAddressTypeSet." << supportedIpAddressTypesIdx++ << "=" << ServiceConnectivityTypeMapper::GetNameForServiceConnectivityType(item) << "&";
+      }
+  }
+
   if(m_baseEndpointDnsNamesHasBeenSet)
   {
       unsigned baseEndpointDnsNamesIdx = 1;
@@ -354,6 +377,14 @@ void ServiceConfiguration::OutputToStream(Aws::OStream& oStream, const char* loc
       for(auto& item : m_gatewayLoadBalancerArns)
       {
         oStream << location << ".GatewayLoadBalancerArnSet." << gatewayLoadBalancerArnsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+  if(m_supportedIpAddressTypesHasBeenSet)
+  {
+      unsigned supportedIpAddressTypesIdx = 1;
+      for(auto& item : m_supportedIpAddressTypes)
+      {
+        oStream << location << ".SupportedIpAddressTypeSet." << supportedIpAddressTypesIdx++ << "=" << ServiceConnectivityTypeMapper::GetNameForServiceConnectivityType(item) << "&";
       }
   }
   if(m_baseEndpointDnsNamesHasBeenSet)

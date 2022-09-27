@@ -454,18 +454,18 @@ namespace Model
      * <p>The KMS key identifier to use when restoring an encrypted cluster from an
      * encrypted cluster.</p> <p>The KMS key identifier is the Amazon Resource Name
      * (ARN) for the KMS encryption key. If you are restoring a cluster with the same
-     * account that owns the KMS encryption key used to encrypt the new cluster, then
-     * you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
-     * <p>You can restore to a new cluster and encrypt the new cluster with an KMS key
-     * that is different from the KMS key used to encrypt the source cluster. The new
-     * DB cluster is encrypted with the KMS key identified by the <code>KmsKeyId</code>
-     * parameter.</p> <p>If you do not specify a value for the <code>KmsKeyId</code>
-     * parameter, then the following occurs:</p> <ul> <li> <p>If the cluster is
-     * encrypted, then the restored cluster is encrypted using the KMS key that was
-     * used to encrypt the source cluster.</p> </li> <li> <p>If the cluster is not
-     * encrypted, then the restored cluster is not encrypted.</p> </li> </ul> <p>If
-     * <code>DBClusterIdentifier</code> refers to a cluster that is not encrypted, then
-     * the restore request is rejected.</p>
+     * Amazon Web Services account that owns the KMS encryption key used to encrypt the
+     * new cluster, then you can use the KMS key alias instead of the ARN for the KMS
+     * encryption key.</p> <p>You can restore to a new cluster and encrypt the new
+     * cluster with an KMS key that is different from the KMS key used to encrypt the
+     * source cluster. The new DB cluster is encrypted with the KMS key identified by
+     * the <code>KmsKeyId</code> parameter.</p> <p>If you do not specify a value for
+     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
+     * <p>If the cluster is encrypted, then the restored cluster is encrypted using the
+     * KMS key that was used to encrypt the source cluster.</p> </li> <li> <p>If the
+     * cluster is not encrypted, then the restored cluster is not encrypted.</p> </li>
+     * </ul> <p>If <code>DBClusterIdentifier</code> refers to a cluster that is not
+     * encrypted, then the restore request is rejected.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
@@ -473,18 +473,18 @@ namespace Model
      * <p>The KMS key identifier to use when restoring an encrypted cluster from an
      * encrypted cluster.</p> <p>The KMS key identifier is the Amazon Resource Name
      * (ARN) for the KMS encryption key. If you are restoring a cluster with the same
-     * account that owns the KMS encryption key used to encrypt the new cluster, then
-     * you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
-     * <p>You can restore to a new cluster and encrypt the new cluster with an KMS key
-     * that is different from the KMS key used to encrypt the source cluster. The new
-     * DB cluster is encrypted with the KMS key identified by the <code>KmsKeyId</code>
-     * parameter.</p> <p>If you do not specify a value for the <code>KmsKeyId</code>
-     * parameter, then the following occurs:</p> <ul> <li> <p>If the cluster is
-     * encrypted, then the restored cluster is encrypted using the KMS key that was
-     * used to encrypt the source cluster.</p> </li> <li> <p>If the cluster is not
-     * encrypted, then the restored cluster is not encrypted.</p> </li> </ul> <p>If
-     * <code>DBClusterIdentifier</code> refers to a cluster that is not encrypted, then
-     * the restore request is rejected.</p>
+     * Amazon Web Services account that owns the KMS encryption key used to encrypt the
+     * new cluster, then you can use the KMS key alias instead of the ARN for the KMS
+     * encryption key.</p> <p>You can restore to a new cluster and encrypt the new
+     * cluster with an KMS key that is different from the KMS key used to encrypt the
+     * source cluster. The new DB cluster is encrypted with the KMS key identified by
+     * the <code>KmsKeyId</code> parameter.</p> <p>If you do not specify a value for
+     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
+     * <p>If the cluster is encrypted, then the restored cluster is encrypted using the
+     * KMS key that was used to encrypt the source cluster.</p> </li> <li> <p>If the
+     * cluster is not encrypted, then the restored cluster is not encrypted.</p> </li>
+     * </ul> <p>If <code>DBClusterIdentifier</code> refers to a cluster that is not
+     * encrypted, then the restore request is rejected.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
@@ -492,18 +492,18 @@ namespace Model
      * <p>The KMS key identifier to use when restoring an encrypted cluster from an
      * encrypted cluster.</p> <p>The KMS key identifier is the Amazon Resource Name
      * (ARN) for the KMS encryption key. If you are restoring a cluster with the same
-     * account that owns the KMS encryption key used to encrypt the new cluster, then
-     * you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
-     * <p>You can restore to a new cluster and encrypt the new cluster with an KMS key
-     * that is different from the KMS key used to encrypt the source cluster. The new
-     * DB cluster is encrypted with the KMS key identified by the <code>KmsKeyId</code>
-     * parameter.</p> <p>If you do not specify a value for the <code>KmsKeyId</code>
-     * parameter, then the following occurs:</p> <ul> <li> <p>If the cluster is
-     * encrypted, then the restored cluster is encrypted using the KMS key that was
-     * used to encrypt the source cluster.</p> </li> <li> <p>If the cluster is not
-     * encrypted, then the restored cluster is not encrypted.</p> </li> </ul> <p>If
-     * <code>DBClusterIdentifier</code> refers to a cluster that is not encrypted, then
-     * the restore request is rejected.</p>
+     * Amazon Web Services account that owns the KMS encryption key used to encrypt the
+     * new cluster, then you can use the KMS key alias instead of the ARN for the KMS
+     * encryption key.</p> <p>You can restore to a new cluster and encrypt the new
+     * cluster with an KMS key that is different from the KMS key used to encrypt the
+     * source cluster. The new DB cluster is encrypted with the KMS key identified by
+     * the <code>KmsKeyId</code> parameter.</p> <p>If you do not specify a value for
+     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
+     * <p>If the cluster is encrypted, then the restored cluster is encrypted using the
+     * KMS key that was used to encrypt the source cluster.</p> </li> <li> <p>If the
+     * cluster is not encrypted, then the restored cluster is not encrypted.</p> </li>
+     * </ul> <p>If <code>DBClusterIdentifier</code> refers to a cluster that is not
+     * encrypted, then the restore request is rejected.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
@@ -511,18 +511,18 @@ namespace Model
      * <p>The KMS key identifier to use when restoring an encrypted cluster from an
      * encrypted cluster.</p> <p>The KMS key identifier is the Amazon Resource Name
      * (ARN) for the KMS encryption key. If you are restoring a cluster with the same
-     * account that owns the KMS encryption key used to encrypt the new cluster, then
-     * you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
-     * <p>You can restore to a new cluster and encrypt the new cluster with an KMS key
-     * that is different from the KMS key used to encrypt the source cluster. The new
-     * DB cluster is encrypted with the KMS key identified by the <code>KmsKeyId</code>
-     * parameter.</p> <p>If you do not specify a value for the <code>KmsKeyId</code>
-     * parameter, then the following occurs:</p> <ul> <li> <p>If the cluster is
-     * encrypted, then the restored cluster is encrypted using the KMS key that was
-     * used to encrypt the source cluster.</p> </li> <li> <p>If the cluster is not
-     * encrypted, then the restored cluster is not encrypted.</p> </li> </ul> <p>If
-     * <code>DBClusterIdentifier</code> refers to a cluster that is not encrypted, then
-     * the restore request is rejected.</p>
+     * Amazon Web Services account that owns the KMS encryption key used to encrypt the
+     * new cluster, then you can use the KMS key alias instead of the ARN for the KMS
+     * encryption key.</p> <p>You can restore to a new cluster and encrypt the new
+     * cluster with an KMS key that is different from the KMS key used to encrypt the
+     * source cluster. The new DB cluster is encrypted with the KMS key identified by
+     * the <code>KmsKeyId</code> parameter.</p> <p>If you do not specify a value for
+     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
+     * <p>If the cluster is encrypted, then the restored cluster is encrypted using the
+     * KMS key that was used to encrypt the source cluster.</p> </li> <li> <p>If the
+     * cluster is not encrypted, then the restored cluster is not encrypted.</p> </li>
+     * </ul> <p>If <code>DBClusterIdentifier</code> refers to a cluster that is not
+     * encrypted, then the restore request is rejected.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
@@ -530,18 +530,18 @@ namespace Model
      * <p>The KMS key identifier to use when restoring an encrypted cluster from an
      * encrypted cluster.</p> <p>The KMS key identifier is the Amazon Resource Name
      * (ARN) for the KMS encryption key. If you are restoring a cluster with the same
-     * account that owns the KMS encryption key used to encrypt the new cluster, then
-     * you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
-     * <p>You can restore to a new cluster and encrypt the new cluster with an KMS key
-     * that is different from the KMS key used to encrypt the source cluster. The new
-     * DB cluster is encrypted with the KMS key identified by the <code>KmsKeyId</code>
-     * parameter.</p> <p>If you do not specify a value for the <code>KmsKeyId</code>
-     * parameter, then the following occurs:</p> <ul> <li> <p>If the cluster is
-     * encrypted, then the restored cluster is encrypted using the KMS key that was
-     * used to encrypt the source cluster.</p> </li> <li> <p>If the cluster is not
-     * encrypted, then the restored cluster is not encrypted.</p> </li> </ul> <p>If
-     * <code>DBClusterIdentifier</code> refers to a cluster that is not encrypted, then
-     * the restore request is rejected.</p>
+     * Amazon Web Services account that owns the KMS encryption key used to encrypt the
+     * new cluster, then you can use the KMS key alias instead of the ARN for the KMS
+     * encryption key.</p> <p>You can restore to a new cluster and encrypt the new
+     * cluster with an KMS key that is different from the KMS key used to encrypt the
+     * source cluster. The new DB cluster is encrypted with the KMS key identified by
+     * the <code>KmsKeyId</code> parameter.</p> <p>If you do not specify a value for
+     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
+     * <p>If the cluster is encrypted, then the restored cluster is encrypted using the
+     * KMS key that was used to encrypt the source cluster.</p> </li> <li> <p>If the
+     * cluster is not encrypted, then the restored cluster is not encrypted.</p> </li>
+     * </ul> <p>If <code>DBClusterIdentifier</code> refers to a cluster that is not
+     * encrypted, then the restore request is rejected.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
@@ -549,18 +549,18 @@ namespace Model
      * <p>The KMS key identifier to use when restoring an encrypted cluster from an
      * encrypted cluster.</p> <p>The KMS key identifier is the Amazon Resource Name
      * (ARN) for the KMS encryption key. If you are restoring a cluster with the same
-     * account that owns the KMS encryption key used to encrypt the new cluster, then
-     * you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
-     * <p>You can restore to a new cluster and encrypt the new cluster with an KMS key
-     * that is different from the KMS key used to encrypt the source cluster. The new
-     * DB cluster is encrypted with the KMS key identified by the <code>KmsKeyId</code>
-     * parameter.</p> <p>If you do not specify a value for the <code>KmsKeyId</code>
-     * parameter, then the following occurs:</p> <ul> <li> <p>If the cluster is
-     * encrypted, then the restored cluster is encrypted using the KMS key that was
-     * used to encrypt the source cluster.</p> </li> <li> <p>If the cluster is not
-     * encrypted, then the restored cluster is not encrypted.</p> </li> </ul> <p>If
-     * <code>DBClusterIdentifier</code> refers to a cluster that is not encrypted, then
-     * the restore request is rejected.</p>
+     * Amazon Web Services account that owns the KMS encryption key used to encrypt the
+     * new cluster, then you can use the KMS key alias instead of the ARN for the KMS
+     * encryption key.</p> <p>You can restore to a new cluster and encrypt the new
+     * cluster with an KMS key that is different from the KMS key used to encrypt the
+     * source cluster. The new DB cluster is encrypted with the KMS key identified by
+     * the <code>KmsKeyId</code> parameter.</p> <p>If you do not specify a value for
+     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
+     * <p>If the cluster is encrypted, then the restored cluster is encrypted using the
+     * KMS key that was used to encrypt the source cluster.</p> </li> <li> <p>If the
+     * cluster is not encrypted, then the restored cluster is not encrypted.</p> </li>
+     * </ul> <p>If <code>DBClusterIdentifier</code> refers to a cluster that is not
+     * encrypted, then the restore request is rejected.</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
@@ -568,18 +568,18 @@ namespace Model
      * <p>The KMS key identifier to use when restoring an encrypted cluster from an
      * encrypted cluster.</p> <p>The KMS key identifier is the Amazon Resource Name
      * (ARN) for the KMS encryption key. If you are restoring a cluster with the same
-     * account that owns the KMS encryption key used to encrypt the new cluster, then
-     * you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
-     * <p>You can restore to a new cluster and encrypt the new cluster with an KMS key
-     * that is different from the KMS key used to encrypt the source cluster. The new
-     * DB cluster is encrypted with the KMS key identified by the <code>KmsKeyId</code>
-     * parameter.</p> <p>If you do not specify a value for the <code>KmsKeyId</code>
-     * parameter, then the following occurs:</p> <ul> <li> <p>If the cluster is
-     * encrypted, then the restored cluster is encrypted using the KMS key that was
-     * used to encrypt the source cluster.</p> </li> <li> <p>If the cluster is not
-     * encrypted, then the restored cluster is not encrypted.</p> </li> </ul> <p>If
-     * <code>DBClusterIdentifier</code> refers to a cluster that is not encrypted, then
-     * the restore request is rejected.</p>
+     * Amazon Web Services account that owns the KMS encryption key used to encrypt the
+     * new cluster, then you can use the KMS key alias instead of the ARN for the KMS
+     * encryption key.</p> <p>You can restore to a new cluster and encrypt the new
+     * cluster with an KMS key that is different from the KMS key used to encrypt the
+     * source cluster. The new DB cluster is encrypted with the KMS key identified by
+     * the <code>KmsKeyId</code> parameter.</p> <p>If you do not specify a value for
+     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
+     * <p>If the cluster is encrypted, then the restored cluster is encrypted using the
+     * KMS key that was used to encrypt the source cluster.</p> </li> <li> <p>If the
+     * cluster is not encrypted, then the restored cluster is not encrypted.</p> </li>
+     * </ul> <p>If <code>DBClusterIdentifier</code> refers to a cluster that is not
+     * encrypted, then the restore request is rejected.</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
@@ -587,18 +587,18 @@ namespace Model
      * <p>The KMS key identifier to use when restoring an encrypted cluster from an
      * encrypted cluster.</p> <p>The KMS key identifier is the Amazon Resource Name
      * (ARN) for the KMS encryption key. If you are restoring a cluster with the same
-     * account that owns the KMS encryption key used to encrypt the new cluster, then
-     * you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
-     * <p>You can restore to a new cluster and encrypt the new cluster with an KMS key
-     * that is different from the KMS key used to encrypt the source cluster. The new
-     * DB cluster is encrypted with the KMS key identified by the <code>KmsKeyId</code>
-     * parameter.</p> <p>If you do not specify a value for the <code>KmsKeyId</code>
-     * parameter, then the following occurs:</p> <ul> <li> <p>If the cluster is
-     * encrypted, then the restored cluster is encrypted using the KMS key that was
-     * used to encrypt the source cluster.</p> </li> <li> <p>If the cluster is not
-     * encrypted, then the restored cluster is not encrypted.</p> </li> </ul> <p>If
-     * <code>DBClusterIdentifier</code> refers to a cluster that is not encrypted, then
-     * the restore request is rejected.</p>
+     * Amazon Web Services account that owns the KMS encryption key used to encrypt the
+     * new cluster, then you can use the KMS key alias instead of the ARN for the KMS
+     * encryption key.</p> <p>You can restore to a new cluster and encrypt the new
+     * cluster with an KMS key that is different from the KMS key used to encrypt the
+     * source cluster. The new DB cluster is encrypted with the KMS key identified by
+     * the <code>KmsKeyId</code> parameter.</p> <p>If you do not specify a value for
+     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
+     * <p>If the cluster is encrypted, then the restored cluster is encrypted using the
+     * KMS key that was used to encrypt the source cluster.</p> </li> <li> <p>If the
+     * cluster is not encrypted, then the restored cluster is not encrypted.</p> </li>
+     * </ul> <p>If <code>DBClusterIdentifier</code> refers to a cluster that is not
+     * encrypted, then the restore request is rejected.</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

@@ -44,6 +44,7 @@ static const int SCHEDULER_TRANSITIONING_HASH = HashingUtils::HashString("Schedu
 static const int CRAWLER_STOPPING_HASH = HashingUtils::HashString("CrawlerStoppingException");
 static const int NO_SCHEDULE_HASH = HashingUtils::HashString("NoScheduleException");
 static const int CONCURRENT_RUNS_EXCEEDED_HASH = HashingUtils::HashString("ConcurrentRunsExceededException");
+static const int ILLEGAL_SESSION_STATE_HASH = HashingUtils::HashString("IllegalSessionStateException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -153,6 +154,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == CONCURRENT_RUNS_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::CONCURRENT_RUNS_EXCEEDED), false);
+  }
+  else if (hashCode == ILLEGAL_SESSION_STATE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::ILLEGAL_SESSION_STATE), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

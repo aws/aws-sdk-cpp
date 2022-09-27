@@ -819,6 +819,72 @@ namespace Model
      */
     inline LoadBalancer& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A Boolean value that indicates whether HTTPS redirection is enabled for the
+     * load balancer.</p>
+     */
+    inline bool GetHttpsRedirectionEnabled() const{ return m_httpsRedirectionEnabled; }
+
+    /**
+     * <p>A Boolean value that indicates whether HTTPS redirection is enabled for the
+     * load balancer.</p>
+     */
+    inline bool HttpsRedirectionEnabledHasBeenSet() const { return m_httpsRedirectionEnabledHasBeenSet; }
+
+    /**
+     * <p>A Boolean value that indicates whether HTTPS redirection is enabled for the
+     * load balancer.</p>
+     */
+    inline void SetHttpsRedirectionEnabled(bool value) { m_httpsRedirectionEnabledHasBeenSet = true; m_httpsRedirectionEnabled = value; }
+
+    /**
+     * <p>A Boolean value that indicates whether HTTPS redirection is enabled for the
+     * load balancer.</p>
+     */
+    inline LoadBalancer& WithHttpsRedirectionEnabled(bool value) { SetHttpsRedirectionEnabled(value); return *this;}
+
+
+    /**
+     * <p>The name of the TLS security policy for the load balancer.</p>
+     */
+    inline const Aws::String& GetTlsPolicyName() const{ return m_tlsPolicyName; }
+
+    /**
+     * <p>The name of the TLS security policy for the load balancer.</p>
+     */
+    inline bool TlsPolicyNameHasBeenSet() const { return m_tlsPolicyNameHasBeenSet; }
+
+    /**
+     * <p>The name of the TLS security policy for the load balancer.</p>
+     */
+    inline void SetTlsPolicyName(const Aws::String& value) { m_tlsPolicyNameHasBeenSet = true; m_tlsPolicyName = value; }
+
+    /**
+     * <p>The name of the TLS security policy for the load balancer.</p>
+     */
+    inline void SetTlsPolicyName(Aws::String&& value) { m_tlsPolicyNameHasBeenSet = true; m_tlsPolicyName = std::move(value); }
+
+    /**
+     * <p>The name of the TLS security policy for the load balancer.</p>
+     */
+    inline void SetTlsPolicyName(const char* value) { m_tlsPolicyNameHasBeenSet = true; m_tlsPolicyName.assign(value); }
+
+    /**
+     * <p>The name of the TLS security policy for the load balancer.</p>
+     */
+    inline LoadBalancer& WithTlsPolicyName(const Aws::String& value) { SetTlsPolicyName(value); return *this;}
+
+    /**
+     * <p>The name of the TLS security policy for the load balancer.</p>
+     */
+    inline LoadBalancer& WithTlsPolicyName(Aws::String&& value) { SetTlsPolicyName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the TLS security policy for the load balancer.</p>
+     */
+    inline LoadBalancer& WithTlsPolicyName(const char* value) { SetTlsPolicyName(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -871,6 +937,12 @@ namespace Model
 
     IpAddressType m_ipAddressType;
     bool m_ipAddressTypeHasBeenSet;
+
+    bool m_httpsRedirectionEnabled;
+    bool m_httpsRedirectionEnabledHasBeenSet;
+
+    Aws::String m_tlsPolicyName;
+    bool m_tlsPolicyNameHasBeenSet;
   };
 
 } // namespace Model

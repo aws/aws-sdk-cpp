@@ -81,100 +81,152 @@ namespace Model
 
     /**
      * <p>Specifies the FSx for ONTAP file system deployment type to use in creating
-     * the file system. <code>MULTI_AZ_1</code> is the supported ONTAP deployment
-     * type.</p>
+     * the file system. </p> <ul> <li> <p> <code>MULTI_AZ_1</code> - (Default) A high
+     * availability file system configured for Multi-AZ redundancy to tolerate
+     * temporary Availability Zone (AZ) unavailability. </p> </li> <li> <p>
+     * <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ
+     * redundancy.</p> </li> </ul> <p>For information about the use cases for Multi-AZ
+     * and Single-AZ deployments, refer to <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-AZ.html">Choosing
+     * a file system deployment type</a>. </p>
      */
     inline const OntapDeploymentType& GetDeploymentType() const{ return m_deploymentType; }
 
     /**
      * <p>Specifies the FSx for ONTAP file system deployment type to use in creating
-     * the file system. <code>MULTI_AZ_1</code> is the supported ONTAP deployment
-     * type.</p>
+     * the file system. </p> <ul> <li> <p> <code>MULTI_AZ_1</code> - (Default) A high
+     * availability file system configured for Multi-AZ redundancy to tolerate
+     * temporary Availability Zone (AZ) unavailability. </p> </li> <li> <p>
+     * <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ
+     * redundancy.</p> </li> </ul> <p>For information about the use cases for Multi-AZ
+     * and Single-AZ deployments, refer to <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-AZ.html">Choosing
+     * a file system deployment type</a>. </p>
      */
     inline bool DeploymentTypeHasBeenSet() const { return m_deploymentTypeHasBeenSet; }
 
     /**
      * <p>Specifies the FSx for ONTAP file system deployment type to use in creating
-     * the file system. <code>MULTI_AZ_1</code> is the supported ONTAP deployment
-     * type.</p>
+     * the file system. </p> <ul> <li> <p> <code>MULTI_AZ_1</code> - (Default) A high
+     * availability file system configured for Multi-AZ redundancy to tolerate
+     * temporary Availability Zone (AZ) unavailability. </p> </li> <li> <p>
+     * <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ
+     * redundancy.</p> </li> </ul> <p>For information about the use cases for Multi-AZ
+     * and Single-AZ deployments, refer to <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-AZ.html">Choosing
+     * a file system deployment type</a>. </p>
      */
     inline void SetDeploymentType(const OntapDeploymentType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
 
     /**
      * <p>Specifies the FSx for ONTAP file system deployment type to use in creating
-     * the file system. <code>MULTI_AZ_1</code> is the supported ONTAP deployment
-     * type.</p>
+     * the file system. </p> <ul> <li> <p> <code>MULTI_AZ_1</code> - (Default) A high
+     * availability file system configured for Multi-AZ redundancy to tolerate
+     * temporary Availability Zone (AZ) unavailability. </p> </li> <li> <p>
+     * <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ
+     * redundancy.</p> </li> </ul> <p>For information about the use cases for Multi-AZ
+     * and Single-AZ deployments, refer to <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-AZ.html">Choosing
+     * a file system deployment type</a>. </p>
      */
     inline void SetDeploymentType(OntapDeploymentType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
 
     /**
      * <p>Specifies the FSx for ONTAP file system deployment type to use in creating
-     * the file system. <code>MULTI_AZ_1</code> is the supported ONTAP deployment
-     * type.</p>
+     * the file system. </p> <ul> <li> <p> <code>MULTI_AZ_1</code> - (Default) A high
+     * availability file system configured for Multi-AZ redundancy to tolerate
+     * temporary Availability Zone (AZ) unavailability. </p> </li> <li> <p>
+     * <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ
+     * redundancy.</p> </li> </ul> <p>For information about the use cases for Multi-AZ
+     * and Single-AZ deployments, refer to <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-AZ.html">Choosing
+     * a file system deployment type</a>. </p>
      */
     inline CreateFileSystemOntapConfiguration& WithDeploymentType(const OntapDeploymentType& value) { SetDeploymentType(value); return *this;}
 
     /**
      * <p>Specifies the FSx for ONTAP file system deployment type to use in creating
-     * the file system. <code>MULTI_AZ_1</code> is the supported ONTAP deployment
-     * type.</p>
+     * the file system. </p> <ul> <li> <p> <code>MULTI_AZ_1</code> - (Default) A high
+     * availability file system configured for Multi-AZ redundancy to tolerate
+     * temporary Availability Zone (AZ) unavailability. </p> </li> <li> <p>
+     * <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ
+     * redundancy.</p> </li> </ul> <p>For information about the use cases for Multi-AZ
+     * and Single-AZ deployments, refer to <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-AZ.html">Choosing
+     * a file system deployment type</a>. </p>
      */
     inline CreateFileSystemOntapConfiguration& WithDeploymentType(OntapDeploymentType&& value) { SetDeploymentType(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specifies the IP address range in which the endpoints to access your file
-     * system will be created. By default, Amazon FSx selects an unused IP address
-     * range for you from the 198.19.* range.</p>
+     * <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to
+     * access your file system will be created. By default, Amazon FSx selects an
+     * unused IP address range for you from the 198.19.* range.</p>  <p>The
+     * Endpoint IP address range you select for your file system must exist outside the
+     * VPC's CIDR range and must be at least /30 or larger.</p> 
      */
     inline const Aws::String& GetEndpointIpAddressRange() const{ return m_endpointIpAddressRange; }
 
     /**
-     * <p>Specifies the IP address range in which the endpoints to access your file
-     * system will be created. By default, Amazon FSx selects an unused IP address
-     * range for you from the 198.19.* range.</p>
+     * <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to
+     * access your file system will be created. By default, Amazon FSx selects an
+     * unused IP address range for you from the 198.19.* range.</p>  <p>The
+     * Endpoint IP address range you select for your file system must exist outside the
+     * VPC's CIDR range and must be at least /30 or larger.</p> 
      */
     inline bool EndpointIpAddressRangeHasBeenSet() const { return m_endpointIpAddressRangeHasBeenSet; }
 
     /**
-     * <p>Specifies the IP address range in which the endpoints to access your file
-     * system will be created. By default, Amazon FSx selects an unused IP address
-     * range for you from the 198.19.* range.</p>
+     * <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to
+     * access your file system will be created. By default, Amazon FSx selects an
+     * unused IP address range for you from the 198.19.* range.</p>  <p>The
+     * Endpoint IP address range you select for your file system must exist outside the
+     * VPC's CIDR range and must be at least /30 or larger.</p> 
      */
     inline void SetEndpointIpAddressRange(const Aws::String& value) { m_endpointIpAddressRangeHasBeenSet = true; m_endpointIpAddressRange = value; }
 
     /**
-     * <p>Specifies the IP address range in which the endpoints to access your file
-     * system will be created. By default, Amazon FSx selects an unused IP address
-     * range for you from the 198.19.* range.</p>
+     * <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to
+     * access your file system will be created. By default, Amazon FSx selects an
+     * unused IP address range for you from the 198.19.* range.</p>  <p>The
+     * Endpoint IP address range you select for your file system must exist outside the
+     * VPC's CIDR range and must be at least /30 or larger.</p> 
      */
     inline void SetEndpointIpAddressRange(Aws::String&& value) { m_endpointIpAddressRangeHasBeenSet = true; m_endpointIpAddressRange = std::move(value); }
 
     /**
-     * <p>Specifies the IP address range in which the endpoints to access your file
-     * system will be created. By default, Amazon FSx selects an unused IP address
-     * range for you from the 198.19.* range.</p>
+     * <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to
+     * access your file system will be created. By default, Amazon FSx selects an
+     * unused IP address range for you from the 198.19.* range.</p>  <p>The
+     * Endpoint IP address range you select for your file system must exist outside the
+     * VPC's CIDR range and must be at least /30 or larger.</p> 
      */
     inline void SetEndpointIpAddressRange(const char* value) { m_endpointIpAddressRangeHasBeenSet = true; m_endpointIpAddressRange.assign(value); }
 
     /**
-     * <p>Specifies the IP address range in which the endpoints to access your file
-     * system will be created. By default, Amazon FSx selects an unused IP address
-     * range for you from the 198.19.* range.</p>
+     * <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to
+     * access your file system will be created. By default, Amazon FSx selects an
+     * unused IP address range for you from the 198.19.* range.</p>  <p>The
+     * Endpoint IP address range you select for your file system must exist outside the
+     * VPC's CIDR range and must be at least /30 or larger.</p> 
      */
     inline CreateFileSystemOntapConfiguration& WithEndpointIpAddressRange(const Aws::String& value) { SetEndpointIpAddressRange(value); return *this;}
 
     /**
-     * <p>Specifies the IP address range in which the endpoints to access your file
-     * system will be created. By default, Amazon FSx selects an unused IP address
-     * range for you from the 198.19.* range.</p>
+     * <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to
+     * access your file system will be created. By default, Amazon FSx selects an
+     * unused IP address range for you from the 198.19.* range.</p>  <p>The
+     * Endpoint IP address range you select for your file system must exist outside the
+     * VPC's CIDR range and must be at least /30 or larger.</p> 
      */
     inline CreateFileSystemOntapConfiguration& WithEndpointIpAddressRange(Aws::String&& value) { SetEndpointIpAddressRange(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the IP address range in which the endpoints to access your file
-     * system will be created. By default, Amazon FSx selects an unused IP address
-     * range for you from the 198.19.* range.</p>
+     * <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to
+     * access your file system will be created. By default, Amazon FSx selects an
+     * unused IP address range for you from the 198.19.* range.</p>  <p>The
+     * Endpoint IP address range you select for your file system must exist outside the
+     * VPC's CIDR range and must be at least /30 or larger.</p> 
      */
     inline CreateFileSystemOntapConfiguration& WithEndpointIpAddressRange(const char* value) { SetEndpointIpAddressRange(value); return *this;}
 
@@ -325,99 +377,99 @@ namespace Model
 
 
     /**
-     * <p>Specifies the virtual private cloud (VPC) route tables in which your file
-     * system's endpoints will be created. You should specify all VPC route tables
-     * associated with the subnets in which your clients are located. By default,
-     * Amazon FSx selects your VPC's default route table.</p>
+     * <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in
+     * which your file system's endpoints will be created. You should specify all VPC
+     * route tables associated with the subnets in which your clients are located. By
+     * default, Amazon FSx selects your VPC's default route table.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRouteTableIds() const{ return m_routeTableIds; }
 
     /**
-     * <p>Specifies the virtual private cloud (VPC) route tables in which your file
-     * system's endpoints will be created. You should specify all VPC route tables
-     * associated with the subnets in which your clients are located. By default,
-     * Amazon FSx selects your VPC's default route table.</p>
+     * <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in
+     * which your file system's endpoints will be created. You should specify all VPC
+     * route tables associated with the subnets in which your clients are located. By
+     * default, Amazon FSx selects your VPC's default route table.</p>
      */
     inline bool RouteTableIdsHasBeenSet() const { return m_routeTableIdsHasBeenSet; }
 
     /**
-     * <p>Specifies the virtual private cloud (VPC) route tables in which your file
-     * system's endpoints will be created. You should specify all VPC route tables
-     * associated with the subnets in which your clients are located. By default,
-     * Amazon FSx selects your VPC's default route table.</p>
+     * <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in
+     * which your file system's endpoints will be created. You should specify all VPC
+     * route tables associated with the subnets in which your clients are located. By
+     * default, Amazon FSx selects your VPC's default route table.</p>
      */
     inline void SetRouteTableIds(const Aws::Vector<Aws::String>& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds = value; }
 
     /**
-     * <p>Specifies the virtual private cloud (VPC) route tables in which your file
-     * system's endpoints will be created. You should specify all VPC route tables
-     * associated with the subnets in which your clients are located. By default,
-     * Amazon FSx selects your VPC's default route table.</p>
+     * <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in
+     * which your file system's endpoints will be created. You should specify all VPC
+     * route tables associated with the subnets in which your clients are located. By
+     * default, Amazon FSx selects your VPC's default route table.</p>
      */
     inline void SetRouteTableIds(Aws::Vector<Aws::String>&& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds = std::move(value); }
 
     /**
-     * <p>Specifies the virtual private cloud (VPC) route tables in which your file
-     * system's endpoints will be created. You should specify all VPC route tables
-     * associated with the subnets in which your clients are located. By default,
-     * Amazon FSx selects your VPC's default route table.</p>
+     * <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in
+     * which your file system's endpoints will be created. You should specify all VPC
+     * route tables associated with the subnets in which your clients are located. By
+     * default, Amazon FSx selects your VPC's default route table.</p>
      */
     inline CreateFileSystemOntapConfiguration& WithRouteTableIds(const Aws::Vector<Aws::String>& value) { SetRouteTableIds(value); return *this;}
 
     /**
-     * <p>Specifies the virtual private cloud (VPC) route tables in which your file
-     * system's endpoints will be created. You should specify all VPC route tables
-     * associated with the subnets in which your clients are located. By default,
-     * Amazon FSx selects your VPC's default route table.</p>
+     * <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in
+     * which your file system's endpoints will be created. You should specify all VPC
+     * route tables associated with the subnets in which your clients are located. By
+     * default, Amazon FSx selects your VPC's default route table.</p>
      */
     inline CreateFileSystemOntapConfiguration& WithRouteTableIds(Aws::Vector<Aws::String>&& value) { SetRouteTableIds(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the virtual private cloud (VPC) route tables in which your file
-     * system's endpoints will be created. You should specify all VPC route tables
-     * associated with the subnets in which your clients are located. By default,
-     * Amazon FSx selects your VPC's default route table.</p>
+     * <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in
+     * which your file system's endpoints will be created. You should specify all VPC
+     * route tables associated with the subnets in which your clients are located. By
+     * default, Amazon FSx selects your VPC's default route table.</p>
      */
     inline CreateFileSystemOntapConfiguration& AddRouteTableIds(const Aws::String& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(value); return *this; }
 
     /**
-     * <p>Specifies the virtual private cloud (VPC) route tables in which your file
-     * system's endpoints will be created. You should specify all VPC route tables
-     * associated with the subnets in which your clients are located. By default,
-     * Amazon FSx selects your VPC's default route table.</p>
+     * <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in
+     * which your file system's endpoints will be created. You should specify all VPC
+     * route tables associated with the subnets in which your clients are located. By
+     * default, Amazon FSx selects your VPC's default route table.</p>
      */
     inline CreateFileSystemOntapConfiguration& AddRouteTableIds(Aws::String&& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Specifies the virtual private cloud (VPC) route tables in which your file
-     * system's endpoints will be created. You should specify all VPC route tables
-     * associated with the subnets in which your clients are located. By default,
-     * Amazon FSx selects your VPC's default route table.</p>
+     * <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in
+     * which your file system's endpoints will be created. You should specify all VPC
+     * route tables associated with the subnets in which your clients are located. By
+     * default, Amazon FSx selects your VPC's default route table.</p>
      */
     inline CreateFileSystemOntapConfiguration& AddRouteTableIds(const char* value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(value); return *this; }
 
 
     /**
      * <p>Sets the throughput capacity for the file system that you're creating. Valid
-     * values are 512, 1024, and 2048 MBps.</p>
+     * values are 128, 256, 512, 1024, and 2048 MBps.</p>
      */
     inline int GetThroughputCapacity() const{ return m_throughputCapacity; }
 
     /**
      * <p>Sets the throughput capacity for the file system that you're creating. Valid
-     * values are 512, 1024, and 2048 MBps.</p>
+     * values are 128, 256, 512, 1024, and 2048 MBps.</p>
      */
     inline bool ThroughputCapacityHasBeenSet() const { return m_throughputCapacityHasBeenSet; }
 
     /**
      * <p>Sets the throughput capacity for the file system that you're creating. Valid
-     * values are 512, 1024, and 2048 MBps.</p>
+     * values are 128, 256, 512, 1024, and 2048 MBps.</p>
      */
     inline void SetThroughputCapacity(int value) { m_throughputCapacityHasBeenSet = true; m_throughputCapacity = value; }
 
     /**
      * <p>Sets the throughput capacity for the file system that you're creating. Valid
-     * values are 512, 1024, and 2048 MBps.</p>
+     * values are 128, 256, 512, 1024, and 2048 MBps.</p>
      */
     inline CreateFileSystemOntapConfiguration& WithThroughputCapacity(int value) { SetThroughputCapacity(value); return *this;}
 

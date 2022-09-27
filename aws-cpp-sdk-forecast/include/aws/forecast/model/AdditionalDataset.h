@@ -105,15 +105,15 @@ namespace Model
 
     /**
      * <p> <b>Weather Index</b> </p> <p>To enable the Weather Index, do not specify a
-     * value for <code>Configuration</code>.</p> <p> <b>Holidays</b> </p> <p>To enable
-     * Holidays, set <code>CountryCode</code> to one of the following two-letter
-     * country codes:</p> <ul> <li> <p>"AL" - ALBANIA</p> </li> <li> <p>"AR" -
-     * ARGENTINA</p> </li> <li> <p>"AT" - AUSTRIA</p> </li> <li> <p>"AU" -
-     * AUSTRALIA</p> </li> <li> <p>"BA" - BOSNIA HERZEGOVINA</p> </li> <li> <p>"BE" -
-     * BELGIUM</p> </li> <li> <p>"BG" - BULGARIA</p> </li> <li> <p>"BO" - BOLIVIA</p>
-     * </li> <li> <p>"BR" - BRAZIL</p> </li> <li> <p>"BY" - BELARUS</p> </li> <li>
-     * <p>"CA" - CANADA</p> </li> <li> <p>"CL" - CHILE</p> </li> <li> <p>"CO" -
-     * COLOMBIA</p> </li> <li> <p>"CR" - COSTA RICA</p> </li> <li> <p>"HR" -
+     * value for <code>Configuration</code>.</p> <p> <b>Holidays</b> </p> <p>
+     * <b>Holidays</b> </p> <p>To enable Holidays, set <code>CountryCode</code> to one
+     * of the following two-letter country codes:</p> <ul> <li> <p>"AL" - ALBANIA</p>
+     * </li> <li> <p>"AR" - ARGENTINA</p> </li> <li> <p>"AT" - AUSTRIA</p> </li> <li>
+     * <p>"AU" - AUSTRALIA</p> </li> <li> <p>"BA" - BOSNIA HERZEGOVINA</p> </li> <li>
+     * <p>"BE" - BELGIUM</p> </li> <li> <p>"BG" - BULGARIA</p> </li> <li> <p>"BO" -
+     * BOLIVIA</p> </li> <li> <p>"BR" - BRAZIL</p> </li> <li> <p>"BY" - BELARUS</p>
+     * </li> <li> <p>"CA" - CANADA</p> </li> <li> <p>"CL" - CHILE</p> </li> <li>
+     * <p>"CO" - COLOMBIA</p> </li> <li> <p>"CR" - COSTA RICA</p> </li> <li> <p>"HR" -
      * CROATIA</p> </li> <li> <p>"CZ" - CZECH REPUBLIC</p> </li> <li> <p>"DK" -
      * DENMARK</p> </li> <li> <p>"EC" - ECUADOR</p> </li> <li> <p>"EE" - ESTONIA</p>
      * </li> <li> <p>"ET" - ETHIOPIA</p> </li> <li> <p>"FI" - FINLAND</p> </li> <li>
@@ -142,15 +142,15 @@ namespace Model
 
     /**
      * <p> <b>Weather Index</b> </p> <p>To enable the Weather Index, do not specify a
-     * value for <code>Configuration</code>.</p> <p> <b>Holidays</b> </p> <p>To enable
-     * Holidays, set <code>CountryCode</code> to one of the following two-letter
-     * country codes:</p> <ul> <li> <p>"AL" - ALBANIA</p> </li> <li> <p>"AR" -
-     * ARGENTINA</p> </li> <li> <p>"AT" - AUSTRIA</p> </li> <li> <p>"AU" -
-     * AUSTRALIA</p> </li> <li> <p>"BA" - BOSNIA HERZEGOVINA</p> </li> <li> <p>"BE" -
-     * BELGIUM</p> </li> <li> <p>"BG" - BULGARIA</p> </li> <li> <p>"BO" - BOLIVIA</p>
-     * </li> <li> <p>"BR" - BRAZIL</p> </li> <li> <p>"BY" - BELARUS</p> </li> <li>
-     * <p>"CA" - CANADA</p> </li> <li> <p>"CL" - CHILE</p> </li> <li> <p>"CO" -
-     * COLOMBIA</p> </li> <li> <p>"CR" - COSTA RICA</p> </li> <li> <p>"HR" -
+     * value for <code>Configuration</code>.</p> <p> <b>Holidays</b> </p> <p>
+     * <b>Holidays</b> </p> <p>To enable Holidays, set <code>CountryCode</code> to one
+     * of the following two-letter country codes:</p> <ul> <li> <p>"AL" - ALBANIA</p>
+     * </li> <li> <p>"AR" - ARGENTINA</p> </li> <li> <p>"AT" - AUSTRIA</p> </li> <li>
+     * <p>"AU" - AUSTRALIA</p> </li> <li> <p>"BA" - BOSNIA HERZEGOVINA</p> </li> <li>
+     * <p>"BE" - BELGIUM</p> </li> <li> <p>"BG" - BULGARIA</p> </li> <li> <p>"BO" -
+     * BOLIVIA</p> </li> <li> <p>"BR" - BRAZIL</p> </li> <li> <p>"BY" - BELARUS</p>
+     * </li> <li> <p>"CA" - CANADA</p> </li> <li> <p>"CL" - CHILE</p> </li> <li>
+     * <p>"CO" - COLOMBIA</p> </li> <li> <p>"CR" - COSTA RICA</p> </li> <li> <p>"HR" -
      * CROATIA</p> </li> <li> <p>"CZ" - CZECH REPUBLIC</p> </li> <li> <p>"DK" -
      * DENMARK</p> </li> <li> <p>"EC" - ECUADOR</p> </li> <li> <p>"EE" - ESTONIA</p>
      * </li> <li> <p>"ET" - ETHIOPIA</p> </li> <li> <p>"FI" - FINLAND</p> </li> <li>
@@ -179,15 +179,15 @@ namespace Model
 
     /**
      * <p> <b>Weather Index</b> </p> <p>To enable the Weather Index, do not specify a
-     * value for <code>Configuration</code>.</p> <p> <b>Holidays</b> </p> <p>To enable
-     * Holidays, set <code>CountryCode</code> to one of the following two-letter
-     * country codes:</p> <ul> <li> <p>"AL" - ALBANIA</p> </li> <li> <p>"AR" -
-     * ARGENTINA</p> </li> <li> <p>"AT" - AUSTRIA</p> </li> <li> <p>"AU" -
-     * AUSTRALIA</p> </li> <li> <p>"BA" - BOSNIA HERZEGOVINA</p> </li> <li> <p>"BE" -
-     * BELGIUM</p> </li> <li> <p>"BG" - BULGARIA</p> </li> <li> <p>"BO" - BOLIVIA</p>
-     * </li> <li> <p>"BR" - BRAZIL</p> </li> <li> <p>"BY" - BELARUS</p> </li> <li>
-     * <p>"CA" - CANADA</p> </li> <li> <p>"CL" - CHILE</p> </li> <li> <p>"CO" -
-     * COLOMBIA</p> </li> <li> <p>"CR" - COSTA RICA</p> </li> <li> <p>"HR" -
+     * value for <code>Configuration</code>.</p> <p> <b>Holidays</b> </p> <p>
+     * <b>Holidays</b> </p> <p>To enable Holidays, set <code>CountryCode</code> to one
+     * of the following two-letter country codes:</p> <ul> <li> <p>"AL" - ALBANIA</p>
+     * </li> <li> <p>"AR" - ARGENTINA</p> </li> <li> <p>"AT" - AUSTRIA</p> </li> <li>
+     * <p>"AU" - AUSTRALIA</p> </li> <li> <p>"BA" - BOSNIA HERZEGOVINA</p> </li> <li>
+     * <p>"BE" - BELGIUM</p> </li> <li> <p>"BG" - BULGARIA</p> </li> <li> <p>"BO" -
+     * BOLIVIA</p> </li> <li> <p>"BR" - BRAZIL</p> </li> <li> <p>"BY" - BELARUS</p>
+     * </li> <li> <p>"CA" - CANADA</p> </li> <li> <p>"CL" - CHILE</p> </li> <li>
+     * <p>"CO" - COLOMBIA</p> </li> <li> <p>"CR" - COSTA RICA</p> </li> <li> <p>"HR" -
      * CROATIA</p> </li> <li> <p>"CZ" - CZECH REPUBLIC</p> </li> <li> <p>"DK" -
      * DENMARK</p> </li> <li> <p>"EC" - ECUADOR</p> </li> <li> <p>"EE" - ESTONIA</p>
      * </li> <li> <p>"ET" - ETHIOPIA</p> </li> <li> <p>"FI" - FINLAND</p> </li> <li>
@@ -216,15 +216,15 @@ namespace Model
 
     /**
      * <p> <b>Weather Index</b> </p> <p>To enable the Weather Index, do not specify a
-     * value for <code>Configuration</code>.</p> <p> <b>Holidays</b> </p> <p>To enable
-     * Holidays, set <code>CountryCode</code> to one of the following two-letter
-     * country codes:</p> <ul> <li> <p>"AL" - ALBANIA</p> </li> <li> <p>"AR" -
-     * ARGENTINA</p> </li> <li> <p>"AT" - AUSTRIA</p> </li> <li> <p>"AU" -
-     * AUSTRALIA</p> </li> <li> <p>"BA" - BOSNIA HERZEGOVINA</p> </li> <li> <p>"BE" -
-     * BELGIUM</p> </li> <li> <p>"BG" - BULGARIA</p> </li> <li> <p>"BO" - BOLIVIA</p>
-     * </li> <li> <p>"BR" - BRAZIL</p> </li> <li> <p>"BY" - BELARUS</p> </li> <li>
-     * <p>"CA" - CANADA</p> </li> <li> <p>"CL" - CHILE</p> </li> <li> <p>"CO" -
-     * COLOMBIA</p> </li> <li> <p>"CR" - COSTA RICA</p> </li> <li> <p>"HR" -
+     * value for <code>Configuration</code>.</p> <p> <b>Holidays</b> </p> <p>
+     * <b>Holidays</b> </p> <p>To enable Holidays, set <code>CountryCode</code> to one
+     * of the following two-letter country codes:</p> <ul> <li> <p>"AL" - ALBANIA</p>
+     * </li> <li> <p>"AR" - ARGENTINA</p> </li> <li> <p>"AT" - AUSTRIA</p> </li> <li>
+     * <p>"AU" - AUSTRALIA</p> </li> <li> <p>"BA" - BOSNIA HERZEGOVINA</p> </li> <li>
+     * <p>"BE" - BELGIUM</p> </li> <li> <p>"BG" - BULGARIA</p> </li> <li> <p>"BO" -
+     * BOLIVIA</p> </li> <li> <p>"BR" - BRAZIL</p> </li> <li> <p>"BY" - BELARUS</p>
+     * </li> <li> <p>"CA" - CANADA</p> </li> <li> <p>"CL" - CHILE</p> </li> <li>
+     * <p>"CO" - COLOMBIA</p> </li> <li> <p>"CR" - COSTA RICA</p> </li> <li> <p>"HR" -
      * CROATIA</p> </li> <li> <p>"CZ" - CZECH REPUBLIC</p> </li> <li> <p>"DK" -
      * DENMARK</p> </li> <li> <p>"EC" - ECUADOR</p> </li> <li> <p>"EE" - ESTONIA</p>
      * </li> <li> <p>"ET" - ETHIOPIA</p> </li> <li> <p>"FI" - FINLAND</p> </li> <li>
@@ -253,15 +253,15 @@ namespace Model
 
     /**
      * <p> <b>Weather Index</b> </p> <p>To enable the Weather Index, do not specify a
-     * value for <code>Configuration</code>.</p> <p> <b>Holidays</b> </p> <p>To enable
-     * Holidays, set <code>CountryCode</code> to one of the following two-letter
-     * country codes:</p> <ul> <li> <p>"AL" - ALBANIA</p> </li> <li> <p>"AR" -
-     * ARGENTINA</p> </li> <li> <p>"AT" - AUSTRIA</p> </li> <li> <p>"AU" -
-     * AUSTRALIA</p> </li> <li> <p>"BA" - BOSNIA HERZEGOVINA</p> </li> <li> <p>"BE" -
-     * BELGIUM</p> </li> <li> <p>"BG" - BULGARIA</p> </li> <li> <p>"BO" - BOLIVIA</p>
-     * </li> <li> <p>"BR" - BRAZIL</p> </li> <li> <p>"BY" - BELARUS</p> </li> <li>
-     * <p>"CA" - CANADA</p> </li> <li> <p>"CL" - CHILE</p> </li> <li> <p>"CO" -
-     * COLOMBIA</p> </li> <li> <p>"CR" - COSTA RICA</p> </li> <li> <p>"HR" -
+     * value for <code>Configuration</code>.</p> <p> <b>Holidays</b> </p> <p>
+     * <b>Holidays</b> </p> <p>To enable Holidays, set <code>CountryCode</code> to one
+     * of the following two-letter country codes:</p> <ul> <li> <p>"AL" - ALBANIA</p>
+     * </li> <li> <p>"AR" - ARGENTINA</p> </li> <li> <p>"AT" - AUSTRIA</p> </li> <li>
+     * <p>"AU" - AUSTRALIA</p> </li> <li> <p>"BA" - BOSNIA HERZEGOVINA</p> </li> <li>
+     * <p>"BE" - BELGIUM</p> </li> <li> <p>"BG" - BULGARIA</p> </li> <li> <p>"BO" -
+     * BOLIVIA</p> </li> <li> <p>"BR" - BRAZIL</p> </li> <li> <p>"BY" - BELARUS</p>
+     * </li> <li> <p>"CA" - CANADA</p> </li> <li> <p>"CL" - CHILE</p> </li> <li>
+     * <p>"CO" - COLOMBIA</p> </li> <li> <p>"CR" - COSTA RICA</p> </li> <li> <p>"HR" -
      * CROATIA</p> </li> <li> <p>"CZ" - CZECH REPUBLIC</p> </li> <li> <p>"DK" -
      * DENMARK</p> </li> <li> <p>"EC" - ECUADOR</p> </li> <li> <p>"EE" - ESTONIA</p>
      * </li> <li> <p>"ET" - ETHIOPIA</p> </li> <li> <p>"FI" - FINLAND</p> </li> <li>
@@ -290,15 +290,15 @@ namespace Model
 
     /**
      * <p> <b>Weather Index</b> </p> <p>To enable the Weather Index, do not specify a
-     * value for <code>Configuration</code>.</p> <p> <b>Holidays</b> </p> <p>To enable
-     * Holidays, set <code>CountryCode</code> to one of the following two-letter
-     * country codes:</p> <ul> <li> <p>"AL" - ALBANIA</p> </li> <li> <p>"AR" -
-     * ARGENTINA</p> </li> <li> <p>"AT" - AUSTRIA</p> </li> <li> <p>"AU" -
-     * AUSTRALIA</p> </li> <li> <p>"BA" - BOSNIA HERZEGOVINA</p> </li> <li> <p>"BE" -
-     * BELGIUM</p> </li> <li> <p>"BG" - BULGARIA</p> </li> <li> <p>"BO" - BOLIVIA</p>
-     * </li> <li> <p>"BR" - BRAZIL</p> </li> <li> <p>"BY" - BELARUS</p> </li> <li>
-     * <p>"CA" - CANADA</p> </li> <li> <p>"CL" - CHILE</p> </li> <li> <p>"CO" -
-     * COLOMBIA</p> </li> <li> <p>"CR" - COSTA RICA</p> </li> <li> <p>"HR" -
+     * value for <code>Configuration</code>.</p> <p> <b>Holidays</b> </p> <p>
+     * <b>Holidays</b> </p> <p>To enable Holidays, set <code>CountryCode</code> to one
+     * of the following two-letter country codes:</p> <ul> <li> <p>"AL" - ALBANIA</p>
+     * </li> <li> <p>"AR" - ARGENTINA</p> </li> <li> <p>"AT" - AUSTRIA</p> </li> <li>
+     * <p>"AU" - AUSTRALIA</p> </li> <li> <p>"BA" - BOSNIA HERZEGOVINA</p> </li> <li>
+     * <p>"BE" - BELGIUM</p> </li> <li> <p>"BG" - BULGARIA</p> </li> <li> <p>"BO" -
+     * BOLIVIA</p> </li> <li> <p>"BR" - BRAZIL</p> </li> <li> <p>"BY" - BELARUS</p>
+     * </li> <li> <p>"CA" - CANADA</p> </li> <li> <p>"CL" - CHILE</p> </li> <li>
+     * <p>"CO" - COLOMBIA</p> </li> <li> <p>"CR" - COSTA RICA</p> </li> <li> <p>"HR" -
      * CROATIA</p> </li> <li> <p>"CZ" - CZECH REPUBLIC</p> </li> <li> <p>"DK" -
      * DENMARK</p> </li> <li> <p>"EC" - ECUADOR</p> </li> <li> <p>"EE" - ESTONIA</p>
      * </li> <li> <p>"ET" - ETHIOPIA</p> </li> <li> <p>"FI" - FINLAND</p> </li> <li>
@@ -327,15 +327,15 @@ namespace Model
 
     /**
      * <p> <b>Weather Index</b> </p> <p>To enable the Weather Index, do not specify a
-     * value for <code>Configuration</code>.</p> <p> <b>Holidays</b> </p> <p>To enable
-     * Holidays, set <code>CountryCode</code> to one of the following two-letter
-     * country codes:</p> <ul> <li> <p>"AL" - ALBANIA</p> </li> <li> <p>"AR" -
-     * ARGENTINA</p> </li> <li> <p>"AT" - AUSTRIA</p> </li> <li> <p>"AU" -
-     * AUSTRALIA</p> </li> <li> <p>"BA" - BOSNIA HERZEGOVINA</p> </li> <li> <p>"BE" -
-     * BELGIUM</p> </li> <li> <p>"BG" - BULGARIA</p> </li> <li> <p>"BO" - BOLIVIA</p>
-     * </li> <li> <p>"BR" - BRAZIL</p> </li> <li> <p>"BY" - BELARUS</p> </li> <li>
-     * <p>"CA" - CANADA</p> </li> <li> <p>"CL" - CHILE</p> </li> <li> <p>"CO" -
-     * COLOMBIA</p> </li> <li> <p>"CR" - COSTA RICA</p> </li> <li> <p>"HR" -
+     * value for <code>Configuration</code>.</p> <p> <b>Holidays</b> </p> <p>
+     * <b>Holidays</b> </p> <p>To enable Holidays, set <code>CountryCode</code> to one
+     * of the following two-letter country codes:</p> <ul> <li> <p>"AL" - ALBANIA</p>
+     * </li> <li> <p>"AR" - ARGENTINA</p> </li> <li> <p>"AT" - AUSTRIA</p> </li> <li>
+     * <p>"AU" - AUSTRALIA</p> </li> <li> <p>"BA" - BOSNIA HERZEGOVINA</p> </li> <li>
+     * <p>"BE" - BELGIUM</p> </li> <li> <p>"BG" - BULGARIA</p> </li> <li> <p>"BO" -
+     * BOLIVIA</p> </li> <li> <p>"BR" - BRAZIL</p> </li> <li> <p>"BY" - BELARUS</p>
+     * </li> <li> <p>"CA" - CANADA</p> </li> <li> <p>"CL" - CHILE</p> </li> <li>
+     * <p>"CO" - COLOMBIA</p> </li> <li> <p>"CR" - COSTA RICA</p> </li> <li> <p>"HR" -
      * CROATIA</p> </li> <li> <p>"CZ" - CZECH REPUBLIC</p> </li> <li> <p>"DK" -
      * DENMARK</p> </li> <li> <p>"EC" - ECUADOR</p> </li> <li> <p>"EE" - ESTONIA</p>
      * </li> <li> <p>"ET" - ETHIOPIA</p> </li> <li> <p>"FI" - FINLAND</p> </li> <li>
@@ -364,15 +364,15 @@ namespace Model
 
     /**
      * <p> <b>Weather Index</b> </p> <p>To enable the Weather Index, do not specify a
-     * value for <code>Configuration</code>.</p> <p> <b>Holidays</b> </p> <p>To enable
-     * Holidays, set <code>CountryCode</code> to one of the following two-letter
-     * country codes:</p> <ul> <li> <p>"AL" - ALBANIA</p> </li> <li> <p>"AR" -
-     * ARGENTINA</p> </li> <li> <p>"AT" - AUSTRIA</p> </li> <li> <p>"AU" -
-     * AUSTRALIA</p> </li> <li> <p>"BA" - BOSNIA HERZEGOVINA</p> </li> <li> <p>"BE" -
-     * BELGIUM</p> </li> <li> <p>"BG" - BULGARIA</p> </li> <li> <p>"BO" - BOLIVIA</p>
-     * </li> <li> <p>"BR" - BRAZIL</p> </li> <li> <p>"BY" - BELARUS</p> </li> <li>
-     * <p>"CA" - CANADA</p> </li> <li> <p>"CL" - CHILE</p> </li> <li> <p>"CO" -
-     * COLOMBIA</p> </li> <li> <p>"CR" - COSTA RICA</p> </li> <li> <p>"HR" -
+     * value for <code>Configuration</code>.</p> <p> <b>Holidays</b> </p> <p>
+     * <b>Holidays</b> </p> <p>To enable Holidays, set <code>CountryCode</code> to one
+     * of the following two-letter country codes:</p> <ul> <li> <p>"AL" - ALBANIA</p>
+     * </li> <li> <p>"AR" - ARGENTINA</p> </li> <li> <p>"AT" - AUSTRIA</p> </li> <li>
+     * <p>"AU" - AUSTRALIA</p> </li> <li> <p>"BA" - BOSNIA HERZEGOVINA</p> </li> <li>
+     * <p>"BE" - BELGIUM</p> </li> <li> <p>"BG" - BULGARIA</p> </li> <li> <p>"BO" -
+     * BOLIVIA</p> </li> <li> <p>"BR" - BRAZIL</p> </li> <li> <p>"BY" - BELARUS</p>
+     * </li> <li> <p>"CA" - CANADA</p> </li> <li> <p>"CL" - CHILE</p> </li> <li>
+     * <p>"CO" - COLOMBIA</p> </li> <li> <p>"CR" - COSTA RICA</p> </li> <li> <p>"HR" -
      * CROATIA</p> </li> <li> <p>"CZ" - CZECH REPUBLIC</p> </li> <li> <p>"DK" -
      * DENMARK</p> </li> <li> <p>"EC" - ECUADOR</p> </li> <li> <p>"EE" - ESTONIA</p>
      * </li> <li> <p>"ET" - ETHIOPIA</p> </li> <li> <p>"FI" - FINLAND</p> </li> <li>
@@ -401,15 +401,15 @@ namespace Model
 
     /**
      * <p> <b>Weather Index</b> </p> <p>To enable the Weather Index, do not specify a
-     * value for <code>Configuration</code>.</p> <p> <b>Holidays</b> </p> <p>To enable
-     * Holidays, set <code>CountryCode</code> to one of the following two-letter
-     * country codes:</p> <ul> <li> <p>"AL" - ALBANIA</p> </li> <li> <p>"AR" -
-     * ARGENTINA</p> </li> <li> <p>"AT" - AUSTRIA</p> </li> <li> <p>"AU" -
-     * AUSTRALIA</p> </li> <li> <p>"BA" - BOSNIA HERZEGOVINA</p> </li> <li> <p>"BE" -
-     * BELGIUM</p> </li> <li> <p>"BG" - BULGARIA</p> </li> <li> <p>"BO" - BOLIVIA</p>
-     * </li> <li> <p>"BR" - BRAZIL</p> </li> <li> <p>"BY" - BELARUS</p> </li> <li>
-     * <p>"CA" - CANADA</p> </li> <li> <p>"CL" - CHILE</p> </li> <li> <p>"CO" -
-     * COLOMBIA</p> </li> <li> <p>"CR" - COSTA RICA</p> </li> <li> <p>"HR" -
+     * value for <code>Configuration</code>.</p> <p> <b>Holidays</b> </p> <p>
+     * <b>Holidays</b> </p> <p>To enable Holidays, set <code>CountryCode</code> to one
+     * of the following two-letter country codes:</p> <ul> <li> <p>"AL" - ALBANIA</p>
+     * </li> <li> <p>"AR" - ARGENTINA</p> </li> <li> <p>"AT" - AUSTRIA</p> </li> <li>
+     * <p>"AU" - AUSTRALIA</p> </li> <li> <p>"BA" - BOSNIA HERZEGOVINA</p> </li> <li>
+     * <p>"BE" - BELGIUM</p> </li> <li> <p>"BG" - BULGARIA</p> </li> <li> <p>"BO" -
+     * BOLIVIA</p> </li> <li> <p>"BR" - BRAZIL</p> </li> <li> <p>"BY" - BELARUS</p>
+     * </li> <li> <p>"CA" - CANADA</p> </li> <li> <p>"CL" - CHILE</p> </li> <li>
+     * <p>"CO" - COLOMBIA</p> </li> <li> <p>"CR" - COSTA RICA</p> </li> <li> <p>"HR" -
      * CROATIA</p> </li> <li> <p>"CZ" - CZECH REPUBLIC</p> </li> <li> <p>"DK" -
      * DENMARK</p> </li> <li> <p>"EC" - ECUADOR</p> </li> <li> <p>"EE" - ESTONIA</p>
      * </li> <li> <p>"ET" - ETHIOPIA</p> </li> <li> <p>"FI" - FINLAND</p> </li> <li>
@@ -438,15 +438,15 @@ namespace Model
 
     /**
      * <p> <b>Weather Index</b> </p> <p>To enable the Weather Index, do not specify a
-     * value for <code>Configuration</code>.</p> <p> <b>Holidays</b> </p> <p>To enable
-     * Holidays, set <code>CountryCode</code> to one of the following two-letter
-     * country codes:</p> <ul> <li> <p>"AL" - ALBANIA</p> </li> <li> <p>"AR" -
-     * ARGENTINA</p> </li> <li> <p>"AT" - AUSTRIA</p> </li> <li> <p>"AU" -
-     * AUSTRALIA</p> </li> <li> <p>"BA" - BOSNIA HERZEGOVINA</p> </li> <li> <p>"BE" -
-     * BELGIUM</p> </li> <li> <p>"BG" - BULGARIA</p> </li> <li> <p>"BO" - BOLIVIA</p>
-     * </li> <li> <p>"BR" - BRAZIL</p> </li> <li> <p>"BY" - BELARUS</p> </li> <li>
-     * <p>"CA" - CANADA</p> </li> <li> <p>"CL" - CHILE</p> </li> <li> <p>"CO" -
-     * COLOMBIA</p> </li> <li> <p>"CR" - COSTA RICA</p> </li> <li> <p>"HR" -
+     * value for <code>Configuration</code>.</p> <p> <b>Holidays</b> </p> <p>
+     * <b>Holidays</b> </p> <p>To enable Holidays, set <code>CountryCode</code> to one
+     * of the following two-letter country codes:</p> <ul> <li> <p>"AL" - ALBANIA</p>
+     * </li> <li> <p>"AR" - ARGENTINA</p> </li> <li> <p>"AT" - AUSTRIA</p> </li> <li>
+     * <p>"AU" - AUSTRALIA</p> </li> <li> <p>"BA" - BOSNIA HERZEGOVINA</p> </li> <li>
+     * <p>"BE" - BELGIUM</p> </li> <li> <p>"BG" - BULGARIA</p> </li> <li> <p>"BO" -
+     * BOLIVIA</p> </li> <li> <p>"BR" - BRAZIL</p> </li> <li> <p>"BY" - BELARUS</p>
+     * </li> <li> <p>"CA" - CANADA</p> </li> <li> <p>"CL" - CHILE</p> </li> <li>
+     * <p>"CO" - COLOMBIA</p> </li> <li> <p>"CR" - COSTA RICA</p> </li> <li> <p>"HR" -
      * CROATIA</p> </li> <li> <p>"CZ" - CZECH REPUBLIC</p> </li> <li> <p>"DK" -
      * DENMARK</p> </li> <li> <p>"EC" - ECUADOR</p> </li> <li> <p>"EE" - ESTONIA</p>
      * </li> <li> <p>"ET" - ETHIOPIA</p> </li> <li> <p>"FI" - FINLAND</p> </li> <li>
@@ -475,15 +475,15 @@ namespace Model
 
     /**
      * <p> <b>Weather Index</b> </p> <p>To enable the Weather Index, do not specify a
-     * value for <code>Configuration</code>.</p> <p> <b>Holidays</b> </p> <p>To enable
-     * Holidays, set <code>CountryCode</code> to one of the following two-letter
-     * country codes:</p> <ul> <li> <p>"AL" - ALBANIA</p> </li> <li> <p>"AR" -
-     * ARGENTINA</p> </li> <li> <p>"AT" - AUSTRIA</p> </li> <li> <p>"AU" -
-     * AUSTRALIA</p> </li> <li> <p>"BA" - BOSNIA HERZEGOVINA</p> </li> <li> <p>"BE" -
-     * BELGIUM</p> </li> <li> <p>"BG" - BULGARIA</p> </li> <li> <p>"BO" - BOLIVIA</p>
-     * </li> <li> <p>"BR" - BRAZIL</p> </li> <li> <p>"BY" - BELARUS</p> </li> <li>
-     * <p>"CA" - CANADA</p> </li> <li> <p>"CL" - CHILE</p> </li> <li> <p>"CO" -
-     * COLOMBIA</p> </li> <li> <p>"CR" - COSTA RICA</p> </li> <li> <p>"HR" -
+     * value for <code>Configuration</code>.</p> <p> <b>Holidays</b> </p> <p>
+     * <b>Holidays</b> </p> <p>To enable Holidays, set <code>CountryCode</code> to one
+     * of the following two-letter country codes:</p> <ul> <li> <p>"AL" - ALBANIA</p>
+     * </li> <li> <p>"AR" - ARGENTINA</p> </li> <li> <p>"AT" - AUSTRIA</p> </li> <li>
+     * <p>"AU" - AUSTRALIA</p> </li> <li> <p>"BA" - BOSNIA HERZEGOVINA</p> </li> <li>
+     * <p>"BE" - BELGIUM</p> </li> <li> <p>"BG" - BULGARIA</p> </li> <li> <p>"BO" -
+     * BOLIVIA</p> </li> <li> <p>"BR" - BRAZIL</p> </li> <li> <p>"BY" - BELARUS</p>
+     * </li> <li> <p>"CA" - CANADA</p> </li> <li> <p>"CL" - CHILE</p> </li> <li>
+     * <p>"CO" - COLOMBIA</p> </li> <li> <p>"CR" - COSTA RICA</p> </li> <li> <p>"HR" -
      * CROATIA</p> </li> <li> <p>"CZ" - CZECH REPUBLIC</p> </li> <li> <p>"DK" -
      * DENMARK</p> </li> <li> <p>"EC" - ECUADOR</p> </li> <li> <p>"EE" - ESTONIA</p>
      * </li> <li> <p>"ET" - ETHIOPIA</p> </li> <li> <p>"FI" - FINLAND</p> </li> <li>
@@ -512,15 +512,15 @@ namespace Model
 
     /**
      * <p> <b>Weather Index</b> </p> <p>To enable the Weather Index, do not specify a
-     * value for <code>Configuration</code>.</p> <p> <b>Holidays</b> </p> <p>To enable
-     * Holidays, set <code>CountryCode</code> to one of the following two-letter
-     * country codes:</p> <ul> <li> <p>"AL" - ALBANIA</p> </li> <li> <p>"AR" -
-     * ARGENTINA</p> </li> <li> <p>"AT" - AUSTRIA</p> </li> <li> <p>"AU" -
-     * AUSTRALIA</p> </li> <li> <p>"BA" - BOSNIA HERZEGOVINA</p> </li> <li> <p>"BE" -
-     * BELGIUM</p> </li> <li> <p>"BG" - BULGARIA</p> </li> <li> <p>"BO" - BOLIVIA</p>
-     * </li> <li> <p>"BR" - BRAZIL</p> </li> <li> <p>"BY" - BELARUS</p> </li> <li>
-     * <p>"CA" - CANADA</p> </li> <li> <p>"CL" - CHILE</p> </li> <li> <p>"CO" -
-     * COLOMBIA</p> </li> <li> <p>"CR" - COSTA RICA</p> </li> <li> <p>"HR" -
+     * value for <code>Configuration</code>.</p> <p> <b>Holidays</b> </p> <p>
+     * <b>Holidays</b> </p> <p>To enable Holidays, set <code>CountryCode</code> to one
+     * of the following two-letter country codes:</p> <ul> <li> <p>"AL" - ALBANIA</p>
+     * </li> <li> <p>"AR" - ARGENTINA</p> </li> <li> <p>"AT" - AUSTRIA</p> </li> <li>
+     * <p>"AU" - AUSTRALIA</p> </li> <li> <p>"BA" - BOSNIA HERZEGOVINA</p> </li> <li>
+     * <p>"BE" - BELGIUM</p> </li> <li> <p>"BG" - BULGARIA</p> </li> <li> <p>"BO" -
+     * BOLIVIA</p> </li> <li> <p>"BR" - BRAZIL</p> </li> <li> <p>"BY" - BELARUS</p>
+     * </li> <li> <p>"CA" - CANADA</p> </li> <li> <p>"CL" - CHILE</p> </li> <li>
+     * <p>"CO" - COLOMBIA</p> </li> <li> <p>"CR" - COSTA RICA</p> </li> <li> <p>"HR" -
      * CROATIA</p> </li> <li> <p>"CZ" - CZECH REPUBLIC</p> </li> <li> <p>"DK" -
      * DENMARK</p> </li> <li> <p>"EC" - ECUADOR</p> </li> <li> <p>"EE" - ESTONIA</p>
      * </li> <li> <p>"ET" - ETHIOPIA</p> </li> <li> <p>"FI" - FINLAND</p> </li> <li>

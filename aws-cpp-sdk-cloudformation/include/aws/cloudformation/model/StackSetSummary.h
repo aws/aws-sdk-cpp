@@ -350,8 +350,8 @@ namespace Model
      * of the stack instances belonging to the stack set stack differs from the
      * expected template and parameter configuration. A stack instance is considered to
      * have drifted if one or more of the resources in the associated stack have
-     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not
-     * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All of
+     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't
+     * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All
      * the stack instances belonging to the stack set stack match from the expected
      * template and parameter configuration.</p> </li> <li> <p> <code>UNKNOWN</code>:
      * This value is reserved for future use.</p> </li> </ul>
@@ -366,8 +366,8 @@ namespace Model
      * of the stack instances belonging to the stack set stack differs from the
      * expected template and parameter configuration. A stack instance is considered to
      * have drifted if one or more of the resources in the associated stack have
-     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not
-     * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All of
+     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't
+     * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All
      * the stack instances belonging to the stack set stack match from the expected
      * template and parameter configuration.</p> </li> <li> <p> <code>UNKNOWN</code>:
      * This value is reserved for future use.</p> </li> </ul>
@@ -382,8 +382,8 @@ namespace Model
      * of the stack instances belonging to the stack set stack differs from the
      * expected template and parameter configuration. A stack instance is considered to
      * have drifted if one or more of the resources in the associated stack have
-     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not
-     * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All of
+     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't
+     * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All
      * the stack instances belonging to the stack set stack match from the expected
      * template and parameter configuration.</p> </li> <li> <p> <code>UNKNOWN</code>:
      * This value is reserved for future use.</p> </li> </ul>
@@ -398,8 +398,8 @@ namespace Model
      * of the stack instances belonging to the stack set stack differs from the
      * expected template and parameter configuration. A stack instance is considered to
      * have drifted if one or more of the resources in the associated stack have
-     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not
-     * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All of
+     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't
+     * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All
      * the stack instances belonging to the stack set stack match from the expected
      * template and parameter configuration.</p> </li> <li> <p> <code>UNKNOWN</code>:
      * This value is reserved for future use.</p> </li> </ul>
@@ -414,8 +414,8 @@ namespace Model
      * of the stack instances belonging to the stack set stack differs from the
      * expected template and parameter configuration. A stack instance is considered to
      * have drifted if one or more of the resources in the associated stack have
-     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not
-     * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All of
+     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't
+     * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All
      * the stack instances belonging to the stack set stack match from the expected
      * template and parameter configuration.</p> </li> <li> <p> <code>UNKNOWN</code>:
      * This value is reserved for future use.</p> </li> </ul>
@@ -430,8 +430,8 @@ namespace Model
      * of the stack instances belonging to the stack set stack differs from the
      * expected template and parameter configuration. A stack instance is considered to
      * have drifted if one or more of the resources in the associated stack have
-     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not
-     * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All of
+     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't
+     * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All
      * the stack instances belonging to the stack set stack match from the expected
      * template and parameter configuration.</p> </li> <li> <p> <code>UNKNOWN</code>:
      * This value is reserved for future use.</p> </li> </ul>
@@ -442,42 +442,42 @@ namespace Model
     /**
      * <p>Most recent time when CloudFormation performed a drift detection operation on
      * the stack set. This value will be <code>NULL</code> for any stack set on which
-     * drift detection has not yet been performed.</p>
+     * drift detection hasn't yet been performed.</p>
      */
     inline const Aws::Utils::DateTime& GetLastDriftCheckTimestamp() const{ return m_lastDriftCheckTimestamp; }
 
     /**
      * <p>Most recent time when CloudFormation performed a drift detection operation on
      * the stack set. This value will be <code>NULL</code> for any stack set on which
-     * drift detection has not yet been performed.</p>
+     * drift detection hasn't yet been performed.</p>
      */
     inline bool LastDriftCheckTimestampHasBeenSet() const { return m_lastDriftCheckTimestampHasBeenSet; }
 
     /**
      * <p>Most recent time when CloudFormation performed a drift detection operation on
      * the stack set. This value will be <code>NULL</code> for any stack set on which
-     * drift detection has not yet been performed.</p>
+     * drift detection hasn't yet been performed.</p>
      */
     inline void SetLastDriftCheckTimestamp(const Aws::Utils::DateTime& value) { m_lastDriftCheckTimestampHasBeenSet = true; m_lastDriftCheckTimestamp = value; }
 
     /**
      * <p>Most recent time when CloudFormation performed a drift detection operation on
      * the stack set. This value will be <code>NULL</code> for any stack set on which
-     * drift detection has not yet been performed.</p>
+     * drift detection hasn't yet been performed.</p>
      */
     inline void SetLastDriftCheckTimestamp(Aws::Utils::DateTime&& value) { m_lastDriftCheckTimestampHasBeenSet = true; m_lastDriftCheckTimestamp = std::move(value); }
 
     /**
      * <p>Most recent time when CloudFormation performed a drift detection operation on
      * the stack set. This value will be <code>NULL</code> for any stack set on which
-     * drift detection has not yet been performed.</p>
+     * drift detection hasn't yet been performed.</p>
      */
     inline StackSetSummary& WithLastDriftCheckTimestamp(const Aws::Utils::DateTime& value) { SetLastDriftCheckTimestamp(value); return *this;}
 
     /**
      * <p>Most recent time when CloudFormation performed a drift detection operation on
      * the stack set. This value will be <code>NULL</code> for any stack set on which
-     * drift detection has not yet been performed.</p>
+     * drift detection hasn't yet been performed.</p>
      */
     inline StackSetSummary& WithLastDriftCheckTimestamp(Aws::Utils::DateTime&& value) { SetLastDriftCheckTimestamp(std::move(value)); return *this;}
 

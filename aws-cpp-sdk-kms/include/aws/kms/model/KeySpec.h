@@ -23,7 +23,11 @@ namespace Model
     ECC_NIST_P384,
     ECC_NIST_P521,
     ECC_SECG_P256K1,
-    SYMMETRIC_DEFAULT
+    SYMMETRIC_DEFAULT,
+    HMAC_224,
+    HMAC_256,
+    HMAC_384,
+    HMAC_512
   };
 
 namespace KeySpecMapper

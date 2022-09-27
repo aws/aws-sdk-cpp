@@ -22,6 +22,7 @@ namespace Model
 
 ObjectVersion::ObjectVersion() : 
     m_eTagHasBeenSet(false),
+    m_checksumAlgorithmHasBeenSet(false),
     m_size(0),
     m_sizeHasBeenSet(false),
     m_storageClass(ObjectVersionStorageClass::NOT_SET),
@@ -37,6 +38,7 @@ ObjectVersion::ObjectVersion() :
 
 ObjectVersion::ObjectVersion(const XmlNode& xmlNode) : 
     m_eTagHasBeenSet(false),
+    m_checksumAlgorithmHasBeenSet(false),
     m_size(0),
     m_sizeHasBeenSet(false),
     m_storageClass(ObjectVersionStorageClass::NOT_SET),
@@ -62,6 +64,18 @@ ObjectVersion& ObjectVersion::operator =(const XmlNode& xmlNode)
     {
       m_eTag = Aws::Utils::Xml::DecodeEscapedXmlText(eTagNode.GetText());
       m_eTagHasBeenSet = true;
+    }
+    XmlNode checksumAlgorithmNode = resultNode.FirstChild("ChecksumAlgorithm");
+    if(!checksumAlgorithmNode.IsNull())
+    {
+      XmlNode checksumAlgorithmMember = checksumAlgorithmNode;
+      while(!checksumAlgorithmMember.IsNull())
+      {
+        m_checksumAlgorithm.push_back(ChecksumAlgorithmMapper::GetChecksumAlgorithmForName(StringUtils::Trim(checksumAlgorithmMember.GetText().c_str())));
+        checksumAlgorithmMember = checksumAlgorithmMember.NextNode("ChecksumAlgorithm");
+      }
+
+      m_checksumAlgorithmHasBeenSet = true;
     }
     XmlNode sizeNode = resultNode.FirstChild("Size");
     if(!sizeNode.IsNull())
@@ -117,6 +131,16 @@ void ObjectVersion::AddToNode(XmlNode& parentNode) const
   {
    XmlNode eTagNode = parentNode.CreateChildElement("ETag");
    eTagNode.SetText(m_eTag);
+  }
+
+  if(m_checksumAlgorithmHasBeenSet)
+  {
+   XmlNode checksumAlgorithmParentNode = parentNode.CreateChildElement("ChecksumAlgorithm");
+   for(const auto& item : m_checksumAlgorithm)
+   {
+     XmlNode checksumAlgorithmNode = checksumAlgorithmParentNode.CreateChildElement("ChecksumAlgorithm");
+     checksumAlgorithmNode.SetText(ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(item));
+   }
   }
 
   if(m_sizeHasBeenSet)

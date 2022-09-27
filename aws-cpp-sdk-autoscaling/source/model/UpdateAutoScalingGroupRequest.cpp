@@ -38,7 +38,9 @@ UpdateAutoScalingGroupRequest::UpdateAutoScalingGroupRequest() :
     m_capacityRebalance(false),
     m_capacityRebalanceHasBeenSet(false),
     m_contextHasBeenSet(false),
-    m_desiredCapacityTypeHasBeenSet(false)
+    m_desiredCapacityTypeHasBeenSet(false),
+    m_defaultInstanceWarmup(0),
+    m_defaultInstanceWarmupHasBeenSet(false)
 {
 }
 
@@ -156,6 +158,11 @@ Aws::String UpdateAutoScalingGroupRequest::SerializePayload() const
   if(m_desiredCapacityTypeHasBeenSet)
   {
     ss << "DesiredCapacityType=" << StringUtils::URLEncode(m_desiredCapacityType.c_str()) << "&";
+  }
+
+  if(m_defaultInstanceWarmupHasBeenSet)
+  {
+    ss << "DefaultInstanceWarmup=" << m_defaultInstanceWarmup << "&";
   }
 
   ss << "Version=2011-01-01";

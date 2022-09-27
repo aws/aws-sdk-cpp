@@ -27,7 +27,9 @@ namespace Model
 
   /**
    * <p>Provides a summary of the properties of a dataset group. For a complete
-   * listing, call the <a>DescribeDatasetGroup</a> API.</p><p><h3>See Also:</h3>   <a
+   * listing, call the <a
+   * href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a>
+   * API.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DatasetGroupSummary">AWS
    * API Reference</a></p>
    */

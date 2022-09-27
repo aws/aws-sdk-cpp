@@ -230,7 +230,7 @@ namespace Model
 
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to AWS Regions. If this
+     * latency that a player experiences when connected to @aws; Regions. If this
      * property is present, FlexMatch considers placing the match only in Regions for
      * which latency is reported. </p> <p>If a matchmaker has a rule that evaluates
      * player latency, players must report latency in order to be matched. If no
@@ -241,7 +241,7 @@ namespace Model
 
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to AWS Regions. If this
+     * latency that a player experiences when connected to @aws; Regions. If this
      * property is present, FlexMatch considers placing the match only in Regions for
      * which latency is reported. </p> <p>If a matchmaker has a rule that evaluates
      * player latency, players must report latency in order to be matched. If no
@@ -252,7 +252,7 @@ namespace Model
 
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to AWS Regions. If this
+     * latency that a player experiences when connected to @aws; Regions. If this
      * property is present, FlexMatch considers placing the match only in Regions for
      * which latency is reported. </p> <p>If a matchmaker has a rule that evaluates
      * player latency, players must report latency in order to be matched. If no
@@ -263,7 +263,7 @@ namespace Model
 
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to AWS Regions. If this
+     * latency that a player experiences when connected to @aws; Regions. If this
      * property is present, FlexMatch considers placing the match only in Regions for
      * which latency is reported. </p> <p>If a matchmaker has a rule that evaluates
      * player latency, players must report latency in order to be matched. If no
@@ -274,7 +274,7 @@ namespace Model
 
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to AWS Regions. If this
+     * latency that a player experiences when connected to @aws; Regions. If this
      * property is present, FlexMatch considers placing the match only in Regions for
      * which latency is reported. </p> <p>If a matchmaker has a rule that evaluates
      * player latency, players must report latency in order to be matched. If no
@@ -285,7 +285,7 @@ namespace Model
 
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to AWS Regions. If this
+     * latency that a player experiences when connected to @aws; Regions. If this
      * property is present, FlexMatch considers placing the match only in Regions for
      * which latency is reported. </p> <p>If a matchmaker has a rule that evaluates
      * player latency, players must report latency in order to be matched. If no
@@ -296,7 +296,7 @@ namespace Model
 
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to AWS Regions. If this
+     * latency that a player experiences when connected to @aws; Regions. If this
      * property is present, FlexMatch considers placing the match only in Regions for
      * which latency is reported. </p> <p>If a matchmaker has a rule that evaluates
      * player latency, players must report latency in order to be matched. If no
@@ -307,7 +307,7 @@ namespace Model
 
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to AWS Regions. If this
+     * latency that a player experiences when connected to @aws; Regions. If this
      * property is present, FlexMatch considers placing the match only in Regions for
      * which latency is reported. </p> <p>If a matchmaker has a rule that evaluates
      * player latency, players must report latency in order to be matched. If no
@@ -318,7 +318,7 @@ namespace Model
 
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to AWS Regions. If this
+     * latency that a player experiences when connected to @aws; Regions. If this
      * property is present, FlexMatch considers placing the match only in Regions for
      * which latency is reported. </p> <p>If a matchmaker has a rule that evaluates
      * player latency, players must report latency in order to be matched. If no

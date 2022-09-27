@@ -78,6 +78,36 @@ DescribeDatasetResult& DescribeDatasetResult::operator =(const Aws::AmazonWebSer
 
   }
 
+  if(jsonValue.ValueExists("DataQualitySummary"))
+  {
+    m_dataQualitySummary = jsonValue.GetObject("DataQualitySummary");
+
+  }
+
+  if(jsonValue.ValueExists("IngestedFilesSummary"))
+  {
+    m_ingestedFilesSummary = jsonValue.GetObject("IngestedFilesSummary");
+
+  }
+
+  if(jsonValue.ValueExists("RoleArn"))
+  {
+    m_roleArn = jsonValue.GetString("RoleArn");
+
+  }
+
+  if(jsonValue.ValueExists("DataStartTime"))
+  {
+    m_dataStartTime = jsonValue.GetDouble("DataStartTime");
+
+  }
+
+  if(jsonValue.ValueExists("DataEndTime"))
+  {
+    m_dataEndTime = jsonValue.GetDouble("DataEndTime");
+
+  }
+
 
 
   return *this;

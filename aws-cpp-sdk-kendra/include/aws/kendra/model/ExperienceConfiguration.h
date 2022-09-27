@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the configuration information for your Amazon Kendra experience.
+   * <p>Provides the configuration information for your Amazon Kendra experience.
    * This includes the data source IDs and/or FAQ IDs, and user or group information
    * to grant access to your Amazon Kendra experience.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ExperienceConfiguration">AWS
@@ -42,43 +42,43 @@ namespace Model
 
     /**
      * <p>The identifiers of your data sources and FAQs. Or, you can specify that you
-     * want to use documents indexed via the <code>BatchPutDocument</code> operation.
-     * This is the content you want to use for your Amazon Kendra experience.</p>
+     * want to use documents indexed via the <code>BatchPutDocument</code> API. This is
+     * the content you want to use for your Amazon Kendra experience.</p>
      */
     inline const ContentSourceConfiguration& GetContentSourceConfiguration() const{ return m_contentSourceConfiguration; }
 
     /**
      * <p>The identifiers of your data sources and FAQs. Or, you can specify that you
-     * want to use documents indexed via the <code>BatchPutDocument</code> operation.
-     * This is the content you want to use for your Amazon Kendra experience.</p>
+     * want to use documents indexed via the <code>BatchPutDocument</code> API. This is
+     * the content you want to use for your Amazon Kendra experience.</p>
      */
     inline bool ContentSourceConfigurationHasBeenSet() const { return m_contentSourceConfigurationHasBeenSet; }
 
     /**
      * <p>The identifiers of your data sources and FAQs. Or, you can specify that you
-     * want to use documents indexed via the <code>BatchPutDocument</code> operation.
-     * This is the content you want to use for your Amazon Kendra experience.</p>
+     * want to use documents indexed via the <code>BatchPutDocument</code> API. This is
+     * the content you want to use for your Amazon Kendra experience.</p>
      */
     inline void SetContentSourceConfiguration(const ContentSourceConfiguration& value) { m_contentSourceConfigurationHasBeenSet = true; m_contentSourceConfiguration = value; }
 
     /**
      * <p>The identifiers of your data sources and FAQs. Or, you can specify that you
-     * want to use documents indexed via the <code>BatchPutDocument</code> operation.
-     * This is the content you want to use for your Amazon Kendra experience.</p>
+     * want to use documents indexed via the <code>BatchPutDocument</code> API. This is
+     * the content you want to use for your Amazon Kendra experience.</p>
      */
     inline void SetContentSourceConfiguration(ContentSourceConfiguration&& value) { m_contentSourceConfigurationHasBeenSet = true; m_contentSourceConfiguration = std::move(value); }
 
     /**
      * <p>The identifiers of your data sources and FAQs. Or, you can specify that you
-     * want to use documents indexed via the <code>BatchPutDocument</code> operation.
-     * This is the content you want to use for your Amazon Kendra experience.</p>
+     * want to use documents indexed via the <code>BatchPutDocument</code> API. This is
+     * the content you want to use for your Amazon Kendra experience.</p>
      */
     inline ExperienceConfiguration& WithContentSourceConfiguration(const ContentSourceConfiguration& value) { SetContentSourceConfiguration(value); return *this;}
 
     /**
      * <p>The identifiers of your data sources and FAQs. Or, you can specify that you
-     * want to use documents indexed via the <code>BatchPutDocument</code> operation.
-     * This is the content you want to use for your Amazon Kendra experience.</p>
+     * want to use documents indexed via the <code>BatchPutDocument</code> API. This is
+     * the content you want to use for your Amazon Kendra experience.</p>
      */
     inline ExperienceConfiguration& WithContentSourceConfiguration(ContentSourceConfiguration&& value) { SetContentSourceConfiguration(std::move(value)); return *this;}
 

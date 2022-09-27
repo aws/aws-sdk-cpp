@@ -33,27 +33,32 @@ namespace Model
 
 
     /**
-     * <p>The rules and associated metadata used to create a category.</p>
+     * <p>Provides you with the properties of your new category, including its
+     * associated rules.</p>
      */
     inline const CategoryProperties& GetCategoryProperties() const{ return m_categoryProperties; }
 
     /**
-     * <p>The rules and associated metadata used to create a category.</p>
+     * <p>Provides you with the properties of your new category, including its
+     * associated rules.</p>
      */
     inline void SetCategoryProperties(const CategoryProperties& value) { m_categoryProperties = value; }
 
     /**
-     * <p>The rules and associated metadata used to create a category.</p>
+     * <p>Provides you with the properties of your new category, including its
+     * associated rules.</p>
      */
     inline void SetCategoryProperties(CategoryProperties&& value) { m_categoryProperties = std::move(value); }
 
     /**
-     * <p>The rules and associated metadata used to create a category.</p>
+     * <p>Provides you with the properties of your new category, including its
+     * associated rules.</p>
      */
     inline CreateCallAnalyticsCategoryResult& WithCategoryProperties(const CategoryProperties& value) { SetCategoryProperties(value); return *this;}
 
     /**
-     * <p>The rules and associated metadata used to create a category.</p>
+     * <p>Provides you with the properties of your new category, including its
+     * associated rules.</p>
      */
     inline CreateCallAnalyticsCategoryResult& WithCategoryProperties(CategoryProperties&& value) { SetCategoryProperties(std::move(value)); return *this;}
 

@@ -22,6 +22,7 @@ namespace Aws
 
         static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
         static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
+        static const int STRICT_HASH = HashingUtils::HashString("STRICT");
 
 
         WebvttStylePassthrough GetWebvttStylePassthroughForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == DISABLED_HASH)
           {
             return WebvttStylePassthrough::DISABLED;
+          }
+          else if (hashCode == STRICT_HASH)
+          {
+            return WebvttStylePassthrough::STRICT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "ENABLED";
           case WebvttStylePassthrough::DISABLED:
             return "DISABLED";
+          case WebvttStylePassthrough::STRICT:
+            return "STRICT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

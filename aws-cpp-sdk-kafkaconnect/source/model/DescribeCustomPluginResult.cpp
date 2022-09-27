@@ -66,6 +66,12 @@ DescribeCustomPluginResult& DescribeCustomPluginResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("stateDescription"))
+  {
+    m_stateDescription = jsonValue.GetObject("stateDescription");
+
+  }
+
 
 
   return *this;

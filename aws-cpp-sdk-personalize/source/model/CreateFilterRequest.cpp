@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 CreateFilterRequest::CreateFilterRequest() : 
     m_nameHasBeenSet(false),
     m_datasetGroupArnHasBeenSet(false),
-    m_filterExpressionHasBeenSet(false)
+    m_filterExpressionHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,17 @@ Aws::String CreateFilterRequest::SerializePayload() const
   if(m_filterExpressionHasBeenSet)
   {
    payload.WithString("filterExpression", m_filterExpression);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

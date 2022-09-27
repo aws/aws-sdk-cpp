@@ -35,42 +35,50 @@ namespace Model
 
 
     /**
-     * <p>A list of objects that filter the request.</p>
+     * <p>A list of objects that filter the request.</p>  <p>Only one object is
+     * accepted as a valid input.</p> 
      */
     inline const Aws::Vector<ListEntitiesFilter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>A list of objects that filter the request.</p>
+     * <p>A list of objects that filter the request.</p>  <p>Only one object is
+     * accepted as a valid input.</p> 
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>A list of objects that filter the request.</p>
+     * <p>A list of objects that filter the request.</p>  <p>Only one object is
+     * accepted as a valid input.</p> 
      */
     inline void SetFilters(const Aws::Vector<ListEntitiesFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>A list of objects that filter the request.</p>
+     * <p>A list of objects that filter the request.</p>  <p>Only one object is
+     * accepted as a valid input.</p> 
      */
     inline void SetFilters(Aws::Vector<ListEntitiesFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>A list of objects that filter the request.</p>
+     * <p>A list of objects that filter the request.</p>  <p>Only one object is
+     * accepted as a valid input.</p> 
      */
     inline ListEntitiesRequest& WithFilters(const Aws::Vector<ListEntitiesFilter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>A list of objects that filter the request.</p>
+     * <p>A list of objects that filter the request.</p>  <p>Only one object is
+     * accepted as a valid input.</p> 
      */
     inline ListEntitiesRequest& WithFilters(Aws::Vector<ListEntitiesFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>A list of objects that filter the request.</p>
+     * <p>A list of objects that filter the request.</p>  <p>Only one object is
+     * accepted as a valid input.</p> 
      */
     inline ListEntitiesRequest& AddFilters(const ListEntitiesFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>A list of objects that filter the request.</p>
+     * <p>A list of objects that filter the request.</p>  <p>Only one object is
+     * accepted as a valid input.</p> 
      */
     inline ListEntitiesRequest& AddFilters(ListEntitiesFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

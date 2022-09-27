@@ -36,26 +36,26 @@ namespace Model
 
 
     /**
-     * <p>The minimum length of the password policy that you have set. Cannot be less
-     * than 6.</p>
+     * <p>The minimum length of the password in the policy that you have set. This
+     * value can't be less than 6.</p>
      */
     inline int GetMinimumLength() const{ return m_minimumLength; }
 
     /**
-     * <p>The minimum length of the password policy that you have set. Cannot be less
-     * than 6.</p>
+     * <p>The minimum length of the password in the policy that you have set. This
+     * value can't be less than 6.</p>
      */
     inline bool MinimumLengthHasBeenSet() const { return m_minimumLengthHasBeenSet; }
 
     /**
-     * <p>The minimum length of the password policy that you have set. Cannot be less
-     * than 6.</p>
+     * <p>The minimum length of the password in the policy that you have set. This
+     * value can't be less than 6.</p>
      */
     inline void SetMinimumLength(int value) { m_minimumLengthHasBeenSet = true; m_minimumLength = value; }
 
     /**
-     * <p>The minimum length of the password policy that you have set. Cannot be less
-     * than 6.</p>
+     * <p>The minimum length of the password in the policy that you have set. This
+     * value can't be less than 6.</p>
      */
     inline PasswordPolicyType& WithMinimumLength(int value) { SetMinimumLength(value); return *this;}
 
@@ -161,42 +161,38 @@ namespace Model
 
 
     /**
-     * <p>In the password policy you have set, refers to the number of days a temporary
-     * password is valid. If the user does not sign-in during this time, their password
-     * will need to be reset by an administrator.</p>  <p>When you set
-     * <code>TemporaryPasswordValidityDays</code> for a user pool, you will no longer
-     * be able to set the deprecated <code>UnusedAccountValidityDays</code> value for
-     * that user pool.</p> 
+     * <p>The number of days a temporary password is valid in the password policy. If
+     * the user doesn't sign in during this time, an administrator must reset their
+     * password.</p>  <p>When you set <code>TemporaryPasswordValidityDays</code>
+     * for a user pool, you can no longer set a value for the legacy
+     * <code>UnusedAccountValidityDays</code> parameter in that user pool.</p> 
      */
     inline int GetTemporaryPasswordValidityDays() const{ return m_temporaryPasswordValidityDays; }
 
     /**
-     * <p>In the password policy you have set, refers to the number of days a temporary
-     * password is valid. If the user does not sign-in during this time, their password
-     * will need to be reset by an administrator.</p>  <p>When you set
-     * <code>TemporaryPasswordValidityDays</code> for a user pool, you will no longer
-     * be able to set the deprecated <code>UnusedAccountValidityDays</code> value for
-     * that user pool.</p> 
+     * <p>The number of days a temporary password is valid in the password policy. If
+     * the user doesn't sign in during this time, an administrator must reset their
+     * password.</p>  <p>When you set <code>TemporaryPasswordValidityDays</code>
+     * for a user pool, you can no longer set a value for the legacy
+     * <code>UnusedAccountValidityDays</code> parameter in that user pool.</p> 
      */
     inline bool TemporaryPasswordValidityDaysHasBeenSet() const { return m_temporaryPasswordValidityDaysHasBeenSet; }
 
     /**
-     * <p>In the password policy you have set, refers to the number of days a temporary
-     * password is valid. If the user does not sign-in during this time, their password
-     * will need to be reset by an administrator.</p>  <p>When you set
-     * <code>TemporaryPasswordValidityDays</code> for a user pool, you will no longer
-     * be able to set the deprecated <code>UnusedAccountValidityDays</code> value for
-     * that user pool.</p> 
+     * <p>The number of days a temporary password is valid in the password policy. If
+     * the user doesn't sign in during this time, an administrator must reset their
+     * password.</p>  <p>When you set <code>TemporaryPasswordValidityDays</code>
+     * for a user pool, you can no longer set a value for the legacy
+     * <code>UnusedAccountValidityDays</code> parameter in that user pool.</p> 
      */
     inline void SetTemporaryPasswordValidityDays(int value) { m_temporaryPasswordValidityDaysHasBeenSet = true; m_temporaryPasswordValidityDays = value; }
 
     /**
-     * <p>In the password policy you have set, refers to the number of days a temporary
-     * password is valid. If the user does not sign-in during this time, their password
-     * will need to be reset by an administrator.</p>  <p>When you set
-     * <code>TemporaryPasswordValidityDays</code> for a user pool, you will no longer
-     * be able to set the deprecated <code>UnusedAccountValidityDays</code> value for
-     * that user pool.</p> 
+     * <p>The number of days a temporary password is valid in the password policy. If
+     * the user doesn't sign in during this time, an administrator must reset their
+     * password.</p>  <p>When you set <code>TemporaryPasswordValidityDays</code>
+     * for a user pool, you can no longer set a value for the legacy
+     * <code>UnusedAccountValidityDays</code> parameter in that user pool.</p> 
      */
     inline PasswordPolicyType& WithTemporaryPasswordValidityDays(int value) { SetTemporaryPasswordValidityDays(value); return *this;}
 

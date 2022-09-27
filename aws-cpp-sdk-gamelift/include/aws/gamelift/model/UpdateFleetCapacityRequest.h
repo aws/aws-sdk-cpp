@@ -87,26 +87,30 @@ namespace Model
 
 
     /**
-     * <p>The number of EC2 instances you want to maintain in the specified fleet
-     * location. This value must fall between the minimum and maximum size limits.</p>
+     * <p>The number of Amazon EC2 instances you want to maintain in the specified
+     * fleet location. This value must fall between the minimum and maximum size
+     * limits.</p>
      */
     inline int GetDesiredInstances() const{ return m_desiredInstances; }
 
     /**
-     * <p>The number of EC2 instances you want to maintain in the specified fleet
-     * location. This value must fall between the minimum and maximum size limits.</p>
+     * <p>The number of Amazon EC2 instances you want to maintain in the specified
+     * fleet location. This value must fall between the minimum and maximum size
+     * limits.</p>
      */
     inline bool DesiredInstancesHasBeenSet() const { return m_desiredInstancesHasBeenSet; }
 
     /**
-     * <p>The number of EC2 instances you want to maintain in the specified fleet
-     * location. This value must fall between the minimum and maximum size limits.</p>
+     * <p>The number of Amazon EC2 instances you want to maintain in the specified
+     * fleet location. This value must fall between the minimum and maximum size
+     * limits.</p>
      */
     inline void SetDesiredInstances(int value) { m_desiredInstancesHasBeenSet = true; m_desiredInstances = value; }
 
     /**
-     * <p>The number of EC2 instances you want to maintain in the specified fleet
-     * location. This value must fall between the minimum and maximum size limits.</p>
+     * <p>The number of Amazon EC2 instances you want to maintain in the specified
+     * fleet location. This value must fall between the minimum and maximum size
+     * limits.</p>
      */
     inline UpdateFleetCapacityRequest& WithDesiredInstances(int value) { SetDesiredInstances(value); return *this;}
 
@@ -163,49 +167,49 @@ namespace Model
 
     /**
      * <p>The name of a remote location to update fleet capacity settings for, in the
-     * form of an AWS Region code such as <code>us-west-2</code>.</p>
+     * form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
     /**
      * <p>The name of a remote location to update fleet capacity settings for, in the
-     * form of an AWS Region code such as <code>us-west-2</code>.</p>
+     * form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
      */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
      * <p>The name of a remote location to update fleet capacity settings for, in the
-     * form of an AWS Region code such as <code>us-west-2</code>.</p>
+     * form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
      */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
      * <p>The name of a remote location to update fleet capacity settings for, in the
-     * form of an AWS Region code such as <code>us-west-2</code>.</p>
+     * form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
      */
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
      * <p>The name of a remote location to update fleet capacity settings for, in the
-     * form of an AWS Region code such as <code>us-west-2</code>.</p>
+     * form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
      */
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
 
     /**
      * <p>The name of a remote location to update fleet capacity settings for, in the
-     * form of an AWS Region code such as <code>us-west-2</code>.</p>
+     * form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
      */
     inline UpdateFleetCapacityRequest& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     /**
      * <p>The name of a remote location to update fleet capacity settings for, in the
-     * form of an AWS Region code such as <code>us-west-2</code>.</p>
+     * form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
      */
     inline UpdateFleetCapacityRequest& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
      * <p>The name of a remote location to update fleet capacity settings for, in the
-     * form of an AWS Region code such as <code>us-west-2</code>.</p>
+     * form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
      */
     inline UpdateFleetCapacityRequest& WithLocation(const char* value) { SetLocation(value); return *this;}
 

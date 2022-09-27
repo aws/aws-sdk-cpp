@@ -230,6 +230,39 @@ namespace Model
      */
     inline AccountSettings& WithNotificationEmail(const char* value) { SetNotificationEmail(value); return *this;}
 
+
+    /**
+     * <p>A boolean that indicates whether or not public sharing is enabled on an
+     * Amazon QuickSight account. For more information about enabling public sharing,
+     * see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
+     */
+    inline bool GetPublicSharingEnabled() const{ return m_publicSharingEnabled; }
+
+    /**
+     * <p>A boolean that indicates whether or not public sharing is enabled on an
+     * Amazon QuickSight account. For more information about enabling public sharing,
+     * see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
+     */
+    inline bool PublicSharingEnabledHasBeenSet() const { return m_publicSharingEnabledHasBeenSet; }
+
+    /**
+     * <p>A boolean that indicates whether or not public sharing is enabled on an
+     * Amazon QuickSight account. For more information about enabling public sharing,
+     * see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
+     */
+    inline void SetPublicSharingEnabled(bool value) { m_publicSharingEnabledHasBeenSet = true; m_publicSharingEnabled = value; }
+
+    /**
+     * <p>A boolean that indicates whether or not public sharing is enabled on an
+     * Amazon QuickSight account. For more information about enabling public sharing,
+     * see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
+     */
+    inline AccountSettings& WithPublicSharingEnabled(bool value) { SetPublicSharingEnabled(value); return *this;}
+
   private:
 
     Aws::String m_accountName;
@@ -243,6 +276,9 @@ namespace Model
 
     Aws::String m_notificationEmail;
     bool m_notificationEmailHasBeenSet;
+
+    bool m_publicSharingEnabled;
+    bool m_publicSharingEnabledHasBeenSet;
   };
 
 } // namespace Model

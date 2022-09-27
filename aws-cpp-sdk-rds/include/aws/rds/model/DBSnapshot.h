@@ -28,9 +28,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the details of an Amazon RDS DB snapshot. </p> <p>This data type is
-   * used as a response element in the <code>DescribeDBSnapshots</code> action.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>Contains the details of an Amazon RDS DB snapshot.</p> <p>This data type is
+   * used as a response element in the <code>DescribeDBSnapshots</code>
+   * action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBSnapshot">AWS API
    * Reference</a></p>
    */
@@ -896,66 +896,58 @@ namespace Model
 
 
     /**
-     * <p> If <code>Encrypted</code> is true, the Amazon Web Services KMS key
-     * identifier for the encrypted DB snapshot. </p> <p>The Amazon Web Services KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
-     * key.</p>
+     * <p>If <code>Encrypted</code> is true, the Amazon Web Services KMS key identifier
+     * for the encrypted DB snapshot.</p> <p>The Amazon Web Services KMS key identifier
+     * is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p> If <code>Encrypted</code> is true, the Amazon Web Services KMS key
-     * identifier for the encrypted DB snapshot. </p> <p>The Amazon Web Services KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
-     * key.</p>
+     * <p>If <code>Encrypted</code> is true, the Amazon Web Services KMS key identifier
+     * for the encrypted DB snapshot.</p> <p>The Amazon Web Services KMS key identifier
+     * is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p> If <code>Encrypted</code> is true, the Amazon Web Services KMS key
-     * identifier for the encrypted DB snapshot. </p> <p>The Amazon Web Services KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
-     * key.</p>
+     * <p>If <code>Encrypted</code> is true, the Amazon Web Services KMS key identifier
+     * for the encrypted DB snapshot.</p> <p>The Amazon Web Services KMS key identifier
+     * is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p> If <code>Encrypted</code> is true, the Amazon Web Services KMS key
-     * identifier for the encrypted DB snapshot. </p> <p>The Amazon Web Services KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
-     * key.</p>
+     * <p>If <code>Encrypted</code> is true, the Amazon Web Services KMS key identifier
+     * for the encrypted DB snapshot.</p> <p>The Amazon Web Services KMS key identifier
+     * is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p> If <code>Encrypted</code> is true, the Amazon Web Services KMS key
-     * identifier for the encrypted DB snapshot. </p> <p>The Amazon Web Services KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
-     * key.</p>
+     * <p>If <code>Encrypted</code> is true, the Amazon Web Services KMS key identifier
+     * for the encrypted DB snapshot.</p> <p>The Amazon Web Services KMS key identifier
+     * is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p> If <code>Encrypted</code> is true, the Amazon Web Services KMS key
-     * identifier for the encrypted DB snapshot. </p> <p>The Amazon Web Services KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
-     * key.</p>
+     * <p>If <code>Encrypted</code> is true, the Amazon Web Services KMS key identifier
+     * for the encrypted DB snapshot.</p> <p>The Amazon Web Services KMS key identifier
+     * is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline DBSnapshot& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p> If <code>Encrypted</code> is true, the Amazon Web Services KMS key
-     * identifier for the encrypted DB snapshot. </p> <p>The Amazon Web Services KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
-     * key.</p>
+     * <p>If <code>Encrypted</code> is true, the Amazon Web Services KMS key identifier
+     * for the encrypted DB snapshot.</p> <p>The Amazon Web Services KMS key identifier
+     * is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline DBSnapshot& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p> If <code>Encrypted</code> is true, the Amazon Web Services KMS key
-     * identifier for the encrypted DB snapshot. </p> <p>The Amazon Web Services KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
-     * key.</p>
+     * <p>If <code>Encrypted</code> is true, the Amazon Web Services KMS key identifier
+     * for the encrypted DB snapshot.</p> <p>The Amazon Web Services KMS key identifier
+     * is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline DBSnapshot& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -1005,7 +997,7 @@ namespace Model
      * <p>The time zone of the DB snapshot. In most cases, the <code>Timezone</code>
      * element is empty. <code>Timezone</code> content appears only for snapshots taken
      * from Microsoft SQL Server DB instances that were created with a time zone
-     * specified. </p>
+     * specified.</p>
      */
     inline const Aws::String& GetTimezone() const{ return m_timezone; }
 
@@ -1013,7 +1005,7 @@ namespace Model
      * <p>The time zone of the DB snapshot. In most cases, the <code>Timezone</code>
      * element is empty. <code>Timezone</code> content appears only for snapshots taken
      * from Microsoft SQL Server DB instances that were created with a time zone
-     * specified. </p>
+     * specified.</p>
      */
     inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
 
@@ -1021,7 +1013,7 @@ namespace Model
      * <p>The time zone of the DB snapshot. In most cases, the <code>Timezone</code>
      * element is empty. <code>Timezone</code> content appears only for snapshots taken
      * from Microsoft SQL Server DB instances that were created with a time zone
-     * specified. </p>
+     * specified.</p>
      */
     inline void SetTimezone(const Aws::String& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
 
@@ -1029,7 +1021,7 @@ namespace Model
      * <p>The time zone of the DB snapshot. In most cases, the <code>Timezone</code>
      * element is empty. <code>Timezone</code> content appears only for snapshots taken
      * from Microsoft SQL Server DB instances that were created with a time zone
-     * specified. </p>
+     * specified.</p>
      */
     inline void SetTimezone(Aws::String&& value) { m_timezoneHasBeenSet = true; m_timezone = std::move(value); }
 
@@ -1037,7 +1029,7 @@ namespace Model
      * <p>The time zone of the DB snapshot. In most cases, the <code>Timezone</code>
      * element is empty. <code>Timezone</code> content appears only for snapshots taken
      * from Microsoft SQL Server DB instances that were created with a time zone
-     * specified. </p>
+     * specified.</p>
      */
     inline void SetTimezone(const char* value) { m_timezoneHasBeenSet = true; m_timezone.assign(value); }
 
@@ -1045,7 +1037,7 @@ namespace Model
      * <p>The time zone of the DB snapshot. In most cases, the <code>Timezone</code>
      * element is empty. <code>Timezone</code> content appears only for snapshots taken
      * from Microsoft SQL Server DB instances that were created with a time zone
-     * specified. </p>
+     * specified.</p>
      */
     inline DBSnapshot& WithTimezone(const Aws::String& value) { SetTimezone(value); return *this;}
 
@@ -1053,7 +1045,7 @@ namespace Model
      * <p>The time zone of the DB snapshot. In most cases, the <code>Timezone</code>
      * element is empty. <code>Timezone</code> content appears only for snapshots taken
      * from Microsoft SQL Server DB instances that were created with a time zone
-     * specified. </p>
+     * specified.</p>
      */
     inline DBSnapshot& WithTimezone(Aws::String&& value) { SetTimezone(std::move(value)); return *this;}
 
@@ -1061,7 +1053,7 @@ namespace Model
      * <p>The time zone of the DB snapshot. In most cases, the <code>Timezone</code>
      * element is empty. <code>Timezone</code> content appears only for snapshots taken
      * from Microsoft SQL Server DB instances that were created with a time zone
-     * specified. </p>
+     * specified.</p>
      */
     inline DBSnapshot& WithTimezone(const char* value) { SetTimezone(value); return *this;}
 

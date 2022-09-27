@@ -118,12 +118,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
      * role that CloudFormation assumes to roll back the stack. CloudFormation uses the
      * role's credentials to make calls on your behalf. CloudFormation always uses this
-     * role for all future operations on the stack. As long as users have permission to
-     * operate on the stack, CloudFormation uses this role even if the users don't have
-     * permission to pass it. Ensure that the role grants least privilege.</p> <p>If
-     * you don't specify a value, CloudFormation uses the role that was previously
-     * associated with the stack. If no role is available, CloudFormation uses a
-     * temporary session that is generated from your user credentials.</p>
+     * role for all future operations on the stack. Provided that users have permission
+     * to operate on the stack, CloudFormation uses this role even if the users don't
+     * have permission to pass it. Ensure that the role grants least permission.</p>
+     * <p>If you don't specify a value, CloudFormation uses the role that was
+     * previously associated with the stack. If no role is available, CloudFormation
+     * uses a temporary session that's generated from your user credentials.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
@@ -131,12 +131,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
      * role that CloudFormation assumes to roll back the stack. CloudFormation uses the
      * role's credentials to make calls on your behalf. CloudFormation always uses this
-     * role for all future operations on the stack. As long as users have permission to
-     * operate on the stack, CloudFormation uses this role even if the users don't have
-     * permission to pass it. Ensure that the role grants least privilege.</p> <p>If
-     * you don't specify a value, CloudFormation uses the role that was previously
-     * associated with the stack. If no role is available, CloudFormation uses a
-     * temporary session that is generated from your user credentials.</p>
+     * role for all future operations on the stack. Provided that users have permission
+     * to operate on the stack, CloudFormation uses this role even if the users don't
+     * have permission to pass it. Ensure that the role grants least permission.</p>
+     * <p>If you don't specify a value, CloudFormation uses the role that was
+     * previously associated with the stack. If no role is available, CloudFormation
+     * uses a temporary session that's generated from your user credentials.</p>
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
@@ -144,12 +144,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
      * role that CloudFormation assumes to roll back the stack. CloudFormation uses the
      * role's credentials to make calls on your behalf. CloudFormation always uses this
-     * role for all future operations on the stack. As long as users have permission to
-     * operate on the stack, CloudFormation uses this role even if the users don't have
-     * permission to pass it. Ensure that the role grants least privilege.</p> <p>If
-     * you don't specify a value, CloudFormation uses the role that was previously
-     * associated with the stack. If no role is available, CloudFormation uses a
-     * temporary session that is generated from your user credentials.</p>
+     * role for all future operations on the stack. Provided that users have permission
+     * to operate on the stack, CloudFormation uses this role even if the users don't
+     * have permission to pass it. Ensure that the role grants least permission.</p>
+     * <p>If you don't specify a value, CloudFormation uses the role that was
+     * previously associated with the stack. If no role is available, CloudFormation
+     * uses a temporary session that's generated from your user credentials.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
@@ -157,12 +157,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
      * role that CloudFormation assumes to roll back the stack. CloudFormation uses the
      * role's credentials to make calls on your behalf. CloudFormation always uses this
-     * role for all future operations on the stack. As long as users have permission to
-     * operate on the stack, CloudFormation uses this role even if the users don't have
-     * permission to pass it. Ensure that the role grants least privilege.</p> <p>If
-     * you don't specify a value, CloudFormation uses the role that was previously
-     * associated with the stack. If no role is available, CloudFormation uses a
-     * temporary session that is generated from your user credentials.</p>
+     * role for all future operations on the stack. Provided that users have permission
+     * to operate on the stack, CloudFormation uses this role even if the users don't
+     * have permission to pass it. Ensure that the role grants least permission.</p>
+     * <p>If you don't specify a value, CloudFormation uses the role that was
+     * previously associated with the stack. If no role is available, CloudFormation
+     * uses a temporary session that's generated from your user credentials.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
@@ -170,12 +170,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
      * role that CloudFormation assumes to roll back the stack. CloudFormation uses the
      * role's credentials to make calls on your behalf. CloudFormation always uses this
-     * role for all future operations on the stack. As long as users have permission to
-     * operate on the stack, CloudFormation uses this role even if the users don't have
-     * permission to pass it. Ensure that the role grants least privilege.</p> <p>If
-     * you don't specify a value, CloudFormation uses the role that was previously
-     * associated with the stack. If no role is available, CloudFormation uses a
-     * temporary session that is generated from your user credentials.</p>
+     * role for all future operations on the stack. Provided that users have permission
+     * to operate on the stack, CloudFormation uses this role even if the users don't
+     * have permission to pass it. Ensure that the role grants least permission.</p>
+     * <p>If you don't specify a value, CloudFormation uses the role that was
+     * previously associated with the stack. If no role is available, CloudFormation
+     * uses a temporary session that's generated from your user credentials.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
@@ -183,12 +183,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
      * role that CloudFormation assumes to roll back the stack. CloudFormation uses the
      * role's credentials to make calls on your behalf. CloudFormation always uses this
-     * role for all future operations on the stack. As long as users have permission to
-     * operate on the stack, CloudFormation uses this role even if the users don't have
-     * permission to pass it. Ensure that the role grants least privilege.</p> <p>If
-     * you don't specify a value, CloudFormation uses the role that was previously
-     * associated with the stack. If no role is available, CloudFormation uses a
-     * temporary session that is generated from your user credentials.</p>
+     * role for all future operations on the stack. Provided that users have permission
+     * to operate on the stack, CloudFormation uses this role even if the users don't
+     * have permission to pass it. Ensure that the role grants least permission.</p>
+     * <p>If you don't specify a value, CloudFormation uses the role that was
+     * previously associated with the stack. If no role is available, CloudFormation
+     * uses a temporary session that's generated from your user credentials.</p>
      */
     inline ContinueUpdateRollbackRequest& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
@@ -196,12 +196,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
      * role that CloudFormation assumes to roll back the stack. CloudFormation uses the
      * role's credentials to make calls on your behalf. CloudFormation always uses this
-     * role for all future operations on the stack. As long as users have permission to
-     * operate on the stack, CloudFormation uses this role even if the users don't have
-     * permission to pass it. Ensure that the role grants least privilege.</p> <p>If
-     * you don't specify a value, CloudFormation uses the role that was previously
-     * associated with the stack. If no role is available, CloudFormation uses a
-     * temporary session that is generated from your user credentials.</p>
+     * role for all future operations on the stack. Provided that users have permission
+     * to operate on the stack, CloudFormation uses this role even if the users don't
+     * have permission to pass it. Ensure that the role grants least permission.</p>
+     * <p>If you don't specify a value, CloudFormation uses the role that was
+     * previously associated with the stack. If no role is available, CloudFormation
+     * uses a temporary session that's generated from your user credentials.</p>
      */
     inline ContinueUpdateRollbackRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
@@ -209,12 +209,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
      * role that CloudFormation assumes to roll back the stack. CloudFormation uses the
      * role's credentials to make calls on your behalf. CloudFormation always uses this
-     * role for all future operations on the stack. As long as users have permission to
-     * operate on the stack, CloudFormation uses this role even if the users don't have
-     * permission to pass it. Ensure that the role grants least privilege.</p> <p>If
-     * you don't specify a value, CloudFormation uses the role that was previously
-     * associated with the stack. If no role is available, CloudFormation uses a
-     * temporary session that is generated from your user credentials.</p>
+     * role for all future operations on the stack. Provided that users have permission
+     * to operate on the stack, CloudFormation uses this role even if the users don't
+     * have permission to pass it. Ensure that the role grants least permission.</p>
+     * <p>If you don't specify a value, CloudFormation uses the role that was
+     * previously associated with the stack. If no role is available, CloudFormation
+     * uses a temporary session that's generated from your user credentials.</p>
      */
     inline ContinueUpdateRollbackRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
@@ -224,11 +224,11 @@ namespace Model
      * the continue update rollback operation. You can specify only resources that are
      * in the <code>UPDATE_FAILED</code> state because a rollback failed. You can't
      * specify resources that are in the <code>UPDATE_FAILED</code> state for other
-     * reasons, for example, because an update was cancelled. To check why a resource
+     * reasons, for example, because an update was canceled. To check why a resource
      * update failed, use the <a>DescribeStackResources</a> action, and view the
-     * resource status reason. </p>  <p>Specify this property to skip
-     * rolling back resources that CloudFormation can't successfully roll back. We
-     * recommend that you <a
+     * resource status reason.</p>  <p>Specify this property to skip rolling
+     * back resources that CloudFormation can't successfully roll back. We recommend
+     * that you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
      * troubleshoot</a> resources before skipping them. CloudFormation sets the status
      * of the specified resources to <code>UPDATE_COMPLETE</code> and continues to roll
@@ -259,11 +259,11 @@ namespace Model
      * the continue update rollback operation. You can specify only resources that are
      * in the <code>UPDATE_FAILED</code> state because a rollback failed. You can't
      * specify resources that are in the <code>UPDATE_FAILED</code> state for other
-     * reasons, for example, because an update was cancelled. To check why a resource
+     * reasons, for example, because an update was canceled. To check why a resource
      * update failed, use the <a>DescribeStackResources</a> action, and view the
-     * resource status reason. </p>  <p>Specify this property to skip
-     * rolling back resources that CloudFormation can't successfully roll back. We
-     * recommend that you <a
+     * resource status reason.</p>  <p>Specify this property to skip rolling
+     * back resources that CloudFormation can't successfully roll back. We recommend
+     * that you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
      * troubleshoot</a> resources before skipping them. CloudFormation sets the status
      * of the specified resources to <code>UPDATE_COMPLETE</code> and continues to roll
@@ -294,11 +294,11 @@ namespace Model
      * the continue update rollback operation. You can specify only resources that are
      * in the <code>UPDATE_FAILED</code> state because a rollback failed. You can't
      * specify resources that are in the <code>UPDATE_FAILED</code> state for other
-     * reasons, for example, because an update was cancelled. To check why a resource
+     * reasons, for example, because an update was canceled. To check why a resource
      * update failed, use the <a>DescribeStackResources</a> action, and view the
-     * resource status reason. </p>  <p>Specify this property to skip
-     * rolling back resources that CloudFormation can't successfully roll back. We
-     * recommend that you <a
+     * resource status reason.</p>  <p>Specify this property to skip rolling
+     * back resources that CloudFormation can't successfully roll back. We recommend
+     * that you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
      * troubleshoot</a> resources before skipping them. CloudFormation sets the status
      * of the specified resources to <code>UPDATE_COMPLETE</code> and continues to roll
@@ -329,11 +329,11 @@ namespace Model
      * the continue update rollback operation. You can specify only resources that are
      * in the <code>UPDATE_FAILED</code> state because a rollback failed. You can't
      * specify resources that are in the <code>UPDATE_FAILED</code> state for other
-     * reasons, for example, because an update was cancelled. To check why a resource
+     * reasons, for example, because an update was canceled. To check why a resource
      * update failed, use the <a>DescribeStackResources</a> action, and view the
-     * resource status reason. </p>  <p>Specify this property to skip
-     * rolling back resources that CloudFormation can't successfully roll back. We
-     * recommend that you <a
+     * resource status reason.</p>  <p>Specify this property to skip rolling
+     * back resources that CloudFormation can't successfully roll back. We recommend
+     * that you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
      * troubleshoot</a> resources before skipping them. CloudFormation sets the status
      * of the specified resources to <code>UPDATE_COMPLETE</code> and continues to roll
@@ -364,11 +364,11 @@ namespace Model
      * the continue update rollback operation. You can specify only resources that are
      * in the <code>UPDATE_FAILED</code> state because a rollback failed. You can't
      * specify resources that are in the <code>UPDATE_FAILED</code> state for other
-     * reasons, for example, because an update was cancelled. To check why a resource
+     * reasons, for example, because an update was canceled. To check why a resource
      * update failed, use the <a>DescribeStackResources</a> action, and view the
-     * resource status reason. </p>  <p>Specify this property to skip
-     * rolling back resources that CloudFormation can't successfully roll back. We
-     * recommend that you <a
+     * resource status reason.</p>  <p>Specify this property to skip rolling
+     * back resources that CloudFormation can't successfully roll back. We recommend
+     * that you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
      * troubleshoot</a> resources before skipping them. CloudFormation sets the status
      * of the specified resources to <code>UPDATE_COMPLETE</code> and continues to roll
@@ -399,11 +399,11 @@ namespace Model
      * the continue update rollback operation. You can specify only resources that are
      * in the <code>UPDATE_FAILED</code> state because a rollback failed. You can't
      * specify resources that are in the <code>UPDATE_FAILED</code> state for other
-     * reasons, for example, because an update was cancelled. To check why a resource
+     * reasons, for example, because an update was canceled. To check why a resource
      * update failed, use the <a>DescribeStackResources</a> action, and view the
-     * resource status reason. </p>  <p>Specify this property to skip
-     * rolling back resources that CloudFormation can't successfully roll back. We
-     * recommend that you <a
+     * resource status reason.</p>  <p>Specify this property to skip rolling
+     * back resources that CloudFormation can't successfully roll back. We recommend
+     * that you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
      * troubleshoot</a> resources before skipping them. CloudFormation sets the status
      * of the specified resources to <code>UPDATE_COMPLETE</code> and continues to roll
@@ -434,11 +434,11 @@ namespace Model
      * the continue update rollback operation. You can specify only resources that are
      * in the <code>UPDATE_FAILED</code> state because a rollback failed. You can't
      * specify resources that are in the <code>UPDATE_FAILED</code> state for other
-     * reasons, for example, because an update was cancelled. To check why a resource
+     * reasons, for example, because an update was canceled. To check why a resource
      * update failed, use the <a>DescribeStackResources</a> action, and view the
-     * resource status reason. </p>  <p>Specify this property to skip
-     * rolling back resources that CloudFormation can't successfully roll back. We
-     * recommend that you <a
+     * resource status reason.</p>  <p>Specify this property to skip rolling
+     * back resources that CloudFormation can't successfully roll back. We recommend
+     * that you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
      * troubleshoot</a> resources before skipping them. CloudFormation sets the status
      * of the specified resources to <code>UPDATE_COMPLETE</code> and continues to roll
@@ -469,11 +469,11 @@ namespace Model
      * the continue update rollback operation. You can specify only resources that are
      * in the <code>UPDATE_FAILED</code> state because a rollback failed. You can't
      * specify resources that are in the <code>UPDATE_FAILED</code> state for other
-     * reasons, for example, because an update was cancelled. To check why a resource
+     * reasons, for example, because an update was canceled. To check why a resource
      * update failed, use the <a>DescribeStackResources</a> action, and view the
-     * resource status reason. </p>  <p>Specify this property to skip
-     * rolling back resources that CloudFormation can't successfully roll back. We
-     * recommend that you <a
+     * resource status reason.</p>  <p>Specify this property to skip rolling
+     * back resources that CloudFormation can't successfully roll back. We recommend
+     * that you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
      * troubleshoot</a> resources before skipping them. CloudFormation sets the status
      * of the specified resources to <code>UPDATE_COMPLETE</code> and continues to roll
@@ -504,11 +504,11 @@ namespace Model
      * the continue update rollback operation. You can specify only resources that are
      * in the <code>UPDATE_FAILED</code> state because a rollback failed. You can't
      * specify resources that are in the <code>UPDATE_FAILED</code> state for other
-     * reasons, for example, because an update was cancelled. To check why a resource
+     * reasons, for example, because an update was canceled. To check why a resource
      * update failed, use the <a>DescribeStackResources</a> action, and view the
-     * resource status reason. </p>  <p>Specify this property to skip
-     * rolling back resources that CloudFormation can't successfully roll back. We
-     * recommend that you <a
+     * resource status reason.</p>  <p>Specify this property to skip rolling
+     * back resources that CloudFormation can't successfully roll back. We recommend
+     * that you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
      * troubleshoot</a> resources before skipping them. CloudFormation sets the status
      * of the specified resources to <code>UPDATE_COMPLETE</code> and continues to roll

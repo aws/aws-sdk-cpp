@@ -151,6 +151,27 @@ namespace Model
      */
     inline ReplicationConfigurationReplicatedDisk& WithStagingDiskType(ReplicationConfigurationReplicatedDiskStagingDiskType&& value) { SetStagingDiskType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Replication Configuration replicated disk throughput.</p>
+     */
+    inline long long GetThroughput() const{ return m_throughput; }
+
+    /**
+     * <p>Replication Configuration replicated disk throughput.</p>
+     */
+    inline bool ThroughputHasBeenSet() const { return m_throughputHasBeenSet; }
+
+    /**
+     * <p>Replication Configuration replicated disk throughput.</p>
+     */
+    inline void SetThroughput(long long value) { m_throughputHasBeenSet = true; m_throughput = value; }
+
+    /**
+     * <p>Replication Configuration replicated disk throughput.</p>
+     */
+    inline ReplicationConfigurationReplicatedDisk& WithThroughput(long long value) { SetThroughput(value); return *this;}
+
   private:
 
     Aws::String m_deviceName;
@@ -164,6 +185,9 @@ namespace Model
 
     ReplicationConfigurationReplicatedDiskStagingDiskType m_stagingDiskType;
     bool m_stagingDiskTypeHasBeenSet;
+
+    long long m_throughput;
+    bool m_throughputHasBeenSet;
   };
 
 } // namespace Model

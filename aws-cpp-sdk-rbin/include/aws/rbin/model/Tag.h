@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about the tags assigned to a Recycle Bin retention
-   * rule.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about the tags to assign to the retention rule.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/Tag">AWS API
    * Reference</a></p>
    */

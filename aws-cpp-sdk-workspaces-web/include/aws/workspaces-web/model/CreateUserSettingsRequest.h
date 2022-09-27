@@ -155,6 +155,31 @@ namespace Model
 
 
     /**
+     * <p>The amount of time that a streaming session remains active after users
+     * disconnect.</p>
+     */
+    inline int GetDisconnectTimeoutInMinutes() const{ return m_disconnectTimeoutInMinutes; }
+
+    /**
+     * <p>The amount of time that a streaming session remains active after users
+     * disconnect.</p>
+     */
+    inline bool DisconnectTimeoutInMinutesHasBeenSet() const { return m_disconnectTimeoutInMinutesHasBeenSet; }
+
+    /**
+     * <p>The amount of time that a streaming session remains active after users
+     * disconnect.</p>
+     */
+    inline void SetDisconnectTimeoutInMinutes(int value) { m_disconnectTimeoutInMinutesHasBeenSet = true; m_disconnectTimeoutInMinutes = value; }
+
+    /**
+     * <p>The amount of time that a streaming session remains active after users
+     * disconnect.</p>
+     */
+    inline CreateUserSettingsRequest& WithDisconnectTimeoutInMinutes(int value) { SetDisconnectTimeoutInMinutes(value); return *this;}
+
+
+    /**
      * <p>Specifies whether the user can download files from the streaming session to
      * the local device.</p>
      */
@@ -189,6 +214,35 @@ namespace Model
      * the local device.</p>
      */
     inline CreateUserSettingsRequest& WithDownloadAllowed(EnabledType&& value) { SetDownloadAllowed(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The amount of time that users can be idle (inactive) before they are
+     * disconnected from their streaming session and the disconnect timeout interval
+     * begins.</p>
+     */
+    inline int GetIdleDisconnectTimeoutInMinutes() const{ return m_idleDisconnectTimeoutInMinutes; }
+
+    /**
+     * <p>The amount of time that users can be idle (inactive) before they are
+     * disconnected from their streaming session and the disconnect timeout interval
+     * begins.</p>
+     */
+    inline bool IdleDisconnectTimeoutInMinutesHasBeenSet() const { return m_idleDisconnectTimeoutInMinutesHasBeenSet; }
+
+    /**
+     * <p>The amount of time that users can be idle (inactive) before they are
+     * disconnected from their streaming session and the disconnect timeout interval
+     * begins.</p>
+     */
+    inline void SetIdleDisconnectTimeoutInMinutes(int value) { m_idleDisconnectTimeoutInMinutesHasBeenSet = true; m_idleDisconnectTimeoutInMinutes = value; }
+
+    /**
+     * <p>The amount of time that users can be idle (inactive) before they are
+     * disconnected from their streaming session and the disconnect timeout interval
+     * begins.</p>
+     */
+    inline CreateUserSettingsRequest& WithIdleDisconnectTimeoutInMinutes(int value) { SetIdleDisconnectTimeoutInMinutes(value); return *this;}
 
 
     /**
@@ -344,8 +398,14 @@ namespace Model
     EnabledType m_copyAllowed;
     bool m_copyAllowedHasBeenSet;
 
+    int m_disconnectTimeoutInMinutes;
+    bool m_disconnectTimeoutInMinutesHasBeenSet;
+
     EnabledType m_downloadAllowed;
     bool m_downloadAllowedHasBeenSet;
+
+    int m_idleDisconnectTimeoutInMinutes;
+    bool m_idleDisconnectTimeoutInMinutesHasBeenSet;
 
     EnabledType m_pasteAllowed;
     bool m_pasteAllowedHasBeenSet;

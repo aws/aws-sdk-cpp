@@ -45,6 +45,7 @@
 #include <aws/network-firewall/model/UntagResourceRequest.h>
 #include <aws/network-firewall/model/UpdateFirewallDeleteProtectionRequest.h>
 #include <aws/network-firewall/model/UpdateFirewallDescriptionRequest.h>
+#include <aws/network-firewall/model/UpdateFirewallEncryptionConfigurationRequest.h>
 #include <aws/network-firewall/model/UpdateFirewallPolicyRequest.h>
 #include <aws/network-firewall/model/UpdateFirewallPolicyChangeProtectionRequest.h>
 #include <aws/network-firewall/model/UpdateLoggingConfigurationRequest.h>
@@ -722,6 +723,30 @@ void NetworkFirewallClient::UpdateFirewallDescriptionAsync(const UpdateFirewallD
 void NetworkFirewallClient::UpdateFirewallDescriptionAsyncHelper(const UpdateFirewallDescriptionRequest& request, const UpdateFirewallDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateFirewallDescription(request), context);
+}
+
+UpdateFirewallEncryptionConfigurationOutcome NetworkFirewallClient::UpdateFirewallEncryptionConfiguration(const UpdateFirewallEncryptionConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateFirewallEncryptionConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateFirewallEncryptionConfigurationOutcomeCallable NetworkFirewallClient::UpdateFirewallEncryptionConfigurationCallable(const UpdateFirewallEncryptionConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateFirewallEncryptionConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFirewallEncryptionConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NetworkFirewallClient::UpdateFirewallEncryptionConfigurationAsync(const UpdateFirewallEncryptionConfigurationRequest& request, const UpdateFirewallEncryptionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateFirewallEncryptionConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void NetworkFirewallClient::UpdateFirewallEncryptionConfigurationAsyncHelper(const UpdateFirewallEncryptionConfigurationRequest& request, const UpdateFirewallEncryptionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateFirewallEncryptionConfiguration(request), context);
 }
 
 UpdateFirewallPolicyOutcome NetworkFirewallClient::UpdateFirewallPolicy(const UpdateFirewallPolicyRequest& request) const

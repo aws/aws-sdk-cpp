@@ -258,7 +258,7 @@ namespace Model
 
 
     /**
-     * <p>The setting to use when creating a cluster. This parameter is used to enable
+     * <p>The setting to use when creating a cluster. This parameter is used to turn on
      * CloudWatch Container Insights for a cluster. If this value is specified, it
      * overrides the <code>containerInsights</code> value set with
      * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
@@ -266,7 +266,7 @@ namespace Model
     inline const Aws::Vector<ClusterSetting>& GetSettings() const{ return m_settings; }
 
     /**
-     * <p>The setting to use when creating a cluster. This parameter is used to enable
+     * <p>The setting to use when creating a cluster. This parameter is used to turn on
      * CloudWatch Container Insights for a cluster. If this value is specified, it
      * overrides the <code>containerInsights</code> value set with
      * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
@@ -274,7 +274,7 @@ namespace Model
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
 
     /**
-     * <p>The setting to use when creating a cluster. This parameter is used to enable
+     * <p>The setting to use when creating a cluster. This parameter is used to turn on
      * CloudWatch Container Insights for a cluster. If this value is specified, it
      * overrides the <code>containerInsights</code> value set with
      * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
@@ -282,7 +282,7 @@ namespace Model
     inline void SetSettings(const Aws::Vector<ClusterSetting>& value) { m_settingsHasBeenSet = true; m_settings = value; }
 
     /**
-     * <p>The setting to use when creating a cluster. This parameter is used to enable
+     * <p>The setting to use when creating a cluster. This parameter is used to turn on
      * CloudWatch Container Insights for a cluster. If this value is specified, it
      * overrides the <code>containerInsights</code> value set with
      * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
@@ -290,7 +290,7 @@ namespace Model
     inline void SetSettings(Aws::Vector<ClusterSetting>&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
 
     /**
-     * <p>The setting to use when creating a cluster. This parameter is used to enable
+     * <p>The setting to use when creating a cluster. This parameter is used to turn on
      * CloudWatch Container Insights for a cluster. If this value is specified, it
      * overrides the <code>containerInsights</code> value set with
      * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
@@ -298,7 +298,7 @@ namespace Model
     inline CreateClusterRequest& WithSettings(const Aws::Vector<ClusterSetting>& value) { SetSettings(value); return *this;}
 
     /**
-     * <p>The setting to use when creating a cluster. This parameter is used to enable
+     * <p>The setting to use when creating a cluster. This parameter is used to turn on
      * CloudWatch Container Insights for a cluster. If this value is specified, it
      * overrides the <code>containerInsights</code> value set with
      * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
@@ -306,7 +306,7 @@ namespace Model
     inline CreateClusterRequest& WithSettings(Aws::Vector<ClusterSetting>&& value) { SetSettings(std::move(value)); return *this;}
 
     /**
-     * <p>The setting to use when creating a cluster. This parameter is used to enable
+     * <p>The setting to use when creating a cluster. This parameter is used to turn on
      * CloudWatch Container Insights for a cluster. If this value is specified, it
      * overrides the <code>containerInsights</code> value set with
      * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
@@ -314,7 +314,7 @@ namespace Model
     inline CreateClusterRequest& AddSettings(const ClusterSetting& value) { m_settingsHasBeenSet = true; m_settings.push_back(value); return *this; }
 
     /**
-     * <p>The setting to use when creating a cluster. This parameter is used to enable
+     * <p>The setting to use when creating a cluster. This parameter is used to turn on
      * CloudWatch Container Insights for a cluster. If this value is specified, it
      * overrides the <code>containerInsights</code> value set with
      * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
@@ -323,32 +323,32 @@ namespace Model
 
 
     /**
-     * <p>The execute command configuration for the cluster.</p>
+     * <p>The <code>execute</code> command configuration for the cluster.</p>
      */
     inline const ClusterConfiguration& GetConfiguration() const{ return m_configuration; }
 
     /**
-     * <p>The execute command configuration for the cluster.</p>
+     * <p>The <code>execute</code> command configuration for the cluster.</p>
      */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
-     * <p>The execute command configuration for the cluster.</p>
+     * <p>The <code>execute</code> command configuration for the cluster.</p>
      */
     inline void SetConfiguration(const ClusterConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
     /**
-     * <p>The execute command configuration for the cluster.</p>
+     * <p>The <code>execute</code> command configuration for the cluster.</p>
      */
     inline void SetConfiguration(ClusterConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
 
     /**
-     * <p>The execute command configuration for the cluster.</p>
+     * <p>The <code>execute</code> command configuration for the cluster.</p>
      */
     inline CreateClusterRequest& WithConfiguration(const ClusterConfiguration& value) { SetConfiguration(value); return *this;}
 
     /**
-     * <p>The execute command configuration for the cluster.</p>
+     * <p>The <code>execute</code> command configuration for the cluster.</p>
      */
     inline CreateClusterRequest& WithConfiguration(ClusterConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 

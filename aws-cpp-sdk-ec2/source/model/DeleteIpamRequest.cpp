@@ -13,7 +13,9 @@ using namespace Aws::Utils;
 DeleteIpamRequest::DeleteIpamRequest() : 
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_ipamIdHasBeenSet(false)
+    m_ipamIdHasBeenSet(false),
+    m_cascade(false),
+    m_cascadeHasBeenSet(false)
 {
 }
 
@@ -29,6 +31,11 @@ Aws::String DeleteIpamRequest::SerializePayload() const
   if(m_ipamIdHasBeenSet)
   {
     ss << "IpamId=" << StringUtils::URLEncode(m_ipamId.c_str()) << "&";
+  }
+
+  if(m_cascadeHasBeenSet)
+  {
+    ss << "Cascade=" << std::boolalpha << m_cascade << "&";
   }
 
   ss << "Version=2016-11-15";

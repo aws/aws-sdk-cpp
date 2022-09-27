@@ -222,7 +222,7 @@ namespace Model
      * the batch to the function in a single call, up to the payload limit for
      * synchronous invocation (6 MB).</p> <ul> <li> <p> <b>Amazon Kinesis</b> - Default
      * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon DynamoDB Streams</b> - Default
-     * 100. Max 1,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> - Default
+     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> - Default
      * 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
      * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100.
      * Max 10,000.</p> </li> <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100.
@@ -237,7 +237,7 @@ namespace Model
      * the batch to the function in a single call, up to the payload limit for
      * synchronous invocation (6 MB).</p> <ul> <li> <p> <b>Amazon Kinesis</b> - Default
      * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon DynamoDB Streams</b> - Default
-     * 100. Max 1,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> - Default
+     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> - Default
      * 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
      * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100.
      * Max 10,000.</p> </li> <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100.
@@ -252,7 +252,7 @@ namespace Model
      * the batch to the function in a single call, up to the payload limit for
      * synchronous invocation (6 MB).</p> <ul> <li> <p> <b>Amazon Kinesis</b> - Default
      * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon DynamoDB Streams</b> - Default
-     * 100. Max 1,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> - Default
+     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> - Default
      * 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
      * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100.
      * Max 10,000.</p> </li> <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100.
@@ -267,7 +267,7 @@ namespace Model
      * the batch to the function in a single call, up to the payload limit for
      * synchronous invocation (6 MB).</p> <ul> <li> <p> <b>Amazon Kinesis</b> - Default
      * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon DynamoDB Streams</b> - Default
-     * 100. Max 1,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> - Default
+     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> - Default
      * 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
      * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100.
      * Max 10,000.</p> </li> <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100.

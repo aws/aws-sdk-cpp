@@ -35,6 +35,8 @@ namespace Aws
         static const int RECOVERY_POINT_MODIFIED_HASH = HashingUtils::HashString("RECOVERY_POINT_MODIFIED");
         static const int BACKUP_PLAN_CREATED_HASH = HashingUtils::HashString("BACKUP_PLAN_CREATED");
         static const int BACKUP_PLAN_MODIFIED_HASH = HashingUtils::HashString("BACKUP_PLAN_MODIFIED");
+        static const int S3_BACKUP_OBJECT_FAILED_HASH = HashingUtils::HashString("S3_BACKUP_OBJECT_FAILED");
+        static const int S3_RESTORE_OBJECT_FAILED_HASH = HashingUtils::HashString("S3_RESTORE_OBJECT_FAILED");
 
 
         BackupVaultEvent GetBackupVaultEventForName(const Aws::String& name)
@@ -100,6 +102,14 @@ namespace Aws
           {
             return BackupVaultEvent::BACKUP_PLAN_MODIFIED;
           }
+          else if (hashCode == S3_BACKUP_OBJECT_FAILED_HASH)
+          {
+            return BackupVaultEvent::S3_BACKUP_OBJECT_FAILED;
+          }
+          else if (hashCode == S3_RESTORE_OBJECT_FAILED_HASH)
+          {
+            return BackupVaultEvent::S3_RESTORE_OBJECT_FAILED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -144,6 +154,10 @@ namespace Aws
             return "BACKUP_PLAN_CREATED";
           case BackupVaultEvent::BACKUP_PLAN_MODIFIED:
             return "BACKUP_PLAN_MODIFIED";
+          case BackupVaultEvent::S3_BACKUP_OBJECT_FAILED:
+            return "S3_BACKUP_OBJECT_FAILED";
+          case BackupVaultEvent::S3_RESTORE_OBJECT_FAILED:
+            return "S3_RESTORE_OBJECT_FAILED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

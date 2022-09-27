@@ -21,8 +21,8 @@ namespace Model
 {
 
   /**
-   * <p>Request to describe a collection of <a>DomainName</a>
-   * resources.</p><p><h3>See Also:</h3>   <a
+   * <p>Request to describe a collection of DomainName resources.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDomainNamesRequest">AWS
    * API Reference</a></p>
    */

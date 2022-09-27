@@ -21,7 +21,7 @@ namespace Model
 {
 
   /**
-   * <p>Gets the <a>VpcLinks</a> collection under the caller's account in a selected
+   * <p>Gets the VpcLinks collection under the caller's account in a selected
    * region.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetVpcLinksRequest">AWS
    * API Reference</a></p>

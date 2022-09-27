@@ -24,6 +24,8 @@ InstanceGroupModifyConfig::InstanceGroupModifyConfig() :
     m_instanceCountHasBeenSet(false),
     m_eC2InstanceIdsToTerminateHasBeenSet(false),
     m_shrinkPolicyHasBeenSet(false),
+    m_reconfigurationType(ReconfigurationType::NOT_SET),
+    m_reconfigurationTypeHasBeenSet(false),
     m_configurationsHasBeenSet(false)
 {
 }
@@ -34,6 +36,8 @@ InstanceGroupModifyConfig::InstanceGroupModifyConfig(JsonView jsonValue) :
     m_instanceCountHasBeenSet(false),
     m_eC2InstanceIdsToTerminateHasBeenSet(false),
     m_shrinkPolicyHasBeenSet(false),
+    m_reconfigurationType(ReconfigurationType::NOT_SET),
+    m_reconfigurationTypeHasBeenSet(false),
     m_configurationsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -70,6 +74,13 @@ InstanceGroupModifyConfig& InstanceGroupModifyConfig::operator =(JsonView jsonVa
     m_shrinkPolicy = jsonValue.GetObject("ShrinkPolicy");
 
     m_shrinkPolicyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ReconfigurationType"))
+  {
+    m_reconfigurationType = ReconfigurationTypeMapper::GetReconfigurationTypeForName(jsonValue.GetString("ReconfigurationType"));
+
+    m_reconfigurationTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Configurations"))
@@ -116,6 +127,11 @@ JsonValue InstanceGroupModifyConfig::Jsonize() const
   {
    payload.WithObject("ShrinkPolicy", m_shrinkPolicy.Jsonize());
 
+  }
+
+  if(m_reconfigurationTypeHasBeenSet)
+  {
+   payload.WithString("ReconfigurationType", ReconfigurationTypeMapper::GetNameForReconfigurationType(m_reconfigurationType));
   }
 
   if(m_configurationsHasBeenSet)

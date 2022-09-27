@@ -251,7 +251,7 @@ namespace Model
      * Windows, Lustre, ONTAP, and OpenZFS deployment types.</p> </li> <li> <p>Set to
      * <code>HDD</code> to use hard disk drive storage. HDD is supported on
      * <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> Windows file system
-     * deployment types, and on <code>PERSISTENT</code> Lustre file system deployment
+     * deployment types, and on <code>PERSISTENT_1</code> Lustre file system deployment
      * types. </p> </li> </ul> <p>Default value is <code>SSD</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
@@ -269,7 +269,7 @@ namespace Model
      * Windows, Lustre, ONTAP, and OpenZFS deployment types.</p> </li> <li> <p>Set to
      * <code>HDD</code> to use hard disk drive storage. HDD is supported on
      * <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> Windows file system
-     * deployment types, and on <code>PERSISTENT</code> Lustre file system deployment
+     * deployment types, and on <code>PERSISTENT_1</code> Lustre file system deployment
      * types. </p> </li> </ul> <p>Default value is <code>SSD</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
@@ -287,7 +287,7 @@ namespace Model
      * Windows, Lustre, ONTAP, and OpenZFS deployment types.</p> </li> <li> <p>Set to
      * <code>HDD</code> to use hard disk drive storage. HDD is supported on
      * <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> Windows file system
-     * deployment types, and on <code>PERSISTENT</code> Lustre file system deployment
+     * deployment types, and on <code>PERSISTENT_1</code> Lustre file system deployment
      * types. </p> </li> </ul> <p>Default value is <code>SSD</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
@@ -305,7 +305,7 @@ namespace Model
      * Windows, Lustre, ONTAP, and OpenZFS deployment types.</p> </li> <li> <p>Set to
      * <code>HDD</code> to use hard disk drive storage. HDD is supported on
      * <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> Windows file system
-     * deployment types, and on <code>PERSISTENT</code> Lustre file system deployment
+     * deployment types, and on <code>PERSISTENT_1</code> Lustre file system deployment
      * types. </p> </li> </ul> <p>Default value is <code>SSD</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
@@ -323,7 +323,7 @@ namespace Model
      * Windows, Lustre, ONTAP, and OpenZFS deployment types.</p> </li> <li> <p>Set to
      * <code>HDD</code> to use hard disk drive storage. HDD is supported on
      * <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> Windows file system
-     * deployment types, and on <code>PERSISTENT</code> Lustre file system deployment
+     * deployment types, and on <code>PERSISTENT_1</code> Lustre file system deployment
      * types. </p> </li> </ul> <p>Default value is <code>SSD</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
@@ -341,7 +341,7 @@ namespace Model
      * Windows, Lustre, ONTAP, and OpenZFS deployment types.</p> </li> <li> <p>Set to
      * <code>HDD</code> to use hard disk drive storage. HDD is supported on
      * <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> Windows file system
-     * deployment types, and on <code>PERSISTENT</code> Lustre file system deployment
+     * deployment types, and on <code>PERSISTENT_1</code> Lustre file system deployment
      * types. </p> </li> </ul> <p>Default value is <code>SSD</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">

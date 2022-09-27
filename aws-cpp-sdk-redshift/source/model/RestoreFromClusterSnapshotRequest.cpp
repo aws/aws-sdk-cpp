@@ -50,7 +50,9 @@ RestoreFromClusterSnapshotRequest::RestoreFromClusterSnapshotRequest() :
     m_aquaConfigurationStatusHasBeenSet(false),
     m_defaultIamRoleArnHasBeenSet(false),
     m_reservedNodeIdHasBeenSet(false),
-    m_targetReservedNodeOfferingIdHasBeenSet(false)
+    m_targetReservedNodeOfferingIdHasBeenSet(false),
+    m_encrypted(false),
+    m_encryptedHasBeenSet(false)
 {
 }
 
@@ -229,6 +231,11 @@ Aws::String RestoreFromClusterSnapshotRequest::SerializePayload() const
   if(m_targetReservedNodeOfferingIdHasBeenSet)
   {
     ss << "TargetReservedNodeOfferingId=" << StringUtils::URLEncode(m_targetReservedNodeOfferingId.c_str()) << "&";
+  }
+
+  if(m_encryptedHasBeenSet)
+  {
+    ss << "Encrypted=" << std::boolalpha << m_encrypted << "&";
   }
 
   ss << "Version=2012-12-01";

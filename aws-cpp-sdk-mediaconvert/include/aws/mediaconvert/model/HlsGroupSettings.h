@@ -9,6 +9,7 @@
 #include <aws/mediaconvert/model/HlsAudioOnlyHeader.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/model/HlsCaptionLanguageSetting.h>
+#include <aws/mediaconvert/model/HlsCaptionSegmentLengthControl.h>
 #include <aws/mediaconvert/model/HlsClientCache.h>
 #include <aws/mediaconvert/model/HlsCodecSpecification.h>
 #include <aws/mediaconvert/model/DestinationSettings.h>
@@ -409,6 +410,67 @@ namespace Model
      * from the manifest.
      */
     inline HlsGroupSettings& WithCaptionLanguageSetting(HlsCaptionLanguageSetting&& value) { SetCaptionLanguageSetting(std::move(value)); return *this;}
+
+
+    /**
+     * Set Caption segment length control (CaptionSegmentLengthControl) to Match video
+     * (MATCH_VIDEO) to create caption segments that align with the video segments from
+     * the first video output in this output group. For example, if the video segments
+     * are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the
+     * default setting, Large segments (LARGE_SEGMENTS) to create caption segments that
+     * are 300 seconds long.
+     */
+    inline const HlsCaptionSegmentLengthControl& GetCaptionSegmentLengthControl() const{ return m_captionSegmentLengthControl; }
+
+    /**
+     * Set Caption segment length control (CaptionSegmentLengthControl) to Match video
+     * (MATCH_VIDEO) to create caption segments that align with the video segments from
+     * the first video output in this output group. For example, if the video segments
+     * are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the
+     * default setting, Large segments (LARGE_SEGMENTS) to create caption segments that
+     * are 300 seconds long.
+     */
+    inline bool CaptionSegmentLengthControlHasBeenSet() const { return m_captionSegmentLengthControlHasBeenSet; }
+
+    /**
+     * Set Caption segment length control (CaptionSegmentLengthControl) to Match video
+     * (MATCH_VIDEO) to create caption segments that align with the video segments from
+     * the first video output in this output group. For example, if the video segments
+     * are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the
+     * default setting, Large segments (LARGE_SEGMENTS) to create caption segments that
+     * are 300 seconds long.
+     */
+    inline void SetCaptionSegmentLengthControl(const HlsCaptionSegmentLengthControl& value) { m_captionSegmentLengthControlHasBeenSet = true; m_captionSegmentLengthControl = value; }
+
+    /**
+     * Set Caption segment length control (CaptionSegmentLengthControl) to Match video
+     * (MATCH_VIDEO) to create caption segments that align with the video segments from
+     * the first video output in this output group. For example, if the video segments
+     * are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the
+     * default setting, Large segments (LARGE_SEGMENTS) to create caption segments that
+     * are 300 seconds long.
+     */
+    inline void SetCaptionSegmentLengthControl(HlsCaptionSegmentLengthControl&& value) { m_captionSegmentLengthControlHasBeenSet = true; m_captionSegmentLengthControl = std::move(value); }
+
+    /**
+     * Set Caption segment length control (CaptionSegmentLengthControl) to Match video
+     * (MATCH_VIDEO) to create caption segments that align with the video segments from
+     * the first video output in this output group. For example, if the video segments
+     * are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the
+     * default setting, Large segments (LARGE_SEGMENTS) to create caption segments that
+     * are 300 seconds long.
+     */
+    inline HlsGroupSettings& WithCaptionSegmentLengthControl(const HlsCaptionSegmentLengthControl& value) { SetCaptionSegmentLengthControl(value); return *this;}
+
+    /**
+     * Set Caption segment length control (CaptionSegmentLengthControl) to Match video
+     * (MATCH_VIDEO) to create caption segments that align with the video segments from
+     * the first video output in this output group. For example, if the video segments
+     * are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the
+     * default setting, Large segments (LARGE_SEGMENTS) to create caption segments that
+     * are 300 seconds long.
+     */
+    inline HlsGroupSettings& WithCaptionSegmentLengthControl(HlsCaptionSegmentLengthControl&& value) { SetCaptionSegmentLengthControl(std::move(value)); return *this;}
 
 
     /**
@@ -1315,53 +1377,97 @@ namespace Model
 
 
     /**
-     * Indicates ID3 frame that has the timecode.
+     * Specify the type of the ID3 frame (timedMetadataId3Frame) to use for ID3
+     * timestamps (timedMetadataId3Period) in your output. To include ID3 timestamps:
+     * Specify PRIV (PRIV) or TDRL (TDRL) and set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). To exclude ID3 timestamps: Set ID3 timestamp frame
+     * type to None (NONE).
      */
     inline const HlsTimedMetadataId3Frame& GetTimedMetadataId3Frame() const{ return m_timedMetadataId3Frame; }
 
     /**
-     * Indicates ID3 frame that has the timecode.
+     * Specify the type of the ID3 frame (timedMetadataId3Frame) to use for ID3
+     * timestamps (timedMetadataId3Period) in your output. To include ID3 timestamps:
+     * Specify PRIV (PRIV) or TDRL (TDRL) and set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). To exclude ID3 timestamps: Set ID3 timestamp frame
+     * type to None (NONE).
      */
     inline bool TimedMetadataId3FrameHasBeenSet() const { return m_timedMetadataId3FrameHasBeenSet; }
 
     /**
-     * Indicates ID3 frame that has the timecode.
+     * Specify the type of the ID3 frame (timedMetadataId3Frame) to use for ID3
+     * timestamps (timedMetadataId3Period) in your output. To include ID3 timestamps:
+     * Specify PRIV (PRIV) or TDRL (TDRL) and set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). To exclude ID3 timestamps: Set ID3 timestamp frame
+     * type to None (NONE).
      */
     inline void SetTimedMetadataId3Frame(const HlsTimedMetadataId3Frame& value) { m_timedMetadataId3FrameHasBeenSet = true; m_timedMetadataId3Frame = value; }
 
     /**
-     * Indicates ID3 frame that has the timecode.
+     * Specify the type of the ID3 frame (timedMetadataId3Frame) to use for ID3
+     * timestamps (timedMetadataId3Period) in your output. To include ID3 timestamps:
+     * Specify PRIV (PRIV) or TDRL (TDRL) and set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). To exclude ID3 timestamps: Set ID3 timestamp frame
+     * type to None (NONE).
      */
     inline void SetTimedMetadataId3Frame(HlsTimedMetadataId3Frame&& value) { m_timedMetadataId3FrameHasBeenSet = true; m_timedMetadataId3Frame = std::move(value); }
 
     /**
-     * Indicates ID3 frame that has the timecode.
+     * Specify the type of the ID3 frame (timedMetadataId3Frame) to use for ID3
+     * timestamps (timedMetadataId3Period) in your output. To include ID3 timestamps:
+     * Specify PRIV (PRIV) or TDRL (TDRL) and set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). To exclude ID3 timestamps: Set ID3 timestamp frame
+     * type to None (NONE).
      */
     inline HlsGroupSettings& WithTimedMetadataId3Frame(const HlsTimedMetadataId3Frame& value) { SetTimedMetadataId3Frame(value); return *this;}
 
     /**
-     * Indicates ID3 frame that has the timecode.
+     * Specify the type of the ID3 frame (timedMetadataId3Frame) to use for ID3
+     * timestamps (timedMetadataId3Period) in your output. To include ID3 timestamps:
+     * Specify PRIV (PRIV) or TDRL (TDRL) and set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). To exclude ID3 timestamps: Set ID3 timestamp frame
+     * type to None (NONE).
      */
     inline HlsGroupSettings& WithTimedMetadataId3Frame(HlsTimedMetadataId3Frame&& value) { SetTimedMetadataId3Frame(std::move(value)); return *this;}
 
 
     /**
-     * Timed Metadata interval in seconds.
+     * Specify the interval in seconds to write ID3 timestamps in your output. The
+     * first timestamp starts at the output timecode and date, and increases
+     * incrementally with each ID3 timestamp. To use the default interval of 10
+     * seconds: Leave blank. To include this metadata in your output: Set ID3 timestamp
+     * frame type (timedMetadataId3Frame) to PRIV (PRIV) or TDRL (TDRL), and set ID3
+     * metadata (timedMetadata) to Passthrough (PASSTHROUGH).
      */
     inline int GetTimedMetadataId3Period() const{ return m_timedMetadataId3Period; }
 
     /**
-     * Timed Metadata interval in seconds.
+     * Specify the interval in seconds to write ID3 timestamps in your output. The
+     * first timestamp starts at the output timecode and date, and increases
+     * incrementally with each ID3 timestamp. To use the default interval of 10
+     * seconds: Leave blank. To include this metadata in your output: Set ID3 timestamp
+     * frame type (timedMetadataId3Frame) to PRIV (PRIV) or TDRL (TDRL), and set ID3
+     * metadata (timedMetadata) to Passthrough (PASSTHROUGH).
      */
     inline bool TimedMetadataId3PeriodHasBeenSet() const { return m_timedMetadataId3PeriodHasBeenSet; }
 
     /**
-     * Timed Metadata interval in seconds.
+     * Specify the interval in seconds to write ID3 timestamps in your output. The
+     * first timestamp starts at the output timecode and date, and increases
+     * incrementally with each ID3 timestamp. To use the default interval of 10
+     * seconds: Leave blank. To include this metadata in your output: Set ID3 timestamp
+     * frame type (timedMetadataId3Frame) to PRIV (PRIV) or TDRL (TDRL), and set ID3
+     * metadata (timedMetadata) to Passthrough (PASSTHROUGH).
      */
     inline void SetTimedMetadataId3Period(int value) { m_timedMetadataId3PeriodHasBeenSet = true; m_timedMetadataId3Period = value; }
 
     /**
-     * Timed Metadata interval in seconds.
+     * Specify the interval in seconds to write ID3 timestamps in your output. The
+     * first timestamp starts at the output timecode and date, and increases
+     * incrementally with each ID3 timestamp. To use the default interval of 10
+     * seconds: Leave blank. To include this metadata in your output: Set ID3 timestamp
+     * frame type (timedMetadataId3Frame) to PRIV (PRIV) or TDRL (TDRL), and set ID3
+     * metadata (timedMetadata) to Passthrough (PASSTHROUGH).
      */
     inline HlsGroupSettings& WithTimedMetadataId3Period(int value) { SetTimedMetadataId3Period(value); return *this;}
 
@@ -1405,6 +1511,9 @@ namespace Model
 
     HlsCaptionLanguageSetting m_captionLanguageSetting;
     bool m_captionLanguageSettingHasBeenSet;
+
+    HlsCaptionSegmentLengthControl m_captionSegmentLengthControl;
+    bool m_captionSegmentLengthControlHasBeenSet;
 
     HlsClientCache m_clientCache;
     bool m_clientCacheHasBeenSet;

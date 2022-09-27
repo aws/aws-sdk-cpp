@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>An object that filters items in a list of component types.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>An object that filters items in a list of component types.</p>  <p>Only
+   * one object is accepted as a valid input.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListComponentTypesFilter">AWS
    * API Reference</a></p>
    */

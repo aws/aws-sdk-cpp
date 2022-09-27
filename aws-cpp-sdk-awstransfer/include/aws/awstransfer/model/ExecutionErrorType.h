@@ -16,7 +16,14 @@ namespace Model
   enum class ExecutionErrorType
   {
     NOT_SET,
-    PERMISSION_DENIED
+    PERMISSION_DENIED,
+    CUSTOM_STEP_FAILED,
+    THROTTLED,
+    ALREADY_EXISTS,
+    NOT_FOUND,
+    BAD_REQUEST,
+    TIMEOUT,
+    INTERNAL_SERVER_ERROR
   };
 
 namespace ExecutionErrorTypeMapper

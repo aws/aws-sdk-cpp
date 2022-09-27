@@ -22,7 +22,8 @@ CopyStepDetails::CopyStepDetails() :
     m_nameHasBeenSet(false),
     m_destinationFileLocationHasBeenSet(false),
     m_overwriteExisting(OverwriteExisting::NOT_SET),
-    m_overwriteExistingHasBeenSet(false)
+    m_overwriteExistingHasBeenSet(false),
+    m_sourceFileLocationHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ CopyStepDetails::CopyStepDetails(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_destinationFileLocationHasBeenSet(false),
     m_overwriteExisting(OverwriteExisting::NOT_SET),
-    m_overwriteExistingHasBeenSet(false)
+    m_overwriteExistingHasBeenSet(false),
+    m_sourceFileLocationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +60,13 @@ CopyStepDetails& CopyStepDetails::operator =(JsonView jsonValue)
     m_overwriteExistingHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SourceFileLocation"))
+  {
+    m_sourceFileLocation = jsonValue.GetString("SourceFileLocation");
+
+    m_sourceFileLocationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -80,6 +89,12 @@ JsonValue CopyStepDetails::Jsonize() const
   if(m_overwriteExistingHasBeenSet)
   {
    payload.WithString("OverwriteExisting", OverwriteExistingMapper::GetNameForOverwriteExisting(m_overwriteExisting));
+  }
+
+  if(m_sourceFileLocationHasBeenSet)
+  {
+   payload.WithString("SourceFileLocation", m_sourceFileLocation);
+
   }
 
   return payload;

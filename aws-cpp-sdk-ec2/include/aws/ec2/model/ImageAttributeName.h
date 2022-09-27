@@ -23,7 +23,10 @@ namespace Model
     productCodes,
     blockDeviceMapping,
     sriovNetSupport,
-    bootMode
+    bootMode,
+    tpmSupport,
+    uefiData,
+    lastLaunchedTime
   };
 
 namespace ImageAttributeNameMapper

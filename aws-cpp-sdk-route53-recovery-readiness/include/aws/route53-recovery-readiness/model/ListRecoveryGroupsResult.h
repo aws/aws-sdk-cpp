@@ -35,73 +35,73 @@ namespace Model
 
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline ListRecoveryGroupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline ListRecoveryGroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline ListRecoveryGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * A list of RecoveryGroups
+     * <p>A list of recovery groups.</p>
      */
     inline const Aws::Vector<RecoveryGroupOutput>& GetRecoveryGroups() const{ return m_recoveryGroups; }
 
     /**
-     * A list of RecoveryGroups
+     * <p>A list of recovery groups.</p>
      */
     inline void SetRecoveryGroups(const Aws::Vector<RecoveryGroupOutput>& value) { m_recoveryGroups = value; }
 
     /**
-     * A list of RecoveryGroups
+     * <p>A list of recovery groups.</p>
      */
     inline void SetRecoveryGroups(Aws::Vector<RecoveryGroupOutput>&& value) { m_recoveryGroups = std::move(value); }
 
     /**
-     * A list of RecoveryGroups
+     * <p>A list of recovery groups.</p>
      */
     inline ListRecoveryGroupsResult& WithRecoveryGroups(const Aws::Vector<RecoveryGroupOutput>& value) { SetRecoveryGroups(value); return *this;}
 
     /**
-     * A list of RecoveryGroups
+     * <p>A list of recovery groups.</p>
      */
     inline ListRecoveryGroupsResult& WithRecoveryGroups(Aws::Vector<RecoveryGroupOutput>&& value) { SetRecoveryGroups(std::move(value)); return *this;}
 
     /**
-     * A list of RecoveryGroups
+     * <p>A list of recovery groups.</p>
      */
     inline ListRecoveryGroupsResult& AddRecoveryGroups(const RecoveryGroupOutput& value) { m_recoveryGroups.push_back(value); return *this; }
 
     /**
-     * A list of RecoveryGroups
+     * <p>A list of recovery groups.</p>
      */
     inline ListRecoveryGroupsResult& AddRecoveryGroups(RecoveryGroupOutput&& value) { m_recoveryGroups.push_back(std::move(value)); return *this; }
 

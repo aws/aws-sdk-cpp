@@ -40,6 +40,7 @@
 #include <aws/dataexchange/model/ListJobsRequest.h>
 #include <aws/dataexchange/model/ListRevisionAssetsRequest.h>
 #include <aws/dataexchange/model/ListTagsForResourceRequest.h>
+#include <aws/dataexchange/model/RevokeRevisionRequest.h>
 #include <aws/dataexchange/model/SendApiAssetRequest.h>
 #include <aws/dataexchange/model/StartJobRequest.h>
 #include <aws/dataexchange/model/TagResourceRequest.h>
@@ -765,6 +766,45 @@ void DataExchangeClient::ListTagsForResourceAsync(const ListTagsForResourceReque
 void DataExchangeClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTagsForResource(request), context);
+}
+
+RevokeRevisionOutcome DataExchangeClient::RevokeRevision(const RevokeRevisionRequest& request) const
+{
+  if (!request.DataSetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RevokeRevision", "Required field: DataSetId, is not set");
+    return RevokeRevisionOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSetId]", false));
+  }
+  if (!request.RevisionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RevokeRevision", "Required field: RevisionId, is not set");
+    return RevokeRevisionOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RevisionId]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  uri.AddPathSegments("/v1/data-sets/");
+  uri.AddPathSegment(request.GetDataSetId());
+  uri.AddPathSegments("/revisions/");
+  uri.AddPathSegment(request.GetRevisionId());
+  uri.AddPathSegments("/revoke");
+  return RevokeRevisionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+RevokeRevisionOutcomeCallable DataExchangeClient::RevokeRevisionCallable(const RevokeRevisionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RevokeRevisionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RevokeRevision(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DataExchangeClient::RevokeRevisionAsync(const RevokeRevisionRequest& request, const RevokeRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RevokeRevisionAsyncHelper( request, handler, context ); } );
+}
+
+void DataExchangeClient::RevokeRevisionAsyncHelper(const RevokeRevisionRequest& request, const RevokeRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RevokeRevision(request), context);
 }
 
 SendApiAssetOutcome DataExchangeClient::SendApiAsset(const SendApiAssetRequest& request) const

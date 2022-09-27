@@ -26,6 +26,8 @@ namespace Aws
         static const int SC1_HASH = HashingUtils::HashString("SC1");
         static const int ST1_HASH = HashingUtils::HashString("ST1");
         static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
+        static const int GP3_HASH = HashingUtils::HashString("GP3");
+        static const int IO2_HASH = HashingUtils::HashString("IO2");
 
 
         ReplicationConfigurationReplicatedDiskStagingDiskType GetReplicationConfigurationReplicatedDiskStagingDiskTypeForName(const Aws::String& name)
@@ -55,6 +57,14 @@ namespace Aws
           {
             return ReplicationConfigurationReplicatedDiskStagingDiskType::STANDARD;
           }
+          else if (hashCode == GP3_HASH)
+          {
+            return ReplicationConfigurationReplicatedDiskStagingDiskType::GP3;
+          }
+          else if (hashCode == IO2_HASH)
+          {
+            return ReplicationConfigurationReplicatedDiskStagingDiskType::IO2;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +91,10 @@ namespace Aws
             return "ST1";
           case ReplicationConfigurationReplicatedDiskStagingDiskType::STANDARD:
             return "STANDARD";
+          case ReplicationConfigurationReplicatedDiskStagingDiskType::GP3:
+            return "GP3";
+          case ReplicationConfigurationReplicatedDiskStagingDiskType::IO2:
+            return "IO2";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

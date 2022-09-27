@@ -9,6 +9,7 @@
 #include <aws/personalize/model/RecommenderConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/personalize/model/RecommenderUpdateSummary.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -320,64 +321,72 @@ namespace Model
     /**
      * <p>The status of the recommender.</p> <p>A recommender can be in one of the
      * following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt;
-     * ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE
-     * IN_PROGRESS</p> </li> </ul>
+     * ACTIVE -or- CREATE FAILED</p> </li> <li> <p>STOP PENDING &gt; STOP IN_PROGRESS
+     * &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
+     * <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
      * <p>The status of the recommender.</p> <p>A recommender can be in one of the
      * following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt;
-     * ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE
-     * IN_PROGRESS</p> </li> </ul>
+     * ACTIVE -or- CREATE FAILED</p> </li> <li> <p>STOP PENDING &gt; STOP IN_PROGRESS
+     * &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
+     * <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the recommender.</p> <p>A recommender can be in one of the
      * following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt;
-     * ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE
-     * IN_PROGRESS</p> </li> </ul>
+     * ACTIVE -or- CREATE FAILED</p> </li> <li> <p>STOP PENDING &gt; STOP IN_PROGRESS
+     * &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
+     * <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The status of the recommender.</p> <p>A recommender can be in one of the
      * following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt;
-     * ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE
-     * IN_PROGRESS</p> </li> </ul>
+     * ACTIVE -or- CREATE FAILED</p> </li> <li> <p>STOP PENDING &gt; STOP IN_PROGRESS
+     * &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
+     * <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the recommender.</p> <p>A recommender can be in one of the
      * following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt;
-     * ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE
-     * IN_PROGRESS</p> </li> </ul>
+     * ACTIVE -or- CREATE FAILED</p> </li> <li> <p>STOP PENDING &gt; STOP IN_PROGRESS
+     * &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
+     * <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
      * <p>The status of the recommender.</p> <p>A recommender can be in one of the
      * following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt;
-     * ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE
-     * IN_PROGRESS</p> </li> </ul>
+     * ACTIVE -or- CREATE FAILED</p> </li> <li> <p>STOP PENDING &gt; STOP IN_PROGRESS
+     * &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
+     * <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul>
      */
     inline Recommender& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The status of the recommender.</p> <p>A recommender can be in one of the
      * following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt;
-     * ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE
-     * IN_PROGRESS</p> </li> </ul>
+     * ACTIVE -or- CREATE FAILED</p> </li> <li> <p>STOP PENDING &gt; STOP IN_PROGRESS
+     * &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
+     * <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul>
      */
     inline Recommender& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the recommender.</p> <p>A recommender can be in one of the
      * following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt;
-     * ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE
-     * IN_PROGRESS</p> </li> </ul>
+     * ACTIVE -or- CREATE FAILED</p> </li> <li> <p>STOP PENDING &gt; STOP IN_PROGRESS
+     * &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
+     * <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul>
      */
     inline Recommender& WithStatus(const char* value) { SetStatus(value); return *this;}
 
@@ -453,6 +462,79 @@ namespace Model
      */
     inline Recommender& WithLatestRecommenderUpdate(RecommenderUpdateSummary&& value) { SetLatestRecommenderUpdate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides evaluation metrics that help you determine the performance of a
+     * recommender. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/evaluating-recommenders.html">
+     * Evaluating a recommender</a>.</p>
+     */
+    inline const Aws::Map<Aws::String, double>& GetModelMetrics() const{ return m_modelMetrics; }
+
+    /**
+     * <p>Provides evaluation metrics that help you determine the performance of a
+     * recommender. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/evaluating-recommenders.html">
+     * Evaluating a recommender</a>.</p>
+     */
+    inline bool ModelMetricsHasBeenSet() const { return m_modelMetricsHasBeenSet; }
+
+    /**
+     * <p>Provides evaluation metrics that help you determine the performance of a
+     * recommender. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/evaluating-recommenders.html">
+     * Evaluating a recommender</a>.</p>
+     */
+    inline void SetModelMetrics(const Aws::Map<Aws::String, double>& value) { m_modelMetricsHasBeenSet = true; m_modelMetrics = value; }
+
+    /**
+     * <p>Provides evaluation metrics that help you determine the performance of a
+     * recommender. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/evaluating-recommenders.html">
+     * Evaluating a recommender</a>.</p>
+     */
+    inline void SetModelMetrics(Aws::Map<Aws::String, double>&& value) { m_modelMetricsHasBeenSet = true; m_modelMetrics = std::move(value); }
+
+    /**
+     * <p>Provides evaluation metrics that help you determine the performance of a
+     * recommender. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/evaluating-recommenders.html">
+     * Evaluating a recommender</a>.</p>
+     */
+    inline Recommender& WithModelMetrics(const Aws::Map<Aws::String, double>& value) { SetModelMetrics(value); return *this;}
+
+    /**
+     * <p>Provides evaluation metrics that help you determine the performance of a
+     * recommender. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/evaluating-recommenders.html">
+     * Evaluating a recommender</a>.</p>
+     */
+    inline Recommender& WithModelMetrics(Aws::Map<Aws::String, double>&& value) { SetModelMetrics(std::move(value)); return *this;}
+
+    /**
+     * <p>Provides evaluation metrics that help you determine the performance of a
+     * recommender. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/evaluating-recommenders.html">
+     * Evaluating a recommender</a>.</p>
+     */
+    inline Recommender& AddModelMetrics(const Aws::String& key, double value) { m_modelMetricsHasBeenSet = true; m_modelMetrics.emplace(key, value); return *this; }
+
+    /**
+     * <p>Provides evaluation metrics that help you determine the performance of a
+     * recommender. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/evaluating-recommenders.html">
+     * Evaluating a recommender</a>.</p>
+     */
+    inline Recommender& AddModelMetrics(Aws::String&& key, double value) { m_modelMetricsHasBeenSet = true; m_modelMetrics.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Provides evaluation metrics that help you determine the performance of a
+     * recommender. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/evaluating-recommenders.html">
+     * Evaluating a recommender</a>.</p>
+     */
+    inline Recommender& AddModelMetrics(const char* key, double value) { m_modelMetricsHasBeenSet = true; m_modelMetrics.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_recommenderArn;
@@ -484,6 +566,9 @@ namespace Model
 
     RecommenderUpdateSummary m_latestRecommenderUpdate;
     bool m_latestRecommenderUpdateHasBeenSet;
+
+    Aws::Map<Aws::String, double> m_modelMetrics;
+    bool m_modelMetricsHasBeenSet;
   };
 
 } // namespace Model

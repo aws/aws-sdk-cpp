@@ -7,10 +7,9 @@
 #include <aws/amplifyuibuilder/AmplifyUIBuilder_EXPORTS.h>
 #include <aws/amplifyuibuilder/model/ComponentPropertyBindingProperties.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/amplifyuibuilder/model/FormBindingElement.h>
-#include <aws/amplifyuibuilder/model/ComponentProperty.h>
 #include <utility>
 #include <memory>
 
@@ -176,6 +175,47 @@ namespace Model
 
 
     /**
+     * <p>The name of the component that is affected by an event.</p>
+     */
+    inline const Aws::String& GetComponentName() const{ return m_componentName; }
+
+    /**
+     * <p>The name of the component that is affected by an event.</p>
+     */
+    inline bool ComponentNameHasBeenSet() const { return m_componentNameHasBeenSet; }
+
+    /**
+     * <p>The name of the component that is affected by an event.</p>
+     */
+    inline void SetComponentName(const Aws::String& value) { m_componentNameHasBeenSet = true; m_componentName = value; }
+
+    /**
+     * <p>The name of the component that is affected by an event.</p>
+     */
+    inline void SetComponentName(Aws::String&& value) { m_componentNameHasBeenSet = true; m_componentName = std::move(value); }
+
+    /**
+     * <p>The name of the component that is affected by an event.</p>
+     */
+    inline void SetComponentName(const char* value) { m_componentNameHasBeenSet = true; m_componentName.assign(value); }
+
+    /**
+     * <p>The name of the component that is affected by an event.</p>
+     */
+    inline ComponentProperty& WithComponentName(const Aws::String& value) { SetComponentName(value); return *this;}
+
+    /**
+     * <p>The name of the component that is affected by an event.</p>
+     */
+    inline ComponentProperty& WithComponentName(Aws::String&& value) { SetComponentName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the component that is affected by an event.</p>
+     */
+    inline ComponentProperty& WithComponentName(const char* value) { SetComponentName(value); return *this;}
+
+
+    /**
      * <p>A list of component properties to concatenate to create the value to assign
      * to this component property.</p>
      */
@@ -226,37 +266,37 @@ namespace Model
 
     /**
      * <p>The conditional expression to use to assign a value to the component
-     * property..</p>
+     * property.</p>
      */
     const ComponentConditionProperty& GetCondition() const;
 
     /**
      * <p>The conditional expression to use to assign a value to the component
-     * property..</p>
+     * property.</p>
      */
     bool ConditionHasBeenSet() const;
 
     /**
      * <p>The conditional expression to use to assign a value to the component
-     * property..</p>
+     * property.</p>
      */
     void SetCondition(const ComponentConditionProperty& value);
 
     /**
      * <p>The conditional expression to use to assign a value to the component
-     * property..</p>
+     * property.</p>
      */
     void SetCondition(ComponentConditionProperty&& value);
 
     /**
      * <p>The conditional expression to use to assign a value to the component
-     * property..</p>
+     * property.</p>
      */
     ComponentProperty& WithCondition(const ComponentConditionProperty& value);
 
     /**
      * <p>The conditional expression to use to assign a value to the component
-     * property..</p>
+     * property.</p>
      */
     ComponentProperty& WithCondition(ComponentConditionProperty&& value);
 
@@ -369,50 +409,50 @@ namespace Model
 
 
     /**
-     * <p>The default value assigned to property when the component is imported into an
-     * app.</p>
+     * <p>The default value assigned to the property when the component is imported
+     * into an app.</p>
      */
     inline const Aws::String& GetImportedValue() const{ return m_importedValue; }
 
     /**
-     * <p>The default value assigned to property when the component is imported into an
-     * app.</p>
+     * <p>The default value assigned to the property when the component is imported
+     * into an app.</p>
      */
     inline bool ImportedValueHasBeenSet() const { return m_importedValueHasBeenSet; }
 
     /**
-     * <p>The default value assigned to property when the component is imported into an
-     * app.</p>
+     * <p>The default value assigned to the property when the component is imported
+     * into an app.</p>
      */
     inline void SetImportedValue(const Aws::String& value) { m_importedValueHasBeenSet = true; m_importedValue = value; }
 
     /**
-     * <p>The default value assigned to property when the component is imported into an
-     * app.</p>
+     * <p>The default value assigned to the property when the component is imported
+     * into an app.</p>
      */
     inline void SetImportedValue(Aws::String&& value) { m_importedValueHasBeenSet = true; m_importedValue = std::move(value); }
 
     /**
-     * <p>The default value assigned to property when the component is imported into an
-     * app.</p>
+     * <p>The default value assigned to the property when the component is imported
+     * into an app.</p>
      */
     inline void SetImportedValue(const char* value) { m_importedValueHasBeenSet = true; m_importedValue.assign(value); }
 
     /**
-     * <p>The default value assigned to property when the component is imported into an
-     * app.</p>
+     * <p>The default value assigned to the property when the component is imported
+     * into an app.</p>
      */
     inline ComponentProperty& WithImportedValue(const Aws::String& value) { SetImportedValue(value); return *this;}
 
     /**
-     * <p>The default value assigned to property when the component is imported into an
-     * app.</p>
+     * <p>The default value assigned to the property when the component is imported
+     * into an app.</p>
      */
     inline ComponentProperty& WithImportedValue(Aws::String&& value) { SetImportedValue(std::move(value)); return *this;}
 
     /**
-     * <p>The default value assigned to property when the component is imported into an
-     * app.</p>
+     * <p>The default value assigned to the property when the component is imported
+     * into an app.</p>
      */
     inline ComponentProperty& WithImportedValue(const char* value) { SetImportedValue(value); return *this;}
 
@@ -456,6 +496,47 @@ namespace Model
      * <p>The data model to use to assign a value to the component property.</p>
      */
     inline ComponentProperty& WithModel(const char* value) { SetModel(value); return *this;}
+
+
+    /**
+     * <p>The name of the component's property that is affected by an event.</p>
+     */
+    inline const Aws::String& GetProperty() const{ return m_property; }
+
+    /**
+     * <p>The name of the component's property that is affected by an event.</p>
+     */
+    inline bool PropertyHasBeenSet() const { return m_propertyHasBeenSet; }
+
+    /**
+     * <p>The name of the component's property that is affected by an event.</p>
+     */
+    inline void SetProperty(const Aws::String& value) { m_propertyHasBeenSet = true; m_property = value; }
+
+    /**
+     * <p>The name of the component's property that is affected by an event.</p>
+     */
+    inline void SetProperty(Aws::String&& value) { m_propertyHasBeenSet = true; m_property = std::move(value); }
+
+    /**
+     * <p>The name of the component's property that is affected by an event.</p>
+     */
+    inline void SetProperty(const char* value) { m_propertyHasBeenSet = true; m_property.assign(value); }
+
+    /**
+     * <p>The name of the component's property that is affected by an event.</p>
+     */
+    inline ComponentProperty& WithProperty(const Aws::String& value) { SetProperty(value); return *this;}
+
+    /**
+     * <p>The name of the component's property that is affected by an event.</p>
+     */
+    inline ComponentProperty& WithProperty(Aws::String&& value) { SetProperty(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the component's property that is affected by an event.</p>
+     */
+    inline ComponentProperty& WithProperty(const char* value) { SetProperty(value); return *this;}
 
 
     /**
@@ -599,6 +680,9 @@ namespace Model
     ComponentPropertyBindingProperties m_collectionBindingProperties;
     bool m_collectionBindingPropertiesHasBeenSet;
 
+    Aws::String m_componentName;
+    bool m_componentNameHasBeenSet;
+
     Aws::Vector<ComponentProperty> m_concat;
     bool m_concatHasBeenSet;
 
@@ -619,6 +703,9 @@ namespace Model
 
     Aws::String m_model;
     bool m_modelHasBeenSet;
+
+    Aws::String m_property;
+    bool m_propertyHasBeenSet;
 
     Aws::String m_type;
     bool m_typeHasBeenSet;

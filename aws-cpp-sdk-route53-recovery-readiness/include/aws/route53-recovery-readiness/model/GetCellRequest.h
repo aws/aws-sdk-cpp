@@ -33,42 +33,42 @@ namespace Model
 
 
     /**
-     * The Cell to get
+     * <p>The name of the cell.</p>
      */
     inline const Aws::String& GetCellName() const{ return m_cellName; }
 
     /**
-     * The Cell to get
+     * <p>The name of the cell.</p>
      */
     inline bool CellNameHasBeenSet() const { return m_cellNameHasBeenSet; }
 
     /**
-     * The Cell to get
+     * <p>The name of the cell.</p>
      */
     inline void SetCellName(const Aws::String& value) { m_cellNameHasBeenSet = true; m_cellName = value; }
 
     /**
-     * The Cell to get
+     * <p>The name of the cell.</p>
      */
     inline void SetCellName(Aws::String&& value) { m_cellNameHasBeenSet = true; m_cellName = std::move(value); }
 
     /**
-     * The Cell to get
+     * <p>The name of the cell.</p>
      */
     inline void SetCellName(const char* value) { m_cellNameHasBeenSet = true; m_cellName.assign(value); }
 
     /**
-     * The Cell to get
+     * <p>The name of the cell.</p>
      */
     inline GetCellRequest& WithCellName(const Aws::String& value) { SetCellName(value); return *this;}
 
     /**
-     * The Cell to get
+     * <p>The name of the cell.</p>
      */
     inline GetCellRequest& WithCellName(Aws::String&& value) { SetCellName(std::move(value)); return *this;}
 
     /**
-     * The Cell to get
+     * <p>The name of the cell.</p>
      */
     inline GetCellRequest& WithCellName(const char* value) { SetCellName(value); return *this;}
 

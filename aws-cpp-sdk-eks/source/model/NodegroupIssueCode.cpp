@@ -38,6 +38,7 @@ namespace Aws
         static const int AccessDenied_HASH = HashingUtils::HashString("AccessDenied");
         static const int InternalFailure_HASH = HashingUtils::HashString("InternalFailure");
         static const int ClusterUnreachable_HASH = HashingUtils::HashString("ClusterUnreachable");
+        static const int Ec2SubnetMissingIpv6Assignment_HASH = HashingUtils::HashString("Ec2SubnetMissingIpv6Assignment");
 
 
         NodegroupIssueCode GetNodegroupIssueCodeForName(const Aws::String& name)
@@ -115,6 +116,10 @@ namespace Aws
           {
             return NodegroupIssueCode::ClusterUnreachable;
           }
+          else if (hashCode == Ec2SubnetMissingIpv6Assignment_HASH)
+          {
+            return NodegroupIssueCode::Ec2SubnetMissingIpv6Assignment;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -165,6 +170,8 @@ namespace Aws
             return "InternalFailure";
           case NodegroupIssueCode::ClusterUnreachable:
             return "ClusterUnreachable";
+          case NodegroupIssueCode::Ec2SubnetMissingIpv6Assignment:
+            return "Ec2SubnetMissingIpv6Assignment";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

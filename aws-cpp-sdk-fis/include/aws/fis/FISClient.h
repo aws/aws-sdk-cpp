@@ -16,10 +16,12 @@
 #include <aws/fis/model/GetActionResult.h>
 #include <aws/fis/model/GetExperimentResult.h>
 #include <aws/fis/model/GetExperimentTemplateResult.h>
+#include <aws/fis/model/GetTargetResourceTypeResult.h>
 #include <aws/fis/model/ListActionsResult.h>
 #include <aws/fis/model/ListExperimentTemplatesResult.h>
 #include <aws/fis/model/ListExperimentsResult.h>
 #include <aws/fis/model/ListTagsForResourceResult.h>
+#include <aws/fis/model/ListTargetResourceTypesResult.h>
 #include <aws/fis/model/StartExperimentResult.h>
 #include <aws/fis/model/StopExperimentResult.h>
 #include <aws/fis/model/TagResourceResult.h>
@@ -69,10 +71,12 @@ namespace Model
         class GetActionRequest;
         class GetExperimentRequest;
         class GetExperimentTemplateRequest;
+        class GetTargetResourceTypeRequest;
         class ListActionsRequest;
         class ListExperimentTemplatesRequest;
         class ListExperimentsRequest;
         class ListTagsForResourceRequest;
+        class ListTargetResourceTypesRequest;
         class StartExperimentRequest;
         class StopExperimentRequest;
         class TagResourceRequest;
@@ -84,10 +88,12 @@ namespace Model
         typedef Aws::Utils::Outcome<GetActionResult, FISError> GetActionOutcome;
         typedef Aws::Utils::Outcome<GetExperimentResult, FISError> GetExperimentOutcome;
         typedef Aws::Utils::Outcome<GetExperimentTemplateResult, FISError> GetExperimentTemplateOutcome;
+        typedef Aws::Utils::Outcome<GetTargetResourceTypeResult, FISError> GetTargetResourceTypeOutcome;
         typedef Aws::Utils::Outcome<ListActionsResult, FISError> ListActionsOutcome;
         typedef Aws::Utils::Outcome<ListExperimentTemplatesResult, FISError> ListExperimentTemplatesOutcome;
         typedef Aws::Utils::Outcome<ListExperimentsResult, FISError> ListExperimentsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, FISError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ListTargetResourceTypesResult, FISError> ListTargetResourceTypesOutcome;
         typedef Aws::Utils::Outcome<StartExperimentResult, FISError> StartExperimentOutcome;
         typedef Aws::Utils::Outcome<StopExperimentResult, FISError> StopExperimentOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, FISError> TagResourceOutcome;
@@ -99,10 +105,12 @@ namespace Model
         typedef std::future<GetActionOutcome> GetActionOutcomeCallable;
         typedef std::future<GetExperimentOutcome> GetExperimentOutcomeCallable;
         typedef std::future<GetExperimentTemplateOutcome> GetExperimentTemplateOutcomeCallable;
+        typedef std::future<GetTargetResourceTypeOutcome> GetTargetResourceTypeOutcomeCallable;
         typedef std::future<ListActionsOutcome> ListActionsOutcomeCallable;
         typedef std::future<ListExperimentTemplatesOutcome> ListExperimentTemplatesOutcomeCallable;
         typedef std::future<ListExperimentsOutcome> ListExperimentsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<ListTargetResourceTypesOutcome> ListTargetResourceTypesOutcomeCallable;
         typedef std::future<StartExperimentOutcome> StartExperimentOutcomeCallable;
         typedef std::future<StopExperimentOutcome> StopExperimentOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -117,10 +125,12 @@ namespace Model
     typedef std::function<void(const FISClient*, const Model::GetActionRequest&, const Model::GetActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetActionResponseReceivedHandler;
     typedef std::function<void(const FISClient*, const Model::GetExperimentRequest&, const Model::GetExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetExperimentResponseReceivedHandler;
     typedef std::function<void(const FISClient*, const Model::GetExperimentTemplateRequest&, const Model::GetExperimentTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetExperimentTemplateResponseReceivedHandler;
+    typedef std::function<void(const FISClient*, const Model::GetTargetResourceTypeRequest&, const Model::GetTargetResourceTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTargetResourceTypeResponseReceivedHandler;
     typedef std::function<void(const FISClient*, const Model::ListActionsRequest&, const Model::ListActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListActionsResponseReceivedHandler;
     typedef std::function<void(const FISClient*, const Model::ListExperimentTemplatesRequest&, const Model::ListExperimentTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListExperimentTemplatesResponseReceivedHandler;
     typedef std::function<void(const FISClient*, const Model::ListExperimentsRequest&, const Model::ListExperimentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListExperimentsResponseReceivedHandler;
     typedef std::function<void(const FISClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const FISClient*, const Model::ListTargetResourceTypesRequest&, const Model::ListTargetResourceTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTargetResourceTypesResponseReceivedHandler;
     typedef std::function<void(const FISClient*, const Model::StartExperimentRequest&, const Model::StartExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartExperimentResponseReceivedHandler;
     typedef std::function<void(const FISClient*, const Model::StopExperimentRequest&, const Model::StopExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopExperimentResponseReceivedHandler;
     typedef std::function<void(const FISClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
@@ -181,44 +191,12 @@ namespace Model
         virtual Model::CreateExperimentTemplateOutcome CreateExperimentTemplate(const Model::CreateExperimentTemplateRequest& request) const;
 
         /**
-         * <p>Creates an experiment template. </p> <p>An experiment template includes the
-         * following components:</p> <ul> <li> <p> <b>Targets</b>: A target can be a
-         * specific resource in your Amazon Web Services environment, or one or more
-         * resources that match criteria that you specify, for example, resources that have
-         * specific tags.</p> </li> <li> <p> <b>Actions</b>: The actions to carry out on
-         * the target. You can specify multiple actions, the duration of each action, and
-         * when to start each action during an experiment.</p> </li> <li> <p> <b>Stop
-         * conditions</b>: If a stop condition is triggered while an experiment is running,
-         * the experiment is automatically stopped. You can define a stop condition as a
-         * CloudWatch alarm.</p> </li> </ul> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">Experiment
-         * templates</a> in the <i>Fault Injection Simulator User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/CreateExperimentTemplate">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateExperimentTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateExperimentTemplateOutcomeCallable CreateExperimentTemplateCallable(const Model::CreateExperimentTemplateRequest& request) const;
 
         /**
-         * <p>Creates an experiment template. </p> <p>An experiment template includes the
-         * following components:</p> <ul> <li> <p> <b>Targets</b>: A target can be a
-         * specific resource in your Amazon Web Services environment, or one or more
-         * resources that match criteria that you specify, for example, resources that have
-         * specific tags.</p> </li> <li> <p> <b>Actions</b>: The actions to carry out on
-         * the target. You can specify multiple actions, the duration of each action, and
-         * when to start each action during an experiment.</p> </li> <li> <p> <b>Stop
-         * conditions</b>: If a stop condition is triggered while an experiment is running,
-         * the experiment is automatically stopped. You can define a stop condition as a
-         * CloudWatch alarm.</p> </li> </ul> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">Experiment
-         * templates</a> in the <i>Fault Injection Simulator User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/CreateExperimentTemplate">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateExperimentTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateExperimentTemplateAsync(const Model::CreateExperimentTemplateRequest& request, const CreateExperimentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -230,20 +208,12 @@ namespace Model
         virtual Model::DeleteExperimentTemplateOutcome DeleteExperimentTemplate(const Model::DeleteExperimentTemplateRequest& request) const;
 
         /**
-         * <p>Deletes the specified experiment template.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/DeleteExperimentTemplate">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteExperimentTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteExperimentTemplateOutcomeCallable DeleteExperimentTemplateCallable(const Model::DeleteExperimentTemplateRequest& request) const;
 
         /**
-         * <p>Deletes the specified experiment template.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/DeleteExperimentTemplate">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteExperimentTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteExperimentTemplateAsync(const Model::DeleteExperimentTemplateRequest& request, const DeleteExperimentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -255,20 +225,12 @@ namespace Model
         virtual Model::GetActionOutcome GetAction(const Model::GetActionRequest& request) const;
 
         /**
-         * <p>Gets information about the specified FIS action.</p><p><h3>See Also:</h3>  
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetAction">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetAction that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetActionOutcomeCallable GetActionCallable(const Model::GetActionRequest& request) const;
 
         /**
-         * <p>Gets information about the specified FIS action.</p><p><h3>See Also:</h3>  
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetAction">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetAction that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetActionAsync(const Model::GetActionRequest& request, const GetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -281,22 +243,12 @@ namespace Model
         virtual Model::GetExperimentOutcome GetExperiment(const Model::GetExperimentRequest& request) const;
 
         /**
-         * <p>Gets information about the specified experiment.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetExperiment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetExperiment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetExperimentOutcomeCallable GetExperimentCallable(const Model::GetExperimentRequest& request) const;
 
         /**
-         * <p>Gets information about the specified experiment.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetExperiment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetExperiment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetExperimentAsync(const Model::GetExperimentRequest& request, const GetExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -309,24 +261,32 @@ namespace Model
         virtual Model::GetExperimentTemplateOutcome GetExperimentTemplate(const Model::GetExperimentTemplateRequest& request) const;
 
         /**
-         * <p>Gets information about the specified experiment template.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetExperimentTemplate">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetExperimentTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetExperimentTemplateOutcomeCallable GetExperimentTemplateCallable(const Model::GetExperimentTemplateRequest& request) const;
 
         /**
-         * <p>Gets information about the specified experiment template.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetExperimentTemplate">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetExperimentTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetExperimentTemplateAsync(const Model::GetExperimentTemplateRequest& request, const GetExperimentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets information about the specified resource type.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetTargetResourceType">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetTargetResourceTypeOutcome GetTargetResourceType(const Model::GetTargetResourceTypeRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetTargetResourceType that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetTargetResourceTypeOutcomeCallable GetTargetResourceTypeCallable(const Model::GetTargetResourceTypeRequest& request) const;
+
+        /**
+         * An Async wrapper for GetTargetResourceType that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetTargetResourceTypeAsync(const Model::GetTargetResourceTypeRequest& request, const GetTargetResourceTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the available FIS actions.</p><p><h3>See Also:</h3>   <a
@@ -336,20 +296,12 @@ namespace Model
         virtual Model::ListActionsOutcome ListActions(const Model::ListActionsRequest& request) const;
 
         /**
-         * <p>Lists the available FIS actions.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListActions">AWS API
-         * Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListActions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListActionsOutcomeCallable ListActionsCallable(const Model::ListActionsRequest& request) const;
 
         /**
-         * <p>Lists the available FIS actions.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListActions">AWS API
-         * Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListActions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListActionsAsync(const Model::ListActionsRequest& request, const ListActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -361,20 +313,12 @@ namespace Model
         virtual Model::ListExperimentTemplatesOutcome ListExperimentTemplates(const Model::ListExperimentTemplatesRequest& request) const;
 
         /**
-         * <p>Lists your experiment templates.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListExperimentTemplates">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListExperimentTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListExperimentTemplatesOutcomeCallable ListExperimentTemplatesCallable(const Model::ListExperimentTemplatesRequest& request) const;
 
         /**
-         * <p>Lists your experiment templates.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListExperimentTemplates">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListExperimentTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListExperimentTemplatesAsync(const Model::ListExperimentTemplatesRequest& request, const ListExperimentTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -386,20 +330,12 @@ namespace Model
         virtual Model::ListExperimentsOutcome ListExperiments(const Model::ListExperimentsRequest& request) const;
 
         /**
-         * <p>Lists your experiments.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListExperiments">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListExperiments that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListExperimentsOutcomeCallable ListExperimentsCallable(const Model::ListExperimentsRequest& request) const;
 
         /**
-         * <p>Lists your experiments.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListExperiments">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListExperiments that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListExperimentsAsync(const Model::ListExperimentsRequest& request, const ListExperimentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -411,22 +347,31 @@ namespace Model
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists the tags for the specified resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists the tags for the specified resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the target resource types.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListTargetResourceTypes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTargetResourceTypesOutcome ListTargetResourceTypes(const Model::ListTargetResourceTypesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTargetResourceTypes that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTargetResourceTypesOutcomeCallable ListTargetResourceTypesCallable(const Model::ListTargetResourceTypesRequest& request) const;
+
+        /**
+         * An Async wrapper for ListTargetResourceTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTargetResourceTypesAsync(const Model::ListTargetResourceTypesRequest& request, const ListTargetResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts running an experiment from the specified experiment
@@ -437,22 +382,12 @@ namespace Model
         virtual Model::StartExperimentOutcome StartExperiment(const Model::StartExperimentRequest& request) const;
 
         /**
-         * <p>Starts running an experiment from the specified experiment
-         * template.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/StartExperiment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for StartExperiment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StartExperimentOutcomeCallable StartExperimentCallable(const Model::StartExperimentRequest& request) const;
 
         /**
-         * <p>Starts running an experiment from the specified experiment
-         * template.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/StartExperiment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for StartExperiment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartExperimentAsync(const Model::StartExperimentRequest& request, const StartExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -464,20 +399,12 @@ namespace Model
         virtual Model::StopExperimentOutcome StopExperiment(const Model::StopExperimentRequest& request) const;
 
         /**
-         * <p>Stops the specified experiment.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/StopExperiment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for StopExperiment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StopExperimentOutcomeCallable StopExperimentCallable(const Model::StopExperimentRequest& request) const;
 
         /**
-         * <p>Stops the specified experiment.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/StopExperiment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for StopExperiment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StopExperimentAsync(const Model::StopExperimentRequest& request, const StopExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -490,22 +417,12 @@ namespace Model
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Applies the specified tags to the specified resource.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/TagResource">AWS API
-         * Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Applies the specified tags to the specified resource.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/TagResource">AWS API
-         * Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -518,22 +435,12 @@ namespace Model
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes the specified tags from the specified resource.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes the specified tags from the specified resource.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -545,20 +452,12 @@ namespace Model
         virtual Model::UpdateExperimentTemplateOutcome UpdateExperimentTemplate(const Model::UpdateExperimentTemplateRequest& request) const;
 
         /**
-         * <p>Updates the specified experiment template.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/UpdateExperimentTemplate">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateExperimentTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateExperimentTemplateOutcomeCallable UpdateExperimentTemplateCallable(const Model::UpdateExperimentTemplateRequest& request) const;
 
         /**
-         * <p>Updates the specified experiment template.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/UpdateExperimentTemplate">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateExperimentTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateExperimentTemplateAsync(const Model::UpdateExperimentTemplateRequest& request, const UpdateExperimentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -571,10 +470,12 @@ namespace Model
         void GetActionAsyncHelper(const Model::GetActionRequest& request, const GetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetExperimentAsyncHelper(const Model::GetExperimentRequest& request, const GetExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetExperimentTemplateAsyncHelper(const Model::GetExperimentTemplateRequest& request, const GetExperimentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetTargetResourceTypeAsyncHelper(const Model::GetTargetResourceTypeRequest& request, const GetTargetResourceTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListActionsAsyncHelper(const Model::ListActionsRequest& request, const ListActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListExperimentTemplatesAsyncHelper(const Model::ListExperimentTemplatesRequest& request, const ListExperimentTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListExperimentsAsyncHelper(const Model::ListExperimentsRequest& request, const ListExperimentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTargetResourceTypesAsyncHelper(const Model::ListTargetResourceTypesRequest& request, const ListTargetResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartExperimentAsyncHelper(const Model::StartExperimentRequest& request, const StartExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopExperimentAsyncHelper(const Model::StopExperimentRequest& request, const StopExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -22,7 +22,9 @@ ModifyVpcEndpointServiceConfigurationRequest::ModifyVpcEndpointServiceConfigurat
     m_addNetworkLoadBalancerArnsHasBeenSet(false),
     m_removeNetworkLoadBalancerArnsHasBeenSet(false),
     m_addGatewayLoadBalancerArnsHasBeenSet(false),
-    m_removeGatewayLoadBalancerArnsHasBeenSet(false)
+    m_removeGatewayLoadBalancerArnsHasBeenSet(false),
+    m_addSupportedIpAddressTypesHasBeenSet(false),
+    m_removeSupportedIpAddressTypesHasBeenSet(false)
 {
 }
 
@@ -96,6 +98,28 @@ Aws::String ModifyVpcEndpointServiceConfigurationRequest::SerializePayload() con
       ss << "RemoveGatewayLoadBalancerArn." << removeGatewayLoadBalancerArnsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       removeGatewayLoadBalancerArnsCount++;
+    }
+  }
+
+  if(m_addSupportedIpAddressTypesHasBeenSet)
+  {
+    unsigned addSupportedIpAddressTypesCount = 1;
+    for(auto& item : m_addSupportedIpAddressTypes)
+    {
+      ss << "AddSupportedIpAddressType." << addSupportedIpAddressTypesCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      addSupportedIpAddressTypesCount++;
+    }
+  }
+
+  if(m_removeSupportedIpAddressTypesHasBeenSet)
+  {
+    unsigned removeSupportedIpAddressTypesCount = 1;
+    for(auto& item : m_removeSupportedIpAddressTypes)
+    {
+      ss << "RemoveSupportedIpAddressType." << removeSupportedIpAddressTypesCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      removeSupportedIpAddressTypesCount++;
     }
   }
 

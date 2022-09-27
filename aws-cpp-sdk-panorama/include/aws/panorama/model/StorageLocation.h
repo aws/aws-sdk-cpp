@@ -38,6 +38,47 @@ namespace Model
 
 
     /**
+     * <p>The location's binary prefix.</p>
+     */
+    inline const Aws::String& GetBinaryPrefixLocation() const{ return m_binaryPrefixLocation; }
+
+    /**
+     * <p>The location's binary prefix.</p>
+     */
+    inline bool BinaryPrefixLocationHasBeenSet() const { return m_binaryPrefixLocationHasBeenSet; }
+
+    /**
+     * <p>The location's binary prefix.</p>
+     */
+    inline void SetBinaryPrefixLocation(const Aws::String& value) { m_binaryPrefixLocationHasBeenSet = true; m_binaryPrefixLocation = value; }
+
+    /**
+     * <p>The location's binary prefix.</p>
+     */
+    inline void SetBinaryPrefixLocation(Aws::String&& value) { m_binaryPrefixLocationHasBeenSet = true; m_binaryPrefixLocation = std::move(value); }
+
+    /**
+     * <p>The location's binary prefix.</p>
+     */
+    inline void SetBinaryPrefixLocation(const char* value) { m_binaryPrefixLocationHasBeenSet = true; m_binaryPrefixLocation.assign(value); }
+
+    /**
+     * <p>The location's binary prefix.</p>
+     */
+    inline StorageLocation& WithBinaryPrefixLocation(const Aws::String& value) { SetBinaryPrefixLocation(value); return *this;}
+
+    /**
+     * <p>The location's binary prefix.</p>
+     */
+    inline StorageLocation& WithBinaryPrefixLocation(Aws::String&& value) { SetBinaryPrefixLocation(std::move(value)); return *this;}
+
+    /**
+     * <p>The location's binary prefix.</p>
+     */
+    inline StorageLocation& WithBinaryPrefixLocation(const char* value) { SetBinaryPrefixLocation(value); return *this;}
+
+
+    /**
      * <p>The location's bucket.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
@@ -76,47 +117,6 @@ namespace Model
      * <p>The location's bucket.</p>
      */
     inline StorageLocation& WithBucket(const char* value) { SetBucket(value); return *this;}
-
-
-    /**
-     * <p>The location's repo prefix.</p>
-     */
-    inline const Aws::String& GetRepoPrefixLocation() const{ return m_repoPrefixLocation; }
-
-    /**
-     * <p>The location's repo prefix.</p>
-     */
-    inline bool RepoPrefixLocationHasBeenSet() const { return m_repoPrefixLocationHasBeenSet; }
-
-    /**
-     * <p>The location's repo prefix.</p>
-     */
-    inline void SetRepoPrefixLocation(const Aws::String& value) { m_repoPrefixLocationHasBeenSet = true; m_repoPrefixLocation = value; }
-
-    /**
-     * <p>The location's repo prefix.</p>
-     */
-    inline void SetRepoPrefixLocation(Aws::String&& value) { m_repoPrefixLocationHasBeenSet = true; m_repoPrefixLocation = std::move(value); }
-
-    /**
-     * <p>The location's repo prefix.</p>
-     */
-    inline void SetRepoPrefixLocation(const char* value) { m_repoPrefixLocationHasBeenSet = true; m_repoPrefixLocation.assign(value); }
-
-    /**
-     * <p>The location's repo prefix.</p>
-     */
-    inline StorageLocation& WithRepoPrefixLocation(const Aws::String& value) { SetRepoPrefixLocation(value); return *this;}
-
-    /**
-     * <p>The location's repo prefix.</p>
-     */
-    inline StorageLocation& WithRepoPrefixLocation(Aws::String&& value) { SetRepoPrefixLocation(std::move(value)); return *this;}
-
-    /**
-     * <p>The location's repo prefix.</p>
-     */
-    inline StorageLocation& WithRepoPrefixLocation(const char* value) { SetRepoPrefixLocation(value); return *this;}
 
 
     /**
@@ -161,47 +161,6 @@ namespace Model
 
 
     /**
-     * <p>The location's binary prefix.</p>
-     */
-    inline const Aws::String& GetBinaryPrefixLocation() const{ return m_binaryPrefixLocation; }
-
-    /**
-     * <p>The location's binary prefix.</p>
-     */
-    inline bool BinaryPrefixLocationHasBeenSet() const { return m_binaryPrefixLocationHasBeenSet; }
-
-    /**
-     * <p>The location's binary prefix.</p>
-     */
-    inline void SetBinaryPrefixLocation(const Aws::String& value) { m_binaryPrefixLocationHasBeenSet = true; m_binaryPrefixLocation = value; }
-
-    /**
-     * <p>The location's binary prefix.</p>
-     */
-    inline void SetBinaryPrefixLocation(Aws::String&& value) { m_binaryPrefixLocationHasBeenSet = true; m_binaryPrefixLocation = std::move(value); }
-
-    /**
-     * <p>The location's binary prefix.</p>
-     */
-    inline void SetBinaryPrefixLocation(const char* value) { m_binaryPrefixLocationHasBeenSet = true; m_binaryPrefixLocation.assign(value); }
-
-    /**
-     * <p>The location's binary prefix.</p>
-     */
-    inline StorageLocation& WithBinaryPrefixLocation(const Aws::String& value) { SetBinaryPrefixLocation(value); return *this;}
-
-    /**
-     * <p>The location's binary prefix.</p>
-     */
-    inline StorageLocation& WithBinaryPrefixLocation(Aws::String&& value) { SetBinaryPrefixLocation(std::move(value)); return *this;}
-
-    /**
-     * <p>The location's binary prefix.</p>
-     */
-    inline StorageLocation& WithBinaryPrefixLocation(const char* value) { SetBinaryPrefixLocation(value); return *this;}
-
-
-    /**
      * <p>The location's manifest prefix.</p>
      */
     inline const Aws::String& GetManifestPrefixLocation() const{ return m_manifestPrefixLocation; }
@@ -241,22 +200,63 @@ namespace Model
      */
     inline StorageLocation& WithManifestPrefixLocation(const char* value) { SetManifestPrefixLocation(value); return *this;}
 
+
+    /**
+     * <p>The location's repo prefix.</p>
+     */
+    inline const Aws::String& GetRepoPrefixLocation() const{ return m_repoPrefixLocation; }
+
+    /**
+     * <p>The location's repo prefix.</p>
+     */
+    inline bool RepoPrefixLocationHasBeenSet() const { return m_repoPrefixLocationHasBeenSet; }
+
+    /**
+     * <p>The location's repo prefix.</p>
+     */
+    inline void SetRepoPrefixLocation(const Aws::String& value) { m_repoPrefixLocationHasBeenSet = true; m_repoPrefixLocation = value; }
+
+    /**
+     * <p>The location's repo prefix.</p>
+     */
+    inline void SetRepoPrefixLocation(Aws::String&& value) { m_repoPrefixLocationHasBeenSet = true; m_repoPrefixLocation = std::move(value); }
+
+    /**
+     * <p>The location's repo prefix.</p>
+     */
+    inline void SetRepoPrefixLocation(const char* value) { m_repoPrefixLocationHasBeenSet = true; m_repoPrefixLocation.assign(value); }
+
+    /**
+     * <p>The location's repo prefix.</p>
+     */
+    inline StorageLocation& WithRepoPrefixLocation(const Aws::String& value) { SetRepoPrefixLocation(value); return *this;}
+
+    /**
+     * <p>The location's repo prefix.</p>
+     */
+    inline StorageLocation& WithRepoPrefixLocation(Aws::String&& value) { SetRepoPrefixLocation(std::move(value)); return *this;}
+
+    /**
+     * <p>The location's repo prefix.</p>
+     */
+    inline StorageLocation& WithRepoPrefixLocation(const char* value) { SetRepoPrefixLocation(value); return *this;}
+
   private:
-
-    Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
-
-    Aws::String m_repoPrefixLocation;
-    bool m_repoPrefixLocationHasBeenSet;
-
-    Aws::String m_generatedPrefixLocation;
-    bool m_generatedPrefixLocationHasBeenSet;
 
     Aws::String m_binaryPrefixLocation;
     bool m_binaryPrefixLocationHasBeenSet;
 
+    Aws::String m_bucket;
+    bool m_bucketHasBeenSet;
+
+    Aws::String m_generatedPrefixLocation;
+    bool m_generatedPrefixLocationHasBeenSet;
+
     Aws::String m_manifestPrefixLocation;
     bool m_manifestPrefixLocationHasBeenSet;
+
+    Aws::String m_repoPrefixLocation;
+    bool m_repoPrefixLocationHasBeenSet;
   };
 
 } // namespace Model

@@ -111,28 +111,12 @@ namespace Model
         virtual Model::SendSSHPublicKeyOutcome SendSSHPublicKey(const Model::SendSSHPublicKeyRequest& request) const;
 
         /**
-         * <p>Pushes an SSH public key to the specified EC2 instance for use by the
-         * specified user. The key remains for 60 seconds. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect.html">Connect
-         * to your Linux instance using EC2 Instance Connect</a> in the <i>Amazon EC2 User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-instance-connect-2018-04-02/SendSSHPublicKey">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for SendSSHPublicKey that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::SendSSHPublicKeyOutcomeCallable SendSSHPublicKeyCallable(const Model::SendSSHPublicKeyRequest& request) const;
 
         /**
-         * <p>Pushes an SSH public key to the specified EC2 instance for use by the
-         * specified user. The key remains for 60 seconds. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect.html">Connect
-         * to your Linux instance using EC2 Instance Connect</a> in the <i>Amazon EC2 User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-instance-connect-2018-04-02/SendSSHPublicKey">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for SendSSHPublicKey that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SendSSHPublicKeyAsync(const Model::SendSSHPublicKeyRequest& request, const SendSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -149,30 +133,12 @@ namespace Model
         virtual Model::SendSerialConsoleSSHPublicKeyOutcome SendSerialConsoleSSHPublicKey(const Model::SendSerialConsoleSSHPublicKeyRequest& request) const;
 
         /**
-         * <p>Pushes an SSH public key to the specified EC2 instance. The key remains for
-         * 60 seconds, which gives you 60 seconds to establish a serial console connection
-         * to the instance using SSH. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-serial-console.html">EC2
-         * Serial Console</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-instance-connect-2018-04-02/SendSerialConsoleSSHPublicKey">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for SendSerialConsoleSSHPublicKey that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::SendSerialConsoleSSHPublicKeyOutcomeCallable SendSerialConsoleSSHPublicKeyCallable(const Model::SendSerialConsoleSSHPublicKeyRequest& request) const;
 
         /**
-         * <p>Pushes an SSH public key to the specified EC2 instance. The key remains for
-         * 60 seconds, which gives you 60 seconds to establish a serial console connection
-         * to the instance using SSH. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-serial-console.html">EC2
-         * Serial Console</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-instance-connect-2018-04-02/SendSerialConsoleSSHPublicKey">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for SendSerialConsoleSSHPublicKey that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SendSerialConsoleSSHPublicKeyAsync(const Model::SendSerialConsoleSSHPublicKeyRequest& request, const SendSerialConsoleSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

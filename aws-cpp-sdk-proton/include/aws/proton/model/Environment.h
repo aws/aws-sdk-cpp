@@ -28,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>The environment detail data. An Proton environment is a set resources shared
-   * across an Proton service.</p><p><h3>See Also:</h3>   <a
+   * <p>Detailed data of an Proton environment resource. An Proton environment is a
+   * set of resources shared across Proton services.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/Environment">AWS
    * API Reference</a></p>
    */
@@ -81,6 +81,103 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the environment.</p>
      */
     inline Environment& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
+     * provisioning directly defined components in this environment. It determines the
+     * scope of infrastructure that a component can provision.</p> <p>The environment
+     * must have a <code>componentRoleArn</code> to allow directly defined components
+     * to be associated with the environment.</p> <p>For more information about
+     * components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     */
+    inline const Aws::String& GetComponentRoleArn() const{ return m_componentRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
+     * provisioning directly defined components in this environment. It determines the
+     * scope of infrastructure that a component can provision.</p> <p>The environment
+     * must have a <code>componentRoleArn</code> to allow directly defined components
+     * to be associated with the environment.</p> <p>For more information about
+     * components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     */
+    inline bool ComponentRoleArnHasBeenSet() const { return m_componentRoleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
+     * provisioning directly defined components in this environment. It determines the
+     * scope of infrastructure that a component can provision.</p> <p>The environment
+     * must have a <code>componentRoleArn</code> to allow directly defined components
+     * to be associated with the environment.</p> <p>For more information about
+     * components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     */
+    inline void SetComponentRoleArn(const Aws::String& value) { m_componentRoleArnHasBeenSet = true; m_componentRoleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
+     * provisioning directly defined components in this environment. It determines the
+     * scope of infrastructure that a component can provision.</p> <p>The environment
+     * must have a <code>componentRoleArn</code> to allow directly defined components
+     * to be associated with the environment.</p> <p>For more information about
+     * components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     */
+    inline void SetComponentRoleArn(Aws::String&& value) { m_componentRoleArnHasBeenSet = true; m_componentRoleArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
+     * provisioning directly defined components in this environment. It determines the
+     * scope of infrastructure that a component can provision.</p> <p>The environment
+     * must have a <code>componentRoleArn</code> to allow directly defined components
+     * to be associated with the environment.</p> <p>For more information about
+     * components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     */
+    inline void SetComponentRoleArn(const char* value) { m_componentRoleArnHasBeenSet = true; m_componentRoleArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
+     * provisioning directly defined components in this environment. It determines the
+     * scope of infrastructure that a component can provision.</p> <p>The environment
+     * must have a <code>componentRoleArn</code> to allow directly defined components
+     * to be associated with the environment.</p> <p>For more information about
+     * components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     */
+    inline Environment& WithComponentRoleArn(const Aws::String& value) { SetComponentRoleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
+     * provisioning directly defined components in this environment. It determines the
+     * scope of infrastructure that a component can provision.</p> <p>The environment
+     * must have a <code>componentRoleArn</code> to allow directly defined components
+     * to be associated with the environment.</p> <p>For more information about
+     * components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     */
+    inline Environment& WithComponentRoleArn(Aws::String&& value) { SetComponentRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
+     * provisioning directly defined components in this environment. It determines the
+     * scope of infrastructure that a component can provision.</p> <p>The environment
+     * must have a <code>componentRoleArn</code> to allow directly defined components
+     * to be associated with the environment.</p> <p>For more information about
+     * components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     */
+    inline Environment& WithComponentRoleArn(const char* value) { SetComponentRoleArn(value); return *this;}
 
 
     /**
@@ -515,56 +612,38 @@ namespace Model
 
 
     /**
-     * <p>The repository that you provide with pull request provisioning.</p>
-     *  <p>Provisioning by pull request is currently in feature preview and
-     * is only usable with Terraform based Proton Templates. To learn more about <a
-     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
-     * terms</a>, see section 2 on Beta and Previews.</p> 
+     * <p>The infrastructure repository that you use to host your rendered
+     * infrastructure templates for self-managed provisioning.</p>
      */
     inline const RepositoryBranch& GetProvisioningRepository() const{ return m_provisioningRepository; }
 
     /**
-     * <p>The repository that you provide with pull request provisioning.</p>
-     *  <p>Provisioning by pull request is currently in feature preview and
-     * is only usable with Terraform based Proton Templates. To learn more about <a
-     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
-     * terms</a>, see section 2 on Beta and Previews.</p> 
+     * <p>The infrastructure repository that you use to host your rendered
+     * infrastructure templates for self-managed provisioning.</p>
      */
     inline bool ProvisioningRepositoryHasBeenSet() const { return m_provisioningRepositoryHasBeenSet; }
 
     /**
-     * <p>The repository that you provide with pull request provisioning.</p>
-     *  <p>Provisioning by pull request is currently in feature preview and
-     * is only usable with Terraform based Proton Templates. To learn more about <a
-     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
-     * terms</a>, see section 2 on Beta and Previews.</p> 
+     * <p>The infrastructure repository that you use to host your rendered
+     * infrastructure templates for self-managed provisioning.</p>
      */
     inline void SetProvisioningRepository(const RepositoryBranch& value) { m_provisioningRepositoryHasBeenSet = true; m_provisioningRepository = value; }
 
     /**
-     * <p>The repository that you provide with pull request provisioning.</p>
-     *  <p>Provisioning by pull request is currently in feature preview and
-     * is only usable with Terraform based Proton Templates. To learn more about <a
-     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
-     * terms</a>, see section 2 on Beta and Previews.</p> 
+     * <p>The infrastructure repository that you use to host your rendered
+     * infrastructure templates for self-managed provisioning.</p>
      */
     inline void SetProvisioningRepository(RepositoryBranch&& value) { m_provisioningRepositoryHasBeenSet = true; m_provisioningRepository = std::move(value); }
 
     /**
-     * <p>The repository that you provide with pull request provisioning.</p>
-     *  <p>Provisioning by pull request is currently in feature preview and
-     * is only usable with Terraform based Proton Templates. To learn more about <a
-     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
-     * terms</a>, see section 2 on Beta and Previews.</p> 
+     * <p>The infrastructure repository that you use to host your rendered
+     * infrastructure templates for self-managed provisioning.</p>
      */
     inline Environment& WithProvisioningRepository(const RepositoryBranch& value) { SetProvisioningRepository(value); return *this;}
 
     /**
-     * <p>The repository that you provide with pull request provisioning.</p>
-     *  <p>Provisioning by pull request is currently in feature preview and
-     * is only usable with Terraform based Proton Templates. To learn more about <a
-     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
-     * terms</a>, see section 2 on Beta and Previews.</p> 
+     * <p>The infrastructure repository that you use to host your rendered
+     * infrastructure templates for self-managed provisioning.</p>
      */
     inline Environment& WithProvisioningRepository(RepositoryBranch&& value) { SetProvisioningRepository(std::move(value)); return *this;}
 
@@ -611,83 +690,83 @@ namespace Model
 
 
     /**
-     * <p>The ID of the major version of the environment template.</p>
+     * <p>The major version of the environment template.</p>
      */
     inline const Aws::String& GetTemplateMajorVersion() const{ return m_templateMajorVersion; }
 
     /**
-     * <p>The ID of the major version of the environment template.</p>
+     * <p>The major version of the environment template.</p>
      */
     inline bool TemplateMajorVersionHasBeenSet() const { return m_templateMajorVersionHasBeenSet; }
 
     /**
-     * <p>The ID of the major version of the environment template.</p>
+     * <p>The major version of the environment template.</p>
      */
     inline void SetTemplateMajorVersion(const Aws::String& value) { m_templateMajorVersionHasBeenSet = true; m_templateMajorVersion = value; }
 
     /**
-     * <p>The ID of the major version of the environment template.</p>
+     * <p>The major version of the environment template.</p>
      */
     inline void SetTemplateMajorVersion(Aws::String&& value) { m_templateMajorVersionHasBeenSet = true; m_templateMajorVersion = std::move(value); }
 
     /**
-     * <p>The ID of the major version of the environment template.</p>
+     * <p>The major version of the environment template.</p>
      */
     inline void SetTemplateMajorVersion(const char* value) { m_templateMajorVersionHasBeenSet = true; m_templateMajorVersion.assign(value); }
 
     /**
-     * <p>The ID of the major version of the environment template.</p>
+     * <p>The major version of the environment template.</p>
      */
     inline Environment& WithTemplateMajorVersion(const Aws::String& value) { SetTemplateMajorVersion(value); return *this;}
 
     /**
-     * <p>The ID of the major version of the environment template.</p>
+     * <p>The major version of the environment template.</p>
      */
     inline Environment& WithTemplateMajorVersion(Aws::String&& value) { SetTemplateMajorVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the major version of the environment template.</p>
+     * <p>The major version of the environment template.</p>
      */
     inline Environment& WithTemplateMajorVersion(const char* value) { SetTemplateMajorVersion(value); return *this;}
 
 
     /**
-     * <p>The ID of the minor version of the environment template.</p>
+     * <p>The minor version of the environment template.</p>
      */
     inline const Aws::String& GetTemplateMinorVersion() const{ return m_templateMinorVersion; }
 
     /**
-     * <p>The ID of the minor version of the environment template.</p>
+     * <p>The minor version of the environment template.</p>
      */
     inline bool TemplateMinorVersionHasBeenSet() const { return m_templateMinorVersionHasBeenSet; }
 
     /**
-     * <p>The ID of the minor version of the environment template.</p>
+     * <p>The minor version of the environment template.</p>
      */
     inline void SetTemplateMinorVersion(const Aws::String& value) { m_templateMinorVersionHasBeenSet = true; m_templateMinorVersion = value; }
 
     /**
-     * <p>The ID of the minor version of the environment template.</p>
+     * <p>The minor version of the environment template.</p>
      */
     inline void SetTemplateMinorVersion(Aws::String&& value) { m_templateMinorVersionHasBeenSet = true; m_templateMinorVersion = std::move(value); }
 
     /**
-     * <p>The ID of the minor version of the environment template.</p>
+     * <p>The minor version of the environment template.</p>
      */
     inline void SetTemplateMinorVersion(const char* value) { m_templateMinorVersionHasBeenSet = true; m_templateMinorVersion.assign(value); }
 
     /**
-     * <p>The ID of the minor version of the environment template.</p>
+     * <p>The minor version of the environment template.</p>
      */
     inline Environment& WithTemplateMinorVersion(const Aws::String& value) { SetTemplateMinorVersion(value); return *this;}
 
     /**
-     * <p>The ID of the minor version of the environment template.</p>
+     * <p>The minor version of the environment template.</p>
      */
     inline Environment& WithTemplateMinorVersion(Aws::String&& value) { SetTemplateMinorVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the minor version of the environment template.</p>
+     * <p>The minor version of the environment template.</p>
      */
     inline Environment& WithTemplateMinorVersion(const char* value) { SetTemplateMinorVersion(value); return *this;}
 
@@ -736,6 +815,9 @@ namespace Model
 
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
+    Aws::String m_componentRoleArn;
+    bool m_componentRoleArnHasBeenSet;
 
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;

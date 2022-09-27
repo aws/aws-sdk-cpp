@@ -1,0 +1,7 @@
+#if($operation.request)## if (operation has a request) -----------------------------------
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/json/serviceoperations/JsonServiceOperationWithRequestSource.vm")
+
+#else## if (operation doesn't have a request) --------------------------------------------
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/json/serviceoperations/JsonServiceOperationWithoutRequestSource.vm")
+
+#end## if (operation have a request) end -------------------------------------------------

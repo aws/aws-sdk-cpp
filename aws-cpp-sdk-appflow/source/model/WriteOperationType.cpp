@@ -23,6 +23,7 @@ namespace Aws
         static const int INSERT_HASH = HashingUtils::HashString("INSERT");
         static const int UPSERT_HASH = HashingUtils::HashString("UPSERT");
         static const int UPDATE_HASH = HashingUtils::HashString("UPDATE");
+        static const int DELETE__HASH = HashingUtils::HashString("DELETE");
 
 
         WriteOperationType GetWriteOperationTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == UPDATE_HASH)
           {
             return WriteOperationType::UPDATE;
+          }
+          else if (hashCode == DELETE__HASH)
+          {
+            return WriteOperationType::DELETE_;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "UPSERT";
           case WriteOperationType::UPDATE:
             return "UPDATE";
+          case WriteOperationType::DELETE_:
+            return "DELETE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -247,6 +247,12 @@ UpdateFunctionCodeResult& UpdateFunctionCodeResult::operator =(const Aws::Amazon
     }
   }
 
+  if(jsonValue.ValueExists("EphemeralStorage"))
+  {
+    m_ephemeralStorage = jsonValue.GetObject("EphemeralStorage");
+
+  }
+
 
 
   return *this;

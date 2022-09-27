@@ -32,21 +32,27 @@ DescribePackageVersionResult::DescribePackageVersionResult(const Aws::AmazonWebS
 DescribePackageVersionResult& DescribePackageVersionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("IsLatestPatch"))
+  {
+    m_isLatestPatch = jsonValue.GetBool("IsLatestPatch");
+
+  }
+
   if(jsonValue.ValueExists("OwnerAccount"))
   {
     m_ownerAccount = jsonValue.GetString("OwnerAccount");
 
   }
 
-  if(jsonValue.ValueExists("PackageId"))
-  {
-    m_packageId = jsonValue.GetString("PackageId");
-
-  }
-
   if(jsonValue.ValueExists("PackageArn"))
   {
     m_packageArn = jsonValue.GetString("PackageArn");
+
+  }
+
+  if(jsonValue.ValueExists("PackageId"))
+  {
+    m_packageId = jsonValue.GetString("PackageId");
 
   }
 
@@ -68,9 +74,9 @@ DescribePackageVersionResult& DescribePackageVersionResult::operator =(const Aws
 
   }
 
-  if(jsonValue.ValueExists("IsLatestPatch"))
+  if(jsonValue.ValueExists("RegisteredTime"))
   {
-    m_isLatestPatch = jsonValue.GetBool("IsLatestPatch");
+    m_registeredTime = jsonValue.GetDouble("RegisteredTime");
 
   }
 
@@ -83,12 +89,6 @@ DescribePackageVersionResult& DescribePackageVersionResult::operator =(const Aws
   if(jsonValue.ValueExists("StatusDescription"))
   {
     m_statusDescription = jsonValue.GetString("StatusDescription");
-
-  }
-
-  if(jsonValue.ValueExists("RegisteredTime"))
-  {
-    m_registeredTime = jsonValue.GetDouble("RegisteredTime");
 
   }
 

@@ -21,7 +21,8 @@ AllocateHostsRequest::AllocateHostsRequest() :
     m_quantityHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false),
     m_hostRecovery(HostRecovery::NOT_SET),
-    m_hostRecoveryHasBeenSet(false)
+    m_hostRecoveryHasBeenSet(false),
+    m_outpostArnHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,11 @@ Aws::String AllocateHostsRequest::SerializePayload() const
   if(m_hostRecoveryHasBeenSet)
   {
     ss << "HostRecovery=" << HostRecoveryMapper::GetNameForHostRecovery(m_hostRecovery) << "&";
+  }
+
+  if(m_outpostArnHasBeenSet)
+  {
+    ss << "OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

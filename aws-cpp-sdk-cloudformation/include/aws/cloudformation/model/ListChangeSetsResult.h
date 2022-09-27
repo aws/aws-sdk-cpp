@@ -86,43 +86,43 @@ namespace Model
 
     /**
      * <p>If the output exceeds 1 MB, a string that identifies the next page of change
-     * sets. If there is no additional page, this value is null.</p>
+     * sets. If there is no additional page, this value is <code>null</code>.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>If the output exceeds 1 MB, a string that identifies the next page of change
-     * sets. If there is no additional page, this value is null.</p>
+     * sets. If there is no additional page, this value is <code>null</code>.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
      * <p>If the output exceeds 1 MB, a string that identifies the next page of change
-     * sets. If there is no additional page, this value is null.</p>
+     * sets. If there is no additional page, this value is <code>null</code>.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If the output exceeds 1 MB, a string that identifies the next page of change
-     * sets. If there is no additional page, this value is null.</p>
+     * sets. If there is no additional page, this value is <code>null</code>.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
      * <p>If the output exceeds 1 MB, a string that identifies the next page of change
-     * sets. If there is no additional page, this value is null.</p>
+     * sets. If there is no additional page, this value is <code>null</code>.</p>
      */
     inline ListChangeSetsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>If the output exceeds 1 MB, a string that identifies the next page of change
-     * sets. If there is no additional page, this value is null.</p>
+     * sets. If there is no additional page, this value is <code>null</code>.</p>
      */
     inline ListChangeSetsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If the output exceeds 1 MB, a string that identifies the next page of change
-     * sets. If there is no additional page, this value is null.</p>
+     * sets. If there is no additional page, this value is <code>null</code>.</p>
      */
     inline ListChangeSetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

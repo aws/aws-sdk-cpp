@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>he ID of the application that the route belongs to.</p>
+     * <p>The ID of the application that the route belongs to.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * <p>he ID of the application that the route belongs to.</p>
+     * <p>The ID of the application that the route belongs to.</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationId = value; }
 
     /**
-     * <p>he ID of the application that the route belongs to.</p>
+     * <p>The ID of the application that the route belongs to.</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationId = std::move(value); }
 
     /**
-     * <p>he ID of the application that the route belongs to.</p>
+     * <p>The ID of the application that the route belongs to.</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationId.assign(value); }
 
     /**
-     * <p>he ID of the application that the route belongs to.</p>
+     * <p>The ID of the application that the route belongs to.</p>
      */
     inline DeleteRouteResult& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * <p>he ID of the application that the route belongs to.</p>
+     * <p>The ID of the application that the route belongs to.</p>
      */
     inline DeleteRouteResult& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * <p>he ID of the application that the route belongs to.</p>
+     * <p>The ID of the application that the route belongs to.</p>
      */
     inline DeleteRouteResult& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 

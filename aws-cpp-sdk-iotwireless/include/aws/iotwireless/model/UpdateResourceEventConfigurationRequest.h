@@ -11,6 +11,8 @@
 #include <aws/iotwireless/model/EventNotificationPartnerType.h>
 #include <aws/iotwireless/model/DeviceRegistrationStateEventConfiguration.h>
 #include <aws/iotwireless/model/ProximityEventConfiguration.h>
+#include <aws/iotwireless/model/JoinEventConfiguration.h>
+#include <aws/iotwireless/model/ConnectionStatusEventConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -212,6 +214,68 @@ namespace Model
      */
     inline UpdateResourceEventConfigurationRequest& WithProximity(ProximityEventConfiguration&& value) { SetProximity(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Event configuration for the join event</p>
+     */
+    inline const JoinEventConfiguration& GetJoin() const{ return m_join; }
+
+    /**
+     * <p>Event configuration for the join event</p>
+     */
+    inline bool JoinHasBeenSet() const { return m_joinHasBeenSet; }
+
+    /**
+     * <p>Event configuration for the join event</p>
+     */
+    inline void SetJoin(const JoinEventConfiguration& value) { m_joinHasBeenSet = true; m_join = value; }
+
+    /**
+     * <p>Event configuration for the join event</p>
+     */
+    inline void SetJoin(JoinEventConfiguration&& value) { m_joinHasBeenSet = true; m_join = std::move(value); }
+
+    /**
+     * <p>Event configuration for the join event</p>
+     */
+    inline UpdateResourceEventConfigurationRequest& WithJoin(const JoinEventConfiguration& value) { SetJoin(value); return *this;}
+
+    /**
+     * <p>Event configuration for the join event</p>
+     */
+    inline UpdateResourceEventConfigurationRequest& WithJoin(JoinEventConfiguration&& value) { SetJoin(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Event configuration for the connection status event</p>
+     */
+    inline const ConnectionStatusEventConfiguration& GetConnectionStatus() const{ return m_connectionStatus; }
+
+    /**
+     * <p>Event configuration for the connection status event</p>
+     */
+    inline bool ConnectionStatusHasBeenSet() const { return m_connectionStatusHasBeenSet; }
+
+    /**
+     * <p>Event configuration for the connection status event</p>
+     */
+    inline void SetConnectionStatus(const ConnectionStatusEventConfiguration& value) { m_connectionStatusHasBeenSet = true; m_connectionStatus = value; }
+
+    /**
+     * <p>Event configuration for the connection status event</p>
+     */
+    inline void SetConnectionStatus(ConnectionStatusEventConfiguration&& value) { m_connectionStatusHasBeenSet = true; m_connectionStatus = std::move(value); }
+
+    /**
+     * <p>Event configuration for the connection status event</p>
+     */
+    inline UpdateResourceEventConfigurationRequest& WithConnectionStatus(const ConnectionStatusEventConfiguration& value) { SetConnectionStatus(value); return *this;}
+
+    /**
+     * <p>Event configuration for the connection status event</p>
+     */
+    inline UpdateResourceEventConfigurationRequest& WithConnectionStatus(ConnectionStatusEventConfiguration&& value) { SetConnectionStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_identifier;
@@ -228,6 +292,12 @@ namespace Model
 
     ProximityEventConfiguration m_proximity;
     bool m_proximityHasBeenSet;
+
+    JoinEventConfiguration m_join;
+    bool m_joinHasBeenSet;
+
+    ConnectionStatusEventConfiguration m_connectionStatus;
+    bool m_connectionStatusHasBeenSet;
   };
 
 } // namespace Model

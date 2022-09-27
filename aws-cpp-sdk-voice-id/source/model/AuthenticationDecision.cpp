@@ -26,6 +26,7 @@ namespace Aws
         static const int SPEAKER_NOT_ENROLLED_HASH = HashingUtils::HashString("SPEAKER_NOT_ENROLLED");
         static const int SPEAKER_OPTED_OUT_HASH = HashingUtils::HashString("SPEAKER_OPTED_OUT");
         static const int SPEAKER_ID_NOT_PROVIDED_HASH = HashingUtils::HashString("SPEAKER_ID_NOT_PROVIDED");
+        static const int SPEAKER_EXPIRED_HASH = HashingUtils::HashString("SPEAKER_EXPIRED");
 
 
         AuthenticationDecision GetAuthenticationDecisionForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return AuthenticationDecision::SPEAKER_ID_NOT_PROVIDED;
           }
+          else if (hashCode == SPEAKER_EXPIRED_HASH)
+          {
+            return AuthenticationDecision::SPEAKER_EXPIRED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +86,8 @@ namespace Aws
             return "SPEAKER_OPTED_OUT";
           case AuthenticationDecision::SPEAKER_ID_NOT_PROVIDED:
             return "SPEAKER_ID_NOT_PROVIDED";
+          case AuthenticationDecision::SPEAKER_EXPIRED:
+            return "SPEAKER_EXPIRED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

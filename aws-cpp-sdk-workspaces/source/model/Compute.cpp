@@ -27,6 +27,8 @@ namespace Aws
         static const int GRAPHICS_HASH = HashingUtils::HashString("GRAPHICS");
         static const int POWERPRO_HASH = HashingUtils::HashString("POWERPRO");
         static const int GRAPHICSPRO_HASH = HashingUtils::HashString("GRAPHICSPRO");
+        static const int GRAPHICS_G4DN_HASH = HashingUtils::HashString("GRAPHICS_G4DN");
+        static const int GRAPHICSPRO_G4DN_HASH = HashingUtils::HashString("GRAPHICSPRO_G4DN");
 
 
         Compute GetComputeForName(const Aws::String& name)
@@ -60,6 +62,14 @@ namespace Aws
           {
             return Compute::GRAPHICSPRO;
           }
+          else if (hashCode == GRAPHICS_G4DN_HASH)
+          {
+            return Compute::GRAPHICS_G4DN;
+          }
+          else if (hashCode == GRAPHICSPRO_G4DN_HASH)
+          {
+            return Compute::GRAPHICSPRO_G4DN;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -88,6 +98,10 @@ namespace Aws
             return "POWERPRO";
           case Compute::GRAPHICSPRO:
             return "GRAPHICSPRO";
+          case Compute::GRAPHICS_G4DN:
+            return "GRAPHICS_G4DN";
+          case Compute::GRAPHICSPRO_G4DN:
+            return "GRAPHICSPRO_G4DN";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

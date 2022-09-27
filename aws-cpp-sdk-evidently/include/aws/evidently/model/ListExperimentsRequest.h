@@ -7,6 +7,7 @@
 #include <aws/evidently/CloudWatchEvidently_EXPORTS.h>
 #include <aws/evidently/CloudWatchEvidentlyRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/evidently/model/ExperimentStatus.h>
 #include <utility>
 
 namespace Aws
@@ -148,6 +149,43 @@ namespace Model
      */
     inline ListExperimentsRequest& WithProject(const char* value) { SetProject(value); return *this;}
 
+
+    /**
+     * <p>Use this optional parameter to limit the returned results to only the
+     * experiments with the status that you specify here.</p>
+     */
+    inline const ExperimentStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>Use this optional parameter to limit the returned results to only the
+     * experiments with the status that you specify here.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>Use this optional parameter to limit the returned results to only the
+     * experiments with the status that you specify here.</p>
+     */
+    inline void SetStatus(const ExperimentStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>Use this optional parameter to limit the returned results to only the
+     * experiments with the status that you specify here.</p>
+     */
+    inline void SetStatus(ExperimentStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>Use this optional parameter to limit the returned results to only the
+     * experiments with the status that you specify here.</p>
+     */
+    inline ListExperimentsRequest& WithStatus(const ExperimentStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>Use this optional parameter to limit the returned results to only the
+     * experiments with the status that you specify here.</p>
+     */
+    inline ListExperimentsRequest& WithStatus(ExperimentStatus&& value) { SetStatus(std::move(value)); return *this;}
+
   private:
 
     int m_maxResults;
@@ -158,6 +196,9 @@ namespace Model
 
     Aws::String m_project;
     bool m_projectHasBeenSet;
+
+    ExperimentStatus m_status;
+    bool m_statusHasBeenSet;
   };
 
 } // namespace Model

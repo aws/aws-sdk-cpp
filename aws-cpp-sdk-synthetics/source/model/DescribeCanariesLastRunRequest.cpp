@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 DescribeCanariesLastRunRequest::DescribeCanariesLastRunRequest() : 
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_namesHasBeenSet(false)
 {
 }
 
@@ -32,6 +33,17 @@ Aws::String DescribeCanariesLastRunRequest::SerializePayload() const
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("MaxResults", m_maxResults);
+
+  }
+
+  if(m_namesHasBeenSet)
+  {
+   Array<JsonValue> namesJsonList(m_names.size());
+   for(unsigned namesIndex = 0; namesIndex < namesJsonList.GetLength(); ++namesIndex)
+   {
+     namesJsonList[namesIndex].AsString(m_names[namesIndex]);
+   }
+   payload.WithArray("Names", std::move(namesJsonList));
 
   }
 

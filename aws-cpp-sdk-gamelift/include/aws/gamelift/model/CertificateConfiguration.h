@@ -48,7 +48,6 @@ namespace Model
      * <p>Valid values include: </p> <ul> <li> <p> <b>GENERATED</b> - Generate a
      * TLS/SSL certificate for this fleet.</p> </li> <li> <p> <b>DISABLED</b> -
      * (default) Do not generate a TLS/SSL certificate for this fleet. </p> </li> </ul>
-     * <p> </p>
      */
     inline const CertificateType& GetCertificateType() const{ return m_certificateType; }
 
@@ -57,7 +56,6 @@ namespace Model
      * <p>Valid values include: </p> <ul> <li> <p> <b>GENERATED</b> - Generate a
      * TLS/SSL certificate for this fleet.</p> </li> <li> <p> <b>DISABLED</b> -
      * (default) Do not generate a TLS/SSL certificate for this fleet. </p> </li> </ul>
-     * <p> </p>
      */
     inline bool CertificateTypeHasBeenSet() const { return m_certificateTypeHasBeenSet; }
 
@@ -66,7 +64,6 @@ namespace Model
      * <p>Valid values include: </p> <ul> <li> <p> <b>GENERATED</b> - Generate a
      * TLS/SSL certificate for this fleet.</p> </li> <li> <p> <b>DISABLED</b> -
      * (default) Do not generate a TLS/SSL certificate for this fleet. </p> </li> </ul>
-     * <p> </p>
      */
     inline void SetCertificateType(const CertificateType& value) { m_certificateTypeHasBeenSet = true; m_certificateType = value; }
 
@@ -75,7 +72,6 @@ namespace Model
      * <p>Valid values include: </p> <ul> <li> <p> <b>GENERATED</b> - Generate a
      * TLS/SSL certificate for this fleet.</p> </li> <li> <p> <b>DISABLED</b> -
      * (default) Do not generate a TLS/SSL certificate for this fleet. </p> </li> </ul>
-     * <p> </p>
      */
     inline void SetCertificateType(CertificateType&& value) { m_certificateTypeHasBeenSet = true; m_certificateType = std::move(value); }
 
@@ -84,7 +80,6 @@ namespace Model
      * <p>Valid values include: </p> <ul> <li> <p> <b>GENERATED</b> - Generate a
      * TLS/SSL certificate for this fleet.</p> </li> <li> <p> <b>DISABLED</b> -
      * (default) Do not generate a TLS/SSL certificate for this fleet. </p> </li> </ul>
-     * <p> </p>
      */
     inline CertificateConfiguration& WithCertificateType(const CertificateType& value) { SetCertificateType(value); return *this;}
 
@@ -93,7 +88,6 @@ namespace Model
      * <p>Valid values include: </p> <ul> <li> <p> <b>GENERATED</b> - Generate a
      * TLS/SSL certificate for this fleet.</p> </li> <li> <p> <b>DISABLED</b> -
      * (default) Do not generate a TLS/SSL certificate for this fleet. </p> </li> </ul>
-     * <p> </p>
      */
     inline CertificateConfiguration& WithCertificateType(CertificateType&& value) { SetCertificateType(std::move(value)); return *this;}
 

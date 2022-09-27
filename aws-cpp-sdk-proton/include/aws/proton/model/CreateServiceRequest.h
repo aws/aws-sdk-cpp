@@ -323,9 +323,9 @@ namespace Model
 
     /**
      * <p>A link to a spec file that provides inputs as defined in the service template
-     * bundle schema file. The spec file is in YAML format. Don’t include pipeline
-     * inputs in the spec if your service template <i>doesn’t</i> include a service
-     * pipeline. For more information, see <a
+     * bundle schema file. The spec file is in YAML format. <i>Don’t</i> include
+     * pipeline inputs in the spec if your service template <i>doesn’t</i> include a
+     * service pipeline. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create
      * a service</a> in the <i>Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create
@@ -335,9 +335,9 @@ namespace Model
 
     /**
      * <p>A link to a spec file that provides inputs as defined in the service template
-     * bundle schema file. The spec file is in YAML format. Don’t include pipeline
-     * inputs in the spec if your service template <i>doesn’t</i> include a service
-     * pipeline. For more information, see <a
+     * bundle schema file. The spec file is in YAML format. <i>Don’t</i> include
+     * pipeline inputs in the spec if your service template <i>doesn’t</i> include a
+     * service pipeline. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create
      * a service</a> in the <i>Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create
@@ -347,9 +347,9 @@ namespace Model
 
     /**
      * <p>A link to a spec file that provides inputs as defined in the service template
-     * bundle schema file. The spec file is in YAML format. Don’t include pipeline
-     * inputs in the spec if your service template <i>doesn’t</i> include a service
-     * pipeline. For more information, see <a
+     * bundle schema file. The spec file is in YAML format. <i>Don’t</i> include
+     * pipeline inputs in the spec if your service template <i>doesn’t</i> include a
+     * service pipeline. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create
      * a service</a> in the <i>Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create
@@ -359,9 +359,9 @@ namespace Model
 
     /**
      * <p>A link to a spec file that provides inputs as defined in the service template
-     * bundle schema file. The spec file is in YAML format. Don’t include pipeline
-     * inputs in the spec if your service template <i>doesn’t</i> include a service
-     * pipeline. For more information, see <a
+     * bundle schema file. The spec file is in YAML format. <i>Don’t</i> include
+     * pipeline inputs in the spec if your service template <i>doesn’t</i> include a
+     * service pipeline. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create
      * a service</a> in the <i>Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create
@@ -371,9 +371,9 @@ namespace Model
 
     /**
      * <p>A link to a spec file that provides inputs as defined in the service template
-     * bundle schema file. The spec file is in YAML format. Don’t include pipeline
-     * inputs in the spec if your service template <i>doesn’t</i> include a service
-     * pipeline. For more information, see <a
+     * bundle schema file. The spec file is in YAML format. <i>Don’t</i> include
+     * pipeline inputs in the spec if your service template <i>doesn’t</i> include a
+     * service pipeline. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create
      * a service</a> in the <i>Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create
@@ -383,9 +383,9 @@ namespace Model
 
     /**
      * <p>A link to a spec file that provides inputs as defined in the service template
-     * bundle schema file. The spec file is in YAML format. Don’t include pipeline
-     * inputs in the spec if your service template <i>doesn’t</i> include a service
-     * pipeline. For more information, see <a
+     * bundle schema file. The spec file is in YAML format. <i>Don’t</i> include
+     * pipeline inputs in the spec if your service template <i>doesn’t</i> include a
+     * service pipeline. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create
      * a service</a> in the <i>Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create
@@ -395,9 +395,9 @@ namespace Model
 
     /**
      * <p>A link to a spec file that provides inputs as defined in the service template
-     * bundle schema file. The spec file is in YAML format. Don’t include pipeline
-     * inputs in the spec if your service template <i>doesn’t</i> include a service
-     * pipeline. For more information, see <a
+     * bundle schema file. The spec file is in YAML format. <i>Don’t</i> include
+     * pipeline inputs in the spec if your service template <i>doesn’t</i> include a
+     * service pipeline. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create
      * a service</a> in the <i>Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create
@@ -407,9 +407,9 @@ namespace Model
 
     /**
      * <p>A link to a spec file that provides inputs as defined in the service template
-     * bundle schema file. The spec file is in YAML format. Don’t include pipeline
-     * inputs in the spec if your service template <i>doesn’t</i> include a service
-     * pipeline. For more information, see <a
+     * bundle schema file. The spec file is in YAML format. <i>Don’t</i> include
+     * pipeline inputs in the spec if your service template <i>doesn’t</i> include a
+     * service pipeline. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create
      * a service</a> in the <i>Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create
@@ -419,8 +419,9 @@ namespace Model
 
 
     /**
-     * <p>Create tags for your service. For more information, see <i>Proton resources
-     * and tagging</i> in the <a
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * service. A tag is a key-value pair.</p> <p>For more information, see <i>Proton
+     * resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
      * Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
@@ -429,8 +430,9 @@ namespace Model
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Create tags for your service. For more information, see <i>Proton resources
-     * and tagging</i> in the <a
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * service. A tag is a key-value pair.</p> <p>For more information, see <i>Proton
+     * resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
      * Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
@@ -439,8 +441,9 @@ namespace Model
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Create tags for your service. For more information, see <i>Proton resources
-     * and tagging</i> in the <a
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * service. A tag is a key-value pair.</p> <p>For more information, see <i>Proton
+     * resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
      * Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
@@ -449,8 +452,9 @@ namespace Model
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Create tags for your service. For more information, see <i>Proton resources
-     * and tagging</i> in the <a
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * service. A tag is a key-value pair.</p> <p>For more information, see <i>Proton
+     * resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
      * Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
@@ -459,8 +463,9 @@ namespace Model
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Create tags for your service. For more information, see <i>Proton resources
-     * and tagging</i> in the <a
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * service. A tag is a key-value pair.</p> <p>For more information, see <i>Proton
+     * resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
      * Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
@@ -469,8 +474,9 @@ namespace Model
     inline CreateServiceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Create tags for your service. For more information, see <i>Proton resources
-     * and tagging</i> in the <a
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * service. A tag is a key-value pair.</p> <p>For more information, see <i>Proton
+     * resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
      * Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
@@ -479,8 +485,9 @@ namespace Model
     inline CreateServiceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Create tags for your service. For more information, see <i>Proton resources
-     * and tagging</i> in the <a
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * service. A tag is a key-value pair.</p> <p>For more information, see <i>Proton
+     * resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
      * Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
@@ -489,8 +496,9 @@ namespace Model
     inline CreateServiceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Create tags for your service. For more information, see <i>Proton resources
-     * and tagging</i> in the <a
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * service. A tag is a key-value pair.</p> <p>For more information, see <i>Proton
+     * resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
      * Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton

@@ -28,7 +28,13 @@ DataSourceConfiguration::DataSourceConfiguration() :
     m_confluenceConfigurationHasBeenSet(false),
     m_googleDriveConfigurationHasBeenSet(false),
     m_webCrawlerConfigurationHasBeenSet(false),
-    m_workDocsConfigurationHasBeenSet(false)
+    m_workDocsConfigurationHasBeenSet(false),
+    m_fsxConfigurationHasBeenSet(false),
+    m_slackConfigurationHasBeenSet(false),
+    m_boxConfigurationHasBeenSet(false),
+    m_quipConfigurationHasBeenSet(false),
+    m_jiraConfigurationHasBeenSet(false),
+    m_gitHubConfigurationHasBeenSet(false)
 {
 }
 
@@ -42,7 +48,13 @@ DataSourceConfiguration::DataSourceConfiguration(JsonView jsonValue) :
     m_confluenceConfigurationHasBeenSet(false),
     m_googleDriveConfigurationHasBeenSet(false),
     m_webCrawlerConfigurationHasBeenSet(false),
-    m_workDocsConfigurationHasBeenSet(false)
+    m_workDocsConfigurationHasBeenSet(false),
+    m_fsxConfigurationHasBeenSet(false),
+    m_slackConfigurationHasBeenSet(false),
+    m_boxConfigurationHasBeenSet(false),
+    m_quipConfigurationHasBeenSet(false),
+    m_jiraConfigurationHasBeenSet(false),
+    m_gitHubConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -119,6 +131,48 @@ DataSourceConfiguration& DataSourceConfiguration::operator =(JsonView jsonValue)
     m_workDocsConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FsxConfiguration"))
+  {
+    m_fsxConfiguration = jsonValue.GetObject("FsxConfiguration");
+
+    m_fsxConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SlackConfiguration"))
+  {
+    m_slackConfiguration = jsonValue.GetObject("SlackConfiguration");
+
+    m_slackConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("BoxConfiguration"))
+  {
+    m_boxConfiguration = jsonValue.GetObject("BoxConfiguration");
+
+    m_boxConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("QuipConfiguration"))
+  {
+    m_quipConfiguration = jsonValue.GetObject("QuipConfiguration");
+
+    m_quipConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("JiraConfiguration"))
+  {
+    m_jiraConfiguration = jsonValue.GetObject("JiraConfiguration");
+
+    m_jiraConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("GitHubConfiguration"))
+  {
+    m_gitHubConfiguration = jsonValue.GetObject("GitHubConfiguration");
+
+    m_gitHubConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -183,6 +237,42 @@ JsonValue DataSourceConfiguration::Jsonize() const
   if(m_workDocsConfigurationHasBeenSet)
   {
    payload.WithObject("WorkDocsConfiguration", m_workDocsConfiguration.Jsonize());
+
+  }
+
+  if(m_fsxConfigurationHasBeenSet)
+  {
+   payload.WithObject("FsxConfiguration", m_fsxConfiguration.Jsonize());
+
+  }
+
+  if(m_slackConfigurationHasBeenSet)
+  {
+   payload.WithObject("SlackConfiguration", m_slackConfiguration.Jsonize());
+
+  }
+
+  if(m_boxConfigurationHasBeenSet)
+  {
+   payload.WithObject("BoxConfiguration", m_boxConfiguration.Jsonize());
+
+  }
+
+  if(m_quipConfigurationHasBeenSet)
+  {
+   payload.WithObject("QuipConfiguration", m_quipConfiguration.Jsonize());
+
+  }
+
+  if(m_jiraConfigurationHasBeenSet)
+  {
+   payload.WithObject("JiraConfiguration", m_jiraConfiguration.Jsonize());
+
+  }
+
+  if(m_gitHubConfigurationHasBeenSet)
+  {
+   payload.WithObject("GitHubConfiguration", m_gitHubConfiguration.Jsonize());
 
   }
 

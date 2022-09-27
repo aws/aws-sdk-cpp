@@ -29,9 +29,10 @@ namespace Model
   /**
    * <p>Describes an access key for an Amazon Lightsail bucket.</p> <p>Access keys
    * grant full programmatic access to the specified bucket and its objects. You can
-   * have a maximum of two access keys per bucket. Use the
-   * <a>CreateBucketAccessKey</a> action to create an access key for a specific
-   * bucket. For more information about access keys, see <a
+   * have a maximum of two access keys per bucket. Use the <a
+   * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucketAccessKey.html">CreateBucketAccessKey</a>
+   * action to create an access key for a specific bucket. For more information about
+   * access keys, see <a
    * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-bucket-access-keys">Creating
    * access keys for a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail
    * Developer Guide</i>.</p>  <p>The <code>secretAccessKey</code> value
@@ -219,55 +220,61 @@ namespace Model
 
     /**
      * <p>An object that describes the last time the access key was used.</p> 
-     * <p>This object does not include data in the response of a
-     * <a>CreateBucketAccessKey</a> action. If the access key has not been used, the
-     * <code>region</code> and <code>serviceName</code> values are <code>N/A</code>,
-     * and the <code>lastUsedDate</code> value is null.</p> 
+     * <p>This object does not include data in the response of a <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucketAccessKey.html">CreateBucketAccessKey</a>
+     * action. If the access key has not been used, the <code>region</code> and
+     * <code>serviceName</code> values are <code>N/A</code>, and the
+     * <code>lastUsedDate</code> value is null.</p> 
      */
     inline const AccessKeyLastUsed& GetLastUsed() const{ return m_lastUsed; }
 
     /**
      * <p>An object that describes the last time the access key was used.</p> 
-     * <p>This object does not include data in the response of a
-     * <a>CreateBucketAccessKey</a> action. If the access key has not been used, the
-     * <code>region</code> and <code>serviceName</code> values are <code>N/A</code>,
-     * and the <code>lastUsedDate</code> value is null.</p> 
+     * <p>This object does not include data in the response of a <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucketAccessKey.html">CreateBucketAccessKey</a>
+     * action. If the access key has not been used, the <code>region</code> and
+     * <code>serviceName</code> values are <code>N/A</code>, and the
+     * <code>lastUsedDate</code> value is null.</p> 
      */
     inline bool LastUsedHasBeenSet() const { return m_lastUsedHasBeenSet; }
 
     /**
      * <p>An object that describes the last time the access key was used.</p> 
-     * <p>This object does not include data in the response of a
-     * <a>CreateBucketAccessKey</a> action. If the access key has not been used, the
-     * <code>region</code> and <code>serviceName</code> values are <code>N/A</code>,
-     * and the <code>lastUsedDate</code> value is null.</p> 
+     * <p>This object does not include data in the response of a <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucketAccessKey.html">CreateBucketAccessKey</a>
+     * action. If the access key has not been used, the <code>region</code> and
+     * <code>serviceName</code> values are <code>N/A</code>, and the
+     * <code>lastUsedDate</code> value is null.</p> 
      */
     inline void SetLastUsed(const AccessKeyLastUsed& value) { m_lastUsedHasBeenSet = true; m_lastUsed = value; }
 
     /**
      * <p>An object that describes the last time the access key was used.</p> 
-     * <p>This object does not include data in the response of a
-     * <a>CreateBucketAccessKey</a> action. If the access key has not been used, the
-     * <code>region</code> and <code>serviceName</code> values are <code>N/A</code>,
-     * and the <code>lastUsedDate</code> value is null.</p> 
+     * <p>This object does not include data in the response of a <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucketAccessKey.html">CreateBucketAccessKey</a>
+     * action. If the access key has not been used, the <code>region</code> and
+     * <code>serviceName</code> values are <code>N/A</code>, and the
+     * <code>lastUsedDate</code> value is null.</p> 
      */
     inline void SetLastUsed(AccessKeyLastUsed&& value) { m_lastUsedHasBeenSet = true; m_lastUsed = std::move(value); }
 
     /**
      * <p>An object that describes the last time the access key was used.</p> 
-     * <p>This object does not include data in the response of a
-     * <a>CreateBucketAccessKey</a> action. If the access key has not been used, the
-     * <code>region</code> and <code>serviceName</code> values are <code>N/A</code>,
-     * and the <code>lastUsedDate</code> value is null.</p> 
+     * <p>This object does not include data in the response of a <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucketAccessKey.html">CreateBucketAccessKey</a>
+     * action. If the access key has not been used, the <code>region</code> and
+     * <code>serviceName</code> values are <code>N/A</code>, and the
+     * <code>lastUsedDate</code> value is null.</p> 
      */
     inline AccessKey& WithLastUsed(const AccessKeyLastUsed& value) { SetLastUsed(value); return *this;}
 
     /**
      * <p>An object that describes the last time the access key was used.</p> 
-     * <p>This object does not include data in the response of a
-     * <a>CreateBucketAccessKey</a> action. If the access key has not been used, the
-     * <code>region</code> and <code>serviceName</code> values are <code>N/A</code>,
-     * and the <code>lastUsedDate</code> value is null.</p> 
+     * <p>This object does not include data in the response of a <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucketAccessKey.html">CreateBucketAccessKey</a>
+     * action. If the access key has not been used, the <code>region</code> and
+     * <code>serviceName</code> values are <code>N/A</code>, and the
+     * <code>lastUsedDate</code> value is null.</p> 
      */
     inline AccessKey& WithLastUsed(AccessKeyLastUsed&& value) { SetLastUsed(std::move(value)); return *this;}
 

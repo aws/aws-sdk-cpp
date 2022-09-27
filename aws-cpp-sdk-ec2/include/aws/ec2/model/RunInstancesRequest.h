@@ -22,6 +22,7 @@
 #include <aws/ec2/model/InstanceMetadataOptionsRequest.h>
 #include <aws/ec2/model/EnclaveOptionsRequest.h>
 #include <aws/ec2/model/PrivateDnsNameOptionsRequest.h>
+#include <aws/ec2/model/InstanceMaintenanceOptionsRequest.h>
 #include <aws/ec2/model/BlockDeviceMapping.h>
 #include <aws/ec2/model/InstanceIpv6Address.h>
 #include <aws/ec2/model/InstanceNetworkInterfaceSpecification.h>
@@ -955,7 +956,8 @@ namespace Model
 
 
     /**
-     * <p>The user data to make available to the instance. For more information, see <a
+     * <p>The user data script to make available to the instance. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run
      * commands on your Linux instance at launch</a> and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html">Run
@@ -967,7 +969,8 @@ namespace Model
     inline const Aws::String& GetUserData() const{ return m_userData; }
 
     /**
-     * <p>The user data to make available to the instance. For more information, see <a
+     * <p>The user data script to make available to the instance. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run
      * commands on your Linux instance at launch</a> and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html">Run
@@ -979,7 +982,8 @@ namespace Model
     inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
 
     /**
-     * <p>The user data to make available to the instance. For more information, see <a
+     * <p>The user data script to make available to the instance. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run
      * commands on your Linux instance at launch</a> and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html">Run
@@ -991,7 +995,8 @@ namespace Model
     inline void SetUserData(const Aws::String& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
-     * <p>The user data to make available to the instance. For more information, see <a
+     * <p>The user data script to make available to the instance. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run
      * commands on your Linux instance at launch</a> and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html">Run
@@ -1003,7 +1008,8 @@ namespace Model
     inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
 
     /**
-     * <p>The user data to make available to the instance. For more information, see <a
+     * <p>The user data script to make available to the instance. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run
      * commands on your Linux instance at launch</a> and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html">Run
@@ -1015,7 +1021,8 @@ namespace Model
     inline void SetUserData(const char* value) { m_userDataHasBeenSet = true; m_userData.assign(value); }
 
     /**
-     * <p>The user data to make available to the instance. For more information, see <a
+     * <p>The user data script to make available to the instance. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run
      * commands on your Linux instance at launch</a> and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html">Run
@@ -1027,7 +1034,8 @@ namespace Model
     inline RunInstancesRequest& WithUserData(const Aws::String& value) { SetUserData(value); return *this;}
 
     /**
-     * <p>The user data to make available to the instance. For more information, see <a
+     * <p>The user data script to make available to the instance. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run
      * commands on your Linux instance at launch</a> and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html">Run
@@ -1039,7 +1047,8 @@ namespace Model
     inline RunInstancesRequest& WithUserData(Aws::String&& value) { SetUserData(std::move(value)); return *this;}
 
     /**
-     * <p>The user data to make available to the instance. For more information, see <a
+     * <p>The user data script to make available to the instance. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run
      * commands on your Linux instance at launch</a> and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html">Run
@@ -2226,6 +2235,70 @@ namespace Model
      */
     inline RunInstancesRequest& WithPrivateDnsNameOptions(PrivateDnsNameOptionsRequest&& value) { SetPrivateDnsNameOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The maintenance and recovery options for the instance.</p>
+     */
+    inline const InstanceMaintenanceOptionsRequest& GetMaintenanceOptions() const{ return m_maintenanceOptions; }
+
+    /**
+     * <p>The maintenance and recovery options for the instance.</p>
+     */
+    inline bool MaintenanceOptionsHasBeenSet() const { return m_maintenanceOptionsHasBeenSet; }
+
+    /**
+     * <p>The maintenance and recovery options for the instance.</p>
+     */
+    inline void SetMaintenanceOptions(const InstanceMaintenanceOptionsRequest& value) { m_maintenanceOptionsHasBeenSet = true; m_maintenanceOptions = value; }
+
+    /**
+     * <p>The maintenance and recovery options for the instance.</p>
+     */
+    inline void SetMaintenanceOptions(InstanceMaintenanceOptionsRequest&& value) { m_maintenanceOptionsHasBeenSet = true; m_maintenanceOptions = std::move(value); }
+
+    /**
+     * <p>The maintenance and recovery options for the instance.</p>
+     */
+    inline RunInstancesRequest& WithMaintenanceOptions(const InstanceMaintenanceOptionsRequest& value) { SetMaintenanceOptions(value); return *this;}
+
+    /**
+     * <p>The maintenance and recovery options for the instance.</p>
+     */
+    inline RunInstancesRequest& WithMaintenanceOptions(InstanceMaintenanceOptionsRequest&& value) { SetMaintenanceOptions(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Indicates whether an instance is enabled for stop protection. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     * Protection</a>. </p>
+     */
+    inline bool GetDisableApiStop() const{ return m_disableApiStop; }
+
+    /**
+     * <p>Indicates whether an instance is enabled for stop protection. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     * Protection</a>. </p>
+     */
+    inline bool DisableApiStopHasBeenSet() const { return m_disableApiStopHasBeenSet; }
+
+    /**
+     * <p>Indicates whether an instance is enabled for stop protection. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     * Protection</a>. </p>
+     */
+    inline void SetDisableApiStop(bool value) { m_disableApiStopHasBeenSet = true; m_disableApiStop = value; }
+
+    /**
+     * <p>Indicates whether an instance is enabled for stop protection. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     * Protection</a>. </p>
+     */
+    inline RunInstancesRequest& WithDisableApiStop(bool value) { SetDisableApiStop(value); return *this;}
+
   private:
 
     Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
@@ -2341,6 +2414,12 @@ namespace Model
 
     PrivateDnsNameOptionsRequest m_privateDnsNameOptions;
     bool m_privateDnsNameOptionsHasBeenSet;
+
+    InstanceMaintenanceOptionsRequest m_maintenanceOptions;
+    bool m_maintenanceOptionsHasBeenSet;
+
+    bool m_disableApiStop;
+    bool m_disableApiStopHasBeenSet;
   };
 
 } // namespace Model

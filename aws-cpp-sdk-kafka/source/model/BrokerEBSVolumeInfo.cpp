@@ -20,6 +20,7 @@ namespace Model
 
 BrokerEBSVolumeInfo::BrokerEBSVolumeInfo() : 
     m_kafkaBrokerNodeIdHasBeenSet(false),
+    m_provisionedThroughputHasBeenSet(false),
     m_volumeSizeGB(0),
     m_volumeSizeGBHasBeenSet(false)
 {
@@ -27,6 +28,7 @@ BrokerEBSVolumeInfo::BrokerEBSVolumeInfo() :
 
 BrokerEBSVolumeInfo::BrokerEBSVolumeInfo(JsonView jsonValue) : 
     m_kafkaBrokerNodeIdHasBeenSet(false),
+    m_provisionedThroughputHasBeenSet(false),
     m_volumeSizeGB(0),
     m_volumeSizeGBHasBeenSet(false)
 {
@@ -40,6 +42,13 @@ BrokerEBSVolumeInfo& BrokerEBSVolumeInfo::operator =(JsonView jsonValue)
     m_kafkaBrokerNodeId = jsonValue.GetString("kafkaBrokerNodeId");
 
     m_kafkaBrokerNodeIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("provisionedThroughput"))
+  {
+    m_provisionedThroughput = jsonValue.GetObject("provisionedThroughput");
+
+    m_provisionedThroughputHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("volumeSizeGB"))
@@ -59,6 +68,12 @@ JsonValue BrokerEBSVolumeInfo::Jsonize() const
   if(m_kafkaBrokerNodeIdHasBeenSet)
   {
    payload.WithString("kafkaBrokerNodeId", m_kafkaBrokerNodeId);
+
+  }
+
+  if(m_provisionedThroughputHasBeenSet)
+  {
+   payload.WithObject("provisionedThroughput", m_provisionedThroughput.Jsonize());
 
   }
 

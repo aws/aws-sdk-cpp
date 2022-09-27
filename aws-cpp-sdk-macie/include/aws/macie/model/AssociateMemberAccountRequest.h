@@ -35,50 +35,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account that you want to associate with Amazon Macie
-     * Classic as a member account.</p>
+     * <p>(Discontinued) The ID of the Amazon Web Services account that you want to
+     * associate with Amazon Macie Classic as a member account.</p>
      */
     inline const Aws::String& GetMemberAccountId() const{ return m_memberAccountId; }
 
     /**
-     * <p>The ID of the AWS account that you want to associate with Amazon Macie
-     * Classic as a member account.</p>
+     * <p>(Discontinued) The ID of the Amazon Web Services account that you want to
+     * associate with Amazon Macie Classic as a member account.</p>
      */
     inline bool MemberAccountIdHasBeenSet() const { return m_memberAccountIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that you want to associate with Amazon Macie
-     * Classic as a member account.</p>
+     * <p>(Discontinued) The ID of the Amazon Web Services account that you want to
+     * associate with Amazon Macie Classic as a member account.</p>
      */
     inline void SetMemberAccountId(const Aws::String& value) { m_memberAccountIdHasBeenSet = true; m_memberAccountId = value; }
 
     /**
-     * <p>The ID of the AWS account that you want to associate with Amazon Macie
-     * Classic as a member account.</p>
+     * <p>(Discontinued) The ID of the Amazon Web Services account that you want to
+     * associate with Amazon Macie Classic as a member account.</p>
      */
     inline void SetMemberAccountId(Aws::String&& value) { m_memberAccountIdHasBeenSet = true; m_memberAccountId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that you want to associate with Amazon Macie
-     * Classic as a member account.</p>
+     * <p>(Discontinued) The ID of the Amazon Web Services account that you want to
+     * associate with Amazon Macie Classic as a member account.</p>
      */
     inline void SetMemberAccountId(const char* value) { m_memberAccountIdHasBeenSet = true; m_memberAccountId.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that you want to associate with Amazon Macie
-     * Classic as a member account.</p>
+     * <p>(Discontinued) The ID of the Amazon Web Services account that you want to
+     * associate with Amazon Macie Classic as a member account.</p>
      */
     inline AssociateMemberAccountRequest& WithMemberAccountId(const Aws::String& value) { SetMemberAccountId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that you want to associate with Amazon Macie
-     * Classic as a member account.</p>
+     * <p>(Discontinued) The ID of the Amazon Web Services account that you want to
+     * associate with Amazon Macie Classic as a member account.</p>
      */
     inline AssociateMemberAccountRequest& WithMemberAccountId(Aws::String&& value) { SetMemberAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that you want to associate with Amazon Macie
-     * Classic as a member account.</p>
+     * <p>(Discontinued) The ID of the Amazon Web Services account that you want to
+     * associate with Amazon Macie Classic as a member account.</p>
      */
     inline AssociateMemberAccountRequest& WithMemberAccountId(const char* value) { SetMemberAccountId(value); return *this;}
 

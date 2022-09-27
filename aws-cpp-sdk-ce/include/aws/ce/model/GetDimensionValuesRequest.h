@@ -144,48 +144,42 @@ namespace Model
 
     /**
      * <p>The name of the dimension. Each <code>Dimension</code> is available for a
-     * different <code>Context</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html#awscostmanagement-GetDimensionValues-request-Context">Context</a>.
+     * different <code>Context</code>. For more information, see <code>Context</code>.
      * </p>
      */
     inline const Dimension& GetDimension() const{ return m_dimension; }
 
     /**
      * <p>The name of the dimension. Each <code>Dimension</code> is available for a
-     * different <code>Context</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html#awscostmanagement-GetDimensionValues-request-Context">Context</a>.
+     * different <code>Context</code>. For more information, see <code>Context</code>.
      * </p>
      */
     inline bool DimensionHasBeenSet() const { return m_dimensionHasBeenSet; }
 
     /**
      * <p>The name of the dimension. Each <code>Dimension</code> is available for a
-     * different <code>Context</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html#awscostmanagement-GetDimensionValues-request-Context">Context</a>.
+     * different <code>Context</code>. For more information, see <code>Context</code>.
      * </p>
      */
     inline void SetDimension(const Dimension& value) { m_dimensionHasBeenSet = true; m_dimension = value; }
 
     /**
      * <p>The name of the dimension. Each <code>Dimension</code> is available for a
-     * different <code>Context</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html#awscostmanagement-GetDimensionValues-request-Context">Context</a>.
+     * different <code>Context</code>. For more information, see <code>Context</code>.
      * </p>
      */
     inline void SetDimension(Dimension&& value) { m_dimensionHasBeenSet = true; m_dimension = std::move(value); }
 
     /**
      * <p>The name of the dimension. Each <code>Dimension</code> is available for a
-     * different <code>Context</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html#awscostmanagement-GetDimensionValues-request-Context">Context</a>.
+     * different <code>Context</code>. For more information, see <code>Context</code>.
      * </p>
      */
     inline GetDimensionValuesRequest& WithDimension(const Dimension& value) { SetDimension(value); return *this;}
 
     /**
      * <p>The name of the dimension. Each <code>Dimension</code> is available for a
-     * different <code>Context</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html#awscostmanagement-GetDimensionValues-request-Context">Context</a>.
+     * different <code>Context</code>. For more information, see <code>Context</code>.
      * </p>
      */
     inline GetDimensionValuesRequest& WithDimension(Dimension&& value) { SetDimension(std::move(value)); return *this;}
@@ -201,37 +195,58 @@ namespace Model
      * <code>GetCostAndUsage</code> operation.</p> <p>If you set the context to
      * <code>COST_AND_USAGE</code>, you can use the following dimensions for
      * searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is
-     * <code>us-east-1a</code>.</p> </li> <li> <p>DATABASE_ENGINE - The Amazon
-     * Relational Database Service database. Examples are Aurora or MySQL.</p> </li>
-     * <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is
-     * <code>m4.xlarge</code>.</p> </li> <li> <p>LEGAL_ENTITY_NAME - The name of the
-     * organization that sells you Amazon Web Services services, such as Amazon Web
-     * Services.</p> </li> <li> <p>LINKED_ACCOUNT - The description in the attribute
-     * map that includes the full name of the member account. The value field contains
-     * the Amazon Web Services ID of the member account.</p> </li> <li>
-     * <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p>
-     * </li> <li> <p>OPERATION - The action performed. Examples include
-     * <code>RunInstance</code> and <code>CreateBucket</code>.</p> </li> <li>
-     * <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or
-     * Linux.</p> </li> <li> <p>PURCHASE_TYPE - The reservation type of the purchase to
-     * which this usage is related. Examples include On-Demand Instances and Standard
-     * Reserved Instances.</p> </li> <li> <p>SERVICE - The Amazon Web Services service
-     * such as Amazon DynamoDB.</p> </li> <li> <p>USAGE_TYPE - The type of usage. An
-     * example is DataTransfer-In-Bytes. The response for the
+     * <code>us-east-1a</code>.</p> </li> <li> <p>BILLING_ENTITY - The Amazon Web
+     * Services seller that your account is with. Possible values are the
+     * following:</p> <p>- Amazon Web Services(Amazon Web Services): The entity that
+     * sells Amazon Web Services.</p> <p>- AISPL (Amazon Internet Services Pvt. Ltd.):
+     * The local Indian entity that's an acting reseller for Amazon Web Services in
+     * India.</p> <p>- Amazon Web Services Marketplace: The entity that supports the
+     * sale of solutions that are built on Amazon Web Services by third-party software
+     * providers.</p> </li> <li> <p>CACHE_ENGINE - The Amazon ElastiCache operating
+     * system. Examples are Windows or Linux.</p> </li> <li> <p>DEPLOYMENT_OPTION - The
+     * scope of Amazon Relational Database Service deployments. Valid values are
+     * <code>SingleAZ</code> and <code>MultiAZ</code>.</p> </li> <li>
+     * <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples
+     * are Aurora or MySQL.</p> </li> <li> <p>INSTANCE_TYPE - The type of Amazon EC2
+     * instance. An example is <code>m4.xlarge</code>.</p> </li> <li>
+     * <p>INSTANCE_TYPE_FAMILY - A family of instance types optimized to fit different
+     * use cases. Examples are <code>Compute Optimized</code> (for example,
+     * <code>C4</code>, <code>C5</code>, <code>C6g</code>, and <code>C7g</code>),
+     * <code>Memory Optimization</code> (for example, <code>R4</code>,
+     * <code>R5n</code>, <code>R5b</code>, and <code>R6g</code>).</p> </li> <li>
+     * <p>INVOICING_ENTITY - The name of the entity that issues the Amazon Web Services
+     * invoice.</p> </li> <li> <p>LEGAL_ENTITY_NAME - The name of the organization that
+     * sells you Amazon Web Services services, such as Amazon Web Services.</p> </li>
+     * <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the
+     * full name of the member account. The value field contains the Amazon Web
+     * Services ID of the member account.</p> </li> <li> <p>OPERATING_SYSTEM - The
+     * operating system. Examples are Windows or Linux.</p> </li> <li> <p>OPERATION -
+     * The action performed. Examples include <code>RunInstance</code> and
+     * <code>CreateBucket</code>.</p> </li> <li> <p>PLATFORM - The Amazon EC2 operating
+     * system. Examples are Windows or Linux.</p> </li> <li> <p>PURCHASE_TYPE - The
+     * reservation type of the purchase that this usage is related to. Examples include
+     * On-Demand Instances and Standard Reserved Instances.</p> </li> <li>
+     * <p>RESERVATION_ID - The unique identifier for an Amazon Web Services Reservation
+     * Instance.</p> </li> <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your
+     * Savings Plans.</p> </li> <li> <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2
+     * Instance or Compute).</p> </li> <li> <p>SERVICE - The Amazon Web Services
+     * service such as Amazon DynamoDB.</p> </li> <li> <p>TENANCY - The tenancy of a
+     * resource. Examples are shared or dedicated.</p> </li> <li> <p>USAGE_TYPE - The
+     * type of usage. An example is DataTransfer-In-Bytes. The response for the
      * <code>GetDimensionValues</code> operation includes a unit attribute. Examples
      * include GB and Hrs.</p> </li> <li> <p>USAGE_TYPE_GROUP - The grouping of common
      * usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for
      * this operation includes a unit attribute.</p> </li> <li> <p>REGION - The Amazon
      * Web Services Region.</p> </li> <li> <p>RECORD_TYPE - The different types of
-     * charges such as RI fees, usage costs, tax refunds, and credits.</p> </li> <li>
-     * <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in
-     * feature only available for last 14 days for EC2-Compute Service.</p> </li> </ul>
-     * <p>If you set the context to <code>RESERVATIONS</code>, you can use the
-     * following dimensions for searching:</p> <ul> <li> <p>AZ - The Availability Zone.
-     * An example is <code>us-east-1a</code>.</p> </li> <li> <p>CACHE_ENGINE - The
-     * Amazon ElastiCache operating system. Examples are Windows or Linux.</p> </li>
-     * <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service
-     * deployments. Valid values are <code>SingleAZ</code> and
+     * charges such as Reserved Instance (RI) fees, usage costs, tax refunds, and
+     * credits.</p> </li> <li> <p>RESOURCE_ID - The unique identifier of the resource.
+     * ResourceId is an opt-in feature only available for last 14 days for EC2-Compute
+     * Service.</p> </li> </ul> <p>If you set the context to <code>RESERVATIONS</code>,
+     * you can use the following dimensions for searching:</p> <ul> <li> <p>AZ - The
+     * Availability Zone. An example is <code>us-east-1a</code>.</p> </li> <li>
+     * <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows
+     * or Linux.</p> </li> <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational
+     * Database Service deployments. Valid values are <code>SingleAZ</code> and
      * <code>MultiAZ</code>.</p> </li> <li> <p>INSTANCE_TYPE - The type of Amazon EC2
      * instance. An example is <code>m4.xlarge</code>.</p> </li> <li> <p>LINKED_ACCOUNT
      * - The description in the attribute map that includes the full name of the member
@@ -245,14 +260,14 @@ namespace Model
      * or dedicated.</p> </li> </ul> <p>If you set the context to
      * <code>SAVINGS_PLANS</code>, you can use the following dimensions for
      * searching:</p> <ul> <li> <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2
-     * Instance or Compute)</p> </li> <li> <p>PAYMENT_OPTION - Payment option for the
-     * given Savings Plans (for example, All Upfront)</p> </li> <li> <p>REGION - The
-     * Amazon Web Services Region.</p> </li> <li> <p>INSTANCE_TYPE_FAMILY - The family
-     * of instances (For example, <code>m5</code>)</p> </li> <li> <p>LINKED_ACCOUNT -
-     * The description in the attribute map that includes the full name of the member
-     * account. The value field contains the Amazon Web Services ID of the member
-     * account.</p> </li> <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your
-     * Savings Plan</p> </li> </ul>
+     * Instance or Compute)</p> </li> <li> <p>PAYMENT_OPTION - The payment option for
+     * the given Savings Plans (for example, All Upfront)</p> </li> <li> <p>REGION -
+     * The Amazon Web Services Region.</p> </li> <li> <p>INSTANCE_TYPE_FAMILY - The
+     * family of instances (For example, <code>m5</code>)</p> </li> <li>
+     * <p>LINKED_ACCOUNT - The description in the attribute map that includes the full
+     * name of the member account. The value field contains the Amazon Web Services ID
+     * of the member account.</p> </li> <li> <p>SAVINGS_PLAN_ARN - The unique
+     * identifier for your Savings Plans.</p> </li> </ul>
      */
     inline const Context& GetContext() const{ return m_context; }
 
@@ -266,37 +281,58 @@ namespace Model
      * <code>GetCostAndUsage</code> operation.</p> <p>If you set the context to
      * <code>COST_AND_USAGE</code>, you can use the following dimensions for
      * searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is
-     * <code>us-east-1a</code>.</p> </li> <li> <p>DATABASE_ENGINE - The Amazon
-     * Relational Database Service database. Examples are Aurora or MySQL.</p> </li>
-     * <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is
-     * <code>m4.xlarge</code>.</p> </li> <li> <p>LEGAL_ENTITY_NAME - The name of the
-     * organization that sells you Amazon Web Services services, such as Amazon Web
-     * Services.</p> </li> <li> <p>LINKED_ACCOUNT - The description in the attribute
-     * map that includes the full name of the member account. The value field contains
-     * the Amazon Web Services ID of the member account.</p> </li> <li>
-     * <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p>
-     * </li> <li> <p>OPERATION - The action performed. Examples include
-     * <code>RunInstance</code> and <code>CreateBucket</code>.</p> </li> <li>
-     * <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or
-     * Linux.</p> </li> <li> <p>PURCHASE_TYPE - The reservation type of the purchase to
-     * which this usage is related. Examples include On-Demand Instances and Standard
-     * Reserved Instances.</p> </li> <li> <p>SERVICE - The Amazon Web Services service
-     * such as Amazon DynamoDB.</p> </li> <li> <p>USAGE_TYPE - The type of usage. An
-     * example is DataTransfer-In-Bytes. The response for the
+     * <code>us-east-1a</code>.</p> </li> <li> <p>BILLING_ENTITY - The Amazon Web
+     * Services seller that your account is with. Possible values are the
+     * following:</p> <p>- Amazon Web Services(Amazon Web Services): The entity that
+     * sells Amazon Web Services.</p> <p>- AISPL (Amazon Internet Services Pvt. Ltd.):
+     * The local Indian entity that's an acting reseller for Amazon Web Services in
+     * India.</p> <p>- Amazon Web Services Marketplace: The entity that supports the
+     * sale of solutions that are built on Amazon Web Services by third-party software
+     * providers.</p> </li> <li> <p>CACHE_ENGINE - The Amazon ElastiCache operating
+     * system. Examples are Windows or Linux.</p> </li> <li> <p>DEPLOYMENT_OPTION - The
+     * scope of Amazon Relational Database Service deployments. Valid values are
+     * <code>SingleAZ</code> and <code>MultiAZ</code>.</p> </li> <li>
+     * <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples
+     * are Aurora or MySQL.</p> </li> <li> <p>INSTANCE_TYPE - The type of Amazon EC2
+     * instance. An example is <code>m4.xlarge</code>.</p> </li> <li>
+     * <p>INSTANCE_TYPE_FAMILY - A family of instance types optimized to fit different
+     * use cases. Examples are <code>Compute Optimized</code> (for example,
+     * <code>C4</code>, <code>C5</code>, <code>C6g</code>, and <code>C7g</code>),
+     * <code>Memory Optimization</code> (for example, <code>R4</code>,
+     * <code>R5n</code>, <code>R5b</code>, and <code>R6g</code>).</p> </li> <li>
+     * <p>INVOICING_ENTITY - The name of the entity that issues the Amazon Web Services
+     * invoice.</p> </li> <li> <p>LEGAL_ENTITY_NAME - The name of the organization that
+     * sells you Amazon Web Services services, such as Amazon Web Services.</p> </li>
+     * <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the
+     * full name of the member account. The value field contains the Amazon Web
+     * Services ID of the member account.</p> </li> <li> <p>OPERATING_SYSTEM - The
+     * operating system. Examples are Windows or Linux.</p> </li> <li> <p>OPERATION -
+     * The action performed. Examples include <code>RunInstance</code> and
+     * <code>CreateBucket</code>.</p> </li> <li> <p>PLATFORM - The Amazon EC2 operating
+     * system. Examples are Windows or Linux.</p> </li> <li> <p>PURCHASE_TYPE - The
+     * reservation type of the purchase that this usage is related to. Examples include
+     * On-Demand Instances and Standard Reserved Instances.</p> </li> <li>
+     * <p>RESERVATION_ID - The unique identifier for an Amazon Web Services Reservation
+     * Instance.</p> </li> <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your
+     * Savings Plans.</p> </li> <li> <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2
+     * Instance or Compute).</p> </li> <li> <p>SERVICE - The Amazon Web Services
+     * service such as Amazon DynamoDB.</p> </li> <li> <p>TENANCY - The tenancy of a
+     * resource. Examples are shared or dedicated.</p> </li> <li> <p>USAGE_TYPE - The
+     * type of usage. An example is DataTransfer-In-Bytes. The response for the
      * <code>GetDimensionValues</code> operation includes a unit attribute. Examples
      * include GB and Hrs.</p> </li> <li> <p>USAGE_TYPE_GROUP - The grouping of common
      * usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for
      * this operation includes a unit attribute.</p> </li> <li> <p>REGION - The Amazon
      * Web Services Region.</p> </li> <li> <p>RECORD_TYPE - The different types of
-     * charges such as RI fees, usage costs, tax refunds, and credits.</p> </li> <li>
-     * <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in
-     * feature only available for last 14 days for EC2-Compute Service.</p> </li> </ul>
-     * <p>If you set the context to <code>RESERVATIONS</code>, you can use the
-     * following dimensions for searching:</p> <ul> <li> <p>AZ - The Availability Zone.
-     * An example is <code>us-east-1a</code>.</p> </li> <li> <p>CACHE_ENGINE - The
-     * Amazon ElastiCache operating system. Examples are Windows or Linux.</p> </li>
-     * <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service
-     * deployments. Valid values are <code>SingleAZ</code> and
+     * charges such as Reserved Instance (RI) fees, usage costs, tax refunds, and
+     * credits.</p> </li> <li> <p>RESOURCE_ID - The unique identifier of the resource.
+     * ResourceId is an opt-in feature only available for last 14 days for EC2-Compute
+     * Service.</p> </li> </ul> <p>If you set the context to <code>RESERVATIONS</code>,
+     * you can use the following dimensions for searching:</p> <ul> <li> <p>AZ - The
+     * Availability Zone. An example is <code>us-east-1a</code>.</p> </li> <li>
+     * <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows
+     * or Linux.</p> </li> <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational
+     * Database Service deployments. Valid values are <code>SingleAZ</code> and
      * <code>MultiAZ</code>.</p> </li> <li> <p>INSTANCE_TYPE - The type of Amazon EC2
      * instance. An example is <code>m4.xlarge</code>.</p> </li> <li> <p>LINKED_ACCOUNT
      * - The description in the attribute map that includes the full name of the member
@@ -310,14 +346,14 @@ namespace Model
      * or dedicated.</p> </li> </ul> <p>If you set the context to
      * <code>SAVINGS_PLANS</code>, you can use the following dimensions for
      * searching:</p> <ul> <li> <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2
-     * Instance or Compute)</p> </li> <li> <p>PAYMENT_OPTION - Payment option for the
-     * given Savings Plans (for example, All Upfront)</p> </li> <li> <p>REGION - The
-     * Amazon Web Services Region.</p> </li> <li> <p>INSTANCE_TYPE_FAMILY - The family
-     * of instances (For example, <code>m5</code>)</p> </li> <li> <p>LINKED_ACCOUNT -
-     * The description in the attribute map that includes the full name of the member
-     * account. The value field contains the Amazon Web Services ID of the member
-     * account.</p> </li> <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your
-     * Savings Plan</p> </li> </ul>
+     * Instance or Compute)</p> </li> <li> <p>PAYMENT_OPTION - The payment option for
+     * the given Savings Plans (for example, All Upfront)</p> </li> <li> <p>REGION -
+     * The Amazon Web Services Region.</p> </li> <li> <p>INSTANCE_TYPE_FAMILY - The
+     * family of instances (For example, <code>m5</code>)</p> </li> <li>
+     * <p>LINKED_ACCOUNT - The description in the attribute map that includes the full
+     * name of the member account. The value field contains the Amazon Web Services ID
+     * of the member account.</p> </li> <li> <p>SAVINGS_PLAN_ARN - The unique
+     * identifier for your Savings Plans.</p> </li> </ul>
      */
     inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
 
@@ -331,37 +367,58 @@ namespace Model
      * <code>GetCostAndUsage</code> operation.</p> <p>If you set the context to
      * <code>COST_AND_USAGE</code>, you can use the following dimensions for
      * searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is
-     * <code>us-east-1a</code>.</p> </li> <li> <p>DATABASE_ENGINE - The Amazon
-     * Relational Database Service database. Examples are Aurora or MySQL.</p> </li>
-     * <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is
-     * <code>m4.xlarge</code>.</p> </li> <li> <p>LEGAL_ENTITY_NAME - The name of the
-     * organization that sells you Amazon Web Services services, such as Amazon Web
-     * Services.</p> </li> <li> <p>LINKED_ACCOUNT - The description in the attribute
-     * map that includes the full name of the member account. The value field contains
-     * the Amazon Web Services ID of the member account.</p> </li> <li>
-     * <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p>
-     * </li> <li> <p>OPERATION - The action performed. Examples include
-     * <code>RunInstance</code> and <code>CreateBucket</code>.</p> </li> <li>
-     * <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or
-     * Linux.</p> </li> <li> <p>PURCHASE_TYPE - The reservation type of the purchase to
-     * which this usage is related. Examples include On-Demand Instances and Standard
-     * Reserved Instances.</p> </li> <li> <p>SERVICE - The Amazon Web Services service
-     * such as Amazon DynamoDB.</p> </li> <li> <p>USAGE_TYPE - The type of usage. An
-     * example is DataTransfer-In-Bytes. The response for the
+     * <code>us-east-1a</code>.</p> </li> <li> <p>BILLING_ENTITY - The Amazon Web
+     * Services seller that your account is with. Possible values are the
+     * following:</p> <p>- Amazon Web Services(Amazon Web Services): The entity that
+     * sells Amazon Web Services.</p> <p>- AISPL (Amazon Internet Services Pvt. Ltd.):
+     * The local Indian entity that's an acting reseller for Amazon Web Services in
+     * India.</p> <p>- Amazon Web Services Marketplace: The entity that supports the
+     * sale of solutions that are built on Amazon Web Services by third-party software
+     * providers.</p> </li> <li> <p>CACHE_ENGINE - The Amazon ElastiCache operating
+     * system. Examples are Windows or Linux.</p> </li> <li> <p>DEPLOYMENT_OPTION - The
+     * scope of Amazon Relational Database Service deployments. Valid values are
+     * <code>SingleAZ</code> and <code>MultiAZ</code>.</p> </li> <li>
+     * <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples
+     * are Aurora or MySQL.</p> </li> <li> <p>INSTANCE_TYPE - The type of Amazon EC2
+     * instance. An example is <code>m4.xlarge</code>.</p> </li> <li>
+     * <p>INSTANCE_TYPE_FAMILY - A family of instance types optimized to fit different
+     * use cases. Examples are <code>Compute Optimized</code> (for example,
+     * <code>C4</code>, <code>C5</code>, <code>C6g</code>, and <code>C7g</code>),
+     * <code>Memory Optimization</code> (for example, <code>R4</code>,
+     * <code>R5n</code>, <code>R5b</code>, and <code>R6g</code>).</p> </li> <li>
+     * <p>INVOICING_ENTITY - The name of the entity that issues the Amazon Web Services
+     * invoice.</p> </li> <li> <p>LEGAL_ENTITY_NAME - The name of the organization that
+     * sells you Amazon Web Services services, such as Amazon Web Services.</p> </li>
+     * <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the
+     * full name of the member account. The value field contains the Amazon Web
+     * Services ID of the member account.</p> </li> <li> <p>OPERATING_SYSTEM - The
+     * operating system. Examples are Windows or Linux.</p> </li> <li> <p>OPERATION -
+     * The action performed. Examples include <code>RunInstance</code> and
+     * <code>CreateBucket</code>.</p> </li> <li> <p>PLATFORM - The Amazon EC2 operating
+     * system. Examples are Windows or Linux.</p> </li> <li> <p>PURCHASE_TYPE - The
+     * reservation type of the purchase that this usage is related to. Examples include
+     * On-Demand Instances and Standard Reserved Instances.</p> </li> <li>
+     * <p>RESERVATION_ID - The unique identifier for an Amazon Web Services Reservation
+     * Instance.</p> </li> <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your
+     * Savings Plans.</p> </li> <li> <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2
+     * Instance or Compute).</p> </li> <li> <p>SERVICE - The Amazon Web Services
+     * service such as Amazon DynamoDB.</p> </li> <li> <p>TENANCY - The tenancy of a
+     * resource. Examples are shared or dedicated.</p> </li> <li> <p>USAGE_TYPE - The
+     * type of usage. An example is DataTransfer-In-Bytes. The response for the
      * <code>GetDimensionValues</code> operation includes a unit attribute. Examples
      * include GB and Hrs.</p> </li> <li> <p>USAGE_TYPE_GROUP - The grouping of common
      * usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for
      * this operation includes a unit attribute.</p> </li> <li> <p>REGION - The Amazon
      * Web Services Region.</p> </li> <li> <p>RECORD_TYPE - The different types of
-     * charges such as RI fees, usage costs, tax refunds, and credits.</p> </li> <li>
-     * <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in
-     * feature only available for last 14 days for EC2-Compute Service.</p> </li> </ul>
-     * <p>If you set the context to <code>RESERVATIONS</code>, you can use the
-     * following dimensions for searching:</p> <ul> <li> <p>AZ - The Availability Zone.
-     * An example is <code>us-east-1a</code>.</p> </li> <li> <p>CACHE_ENGINE - The
-     * Amazon ElastiCache operating system. Examples are Windows or Linux.</p> </li>
-     * <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service
-     * deployments. Valid values are <code>SingleAZ</code> and
+     * charges such as Reserved Instance (RI) fees, usage costs, tax refunds, and
+     * credits.</p> </li> <li> <p>RESOURCE_ID - The unique identifier of the resource.
+     * ResourceId is an opt-in feature only available for last 14 days for EC2-Compute
+     * Service.</p> </li> </ul> <p>If you set the context to <code>RESERVATIONS</code>,
+     * you can use the following dimensions for searching:</p> <ul> <li> <p>AZ - The
+     * Availability Zone. An example is <code>us-east-1a</code>.</p> </li> <li>
+     * <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows
+     * or Linux.</p> </li> <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational
+     * Database Service deployments. Valid values are <code>SingleAZ</code> and
      * <code>MultiAZ</code>.</p> </li> <li> <p>INSTANCE_TYPE - The type of Amazon EC2
      * instance. An example is <code>m4.xlarge</code>.</p> </li> <li> <p>LINKED_ACCOUNT
      * - The description in the attribute map that includes the full name of the member
@@ -375,14 +432,14 @@ namespace Model
      * or dedicated.</p> </li> </ul> <p>If you set the context to
      * <code>SAVINGS_PLANS</code>, you can use the following dimensions for
      * searching:</p> <ul> <li> <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2
-     * Instance or Compute)</p> </li> <li> <p>PAYMENT_OPTION - Payment option for the
-     * given Savings Plans (for example, All Upfront)</p> </li> <li> <p>REGION - The
-     * Amazon Web Services Region.</p> </li> <li> <p>INSTANCE_TYPE_FAMILY - The family
-     * of instances (For example, <code>m5</code>)</p> </li> <li> <p>LINKED_ACCOUNT -
-     * The description in the attribute map that includes the full name of the member
-     * account. The value field contains the Amazon Web Services ID of the member
-     * account.</p> </li> <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your
-     * Savings Plan</p> </li> </ul>
+     * Instance or Compute)</p> </li> <li> <p>PAYMENT_OPTION - The payment option for
+     * the given Savings Plans (for example, All Upfront)</p> </li> <li> <p>REGION -
+     * The Amazon Web Services Region.</p> </li> <li> <p>INSTANCE_TYPE_FAMILY - The
+     * family of instances (For example, <code>m5</code>)</p> </li> <li>
+     * <p>LINKED_ACCOUNT - The description in the attribute map that includes the full
+     * name of the member account. The value field contains the Amazon Web Services ID
+     * of the member account.</p> </li> <li> <p>SAVINGS_PLAN_ARN - The unique
+     * identifier for your Savings Plans.</p> </li> </ul>
      */
     inline void SetContext(const Context& value) { m_contextHasBeenSet = true; m_context = value; }
 
@@ -396,37 +453,58 @@ namespace Model
      * <code>GetCostAndUsage</code> operation.</p> <p>If you set the context to
      * <code>COST_AND_USAGE</code>, you can use the following dimensions for
      * searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is
-     * <code>us-east-1a</code>.</p> </li> <li> <p>DATABASE_ENGINE - The Amazon
-     * Relational Database Service database. Examples are Aurora or MySQL.</p> </li>
-     * <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is
-     * <code>m4.xlarge</code>.</p> </li> <li> <p>LEGAL_ENTITY_NAME - The name of the
-     * organization that sells you Amazon Web Services services, such as Amazon Web
-     * Services.</p> </li> <li> <p>LINKED_ACCOUNT - The description in the attribute
-     * map that includes the full name of the member account. The value field contains
-     * the Amazon Web Services ID of the member account.</p> </li> <li>
-     * <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p>
-     * </li> <li> <p>OPERATION - The action performed. Examples include
-     * <code>RunInstance</code> and <code>CreateBucket</code>.</p> </li> <li>
-     * <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or
-     * Linux.</p> </li> <li> <p>PURCHASE_TYPE - The reservation type of the purchase to
-     * which this usage is related. Examples include On-Demand Instances and Standard
-     * Reserved Instances.</p> </li> <li> <p>SERVICE - The Amazon Web Services service
-     * such as Amazon DynamoDB.</p> </li> <li> <p>USAGE_TYPE - The type of usage. An
-     * example is DataTransfer-In-Bytes. The response for the
+     * <code>us-east-1a</code>.</p> </li> <li> <p>BILLING_ENTITY - The Amazon Web
+     * Services seller that your account is with. Possible values are the
+     * following:</p> <p>- Amazon Web Services(Amazon Web Services): The entity that
+     * sells Amazon Web Services.</p> <p>- AISPL (Amazon Internet Services Pvt. Ltd.):
+     * The local Indian entity that's an acting reseller for Amazon Web Services in
+     * India.</p> <p>- Amazon Web Services Marketplace: The entity that supports the
+     * sale of solutions that are built on Amazon Web Services by third-party software
+     * providers.</p> </li> <li> <p>CACHE_ENGINE - The Amazon ElastiCache operating
+     * system. Examples are Windows or Linux.</p> </li> <li> <p>DEPLOYMENT_OPTION - The
+     * scope of Amazon Relational Database Service deployments. Valid values are
+     * <code>SingleAZ</code> and <code>MultiAZ</code>.</p> </li> <li>
+     * <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples
+     * are Aurora or MySQL.</p> </li> <li> <p>INSTANCE_TYPE - The type of Amazon EC2
+     * instance. An example is <code>m4.xlarge</code>.</p> </li> <li>
+     * <p>INSTANCE_TYPE_FAMILY - A family of instance types optimized to fit different
+     * use cases. Examples are <code>Compute Optimized</code> (for example,
+     * <code>C4</code>, <code>C5</code>, <code>C6g</code>, and <code>C7g</code>),
+     * <code>Memory Optimization</code> (for example, <code>R4</code>,
+     * <code>R5n</code>, <code>R5b</code>, and <code>R6g</code>).</p> </li> <li>
+     * <p>INVOICING_ENTITY - The name of the entity that issues the Amazon Web Services
+     * invoice.</p> </li> <li> <p>LEGAL_ENTITY_NAME - The name of the organization that
+     * sells you Amazon Web Services services, such as Amazon Web Services.</p> </li>
+     * <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the
+     * full name of the member account. The value field contains the Amazon Web
+     * Services ID of the member account.</p> </li> <li> <p>OPERATING_SYSTEM - The
+     * operating system. Examples are Windows or Linux.</p> </li> <li> <p>OPERATION -
+     * The action performed. Examples include <code>RunInstance</code> and
+     * <code>CreateBucket</code>.</p> </li> <li> <p>PLATFORM - The Amazon EC2 operating
+     * system. Examples are Windows or Linux.</p> </li> <li> <p>PURCHASE_TYPE - The
+     * reservation type of the purchase that this usage is related to. Examples include
+     * On-Demand Instances and Standard Reserved Instances.</p> </li> <li>
+     * <p>RESERVATION_ID - The unique identifier for an Amazon Web Services Reservation
+     * Instance.</p> </li> <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your
+     * Savings Plans.</p> </li> <li> <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2
+     * Instance or Compute).</p> </li> <li> <p>SERVICE - The Amazon Web Services
+     * service such as Amazon DynamoDB.</p> </li> <li> <p>TENANCY - The tenancy of a
+     * resource. Examples are shared or dedicated.</p> </li> <li> <p>USAGE_TYPE - The
+     * type of usage. An example is DataTransfer-In-Bytes. The response for the
      * <code>GetDimensionValues</code> operation includes a unit attribute. Examples
      * include GB and Hrs.</p> </li> <li> <p>USAGE_TYPE_GROUP - The grouping of common
      * usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for
      * this operation includes a unit attribute.</p> </li> <li> <p>REGION - The Amazon
      * Web Services Region.</p> </li> <li> <p>RECORD_TYPE - The different types of
-     * charges such as RI fees, usage costs, tax refunds, and credits.</p> </li> <li>
-     * <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in
-     * feature only available for last 14 days for EC2-Compute Service.</p> </li> </ul>
-     * <p>If you set the context to <code>RESERVATIONS</code>, you can use the
-     * following dimensions for searching:</p> <ul> <li> <p>AZ - The Availability Zone.
-     * An example is <code>us-east-1a</code>.</p> </li> <li> <p>CACHE_ENGINE - The
-     * Amazon ElastiCache operating system. Examples are Windows or Linux.</p> </li>
-     * <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service
-     * deployments. Valid values are <code>SingleAZ</code> and
+     * charges such as Reserved Instance (RI) fees, usage costs, tax refunds, and
+     * credits.</p> </li> <li> <p>RESOURCE_ID - The unique identifier of the resource.
+     * ResourceId is an opt-in feature only available for last 14 days for EC2-Compute
+     * Service.</p> </li> </ul> <p>If you set the context to <code>RESERVATIONS</code>,
+     * you can use the following dimensions for searching:</p> <ul> <li> <p>AZ - The
+     * Availability Zone. An example is <code>us-east-1a</code>.</p> </li> <li>
+     * <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows
+     * or Linux.</p> </li> <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational
+     * Database Service deployments. Valid values are <code>SingleAZ</code> and
      * <code>MultiAZ</code>.</p> </li> <li> <p>INSTANCE_TYPE - The type of Amazon EC2
      * instance. An example is <code>m4.xlarge</code>.</p> </li> <li> <p>LINKED_ACCOUNT
      * - The description in the attribute map that includes the full name of the member
@@ -440,14 +518,14 @@ namespace Model
      * or dedicated.</p> </li> </ul> <p>If you set the context to
      * <code>SAVINGS_PLANS</code>, you can use the following dimensions for
      * searching:</p> <ul> <li> <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2
-     * Instance or Compute)</p> </li> <li> <p>PAYMENT_OPTION - Payment option for the
-     * given Savings Plans (for example, All Upfront)</p> </li> <li> <p>REGION - The
-     * Amazon Web Services Region.</p> </li> <li> <p>INSTANCE_TYPE_FAMILY - The family
-     * of instances (For example, <code>m5</code>)</p> </li> <li> <p>LINKED_ACCOUNT -
-     * The description in the attribute map that includes the full name of the member
-     * account. The value field contains the Amazon Web Services ID of the member
-     * account.</p> </li> <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your
-     * Savings Plan</p> </li> </ul>
+     * Instance or Compute)</p> </li> <li> <p>PAYMENT_OPTION - The payment option for
+     * the given Savings Plans (for example, All Upfront)</p> </li> <li> <p>REGION -
+     * The Amazon Web Services Region.</p> </li> <li> <p>INSTANCE_TYPE_FAMILY - The
+     * family of instances (For example, <code>m5</code>)</p> </li> <li>
+     * <p>LINKED_ACCOUNT - The description in the attribute map that includes the full
+     * name of the member account. The value field contains the Amazon Web Services ID
+     * of the member account.</p> </li> <li> <p>SAVINGS_PLAN_ARN - The unique
+     * identifier for your Savings Plans.</p> </li> </ul>
      */
     inline void SetContext(Context&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
 
@@ -461,37 +539,58 @@ namespace Model
      * <code>GetCostAndUsage</code> operation.</p> <p>If you set the context to
      * <code>COST_AND_USAGE</code>, you can use the following dimensions for
      * searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is
-     * <code>us-east-1a</code>.</p> </li> <li> <p>DATABASE_ENGINE - The Amazon
-     * Relational Database Service database. Examples are Aurora or MySQL.</p> </li>
-     * <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is
-     * <code>m4.xlarge</code>.</p> </li> <li> <p>LEGAL_ENTITY_NAME - The name of the
-     * organization that sells you Amazon Web Services services, such as Amazon Web
-     * Services.</p> </li> <li> <p>LINKED_ACCOUNT - The description in the attribute
-     * map that includes the full name of the member account. The value field contains
-     * the Amazon Web Services ID of the member account.</p> </li> <li>
-     * <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p>
-     * </li> <li> <p>OPERATION - The action performed. Examples include
-     * <code>RunInstance</code> and <code>CreateBucket</code>.</p> </li> <li>
-     * <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or
-     * Linux.</p> </li> <li> <p>PURCHASE_TYPE - The reservation type of the purchase to
-     * which this usage is related. Examples include On-Demand Instances and Standard
-     * Reserved Instances.</p> </li> <li> <p>SERVICE - The Amazon Web Services service
-     * such as Amazon DynamoDB.</p> </li> <li> <p>USAGE_TYPE - The type of usage. An
-     * example is DataTransfer-In-Bytes. The response for the
+     * <code>us-east-1a</code>.</p> </li> <li> <p>BILLING_ENTITY - The Amazon Web
+     * Services seller that your account is with. Possible values are the
+     * following:</p> <p>- Amazon Web Services(Amazon Web Services): The entity that
+     * sells Amazon Web Services.</p> <p>- AISPL (Amazon Internet Services Pvt. Ltd.):
+     * The local Indian entity that's an acting reseller for Amazon Web Services in
+     * India.</p> <p>- Amazon Web Services Marketplace: The entity that supports the
+     * sale of solutions that are built on Amazon Web Services by third-party software
+     * providers.</p> </li> <li> <p>CACHE_ENGINE - The Amazon ElastiCache operating
+     * system. Examples are Windows or Linux.</p> </li> <li> <p>DEPLOYMENT_OPTION - The
+     * scope of Amazon Relational Database Service deployments. Valid values are
+     * <code>SingleAZ</code> and <code>MultiAZ</code>.</p> </li> <li>
+     * <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples
+     * are Aurora or MySQL.</p> </li> <li> <p>INSTANCE_TYPE - The type of Amazon EC2
+     * instance. An example is <code>m4.xlarge</code>.</p> </li> <li>
+     * <p>INSTANCE_TYPE_FAMILY - A family of instance types optimized to fit different
+     * use cases. Examples are <code>Compute Optimized</code> (for example,
+     * <code>C4</code>, <code>C5</code>, <code>C6g</code>, and <code>C7g</code>),
+     * <code>Memory Optimization</code> (for example, <code>R4</code>,
+     * <code>R5n</code>, <code>R5b</code>, and <code>R6g</code>).</p> </li> <li>
+     * <p>INVOICING_ENTITY - The name of the entity that issues the Amazon Web Services
+     * invoice.</p> </li> <li> <p>LEGAL_ENTITY_NAME - The name of the organization that
+     * sells you Amazon Web Services services, such as Amazon Web Services.</p> </li>
+     * <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the
+     * full name of the member account. The value field contains the Amazon Web
+     * Services ID of the member account.</p> </li> <li> <p>OPERATING_SYSTEM - The
+     * operating system. Examples are Windows or Linux.</p> </li> <li> <p>OPERATION -
+     * The action performed. Examples include <code>RunInstance</code> and
+     * <code>CreateBucket</code>.</p> </li> <li> <p>PLATFORM - The Amazon EC2 operating
+     * system. Examples are Windows or Linux.</p> </li> <li> <p>PURCHASE_TYPE - The
+     * reservation type of the purchase that this usage is related to. Examples include
+     * On-Demand Instances and Standard Reserved Instances.</p> </li> <li>
+     * <p>RESERVATION_ID - The unique identifier for an Amazon Web Services Reservation
+     * Instance.</p> </li> <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your
+     * Savings Plans.</p> </li> <li> <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2
+     * Instance or Compute).</p> </li> <li> <p>SERVICE - The Amazon Web Services
+     * service such as Amazon DynamoDB.</p> </li> <li> <p>TENANCY - The tenancy of a
+     * resource. Examples are shared or dedicated.</p> </li> <li> <p>USAGE_TYPE - The
+     * type of usage. An example is DataTransfer-In-Bytes. The response for the
      * <code>GetDimensionValues</code> operation includes a unit attribute. Examples
      * include GB and Hrs.</p> </li> <li> <p>USAGE_TYPE_GROUP - The grouping of common
      * usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for
      * this operation includes a unit attribute.</p> </li> <li> <p>REGION - The Amazon
      * Web Services Region.</p> </li> <li> <p>RECORD_TYPE - The different types of
-     * charges such as RI fees, usage costs, tax refunds, and credits.</p> </li> <li>
-     * <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in
-     * feature only available for last 14 days for EC2-Compute Service.</p> </li> </ul>
-     * <p>If you set the context to <code>RESERVATIONS</code>, you can use the
-     * following dimensions for searching:</p> <ul> <li> <p>AZ - The Availability Zone.
-     * An example is <code>us-east-1a</code>.</p> </li> <li> <p>CACHE_ENGINE - The
-     * Amazon ElastiCache operating system. Examples are Windows or Linux.</p> </li>
-     * <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service
-     * deployments. Valid values are <code>SingleAZ</code> and
+     * charges such as Reserved Instance (RI) fees, usage costs, tax refunds, and
+     * credits.</p> </li> <li> <p>RESOURCE_ID - The unique identifier of the resource.
+     * ResourceId is an opt-in feature only available for last 14 days for EC2-Compute
+     * Service.</p> </li> </ul> <p>If you set the context to <code>RESERVATIONS</code>,
+     * you can use the following dimensions for searching:</p> <ul> <li> <p>AZ - The
+     * Availability Zone. An example is <code>us-east-1a</code>.</p> </li> <li>
+     * <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows
+     * or Linux.</p> </li> <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational
+     * Database Service deployments. Valid values are <code>SingleAZ</code> and
      * <code>MultiAZ</code>.</p> </li> <li> <p>INSTANCE_TYPE - The type of Amazon EC2
      * instance. An example is <code>m4.xlarge</code>.</p> </li> <li> <p>LINKED_ACCOUNT
      * - The description in the attribute map that includes the full name of the member
@@ -505,14 +604,14 @@ namespace Model
      * or dedicated.</p> </li> </ul> <p>If you set the context to
      * <code>SAVINGS_PLANS</code>, you can use the following dimensions for
      * searching:</p> <ul> <li> <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2
-     * Instance or Compute)</p> </li> <li> <p>PAYMENT_OPTION - Payment option for the
-     * given Savings Plans (for example, All Upfront)</p> </li> <li> <p>REGION - The
-     * Amazon Web Services Region.</p> </li> <li> <p>INSTANCE_TYPE_FAMILY - The family
-     * of instances (For example, <code>m5</code>)</p> </li> <li> <p>LINKED_ACCOUNT -
-     * The description in the attribute map that includes the full name of the member
-     * account. The value field contains the Amazon Web Services ID of the member
-     * account.</p> </li> <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your
-     * Savings Plan</p> </li> </ul>
+     * Instance or Compute)</p> </li> <li> <p>PAYMENT_OPTION - The payment option for
+     * the given Savings Plans (for example, All Upfront)</p> </li> <li> <p>REGION -
+     * The Amazon Web Services Region.</p> </li> <li> <p>INSTANCE_TYPE_FAMILY - The
+     * family of instances (For example, <code>m5</code>)</p> </li> <li>
+     * <p>LINKED_ACCOUNT - The description in the attribute map that includes the full
+     * name of the member account. The value field contains the Amazon Web Services ID
+     * of the member account.</p> </li> <li> <p>SAVINGS_PLAN_ARN - The unique
+     * identifier for your Savings Plans.</p> </li> </ul>
      */
     inline GetDimensionValuesRequest& WithContext(const Context& value) { SetContext(value); return *this;}
 
@@ -526,37 +625,58 @@ namespace Model
      * <code>GetCostAndUsage</code> operation.</p> <p>If you set the context to
      * <code>COST_AND_USAGE</code>, you can use the following dimensions for
      * searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is
-     * <code>us-east-1a</code>.</p> </li> <li> <p>DATABASE_ENGINE - The Amazon
-     * Relational Database Service database. Examples are Aurora or MySQL.</p> </li>
-     * <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is
-     * <code>m4.xlarge</code>.</p> </li> <li> <p>LEGAL_ENTITY_NAME - The name of the
-     * organization that sells you Amazon Web Services services, such as Amazon Web
-     * Services.</p> </li> <li> <p>LINKED_ACCOUNT - The description in the attribute
-     * map that includes the full name of the member account. The value field contains
-     * the Amazon Web Services ID of the member account.</p> </li> <li>
-     * <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p>
-     * </li> <li> <p>OPERATION - The action performed. Examples include
-     * <code>RunInstance</code> and <code>CreateBucket</code>.</p> </li> <li>
-     * <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or
-     * Linux.</p> </li> <li> <p>PURCHASE_TYPE - The reservation type of the purchase to
-     * which this usage is related. Examples include On-Demand Instances and Standard
-     * Reserved Instances.</p> </li> <li> <p>SERVICE - The Amazon Web Services service
-     * such as Amazon DynamoDB.</p> </li> <li> <p>USAGE_TYPE - The type of usage. An
-     * example is DataTransfer-In-Bytes. The response for the
+     * <code>us-east-1a</code>.</p> </li> <li> <p>BILLING_ENTITY - The Amazon Web
+     * Services seller that your account is with. Possible values are the
+     * following:</p> <p>- Amazon Web Services(Amazon Web Services): The entity that
+     * sells Amazon Web Services.</p> <p>- AISPL (Amazon Internet Services Pvt. Ltd.):
+     * The local Indian entity that's an acting reseller for Amazon Web Services in
+     * India.</p> <p>- Amazon Web Services Marketplace: The entity that supports the
+     * sale of solutions that are built on Amazon Web Services by third-party software
+     * providers.</p> </li> <li> <p>CACHE_ENGINE - The Amazon ElastiCache operating
+     * system. Examples are Windows or Linux.</p> </li> <li> <p>DEPLOYMENT_OPTION - The
+     * scope of Amazon Relational Database Service deployments. Valid values are
+     * <code>SingleAZ</code> and <code>MultiAZ</code>.</p> </li> <li>
+     * <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples
+     * are Aurora or MySQL.</p> </li> <li> <p>INSTANCE_TYPE - The type of Amazon EC2
+     * instance. An example is <code>m4.xlarge</code>.</p> </li> <li>
+     * <p>INSTANCE_TYPE_FAMILY - A family of instance types optimized to fit different
+     * use cases. Examples are <code>Compute Optimized</code> (for example,
+     * <code>C4</code>, <code>C5</code>, <code>C6g</code>, and <code>C7g</code>),
+     * <code>Memory Optimization</code> (for example, <code>R4</code>,
+     * <code>R5n</code>, <code>R5b</code>, and <code>R6g</code>).</p> </li> <li>
+     * <p>INVOICING_ENTITY - The name of the entity that issues the Amazon Web Services
+     * invoice.</p> </li> <li> <p>LEGAL_ENTITY_NAME - The name of the organization that
+     * sells you Amazon Web Services services, such as Amazon Web Services.</p> </li>
+     * <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the
+     * full name of the member account. The value field contains the Amazon Web
+     * Services ID of the member account.</p> </li> <li> <p>OPERATING_SYSTEM - The
+     * operating system. Examples are Windows or Linux.</p> </li> <li> <p>OPERATION -
+     * The action performed. Examples include <code>RunInstance</code> and
+     * <code>CreateBucket</code>.</p> </li> <li> <p>PLATFORM - The Amazon EC2 operating
+     * system. Examples are Windows or Linux.</p> </li> <li> <p>PURCHASE_TYPE - The
+     * reservation type of the purchase that this usage is related to. Examples include
+     * On-Demand Instances and Standard Reserved Instances.</p> </li> <li>
+     * <p>RESERVATION_ID - The unique identifier for an Amazon Web Services Reservation
+     * Instance.</p> </li> <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your
+     * Savings Plans.</p> </li> <li> <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2
+     * Instance or Compute).</p> </li> <li> <p>SERVICE - The Amazon Web Services
+     * service such as Amazon DynamoDB.</p> </li> <li> <p>TENANCY - The tenancy of a
+     * resource. Examples are shared or dedicated.</p> </li> <li> <p>USAGE_TYPE - The
+     * type of usage. An example is DataTransfer-In-Bytes. The response for the
      * <code>GetDimensionValues</code> operation includes a unit attribute. Examples
      * include GB and Hrs.</p> </li> <li> <p>USAGE_TYPE_GROUP - The grouping of common
      * usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for
      * this operation includes a unit attribute.</p> </li> <li> <p>REGION - The Amazon
      * Web Services Region.</p> </li> <li> <p>RECORD_TYPE - The different types of
-     * charges such as RI fees, usage costs, tax refunds, and credits.</p> </li> <li>
-     * <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in
-     * feature only available for last 14 days for EC2-Compute Service.</p> </li> </ul>
-     * <p>If you set the context to <code>RESERVATIONS</code>, you can use the
-     * following dimensions for searching:</p> <ul> <li> <p>AZ - The Availability Zone.
-     * An example is <code>us-east-1a</code>.</p> </li> <li> <p>CACHE_ENGINE - The
-     * Amazon ElastiCache operating system. Examples are Windows or Linux.</p> </li>
-     * <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service
-     * deployments. Valid values are <code>SingleAZ</code> and
+     * charges such as Reserved Instance (RI) fees, usage costs, tax refunds, and
+     * credits.</p> </li> <li> <p>RESOURCE_ID - The unique identifier of the resource.
+     * ResourceId is an opt-in feature only available for last 14 days for EC2-Compute
+     * Service.</p> </li> </ul> <p>If you set the context to <code>RESERVATIONS</code>,
+     * you can use the following dimensions for searching:</p> <ul> <li> <p>AZ - The
+     * Availability Zone. An example is <code>us-east-1a</code>.</p> </li> <li>
+     * <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows
+     * or Linux.</p> </li> <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational
+     * Database Service deployments. Valid values are <code>SingleAZ</code> and
      * <code>MultiAZ</code>.</p> </li> <li> <p>INSTANCE_TYPE - The type of Amazon EC2
      * instance. An example is <code>m4.xlarge</code>.</p> </li> <li> <p>LINKED_ACCOUNT
      * - The description in the attribute map that includes the full name of the member
@@ -570,14 +690,14 @@ namespace Model
      * or dedicated.</p> </li> </ul> <p>If you set the context to
      * <code>SAVINGS_PLANS</code>, you can use the following dimensions for
      * searching:</p> <ul> <li> <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2
-     * Instance or Compute)</p> </li> <li> <p>PAYMENT_OPTION - Payment option for the
-     * given Savings Plans (for example, All Upfront)</p> </li> <li> <p>REGION - The
-     * Amazon Web Services Region.</p> </li> <li> <p>INSTANCE_TYPE_FAMILY - The family
-     * of instances (For example, <code>m5</code>)</p> </li> <li> <p>LINKED_ACCOUNT -
-     * The description in the attribute map that includes the full name of the member
-     * account. The value field contains the Amazon Web Services ID of the member
-     * account.</p> </li> <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your
-     * Savings Plan</p> </li> </ul>
+     * Instance or Compute)</p> </li> <li> <p>PAYMENT_OPTION - The payment option for
+     * the given Savings Plans (for example, All Upfront)</p> </li> <li> <p>REGION -
+     * The Amazon Web Services Region.</p> </li> <li> <p>INSTANCE_TYPE_FAMILY - The
+     * family of instances (For example, <code>m5</code>)</p> </li> <li>
+     * <p>LINKED_ACCOUNT - The description in the attribute map that includes the full
+     * name of the member account. The value field contains the Amazon Web Services ID
+     * of the member account.</p> </li> <li> <p>SAVINGS_PLAN_ARN - The unique
+     * identifier for your Savings Plans.</p> </li> </ul>
      */
     inline GetDimensionValuesRequest& WithContext(Context&& value) { SetContext(std::move(value)); return *this;}
 
@@ -602,167 +722,167 @@ namespace Model
 
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The key represents cost
+     * <p>The value that you want to sort the data by.</p> <p>The key represents cost
      * and usage metrics. The following values are supported:</p> <ul> <li> <p>
      * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
      * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
      * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
      * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
-     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>The supported values for
+     * the <code>SortOrder</code> key are <code>ASCENDING</code> or
      * <code>DESCENDING</code>.</p> <p>When you specify a <code>SortBy</code>
      * paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using
      * <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code>
-     * are not supported.</p>
+     * aren't supported.</p>
      */
     inline const Aws::Vector<SortDefinition>& GetSortBy() const{ return m_sortBy; }
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The key represents cost
+     * <p>The value that you want to sort the data by.</p> <p>The key represents cost
      * and usage metrics. The following values are supported:</p> <ul> <li> <p>
      * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
      * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
      * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
      * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
-     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>The supported values for
+     * the <code>SortOrder</code> key are <code>ASCENDING</code> or
      * <code>DESCENDING</code>.</p> <p>When you specify a <code>SortBy</code>
      * paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using
      * <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code>
-     * are not supported.</p>
+     * aren't supported.</p>
      */
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The key represents cost
+     * <p>The value that you want to sort the data by.</p> <p>The key represents cost
      * and usage metrics. The following values are supported:</p> <ul> <li> <p>
      * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
      * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
      * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
      * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
-     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>The supported values for
+     * the <code>SortOrder</code> key are <code>ASCENDING</code> or
      * <code>DESCENDING</code>.</p> <p>When you specify a <code>SortBy</code>
      * paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using
      * <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code>
-     * are not supported.</p>
+     * aren't supported.</p>
      */
     inline void SetSortBy(const Aws::Vector<SortDefinition>& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The key represents cost
+     * <p>The value that you want to sort the data by.</p> <p>The key represents cost
      * and usage metrics. The following values are supported:</p> <ul> <li> <p>
      * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
      * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
      * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
      * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
-     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>The supported values for
+     * the <code>SortOrder</code> key are <code>ASCENDING</code> or
      * <code>DESCENDING</code>.</p> <p>When you specify a <code>SortBy</code>
      * paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using
      * <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code>
-     * are not supported.</p>
+     * aren't supported.</p>
      */
     inline void SetSortBy(Aws::Vector<SortDefinition>&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The key represents cost
+     * <p>The value that you want to sort the data by.</p> <p>The key represents cost
      * and usage metrics. The following values are supported:</p> <ul> <li> <p>
      * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
      * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
      * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
      * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
-     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>The supported values for
+     * the <code>SortOrder</code> key are <code>ASCENDING</code> or
      * <code>DESCENDING</code>.</p> <p>When you specify a <code>SortBy</code>
      * paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using
      * <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code>
-     * are not supported.</p>
+     * aren't supported.</p>
      */
     inline GetDimensionValuesRequest& WithSortBy(const Aws::Vector<SortDefinition>& value) { SetSortBy(value); return *this;}
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The key represents cost
+     * <p>The value that you want to sort the data by.</p> <p>The key represents cost
      * and usage metrics. The following values are supported:</p> <ul> <li> <p>
      * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
      * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
      * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
      * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
-     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>The supported values for
+     * the <code>SortOrder</code> key are <code>ASCENDING</code> or
      * <code>DESCENDING</code>.</p> <p>When you specify a <code>SortBy</code>
      * paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using
      * <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code>
-     * are not supported.</p>
+     * aren't supported.</p>
      */
     inline GetDimensionValuesRequest& WithSortBy(Aws::Vector<SortDefinition>&& value) { SetSortBy(std::move(value)); return *this;}
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The key represents cost
+     * <p>The value that you want to sort the data by.</p> <p>The key represents cost
      * and usage metrics. The following values are supported:</p> <ul> <li> <p>
      * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
      * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
      * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
      * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
-     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>The supported values for
+     * the <code>SortOrder</code> key are <code>ASCENDING</code> or
      * <code>DESCENDING</code>.</p> <p>When you specify a <code>SortBy</code>
      * paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using
      * <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code>
-     * are not supported.</p>
+     * aren't supported.</p>
      */
     inline GetDimensionValuesRequest& AddSortBy(const SortDefinition& value) { m_sortByHasBeenSet = true; m_sortBy.push_back(value); return *this; }
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The key represents cost
+     * <p>The value that you want to sort the data by.</p> <p>The key represents cost
      * and usage metrics. The following values are supported:</p> <ul> <li> <p>
      * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
      * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
      * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
      * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
-     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>The supported values for
+     * the <code>SortOrder</code> key are <code>ASCENDING</code> or
      * <code>DESCENDING</code>.</p> <p>When you specify a <code>SortBy</code>
      * paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using
      * <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code>
-     * are not supported.</p>
+     * aren't supported.</p>
      */
     inline GetDimensionValuesRequest& AddSortBy(SortDefinition&& value) { m_sortByHasBeenSet = true; m_sortBy.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>This field is only used when SortBy is provided in the request. The maximum
-     * number of objects that to be returned for this request. If MaxResults is not
-     * specified with SortBy, the request will return 1000 results as the default value
-     * for this parameter.</p> <p>For <code>GetDimensionValues</code>, MaxResults has
-     * an upper limit of 1000.</p>
+     * number of objects that are returned for this request. If MaxResults isn't
+     * specified with SortBy, the request returns 1000 results as the default value for
+     * this parameter.</p> <p>For <code>GetDimensionValues</code>, MaxResults has an
+     * upper limit of 1000.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>This field is only used when SortBy is provided in the request. The maximum
-     * number of objects that to be returned for this request. If MaxResults is not
-     * specified with SortBy, the request will return 1000 results as the default value
-     * for this parameter.</p> <p>For <code>GetDimensionValues</code>, MaxResults has
-     * an upper limit of 1000.</p>
+     * number of objects that are returned for this request. If MaxResults isn't
+     * specified with SortBy, the request returns 1000 results as the default value for
+     * this parameter.</p> <p>For <code>GetDimensionValues</code>, MaxResults has an
+     * upper limit of 1000.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>This field is only used when SortBy is provided in the request. The maximum
-     * number of objects that to be returned for this request. If MaxResults is not
-     * specified with SortBy, the request will return 1000 results as the default value
-     * for this parameter.</p> <p>For <code>GetDimensionValues</code>, MaxResults has
-     * an upper limit of 1000.</p>
+     * number of objects that are returned for this request. If MaxResults isn't
+     * specified with SortBy, the request returns 1000 results as the default value for
+     * this parameter.</p> <p>For <code>GetDimensionValues</code>, MaxResults has an
+     * upper limit of 1000.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>This field is only used when SortBy is provided in the request. The maximum
-     * number of objects that to be returned for this request. If MaxResults is not
-     * specified with SortBy, the request will return 1000 results as the default value
-     * for this parameter.</p> <p>For <code>GetDimensionValues</code>, MaxResults has
-     * an upper limit of 1000.</p>
+     * number of objects that are returned for this request. If MaxResults isn't
+     * specified with SortBy, the request returns 1000 results as the default value for
+     * this parameter.</p> <p>For <code>GetDimensionValues</code>, MaxResults has an
+     * upper limit of 1000.</p>
      */
     inline GetDimensionValuesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

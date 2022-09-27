@@ -29,6 +29,9 @@ namespace Aws
         static const int delete_in_progress_HASH = HashingUtils::HashString("delete-in-progress");
         static const int delete_complete_HASH = HashingUtils::HashString("delete-complete");
         static const int delete_failed_HASH = HashingUtils::HashString("delete-failed");
+        static const int isolate_in_progress_HASH = HashingUtils::HashString("isolate-in-progress");
+        static const int isolate_complete_HASH = HashingUtils::HashString("isolate-complete");
+        static const int restore_in_progress_HASH = HashingUtils::HashString("restore-in-progress");
 
 
         IpamState GetIpamStateForName(const Aws::String& name)
@@ -70,6 +73,18 @@ namespace Aws
           {
             return IpamState::delete_failed;
           }
+          else if (hashCode == isolate_in_progress_HASH)
+          {
+            return IpamState::isolate_in_progress;
+          }
+          else if (hashCode == isolate_complete_HASH)
+          {
+            return IpamState::isolate_complete;
+          }
+          else if (hashCode == restore_in_progress_HASH)
+          {
+            return IpamState::restore_in_progress;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -102,6 +117,12 @@ namespace Aws
             return "delete-complete";
           case IpamState::delete_failed:
             return "delete-failed";
+          case IpamState::isolate_in_progress:
+            return "isolate-in-progress";
+          case IpamState::isolate_complete:
+            return "isolate-complete";
+          case IpamState::restore_in_progress:
+            return "restore-in-progress";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

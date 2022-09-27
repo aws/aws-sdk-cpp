@@ -33,27 +33,32 @@ namespace Model
 
 
     /**
-     * <p>An object containing the details of the asynchronous call analytics job.</p>
+     * <p>Provides detailed information about the current Call Analytics job, including
+     * job status and, if applicable, failure reason.</p>
      */
     inline const CallAnalyticsJob& GetCallAnalyticsJob() const{ return m_callAnalyticsJob; }
 
     /**
-     * <p>An object containing the details of the asynchronous call analytics job.</p>
+     * <p>Provides detailed information about the current Call Analytics job, including
+     * job status and, if applicable, failure reason.</p>
      */
     inline void SetCallAnalyticsJob(const CallAnalyticsJob& value) { m_callAnalyticsJob = value; }
 
     /**
-     * <p>An object containing the details of the asynchronous call analytics job.</p>
+     * <p>Provides detailed information about the current Call Analytics job, including
+     * job status and, if applicable, failure reason.</p>
      */
     inline void SetCallAnalyticsJob(CallAnalyticsJob&& value) { m_callAnalyticsJob = std::move(value); }
 
     /**
-     * <p>An object containing the details of the asynchronous call analytics job.</p>
+     * <p>Provides detailed information about the current Call Analytics job, including
+     * job status and, if applicable, failure reason.</p>
      */
     inline StartCallAnalyticsJobResult& WithCallAnalyticsJob(const CallAnalyticsJob& value) { SetCallAnalyticsJob(value); return *this;}
 
     /**
-     * <p>An object containing the details of the asynchronous call analytics job.</p>
+     * <p>Provides detailed information about the current Call Analytics job, including
+     * job status and, if applicable, failure reason.</p>
      */
     inline StartCallAnalyticsJobResult& WithCallAnalyticsJob(CallAnalyticsJob&& value) { SetCallAnalyticsJob(std::move(value)); return *this;}
 

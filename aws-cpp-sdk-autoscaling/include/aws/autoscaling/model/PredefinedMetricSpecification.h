@@ -48,8 +48,8 @@ namespace Model
      * Average number of bytes received on all network interfaces by the Auto Scaling
      * group.</p> </li> <li> <p> <code>ASGAverageNetworkOut</code> - Average number of
      * bytes sent out on all network interfaces by the Auto Scaling group.</p> </li>
-     * <li> <p> <code>ALBRequestCountPerTarget</code> - Number of requests completed
-     * per target in an Application Load Balancer target group.</p> </li> </ul>
+     * <li> <p> <code>ALBRequestCountPerTarget</code> - Average Application Load
+     * Balancer request count per target for your Auto Scaling group.</p> </li> </ul>
      */
     inline const MetricType& GetPredefinedMetricType() const{ return m_predefinedMetricType; }
 
@@ -60,8 +60,8 @@ namespace Model
      * Average number of bytes received on all network interfaces by the Auto Scaling
      * group.</p> </li> <li> <p> <code>ASGAverageNetworkOut</code> - Average number of
      * bytes sent out on all network interfaces by the Auto Scaling group.</p> </li>
-     * <li> <p> <code>ALBRequestCountPerTarget</code> - Number of requests completed
-     * per target in an Application Load Balancer target group.</p> </li> </ul>
+     * <li> <p> <code>ALBRequestCountPerTarget</code> - Average Application Load
+     * Balancer request count per target for your Auto Scaling group.</p> </li> </ul>
      */
     inline bool PredefinedMetricTypeHasBeenSet() const { return m_predefinedMetricTypeHasBeenSet; }
 
@@ -72,8 +72,8 @@ namespace Model
      * Average number of bytes received on all network interfaces by the Auto Scaling
      * group.</p> </li> <li> <p> <code>ASGAverageNetworkOut</code> - Average number of
      * bytes sent out on all network interfaces by the Auto Scaling group.</p> </li>
-     * <li> <p> <code>ALBRequestCountPerTarget</code> - Number of requests completed
-     * per target in an Application Load Balancer target group.</p> </li> </ul>
+     * <li> <p> <code>ALBRequestCountPerTarget</code> - Average Application Load
+     * Balancer request count per target for your Auto Scaling group.</p> </li> </ul>
      */
     inline void SetPredefinedMetricType(const MetricType& value) { m_predefinedMetricTypeHasBeenSet = true; m_predefinedMetricType = value; }
 
@@ -84,8 +84,8 @@ namespace Model
      * Average number of bytes received on all network interfaces by the Auto Scaling
      * group.</p> </li> <li> <p> <code>ASGAverageNetworkOut</code> - Average number of
      * bytes sent out on all network interfaces by the Auto Scaling group.</p> </li>
-     * <li> <p> <code>ALBRequestCountPerTarget</code> - Number of requests completed
-     * per target in an Application Load Balancer target group.</p> </li> </ul>
+     * <li> <p> <code>ALBRequestCountPerTarget</code> - Average Application Load
+     * Balancer request count per target for your Auto Scaling group.</p> </li> </ul>
      */
     inline void SetPredefinedMetricType(MetricType&& value) { m_predefinedMetricTypeHasBeenSet = true; m_predefinedMetricType = std::move(value); }
 
@@ -96,8 +96,8 @@ namespace Model
      * Average number of bytes received on all network interfaces by the Auto Scaling
      * group.</p> </li> <li> <p> <code>ASGAverageNetworkOut</code> - Average number of
      * bytes sent out on all network interfaces by the Auto Scaling group.</p> </li>
-     * <li> <p> <code>ALBRequestCountPerTarget</code> - Number of requests completed
-     * per target in an Application Load Balancer target group.</p> </li> </ul>
+     * <li> <p> <code>ALBRequestCountPerTarget</code> - Average Application Load
+     * Balancer request count per target for your Auto Scaling group.</p> </li> </ul>
      */
     inline PredefinedMetricSpecification& WithPredefinedMetricType(const MetricType& value) { SetPredefinedMetricType(value); return *this;}
 
@@ -108,8 +108,8 @@ namespace Model
      * Average number of bytes received on all network interfaces by the Auto Scaling
      * group.</p> </li> <li> <p> <code>ASGAverageNetworkOut</code> - Average number of
      * bytes sent out on all network interfaces by the Auto Scaling group.</p> </li>
-     * <li> <p> <code>ALBRequestCountPerTarget</code> - Number of requests completed
-     * per target in an Application Load Balancer target group.</p> </li> </ul>
+     * <li> <p> <code>ALBRequestCountPerTarget</code> - Average Application Load
+     * Balancer request count per target for your Auto Scaling group.</p> </li> </ul>
      */
     inline PredefinedMetricSpecification& WithPredefinedMetricType(MetricType&& value) { SetPredefinedMetricType(std::move(value)); return *this;}
 

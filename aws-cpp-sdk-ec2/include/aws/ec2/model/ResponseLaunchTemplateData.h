@@ -22,6 +22,7 @@
 #include <aws/ec2/model/LaunchTemplateEnclaveOptions.h>
 #include <aws/ec2/model/InstanceRequirements.h>
 #include <aws/ec2/model/LaunchTemplatePrivateDnsNameOptions.h>
+#include <aws/ec2/model/LaunchTemplateInstanceMaintenanceOptions.h>
 #include <aws/ec2/model/LaunchTemplateBlockDeviceMapping.h>
 #include <aws/ec2/model/LaunchTemplateInstanceNetworkInterfaceSpecification.h>
 #include <aws/ec2/model/LaunchTemplateTagSpecification.h>
@@ -1160,6 +1161,70 @@ namespace Model
      */
     inline ResponseLaunchTemplateData& WithPrivateDnsNameOptions(LaunchTemplatePrivateDnsNameOptions&& value) { SetPrivateDnsNameOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The maintenance options for your instance.</p>
+     */
+    inline const LaunchTemplateInstanceMaintenanceOptions& GetMaintenanceOptions() const{ return m_maintenanceOptions; }
+
+    /**
+     * <p>The maintenance options for your instance.</p>
+     */
+    inline bool MaintenanceOptionsHasBeenSet() const { return m_maintenanceOptionsHasBeenSet; }
+
+    /**
+     * <p>The maintenance options for your instance.</p>
+     */
+    inline void SetMaintenanceOptions(const LaunchTemplateInstanceMaintenanceOptions& value) { m_maintenanceOptionsHasBeenSet = true; m_maintenanceOptions = value; }
+
+    /**
+     * <p>The maintenance options for your instance.</p>
+     */
+    inline void SetMaintenanceOptions(LaunchTemplateInstanceMaintenanceOptions&& value) { m_maintenanceOptionsHasBeenSet = true; m_maintenanceOptions = std::move(value); }
+
+    /**
+     * <p>The maintenance options for your instance.</p>
+     */
+    inline ResponseLaunchTemplateData& WithMaintenanceOptions(const LaunchTemplateInstanceMaintenanceOptions& value) { SetMaintenanceOptions(value); return *this;}
+
+    /**
+     * <p>The maintenance options for your instance.</p>
+     */
+    inline ResponseLaunchTemplateData& WithMaintenanceOptions(LaunchTemplateInstanceMaintenanceOptions&& value) { SetMaintenanceOptions(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Indicates whether the instance is enabled for stop protection. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     * Protection</a>.</p>
+     */
+    inline bool GetDisableApiStop() const{ return m_disableApiStop; }
+
+    /**
+     * <p>Indicates whether the instance is enabled for stop protection. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     * Protection</a>.</p>
+     */
+    inline bool DisableApiStopHasBeenSet() const { return m_disableApiStopHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the instance is enabled for stop protection. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     * Protection</a>.</p>
+     */
+    inline void SetDisableApiStop(bool value) { m_disableApiStopHasBeenSet = true; m_disableApiStop = value; }
+
+    /**
+     * <p>Indicates whether the instance is enabled for stop protection. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     * Protection</a>.</p>
+     */
+    inline ResponseLaunchTemplateData& WithDisableApiStop(bool value) { SetDisableApiStop(value); return *this;}
+
   private:
 
     Aws::String m_kernelId;
@@ -1248,6 +1313,12 @@ namespace Model
 
     LaunchTemplatePrivateDnsNameOptions m_privateDnsNameOptions;
     bool m_privateDnsNameOptionsHasBeenSet;
+
+    LaunchTemplateInstanceMaintenanceOptions m_maintenanceOptions;
+    bool m_maintenanceOptionsHasBeenSet;
+
+    bool m_disableApiStop;
+    bool m_disableApiStopHasBeenSet;
   };
 
 } // namespace Model

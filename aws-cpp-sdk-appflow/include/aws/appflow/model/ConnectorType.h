@@ -37,7 +37,8 @@ namespace Model
     Upsolver,
     Honeycode,
     CustomerProfiles,
-    SAPOData
+    SAPOData,
+    CustomConnector
   };
 
 namespace ConnectorTypeMapper

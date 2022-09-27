@@ -374,56 +374,56 @@ namespace Model
     /**
      * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
      * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
 
     /**
      * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
      * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline bool DBSubnetGroupNameHasBeenSet() const { return m_dBSubnetGroupNameHasBeenSet; }
 
     /**
      * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
      * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
      * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
      * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::move(value); }
 
     /**
      * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
      * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
 
     /**
      * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
      * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
 
     /**
      * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
      * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
      * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 
@@ -549,7 +549,7 @@ namespace Model
 
     /**
      * <p>License model information for the restored DB instance.</p> <p>This setting
-     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p> Valid
+     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p>Valid
      * values: <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p>
      */
@@ -557,7 +557,7 @@ namespace Model
 
     /**
      * <p>License model information for the restored DB instance.</p> <p>This setting
-     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p> Valid
+     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p>Valid
      * values: <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p>
      */
@@ -565,7 +565,7 @@ namespace Model
 
     /**
      * <p>License model information for the restored DB instance.</p> <p>This setting
-     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p> Valid
+     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p>Valid
      * values: <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p>
      */
@@ -573,7 +573,7 @@ namespace Model
 
     /**
      * <p>License model information for the restored DB instance.</p> <p>This setting
-     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p> Valid
+     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p>Valid
      * values: <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p>
      */
@@ -581,7 +581,7 @@ namespace Model
 
     /**
      * <p>License model information for the restored DB instance.</p> <p>This setting
-     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p> Valid
+     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p>Valid
      * values: <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p>
      */
@@ -589,7 +589,7 @@ namespace Model
 
     /**
      * <p>License model information for the restored DB instance.</p> <p>This setting
-     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p> Valid
+     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p>Valid
      * values: <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p>
      */
@@ -597,7 +597,7 @@ namespace Model
 
     /**
      * <p>License model information for the restored DB instance.</p> <p>This setting
-     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p> Valid
+     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p>Valid
      * values: <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p>
      */
@@ -605,7 +605,7 @@ namespace Model
 
     /**
      * <p>License model information for the restored DB instance.</p> <p>This setting
-     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p> Valid
+     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p>Valid
      * values: <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p>
      */
@@ -795,7 +795,7 @@ namespace Model
      * I/O operations per second. If this parameter isn't specified, the IOPS value is
      * taken from the backup. If this parameter is set to 0, the new instance is
      * converted to a non-PIOPS instance. The conversion takes additional time, though
-     * your DB instance is available for connections before the conversion starts. </p>
+     * your DB instance is available for connections before the conversion starts.</p>
      * <p>The provisioned IOPS value must follow the requirements for your database
      * engine. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
@@ -809,7 +809,7 @@ namespace Model
      * I/O operations per second. If this parameter isn't specified, the IOPS value is
      * taken from the backup. If this parameter is set to 0, the new instance is
      * converted to a non-PIOPS instance. The conversion takes additional time, though
-     * your DB instance is available for connections before the conversion starts. </p>
+     * your DB instance is available for connections before the conversion starts.</p>
      * <p>The provisioned IOPS value must follow the requirements for your database
      * engine. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
@@ -823,7 +823,7 @@ namespace Model
      * I/O operations per second. If this parameter isn't specified, the IOPS value is
      * taken from the backup. If this parameter is set to 0, the new instance is
      * converted to a non-PIOPS instance. The conversion takes additional time, though
-     * your DB instance is available for connections before the conversion starts. </p>
+     * your DB instance is available for connections before the conversion starts.</p>
      * <p>The provisioned IOPS value must follow the requirements for your database
      * engine. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
@@ -837,7 +837,7 @@ namespace Model
      * I/O operations per second. If this parameter isn't specified, the IOPS value is
      * taken from the backup. If this parameter is set to 0, the new instance is
      * converted to a non-PIOPS instance. The conversion takes additional time, though
-     * your DB instance is available for connections before the conversion starts. </p>
+     * your DB instance is available for connections before the conversion starts.</p>
      * <p>The provisioned IOPS value must follow the requirements for your database
      * engine. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
@@ -946,73 +946,73 @@ namespace Model
 
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
-     * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
+     * <p>Specifies the storage type to be associated with the DB instance.</p>
+     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
+     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
      * is specified, otherwise <code>gp2</code> </p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
-     * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
+     * <p>Specifies the storage type to be associated with the DB instance.</p>
+     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
+     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
      * is specified, otherwise <code>gp2</code> </p>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
-     * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
+     * <p>Specifies the storage type to be associated with the DB instance.</p>
+     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
+     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
      * is specified, otherwise <code>gp2</code> </p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
-     * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
+     * <p>Specifies the storage type to be associated with the DB instance.</p>
+     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
+     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
      * is specified, otherwise <code>gp2</code> </p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
-     * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
+     * <p>Specifies the storage type to be associated with the DB instance.</p>
+     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
+     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
      * is specified, otherwise <code>gp2</code> </p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
-     * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
+     * <p>Specifies the storage type to be associated with the DB instance.</p>
+     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
+     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
      * is specified, otherwise <code>gp2</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
-     * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
+     * <p>Specifies the storage type to be associated with the DB instance.</p>
+     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
+     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
      * is specified, otherwise <code>gp2</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
-     * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
+     * <p>Specifies the storage type to be associated with the DB instance.</p>
+     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
+     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
      * is specified, otherwise <code>gp2</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
@@ -1117,65 +1117,65 @@ namespace Model
 
 
     /**
-     * <p> A list of EC2 VPC security groups to associate with this DB instance. </p>
-     * <p> Default: The default EC2 VPC security group for the DB subnet group's VPC.
-     * </p>
+     * <p>A list of EC2 VPC security groups to associate with this DB instance.</p>
+     * <p>Default: The default EC2 VPC security group for the DB subnet group's
+     * VPC.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
 
     /**
-     * <p> A list of EC2 VPC security groups to associate with this DB instance. </p>
-     * <p> Default: The default EC2 VPC security group for the DB subnet group's VPC.
-     * </p>
+     * <p>A list of EC2 VPC security groups to associate with this DB instance.</p>
+     * <p>Default: The default EC2 VPC security group for the DB subnet group's
+     * VPC.</p>
      */
     inline bool VpcSecurityGroupIdsHasBeenSet() const { return m_vpcSecurityGroupIdsHasBeenSet; }
 
     /**
-     * <p> A list of EC2 VPC security groups to associate with this DB instance. </p>
-     * <p> Default: The default EC2 VPC security group for the DB subnet group's VPC.
-     * </p>
+     * <p>A list of EC2 VPC security groups to associate with this DB instance.</p>
+     * <p>Default: The default EC2 VPC security group for the DB subnet group's
+     * VPC.</p>
      */
     inline void SetVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
 
     /**
-     * <p> A list of EC2 VPC security groups to associate with this DB instance. </p>
-     * <p> Default: The default EC2 VPC security group for the DB subnet group's VPC.
-     * </p>
+     * <p>A list of EC2 VPC security groups to associate with this DB instance.</p>
+     * <p>Default: The default EC2 VPC security group for the DB subnet group's
+     * VPC.</p>
      */
     inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::move(value); }
 
     /**
-     * <p> A list of EC2 VPC security groups to associate with this DB instance. </p>
-     * <p> Default: The default EC2 VPC security group for the DB subnet group's VPC.
-     * </p>
+     * <p>A list of EC2 VPC security groups to associate with this DB instance.</p>
+     * <p>Default: The default EC2 VPC security group for the DB subnet group's
+     * VPC.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetVpcSecurityGroupIds(value); return *this;}
 
     /**
-     * <p> A list of EC2 VPC security groups to associate with this DB instance. </p>
-     * <p> Default: The default EC2 VPC security group for the DB subnet group's VPC.
-     * </p>
+     * <p>A list of EC2 VPC security groups to associate with this DB instance.</p>
+     * <p>Default: The default EC2 VPC security group for the DB subnet group's
+     * VPC.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p> A list of EC2 VPC security groups to associate with this DB instance. </p>
-     * <p> Default: The default EC2 VPC security group for the DB subnet group's VPC.
-     * </p>
+     * <p>A list of EC2 VPC security groups to associate with this DB instance.</p>
+     * <p>Default: The default EC2 VPC security group for the DB subnet group's
+     * VPC.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& AddVpcSecurityGroupIds(const Aws::String& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
 
     /**
-     * <p> A list of EC2 VPC security groups to associate with this DB instance. </p>
-     * <p> Default: The default EC2 VPC security group for the DB subnet group's VPC.
-     * </p>
+     * <p>A list of EC2 VPC security groups to associate with this DB instance.</p>
+     * <p>Default: The default EC2 VPC security group for the DB subnet group's
+     * VPC.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> A list of EC2 VPC security groups to associate with this DB instance. </p>
-     * <p> Default: The default EC2 VPC security group for the DB subnet group's VPC.
-     * </p>
+     * <p>A list of EC2 VPC security groups to associate with this DB instance.</p>
+     * <p>Default: The default EC2 VPC security group for the DB subnet group's
+     * VPC.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
 
@@ -1271,25 +1271,57 @@ namespace Model
 
     /**
      * <p>A value that indicates whether to copy all tags from the restored DB instance
-     * to snapshots of the DB instance. By default, tags are not copied.</p>
+     * to snapshots of the DB instance.</p> <p>In most cases, tags aren't copied by
+     * default. However, when you restore a DB instance from a DB snapshot, RDS checks
+     * whether you specify new tags. If yes, the new tags are added to the restored DB
+     * instance. If there are no new tags, RDS looks for the tags from the source DB
+     * instance for the DB snapshot, and then adds those tags to the restored DB
+     * instance.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.CopyTags">
+     * Copying tags to DB instance snapshots</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
      */
     inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
 
     /**
      * <p>A value that indicates whether to copy all tags from the restored DB instance
-     * to snapshots of the DB instance. By default, tags are not copied.</p>
+     * to snapshots of the DB instance.</p> <p>In most cases, tags aren't copied by
+     * default. However, when you restore a DB instance from a DB snapshot, RDS checks
+     * whether you specify new tags. If yes, the new tags are added to the restored DB
+     * instance. If there are no new tags, RDS looks for the tags from the source DB
+     * instance for the DB snapshot, and then adds those tags to the restored DB
+     * instance.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.CopyTags">
+     * Copying tags to DB instance snapshots</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
      */
     inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
 
     /**
      * <p>A value that indicates whether to copy all tags from the restored DB instance
-     * to snapshots of the DB instance. By default, tags are not copied.</p>
+     * to snapshots of the DB instance.</p> <p>In most cases, tags aren't copied by
+     * default. However, when you restore a DB instance from a DB snapshot, RDS checks
+     * whether you specify new tags. If yes, the new tags are added to the restored DB
+     * instance. If there are no new tags, RDS looks for the tags from the source DB
+     * instance for the DB snapshot, and then adds those tags to the restored DB
+     * instance.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.CopyTags">
+     * Copying tags to DB instance snapshots</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
      */
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
 
     /**
      * <p>A value that indicates whether to copy all tags from the restored DB instance
-     * to snapshots of the DB instance. By default, tags are not copied.</p>
+     * to snapshots of the DB instance.</p> <p>In most cases, tags aren't copied by
+     * default. However, when you restore a DB instance from a DB snapshot, RDS checks
+     * whether you specify new tags. If yes, the new tags are added to the restored DB
+     * instance. If there are no new tags, RDS looks for the tags from the source DB
+     * instance for the DB snapshot, and then adds those tags to the restored DB
+     * instance.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.CopyTags">
+     * Copying tags to DB instance snapshots</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 
@@ -1667,7 +1699,7 @@ namespace Model
      * enabled. The database can't be deleted when deletion protection is enabled. By
      * default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
-     * Deleting a DB Instance</a>. </p>
+     * Deleting a DB Instance</a>.</p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
@@ -1676,7 +1708,7 @@ namespace Model
      * enabled. The database can't be deleted when deletion protection is enabled. By
      * default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
-     * Deleting a DB Instance</a>. </p>
+     * Deleting a DB Instance</a>.</p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
@@ -1685,7 +1717,7 @@ namespace Model
      * enabled. The database can't be deleted when deletion protection is enabled. By
      * default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
-     * Deleting a DB Instance</a>. </p>
+     * Deleting a DB Instance</a>.</p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
@@ -1694,7 +1726,7 @@ namespace Model
      * enabled. The database can't be deleted when deletion protection is enabled. By
      * default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
-     * Deleting a DB Instance</a>. </p>
+     * Deleting a DB Instance</a>.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
@@ -1773,8 +1805,8 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting is required for RDS Custom.</p>
      */
     inline const Aws::String& GetCustomIamInstanceProfile() const{ return m_customIamInstanceProfile; }
 
@@ -1787,8 +1819,8 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting is required for RDS Custom.</p>
      */
     inline bool CustomIamInstanceProfileHasBeenSet() const { return m_customIamInstanceProfileHasBeenSet; }
 
@@ -1801,8 +1833,8 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting is required for RDS Custom.</p>
      */
     inline void SetCustomIamInstanceProfile(const Aws::String& value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile = value; }
 
@@ -1815,8 +1847,8 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting is required for RDS Custom.</p>
      */
     inline void SetCustomIamInstanceProfile(Aws::String&& value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile = std::move(value); }
 
@@ -1829,8 +1861,8 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting is required for RDS Custom.</p>
      */
     inline void SetCustomIamInstanceProfile(const char* value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile.assign(value); }
 
@@ -1843,8 +1875,8 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting is required for RDS Custom.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithCustomIamInstanceProfile(const Aws::String& value) { SetCustomIamInstanceProfile(value); return *this;}
 
@@ -1857,8 +1889,8 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting is required for RDS Custom.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithCustomIamInstanceProfile(Aws::String&& value) { SetCustomIamInstanceProfile(std::move(value)); return *this;}
 
@@ -1871,8 +1903,8 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting is required for RDS Custom.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithCustomIamInstanceProfile(const char* value) { SetCustomIamInstanceProfile(value); return *this;}
 
@@ -1964,6 +1996,111 @@ namespace Model
      * Guide</i>.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithBackupTarget(const char* value) { SetBackupTarget(value); return *this;}
+
+
+    /**
+     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline const Aws::String& GetNetworkType() const{ return m_networkType; }
+
+    /**
+     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+
+    /**
+     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline void SetNetworkType(const Aws::String& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+
+    /**
+     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline void SetNetworkType(Aws::String&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
+
+    /**
+     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline void SetNetworkType(const char* value) { m_networkTypeHasBeenSet = true; m_networkType.assign(value); }
+
+    /**
+     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithNetworkType(const Aws::String& value) { SetNetworkType(value); return *this;}
+
+    /**
+     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithNetworkType(Aws::String&& value) { SetNetworkType(std::move(value)); return *this;}
+
+    /**
+     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithNetworkType(const char* value) { SetNetworkType(value); return *this;}
 
   private:
 
@@ -2059,6 +2196,9 @@ namespace Model
 
     Aws::String m_backupTarget;
     bool m_backupTargetHasBeenSet;
+
+    Aws::String m_networkType;
+    bool m_networkTypeHasBeenSet;
   };
 
 } // namespace Model

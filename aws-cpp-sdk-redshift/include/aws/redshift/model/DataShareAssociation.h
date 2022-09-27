@@ -123,6 +123,55 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Web Services Region of the consumer accounts that have an
+     * association with a producer datashare.</p>
+     */
+    inline const Aws::String& GetConsumerRegion() const{ return m_consumerRegion; }
+
+    /**
+     * <p>The Amazon Web Services Region of the consumer accounts that have an
+     * association with a producer datashare.</p>
+     */
+    inline bool ConsumerRegionHasBeenSet() const { return m_consumerRegionHasBeenSet; }
+
+    /**
+     * <p>The Amazon Web Services Region of the consumer accounts that have an
+     * association with a producer datashare.</p>
+     */
+    inline void SetConsumerRegion(const Aws::String& value) { m_consumerRegionHasBeenSet = true; m_consumerRegion = value; }
+
+    /**
+     * <p>The Amazon Web Services Region of the consumer accounts that have an
+     * association with a producer datashare.</p>
+     */
+    inline void SetConsumerRegion(Aws::String&& value) { m_consumerRegionHasBeenSet = true; m_consumerRegion = std::move(value); }
+
+    /**
+     * <p>The Amazon Web Services Region of the consumer accounts that have an
+     * association with a producer datashare.</p>
+     */
+    inline void SetConsumerRegion(const char* value) { m_consumerRegionHasBeenSet = true; m_consumerRegion.assign(value); }
+
+    /**
+     * <p>The Amazon Web Services Region of the consumer accounts that have an
+     * association with a producer datashare.</p>
+     */
+    inline DataShareAssociation& WithConsumerRegion(const Aws::String& value) { SetConsumerRegion(value); return *this;}
+
+    /**
+     * <p>The Amazon Web Services Region of the consumer accounts that have an
+     * association with a producer datashare.</p>
+     */
+    inline DataShareAssociation& WithConsumerRegion(Aws::String&& value) { SetConsumerRegion(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Web Services Region of the consumer accounts that have an
+     * association with a producer datashare.</p>
+     */
+    inline DataShareAssociation& WithConsumerRegion(const char* value) { SetConsumerRegion(value); return *this;}
+
+
+    /**
      * <p>The creation date of the datashare that is associated.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
@@ -190,6 +239,9 @@ namespace Model
 
     DataShareStatus m_status;
     bool m_statusHasBeenSet;
+
+    Aws::String m_consumerRegion;
+    bool m_consumerRegionHasBeenSet;
 
     Aws::Utils::DateTime m_createdDate;
     bool m_createdDateHasBeenSet;

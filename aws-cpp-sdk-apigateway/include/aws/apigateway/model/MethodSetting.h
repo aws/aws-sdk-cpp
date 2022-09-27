@@ -161,42 +161,34 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether full requests and responses are logged for this method,
-     * which affects the log entries pushed to Amazon CloudWatch Logs. This can be
-     * useful to troubleshoot APIs, but can result in logging sensitive data. We
-     * recommend that you don't enable this option for production APIs. The PATCH path
-     * for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and
-     * the value is a Boolean.</p>
+     * <p>Specifies whether data trace logging is enabled for this method, which
+     * affects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for
+     * this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the
+     * value is a Boolean.</p>
      */
     inline bool GetDataTraceEnabled() const{ return m_dataTraceEnabled; }
 
     /**
-     * <p>Specifies whether full requests and responses are logged for this method,
-     * which affects the log entries pushed to Amazon CloudWatch Logs. This can be
-     * useful to troubleshoot APIs, but can result in logging sensitive data. We
-     * recommend that you don't enable this option for production APIs. The PATCH path
-     * for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and
-     * the value is a Boolean.</p>
+     * <p>Specifies whether data trace logging is enabled for this method, which
+     * affects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for
+     * this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the
+     * value is a Boolean.</p>
      */
     inline bool DataTraceEnabledHasBeenSet() const { return m_dataTraceEnabledHasBeenSet; }
 
     /**
-     * <p>Specifies whether full requests and responses are logged for this method,
-     * which affects the log entries pushed to Amazon CloudWatch Logs. This can be
-     * useful to troubleshoot APIs, but can result in logging sensitive data. We
-     * recommend that you don't enable this option for production APIs. The PATCH path
-     * for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and
-     * the value is a Boolean.</p>
+     * <p>Specifies whether data trace logging is enabled for this method, which
+     * affects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for
+     * this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the
+     * value is a Boolean.</p>
      */
     inline void SetDataTraceEnabled(bool value) { m_dataTraceEnabledHasBeenSet = true; m_dataTraceEnabled = value; }
 
     /**
-     * <p>Specifies whether full requests and responses are logged for this method,
-     * which affects the log entries pushed to Amazon CloudWatch Logs. This can be
-     * useful to troubleshoot APIs, but can result in logging sensitive data. We
-     * recommend that you don't enable this option for production APIs. The PATCH path
-     * for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and
-     * the value is a Boolean.</p>
+     * <p>Specifies whether data trace logging is enabled for this method, which
+     * affects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for
+     * this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the
+     * value is a Boolean.</p>
      */
     inline MethodSetting& WithDataTraceEnabled(bool value) { SetDataTraceEnabled(value); return *this;}
 

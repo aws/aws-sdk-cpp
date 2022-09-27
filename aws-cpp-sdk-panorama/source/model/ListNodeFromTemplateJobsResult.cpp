@@ -28,6 +28,12 @@ ListNodeFromTemplateJobsResult::ListNodeFromTemplateJobsResult(const Aws::Amazon
 ListNodeFromTemplateJobsResult& ListNodeFromTemplateJobsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+
+  }
+
   if(jsonValue.ValueExists("NodeFromTemplateJobs"))
   {
     Array<JsonView> nodeFromTemplateJobsJsonList = jsonValue.GetArray("NodeFromTemplateJobs");
@@ -35,12 +41,6 @@ ListNodeFromTemplateJobsResult& ListNodeFromTemplateJobsResult::operator =(const
     {
       m_nodeFromTemplateJobs.push_back(nodeFromTemplateJobsJsonList[nodeFromTemplateJobsIndex].AsObject());
     }
-  }
-
-  if(jsonValue.ValueExists("NextToken"))
-  {
-    m_nextToken = jsonValue.GetString("NextToken");
-
   }
 
 

@@ -24,7 +24,8 @@ CreateEntityRecognizerRequest::CreateEntityRecognizerRequest() :
     m_languageCodeHasBeenSet(false),
     m_volumeKmsKeyIdHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
-    m_modelKmsKeyIdHasBeenSet(false)
+    m_modelKmsKeyIdHasBeenSet(false),
+    m_modelPolicyHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,12 @@ Aws::String CreateEntityRecognizerRequest::SerializePayload() const
   if(m_modelKmsKeyIdHasBeenSet)
   {
    payload.WithString("ModelKmsKeyId", m_modelKmsKeyId);
+
+  }
+
+  if(m_modelPolicyHasBeenSet)
+  {
+   payload.WithString("ModelPolicy", m_modelPolicy);
 
   }
 

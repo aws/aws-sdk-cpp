@@ -10,6 +10,7 @@
 #include <aws/ec2/model/State.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/IpAddressType.h>
 #include <aws/ec2/model/DnsEntry.h>
 #include <utility>
 
@@ -379,6 +380,37 @@ namespace Model
      */
     inline VpcEndpointConnection& AddGatewayLoadBalancerArns(const char* value) { m_gatewayLoadBalancerArnsHasBeenSet = true; m_gatewayLoadBalancerArns.push_back(value); return *this; }
 
+
+    /**
+     * <p>The IP address type for the endpoint.</p>
+     */
+    inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
+
+    /**
+     * <p>The IP address type for the endpoint.</p>
+     */
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+
+    /**
+     * <p>The IP address type for the endpoint.</p>
+     */
+    inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+
+    /**
+     * <p>The IP address type for the endpoint.</p>
+     */
+    inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
+
+    /**
+     * <p>The IP address type for the endpoint.</p>
+     */
+    inline VpcEndpointConnection& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
+
+    /**
+     * <p>The IP address type for the endpoint.</p>
+     */
+    inline VpcEndpointConnection& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_serviceId;
@@ -404,6 +436,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_gatewayLoadBalancerArns;
     bool m_gatewayLoadBalancerArnsHasBeenSet;
+
+    IpAddressType m_ipAddressType;
+    bool m_ipAddressTypeHasBeenSet;
   };
 
 } // namespace Model

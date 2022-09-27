@@ -30,6 +30,7 @@ ChannelSummary::ChannelSummary() :
     m_inputSpecificationHasBeenSet(false),
     m_logLevel(LogLevel::NOT_SET),
     m_logLevelHasBeenSet(false),
+    m_maintenanceHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_pipelinesRunningCount(0),
     m_pipelinesRunningCountHasBeenSet(false),
@@ -53,6 +54,7 @@ ChannelSummary::ChannelSummary(JsonView jsonValue) :
     m_inputSpecificationHasBeenSet(false),
     m_logLevel(LogLevel::NOT_SET),
     m_logLevelHasBeenSet(false),
+    m_maintenanceHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_pipelinesRunningCount(0),
     m_pipelinesRunningCountHasBeenSet(false),
@@ -137,6 +139,13 @@ ChannelSummary& ChannelSummary::operator =(JsonView jsonValue)
     m_logLevel = LogLevelMapper::GetLogLevelForName(jsonValue.GetString("logLevel"));
 
     m_logLevelHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("maintenance"))
+  {
+    m_maintenance = jsonValue.GetObject("maintenance");
+
+    m_maintenanceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -256,6 +265,12 @@ JsonValue ChannelSummary::Jsonize() const
   if(m_logLevelHasBeenSet)
   {
    payload.WithString("logLevel", LogLevelMapper::GetNameForLogLevel(m_logLevel));
+  }
+
+  if(m_maintenanceHasBeenSet)
+  {
+   payload.WithObject("maintenance", m_maintenance.Jsonize());
+
   }
 
   if(m_nameHasBeenSet)

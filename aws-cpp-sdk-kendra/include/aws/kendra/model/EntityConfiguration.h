@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides the configuration information of users or groups in your Amazon Web
+   * <p>Provides the configuration information for users or groups in your Amazon Web
    * Services SSO identity source to grant access your Amazon Kendra
    * experience.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/EntityConfiguration">AWS

@@ -13,6 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateAppRequest::CreateAppRequest() : 
+    m_assessmentSchedule(AppAssessmentScheduleType::NOT_SET),
+    m_assessmentScheduleHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_descriptionHasBeenSet(false),
@@ -25,6 +27,11 @@ CreateAppRequest::CreateAppRequest() :
 Aws::String CreateAppRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_assessmentScheduleHasBeenSet)
+  {
+   payload.WithString("assessmentSchedule", AppAssessmentScheduleTypeMapper::GetNameForAppAssessmentScheduleType(m_assessmentSchedule));
+  }
 
   if(m_clientTokenHasBeenSet)
   {

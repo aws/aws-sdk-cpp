@@ -80,50 +80,58 @@ namespace Model
 
 
     /**
-     * <p>The principal the assumed the role specified of the
-     * <code>createdBy</code>.</p>
+     * <p>The service principal that assumed the role specified in
+     * <code>createdBy</code>. If no service principal assumed the role this will be
+     * left blank.</p>
      */
     inline const Aws::String& GetInvokedBy() const{ return m_invokedBy; }
 
     /**
-     * <p>The principal the assumed the role specified of the
-     * <code>createdBy</code>.</p>
+     * <p>The service principal that assumed the role specified in
+     * <code>createdBy</code>. If no service principal assumed the role this will be
+     * left blank.</p>
      */
     inline bool InvokedByHasBeenSet() const { return m_invokedByHasBeenSet; }
 
     /**
-     * <p>The principal the assumed the role specified of the
-     * <code>createdBy</code>.</p>
+     * <p>The service principal that assumed the role specified in
+     * <code>createdBy</code>. If no service principal assumed the role this will be
+     * left blank.</p>
      */
     inline void SetInvokedBy(const Aws::String& value) { m_invokedByHasBeenSet = true; m_invokedBy = value; }
 
     /**
-     * <p>The principal the assumed the role specified of the
-     * <code>createdBy</code>.</p>
+     * <p>The service principal that assumed the role specified in
+     * <code>createdBy</code>. If no service principal assumed the role this will be
+     * left blank.</p>
      */
     inline void SetInvokedBy(Aws::String&& value) { m_invokedByHasBeenSet = true; m_invokedBy = std::move(value); }
 
     /**
-     * <p>The principal the assumed the role specified of the
-     * <code>createdBy</code>.</p>
+     * <p>The service principal that assumed the role specified in
+     * <code>createdBy</code>. If no service principal assumed the role this will be
+     * left blank.</p>
      */
     inline void SetInvokedBy(const char* value) { m_invokedByHasBeenSet = true; m_invokedBy.assign(value); }
 
     /**
-     * <p>The principal the assumed the role specified of the
-     * <code>createdBy</code>.</p>
+     * <p>The service principal that assumed the role specified in
+     * <code>createdBy</code>. If no service principal assumed the role this will be
+     * left blank.</p>
      */
     inline IncidentRecordSource& WithInvokedBy(const Aws::String& value) { SetInvokedBy(value); return *this;}
 
     /**
-     * <p>The principal the assumed the role specified of the
-     * <code>createdBy</code>.</p>
+     * <p>The service principal that assumed the role specified in
+     * <code>createdBy</code>. If no service principal assumed the role this will be
+     * left blank.</p>
      */
     inline IncidentRecordSource& WithInvokedBy(Aws::String&& value) { SetInvokedBy(std::move(value)); return *this;}
 
     /**
-     * <p>The principal the assumed the role specified of the
-     * <code>createdBy</code>.</p>
+     * <p>The service principal that assumed the role specified in
+     * <code>createdBy</code>. If no service principal assumed the role this will be
+     * left blank.</p>
      */
     inline IncidentRecordSource& WithInvokedBy(const char* value) { SetInvokedBy(value); return *this;}
 

@@ -153,57 +153,57 @@ namespace Model
 
     /**
      * <p>A fleet location to search for game sessions. You can specify a fleet's home
-     * Region or a remote location. Use the AWS Region code format, such as
-     * <code>us-west-2</code>. </p> <p> </p>
+     * Region or a remote location. Use the Amazon Web Services Region code format,
+     * such as <code>us-west-2</code>. </p> <p> </p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
     /**
      * <p>A fleet location to search for game sessions. You can specify a fleet's home
-     * Region or a remote location. Use the AWS Region code format, such as
-     * <code>us-west-2</code>. </p> <p> </p>
+     * Region or a remote location. Use the Amazon Web Services Region code format,
+     * such as <code>us-west-2</code>. </p> <p> </p>
      */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
      * <p>A fleet location to search for game sessions. You can specify a fleet's home
-     * Region or a remote location. Use the AWS Region code format, such as
-     * <code>us-west-2</code>. </p> <p> </p>
+     * Region or a remote location. Use the Amazon Web Services Region code format,
+     * such as <code>us-west-2</code>. </p> <p> </p>
      */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
      * <p>A fleet location to search for game sessions. You can specify a fleet's home
-     * Region or a remote location. Use the AWS Region code format, such as
-     * <code>us-west-2</code>. </p> <p> </p>
+     * Region or a remote location. Use the Amazon Web Services Region code format,
+     * such as <code>us-west-2</code>. </p> <p> </p>
      */
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
      * <p>A fleet location to search for game sessions. You can specify a fleet's home
-     * Region or a remote location. Use the AWS Region code format, such as
-     * <code>us-west-2</code>. </p> <p> </p>
+     * Region or a remote location. Use the Amazon Web Services Region code format,
+     * such as <code>us-west-2</code>. </p> <p> </p>
      */
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
 
     /**
      * <p>A fleet location to search for game sessions. You can specify a fleet's home
-     * Region or a remote location. Use the AWS Region code format, such as
-     * <code>us-west-2</code>. </p> <p> </p>
+     * Region or a remote location. Use the Amazon Web Services Region code format,
+     * such as <code>us-west-2</code>. </p> <p> </p>
      */
     inline SearchGameSessionsRequest& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     /**
      * <p>A fleet location to search for game sessions. You can specify a fleet's home
-     * Region or a remote location. Use the AWS Region code format, such as
-     * <code>us-west-2</code>. </p> <p> </p>
+     * Region or a remote location. Use the Amazon Web Services Region code format,
+     * such as <code>us-west-2</code>. </p> <p> </p>
      */
     inline SearchGameSessionsRequest& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
      * <p>A fleet location to search for game sessions. You can specify a fleet's home
-     * Region or a remote location. Use the AWS Region code format, such as
-     * <code>us-west-2</code>. </p> <p> </p>
+     * Region or a remote location. Use the Amazon Web Services Region code format,
+     * such as <code>us-west-2</code>. </p> <p> </p>
      */
     inline SearchGameSessionsRequest& WithLocation(const char* value) { SetLocation(value); return *this;}
 

@@ -19,12 +19,14 @@ namespace Model
 {
 
 CandidateArtifactLocations::CandidateArtifactLocations() : 
-    m_explainabilityHasBeenSet(false)
+    m_explainabilityHasBeenSet(false),
+    m_modelInsightsHasBeenSet(false)
 {
 }
 
 CandidateArtifactLocations::CandidateArtifactLocations(JsonView jsonValue) : 
-    m_explainabilityHasBeenSet(false)
+    m_explainabilityHasBeenSet(false),
+    m_modelInsightsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ CandidateArtifactLocations& CandidateArtifactLocations::operator =(JsonView json
     m_explainabilityHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ModelInsights"))
+  {
+    m_modelInsights = jsonValue.GetString("ModelInsights");
+
+    m_modelInsightsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue CandidateArtifactLocations::Jsonize() const
   if(m_explainabilityHasBeenSet)
   {
    payload.WithString("Explainability", m_explainability);
+
+  }
+
+  if(m_modelInsightsHasBeenSet)
+  {
+   payload.WithString("ModelInsights", m_modelInsights);
 
   }
 

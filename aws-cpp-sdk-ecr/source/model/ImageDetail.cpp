@@ -29,7 +29,8 @@ ImageDetail::ImageDetail() :
     m_imageScanStatusHasBeenSet(false),
     m_imageScanFindingsSummaryHasBeenSet(false),
     m_imageManifestMediaTypeHasBeenSet(false),
-    m_artifactMediaTypeHasBeenSet(false)
+    m_artifactMediaTypeHasBeenSet(false),
+    m_lastRecordedPullTimeHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ ImageDetail::ImageDetail(JsonView jsonValue) :
     m_imageScanStatusHasBeenSet(false),
     m_imageScanFindingsSummaryHasBeenSet(false),
     m_imageManifestMediaTypeHasBeenSet(false),
-    m_artifactMediaTypeHasBeenSet(false)
+    m_artifactMediaTypeHasBeenSet(false),
+    m_lastRecordedPullTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -124,6 +126,13 @@ ImageDetail& ImageDetail::operator =(JsonView jsonValue)
     m_artifactMediaTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("lastRecordedPullTime"))
+  {
+    m_lastRecordedPullTime = jsonValue.GetDouble("lastRecordedPullTime");
+
+    m_lastRecordedPullTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -193,6 +202,11 @@ JsonValue ImageDetail::Jsonize() const
   {
    payload.WithString("artifactMediaType", m_artifactMediaType);
 
+  }
+
+  if(m_lastRecordedPullTimeHasBeenSet)
+  {
+   payload.WithDouble("lastRecordedPullTime", m_lastRecordedPullTime.SecondsWithMSPrecision());
   }
 
   return payload;

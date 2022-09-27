@@ -17,7 +17,11 @@ ListRuleGroupsRequest::ListRuleGroupsRequest() :
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_scope(ResourceManagedStatus::NOT_SET),
-    m_scopeHasBeenSet(false)
+    m_scopeHasBeenSet(false),
+    m_managedType(ResourceManagedType::NOT_SET),
+    m_managedTypeHasBeenSet(false),
+    m_type(RuleGroupType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -40,6 +44,16 @@ Aws::String ListRuleGroupsRequest::SerializePayload() const
   if(m_scopeHasBeenSet)
   {
    payload.WithString("Scope", ResourceManagedStatusMapper::GetNameForResourceManagedStatus(m_scope));
+  }
+
+  if(m_managedTypeHasBeenSet)
+  {
+   payload.WithString("ManagedType", ResourceManagedTypeMapper::GetNameForResourceManagedType(m_managedType));
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("Type", RuleGroupTypeMapper::GetNameForRuleGroupType(m_type));
   }
 
   return payload.View().WriteReadable();

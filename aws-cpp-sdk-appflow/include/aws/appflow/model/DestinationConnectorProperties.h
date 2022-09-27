@@ -15,6 +15,9 @@
 #include <aws/appflow/model/HoneycodeDestinationProperties.h>
 #include <aws/appflow/model/CustomerProfilesDestinationProperties.h>
 #include <aws/appflow/model/ZendeskDestinationProperties.h>
+#include <aws/appflow/model/MarketoDestinationProperties.h>
+#include <aws/appflow/model/CustomConnectorDestinationProperties.h>
+#include <aws/appflow/model/SAPODataDestinationProperties.h>
 #include <utility>
 
 namespace Aws
@@ -356,6 +359,99 @@ namespace Model
      */
     inline DestinationConnectorProperties& WithZendesk(ZendeskDestinationProperties&& value) { SetZendesk(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The properties required to query Marketo.</p>
+     */
+    inline const MarketoDestinationProperties& GetMarketo() const{ return m_marketo; }
+
+    /**
+     * <p>The properties required to query Marketo.</p>
+     */
+    inline bool MarketoHasBeenSet() const { return m_marketoHasBeenSet; }
+
+    /**
+     * <p>The properties required to query Marketo.</p>
+     */
+    inline void SetMarketo(const MarketoDestinationProperties& value) { m_marketoHasBeenSet = true; m_marketo = value; }
+
+    /**
+     * <p>The properties required to query Marketo.</p>
+     */
+    inline void SetMarketo(MarketoDestinationProperties&& value) { m_marketoHasBeenSet = true; m_marketo = std::move(value); }
+
+    /**
+     * <p>The properties required to query Marketo.</p>
+     */
+    inline DestinationConnectorProperties& WithMarketo(const MarketoDestinationProperties& value) { SetMarketo(value); return *this;}
+
+    /**
+     * <p>The properties required to query Marketo.</p>
+     */
+    inline DestinationConnectorProperties& WithMarketo(MarketoDestinationProperties&& value) { SetMarketo(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The properties that are required to query the custom Connector.</p>
+     */
+    inline const CustomConnectorDestinationProperties& GetCustomConnector() const{ return m_customConnector; }
+
+    /**
+     * <p>The properties that are required to query the custom Connector.</p>
+     */
+    inline bool CustomConnectorHasBeenSet() const { return m_customConnectorHasBeenSet; }
+
+    /**
+     * <p>The properties that are required to query the custom Connector.</p>
+     */
+    inline void SetCustomConnector(const CustomConnectorDestinationProperties& value) { m_customConnectorHasBeenSet = true; m_customConnector = value; }
+
+    /**
+     * <p>The properties that are required to query the custom Connector.</p>
+     */
+    inline void SetCustomConnector(CustomConnectorDestinationProperties&& value) { m_customConnectorHasBeenSet = true; m_customConnector = std::move(value); }
+
+    /**
+     * <p>The properties that are required to query the custom Connector.</p>
+     */
+    inline DestinationConnectorProperties& WithCustomConnector(const CustomConnectorDestinationProperties& value) { SetCustomConnector(value); return *this;}
+
+    /**
+     * <p>The properties that are required to query the custom Connector.</p>
+     */
+    inline DestinationConnectorProperties& WithCustomConnector(CustomConnectorDestinationProperties&& value) { SetCustomConnector(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The properties required to query SAPOData.</p>
+     */
+    inline const SAPODataDestinationProperties& GetSAPOData() const{ return m_sAPOData; }
+
+    /**
+     * <p>The properties required to query SAPOData.</p>
+     */
+    inline bool SAPODataHasBeenSet() const { return m_sAPODataHasBeenSet; }
+
+    /**
+     * <p>The properties required to query SAPOData.</p>
+     */
+    inline void SetSAPOData(const SAPODataDestinationProperties& value) { m_sAPODataHasBeenSet = true; m_sAPOData = value; }
+
+    /**
+     * <p>The properties required to query SAPOData.</p>
+     */
+    inline void SetSAPOData(SAPODataDestinationProperties&& value) { m_sAPODataHasBeenSet = true; m_sAPOData = std::move(value); }
+
+    /**
+     * <p>The properties required to query SAPOData.</p>
+     */
+    inline DestinationConnectorProperties& WithSAPOData(const SAPODataDestinationProperties& value) { SetSAPOData(value); return *this;}
+
+    /**
+     * <p>The properties required to query SAPOData.</p>
+     */
+    inline DestinationConnectorProperties& WithSAPOData(SAPODataDestinationProperties&& value) { SetSAPOData(std::move(value)); return *this;}
+
   private:
 
     RedshiftDestinationProperties m_redshift;
@@ -387,6 +483,15 @@ namespace Model
 
     ZendeskDestinationProperties m_zendesk;
     bool m_zendeskHasBeenSet;
+
+    MarketoDestinationProperties m_marketo;
+    bool m_marketoHasBeenSet;
+
+    CustomConnectorDestinationProperties m_customConnector;
+    bool m_customConnectorHasBeenSet;
+
+    SAPODataDestinationProperties m_sAPOData;
+    bool m_sAPODataHasBeenSet;
   };
 
 } // namespace Model

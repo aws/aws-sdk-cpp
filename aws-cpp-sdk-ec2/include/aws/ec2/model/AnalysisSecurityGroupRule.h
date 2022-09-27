@@ -82,50 +82,50 @@ namespace Model
 
 
     /**
-     * <p>The direction. The following are possible values:</p> <ul> <li> <p>egress</p>
-     * </li> <li> <p>ingress</p> </li> </ul>
+     * <p>The direction. The following are the possible values:</p> <ul> <li>
+     * <p>egress</p> </li> <li> <p>ingress</p> </li> </ul>
      */
     inline const Aws::String& GetDirection() const{ return m_direction; }
 
     /**
-     * <p>The direction. The following are possible values:</p> <ul> <li> <p>egress</p>
-     * </li> <li> <p>ingress</p> </li> </ul>
+     * <p>The direction. The following are the possible values:</p> <ul> <li>
+     * <p>egress</p> </li> <li> <p>ingress</p> </li> </ul>
      */
     inline bool DirectionHasBeenSet() const { return m_directionHasBeenSet; }
 
     /**
-     * <p>The direction. The following are possible values:</p> <ul> <li> <p>egress</p>
-     * </li> <li> <p>ingress</p> </li> </ul>
+     * <p>The direction. The following are the possible values:</p> <ul> <li>
+     * <p>egress</p> </li> <li> <p>ingress</p> </li> </ul>
      */
     inline void SetDirection(const Aws::String& value) { m_directionHasBeenSet = true; m_direction = value; }
 
     /**
-     * <p>The direction. The following are possible values:</p> <ul> <li> <p>egress</p>
-     * </li> <li> <p>ingress</p> </li> </ul>
+     * <p>The direction. The following are the possible values:</p> <ul> <li>
+     * <p>egress</p> </li> <li> <p>ingress</p> </li> </ul>
      */
     inline void SetDirection(Aws::String&& value) { m_directionHasBeenSet = true; m_direction = std::move(value); }
 
     /**
-     * <p>The direction. The following are possible values:</p> <ul> <li> <p>egress</p>
-     * </li> <li> <p>ingress</p> </li> </ul>
+     * <p>The direction. The following are the possible values:</p> <ul> <li>
+     * <p>egress</p> </li> <li> <p>ingress</p> </li> </ul>
      */
     inline void SetDirection(const char* value) { m_directionHasBeenSet = true; m_direction.assign(value); }
 
     /**
-     * <p>The direction. The following are possible values:</p> <ul> <li> <p>egress</p>
-     * </li> <li> <p>ingress</p> </li> </ul>
+     * <p>The direction. The following are the possible values:</p> <ul> <li>
+     * <p>egress</p> </li> <li> <p>ingress</p> </li> </ul>
      */
     inline AnalysisSecurityGroupRule& WithDirection(const Aws::String& value) { SetDirection(value); return *this;}
 
     /**
-     * <p>The direction. The following are possible values:</p> <ul> <li> <p>egress</p>
-     * </li> <li> <p>ingress</p> </li> </ul>
+     * <p>The direction. The following are the possible values:</p> <ul> <li>
+     * <p>egress</p> </li> <li> <p>ingress</p> </li> </ul>
      */
     inline AnalysisSecurityGroupRule& WithDirection(Aws::String&& value) { SetDirection(std::move(value)); return *this;}
 
     /**
-     * <p>The direction. The following are possible values:</p> <ul> <li> <p>egress</p>
-     * </li> <li> <p>ingress</p> </li> </ul>
+     * <p>The direction. The following are the possible values:</p> <ul> <li>
+     * <p>egress</p> </li> <li> <p>ingress</p> </li> </ul>
      */
     inline AnalysisSecurityGroupRule& WithDirection(const char* value) { SetDirection(value); return *this;}
 

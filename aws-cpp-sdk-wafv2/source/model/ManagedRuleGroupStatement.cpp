@@ -24,7 +24,8 @@ ManagedRuleGroupStatement::ManagedRuleGroupStatement() :
     m_nameHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_excludedRulesHasBeenSet(false),
-    m_scopeDownStatementHasBeenSet(false)
+    m_scopeDownStatementHasBeenSet(false),
+    m_managedRuleGroupConfigsHasBeenSet(false)
 {
 }
 
@@ -33,7 +34,8 @@ ManagedRuleGroupStatement::ManagedRuleGroupStatement(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_excludedRulesHasBeenSet(false),
-    m_scopeDownStatementHasBeenSet(false)
+    m_scopeDownStatementHasBeenSet(false),
+    m_managedRuleGroupConfigsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -85,6 +87,16 @@ ManagedRuleGroupStatement& ManagedRuleGroupStatement::operator =(JsonView jsonVa
     m_scopeDownStatementHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ManagedRuleGroupConfigs"))
+  {
+    Array<JsonView> managedRuleGroupConfigsJsonList = jsonValue.GetArray("ManagedRuleGroupConfigs");
+    for(unsigned managedRuleGroupConfigsIndex = 0; managedRuleGroupConfigsIndex < managedRuleGroupConfigsJsonList.GetLength(); ++managedRuleGroupConfigsIndex)
+    {
+      m_managedRuleGroupConfigs.push_back(managedRuleGroupConfigsJsonList[managedRuleGroupConfigsIndex].AsObject());
+    }
+    m_managedRuleGroupConfigsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -124,6 +136,17 @@ JsonValue ManagedRuleGroupStatement::Jsonize() const
   if(m_scopeDownStatementHasBeenSet)
   {
    payload.WithObject("ScopeDownStatement", m_scopeDownStatement->Jsonize());
+
+  }
+
+  if(m_managedRuleGroupConfigsHasBeenSet)
+  {
+   Array<JsonValue> managedRuleGroupConfigsJsonList(m_managedRuleGroupConfigs.size());
+   for(unsigned managedRuleGroupConfigsIndex = 0; managedRuleGroupConfigsIndex < managedRuleGroupConfigsJsonList.GetLength(); ++managedRuleGroupConfigsIndex)
+   {
+     managedRuleGroupConfigsJsonList[managedRuleGroupConfigsIndex].AsObject(m_managedRuleGroupConfigs[managedRuleGroupConfigsIndex].Jsonize());
+   }
+   payload.WithArray("ManagedRuleGroupConfigs", std::move(managedRuleGroupConfigsJsonList));
 
   }
 

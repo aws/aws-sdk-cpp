@@ -70,19 +70,29 @@ namespace Model
     inline GetChannelMembershipPreferencesResult& WithChannelArn(const char* value) { SetChannelArn(value); return *this;}
 
 
-    
+    /**
+     * <p>The details of a user.</p>
+     */
     inline const Identity& GetMember() const{ return m_member; }
 
-    
+    /**
+     * <p>The details of a user.</p>
+     */
     inline void SetMember(const Identity& value) { m_member = value; }
 
-    
+    /**
+     * <p>The details of a user.</p>
+     */
     inline void SetMember(Identity&& value) { m_member = std::move(value); }
 
-    
+    /**
+     * <p>The details of a user.</p>
+     */
     inline GetChannelMembershipPreferencesResult& WithMember(const Identity& value) { SetMember(value); return *this;}
 
-    
+    /**
+     * <p>The details of a user.</p>
+     */
     inline GetChannelMembershipPreferencesResult& WithMember(Identity&& value) { SetMember(std::move(value)); return *this;}
 
 

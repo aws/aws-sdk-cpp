@@ -28,8 +28,8 @@ namespace RDS
 namespace Model
 {
   /**
-   * <p> Contains the result of a successful invocation of the
-   * <code>DescribeEvents</code> action. </p><p><h3>See Also:</h3>   <a
+   * <p>Contains the result of a successful invocation of the
+   * <code>DescribeEvents</code> action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/EventsMessage">AWS
    * API Reference</a></p>
    */
@@ -42,87 +42,87 @@ namespace Model
 
 
     /**
-     * <p> An optional pagination token provided by a previous Events request. If this
+     * <p>An optional pagination token provided by a previous Events request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code> . </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p> An optional pagination token provided by a previous Events request. If this
+     * <p>An optional pagination token provided by a previous Events request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code> . </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
     /**
-     * <p> An optional pagination token provided by a previous Events request. If this
+     * <p>An optional pagination token provided by a previous Events request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code> . </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
-     * <p> An optional pagination token provided by a previous Events request. If this
+     * <p>An optional pagination token provided by a previous Events request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code> . </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
     /**
-     * <p> An optional pagination token provided by a previous Events request. If this
+     * <p>An optional pagination token provided by a previous Events request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code> . </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline DescribeEventsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p> An optional pagination token provided by a previous Events request. If this
+     * <p>An optional pagination token provided by a previous Events request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code> . </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline DescribeEventsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
-     * <p> An optional pagination token provided by a previous Events request. If this
+     * <p>An optional pagination token provided by a previous Events request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code> . </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline DescribeEventsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
 
     /**
-     * <p> A list of <code>Event</code> instances. </p>
+     * <p>A list of <code>Event</code> instances.</p>
      */
     inline const Aws::Vector<Event>& GetEvents() const{ return m_events; }
 
     /**
-     * <p> A list of <code>Event</code> instances. </p>
+     * <p>A list of <code>Event</code> instances.</p>
      */
     inline void SetEvents(const Aws::Vector<Event>& value) { m_events = value; }
 
     /**
-     * <p> A list of <code>Event</code> instances. </p>
+     * <p>A list of <code>Event</code> instances.</p>
      */
     inline void SetEvents(Aws::Vector<Event>&& value) { m_events = std::move(value); }
 
     /**
-     * <p> A list of <code>Event</code> instances. </p>
+     * <p>A list of <code>Event</code> instances.</p>
      */
     inline DescribeEventsResult& WithEvents(const Aws::Vector<Event>& value) { SetEvents(value); return *this;}
 
     /**
-     * <p> A list of <code>Event</code> instances. </p>
+     * <p>A list of <code>Event</code> instances.</p>
      */
     inline DescribeEventsResult& WithEvents(Aws::Vector<Event>&& value) { SetEvents(std::move(value)); return *this;}
 
     /**
-     * <p> A list of <code>Event</code> instances. </p>
+     * <p>A list of <code>Event</code> instances.</p>
      */
     inline DescribeEventsResult& AddEvents(const Event& value) { m_events.push_back(value); return *this; }
 
     /**
-     * <p> A list of <code>Event</code> instances. </p>
+     * <p>A list of <code>Event</code> instances.</p>
      */
     inline DescribeEventsResult& AddEvents(Event&& value) { m_events.push_back(std::move(value)); return *this; }
 

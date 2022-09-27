@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 CreateAttendeeRequest::CreateAttendeeRequest() : 
     m_meetingIdHasBeenSet(false),
-    m_externalUserIdHasBeenSet(false)
+    m_externalUserIdHasBeenSet(false),
+    m_capabilitiesHasBeenSet(false)
 {
 }
 
@@ -25,6 +26,12 @@ Aws::String CreateAttendeeRequest::SerializePayload() const
   if(m_externalUserIdHasBeenSet)
   {
    payload.WithString("ExternalUserId", m_externalUserId);
+
+  }
+
+  if(m_capabilitiesHasBeenSet)
+  {
+   payload.WithObject("Capabilities", m_capabilities.Jsonize());
 
   }
 

@@ -27,7 +27,9 @@ namespace Model
 
   /**
    * <p>Provides a summary of the properties of a dataset schema. For a complete
-   * listing, call the <a>DescribeSchema</a> API.</p><p><h3>See Also:</h3>   <a
+   * listing, call the <a
+   * href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSchema.html">DescribeSchema</a>
+   * API.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DatasetSchemaSummary">AWS
    * API Reference</a></p>
    */

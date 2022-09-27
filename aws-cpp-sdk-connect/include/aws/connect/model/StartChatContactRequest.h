@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/connect/model/ParticipantDetails.h>
 #include <aws/connect/model/ChatMessage.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -410,6 +411,90 @@ namespace Model
      */
     inline StartChatContactRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
+    /**
+     * <p>The total duration of the newly started chat session. If not specified, the
+     * chat session duration defaults to 25 hour. The minumum configurable time is 60
+     * minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
+     */
+    inline int GetChatDurationInMinutes() const{ return m_chatDurationInMinutes; }
+
+    /**
+     * <p>The total duration of the newly started chat session. If not specified, the
+     * chat session duration defaults to 25 hour. The minumum configurable time is 60
+     * minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
+     */
+    inline bool ChatDurationInMinutesHasBeenSet() const { return m_chatDurationInMinutesHasBeenSet; }
+
+    /**
+     * <p>The total duration of the newly started chat session. If not specified, the
+     * chat session duration defaults to 25 hour. The minumum configurable time is 60
+     * minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
+     */
+    inline void SetChatDurationInMinutes(int value) { m_chatDurationInMinutesHasBeenSet = true; m_chatDurationInMinutes = value; }
+
+    /**
+     * <p>The total duration of the newly started chat session. If not specified, the
+     * chat session duration defaults to 25 hour. The minumum configurable time is 60
+     * minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
+     */
+    inline StartChatContactRequest& WithChatDurationInMinutes(int value) { SetChatDurationInMinutes(value); return *this;}
+
+
+    /**
+     * <p>The supported chat message content types. Content types can be text/plain or
+     * both text/plain and text/markdown.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSupportedMessagingContentTypes() const{ return m_supportedMessagingContentTypes; }
+
+    /**
+     * <p>The supported chat message content types. Content types can be text/plain or
+     * both text/plain and text/markdown.</p>
+     */
+    inline bool SupportedMessagingContentTypesHasBeenSet() const { return m_supportedMessagingContentTypesHasBeenSet; }
+
+    /**
+     * <p>The supported chat message content types. Content types can be text/plain or
+     * both text/plain and text/markdown.</p>
+     */
+    inline void SetSupportedMessagingContentTypes(const Aws::Vector<Aws::String>& value) { m_supportedMessagingContentTypesHasBeenSet = true; m_supportedMessagingContentTypes = value; }
+
+    /**
+     * <p>The supported chat message content types. Content types can be text/plain or
+     * both text/plain and text/markdown.</p>
+     */
+    inline void SetSupportedMessagingContentTypes(Aws::Vector<Aws::String>&& value) { m_supportedMessagingContentTypesHasBeenSet = true; m_supportedMessagingContentTypes = std::move(value); }
+
+    /**
+     * <p>The supported chat message content types. Content types can be text/plain or
+     * both text/plain and text/markdown.</p>
+     */
+    inline StartChatContactRequest& WithSupportedMessagingContentTypes(const Aws::Vector<Aws::String>& value) { SetSupportedMessagingContentTypes(value); return *this;}
+
+    /**
+     * <p>The supported chat message content types. Content types can be text/plain or
+     * both text/plain and text/markdown.</p>
+     */
+    inline StartChatContactRequest& WithSupportedMessagingContentTypes(Aws::Vector<Aws::String>&& value) { SetSupportedMessagingContentTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The supported chat message content types. Content types can be text/plain or
+     * both text/plain and text/markdown.</p>
+     */
+    inline StartChatContactRequest& AddSupportedMessagingContentTypes(const Aws::String& value) { m_supportedMessagingContentTypesHasBeenSet = true; m_supportedMessagingContentTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The supported chat message content types. Content types can be text/plain or
+     * both text/plain and text/markdown.</p>
+     */
+    inline StartChatContactRequest& AddSupportedMessagingContentTypes(Aws::String&& value) { m_supportedMessagingContentTypesHasBeenSet = true; m_supportedMessagingContentTypes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The supported chat message content types. Content types can be text/plain or
+     * both text/plain and text/markdown.</p>
+     */
+    inline StartChatContactRequest& AddSupportedMessagingContentTypes(const char* value) { m_supportedMessagingContentTypesHasBeenSet = true; m_supportedMessagingContentTypes.push_back(value); return *this; }
+
   private:
 
     Aws::String m_instanceId;
@@ -429,6 +514,12 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
+    int m_chatDurationInMinutes;
+    bool m_chatDurationInMinutesHasBeenSet;
+
+    Aws::Vector<Aws::String> m_supportedMessagingContentTypes;
+    bool m_supportedMessagingContentTypesHasBeenSet;
   };
 
 } // namespace Model

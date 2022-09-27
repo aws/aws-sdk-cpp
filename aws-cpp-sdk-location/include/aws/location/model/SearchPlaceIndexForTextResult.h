@@ -36,43 +36,57 @@ namespace Model
 
     /**
      * <p>A list of Places matching the input text. Each result contains additional
-     * information about the specific point of interest. </p>
+     * information about the specific point of interest. </p> <p>Not all response
+     * properties are included with all responses. Some properties may only be returned
+     * by specific data partners.</p>
      */
     inline const Aws::Vector<SearchForTextResult>& GetResults() const{ return m_results; }
 
     /**
      * <p>A list of Places matching the input text. Each result contains additional
-     * information about the specific point of interest. </p>
+     * information about the specific point of interest. </p> <p>Not all response
+     * properties are included with all responses. Some properties may only be returned
+     * by specific data partners.</p>
      */
     inline void SetResults(const Aws::Vector<SearchForTextResult>& value) { m_results = value; }
 
     /**
      * <p>A list of Places matching the input text. Each result contains additional
-     * information about the specific point of interest. </p>
+     * information about the specific point of interest. </p> <p>Not all response
+     * properties are included with all responses. Some properties may only be returned
+     * by specific data partners.</p>
      */
     inline void SetResults(Aws::Vector<SearchForTextResult>&& value) { m_results = std::move(value); }
 
     /**
      * <p>A list of Places matching the input text. Each result contains additional
-     * information about the specific point of interest. </p>
+     * information about the specific point of interest. </p> <p>Not all response
+     * properties are included with all responses. Some properties may only be returned
+     * by specific data partners.</p>
      */
     inline SearchPlaceIndexForTextResult& WithResults(const Aws::Vector<SearchForTextResult>& value) { SetResults(value); return *this;}
 
     /**
      * <p>A list of Places matching the input text. Each result contains additional
-     * information about the specific point of interest. </p>
+     * information about the specific point of interest. </p> <p>Not all response
+     * properties are included with all responses. Some properties may only be returned
+     * by specific data partners.</p>
      */
     inline SearchPlaceIndexForTextResult& WithResults(Aws::Vector<SearchForTextResult>&& value) { SetResults(std::move(value)); return *this;}
 
     /**
      * <p>A list of Places matching the input text. Each result contains additional
-     * information about the specific point of interest. </p>
+     * information about the specific point of interest. </p> <p>Not all response
+     * properties are included with all responses. Some properties may only be returned
+     * by specific data partners.</p>
      */
     inline SearchPlaceIndexForTextResult& AddResults(const SearchForTextResult& value) { m_results.push_back(value); return *this; }
 
     /**
      * <p>A list of Places matching the input text. Each result contains additional
-     * information about the specific point of interest. </p>
+     * information about the specific point of interest. </p> <p>Not all response
+     * properties are included with all responses. Some properties may only be returned
+     * by specific data partners.</p>
      */
     inline SearchPlaceIndexForTextResult& AddResults(SearchForTextResult&& value) { m_results.push_back(std::move(value)); return *this; }
 

@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>The service template version detail data that's returned by Proton.</p>
+     * <p>The detailed data of the requested service template version.</p>
      */
     inline const ServiceTemplateVersion& GetServiceTemplateVersion() const{ return m_serviceTemplateVersion; }
 
     /**
-     * <p>The service template version detail data that's returned by Proton.</p>
+     * <p>The detailed data of the requested service template version.</p>
      */
     inline void SetServiceTemplateVersion(const ServiceTemplateVersion& value) { m_serviceTemplateVersion = value; }
 
     /**
-     * <p>The service template version detail data that's returned by Proton.</p>
+     * <p>The detailed data of the requested service template version.</p>
      */
     inline void SetServiceTemplateVersion(ServiceTemplateVersion&& value) { m_serviceTemplateVersion = std::move(value); }
 
     /**
-     * <p>The service template version detail data that's returned by Proton.</p>
+     * <p>The detailed data of the requested service template version.</p>
      */
     inline GetServiceTemplateVersionResult& WithServiceTemplateVersion(const ServiceTemplateVersion& value) { SetServiceTemplateVersion(value); return *this;}
 
     /**
-     * <p>The service template version detail data that's returned by Proton.</p>
+     * <p>The detailed data of the requested service template version.</p>
      */
     inline GetServiceTemplateVersionResult& WithServiceTemplateVersion(ServiceTemplateVersion&& value) { SetServiceTemplateVersion(std::move(value)); return *this;}
 

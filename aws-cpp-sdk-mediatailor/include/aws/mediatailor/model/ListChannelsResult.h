@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>An array of channels that are associated with this account.</p>
+     * <p>A list of channels that are associated with this account.</p>
      */
     inline const Aws::Vector<Channel>& GetItems() const{ return m_items; }
 
     /**
-     * <p>An array of channels that are associated with this account.</p>
+     * <p>A list of channels that are associated with this account.</p>
      */
     inline void SetItems(const Aws::Vector<Channel>& value) { m_items = value; }
 
     /**
-     * <p>An array of channels that are associated with this account.</p>
+     * <p>A list of channels that are associated with this account.</p>
      */
     inline void SetItems(Aws::Vector<Channel>&& value) { m_items = std::move(value); }
 
     /**
-     * <p>An array of channels that are associated with this account.</p>
+     * <p>A list of channels that are associated with this account.</p>
      */
     inline ListChannelsResult& WithItems(const Aws::Vector<Channel>& value) { SetItems(value); return *this;}
 
     /**
-     * <p>An array of channels that are associated with this account.</p>
+     * <p>A list of channels that are associated with this account.</p>
      */
     inline ListChannelsResult& WithItems(Aws::Vector<Channel>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * <p>An array of channels that are associated with this account.</p>
+     * <p>A list of channels that are associated with this account.</p>
      */
     inline ListChannelsResult& AddItems(const Channel& value) { m_items.push_back(value); return *this; }
 
     /**
-     * <p>An array of channels that are associated with this account.</p>
+     * <p>A list of channels that are associated with this account.</p>
      */
     inline ListChannelsResult& AddItems(Channel&& value) { m_items.push_back(std::move(value)); return *this; }
 

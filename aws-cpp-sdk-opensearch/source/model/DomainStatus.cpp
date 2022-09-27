@@ -46,7 +46,8 @@ DomainStatus::DomainStatus() :
     m_serviceSoftwareOptionsHasBeenSet(false),
     m_domainEndpointOptionsHasBeenSet(false),
     m_advancedSecurityOptionsHasBeenSet(false),
-    m_autoTuneOptionsHasBeenSet(false)
+    m_autoTuneOptionsHasBeenSet(false),
+    m_changeProgressDetailsHasBeenSet(false)
 {
 }
 
@@ -78,7 +79,8 @@ DomainStatus::DomainStatus(JsonView jsonValue) :
     m_serviceSoftwareOptionsHasBeenSet(false),
     m_domainEndpointOptionsHasBeenSet(false),
     m_advancedSecurityOptionsHasBeenSet(false),
-    m_autoTuneOptionsHasBeenSet(false)
+    m_autoTuneOptionsHasBeenSet(false),
+    m_changeProgressDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -262,6 +264,13 @@ DomainStatus& DomainStatus::operator =(JsonView jsonValue)
     m_autoTuneOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ChangeProgressDetails"))
+  {
+    m_changeProgressDetails = jsonValue.GetObject("ChangeProgressDetails");
+
+    m_changeProgressDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -425,6 +434,12 @@ JsonValue DomainStatus::Jsonize() const
   if(m_autoTuneOptionsHasBeenSet)
   {
    payload.WithObject("AutoTuneOptions", m_autoTuneOptions.Jsonize());
+
+  }
+
+  if(m_changeProgressDetailsHasBeenSet)
+  {
+   payload.WithObject("ChangeProgressDetails", m_changeProgressDetails.Jsonize());
 
   }
 

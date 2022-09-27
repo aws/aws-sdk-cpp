@@ -247,6 +247,12 @@ GetFunctionConfigurationResult& GetFunctionConfigurationResult::operator =(const
     }
   }
 
+  if(jsonValue.ValueExists("EphemeralStorage"))
+  {
+    m_ephemeralStorage = jsonValue.GetObject("EphemeralStorage");
+
+  }
+
 
 
   return *this;

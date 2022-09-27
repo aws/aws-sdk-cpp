@@ -40,9 +40,12 @@ TranscriptionJob::TranscriptionJob() :
     m_contentRedactionHasBeenSet(false),
     m_identifyLanguage(false),
     m_identifyLanguageHasBeenSet(false),
+    m_identifyMultipleLanguages(false),
+    m_identifyMultipleLanguagesHasBeenSet(false),
     m_languageOptionsHasBeenSet(false),
     m_identifiedLanguageScore(0.0),
     m_identifiedLanguageScoreHasBeenSet(false),
+    m_languageCodesHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_subtitlesHasBeenSet(false),
     m_languageIdSettingsHasBeenSet(false)
@@ -71,9 +74,12 @@ TranscriptionJob::TranscriptionJob(JsonView jsonValue) :
     m_contentRedactionHasBeenSet(false),
     m_identifyLanguage(false),
     m_identifyLanguageHasBeenSet(false),
+    m_identifyMultipleLanguages(false),
+    m_identifyMultipleLanguagesHasBeenSet(false),
     m_languageOptionsHasBeenSet(false),
     m_identifiedLanguageScore(0.0),
     m_identifiedLanguageScoreHasBeenSet(false),
+    m_languageCodesHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_subtitlesHasBeenSet(false),
     m_languageIdSettingsHasBeenSet(false)
@@ -195,6 +201,13 @@ TranscriptionJob& TranscriptionJob::operator =(JsonView jsonValue)
     m_identifyLanguageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IdentifyMultipleLanguages"))
+  {
+    m_identifyMultipleLanguages = jsonValue.GetBool("IdentifyMultipleLanguages");
+
+    m_identifyMultipleLanguagesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("LanguageOptions"))
   {
     Array<JsonView> languageOptionsJsonList = jsonValue.GetArray("LanguageOptions");
@@ -210,6 +223,16 @@ TranscriptionJob& TranscriptionJob::operator =(JsonView jsonValue)
     m_identifiedLanguageScore = jsonValue.GetDouble("IdentifiedLanguageScore");
 
     m_identifiedLanguageScoreHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LanguageCodes"))
+  {
+    Array<JsonView> languageCodesJsonList = jsonValue.GetArray("LanguageCodes");
+    for(unsigned languageCodesIndex = 0; languageCodesIndex < languageCodesJsonList.GetLength(); ++languageCodesIndex)
+    {
+      m_languageCodes.push_back(languageCodesJsonList[languageCodesIndex].AsObject());
+    }
+    m_languageCodesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Tags"))
@@ -336,6 +359,12 @@ JsonValue TranscriptionJob::Jsonize() const
 
   }
 
+  if(m_identifyMultipleLanguagesHasBeenSet)
+  {
+   payload.WithBool("IdentifyMultipleLanguages", m_identifyMultipleLanguages);
+
+  }
+
   if(m_languageOptionsHasBeenSet)
   {
    Array<JsonValue> languageOptionsJsonList(m_languageOptions.size());
@@ -350,6 +379,17 @@ JsonValue TranscriptionJob::Jsonize() const
   if(m_identifiedLanguageScoreHasBeenSet)
   {
    payload.WithDouble("IdentifiedLanguageScore", m_identifiedLanguageScore);
+
+  }
+
+  if(m_languageCodesHasBeenSet)
+  {
+   Array<JsonValue> languageCodesJsonList(m_languageCodes.size());
+   for(unsigned languageCodesIndex = 0; languageCodesIndex < languageCodesJsonList.GetLength(); ++languageCodesIndex)
+   {
+     languageCodesJsonList[languageCodesIndex].AsObject(m_languageCodes[languageCodesIndex].Jsonize());
+   }
+   payload.WithArray("LanguageCodes", std::move(languageCodesJsonList));
 
   }
 

@@ -19,12 +19,14 @@ namespace Model
 {
 
 MeshSpec::MeshSpec() : 
-    m_egressFilterHasBeenSet(false)
+    m_egressFilterHasBeenSet(false),
+    m_serviceDiscoveryHasBeenSet(false)
 {
 }
 
 MeshSpec::MeshSpec(JsonView jsonValue) : 
-    m_egressFilterHasBeenSet(false)
+    m_egressFilterHasBeenSet(false),
+    m_serviceDiscoveryHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ MeshSpec& MeshSpec::operator =(JsonView jsonValue)
     m_egressFilterHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("serviceDiscovery"))
+  {
+    m_serviceDiscovery = jsonValue.GetObject("serviceDiscovery");
+
+    m_serviceDiscoveryHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue MeshSpec::Jsonize() const
   if(m_egressFilterHasBeenSet)
   {
    payload.WithObject("egressFilter", m_egressFilter.Jsonize());
+
+  }
+
+  if(m_serviceDiscoveryHasBeenSet)
+  {
+   payload.WithObject("serviceDiscovery", m_serviceDiscovery.Jsonize());
 
   }
 

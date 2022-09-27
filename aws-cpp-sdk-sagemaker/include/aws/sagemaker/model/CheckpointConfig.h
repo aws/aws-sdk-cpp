@@ -39,50 +39,50 @@ namespace Model
 
 
     /**
-     * <p>Identifies the S3 path where you want Amazon SageMaker to store checkpoints.
-     * For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+     * <p>Identifies the S3 path where you want SageMaker to store checkpoints. For
+     * example, <code>s3://bucket-name/key-name-prefix</code>.</p>
      */
     inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
 
     /**
-     * <p>Identifies the S3 path where you want Amazon SageMaker to store checkpoints.
-     * For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+     * <p>Identifies the S3 path where you want SageMaker to store checkpoints. For
+     * example, <code>s3://bucket-name/key-name-prefix</code>.</p>
      */
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
 
     /**
-     * <p>Identifies the S3 path where you want Amazon SageMaker to store checkpoints.
-     * For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+     * <p>Identifies the S3 path where you want SageMaker to store checkpoints. For
+     * example, <code>s3://bucket-name/key-name-prefix</code>.</p>
      */
     inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
 
     /**
-     * <p>Identifies the S3 path where you want Amazon SageMaker to store checkpoints.
-     * For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+     * <p>Identifies the S3 path where you want SageMaker to store checkpoints. For
+     * example, <code>s3://bucket-name/key-name-prefix</code>.</p>
      */
     inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
 
     /**
-     * <p>Identifies the S3 path where you want Amazon SageMaker to store checkpoints.
-     * For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+     * <p>Identifies the S3 path where you want SageMaker to store checkpoints. For
+     * example, <code>s3://bucket-name/key-name-prefix</code>.</p>
      */
     inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
 
     /**
-     * <p>Identifies the S3 path where you want Amazon SageMaker to store checkpoints.
-     * For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+     * <p>Identifies the S3 path where you want SageMaker to store checkpoints. For
+     * example, <code>s3://bucket-name/key-name-prefix</code>.</p>
      */
     inline CheckpointConfig& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
 
     /**
-     * <p>Identifies the S3 path where you want Amazon SageMaker to store checkpoints.
-     * For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+     * <p>Identifies the S3 path where you want SageMaker to store checkpoints. For
+     * example, <code>s3://bucket-name/key-name-prefix</code>.</p>
      */
     inline CheckpointConfig& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
 
     /**
-     * <p>Identifies the S3 path where you want Amazon SageMaker to store checkpoints.
-     * For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+     * <p>Identifies the S3 path where you want SageMaker to store checkpoints. For
+     * example, <code>s3://bucket-name/key-name-prefix</code>.</p>
      */
     inline CheckpointConfig& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
 

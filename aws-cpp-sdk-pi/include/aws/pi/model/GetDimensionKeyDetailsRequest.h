@@ -139,189 +139,265 @@ namespace Model
 
 
     /**
-     * <p>The name of the dimension group. The only valid value is <code>db.sql</code>.
-     * Performance Insights searches the specified group for the dimension group
-     * ID.</p>
+     * <p>The name of the dimension group. Performance Insights searches the specified
+     * group for the dimension group ID. The following group name values are valid:</p>
+     * <ul> <li> <p> <code>db.query</code> (Amazon DocumentDB only)</p> </li> <li> <p>
+     * <code>db.sql</code> (Amazon RDS and Aurora only)</p> </li> </ul>
      */
     inline const Aws::String& GetGroup() const{ return m_group; }
 
     /**
-     * <p>The name of the dimension group. The only valid value is <code>db.sql</code>.
-     * Performance Insights searches the specified group for the dimension group
-     * ID.</p>
+     * <p>The name of the dimension group. Performance Insights searches the specified
+     * group for the dimension group ID. The following group name values are valid:</p>
+     * <ul> <li> <p> <code>db.query</code> (Amazon DocumentDB only)</p> </li> <li> <p>
+     * <code>db.sql</code> (Amazon RDS and Aurora only)</p> </li> </ul>
      */
     inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
 
     /**
-     * <p>The name of the dimension group. The only valid value is <code>db.sql</code>.
-     * Performance Insights searches the specified group for the dimension group
-     * ID.</p>
+     * <p>The name of the dimension group. Performance Insights searches the specified
+     * group for the dimension group ID. The following group name values are valid:</p>
+     * <ul> <li> <p> <code>db.query</code> (Amazon DocumentDB only)</p> </li> <li> <p>
+     * <code>db.sql</code> (Amazon RDS and Aurora only)</p> </li> </ul>
      */
     inline void SetGroup(const Aws::String& value) { m_groupHasBeenSet = true; m_group = value; }
 
     /**
-     * <p>The name of the dimension group. The only valid value is <code>db.sql</code>.
-     * Performance Insights searches the specified group for the dimension group
-     * ID.</p>
+     * <p>The name of the dimension group. Performance Insights searches the specified
+     * group for the dimension group ID. The following group name values are valid:</p>
+     * <ul> <li> <p> <code>db.query</code> (Amazon DocumentDB only)</p> </li> <li> <p>
+     * <code>db.sql</code> (Amazon RDS and Aurora only)</p> </li> </ul>
      */
     inline void SetGroup(Aws::String&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
 
     /**
-     * <p>The name of the dimension group. The only valid value is <code>db.sql</code>.
-     * Performance Insights searches the specified group for the dimension group
-     * ID.</p>
+     * <p>The name of the dimension group. Performance Insights searches the specified
+     * group for the dimension group ID. The following group name values are valid:</p>
+     * <ul> <li> <p> <code>db.query</code> (Amazon DocumentDB only)</p> </li> <li> <p>
+     * <code>db.sql</code> (Amazon RDS and Aurora only)</p> </li> </ul>
      */
     inline void SetGroup(const char* value) { m_groupHasBeenSet = true; m_group.assign(value); }
 
     /**
-     * <p>The name of the dimension group. The only valid value is <code>db.sql</code>.
-     * Performance Insights searches the specified group for the dimension group
-     * ID.</p>
+     * <p>The name of the dimension group. Performance Insights searches the specified
+     * group for the dimension group ID. The following group name values are valid:</p>
+     * <ul> <li> <p> <code>db.query</code> (Amazon DocumentDB only)</p> </li> <li> <p>
+     * <code>db.sql</code> (Amazon RDS and Aurora only)</p> </li> </ul>
      */
     inline GetDimensionKeyDetailsRequest& WithGroup(const Aws::String& value) { SetGroup(value); return *this;}
 
     /**
-     * <p>The name of the dimension group. The only valid value is <code>db.sql</code>.
-     * Performance Insights searches the specified group for the dimension group
-     * ID.</p>
+     * <p>The name of the dimension group. Performance Insights searches the specified
+     * group for the dimension group ID. The following group name values are valid:</p>
+     * <ul> <li> <p> <code>db.query</code> (Amazon DocumentDB only)</p> </li> <li> <p>
+     * <code>db.sql</code> (Amazon RDS and Aurora only)</p> </li> </ul>
      */
     inline GetDimensionKeyDetailsRequest& WithGroup(Aws::String&& value) { SetGroup(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the dimension group. The only valid value is <code>db.sql</code>.
-     * Performance Insights searches the specified group for the dimension group
-     * ID.</p>
+     * <p>The name of the dimension group. Performance Insights searches the specified
+     * group for the dimension group ID. The following group name values are valid:</p>
+     * <ul> <li> <p> <code>db.query</code> (Amazon DocumentDB only)</p> </li> <li> <p>
+     * <code>db.sql</code> (Amazon RDS and Aurora only)</p> </li> </ul>
      */
     inline GetDimensionKeyDetailsRequest& WithGroup(const char* value) { SetGroup(value); return *this;}
 
 
     /**
      * <p>The ID of the dimension group from which to retrieve dimension details. For
-     * dimension group <code>db.sql</code>, the group ID is <code>db.sql.id</code>.</p>
+     * dimension group <code>db.sql</code>, the group ID is <code>db.sql.id</code>. The
+     * following group ID values are valid:</p> <ul> <li> <p> <code>db.sql.id</code>
+     * for dimension group <code>db.sql</code> (Aurora and RDS only)</p> </li> <li> <p>
+     * <code>db.query.id</code> for dimension group <code>db.query</code> (DocumentDB
+     * only)</p> </li> </ul>
      */
     inline const Aws::String& GetGroupIdentifier() const{ return m_groupIdentifier; }
 
     /**
      * <p>The ID of the dimension group from which to retrieve dimension details. For
-     * dimension group <code>db.sql</code>, the group ID is <code>db.sql.id</code>.</p>
+     * dimension group <code>db.sql</code>, the group ID is <code>db.sql.id</code>. The
+     * following group ID values are valid:</p> <ul> <li> <p> <code>db.sql.id</code>
+     * for dimension group <code>db.sql</code> (Aurora and RDS only)</p> </li> <li> <p>
+     * <code>db.query.id</code> for dimension group <code>db.query</code> (DocumentDB
+     * only)</p> </li> </ul>
      */
     inline bool GroupIdentifierHasBeenSet() const { return m_groupIdentifierHasBeenSet; }
 
     /**
      * <p>The ID of the dimension group from which to retrieve dimension details. For
-     * dimension group <code>db.sql</code>, the group ID is <code>db.sql.id</code>.</p>
+     * dimension group <code>db.sql</code>, the group ID is <code>db.sql.id</code>. The
+     * following group ID values are valid:</p> <ul> <li> <p> <code>db.sql.id</code>
+     * for dimension group <code>db.sql</code> (Aurora and RDS only)</p> </li> <li> <p>
+     * <code>db.query.id</code> for dimension group <code>db.query</code> (DocumentDB
+     * only)</p> </li> </ul>
      */
     inline void SetGroupIdentifier(const Aws::String& value) { m_groupIdentifierHasBeenSet = true; m_groupIdentifier = value; }
 
     /**
      * <p>The ID of the dimension group from which to retrieve dimension details. For
-     * dimension group <code>db.sql</code>, the group ID is <code>db.sql.id</code>.</p>
+     * dimension group <code>db.sql</code>, the group ID is <code>db.sql.id</code>. The
+     * following group ID values are valid:</p> <ul> <li> <p> <code>db.sql.id</code>
+     * for dimension group <code>db.sql</code> (Aurora and RDS only)</p> </li> <li> <p>
+     * <code>db.query.id</code> for dimension group <code>db.query</code> (DocumentDB
+     * only)</p> </li> </ul>
      */
     inline void SetGroupIdentifier(Aws::String&& value) { m_groupIdentifierHasBeenSet = true; m_groupIdentifier = std::move(value); }
 
     /**
      * <p>The ID of the dimension group from which to retrieve dimension details. For
-     * dimension group <code>db.sql</code>, the group ID is <code>db.sql.id</code>.</p>
+     * dimension group <code>db.sql</code>, the group ID is <code>db.sql.id</code>. The
+     * following group ID values are valid:</p> <ul> <li> <p> <code>db.sql.id</code>
+     * for dimension group <code>db.sql</code> (Aurora and RDS only)</p> </li> <li> <p>
+     * <code>db.query.id</code> for dimension group <code>db.query</code> (DocumentDB
+     * only)</p> </li> </ul>
      */
     inline void SetGroupIdentifier(const char* value) { m_groupIdentifierHasBeenSet = true; m_groupIdentifier.assign(value); }
 
     /**
      * <p>The ID of the dimension group from which to retrieve dimension details. For
-     * dimension group <code>db.sql</code>, the group ID is <code>db.sql.id</code>.</p>
+     * dimension group <code>db.sql</code>, the group ID is <code>db.sql.id</code>. The
+     * following group ID values are valid:</p> <ul> <li> <p> <code>db.sql.id</code>
+     * for dimension group <code>db.sql</code> (Aurora and RDS only)</p> </li> <li> <p>
+     * <code>db.query.id</code> for dimension group <code>db.query</code> (DocumentDB
+     * only)</p> </li> </ul>
      */
     inline GetDimensionKeyDetailsRequest& WithGroupIdentifier(const Aws::String& value) { SetGroupIdentifier(value); return *this;}
 
     /**
      * <p>The ID of the dimension group from which to retrieve dimension details. For
-     * dimension group <code>db.sql</code>, the group ID is <code>db.sql.id</code>.</p>
+     * dimension group <code>db.sql</code>, the group ID is <code>db.sql.id</code>. The
+     * following group ID values are valid:</p> <ul> <li> <p> <code>db.sql.id</code>
+     * for dimension group <code>db.sql</code> (Aurora and RDS only)</p> </li> <li> <p>
+     * <code>db.query.id</code> for dimension group <code>db.query</code> (DocumentDB
+     * only)</p> </li> </ul>
      */
     inline GetDimensionKeyDetailsRequest& WithGroupIdentifier(Aws::String&& value) { SetGroupIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the dimension group from which to retrieve dimension details. For
-     * dimension group <code>db.sql</code>, the group ID is <code>db.sql.id</code>.</p>
+     * dimension group <code>db.sql</code>, the group ID is <code>db.sql.id</code>. The
+     * following group ID values are valid:</p> <ul> <li> <p> <code>db.sql.id</code>
+     * for dimension group <code>db.sql</code> (Aurora and RDS only)</p> </li> <li> <p>
+     * <code>db.query.id</code> for dimension group <code>db.query</code> (DocumentDB
+     * only)</p> </li> </ul>
      */
     inline GetDimensionKeyDetailsRequest& WithGroupIdentifier(const char* value) { SetGroupIdentifier(value); return *this;}
 
 
     /**
      * <p>A list of dimensions to retrieve the detail data for within the given
-     * dimension group. For the dimension group <code>db.sql</code>, specify either the
-     * full dimension name <code>db.sql.statement</code> or the short dimension name
-     * <code>statement</code>. If you don't specify this parameter, Performance
-     * Insights returns all dimension data within the specified dimension group. </p>
+     * dimension group. If you don't specify this parameter, Performance Insights
+     * returns all dimension data within the specified dimension group. Specify
+     * dimension names for the following dimension groups:</p> <ul> <li> <p>
+     * <code>db.sql</code> - Specify either the full dimension name
+     * <code>db.sql.statement</code> or the short dimension name <code>statement</code>
+     * (Aurora and RDS only).</p> </li> <li> <p> <code>db.query</code> - Specify either
+     * the full dimension name <code>db.query.statement</code> or the short dimension
+     * name <code>statement</code> (DocumentDB only).</p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetRequestedDimensions() const{ return m_requestedDimensions; }
 
     /**
      * <p>A list of dimensions to retrieve the detail data for within the given
-     * dimension group. For the dimension group <code>db.sql</code>, specify either the
-     * full dimension name <code>db.sql.statement</code> or the short dimension name
-     * <code>statement</code>. If you don't specify this parameter, Performance
-     * Insights returns all dimension data within the specified dimension group. </p>
+     * dimension group. If you don't specify this parameter, Performance Insights
+     * returns all dimension data within the specified dimension group. Specify
+     * dimension names for the following dimension groups:</p> <ul> <li> <p>
+     * <code>db.sql</code> - Specify either the full dimension name
+     * <code>db.sql.statement</code> or the short dimension name <code>statement</code>
+     * (Aurora and RDS only).</p> </li> <li> <p> <code>db.query</code> - Specify either
+     * the full dimension name <code>db.query.statement</code> or the short dimension
+     * name <code>statement</code> (DocumentDB only).</p> </li> </ul>
      */
     inline bool RequestedDimensionsHasBeenSet() const { return m_requestedDimensionsHasBeenSet; }
 
     /**
      * <p>A list of dimensions to retrieve the detail data for within the given
-     * dimension group. For the dimension group <code>db.sql</code>, specify either the
-     * full dimension name <code>db.sql.statement</code> or the short dimension name
-     * <code>statement</code>. If you don't specify this parameter, Performance
-     * Insights returns all dimension data within the specified dimension group. </p>
+     * dimension group. If you don't specify this parameter, Performance Insights
+     * returns all dimension data within the specified dimension group. Specify
+     * dimension names for the following dimension groups:</p> <ul> <li> <p>
+     * <code>db.sql</code> - Specify either the full dimension name
+     * <code>db.sql.statement</code> or the short dimension name <code>statement</code>
+     * (Aurora and RDS only).</p> </li> <li> <p> <code>db.query</code> - Specify either
+     * the full dimension name <code>db.query.statement</code> or the short dimension
+     * name <code>statement</code> (DocumentDB only).</p> </li> </ul>
      */
     inline void SetRequestedDimensions(const Aws::Vector<Aws::String>& value) { m_requestedDimensionsHasBeenSet = true; m_requestedDimensions = value; }
 
     /**
      * <p>A list of dimensions to retrieve the detail data for within the given
-     * dimension group. For the dimension group <code>db.sql</code>, specify either the
-     * full dimension name <code>db.sql.statement</code> or the short dimension name
-     * <code>statement</code>. If you don't specify this parameter, Performance
-     * Insights returns all dimension data within the specified dimension group. </p>
+     * dimension group. If you don't specify this parameter, Performance Insights
+     * returns all dimension data within the specified dimension group. Specify
+     * dimension names for the following dimension groups:</p> <ul> <li> <p>
+     * <code>db.sql</code> - Specify either the full dimension name
+     * <code>db.sql.statement</code> or the short dimension name <code>statement</code>
+     * (Aurora and RDS only).</p> </li> <li> <p> <code>db.query</code> - Specify either
+     * the full dimension name <code>db.query.statement</code> or the short dimension
+     * name <code>statement</code> (DocumentDB only).</p> </li> </ul>
      */
     inline void SetRequestedDimensions(Aws::Vector<Aws::String>&& value) { m_requestedDimensionsHasBeenSet = true; m_requestedDimensions = std::move(value); }
 
     /**
      * <p>A list of dimensions to retrieve the detail data for within the given
-     * dimension group. For the dimension group <code>db.sql</code>, specify either the
-     * full dimension name <code>db.sql.statement</code> or the short dimension name
-     * <code>statement</code>. If you don't specify this parameter, Performance
-     * Insights returns all dimension data within the specified dimension group. </p>
+     * dimension group. If you don't specify this parameter, Performance Insights
+     * returns all dimension data within the specified dimension group. Specify
+     * dimension names for the following dimension groups:</p> <ul> <li> <p>
+     * <code>db.sql</code> - Specify either the full dimension name
+     * <code>db.sql.statement</code> or the short dimension name <code>statement</code>
+     * (Aurora and RDS only).</p> </li> <li> <p> <code>db.query</code> - Specify either
+     * the full dimension name <code>db.query.statement</code> or the short dimension
+     * name <code>statement</code> (DocumentDB only).</p> </li> </ul>
      */
     inline GetDimensionKeyDetailsRequest& WithRequestedDimensions(const Aws::Vector<Aws::String>& value) { SetRequestedDimensions(value); return *this;}
 
     /**
      * <p>A list of dimensions to retrieve the detail data for within the given
-     * dimension group. For the dimension group <code>db.sql</code>, specify either the
-     * full dimension name <code>db.sql.statement</code> or the short dimension name
-     * <code>statement</code>. If you don't specify this parameter, Performance
-     * Insights returns all dimension data within the specified dimension group. </p>
+     * dimension group. If you don't specify this parameter, Performance Insights
+     * returns all dimension data within the specified dimension group. Specify
+     * dimension names for the following dimension groups:</p> <ul> <li> <p>
+     * <code>db.sql</code> - Specify either the full dimension name
+     * <code>db.sql.statement</code> or the short dimension name <code>statement</code>
+     * (Aurora and RDS only).</p> </li> <li> <p> <code>db.query</code> - Specify either
+     * the full dimension name <code>db.query.statement</code> or the short dimension
+     * name <code>statement</code> (DocumentDB only).</p> </li> </ul>
      */
     inline GetDimensionKeyDetailsRequest& WithRequestedDimensions(Aws::Vector<Aws::String>&& value) { SetRequestedDimensions(std::move(value)); return *this;}
 
     /**
      * <p>A list of dimensions to retrieve the detail data for within the given
-     * dimension group. For the dimension group <code>db.sql</code>, specify either the
-     * full dimension name <code>db.sql.statement</code> or the short dimension name
-     * <code>statement</code>. If you don't specify this parameter, Performance
-     * Insights returns all dimension data within the specified dimension group. </p>
+     * dimension group. If you don't specify this parameter, Performance Insights
+     * returns all dimension data within the specified dimension group. Specify
+     * dimension names for the following dimension groups:</p> <ul> <li> <p>
+     * <code>db.sql</code> - Specify either the full dimension name
+     * <code>db.sql.statement</code> or the short dimension name <code>statement</code>
+     * (Aurora and RDS only).</p> </li> <li> <p> <code>db.query</code> - Specify either
+     * the full dimension name <code>db.query.statement</code> or the short dimension
+     * name <code>statement</code> (DocumentDB only).</p> </li> </ul>
      */
     inline GetDimensionKeyDetailsRequest& AddRequestedDimensions(const Aws::String& value) { m_requestedDimensionsHasBeenSet = true; m_requestedDimensions.push_back(value); return *this; }
 
     /**
      * <p>A list of dimensions to retrieve the detail data for within the given
-     * dimension group. For the dimension group <code>db.sql</code>, specify either the
-     * full dimension name <code>db.sql.statement</code> or the short dimension name
-     * <code>statement</code>. If you don't specify this parameter, Performance
-     * Insights returns all dimension data within the specified dimension group. </p>
+     * dimension group. If you don't specify this parameter, Performance Insights
+     * returns all dimension data within the specified dimension group. Specify
+     * dimension names for the following dimension groups:</p> <ul> <li> <p>
+     * <code>db.sql</code> - Specify either the full dimension name
+     * <code>db.sql.statement</code> or the short dimension name <code>statement</code>
+     * (Aurora and RDS only).</p> </li> <li> <p> <code>db.query</code> - Specify either
+     * the full dimension name <code>db.query.statement</code> or the short dimension
+     * name <code>statement</code> (DocumentDB only).</p> </li> </ul>
      */
     inline GetDimensionKeyDetailsRequest& AddRequestedDimensions(Aws::String&& value) { m_requestedDimensionsHasBeenSet = true; m_requestedDimensions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of dimensions to retrieve the detail data for within the given
-     * dimension group. For the dimension group <code>db.sql</code>, specify either the
-     * full dimension name <code>db.sql.statement</code> or the short dimension name
-     * <code>statement</code>. If you don't specify this parameter, Performance
-     * Insights returns all dimension data within the specified dimension group. </p>
+     * dimension group. If you don't specify this parameter, Performance Insights
+     * returns all dimension data within the specified dimension group. Specify
+     * dimension names for the following dimension groups:</p> <ul> <li> <p>
+     * <code>db.sql</code> - Specify either the full dimension name
+     * <code>db.sql.statement</code> or the short dimension name <code>statement</code>
+     * (Aurora and RDS only).</p> </li> <li> <p> <code>db.query</code> - Specify either
+     * the full dimension name <code>db.query.statement</code> or the short dimension
+     * name <code>statement</code> (DocumentDB only).</p> </li> </ul>
      */
     inline GetDimensionKeyDetailsRequest& AddRequestedDimensions(const char* value) { m_requestedDimensionsHasBeenSet = true; m_requestedDimensions.push_back(value); return *this; }
 

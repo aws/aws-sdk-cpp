@@ -36,55 +36,55 @@ namespace Model
 
     /**
      * <p>An array of strings that lists the unique identifiers for the findings to
-     * retrieve.</p>
+     * retrieve. You can specify as many as 50 unique identifiers in this array.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFindingIds() const{ return m_findingIds; }
 
     /**
      * <p>An array of strings that lists the unique identifiers for the findings to
-     * retrieve.</p>
+     * retrieve. You can specify as many as 50 unique identifiers in this array.</p>
      */
     inline bool FindingIdsHasBeenSet() const { return m_findingIdsHasBeenSet; }
 
     /**
      * <p>An array of strings that lists the unique identifiers for the findings to
-     * retrieve.</p>
+     * retrieve. You can specify as many as 50 unique identifiers in this array.</p>
      */
     inline void SetFindingIds(const Aws::Vector<Aws::String>& value) { m_findingIdsHasBeenSet = true; m_findingIds = value; }
 
     /**
      * <p>An array of strings that lists the unique identifiers for the findings to
-     * retrieve.</p>
+     * retrieve. You can specify as many as 50 unique identifiers in this array.</p>
      */
     inline void SetFindingIds(Aws::Vector<Aws::String>&& value) { m_findingIdsHasBeenSet = true; m_findingIds = std::move(value); }
 
     /**
      * <p>An array of strings that lists the unique identifiers for the findings to
-     * retrieve.</p>
+     * retrieve. You can specify as many as 50 unique identifiers in this array.</p>
      */
     inline GetFindingsRequest& WithFindingIds(const Aws::Vector<Aws::String>& value) { SetFindingIds(value); return *this;}
 
     /**
      * <p>An array of strings that lists the unique identifiers for the findings to
-     * retrieve.</p>
+     * retrieve. You can specify as many as 50 unique identifiers in this array.</p>
      */
     inline GetFindingsRequest& WithFindingIds(Aws::Vector<Aws::String>&& value) { SetFindingIds(std::move(value)); return *this;}
 
     /**
      * <p>An array of strings that lists the unique identifiers for the findings to
-     * retrieve.</p>
+     * retrieve. You can specify as many as 50 unique identifiers in this array.</p>
      */
     inline GetFindingsRequest& AddFindingIds(const Aws::String& value) { m_findingIdsHasBeenSet = true; m_findingIds.push_back(value); return *this; }
 
     /**
      * <p>An array of strings that lists the unique identifiers for the findings to
-     * retrieve.</p>
+     * retrieve. You can specify as many as 50 unique identifiers in this array.</p>
      */
     inline GetFindingsRequest& AddFindingIds(Aws::String&& value) { m_findingIdsHasBeenSet = true; m_findingIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of strings that lists the unique identifiers for the findings to
-     * retrieve.</p>
+     * retrieve. You can specify as many as 50 unique identifiers in this array.</p>
      */
     inline GetFindingsRequest& AddFindingIds(const char* value) { m_findingIdsHasBeenSet = true; m_findingIds.push_back(value); return *this; }
 

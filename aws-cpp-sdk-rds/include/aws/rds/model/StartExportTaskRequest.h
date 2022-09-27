@@ -39,49 +39,49 @@ namespace Model
 
     /**
      * <p>A unique identifier for the snapshot export task. This ID isn't an identifier
-     * for the Amazon S3 bucket where the snapshot is to be exported to. </p>
+     * for the Amazon S3 bucket where the snapshot is to be exported to.</p>
      */
     inline const Aws::String& GetExportTaskIdentifier() const{ return m_exportTaskIdentifier; }
 
     /**
      * <p>A unique identifier for the snapshot export task. This ID isn't an identifier
-     * for the Amazon S3 bucket where the snapshot is to be exported to. </p>
+     * for the Amazon S3 bucket where the snapshot is to be exported to.</p>
      */
     inline bool ExportTaskIdentifierHasBeenSet() const { return m_exportTaskIdentifierHasBeenSet; }
 
     /**
      * <p>A unique identifier for the snapshot export task. This ID isn't an identifier
-     * for the Amazon S3 bucket where the snapshot is to be exported to. </p>
+     * for the Amazon S3 bucket where the snapshot is to be exported to.</p>
      */
     inline void SetExportTaskIdentifier(const Aws::String& value) { m_exportTaskIdentifierHasBeenSet = true; m_exportTaskIdentifier = value; }
 
     /**
      * <p>A unique identifier for the snapshot export task. This ID isn't an identifier
-     * for the Amazon S3 bucket where the snapshot is to be exported to. </p>
+     * for the Amazon S3 bucket where the snapshot is to be exported to.</p>
      */
     inline void SetExportTaskIdentifier(Aws::String&& value) { m_exportTaskIdentifierHasBeenSet = true; m_exportTaskIdentifier = std::move(value); }
 
     /**
      * <p>A unique identifier for the snapshot export task. This ID isn't an identifier
-     * for the Amazon S3 bucket where the snapshot is to be exported to. </p>
+     * for the Amazon S3 bucket where the snapshot is to be exported to.</p>
      */
     inline void SetExportTaskIdentifier(const char* value) { m_exportTaskIdentifierHasBeenSet = true; m_exportTaskIdentifier.assign(value); }
 
     /**
      * <p>A unique identifier for the snapshot export task. This ID isn't an identifier
-     * for the Amazon S3 bucket where the snapshot is to be exported to. </p>
+     * for the Amazon S3 bucket where the snapshot is to be exported to.</p>
      */
     inline StartExportTaskRequest& WithExportTaskIdentifier(const Aws::String& value) { SetExportTaskIdentifier(value); return *this;}
 
     /**
      * <p>A unique identifier for the snapshot export task. This ID isn't an identifier
-     * for the Amazon S3 bucket where the snapshot is to be exported to. </p>
+     * for the Amazon S3 bucket where the snapshot is to be exported to.</p>
      */
     inline StartExportTaskRequest& WithExportTaskIdentifier(Aws::String&& value) { SetExportTaskIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for the snapshot export task. This ID isn't an identifier
-     * for the Amazon S3 bucket where the snapshot is to be exported to. </p>
+     * for the Amazon S3 bucket where the snapshot is to be exported to.</p>
      */
     inline StartExportTaskRequest& WithExportTaskIdentifier(const char* value) { SetExportTaskIdentifier(value); return *this;}
 
@@ -170,49 +170,49 @@ namespace Model
 
     /**
      * <p>The name of the IAM role to use for writing to the Amazon S3 bucket when
-     * exporting a snapshot. </p>
+     * exporting a snapshot.</p>
      */
     inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
 
     /**
      * <p>The name of the IAM role to use for writing to the Amazon S3 bucket when
-     * exporting a snapshot. </p>
+     * exporting a snapshot.</p>
      */
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
 
     /**
      * <p>The name of the IAM role to use for writing to the Amazon S3 bucket when
-     * exporting a snapshot. </p>
+     * exporting a snapshot.</p>
      */
     inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
 
     /**
      * <p>The name of the IAM role to use for writing to the Amazon S3 bucket when
-     * exporting a snapshot. </p>
+     * exporting a snapshot.</p>
      */
     inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
 
     /**
      * <p>The name of the IAM role to use for writing to the Amazon S3 bucket when
-     * exporting a snapshot. </p>
+     * exporting a snapshot.</p>
      */
     inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
 
     /**
      * <p>The name of the IAM role to use for writing to the Amazon S3 bucket when
-     * exporting a snapshot. </p>
+     * exporting a snapshot.</p>
      */
     inline StartExportTaskRequest& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
 
     /**
      * <p>The name of the IAM role to use for writing to the Amazon S3 bucket when
-     * exporting a snapshot. </p>
+     * exporting a snapshot.</p>
      */
     inline StartExportTaskRequest& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The name of the IAM role to use for writing to the Amazon S3 bucket when
-     * exporting a snapshot. </p>
+     * exporting a snapshot.</p>
      */
     inline StartExportTaskRequest& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
 
@@ -222,7 +222,7 @@ namespace Model
      * exported to Amazon S3. The Amazon Web Services KMS key identifier is the key
      * ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this
      * operation must be authorized to execute the following operations. These can be
-     * set in the Amazon Web Services KMS key policy: </p> <ul> <li>
+     * set in the Amazon Web Services KMS key policy:</p> <ul> <li>
      * <p>GrantOperation.Encrypt</p> </li> <li> <p>GrantOperation.Decrypt</p> </li>
      * <li> <p>GrantOperation.GenerateDataKey</p> </li> <li>
      * <p>GrantOperation.GenerateDataKeyWithoutPlaintext</p> </li> <li>
@@ -238,7 +238,7 @@ namespace Model
      * exported to Amazon S3. The Amazon Web Services KMS key identifier is the key
      * ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this
      * operation must be authorized to execute the following operations. These can be
-     * set in the Amazon Web Services KMS key policy: </p> <ul> <li>
+     * set in the Amazon Web Services KMS key policy:</p> <ul> <li>
      * <p>GrantOperation.Encrypt</p> </li> <li> <p>GrantOperation.Decrypt</p> </li>
      * <li> <p>GrantOperation.GenerateDataKey</p> </li> <li>
      * <p>GrantOperation.GenerateDataKeyWithoutPlaintext</p> </li> <li>
@@ -254,7 +254,7 @@ namespace Model
      * exported to Amazon S3. The Amazon Web Services KMS key identifier is the key
      * ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this
      * operation must be authorized to execute the following operations. These can be
-     * set in the Amazon Web Services KMS key policy: </p> <ul> <li>
+     * set in the Amazon Web Services KMS key policy:</p> <ul> <li>
      * <p>GrantOperation.Encrypt</p> </li> <li> <p>GrantOperation.Decrypt</p> </li>
      * <li> <p>GrantOperation.GenerateDataKey</p> </li> <li>
      * <p>GrantOperation.GenerateDataKeyWithoutPlaintext</p> </li> <li>
@@ -270,7 +270,7 @@ namespace Model
      * exported to Amazon S3. The Amazon Web Services KMS key identifier is the key
      * ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this
      * operation must be authorized to execute the following operations. These can be
-     * set in the Amazon Web Services KMS key policy: </p> <ul> <li>
+     * set in the Amazon Web Services KMS key policy:</p> <ul> <li>
      * <p>GrantOperation.Encrypt</p> </li> <li> <p>GrantOperation.Decrypt</p> </li>
      * <li> <p>GrantOperation.GenerateDataKey</p> </li> <li>
      * <p>GrantOperation.GenerateDataKeyWithoutPlaintext</p> </li> <li>
@@ -286,7 +286,7 @@ namespace Model
      * exported to Amazon S3. The Amazon Web Services KMS key identifier is the key
      * ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this
      * operation must be authorized to execute the following operations. These can be
-     * set in the Amazon Web Services KMS key policy: </p> <ul> <li>
+     * set in the Amazon Web Services KMS key policy:</p> <ul> <li>
      * <p>GrantOperation.Encrypt</p> </li> <li> <p>GrantOperation.Decrypt</p> </li>
      * <li> <p>GrantOperation.GenerateDataKey</p> </li> <li>
      * <p>GrantOperation.GenerateDataKeyWithoutPlaintext</p> </li> <li>
@@ -302,7 +302,7 @@ namespace Model
      * exported to Amazon S3. The Amazon Web Services KMS key identifier is the key
      * ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this
      * operation must be authorized to execute the following operations. These can be
-     * set in the Amazon Web Services KMS key policy: </p> <ul> <li>
+     * set in the Amazon Web Services KMS key policy:</p> <ul> <li>
      * <p>GrantOperation.Encrypt</p> </li> <li> <p>GrantOperation.Decrypt</p> </li>
      * <li> <p>GrantOperation.GenerateDataKey</p> </li> <li>
      * <p>GrantOperation.GenerateDataKeyWithoutPlaintext</p> </li> <li>
@@ -318,7 +318,7 @@ namespace Model
      * exported to Amazon S3. The Amazon Web Services KMS key identifier is the key
      * ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this
      * operation must be authorized to execute the following operations. These can be
-     * set in the Amazon Web Services KMS key policy: </p> <ul> <li>
+     * set in the Amazon Web Services KMS key policy:</p> <ul> <li>
      * <p>GrantOperation.Encrypt</p> </li> <li> <p>GrantOperation.Decrypt</p> </li>
      * <li> <p>GrantOperation.GenerateDataKey</p> </li> <li>
      * <p>GrantOperation.GenerateDataKeyWithoutPlaintext</p> </li> <li>
@@ -334,7 +334,7 @@ namespace Model
      * exported to Amazon S3. The Amazon Web Services KMS key identifier is the key
      * ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this
      * operation must be authorized to execute the following operations. These can be
-     * set in the Amazon Web Services KMS key policy: </p> <ul> <li>
+     * set in the Amazon Web Services KMS key policy:</p> <ul> <li>
      * <p>GrantOperation.Encrypt</p> </li> <li> <p>GrantOperation.Decrypt</p> </li>
      * <li> <p>GrantOperation.GenerateDataKey</p> </li> <li>
      * <p>GrantOperation.GenerateDataKeyWithoutPlaintext</p> </li> <li>

@@ -25,6 +25,8 @@ MpdSettings::MpdSettings() :
     m_audioDurationHasBeenSet(false),
     m_captionContainerType(MpdCaptionContainerType::NOT_SET),
     m_captionContainerTypeHasBeenSet(false),
+    m_klvMetadata(MpdKlvMetadata::NOT_SET),
+    m_klvMetadataHasBeenSet(false),
     m_scte35Esam(MpdScte35Esam::NOT_SET),
     m_scte35EsamHasBeenSet(false),
     m_scte35Source(MpdScte35Source::NOT_SET),
@@ -41,6 +43,8 @@ MpdSettings::MpdSettings(JsonView jsonValue) :
     m_audioDurationHasBeenSet(false),
     m_captionContainerType(MpdCaptionContainerType::NOT_SET),
     m_captionContainerTypeHasBeenSet(false),
+    m_klvMetadata(MpdKlvMetadata::NOT_SET),
+    m_klvMetadataHasBeenSet(false),
     m_scte35Esam(MpdScte35Esam::NOT_SET),
     m_scte35EsamHasBeenSet(false),
     m_scte35Source(MpdScte35Source::NOT_SET),
@@ -72,6 +76,13 @@ MpdSettings& MpdSettings::operator =(JsonView jsonValue)
     m_captionContainerType = MpdCaptionContainerTypeMapper::GetMpdCaptionContainerTypeForName(jsonValue.GetString("captionContainerType"));
 
     m_captionContainerTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("klvMetadata"))
+  {
+    m_klvMetadata = MpdKlvMetadataMapper::GetMpdKlvMetadataForName(jsonValue.GetString("klvMetadata"));
+
+    m_klvMetadataHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("scte35Esam"))
@@ -115,6 +126,11 @@ JsonValue MpdSettings::Jsonize() const
   if(m_captionContainerTypeHasBeenSet)
   {
    payload.WithString("captionContainerType", MpdCaptionContainerTypeMapper::GetNameForMpdCaptionContainerType(m_captionContainerType));
+  }
+
+  if(m_klvMetadataHasBeenSet)
+  {
+   payload.WithString("klvMetadata", MpdKlvMetadataMapper::GetNameForMpdKlvMetadata(m_klvMetadata));
   }
 
   if(m_scte35EsamHasBeenSet)

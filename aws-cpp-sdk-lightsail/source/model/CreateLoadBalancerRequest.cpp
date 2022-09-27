@@ -22,7 +22,8 @@ CreateLoadBalancerRequest::CreateLoadBalancerRequest() :
     m_certificateAlternativeNamesHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false)
+    m_ipAddressTypeHasBeenSet(false),
+    m_tlsPolicyNameHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,12 @@ Aws::String CreateLoadBalancerRequest::SerializePayload() const
   if(m_ipAddressTypeHasBeenSet)
   {
    payload.WithString("ipAddressType", IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType));
+  }
+
+  if(m_tlsPolicyNameHasBeenSet)
+  {
+   payload.WithString("tlsPolicyName", m_tlsPolicyName);
+
   }
 
   return payload.View().WriteReadable();

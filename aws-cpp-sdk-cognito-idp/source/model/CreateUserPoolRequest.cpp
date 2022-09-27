@@ -26,6 +26,7 @@ CreateUserPoolRequest::CreateUserPoolRequest() :
     m_smsAuthenticationMessageHasBeenSet(false),
     m_mfaConfiguration(UserPoolMfaType::NOT_SET),
     m_mfaConfigurationHasBeenSet(false),
+    m_userAttributeUpdateSettingsHasBeenSet(false),
     m_deviceConfigurationHasBeenSet(false),
     m_emailConfigurationHasBeenSet(false),
     m_smsConfigurationHasBeenSet(false),
@@ -126,6 +127,12 @@ Aws::String CreateUserPoolRequest::SerializePayload() const
   if(m_mfaConfigurationHasBeenSet)
   {
    payload.WithString("MfaConfiguration", UserPoolMfaTypeMapper::GetNameForUserPoolMfaType(m_mfaConfiguration));
+  }
+
+  if(m_userAttributeUpdateSettingsHasBeenSet)
+  {
+   payload.WithObject("UserAttributeUpdateSettings", m_userAttributeUpdateSettings.Jsonize());
+
   }
 
   if(m_deviceConfigurationHasBeenSet)

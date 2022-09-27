@@ -91,50 +91,50 @@ namespace Model
 
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline const Aws::String& GetDomainOwner() const{ return m_domainOwner; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline bool DomainOwnerHasBeenSet() const { return m_domainOwnerHasBeenSet; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline void SetDomainOwner(const Aws::String& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = value; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline void SetDomainOwner(Aws::String&& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = std::move(value); }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline void SetDomainOwner(const char* value) { m_domainOwnerHasBeenSet = true; m_domainOwner.assign(value); }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline CopyPackageVersionsRequest& WithDomainOwner(const Aws::String& value) { SetDomainOwner(value); return *this;}
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline CopyPackageVersionsRequest& WithDomainOwner(Aws::String&& value) { SetDomainOwner(std::move(value)); return *this;}
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline CopyPackageVersionsRequest& WithDomainOwner(const char* value) { SetDomainOwner(value); return *this;}
 
@@ -222,56 +222,32 @@ namespace Model
 
 
     /**
-     * <p> The format of the package that is copied. The valid package types are: </p>
-     * <ul> <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-     * <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-     * <li> <p> <code>maven</code>: A Maven package that contains compiled code in a
-     * distributable format, such as a JAR file. </p> </li> </ul>
+     * <p> The format of the package that is copied. </p>
      */
     inline const PackageFormat& GetFormat() const{ return m_format; }
 
     /**
-     * <p> The format of the package that is copied. The valid package types are: </p>
-     * <ul> <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-     * <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-     * <li> <p> <code>maven</code>: A Maven package that contains compiled code in a
-     * distributable format, such as a JAR file. </p> </li> </ul>
+     * <p> The format of the package that is copied. </p>
      */
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
 
     /**
-     * <p> The format of the package that is copied. The valid package types are: </p>
-     * <ul> <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-     * <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-     * <li> <p> <code>maven</code>: A Maven package that contains compiled code in a
-     * distributable format, such as a JAR file. </p> </li> </ul>
+     * <p> The format of the package that is copied. </p>
      */
     inline void SetFormat(const PackageFormat& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
-     * <p> The format of the package that is copied. The valid package types are: </p>
-     * <ul> <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-     * <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-     * <li> <p> <code>maven</code>: A Maven package that contains compiled code in a
-     * distributable format, such as a JAR file. </p> </li> </ul>
+     * <p> The format of the package that is copied. </p>
      */
     inline void SetFormat(PackageFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
 
     /**
-     * <p> The format of the package that is copied. The valid package types are: </p>
-     * <ul> <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-     * <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-     * <li> <p> <code>maven</code>: A Maven package that contains compiled code in a
-     * distributable format, such as a JAR file. </p> </li> </ul>
+     * <p> The format of the package that is copied. </p>
      */
     inline CopyPackageVersionsRequest& WithFormat(const PackageFormat& value) { SetFormat(value); return *this;}
 
     /**
-     * <p> The format of the package that is copied. The valid package types are: </p>
-     * <ul> <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-     * <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-     * <li> <p> <code>maven</code>: A Maven package that contains compiled code in a
-     * distributable format, such as a JAR file. </p> </li> </ul>
+     * <p> The format of the package that is copied. </p>
      */
     inline CopyPackageVersionsRequest& WithFormat(PackageFormat&& value) { SetFormat(std::move(value)); return *this;}
 

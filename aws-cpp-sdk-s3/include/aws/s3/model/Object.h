@@ -7,8 +7,10 @@
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3/model/ObjectStorageClass.h>
 #include <aws/s3/model/Owner.h>
+#include <aws/s3/model/ChecksumAlgorithm.h>
 #include <utility>
 
 namespace Aws
@@ -133,8 +135,10 @@ namespace Model
      * Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have
      * ETags that are not an MD5 digest of their object data.</p> </li> <li> <p>If an
      * object is created by either the Multipart Upload or Part Copy operation, the
-     * ETag is not an MD5 digest, regardless of the method of encryption.</p> </li>
-     * </ul>
+     * ETag is not an MD5 digest, regardless of the method of encryption. If an object
+     * is larger than 16 MB, the Amazon Web Services Management Console will upload or
+     * copy that object as a Multipart Upload, and therefore the ETag will not be an
+     * MD5 digest.</p> </li> </ul>
      */
     inline const Aws::String& GetETag() const{ return m_eTag; }
 
@@ -150,8 +154,10 @@ namespace Model
      * Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have
      * ETags that are not an MD5 digest of their object data.</p> </li> <li> <p>If an
      * object is created by either the Multipart Upload or Part Copy operation, the
-     * ETag is not an MD5 digest, regardless of the method of encryption.</p> </li>
-     * </ul>
+     * ETag is not an MD5 digest, regardless of the method of encryption. If an object
+     * is larger than 16 MB, the Amazon Web Services Management Console will upload or
+     * copy that object as a Multipart Upload, and therefore the ETag will not be an
+     * MD5 digest.</p> </li> </ul>
      */
     inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
 
@@ -167,8 +173,10 @@ namespace Model
      * Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have
      * ETags that are not an MD5 digest of their object data.</p> </li> <li> <p>If an
      * object is created by either the Multipart Upload or Part Copy operation, the
-     * ETag is not an MD5 digest, regardless of the method of encryption.</p> </li>
-     * </ul>
+     * ETag is not an MD5 digest, regardless of the method of encryption. If an object
+     * is larger than 16 MB, the Amazon Web Services Management Console will upload or
+     * copy that object as a Multipart Upload, and therefore the ETag will not be an
+     * MD5 digest.</p> </li> </ul>
      */
     inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
 
@@ -184,8 +192,10 @@ namespace Model
      * Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have
      * ETags that are not an MD5 digest of their object data.</p> </li> <li> <p>If an
      * object is created by either the Multipart Upload or Part Copy operation, the
-     * ETag is not an MD5 digest, regardless of the method of encryption.</p> </li>
-     * </ul>
+     * ETag is not an MD5 digest, regardless of the method of encryption. If an object
+     * is larger than 16 MB, the Amazon Web Services Management Console will upload or
+     * copy that object as a Multipart Upload, and therefore the ETag will not be an
+     * MD5 digest.</p> </li> </ul>
      */
     inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = std::move(value); }
 
@@ -201,8 +211,10 @@ namespace Model
      * Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have
      * ETags that are not an MD5 digest of their object data.</p> </li> <li> <p>If an
      * object is created by either the Multipart Upload or Part Copy operation, the
-     * ETag is not an MD5 digest, regardless of the method of encryption.</p> </li>
-     * </ul>
+     * ETag is not an MD5 digest, regardless of the method of encryption. If an object
+     * is larger than 16 MB, the Amazon Web Services Management Console will upload or
+     * copy that object as a Multipart Upload, and therefore the ETag will not be an
+     * MD5 digest.</p> </li> </ul>
      */
     inline void SetETag(const char* value) { m_eTagHasBeenSet = true; m_eTag.assign(value); }
 
@@ -218,8 +230,10 @@ namespace Model
      * Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have
      * ETags that are not an MD5 digest of their object data.</p> </li> <li> <p>If an
      * object is created by either the Multipart Upload or Part Copy operation, the
-     * ETag is not an MD5 digest, regardless of the method of encryption.</p> </li>
-     * </ul>
+     * ETag is not an MD5 digest, regardless of the method of encryption. If an object
+     * is larger than 16 MB, the Amazon Web Services Management Console will upload or
+     * copy that object as a Multipart Upload, and therefore the ETag will not be an
+     * MD5 digest.</p> </li> </ul>
      */
     inline Object& WithETag(const Aws::String& value) { SetETag(value); return *this;}
 
@@ -235,8 +249,10 @@ namespace Model
      * Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have
      * ETags that are not an MD5 digest of their object data.</p> </li> <li> <p>If an
      * object is created by either the Multipart Upload or Part Copy operation, the
-     * ETag is not an MD5 digest, regardless of the method of encryption.</p> </li>
-     * </ul>
+     * ETag is not an MD5 digest, regardless of the method of encryption. If an object
+     * is larger than 16 MB, the Amazon Web Services Management Console will upload or
+     * copy that object as a Multipart Upload, and therefore the ETag will not be an
+     * MD5 digest.</p> </li> </ul>
      */
     inline Object& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
 
@@ -252,10 +268,53 @@ namespace Model
      * Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have
      * ETags that are not an MD5 digest of their object data.</p> </li> <li> <p>If an
      * object is created by either the Multipart Upload or Part Copy operation, the
-     * ETag is not an MD5 digest, regardless of the method of encryption.</p> </li>
-     * </ul>
+     * ETag is not an MD5 digest, regardless of the method of encryption. If an object
+     * is larger than 16 MB, the Amazon Web Services Management Console will upload or
+     * copy that object as a Multipart Upload, and therefore the ETag will not be an
+     * MD5 digest.</p> </li> </ul>
      */
     inline Object& WithETag(const char* value) { SetETag(value); return *this;}
+
+
+    /**
+     * <p>The algorithm that was used to create a checksum of the object.</p>
+     */
+    inline const Aws::Vector<ChecksumAlgorithm>& GetChecksumAlgorithm() const{ return m_checksumAlgorithm; }
+
+    /**
+     * <p>The algorithm that was used to create a checksum of the object.</p>
+     */
+    inline bool ChecksumAlgorithmHasBeenSet() const { return m_checksumAlgorithmHasBeenSet; }
+
+    /**
+     * <p>The algorithm that was used to create a checksum of the object.</p>
+     */
+    inline void SetChecksumAlgorithm(const Aws::Vector<ChecksumAlgorithm>& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = value; }
+
+    /**
+     * <p>The algorithm that was used to create a checksum of the object.</p>
+     */
+    inline void SetChecksumAlgorithm(Aws::Vector<ChecksumAlgorithm>&& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = std::move(value); }
+
+    /**
+     * <p>The algorithm that was used to create a checksum of the object.</p>
+     */
+    inline Object& WithChecksumAlgorithm(const Aws::Vector<ChecksumAlgorithm>& value) { SetChecksumAlgorithm(value); return *this;}
+
+    /**
+     * <p>The algorithm that was used to create a checksum of the object.</p>
+     */
+    inline Object& WithChecksumAlgorithm(Aws::Vector<ChecksumAlgorithm>&& value) { SetChecksumAlgorithm(std::move(value)); return *this;}
+
+    /**
+     * <p>The algorithm that was used to create a checksum of the object.</p>
+     */
+    inline Object& AddChecksumAlgorithm(const ChecksumAlgorithm& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm.push_back(value); return *this; }
+
+    /**
+     * <p>The algorithm that was used to create a checksum of the object.</p>
+     */
+    inline Object& AddChecksumAlgorithm(ChecksumAlgorithm&& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -350,6 +409,9 @@ namespace Model
 
     Aws::String m_eTag;
     bool m_eTagHasBeenSet;
+
+    Aws::Vector<ChecksumAlgorithm> m_checksumAlgorithm;
+    bool m_checksumAlgorithmHasBeenSet;
 
     long long m_size;
     bool m_sizeHasBeenSet;

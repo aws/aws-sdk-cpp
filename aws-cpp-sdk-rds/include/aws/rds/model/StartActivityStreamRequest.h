@@ -89,42 +89,42 @@ namespace Model
     /**
      * <p>Specifies the mode of the database activity stream. Database events such as a
      * change or access generate an activity stream event. The database session can
-     * handle these events either synchronously or asynchronously. </p>
+     * handle these events either synchronously or asynchronously.</p>
      */
     inline const ActivityStreamMode& GetMode() const{ return m_mode; }
 
     /**
      * <p>Specifies the mode of the database activity stream. Database events such as a
      * change or access generate an activity stream event. The database session can
-     * handle these events either synchronously or asynchronously. </p>
+     * handle these events either synchronously or asynchronously.</p>
      */
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
 
     /**
      * <p>Specifies the mode of the database activity stream. Database events such as a
      * change or access generate an activity stream event. The database session can
-     * handle these events either synchronously or asynchronously. </p>
+     * handle these events either synchronously or asynchronously.</p>
      */
     inline void SetMode(const ActivityStreamMode& value) { m_modeHasBeenSet = true; m_mode = value; }
 
     /**
      * <p>Specifies the mode of the database activity stream. Database events such as a
      * change or access generate an activity stream event. The database session can
-     * handle these events either synchronously or asynchronously. </p>
+     * handle these events either synchronously or asynchronously.</p>
      */
     inline void SetMode(ActivityStreamMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
 
     /**
      * <p>Specifies the mode of the database activity stream. Database events such as a
      * change or access generate an activity stream event. The database session can
-     * handle these events either synchronously or asynchronously. </p>
+     * handle these events either synchronously or asynchronously.</p>
      */
     inline StartActivityStreamRequest& WithMode(const ActivityStreamMode& value) { SetMode(value); return *this;}
 
     /**
      * <p>Specifies the mode of the database activity stream. Database events such as a
      * change or access generate an activity stream event. The database session can
-     * handle these events either synchronously or asynchronously. </p>
+     * handle these events either synchronously or asynchronously.</p>
      */
     inline StartActivityStreamRequest& WithMode(ActivityStreamMode&& value) { SetMode(std::move(value)); return *this;}
 

@@ -28,7 +28,10 @@ DestinationConnectorProperties::DestinationConnectorProperties() :
     m_upsolverHasBeenSet(false),
     m_honeycodeHasBeenSet(false),
     m_customerProfilesHasBeenSet(false),
-    m_zendeskHasBeenSet(false)
+    m_zendeskHasBeenSet(false),
+    m_marketoHasBeenSet(false),
+    m_customConnectorHasBeenSet(false),
+    m_sAPODataHasBeenSet(false)
 {
 }
 
@@ -42,7 +45,10 @@ DestinationConnectorProperties::DestinationConnectorProperties(JsonView jsonValu
     m_upsolverHasBeenSet(false),
     m_honeycodeHasBeenSet(false),
     m_customerProfilesHasBeenSet(false),
-    m_zendeskHasBeenSet(false)
+    m_zendeskHasBeenSet(false),
+    m_marketoHasBeenSet(false),
+    m_customConnectorHasBeenSet(false),
+    m_sAPODataHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -119,6 +125,27 @@ DestinationConnectorProperties& DestinationConnectorProperties::operator =(JsonV
     m_zendeskHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Marketo"))
+  {
+    m_marketo = jsonValue.GetObject("Marketo");
+
+    m_marketoHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CustomConnector"))
+  {
+    m_customConnector = jsonValue.GetObject("CustomConnector");
+
+    m_customConnectorHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SAPOData"))
+  {
+    m_sAPOData = jsonValue.GetObject("SAPOData");
+
+    m_sAPODataHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -183,6 +210,24 @@ JsonValue DestinationConnectorProperties::Jsonize() const
   if(m_zendeskHasBeenSet)
   {
    payload.WithObject("Zendesk", m_zendesk.Jsonize());
+
+  }
+
+  if(m_marketoHasBeenSet)
+  {
+   payload.WithObject("Marketo", m_marketo.Jsonize());
+
+  }
+
+  if(m_customConnectorHasBeenSet)
+  {
+   payload.WithObject("CustomConnector", m_customConnector.Jsonize());
+
+  }
+
+  if(m_sAPODataHasBeenSet)
+  {
+   payload.WithObject("SAPOData", m_sAPOData.Jsonize());
 
   }
 

@@ -36,7 +36,9 @@ CodeReview::CodeReview() :
     m_sourceCodeTypeHasBeenSet(false),
     m_associationArnHasBeenSet(false),
     m_metricsHasBeenSet(false),
-    m_analysisTypesHasBeenSet(false)
+    m_analysisTypesHasBeenSet(false),
+    m_configFileState(ConfigFileState::NOT_SET),
+    m_configFileStateHasBeenSet(false)
 {
 }
 
@@ -58,7 +60,9 @@ CodeReview::CodeReview(JsonView jsonValue) :
     m_sourceCodeTypeHasBeenSet(false),
     m_associationArnHasBeenSet(false),
     m_metricsHasBeenSet(false),
-    m_analysisTypesHasBeenSet(false)
+    m_analysisTypesHasBeenSet(false),
+    m_configFileState(ConfigFileState::NOT_SET),
+    m_configFileStateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -173,6 +177,13 @@ CodeReview& CodeReview::operator =(JsonView jsonValue)
     m_analysisTypesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ConfigFileState"))
+  {
+    m_configFileState = ConfigFileStateMapper::GetConfigFileStateForName(jsonValue.GetString("ConfigFileState"));
+
+    m_configFileStateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -268,6 +279,11 @@ JsonValue CodeReview::Jsonize() const
    }
    payload.WithArray("AnalysisTypes", std::move(analysisTypesJsonList));
 
+  }
+
+  if(m_configFileStateHasBeenSet)
+  {
+   payload.WithString("ConfigFileState", ConfigFileStateMapper::GetNameForConfigFileState(m_configFileState));
   }
 
   return payload;

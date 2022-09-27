@@ -13,6 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateLaunchConfigurationRequest::UpdateLaunchConfigurationRequest() : 
+    m_bootMode(BootMode::NOT_SET),
+    m_bootModeHasBeenSet(false),
     m_copyPrivateIp(false),
     m_copyPrivateIpHasBeenSet(false),
     m_copyTags(false),
@@ -30,6 +32,11 @@ UpdateLaunchConfigurationRequest::UpdateLaunchConfigurationRequest() :
 Aws::String UpdateLaunchConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_bootModeHasBeenSet)
+  {
+   payload.WithString("bootMode", BootModeMapper::GetNameForBootMode(m_bootMode));
+  }
 
   if(m_copyPrivateIpHasBeenSet)
   {

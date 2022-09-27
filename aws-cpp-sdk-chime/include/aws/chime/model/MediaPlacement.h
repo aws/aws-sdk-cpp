@@ -326,42 +326,42 @@ namespace Model
 
 
     /**
-     * <p>The event ingestion URL.</p>
+     * <p>The event ingestion URL to which you send client meeting events.</p>
      */
     inline const Aws::String& GetEventIngestionUrl() const{ return m_eventIngestionUrl; }
 
     /**
-     * <p>The event ingestion URL.</p>
+     * <p>The event ingestion URL to which you send client meeting events.</p>
      */
     inline bool EventIngestionUrlHasBeenSet() const { return m_eventIngestionUrlHasBeenSet; }
 
     /**
-     * <p>The event ingestion URL.</p>
+     * <p>The event ingestion URL to which you send client meeting events.</p>
      */
     inline void SetEventIngestionUrl(const Aws::String& value) { m_eventIngestionUrlHasBeenSet = true; m_eventIngestionUrl = value; }
 
     /**
-     * <p>The event ingestion URL.</p>
+     * <p>The event ingestion URL to which you send client meeting events.</p>
      */
     inline void SetEventIngestionUrl(Aws::String&& value) { m_eventIngestionUrlHasBeenSet = true; m_eventIngestionUrl = std::move(value); }
 
     /**
-     * <p>The event ingestion URL.</p>
+     * <p>The event ingestion URL to which you send client meeting events.</p>
      */
     inline void SetEventIngestionUrl(const char* value) { m_eventIngestionUrlHasBeenSet = true; m_eventIngestionUrl.assign(value); }
 
     /**
-     * <p>The event ingestion URL.</p>
+     * <p>The event ingestion URL to which you send client meeting events.</p>
      */
     inline MediaPlacement& WithEventIngestionUrl(const Aws::String& value) { SetEventIngestionUrl(value); return *this;}
 
     /**
-     * <p>The event ingestion URL.</p>
+     * <p>The event ingestion URL to which you send client meeting events.</p>
      */
     inline MediaPlacement& WithEventIngestionUrl(Aws::String&& value) { SetEventIngestionUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The event ingestion URL.</p>
+     * <p>The event ingestion URL to which you send client meeting events.</p>
      */
     inline MediaPlacement& WithEventIngestionUrl(const char* value) { SetEventIngestionUrl(value); return *this;}
 

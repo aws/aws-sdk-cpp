@@ -22,7 +22,9 @@ SourceFieldProperties::SourceFieldProperties() :
     m_isRetrievable(false),
     m_isRetrievableHasBeenSet(false),
     m_isQueryable(false),
-    m_isQueryableHasBeenSet(false)
+    m_isQueryableHasBeenSet(false),
+    m_isTimestampFieldForIncrementalQueries(false),
+    m_isTimestampFieldForIncrementalQueriesHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ SourceFieldProperties::SourceFieldProperties(JsonView jsonValue) :
     m_isRetrievable(false),
     m_isRetrievableHasBeenSet(false),
     m_isQueryable(false),
-    m_isQueryableHasBeenSet(false)
+    m_isQueryableHasBeenSet(false),
+    m_isTimestampFieldForIncrementalQueries(false),
+    m_isTimestampFieldForIncrementalQueriesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +55,13 @@ SourceFieldProperties& SourceFieldProperties::operator =(JsonView jsonValue)
     m_isQueryableHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("isTimestampFieldForIncrementalQueries"))
+  {
+    m_isTimestampFieldForIncrementalQueries = jsonValue.GetBool("isTimestampFieldForIncrementalQueries");
+
+    m_isTimestampFieldForIncrementalQueriesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -67,6 +78,12 @@ JsonValue SourceFieldProperties::Jsonize() const
   if(m_isQueryableHasBeenSet)
   {
    payload.WithBool("isQueryable", m_isQueryable);
+
+  }
+
+  if(m_isTimestampFieldForIncrementalQueriesHasBeenSet)
+  {
+   payload.WithBool("isTimestampFieldForIncrementalQueries", m_isTimestampFieldForIncrementalQueries);
 
   }
 

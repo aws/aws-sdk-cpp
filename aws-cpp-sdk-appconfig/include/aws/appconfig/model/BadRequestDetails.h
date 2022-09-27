@@ -26,7 +26,7 @@ namespace Model
 
   /**
    * <p>Detailed information about the input that failed to satisfy the constraints
-   * specified by an AWS service.</p><p><h3>See Also:</h3>   <a
+   * specified by a call.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/BadRequestDetails">AWS
    * API Reference</a></p>
    */

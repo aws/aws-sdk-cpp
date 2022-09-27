@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The request references a routing control that was not found.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The request references a routing control or control panel that was not
+   * found.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-cluster-2019-12-02/ResourceNotFoundException">AWS
    * API Reference</a></p>
    */

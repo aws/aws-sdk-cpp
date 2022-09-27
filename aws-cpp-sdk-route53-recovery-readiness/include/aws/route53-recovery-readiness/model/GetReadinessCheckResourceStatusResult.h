@@ -36,99 +36,99 @@ namespace Model
 
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline GetReadinessCheckResourceStatusResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline GetReadinessCheckResourceStatusResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline GetReadinessCheckResourceStatusResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * The readiness at rule level.
+     * <p>The readiness at a rule level.</p>
      */
     inline const Readiness& GetReadiness() const{ return m_readiness; }
 
     /**
-     * The readiness at rule level.
+     * <p>The readiness at a rule level.</p>
      */
     inline void SetReadiness(const Readiness& value) { m_readiness = value; }
 
     /**
-     * The readiness at rule level.
+     * <p>The readiness at a rule level.</p>
      */
     inline void SetReadiness(Readiness&& value) { m_readiness = std::move(value); }
 
     /**
-     * The readiness at rule level.
+     * <p>The readiness at a rule level.</p>
      */
     inline GetReadinessCheckResourceStatusResult& WithReadiness(const Readiness& value) { SetReadiness(value); return *this;}
 
     /**
-     * The readiness at rule level.
+     * <p>The readiness at a rule level.</p>
      */
     inline GetReadinessCheckResourceStatusResult& WithReadiness(Readiness&& value) { SetReadiness(std::move(value)); return *this;}
 
 
     /**
-     * Details of the rules's results
+     * <p>Details of the rule's results.</p>
      */
     inline const Aws::Vector<RuleResult>& GetRules() const{ return m_rules; }
 
     /**
-     * Details of the rules's results
+     * <p>Details of the rule's results.</p>
      */
     inline void SetRules(const Aws::Vector<RuleResult>& value) { m_rules = value; }
 
     /**
-     * Details of the rules's results
+     * <p>Details of the rule's results.</p>
      */
     inline void SetRules(Aws::Vector<RuleResult>&& value) { m_rules = std::move(value); }
 
     /**
-     * Details of the rules's results
+     * <p>Details of the rule's results.</p>
      */
     inline GetReadinessCheckResourceStatusResult& WithRules(const Aws::Vector<RuleResult>& value) { SetRules(value); return *this;}
 
     /**
-     * Details of the rules's results
+     * <p>Details of the rule's results.</p>
      */
     inline GetReadinessCheckResourceStatusResult& WithRules(Aws::Vector<RuleResult>&& value) { SetRules(std::move(value)); return *this;}
 
     /**
-     * Details of the rules's results
+     * <p>Details of the rule's results.</p>
      */
     inline GetReadinessCheckResourceStatusResult& AddRules(const RuleResult& value) { m_rules.push_back(value); return *this; }
 
     /**
-     * Details of the rules's results
+     * <p>Details of the rule's results.</p>
      */
     inline GetReadinessCheckResourceStatusResult& AddRules(RuleResult&& value) { m_rules.push_back(std::move(value)); return *this; }
 

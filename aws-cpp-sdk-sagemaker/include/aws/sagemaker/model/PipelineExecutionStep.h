@@ -290,29 +290,29 @@ namespace Model
 
     /**
      * <p>The current attempt of the execution step. For more information, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry
-     * Policy for Amazon SageMaker Pipelines steps</a>.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry
+     * Policy for SageMaker Pipelines steps</a>.</p>
      */
     inline int GetAttemptCount() const{ return m_attemptCount; }
 
     /**
      * <p>The current attempt of the execution step. For more information, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry
-     * Policy for Amazon SageMaker Pipelines steps</a>.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry
+     * Policy for SageMaker Pipelines steps</a>.</p>
      */
     inline bool AttemptCountHasBeenSet() const { return m_attemptCountHasBeenSet; }
 
     /**
      * <p>The current attempt of the execution step. For more information, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry
-     * Policy for Amazon SageMaker Pipelines steps</a>.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry
+     * Policy for SageMaker Pipelines steps</a>.</p>
      */
     inline void SetAttemptCount(int value) { m_attemptCountHasBeenSet = true; m_attemptCount = value; }
 
     /**
      * <p>The current attempt of the execution step. For more information, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry
-     * Policy for Amazon SageMaker Pipelines steps</a>.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry
+     * Policy for SageMaker Pipelines steps</a>.</p>
      */
     inline PipelineExecutionStep& WithAttemptCount(int value) { SetAttemptCount(value); return *this;}
 

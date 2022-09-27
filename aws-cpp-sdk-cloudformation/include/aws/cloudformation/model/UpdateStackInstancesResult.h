@@ -34,37 +34,37 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for this stack set operation. </p>
+     * <p>The unique identifier for this stack set operation.</p>
      */
     inline const Aws::String& GetOperationId() const{ return m_operationId; }
 
     /**
-     * <p>The unique identifier for this stack set operation. </p>
+     * <p>The unique identifier for this stack set operation.</p>
      */
     inline void SetOperationId(const Aws::String& value) { m_operationId = value; }
 
     /**
-     * <p>The unique identifier for this stack set operation. </p>
+     * <p>The unique identifier for this stack set operation.</p>
      */
     inline void SetOperationId(Aws::String&& value) { m_operationId = std::move(value); }
 
     /**
-     * <p>The unique identifier for this stack set operation. </p>
+     * <p>The unique identifier for this stack set operation.</p>
      */
     inline void SetOperationId(const char* value) { m_operationId.assign(value); }
 
     /**
-     * <p>The unique identifier for this stack set operation. </p>
+     * <p>The unique identifier for this stack set operation.</p>
      */
     inline UpdateStackInstancesResult& WithOperationId(const Aws::String& value) { SetOperationId(value); return *this;}
 
     /**
-     * <p>The unique identifier for this stack set operation. </p>
+     * <p>The unique identifier for this stack set operation.</p>
      */
     inline UpdateStackInstancesResult& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for this stack set operation. </p>
+     * <p>The unique identifier for this stack set operation.</p>
      */
     inline UpdateStackInstancesResult& WithOperationId(const char* value) { SetOperationId(value); return *this;}
 

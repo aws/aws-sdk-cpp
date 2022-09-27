@@ -42,7 +42,8 @@ Host::Host() :
     m_ownerIdHasBeenSet(false),
     m_availabilityZoneIdHasBeenSet(false),
     m_memberOfServiceLinkedResourceGroup(false),
-    m_memberOfServiceLinkedResourceGroupHasBeenSet(false)
+    m_memberOfServiceLinkedResourceGroupHasBeenSet(false),
+    m_outpostArnHasBeenSet(false)
 {
 }
 
@@ -68,7 +69,8 @@ Host::Host(const XmlNode& xmlNode) :
     m_ownerIdHasBeenSet(false),
     m_availabilityZoneIdHasBeenSet(false),
     m_memberOfServiceLinkedResourceGroup(false),
-    m_memberOfServiceLinkedResourceGroupHasBeenSet(false)
+    m_memberOfServiceLinkedResourceGroupHasBeenSet(false),
+    m_outpostArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -193,6 +195,12 @@ Host& Host::operator =(const XmlNode& xmlNode)
       m_memberOfServiceLinkedResourceGroup = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(memberOfServiceLinkedResourceGroupNode.GetText()).c_str()).c_str());
       m_memberOfServiceLinkedResourceGroupHasBeenSet = true;
     }
+    XmlNode outpostArnNode = resultNode.FirstChild("outpostArn");
+    if(!outpostArnNode.IsNull())
+    {
+      m_outpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(outpostArnNode.GetText());
+      m_outpostArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -301,6 +309,11 @@ void Host::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
       oStream << location << index << locationValue << ".MemberOfServiceLinkedResourceGroup=" << std::boolalpha << m_memberOfServiceLinkedResourceGroup << "&";
   }
 
+  if(m_outpostArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
+  }
+
 }
 
 void Host::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -388,6 +401,10 @@ void Host::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_memberOfServiceLinkedResourceGroupHasBeenSet)
   {
       oStream << location << ".MemberOfServiceLinkedResourceGroup=" << std::boolalpha << m_memberOfServiceLinkedResourceGroup << "&";
+  }
+  if(m_outpostArnHasBeenSet)
+  {
+      oStream << location << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
   }
 }
 

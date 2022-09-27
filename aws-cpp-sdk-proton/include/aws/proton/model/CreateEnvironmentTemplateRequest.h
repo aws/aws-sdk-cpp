@@ -239,8 +239,9 @@ namespace Model
 
 
     /**
-     * <p>Create tags for your environment template. For more information, see
-     * <i>Proton resources and tagging</i> in the <a
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * environment template. A tag is a key-value pair.</p> <p>For more information,
+     * see <i>Proton resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
      * Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
@@ -249,8 +250,9 @@ namespace Model
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Create tags for your environment template. For more information, see
-     * <i>Proton resources and tagging</i> in the <a
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * environment template. A tag is a key-value pair.</p> <p>For more information,
+     * see <i>Proton resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
      * Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
@@ -259,8 +261,9 @@ namespace Model
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Create tags for your environment template. For more information, see
-     * <i>Proton resources and tagging</i> in the <a
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * environment template. A tag is a key-value pair.</p> <p>For more information,
+     * see <i>Proton resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
      * Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
@@ -269,8 +272,9 @@ namespace Model
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Create tags for your environment template. For more information, see
-     * <i>Proton resources and tagging</i> in the <a
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * environment template. A tag is a key-value pair.</p> <p>For more information,
+     * see <i>Proton resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
      * Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
@@ -279,8 +283,9 @@ namespace Model
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Create tags for your environment template. For more information, see
-     * <i>Proton resources and tagging</i> in the <a
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * environment template. A tag is a key-value pair.</p> <p>For more information,
+     * see <i>Proton resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
      * Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
@@ -289,8 +294,9 @@ namespace Model
     inline CreateEnvironmentTemplateRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Create tags for your environment template. For more information, see
-     * <i>Proton resources and tagging</i> in the <a
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * environment template. A tag is a key-value pair.</p> <p>For more information,
+     * see <i>Proton resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
      * Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
@@ -299,8 +305,9 @@ namespace Model
     inline CreateEnvironmentTemplateRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Create tags for your environment template. For more information, see
-     * <i>Proton resources and tagging</i> in the <a
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * environment template. A tag is a key-value pair.</p> <p>For more information,
+     * see <i>Proton resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
      * Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
@@ -309,8 +316,9 @@ namespace Model
     inline CreateEnvironmentTemplateRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Create tags for your environment template. For more information, see
-     * <i>Proton resources and tagging</i> in the <a
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * environment template. A tag is a key-value pair.</p> <p>For more information,
+     * see <i>Proton resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
      * Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton

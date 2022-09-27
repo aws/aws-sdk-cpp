@@ -35,9 +35,9 @@ namespace Model
    * For example, when a management account (the originator) invites another account
    * (the recipient) to join its organization, the two accounts exchange information
    * as a series of handshake requests and responses.</p> <p> <b>Note:</b> Handshakes
-   * that are <code>CANCELED</code>, <code>ACCEPTED</code>, or <code>DECLINED</code>
-   * show up in lists for only 30 days after entering that state After that they are
-   * deleted.</p><p><h3>See Also:</h3>   <a
+   * that are <code>CANCELED</code>, <code>ACCEPTED</code>, <code>DECLINED</code>, or
+   * <code>EXPIRED</code> show up in lists for only 30 days after entering that state
+   * After that they are deleted.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/Handshake">AWS
    * API Reference</a></p>
    */
@@ -119,8 +119,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a handshake.</p> <p>For more information
      * about ARNs in Organizations, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Service Authorization
-     * Reference</i>.</p>
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
@@ -128,8 +128,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a handshake.</p> <p>For more information
      * about ARNs in Organizations, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Service Authorization
-     * Reference</i>.</p>
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
@@ -137,8 +137,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a handshake.</p> <p>For more information
      * about ARNs in Organizations, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Service Authorization
-     * Reference</i>.</p>
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
@@ -146,8 +146,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a handshake.</p> <p>For more information
      * about ARNs in Organizations, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Service Authorization
-     * Reference</i>.</p>
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
@@ -155,8 +155,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a handshake.</p> <p>For more information
      * about ARNs in Organizations, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Service Authorization
-     * Reference</i>.</p>
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
@@ -164,8 +164,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a handshake.</p> <p>For more information
      * about ARNs in Organizations, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Service Authorization
-     * Reference</i>.</p>
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline Handshake& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
@@ -173,8 +173,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a handshake.</p> <p>For more information
      * about ARNs in Organizations, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Service Authorization
-     * Reference</i>.</p>
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline Handshake& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
@@ -182,8 +182,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a handshake.</p> <p>For more information
      * about ARNs in Organizations, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Service Authorization
-     * Reference</i>.</p>
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline Handshake& WithArn(const char* value) { SetArn(value); return *this;}
 

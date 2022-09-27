@@ -117,42 +117,42 @@ namespace Model
 
 
     /**
-     * <p>he Amazon Resource Name (ARN) of the application. </p>
+     * <p>The Amazon Resource Name (ARN) of the application. </p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>he Amazon Resource Name (ARN) of the application. </p>
+     * <p>The Amazon Resource Name (ARN) of the application. </p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>he Amazon Resource Name (ARN) of the application. </p>
+     * <p>The Amazon Resource Name (ARN) of the application. </p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>he Amazon Resource Name (ARN) of the application. </p>
+     * <p>The Amazon Resource Name (ARN) of the application. </p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>he Amazon Resource Name (ARN) of the application. </p>
+     * <p>The Amazon Resource Name (ARN) of the application. </p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>he Amazon Resource Name (ARN) of the application. </p>
+     * <p>The Amazon Resource Name (ARN) of the application. </p>
      */
     inline ApplicationSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>he Amazon Resource Name (ARN) of the application. </p>
+     * <p>The Amazon Resource Name (ARN) of the application. </p>
      */
     inline ApplicationSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>he Amazon Resource Name (ARN) of the application. </p>
+     * <p>The Amazon Resource Name (ARN) of the application. </p>
      */
     inline ApplicationSummary& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -374,42 +374,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Web Services account ID of the application owner.</p>
+     * <p>The Amazon Web Services account ID of the application owner (which is always
+     * the same as the environment owner account ID).</p>
      */
     inline const Aws::String& GetOwnerAccountId() const{ return m_ownerAccountId; }
 
     /**
-     * <p>The Amazon Web Services account ID of the application owner.</p>
+     * <p>The Amazon Web Services account ID of the application owner (which is always
+     * the same as the environment owner account ID).</p>
      */
     inline bool OwnerAccountIdHasBeenSet() const { return m_ownerAccountIdHasBeenSet; }
 
     /**
-     * <p>The Amazon Web Services account ID of the application owner.</p>
+     * <p>The Amazon Web Services account ID of the application owner (which is always
+     * the same as the environment owner account ID).</p>
      */
     inline void SetOwnerAccountId(const Aws::String& value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId = value; }
 
     /**
-     * <p>The Amazon Web Services account ID of the application owner.</p>
+     * <p>The Amazon Web Services account ID of the application owner (which is always
+     * the same as the environment owner account ID).</p>
      */
     inline void SetOwnerAccountId(Aws::String&& value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services account ID of the application owner.</p>
+     * <p>The Amazon Web Services account ID of the application owner (which is always
+     * the same as the environment owner account ID).</p>
      */
     inline void SetOwnerAccountId(const char* value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId.assign(value); }
 
     /**
-     * <p>The Amazon Web Services account ID of the application owner.</p>
+     * <p>The Amazon Web Services account ID of the application owner (which is always
+     * the same as the environment owner account ID).</p>
      */
     inline ApplicationSummary& WithOwnerAccountId(const Aws::String& value) { SetOwnerAccountId(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services account ID of the application owner.</p>
+     * <p>The Amazon Web Services account ID of the application owner (which is always
+     * the same as the environment owner account ID).</p>
      */
     inline ApplicationSummary& WithOwnerAccountId(Aws::String&& value) { SetOwnerAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services account ID of the application owner.</p>
+     * <p>The Amazon Web Services account ID of the application owner (which is always
+     * the same as the environment owner account ID).</p>
      */
     inline ApplicationSummary& WithOwnerAccountId(const char* value) { SetOwnerAccountId(value); return *this;}
 

@@ -129,8 +129,7 @@ namespace Model
      * <p>The current status of the KMS key.</p> <p>For more information about how key
      * state affects the use of a KMS key, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-     * state: Effect on your KMS key</a> in the <i>Key Management Service Developer
-     * Guide</i>.</p>
+     * states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline const KeyState& GetKeyState() const{ return m_keyState; }
 
@@ -138,8 +137,7 @@ namespace Model
      * <p>The current status of the KMS key.</p> <p>For more information about how key
      * state affects the use of a KMS key, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-     * state: Effect on your KMS key</a> in the <i>Key Management Service Developer
-     * Guide</i>.</p>
+     * states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline void SetKeyState(const KeyState& value) { m_keyState = value; }
 
@@ -147,8 +145,7 @@ namespace Model
      * <p>The current status of the KMS key.</p> <p>For more information about how key
      * state affects the use of a KMS key, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-     * state: Effect on your KMS key</a> in the <i>Key Management Service Developer
-     * Guide</i>.</p>
+     * states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline void SetKeyState(KeyState&& value) { m_keyState = std::move(value); }
 
@@ -156,8 +153,7 @@ namespace Model
      * <p>The current status of the KMS key.</p> <p>For more information about how key
      * state affects the use of a KMS key, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-     * state: Effect on your KMS key</a> in the <i>Key Management Service Developer
-     * Guide</i>.</p>
+     * states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline ScheduleKeyDeletionResult& WithKeyState(const KeyState& value) { SetKeyState(value); return *this;}
 
@@ -165,8 +161,7 @@ namespace Model
      * <p>The current status of the KMS key.</p> <p>For more information about how key
      * state affects the use of a KMS key, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-     * state: Effect on your KMS key</a> in the <i>Key Management Service Developer
-     * Guide</i>.</p>
+     * states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline ScheduleKeyDeletionResult& WithKeyState(KeyState&& value) { SetKeyState(std::move(value)); return *this;}
 

@@ -331,190 +331,122 @@ namespace Model
 
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
+     * EC2-Classic instances to.</p>
      */
     inline const Aws::String& GetClassicLinkVPCId() const{ return m_classicLinkVPCId; }
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
+     * EC2-Classic instances to.</p>
      */
     inline bool ClassicLinkVPCIdHasBeenSet() const { return m_classicLinkVPCIdHasBeenSet; }
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
+     * EC2-Classic instances to.</p>
      */
     inline void SetClassicLinkVPCId(const Aws::String& value) { m_classicLinkVPCIdHasBeenSet = true; m_classicLinkVPCId = value; }
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
+     * EC2-Classic instances to.</p>
      */
     inline void SetClassicLinkVPCId(Aws::String&& value) { m_classicLinkVPCIdHasBeenSet = true; m_classicLinkVPCId = std::move(value); }
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
+     * EC2-Classic instances to.</p>
      */
     inline void SetClassicLinkVPCId(const char* value) { m_classicLinkVPCIdHasBeenSet = true; m_classicLinkVPCId.assign(value); }
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
+     * EC2-Classic instances to.</p>
      */
     inline LaunchConfiguration& WithClassicLinkVPCId(const Aws::String& value) { SetClassicLinkVPCId(value); return *this;}
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
+     * EC2-Classic instances to.</p>
      */
     inline LaunchConfiguration& WithClassicLinkVPCId(Aws::String&& value) { SetClassicLinkVPCId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
+     * EC2-Classic instances to.</p>
      */
     inline LaunchConfiguration& WithClassicLinkVPCId(const char* value) { SetClassicLinkVPCId(value); return *this;}
 
 
     /**
-     * <p>The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
+     * specified in <code>ClassicLinkVPCId</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetClassicLinkVPCSecurityGroups() const{ return m_classicLinkVPCSecurityGroups; }
 
     /**
-     * <p>The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
+     * specified in <code>ClassicLinkVPCId</code>.</p>
      */
     inline bool ClassicLinkVPCSecurityGroupsHasBeenSet() const { return m_classicLinkVPCSecurityGroupsHasBeenSet; }
 
     /**
-     * <p>The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
+     * specified in <code>ClassicLinkVPCId</code>.</p>
      */
     inline void SetClassicLinkVPCSecurityGroups(const Aws::Vector<Aws::String>& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups = value; }
 
     /**
-     * <p>The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
+     * specified in <code>ClassicLinkVPCId</code>.</p>
      */
     inline void SetClassicLinkVPCSecurityGroups(Aws::Vector<Aws::String>&& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups = std::move(value); }
 
     /**
-     * <p>The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
+     * specified in <code>ClassicLinkVPCId</code>.</p>
      */
     inline LaunchConfiguration& WithClassicLinkVPCSecurityGroups(const Aws::Vector<Aws::String>& value) { SetClassicLinkVPCSecurityGroups(value); return *this;}
 
     /**
-     * <p>The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
+     * specified in <code>ClassicLinkVPCId</code>.</p>
      */
     inline LaunchConfiguration& WithClassicLinkVPCSecurityGroups(Aws::Vector<Aws::String>&& value) { SetClassicLinkVPCSecurityGroups(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
+     * specified in <code>ClassicLinkVPCId</code>.</p>
      */
     inline LaunchConfiguration& AddClassicLinkVPCSecurityGroups(const Aws::String& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
+     * specified in <code>ClassicLinkVPCId</code>.</p>
      */
     inline LaunchConfiguration& AddClassicLinkVPCSecurityGroups(Aws::String&& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
+     * specified in <code>ClassicLinkVPCId</code>.</p>
      */
     inline LaunchConfiguration& AddClassicLinkVPCSecurityGroups(const char* value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups.push_back(value); return *this; }
 

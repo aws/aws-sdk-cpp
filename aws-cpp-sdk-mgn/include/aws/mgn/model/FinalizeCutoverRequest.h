@@ -33,42 +33,42 @@ namespace Model
 
 
     /**
-     * <p>Request to finalize Cutover by Soure Server ID.</p>
+     * <p>Request to finalize Cutover by Source Server ID.</p>
      */
     inline const Aws::String& GetSourceServerID() const{ return m_sourceServerID; }
 
     /**
-     * <p>Request to finalize Cutover by Soure Server ID.</p>
+     * <p>Request to finalize Cutover by Source Server ID.</p>
      */
     inline bool SourceServerIDHasBeenSet() const { return m_sourceServerIDHasBeenSet; }
 
     /**
-     * <p>Request to finalize Cutover by Soure Server ID.</p>
+     * <p>Request to finalize Cutover by Source Server ID.</p>
      */
     inline void SetSourceServerID(const Aws::String& value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID = value; }
 
     /**
-     * <p>Request to finalize Cutover by Soure Server ID.</p>
+     * <p>Request to finalize Cutover by Source Server ID.</p>
      */
     inline void SetSourceServerID(Aws::String&& value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID = std::move(value); }
 
     /**
-     * <p>Request to finalize Cutover by Soure Server ID.</p>
+     * <p>Request to finalize Cutover by Source Server ID.</p>
      */
     inline void SetSourceServerID(const char* value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID.assign(value); }
 
     /**
-     * <p>Request to finalize Cutover by Soure Server ID.</p>
+     * <p>Request to finalize Cutover by Source Server ID.</p>
      */
     inline FinalizeCutoverRequest& WithSourceServerID(const Aws::String& value) { SetSourceServerID(value); return *this;}
 
     /**
-     * <p>Request to finalize Cutover by Soure Server ID.</p>
+     * <p>Request to finalize Cutover by Source Server ID.</p>
      */
     inline FinalizeCutoverRequest& WithSourceServerID(Aws::String&& value) { SetSourceServerID(std::move(value)); return *this;}
 
     /**
-     * <p>Request to finalize Cutover by Soure Server ID.</p>
+     * <p>Request to finalize Cutover by Source Server ID.</p>
      */
     inline FinalizeCutoverRequest& WithSourceServerID(const char* value) { SetSourceServerID(value); return *this;}
 

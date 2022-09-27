@@ -26,7 +26,8 @@ AwsCodeBuildProjectDetails::AwsCodeBuildProjectDetails() :
     m_sourceHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
     m_logsConfigHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+    m_vpcConfigHasBeenSet(false),
+    m_secondaryArtifactsHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ AwsCodeBuildProjectDetails::AwsCodeBuildProjectDetails(JsonView jsonValue) :
     m_sourceHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
     m_logsConfigHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+    m_vpcConfigHasBeenSet(false),
+    m_secondaryArtifactsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -104,6 +106,16 @@ AwsCodeBuildProjectDetails& AwsCodeBuildProjectDetails::operator =(JsonView json
     m_vpcConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SecondaryArtifacts"))
+  {
+    Array<JsonView> secondaryArtifactsJsonList = jsonValue.GetArray("SecondaryArtifacts");
+    for(unsigned secondaryArtifactsIndex = 0; secondaryArtifactsIndex < secondaryArtifactsJsonList.GetLength(); ++secondaryArtifactsIndex)
+    {
+      m_secondaryArtifacts.push_back(secondaryArtifactsJsonList[secondaryArtifactsIndex].AsObject());
+    }
+    m_secondaryArtifactsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -161,6 +173,17 @@ JsonValue AwsCodeBuildProjectDetails::Jsonize() const
   if(m_vpcConfigHasBeenSet)
   {
    payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
+
+  }
+
+  if(m_secondaryArtifactsHasBeenSet)
+  {
+   Array<JsonValue> secondaryArtifactsJsonList(m_secondaryArtifacts.size());
+   for(unsigned secondaryArtifactsIndex = 0; secondaryArtifactsIndex < secondaryArtifactsJsonList.GetLength(); ++secondaryArtifactsIndex)
+   {
+     secondaryArtifactsJsonList[secondaryArtifactsIndex].AsObject(m_secondaryArtifacts[secondaryArtifactsIndex].Jsonize());
+   }
+   payload.WithArray("SecondaryArtifacts", std::move(secondaryArtifactsJsonList));
 
   }
 

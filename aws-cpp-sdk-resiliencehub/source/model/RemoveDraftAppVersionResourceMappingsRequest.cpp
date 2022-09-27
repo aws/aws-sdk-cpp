@@ -17,7 +17,8 @@ RemoveDraftAppVersionResourceMappingsRequest::RemoveDraftAppVersionResourceMappi
     m_appRegistryAppNamesHasBeenSet(false),
     m_logicalStackNamesHasBeenSet(false),
     m_resourceGroupNamesHasBeenSet(false),
-    m_resourceNamesHasBeenSet(false)
+    m_resourceNamesHasBeenSet(false),
+    m_terraformSourceNamesHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,17 @@ Aws::String RemoveDraftAppVersionResourceMappingsRequest::SerializePayload() con
      resourceNamesJsonList[resourceNamesIndex].AsString(m_resourceNames[resourceNamesIndex]);
    }
    payload.WithArray("resourceNames", std::move(resourceNamesJsonList));
+
+  }
+
+  if(m_terraformSourceNamesHasBeenSet)
+  {
+   Array<JsonValue> terraformSourceNamesJsonList(m_terraformSourceNames.size());
+   for(unsigned terraformSourceNamesIndex = 0; terraformSourceNamesIndex < terraformSourceNamesJsonList.GetLength(); ++terraformSourceNamesIndex)
+   {
+     terraformSourceNamesJsonList[terraformSourceNamesIndex].AsString(m_terraformSourceNames[terraformSourceNamesIndex]);
+   }
+   payload.WithArray("terraformSourceNames", std::move(terraformSourceNamesJsonList));
 
   }
 

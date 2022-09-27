@@ -31,10 +31,7 @@ namespace Aws
         static const int CREATE_TABLE_HASH = HashingUtils::HashString("CREATE_TABLE");
         static const int DATA_LOCATION_ACCESS_HASH = HashingUtils::HashString("DATA_LOCATION_ACCESS");
         static const int CREATE_TAG_HASH = HashingUtils::HashString("CREATE_TAG");
-        static const int ALTER_TAG_HASH = HashingUtils::HashString("ALTER_TAG");
-        static const int DELETE_TAG_HASH = HashingUtils::HashString("DELETE_TAG");
-        static const int DESCRIBE_TAG_HASH = HashingUtils::HashString("DESCRIBE_TAG");
-        static const int ASSOCIATE_TAG_HASH = HashingUtils::HashString("ASSOCIATE_TAG");
+        static const int ASSOCIATE_HASH = HashingUtils::HashString("ASSOCIATE");
 
 
         Permission GetPermissionForName(const Aws::String& name)
@@ -84,21 +81,9 @@ namespace Aws
           {
             return Permission::CREATE_TAG;
           }
-          else if (hashCode == ALTER_TAG_HASH)
+          else if (hashCode == ASSOCIATE_HASH)
           {
-            return Permission::ALTER_TAG;
-          }
-          else if (hashCode == DELETE_TAG_HASH)
-          {
-            return Permission::DELETE_TAG;
-          }
-          else if (hashCode == DESCRIBE_TAG_HASH)
-          {
-            return Permission::DESCRIBE_TAG;
-          }
-          else if (hashCode == ASSOCIATE_TAG_HASH)
-          {
-            return Permission::ASSOCIATE_TAG;
+            return Permission::ASSOCIATE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -136,14 +121,8 @@ namespace Aws
             return "DATA_LOCATION_ACCESS";
           case Permission::CREATE_TAG:
             return "CREATE_TAG";
-          case Permission::ALTER_TAG:
-            return "ALTER_TAG";
-          case Permission::DELETE_TAG:
-            return "DELETE_TAG";
-          case Permission::DESCRIBE_TAG:
-            return "DESCRIBE_TAG";
-          case Permission::ASSOCIATE_TAG:
-            return "ASSOCIATE_TAG";
+          case Permission::ASSOCIATE:
+            return "ASSOCIATE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

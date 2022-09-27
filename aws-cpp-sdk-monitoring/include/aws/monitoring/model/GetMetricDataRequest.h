@@ -44,64 +44,64 @@ namespace Model
     /**
      * <p>The metric queries to be returned. A single <code>GetMetricData</code> call
      * can include as many as 500 <code>MetricDataQuery</code> structures. Each of
-     * these structures can specify either a metric to retrieve, or a math expression
-     * to perform on retrieved data. </p>
+     * these structures can specify either a metric to retrieve, a Metrics Insights
+     * query, or a math expression to perform on retrieved data. </p>
      */
     inline const Aws::Vector<MetricDataQuery>& GetMetricDataQueries() const{ return m_metricDataQueries; }
 
     /**
      * <p>The metric queries to be returned. A single <code>GetMetricData</code> call
      * can include as many as 500 <code>MetricDataQuery</code> structures. Each of
-     * these structures can specify either a metric to retrieve, or a math expression
-     * to perform on retrieved data. </p>
+     * these structures can specify either a metric to retrieve, a Metrics Insights
+     * query, or a math expression to perform on retrieved data. </p>
      */
     inline bool MetricDataQueriesHasBeenSet() const { return m_metricDataQueriesHasBeenSet; }
 
     /**
      * <p>The metric queries to be returned. A single <code>GetMetricData</code> call
      * can include as many as 500 <code>MetricDataQuery</code> structures. Each of
-     * these structures can specify either a metric to retrieve, or a math expression
-     * to perform on retrieved data. </p>
+     * these structures can specify either a metric to retrieve, a Metrics Insights
+     * query, or a math expression to perform on retrieved data. </p>
      */
     inline void SetMetricDataQueries(const Aws::Vector<MetricDataQuery>& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries = value; }
 
     /**
      * <p>The metric queries to be returned. A single <code>GetMetricData</code> call
      * can include as many as 500 <code>MetricDataQuery</code> structures. Each of
-     * these structures can specify either a metric to retrieve, or a math expression
-     * to perform on retrieved data. </p>
+     * these structures can specify either a metric to retrieve, a Metrics Insights
+     * query, or a math expression to perform on retrieved data. </p>
      */
     inline void SetMetricDataQueries(Aws::Vector<MetricDataQuery>&& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries = std::move(value); }
 
     /**
      * <p>The metric queries to be returned. A single <code>GetMetricData</code> call
      * can include as many as 500 <code>MetricDataQuery</code> structures. Each of
-     * these structures can specify either a metric to retrieve, or a math expression
-     * to perform on retrieved data. </p>
+     * these structures can specify either a metric to retrieve, a Metrics Insights
+     * query, or a math expression to perform on retrieved data. </p>
      */
     inline GetMetricDataRequest& WithMetricDataQueries(const Aws::Vector<MetricDataQuery>& value) { SetMetricDataQueries(value); return *this;}
 
     /**
      * <p>The metric queries to be returned. A single <code>GetMetricData</code> call
      * can include as many as 500 <code>MetricDataQuery</code> structures. Each of
-     * these structures can specify either a metric to retrieve, or a math expression
-     * to perform on retrieved data. </p>
+     * these structures can specify either a metric to retrieve, a Metrics Insights
+     * query, or a math expression to perform on retrieved data. </p>
      */
     inline GetMetricDataRequest& WithMetricDataQueries(Aws::Vector<MetricDataQuery>&& value) { SetMetricDataQueries(std::move(value)); return *this;}
 
     /**
      * <p>The metric queries to be returned. A single <code>GetMetricData</code> call
      * can include as many as 500 <code>MetricDataQuery</code> structures. Each of
-     * these structures can specify either a metric to retrieve, or a math expression
-     * to perform on retrieved data. </p>
+     * these structures can specify either a metric to retrieve, a Metrics Insights
+     * query, or a math expression to perform on retrieved data. </p>
      */
     inline GetMetricDataRequest& AddMetricDataQueries(const MetricDataQuery& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries.push_back(value); return *this; }
 
     /**
      * <p>The metric queries to be returned. A single <code>GetMetricData</code> call
      * can include as many as 500 <code>MetricDataQuery</code> structures. Each of
-     * these structures can specify either a metric to retrieve, or a math expression
-     * to perform on retrieved data. </p>
+     * these structures can specify either a metric to retrieve, a Metrics Insights
+     * query, or a math expression to perform on retrieved data. </p>
      */
     inline GetMetricDataRequest& AddMetricDataQueries(MetricDataQuery&& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries.push_back(std::move(value)); return *this; }
 

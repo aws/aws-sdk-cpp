@@ -40,7 +40,7 @@ namespace Model
      * suggestions.<code>LEARN_ONLY</code> turns off query suggestions for your users.
      * You can change the mode using the <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a>
-     * operation.</p>
+     * API.</p>
      */
     inline const Mode& GetMode() const{ return m_mode; }
 
@@ -50,7 +50,7 @@ namespace Model
      * suggestions.<code>LEARN_ONLY</code> turns off query suggestions for your users.
      * You can change the mode using the <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a>
-     * operation.</p>
+     * API.</p>
      */
     inline void SetMode(const Mode& value) { m_mode = value; }
 
@@ -60,7 +60,7 @@ namespace Model
      * suggestions.<code>LEARN_ONLY</code> turns off query suggestions for your users.
      * You can change the mode using the <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a>
-     * operation.</p>
+     * API.</p>
      */
     inline void SetMode(Mode&& value) { m_mode = std::move(value); }
 
@@ -70,7 +70,7 @@ namespace Model
      * suggestions.<code>LEARN_ONLY</code> turns off query suggestions for your users.
      * You can change the mode using the <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a>
-     * operation.</p>
+     * API.</p>
      */
     inline DescribeQuerySuggestionsConfigResult& WithMode(const Mode& value) { SetMode(value); return *this;}
 
@@ -80,7 +80,7 @@ namespace Model
      * suggestions.<code>LEARN_ONLY</code> turns off query suggestions for your users.
      * You can change the mode using the <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a>
-     * operation.</p>
+     * API.</p>
      */
     inline DescribeQuerySuggestionsConfigResult& WithMode(Mode&& value) { SetMode(std::move(value)); return *this;}
 

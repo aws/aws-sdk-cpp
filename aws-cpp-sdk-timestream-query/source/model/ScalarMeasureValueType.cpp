@@ -24,6 +24,7 @@ namespace Aws
         static const int BOOLEAN_HASH = HashingUtils::HashString("BOOLEAN");
         static const int DOUBLE_HASH = HashingUtils::HashString("DOUBLE");
         static const int VARCHAR_HASH = HashingUtils::HashString("VARCHAR");
+        static const int TIMESTAMP_HASH = HashingUtils::HashString("TIMESTAMP");
 
 
         ScalarMeasureValueType GetScalarMeasureValueTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == VARCHAR_HASH)
           {
             return ScalarMeasureValueType::VARCHAR;
+          }
+          else if (hashCode == TIMESTAMP_HASH)
+          {
+            return ScalarMeasureValueType::TIMESTAMP;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -67,6 +72,8 @@ namespace Aws
             return "DOUBLE";
           case ScalarMeasureValueType::VARCHAR:
             return "VARCHAR";
+          case ScalarMeasureValueType::TIMESTAMP:
+            return "TIMESTAMP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

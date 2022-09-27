@@ -17,7 +17,9 @@ UpdateServiceRequest::UpdateServiceRequest() :
     m_sourceConfigurationHasBeenSet(false),
     m_instanceConfigurationHasBeenSet(false),
     m_autoScalingConfigurationArnHasBeenSet(false),
-    m_healthCheckConfigurationHasBeenSet(false)
+    m_healthCheckConfigurationHasBeenSet(false),
+    m_networkConfigurationHasBeenSet(false),
+    m_observabilityConfigurationHasBeenSet(false)
 {
 }
 
@@ -52,6 +54,18 @@ Aws::String UpdateServiceRequest::SerializePayload() const
   if(m_healthCheckConfigurationHasBeenSet)
   {
    payload.WithObject("HealthCheckConfiguration", m_healthCheckConfiguration.Jsonize());
+
+  }
+
+  if(m_networkConfigurationHasBeenSet)
+  {
+   payload.WithObject("NetworkConfiguration", m_networkConfiguration.Jsonize());
+
+  }
+
+  if(m_observabilityConfigurationHasBeenSet)
+  {
+   payload.WithObject("ObservabilityConfiguration", m_observabilityConfiguration.Jsonize());
 
   }
 

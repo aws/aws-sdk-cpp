@@ -33,11 +33,10 @@ namespace Model
    * <p> <code>ApplicationConfiguration</code> </p> </li> <li> <p>
    * <code>ApplicationConfigurationSchema</code> </p> </li> <li> <p>
    * <code>Automation</code> </p> </li> <li> <p> <code>ChangeCalendar</code> </p>
-   * </li> <li> <p> <code>Command</code> </p> </li> <li> <p>
-   * <code>DeploymentStrategy</code> </p> </li> <li> <p> <code>Package</code> </p>
-   * </li> <li> <p> <code>Policy</code> </p> </li> <li> <p> <code>Session</code> </p>
-   * </li> </ul> </dd> <dt>Owner</dt> <dd> <p>Note that only one <code>Owner</code>
-   * can be specified in a request. For example:
+   * </li> <li> <p> <code>Command</code> </p> </li> <li> <p> <code>Package</code>
+   * </p> </li> <li> <p> <code>Policy</code> </p> </li> <li> <p> <code>Session</code>
+   * </p> </li> </ul> </dd> <dt>Owner</dt> <dd> <p>Note that only one
+   * <code>Owner</code> can be specified in a request. For example:
    * <code>Key=Owner,Values=Self</code>.</p> <ul> <li> <p> <code>Amazon</code> </p>
    * </li> <li> <p> <code>Private</code> </p> </li> <li> <p> <code>Public</code> </p>
    * </li> <li> <p> <code>Self</code> </p> </li> <li> <p> <code>ThirdParty</code>

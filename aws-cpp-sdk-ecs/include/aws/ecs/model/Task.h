@@ -1563,37 +1563,67 @@ namespace Model
 
     /**
      * <p>The stop code indicating why a task was stopped. The
-     * <code>stoppedReason</code> might contain additional details.</p>
+     * <code>stoppedReason</code> might contain additional details.</p> <p>The
+     * following are valid values:</p> <ul> <li> <p> <code>TaskFailedToStart</code>
+     * </p> </li> <li> <p> <code>EssentialContainerExited</code> </p> </li> <li> <p>
+     * <code>UserInitiated</code> </p> </li> <li> <p> <code>TerminationNotice</code>
+     * </p> </li> <li> <p> <code>ServiceSchedulerInitiated</code> </p> </li> <li> <p>
+     * <code>SpotInterruption</code> </p> </li> </ul>
      */
     inline const TaskStopCode& GetStopCode() const{ return m_stopCode; }
 
     /**
      * <p>The stop code indicating why a task was stopped. The
-     * <code>stoppedReason</code> might contain additional details.</p>
+     * <code>stoppedReason</code> might contain additional details.</p> <p>The
+     * following are valid values:</p> <ul> <li> <p> <code>TaskFailedToStart</code>
+     * </p> </li> <li> <p> <code>EssentialContainerExited</code> </p> </li> <li> <p>
+     * <code>UserInitiated</code> </p> </li> <li> <p> <code>TerminationNotice</code>
+     * </p> </li> <li> <p> <code>ServiceSchedulerInitiated</code> </p> </li> <li> <p>
+     * <code>SpotInterruption</code> </p> </li> </ul>
      */
     inline bool StopCodeHasBeenSet() const { return m_stopCodeHasBeenSet; }
 
     /**
      * <p>The stop code indicating why a task was stopped. The
-     * <code>stoppedReason</code> might contain additional details.</p>
+     * <code>stoppedReason</code> might contain additional details.</p> <p>The
+     * following are valid values:</p> <ul> <li> <p> <code>TaskFailedToStart</code>
+     * </p> </li> <li> <p> <code>EssentialContainerExited</code> </p> </li> <li> <p>
+     * <code>UserInitiated</code> </p> </li> <li> <p> <code>TerminationNotice</code>
+     * </p> </li> <li> <p> <code>ServiceSchedulerInitiated</code> </p> </li> <li> <p>
+     * <code>SpotInterruption</code> </p> </li> </ul>
      */
     inline void SetStopCode(const TaskStopCode& value) { m_stopCodeHasBeenSet = true; m_stopCode = value; }
 
     /**
      * <p>The stop code indicating why a task was stopped. The
-     * <code>stoppedReason</code> might contain additional details.</p>
+     * <code>stoppedReason</code> might contain additional details.</p> <p>The
+     * following are valid values:</p> <ul> <li> <p> <code>TaskFailedToStart</code>
+     * </p> </li> <li> <p> <code>EssentialContainerExited</code> </p> </li> <li> <p>
+     * <code>UserInitiated</code> </p> </li> <li> <p> <code>TerminationNotice</code>
+     * </p> </li> <li> <p> <code>ServiceSchedulerInitiated</code> </p> </li> <li> <p>
+     * <code>SpotInterruption</code> </p> </li> </ul>
      */
     inline void SetStopCode(TaskStopCode&& value) { m_stopCodeHasBeenSet = true; m_stopCode = std::move(value); }
 
     /**
      * <p>The stop code indicating why a task was stopped. The
-     * <code>stoppedReason</code> might contain additional details.</p>
+     * <code>stoppedReason</code> might contain additional details.</p> <p>The
+     * following are valid values:</p> <ul> <li> <p> <code>TaskFailedToStart</code>
+     * </p> </li> <li> <p> <code>EssentialContainerExited</code> </p> </li> <li> <p>
+     * <code>UserInitiated</code> </p> </li> <li> <p> <code>TerminationNotice</code>
+     * </p> </li> <li> <p> <code>ServiceSchedulerInitiated</code> </p> </li> <li> <p>
+     * <code>SpotInterruption</code> </p> </li> </ul>
      */
     inline Task& WithStopCode(const TaskStopCode& value) { SetStopCode(value); return *this;}
 
     /**
      * <p>The stop code indicating why a task was stopped. The
-     * <code>stoppedReason</code> might contain additional details.</p>
+     * <code>stoppedReason</code> might contain additional details.</p> <p>The
+     * following are valid values:</p> <ul> <li> <p> <code>TaskFailedToStart</code>
+     * </p> </li> <li> <p> <code>EssentialContainerExited</code> </p> </li> <li> <p>
+     * <code>UserInitiated</code> </p> </li> <li> <p> <code>TerminationNotice</code>
+     * </p> </li> <li> <p> <code>ServiceSchedulerInitiated</code> </p> </li> <li> <p>
+     * <code>SpotInterruption</code> </p> </li> </ul>
      */
     inline Task& WithStopCode(TaskStopCode&& value) { SetStopCode(std::move(value)); return *this;}
 

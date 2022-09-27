@@ -20,6 +20,7 @@
 #include <aws/appflow/model/VeevaSourceProperties.h>
 #include <aws/appflow/model/ZendeskSourceProperties.h>
 #include <aws/appflow/model/SAPODataSourceProperties.h>
+#include <aws/appflow/model/CustomConnectorSourceProperties.h>
 #include <utility>
 
 namespace Aws
@@ -510,6 +511,25 @@ namespace Model
     
     inline SourceConnectorProperties& WithSAPOData(SAPODataSourceProperties&& value) { SetSAPOData(std::move(value)); return *this;}
 
+
+    
+    inline const CustomConnectorSourceProperties& GetCustomConnector() const{ return m_customConnector; }
+
+    
+    inline bool CustomConnectorHasBeenSet() const { return m_customConnectorHasBeenSet; }
+
+    
+    inline void SetCustomConnector(const CustomConnectorSourceProperties& value) { m_customConnectorHasBeenSet = true; m_customConnector = value; }
+
+    
+    inline void SetCustomConnector(CustomConnectorSourceProperties&& value) { m_customConnectorHasBeenSet = true; m_customConnector = std::move(value); }
+
+    
+    inline SourceConnectorProperties& WithCustomConnector(const CustomConnectorSourceProperties& value) { SetCustomConnector(value); return *this;}
+
+    
+    inline SourceConnectorProperties& WithCustomConnector(CustomConnectorSourceProperties&& value) { SetCustomConnector(std::move(value)); return *this;}
+
   private:
 
     AmplitudeSourceProperties m_amplitude;
@@ -556,6 +576,9 @@ namespace Model
 
     SAPODataSourceProperties m_sAPOData;
     bool m_sAPODataHasBeenSet;
+
+    CustomConnectorSourceProperties m_customConnector;
+    bool m_customConnectorHasBeenSet;
   };
 
 } // namespace Model

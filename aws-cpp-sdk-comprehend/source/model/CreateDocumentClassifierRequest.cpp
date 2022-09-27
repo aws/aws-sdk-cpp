@@ -27,7 +27,8 @@ CreateDocumentClassifierRequest::CreateDocumentClassifierRequest() :
     m_vpcConfigHasBeenSet(false),
     m_mode(DocumentClassifierMode::NOT_SET),
     m_modeHasBeenSet(false),
-    m_modelKmsKeyIdHasBeenSet(false)
+    m_modelKmsKeyIdHasBeenSet(false),
+    m_modelPolicyHasBeenSet(false)
 {
 }
 
@@ -107,6 +108,12 @@ Aws::String CreateDocumentClassifierRequest::SerializePayload() const
   if(m_modelKmsKeyIdHasBeenSet)
   {
    payload.WithString("ModelKmsKeyId", m_modelKmsKeyId);
+
+  }
+
+  if(m_modelPolicyHasBeenSet)
+  {
+   payload.WithString("ModelPolicy", m_modelPolicy);
 
   }
 

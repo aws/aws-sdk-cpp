@@ -26,7 +26,7 @@ namespace Model
   /**
    * <p>Contains information about the module from which the resource was created, if
    * the resource was created from a module included in the stack template.</p>
-   * <p>For more information on modules, see <a
+   * <p>For more information about modules, see <a
    * href="AWSCloudFormation/latest/UserGuide/modules.html">Using modules to
    * encapsulate and reuse resource configurations</a> in the <i>CloudFormation User
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -45,10 +45,10 @@ namespace Model
 
 
     /**
-     * <p>A concantenated list of the the module type or types containing the resource.
+     * <p>A concatenated list of the module type or types containing the resource.
      * Module types are listed starting with the inner-most nested module, and
      * separated by <code>/</code>.</p> <p>In the following example, the resource was
-     * created from a module of type <code>AWS::First::Example::MODULE</code>, that is
+     * created from a module of type <code>AWS::First::Example::MODULE</code>, that's
      * nested inside a parent module of type
      * <code>AWS::Second::Example::MODULE</code>.</p> <p>
      * <code>AWS::First::Example::MODULE/AWS::Second::Example::MODULE</code> </p>
@@ -56,10 +56,10 @@ namespace Model
     inline const Aws::String& GetTypeHierarchy() const{ return m_typeHierarchy; }
 
     /**
-     * <p>A concantenated list of the the module type or types containing the resource.
+     * <p>A concatenated list of the module type or types containing the resource.
      * Module types are listed starting with the inner-most nested module, and
      * separated by <code>/</code>.</p> <p>In the following example, the resource was
-     * created from a module of type <code>AWS::First::Example::MODULE</code>, that is
+     * created from a module of type <code>AWS::First::Example::MODULE</code>, that's
      * nested inside a parent module of type
      * <code>AWS::Second::Example::MODULE</code>.</p> <p>
      * <code>AWS::First::Example::MODULE/AWS::Second::Example::MODULE</code> </p>
@@ -67,10 +67,10 @@ namespace Model
     inline bool TypeHierarchyHasBeenSet() const { return m_typeHierarchyHasBeenSet; }
 
     /**
-     * <p>A concantenated list of the the module type or types containing the resource.
+     * <p>A concatenated list of the module type or types containing the resource.
      * Module types are listed starting with the inner-most nested module, and
      * separated by <code>/</code>.</p> <p>In the following example, the resource was
-     * created from a module of type <code>AWS::First::Example::MODULE</code>, that is
+     * created from a module of type <code>AWS::First::Example::MODULE</code>, that's
      * nested inside a parent module of type
      * <code>AWS::Second::Example::MODULE</code>.</p> <p>
      * <code>AWS::First::Example::MODULE/AWS::Second::Example::MODULE</code> </p>
@@ -78,10 +78,10 @@ namespace Model
     inline void SetTypeHierarchy(const Aws::String& value) { m_typeHierarchyHasBeenSet = true; m_typeHierarchy = value; }
 
     /**
-     * <p>A concantenated list of the the module type or types containing the resource.
+     * <p>A concatenated list of the module type or types containing the resource.
      * Module types are listed starting with the inner-most nested module, and
      * separated by <code>/</code>.</p> <p>In the following example, the resource was
-     * created from a module of type <code>AWS::First::Example::MODULE</code>, that is
+     * created from a module of type <code>AWS::First::Example::MODULE</code>, that's
      * nested inside a parent module of type
      * <code>AWS::Second::Example::MODULE</code>.</p> <p>
      * <code>AWS::First::Example::MODULE/AWS::Second::Example::MODULE</code> </p>
@@ -89,10 +89,10 @@ namespace Model
     inline void SetTypeHierarchy(Aws::String&& value) { m_typeHierarchyHasBeenSet = true; m_typeHierarchy = std::move(value); }
 
     /**
-     * <p>A concantenated list of the the module type or types containing the resource.
+     * <p>A concatenated list of the module type or types containing the resource.
      * Module types are listed starting with the inner-most nested module, and
      * separated by <code>/</code>.</p> <p>In the following example, the resource was
-     * created from a module of type <code>AWS::First::Example::MODULE</code>, that is
+     * created from a module of type <code>AWS::First::Example::MODULE</code>, that's
      * nested inside a parent module of type
      * <code>AWS::Second::Example::MODULE</code>.</p> <p>
      * <code>AWS::First::Example::MODULE/AWS::Second::Example::MODULE</code> </p>
@@ -100,10 +100,10 @@ namespace Model
     inline void SetTypeHierarchy(const char* value) { m_typeHierarchyHasBeenSet = true; m_typeHierarchy.assign(value); }
 
     /**
-     * <p>A concantenated list of the the module type or types containing the resource.
+     * <p>A concatenated list of the module type or types containing the resource.
      * Module types are listed starting with the inner-most nested module, and
      * separated by <code>/</code>.</p> <p>In the following example, the resource was
-     * created from a module of type <code>AWS::First::Example::MODULE</code>, that is
+     * created from a module of type <code>AWS::First::Example::MODULE</code>, that's
      * nested inside a parent module of type
      * <code>AWS::Second::Example::MODULE</code>.</p> <p>
      * <code>AWS::First::Example::MODULE/AWS::Second::Example::MODULE</code> </p>
@@ -111,10 +111,10 @@ namespace Model
     inline ModuleInfo& WithTypeHierarchy(const Aws::String& value) { SetTypeHierarchy(value); return *this;}
 
     /**
-     * <p>A concantenated list of the the module type or types containing the resource.
+     * <p>A concatenated list of the module type or types containing the resource.
      * Module types are listed starting with the inner-most nested module, and
      * separated by <code>/</code>.</p> <p>In the following example, the resource was
-     * created from a module of type <code>AWS::First::Example::MODULE</code>, that is
+     * created from a module of type <code>AWS::First::Example::MODULE</code>, that's
      * nested inside a parent module of type
      * <code>AWS::Second::Example::MODULE</code>.</p> <p>
      * <code>AWS::First::Example::MODULE/AWS::Second::Example::MODULE</code> </p>
@@ -122,10 +122,10 @@ namespace Model
     inline ModuleInfo& WithTypeHierarchy(Aws::String&& value) { SetTypeHierarchy(std::move(value)); return *this;}
 
     /**
-     * <p>A concantenated list of the the module type or types containing the resource.
+     * <p>A concatenated list of the module type or types containing the resource.
      * Module types are listed starting with the inner-most nested module, and
      * separated by <code>/</code>.</p> <p>In the following example, the resource was
-     * created from a module of type <code>AWS::First::Example::MODULE</code>, that is
+     * created from a module of type <code>AWS::First::Example::MODULE</code>, that's
      * nested inside a parent module of type
      * <code>AWS::Second::Example::MODULE</code>.</p> <p>
      * <code>AWS::First::Example::MODULE/AWS::Second::Example::MODULE</code> </p>
@@ -134,10 +134,10 @@ namespace Model
 
 
     /**
-     * <p>A concantenated list of the logical IDs of the module or modules containing
+     * <p>A concatenated list of the logical IDs of the module or modules containing
      * the resource. Modules are listed starting with the inner-most nested module, and
      * separated by <code>/</code>.</p> <p>In the following example, the resource was
-     * created from a module, <code>moduleA</code>, that is nested inside a parent
+     * created from a module, <code>moduleA</code>, that's nested inside a parent
      * module, <code>moduleB</code>.</p> <p> <code>moduleA/moduleB</code> </p> <p>For
      * more information, see <a
      * href="AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources">Referencing
@@ -146,10 +146,10 @@ namespace Model
     inline const Aws::String& GetLogicalIdHierarchy() const{ return m_logicalIdHierarchy; }
 
     /**
-     * <p>A concantenated list of the logical IDs of the module or modules containing
+     * <p>A concatenated list of the logical IDs of the module or modules containing
      * the resource. Modules are listed starting with the inner-most nested module, and
      * separated by <code>/</code>.</p> <p>In the following example, the resource was
-     * created from a module, <code>moduleA</code>, that is nested inside a parent
+     * created from a module, <code>moduleA</code>, that's nested inside a parent
      * module, <code>moduleB</code>.</p> <p> <code>moduleA/moduleB</code> </p> <p>For
      * more information, see <a
      * href="AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources">Referencing
@@ -158,10 +158,10 @@ namespace Model
     inline bool LogicalIdHierarchyHasBeenSet() const { return m_logicalIdHierarchyHasBeenSet; }
 
     /**
-     * <p>A concantenated list of the logical IDs of the module or modules containing
+     * <p>A concatenated list of the logical IDs of the module or modules containing
      * the resource. Modules are listed starting with the inner-most nested module, and
      * separated by <code>/</code>.</p> <p>In the following example, the resource was
-     * created from a module, <code>moduleA</code>, that is nested inside a parent
+     * created from a module, <code>moduleA</code>, that's nested inside a parent
      * module, <code>moduleB</code>.</p> <p> <code>moduleA/moduleB</code> </p> <p>For
      * more information, see <a
      * href="AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources">Referencing
@@ -170,10 +170,10 @@ namespace Model
     inline void SetLogicalIdHierarchy(const Aws::String& value) { m_logicalIdHierarchyHasBeenSet = true; m_logicalIdHierarchy = value; }
 
     /**
-     * <p>A concantenated list of the logical IDs of the module or modules containing
+     * <p>A concatenated list of the logical IDs of the module or modules containing
      * the resource. Modules are listed starting with the inner-most nested module, and
      * separated by <code>/</code>.</p> <p>In the following example, the resource was
-     * created from a module, <code>moduleA</code>, that is nested inside a parent
+     * created from a module, <code>moduleA</code>, that's nested inside a parent
      * module, <code>moduleB</code>.</p> <p> <code>moduleA/moduleB</code> </p> <p>For
      * more information, see <a
      * href="AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources">Referencing
@@ -182,10 +182,10 @@ namespace Model
     inline void SetLogicalIdHierarchy(Aws::String&& value) { m_logicalIdHierarchyHasBeenSet = true; m_logicalIdHierarchy = std::move(value); }
 
     /**
-     * <p>A concantenated list of the logical IDs of the module or modules containing
+     * <p>A concatenated list of the logical IDs of the module or modules containing
      * the resource. Modules are listed starting with the inner-most nested module, and
      * separated by <code>/</code>.</p> <p>In the following example, the resource was
-     * created from a module, <code>moduleA</code>, that is nested inside a parent
+     * created from a module, <code>moduleA</code>, that's nested inside a parent
      * module, <code>moduleB</code>.</p> <p> <code>moduleA/moduleB</code> </p> <p>For
      * more information, see <a
      * href="AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources">Referencing
@@ -194,10 +194,10 @@ namespace Model
     inline void SetLogicalIdHierarchy(const char* value) { m_logicalIdHierarchyHasBeenSet = true; m_logicalIdHierarchy.assign(value); }
 
     /**
-     * <p>A concantenated list of the logical IDs of the module or modules containing
+     * <p>A concatenated list of the logical IDs of the module or modules containing
      * the resource. Modules are listed starting with the inner-most nested module, and
      * separated by <code>/</code>.</p> <p>In the following example, the resource was
-     * created from a module, <code>moduleA</code>, that is nested inside a parent
+     * created from a module, <code>moduleA</code>, that's nested inside a parent
      * module, <code>moduleB</code>.</p> <p> <code>moduleA/moduleB</code> </p> <p>For
      * more information, see <a
      * href="AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources">Referencing
@@ -206,10 +206,10 @@ namespace Model
     inline ModuleInfo& WithLogicalIdHierarchy(const Aws::String& value) { SetLogicalIdHierarchy(value); return *this;}
 
     /**
-     * <p>A concantenated list of the logical IDs of the module or modules containing
+     * <p>A concatenated list of the logical IDs of the module or modules containing
      * the resource. Modules are listed starting with the inner-most nested module, and
      * separated by <code>/</code>.</p> <p>In the following example, the resource was
-     * created from a module, <code>moduleA</code>, that is nested inside a parent
+     * created from a module, <code>moduleA</code>, that's nested inside a parent
      * module, <code>moduleB</code>.</p> <p> <code>moduleA/moduleB</code> </p> <p>For
      * more information, see <a
      * href="AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources">Referencing
@@ -218,10 +218,10 @@ namespace Model
     inline ModuleInfo& WithLogicalIdHierarchy(Aws::String&& value) { SetLogicalIdHierarchy(std::move(value)); return *this;}
 
     /**
-     * <p>A concantenated list of the logical IDs of the module or modules containing
+     * <p>A concatenated list of the logical IDs of the module or modules containing
      * the resource. Modules are listed starting with the inner-most nested module, and
      * separated by <code>/</code>.</p> <p>In the following example, the resource was
-     * created from a module, <code>moduleA</code>, that is nested inside a parent
+     * created from a module, <code>moduleA</code>, that's nested inside a parent
      * module, <code>moduleB</code>.</p> <p> <code>moduleA/moduleB</code> </p> <p>For
      * more information, see <a
      * href="AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources">Referencing

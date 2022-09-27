@@ -24,7 +24,8 @@ AutomatedAbrSettings::AutomatedAbrSettings() :
     m_maxRenditions(0),
     m_maxRenditionsHasBeenSet(false),
     m_minAbrBitrate(0),
-    m_minAbrBitrateHasBeenSet(false)
+    m_minAbrBitrateHasBeenSet(false),
+    m_rulesHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ AutomatedAbrSettings::AutomatedAbrSettings(JsonView jsonValue) :
     m_maxRenditions(0),
     m_maxRenditionsHasBeenSet(false),
     m_minAbrBitrate(0),
-    m_minAbrBitrateHasBeenSet(false)
+    m_minAbrBitrateHasBeenSet(false),
+    m_rulesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -62,6 +64,16 @@ AutomatedAbrSettings& AutomatedAbrSettings::operator =(JsonView jsonValue)
     m_minAbrBitrateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("rules"))
+  {
+    Array<JsonView> rulesJsonList = jsonValue.GetArray("rules");
+    for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
+    {
+      m_rules.push_back(rulesJsonList[rulesIndex].AsObject());
+    }
+    m_rulesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -84,6 +96,17 @@ JsonValue AutomatedAbrSettings::Jsonize() const
   if(m_minAbrBitrateHasBeenSet)
   {
    payload.WithInteger("minAbrBitrate", m_minAbrBitrate);
+
+  }
+
+  if(m_rulesHasBeenSet)
+  {
+   Array<JsonValue> rulesJsonList(m_rules.size());
+   for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
+   {
+     rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
+   }
+   payload.WithArray("rules", std::move(rulesJsonList));
 
   }
 

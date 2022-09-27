@@ -24,7 +24,6 @@ namespace AmplifyUIBuilder
 namespace Model
 {
   class ComponentProperty;
-  class ComponentProperty;
 
   /**
    * <p>Represents a conditional expression to set a component property. Use
@@ -157,6 +156,47 @@ namespace Model
 
 
     /**
+     * <p>The type of the property to evaluate.</p>
+     */
+    inline const Aws::String& GetOperandType() const{ return m_operandType; }
+
+    /**
+     * <p>The type of the property to evaluate.</p>
+     */
+    inline bool OperandTypeHasBeenSet() const { return m_operandTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the property to evaluate.</p>
+     */
+    inline void SetOperandType(const Aws::String& value) { m_operandTypeHasBeenSet = true; m_operandType = value; }
+
+    /**
+     * <p>The type of the property to evaluate.</p>
+     */
+    inline void SetOperandType(Aws::String&& value) { m_operandTypeHasBeenSet = true; m_operandType = std::move(value); }
+
+    /**
+     * <p>The type of the property to evaluate.</p>
+     */
+    inline void SetOperandType(const char* value) { m_operandTypeHasBeenSet = true; m_operandType.assign(value); }
+
+    /**
+     * <p>The type of the property to evaluate.</p>
+     */
+    inline ComponentConditionProperty& WithOperandType(const Aws::String& value) { SetOperandType(value); return *this;}
+
+    /**
+     * <p>The type of the property to evaluate.</p>
+     */
+    inline ComponentConditionProperty& WithOperandType(Aws::String&& value) { SetOperandType(std::move(value)); return *this;}
+
+    /**
+     * <p>The type of the property to evaluate.</p>
+     */
+    inline ComponentConditionProperty& WithOperandType(const char* value) { SetOperandType(value); return *this;}
+
+
+    /**
      * <p>The operator to use to perform the evaluation, such as <code>eq</code> to
      * represent equals.</p>
      */
@@ -286,6 +326,9 @@ namespace Model
 
     Aws::String m_operand;
     bool m_operandHasBeenSet;
+
+    Aws::String m_operandType;
+    bool m_operandTypeHasBeenSet;
 
     Aws::String m_operator;
     bool m_operatorHasBeenSet;

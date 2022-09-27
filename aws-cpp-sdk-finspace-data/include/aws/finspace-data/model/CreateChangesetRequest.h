@@ -129,61 +129,61 @@ namespace Model
 
 
     /**
-     * <p>Option to indicate how a Changeset will be applied to a Dataset.</p> <ul>
-     * <li> <p> <code>REPLACE</code> - Changeset will be considered as a replacement to
-     * all prior loaded Changesets.</p> </li> <li> <p> <code>APPEND</code> - Changeset
+     * <p>The option to indicate how a Changeset will be applied to a Dataset.</p> <ul>
+     * <li> <p> <code>REPLACE</code> – Changeset will be considered as a replacement to
+     * all prior loaded Changesets.</p> </li> <li> <p> <code>APPEND</code> – Changeset
      * will be considered as an addition to the end of all prior loaded Changesets.</p>
-     * </li> <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to
+     * </li> <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to
      * a specific prior ingested Changeset.</p> </li> </ul>
      */
     inline const ChangeType& GetChangeType() const{ return m_changeType; }
 
     /**
-     * <p>Option to indicate how a Changeset will be applied to a Dataset.</p> <ul>
-     * <li> <p> <code>REPLACE</code> - Changeset will be considered as a replacement to
-     * all prior loaded Changesets.</p> </li> <li> <p> <code>APPEND</code> - Changeset
+     * <p>The option to indicate how a Changeset will be applied to a Dataset.</p> <ul>
+     * <li> <p> <code>REPLACE</code> – Changeset will be considered as a replacement to
+     * all prior loaded Changesets.</p> </li> <li> <p> <code>APPEND</code> – Changeset
      * will be considered as an addition to the end of all prior loaded Changesets.</p>
-     * </li> <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to
+     * </li> <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to
      * a specific prior ingested Changeset.</p> </li> </ul>
      */
     inline bool ChangeTypeHasBeenSet() const { return m_changeTypeHasBeenSet; }
 
     /**
-     * <p>Option to indicate how a Changeset will be applied to a Dataset.</p> <ul>
-     * <li> <p> <code>REPLACE</code> - Changeset will be considered as a replacement to
-     * all prior loaded Changesets.</p> </li> <li> <p> <code>APPEND</code> - Changeset
+     * <p>The option to indicate how a Changeset will be applied to a Dataset.</p> <ul>
+     * <li> <p> <code>REPLACE</code> – Changeset will be considered as a replacement to
+     * all prior loaded Changesets.</p> </li> <li> <p> <code>APPEND</code> – Changeset
      * will be considered as an addition to the end of all prior loaded Changesets.</p>
-     * </li> <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to
+     * </li> <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to
      * a specific prior ingested Changeset.</p> </li> </ul>
      */
     inline void SetChangeType(const ChangeType& value) { m_changeTypeHasBeenSet = true; m_changeType = value; }
 
     /**
-     * <p>Option to indicate how a Changeset will be applied to a Dataset.</p> <ul>
-     * <li> <p> <code>REPLACE</code> - Changeset will be considered as a replacement to
-     * all prior loaded Changesets.</p> </li> <li> <p> <code>APPEND</code> - Changeset
+     * <p>The option to indicate how a Changeset will be applied to a Dataset.</p> <ul>
+     * <li> <p> <code>REPLACE</code> – Changeset will be considered as a replacement to
+     * all prior loaded Changesets.</p> </li> <li> <p> <code>APPEND</code> – Changeset
      * will be considered as an addition to the end of all prior loaded Changesets.</p>
-     * </li> <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to
+     * </li> <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to
      * a specific prior ingested Changeset.</p> </li> </ul>
      */
     inline void SetChangeType(ChangeType&& value) { m_changeTypeHasBeenSet = true; m_changeType = std::move(value); }
 
     /**
-     * <p>Option to indicate how a Changeset will be applied to a Dataset.</p> <ul>
-     * <li> <p> <code>REPLACE</code> - Changeset will be considered as a replacement to
-     * all prior loaded Changesets.</p> </li> <li> <p> <code>APPEND</code> - Changeset
+     * <p>The option to indicate how a Changeset will be applied to a Dataset.</p> <ul>
+     * <li> <p> <code>REPLACE</code> – Changeset will be considered as a replacement to
+     * all prior loaded Changesets.</p> </li> <li> <p> <code>APPEND</code> – Changeset
      * will be considered as an addition to the end of all prior loaded Changesets.</p>
-     * </li> <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to
+     * </li> <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to
      * a specific prior ingested Changeset.</p> </li> </ul>
      */
     inline CreateChangesetRequest& WithChangeType(const ChangeType& value) { SetChangeType(value); return *this;}
 
     /**
-     * <p>Option to indicate how a Changeset will be applied to a Dataset.</p> <ul>
-     * <li> <p> <code>REPLACE</code> - Changeset will be considered as a replacement to
-     * all prior loaded Changesets.</p> </li> <li> <p> <code>APPEND</code> - Changeset
+     * <p>The option to indicate how a Changeset will be applied to a Dataset.</p> <ul>
+     * <li> <p> <code>REPLACE</code> – Changeset will be considered as a replacement to
+     * all prior loaded Changesets.</p> </li> <li> <p> <code>APPEND</code> – Changeset
      * will be considered as an addition to the end of all prior loaded Changesets.</p>
-     * </li> <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to
+     * </li> <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to
      * a specific prior ingested Changeset.</p> </li> </ul>
      */
     inline CreateChangesetRequest& WithChangeType(ChangeType&& value) { SetChangeType(std::move(value)); return *this;}
@@ -201,7 +201,7 @@ namespace Model
      * FinSpace role access. To do that, you first need to configure the IAM policy on
      * S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading
-     * data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
+     * data from an Amazon S3 Bucket using the FinSpace API</a> section.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetSourceParams() const{ return m_sourceParams; }
 
@@ -217,7 +217,7 @@ namespace Model
      * FinSpace role access. To do that, you first need to configure the IAM policy on
      * S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading
-     * data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
+     * data from an Amazon S3 Bucket using the FinSpace API</a> section.</p>
      */
     inline bool SourceParamsHasBeenSet() const { return m_sourceParamsHasBeenSet; }
 
@@ -233,7 +233,7 @@ namespace Model
      * FinSpace role access. To do that, you first need to configure the IAM policy on
      * S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading
-     * data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
+     * data from an Amazon S3 Bucket using the FinSpace API</a> section.</p>
      */
     inline void SetSourceParams(const Aws::Map<Aws::String, Aws::String>& value) { m_sourceParamsHasBeenSet = true; m_sourceParams = value; }
 
@@ -249,7 +249,7 @@ namespace Model
      * FinSpace role access. To do that, you first need to configure the IAM policy on
      * S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading
-     * data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
+     * data from an Amazon S3 Bucket using the FinSpace API</a> section.</p>
      */
     inline void SetSourceParams(Aws::Map<Aws::String, Aws::String>&& value) { m_sourceParamsHasBeenSet = true; m_sourceParams = std::move(value); }
 
@@ -265,7 +265,7 @@ namespace Model
      * FinSpace role access. To do that, you first need to configure the IAM policy on
      * S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading
-     * data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
+     * data from an Amazon S3 Bucket using the FinSpace API</a> section.</p>
      */
     inline CreateChangesetRequest& WithSourceParams(const Aws::Map<Aws::String, Aws::String>& value) { SetSourceParams(value); return *this;}
 
@@ -281,7 +281,7 @@ namespace Model
      * FinSpace role access. To do that, you first need to configure the IAM policy on
      * S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading
-     * data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
+     * data from an Amazon S3 Bucket using the FinSpace API</a> section.</p>
      */
     inline CreateChangesetRequest& WithSourceParams(Aws::Map<Aws::String, Aws::String>&& value) { SetSourceParams(std::move(value)); return *this;}
 
@@ -297,7 +297,7 @@ namespace Model
      * FinSpace role access. To do that, you first need to configure the IAM policy on
      * S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading
-     * data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
+     * data from an Amazon S3 Bucket using the FinSpace API</a> section.</p>
      */
     inline CreateChangesetRequest& AddSourceParams(const Aws::String& key, const Aws::String& value) { m_sourceParamsHasBeenSet = true; m_sourceParams.emplace(key, value); return *this; }
 
@@ -313,7 +313,7 @@ namespace Model
      * FinSpace role access. To do that, you first need to configure the IAM policy on
      * S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading
-     * data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
+     * data from an Amazon S3 Bucket using the FinSpace API</a> section.</p>
      */
     inline CreateChangesetRequest& AddSourceParams(Aws::String&& key, const Aws::String& value) { m_sourceParamsHasBeenSet = true; m_sourceParams.emplace(std::move(key), value); return *this; }
 
@@ -329,7 +329,7 @@ namespace Model
      * FinSpace role access. To do that, you first need to configure the IAM policy on
      * S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading
-     * data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
+     * data from an Amazon S3 Bucket using the FinSpace API</a> section.</p>
      */
     inline CreateChangesetRequest& AddSourceParams(const Aws::String& key, Aws::String&& value) { m_sourceParamsHasBeenSet = true; m_sourceParams.emplace(key, std::move(value)); return *this; }
 
@@ -345,7 +345,7 @@ namespace Model
      * FinSpace role access. To do that, you first need to configure the IAM policy on
      * S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading
-     * data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
+     * data from an Amazon S3 Bucket using the FinSpace API</a> section.</p>
      */
     inline CreateChangesetRequest& AddSourceParams(Aws::String&& key, Aws::String&& value) { m_sourceParamsHasBeenSet = true; m_sourceParams.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -361,7 +361,7 @@ namespace Model
      * FinSpace role access. To do that, you first need to configure the IAM policy on
      * S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading
-     * data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
+     * data from an Amazon S3 Bucket using the FinSpace API</a> section.</p>
      */
     inline CreateChangesetRequest& AddSourceParams(const char* key, Aws::String&& value) { m_sourceParamsHasBeenSet = true; m_sourceParams.emplace(key, std::move(value)); return *this; }
 
@@ -377,7 +377,7 @@ namespace Model
      * FinSpace role access. To do that, you first need to configure the IAM policy on
      * S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading
-     * data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
+     * data from an Amazon S3 Bucket using the FinSpace API</a> section.</p>
      */
     inline CreateChangesetRequest& AddSourceParams(Aws::String&& key, const char* value) { m_sourceParamsHasBeenSet = true; m_sourceParams.emplace(std::move(key), value); return *this; }
 
@@ -393,7 +393,7 @@ namespace Model
      * FinSpace role access. To do that, you first need to configure the IAM policy on
      * S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading
-     * data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
+     * data from an Amazon S3 Bucket using the FinSpace API</a> section.</p>
      */
     inline CreateChangesetRequest& AddSourceParams(const char* key, const char* value) { m_sourceParamsHasBeenSet = true; m_sourceParams.emplace(key, value); return *this; }
 
@@ -404,9 +404,9 @@ namespace Model
      * separation character (<code>separator</code>) and the type of compression
      * (<code>compression</code>). </p> <p> <code>formatType</code> is a required
      * attribute and can have the following values: </p> <ul> <li> <p>
-     * <code>PARQUET</code> - Parquet source file format.</p> </li> <li> <p>
-     * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
-     * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
+     * <code>PARQUET</code> – Parquet source file format.</p> </li> <li> <p>
+     * <code>CSV</code> – CSV source file format.</p> </li> <li> <p> <code>JSON</code>
+     * – JSON source file format.</p> </li> <li> <p> <code>XML</code> – XML source file
      * format.</p> </li> </ul> <p>Here is an example of how you could specify the
      * <code>formatParams</code>:</p> <p> <code> "formatParams": { "formatType": "CSV",
      * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
@@ -425,9 +425,9 @@ namespace Model
      * separation character (<code>separator</code>) and the type of compression
      * (<code>compression</code>). </p> <p> <code>formatType</code> is a required
      * attribute and can have the following values: </p> <ul> <li> <p>
-     * <code>PARQUET</code> - Parquet source file format.</p> </li> <li> <p>
-     * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
-     * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
+     * <code>PARQUET</code> – Parquet source file format.</p> </li> <li> <p>
+     * <code>CSV</code> – CSV source file format.</p> </li> <li> <p> <code>JSON</code>
+     * – JSON source file format.</p> </li> <li> <p> <code>XML</code> – XML source file
      * format.</p> </li> </ul> <p>Here is an example of how you could specify the
      * <code>formatParams</code>:</p> <p> <code> "formatParams": { "formatType": "CSV",
      * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
@@ -446,9 +446,9 @@ namespace Model
      * separation character (<code>separator</code>) and the type of compression
      * (<code>compression</code>). </p> <p> <code>formatType</code> is a required
      * attribute and can have the following values: </p> <ul> <li> <p>
-     * <code>PARQUET</code> - Parquet source file format.</p> </li> <li> <p>
-     * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
-     * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
+     * <code>PARQUET</code> – Parquet source file format.</p> </li> <li> <p>
+     * <code>CSV</code> – CSV source file format.</p> </li> <li> <p> <code>JSON</code>
+     * – JSON source file format.</p> </li> <li> <p> <code>XML</code> – XML source file
      * format.</p> </li> </ul> <p>Here is an example of how you could specify the
      * <code>formatParams</code>:</p> <p> <code> "formatParams": { "formatType": "CSV",
      * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
@@ -467,9 +467,9 @@ namespace Model
      * separation character (<code>separator</code>) and the type of compression
      * (<code>compression</code>). </p> <p> <code>formatType</code> is a required
      * attribute and can have the following values: </p> <ul> <li> <p>
-     * <code>PARQUET</code> - Parquet source file format.</p> </li> <li> <p>
-     * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
-     * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
+     * <code>PARQUET</code> – Parquet source file format.</p> </li> <li> <p>
+     * <code>CSV</code> – CSV source file format.</p> </li> <li> <p> <code>JSON</code>
+     * – JSON source file format.</p> </li> <li> <p> <code>XML</code> – XML source file
      * format.</p> </li> </ul> <p>Here is an example of how you could specify the
      * <code>formatParams</code>:</p> <p> <code> "formatParams": { "formatType": "CSV",
      * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
@@ -488,9 +488,9 @@ namespace Model
      * separation character (<code>separator</code>) and the type of compression
      * (<code>compression</code>). </p> <p> <code>formatType</code> is a required
      * attribute and can have the following values: </p> <ul> <li> <p>
-     * <code>PARQUET</code> - Parquet source file format.</p> </li> <li> <p>
-     * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
-     * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
+     * <code>PARQUET</code> – Parquet source file format.</p> </li> <li> <p>
+     * <code>CSV</code> – CSV source file format.</p> </li> <li> <p> <code>JSON</code>
+     * – JSON source file format.</p> </li> <li> <p> <code>XML</code> – XML source file
      * format.</p> </li> </ul> <p>Here is an example of how you could specify the
      * <code>formatParams</code>:</p> <p> <code> "formatParams": { "formatType": "CSV",
      * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
@@ -509,9 +509,9 @@ namespace Model
      * separation character (<code>separator</code>) and the type of compression
      * (<code>compression</code>). </p> <p> <code>formatType</code> is a required
      * attribute and can have the following values: </p> <ul> <li> <p>
-     * <code>PARQUET</code> - Parquet source file format.</p> </li> <li> <p>
-     * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
-     * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
+     * <code>PARQUET</code> – Parquet source file format.</p> </li> <li> <p>
+     * <code>CSV</code> – CSV source file format.</p> </li> <li> <p> <code>JSON</code>
+     * – JSON source file format.</p> </li> <li> <p> <code>XML</code> – XML source file
      * format.</p> </li> </ul> <p>Here is an example of how you could specify the
      * <code>formatParams</code>:</p> <p> <code> "formatParams": { "formatType": "CSV",
      * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
@@ -530,9 +530,9 @@ namespace Model
      * separation character (<code>separator</code>) and the type of compression
      * (<code>compression</code>). </p> <p> <code>formatType</code> is a required
      * attribute and can have the following values: </p> <ul> <li> <p>
-     * <code>PARQUET</code> - Parquet source file format.</p> </li> <li> <p>
-     * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
-     * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
+     * <code>PARQUET</code> – Parquet source file format.</p> </li> <li> <p>
+     * <code>CSV</code> – CSV source file format.</p> </li> <li> <p> <code>JSON</code>
+     * – JSON source file format.</p> </li> <li> <p> <code>XML</code> – XML source file
      * format.</p> </li> </ul> <p>Here is an example of how you could specify the
      * <code>formatParams</code>:</p> <p> <code> "formatParams": { "formatType": "CSV",
      * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
@@ -551,9 +551,9 @@ namespace Model
      * separation character (<code>separator</code>) and the type of compression
      * (<code>compression</code>). </p> <p> <code>formatType</code> is a required
      * attribute and can have the following values: </p> <ul> <li> <p>
-     * <code>PARQUET</code> - Parquet source file format.</p> </li> <li> <p>
-     * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
-     * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
+     * <code>PARQUET</code> – Parquet source file format.</p> </li> <li> <p>
+     * <code>CSV</code> – CSV source file format.</p> </li> <li> <p> <code>JSON</code>
+     * – JSON source file format.</p> </li> <li> <p> <code>XML</code> – XML source file
      * format.</p> </li> </ul> <p>Here is an example of how you could specify the
      * <code>formatParams</code>:</p> <p> <code> "formatParams": { "formatType": "CSV",
      * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
@@ -572,9 +572,9 @@ namespace Model
      * separation character (<code>separator</code>) and the type of compression
      * (<code>compression</code>). </p> <p> <code>formatType</code> is a required
      * attribute and can have the following values: </p> <ul> <li> <p>
-     * <code>PARQUET</code> - Parquet source file format.</p> </li> <li> <p>
-     * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
-     * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
+     * <code>PARQUET</code> – Parquet source file format.</p> </li> <li> <p>
+     * <code>CSV</code> – CSV source file format.</p> </li> <li> <p> <code>JSON</code>
+     * – JSON source file format.</p> </li> <li> <p> <code>XML</code> – XML source file
      * format.</p> </li> </ul> <p>Here is an example of how you could specify the
      * <code>formatParams</code>:</p> <p> <code> "formatParams": { "formatType": "CSV",
      * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
@@ -593,9 +593,9 @@ namespace Model
      * separation character (<code>separator</code>) and the type of compression
      * (<code>compression</code>). </p> <p> <code>formatType</code> is a required
      * attribute and can have the following values: </p> <ul> <li> <p>
-     * <code>PARQUET</code> - Parquet source file format.</p> </li> <li> <p>
-     * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
-     * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
+     * <code>PARQUET</code> – Parquet source file format.</p> </li> <li> <p>
+     * <code>CSV</code> – CSV source file format.</p> </li> <li> <p> <code>JSON</code>
+     * – JSON source file format.</p> </li> <li> <p> <code>XML</code> – XML source file
      * format.</p> </li> </ul> <p>Here is an example of how you could specify the
      * <code>formatParams</code>:</p> <p> <code> "formatParams": { "formatType": "CSV",
      * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
@@ -614,9 +614,9 @@ namespace Model
      * separation character (<code>separator</code>) and the type of compression
      * (<code>compression</code>). </p> <p> <code>formatType</code> is a required
      * attribute and can have the following values: </p> <ul> <li> <p>
-     * <code>PARQUET</code> - Parquet source file format.</p> </li> <li> <p>
-     * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
-     * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
+     * <code>PARQUET</code> – Parquet source file format.</p> </li> <li> <p>
+     * <code>CSV</code> – CSV source file format.</p> </li> <li> <p> <code>JSON</code>
+     * – JSON source file format.</p> </li> <li> <p> <code>XML</code> – XML source file
      * format.</p> </li> </ul> <p>Here is an example of how you could specify the
      * <code>formatParams</code>:</p> <p> <code> "formatParams": { "formatType": "CSV",
      * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
@@ -635,9 +635,9 @@ namespace Model
      * separation character (<code>separator</code>) and the type of compression
      * (<code>compression</code>). </p> <p> <code>formatType</code> is a required
      * attribute and can have the following values: </p> <ul> <li> <p>
-     * <code>PARQUET</code> - Parquet source file format.</p> </li> <li> <p>
-     * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
-     * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
+     * <code>PARQUET</code> – Parquet source file format.</p> </li> <li> <p>
+     * <code>CSV</code> – CSV source file format.</p> </li> <li> <p> <code>JSON</code>
+     * – JSON source file format.</p> </li> <li> <p> <code>XML</code> – XML source file
      * format.</p> </li> </ul> <p>Here is an example of how you could specify the
      * <code>formatParams</code>:</p> <p> <code> "formatParams": { "formatType": "CSV",
      * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
@@ -656,9 +656,9 @@ namespace Model
      * separation character (<code>separator</code>) and the type of compression
      * (<code>compression</code>). </p> <p> <code>formatType</code> is a required
      * attribute and can have the following values: </p> <ul> <li> <p>
-     * <code>PARQUET</code> - Parquet source file format.</p> </li> <li> <p>
-     * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
-     * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
+     * <code>PARQUET</code> – Parquet source file format.</p> </li> <li> <p>
+     * <code>CSV</code> – CSV source file format.</p> </li> <li> <p> <code>JSON</code>
+     * – JSON source file format.</p> </li> <li> <p> <code>XML</code> – XML source file
      * format.</p> </li> </ul> <p>Here is an example of how you could specify the
      * <code>formatParams</code>:</p> <p> <code> "formatParams": { "formatType": "CSV",
      * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>

@@ -27,6 +27,9 @@ ListPartsRequest::ListPartsRequest() :
     m_requestPayer(RequestPayer::NOT_SET),
     m_requestPayerHasBeenSet(false),
     m_expectedBucketOwnerHasBeenSet(false),
+    m_sSECustomerAlgorithmHasBeenSet(false),
+    m_sSECustomerKeyHasBeenSet(false),
+    m_sSECustomerKeyMD5HasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -92,6 +95,27 @@ Aws::Http::HeaderValueCollection ListPartsRequest::GetRequestSpecificHeaders() c
   {
     ss << m_expectedBucketOwner;
     headers.emplace("x-amz-expected-bucket-owner",  ss.str());
+    ss.str("");
+  }
+
+  if(m_sSECustomerAlgorithmHasBeenSet)
+  {
+    ss << m_sSECustomerAlgorithm;
+    headers.emplace("x-amz-server-side-encryption-customer-algorithm",  ss.str());
+    ss.str("");
+  }
+
+  if(m_sSECustomerKeyHasBeenSet)
+  {
+    ss << m_sSECustomerKey;
+    headers.emplace("x-amz-server-side-encryption-customer-key",  ss.str());
+    ss.str("");
+  }
+
+  if(m_sSECustomerKeyMD5HasBeenSet)
+  {
+    ss << m_sSECustomerKeyMD5;
+    headers.emplace("x-amz-server-side-encryption-customer-key-md5",  ss.str());
     ss.str("");
   }
 

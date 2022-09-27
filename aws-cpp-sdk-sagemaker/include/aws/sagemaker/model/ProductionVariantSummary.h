@@ -285,93 +285,63 @@ namespace Model
 
 
     /**
-     * <p>The serverless configuration for the endpoint.</p>  <p>Serverless
-     * Inference is in preview release for Amazon SageMaker and is subject to change.
-     * We do not recommend using this feature in production environments.</p> 
+     * <p>The serverless configuration for the endpoint.</p>
      */
     inline const ProductionVariantServerlessConfig& GetCurrentServerlessConfig() const{ return m_currentServerlessConfig; }
 
     /**
-     * <p>The serverless configuration for the endpoint.</p>  <p>Serverless
-     * Inference is in preview release for Amazon SageMaker and is subject to change.
-     * We do not recommend using this feature in production environments.</p> 
+     * <p>The serverless configuration for the endpoint.</p>
      */
     inline bool CurrentServerlessConfigHasBeenSet() const { return m_currentServerlessConfigHasBeenSet; }
 
     /**
-     * <p>The serverless configuration for the endpoint.</p>  <p>Serverless
-     * Inference is in preview release for Amazon SageMaker and is subject to change.
-     * We do not recommend using this feature in production environments.</p> 
+     * <p>The serverless configuration for the endpoint.</p>
      */
     inline void SetCurrentServerlessConfig(const ProductionVariantServerlessConfig& value) { m_currentServerlessConfigHasBeenSet = true; m_currentServerlessConfig = value; }
 
     /**
-     * <p>The serverless configuration for the endpoint.</p>  <p>Serverless
-     * Inference is in preview release for Amazon SageMaker and is subject to change.
-     * We do not recommend using this feature in production environments.</p> 
+     * <p>The serverless configuration for the endpoint.</p>
      */
     inline void SetCurrentServerlessConfig(ProductionVariantServerlessConfig&& value) { m_currentServerlessConfigHasBeenSet = true; m_currentServerlessConfig = std::move(value); }
 
     /**
-     * <p>The serverless configuration for the endpoint.</p>  <p>Serverless
-     * Inference is in preview release for Amazon SageMaker and is subject to change.
-     * We do not recommend using this feature in production environments.</p> 
+     * <p>The serverless configuration for the endpoint.</p>
      */
     inline ProductionVariantSummary& WithCurrentServerlessConfig(const ProductionVariantServerlessConfig& value) { SetCurrentServerlessConfig(value); return *this;}
 
     /**
-     * <p>The serverless configuration for the endpoint.</p>  <p>Serverless
-     * Inference is in preview release for Amazon SageMaker and is subject to change.
-     * We do not recommend using this feature in production environments.</p> 
+     * <p>The serverless configuration for the endpoint.</p>
      */
     inline ProductionVariantSummary& WithCurrentServerlessConfig(ProductionVariantServerlessConfig&& value) { SetCurrentServerlessConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>The serverless configuration requested for the endpoint update.</p> 
-     * <p>Serverless Inference is in preview release for Amazon SageMaker and is
-     * subject to change. We do not recommend using this feature in production
-     * environments.</p> 
+     * <p>The serverless configuration requested for the endpoint update.</p>
      */
     inline const ProductionVariantServerlessConfig& GetDesiredServerlessConfig() const{ return m_desiredServerlessConfig; }
 
     /**
-     * <p>The serverless configuration requested for the endpoint update.</p> 
-     * <p>Serverless Inference is in preview release for Amazon SageMaker and is
-     * subject to change. We do not recommend using this feature in production
-     * environments.</p> 
+     * <p>The serverless configuration requested for the endpoint update.</p>
      */
     inline bool DesiredServerlessConfigHasBeenSet() const { return m_desiredServerlessConfigHasBeenSet; }
 
     /**
-     * <p>The serverless configuration requested for the endpoint update.</p> 
-     * <p>Serverless Inference is in preview release for Amazon SageMaker and is
-     * subject to change. We do not recommend using this feature in production
-     * environments.</p> 
+     * <p>The serverless configuration requested for the endpoint update.</p>
      */
     inline void SetDesiredServerlessConfig(const ProductionVariantServerlessConfig& value) { m_desiredServerlessConfigHasBeenSet = true; m_desiredServerlessConfig = value; }
 
     /**
-     * <p>The serverless configuration requested for the endpoint update.</p> 
-     * <p>Serverless Inference is in preview release for Amazon SageMaker and is
-     * subject to change. We do not recommend using this feature in production
-     * environments.</p> 
+     * <p>The serverless configuration requested for the endpoint update.</p>
      */
     inline void SetDesiredServerlessConfig(ProductionVariantServerlessConfig&& value) { m_desiredServerlessConfigHasBeenSet = true; m_desiredServerlessConfig = std::move(value); }
 
     /**
-     * <p>The serverless configuration requested for the endpoint update.</p> 
-     * <p>Serverless Inference is in preview release for Amazon SageMaker and is
-     * subject to change. We do not recommend using this feature in production
-     * environments.</p> 
+     * <p>The serverless configuration requested for the endpoint update.</p>
      */
     inline ProductionVariantSummary& WithDesiredServerlessConfig(const ProductionVariantServerlessConfig& value) { SetDesiredServerlessConfig(value); return *this;}
 
     /**
-     * <p>The serverless configuration requested for the endpoint update.</p> 
-     * <p>Serverless Inference is in preview release for Amazon SageMaker and is
-     * subject to change. We do not recommend using this feature in production
-     * environments.</p> 
+     * <p>The serverless configuration requested for the endpoint update.</p>
      */
     inline ProductionVariantSummary& WithDesiredServerlessConfig(ProductionVariantServerlessConfig&& value) { SetDesiredServerlessConfig(std::move(value)); return *this;}
 

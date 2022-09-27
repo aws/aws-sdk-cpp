@@ -102,6 +102,17 @@ GetMetricStreamResult& GetMetricStreamResult::operator =(const Aws::AmazonWebSer
     {
       m_outputFormat = MetricStreamOutputFormatMapper::GetMetricStreamOutputFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(outputFormatNode.GetText()).c_str()).c_str());
     }
+    XmlNode statisticsConfigurationsNode = resultNode.FirstChild("StatisticsConfigurations");
+    if(!statisticsConfigurationsNode.IsNull())
+    {
+      XmlNode statisticsConfigurationsMember = statisticsConfigurationsNode.FirstChild("member");
+      while(!statisticsConfigurationsMember.IsNull())
+      {
+        m_statisticsConfigurations.push_back(statisticsConfigurationsMember);
+        statisticsConfigurationsMember = statisticsConfigurationsMember.NextNode("member");
+      }
+
+    }
   }
 
   if (!rootNode.IsNull()) {

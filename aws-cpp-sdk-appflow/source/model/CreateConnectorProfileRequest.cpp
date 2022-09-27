@@ -17,6 +17,7 @@ CreateConnectorProfileRequest::CreateConnectorProfileRequest() :
     m_kmsArnHasBeenSet(false),
     m_connectorType(ConnectorType::NOT_SET),
     m_connectorTypeHasBeenSet(false),
+    m_connectorLabelHasBeenSet(false),
     m_connectionMode(ConnectionMode::NOT_SET),
     m_connectionModeHasBeenSet(false),
     m_connectorProfileConfigHasBeenSet(false)
@@ -42,6 +43,12 @@ Aws::String CreateConnectorProfileRequest::SerializePayload() const
   if(m_connectorTypeHasBeenSet)
   {
    payload.WithString("connectorType", ConnectorTypeMapper::GetNameForConnectorType(m_connectorType));
+  }
+
+  if(m_connectorLabelHasBeenSet)
+  {
+   payload.WithString("connectorLabel", m_connectorLabel);
+
   }
 
   if(m_connectionModeHasBeenSet)

@@ -18,7 +18,9 @@ CreateChannelRequest::CreateChannelRequest() :
     m_outputsHasBeenSet(false),
     m_playbackMode(PlaybackMode::NOT_SET),
     m_playbackModeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_tier(Tier::NOT_SET),
+    m_tierHasBeenSet(false)
 {
 }
 
@@ -57,6 +59,11 @@ Aws::String CreateChannelRequest::SerializePayload() const
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
 
+  }
+
+  if(m_tierHasBeenSet)
+  {
+   payload.WithString("Tier", TierMapper::GetNameForTier(m_tier));
   }
 
   return payload.View().WriteReadable();

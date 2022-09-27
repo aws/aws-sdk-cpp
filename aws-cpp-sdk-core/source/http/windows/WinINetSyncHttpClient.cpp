@@ -154,7 +154,7 @@ void* WinINetSyncHttpClient::OpenRequest(const std::shared_ptr<HttpRequest>& req
 void WinINetSyncHttpClient::DoAddHeaders(void* hHttpRequest, Aws::String& headerStr) const
 {
     if (!HttpAddRequestHeadersA(hHttpRequest, headerStr.c_str(), (DWORD)headerStr.length(), HTTP_ADDREQ_FLAG_REPLACE | HTTP_ADDREQ_FLAG_ADD))
-        AWS_LOGSTREAM_ERROR(GetLogTag(), "Failed to add HTTP request headers with error code: " << GetLastError());
+        AWS_LOGSTREAM_ERROR(GetLogTag(), "Failed to add HTTP request headers: " << headerStr << ", with error code: " << GetLastError());
 }
 
 uint64_t WinINetSyncHttpClient::DoWriteData(void* hHttpRequest, char* streamBuffer, uint64_t bytesRead, bool isChunked) const

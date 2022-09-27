@@ -22,6 +22,7 @@ CreateWorkspaceRequest::CreateWorkspaceRequest() :
     m_permissionType(PermissionType::NOT_SET),
     m_permissionTypeHasBeenSet(false),
     m_stackSetNameHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_workspaceDataSourcesHasBeenSet(false),
     m_workspaceDescriptionHasBeenSet(false),
     m_workspaceNameHasBeenSet(false),
@@ -71,6 +72,17 @@ Aws::String CreateWorkspaceRequest::SerializePayload() const
   if(m_stackSetNameHasBeenSet)
   {
    payload.WithString("stackSetName", m_stackSetName);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

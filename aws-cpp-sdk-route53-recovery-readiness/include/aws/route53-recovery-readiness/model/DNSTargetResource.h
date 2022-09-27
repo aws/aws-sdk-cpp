@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * A component for DNS/Routing Control Readiness Checks<p><h3>See Also:</h3>   <a
+   * <p>A component for DNS/routing control readiness checks and architecture
+   * checks.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/DNSTargetResource">AWS
    * API Reference</a></p>
    */
@@ -39,193 +40,221 @@ namespace Model
 
 
     /**
-     * The DNS Name that acts as ingress point to a portion of application
+     * <p>The domain name that acts as an ingress point to a portion of the customer
+     * application.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * The DNS Name that acts as ingress point to a portion of application
+     * <p>The domain name that acts as an ingress point to a portion of the customer
+     * application.</p>
      */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
-     * The DNS Name that acts as ingress point to a portion of application
+     * <p>The domain name that acts as an ingress point to a portion of the customer
+     * application.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * The DNS Name that acts as ingress point to a portion of application
+     * <p>The domain name that acts as an ingress point to a portion of the customer
+     * application.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * The DNS Name that acts as ingress point to a portion of application
+     * <p>The domain name that acts as an ingress point to a portion of the customer
+     * application.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * The DNS Name that acts as ingress point to a portion of application
+     * <p>The domain name that acts as an ingress point to a portion of the customer
+     * application.</p>
      */
     inline DNSTargetResource& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * The DNS Name that acts as ingress point to a portion of application
+     * <p>The domain name that acts as an ingress point to a portion of the customer
+     * application.</p>
      */
     inline DNSTargetResource& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * The DNS Name that acts as ingress point to a portion of application
+     * <p>The domain name that acts as an ingress point to a portion of the customer
+     * application.</p>
      */
     inline DNSTargetResource& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
 
     /**
-     * The Hosted Zone ARN that contains the DNS record with the provided name of
-     * target resource.
+     * <p>The hosted zone Amazon Resource Name (ARN) that contains the DNS record with
+     * the provided name of the target resource.</p>
      */
     inline const Aws::String& GetHostedZoneArn() const{ return m_hostedZoneArn; }
 
     /**
-     * The Hosted Zone ARN that contains the DNS record with the provided name of
-     * target resource.
+     * <p>The hosted zone Amazon Resource Name (ARN) that contains the DNS record with
+     * the provided name of the target resource.</p>
      */
     inline bool HostedZoneArnHasBeenSet() const { return m_hostedZoneArnHasBeenSet; }
 
     /**
-     * The Hosted Zone ARN that contains the DNS record with the provided name of
-     * target resource.
+     * <p>The hosted zone Amazon Resource Name (ARN) that contains the DNS record with
+     * the provided name of the target resource.</p>
      */
     inline void SetHostedZoneArn(const Aws::String& value) { m_hostedZoneArnHasBeenSet = true; m_hostedZoneArn = value; }
 
     /**
-     * The Hosted Zone ARN that contains the DNS record with the provided name of
-     * target resource.
+     * <p>The hosted zone Amazon Resource Name (ARN) that contains the DNS record with
+     * the provided name of the target resource.</p>
      */
     inline void SetHostedZoneArn(Aws::String&& value) { m_hostedZoneArnHasBeenSet = true; m_hostedZoneArn = std::move(value); }
 
     /**
-     * The Hosted Zone ARN that contains the DNS record with the provided name of
-     * target resource.
+     * <p>The hosted zone Amazon Resource Name (ARN) that contains the DNS record with
+     * the provided name of the target resource.</p>
      */
     inline void SetHostedZoneArn(const char* value) { m_hostedZoneArnHasBeenSet = true; m_hostedZoneArn.assign(value); }
 
     /**
-     * The Hosted Zone ARN that contains the DNS record with the provided name of
-     * target resource.
+     * <p>The hosted zone Amazon Resource Name (ARN) that contains the DNS record with
+     * the provided name of the target resource.</p>
      */
     inline DNSTargetResource& WithHostedZoneArn(const Aws::String& value) { SetHostedZoneArn(value); return *this;}
 
     /**
-     * The Hosted Zone ARN that contains the DNS record with the provided name of
-     * target resource.
+     * <p>The hosted zone Amazon Resource Name (ARN) that contains the DNS record with
+     * the provided name of the target resource.</p>
      */
     inline DNSTargetResource& WithHostedZoneArn(Aws::String&& value) { SetHostedZoneArn(std::move(value)); return *this;}
 
     /**
-     * The Hosted Zone ARN that contains the DNS record with the provided name of
-     * target resource.
+     * <p>The hosted zone Amazon Resource Name (ARN) that contains the DNS record with
+     * the provided name of the target resource.</p>
      */
     inline DNSTargetResource& WithHostedZoneArn(const char* value) { SetHostedZoneArn(value); return *this;}
 
 
     /**
-     * The R53 Set Id to uniquely identify a record given a Name and a Type
+     * <p>The Route 53 record set ID that uniquely identifies a DNS record, given a
+     * name and a type.</p>
      */
     inline const Aws::String& GetRecordSetId() const{ return m_recordSetId; }
 
     /**
-     * The R53 Set Id to uniquely identify a record given a Name and a Type
+     * <p>The Route 53 record set ID that uniquely identifies a DNS record, given a
+     * name and a type.</p>
      */
     inline bool RecordSetIdHasBeenSet() const { return m_recordSetIdHasBeenSet; }
 
     /**
-     * The R53 Set Id to uniquely identify a record given a Name and a Type
+     * <p>The Route 53 record set ID that uniquely identifies a DNS record, given a
+     * name and a type.</p>
      */
     inline void SetRecordSetId(const Aws::String& value) { m_recordSetIdHasBeenSet = true; m_recordSetId = value; }
 
     /**
-     * The R53 Set Id to uniquely identify a record given a Name and a Type
+     * <p>The Route 53 record set ID that uniquely identifies a DNS record, given a
+     * name and a type.</p>
      */
     inline void SetRecordSetId(Aws::String&& value) { m_recordSetIdHasBeenSet = true; m_recordSetId = std::move(value); }
 
     /**
-     * The R53 Set Id to uniquely identify a record given a Name and a Type
+     * <p>The Route 53 record set ID that uniquely identifies a DNS record, given a
+     * name and a type.</p>
      */
     inline void SetRecordSetId(const char* value) { m_recordSetIdHasBeenSet = true; m_recordSetId.assign(value); }
 
     /**
-     * The R53 Set Id to uniquely identify a record given a Name and a Type
+     * <p>The Route 53 record set ID that uniquely identifies a DNS record, given a
+     * name and a type.</p>
      */
     inline DNSTargetResource& WithRecordSetId(const Aws::String& value) { SetRecordSetId(value); return *this;}
 
     /**
-     * The R53 Set Id to uniquely identify a record given a Name and a Type
+     * <p>The Route 53 record set ID that uniquely identifies a DNS record, given a
+     * name and a type.</p>
      */
     inline DNSTargetResource& WithRecordSetId(Aws::String&& value) { SetRecordSetId(std::move(value)); return *this;}
 
     /**
-     * The R53 Set Id to uniquely identify a record given a Name and a Type
+     * <p>The Route 53 record set ID that uniquely identifies a DNS record, given a
+     * name and a type.</p>
      */
     inline DNSTargetResource& WithRecordSetId(const char* value) { SetRecordSetId(value); return *this;}
 
 
     /**
-     * The Type of DNS Record of target resource
+     * <p>The type of DNS record of the target resource.</p>
      */
     inline const Aws::String& GetRecordType() const{ return m_recordType; }
 
     /**
-     * The Type of DNS Record of target resource
+     * <p>The type of DNS record of the target resource.</p>
      */
     inline bool RecordTypeHasBeenSet() const { return m_recordTypeHasBeenSet; }
 
     /**
-     * The Type of DNS Record of target resource
+     * <p>The type of DNS record of the target resource.</p>
      */
     inline void SetRecordType(const Aws::String& value) { m_recordTypeHasBeenSet = true; m_recordType = value; }
 
     /**
-     * The Type of DNS Record of target resource
+     * <p>The type of DNS record of the target resource.</p>
      */
     inline void SetRecordType(Aws::String&& value) { m_recordTypeHasBeenSet = true; m_recordType = std::move(value); }
 
     /**
-     * The Type of DNS Record of target resource
+     * <p>The type of DNS record of the target resource.</p>
      */
     inline void SetRecordType(const char* value) { m_recordTypeHasBeenSet = true; m_recordType.assign(value); }
 
     /**
-     * The Type of DNS Record of target resource
+     * <p>The type of DNS record of the target resource.</p>
      */
     inline DNSTargetResource& WithRecordType(const Aws::String& value) { SetRecordType(value); return *this;}
 
     /**
-     * The Type of DNS Record of target resource
+     * <p>The type of DNS record of the target resource.</p>
      */
     inline DNSTargetResource& WithRecordType(Aws::String&& value) { SetRecordType(std::move(value)); return *this;}
 
     /**
-     * The Type of DNS Record of target resource
+     * <p>The type of DNS record of the target resource.</p>
      */
     inline DNSTargetResource& WithRecordType(const char* value) { SetRecordType(value); return *this;}
 
 
-    
+    /**
+     * <p>The target resource of the DNS target resource.</p>
+     */
     inline const TargetResource& GetTargetResource() const{ return m_targetResource; }
 
-    
+    /**
+     * <p>The target resource of the DNS target resource.</p>
+     */
     inline bool TargetResourceHasBeenSet() const { return m_targetResourceHasBeenSet; }
 
-    
+    /**
+     * <p>The target resource of the DNS target resource.</p>
+     */
     inline void SetTargetResource(const TargetResource& value) { m_targetResourceHasBeenSet = true; m_targetResource = value; }
 
-    
+    /**
+     * <p>The target resource of the DNS target resource.</p>
+     */
     inline void SetTargetResource(TargetResource&& value) { m_targetResourceHasBeenSet = true; m_targetResource = std::move(value); }
 
-    
+    /**
+     * <p>The target resource of the DNS target resource.</p>
+     */
     inline DNSTargetResource& WithTargetResource(const TargetResource& value) { SetTargetResource(value); return *this;}
 
-    
+    /**
+     * <p>The target resource of the DNS target resource.</p>
+     */
     inline DNSTargetResource& WithTargetResource(TargetResource&& value) { SetTargetResource(std::move(value)); return *this;}
 
   private:

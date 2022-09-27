@@ -20,13 +20,15 @@ namespace Model
 
 NetworkPayload::NetworkPayload() : 
     m_ethernet0HasBeenSet(false),
-    m_ethernet1HasBeenSet(false)
+    m_ethernet1HasBeenSet(false),
+    m_ntpHasBeenSet(false)
 {
 }
 
 NetworkPayload::NetworkPayload(JsonView jsonValue) : 
     m_ethernet0HasBeenSet(false),
-    m_ethernet1HasBeenSet(false)
+    m_ethernet1HasBeenSet(false),
+    m_ntpHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ NetworkPayload& NetworkPayload::operator =(JsonView jsonValue)
     m_ethernet1HasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Ntp"))
+  {
+    m_ntp = jsonValue.GetObject("Ntp");
+
+    m_ntpHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue NetworkPayload::Jsonize() const
   if(m_ethernet1HasBeenSet)
   {
    payload.WithObject("Ethernet1", m_ethernet1.Jsonize());
+
+  }
+
+  if(m_ntpHasBeenSet)
+  {
+   payload.WithObject("Ntp", m_ntp.Jsonize());
 
   }
 

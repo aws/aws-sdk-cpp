@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>Summary information for a Amazon Kendra data source. Returned in a call to
-   * the <code>DescribeDataSource</code> operation.</p><p><h3>See Also:</h3>   <a
+   * <p>Summary information for an Amazon Kendra data source. Returned in a call to
+   * the <code>DescribeDataSource</code> API.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DataSourceSummary">AWS
    * API Reference</a></p>
    */

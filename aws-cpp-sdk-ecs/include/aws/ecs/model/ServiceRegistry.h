@@ -24,7 +24,12 @@ namespace Model
 {
 
   /**
-   * <p>The details for the service registry.</p><p><h3>See Also:</h3>   <a
+   * <p>The details for the service registry.</p> <p>Each service may be associated
+   * with one service registry. Multiple service registries for each service are not
+   * supported.</p> <p>When you add, update, or remove the service registries
+   * configuration, Amazon ECS starts a new deployment. New tasks are registered and
+   * deregistered to the updated service registry configuration.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ServiceRegistry">AWS
    * API Reference</a></p>
    */

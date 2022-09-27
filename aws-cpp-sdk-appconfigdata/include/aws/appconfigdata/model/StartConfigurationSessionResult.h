@@ -24,12 +24,6 @@ namespace AppConfigData
 {
 namespace Model
 {
-  /**
-   * <p>Response parameters for the StartConfigurationSession API.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/appconfigdata-2021-11-11/StartConfigurationSessionResponse">AWS
-   * API Reference</a></p>
-   */
   class AWS_APPCONFIGDATA_API StartConfigurationSessionResult
   {
   public:
@@ -40,71 +34,78 @@ namespace Model
 
     /**
      * <p>Token encapsulating state about the configuration session. Provide this token
-     * to the GetLatestConfiguration API to retrieve configuration data.</p>
-     *  <p>This token should only be used once in your first call to
-     * GetLatestConfiguration. You MUST use the new token in the GetConfiguration
-     * response (NextPollConfigurationToken) in each subsequent call to
-     * GetLatestConfiguration.</p> 
+     * to the <code>GetLatestConfiguration</code> API to retrieve configuration
+     * data.</p>  <p>This token should only be used once in your first call
+     * to <code>GetLatestConfiguration</code>. You MUST use the new token in the
+     * <code>GetLatestConfiguration</code> response
+     * (<code>NextPollConfigurationToken</code>) in each subsequent call to
+     * <code>GetLatestConfiguration</code>.</p> 
      */
     inline const Aws::String& GetInitialConfigurationToken() const{ return m_initialConfigurationToken; }
 
     /**
      * <p>Token encapsulating state about the configuration session. Provide this token
-     * to the GetLatestConfiguration API to retrieve configuration data.</p>
-     *  <p>This token should only be used once in your first call to
-     * GetLatestConfiguration. You MUST use the new token in the GetConfiguration
-     * response (NextPollConfigurationToken) in each subsequent call to
-     * GetLatestConfiguration.</p> 
+     * to the <code>GetLatestConfiguration</code> API to retrieve configuration
+     * data.</p>  <p>This token should only be used once in your first call
+     * to <code>GetLatestConfiguration</code>. You MUST use the new token in the
+     * <code>GetLatestConfiguration</code> response
+     * (<code>NextPollConfigurationToken</code>) in each subsequent call to
+     * <code>GetLatestConfiguration</code>.</p> 
      */
     inline void SetInitialConfigurationToken(const Aws::String& value) { m_initialConfigurationToken = value; }
 
     /**
      * <p>Token encapsulating state about the configuration session. Provide this token
-     * to the GetLatestConfiguration API to retrieve configuration data.</p>
-     *  <p>This token should only be used once in your first call to
-     * GetLatestConfiguration. You MUST use the new token in the GetConfiguration
-     * response (NextPollConfigurationToken) in each subsequent call to
-     * GetLatestConfiguration.</p> 
+     * to the <code>GetLatestConfiguration</code> API to retrieve configuration
+     * data.</p>  <p>This token should only be used once in your first call
+     * to <code>GetLatestConfiguration</code>. You MUST use the new token in the
+     * <code>GetLatestConfiguration</code> response
+     * (<code>NextPollConfigurationToken</code>) in each subsequent call to
+     * <code>GetLatestConfiguration</code>.</p> 
      */
     inline void SetInitialConfigurationToken(Aws::String&& value) { m_initialConfigurationToken = std::move(value); }
 
     /**
      * <p>Token encapsulating state about the configuration session. Provide this token
-     * to the GetLatestConfiguration API to retrieve configuration data.</p>
-     *  <p>This token should only be used once in your first call to
-     * GetLatestConfiguration. You MUST use the new token in the GetConfiguration
-     * response (NextPollConfigurationToken) in each subsequent call to
-     * GetLatestConfiguration.</p> 
+     * to the <code>GetLatestConfiguration</code> API to retrieve configuration
+     * data.</p>  <p>This token should only be used once in your first call
+     * to <code>GetLatestConfiguration</code>. You MUST use the new token in the
+     * <code>GetLatestConfiguration</code> response
+     * (<code>NextPollConfigurationToken</code>) in each subsequent call to
+     * <code>GetLatestConfiguration</code>.</p> 
      */
     inline void SetInitialConfigurationToken(const char* value) { m_initialConfigurationToken.assign(value); }
 
     /**
      * <p>Token encapsulating state about the configuration session. Provide this token
-     * to the GetLatestConfiguration API to retrieve configuration data.</p>
-     *  <p>This token should only be used once in your first call to
-     * GetLatestConfiguration. You MUST use the new token in the GetConfiguration
-     * response (NextPollConfigurationToken) in each subsequent call to
-     * GetLatestConfiguration.</p> 
+     * to the <code>GetLatestConfiguration</code> API to retrieve configuration
+     * data.</p>  <p>This token should only be used once in your first call
+     * to <code>GetLatestConfiguration</code>. You MUST use the new token in the
+     * <code>GetLatestConfiguration</code> response
+     * (<code>NextPollConfigurationToken</code>) in each subsequent call to
+     * <code>GetLatestConfiguration</code>.</p> 
      */
     inline StartConfigurationSessionResult& WithInitialConfigurationToken(const Aws::String& value) { SetInitialConfigurationToken(value); return *this;}
 
     /**
      * <p>Token encapsulating state about the configuration session. Provide this token
-     * to the GetLatestConfiguration API to retrieve configuration data.</p>
-     *  <p>This token should only be used once in your first call to
-     * GetLatestConfiguration. You MUST use the new token in the GetConfiguration
-     * response (NextPollConfigurationToken) in each subsequent call to
-     * GetLatestConfiguration.</p> 
+     * to the <code>GetLatestConfiguration</code> API to retrieve configuration
+     * data.</p>  <p>This token should only be used once in your first call
+     * to <code>GetLatestConfiguration</code>. You MUST use the new token in the
+     * <code>GetLatestConfiguration</code> response
+     * (<code>NextPollConfigurationToken</code>) in each subsequent call to
+     * <code>GetLatestConfiguration</code>.</p> 
      */
     inline StartConfigurationSessionResult& WithInitialConfigurationToken(Aws::String&& value) { SetInitialConfigurationToken(std::move(value)); return *this;}
 
     /**
      * <p>Token encapsulating state about the configuration session. Provide this token
-     * to the GetLatestConfiguration API to retrieve configuration data.</p>
-     *  <p>This token should only be used once in your first call to
-     * GetLatestConfiguration. You MUST use the new token in the GetConfiguration
-     * response (NextPollConfigurationToken) in each subsequent call to
-     * GetLatestConfiguration.</p> 
+     * to the <code>GetLatestConfiguration</code> API to retrieve configuration
+     * data.</p>  <p>This token should only be used once in your first call
+     * to <code>GetLatestConfiguration</code>. You MUST use the new token in the
+     * <code>GetLatestConfiguration</code> response
+     * (<code>NextPollConfigurationToken</code>) in each subsequent call to
+     * <code>GetLatestConfiguration</code>.</p> 
      */
     inline StartConfigurationSessionResult& WithInitialConfigurationToken(const char* value) { SetInitialConfigurationToken(value); return *this;}
 

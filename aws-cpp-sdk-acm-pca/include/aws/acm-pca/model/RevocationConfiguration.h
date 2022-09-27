@@ -37,7 +37,7 @@ namespace Model
    * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_RevokeCertificate.html">RevokeCertificate</a>
    * and <a
    * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/revocation-setup.html">Setting
-   * up a certificate revocation method</a> in the <i>AWS Certificate Manager Private
+   * up a certificate revocation method</a> in the <i>Certificate Manager Private
    * Certificate Authority (PCA) User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/RevocationConfiguration">AWS
    * API Reference</a></p>

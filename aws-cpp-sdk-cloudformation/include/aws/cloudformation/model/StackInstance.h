@@ -35,7 +35,7 @@ namespace Model
    * stack in a given account within a given Region. A stack instance can exist
    * without a stack—for example, if the stack couldn't be created for some reason. A
    * stack instance is associated with only one stack set. Each stack instance
-   * contains the ID of its associated stack set, as well as the ID of the actual
+   * contains the ID of its associated stack set, in addition to the ID of the actual
    * stack and the stack status.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackInstance">AWS
    * API Reference</a></p>
@@ -298,10 +298,10 @@ namespace Model
      * to <code>true</code>, to delete the stack instance, and then delete the stack
      * manually.</p> </li> <li> <p> <code>OUTDATED</code>: The stack isn't currently up
      * to date with the stack set because:</p> <ul> <li> <p>The associated stack failed
-     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.
-     * </p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code> or
-     * <code>UpdateStackSet</code> operation that failed or was stopped before the
-     * stack was created or updated. </p> </li> </ul> </li> <li> <p>
+     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code>
+     * operation.</p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code>
+     * or <code>UpdateStackSet</code> operation that failed or was stopped before the
+     * stack was created or updated.</p> </li> </ul> </li> <li> <p>
      * <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
      * </li> </ul>
      */
@@ -317,10 +317,10 @@ namespace Model
      * to <code>true</code>, to delete the stack instance, and then delete the stack
      * manually.</p> </li> <li> <p> <code>OUTDATED</code>: The stack isn't currently up
      * to date with the stack set because:</p> <ul> <li> <p>The associated stack failed
-     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.
-     * </p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code> or
-     * <code>UpdateStackSet</code> operation that failed or was stopped before the
-     * stack was created or updated. </p> </li> </ul> </li> <li> <p>
+     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code>
+     * operation.</p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code>
+     * or <code>UpdateStackSet</code> operation that failed or was stopped before the
+     * stack was created or updated.</p> </li> </ul> </li> <li> <p>
      * <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
      * </li> </ul>
      */
@@ -336,10 +336,10 @@ namespace Model
      * to <code>true</code>, to delete the stack instance, and then delete the stack
      * manually.</p> </li> <li> <p> <code>OUTDATED</code>: The stack isn't currently up
      * to date with the stack set because:</p> <ul> <li> <p>The associated stack failed
-     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.
-     * </p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code> or
-     * <code>UpdateStackSet</code> operation that failed or was stopped before the
-     * stack was created or updated. </p> </li> </ul> </li> <li> <p>
+     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code>
+     * operation.</p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code>
+     * or <code>UpdateStackSet</code> operation that failed or was stopped before the
+     * stack was created or updated.</p> </li> </ul> </li> <li> <p>
      * <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
      * </li> </ul>
      */
@@ -355,10 +355,10 @@ namespace Model
      * to <code>true</code>, to delete the stack instance, and then delete the stack
      * manually.</p> </li> <li> <p> <code>OUTDATED</code>: The stack isn't currently up
      * to date with the stack set because:</p> <ul> <li> <p>The associated stack failed
-     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.
-     * </p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code> or
-     * <code>UpdateStackSet</code> operation that failed or was stopped before the
-     * stack was created or updated. </p> </li> </ul> </li> <li> <p>
+     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code>
+     * operation.</p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code>
+     * or <code>UpdateStackSet</code> operation that failed or was stopped before the
+     * stack was created or updated.</p> </li> </ul> </li> <li> <p>
      * <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
      * </li> </ul>
      */
@@ -374,10 +374,10 @@ namespace Model
      * to <code>true</code>, to delete the stack instance, and then delete the stack
      * manually.</p> </li> <li> <p> <code>OUTDATED</code>: The stack isn't currently up
      * to date with the stack set because:</p> <ul> <li> <p>The associated stack failed
-     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.
-     * </p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code> or
-     * <code>UpdateStackSet</code> operation that failed or was stopped before the
-     * stack was created or updated. </p> </li> </ul> </li> <li> <p>
+     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code>
+     * operation.</p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code>
+     * or <code>UpdateStackSet</code> operation that failed or was stopped before the
+     * stack was created or updated.</p> </li> </ul> </li> <li> <p>
      * <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
      * </li> </ul>
      */
@@ -393,10 +393,10 @@ namespace Model
      * to <code>true</code>, to delete the stack instance, and then delete the stack
      * manually.</p> </li> <li> <p> <code>OUTDATED</code>: The stack isn't currently up
      * to date with the stack set because:</p> <ul> <li> <p>The associated stack failed
-     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.
-     * </p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code> or
-     * <code>UpdateStackSet</code> operation that failed or was stopped before the
-     * stack was created or updated. </p> </li> </ul> </li> <li> <p>
+     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code>
+     * operation.</p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code>
+     * or <code>UpdateStackSet</code> operation that failed or was stopped before the
+     * stack was created or updated.</p> </li> </ul> </li> <li> <p>
      * <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
      * </li> </ul>
      */
@@ -435,49 +435,49 @@ namespace Model
 
 
     /**
-     * <p>The explanation for the specific status code that is assigned to this stack
+     * <p>The explanation for the specific status code that's assigned to this stack
      * instance.</p>
      */
     inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
 
     /**
-     * <p>The explanation for the specific status code that is assigned to this stack
+     * <p>The explanation for the specific status code that's assigned to this stack
      * instance.</p>
      */
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
 
     /**
-     * <p>The explanation for the specific status code that is assigned to this stack
+     * <p>The explanation for the specific status code that's assigned to this stack
      * instance.</p>
      */
     inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
 
     /**
-     * <p>The explanation for the specific status code that is assigned to this stack
+     * <p>The explanation for the specific status code that's assigned to this stack
      * instance.</p>
      */
     inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
 
     /**
-     * <p>The explanation for the specific status code that is assigned to this stack
+     * <p>The explanation for the specific status code that's assigned to this stack
      * instance.</p>
      */
     inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
 
     /**
-     * <p>The explanation for the specific status code that is assigned to this stack
+     * <p>The explanation for the specific status code that's assigned to this stack
      * instance.</p>
      */
     inline StackInstance& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
 
     /**
-     * <p>The explanation for the specific status code that is assigned to this stack
+     * <p>The explanation for the specific status code that's assigned to this stack
      * instance.</p>
      */
     inline StackInstance& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
 
     /**
-     * <p>The explanation for the specific status code that is assigned to this stack
+     * <p>The explanation for the specific status code that's assigned to this stack
      * instance.</p>
      */
     inline StackInstance& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
@@ -542,12 +542,12 @@ namespace Model
 
     /**
      * <p>Status of the stack instance's actual configuration compared to the expected
-     * template and parameter configuration of the stack set to which it belongs. </p>
+     * template and parameter configuration of the stack set to which it belongs.</p>
      * <ul> <li> <p> <code>DRIFTED</code>: The stack differs from the expected template
      * and parameter configuration of the stack set to which it belongs. A stack
      * instance is considered to have drifted if one or more of the resources in the
      * associated stack have drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>:
-     * CloudFormation has not checked if the stack instance differs from its expected
+     * CloudFormation hasn't checked if the stack instance differs from its expected
      * stack set configuration.</p> </li> <li> <p> <code>IN_SYNC</code>: The stack
      * instance's actual configuration matches its expected stack set
      * configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is reserved
@@ -557,12 +557,12 @@ namespace Model
 
     /**
      * <p>Status of the stack instance's actual configuration compared to the expected
-     * template and parameter configuration of the stack set to which it belongs. </p>
+     * template and parameter configuration of the stack set to which it belongs.</p>
      * <ul> <li> <p> <code>DRIFTED</code>: The stack differs from the expected template
      * and parameter configuration of the stack set to which it belongs. A stack
      * instance is considered to have drifted if one or more of the resources in the
      * associated stack have drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>:
-     * CloudFormation has not checked if the stack instance differs from its expected
+     * CloudFormation hasn't checked if the stack instance differs from its expected
      * stack set configuration.</p> </li> <li> <p> <code>IN_SYNC</code>: The stack
      * instance's actual configuration matches its expected stack set
      * configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is reserved
@@ -572,12 +572,12 @@ namespace Model
 
     /**
      * <p>Status of the stack instance's actual configuration compared to the expected
-     * template and parameter configuration of the stack set to which it belongs. </p>
+     * template and parameter configuration of the stack set to which it belongs.</p>
      * <ul> <li> <p> <code>DRIFTED</code>: The stack differs from the expected template
      * and parameter configuration of the stack set to which it belongs. A stack
      * instance is considered to have drifted if one or more of the resources in the
      * associated stack have drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>:
-     * CloudFormation has not checked if the stack instance differs from its expected
+     * CloudFormation hasn't checked if the stack instance differs from its expected
      * stack set configuration.</p> </li> <li> <p> <code>IN_SYNC</code>: The stack
      * instance's actual configuration matches its expected stack set
      * configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is reserved
@@ -587,12 +587,12 @@ namespace Model
 
     /**
      * <p>Status of the stack instance's actual configuration compared to the expected
-     * template and parameter configuration of the stack set to which it belongs. </p>
+     * template and parameter configuration of the stack set to which it belongs.</p>
      * <ul> <li> <p> <code>DRIFTED</code>: The stack differs from the expected template
      * and parameter configuration of the stack set to which it belongs. A stack
      * instance is considered to have drifted if one or more of the resources in the
      * associated stack have drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>:
-     * CloudFormation has not checked if the stack instance differs from its expected
+     * CloudFormation hasn't checked if the stack instance differs from its expected
      * stack set configuration.</p> </li> <li> <p> <code>IN_SYNC</code>: The stack
      * instance's actual configuration matches its expected stack set
      * configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is reserved
@@ -602,12 +602,12 @@ namespace Model
 
     /**
      * <p>Status of the stack instance's actual configuration compared to the expected
-     * template and parameter configuration of the stack set to which it belongs. </p>
+     * template and parameter configuration of the stack set to which it belongs.</p>
      * <ul> <li> <p> <code>DRIFTED</code>: The stack differs from the expected template
      * and parameter configuration of the stack set to which it belongs. A stack
      * instance is considered to have drifted if one or more of the resources in the
      * associated stack have drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>:
-     * CloudFormation has not checked if the stack instance differs from its expected
+     * CloudFormation hasn't checked if the stack instance differs from its expected
      * stack set configuration.</p> </li> <li> <p> <code>IN_SYNC</code>: The stack
      * instance's actual configuration matches its expected stack set
      * configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is reserved
@@ -617,12 +617,12 @@ namespace Model
 
     /**
      * <p>Status of the stack instance's actual configuration compared to the expected
-     * template and parameter configuration of the stack set to which it belongs. </p>
+     * template and parameter configuration of the stack set to which it belongs.</p>
      * <ul> <li> <p> <code>DRIFTED</code>: The stack differs from the expected template
      * and parameter configuration of the stack set to which it belongs. A stack
      * instance is considered to have drifted if one or more of the resources in the
      * associated stack have drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>:
-     * CloudFormation has not checked if the stack instance differs from its expected
+     * CloudFormation hasn't checked if the stack instance differs from its expected
      * stack set configuration.</p> </li> <li> <p> <code>IN_SYNC</code>: The stack
      * instance's actual configuration matches its expected stack set
      * configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is reserved
@@ -634,42 +634,42 @@ namespace Model
     /**
      * <p>Most recent time when CloudFormation performed a drift detection operation on
      * the stack instance. This value will be <code>NULL</code> for any stack instance
-     * on which drift detection has not yet been performed.</p>
+     * on which drift detection hasn't yet been performed.</p>
      */
     inline const Aws::Utils::DateTime& GetLastDriftCheckTimestamp() const{ return m_lastDriftCheckTimestamp; }
 
     /**
      * <p>Most recent time when CloudFormation performed a drift detection operation on
      * the stack instance. This value will be <code>NULL</code> for any stack instance
-     * on which drift detection has not yet been performed.</p>
+     * on which drift detection hasn't yet been performed.</p>
      */
     inline bool LastDriftCheckTimestampHasBeenSet() const { return m_lastDriftCheckTimestampHasBeenSet; }
 
     /**
      * <p>Most recent time when CloudFormation performed a drift detection operation on
      * the stack instance. This value will be <code>NULL</code> for any stack instance
-     * on which drift detection has not yet been performed.</p>
+     * on which drift detection hasn't yet been performed.</p>
      */
     inline void SetLastDriftCheckTimestamp(const Aws::Utils::DateTime& value) { m_lastDriftCheckTimestampHasBeenSet = true; m_lastDriftCheckTimestamp = value; }
 
     /**
      * <p>Most recent time when CloudFormation performed a drift detection operation on
      * the stack instance. This value will be <code>NULL</code> for any stack instance
-     * on which drift detection has not yet been performed.</p>
+     * on which drift detection hasn't yet been performed.</p>
      */
     inline void SetLastDriftCheckTimestamp(Aws::Utils::DateTime&& value) { m_lastDriftCheckTimestampHasBeenSet = true; m_lastDriftCheckTimestamp = std::move(value); }
 
     /**
      * <p>Most recent time when CloudFormation performed a drift detection operation on
      * the stack instance. This value will be <code>NULL</code> for any stack instance
-     * on which drift detection has not yet been performed.</p>
+     * on which drift detection hasn't yet been performed.</p>
      */
     inline StackInstance& WithLastDriftCheckTimestamp(const Aws::Utils::DateTime& value) { SetLastDriftCheckTimestamp(value); return *this;}
 
     /**
      * <p>Most recent time when CloudFormation performed a drift detection operation on
      * the stack instance. This value will be <code>NULL</code> for any stack instance
-     * on which drift detection has not yet been performed.</p>
+     * on which drift detection hasn't yet been performed.</p>
      */
     inline StackInstance& WithLastDriftCheckTimestamp(Aws::Utils::DateTime&& value) { SetLastDriftCheckTimestamp(std::move(value)); return *this;}
 

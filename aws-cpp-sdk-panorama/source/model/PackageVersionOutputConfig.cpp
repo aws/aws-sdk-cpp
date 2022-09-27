@@ -19,24 +19,31 @@ namespace Model
 {
 
 PackageVersionOutputConfig::PackageVersionOutputConfig() : 
-    m_packageNameHasBeenSet(false),
-    m_packageVersionHasBeenSet(false),
     m_markLatest(false),
-    m_markLatestHasBeenSet(false)
+    m_markLatestHasBeenSet(false),
+    m_packageNameHasBeenSet(false),
+    m_packageVersionHasBeenSet(false)
 {
 }
 
 PackageVersionOutputConfig::PackageVersionOutputConfig(JsonView jsonValue) : 
-    m_packageNameHasBeenSet(false),
-    m_packageVersionHasBeenSet(false),
     m_markLatest(false),
-    m_markLatestHasBeenSet(false)
+    m_markLatestHasBeenSet(false),
+    m_packageNameHasBeenSet(false),
+    m_packageVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 PackageVersionOutputConfig& PackageVersionOutputConfig::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("MarkLatest"))
+  {
+    m_markLatest = jsonValue.GetBool("MarkLatest");
+
+    m_markLatestHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("PackageName"))
   {
     m_packageName = jsonValue.GetString("PackageName");
@@ -51,19 +58,18 @@ PackageVersionOutputConfig& PackageVersionOutputConfig::operator =(JsonView json
     m_packageVersionHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("MarkLatest"))
-  {
-    m_markLatest = jsonValue.GetBool("MarkLatest");
-
-    m_markLatestHasBeenSet = true;
-  }
-
   return *this;
 }
 
 JsonValue PackageVersionOutputConfig::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_markLatestHasBeenSet)
+  {
+   payload.WithBool("MarkLatest", m_markLatest);
+
+  }
 
   if(m_packageNameHasBeenSet)
   {
@@ -74,12 +80,6 @@ JsonValue PackageVersionOutputConfig::Jsonize() const
   if(m_packageVersionHasBeenSet)
   {
    payload.WithString("PackageVersion", m_packageVersion);
-
-  }
-
-  if(m_markLatestHasBeenSet)
-  {
-   payload.WithBool("MarkLatest", m_markLatest);
 
   }
 

@@ -28,15 +28,15 @@ CreatePackageResult::CreatePackageResult(const Aws::AmazonWebServiceResult<JsonV
 CreatePackageResult& CreatePackageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("PackageId"))
-  {
-    m_packageId = jsonValue.GetString("PackageId");
-
-  }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
+
+  }
+
+  if(jsonValue.ValueExists("PackageId"))
+  {
+    m_packageId = jsonValue.GetString("PackageId");
 
   }
 

@@ -267,6 +267,80 @@ namespace Model
      */
     inline ListRestoreJobsRequest& WithByStatus(RestoreJobStatus&& value) { SetByStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Returns only copy jobs completed before a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline const Aws::Utils::DateTime& GetByCompleteBefore() const{ return m_byCompleteBefore; }
+
+    /**
+     * <p>Returns only copy jobs completed before a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline bool ByCompleteBeforeHasBeenSet() const { return m_byCompleteBeforeHasBeenSet; }
+
+    /**
+     * <p>Returns only copy jobs completed before a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline void SetByCompleteBefore(const Aws::Utils::DateTime& value) { m_byCompleteBeforeHasBeenSet = true; m_byCompleteBefore = value; }
+
+    /**
+     * <p>Returns only copy jobs completed before a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline void SetByCompleteBefore(Aws::Utils::DateTime&& value) { m_byCompleteBeforeHasBeenSet = true; m_byCompleteBefore = std::move(value); }
+
+    /**
+     * <p>Returns only copy jobs completed before a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline ListRestoreJobsRequest& WithByCompleteBefore(const Aws::Utils::DateTime& value) { SetByCompleteBefore(value); return *this;}
+
+    /**
+     * <p>Returns only copy jobs completed before a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline ListRestoreJobsRequest& WithByCompleteBefore(Aws::Utils::DateTime&& value) { SetByCompleteBefore(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Returns only copy jobs completed after a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline const Aws::Utils::DateTime& GetByCompleteAfter() const{ return m_byCompleteAfter; }
+
+    /**
+     * <p>Returns only copy jobs completed after a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline bool ByCompleteAfterHasBeenSet() const { return m_byCompleteAfterHasBeenSet; }
+
+    /**
+     * <p>Returns only copy jobs completed after a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline void SetByCompleteAfter(const Aws::Utils::DateTime& value) { m_byCompleteAfterHasBeenSet = true; m_byCompleteAfter = value; }
+
+    /**
+     * <p>Returns only copy jobs completed after a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline void SetByCompleteAfter(Aws::Utils::DateTime&& value) { m_byCompleteAfterHasBeenSet = true; m_byCompleteAfter = std::move(value); }
+
+    /**
+     * <p>Returns only copy jobs completed after a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline ListRestoreJobsRequest& WithByCompleteAfter(const Aws::Utils::DateTime& value) { SetByCompleteAfter(value); return *this;}
+
+    /**
+     * <p>Returns only copy jobs completed after a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline ListRestoreJobsRequest& WithByCompleteAfter(Aws::Utils::DateTime&& value) { SetByCompleteAfter(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_nextToken;
@@ -286,6 +360,12 @@ namespace Model
 
     RestoreJobStatus m_byStatus;
     bool m_byStatusHasBeenSet;
+
+    Aws::Utils::DateTime m_byCompleteBefore;
+    bool m_byCompleteBeforeHasBeenSet;
+
+    Aws::Utils::DateTime m_byCompleteAfter;
+    bool m_byCompleteAfterHasBeenSet;
   };
 
 } // namespace Model

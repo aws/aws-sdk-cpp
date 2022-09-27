@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/panorama/Panorama_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/panorama/model/ApplicationInstanceStatus.h>
-#include <aws/panorama/model/ApplicationInstanceHealthStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/panorama/model/ApplicationInstanceHealthStatus.h>
+#include <aws/panorama/model/ApplicationInstanceStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -37,75 +37,137 @@ namespace Model
 
 
     /**
-     * <p>The application instance's name.</p>
+     * <p>The application instance's ID.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetApplicationInstanceId() const{ return m_applicationInstanceId; }
 
     /**
-     * <p>The application instance's name.</p>
+     * <p>The application instance's ID.</p>
      */
-    inline void SetName(const Aws::String& value) { m_name = value; }
+    inline void SetApplicationInstanceId(const Aws::String& value) { m_applicationInstanceId = value; }
 
     /**
-     * <p>The application instance's name.</p>
+     * <p>The application instance's ID.</p>
      */
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
+    inline void SetApplicationInstanceId(Aws::String&& value) { m_applicationInstanceId = std::move(value); }
 
     /**
-     * <p>The application instance's name.</p>
+     * <p>The application instance's ID.</p>
      */
-    inline void SetName(const char* value) { m_name.assign(value); }
+    inline void SetApplicationInstanceId(const char* value) { m_applicationInstanceId.assign(value); }
 
     /**
-     * <p>The application instance's name.</p>
+     * <p>The application instance's ID.</p>
      */
-    inline DescribeApplicationInstanceResult& WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline DescribeApplicationInstanceResult& WithApplicationInstanceId(const Aws::String& value) { SetApplicationInstanceId(value); return *this;}
 
     /**
-     * <p>The application instance's name.</p>
+     * <p>The application instance's ID.</p>
      */
-    inline DescribeApplicationInstanceResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+    inline DescribeApplicationInstanceResult& WithApplicationInstanceId(Aws::String&& value) { SetApplicationInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The application instance's name.</p>
+     * <p>The application instance's ID.</p>
      */
-    inline DescribeApplicationInstanceResult& WithName(const char* value) { SetName(value); return *this;}
+    inline DescribeApplicationInstanceResult& WithApplicationInstanceId(const char* value) { SetApplicationInstanceId(value); return *this;}
 
 
     /**
-     * <p>The application instance's description.</p>
+     * <p>The ID of the application instance that this instance replaced.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetApplicationInstanceIdToReplace() const{ return m_applicationInstanceIdToReplace; }
 
     /**
-     * <p>The application instance's description.</p>
+     * <p>The ID of the application instance that this instance replaced.</p>
      */
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
+    inline void SetApplicationInstanceIdToReplace(const Aws::String& value) { m_applicationInstanceIdToReplace = value; }
 
     /**
-     * <p>The application instance's description.</p>
+     * <p>The ID of the application instance that this instance replaced.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
+    inline void SetApplicationInstanceIdToReplace(Aws::String&& value) { m_applicationInstanceIdToReplace = std::move(value); }
 
     /**
-     * <p>The application instance's description.</p>
+     * <p>The ID of the application instance that this instance replaced.</p>
      */
-    inline void SetDescription(const char* value) { m_description.assign(value); }
+    inline void SetApplicationInstanceIdToReplace(const char* value) { m_applicationInstanceIdToReplace.assign(value); }
 
     /**
-     * <p>The application instance's description.</p>
+     * <p>The ID of the application instance that this instance replaced.</p>
      */
-    inline DescribeApplicationInstanceResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline DescribeApplicationInstanceResult& WithApplicationInstanceIdToReplace(const Aws::String& value) { SetApplicationInstanceIdToReplace(value); return *this;}
 
     /**
-     * <p>The application instance's description.</p>
+     * <p>The ID of the application instance that this instance replaced.</p>
      */
-    inline DescribeApplicationInstanceResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+    inline DescribeApplicationInstanceResult& WithApplicationInstanceIdToReplace(Aws::String&& value) { SetApplicationInstanceIdToReplace(std::move(value)); return *this;}
 
     /**
-     * <p>The application instance's description.</p>
+     * <p>The ID of the application instance that this instance replaced.</p>
      */
-    inline DescribeApplicationInstanceResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline DescribeApplicationInstanceResult& WithApplicationInstanceIdToReplace(const char* value) { SetApplicationInstanceIdToReplace(value); return *this;}
+
+
+    /**
+     * <p>The application instance's ARN.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The application instance's ARN.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arn = value; }
+
+    /**
+     * <p>The application instance's ARN.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
+
+    /**
+     * <p>The application instance's ARN.</p>
+     */
+    inline void SetArn(const char* value) { m_arn.assign(value); }
+
+    /**
+     * <p>The application instance's ARN.</p>
+     */
+    inline DescribeApplicationInstanceResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The application instance's ARN.</p>
+     */
+    inline DescribeApplicationInstanceResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The application instance's ARN.</p>
+     */
+    inline DescribeApplicationInstanceResult& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * <p>When the application instance was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
+
+    /**
+     * <p>When the application instance was created.</p>
+     */
+    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTime = value; }
+
+    /**
+     * <p>When the application instance was created.</p>
+     */
+    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTime = std::move(value); }
+
+    /**
+     * <p>When the application instance was created.</p>
+     */
+    inline DescribeApplicationInstanceResult& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
+
+    /**
+     * <p>When the application instance was created.</p>
+     */
+    inline DescribeApplicationInstanceResult& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 
 
     /**
@@ -181,39 +243,127 @@ namespace Model
 
 
     /**
-     * <p>The ID of the application instance that this instance replaced.</p>
+     * <p>The application instance's description.</p>
      */
-    inline const Aws::String& GetApplicationInstanceIdToReplace() const{ return m_applicationInstanceIdToReplace; }
+    inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The ID of the application instance that this instance replaced.</p>
+     * <p>The application instance's description.</p>
      */
-    inline void SetApplicationInstanceIdToReplace(const Aws::String& value) { m_applicationInstanceIdToReplace = value; }
+    inline void SetDescription(const Aws::String& value) { m_description = value; }
 
     /**
-     * <p>The ID of the application instance that this instance replaced.</p>
+     * <p>The application instance's description.</p>
      */
-    inline void SetApplicationInstanceIdToReplace(Aws::String&& value) { m_applicationInstanceIdToReplace = std::move(value); }
+    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
 
     /**
-     * <p>The ID of the application instance that this instance replaced.</p>
+     * <p>The application instance's description.</p>
      */
-    inline void SetApplicationInstanceIdToReplace(const char* value) { m_applicationInstanceIdToReplace.assign(value); }
+    inline void SetDescription(const char* value) { m_description.assign(value); }
 
     /**
-     * <p>The ID of the application instance that this instance replaced.</p>
+     * <p>The application instance's description.</p>
      */
-    inline DescribeApplicationInstanceResult& WithApplicationInstanceIdToReplace(const Aws::String& value) { SetApplicationInstanceIdToReplace(value); return *this;}
+    inline DescribeApplicationInstanceResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The ID of the application instance that this instance replaced.</p>
+     * <p>The application instance's description.</p>
      */
-    inline DescribeApplicationInstanceResult& WithApplicationInstanceIdToReplace(Aws::String&& value) { SetApplicationInstanceIdToReplace(std::move(value)); return *this;}
+    inline DescribeApplicationInstanceResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the application instance that this instance replaced.</p>
+     * <p>The application instance's description.</p>
      */
-    inline DescribeApplicationInstanceResult& WithApplicationInstanceIdToReplace(const char* value) { SetApplicationInstanceIdToReplace(value); return *this;}
+    inline DescribeApplicationInstanceResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
+     * <p>The application instance's health status.</p>
+     */
+    inline const ApplicationInstanceHealthStatus& GetHealthStatus() const{ return m_healthStatus; }
+
+    /**
+     * <p>The application instance's health status.</p>
+     */
+    inline void SetHealthStatus(const ApplicationInstanceHealthStatus& value) { m_healthStatus = value; }
+
+    /**
+     * <p>The application instance's health status.</p>
+     */
+    inline void SetHealthStatus(ApplicationInstanceHealthStatus&& value) { m_healthStatus = std::move(value); }
+
+    /**
+     * <p>The application instance's health status.</p>
+     */
+    inline DescribeApplicationInstanceResult& WithHealthStatus(const ApplicationInstanceHealthStatus& value) { SetHealthStatus(value); return *this;}
+
+    /**
+     * <p>The application instance's health status.</p>
+     */
+    inline DescribeApplicationInstanceResult& WithHealthStatus(ApplicationInstanceHealthStatus&& value) { SetHealthStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The application instance was updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
+
+    /**
+     * <p>The application instance was updated.</p>
+     */
+    inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTime = value; }
+
+    /**
+     * <p>The application instance was updated.</p>
+     */
+    inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTime = std::move(value); }
+
+    /**
+     * <p>The application instance was updated.</p>
+     */
+    inline DescribeApplicationInstanceResult& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
+
+    /**
+     * <p>The application instance was updated.</p>
+     */
+    inline DescribeApplicationInstanceResult& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The application instance's name.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The application instance's name.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_name = value; }
+
+    /**
+     * <p>The application instance's name.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
+
+    /**
+     * <p>The application instance's name.</p>
+     */
+    inline void SetName(const char* value) { m_name.assign(value); }
+
+    /**
+     * <p>The application instance's name.</p>
+     */
+    inline DescribeApplicationInstanceResult& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>The application instance's name.</p>
+     */
+    inline DescribeApplicationInstanceResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The application instance's name.</p>
+     */
+    inline DescribeApplicationInstanceResult& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
@@ -279,32 +429,6 @@ namespace Model
 
 
     /**
-     * <p>The application instance's health status.</p>
-     */
-    inline const ApplicationInstanceHealthStatus& GetHealthStatus() const{ return m_healthStatus; }
-
-    /**
-     * <p>The application instance's health status.</p>
-     */
-    inline void SetHealthStatus(const ApplicationInstanceHealthStatus& value) { m_healthStatus = value; }
-
-    /**
-     * <p>The application instance's health status.</p>
-     */
-    inline void SetHealthStatus(ApplicationInstanceHealthStatus&& value) { m_healthStatus = std::move(value); }
-
-    /**
-     * <p>The application instance's health status.</p>
-     */
-    inline DescribeApplicationInstanceResult& WithHealthStatus(const ApplicationInstanceHealthStatus& value) { SetHealthStatus(value); return *this;}
-
-    /**
-     * <p>The application instance's health status.</p>
-     */
-    inline DescribeApplicationInstanceResult& WithHealthStatus(ApplicationInstanceHealthStatus&& value) { SetHealthStatus(std::move(value)); return *this;}
-
-
-    /**
      * <p>The application instance's status description.</p>
      */
     inline const Aws::String& GetStatusDescription() const{ return m_statusDescription; }
@@ -338,130 +462,6 @@ namespace Model
      * <p>The application instance's status description.</p>
      */
     inline DescribeApplicationInstanceResult& WithStatusDescription(const char* value) { SetStatusDescription(value); return *this;}
-
-
-    /**
-     * <p>When the application instance was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
-
-    /**
-     * <p>When the application instance was created.</p>
-     */
-    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTime = value; }
-
-    /**
-     * <p>When the application instance was created.</p>
-     */
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTime = std::move(value); }
-
-    /**
-     * <p>When the application instance was created.</p>
-     */
-    inline DescribeApplicationInstanceResult& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
-
-    /**
-     * <p>When the application instance was created.</p>
-     */
-    inline DescribeApplicationInstanceResult& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The application instance was updated.</p>
-     */
-    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
-
-    /**
-     * <p>The application instance was updated.</p>
-     */
-    inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTime = value; }
-
-    /**
-     * <p>The application instance was updated.</p>
-     */
-    inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTime = std::move(value); }
-
-    /**
-     * <p>The application instance was updated.</p>
-     */
-    inline DescribeApplicationInstanceResult& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
-
-    /**
-     * <p>The application instance was updated.</p>
-     */
-    inline DescribeApplicationInstanceResult& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The application instance's ID.</p>
-     */
-    inline const Aws::String& GetApplicationInstanceId() const{ return m_applicationInstanceId; }
-
-    /**
-     * <p>The application instance's ID.</p>
-     */
-    inline void SetApplicationInstanceId(const Aws::String& value) { m_applicationInstanceId = value; }
-
-    /**
-     * <p>The application instance's ID.</p>
-     */
-    inline void SetApplicationInstanceId(Aws::String&& value) { m_applicationInstanceId = std::move(value); }
-
-    /**
-     * <p>The application instance's ID.</p>
-     */
-    inline void SetApplicationInstanceId(const char* value) { m_applicationInstanceId.assign(value); }
-
-    /**
-     * <p>The application instance's ID.</p>
-     */
-    inline DescribeApplicationInstanceResult& WithApplicationInstanceId(const Aws::String& value) { SetApplicationInstanceId(value); return *this;}
-
-    /**
-     * <p>The application instance's ID.</p>
-     */
-    inline DescribeApplicationInstanceResult& WithApplicationInstanceId(Aws::String&& value) { SetApplicationInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The application instance's ID.</p>
-     */
-    inline DescribeApplicationInstanceResult& WithApplicationInstanceId(const char* value) { SetApplicationInstanceId(value); return *this;}
-
-
-    /**
-     * <p>The application instance's ARN.</p>
-     */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The application instance's ARN.</p>
-     */
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-
-    /**
-     * <p>The application instance's ARN.</p>
-     */
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-
-    /**
-     * <p>The application instance's ARN.</p>
-     */
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-
-    /**
-     * <p>The application instance's ARN.</p>
-     */
-    inline DescribeApplicationInstanceResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The application instance's ARN.</p>
-     */
-    inline DescribeApplicationInstanceResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The application instance's ARN.</p>
-     */
-    inline DescribeApplicationInstanceResult& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
@@ -526,31 +526,31 @@ namespace Model
 
   private:
 
-    Aws::String m_name;
+    Aws::String m_applicationInstanceId;
 
-    Aws::String m_description;
+    Aws::String m_applicationInstanceIdToReplace;
+
+    Aws::String m_arn;
+
+    Aws::Utils::DateTime m_createdTime;
 
     Aws::String m_defaultRuntimeContextDevice;
 
     Aws::String m_defaultRuntimeContextDeviceName;
 
-    Aws::String m_applicationInstanceIdToReplace;
+    Aws::String m_description;
+
+    ApplicationInstanceHealthStatus m_healthStatus;
+
+    Aws::Utils::DateTime m_lastUpdatedTime;
+
+    Aws::String m_name;
 
     Aws::String m_runtimeRoleArn;
 
     ApplicationInstanceStatus m_status;
 
-    ApplicationInstanceHealthStatus m_healthStatus;
-
     Aws::String m_statusDescription;
-
-    Aws::Utils::DateTime m_createdTime;
-
-    Aws::Utils::DateTime m_lastUpdatedTime;
-
-    Aws::String m_applicationInstanceId;
-
-    Aws::String m_arn;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
   };

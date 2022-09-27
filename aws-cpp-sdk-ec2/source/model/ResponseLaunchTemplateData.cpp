@@ -53,7 +53,10 @@ ResponseLaunchTemplateData::ResponseLaunchTemplateData() :
     m_metadataOptionsHasBeenSet(false),
     m_enclaveOptionsHasBeenSet(false),
     m_instanceRequirementsHasBeenSet(false),
-    m_privateDnsNameOptionsHasBeenSet(false)
+    m_privateDnsNameOptionsHasBeenSet(false),
+    m_maintenanceOptionsHasBeenSet(false),
+    m_disableApiStop(false),
+    m_disableApiStopHasBeenSet(false)
 {
 }
 
@@ -90,7 +93,10 @@ ResponseLaunchTemplateData::ResponseLaunchTemplateData(const XmlNode& xmlNode) :
     m_metadataOptionsHasBeenSet(false),
     m_enclaveOptionsHasBeenSet(false),
     m_instanceRequirementsHasBeenSet(false),
-    m_privateDnsNameOptionsHasBeenSet(false)
+    m_privateDnsNameOptionsHasBeenSet(false),
+    m_maintenanceOptionsHasBeenSet(false),
+    m_disableApiStop(false),
+    m_disableApiStopHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -323,6 +329,18 @@ ResponseLaunchTemplateData& ResponseLaunchTemplateData::operator =(const XmlNode
       m_privateDnsNameOptions = privateDnsNameOptionsNode;
       m_privateDnsNameOptionsHasBeenSet = true;
     }
+    XmlNode maintenanceOptionsNode = resultNode.FirstChild("maintenanceOptions");
+    if(!maintenanceOptionsNode.IsNull())
+    {
+      m_maintenanceOptions = maintenanceOptionsNode;
+      m_maintenanceOptionsHasBeenSet = true;
+    }
+    XmlNode disableApiStopNode = resultNode.FirstChild("disableApiStop");
+    if(!disableApiStopNode.IsNull())
+    {
+      m_disableApiStop = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(disableApiStopNode.GetText()).c_str()).c_str());
+      m_disableApiStopHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -543,6 +561,18 @@ void ResponseLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const cha
       m_privateDnsNameOptions.OutputToStream(oStream, privateDnsNameOptionsLocationAndMemberSs.str().c_str());
   }
 
+  if(m_maintenanceOptionsHasBeenSet)
+  {
+      Aws::StringStream maintenanceOptionsLocationAndMemberSs;
+      maintenanceOptionsLocationAndMemberSs << location << index << locationValue << ".MaintenanceOptions";
+      m_maintenanceOptions.OutputToStream(oStream, maintenanceOptionsLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_disableApiStopHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DisableApiStop=" << std::boolalpha << m_disableApiStop << "&";
+  }
+
 }
 
 void ResponseLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -730,6 +760,16 @@ void ResponseLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const cha
       Aws::String privateDnsNameOptionsLocationAndMember(location);
       privateDnsNameOptionsLocationAndMember += ".PrivateDnsNameOptions";
       m_privateDnsNameOptions.OutputToStream(oStream, privateDnsNameOptionsLocationAndMember.c_str());
+  }
+  if(m_maintenanceOptionsHasBeenSet)
+  {
+      Aws::String maintenanceOptionsLocationAndMember(location);
+      maintenanceOptionsLocationAndMember += ".MaintenanceOptions";
+      m_maintenanceOptions.OutputToStream(oStream, maintenanceOptionsLocationAndMember.c_str());
+  }
+  if(m_disableApiStopHasBeenSet)
+  {
+      oStream << location << ".DisableApiStop=" << std::boolalpha << m_disableApiStop << "&";
   }
 }
 

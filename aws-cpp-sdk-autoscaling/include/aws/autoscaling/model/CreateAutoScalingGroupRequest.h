@@ -512,46 +512,42 @@ namespace Model
 
 
     /**
-     * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start. The default value is <code>300</code>. This
-     * setting applies when using simple scaling policies, but not when using other
-     * scaling policies or scheduled scaling. For more information, see <a
+     * <p> <i>Only needed if you use simple scaling policies.</i> </p> <p>The amount of
+     * time, in seconds, between one scaling activity ending and another one starting
+     * due to simple scaling policies. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
      * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>Default: <code>300</code> seconds</p>
      */
     inline int GetDefaultCooldown() const{ return m_defaultCooldown; }
 
     /**
-     * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start. The default value is <code>300</code>. This
-     * setting applies when using simple scaling policies, but not when using other
-     * scaling policies or scheduled scaling. For more information, see <a
+     * <p> <i>Only needed if you use simple scaling policies.</i> </p> <p>The amount of
+     * time, in seconds, between one scaling activity ending and another one starting
+     * due to simple scaling policies. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
      * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>Default: <code>300</code> seconds</p>
      */
     inline bool DefaultCooldownHasBeenSet() const { return m_defaultCooldownHasBeenSet; }
 
     /**
-     * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start. The default value is <code>300</code>. This
-     * setting applies when using simple scaling policies, but not when using other
-     * scaling policies or scheduled scaling. For more information, see <a
+     * <p> <i>Only needed if you use simple scaling policies.</i> </p> <p>The amount of
+     * time, in seconds, between one scaling activity ending and another one starting
+     * due to simple scaling policies. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
      * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>Default: <code>300</code> seconds</p>
      */
     inline void SetDefaultCooldown(int value) { m_defaultCooldownHasBeenSet = true; m_defaultCooldown = value; }
 
     /**
-     * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start. The default value is <code>300</code>. This
-     * setting applies when using simple scaling policies, but not when using other
-     * scaling policies or scheduled scaling. For more information, see <a
+     * <p> <i>Only needed if you use simple scaling policies.</i> </p> <p>The amount of
+     * time, in seconds, between one scaling activity ending and another one starting
+     * due to simple scaling policies. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
      * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>Default: <code>300</code> seconds</p>
      */
     inline CreateAutoScalingGroupRequest& WithDefaultCooldown(int value) { SetDefaultCooldown(value); return *this;}
 
@@ -891,127 +887,143 @@ namespace Model
 
 
     /**
-     * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
-     * checking the health status of an EC2 instance that has come into service and
-     * marking it unhealthy due to a failed health check. The default value is
-     * <code>0</code>. For more information, see <a
+     * <p> <i/> </p> <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling
+     * waits before checking the health status of an EC2 instance that has come into
+     * service and marking it unhealthy due to a failed Elastic Load Balancing or
+     * custom health check. This is useful if your instances do not immediately pass
+     * these health checks after they enter the <code>InService</code> state. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
      * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
+     * <p>Default: <code>0</code> seconds</p>
      */
     inline int GetHealthCheckGracePeriod() const{ return m_healthCheckGracePeriod; }
 
     /**
-     * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
-     * checking the health status of an EC2 instance that has come into service and
-     * marking it unhealthy due to a failed health check. The default value is
-     * <code>0</code>. For more information, see <a
+     * <p> <i/> </p> <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling
+     * waits before checking the health status of an EC2 instance that has come into
+     * service and marking it unhealthy due to a failed Elastic Load Balancing or
+     * custom health check. This is useful if your instances do not immediately pass
+     * these health checks after they enter the <code>InService</code> state. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
      * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
+     * <p>Default: <code>0</code> seconds</p>
      */
     inline bool HealthCheckGracePeriodHasBeenSet() const { return m_healthCheckGracePeriodHasBeenSet; }
 
     /**
-     * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
-     * checking the health status of an EC2 instance that has come into service and
-     * marking it unhealthy due to a failed health check. The default value is
-     * <code>0</code>. For more information, see <a
+     * <p> <i/> </p> <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling
+     * waits before checking the health status of an EC2 instance that has come into
+     * service and marking it unhealthy due to a failed Elastic Load Balancing or
+     * custom health check. This is useful if your instances do not immediately pass
+     * these health checks after they enter the <code>InService</code> state. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
      * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
+     * <p>Default: <code>0</code> seconds</p>
      */
     inline void SetHealthCheckGracePeriod(int value) { m_healthCheckGracePeriodHasBeenSet = true; m_healthCheckGracePeriod = value; }
 
     /**
-     * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
-     * checking the health status of an EC2 instance that has come into service and
-     * marking it unhealthy due to a failed health check. The default value is
-     * <code>0</code>. For more information, see <a
+     * <p> <i/> </p> <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling
+     * waits before checking the health status of an EC2 instance that has come into
+     * service and marking it unhealthy due to a failed Elastic Load Balancing or
+     * custom health check. This is useful if your instances do not immediately pass
+     * these health checks after they enter the <code>InService</code> state. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
      * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
+     * <p>Default: <code>0</code> seconds</p>
      */
     inline CreateAutoScalingGroupRequest& WithHealthCheckGracePeriod(int value) { SetHealthCheckGracePeriod(value); return *this;}
 
 
     /**
-     * <p>The name of an existing placement group into which to launch your instances,
-     * if any. A placement group is a logical grouping of instances within a single
-     * Availability Zone. You cannot specify multiple Availability Zones and a
-     * placement group. For more information, see <a
+     * <p>The name of an existing placement group into which to launch your instances.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> 
+     * <p>A <i>cluster</i> placement group is a logical grouping of instances within a
+     * single Availability Zone. You cannot specify multiple Availability Zones and a
+     * cluster placement group. </p> 
      */
     inline const Aws::String& GetPlacementGroup() const{ return m_placementGroup; }
 
     /**
-     * <p>The name of an existing placement group into which to launch your instances,
-     * if any. A placement group is a logical grouping of instances within a single
-     * Availability Zone. You cannot specify multiple Availability Zones and a
-     * placement group. For more information, see <a
+     * <p>The name of an existing placement group into which to launch your instances.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> 
+     * <p>A <i>cluster</i> placement group is a logical grouping of instances within a
+     * single Availability Zone. You cannot specify multiple Availability Zones and a
+     * cluster placement group. </p> 
      */
     inline bool PlacementGroupHasBeenSet() const { return m_placementGroupHasBeenSet; }
 
     /**
-     * <p>The name of an existing placement group into which to launch your instances,
-     * if any. A placement group is a logical grouping of instances within a single
-     * Availability Zone. You cannot specify multiple Availability Zones and a
-     * placement group. For more information, see <a
+     * <p>The name of an existing placement group into which to launch your instances.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> 
+     * <p>A <i>cluster</i> placement group is a logical grouping of instances within a
+     * single Availability Zone. You cannot specify multiple Availability Zones and a
+     * cluster placement group. </p> 
      */
     inline void SetPlacementGroup(const Aws::String& value) { m_placementGroupHasBeenSet = true; m_placementGroup = value; }
 
     /**
-     * <p>The name of an existing placement group into which to launch your instances,
-     * if any. A placement group is a logical grouping of instances within a single
-     * Availability Zone. You cannot specify multiple Availability Zones and a
-     * placement group. For more information, see <a
+     * <p>The name of an existing placement group into which to launch your instances.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> 
+     * <p>A <i>cluster</i> placement group is a logical grouping of instances within a
+     * single Availability Zone. You cannot specify multiple Availability Zones and a
+     * cluster placement group. </p> 
      */
     inline void SetPlacementGroup(Aws::String&& value) { m_placementGroupHasBeenSet = true; m_placementGroup = std::move(value); }
 
     /**
-     * <p>The name of an existing placement group into which to launch your instances,
-     * if any. A placement group is a logical grouping of instances within a single
-     * Availability Zone. You cannot specify multiple Availability Zones and a
-     * placement group. For more information, see <a
+     * <p>The name of an existing placement group into which to launch your instances.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> 
+     * <p>A <i>cluster</i> placement group is a logical grouping of instances within a
+     * single Availability Zone. You cannot specify multiple Availability Zones and a
+     * cluster placement group. </p> 
      */
     inline void SetPlacementGroup(const char* value) { m_placementGroupHasBeenSet = true; m_placementGroup.assign(value); }
 
     /**
-     * <p>The name of an existing placement group into which to launch your instances,
-     * if any. A placement group is a logical grouping of instances within a single
-     * Availability Zone. You cannot specify multiple Availability Zones and a
-     * placement group. For more information, see <a
+     * <p>The name of an existing placement group into which to launch your instances.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> 
+     * <p>A <i>cluster</i> placement group is a logical grouping of instances within a
+     * single Availability Zone. You cannot specify multiple Availability Zones and a
+     * cluster placement group. </p> 
      */
     inline CreateAutoScalingGroupRequest& WithPlacementGroup(const Aws::String& value) { SetPlacementGroup(value); return *this;}
 
     /**
-     * <p>The name of an existing placement group into which to launch your instances,
-     * if any. A placement group is a logical grouping of instances within a single
-     * Availability Zone. You cannot specify multiple Availability Zones and a
-     * placement group. For more information, see <a
+     * <p>The name of an existing placement group into which to launch your instances.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> 
+     * <p>A <i>cluster</i> placement group is a logical grouping of instances within a
+     * single Availability Zone. You cannot specify multiple Availability Zones and a
+     * cluster placement group. </p> 
      */
     inline CreateAutoScalingGroupRequest& WithPlacementGroup(Aws::String&& value) { SetPlacementGroup(std::move(value)); return *this;}
 
     /**
-     * <p>The name of an existing placement group into which to launch your instances,
-     * if any. A placement group is a logical grouping of instances within a single
-     * Availability Zone. You cannot specify multiple Availability Zones and a
-     * placement group. For more information, see <a
+     * <p>The name of an existing placement group into which to launch your instances.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> 
+     * <p>A <i>cluster</i> placement group is a logical grouping of instances within a
+     * single Availability Zone. You cannot specify multiple Availability Zones and a
+     * cluster placement group. </p> 
      */
     inline CreateAutoScalingGroupRequest& WithPlacementGroup(const char* value) { SetPlacementGroup(value); return *this;}
 
@@ -1715,6 +1727,91 @@ namespace Model
      */
     inline CreateAutoScalingGroupRequest& WithDesiredCapacityType(const char* value) { SetDesiredCapacityType(value); return *this;}
 
+
+    /**
+     * <p>The amount of time, in seconds, until a newly launched instance can
+     * contribute to the Amazon CloudWatch metrics. This delay lets an instance finish
+     * initializing before Amazon EC2 Auto Scaling aggregates instance metrics,
+     * resulting in more reliable usage data. Set this value equal to the amount of
+     * time that it takes for resource consumption to become stable after an instance
+     * reaches the <code>InService</code> state. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set
+     * the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>  <p>To manage your warm-up settings
+     * at the group level, we recommend that you set the default instance warmup,
+     * <i>even if its value is set to 0 seconds</i>. This also optimizes the
+     * performance of scaling policies that scale continuously, such as target tracking
+     * and step scaling policies. </p> <p>If you need to remove a value that you
+     * previously set, include the property but specify <code>-1</code> for the value.
+     * However, we strongly recommend keeping the default instance warmup enabled by
+     * specifying a minimum value of <code>0</code>.</p>  <p>Default: None
+     * </p>
+     */
+    inline int GetDefaultInstanceWarmup() const{ return m_defaultInstanceWarmup; }
+
+    /**
+     * <p>The amount of time, in seconds, until a newly launched instance can
+     * contribute to the Amazon CloudWatch metrics. This delay lets an instance finish
+     * initializing before Amazon EC2 Auto Scaling aggregates instance metrics,
+     * resulting in more reliable usage data. Set this value equal to the amount of
+     * time that it takes for resource consumption to become stable after an instance
+     * reaches the <code>InService</code> state. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set
+     * the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>  <p>To manage your warm-up settings
+     * at the group level, we recommend that you set the default instance warmup,
+     * <i>even if its value is set to 0 seconds</i>. This also optimizes the
+     * performance of scaling policies that scale continuously, such as target tracking
+     * and step scaling policies. </p> <p>If you need to remove a value that you
+     * previously set, include the property but specify <code>-1</code> for the value.
+     * However, we strongly recommend keeping the default instance warmup enabled by
+     * specifying a minimum value of <code>0</code>.</p>  <p>Default: None
+     * </p>
+     */
+    inline bool DefaultInstanceWarmupHasBeenSet() const { return m_defaultInstanceWarmupHasBeenSet; }
+
+    /**
+     * <p>The amount of time, in seconds, until a newly launched instance can
+     * contribute to the Amazon CloudWatch metrics. This delay lets an instance finish
+     * initializing before Amazon EC2 Auto Scaling aggregates instance metrics,
+     * resulting in more reliable usage data. Set this value equal to the amount of
+     * time that it takes for resource consumption to become stable after an instance
+     * reaches the <code>InService</code> state. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set
+     * the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>  <p>To manage your warm-up settings
+     * at the group level, we recommend that you set the default instance warmup,
+     * <i>even if its value is set to 0 seconds</i>. This also optimizes the
+     * performance of scaling policies that scale continuously, such as target tracking
+     * and step scaling policies. </p> <p>If you need to remove a value that you
+     * previously set, include the property but specify <code>-1</code> for the value.
+     * However, we strongly recommend keeping the default instance warmup enabled by
+     * specifying a minimum value of <code>0</code>.</p>  <p>Default: None
+     * </p>
+     */
+    inline void SetDefaultInstanceWarmup(int value) { m_defaultInstanceWarmupHasBeenSet = true; m_defaultInstanceWarmup = value; }
+
+    /**
+     * <p>The amount of time, in seconds, until a newly launched instance can
+     * contribute to the Amazon CloudWatch metrics. This delay lets an instance finish
+     * initializing before Amazon EC2 Auto Scaling aggregates instance metrics,
+     * resulting in more reliable usage data. Set this value equal to the amount of
+     * time that it takes for resource consumption to become stable after an instance
+     * reaches the <code>InService</code> state. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set
+     * the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>  <p>To manage your warm-up settings
+     * at the group level, we recommend that you set the default instance warmup,
+     * <i>even if its value is set to 0 seconds</i>. This also optimizes the
+     * performance of scaling policies that scale continuously, such as target tracking
+     * and step scaling policies. </p> <p>If you need to remove a value that you
+     * previously set, include the property but specify <code>-1</code> for the value.
+     * However, we strongly recommend keeping the default instance warmup enabled by
+     * specifying a minimum value of <code>0</code>.</p>  <p>Default: None
+     * </p>
+     */
+    inline CreateAutoScalingGroupRequest& WithDefaultInstanceWarmup(int value) { SetDefaultInstanceWarmup(value); return *this;}
+
   private:
 
     Aws::String m_autoScalingGroupName;
@@ -1791,6 +1888,9 @@ namespace Model
 
     Aws::String m_desiredCapacityType;
     bool m_desiredCapacityTypeHasBeenSet;
+
+    int m_defaultInstanceWarmup;
+    bool m_defaultInstanceWarmupHasBeenSet;
   };
 
 } // namespace Model

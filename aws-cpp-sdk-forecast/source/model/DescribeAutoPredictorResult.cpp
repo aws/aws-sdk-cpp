@@ -145,6 +145,18 @@ DescribeAutoPredictorResult& DescribeAutoPredictorResult::operator =(const Aws::
 
   }
 
+  if(jsonValue.ValueExists("MonitorInfo"))
+  {
+    m_monitorInfo = jsonValue.GetObject("MonitorInfo");
+
+  }
+
+  if(jsonValue.ValueExists("TimeAlignmentBoundary"))
+  {
+    m_timeAlignmentBoundary = jsonValue.GetObject("TimeAlignmentBoundary");
+
+  }
+
 
 
   return *this;

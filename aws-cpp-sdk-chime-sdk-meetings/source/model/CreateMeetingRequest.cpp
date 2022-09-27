@@ -19,7 +19,8 @@ CreateMeetingRequest::CreateMeetingRequest() :
     m_meetingHostIdHasBeenSet(false),
     m_externalMeetingIdHasBeenSet(false),
     m_notificationsConfigurationHasBeenSet(false),
-    m_meetingFeaturesHasBeenSet(false)
+    m_meetingFeaturesHasBeenSet(false),
+    m_primaryMeetingIdHasBeenSet(false)
 {
 }
 
@@ -60,6 +61,12 @@ Aws::String CreateMeetingRequest::SerializePayload() const
   if(m_meetingFeaturesHasBeenSet)
   {
    payload.WithObject("MeetingFeatures", m_meetingFeatures.Jsonize());
+
+  }
+
+  if(m_primaryMeetingIdHasBeenSet)
+  {
+   payload.WithString("PrimaryMeetingId", m_primaryMeetingId);
 
   }
 

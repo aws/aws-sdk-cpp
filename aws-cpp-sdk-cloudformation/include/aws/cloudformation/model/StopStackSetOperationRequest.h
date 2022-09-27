@@ -87,42 +87,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the stack operation. </p>
+     * <p>The ID of the stack operation.</p>
      */
     inline const Aws::String& GetOperationId() const{ return m_operationId; }
 
     /**
-     * <p>The ID of the stack operation. </p>
+     * <p>The ID of the stack operation.</p>
      */
     inline bool OperationIdHasBeenSet() const { return m_operationIdHasBeenSet; }
 
     /**
-     * <p>The ID of the stack operation. </p>
+     * <p>The ID of the stack operation.</p>
      */
     inline void SetOperationId(const Aws::String& value) { m_operationIdHasBeenSet = true; m_operationId = value; }
 
     /**
-     * <p>The ID of the stack operation. </p>
+     * <p>The ID of the stack operation.</p>
      */
     inline void SetOperationId(Aws::String&& value) { m_operationIdHasBeenSet = true; m_operationId = std::move(value); }
 
     /**
-     * <p>The ID of the stack operation. </p>
+     * <p>The ID of the stack operation.</p>
      */
     inline void SetOperationId(const char* value) { m_operationIdHasBeenSet = true; m_operationId.assign(value); }
 
     /**
-     * <p>The ID of the stack operation. </p>
+     * <p>The ID of the stack operation.</p>
      */
     inline StopStackSetOperationRequest& WithOperationId(const Aws::String& value) { SetOperationId(value); return *this;}
 
     /**
-     * <p>The ID of the stack operation. </p>
+     * <p>The ID of the stack operation.</p>
      */
     inline StopStackSetOperationRequest& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the stack operation. </p>
+     * <p>The ID of the stack operation.</p>
      */
     inline StopStackSetOperationRequest& WithOperationId(const char* value) { SetOperationId(value); return *this;}
 

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/panorama/Panorama_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/panorama/model/PackageImportJob.h>
 #include <utility>
 
@@ -32,42 +32,6 @@ namespace Model
     ListPackageImportJobsResult();
     ListPackageImportJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     ListPackageImportJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>A list of package import jobs.</p>
-     */
-    inline const Aws::Vector<PackageImportJob>& GetPackageImportJobs() const{ return m_packageImportJobs; }
-
-    /**
-     * <p>A list of package import jobs.</p>
-     */
-    inline void SetPackageImportJobs(const Aws::Vector<PackageImportJob>& value) { m_packageImportJobs = value; }
-
-    /**
-     * <p>A list of package import jobs.</p>
-     */
-    inline void SetPackageImportJobs(Aws::Vector<PackageImportJob>&& value) { m_packageImportJobs = std::move(value); }
-
-    /**
-     * <p>A list of package import jobs.</p>
-     */
-    inline ListPackageImportJobsResult& WithPackageImportJobs(const Aws::Vector<PackageImportJob>& value) { SetPackageImportJobs(value); return *this;}
-
-    /**
-     * <p>A list of package import jobs.</p>
-     */
-    inline ListPackageImportJobsResult& WithPackageImportJobs(Aws::Vector<PackageImportJob>&& value) { SetPackageImportJobs(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of package import jobs.</p>
-     */
-    inline ListPackageImportJobsResult& AddPackageImportJobs(const PackageImportJob& value) { m_packageImportJobs.push_back(value); return *this; }
-
-    /**
-     * <p>A list of package import jobs.</p>
-     */
-    inline ListPackageImportJobsResult& AddPackageImportJobs(PackageImportJob&& value) { m_packageImportJobs.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -105,11 +69,47 @@ namespace Model
      */
     inline ListPackageImportJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>A list of package import jobs.</p>
+     */
+    inline const Aws::Vector<PackageImportJob>& GetPackageImportJobs() const{ return m_packageImportJobs; }
+
+    /**
+     * <p>A list of package import jobs.</p>
+     */
+    inline void SetPackageImportJobs(const Aws::Vector<PackageImportJob>& value) { m_packageImportJobs = value; }
+
+    /**
+     * <p>A list of package import jobs.</p>
+     */
+    inline void SetPackageImportJobs(Aws::Vector<PackageImportJob>&& value) { m_packageImportJobs = std::move(value); }
+
+    /**
+     * <p>A list of package import jobs.</p>
+     */
+    inline ListPackageImportJobsResult& WithPackageImportJobs(const Aws::Vector<PackageImportJob>& value) { SetPackageImportJobs(value); return *this;}
+
+    /**
+     * <p>A list of package import jobs.</p>
+     */
+    inline ListPackageImportJobsResult& WithPackageImportJobs(Aws::Vector<PackageImportJob>&& value) { SetPackageImportJobs(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of package import jobs.</p>
+     */
+    inline ListPackageImportJobsResult& AddPackageImportJobs(const PackageImportJob& value) { m_packageImportJobs.push_back(value); return *this; }
+
+    /**
+     * <p>A list of package import jobs.</p>
+     */
+    inline ListPackageImportJobsResult& AddPackageImportJobs(PackageImportJob&& value) { m_packageImportJobs.push_back(std::move(value)); return *this; }
+
   private:
 
-    Aws::Vector<PackageImportJob> m_packageImportJobs;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<PackageImportJob> m_packageImportJobs;
   };
 
 } // namespace Model

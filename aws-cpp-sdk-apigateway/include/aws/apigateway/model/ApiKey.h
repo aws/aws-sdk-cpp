@@ -27,12 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>A resource that can be distributed to callers for executing <a>Method</a>
-   * resources that require an API key. API keys can be mapped to any <a>Stage</a> on
-   * any <a>RestApi</a>, which indicates that the callers with the API key can make
-   * requests to that stage.</p> <div class="seeAlso"> <a
-   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-api-keys.html">Use
-   * API Keys</a> </div><p><h3>See Also:</h3>   <a
+   * <p>A resource that can be distributed to callers for executing Method resources
+   * that require an API key. API keys can be mapped to any Stage on any RestApi,
+   * which indicates that the callers with the API key can make requests to that
+   * stage.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ApiKey">AWS
    * API Reference</a></p>
    */
@@ -342,56 +340,47 @@ namespace Model
 
 
     /**
-     * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
-     * resource.</p>
+     * <p>A list of Stage resources that are associated with the ApiKey resource.</p>
      */
     inline const Aws::Vector<Aws::String>& GetStageKeys() const{ return m_stageKeys; }
 
     /**
-     * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
-     * resource.</p>
+     * <p>A list of Stage resources that are associated with the ApiKey resource.</p>
      */
     inline bool StageKeysHasBeenSet() const { return m_stageKeysHasBeenSet; }
 
     /**
-     * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
-     * resource.</p>
+     * <p>A list of Stage resources that are associated with the ApiKey resource.</p>
      */
     inline void SetStageKeys(const Aws::Vector<Aws::String>& value) { m_stageKeysHasBeenSet = true; m_stageKeys = value; }
 
     /**
-     * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
-     * resource.</p>
+     * <p>A list of Stage resources that are associated with the ApiKey resource.</p>
      */
     inline void SetStageKeys(Aws::Vector<Aws::String>&& value) { m_stageKeysHasBeenSet = true; m_stageKeys = std::move(value); }
 
     /**
-     * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
-     * resource.</p>
+     * <p>A list of Stage resources that are associated with the ApiKey resource.</p>
      */
     inline ApiKey& WithStageKeys(const Aws::Vector<Aws::String>& value) { SetStageKeys(value); return *this;}
 
     /**
-     * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
-     * resource.</p>
+     * <p>A list of Stage resources that are associated with the ApiKey resource.</p>
      */
     inline ApiKey& WithStageKeys(Aws::Vector<Aws::String>&& value) { SetStageKeys(std::move(value)); return *this;}
 
     /**
-     * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
-     * resource.</p>
+     * <p>A list of Stage resources that are associated with the ApiKey resource.</p>
      */
     inline ApiKey& AddStageKeys(const Aws::String& value) { m_stageKeysHasBeenSet = true; m_stageKeys.push_back(value); return *this; }
 
     /**
-     * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
-     * resource.</p>
+     * <p>A list of Stage resources that are associated with the ApiKey resource.</p>
      */
     inline ApiKey& AddStageKeys(Aws::String&& value) { m_stageKeysHasBeenSet = true; m_stageKeys.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
-     * resource.</p>
+     * <p>A list of Stage resources that are associated with the ApiKey resource.</p>
      */
     inline ApiKey& AddStageKeys(const char* value) { m_stageKeysHasBeenSet = true; m_stageKeys.push_back(value); return *this; }
 

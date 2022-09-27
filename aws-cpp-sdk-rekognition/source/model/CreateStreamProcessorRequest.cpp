@@ -18,7 +18,11 @@ CreateStreamProcessorRequest::CreateStreamProcessorRequest() :
     m_nameHasBeenSet(false),
     m_settingsHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_notificationChannelHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false),
+    m_regionsOfInterestHasBeenSet(false),
+    m_dataSharingPreferenceHasBeenSet(false)
 {
 }
 
@@ -64,6 +68,35 @@ Aws::String CreateStreamProcessorRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_notificationChannelHasBeenSet)
+  {
+   payload.WithObject("NotificationChannel", m_notificationChannel.Jsonize());
+
+  }
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+   payload.WithString("KmsKeyId", m_kmsKeyId);
+
+  }
+
+  if(m_regionsOfInterestHasBeenSet)
+  {
+   Array<JsonValue> regionsOfInterestJsonList(m_regionsOfInterest.size());
+   for(unsigned regionsOfInterestIndex = 0; regionsOfInterestIndex < regionsOfInterestJsonList.GetLength(); ++regionsOfInterestIndex)
+   {
+     regionsOfInterestJsonList[regionsOfInterestIndex].AsObject(m_regionsOfInterest[regionsOfInterestIndex].Jsonize());
+   }
+   payload.WithArray("RegionsOfInterest", std::move(regionsOfInterestJsonList));
+
+  }
+
+  if(m_dataSharingPreferenceHasBeenSet)
+  {
+   payload.WithObject("DataSharingPreference", m_dataSharingPreference.Jsonize());
 
   }
 

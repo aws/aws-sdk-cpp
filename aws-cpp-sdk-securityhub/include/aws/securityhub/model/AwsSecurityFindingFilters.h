@@ -11,6 +11,7 @@
 #include <aws/securityhub/model/NumberFilter.h>
 #include <aws/securityhub/model/MapFilter.h>
 #include <aws/securityhub/model/IpFilter.h>
+#include <aws/securityhub/model/BooleanFilter.h>
 #include <utility>
 
 namespace Aws
@@ -937,131 +938,91 @@ namespace Model
 
 
     /**
-     * <p>The name of the solution (product) that generates findings.</p> <p>Note that
-     * this is a filter against the <code>aws/securityhub/ProductName</code> field in
-     * <code>ProductFields</code>. It is not a filter for the top-level
-     * <code>ProductName</code> field.</p>
+     * <p>The name of the solution (product) that generates findings.</p>
      */
     inline const Aws::Vector<StringFilter>& GetProductName() const{ return m_productName; }
 
     /**
-     * <p>The name of the solution (product) that generates findings.</p> <p>Note that
-     * this is a filter against the <code>aws/securityhub/ProductName</code> field in
-     * <code>ProductFields</code>. It is not a filter for the top-level
-     * <code>ProductName</code> field.</p>
+     * <p>The name of the solution (product) that generates findings.</p>
      */
     inline bool ProductNameHasBeenSet() const { return m_productNameHasBeenSet; }
 
     /**
-     * <p>The name of the solution (product) that generates findings.</p> <p>Note that
-     * this is a filter against the <code>aws/securityhub/ProductName</code> field in
-     * <code>ProductFields</code>. It is not a filter for the top-level
-     * <code>ProductName</code> field.</p>
+     * <p>The name of the solution (product) that generates findings.</p>
      */
     inline void SetProductName(const Aws::Vector<StringFilter>& value) { m_productNameHasBeenSet = true; m_productName = value; }
 
     /**
-     * <p>The name of the solution (product) that generates findings.</p> <p>Note that
-     * this is a filter against the <code>aws/securityhub/ProductName</code> field in
-     * <code>ProductFields</code>. It is not a filter for the top-level
-     * <code>ProductName</code> field.</p>
+     * <p>The name of the solution (product) that generates findings.</p>
      */
     inline void SetProductName(Aws::Vector<StringFilter>&& value) { m_productNameHasBeenSet = true; m_productName = std::move(value); }
 
     /**
-     * <p>The name of the solution (product) that generates findings.</p> <p>Note that
-     * this is a filter against the <code>aws/securityhub/ProductName</code> field in
-     * <code>ProductFields</code>. It is not a filter for the top-level
-     * <code>ProductName</code> field.</p>
+     * <p>The name of the solution (product) that generates findings.</p>
      */
     inline AwsSecurityFindingFilters& WithProductName(const Aws::Vector<StringFilter>& value) { SetProductName(value); return *this;}
 
     /**
-     * <p>The name of the solution (product) that generates findings.</p> <p>Note that
-     * this is a filter against the <code>aws/securityhub/ProductName</code> field in
-     * <code>ProductFields</code>. It is not a filter for the top-level
-     * <code>ProductName</code> field.</p>
+     * <p>The name of the solution (product) that generates findings.</p>
      */
     inline AwsSecurityFindingFilters& WithProductName(Aws::Vector<StringFilter>&& value) { SetProductName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the solution (product) that generates findings.</p> <p>Note that
-     * this is a filter against the <code>aws/securityhub/ProductName</code> field in
-     * <code>ProductFields</code>. It is not a filter for the top-level
-     * <code>ProductName</code> field.</p>
+     * <p>The name of the solution (product) that generates findings.</p>
      */
     inline AwsSecurityFindingFilters& AddProductName(const StringFilter& value) { m_productNameHasBeenSet = true; m_productName.push_back(value); return *this; }
 
     /**
-     * <p>The name of the solution (product) that generates findings.</p> <p>Note that
-     * this is a filter against the <code>aws/securityhub/ProductName</code> field in
-     * <code>ProductFields</code>. It is not a filter for the top-level
-     * <code>ProductName</code> field.</p>
+     * <p>The name of the solution (product) that generates findings.</p>
      */
     inline AwsSecurityFindingFilters& AddProductName(StringFilter&& value) { m_productNameHasBeenSet = true; m_productName.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>The name of the findings provider (company) that owns the solution (product)
-     * that generates findings.</p> <p>Note that this is a filter against the
-     * <code>aws/securityhub/CompanyName</code> field in <code>ProductFields</code>. It
-     * is not a filter for the top-level <code>CompanyName</code> field.</p>
+     * that generates findings.</p>
      */
     inline const Aws::Vector<StringFilter>& GetCompanyName() const{ return m_companyName; }
 
     /**
      * <p>The name of the findings provider (company) that owns the solution (product)
-     * that generates findings.</p> <p>Note that this is a filter against the
-     * <code>aws/securityhub/CompanyName</code> field in <code>ProductFields</code>. It
-     * is not a filter for the top-level <code>CompanyName</code> field.</p>
+     * that generates findings.</p>
      */
     inline bool CompanyNameHasBeenSet() const { return m_companyNameHasBeenSet; }
 
     /**
      * <p>The name of the findings provider (company) that owns the solution (product)
-     * that generates findings.</p> <p>Note that this is a filter against the
-     * <code>aws/securityhub/CompanyName</code> field in <code>ProductFields</code>. It
-     * is not a filter for the top-level <code>CompanyName</code> field.</p>
+     * that generates findings.</p>
      */
     inline void SetCompanyName(const Aws::Vector<StringFilter>& value) { m_companyNameHasBeenSet = true; m_companyName = value; }
 
     /**
      * <p>The name of the findings provider (company) that owns the solution (product)
-     * that generates findings.</p> <p>Note that this is a filter against the
-     * <code>aws/securityhub/CompanyName</code> field in <code>ProductFields</code>. It
-     * is not a filter for the top-level <code>CompanyName</code> field.</p>
+     * that generates findings.</p>
      */
     inline void SetCompanyName(Aws::Vector<StringFilter>&& value) { m_companyNameHasBeenSet = true; m_companyName = std::move(value); }
 
     /**
      * <p>The name of the findings provider (company) that owns the solution (product)
-     * that generates findings.</p> <p>Note that this is a filter against the
-     * <code>aws/securityhub/CompanyName</code> field in <code>ProductFields</code>. It
-     * is not a filter for the top-level <code>CompanyName</code> field.</p>
+     * that generates findings.</p>
      */
     inline AwsSecurityFindingFilters& WithCompanyName(const Aws::Vector<StringFilter>& value) { SetCompanyName(value); return *this;}
 
     /**
      * <p>The name of the findings provider (company) that owns the solution (product)
-     * that generates findings.</p> <p>Note that this is a filter against the
-     * <code>aws/securityhub/CompanyName</code> field in <code>ProductFields</code>. It
-     * is not a filter for the top-level <code>CompanyName</code> field.</p>
+     * that generates findings.</p>
      */
     inline AwsSecurityFindingFilters& WithCompanyName(Aws::Vector<StringFilter>&& value) { SetCompanyName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the findings provider (company) that owns the solution (product)
-     * that generates findings.</p> <p>Note that this is a filter against the
-     * <code>aws/securityhub/CompanyName</code> field in <code>ProductFields</code>. It
-     * is not a filter for the top-level <code>CompanyName</code> field.</p>
+     * that generates findings.</p>
      */
     inline AwsSecurityFindingFilters& AddCompanyName(const StringFilter& value) { m_companyNameHasBeenSet = true; m_companyName.push_back(value); return *this; }
 
     /**
      * <p>The name of the findings provider (company) that owns the solution (product)
-     * that generates findings.</p> <p>Note that this is a filter against the
-     * <code>aws/securityhub/CompanyName</code> field in <code>ProductFields</code>. It
-     * is not a filter for the top-level <code>CompanyName</code> field.</p>
+     * that generates findings.</p>
      */
     inline AwsSecurityFindingFilters& AddCompanyName(StringFilter&& value) { m_companyNameHasBeenSet = true; m_companyName.push_back(std::move(value)); return *this; }
 
@@ -4367,6 +4328,55 @@ namespace Model
      */
     inline AwsSecurityFindingFilters& AddFindingProviderFieldsTypes(StringFilter&& value) { m_findingProviderFieldsTypesHasBeenSet = true; m_findingProviderFieldsTypes.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Indicates whether or not sample findings are included in the filter
+     * results.</p>
+     */
+    inline const Aws::Vector<BooleanFilter>& GetSample() const{ return m_sample; }
+
+    /**
+     * <p>Indicates whether or not sample findings are included in the filter
+     * results.</p>
+     */
+    inline bool SampleHasBeenSet() const { return m_sampleHasBeenSet; }
+
+    /**
+     * <p>Indicates whether or not sample findings are included in the filter
+     * results.</p>
+     */
+    inline void SetSample(const Aws::Vector<BooleanFilter>& value) { m_sampleHasBeenSet = true; m_sample = value; }
+
+    /**
+     * <p>Indicates whether or not sample findings are included in the filter
+     * results.</p>
+     */
+    inline void SetSample(Aws::Vector<BooleanFilter>&& value) { m_sampleHasBeenSet = true; m_sample = std::move(value); }
+
+    /**
+     * <p>Indicates whether or not sample findings are included in the filter
+     * results.</p>
+     */
+    inline AwsSecurityFindingFilters& WithSample(const Aws::Vector<BooleanFilter>& value) { SetSample(value); return *this;}
+
+    /**
+     * <p>Indicates whether or not sample findings are included in the filter
+     * results.</p>
+     */
+    inline AwsSecurityFindingFilters& WithSample(Aws::Vector<BooleanFilter>&& value) { SetSample(std::move(value)); return *this;}
+
+    /**
+     * <p>Indicates whether or not sample findings are included in the filter
+     * results.</p>
+     */
+    inline AwsSecurityFindingFilters& AddSample(const BooleanFilter& value) { m_sampleHasBeenSet = true; m_sample.push_back(value); return *this; }
+
+    /**
+     * <p>Indicates whether or not sample findings are included in the filter
+     * results.</p>
+     */
+    inline AwsSecurityFindingFilters& AddSample(BooleanFilter&& value) { m_sampleHasBeenSet = true; m_sample.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<StringFilter> m_productArn;
@@ -4638,6 +4648,9 @@ namespace Model
 
     Aws::Vector<StringFilter> m_findingProviderFieldsTypes;
     bool m_findingProviderFieldsTypesHasBeenSet;
+
+    Aws::Vector<BooleanFilter> m_sample;
+    bool m_sampleHasBeenSet;
   };
 
 } // namespace Model

@@ -79,56 +79,56 @@ namespace Model
 
 
     /**
-     * <p>The type of policy. Parameter Store, a capablility of Amazon Web Services
+     * <p>The type of policy. Parameter Store, a capability of Amazon Web Services
      * Systems Manager, supports the following policy types: Expiration,
      * ExpirationNotification, and NoChangeNotification. </p>
      */
     inline const Aws::String& GetPolicyType() const{ return m_policyType; }
 
     /**
-     * <p>The type of policy. Parameter Store, a capablility of Amazon Web Services
+     * <p>The type of policy. Parameter Store, a capability of Amazon Web Services
      * Systems Manager, supports the following policy types: Expiration,
      * ExpirationNotification, and NoChangeNotification. </p>
      */
     inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
 
     /**
-     * <p>The type of policy. Parameter Store, a capablility of Amazon Web Services
+     * <p>The type of policy. Parameter Store, a capability of Amazon Web Services
      * Systems Manager, supports the following policy types: Expiration,
      * ExpirationNotification, and NoChangeNotification. </p>
      */
     inline void SetPolicyType(const Aws::String& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
 
     /**
-     * <p>The type of policy. Parameter Store, a capablility of Amazon Web Services
+     * <p>The type of policy. Parameter Store, a capability of Amazon Web Services
      * Systems Manager, supports the following policy types: Expiration,
      * ExpirationNotification, and NoChangeNotification. </p>
      */
     inline void SetPolicyType(Aws::String&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
 
     /**
-     * <p>The type of policy. Parameter Store, a capablility of Amazon Web Services
+     * <p>The type of policy. Parameter Store, a capability of Amazon Web Services
      * Systems Manager, supports the following policy types: Expiration,
      * ExpirationNotification, and NoChangeNotification. </p>
      */
     inline void SetPolicyType(const char* value) { m_policyTypeHasBeenSet = true; m_policyType.assign(value); }
 
     /**
-     * <p>The type of policy. Parameter Store, a capablility of Amazon Web Services
+     * <p>The type of policy. Parameter Store, a capability of Amazon Web Services
      * Systems Manager, supports the following policy types: Expiration,
      * ExpirationNotification, and NoChangeNotification. </p>
      */
     inline ParameterInlinePolicy& WithPolicyType(const Aws::String& value) { SetPolicyType(value); return *this;}
 
     /**
-     * <p>The type of policy. Parameter Store, a capablility of Amazon Web Services
+     * <p>The type of policy. Parameter Store, a capability of Amazon Web Services
      * Systems Manager, supports the following policy types: Expiration,
      * ExpirationNotification, and NoChangeNotification. </p>
      */
     inline ParameterInlinePolicy& WithPolicyType(Aws::String&& value) { SetPolicyType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of policy. Parameter Store, a capablility of Amazon Web Services
+     * <p>The type of policy. Parameter Store, a capability of Amazon Web Services
      * Systems Manager, supports the following policy types: Expiration,
      * ExpirationNotification, and NoChangeNotification. </p>
      */

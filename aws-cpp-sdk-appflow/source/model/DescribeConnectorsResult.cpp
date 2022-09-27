@@ -37,6 +37,15 @@ DescribeConnectorsResult& DescribeConnectorsResult::operator =(const Aws::Amazon
     }
   }
 
+  if(jsonValue.ValueExists("connectors"))
+  {
+    Array<JsonView> connectorsJsonList = jsonValue.GetArray("connectors");
+    for(unsigned connectorsIndex = 0; connectorsIndex < connectorsJsonList.GetLength(); ++connectorsIndex)
+    {
+      m_connectors.push_back(connectorsJsonList[connectorsIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");

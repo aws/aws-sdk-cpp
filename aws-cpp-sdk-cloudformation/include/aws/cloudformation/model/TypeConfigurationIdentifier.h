@@ -48,7 +48,7 @@ namespace Model
      * the type</a> in this account and region. For private extensions, this will be
      * the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register
-     * the type</a> in this account and region. </p>
+     * the type</a> in this account and region.</p>
      */
     inline const Aws::String& GetTypeArn() const{ return m_typeArn; }
 
@@ -59,7 +59,7 @@ namespace Model
      * the type</a> in this account and region. For private extensions, this will be
      * the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register
-     * the type</a> in this account and region. </p>
+     * the type</a> in this account and region.</p>
      */
     inline bool TypeArnHasBeenSet() const { return m_typeArnHasBeenSet; }
 
@@ -70,7 +70,7 @@ namespace Model
      * the type</a> in this account and region. For private extensions, this will be
      * the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register
-     * the type</a> in this account and region. </p>
+     * the type</a> in this account and region.</p>
      */
     inline void SetTypeArn(const Aws::String& value) { m_typeArnHasBeenSet = true; m_typeArn = value; }
 
@@ -81,7 +81,7 @@ namespace Model
      * the type</a> in this account and region. For private extensions, this will be
      * the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register
-     * the type</a> in this account and region. </p>
+     * the type</a> in this account and region.</p>
      */
     inline void SetTypeArn(Aws::String&& value) { m_typeArnHasBeenSet = true; m_typeArn = std::move(value); }
 
@@ -92,7 +92,7 @@ namespace Model
      * the type</a> in this account and region. For private extensions, this will be
      * the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register
-     * the type</a> in this account and region. </p>
+     * the type</a> in this account and region.</p>
      */
     inline void SetTypeArn(const char* value) { m_typeArnHasBeenSet = true; m_typeArn.assign(value); }
 
@@ -103,7 +103,7 @@ namespace Model
      * the type</a> in this account and region. For private extensions, this will be
      * the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register
-     * the type</a> in this account and region. </p>
+     * the type</a> in this account and region.</p>
      */
     inline TypeConfigurationIdentifier& WithTypeArn(const Aws::String& value) { SetTypeArn(value); return *this;}
 
@@ -114,7 +114,7 @@ namespace Model
      * the type</a> in this account and region. For private extensions, this will be
      * the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register
-     * the type</a> in this account and region. </p>
+     * the type</a> in this account and region.</p>
      */
     inline TypeConfigurationIdentifier& WithTypeArn(Aws::String&& value) { SetTypeArn(std::move(value)); return *this;}
 
@@ -125,7 +125,7 @@ namespace Model
      * the type</a> in this account and region. For private extensions, this will be
      * the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register
-     * the type</a> in this account and region. </p>
+     * the type</a> in this account and region.</p>
      */
     inline TypeConfigurationIdentifier& WithTypeArn(const char* value) { SetTypeArn(value); return *this;}
 

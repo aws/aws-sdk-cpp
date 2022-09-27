@@ -35,6 +35,7 @@
 #include <aws/lookoutequipment/model/ListInferenceExecutionsRequest.h>
 #include <aws/lookoutequipment/model/ListInferenceSchedulersRequest.h>
 #include <aws/lookoutequipment/model/ListModelsRequest.h>
+#include <aws/lookoutequipment/model/ListSensorStatisticsRequest.h>
 #include <aws/lookoutequipment/model/ListTagsForResourceRequest.h>
 #include <aws/lookoutequipment/model/StartDataIngestionJobRequest.h>
 #include <aws/lookoutequipment/model/StartInferenceSchedulerRequest.h>
@@ -474,6 +475,30 @@ void LookoutEquipmentClient::ListModelsAsync(const ListModelsRequest& request, c
 void LookoutEquipmentClient::ListModelsAsyncHelper(const ListModelsRequest& request, const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListModels(request), context);
+}
+
+ListSensorStatisticsOutcome LookoutEquipmentClient::ListSensorStatistics(const ListSensorStatisticsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListSensorStatisticsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListSensorStatisticsOutcomeCallable LookoutEquipmentClient::ListSensorStatisticsCallable(const ListSensorStatisticsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListSensorStatisticsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSensorStatistics(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LookoutEquipmentClient::ListSensorStatisticsAsync(const ListSensorStatisticsRequest& request, const ListSensorStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListSensorStatisticsAsyncHelper( request, handler, context ); } );
+}
+
+void LookoutEquipmentClient::ListSensorStatisticsAsyncHelper(const ListSensorStatisticsRequest& request, const ListSensorStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListSensorStatistics(request), context);
 }
 
 ListTagsForResourceOutcome LookoutEquipmentClient::ListTagsForResource(const ListTagsForResourceRequest& request) const

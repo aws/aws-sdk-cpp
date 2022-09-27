@@ -206,6 +206,199 @@ namespace Model
      */
     inline RecommendationJobInputConfig& AddEndpointConfigurations(EndpointInputConfiguration&& value) { m_endpointConfigurationsHasBeenSet = true; m_endpointConfigurations.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
+     * Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data
+     * on the storage volume attached to the ML compute instance that hosts the
+     * endpoint. This key will be passed to SageMaker Hosting for endpoint creation.
+     * </p> <p>The SageMaker execution role must have <code>kms:CreateGrant</code>
+     * permission in order to encrypt data on the storage volume of the endpoints
+     * created for inference recommendation. The inference recommendation job will fail
+     * asynchronously during endpoint configuration creation if the role passed does
+     * not have <code>kms:CreateGrant</code> permission.</p> <p>The
+     * <code>KmsKeyId</code> can be any of the following formats:</p> <ul> <li> <p>//
+     * KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+     * </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p>
+     * <code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:key/&lt;key-id-12ab-34cd-56ef-1234567890ab&gt;"</code>
+     * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
+     * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
+     * <code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:alias/&lt;ExampleAlias&gt;"</code>
+     * </p> </li> </ul> <p>For more information about key identifiers, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key
+     * identifiers (KeyID)</a> in the Amazon Web Services Key Management Service
+     * (Amazon Web Services KMS) documentation.</p>
+     */
+    inline const Aws::String& GetVolumeKmsKeyId() const{ return m_volumeKmsKeyId; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
+     * Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data
+     * on the storage volume attached to the ML compute instance that hosts the
+     * endpoint. This key will be passed to SageMaker Hosting for endpoint creation.
+     * </p> <p>The SageMaker execution role must have <code>kms:CreateGrant</code>
+     * permission in order to encrypt data on the storage volume of the endpoints
+     * created for inference recommendation. The inference recommendation job will fail
+     * asynchronously during endpoint configuration creation if the role passed does
+     * not have <code>kms:CreateGrant</code> permission.</p> <p>The
+     * <code>KmsKeyId</code> can be any of the following formats:</p> <ul> <li> <p>//
+     * KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+     * </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p>
+     * <code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:key/&lt;key-id-12ab-34cd-56ef-1234567890ab&gt;"</code>
+     * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
+     * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
+     * <code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:alias/&lt;ExampleAlias&gt;"</code>
+     * </p> </li> </ul> <p>For more information about key identifiers, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key
+     * identifiers (KeyID)</a> in the Amazon Web Services Key Management Service
+     * (Amazon Web Services KMS) documentation.</p>
+     */
+    inline bool VolumeKmsKeyIdHasBeenSet() const { return m_volumeKmsKeyIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
+     * Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data
+     * on the storage volume attached to the ML compute instance that hosts the
+     * endpoint. This key will be passed to SageMaker Hosting for endpoint creation.
+     * </p> <p>The SageMaker execution role must have <code>kms:CreateGrant</code>
+     * permission in order to encrypt data on the storage volume of the endpoints
+     * created for inference recommendation. The inference recommendation job will fail
+     * asynchronously during endpoint configuration creation if the role passed does
+     * not have <code>kms:CreateGrant</code> permission.</p> <p>The
+     * <code>KmsKeyId</code> can be any of the following formats:</p> <ul> <li> <p>//
+     * KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+     * </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p>
+     * <code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:key/&lt;key-id-12ab-34cd-56ef-1234567890ab&gt;"</code>
+     * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
+     * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
+     * <code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:alias/&lt;ExampleAlias&gt;"</code>
+     * </p> </li> </ul> <p>For more information about key identifiers, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key
+     * identifiers (KeyID)</a> in the Amazon Web Services Key Management Service
+     * (Amazon Web Services KMS) documentation.</p>
+     */
+    inline void SetVolumeKmsKeyId(const Aws::String& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
+     * Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data
+     * on the storage volume attached to the ML compute instance that hosts the
+     * endpoint. This key will be passed to SageMaker Hosting for endpoint creation.
+     * </p> <p>The SageMaker execution role must have <code>kms:CreateGrant</code>
+     * permission in order to encrypt data on the storage volume of the endpoints
+     * created for inference recommendation. The inference recommendation job will fail
+     * asynchronously during endpoint configuration creation if the role passed does
+     * not have <code>kms:CreateGrant</code> permission.</p> <p>The
+     * <code>KmsKeyId</code> can be any of the following formats:</p> <ul> <li> <p>//
+     * KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+     * </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p>
+     * <code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:key/&lt;key-id-12ab-34cd-56ef-1234567890ab&gt;"</code>
+     * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
+     * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
+     * <code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:alias/&lt;ExampleAlias&gt;"</code>
+     * </p> </li> </ul> <p>For more information about key identifiers, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key
+     * identifiers (KeyID)</a> in the Amazon Web Services Key Management Service
+     * (Amazon Web Services KMS) documentation.</p>
+     */
+    inline void SetVolumeKmsKeyId(Aws::String&& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
+     * Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data
+     * on the storage volume attached to the ML compute instance that hosts the
+     * endpoint. This key will be passed to SageMaker Hosting for endpoint creation.
+     * </p> <p>The SageMaker execution role must have <code>kms:CreateGrant</code>
+     * permission in order to encrypt data on the storage volume of the endpoints
+     * created for inference recommendation. The inference recommendation job will fail
+     * asynchronously during endpoint configuration creation if the role passed does
+     * not have <code>kms:CreateGrant</code> permission.</p> <p>The
+     * <code>KmsKeyId</code> can be any of the following formats:</p> <ul> <li> <p>//
+     * KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+     * </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p>
+     * <code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:key/&lt;key-id-12ab-34cd-56ef-1234567890ab&gt;"</code>
+     * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
+     * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
+     * <code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:alias/&lt;ExampleAlias&gt;"</code>
+     * </p> </li> </ul> <p>For more information about key identifiers, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key
+     * identifiers (KeyID)</a> in the Amazon Web Services Key Management Service
+     * (Amazon Web Services KMS) documentation.</p>
+     */
+    inline void SetVolumeKmsKeyId(const char* value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
+     * Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data
+     * on the storage volume attached to the ML compute instance that hosts the
+     * endpoint. This key will be passed to SageMaker Hosting for endpoint creation.
+     * </p> <p>The SageMaker execution role must have <code>kms:CreateGrant</code>
+     * permission in order to encrypt data on the storage volume of the endpoints
+     * created for inference recommendation. The inference recommendation job will fail
+     * asynchronously during endpoint configuration creation if the role passed does
+     * not have <code>kms:CreateGrant</code> permission.</p> <p>The
+     * <code>KmsKeyId</code> can be any of the following formats:</p> <ul> <li> <p>//
+     * KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+     * </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p>
+     * <code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:key/&lt;key-id-12ab-34cd-56ef-1234567890ab&gt;"</code>
+     * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
+     * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
+     * <code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:alias/&lt;ExampleAlias&gt;"</code>
+     * </p> </li> </ul> <p>For more information about key identifiers, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key
+     * identifiers (KeyID)</a> in the Amazon Web Services Key Management Service
+     * (Amazon Web Services KMS) documentation.</p>
+     */
+    inline RecommendationJobInputConfig& WithVolumeKmsKeyId(const Aws::String& value) { SetVolumeKmsKeyId(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
+     * Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data
+     * on the storage volume attached to the ML compute instance that hosts the
+     * endpoint. This key will be passed to SageMaker Hosting for endpoint creation.
+     * </p> <p>The SageMaker execution role must have <code>kms:CreateGrant</code>
+     * permission in order to encrypt data on the storage volume of the endpoints
+     * created for inference recommendation. The inference recommendation job will fail
+     * asynchronously during endpoint configuration creation if the role passed does
+     * not have <code>kms:CreateGrant</code> permission.</p> <p>The
+     * <code>KmsKeyId</code> can be any of the following formats:</p> <ul> <li> <p>//
+     * KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+     * </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p>
+     * <code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:key/&lt;key-id-12ab-34cd-56ef-1234567890ab&gt;"</code>
+     * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
+     * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
+     * <code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:alias/&lt;ExampleAlias&gt;"</code>
+     * </p> </li> </ul> <p>For more information about key identifiers, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key
+     * identifiers (KeyID)</a> in the Amazon Web Services Key Management Service
+     * (Amazon Web Services KMS) documentation.</p>
+     */
+    inline RecommendationJobInputConfig& WithVolumeKmsKeyId(Aws::String&& value) { SetVolumeKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
+     * Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data
+     * on the storage volume attached to the ML compute instance that hosts the
+     * endpoint. This key will be passed to SageMaker Hosting for endpoint creation.
+     * </p> <p>The SageMaker execution role must have <code>kms:CreateGrant</code>
+     * permission in order to encrypt data on the storage volume of the endpoints
+     * created for inference recommendation. The inference recommendation job will fail
+     * asynchronously during endpoint configuration creation if the role passed does
+     * not have <code>kms:CreateGrant</code> permission.</p> <p>The
+     * <code>KmsKeyId</code> can be any of the following formats:</p> <ul> <li> <p>//
+     * KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+     * </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p>
+     * <code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:key/&lt;key-id-12ab-34cd-56ef-1234567890ab&gt;"</code>
+     * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
+     * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
+     * <code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:alias/&lt;ExampleAlias&gt;"</code>
+     * </p> </li> </ul> <p>For more information about key identifiers, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key
+     * identifiers (KeyID)</a> in the Amazon Web Services Key Management Service
+     * (Amazon Web Services KMS) documentation.</p>
+     */
+    inline RecommendationJobInputConfig& WithVolumeKmsKeyId(const char* value) { SetVolumeKmsKeyId(value); return *this;}
+
   private:
 
     Aws::String m_modelPackageVersionArn;
@@ -222,6 +415,9 @@ namespace Model
 
     Aws::Vector<EndpointInputConfiguration> m_endpointConfigurations;
     bool m_endpointConfigurationsHasBeenSet;
+
+    Aws::String m_volumeKmsKeyId;
+    bool m_volumeKmsKeyIdHasBeenSet;
   };
 
 } // namespace Model

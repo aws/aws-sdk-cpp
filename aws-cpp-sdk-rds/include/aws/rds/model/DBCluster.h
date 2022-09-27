@@ -14,6 +14,7 @@
 #include <aws/rds/model/ActivityStreamStatus.h>
 #include <aws/rds/model/WriteForwardingStatus.h>
 #include <aws/rds/model/ClusterPendingModifiedValues.h>
+#include <aws/rds/model/ServerlessV2ScalingConfigurationInfo.h>
 #include <aws/rds/model/DBClusterOptionGroupStatus.h>
 #include <aws/rds/model/DBClusterMember.h>
 #include <aws/rds/model/VpcSecurityGroupMembership.h>
@@ -37,9 +38,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
-   * </p> <p>For an Amazon Aurora DB cluster, this data type is used as a response
-   * element in the operations <code>CreateDBCluster</code>,
+   * <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB
+   * cluster.</p> <p>For an Amazon Aurora DB cluster, this data type is used as a
+   * response element in the operations <code>CreateDBCluster</code>,
    * <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
    * <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>,
    * <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>,
@@ -57,8 +58,7 @@ namespace Model
    * more information on Multi-AZ DB clusters, see <a
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
    * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-   * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-   * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+   * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBCluster">AWS API
    * Reference</a></p>
    */
@@ -636,8 +636,8 @@ namespace Model
      * cluster. As clients request new connections to the reader endpoint, Aurora
      * distributes the connection requests among the Aurora Replicas in the DB cluster.
      * This functionality can help balance your read workload across multiple Aurora
-     * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
-     * Replica that you are connected to is promoted to be the primary instance, your
+     * Replicas in your DB cluster.</p> <p>If a failover occurs, and the Aurora Replica
+     * that you are connected to is promoted to be the primary instance, your
      * connection is dropped. To continue sending your read workload to other Aurora
      * Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
      */
@@ -649,8 +649,8 @@ namespace Model
      * cluster. As clients request new connections to the reader endpoint, Aurora
      * distributes the connection requests among the Aurora Replicas in the DB cluster.
      * This functionality can help balance your read workload across multiple Aurora
-     * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
-     * Replica that you are connected to is promoted to be the primary instance, your
+     * Replicas in your DB cluster.</p> <p>If a failover occurs, and the Aurora Replica
+     * that you are connected to is promoted to be the primary instance, your
      * connection is dropped. To continue sending your read workload to other Aurora
      * Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
      */
@@ -662,8 +662,8 @@ namespace Model
      * cluster. As clients request new connections to the reader endpoint, Aurora
      * distributes the connection requests among the Aurora Replicas in the DB cluster.
      * This functionality can help balance your read workload across multiple Aurora
-     * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
-     * Replica that you are connected to is promoted to be the primary instance, your
+     * Replicas in your DB cluster.</p> <p>If a failover occurs, and the Aurora Replica
+     * that you are connected to is promoted to be the primary instance, your
      * connection is dropped. To continue sending your read workload to other Aurora
      * Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
      */
@@ -675,8 +675,8 @@ namespace Model
      * cluster. As clients request new connections to the reader endpoint, Aurora
      * distributes the connection requests among the Aurora Replicas in the DB cluster.
      * This functionality can help balance your read workload across multiple Aurora
-     * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
-     * Replica that you are connected to is promoted to be the primary instance, your
+     * Replicas in your DB cluster.</p> <p>If a failover occurs, and the Aurora Replica
+     * that you are connected to is promoted to be the primary instance, your
      * connection is dropped. To continue sending your read workload to other Aurora
      * Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
      */
@@ -688,8 +688,8 @@ namespace Model
      * cluster. As clients request new connections to the reader endpoint, Aurora
      * distributes the connection requests among the Aurora Replicas in the DB cluster.
      * This functionality can help balance your read workload across multiple Aurora
-     * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
-     * Replica that you are connected to is promoted to be the primary instance, your
+     * Replicas in your DB cluster.</p> <p>If a failover occurs, and the Aurora Replica
+     * that you are connected to is promoted to be the primary instance, your
      * connection is dropped. To continue sending your read workload to other Aurora
      * Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
      */
@@ -701,8 +701,8 @@ namespace Model
      * cluster. As clients request new connections to the reader endpoint, Aurora
      * distributes the connection requests among the Aurora Replicas in the DB cluster.
      * This functionality can help balance your read workload across multiple Aurora
-     * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
-     * Replica that you are connected to is promoted to be the primary instance, your
+     * Replicas in your DB cluster.</p> <p>If a failover occurs, and the Aurora Replica
+     * that you are connected to is promoted to be the primary instance, your
      * connection is dropped. To continue sending your read workload to other Aurora
      * Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
      */
@@ -714,8 +714,8 @@ namespace Model
      * cluster. As clients request new connections to the reader endpoint, Aurora
      * distributes the connection requests among the Aurora Replicas in the DB cluster.
      * This functionality can help balance your read workload across multiple Aurora
-     * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
-     * Replica that you are connected to is promoted to be the primary instance, your
+     * Replicas in your DB cluster.</p> <p>If a failover occurs, and the Aurora Replica
+     * that you are connected to is promoted to be the primary instance, your
      * connection is dropped. To continue sending your read workload to other Aurora
      * Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
      */
@@ -727,8 +727,8 @@ namespace Model
      * cluster. As clients request new connections to the reader endpoint, Aurora
      * distributes the connection requests among the Aurora Replicas in the DB cluster.
      * This functionality can help balance your read workload across multiple Aurora
-     * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
-     * Replica that you are connected to is promoted to be the primary instance, your
+     * Replicas in your DB cluster.</p> <p>If a failover occurs, and the Aurora Replica
+     * that you are connected to is promoted to be the primary instance, your
      * connection is dropped. To continue sending your read workload to other Aurora
      * Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
      */
@@ -1031,56 +1031,56 @@ namespace Model
     /**
      * <p>Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
 
     /**
      * <p>Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
 
     /**
      * <p>Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline void SetPreferredBackupWindow(const Aws::String& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
 
     /**
      * <p>Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::move(value); }
 
     /**
      * <p>Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline void SetPreferredBackupWindow(const char* value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow.assign(value); }
 
     /**
      * <p>Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline DBCluster& WithPreferredBackupWindow(const Aws::String& value) { SetPreferredBackupWindow(value); return *this;}
 
     /**
      * <p>Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline DBCluster& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline DBCluster& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
 
@@ -1877,38 +1877,38 @@ namespace Model
 
 
     /**
-     * <p>The current capacity of an Aurora Serverless DB cluster. The capacity is 0
+     * <p>The current capacity of an Aurora Serverless v1 DB cluster. The capacity is 0
      * (zero) when the cluster is paused.</p> <p>For more information about Aurora
-     * Serverless, see <a
+     * Serverless v1, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
-     * Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     * Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline int GetCapacity() const{ return m_capacity; }
 
     /**
-     * <p>The current capacity of an Aurora Serverless DB cluster. The capacity is 0
+     * <p>The current capacity of an Aurora Serverless v1 DB cluster. The capacity is 0
      * (zero) when the cluster is paused.</p> <p>For more information about Aurora
-     * Serverless, see <a
+     * Serverless v1, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
-     * Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     * Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline bool CapacityHasBeenSet() const { return m_capacityHasBeenSet; }
 
     /**
-     * <p>The current capacity of an Aurora Serverless DB cluster. The capacity is 0
+     * <p>The current capacity of an Aurora Serverless v1 DB cluster. The capacity is 0
      * (zero) when the cluster is paused.</p> <p>For more information about Aurora
-     * Serverless, see <a
+     * Serverless v1, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
-     * Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     * Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline void SetCapacity(int value) { m_capacityHasBeenSet = true; m_capacity = value; }
 
     /**
-     * <p>The current capacity of an Aurora Serverless DB cluster. The capacity is 0
+     * <p>The current capacity of an Aurora Serverless v1 DB cluster. The capacity is 0
      * (zero) when the cluster is paused.</p> <p>For more information about Aurora
-     * Serverless, see <a
+     * Serverless v1, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
-     * Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     * Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline DBCluster& WithCapacity(int value) { SetCapacity(value); return *this;}
 
@@ -2007,73 +2007,73 @@ namespace Model
 
     /**
      * <p>Indicates if the DB cluster has deletion protection enabled. The database
-     * can't be deleted when deletion protection is enabled. </p>
+     * can't be deleted when deletion protection is enabled.</p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
     /**
      * <p>Indicates if the DB cluster has deletion protection enabled. The database
-     * can't be deleted when deletion protection is enabled. </p>
+     * can't be deleted when deletion protection is enabled.</p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
      * <p>Indicates if the DB cluster has deletion protection enabled. The database
-     * can't be deleted when deletion protection is enabled. </p>
+     * can't be deleted when deletion protection is enabled.</p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
      * <p>Indicates if the DB cluster has deletion protection enabled. The database
-     * can't be deleted when deletion protection is enabled. </p>
+     * can't be deleted when deletion protection is enabled.</p>
      */
     inline DBCluster& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether the HTTP endpoint for an Aurora Serverless DB
-     * cluster is enabled.</p> <p>When enabled, the HTTP endpoint provides a
+     * <p>A value that indicates whether the HTTP endpoint for an Aurora Serverless v1
+     * DB cluster is enabled.</p> <p>When enabled, the HTTP endpoint provides a
      * connectionless web service API for running SQL queries on the Aurora Serverless
-     * DB cluster. You can also query your database from inside the RDS console with
+     * v1 DB cluster. You can also query your database from inside the RDS console with
      * the query editor.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless</a> in the <i>Amazon Aurora User
+     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
      * Guide</i>.</p>
      */
     inline bool GetHttpEndpointEnabled() const{ return m_httpEndpointEnabled; }
 
     /**
-     * <p>A value that indicates whether the HTTP endpoint for an Aurora Serverless DB
-     * cluster is enabled.</p> <p>When enabled, the HTTP endpoint provides a
+     * <p>A value that indicates whether the HTTP endpoint for an Aurora Serverless v1
+     * DB cluster is enabled.</p> <p>When enabled, the HTTP endpoint provides a
      * connectionless web service API for running SQL queries on the Aurora Serverless
-     * DB cluster. You can also query your database from inside the RDS console with
+     * v1 DB cluster. You can also query your database from inside the RDS console with
      * the query editor.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless</a> in the <i>Amazon Aurora User
+     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
      * Guide</i>.</p>
      */
     inline bool HttpEndpointEnabledHasBeenSet() const { return m_httpEndpointEnabledHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the HTTP endpoint for an Aurora Serverless DB
-     * cluster is enabled.</p> <p>When enabled, the HTTP endpoint provides a
+     * <p>A value that indicates whether the HTTP endpoint for an Aurora Serverless v1
+     * DB cluster is enabled.</p> <p>When enabled, the HTTP endpoint provides a
      * connectionless web service API for running SQL queries on the Aurora Serverless
-     * DB cluster. You can also query your database from inside the RDS console with
+     * v1 DB cluster. You can also query your database from inside the RDS console with
      * the query editor.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless</a> in the <i>Amazon Aurora User
+     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
      * Guide</i>.</p>
      */
     inline void SetHttpEndpointEnabled(bool value) { m_httpEndpointEnabledHasBeenSet = true; m_httpEndpointEnabled = value; }
 
     /**
-     * <p>A value that indicates whether the HTTP endpoint for an Aurora Serverless DB
-     * cluster is enabled.</p> <p>When enabled, the HTTP endpoint provides a
+     * <p>A value that indicates whether the HTTP endpoint for an Aurora Serverless v1
+     * DB cluster is enabled.</p> <p>When enabled, the HTTP endpoint provides a
      * connectionless web service API for running SQL queries on the Aurora Serverless
-     * DB cluster. You can also query your database from inside the RDS console with
+     * v1 DB cluster. You can also query your database from inside the RDS console with
      * the query editor.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless</a> in the <i>Amazon Aurora User
+     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
      * Guide</i>.</p>
      */
     inline DBCluster& WithHttpEndpointEnabled(bool value) { SetHttpEndpointEnabled(value); return *this;}
@@ -2082,42 +2082,42 @@ namespace Model
     /**
      * <p>The mode of the database activity stream. Database events such as a change or
      * access generate an activity stream event. The database session can handle these
-     * events either synchronously or asynchronously. </p>
+     * events either synchronously or asynchronously.</p>
      */
     inline const ActivityStreamMode& GetActivityStreamMode() const{ return m_activityStreamMode; }
 
     /**
      * <p>The mode of the database activity stream. Database events such as a change or
      * access generate an activity stream event. The database session can handle these
-     * events either synchronously or asynchronously. </p>
+     * events either synchronously or asynchronously.</p>
      */
     inline bool ActivityStreamModeHasBeenSet() const { return m_activityStreamModeHasBeenSet; }
 
     /**
      * <p>The mode of the database activity stream. Database events such as a change or
      * access generate an activity stream event. The database session can handle these
-     * events either synchronously or asynchronously. </p>
+     * events either synchronously or asynchronously.</p>
      */
     inline void SetActivityStreamMode(const ActivityStreamMode& value) { m_activityStreamModeHasBeenSet = true; m_activityStreamMode = value; }
 
     /**
      * <p>The mode of the database activity stream. Database events such as a change or
      * access generate an activity stream event. The database session can handle these
-     * events either synchronously or asynchronously. </p>
+     * events either synchronously or asynchronously.</p>
      */
     inline void SetActivityStreamMode(ActivityStreamMode&& value) { m_activityStreamModeHasBeenSet = true; m_activityStreamMode = std::move(value); }
 
     /**
      * <p>The mode of the database activity stream. Database events such as a change or
      * access generate an activity stream event. The database session can handle these
-     * events either synchronously or asynchronously. </p>
+     * events either synchronously or asynchronously.</p>
      */
     inline DBCluster& WithActivityStreamMode(const ActivityStreamMode& value) { SetActivityStreamMode(value); return *this;}
 
     /**
      * <p>The mode of the database activity stream. Database events such as a change or
      * access generate an activity stream event. The database session can handle these
-     * events either synchronously or asynchronously. </p>
+     * events either synchronously or asynchronously.</p>
      */
     inline DBCluster& WithActivityStreamMode(ActivityStreamMode&& value) { SetActivityStreamMode(std::move(value)); return *this;}
 
@@ -2917,6 +2917,25 @@ namespace Model
      */
     inline DBCluster& WithPerformanceInsightsRetentionPeriod(int value) { SetPerformanceInsightsRetentionPeriod(value); return *this;}
 
+
+    
+    inline const ServerlessV2ScalingConfigurationInfo& GetServerlessV2ScalingConfiguration() const{ return m_serverlessV2ScalingConfiguration; }
+
+    
+    inline bool ServerlessV2ScalingConfigurationHasBeenSet() const { return m_serverlessV2ScalingConfigurationHasBeenSet; }
+
+    
+    inline void SetServerlessV2ScalingConfiguration(const ServerlessV2ScalingConfigurationInfo& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = value; }
+
+    
+    inline void SetServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationInfo&& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = std::move(value); }
+
+    
+    inline DBCluster& WithServerlessV2ScalingConfiguration(const ServerlessV2ScalingConfigurationInfo& value) { SetServerlessV2ScalingConfiguration(value); return *this;}
+
+    
+    inline DBCluster& WithServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationInfo&& value) { SetServerlessV2ScalingConfiguration(std::move(value)); return *this;}
+
   private:
 
     int m_allocatedStorage;
@@ -3119,6 +3138,9 @@ namespace Model
 
     int m_performanceInsightsRetentionPeriod;
     bool m_performanceInsightsRetentionPeriodHasBeenSet;
+
+    ServerlessV2ScalingConfigurationInfo m_serverlessV2ScalingConfiguration;
+    bool m_serverlessV2ScalingConfigurationHasBeenSet;
   };
 
 } // namespace Model

@@ -35,7 +35,7 @@ namespace Model
    * addresses across multiple unconnected networks without causing IP address
    * overlap or conflict.</p> <p>For more information, see <a
    * href="/vpc/latest/ipam/how-it-works-ipam.html">How IPAM works</a> in the
-   * <i>Amazon VPC IPAM User Guide</i> </p><p><h3>See Also:</h3>   <a
+   * <i>Amazon VPC IPAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/IpamScope">AWS API
    * Reference</a></p>
    */

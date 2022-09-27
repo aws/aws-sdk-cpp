@@ -23,19 +23,27 @@
 #include <aws/apprunner/model/AssociateCustomDomainRequest.h>
 #include <aws/apprunner/model/CreateAutoScalingConfigurationRequest.h>
 #include <aws/apprunner/model/CreateConnectionRequest.h>
+#include <aws/apprunner/model/CreateObservabilityConfigurationRequest.h>
 #include <aws/apprunner/model/CreateServiceRequest.h>
+#include <aws/apprunner/model/CreateVpcConnectorRequest.h>
 #include <aws/apprunner/model/DeleteAutoScalingConfigurationRequest.h>
 #include <aws/apprunner/model/DeleteConnectionRequest.h>
+#include <aws/apprunner/model/DeleteObservabilityConfigurationRequest.h>
 #include <aws/apprunner/model/DeleteServiceRequest.h>
+#include <aws/apprunner/model/DeleteVpcConnectorRequest.h>
 #include <aws/apprunner/model/DescribeAutoScalingConfigurationRequest.h>
 #include <aws/apprunner/model/DescribeCustomDomainsRequest.h>
+#include <aws/apprunner/model/DescribeObservabilityConfigurationRequest.h>
 #include <aws/apprunner/model/DescribeServiceRequest.h>
+#include <aws/apprunner/model/DescribeVpcConnectorRequest.h>
 #include <aws/apprunner/model/DisassociateCustomDomainRequest.h>
 #include <aws/apprunner/model/ListAutoScalingConfigurationsRequest.h>
 #include <aws/apprunner/model/ListConnectionsRequest.h>
+#include <aws/apprunner/model/ListObservabilityConfigurationsRequest.h>
 #include <aws/apprunner/model/ListOperationsRequest.h>
 #include <aws/apprunner/model/ListServicesRequest.h>
 #include <aws/apprunner/model/ListTagsForResourceRequest.h>
+#include <aws/apprunner/model/ListVpcConnectorsRequest.h>
 #include <aws/apprunner/model/PauseServiceRequest.h>
 #include <aws/apprunner/model/ResumeServiceRequest.h>
 #include <aws/apprunner/model/StartDeploymentRequest.h>
@@ -188,6 +196,30 @@ void AppRunnerClient::CreateConnectionAsyncHelper(const CreateConnectionRequest&
   handler(this, request, CreateConnection(request), context);
 }
 
+CreateObservabilityConfigurationOutcome AppRunnerClient::CreateObservabilityConfiguration(const CreateObservabilityConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateObservabilityConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateObservabilityConfigurationOutcomeCallable AppRunnerClient::CreateObservabilityConfigurationCallable(const CreateObservabilityConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateObservabilityConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateObservabilityConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppRunnerClient::CreateObservabilityConfigurationAsync(const CreateObservabilityConfigurationRequest& request, const CreateObservabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateObservabilityConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void AppRunnerClient::CreateObservabilityConfigurationAsyncHelper(const CreateObservabilityConfigurationRequest& request, const CreateObservabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateObservabilityConfiguration(request), context);
+}
+
 CreateServiceOutcome AppRunnerClient::CreateService(const CreateServiceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -210,6 +242,30 @@ void AppRunnerClient::CreateServiceAsync(const CreateServiceRequest& request, co
 void AppRunnerClient::CreateServiceAsyncHelper(const CreateServiceRequest& request, const CreateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateService(request), context);
+}
+
+CreateVpcConnectorOutcome AppRunnerClient::CreateVpcConnector(const CreateVpcConnectorRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateVpcConnectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateVpcConnectorOutcomeCallable AppRunnerClient::CreateVpcConnectorCallable(const CreateVpcConnectorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateVpcConnectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateVpcConnector(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppRunnerClient::CreateVpcConnectorAsync(const CreateVpcConnectorRequest& request, const CreateVpcConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateVpcConnectorAsyncHelper( request, handler, context ); } );
+}
+
+void AppRunnerClient::CreateVpcConnectorAsyncHelper(const CreateVpcConnectorRequest& request, const CreateVpcConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateVpcConnector(request), context);
 }
 
 DeleteAutoScalingConfigurationOutcome AppRunnerClient::DeleteAutoScalingConfiguration(const DeleteAutoScalingConfigurationRequest& request) const
@@ -260,6 +316,30 @@ void AppRunnerClient::DeleteConnectionAsyncHelper(const DeleteConnectionRequest&
   handler(this, request, DeleteConnection(request), context);
 }
 
+DeleteObservabilityConfigurationOutcome AppRunnerClient::DeleteObservabilityConfiguration(const DeleteObservabilityConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteObservabilityConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteObservabilityConfigurationOutcomeCallable AppRunnerClient::DeleteObservabilityConfigurationCallable(const DeleteObservabilityConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteObservabilityConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteObservabilityConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppRunnerClient::DeleteObservabilityConfigurationAsync(const DeleteObservabilityConfigurationRequest& request, const DeleteObservabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteObservabilityConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void AppRunnerClient::DeleteObservabilityConfigurationAsyncHelper(const DeleteObservabilityConfigurationRequest& request, const DeleteObservabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteObservabilityConfiguration(request), context);
+}
+
 DeleteServiceOutcome AppRunnerClient::DeleteService(const DeleteServiceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -282,6 +362,30 @@ void AppRunnerClient::DeleteServiceAsync(const DeleteServiceRequest& request, co
 void AppRunnerClient::DeleteServiceAsyncHelper(const DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteService(request), context);
+}
+
+DeleteVpcConnectorOutcome AppRunnerClient::DeleteVpcConnector(const DeleteVpcConnectorRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteVpcConnectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteVpcConnectorOutcomeCallable AppRunnerClient::DeleteVpcConnectorCallable(const DeleteVpcConnectorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteVpcConnectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteVpcConnector(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppRunnerClient::DeleteVpcConnectorAsync(const DeleteVpcConnectorRequest& request, const DeleteVpcConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteVpcConnectorAsyncHelper( request, handler, context ); } );
+}
+
+void AppRunnerClient::DeleteVpcConnectorAsyncHelper(const DeleteVpcConnectorRequest& request, const DeleteVpcConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteVpcConnector(request), context);
 }
 
 DescribeAutoScalingConfigurationOutcome AppRunnerClient::DescribeAutoScalingConfiguration(const DescribeAutoScalingConfigurationRequest& request) const
@@ -332,6 +436,30 @@ void AppRunnerClient::DescribeCustomDomainsAsyncHelper(const DescribeCustomDomai
   handler(this, request, DescribeCustomDomains(request), context);
 }
 
+DescribeObservabilityConfigurationOutcome AppRunnerClient::DescribeObservabilityConfiguration(const DescribeObservabilityConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeObservabilityConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeObservabilityConfigurationOutcomeCallable AppRunnerClient::DescribeObservabilityConfigurationCallable(const DescribeObservabilityConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeObservabilityConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeObservabilityConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppRunnerClient::DescribeObservabilityConfigurationAsync(const DescribeObservabilityConfigurationRequest& request, const DescribeObservabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeObservabilityConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void AppRunnerClient::DescribeObservabilityConfigurationAsyncHelper(const DescribeObservabilityConfigurationRequest& request, const DescribeObservabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeObservabilityConfiguration(request), context);
+}
+
 DescribeServiceOutcome AppRunnerClient::DescribeService(const DescribeServiceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -354,6 +482,30 @@ void AppRunnerClient::DescribeServiceAsync(const DescribeServiceRequest& request
 void AppRunnerClient::DescribeServiceAsyncHelper(const DescribeServiceRequest& request, const DescribeServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeService(request), context);
+}
+
+DescribeVpcConnectorOutcome AppRunnerClient::DescribeVpcConnector(const DescribeVpcConnectorRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeVpcConnectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeVpcConnectorOutcomeCallable AppRunnerClient::DescribeVpcConnectorCallable(const DescribeVpcConnectorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeVpcConnectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeVpcConnector(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppRunnerClient::DescribeVpcConnectorAsync(const DescribeVpcConnectorRequest& request, const DescribeVpcConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeVpcConnectorAsyncHelper( request, handler, context ); } );
+}
+
+void AppRunnerClient::DescribeVpcConnectorAsyncHelper(const DescribeVpcConnectorRequest& request, const DescribeVpcConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeVpcConnector(request), context);
 }
 
 DisassociateCustomDomainOutcome AppRunnerClient::DisassociateCustomDomain(const DisassociateCustomDomainRequest& request) const
@@ -428,6 +580,30 @@ void AppRunnerClient::ListConnectionsAsyncHelper(const ListConnectionsRequest& r
   handler(this, request, ListConnections(request), context);
 }
 
+ListObservabilityConfigurationsOutcome AppRunnerClient::ListObservabilityConfigurations(const ListObservabilityConfigurationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListObservabilityConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListObservabilityConfigurationsOutcomeCallable AppRunnerClient::ListObservabilityConfigurationsCallable(const ListObservabilityConfigurationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListObservabilityConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListObservabilityConfigurations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppRunnerClient::ListObservabilityConfigurationsAsync(const ListObservabilityConfigurationsRequest& request, const ListObservabilityConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListObservabilityConfigurationsAsyncHelper( request, handler, context ); } );
+}
+
+void AppRunnerClient::ListObservabilityConfigurationsAsyncHelper(const ListObservabilityConfigurationsRequest& request, const ListObservabilityConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListObservabilityConfigurations(request), context);
+}
+
 ListOperationsOutcome AppRunnerClient::ListOperations(const ListOperationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -498,6 +674,30 @@ void AppRunnerClient::ListTagsForResourceAsync(const ListTagsForResourceRequest&
 void AppRunnerClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTagsForResource(request), context);
+}
+
+ListVpcConnectorsOutcome AppRunnerClient::ListVpcConnectors(const ListVpcConnectorsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListVpcConnectorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListVpcConnectorsOutcomeCallable AppRunnerClient::ListVpcConnectorsCallable(const ListVpcConnectorsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListVpcConnectorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListVpcConnectors(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppRunnerClient::ListVpcConnectorsAsync(const ListVpcConnectorsRequest& request, const ListVpcConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListVpcConnectorsAsyncHelper( request, handler, context ); } );
+}
+
+void AppRunnerClient::ListVpcConnectorsAsyncHelper(const ListVpcConnectorsRequest& request, const ListVpcConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListVpcConnectors(request), context);
 }
 
 PauseServiceOutcome AppRunnerClient::PauseService(const PauseServiceRequest& request) const

@@ -32,6 +32,7 @@
 #include <aws/iotwireless/model/CreateDeviceProfileRequest.h>
 #include <aws/iotwireless/model/CreateFuotaTaskRequest.h>
 #include <aws/iotwireless/model/CreateMulticastGroupRequest.h>
+#include <aws/iotwireless/model/CreateNetworkAnalyzerConfigurationRequest.h>
 #include <aws/iotwireless/model/CreateServiceProfileRequest.h>
 #include <aws/iotwireless/model/CreateWirelessDeviceRequest.h>
 #include <aws/iotwireless/model/CreateWirelessGatewayRequest.h>
@@ -41,6 +42,7 @@
 #include <aws/iotwireless/model/DeleteDeviceProfileRequest.h>
 #include <aws/iotwireless/model/DeleteFuotaTaskRequest.h>
 #include <aws/iotwireless/model/DeleteMulticastGroupRequest.h>
+#include <aws/iotwireless/model/DeleteNetworkAnalyzerConfigurationRequest.h>
 #include <aws/iotwireless/model/DeleteQueuedMessagesRequest.h>
 #include <aws/iotwireless/model/DeleteServiceProfileRequest.h>
 #include <aws/iotwireless/model/DeleteWirelessDeviceRequest.h>
@@ -56,6 +58,7 @@
 #include <aws/iotwireless/model/DisassociateWirelessGatewayFromThingRequest.h>
 #include <aws/iotwireless/model/GetDestinationRequest.h>
 #include <aws/iotwireless/model/GetDeviceProfileRequest.h>
+#include <aws/iotwireless/model/GetEventConfigurationByResourceTypesRequest.h>
 #include <aws/iotwireless/model/GetFuotaTaskRequest.h>
 #include <aws/iotwireless/model/GetLogLevelsByResourceTypesRequest.h>
 #include <aws/iotwireless/model/GetMulticastGroupRequest.h>
@@ -76,9 +79,11 @@
 #include <aws/iotwireless/model/GetWirelessGatewayTaskDefinitionRequest.h>
 #include <aws/iotwireless/model/ListDestinationsRequest.h>
 #include <aws/iotwireless/model/ListDeviceProfilesRequest.h>
+#include <aws/iotwireless/model/ListEventConfigurationsRequest.h>
 #include <aws/iotwireless/model/ListFuotaTasksRequest.h>
 #include <aws/iotwireless/model/ListMulticastGroupsRequest.h>
 #include <aws/iotwireless/model/ListMulticastGroupsByFuotaTaskRequest.h>
+#include <aws/iotwireless/model/ListNetworkAnalyzerConfigurationsRequest.h>
 #include <aws/iotwireless/model/ListPartnerAccountsRequest.h>
 #include <aws/iotwireless/model/ListQueuedMessagesRequest.h>
 #include <aws/iotwireless/model/ListServiceProfilesRequest.h>
@@ -99,6 +104,7 @@
 #include <aws/iotwireless/model/TestWirelessDeviceRequest.h>
 #include <aws/iotwireless/model/UntagResourceRequest.h>
 #include <aws/iotwireless/model/UpdateDestinationRequest.h>
+#include <aws/iotwireless/model/UpdateEventConfigurationByResourceTypesRequest.h>
 #include <aws/iotwireless/model/UpdateFuotaTaskRequest.h>
 #include <aws/iotwireless/model/UpdateLogLevelsByResourceTypesRequest.h>
 #include <aws/iotwireless/model/UpdateMulticastGroupRequest.h>
@@ -530,6 +536,31 @@ void IoTWirelessClient::CreateMulticastGroupAsyncHelper(const CreateMulticastGro
   handler(this, request, CreateMulticastGroup(request), context);
 }
 
+CreateNetworkAnalyzerConfigurationOutcome IoTWirelessClient::CreateNetworkAnalyzerConfiguration(const CreateNetworkAnalyzerConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/network-analyzer-configurations");
+  return CreateNetworkAnalyzerConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateNetworkAnalyzerConfigurationOutcomeCallable IoTWirelessClient::CreateNetworkAnalyzerConfigurationCallable(const CreateNetworkAnalyzerConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateNetworkAnalyzerConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateNetworkAnalyzerConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::CreateNetworkAnalyzerConfigurationAsync(const CreateNetworkAnalyzerConfigurationRequest& request, const CreateNetworkAnalyzerConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateNetworkAnalyzerConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::CreateNetworkAnalyzerConfigurationAsyncHelper(const CreateNetworkAnalyzerConfigurationRequest& request, const CreateNetworkAnalyzerConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateNetworkAnalyzerConfiguration(request), context);
+}
+
 CreateServiceProfileOutcome IoTWirelessClient::CreateServiceProfile(const CreateServiceProfileRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -784,6 +815,37 @@ void IoTWirelessClient::DeleteMulticastGroupAsync(const DeleteMulticastGroupRequ
 void IoTWirelessClient::DeleteMulticastGroupAsyncHelper(const DeleteMulticastGroupRequest& request, const DeleteMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteMulticastGroup(request), context);
+}
+
+DeleteNetworkAnalyzerConfigurationOutcome IoTWirelessClient::DeleteNetworkAnalyzerConfiguration(const DeleteNetworkAnalyzerConfigurationRequest& request) const
+{
+  if (!request.ConfigurationNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteNetworkAnalyzerConfiguration", "Required field: ConfigurationName, is not set");
+    return DeleteNetworkAnalyzerConfigurationOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/network-analyzer-configurations/");
+  uri.AddPathSegment(request.GetConfigurationName());
+  return DeleteNetworkAnalyzerConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteNetworkAnalyzerConfigurationOutcomeCallable IoTWirelessClient::DeleteNetworkAnalyzerConfigurationCallable(const DeleteNetworkAnalyzerConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteNetworkAnalyzerConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteNetworkAnalyzerConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::DeleteNetworkAnalyzerConfigurationAsync(const DeleteNetworkAnalyzerConfigurationRequest& request, const DeleteNetworkAnalyzerConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteNetworkAnalyzerConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::DeleteNetworkAnalyzerConfigurationAsyncHelper(const DeleteNetworkAnalyzerConfigurationRequest& request, const DeleteNetworkAnalyzerConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteNetworkAnalyzerConfiguration(request), context);
 }
 
 DeleteQueuedMessagesOutcome IoTWirelessClient::DeleteQueuedMessages(const DeleteQueuedMessagesRequest& request) const
@@ -1285,6 +1347,31 @@ void IoTWirelessClient::GetDeviceProfileAsync(const GetDeviceProfileRequest& req
 void IoTWirelessClient::GetDeviceProfileAsyncHelper(const GetDeviceProfileRequest& request, const GetDeviceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetDeviceProfile(request), context);
+}
+
+GetEventConfigurationByResourceTypesOutcome IoTWirelessClient::GetEventConfigurationByResourceTypes(const GetEventConfigurationByResourceTypesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/event-configurations-resource-types");
+  return GetEventConfigurationByResourceTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetEventConfigurationByResourceTypesOutcomeCallable IoTWirelessClient::GetEventConfigurationByResourceTypesCallable(const GetEventConfigurationByResourceTypesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetEventConfigurationByResourceTypesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetEventConfigurationByResourceTypes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::GetEventConfigurationByResourceTypesAsync(const GetEventConfigurationByResourceTypesRequest& request, const GetEventConfigurationByResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetEventConfigurationByResourceTypesAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::GetEventConfigurationByResourceTypesAsyncHelper(const GetEventConfigurationByResourceTypesRequest& request, const GetEventConfigurationByResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetEventConfigurationByResourceTypes(request), context);
 }
 
 GetFuotaTaskOutcome IoTWirelessClient::GetFuotaTask(const GetFuotaTaskRequest& request) const
@@ -1914,6 +2001,36 @@ void IoTWirelessClient::ListDeviceProfilesAsyncHelper(const ListDeviceProfilesRe
   handler(this, request, ListDeviceProfiles(request), context);
 }
 
+ListEventConfigurationsOutcome IoTWirelessClient::ListEventConfigurations(const ListEventConfigurationsRequest& request) const
+{
+  if (!request.ResourceTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListEventConfigurations", "Required field: ResourceType, is not set");
+    return ListEventConfigurationsOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/event-configurations");
+  return ListEventConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListEventConfigurationsOutcomeCallable IoTWirelessClient::ListEventConfigurationsCallable(const ListEventConfigurationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListEventConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEventConfigurations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::ListEventConfigurationsAsync(const ListEventConfigurationsRequest& request, const ListEventConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListEventConfigurationsAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::ListEventConfigurationsAsyncHelper(const ListEventConfigurationsRequest& request, const ListEventConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListEventConfigurations(request), context);
+}
+
 ListFuotaTasksOutcome IoTWirelessClient::ListFuotaTasks(const ListFuotaTasksRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1994,6 +2111,31 @@ void IoTWirelessClient::ListMulticastGroupsByFuotaTaskAsync(const ListMulticastG
 void IoTWirelessClient::ListMulticastGroupsByFuotaTaskAsyncHelper(const ListMulticastGroupsByFuotaTaskRequest& request, const ListMulticastGroupsByFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListMulticastGroupsByFuotaTask(request), context);
+}
+
+ListNetworkAnalyzerConfigurationsOutcome IoTWirelessClient::ListNetworkAnalyzerConfigurations(const ListNetworkAnalyzerConfigurationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/network-analyzer-configurations");
+  return ListNetworkAnalyzerConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListNetworkAnalyzerConfigurationsOutcomeCallable IoTWirelessClient::ListNetworkAnalyzerConfigurationsCallable(const ListNetworkAnalyzerConfigurationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListNetworkAnalyzerConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListNetworkAnalyzerConfigurations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::ListNetworkAnalyzerConfigurationsAsync(const ListNetworkAnalyzerConfigurationsRequest& request, const ListNetworkAnalyzerConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListNetworkAnalyzerConfigurationsAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::ListNetworkAnalyzerConfigurationsAsyncHelper(const ListNetworkAnalyzerConfigurationsRequest& request, const ListNetworkAnalyzerConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListNetworkAnalyzerConfigurations(request), context);
 }
 
 ListPartnerAccountsOutcome IoTWirelessClient::ListPartnerAccounts(const ListPartnerAccountsRequest& request) const
@@ -2597,6 +2739,31 @@ void IoTWirelessClient::UpdateDestinationAsync(const UpdateDestinationRequest& r
 void IoTWirelessClient::UpdateDestinationAsyncHelper(const UpdateDestinationRequest& request, const UpdateDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateDestination(request), context);
+}
+
+UpdateEventConfigurationByResourceTypesOutcome IoTWirelessClient::UpdateEventConfigurationByResourceTypes(const UpdateEventConfigurationByResourceTypesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/event-configurations-resource-types");
+  return UpdateEventConfigurationByResourceTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateEventConfigurationByResourceTypesOutcomeCallable IoTWirelessClient::UpdateEventConfigurationByResourceTypesCallable(const UpdateEventConfigurationByResourceTypesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateEventConfigurationByResourceTypesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateEventConfigurationByResourceTypes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::UpdateEventConfigurationByResourceTypesAsync(const UpdateEventConfigurationByResourceTypesRequest& request, const UpdateEventConfigurationByResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateEventConfigurationByResourceTypesAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::UpdateEventConfigurationByResourceTypesAsyncHelper(const UpdateEventConfigurationByResourceTypesRequest& request, const UpdateEventConfigurationByResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateEventConfigurationByResourceTypes(request), context);
 }
 
 UpdateFuotaTaskOutcome IoTWirelessClient::UpdateFuotaTask(const UpdateFuotaTaskRequest& request) const

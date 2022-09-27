@@ -166,37 +166,49 @@ namespace Model
 
     /**
      * <p>The Kubernetes taints to be applied to the nodes in the node group after the
-     * update.</p>
+     * update. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
      */
     inline const UpdateTaintsPayload& GetTaints() const{ return m_taints; }
 
     /**
      * <p>The Kubernetes taints to be applied to the nodes in the node group after the
-     * update.</p>
+     * update. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
      */
     inline bool TaintsHasBeenSet() const { return m_taintsHasBeenSet; }
 
     /**
      * <p>The Kubernetes taints to be applied to the nodes in the node group after the
-     * update.</p>
+     * update. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
      */
     inline void SetTaints(const UpdateTaintsPayload& value) { m_taintsHasBeenSet = true; m_taints = value; }
 
     /**
      * <p>The Kubernetes taints to be applied to the nodes in the node group after the
-     * update.</p>
+     * update. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
      */
     inline void SetTaints(UpdateTaintsPayload&& value) { m_taintsHasBeenSet = true; m_taints = std::move(value); }
 
     /**
      * <p>The Kubernetes taints to be applied to the nodes in the node group after the
-     * update.</p>
+     * update. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
      */
     inline UpdateNodegroupConfigRequest& WithTaints(const UpdateTaintsPayload& value) { SetTaints(value); return *this;}
 
     /**
      * <p>The Kubernetes taints to be applied to the nodes in the node group after the
-     * update.</p>
+     * update. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
      */
     inline UpdateNodegroupConfigRequest& WithTaints(UpdateTaintsPayload&& value) { SetTaints(std::move(value)); return *this;}
 

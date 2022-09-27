@@ -36,57 +36,57 @@ namespace Model
 
     /**
      * <p>The name of the bucket for which to return information.</p> <p>When omitted,
-     * the response includes all of your buckets in the AWS Region where the request is
-     * made.</p>
+     * the response includes all of your buckets in the Amazon Web Services Region
+     * where the request is made.</p>
      */
     inline const Aws::String& GetBucketName() const{ return m_bucketName; }
 
     /**
      * <p>The name of the bucket for which to return information.</p> <p>When omitted,
-     * the response includes all of your buckets in the AWS Region where the request is
-     * made.</p>
+     * the response includes all of your buckets in the Amazon Web Services Region
+     * where the request is made.</p>
      */
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
 
     /**
      * <p>The name of the bucket for which to return information.</p> <p>When omitted,
-     * the response includes all of your buckets in the AWS Region where the request is
-     * made.</p>
+     * the response includes all of your buckets in the Amazon Web Services Region
+     * where the request is made.</p>
      */
     inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
 
     /**
      * <p>The name of the bucket for which to return information.</p> <p>When omitted,
-     * the response includes all of your buckets in the AWS Region where the request is
-     * made.</p>
+     * the response includes all of your buckets in the Amazon Web Services Region
+     * where the request is made.</p>
      */
     inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
 
     /**
      * <p>The name of the bucket for which to return information.</p> <p>When omitted,
-     * the response includes all of your buckets in the AWS Region where the request is
-     * made.</p>
+     * the response includes all of your buckets in the Amazon Web Services Region
+     * where the request is made.</p>
      */
     inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
 
     /**
      * <p>The name of the bucket for which to return information.</p> <p>When omitted,
-     * the response includes all of your buckets in the AWS Region where the request is
-     * made.</p>
+     * the response includes all of your buckets in the Amazon Web Services Region
+     * where the request is made.</p>
      */
     inline GetBucketsRequest& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
 
     /**
      * <p>The name of the bucket for which to return information.</p> <p>When omitted,
-     * the response includes all of your buckets in the AWS Region where the request is
-     * made.</p>
+     * the response includes all of your buckets in the Amazon Web Services Region
+     * where the request is made.</p>
      */
     inline GetBucketsRequest& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the bucket for which to return information.</p> <p>When omitted,
-     * the response includes all of your buckets in the AWS Region where the request is
-     * made.</p>
+     * the response includes all of your buckets in the Amazon Web Services Region
+     * where the request is made.</p>
      */
     inline GetBucketsRequest& WithBucketName(const char* value) { SetBucketName(value); return *this;}
 
@@ -158,28 +158,32 @@ namespace Model
 
     /**
      * <p>A Boolean value that indicates whether to include Lightsail instances that
-     * were given access to the bucket using the <a>SetResourceAccessForBucket</a>
+     * were given access to the bucket using the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a>
      * action.</p>
      */
     inline bool GetIncludeConnectedResources() const{ return m_includeConnectedResources; }
 
     /**
      * <p>A Boolean value that indicates whether to include Lightsail instances that
-     * were given access to the bucket using the <a>SetResourceAccessForBucket</a>
+     * were given access to the bucket using the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a>
      * action.</p>
      */
     inline bool IncludeConnectedResourcesHasBeenSet() const { return m_includeConnectedResourcesHasBeenSet; }
 
     /**
      * <p>A Boolean value that indicates whether to include Lightsail instances that
-     * were given access to the bucket using the <a>SetResourceAccessForBucket</a>
+     * were given access to the bucket using the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a>
      * action.</p>
      */
     inline void SetIncludeConnectedResources(bool value) { m_includeConnectedResourcesHasBeenSet = true; m_includeConnectedResources = value; }
 
     /**
      * <p>A Boolean value that indicates whether to include Lightsail instances that
-     * were given access to the bucket using the <a>SetResourceAccessForBucket</a>
+     * were given access to the bucket using the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a>
      * action.</p>
      */
     inline GetBucketsRequest& WithIncludeConnectedResources(bool value) { SetIncludeConnectedResources(value); return *this;}

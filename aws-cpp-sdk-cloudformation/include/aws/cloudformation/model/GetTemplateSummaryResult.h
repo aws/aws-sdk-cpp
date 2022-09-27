@@ -87,43 +87,43 @@ namespace Model
 
 
     /**
-     * <p>The value that is defined in the <code>Description</code> property of the
+     * <p>The value that's defined in the <code>Description</code> property of the
      * template.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The value that is defined in the <code>Description</code> property of the
+     * <p>The value that's defined in the <code>Description</code> property of the
      * template.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_description = value; }
 
     /**
-     * <p>The value that is defined in the <code>Description</code> property of the
+     * <p>The value that's defined in the <code>Description</code> property of the
      * template.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
 
     /**
-     * <p>The value that is defined in the <code>Description</code> property of the
+     * <p>The value that's defined in the <code>Description</code> property of the
      * template.</p>
      */
     inline void SetDescription(const char* value) { m_description.assign(value); }
 
     /**
-     * <p>The value that is defined in the <code>Description</code> property of the
+     * <p>The value that's defined in the <code>Description</code> property of the
      * template.</p>
      */
     inline GetTemplateSummaryResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The value that is defined in the <code>Description</code> property of the
+     * <p>The value that's defined in the <code>Description</code> property of the
      * template.</p>
      */
     inline GetTemplateSummaryResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The value that is defined in the <code>Description</code> property of the
+     * <p>The value that's defined in the <code>Description</code> property of the
      * template.</p>
      */
     inline GetTemplateSummaryResult& WithDescription(const char* value) { SetDescription(value); return *this;}
@@ -358,43 +358,43 @@ namespace Model
 
 
     /**
-     * <p>The value that is defined for the <code>Metadata</code> property of the
+     * <p>The value that's defined for the <code>Metadata</code> property of the
      * template.</p>
      */
     inline const Aws::String& GetMetadata() const{ return m_metadata; }
 
     /**
-     * <p>The value that is defined for the <code>Metadata</code> property of the
+     * <p>The value that's defined for the <code>Metadata</code> property of the
      * template.</p>
      */
     inline void SetMetadata(const Aws::String& value) { m_metadata = value; }
 
     /**
-     * <p>The value that is defined for the <code>Metadata</code> property of the
+     * <p>The value that's defined for the <code>Metadata</code> property of the
      * template.</p>
      */
     inline void SetMetadata(Aws::String&& value) { m_metadata = std::move(value); }
 
     /**
-     * <p>The value that is defined for the <code>Metadata</code> property of the
+     * <p>The value that's defined for the <code>Metadata</code> property of the
      * template.</p>
      */
     inline void SetMetadata(const char* value) { m_metadata.assign(value); }
 
     /**
-     * <p>The value that is defined for the <code>Metadata</code> property of the
+     * <p>The value that's defined for the <code>Metadata</code> property of the
      * template.</p>
      */
     inline GetTemplateSummaryResult& WithMetadata(const Aws::String& value) { SetMetadata(value); return *this;}
 
     /**
-     * <p>The value that is defined for the <code>Metadata</code> property of the
+     * <p>The value that's defined for the <code>Metadata</code> property of the
      * template.</p>
      */
     inline GetTemplateSummaryResult& WithMetadata(Aws::String&& value) { SetMetadata(std::move(value)); return *this;}
 
     /**
-     * <p>The value that is defined for the <code>Metadata</code> property of the
+     * <p>The value that's defined for the <code>Metadata</code> property of the
      * template.</p>
      */
     inline GetTemplateSummaryResult& WithMetadata(const char* value) { SetMetadata(value); return *this;}

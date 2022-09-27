@@ -710,6 +710,63 @@ namespace Model
      */
     inline EntityRecognizerProperties& WithVersionName(const char* value) { SetVersionName(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source model. This model was imported
+     * from a different AWS account to create the entity recognizer model in your AWS
+     * account.</p>
+     */
+    inline const Aws::String& GetSourceModelArn() const{ return m_sourceModelArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source model. This model was imported
+     * from a different AWS account to create the entity recognizer model in your AWS
+     * account.</p>
+     */
+    inline bool SourceModelArnHasBeenSet() const { return m_sourceModelArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source model. This model was imported
+     * from a different AWS account to create the entity recognizer model in your AWS
+     * account.</p>
+     */
+    inline void SetSourceModelArn(const Aws::String& value) { m_sourceModelArnHasBeenSet = true; m_sourceModelArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source model. This model was imported
+     * from a different AWS account to create the entity recognizer model in your AWS
+     * account.</p>
+     */
+    inline void SetSourceModelArn(Aws::String&& value) { m_sourceModelArnHasBeenSet = true; m_sourceModelArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source model. This model was imported
+     * from a different AWS account to create the entity recognizer model in your AWS
+     * account.</p>
+     */
+    inline void SetSourceModelArn(const char* value) { m_sourceModelArnHasBeenSet = true; m_sourceModelArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source model. This model was imported
+     * from a different AWS account to create the entity recognizer model in your AWS
+     * account.</p>
+     */
+    inline EntityRecognizerProperties& WithSourceModelArn(const Aws::String& value) { SetSourceModelArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source model. This model was imported
+     * from a different AWS account to create the entity recognizer model in your AWS
+     * account.</p>
+     */
+    inline EntityRecognizerProperties& WithSourceModelArn(Aws::String&& value) { SetSourceModelArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source model. This model was imported
+     * from a different AWS account to create the entity recognizer model in your AWS
+     * account.</p>
+     */
+    inline EntityRecognizerProperties& WithSourceModelArn(const char* value) { SetSourceModelArn(value); return *this;}
+
   private:
 
     Aws::String m_entityRecognizerArn;
@@ -756,6 +813,9 @@ namespace Model
 
     Aws::String m_versionName;
     bool m_versionNameHasBeenSet;
+
+    Aws::String m_sourceModelArn;
+    bool m_sourceModelArnHasBeenSet;
   };
 
 } // namespace Model

@@ -9,6 +9,8 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/lookoutequipment/model/DatasetStatus.h>
 #include <aws/lookoutequipment/model/IngestionInputConfiguration.h>
+#include <aws/lookoutequipment/model/DataQualitySummary.h>
+#include <aws/lookoutequipment/model/IngestedFilesSummary.h>
 #include <utility>
 
 namespace Aws
@@ -306,6 +308,183 @@ namespace Model
      */
     inline DescribeDatasetResult& WithIngestionInputConfiguration(IngestionInputConfiguration&& value) { SetIngestionInputConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Gives statistics associated with the given dataset for the latest successful
+     * associated ingestion job id. These statistics primarily relate to quantifying
+     * incorrect data such as MissingCompleteSensorData, MissingSensorData,
+     * UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps. </p>
+     */
+    inline const DataQualitySummary& GetDataQualitySummary() const{ return m_dataQualitySummary; }
+
+    /**
+     * <p> Gives statistics associated with the given dataset for the latest successful
+     * associated ingestion job id. These statistics primarily relate to quantifying
+     * incorrect data such as MissingCompleteSensorData, MissingSensorData,
+     * UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps. </p>
+     */
+    inline void SetDataQualitySummary(const DataQualitySummary& value) { m_dataQualitySummary = value; }
+
+    /**
+     * <p> Gives statistics associated with the given dataset for the latest successful
+     * associated ingestion job id. These statistics primarily relate to quantifying
+     * incorrect data such as MissingCompleteSensorData, MissingSensorData,
+     * UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps. </p>
+     */
+    inline void SetDataQualitySummary(DataQualitySummary&& value) { m_dataQualitySummary = std::move(value); }
+
+    /**
+     * <p> Gives statistics associated with the given dataset for the latest successful
+     * associated ingestion job id. These statistics primarily relate to quantifying
+     * incorrect data such as MissingCompleteSensorData, MissingSensorData,
+     * UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps. </p>
+     */
+    inline DescribeDatasetResult& WithDataQualitySummary(const DataQualitySummary& value) { SetDataQualitySummary(value); return *this;}
+
+    /**
+     * <p> Gives statistics associated with the given dataset for the latest successful
+     * associated ingestion job id. These statistics primarily relate to quantifying
+     * incorrect data such as MissingCompleteSensorData, MissingSensorData,
+     * UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps. </p>
+     */
+    inline DescribeDatasetResult& WithDataQualitySummary(DataQualitySummary&& value) { SetDataQualitySummary(std::move(value)); return *this;}
+
+
+    /**
+     * <p> IngestedFilesSummary associated with the given dataset for the latest
+     * successful associated ingestion job id. </p>
+     */
+    inline const IngestedFilesSummary& GetIngestedFilesSummary() const{ return m_ingestedFilesSummary; }
+
+    /**
+     * <p> IngestedFilesSummary associated with the given dataset for the latest
+     * successful associated ingestion job id. </p>
+     */
+    inline void SetIngestedFilesSummary(const IngestedFilesSummary& value) { m_ingestedFilesSummary = value; }
+
+    /**
+     * <p> IngestedFilesSummary associated with the given dataset for the latest
+     * successful associated ingestion job id. </p>
+     */
+    inline void SetIngestedFilesSummary(IngestedFilesSummary&& value) { m_ingestedFilesSummary = std::move(value); }
+
+    /**
+     * <p> IngestedFilesSummary associated with the given dataset for the latest
+     * successful associated ingestion job id. </p>
+     */
+    inline DescribeDatasetResult& WithIngestedFilesSummary(const IngestedFilesSummary& value) { SetIngestedFilesSummary(value); return *this;}
+
+    /**
+     * <p> IngestedFilesSummary associated with the given dataset for the latest
+     * successful associated ingestion job id. </p>
+     */
+    inline DescribeDatasetResult& WithIngestedFilesSummary(IngestedFilesSummary&& value) { SetIngestedFilesSummary(std::move(value)); return *this;}
+
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the IAM role that you are using for this
+     * the data ingestion job. </p>
+     */
+    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the IAM role that you are using for this
+     * the data ingestion job. </p>
+     */
+    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the IAM role that you are using for this
+     * the data ingestion job. </p>
+     */
+    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the IAM role that you are using for this
+     * the data ingestion job. </p>
+     */
+    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the IAM role that you are using for this
+     * the data ingestion job. </p>
+     */
+    inline DescribeDatasetResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the IAM role that you are using for this
+     * the data ingestion job. </p>
+     */
+    inline DescribeDatasetResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the IAM role that you are using for this
+     * the data ingestion job. </p>
+     */
+    inline DescribeDatasetResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
+
+    /**
+     * <p> Indicates the earliest timestamp corresponding to data that was successfully
+     * ingested during the most recent ingestion of this particular dataset. </p>
+     */
+    inline const Aws::Utils::DateTime& GetDataStartTime() const{ return m_dataStartTime; }
+
+    /**
+     * <p> Indicates the earliest timestamp corresponding to data that was successfully
+     * ingested during the most recent ingestion of this particular dataset. </p>
+     */
+    inline void SetDataStartTime(const Aws::Utils::DateTime& value) { m_dataStartTime = value; }
+
+    /**
+     * <p> Indicates the earliest timestamp corresponding to data that was successfully
+     * ingested during the most recent ingestion of this particular dataset. </p>
+     */
+    inline void SetDataStartTime(Aws::Utils::DateTime&& value) { m_dataStartTime = std::move(value); }
+
+    /**
+     * <p> Indicates the earliest timestamp corresponding to data that was successfully
+     * ingested during the most recent ingestion of this particular dataset. </p>
+     */
+    inline DescribeDatasetResult& WithDataStartTime(const Aws::Utils::DateTime& value) { SetDataStartTime(value); return *this;}
+
+    /**
+     * <p> Indicates the earliest timestamp corresponding to data that was successfully
+     * ingested during the most recent ingestion of this particular dataset. </p>
+     */
+    inline DescribeDatasetResult& WithDataStartTime(Aws::Utils::DateTime&& value) { SetDataStartTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Indicates the latest timestamp corresponding to data that was successfully
+     * ingested during the most recent ingestion of this particular dataset. </p>
+     */
+    inline const Aws::Utils::DateTime& GetDataEndTime() const{ return m_dataEndTime; }
+
+    /**
+     * <p> Indicates the latest timestamp corresponding to data that was successfully
+     * ingested during the most recent ingestion of this particular dataset. </p>
+     */
+    inline void SetDataEndTime(const Aws::Utils::DateTime& value) { m_dataEndTime = value; }
+
+    /**
+     * <p> Indicates the latest timestamp corresponding to data that was successfully
+     * ingested during the most recent ingestion of this particular dataset. </p>
+     */
+    inline void SetDataEndTime(Aws::Utils::DateTime&& value) { m_dataEndTime = std::move(value); }
+
+    /**
+     * <p> Indicates the latest timestamp corresponding to data that was successfully
+     * ingested during the most recent ingestion of this particular dataset. </p>
+     */
+    inline DescribeDatasetResult& WithDataEndTime(const Aws::Utils::DateTime& value) { SetDataEndTime(value); return *this;}
+
+    /**
+     * <p> Indicates the latest timestamp corresponding to data that was successfully
+     * ingested during the most recent ingestion of this particular dataset. </p>
+     */
+    inline DescribeDatasetResult& WithDataEndTime(Aws::Utils::DateTime&& value) { SetDataEndTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_datasetName;
@@ -323,6 +502,16 @@ namespace Model
     Aws::String m_serverSideKmsKeyId;
 
     IngestionInputConfiguration m_ingestionInputConfiguration;
+
+    DataQualitySummary m_dataQualitySummary;
+
+    IngestedFilesSummary m_ingestedFilesSummary;
+
+    Aws::String m_roleArn;
+
+    Aws::Utils::DateTime m_dataStartTime;
+
+    Aws::Utils::DateTime m_dataEndTime;
   };
 
 } // namespace Model

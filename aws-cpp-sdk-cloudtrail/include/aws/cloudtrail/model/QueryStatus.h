@@ -20,7 +20,8 @@ namespace Model
     RUNNING,
     FINISHED,
     FAILED,
-    CANCELLED
+    CANCELLED,
+    TIMED_OUT
   };
 
 namespace QueryStatusMapper

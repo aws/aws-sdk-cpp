@@ -113,28 +113,12 @@ namespace Model
         virtual Model::DeleteAlternateContactOutcome DeleteAlternateContact(const Model::DeleteAlternateContactRequest& request) const;
 
         /**
-         * <p>Deletes the specified alternate contact from an Amazon Web Services
-         * account.</p> <p>For complete details about how to use the alternate contact
-         * operations, see <a
-         * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access
-         * or updating the alternate contacts</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/DeleteAlternateContact">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteAlternateContact that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteAlternateContactOutcomeCallable DeleteAlternateContactCallable(const Model::DeleteAlternateContactRequest& request) const;
 
         /**
-         * <p>Deletes the specified alternate contact from an Amazon Web Services
-         * account.</p> <p>For complete details about how to use the alternate contact
-         * operations, see <a
-         * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access
-         * or updating the alternate contacts</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/DeleteAlternateContact">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteAlternateContact that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteAlternateContactAsync(const Model::DeleteAlternateContactRequest& request, const DeleteAlternateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -150,28 +134,12 @@ namespace Model
         virtual Model::GetAlternateContactOutcome GetAlternateContact(const Model::GetAlternateContactRequest& request) const;
 
         /**
-         * <p>Retrieves the specified alternate contact attached to an Amazon Web Services
-         * account.</p> <p>For complete details about how to use the alternate contact
-         * operations, see <a
-         * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access
-         * or updating the alternate contacts</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetAlternateContact">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetAlternateContact that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetAlternateContactOutcomeCallable GetAlternateContactCallable(const Model::GetAlternateContactRequest& request) const;
 
         /**
-         * <p>Retrieves the specified alternate contact attached to an Amazon Web Services
-         * account.</p> <p>For complete details about how to use the alternate contact
-         * operations, see <a
-         * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access
-         * or updating the alternate contacts</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetAlternateContact">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetAlternateContact that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetAlternateContactAsync(const Model::GetAlternateContactRequest& request, const GetAlternateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -187,28 +155,12 @@ namespace Model
         virtual Model::PutAlternateContactOutcome PutAlternateContact(const Model::PutAlternateContactRequest& request) const;
 
         /**
-         * <p>Modifies the specified alternate contact attached to an Amazon Web Services
-         * account.</p> <p>For complete details about how to use the alternate contact
-         * operations, see <a
-         * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access
-         * or updating the alternate contacts</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/PutAlternateContact">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for PutAlternateContact that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutAlternateContactOutcomeCallable PutAlternateContactCallable(const Model::PutAlternateContactRequest& request) const;
 
         /**
-         * <p>Modifies the specified alternate contact attached to an Amazon Web Services
-         * account.</p> <p>For complete details about how to use the alternate contact
-         * operations, see <a
-         * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access
-         * or updating the alternate contacts</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/PutAlternateContact">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for PutAlternateContact that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutAlternateContactAsync(const Model::PutAlternateContactRequest& request, const PutAlternateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

@@ -108,7 +108,8 @@ AwsSecurityFindingFilters::AwsSecurityFindingFilters() :
     m_findingProviderFieldsRelatedFindingsProductArnHasBeenSet(false),
     m_findingProviderFieldsSeverityLabelHasBeenSet(false),
     m_findingProviderFieldsSeverityOriginalHasBeenSet(false),
-    m_findingProviderFieldsTypesHasBeenSet(false)
+    m_findingProviderFieldsTypesHasBeenSet(false),
+    m_sampleHasBeenSet(false)
 {
 }
 
@@ -202,7 +203,8 @@ AwsSecurityFindingFilters::AwsSecurityFindingFilters(JsonView jsonValue) :
     m_findingProviderFieldsRelatedFindingsProductArnHasBeenSet(false),
     m_findingProviderFieldsSeverityLabelHasBeenSet(false),
     m_findingProviderFieldsSeverityOriginalHasBeenSet(false),
-    m_findingProviderFieldsTypesHasBeenSet(false)
+    m_findingProviderFieldsTypesHasBeenSet(false),
+    m_sampleHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -1107,6 +1109,16 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
       m_findingProviderFieldsTypes.push_back(findingProviderFieldsTypesJsonList[findingProviderFieldsTypesIndex].AsObject());
     }
     m_findingProviderFieldsTypesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Sample"))
+  {
+    Array<JsonView> sampleJsonList = jsonValue.GetArray("Sample");
+    for(unsigned sampleIndex = 0; sampleIndex < sampleJsonList.GetLength(); ++sampleIndex)
+    {
+      m_sample.push_back(sampleJsonList[sampleIndex].AsObject());
+    }
+    m_sampleHasBeenSet = true;
   }
 
   return *this;
@@ -2103,6 +2115,17 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
      findingProviderFieldsTypesJsonList[findingProviderFieldsTypesIndex].AsObject(m_findingProviderFieldsTypes[findingProviderFieldsTypesIndex].Jsonize());
    }
    payload.WithArray("FindingProviderFieldsTypes", std::move(findingProviderFieldsTypesJsonList));
+
+  }
+
+  if(m_sampleHasBeenSet)
+  {
+   Array<JsonValue> sampleJsonList(m_sample.size());
+   for(unsigned sampleIndex = 0; sampleIndex < sampleJsonList.GetLength(); ++sampleIndex)
+   {
+     sampleJsonList[sampleIndex].AsObject(m_sample[sampleIndex].Jsonize());
+   }
+   payload.WithArray("Sample", std::move(sampleJsonList));
 
   }
 

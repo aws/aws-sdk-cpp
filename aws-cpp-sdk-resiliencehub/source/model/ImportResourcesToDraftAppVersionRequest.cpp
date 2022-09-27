@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 ImportResourcesToDraftAppVersionRequest::ImportResourcesToDraftAppVersionRequest() : 
     m_appArnHasBeenSet(false),
-    m_sourceArnsHasBeenSet(false)
+    m_sourceArnsHasBeenSet(false),
+    m_terraformSourcesHasBeenSet(false)
 {
 }
 
@@ -36,6 +37,17 @@ Aws::String ImportResourcesToDraftAppVersionRequest::SerializePayload() const
      sourceArnsJsonList[sourceArnsIndex].AsString(m_sourceArns[sourceArnsIndex]);
    }
    payload.WithArray("sourceArns", std::move(sourceArnsJsonList));
+
+  }
+
+  if(m_terraformSourcesHasBeenSet)
+  {
+   Array<JsonValue> terraformSourcesJsonList(m_terraformSources.size());
+   for(unsigned terraformSourcesIndex = 0; terraformSourcesIndex < terraformSourcesJsonList.GetLength(); ++terraformSourcesIndex)
+   {
+     terraformSourcesJsonList[terraformSourcesIndex].AsObject(m_terraformSources[terraformSourcesIndex].Jsonize());
+   }
+   payload.WithArray("terraformSources", std::move(terraformSourcesJsonList));
 
   }
 

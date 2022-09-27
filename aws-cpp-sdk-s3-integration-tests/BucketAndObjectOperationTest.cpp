@@ -84,6 +84,7 @@ namespace
     static std::string BASE_EVENT_STREAM_TEST_BUCKET_NAME = "eventstream";
     static std::string BASE_EVENT_STREAM_LARGE_FILE_TEST_BUCKET_NAME = "largeeventstream";
     static std::string BASE_EVENT_STREAM_ERRORS_IN_EVENT_TEST_BUCKET_NAME = "errorsinevent";
+    static std::string BASE_CHECKSUMS_BUCKET_NAME = "checksums";
     static std::string BASE_CROSS_REGION_BUCKET_NAME = "crossregion";
     static std::string BASE_ENDPOINT_OVERRIDE_BUCKET_NAME = "endpointoverride";
     static const char* ALLOCATION_TAG = "BucketAndObjectOperationTest";
@@ -126,6 +127,7 @@ namespace
         AppendUUID(BASE_EVENT_STREAM_TEST_BUCKET_NAME);
         AppendUUID(BASE_EVENT_STREAM_LARGE_FILE_TEST_BUCKET_NAME);
         AppendUUID(BASE_EVENT_STREAM_ERRORS_IN_EVENT_TEST_BUCKET_NAME);
+        AppendUUID(BASE_CHECKSUMS_BUCKET_NAME);
         AppendUUID(BASE_CROSS_REGION_BUCKET_NAME);
         AppendUUID(BASE_ENDPOINT_OVERRIDE_BUCKET_NAME);
     }
@@ -213,6 +215,7 @@ namespace
             DeleteBucket(CalculateBucketName(BASE_EVENT_STREAM_TEST_BUCKET_NAME.c_str()));
             DeleteBucket(CalculateBucketName(BASE_EVENT_STREAM_LARGE_FILE_TEST_BUCKET_NAME.c_str()));
             DeleteBucket(CalculateBucketName(BASE_EVENT_STREAM_ERRORS_IN_EVENT_TEST_BUCKET_NAME.c_str()));
+            DeleteBucket(CalculateBucketName(BASE_CHECKSUMS_BUCKET_NAME.c_str()));
             Limiter = nullptr;
             Client = nullptr;
             globalClient = nullptr;
@@ -1815,6 +1818,168 @@ namespace
 
         ASSERT_TRUE(isErrorEventReceived);
     }
+
+    TEST_F(BucketAndObjectOperationTest, TestFlexibleChecksums)
+    {
+        Aws::String fullBucketName = CalculateBucketName(BASE_CHECKSUMS_BUCKET_NAME.c_str());
+
+        CreateBucketRequest createBucketRequest;
+        createBucketRequest.SetBucket(fullBucketName);
+
+        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        WaitForBucketToPropagate(fullBucketName, Client);
+
+        // Checksums in request body using aws-chunked trailer
+        std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
+        *objectStream << "Test Object";
+
+        PutObjectRequest putObjectRequest;
+        putObjectRequest.SetBucket(fullBucketName);
+        putObjectRequest.SetKey(TEST_OBJ_KEY);
+        putObjectRequest.SetBody(objectStream);
+        putObjectRequest.SetChecksumAlgorithm(ChecksumAlgorithm::CRC32);
+        auto putObjectOutcome = Client->PutObject(putObjectRequest);
+        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+
+        objectStream->clear();
+        objectStream->seekg(0);
+        putObjectRequest.SetChecksumAlgorithm(ChecksumAlgorithm::CRC32C);
+        putObjectOutcome = Client->PutObject(putObjectRequest);
+        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+
+        objectStream->clear();
+        objectStream->seekg(0);
+        putObjectRequest.SetChecksumAlgorithm(ChecksumAlgorithm::SHA256);
+        putObjectOutcome = Client->PutObject(putObjectRequest);
+        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+
+        objectStream->clear();
+        objectStream->seekg(0);
+        putObjectRequest.SetChecksumAlgorithm(ChecksumAlgorithm::SHA1);
+        putObjectOutcome = Client->PutObject(putObjectRequest);
+        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+
+        // Checksums in request headers
+        ClientConfiguration config;
+        config.region = Aws::Region::US_EAST_1;
+        S3Client s3ClientSigningBody(config, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::Always, false);
+
+        objectStream->clear();
+        objectStream->seekg(0);
+        putObjectRequest.SetChecksumAlgorithm(ChecksumAlgorithm::CRC32);
+        putObjectOutcome = s3ClientSigningBody.PutObject(putObjectRequest);
+        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+
+        objectStream->clear();
+        objectStream->seekg(0);
+        putObjectRequest.SetChecksumAlgorithm(ChecksumAlgorithm::CRC32C);
+        putObjectOutcome = s3ClientSigningBody.PutObject(putObjectRequest);
+        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+
+        objectStream->clear();
+        objectStream->seekg(0);
+        putObjectRequest.SetChecksumAlgorithm(ChecksumAlgorithm::SHA256);
+        putObjectOutcome = s3ClientSigningBody.PutObject(putObjectRequest);
+        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+
+        objectStream->clear();
+        objectStream->seekg(0);
+        putObjectRequest.SetChecksumAlgorithm(ChecksumAlgorithm::SHA1);
+        putObjectOutcome = s3ClientSigningBody.PutObject(putObjectRequest);
+        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+
+        // Response Checksums Validation
+        GetObjectRequest getObjectRequest;
+        getObjectRequest.SetBucket(fullBucketName);
+        getObjectRequest.SetKey(TEST_OBJ_KEY);
+        getObjectRequest.SetChecksumMode(ChecksumMode::ENABLED);
+
+        auto getObjectOutcome = Client->GetObject(getObjectRequest);
+        ASSERT_TRUE(getObjectOutcome.IsSuccess());
+    }
+
+    TEST_F(BucketAndObjectOperationTest, TestMultipartFlexibleChecksums)
+    {
+        const char* multipartKeyName = "MultiPartKey";
+        Aws::String fullBucketName = CalculateBucketName(BASE_CHECKSUMS_BUCKET_NAME.c_str());
+
+        CreateBucketRequest createBucketRequest;
+        createBucketRequest.SetBucket(fullBucketName);
+
+        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+
+        CreateMultipartUploadRequest createMultipartUploadRequest;
+        createMultipartUploadRequest.SetBucket(fullBucketName);
+        createMultipartUploadRequest.SetKey(multipartKeyName);
+        createMultipartUploadRequest.SetContentType("text/plain");
+
+        CreateMultipartUploadOutcome createMultipartUploadOutcome = Client->CreateMultipartUpload(createMultipartUploadRequest);
+        ASSERT_TRUE(createMultipartUploadOutcome.IsSuccess());
+
+        std::shared_ptr<Aws::IOStream> part1Stream = Create5MbStreamForUploadPart("1");
+        std::shared_ptr<Aws::IOStream> part2Stream = Create5MbStreamForUploadPart("2");
+        std::shared_ptr<Aws::IOStream> part3Stream = Create5MbStreamForUploadPart("3");
+
+        UploadPartRequest uploadPartRequest;
+        uploadPartRequest.SetBucket(fullBucketName);
+        uploadPartRequest.SetKey(multipartKeyName);
+        uploadPartRequest.SetUploadId(createMultipartUploadOutcome.GetResult().GetUploadId());
+
+        uploadPartRequest.SetPartNumber(1);
+        uploadPartRequest.SetBody(part1Stream);
+        auto uploadPartOutcome1 = Client->UploadPart(uploadPartRequest);
+        ASSERT_TRUE(uploadPartOutcome1.IsSuccess());
+
+        uploadPartRequest.SetPartNumber(2);
+        uploadPartRequest.SetBody(part2Stream);
+        auto uploadPartOutcome2 = Client->UploadPart(uploadPartRequest);
+        ASSERT_TRUE(uploadPartOutcome2.IsSuccess());
+
+        uploadPartRequest.SetPartNumber(3);
+        uploadPartRequest.SetBody(part3Stream);
+        auto uploadPartOutcome3 = Client->UploadPart(uploadPartRequest);
+        ASSERT_TRUE(uploadPartOutcome3.IsSuccess());
+
+        CompletedPart completedPart1;
+        completedPart1.SetETag(uploadPartOutcome1.GetResult().GetETag());
+        completedPart1.SetPartNumber(1);
+
+        CompletedPart completedPart2;
+        completedPart2.SetETag(uploadPartOutcome2.GetResult().GetETag());
+        completedPart2.SetPartNumber(2);
+
+        CompletedPart completedPart3;
+        completedPart3.SetETag(uploadPartOutcome3.GetResult().GetETag());
+        completedPart3.SetPartNumber(3);
+
+        CompleteMultipartUploadRequest completeMultipartUploadRequest;
+        completeMultipartUploadRequest.SetBucket(fullBucketName);
+        completeMultipartUploadRequest.SetKey(multipartKeyName);
+        completeMultipartUploadRequest.SetUploadId(createMultipartUploadOutcome.GetResult().GetUploadId());
+
+        CompletedMultipartUpload completedMultipartUpload;
+        completedMultipartUpload.AddParts(completedPart1);
+        completedMultipartUpload.AddParts(completedPart2);
+        completedMultipartUpload.AddParts(completedPart3);
+        completeMultipartUploadRequest.SetMultipartUpload(completedMultipartUpload);
+
+        CompleteMultipartUploadOutcome completeMultipartUploadOutcome = Client->CompleteMultipartUpload(completeMultipartUploadRequest);
+        ASSERT_TRUE(completeMultipartUploadOutcome.IsSuccess());
+
+        ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, multipartKeyName));
+
+        GetObjectRequest getObjectRequest;
+        getObjectRequest.SetBucket(fullBucketName);
+        getObjectRequest.SetKey(multipartKeyName);
+        getObjectRequest.SetChecksumMode(ChecksumMode::ENABLED);
+
+        GetObjectOutcome getObjectOutcome = Client->GetObject(getObjectRequest);
+        ASSERT_TRUE(getObjectOutcome.IsSuccess());
+    }
+
 
     TEST_F(BucketAndObjectOperationTest, TestCrossRegionOperations)
     {

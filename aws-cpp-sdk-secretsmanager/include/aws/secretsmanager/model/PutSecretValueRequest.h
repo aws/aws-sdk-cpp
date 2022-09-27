@@ -39,57 +39,73 @@ namespace Model
 
     /**
      * <p>The ARN or name of the secret to add a new version to.</p> <p>For an ARN, we
-     * recommend that you specify a complete ARN rather than a partial ARN.</p> <p>If
-     * the secret doesn't already exist, use <code>CreateSecret</code> instead.</p>
+     * recommend that you specify a complete ARN rather than a partial ARN. See <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding
+     * a secret from a partial ARN</a>.</p> <p>If the secret doesn't already exist, use
+     * <code>CreateSecret</code> instead.</p>
      */
     inline const Aws::String& GetSecretId() const{ return m_secretId; }
 
     /**
      * <p>The ARN or name of the secret to add a new version to.</p> <p>For an ARN, we
-     * recommend that you specify a complete ARN rather than a partial ARN.</p> <p>If
-     * the secret doesn't already exist, use <code>CreateSecret</code> instead.</p>
+     * recommend that you specify a complete ARN rather than a partial ARN. See <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding
+     * a secret from a partial ARN</a>.</p> <p>If the secret doesn't already exist, use
+     * <code>CreateSecret</code> instead.</p>
      */
     inline bool SecretIdHasBeenSet() const { return m_secretIdHasBeenSet; }
 
     /**
      * <p>The ARN or name of the secret to add a new version to.</p> <p>For an ARN, we
-     * recommend that you specify a complete ARN rather than a partial ARN.</p> <p>If
-     * the secret doesn't already exist, use <code>CreateSecret</code> instead.</p>
+     * recommend that you specify a complete ARN rather than a partial ARN. See <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding
+     * a secret from a partial ARN</a>.</p> <p>If the secret doesn't already exist, use
+     * <code>CreateSecret</code> instead.</p>
      */
     inline void SetSecretId(const Aws::String& value) { m_secretIdHasBeenSet = true; m_secretId = value; }
 
     /**
      * <p>The ARN or name of the secret to add a new version to.</p> <p>For an ARN, we
-     * recommend that you specify a complete ARN rather than a partial ARN.</p> <p>If
-     * the secret doesn't already exist, use <code>CreateSecret</code> instead.</p>
+     * recommend that you specify a complete ARN rather than a partial ARN. See <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding
+     * a secret from a partial ARN</a>.</p> <p>If the secret doesn't already exist, use
+     * <code>CreateSecret</code> instead.</p>
      */
     inline void SetSecretId(Aws::String&& value) { m_secretIdHasBeenSet = true; m_secretId = std::move(value); }
 
     /**
      * <p>The ARN or name of the secret to add a new version to.</p> <p>For an ARN, we
-     * recommend that you specify a complete ARN rather than a partial ARN.</p> <p>If
-     * the secret doesn't already exist, use <code>CreateSecret</code> instead.</p>
+     * recommend that you specify a complete ARN rather than a partial ARN. See <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding
+     * a secret from a partial ARN</a>.</p> <p>If the secret doesn't already exist, use
+     * <code>CreateSecret</code> instead.</p>
      */
     inline void SetSecretId(const char* value) { m_secretIdHasBeenSet = true; m_secretId.assign(value); }
 
     /**
      * <p>The ARN or name of the secret to add a new version to.</p> <p>For an ARN, we
-     * recommend that you specify a complete ARN rather than a partial ARN.</p> <p>If
-     * the secret doesn't already exist, use <code>CreateSecret</code> instead.</p>
+     * recommend that you specify a complete ARN rather than a partial ARN. See <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding
+     * a secret from a partial ARN</a>.</p> <p>If the secret doesn't already exist, use
+     * <code>CreateSecret</code> instead.</p>
      */
     inline PutSecretValueRequest& WithSecretId(const Aws::String& value) { SetSecretId(value); return *this;}
 
     /**
      * <p>The ARN or name of the secret to add a new version to.</p> <p>For an ARN, we
-     * recommend that you specify a complete ARN rather than a partial ARN.</p> <p>If
-     * the secret doesn't already exist, use <code>CreateSecret</code> instead.</p>
+     * recommend that you specify a complete ARN rather than a partial ARN. See <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding
+     * a secret from a partial ARN</a>.</p> <p>If the secret doesn't already exist, use
+     * <code>CreateSecret</code> instead.</p>
      */
     inline PutSecretValueRequest& WithSecretId(Aws::String&& value) { SetSecretId(std::move(value)); return *this;}
 
     /**
      * <p>The ARN or name of the secret to add a new version to.</p> <p>For an ARN, we
-     * recommend that you specify a complete ARN rather than a partial ARN.</p> <p>If
-     * the secret doesn't already exist, use <code>CreateSecret</code> instead.</p>
+     * recommend that you specify a complete ARN rather than a partial ARN. See <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding
+     * a secret from a partial ARN</a>.</p> <p>If the secret doesn't already exist, use
+     * <code>CreateSecret</code> instead.</p>
      */
     inline PutSecretValueRequest& WithSecretId(const char* value) { SetSecretId(value); return *this;}
 

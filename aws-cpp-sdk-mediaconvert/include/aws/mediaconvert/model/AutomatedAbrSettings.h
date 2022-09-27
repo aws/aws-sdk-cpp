@@ -5,6 +5,9 @@
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mediaconvert/model/AutomatedAbrRule.h>
+#include <utility>
 
 namespace Aws
 {
@@ -144,6 +147,71 @@ namespace Model
      */
     inline AutomatedAbrSettings& WithMinAbrBitrate(int value) { SetMinAbrBitrate(value); return *this;}
 
+
+    /**
+     * Optional. Use Automated ABR rules to specify restrictions for the rendition
+     * sizes MediaConvert will create in your ABR stack. You can use these rules if
+     * your ABR workflow has specific rendition size requirements, but you still want
+     * MediaConvert to optimize for video quality and overall file size.
+     */
+    inline const Aws::Vector<AutomatedAbrRule>& GetRules() const{ return m_rules; }
+
+    /**
+     * Optional. Use Automated ABR rules to specify restrictions for the rendition
+     * sizes MediaConvert will create in your ABR stack. You can use these rules if
+     * your ABR workflow has specific rendition size requirements, but you still want
+     * MediaConvert to optimize for video quality and overall file size.
+     */
+    inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
+
+    /**
+     * Optional. Use Automated ABR rules to specify restrictions for the rendition
+     * sizes MediaConvert will create in your ABR stack. You can use these rules if
+     * your ABR workflow has specific rendition size requirements, but you still want
+     * MediaConvert to optimize for video quality and overall file size.
+     */
+    inline void SetRules(const Aws::Vector<AutomatedAbrRule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
+
+    /**
+     * Optional. Use Automated ABR rules to specify restrictions for the rendition
+     * sizes MediaConvert will create in your ABR stack. You can use these rules if
+     * your ABR workflow has specific rendition size requirements, but you still want
+     * MediaConvert to optimize for video quality and overall file size.
+     */
+    inline void SetRules(Aws::Vector<AutomatedAbrRule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
+
+    /**
+     * Optional. Use Automated ABR rules to specify restrictions for the rendition
+     * sizes MediaConvert will create in your ABR stack. You can use these rules if
+     * your ABR workflow has specific rendition size requirements, but you still want
+     * MediaConvert to optimize for video quality and overall file size.
+     */
+    inline AutomatedAbrSettings& WithRules(const Aws::Vector<AutomatedAbrRule>& value) { SetRules(value); return *this;}
+
+    /**
+     * Optional. Use Automated ABR rules to specify restrictions for the rendition
+     * sizes MediaConvert will create in your ABR stack. You can use these rules if
+     * your ABR workflow has specific rendition size requirements, but you still want
+     * MediaConvert to optimize for video quality and overall file size.
+     */
+    inline AutomatedAbrSettings& WithRules(Aws::Vector<AutomatedAbrRule>&& value) { SetRules(std::move(value)); return *this;}
+
+    /**
+     * Optional. Use Automated ABR rules to specify restrictions for the rendition
+     * sizes MediaConvert will create in your ABR stack. You can use these rules if
+     * your ABR workflow has specific rendition size requirements, but you still want
+     * MediaConvert to optimize for video quality and overall file size.
+     */
+    inline AutomatedAbrSettings& AddRules(const AutomatedAbrRule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
+
+    /**
+     * Optional. Use Automated ABR rules to specify restrictions for the rendition
+     * sizes MediaConvert will create in your ABR stack. You can use these rules if
+     * your ABR workflow has specific rendition size requirements, but you still want
+     * MediaConvert to optimize for video quality and overall file size.
+     */
+    inline AutomatedAbrSettings& AddRules(AutomatedAbrRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
+
   private:
 
     int m_maxAbrBitrate;
@@ -154,6 +222,9 @@ namespace Model
 
     int m_minAbrBitrate;
     bool m_minAbrBitrateHasBeenSet;
+
+    Aws::Vector<AutomatedAbrRule> m_rules;
+    bool m_rulesHasBeenSet;
   };
 
 } // namespace Model

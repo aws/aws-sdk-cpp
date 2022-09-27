@@ -28,10 +28,11 @@ namespace Model
 
   /**
    * <p>Describes a job that exports a dataset to an Amazon S3 bucket. For more
-   * information, see <a>CreateDatasetExportJob</a>.</p> <p>A dataset export job can
-   * be in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE
-   * IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul><p><h3>See Also:</h3> 
-   * <a
+   * information, see <a
+   * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetExportJob.html">CreateDatasetExportJob</a>.</p>
+   * <p>A dataset export job can be in one of the following states:</p> <ul> <li>
+   * <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p>
+   * </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DatasetExportJob">AWS
    * API Reference</a></p>
    */

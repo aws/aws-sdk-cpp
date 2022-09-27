@@ -26,8 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes the schema for a dataset. For more information on schemas, see
-   * <a>CreateSchema</a>.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the schema for a dataset. For more information on schemas, see <a
+   * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSchema.html">CreateSchema</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DatasetSchema">AWS
    * API Reference</a></p>
    */

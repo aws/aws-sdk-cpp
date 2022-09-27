@@ -430,42 +430,66 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the Outpost on which the snapshot is stored.</p>
+     * <p>The ARN of the Outpost on which the snapshot is stored.</p> <p>This parameter
+     * is only supported on <code>BlockDeviceMapping</code> objects called by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">
+     * CreateImage</a>.</p>
      */
     inline const Aws::String& GetOutpostArn() const{ return m_outpostArn; }
 
     /**
-     * <p>The ARN of the Outpost on which the snapshot is stored.</p>
+     * <p>The ARN of the Outpost on which the snapshot is stored.</p> <p>This parameter
+     * is only supported on <code>BlockDeviceMapping</code> objects called by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">
+     * CreateImage</a>.</p>
      */
     inline bool OutpostArnHasBeenSet() const { return m_outpostArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the Outpost on which the snapshot is stored.</p>
+     * <p>The ARN of the Outpost on which the snapshot is stored.</p> <p>This parameter
+     * is only supported on <code>BlockDeviceMapping</code> objects called by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">
+     * CreateImage</a>.</p>
      */
     inline void SetOutpostArn(const Aws::String& value) { m_outpostArnHasBeenSet = true; m_outpostArn = value; }
 
     /**
-     * <p>The ARN of the Outpost on which the snapshot is stored.</p>
+     * <p>The ARN of the Outpost on which the snapshot is stored.</p> <p>This parameter
+     * is only supported on <code>BlockDeviceMapping</code> objects called by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">
+     * CreateImage</a>.</p>
      */
     inline void SetOutpostArn(Aws::String&& value) { m_outpostArnHasBeenSet = true; m_outpostArn = std::move(value); }
 
     /**
-     * <p>The ARN of the Outpost on which the snapshot is stored.</p>
+     * <p>The ARN of the Outpost on which the snapshot is stored.</p> <p>This parameter
+     * is only supported on <code>BlockDeviceMapping</code> objects called by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">
+     * CreateImage</a>.</p>
      */
     inline void SetOutpostArn(const char* value) { m_outpostArnHasBeenSet = true; m_outpostArn.assign(value); }
 
     /**
-     * <p>The ARN of the Outpost on which the snapshot is stored.</p>
+     * <p>The ARN of the Outpost on which the snapshot is stored.</p> <p>This parameter
+     * is only supported on <code>BlockDeviceMapping</code> objects called by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">
+     * CreateImage</a>.</p>
      */
     inline EbsBlockDevice& WithOutpostArn(const Aws::String& value) { SetOutpostArn(value); return *this;}
 
     /**
-     * <p>The ARN of the Outpost on which the snapshot is stored.</p>
+     * <p>The ARN of the Outpost on which the snapshot is stored.</p> <p>This parameter
+     * is only supported on <code>BlockDeviceMapping</code> objects called by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">
+     * CreateImage</a>.</p>
      */
     inline EbsBlockDevice& WithOutpostArn(Aws::String&& value) { SetOutpostArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the Outpost on which the snapshot is stored.</p>
+     * <p>The ARN of the Outpost on which the snapshot is stored.</p> <p>This parameter
+     * is only supported on <code>BlockDeviceMapping</code> objects called by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">
+     * CreateImage</a>.</p>
      */
     inline EbsBlockDevice& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
 
@@ -482,7 +506,8 @@ namespace Model
      * only be attached to instances that support Amazon EBS encryption. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
-     * instance types</a>.</p> <p>This parameter is not returned by .</p>
+     * instance types</a>.</p> <p>This parameter is not returned by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImageAttribute.html">DescribeImageAttribute</a>.</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
 
@@ -498,7 +523,8 @@ namespace Model
      * only be attached to instances that support Amazon EBS encryption. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
-     * instance types</a>.</p> <p>This parameter is not returned by .</p>
+     * instance types</a>.</p> <p>This parameter is not returned by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImageAttribute.html">DescribeImageAttribute</a>.</p>
      */
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
 
@@ -514,7 +540,8 @@ namespace Model
      * only be attached to instances that support Amazon EBS encryption. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
-     * instance types</a>.</p> <p>This parameter is not returned by .</p>
+     * instance types</a>.</p> <p>This parameter is not returned by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImageAttribute.html">DescribeImageAttribute</a>.</p>
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
@@ -530,7 +557,8 @@ namespace Model
      * only be attached to instances that support Amazon EBS encryption. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
-     * instance types</a>.</p> <p>This parameter is not returned by .</p>
+     * instance types</a>.</p> <p>This parameter is not returned by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImageAttribute.html">DescribeImageAttribute</a>.</p>
      */
     inline EbsBlockDevice& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 

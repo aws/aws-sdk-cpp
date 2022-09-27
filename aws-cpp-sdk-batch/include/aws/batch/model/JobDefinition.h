@@ -305,7 +305,7 @@ namespace Model
      * defaults from the job definition. For more information about specifying
      * parameters, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job
-     * Definition Parameters</a> in the <i>Batch User Guide</i>.</p>
+     * definition parameters</a> in the <i>Batch User Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
 
@@ -316,7 +316,7 @@ namespace Model
      * defaults from the job definition. For more information about specifying
      * parameters, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job
-     * Definition Parameters</a> in the <i>Batch User Guide</i>.</p>
+     * definition parameters</a> in the <i>Batch User Guide</i>.</p>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
@@ -327,7 +327,7 @@ namespace Model
      * defaults from the job definition. For more information about specifying
      * parameters, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job
-     * Definition Parameters</a> in the <i>Batch User Guide</i>.</p>
+     * definition parameters</a> in the <i>Batch User Guide</i>.</p>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
@@ -338,7 +338,7 @@ namespace Model
      * defaults from the job definition. For more information about specifying
      * parameters, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job
-     * Definition Parameters</a> in the <i>Batch User Guide</i>.</p>
+     * definition parameters</a> in the <i>Batch User Guide</i>.</p>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
@@ -349,7 +349,7 @@ namespace Model
      * defaults from the job definition. For more information about specifying
      * parameters, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job
-     * Definition Parameters</a> in the <i>Batch User Guide</i>.</p>
+     * definition parameters</a> in the <i>Batch User Guide</i>.</p>
      */
     inline JobDefinition& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
 
@@ -360,7 +360,7 @@ namespace Model
      * defaults from the job definition. For more information about specifying
      * parameters, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job
-     * Definition Parameters</a> in the <i>Batch User Guide</i>.</p>
+     * definition parameters</a> in the <i>Batch User Guide</i>.</p>
      */
     inline JobDefinition& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
 
@@ -371,7 +371,7 @@ namespace Model
      * defaults from the job definition. For more information about specifying
      * parameters, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job
-     * Definition Parameters</a> in the <i>Batch User Guide</i>.</p>
+     * definition parameters</a> in the <i>Batch User Guide</i>.</p>
      */
     inline JobDefinition& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
@@ -382,7 +382,7 @@ namespace Model
      * defaults from the job definition. For more information about specifying
      * parameters, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job
-     * Definition Parameters</a> in the <i>Batch User Guide</i>.</p>
+     * definition parameters</a> in the <i>Batch User Guide</i>.</p>
      */
     inline JobDefinition& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
@@ -393,7 +393,7 @@ namespace Model
      * defaults from the job definition. For more information about specifying
      * parameters, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job
-     * Definition Parameters</a> in the <i>Batch User Guide</i>.</p>
+     * definition parameters</a> in the <i>Batch User Guide</i>.</p>
      */
     inline JobDefinition& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
@@ -404,7 +404,7 @@ namespace Model
      * defaults from the job definition. For more information about specifying
      * parameters, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job
-     * Definition Parameters</a> in the <i>Batch User Guide</i>.</p>
+     * definition parameters</a> in the <i>Batch User Guide</i>.</p>
      */
     inline JobDefinition& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -415,7 +415,7 @@ namespace Model
      * defaults from the job definition. For more information about specifying
      * parameters, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job
-     * Definition Parameters</a> in the <i>Batch User Guide</i>.</p>
+     * definition parameters</a> in the <i>Batch User Guide</i>.</p>
      */
     inline JobDefinition& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
@@ -426,7 +426,7 @@ namespace Model
      * defaults from the job definition. For more information about specifying
      * parameters, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job
-     * Definition Parameters</a> in the <i>Batch User Guide</i>.</p>
+     * definition parameters</a> in the <i>Batch User Guide</i>.</p>
      */
     inline JobDefinition& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
@@ -437,7 +437,7 @@ namespace Model
      * defaults from the job definition. For more information about specifying
      * parameters, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job
-     * Definition Parameters</a> in the <i>Batch User Guide</i>.</p>
+     * definition parameters</a> in the <i>Batch User Guide</i>.</p>
      */
     inline JobDefinition& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 

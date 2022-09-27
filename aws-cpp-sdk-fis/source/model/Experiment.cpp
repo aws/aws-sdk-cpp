@@ -29,7 +29,8 @@ Experiment::Experiment() :
     m_creationTimeHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_logConfigurationHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ Experiment::Experiment(JsonView jsonValue) :
     m_creationTimeHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_logConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -140,6 +142,13 @@ Experiment& Experiment::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("logConfiguration"))
+  {
+    m_logConfiguration = jsonValue.GetObject("logConfiguration");
+
+    m_logConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -227,6 +236,12 @@ JsonValue Experiment::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_logConfigurationHasBeenSet)
+  {
+   payload.WithObject("logConfiguration", m_logConfiguration.Jsonize());
 
   }
 

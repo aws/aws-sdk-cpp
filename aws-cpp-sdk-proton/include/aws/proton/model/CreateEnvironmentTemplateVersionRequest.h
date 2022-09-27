@@ -137,58 +137,58 @@ namespace Model
 
 
     /**
-     * <p>To create a new minor version of the environment template, include a
+     * <p>To create a new minor version of the environment template, include
      * <code>major Version</code>.</p> <p>To create a new major and minor version of
-     * the environment template, <i>exclude</i> <code>major Version</code>.</p>
+     * the environment template, exclude <code>major Version</code>.</p>
      */
     inline const Aws::String& GetMajorVersion() const{ return m_majorVersion; }
 
     /**
-     * <p>To create a new minor version of the environment template, include a
+     * <p>To create a new minor version of the environment template, include
      * <code>major Version</code>.</p> <p>To create a new major and minor version of
-     * the environment template, <i>exclude</i> <code>major Version</code>.</p>
+     * the environment template, exclude <code>major Version</code>.</p>
      */
     inline bool MajorVersionHasBeenSet() const { return m_majorVersionHasBeenSet; }
 
     /**
-     * <p>To create a new minor version of the environment template, include a
+     * <p>To create a new minor version of the environment template, include
      * <code>major Version</code>.</p> <p>To create a new major and minor version of
-     * the environment template, <i>exclude</i> <code>major Version</code>.</p>
+     * the environment template, exclude <code>major Version</code>.</p>
      */
     inline void SetMajorVersion(const Aws::String& value) { m_majorVersionHasBeenSet = true; m_majorVersion = value; }
 
     /**
-     * <p>To create a new minor version of the environment template, include a
+     * <p>To create a new minor version of the environment template, include
      * <code>major Version</code>.</p> <p>To create a new major and minor version of
-     * the environment template, <i>exclude</i> <code>major Version</code>.</p>
+     * the environment template, exclude <code>major Version</code>.</p>
      */
     inline void SetMajorVersion(Aws::String&& value) { m_majorVersionHasBeenSet = true; m_majorVersion = std::move(value); }
 
     /**
-     * <p>To create a new minor version of the environment template, include a
+     * <p>To create a new minor version of the environment template, include
      * <code>major Version</code>.</p> <p>To create a new major and minor version of
-     * the environment template, <i>exclude</i> <code>major Version</code>.</p>
+     * the environment template, exclude <code>major Version</code>.</p>
      */
     inline void SetMajorVersion(const char* value) { m_majorVersionHasBeenSet = true; m_majorVersion.assign(value); }
 
     /**
-     * <p>To create a new minor version of the environment template, include a
+     * <p>To create a new minor version of the environment template, include
      * <code>major Version</code>.</p> <p>To create a new major and minor version of
-     * the environment template, <i>exclude</i> <code>major Version</code>.</p>
+     * the environment template, exclude <code>major Version</code>.</p>
      */
     inline CreateEnvironmentTemplateVersionRequest& WithMajorVersion(const Aws::String& value) { SetMajorVersion(value); return *this;}
 
     /**
-     * <p>To create a new minor version of the environment template, include a
+     * <p>To create a new minor version of the environment template, include
      * <code>major Version</code>.</p> <p>To create a new major and minor version of
-     * the environment template, <i>exclude</i> <code>major Version</code>.</p>
+     * the environment template, exclude <code>major Version</code>.</p>
      */
     inline CreateEnvironmentTemplateVersionRequest& WithMajorVersion(Aws::String&& value) { SetMajorVersion(std::move(value)); return *this;}
 
     /**
-     * <p>To create a new minor version of the environment template, include a
+     * <p>To create a new minor version of the environment template, include
      * <code>major Version</code>.</p> <p>To create a new major and minor version of
-     * the environment template, <i>exclude</i> <code>major Version</code>.</p>
+     * the environment template, exclude <code>major Version</code>.</p>
      */
     inline CreateEnvironmentTemplateVersionRequest& WithMajorVersion(const char* value) { SetMajorVersion(value); return *this;}
 
@@ -231,42 +231,90 @@ namespace Model
 
 
     /**
-     * <p>Create tags for a new version of an environment template.</p>
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * environment template version. A tag is a key-value pair.</p> <p>For more
+     * information, see <i>Proton resources and tagging</i> in the <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+     * Administrator Guide</a> or <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * User Guide</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Create tags for a new version of an environment template.</p>
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * environment template version. A tag is a key-value pair.</p> <p>For more
+     * information, see <i>Proton resources and tagging</i> in the <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+     * Administrator Guide</a> or <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * User Guide</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Create tags for a new version of an environment template.</p>
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * environment template version. A tag is a key-value pair.</p> <p>For more
+     * information, see <i>Proton resources and tagging</i> in the <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+     * Administrator Guide</a> or <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * User Guide</a>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Create tags for a new version of an environment template.</p>
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * environment template version. A tag is a key-value pair.</p> <p>For more
+     * information, see <i>Proton resources and tagging</i> in the <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+     * Administrator Guide</a> or <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * User Guide</a>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Create tags for a new version of an environment template.</p>
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * environment template version. A tag is a key-value pair.</p> <p>For more
+     * information, see <i>Proton resources and tagging</i> in the <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+     * Administrator Guide</a> or <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * User Guide</a>.</p>
      */
     inline CreateEnvironmentTemplateVersionRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Create tags for a new version of an environment template.</p>
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * environment template version. A tag is a key-value pair.</p> <p>For more
+     * information, see <i>Proton resources and tagging</i> in the <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+     * Administrator Guide</a> or <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * User Guide</a>.</p>
      */
     inline CreateEnvironmentTemplateVersionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Create tags for a new version of an environment template.</p>
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * environment template version. A tag is a key-value pair.</p> <p>For more
+     * information, see <i>Proton resources and tagging</i> in the <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+     * Administrator Guide</a> or <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * User Guide</a>.</p>
      */
     inline CreateEnvironmentTemplateVersionRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Create tags for a new version of an environment template.</p>
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * environment template version. A tag is a key-value pair.</p> <p>For more
+     * information, see <i>Proton resources and tagging</i> in the <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+     * Administrator Guide</a> or <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * User Guide</a>.</p>
      */
     inline CreateEnvironmentTemplateVersionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

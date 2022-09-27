@@ -767,7 +767,7 @@ namespace Model
      * In this case, you could specify the following key-value pairs:</p> <ul> <li> <p>
      * <code>Key=environment,Value=test</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> </ul>  <p>To add tags to an
-     * existing patch baseline, use the <a>AddTagsToResource</a> operation.</p> 
+     * existing automation, use the <a>AddTagsToResource</a> operation.</p> 
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -779,7 +779,7 @@ namespace Model
      * In this case, you could specify the following key-value pairs:</p> <ul> <li> <p>
      * <code>Key=environment,Value=test</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> </ul>  <p>To add tags to an
-     * existing patch baseline, use the <a>AddTagsToResource</a> operation.</p> 
+     * existing automation, use the <a>AddTagsToResource</a> operation.</p> 
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -791,7 +791,7 @@ namespace Model
      * In this case, you could specify the following key-value pairs:</p> <ul> <li> <p>
      * <code>Key=environment,Value=test</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> </ul>  <p>To add tags to an
-     * existing patch baseline, use the <a>AddTagsToResource</a> operation.</p> 
+     * existing automation, use the <a>AddTagsToResource</a> operation.</p> 
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -803,7 +803,7 @@ namespace Model
      * In this case, you could specify the following key-value pairs:</p> <ul> <li> <p>
      * <code>Key=environment,Value=test</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> </ul>  <p>To add tags to an
-     * existing patch baseline, use the <a>AddTagsToResource</a> operation.</p> 
+     * existing automation, use the <a>AddTagsToResource</a> operation.</p> 
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -815,7 +815,7 @@ namespace Model
      * In this case, you could specify the following key-value pairs:</p> <ul> <li> <p>
      * <code>Key=environment,Value=test</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> </ul>  <p>To add tags to an
-     * existing patch baseline, use the <a>AddTagsToResource</a> operation.</p> 
+     * existing automation, use the <a>AddTagsToResource</a> operation.</p> 
      */
     inline StartAutomationExecutionRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -827,7 +827,7 @@ namespace Model
      * In this case, you could specify the following key-value pairs:</p> <ul> <li> <p>
      * <code>Key=environment,Value=test</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> </ul>  <p>To add tags to an
-     * existing patch baseline, use the <a>AddTagsToResource</a> operation.</p> 
+     * existing automation, use the <a>AddTagsToResource</a> operation.</p> 
      */
     inline StartAutomationExecutionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -839,7 +839,7 @@ namespace Model
      * In this case, you could specify the following key-value pairs:</p> <ul> <li> <p>
      * <code>Key=environment,Value=test</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> </ul>  <p>To add tags to an
-     * existing patch baseline, use the <a>AddTagsToResource</a> operation.</p> 
+     * existing automation, use the <a>AddTagsToResource</a> operation.</p> 
      */
     inline StartAutomationExecutionRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -851,7 +851,7 @@ namespace Model
      * In this case, you could specify the following key-value pairs:</p> <ul> <li> <p>
      * <code>Key=environment,Value=test</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> </ul>  <p>To add tags to an
-     * existing patch baseline, use the <a>AddTagsToResource</a> operation.</p> 
+     * existing automation, use the <a>AddTagsToResource</a> operation.</p> 
      */
     inline StartAutomationExecutionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

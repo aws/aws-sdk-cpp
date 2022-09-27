@@ -500,6 +500,18 @@ public class C2jModelToGeneratorModelTransformer {
         // http
         operation.setHttp(convertHttp(c2jOperation.getHttp()));
 
+        // http checksum
+        if (c2jOperation.getHttpChecksum() != null) {
+            C2jHttpChecksum c2jHttpChecksum = c2jOperation.getHttpChecksum();
+
+            operation.setRequestChecksumRequired(c2jHttpChecksum.isRequestChecksumRequired());
+            operation.setRequestAlgorithmMember(c2jHttpChecksum.getRequestAlgorithmMember());
+            operation.setRequestValidationModeMember(c2jHttpChecksum.getRequestValidationModeMember());
+            if (c2jHttpChecksum.getResponseAlgorithms() != null) {
+                operation.setResponseAlgorithms(new ArrayList<>(c2jHttpChecksum.getResponseAlgorithms()));
+            }
+        }
+
         // errors
 
         List<Error> operationErrors = new ArrayList<>();
@@ -527,14 +539,18 @@ public class C2jModelToGeneratorModelTransformer {
             switch(originalShapeName) {
                 case "CopyObjectResult":
                     newShapeName = "CopyObjectResultDetails";
-                    renameShapeMember(shape, "CopyObjectResult", originalShapeName, newShapeName, true);
+                    renameShapeMember(shape, "CopyObjectResult", originalShapeName, newShapeName, newShapeName, true);
                     break;
                 case "BatchUpdateScheduleResult":
                     shapes.remove(originalShapeName);
                     break;
                 case "GeneratedPolicyResult":
                     newShapeName = "GeneratedPolicyResults";
-                    renameShapeMember(shape, "generatedPolicyResult", originalShapeName, newShapeName, false);
+                    renameShapeMember(shape, "generatedPolicyResult", originalShapeName, newShapeName, newShapeName, false);
+                    break;
+                case "SearchResult":
+                    newShapeName = "SearchResultDetails";
+                    renameShapeMember(shape, "results", originalShapeName, "results", newShapeName, true);
                     break;
                 default:
                     throw new RuntimeException("Unhandled shape name conflict: " + name);
@@ -576,15 +592,34 @@ public class C2jModelToGeneratorModelTransformer {
         return cloned;
     }
 
-    void renameShapeMember(Shape parentShape, String originalMemberKey, String originalShapeName, String newShapeName, boolean isPayload) {
+    /**
+     * Renames shape in the model tree
+     *
+     * @param parentShape - current parent in which renamed Shape being located
+     * @param originalMemberKey - original key name in the parent of the Shape being renamed
+     * @param originalShapeName - original name of the Shape
+     * @param newMemberKey - new key name in the parent of the Shape being renamed
+     * @param newShapeName - new Shape name
+     * @param isPayload - if the current Shape being renamed is a payload of a parent
+     */
+    void renameShapeMember(Shape parentShape,
+                           String originalMemberKey, String originalShapeName,
+                           String newMemberKey, String newShapeName, boolean isPayload) {
+        if (!shapes.containsKey(originalShapeName)) {
+            throw new NoSuchElementException("Shape to rename was not found in all shapes: " + originalShapeName);
+        }
+        if (!parentShape.getMembers().containsKey(originalMemberKey)) {
+            throw new NoSuchElementException("Requested to rename non-existent child shape key "
+                    + originalMemberKey + " of a Shape type " + originalShapeName);
+        }
         shapes.get(originalShapeName).setName(newShapeName);
         shapes.put(newShapeName, shapes.get(originalShapeName));
         shapes.remove(originalShapeName);
-        parentShape.getMembers().put(newShapeName, parentShape.getMembers().get(originalMemberKey));
+        parentShape.getMembers().put(newMemberKey, parentShape.getMembers().get(originalMemberKey));
         parentShape.RemoveMember(originalMemberKey);
         if (isPayload)
         {
-            parentShape.setPayload(newShapeName);
+            parentShape.setPayload(newMemberKey);
         }
     }
 
@@ -621,6 +656,10 @@ public class C2jModelToGeneratorModelTransformer {
             if (errorPayloadType.equals("xml") && referencedShape.isXmlModeledException() ||
                 errorPayloadType.equals("json") && referencedShape.isJsonModeledException()) {
                 error.setModeled(true);
+            }
+
+            if (shape.getRetryable() != null && shape.getRetryable().getOrDefault("throttling", false)) {
+                error.setRetryable(true);
             }
         }
         error.setDocumentation(formatDocumentation(c2jError.getDocumentation(), 3));

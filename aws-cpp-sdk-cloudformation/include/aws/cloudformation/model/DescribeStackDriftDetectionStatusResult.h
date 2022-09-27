@@ -134,7 +134,7 @@ namespace Model
      * configuration.</p> <ul> <li> <p> <code>DRIFTED</code>: The stack differs from
      * its expected template configuration. A stack is considered to have drifted if
      * one or more of its resources have drifted.</p> </li> <li> <p>
-     * <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs
+     * <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs
      * from its expected template configuration.</p> </li> <li> <p>
      * <code>IN_SYNC</code>: The stack's actual configuration matches its expected
      * template configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is
@@ -147,7 +147,7 @@ namespace Model
      * configuration.</p> <ul> <li> <p> <code>DRIFTED</code>: The stack differs from
      * its expected template configuration. A stack is considered to have drifted if
      * one or more of its resources have drifted.</p> </li> <li> <p>
-     * <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs
+     * <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs
      * from its expected template configuration.</p> </li> <li> <p>
      * <code>IN_SYNC</code>: The stack's actual configuration matches its expected
      * template configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is
@@ -160,7 +160,7 @@ namespace Model
      * configuration.</p> <ul> <li> <p> <code>DRIFTED</code>: The stack differs from
      * its expected template configuration. A stack is considered to have drifted if
      * one or more of its resources have drifted.</p> </li> <li> <p>
-     * <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs
+     * <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs
      * from its expected template configuration.</p> </li> <li> <p>
      * <code>IN_SYNC</code>: The stack's actual configuration matches its expected
      * template configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is
@@ -173,7 +173,7 @@ namespace Model
      * configuration.</p> <ul> <li> <p> <code>DRIFTED</code>: The stack differs from
      * its expected template configuration. A stack is considered to have drifted if
      * one or more of its resources have drifted.</p> </li> <li> <p>
-     * <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs
+     * <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs
      * from its expected template configuration.</p> </li> <li> <p>
      * <code>IN_SYNC</code>: The stack's actual configuration matches its expected
      * template configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is
@@ -186,7 +186,7 @@ namespace Model
      * configuration.</p> <ul> <li> <p> <code>DRIFTED</code>: The stack differs from
      * its expected template configuration. A stack is considered to have drifted if
      * one or more of its resources have drifted.</p> </li> <li> <p>
-     * <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs
+     * <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs
      * from its expected template configuration.</p> </li> <li> <p>
      * <code>IN_SYNC</code>: The stack's actual configuration matches its expected
      * template configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is
@@ -199,7 +199,7 @@ namespace Model
      * <p>The status of the stack drift detection operation.</p> <ul> <li> <p>
      * <code>DETECTION_COMPLETE</code>: The stack drift detection operation has
      * successfully completed for all resources in the stack that support drift
-     * detection. (Resources that do not currently support stack detection remain
+     * detection. (Resources that don't currently support stack detection remain
      * unchecked.)</p> <p>If you specified logical resource IDs for CloudFormation to
      * use as a filter for the stack drift detection operation, only the resources with
      * those logical IDs are checked for drift.</p> </li> <li> <p>
@@ -215,7 +215,7 @@ namespace Model
      * <p>The status of the stack drift detection operation.</p> <ul> <li> <p>
      * <code>DETECTION_COMPLETE</code>: The stack drift detection operation has
      * successfully completed for all resources in the stack that support drift
-     * detection. (Resources that do not currently support stack detection remain
+     * detection. (Resources that don't currently support stack detection remain
      * unchecked.)</p> <p>If you specified logical resource IDs for CloudFormation to
      * use as a filter for the stack drift detection operation, only the resources with
      * those logical IDs are checked for drift.</p> </li> <li> <p>
@@ -231,7 +231,7 @@ namespace Model
      * <p>The status of the stack drift detection operation.</p> <ul> <li> <p>
      * <code>DETECTION_COMPLETE</code>: The stack drift detection operation has
      * successfully completed for all resources in the stack that support drift
-     * detection. (Resources that do not currently support stack detection remain
+     * detection. (Resources that don't currently support stack detection remain
      * unchecked.)</p> <p>If you specified logical resource IDs for CloudFormation to
      * use as a filter for the stack drift detection operation, only the resources with
      * those logical IDs are checked for drift.</p> </li> <li> <p>
@@ -247,7 +247,7 @@ namespace Model
      * <p>The status of the stack drift detection operation.</p> <ul> <li> <p>
      * <code>DETECTION_COMPLETE</code>: The stack drift detection operation has
      * successfully completed for all resources in the stack that support drift
-     * detection. (Resources that do not currently support stack detection remain
+     * detection. (Resources that don't currently support stack detection remain
      * unchecked.)</p> <p>If you specified logical resource IDs for CloudFormation to
      * use as a filter for the stack drift detection operation, only the resources with
      * those logical IDs are checked for drift.</p> </li> <li> <p>
@@ -263,7 +263,7 @@ namespace Model
      * <p>The status of the stack drift detection operation.</p> <ul> <li> <p>
      * <code>DETECTION_COMPLETE</code>: The stack drift detection operation has
      * successfully completed for all resources in the stack that support drift
-     * detection. (Resources that do not currently support stack detection remain
+     * detection. (Resources that don't currently support stack detection remain
      * unchecked.)</p> <p>If you specified logical resource IDs for CloudFormation to
      * use as a filter for the stack drift detection operation, only the resources with
      * those logical IDs are checked for drift.</p> </li> <li> <p>

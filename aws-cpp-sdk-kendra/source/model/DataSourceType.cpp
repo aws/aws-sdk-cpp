@@ -31,6 +31,12 @@ namespace Aws
         static const int GOOGLEDRIVE_HASH = HashingUtils::HashString("GOOGLEDRIVE");
         static const int WEBCRAWLER_HASH = HashingUtils::HashString("WEBCRAWLER");
         static const int WORKDOCS_HASH = HashingUtils::HashString("WORKDOCS");
+        static const int FSX_HASH = HashingUtils::HashString("FSX");
+        static const int SLACK_HASH = HashingUtils::HashString("SLACK");
+        static const int BOX_HASH = HashingUtils::HashString("BOX");
+        static const int QUIP_HASH = HashingUtils::HashString("QUIP");
+        static const int JIRA_HASH = HashingUtils::HashString("JIRA");
+        static const int GITHUB_HASH = HashingUtils::HashString("GITHUB");
 
 
         DataSourceType GetDataSourceTypeForName(const Aws::String& name)
@@ -80,6 +86,30 @@ namespace Aws
           {
             return DataSourceType::WORKDOCS;
           }
+          else if (hashCode == FSX_HASH)
+          {
+            return DataSourceType::FSX;
+          }
+          else if (hashCode == SLACK_HASH)
+          {
+            return DataSourceType::SLACK;
+          }
+          else if (hashCode == BOX_HASH)
+          {
+            return DataSourceType::BOX;
+          }
+          else if (hashCode == QUIP_HASH)
+          {
+            return DataSourceType::QUIP;
+          }
+          else if (hashCode == JIRA_HASH)
+          {
+            return DataSourceType::JIRA;
+          }
+          else if (hashCode == GITHUB_HASH)
+          {
+            return DataSourceType::GITHUB;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -116,6 +146,18 @@ namespace Aws
             return "WEBCRAWLER";
           case DataSourceType::WORKDOCS:
             return "WORKDOCS";
+          case DataSourceType::FSX:
+            return "FSX";
+          case DataSourceType::SLACK:
+            return "SLACK";
+          case DataSourceType::BOX:
+            return "BOX";
+          case DataSourceType::QUIP:
+            return "QUIP";
+          case DataSourceType::JIRA:
+            return "JIRA";
+          case DataSourceType::GITHUB:
+            return "GITHUB";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

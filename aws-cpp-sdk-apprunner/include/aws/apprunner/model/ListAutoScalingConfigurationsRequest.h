@@ -37,85 +37,85 @@ namespace Model
     /**
      * <p>The name of the App Runner auto scaling configuration that you want to list.
      * If specified, App Runner lists revisions that share this name. If not specified,
-     * App Runner returns revisions of all configurations.</p>
+     * App Runner returns revisions of all active configurations.</p>
      */
     inline const Aws::String& GetAutoScalingConfigurationName() const{ return m_autoScalingConfigurationName; }
 
     /**
      * <p>The name of the App Runner auto scaling configuration that you want to list.
      * If specified, App Runner lists revisions that share this name. If not specified,
-     * App Runner returns revisions of all configurations.</p>
+     * App Runner returns revisions of all active configurations.</p>
      */
     inline bool AutoScalingConfigurationNameHasBeenSet() const { return m_autoScalingConfigurationNameHasBeenSet; }
 
     /**
      * <p>The name of the App Runner auto scaling configuration that you want to list.
      * If specified, App Runner lists revisions that share this name. If not specified,
-     * App Runner returns revisions of all configurations.</p>
+     * App Runner returns revisions of all active configurations.</p>
      */
     inline void SetAutoScalingConfigurationName(const Aws::String& value) { m_autoScalingConfigurationNameHasBeenSet = true; m_autoScalingConfigurationName = value; }
 
     /**
      * <p>The name of the App Runner auto scaling configuration that you want to list.
      * If specified, App Runner lists revisions that share this name. If not specified,
-     * App Runner returns revisions of all configurations.</p>
+     * App Runner returns revisions of all active configurations.</p>
      */
     inline void SetAutoScalingConfigurationName(Aws::String&& value) { m_autoScalingConfigurationNameHasBeenSet = true; m_autoScalingConfigurationName = std::move(value); }
 
     /**
      * <p>The name of the App Runner auto scaling configuration that you want to list.
      * If specified, App Runner lists revisions that share this name. If not specified,
-     * App Runner returns revisions of all configurations.</p>
+     * App Runner returns revisions of all active configurations.</p>
      */
     inline void SetAutoScalingConfigurationName(const char* value) { m_autoScalingConfigurationNameHasBeenSet = true; m_autoScalingConfigurationName.assign(value); }
 
     /**
      * <p>The name of the App Runner auto scaling configuration that you want to list.
      * If specified, App Runner lists revisions that share this name. If not specified,
-     * App Runner returns revisions of all configurations.</p>
+     * App Runner returns revisions of all active configurations.</p>
      */
     inline ListAutoScalingConfigurationsRequest& WithAutoScalingConfigurationName(const Aws::String& value) { SetAutoScalingConfigurationName(value); return *this;}
 
     /**
      * <p>The name of the App Runner auto scaling configuration that you want to list.
      * If specified, App Runner lists revisions that share this name. If not specified,
-     * App Runner returns revisions of all configurations.</p>
+     * App Runner returns revisions of all active configurations.</p>
      */
     inline ListAutoScalingConfigurationsRequest& WithAutoScalingConfigurationName(Aws::String&& value) { SetAutoScalingConfigurationName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the App Runner auto scaling configuration that you want to list.
      * If specified, App Runner lists revisions that share this name. If not specified,
-     * App Runner returns revisions of all configurations.</p>
+     * App Runner returns revisions of all active configurations.</p>
      */
     inline ListAutoScalingConfigurationsRequest& WithAutoScalingConfigurationName(const char* value) { SetAutoScalingConfigurationName(value); return *this;}
 
 
     /**
      * <p>Set to <code>true</code> to list only the latest revision for each requested
-     * configuration name.</p> <p>Keep as <code>false</code> to list all revisions for
-     * each requested configuration name.</p> <p>Default: <code>false</code> </p>
+     * configuration name.</p> <p>Set to <code>false</code> to list all revisions for
+     * each requested configuration name.</p> <p>Default: <code>true</code> </p>
      */
     inline bool GetLatestOnly() const{ return m_latestOnly; }
 
     /**
      * <p>Set to <code>true</code> to list only the latest revision for each requested
-     * configuration name.</p> <p>Keep as <code>false</code> to list all revisions for
-     * each requested configuration name.</p> <p>Default: <code>false</code> </p>
+     * configuration name.</p> <p>Set to <code>false</code> to list all revisions for
+     * each requested configuration name.</p> <p>Default: <code>true</code> </p>
      */
     inline bool LatestOnlyHasBeenSet() const { return m_latestOnlyHasBeenSet; }
 
     /**
      * <p>Set to <code>true</code> to list only the latest revision for each requested
-     * configuration name.</p> <p>Keep as <code>false</code> to list all revisions for
-     * each requested configuration name.</p> <p>Default: <code>false</code> </p>
+     * configuration name.</p> <p>Set to <code>false</code> to list all revisions for
+     * each requested configuration name.</p> <p>Default: <code>true</code> </p>
      */
     inline void SetLatestOnly(bool value) { m_latestOnlyHasBeenSet = true; m_latestOnly = value; }
 
     /**
      * <p>Set to <code>true</code> to list only the latest revision for each requested
-     * configuration name.</p> <p>Keep as <code>false</code> to list all revisions for
-     * each requested configuration name.</p> <p>Default: <code>false</code> </p>
+     * configuration name.</p> <p>Set to <code>false</code> to list all revisions for
+     * each requested configuration name.</p> <p>Default: <code>true</code> </p>
      */
     inline ListAutoScalingConfigurationsRequest& WithLatestOnly(bool value) { SetLatestOnly(value); return *this;}
 

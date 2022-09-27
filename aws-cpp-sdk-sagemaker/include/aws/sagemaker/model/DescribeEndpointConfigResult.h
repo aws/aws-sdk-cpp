@@ -38,37 +38,37 @@ namespace Model
 
 
     /**
-     * <p>Name of the Amazon SageMaker endpoint configuration.</p>
+     * <p>Name of the SageMaker endpoint configuration.</p>
      */
     inline const Aws::String& GetEndpointConfigName() const{ return m_endpointConfigName; }
 
     /**
-     * <p>Name of the Amazon SageMaker endpoint configuration.</p>
+     * <p>Name of the SageMaker endpoint configuration.</p>
      */
     inline void SetEndpointConfigName(const Aws::String& value) { m_endpointConfigName = value; }
 
     /**
-     * <p>Name of the Amazon SageMaker endpoint configuration.</p>
+     * <p>Name of the SageMaker endpoint configuration.</p>
      */
     inline void SetEndpointConfigName(Aws::String&& value) { m_endpointConfigName = std::move(value); }
 
     /**
-     * <p>Name of the Amazon SageMaker endpoint configuration.</p>
+     * <p>Name of the SageMaker endpoint configuration.</p>
      */
     inline void SetEndpointConfigName(const char* value) { m_endpointConfigName.assign(value); }
 
     /**
-     * <p>Name of the Amazon SageMaker endpoint configuration.</p>
+     * <p>Name of the SageMaker endpoint configuration.</p>
      */
     inline DescribeEndpointConfigResult& WithEndpointConfigName(const Aws::String& value) { SetEndpointConfigName(value); return *this;}
 
     /**
-     * <p>Name of the Amazon SageMaker endpoint configuration.</p>
+     * <p>Name of the SageMaker endpoint configuration.</p>
      */
     inline DescribeEndpointConfigResult& WithEndpointConfigName(Aws::String&& value) { SetEndpointConfigName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the Amazon SageMaker endpoint configuration.</p>
+     * <p>Name of the SageMaker endpoint configuration.</p>
      */
     inline DescribeEndpointConfigResult& WithEndpointConfigName(const char* value) { SetEndpointConfigName(value); return *this;}
 

@@ -457,6 +457,95 @@ namespace Model
      */
     inline CreateLoadBalancerRequest& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The name of the TLS policy to apply to the load balancer.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a>
+     * action to get a list of TLS policy names that you can specify.</p> <p>For more
+     * information about load balancer TLS policies, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Configuring
+     * TLS security policies on your Amazon Lightsail load balancers</a> in the
+     * <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline const Aws::String& GetTlsPolicyName() const{ return m_tlsPolicyName; }
+
+    /**
+     * <p>The name of the TLS policy to apply to the load balancer.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a>
+     * action to get a list of TLS policy names that you can specify.</p> <p>For more
+     * information about load balancer TLS policies, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Configuring
+     * TLS security policies on your Amazon Lightsail load balancers</a> in the
+     * <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline bool TlsPolicyNameHasBeenSet() const { return m_tlsPolicyNameHasBeenSet; }
+
+    /**
+     * <p>The name of the TLS policy to apply to the load balancer.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a>
+     * action to get a list of TLS policy names that you can specify.</p> <p>For more
+     * information about load balancer TLS policies, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Configuring
+     * TLS security policies on your Amazon Lightsail load balancers</a> in the
+     * <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline void SetTlsPolicyName(const Aws::String& value) { m_tlsPolicyNameHasBeenSet = true; m_tlsPolicyName = value; }
+
+    /**
+     * <p>The name of the TLS policy to apply to the load balancer.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a>
+     * action to get a list of TLS policy names that you can specify.</p> <p>For more
+     * information about load balancer TLS policies, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Configuring
+     * TLS security policies on your Amazon Lightsail load balancers</a> in the
+     * <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline void SetTlsPolicyName(Aws::String&& value) { m_tlsPolicyNameHasBeenSet = true; m_tlsPolicyName = std::move(value); }
+
+    /**
+     * <p>The name of the TLS policy to apply to the load balancer.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a>
+     * action to get a list of TLS policy names that you can specify.</p> <p>For more
+     * information about load balancer TLS policies, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Configuring
+     * TLS security policies on your Amazon Lightsail load balancers</a> in the
+     * <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline void SetTlsPolicyName(const char* value) { m_tlsPolicyNameHasBeenSet = true; m_tlsPolicyName.assign(value); }
+
+    /**
+     * <p>The name of the TLS policy to apply to the load balancer.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a>
+     * action to get a list of TLS policy names that you can specify.</p> <p>For more
+     * information about load balancer TLS policies, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Configuring
+     * TLS security policies on your Amazon Lightsail load balancers</a> in the
+     * <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline CreateLoadBalancerRequest& WithTlsPolicyName(const Aws::String& value) { SetTlsPolicyName(value); return *this;}
+
+    /**
+     * <p>The name of the TLS policy to apply to the load balancer.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a>
+     * action to get a list of TLS policy names that you can specify.</p> <p>For more
+     * information about load balancer TLS policies, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Configuring
+     * TLS security policies on your Amazon Lightsail load balancers</a> in the
+     * <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline CreateLoadBalancerRequest& WithTlsPolicyName(Aws::String&& value) { SetTlsPolicyName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the TLS policy to apply to the load balancer.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a>
+     * action to get a list of TLS policy names that you can specify.</p> <p>For more
+     * information about load balancer TLS policies, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Configuring
+     * TLS security policies on your Amazon Lightsail load balancers</a> in the
+     * <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline CreateLoadBalancerRequest& WithTlsPolicyName(const char* value) { SetTlsPolicyName(value); return *this;}
+
   private:
 
     Aws::String m_loadBalancerName;
@@ -482,6 +571,9 @@ namespace Model
 
     IpAddressType m_ipAddressType;
     bool m_ipAddressTypeHasBeenSet;
+
+    Aws::String m_tlsPolicyName;
+    bool m_tlsPolicyNameHasBeenSet;
   };
 
 } // namespace Model

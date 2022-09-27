@@ -19,7 +19,8 @@ namespace Model
     CfnStack,
     Resource,
     AppRegistryApp,
-    ResourceGroup
+    ResourceGroup,
+    Terraform
   };
 
 namespace ResourceMappingTypeMapper

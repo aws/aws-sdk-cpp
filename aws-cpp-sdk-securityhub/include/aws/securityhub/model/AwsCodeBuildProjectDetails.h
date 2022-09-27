@@ -354,6 +354,47 @@ namespace Model
      */
     inline AwsCodeBuildProjectDetails& WithVpcConfig(AwsCodeBuildProjectVpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information about the secondary artifacts for the CodeBuild project.</p>
+     */
+    inline const Aws::Vector<AwsCodeBuildProjectArtifactsDetails>& GetSecondaryArtifacts() const{ return m_secondaryArtifacts; }
+
+    /**
+     * <p>Information about the secondary artifacts for the CodeBuild project.</p>
+     */
+    inline bool SecondaryArtifactsHasBeenSet() const { return m_secondaryArtifactsHasBeenSet; }
+
+    /**
+     * <p>Information about the secondary artifacts for the CodeBuild project.</p>
+     */
+    inline void SetSecondaryArtifacts(const Aws::Vector<AwsCodeBuildProjectArtifactsDetails>& value) { m_secondaryArtifactsHasBeenSet = true; m_secondaryArtifacts = value; }
+
+    /**
+     * <p>Information about the secondary artifacts for the CodeBuild project.</p>
+     */
+    inline void SetSecondaryArtifacts(Aws::Vector<AwsCodeBuildProjectArtifactsDetails>&& value) { m_secondaryArtifactsHasBeenSet = true; m_secondaryArtifacts = std::move(value); }
+
+    /**
+     * <p>Information about the secondary artifacts for the CodeBuild project.</p>
+     */
+    inline AwsCodeBuildProjectDetails& WithSecondaryArtifacts(const Aws::Vector<AwsCodeBuildProjectArtifactsDetails>& value) { SetSecondaryArtifacts(value); return *this;}
+
+    /**
+     * <p>Information about the secondary artifacts for the CodeBuild project.</p>
+     */
+    inline AwsCodeBuildProjectDetails& WithSecondaryArtifacts(Aws::Vector<AwsCodeBuildProjectArtifactsDetails>&& value) { SetSecondaryArtifacts(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the secondary artifacts for the CodeBuild project.</p>
+     */
+    inline AwsCodeBuildProjectDetails& AddSecondaryArtifacts(const AwsCodeBuildProjectArtifactsDetails& value) { m_secondaryArtifactsHasBeenSet = true; m_secondaryArtifacts.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the secondary artifacts for the CodeBuild project.</p>
+     */
+    inline AwsCodeBuildProjectDetails& AddSecondaryArtifacts(AwsCodeBuildProjectArtifactsDetails&& value) { m_secondaryArtifactsHasBeenSet = true; m_secondaryArtifacts.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_encryptionKey;
@@ -379,6 +420,9 @@ namespace Model
 
     AwsCodeBuildProjectVpcConfig m_vpcConfig;
     bool m_vpcConfigHasBeenSet;
+
+    Aws::Vector<AwsCodeBuildProjectArtifactsDetails> m_secondaryArtifacts;
+    bool m_secondaryArtifactsHasBeenSet;
   };
 
 } // namespace Model

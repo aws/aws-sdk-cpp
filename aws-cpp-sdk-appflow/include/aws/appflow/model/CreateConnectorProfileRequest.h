@@ -181,6 +181,63 @@ namespace Model
 
 
     /**
+     * <p>The label of the connector. The label is unique for each
+     * <code>ConnectorRegistration</code> in your Amazon Web Services account. Only
+     * needed if calling for CUSTOMCONNECTOR connector type/.</p>
+     */
+    inline const Aws::String& GetConnectorLabel() const{ return m_connectorLabel; }
+
+    /**
+     * <p>The label of the connector. The label is unique for each
+     * <code>ConnectorRegistration</code> in your Amazon Web Services account. Only
+     * needed if calling for CUSTOMCONNECTOR connector type/.</p>
+     */
+    inline bool ConnectorLabelHasBeenSet() const { return m_connectorLabelHasBeenSet; }
+
+    /**
+     * <p>The label of the connector. The label is unique for each
+     * <code>ConnectorRegistration</code> in your Amazon Web Services account. Only
+     * needed if calling for CUSTOMCONNECTOR connector type/.</p>
+     */
+    inline void SetConnectorLabel(const Aws::String& value) { m_connectorLabelHasBeenSet = true; m_connectorLabel = value; }
+
+    /**
+     * <p>The label of the connector. The label is unique for each
+     * <code>ConnectorRegistration</code> in your Amazon Web Services account. Only
+     * needed if calling for CUSTOMCONNECTOR connector type/.</p>
+     */
+    inline void SetConnectorLabel(Aws::String&& value) { m_connectorLabelHasBeenSet = true; m_connectorLabel = std::move(value); }
+
+    /**
+     * <p>The label of the connector. The label is unique for each
+     * <code>ConnectorRegistration</code> in your Amazon Web Services account. Only
+     * needed if calling for CUSTOMCONNECTOR connector type/.</p>
+     */
+    inline void SetConnectorLabel(const char* value) { m_connectorLabelHasBeenSet = true; m_connectorLabel.assign(value); }
+
+    /**
+     * <p>The label of the connector. The label is unique for each
+     * <code>ConnectorRegistration</code> in your Amazon Web Services account. Only
+     * needed if calling for CUSTOMCONNECTOR connector type/.</p>
+     */
+    inline CreateConnectorProfileRequest& WithConnectorLabel(const Aws::String& value) { SetConnectorLabel(value); return *this;}
+
+    /**
+     * <p>The label of the connector. The label is unique for each
+     * <code>ConnectorRegistration</code> in your Amazon Web Services account. Only
+     * needed if calling for CUSTOMCONNECTOR connector type/.</p>
+     */
+    inline CreateConnectorProfileRequest& WithConnectorLabel(Aws::String&& value) { SetConnectorLabel(std::move(value)); return *this;}
+
+    /**
+     * <p>The label of the connector. The label is unique for each
+     * <code>ConnectorRegistration</code> in your Amazon Web Services account. Only
+     * needed if calling for CUSTOMCONNECTOR connector type/.</p>
+     */
+    inline CreateConnectorProfileRequest& WithConnectorLabel(const char* value) { SetConnectorLabel(value); return *this;}
+
+
+    /**
      * <p> Indicates the connection mode and specifies whether it is public or private.
      * Private flows use Amazon Web Services PrivateLink to route data over Amazon Web
      * Services infrastructure without exposing it to the public internet. </p>
@@ -263,6 +320,9 @@ namespace Model
 
     ConnectorType m_connectorType;
     bool m_connectorTypeHasBeenSet;
+
+    Aws::String m_connectorLabel;
+    bool m_connectorLabelHasBeenSet;
 
     ConnectionMode m_connectionMode;
     bool m_connectionModeHasBeenSet;

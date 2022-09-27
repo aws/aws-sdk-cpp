@@ -354,49 +354,56 @@ namespace Model
     /**
      * <p>The date on which the last software update was applied to the gateway. If the
      * gateway has never been updated, this field does not return a value in the
-     * response.</p>
+     * response. This only only exist and returns once it have been chosen and set by
+     * the SGW service, based on the OS version of the gateway VM</p>
      */
     inline const Aws::String& GetLastSoftwareUpdate() const{ return m_lastSoftwareUpdate; }
 
     /**
      * <p>The date on which the last software update was applied to the gateway. If the
      * gateway has never been updated, this field does not return a value in the
-     * response.</p>
+     * response. This only only exist and returns once it have been chosen and set by
+     * the SGW service, based on the OS version of the gateway VM</p>
      */
     inline void SetLastSoftwareUpdate(const Aws::String& value) { m_lastSoftwareUpdate = value; }
 
     /**
      * <p>The date on which the last software update was applied to the gateway. If the
      * gateway has never been updated, this field does not return a value in the
-     * response.</p>
+     * response. This only only exist and returns once it have been chosen and set by
+     * the SGW service, based on the OS version of the gateway VM</p>
      */
     inline void SetLastSoftwareUpdate(Aws::String&& value) { m_lastSoftwareUpdate = std::move(value); }
 
     /**
      * <p>The date on which the last software update was applied to the gateway. If the
      * gateway has never been updated, this field does not return a value in the
-     * response.</p>
+     * response. This only only exist and returns once it have been chosen and set by
+     * the SGW service, based on the OS version of the gateway VM</p>
      */
     inline void SetLastSoftwareUpdate(const char* value) { m_lastSoftwareUpdate.assign(value); }
 
     /**
      * <p>The date on which the last software update was applied to the gateway. If the
      * gateway has never been updated, this field does not return a value in the
-     * response.</p>
+     * response. This only only exist and returns once it have been chosen and set by
+     * the SGW service, based on the OS version of the gateway VM</p>
      */
     inline DescribeGatewayInformationResult& WithLastSoftwareUpdate(const Aws::String& value) { SetLastSoftwareUpdate(value); return *this;}
 
     /**
      * <p>The date on which the last software update was applied to the gateway. If the
      * gateway has never been updated, this field does not return a value in the
-     * response.</p>
+     * response. This only only exist and returns once it have been chosen and set by
+     * the SGW service, based on the OS version of the gateway VM</p>
      */
     inline DescribeGatewayInformationResult& WithLastSoftwareUpdate(Aws::String&& value) { SetLastSoftwareUpdate(std::move(value)); return *this;}
 
     /**
      * <p>The date on which the last software update was applied to the gateway. If the
      * gateway has never been updated, this field does not return a value in the
-     * response.</p>
+     * response. This only only exist and returns once it have been chosen and set by
+     * the SGW service, based on the OS version of the gateway VM</p>
      */
     inline DescribeGatewayInformationResult& WithLastSoftwareUpdate(const char* value) { SetLastSoftwareUpdate(value); return *this;}
 
@@ -575,43 +582,57 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
-     * used to monitor events in the gateway.</p>
+     * used to monitor events in the gateway. This field only only exist and returns
+     * once it have been chosen and set by the SGW service, based on the OS version of
+     * the gateway VM</p>
      */
     inline const Aws::String& GetCloudWatchLogGroupARN() const{ return m_cloudWatchLogGroupARN; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
-     * used to monitor events in the gateway.</p>
+     * used to monitor events in the gateway. This field only only exist and returns
+     * once it have been chosen and set by the SGW service, based on the OS version of
+     * the gateway VM</p>
      */
     inline void SetCloudWatchLogGroupARN(const Aws::String& value) { m_cloudWatchLogGroupARN = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
-     * used to monitor events in the gateway.</p>
+     * used to monitor events in the gateway. This field only only exist and returns
+     * once it have been chosen and set by the SGW service, based on the OS version of
+     * the gateway VM</p>
      */
     inline void SetCloudWatchLogGroupARN(Aws::String&& value) { m_cloudWatchLogGroupARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
-     * used to monitor events in the gateway.</p>
+     * used to monitor events in the gateway. This field only only exist and returns
+     * once it have been chosen and set by the SGW service, based on the OS version of
+     * the gateway VM</p>
      */
     inline void SetCloudWatchLogGroupARN(const char* value) { m_cloudWatchLogGroupARN.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
-     * used to monitor events in the gateway.</p>
+     * used to monitor events in the gateway. This field only only exist and returns
+     * once it have been chosen and set by the SGW service, based on the OS version of
+     * the gateway VM</p>
      */
     inline DescribeGatewayInformationResult& WithCloudWatchLogGroupARN(const Aws::String& value) { SetCloudWatchLogGroupARN(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
-     * used to monitor events in the gateway.</p>
+     * used to monitor events in the gateway. This field only only exist and returns
+     * once it have been chosen and set by the SGW service, based on the OS version of
+     * the gateway VM</p>
      */
     inline DescribeGatewayInformationResult& WithCloudWatchLogGroupARN(Aws::String&& value) { SetCloudWatchLogGroupARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
-     * used to monitor events in the gateway.</p>
+     * used to monitor events in the gateway. This field only only exist and returns
+     * once it have been chosen and set by the SGW service, based on the OS version of
+     * the gateway VM</p>
      */
     inline DescribeGatewayInformationResult& WithCloudWatchLogGroupARN(const char* value) { SetCloudWatchLogGroupARN(value); return *this;}
 

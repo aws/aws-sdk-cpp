@@ -28,7 +28,9 @@ JobSummary::JobSummary() :
     m_statusHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_lastUpdatedAtHasBeenSet(false),
-    m_completedAtHasBeenSet(false)
+    m_completedAtHasBeenSet(false),
+    m_isConcurrent(false),
+    m_isConcurrentHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ JobSummary::JobSummary(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_lastUpdatedAtHasBeenSet(false),
-    m_completedAtHasBeenSet(false)
+    m_completedAtHasBeenSet(false),
+    m_isConcurrent(false),
+    m_isConcurrentHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -105,6 +109,13 @@ JobSummary& JobSummary::operator =(JsonView jsonValue)
     m_completedAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("isConcurrent"))
+  {
+    m_isConcurrent = jsonValue.GetBool("isConcurrent");
+
+    m_isConcurrentHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -153,6 +164,12 @@ JsonValue JobSummary::Jsonize() const
   if(m_completedAtHasBeenSet)
   {
    payload.WithDouble("completedAt", m_completedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_isConcurrentHasBeenSet)
+  {
+   payload.WithBool("isConcurrent", m_isConcurrent);
+
   }
 
   return payload;

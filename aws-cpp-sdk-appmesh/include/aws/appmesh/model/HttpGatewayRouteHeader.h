@@ -64,22 +64,40 @@ namespace Model
     inline HttpGatewayRouteHeader& WithInvert(bool value) { SetInvert(value); return *this;}
 
 
-    
+    /**
+     * <p>An object that represents the method and value to match with the header value
+     * sent in a request. Specify one match method.</p>
+     */
     inline const HeaderMatchMethod& GetMatch() const{ return m_match; }
 
-    
+    /**
+     * <p>An object that represents the method and value to match with the header value
+     * sent in a request. Specify one match method.</p>
+     */
     inline bool MatchHasBeenSet() const { return m_matchHasBeenSet; }
 
-    
+    /**
+     * <p>An object that represents the method and value to match with the header value
+     * sent in a request. Specify one match method.</p>
+     */
     inline void SetMatch(const HeaderMatchMethod& value) { m_matchHasBeenSet = true; m_match = value; }
 
-    
+    /**
+     * <p>An object that represents the method and value to match with the header value
+     * sent in a request. Specify one match method.</p>
+     */
     inline void SetMatch(HeaderMatchMethod&& value) { m_matchHasBeenSet = true; m_match = std::move(value); }
 
-    
+    /**
+     * <p>An object that represents the method and value to match with the header value
+     * sent in a request. Specify one match method.</p>
+     */
     inline HttpGatewayRouteHeader& WithMatch(const HeaderMatchMethod& value) { SetMatch(value); return *this;}
 
-    
+    /**
+     * <p>An object that represents the method and value to match with the header value
+     * sent in a request. Specify one match method.</p>
+     */
     inline HttpGatewayRouteHeader& WithMatch(HeaderMatchMethod&& value) { SetMatch(std::move(value)); return *this;}
 
 

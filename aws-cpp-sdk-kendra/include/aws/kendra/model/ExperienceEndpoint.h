@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides the configuration information of the endpoint for your Amazon Kendra
-   * experience.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides the configuration information for the endpoint for your Amazon
+   * Kendra experience.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ExperienceEndpoint">AWS
    * API Reference</a></p>
    */

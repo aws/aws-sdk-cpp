@@ -40,7 +40,13 @@ namespace Model
      * <p>A name for the auto scaling configuration. When you use it for the first time
      * in an Amazon Web Services Region, App Runner creates revision number
      * <code>1</code> of this name. When you use the same name in subsequent calls, App
-     * Runner creates incremental revisions of the configuration.</p>
+     * Runner creates incremental revisions of the configuration.</p>  <p>The
+     * name <code>DefaultConfiguration</code> is reserved (it's the configuration that
+     * App Runner uses if you don't provide a custome one). You can't use it to create
+     * a new auto scaling configuration, and you can't create a revision of it.</p>
+     * <p>When you want to use your own auto scaling configuration for your App Runner
+     * service, <i>create a configuration with a different name</i>, and then provide
+     * it when you create or update your service.</p> 
      */
     inline const Aws::String& GetAutoScalingConfigurationName() const{ return m_autoScalingConfigurationName; }
 
@@ -48,7 +54,13 @@ namespace Model
      * <p>A name for the auto scaling configuration. When you use it for the first time
      * in an Amazon Web Services Region, App Runner creates revision number
      * <code>1</code> of this name. When you use the same name in subsequent calls, App
-     * Runner creates incremental revisions of the configuration.</p>
+     * Runner creates incremental revisions of the configuration.</p>  <p>The
+     * name <code>DefaultConfiguration</code> is reserved (it's the configuration that
+     * App Runner uses if you don't provide a custome one). You can't use it to create
+     * a new auto scaling configuration, and you can't create a revision of it.</p>
+     * <p>When you want to use your own auto scaling configuration for your App Runner
+     * service, <i>create a configuration with a different name</i>, and then provide
+     * it when you create or update your service.</p> 
      */
     inline bool AutoScalingConfigurationNameHasBeenSet() const { return m_autoScalingConfigurationNameHasBeenSet; }
 
@@ -56,7 +68,13 @@ namespace Model
      * <p>A name for the auto scaling configuration. When you use it for the first time
      * in an Amazon Web Services Region, App Runner creates revision number
      * <code>1</code> of this name. When you use the same name in subsequent calls, App
-     * Runner creates incremental revisions of the configuration.</p>
+     * Runner creates incremental revisions of the configuration.</p>  <p>The
+     * name <code>DefaultConfiguration</code> is reserved (it's the configuration that
+     * App Runner uses if you don't provide a custome one). You can't use it to create
+     * a new auto scaling configuration, and you can't create a revision of it.</p>
+     * <p>When you want to use your own auto scaling configuration for your App Runner
+     * service, <i>create a configuration with a different name</i>, and then provide
+     * it when you create or update your service.</p> 
      */
     inline void SetAutoScalingConfigurationName(const Aws::String& value) { m_autoScalingConfigurationNameHasBeenSet = true; m_autoScalingConfigurationName = value; }
 
@@ -64,7 +82,13 @@ namespace Model
      * <p>A name for the auto scaling configuration. When you use it for the first time
      * in an Amazon Web Services Region, App Runner creates revision number
      * <code>1</code> of this name. When you use the same name in subsequent calls, App
-     * Runner creates incremental revisions of the configuration.</p>
+     * Runner creates incremental revisions of the configuration.</p>  <p>The
+     * name <code>DefaultConfiguration</code> is reserved (it's the configuration that
+     * App Runner uses if you don't provide a custome one). You can't use it to create
+     * a new auto scaling configuration, and you can't create a revision of it.</p>
+     * <p>When you want to use your own auto scaling configuration for your App Runner
+     * service, <i>create a configuration with a different name</i>, and then provide
+     * it when you create or update your service.</p> 
      */
     inline void SetAutoScalingConfigurationName(Aws::String&& value) { m_autoScalingConfigurationNameHasBeenSet = true; m_autoScalingConfigurationName = std::move(value); }
 
@@ -72,7 +96,13 @@ namespace Model
      * <p>A name for the auto scaling configuration. When you use it for the first time
      * in an Amazon Web Services Region, App Runner creates revision number
      * <code>1</code> of this name. When you use the same name in subsequent calls, App
-     * Runner creates incremental revisions of the configuration.</p>
+     * Runner creates incremental revisions of the configuration.</p>  <p>The
+     * name <code>DefaultConfiguration</code> is reserved (it's the configuration that
+     * App Runner uses if you don't provide a custome one). You can't use it to create
+     * a new auto scaling configuration, and you can't create a revision of it.</p>
+     * <p>When you want to use your own auto scaling configuration for your App Runner
+     * service, <i>create a configuration with a different name</i>, and then provide
+     * it when you create or update your service.</p> 
      */
     inline void SetAutoScalingConfigurationName(const char* value) { m_autoScalingConfigurationNameHasBeenSet = true; m_autoScalingConfigurationName.assign(value); }
 
@@ -80,7 +110,13 @@ namespace Model
      * <p>A name for the auto scaling configuration. When you use it for the first time
      * in an Amazon Web Services Region, App Runner creates revision number
      * <code>1</code> of this name. When you use the same name in subsequent calls, App
-     * Runner creates incremental revisions of the configuration.</p>
+     * Runner creates incremental revisions of the configuration.</p>  <p>The
+     * name <code>DefaultConfiguration</code> is reserved (it's the configuration that
+     * App Runner uses if you don't provide a custome one). You can't use it to create
+     * a new auto scaling configuration, and you can't create a revision of it.</p>
+     * <p>When you want to use your own auto scaling configuration for your App Runner
+     * service, <i>create a configuration with a different name</i>, and then provide
+     * it when you create or update your service.</p> 
      */
     inline CreateAutoScalingConfigurationRequest& WithAutoScalingConfigurationName(const Aws::String& value) { SetAutoScalingConfigurationName(value); return *this;}
 
@@ -88,7 +124,13 @@ namespace Model
      * <p>A name for the auto scaling configuration. When you use it for the first time
      * in an Amazon Web Services Region, App Runner creates revision number
      * <code>1</code> of this name. When you use the same name in subsequent calls, App
-     * Runner creates incremental revisions of the configuration.</p>
+     * Runner creates incremental revisions of the configuration.</p>  <p>The
+     * name <code>DefaultConfiguration</code> is reserved (it's the configuration that
+     * App Runner uses if you don't provide a custome one). You can't use it to create
+     * a new auto scaling configuration, and you can't create a revision of it.</p>
+     * <p>When you want to use your own auto scaling configuration for your App Runner
+     * service, <i>create a configuration with a different name</i>, and then provide
+     * it when you create or update your service.</p> 
      */
     inline CreateAutoScalingConfigurationRequest& WithAutoScalingConfigurationName(Aws::String&& value) { SetAutoScalingConfigurationName(std::move(value)); return *this;}
 
@@ -96,7 +138,13 @@ namespace Model
      * <p>A name for the auto scaling configuration. When you use it for the first time
      * in an Amazon Web Services Region, App Runner creates revision number
      * <code>1</code> of this name. When you use the same name in subsequent calls, App
-     * Runner creates incremental revisions of the configuration.</p>
+     * Runner creates incremental revisions of the configuration.</p>  <p>The
+     * name <code>DefaultConfiguration</code> is reserved (it's the configuration that
+     * App Runner uses if you don't provide a custome one). You can't use it to create
+     * a new auto scaling configuration, and you can't create a revision of it.</p>
+     * <p>When you want to use your own auto scaling configuration for your App Runner
+     * service, <i>create a configuration with a different name</i>, and then provide
+     * it when you create or update your service.</p> 
      */
     inline CreateAutoScalingConfigurationRequest& WithAutoScalingConfigurationName(const char* value) { SetAutoScalingConfigurationName(value); return *this;}
 

@@ -32,8 +32,8 @@ namespace RDS
 namespace Model
 {
   /**
-   * <p> This data type is used as a response element in the action
-   * <code>DescribeDBEngineVersions</code>. </p><p><h3>See Also:</h3>   <a
+   * <p>This data type is used as a response element in the action
+   * <code>DescribeDBEngineVersions</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBEngineVersion">AWS
    * API Reference</a></p>
    */
@@ -226,37 +226,37 @@ namespace Model
 
 
     /**
-     * <p> The default character set for new instances of this engine version, if the
+     * <p>The default character set for new instances of this engine version, if the
      * <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't
-     * specified. </p>
+     * specified.</p>
      */
     inline const CharacterSet& GetDefaultCharacterSet() const{ return m_defaultCharacterSet; }
 
     /**
-     * <p> The default character set for new instances of this engine version, if the
+     * <p>The default character set for new instances of this engine version, if the
      * <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't
-     * specified. </p>
+     * specified.</p>
      */
     inline void SetDefaultCharacterSet(const CharacterSet& value) { m_defaultCharacterSet = value; }
 
     /**
-     * <p> The default character set for new instances of this engine version, if the
+     * <p>The default character set for new instances of this engine version, if the
      * <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't
-     * specified. </p>
+     * specified.</p>
      */
     inline void SetDefaultCharacterSet(CharacterSet&& value) { m_defaultCharacterSet = std::move(value); }
 
     /**
-     * <p> The default character set for new instances of this engine version, if the
+     * <p>The default character set for new instances of this engine version, if the
      * <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't
-     * specified. </p>
+     * specified.</p>
      */
     inline DeleteCustomDBEngineVersionResult& WithDefaultCharacterSet(const CharacterSet& value) { SetDefaultCharacterSet(value); return *this;}
 
     /**
-     * <p> The default character set for new instances of this engine version, if the
+     * <p>The default character set for new instances of this engine version, if the
      * <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't
-     * specified. </p>
+     * specified.</p>
      */
     inline DeleteCustomDBEngineVersionResult& WithDefaultCharacterSet(CharacterSet&& value) { SetDefaultCharacterSet(std::move(value)); return *this;}
 
@@ -264,49 +264,49 @@ namespace Model
     /**
      * <p>A list of the character sets supported by this engine for the
      * <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code>
-     * operation. </p>
+     * operation.</p>
      */
     inline const Aws::Vector<CharacterSet>& GetSupportedCharacterSets() const{ return m_supportedCharacterSets; }
 
     /**
      * <p>A list of the character sets supported by this engine for the
      * <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code>
-     * operation. </p>
+     * operation.</p>
      */
     inline void SetSupportedCharacterSets(const Aws::Vector<CharacterSet>& value) { m_supportedCharacterSets = value; }
 
     /**
      * <p>A list of the character sets supported by this engine for the
      * <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code>
-     * operation. </p>
+     * operation.</p>
      */
     inline void SetSupportedCharacterSets(Aws::Vector<CharacterSet>&& value) { m_supportedCharacterSets = std::move(value); }
 
     /**
      * <p>A list of the character sets supported by this engine for the
      * <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code>
-     * operation. </p>
+     * operation.</p>
      */
     inline DeleteCustomDBEngineVersionResult& WithSupportedCharacterSets(const Aws::Vector<CharacterSet>& value) { SetSupportedCharacterSets(value); return *this;}
 
     /**
      * <p>A list of the character sets supported by this engine for the
      * <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code>
-     * operation. </p>
+     * operation.</p>
      */
     inline DeleteCustomDBEngineVersionResult& WithSupportedCharacterSets(Aws::Vector<CharacterSet>&& value) { SetSupportedCharacterSets(std::move(value)); return *this;}
 
     /**
      * <p>A list of the character sets supported by this engine for the
      * <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code>
-     * operation. </p>
+     * operation.</p>
      */
     inline DeleteCustomDBEngineVersionResult& AddSupportedCharacterSets(const CharacterSet& value) { m_supportedCharacterSets.push_back(value); return *this; }
 
     /**
      * <p>A list of the character sets supported by this engine for the
      * <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code>
-     * operation. </p>
+     * operation.</p>
      */
     inline DeleteCustomDBEngineVersionResult& AddSupportedCharacterSets(CharacterSet&& value) { m_supportedCharacterSets.push_back(std::move(value)); return *this; }
 
@@ -314,49 +314,49 @@ namespace Model
     /**
      * <p>A list of the character sets supported by the Oracle DB engine for the
      * <code>NcharCharacterSetName</code> parameter of the
-     * <code>CreateDBInstance</code> operation. </p>
+     * <code>CreateDBInstance</code> operation.</p>
      */
     inline const Aws::Vector<CharacterSet>& GetSupportedNcharCharacterSets() const{ return m_supportedNcharCharacterSets; }
 
     /**
      * <p>A list of the character sets supported by the Oracle DB engine for the
      * <code>NcharCharacterSetName</code> parameter of the
-     * <code>CreateDBInstance</code> operation. </p>
+     * <code>CreateDBInstance</code> operation.</p>
      */
     inline void SetSupportedNcharCharacterSets(const Aws::Vector<CharacterSet>& value) { m_supportedNcharCharacterSets = value; }
 
     /**
      * <p>A list of the character sets supported by the Oracle DB engine for the
      * <code>NcharCharacterSetName</code> parameter of the
-     * <code>CreateDBInstance</code> operation. </p>
+     * <code>CreateDBInstance</code> operation.</p>
      */
     inline void SetSupportedNcharCharacterSets(Aws::Vector<CharacterSet>&& value) { m_supportedNcharCharacterSets = std::move(value); }
 
     /**
      * <p>A list of the character sets supported by the Oracle DB engine for the
      * <code>NcharCharacterSetName</code> parameter of the
-     * <code>CreateDBInstance</code> operation. </p>
+     * <code>CreateDBInstance</code> operation.</p>
      */
     inline DeleteCustomDBEngineVersionResult& WithSupportedNcharCharacterSets(const Aws::Vector<CharacterSet>& value) { SetSupportedNcharCharacterSets(value); return *this;}
 
     /**
      * <p>A list of the character sets supported by the Oracle DB engine for the
      * <code>NcharCharacterSetName</code> parameter of the
-     * <code>CreateDBInstance</code> operation. </p>
+     * <code>CreateDBInstance</code> operation.</p>
      */
     inline DeleteCustomDBEngineVersionResult& WithSupportedNcharCharacterSets(Aws::Vector<CharacterSet>&& value) { SetSupportedNcharCharacterSets(std::move(value)); return *this;}
 
     /**
      * <p>A list of the character sets supported by the Oracle DB engine for the
      * <code>NcharCharacterSetName</code> parameter of the
-     * <code>CreateDBInstance</code> operation. </p>
+     * <code>CreateDBInstance</code> operation.</p>
      */
     inline DeleteCustomDBEngineVersionResult& AddSupportedNcharCharacterSets(const CharacterSet& value) { m_supportedNcharCharacterSets.push_back(value); return *this; }
 
     /**
      * <p>A list of the character sets supported by the Oracle DB engine for the
      * <code>NcharCharacterSetName</code> parameter of the
-     * <code>CreateDBInstance</code> operation. </p>
+     * <code>CreateDBInstance</code> operation.</p>
      */
     inline DeleteCustomDBEngineVersionResult& AddSupportedNcharCharacterSets(CharacterSet&& value) { m_supportedNcharCharacterSets.push_back(std::move(value)); return *this; }
 
@@ -406,50 +406,43 @@ namespace Model
 
     /**
      * <p>A list of the time zones supported by this engine for the
-     * <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.
-     * </p>
+     * <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.</p>
      */
     inline const Aws::Vector<Timezone>& GetSupportedTimezones() const{ return m_supportedTimezones; }
 
     /**
      * <p>A list of the time zones supported by this engine for the
-     * <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.
-     * </p>
+     * <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.</p>
      */
     inline void SetSupportedTimezones(const Aws::Vector<Timezone>& value) { m_supportedTimezones = value; }
 
     /**
      * <p>A list of the time zones supported by this engine for the
-     * <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.
-     * </p>
+     * <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.</p>
      */
     inline void SetSupportedTimezones(Aws::Vector<Timezone>&& value) { m_supportedTimezones = std::move(value); }
 
     /**
      * <p>A list of the time zones supported by this engine for the
-     * <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.
-     * </p>
+     * <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.</p>
      */
     inline DeleteCustomDBEngineVersionResult& WithSupportedTimezones(const Aws::Vector<Timezone>& value) { SetSupportedTimezones(value); return *this;}
 
     /**
      * <p>A list of the time zones supported by this engine for the
-     * <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.
-     * </p>
+     * <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.</p>
      */
     inline DeleteCustomDBEngineVersionResult& WithSupportedTimezones(Aws::Vector<Timezone>&& value) { SetSupportedTimezones(std::move(value)); return *this;}
 
     /**
      * <p>A list of the time zones supported by this engine for the
-     * <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.
-     * </p>
+     * <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.</p>
      */
     inline DeleteCustomDBEngineVersionResult& AddSupportedTimezones(const Timezone& value) { m_supportedTimezones.push_back(value); return *this; }
 
     /**
      * <p>A list of the time zones supported by this engine for the
-     * <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.
-     * </p>
+     * <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.</p>
      */
     inline DeleteCustomDBEngineVersionResult& AddSupportedTimezones(Timezone&& value) { m_supportedTimezones.push_back(std::move(value)); return *this; }
 
@@ -580,13 +573,13 @@ namespace Model
 
 
     /**
-     * <p> A list of features supported by the DB engine. </p> <p>The supported
-     * features vary by DB engine and DB engine version.</p> <p>To determine the
-     * supported features for a specific DB engine and DB engine version using the CLI,
-     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
-     * --engine &lt;engine_name&gt; --engine-version &lt;engine_version&gt;</code> </p>
-     * <p>For example, to determine the supported features for RDS for PostgreSQL
-     * version 13.3 using the CLI, use the following command:</p> <p> <code>aws rds
+     * <p>A list of features supported by the DB engine.</p> <p>The supported features
+     * vary by DB engine and DB engine version.</p> <p>To determine the supported
+     * features for a specific DB engine and DB engine version using the CLI, use the
+     * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
+     * &lt;engine_name&gt; --engine-version &lt;engine_version&gt;</code> </p> <p>For
+     * example, to determine the supported features for RDS for PostgreSQL version 13.3
+     * using the CLI, use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
      * <p>The supported features are listed under <code>SupportedFeatureNames</code> in
      * the output.</p>
@@ -594,13 +587,13 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetSupportedFeatureNames() const{ return m_supportedFeatureNames; }
 
     /**
-     * <p> A list of features supported by the DB engine. </p> <p>The supported
-     * features vary by DB engine and DB engine version.</p> <p>To determine the
-     * supported features for a specific DB engine and DB engine version using the CLI,
-     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
-     * --engine &lt;engine_name&gt; --engine-version &lt;engine_version&gt;</code> </p>
-     * <p>For example, to determine the supported features for RDS for PostgreSQL
-     * version 13.3 using the CLI, use the following command:</p> <p> <code>aws rds
+     * <p>A list of features supported by the DB engine.</p> <p>The supported features
+     * vary by DB engine and DB engine version.</p> <p>To determine the supported
+     * features for a specific DB engine and DB engine version using the CLI, use the
+     * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
+     * &lt;engine_name&gt; --engine-version &lt;engine_version&gt;</code> </p> <p>For
+     * example, to determine the supported features for RDS for PostgreSQL version 13.3
+     * using the CLI, use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
      * <p>The supported features are listed under <code>SupportedFeatureNames</code> in
      * the output.</p>
@@ -608,13 +601,13 @@ namespace Model
     inline void SetSupportedFeatureNames(const Aws::Vector<Aws::String>& value) { m_supportedFeatureNames = value; }
 
     /**
-     * <p> A list of features supported by the DB engine. </p> <p>The supported
-     * features vary by DB engine and DB engine version.</p> <p>To determine the
-     * supported features for a specific DB engine and DB engine version using the CLI,
-     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
-     * --engine &lt;engine_name&gt; --engine-version &lt;engine_version&gt;</code> </p>
-     * <p>For example, to determine the supported features for RDS for PostgreSQL
-     * version 13.3 using the CLI, use the following command:</p> <p> <code>aws rds
+     * <p>A list of features supported by the DB engine.</p> <p>The supported features
+     * vary by DB engine and DB engine version.</p> <p>To determine the supported
+     * features for a specific DB engine and DB engine version using the CLI, use the
+     * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
+     * &lt;engine_name&gt; --engine-version &lt;engine_version&gt;</code> </p> <p>For
+     * example, to determine the supported features for RDS for PostgreSQL version 13.3
+     * using the CLI, use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
      * <p>The supported features are listed under <code>SupportedFeatureNames</code> in
      * the output.</p>
@@ -622,13 +615,13 @@ namespace Model
     inline void SetSupportedFeatureNames(Aws::Vector<Aws::String>&& value) { m_supportedFeatureNames = std::move(value); }
 
     /**
-     * <p> A list of features supported by the DB engine. </p> <p>The supported
-     * features vary by DB engine and DB engine version.</p> <p>To determine the
-     * supported features for a specific DB engine and DB engine version using the CLI,
-     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
-     * --engine &lt;engine_name&gt; --engine-version &lt;engine_version&gt;</code> </p>
-     * <p>For example, to determine the supported features for RDS for PostgreSQL
-     * version 13.3 using the CLI, use the following command:</p> <p> <code>aws rds
+     * <p>A list of features supported by the DB engine.</p> <p>The supported features
+     * vary by DB engine and DB engine version.</p> <p>To determine the supported
+     * features for a specific DB engine and DB engine version using the CLI, use the
+     * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
+     * &lt;engine_name&gt; --engine-version &lt;engine_version&gt;</code> </p> <p>For
+     * example, to determine the supported features for RDS for PostgreSQL version 13.3
+     * using the CLI, use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
      * <p>The supported features are listed under <code>SupportedFeatureNames</code> in
      * the output.</p>
@@ -636,13 +629,13 @@ namespace Model
     inline DeleteCustomDBEngineVersionResult& WithSupportedFeatureNames(const Aws::Vector<Aws::String>& value) { SetSupportedFeatureNames(value); return *this;}
 
     /**
-     * <p> A list of features supported by the DB engine. </p> <p>The supported
-     * features vary by DB engine and DB engine version.</p> <p>To determine the
-     * supported features for a specific DB engine and DB engine version using the CLI,
-     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
-     * --engine &lt;engine_name&gt; --engine-version &lt;engine_version&gt;</code> </p>
-     * <p>For example, to determine the supported features for RDS for PostgreSQL
-     * version 13.3 using the CLI, use the following command:</p> <p> <code>aws rds
+     * <p>A list of features supported by the DB engine.</p> <p>The supported features
+     * vary by DB engine and DB engine version.</p> <p>To determine the supported
+     * features for a specific DB engine and DB engine version using the CLI, use the
+     * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
+     * &lt;engine_name&gt; --engine-version &lt;engine_version&gt;</code> </p> <p>For
+     * example, to determine the supported features for RDS for PostgreSQL version 13.3
+     * using the CLI, use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
      * <p>The supported features are listed under <code>SupportedFeatureNames</code> in
      * the output.</p>
@@ -650,13 +643,13 @@ namespace Model
     inline DeleteCustomDBEngineVersionResult& WithSupportedFeatureNames(Aws::Vector<Aws::String>&& value) { SetSupportedFeatureNames(std::move(value)); return *this;}
 
     /**
-     * <p> A list of features supported by the DB engine. </p> <p>The supported
-     * features vary by DB engine and DB engine version.</p> <p>To determine the
-     * supported features for a specific DB engine and DB engine version using the CLI,
-     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
-     * --engine &lt;engine_name&gt; --engine-version &lt;engine_version&gt;</code> </p>
-     * <p>For example, to determine the supported features for RDS for PostgreSQL
-     * version 13.3 using the CLI, use the following command:</p> <p> <code>aws rds
+     * <p>A list of features supported by the DB engine.</p> <p>The supported features
+     * vary by DB engine and DB engine version.</p> <p>To determine the supported
+     * features for a specific DB engine and DB engine version using the CLI, use the
+     * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
+     * &lt;engine_name&gt; --engine-version &lt;engine_version&gt;</code> </p> <p>For
+     * example, to determine the supported features for RDS for PostgreSQL version 13.3
+     * using the CLI, use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
      * <p>The supported features are listed under <code>SupportedFeatureNames</code> in
      * the output.</p>
@@ -664,13 +657,13 @@ namespace Model
     inline DeleteCustomDBEngineVersionResult& AddSupportedFeatureNames(const Aws::String& value) { m_supportedFeatureNames.push_back(value); return *this; }
 
     /**
-     * <p> A list of features supported by the DB engine. </p> <p>The supported
-     * features vary by DB engine and DB engine version.</p> <p>To determine the
-     * supported features for a specific DB engine and DB engine version using the CLI,
-     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
-     * --engine &lt;engine_name&gt; --engine-version &lt;engine_version&gt;</code> </p>
-     * <p>For example, to determine the supported features for RDS for PostgreSQL
-     * version 13.3 using the CLI, use the following command:</p> <p> <code>aws rds
+     * <p>A list of features supported by the DB engine.</p> <p>The supported features
+     * vary by DB engine and DB engine version.</p> <p>To determine the supported
+     * features for a specific DB engine and DB engine version using the CLI, use the
+     * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
+     * &lt;engine_name&gt; --engine-version &lt;engine_version&gt;</code> </p> <p>For
+     * example, to determine the supported features for RDS for PostgreSQL version 13.3
+     * using the CLI, use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
      * <p>The supported features are listed under <code>SupportedFeatureNames</code> in
      * the output.</p>
@@ -678,13 +671,13 @@ namespace Model
     inline DeleteCustomDBEngineVersionResult& AddSupportedFeatureNames(Aws::String&& value) { m_supportedFeatureNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> A list of features supported by the DB engine. </p> <p>The supported
-     * features vary by DB engine and DB engine version.</p> <p>To determine the
-     * supported features for a specific DB engine and DB engine version using the CLI,
-     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
-     * --engine &lt;engine_name&gt; --engine-version &lt;engine_version&gt;</code> </p>
-     * <p>For example, to determine the supported features for RDS for PostgreSQL
-     * version 13.3 using the CLI, use the following command:</p> <p> <code>aws rds
+     * <p>A list of features supported by the DB engine.</p> <p>The supported features
+     * vary by DB engine and DB engine version.</p> <p>To determine the supported
+     * features for a specific DB engine and DB engine version using the CLI, use the
+     * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
+     * &lt;engine_name&gt; --engine-version &lt;engine_version&gt;</code> </p> <p>For
+     * example, to determine the supported features for RDS for PostgreSQL version 13.3
+     * using the CLI, use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
      * <p>The supported features are listed under <code>SupportedFeatureNames</code> in
      * the output.</p>
@@ -1022,6 +1015,25 @@ namespace Model
     inline DeleteCustomDBEngineVersionResult& AddTagList(Tag&& value) { m_tagList.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>A value that indicates whether the engine version supports Babelfish for
+     * Aurora PostgreSQL.</p>
+     */
+    inline bool GetSupportsBabelfish() const{ return m_supportsBabelfish; }
+
+    /**
+     * <p>A value that indicates whether the engine version supports Babelfish for
+     * Aurora PostgreSQL.</p>
+     */
+    inline void SetSupportsBabelfish(bool value) { m_supportsBabelfish = value; }
+
+    /**
+     * <p>A value that indicates whether the engine version supports Babelfish for
+     * Aurora PostgreSQL.</p>
+     */
+    inline DeleteCustomDBEngineVersionResult& WithSupportsBabelfish(bool value) { SetSupportsBabelfish(value); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -1088,6 +1100,8 @@ namespace Model
     Aws::Utils::DateTime m_createTime;
 
     Aws::Vector<Tag> m_tagList;
+
+    bool m_supportsBabelfish;
 
     ResponseMetadata m_responseMetadata;
   };

@@ -245,58 +245,90 @@ namespace Model
 
 
     /**
-     * <p>The type of configurations that the configuration profile contains. A
-     * configuration can be a feature flag used for enabling or disabling new features
-     * or a free-form configuration used to introduce changes to your application.</p>
+     * <p>The type of configurations contained in the profile. AppConfig supports
+     * <code>feature flags</code> and <code>freeform</code> configurations. We
+     * recommend you create feature flag configurations to enable or disable new
+     * features and freeform configurations to distribute configurations to an
+     * application. When calling this API, enter one of the following values for
+     * <code>Type</code>:</p> <p> <code>AWS.AppConfig.FeatureFlags</code> </p> <p>
+     * <code>AWS.Freeform</code> </p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of configurations that the configuration profile contains. A
-     * configuration can be a feature flag used for enabling or disabling new features
-     * or a free-form configuration used to introduce changes to your application.</p>
+     * <p>The type of configurations contained in the profile. AppConfig supports
+     * <code>feature flags</code> and <code>freeform</code> configurations. We
+     * recommend you create feature flag configurations to enable or disable new
+     * features and freeform configurations to distribute configurations to an
+     * application. When calling this API, enter one of the following values for
+     * <code>Type</code>:</p> <p> <code>AWS.AppConfig.FeatureFlags</code> </p> <p>
+     * <code>AWS.Freeform</code> </p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of configurations that the configuration profile contains. A
-     * configuration can be a feature flag used for enabling or disabling new features
-     * or a free-form configuration used to introduce changes to your application.</p>
+     * <p>The type of configurations contained in the profile. AppConfig supports
+     * <code>feature flags</code> and <code>freeform</code> configurations. We
+     * recommend you create feature flag configurations to enable or disable new
+     * features and freeform configurations to distribute configurations to an
+     * application. When calling this API, enter one of the following values for
+     * <code>Type</code>:</p> <p> <code>AWS.AppConfig.FeatureFlags</code> </p> <p>
+     * <code>AWS.Freeform</code> </p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of configurations that the configuration profile contains. A
-     * configuration can be a feature flag used for enabling or disabling new features
-     * or a free-form configuration used to introduce changes to your application.</p>
+     * <p>The type of configurations contained in the profile. AppConfig supports
+     * <code>feature flags</code> and <code>freeform</code> configurations. We
+     * recommend you create feature flag configurations to enable or disable new
+     * features and freeform configurations to distribute configurations to an
+     * application. When calling this API, enter one of the following values for
+     * <code>Type</code>:</p> <p> <code>AWS.AppConfig.FeatureFlags</code> </p> <p>
+     * <code>AWS.Freeform</code> </p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of configurations that the configuration profile contains. A
-     * configuration can be a feature flag used for enabling or disabling new features
-     * or a free-form configuration used to introduce changes to your application.</p>
+     * <p>The type of configurations contained in the profile. AppConfig supports
+     * <code>feature flags</code> and <code>freeform</code> configurations. We
+     * recommend you create feature flag configurations to enable or disable new
+     * features and freeform configurations to distribute configurations to an
+     * application. When calling this API, enter one of the following values for
+     * <code>Type</code>:</p> <p> <code>AWS.AppConfig.FeatureFlags</code> </p> <p>
+     * <code>AWS.Freeform</code> </p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The type of configurations that the configuration profile contains. A
-     * configuration can be a feature flag used for enabling or disabling new features
-     * or a free-form configuration used to introduce changes to your application.</p>
+     * <p>The type of configurations contained in the profile. AppConfig supports
+     * <code>feature flags</code> and <code>freeform</code> configurations. We
+     * recommend you create feature flag configurations to enable or disable new
+     * features and freeform configurations to distribute configurations to an
+     * application. When calling this API, enter one of the following values for
+     * <code>Type</code>:</p> <p> <code>AWS.AppConfig.FeatureFlags</code> </p> <p>
+     * <code>AWS.Freeform</code> </p>
      */
     inline ConfigurationProfileSummary& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of configurations that the configuration profile contains. A
-     * configuration can be a feature flag used for enabling or disabling new features
-     * or a free-form configuration used to introduce changes to your application.</p>
+     * <p>The type of configurations contained in the profile. AppConfig supports
+     * <code>feature flags</code> and <code>freeform</code> configurations. We
+     * recommend you create feature flag configurations to enable or disable new
+     * features and freeform configurations to distribute configurations to an
+     * application. When calling this API, enter one of the following values for
+     * <code>Type</code>:</p> <p> <code>AWS.AppConfig.FeatureFlags</code> </p> <p>
+     * <code>AWS.Freeform</code> </p>
      */
     inline ConfigurationProfileSummary& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of configurations that the configuration profile contains. A
-     * configuration can be a feature flag used for enabling or disabling new features
-     * or a free-form configuration used to introduce changes to your application.</p>
+     * <p>The type of configurations contained in the profile. AppConfig supports
+     * <code>feature flags</code> and <code>freeform</code> configurations. We
+     * recommend you create feature flag configurations to enable or disable new
+     * features and freeform configurations to distribute configurations to an
+     * application. When calling this API, enter one of the following values for
+     * <code>Type</code>:</p> <p> <code>AWS.AppConfig.FeatureFlags</code> </p> <p>
+     * <code>AWS.Freeform</code> </p>
      */
     inline ConfigurationProfileSummary& WithType(const char* value) { SetType(value); return *this;}
 

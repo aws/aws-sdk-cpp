@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/network-firewall/model/ResourceStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/network-firewall/model/EncryptionConfiguration.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/network-firewall/model/Tag.h>
 #include <utility>
 
@@ -393,6 +395,74 @@ namespace Model
      */
     inline FirewallPolicyResponse& WithNumberOfAssociations(int value) { SetNumberOfAssociations(value); return *this;}
 
+
+    /**
+     * <p>A complex type that contains the Amazon Web Services KMS encryption
+     * configuration settings for your firewall policy.</p>
+     */
+    inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
+
+    /**
+     * <p>A complex type that contains the Amazon Web Services KMS encryption
+     * configuration settings for your firewall policy.</p>
+     */
+    inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
+
+    /**
+     * <p>A complex type that contains the Amazon Web Services KMS encryption
+     * configuration settings for your firewall policy.</p>
+     */
+    inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
+
+    /**
+     * <p>A complex type that contains the Amazon Web Services KMS encryption
+     * configuration settings for your firewall policy.</p>
+     */
+    inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
+
+    /**
+     * <p>A complex type that contains the Amazon Web Services KMS encryption
+     * configuration settings for your firewall policy.</p>
+     */
+    inline FirewallPolicyResponse& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
+
+    /**
+     * <p>A complex type that contains the Amazon Web Services KMS encryption
+     * configuration settings for your firewall policy.</p>
+     */
+    inline FirewallPolicyResponse& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The last time that the firewall policy was changed.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+
+    /**
+     * <p>The last time that the firewall policy was changed.</p>
+     */
+    inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
+
+    /**
+     * <p>The last time that the firewall policy was changed.</p>
+     */
+    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
+
+    /**
+     * <p>The last time that the firewall policy was changed.</p>
+     */
+    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
+
+    /**
+     * <p>The last time that the firewall policy was changed.</p>
+     */
+    inline FirewallPolicyResponse& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
+
+    /**
+     * <p>The last time that the firewall policy was changed.</p>
+     */
+    inline FirewallPolicyResponse& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_firewallPolicyName;
@@ -421,6 +491,12 @@ namespace Model
 
     int m_numberOfAssociations;
     bool m_numberOfAssociationsHasBeenSet;
+
+    EncryptionConfiguration m_encryptionConfiguration;
+    bool m_encryptionConfigurationHasBeenSet;
+
+    Aws::Utils::DateTime m_lastModifiedTime;
+    bool m_lastModifiedTimeHasBeenSet;
   };
 
 } // namespace Model

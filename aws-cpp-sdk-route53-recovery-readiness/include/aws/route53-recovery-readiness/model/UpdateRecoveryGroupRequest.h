@@ -18,7 +18,7 @@ namespace Model
 {
 
   /**
-   * Parameters to update for the RecoveryGroup<p><h3>See Also:</h3>   <a
+   * <p>Name of a recovery group.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/UpdateRecoveryGroupRequest">AWS
    * API Reference</a></p>
    */
@@ -37,88 +37,97 @@ namespace Model
 
 
     /**
-     * A list of Cell arns, completely replaces previous list
+     * <p>A list of cell Amazon Resource Names (ARNs). This list completely replaces
+     * the previous list.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCells() const{ return m_cells; }
 
     /**
-     * A list of Cell arns, completely replaces previous list
+     * <p>A list of cell Amazon Resource Names (ARNs). This list completely replaces
+     * the previous list.</p>
      */
     inline bool CellsHasBeenSet() const { return m_cellsHasBeenSet; }
 
     /**
-     * A list of Cell arns, completely replaces previous list
+     * <p>A list of cell Amazon Resource Names (ARNs). This list completely replaces
+     * the previous list.</p>
      */
     inline void SetCells(const Aws::Vector<Aws::String>& value) { m_cellsHasBeenSet = true; m_cells = value; }
 
     /**
-     * A list of Cell arns, completely replaces previous list
+     * <p>A list of cell Amazon Resource Names (ARNs). This list completely replaces
+     * the previous list.</p>
      */
     inline void SetCells(Aws::Vector<Aws::String>&& value) { m_cellsHasBeenSet = true; m_cells = std::move(value); }
 
     /**
-     * A list of Cell arns, completely replaces previous list
+     * <p>A list of cell Amazon Resource Names (ARNs). This list completely replaces
+     * the previous list.</p>
      */
     inline UpdateRecoveryGroupRequest& WithCells(const Aws::Vector<Aws::String>& value) { SetCells(value); return *this;}
 
     /**
-     * A list of Cell arns, completely replaces previous list
+     * <p>A list of cell Amazon Resource Names (ARNs). This list completely replaces
+     * the previous list.</p>
      */
     inline UpdateRecoveryGroupRequest& WithCells(Aws::Vector<Aws::String>&& value) { SetCells(std::move(value)); return *this;}
 
     /**
-     * A list of Cell arns, completely replaces previous list
+     * <p>A list of cell Amazon Resource Names (ARNs). This list completely replaces
+     * the previous list.</p>
      */
     inline UpdateRecoveryGroupRequest& AddCells(const Aws::String& value) { m_cellsHasBeenSet = true; m_cells.push_back(value); return *this; }
 
     /**
-     * A list of Cell arns, completely replaces previous list
+     * <p>A list of cell Amazon Resource Names (ARNs). This list completely replaces
+     * the previous list.</p>
      */
     inline UpdateRecoveryGroupRequest& AddCells(Aws::String&& value) { m_cellsHasBeenSet = true; m_cells.push_back(std::move(value)); return *this; }
 
     /**
-     * A list of Cell arns, completely replaces previous list
+     * <p>A list of cell Amazon Resource Names (ARNs). This list completely replaces
+     * the previous list.</p>
      */
     inline UpdateRecoveryGroupRequest& AddCells(const char* value) { m_cellsHasBeenSet = true; m_cells.push_back(value); return *this; }
 
 
     /**
-     * The RecoveryGroup to update
+     * <p>The name of a recovery group.</p>
      */
     inline const Aws::String& GetRecoveryGroupName() const{ return m_recoveryGroupName; }
 
     /**
-     * The RecoveryGroup to update
+     * <p>The name of a recovery group.</p>
      */
     inline bool RecoveryGroupNameHasBeenSet() const { return m_recoveryGroupNameHasBeenSet; }
 
     /**
-     * The RecoveryGroup to update
+     * <p>The name of a recovery group.</p>
      */
     inline void SetRecoveryGroupName(const Aws::String& value) { m_recoveryGroupNameHasBeenSet = true; m_recoveryGroupName = value; }
 
     /**
-     * The RecoveryGroup to update
+     * <p>The name of a recovery group.</p>
      */
     inline void SetRecoveryGroupName(Aws::String&& value) { m_recoveryGroupNameHasBeenSet = true; m_recoveryGroupName = std::move(value); }
 
     /**
-     * The RecoveryGroup to update
+     * <p>The name of a recovery group.</p>
      */
     inline void SetRecoveryGroupName(const char* value) { m_recoveryGroupNameHasBeenSet = true; m_recoveryGroupName.assign(value); }
 
     /**
-     * The RecoveryGroup to update
+     * <p>The name of a recovery group.</p>
      */
     inline UpdateRecoveryGroupRequest& WithRecoveryGroupName(const Aws::String& value) { SetRecoveryGroupName(value); return *this;}
 
     /**
-     * The RecoveryGroup to update
+     * <p>The name of a recovery group.</p>
      */
     inline UpdateRecoveryGroupRequest& WithRecoveryGroupName(Aws::String&& value) { SetRecoveryGroupName(std::move(value)); return *this;}
 
     /**
-     * The RecoveryGroup to update
+     * <p>The name of a recovery group.</p>
      */
     inline UpdateRecoveryGroupRequest& WithRecoveryGroupName(const char* value) { SetRecoveryGroupName(value); return *this;}
 

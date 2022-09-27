@@ -33,37 +33,32 @@ namespace Model
 
 
     /**
-     * <p>The attributes describing the analytics category. You can see information
-     * such as the rules that you've used to update the category and when the category
-     * was originally created.</p>
+     * <p>Provides you with the properties of the Call Analytics category you specified
+     * in your <code>UpdateCallAnalyticsCategory</code> request.</p>
      */
     inline const CategoryProperties& GetCategoryProperties() const{ return m_categoryProperties; }
 
     /**
-     * <p>The attributes describing the analytics category. You can see information
-     * such as the rules that you've used to update the category and when the category
-     * was originally created.</p>
+     * <p>Provides you with the properties of the Call Analytics category you specified
+     * in your <code>UpdateCallAnalyticsCategory</code> request.</p>
      */
     inline void SetCategoryProperties(const CategoryProperties& value) { m_categoryProperties = value; }
 
     /**
-     * <p>The attributes describing the analytics category. You can see information
-     * such as the rules that you've used to update the category and when the category
-     * was originally created.</p>
+     * <p>Provides you with the properties of the Call Analytics category you specified
+     * in your <code>UpdateCallAnalyticsCategory</code> request.</p>
      */
     inline void SetCategoryProperties(CategoryProperties&& value) { m_categoryProperties = std::move(value); }
 
     /**
-     * <p>The attributes describing the analytics category. You can see information
-     * such as the rules that you've used to update the category and when the category
-     * was originally created.</p>
+     * <p>Provides you with the properties of the Call Analytics category you specified
+     * in your <code>UpdateCallAnalyticsCategory</code> request.</p>
      */
     inline UpdateCallAnalyticsCategoryResult& WithCategoryProperties(const CategoryProperties& value) { SetCategoryProperties(value); return *this;}
 
     /**
-     * <p>The attributes describing the analytics category. You can see information
-     * such as the rules that you've used to update the category and when the category
-     * was originally created.</p>
+     * <p>Provides you with the properties of the Call Analytics category you specified
+     * in your <code>UpdateCallAnalyticsCategory</code> request.</p>
      */
     inline UpdateCallAnalyticsCategoryResult& WithCategoryProperties(CategoryProperties&& value) { SetCategoryProperties(std::move(value)); return *this;}
 

@@ -35,73 +35,73 @@ namespace Model
 
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline ListReadinessChecksResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline ListReadinessChecksResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline ListReadinessChecksResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * A list of ReadinessCheck associated with the account
+     * <p>A list of readiness checks associated with the account.</p>
      */
     inline const Aws::Vector<ReadinessCheckOutput>& GetReadinessChecks() const{ return m_readinessChecks; }
 
     /**
-     * A list of ReadinessCheck associated with the account
+     * <p>A list of readiness checks associated with the account.</p>
      */
     inline void SetReadinessChecks(const Aws::Vector<ReadinessCheckOutput>& value) { m_readinessChecks = value; }
 
     /**
-     * A list of ReadinessCheck associated with the account
+     * <p>A list of readiness checks associated with the account.</p>
      */
     inline void SetReadinessChecks(Aws::Vector<ReadinessCheckOutput>&& value) { m_readinessChecks = std::move(value); }
 
     /**
-     * A list of ReadinessCheck associated with the account
+     * <p>A list of readiness checks associated with the account.</p>
      */
     inline ListReadinessChecksResult& WithReadinessChecks(const Aws::Vector<ReadinessCheckOutput>& value) { SetReadinessChecks(value); return *this;}
 
     /**
-     * A list of ReadinessCheck associated with the account
+     * <p>A list of readiness checks associated with the account.</p>
      */
     inline ListReadinessChecksResult& WithReadinessChecks(Aws::Vector<ReadinessCheckOutput>&& value) { SetReadinessChecks(std::move(value)); return *this;}
 
     /**
-     * A list of ReadinessCheck associated with the account
+     * <p>A list of readiness checks associated with the account.</p>
      */
     inline ListReadinessChecksResult& AddReadinessChecks(const ReadinessCheckOutput& value) { m_readinessChecks.push_back(value); return *this; }
 
     /**
-     * A list of ReadinessCheck associated with the account
+     * <p>A list of readiness checks associated with the account.</p>
      */
     inline ListReadinessChecksResult& AddReadinessChecks(ReadinessCheckOutput&& value) { m_readinessChecks.push_back(std::move(value)); return *this; }
 

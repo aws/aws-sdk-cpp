@@ -205,105 +205,81 @@ namespace Model
 
     /**
      * <p>The name of the product that generated the finding.</p> <p>Security Hub
-     * populates this attribute automatically for each finding. You cannot update it
-     * using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>. The
-     * exception to this is when you use a custom integration.</p> <p>When you use the
-     * Security Hub console to filter findings by product name, you use this
-     * attribute.</p> <p>When you use the Security Hub API to filter findings by
-     * product name, you use the <code>aws/securityhub/ProductName</code> attribute
-     * under <code>ProductFields</code>.</p> <p>Security Hub does not synchronize those
-     * two attributes.</p>
+     * populates this attribute automatically for each finding. You cannot update this
+     * attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by product name, you use this attribute.</p>
      */
     inline const Aws::String& GetProductName() const{ return m_productName; }
 
     /**
      * <p>The name of the product that generated the finding.</p> <p>Security Hub
-     * populates this attribute automatically for each finding. You cannot update it
-     * using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>. The
-     * exception to this is when you use a custom integration.</p> <p>When you use the
-     * Security Hub console to filter findings by product name, you use this
-     * attribute.</p> <p>When you use the Security Hub API to filter findings by
-     * product name, you use the <code>aws/securityhub/ProductName</code> attribute
-     * under <code>ProductFields</code>.</p> <p>Security Hub does not synchronize those
-     * two attributes.</p>
+     * populates this attribute automatically for each finding. You cannot update this
+     * attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by product name, you use this attribute.</p>
      */
     inline bool ProductNameHasBeenSet() const { return m_productNameHasBeenSet; }
 
     /**
      * <p>The name of the product that generated the finding.</p> <p>Security Hub
-     * populates this attribute automatically for each finding. You cannot update it
-     * using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>. The
-     * exception to this is when you use a custom integration.</p> <p>When you use the
-     * Security Hub console to filter findings by product name, you use this
-     * attribute.</p> <p>When you use the Security Hub API to filter findings by
-     * product name, you use the <code>aws/securityhub/ProductName</code> attribute
-     * under <code>ProductFields</code>.</p> <p>Security Hub does not synchronize those
-     * two attributes.</p>
+     * populates this attribute automatically for each finding. You cannot update this
+     * attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by product name, you use this attribute.</p>
      */
     inline void SetProductName(const Aws::String& value) { m_productNameHasBeenSet = true; m_productName = value; }
 
     /**
      * <p>The name of the product that generated the finding.</p> <p>Security Hub
-     * populates this attribute automatically for each finding. You cannot update it
-     * using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>. The
-     * exception to this is when you use a custom integration.</p> <p>When you use the
-     * Security Hub console to filter findings by product name, you use this
-     * attribute.</p> <p>When you use the Security Hub API to filter findings by
-     * product name, you use the <code>aws/securityhub/ProductName</code> attribute
-     * under <code>ProductFields</code>.</p> <p>Security Hub does not synchronize those
-     * two attributes.</p>
+     * populates this attribute automatically for each finding. You cannot update this
+     * attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by product name, you use this attribute.</p>
      */
     inline void SetProductName(Aws::String&& value) { m_productNameHasBeenSet = true; m_productName = std::move(value); }
 
     /**
      * <p>The name of the product that generated the finding.</p> <p>Security Hub
-     * populates this attribute automatically for each finding. You cannot update it
-     * using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>. The
-     * exception to this is when you use a custom integration.</p> <p>When you use the
-     * Security Hub console to filter findings by product name, you use this
-     * attribute.</p> <p>When you use the Security Hub API to filter findings by
-     * product name, you use the <code>aws/securityhub/ProductName</code> attribute
-     * under <code>ProductFields</code>.</p> <p>Security Hub does not synchronize those
-     * two attributes.</p>
+     * populates this attribute automatically for each finding. You cannot update this
+     * attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by product name, you use this attribute.</p>
      */
     inline void SetProductName(const char* value) { m_productNameHasBeenSet = true; m_productName.assign(value); }
 
     /**
      * <p>The name of the product that generated the finding.</p> <p>Security Hub
-     * populates this attribute automatically for each finding. You cannot update it
-     * using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>. The
-     * exception to this is when you use a custom integration.</p> <p>When you use the
-     * Security Hub console to filter findings by product name, you use this
-     * attribute.</p> <p>When you use the Security Hub API to filter findings by
-     * product name, you use the <code>aws/securityhub/ProductName</code> attribute
-     * under <code>ProductFields</code>.</p> <p>Security Hub does not synchronize those
-     * two attributes.</p>
+     * populates this attribute automatically for each finding. You cannot update this
+     * attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by product name, you use this attribute.</p>
      */
     inline AwsSecurityFinding& WithProductName(const Aws::String& value) { SetProductName(value); return *this;}
 
     /**
      * <p>The name of the product that generated the finding.</p> <p>Security Hub
-     * populates this attribute automatically for each finding. You cannot update it
-     * using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>. The
-     * exception to this is when you use a custom integration.</p> <p>When you use the
-     * Security Hub console to filter findings by product name, you use this
-     * attribute.</p> <p>When you use the Security Hub API to filter findings by
-     * product name, you use the <code>aws/securityhub/ProductName</code> attribute
-     * under <code>ProductFields</code>.</p> <p>Security Hub does not synchronize those
-     * two attributes.</p>
+     * populates this attribute automatically for each finding. You cannot update this
+     * attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by product name, you use this attribute.</p>
      */
     inline AwsSecurityFinding& WithProductName(Aws::String&& value) { SetProductName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the product that generated the finding.</p> <p>Security Hub
-     * populates this attribute automatically for each finding. You cannot update it
-     * using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>. The
-     * exception to this is when you use a custom integration.</p> <p>When you use the
-     * Security Hub console to filter findings by product name, you use this
-     * attribute.</p> <p>When you use the Security Hub API to filter findings by
-     * product name, you use the <code>aws/securityhub/ProductName</code> attribute
-     * under <code>ProductFields</code>.</p> <p>Security Hub does not synchronize those
-     * two attributes.</p>
+     * populates this attribute automatically for each finding. You cannot update this
+     * attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by product name, you use this attribute.</p>
      */
     inline AwsSecurityFinding& WithProductName(const char* value) { SetProductName(value); return *this;}
 
@@ -311,112 +287,80 @@ namespace Model
     /**
      * <p>The name of the company for the product that generated the finding.</p>
      * <p>Security Hub populates this attribute automatically for each finding. You
-     * cannot be updated using <code>BatchImportFindings</code> or
-     * <code>BatchUpdateFindings</code>. The exception to this is when you use a custom
-     * integration.</p> <p>When you use the Security Hub console to filter findings by
-     * company name, you use this attribute.</p> <p>When you use the Security Hub API
-     * to filter findings by company name, you use the
-     * <code>aws/securityhub/CompanyName</code> attribute under
-     * <code>ProductFields</code>.</p> <p>Security Hub does not synchronize those two
-     * attributes.</p>
+     * cannot update this attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by company name, you use this attribute.</p>
      */
     inline const Aws::String& GetCompanyName() const{ return m_companyName; }
 
     /**
      * <p>The name of the company for the product that generated the finding.</p>
      * <p>Security Hub populates this attribute automatically for each finding. You
-     * cannot be updated using <code>BatchImportFindings</code> or
-     * <code>BatchUpdateFindings</code>. The exception to this is when you use a custom
-     * integration.</p> <p>When you use the Security Hub console to filter findings by
-     * company name, you use this attribute.</p> <p>When you use the Security Hub API
-     * to filter findings by company name, you use the
-     * <code>aws/securityhub/CompanyName</code> attribute under
-     * <code>ProductFields</code>.</p> <p>Security Hub does not synchronize those two
-     * attributes.</p>
+     * cannot update this attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by company name, you use this attribute.</p>
      */
     inline bool CompanyNameHasBeenSet() const { return m_companyNameHasBeenSet; }
 
     /**
      * <p>The name of the company for the product that generated the finding.</p>
      * <p>Security Hub populates this attribute automatically for each finding. You
-     * cannot be updated using <code>BatchImportFindings</code> or
-     * <code>BatchUpdateFindings</code>. The exception to this is when you use a custom
-     * integration.</p> <p>When you use the Security Hub console to filter findings by
-     * company name, you use this attribute.</p> <p>When you use the Security Hub API
-     * to filter findings by company name, you use the
-     * <code>aws/securityhub/CompanyName</code> attribute under
-     * <code>ProductFields</code>.</p> <p>Security Hub does not synchronize those two
-     * attributes.</p>
+     * cannot update this attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by company name, you use this attribute.</p>
      */
     inline void SetCompanyName(const Aws::String& value) { m_companyNameHasBeenSet = true; m_companyName = value; }
 
     /**
      * <p>The name of the company for the product that generated the finding.</p>
      * <p>Security Hub populates this attribute automatically for each finding. You
-     * cannot be updated using <code>BatchImportFindings</code> or
-     * <code>BatchUpdateFindings</code>. The exception to this is when you use a custom
-     * integration.</p> <p>When you use the Security Hub console to filter findings by
-     * company name, you use this attribute.</p> <p>When you use the Security Hub API
-     * to filter findings by company name, you use the
-     * <code>aws/securityhub/CompanyName</code> attribute under
-     * <code>ProductFields</code>.</p> <p>Security Hub does not synchronize those two
-     * attributes.</p>
+     * cannot update this attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by company name, you use this attribute.</p>
      */
     inline void SetCompanyName(Aws::String&& value) { m_companyNameHasBeenSet = true; m_companyName = std::move(value); }
 
     /**
      * <p>The name of the company for the product that generated the finding.</p>
      * <p>Security Hub populates this attribute automatically for each finding. You
-     * cannot be updated using <code>BatchImportFindings</code> or
-     * <code>BatchUpdateFindings</code>. The exception to this is when you use a custom
-     * integration.</p> <p>When you use the Security Hub console to filter findings by
-     * company name, you use this attribute.</p> <p>When you use the Security Hub API
-     * to filter findings by company name, you use the
-     * <code>aws/securityhub/CompanyName</code> attribute under
-     * <code>ProductFields</code>.</p> <p>Security Hub does not synchronize those two
-     * attributes.</p>
+     * cannot update this attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by company name, you use this attribute.</p>
      */
     inline void SetCompanyName(const char* value) { m_companyNameHasBeenSet = true; m_companyName.assign(value); }
 
     /**
      * <p>The name of the company for the product that generated the finding.</p>
      * <p>Security Hub populates this attribute automatically for each finding. You
-     * cannot be updated using <code>BatchImportFindings</code> or
-     * <code>BatchUpdateFindings</code>. The exception to this is when you use a custom
-     * integration.</p> <p>When you use the Security Hub console to filter findings by
-     * company name, you use this attribute.</p> <p>When you use the Security Hub API
-     * to filter findings by company name, you use the
-     * <code>aws/securityhub/CompanyName</code> attribute under
-     * <code>ProductFields</code>.</p> <p>Security Hub does not synchronize those two
-     * attributes.</p>
+     * cannot update this attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by company name, you use this attribute.</p>
      */
     inline AwsSecurityFinding& WithCompanyName(const Aws::String& value) { SetCompanyName(value); return *this;}
 
     /**
      * <p>The name of the company for the product that generated the finding.</p>
      * <p>Security Hub populates this attribute automatically for each finding. You
-     * cannot be updated using <code>BatchImportFindings</code> or
-     * <code>BatchUpdateFindings</code>. The exception to this is when you use a custom
-     * integration.</p> <p>When you use the Security Hub console to filter findings by
-     * company name, you use this attribute.</p> <p>When you use the Security Hub API
-     * to filter findings by company name, you use the
-     * <code>aws/securityhub/CompanyName</code> attribute under
-     * <code>ProductFields</code>.</p> <p>Security Hub does not synchronize those two
-     * attributes.</p>
+     * cannot update this attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by company name, you use this attribute.</p>
      */
     inline AwsSecurityFinding& WithCompanyName(Aws::String&& value) { SetCompanyName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the company for the product that generated the finding.</p>
      * <p>Security Hub populates this attribute automatically for each finding. You
-     * cannot be updated using <code>BatchImportFindings</code> or
-     * <code>BatchUpdateFindings</code>. The exception to this is when you use a custom
-     * integration.</p> <p>When you use the Security Hub console to filter findings by
-     * company name, you use this attribute.</p> <p>When you use the Security Hub API
-     * to filter findings by company name, you use the
-     * <code>aws/securityhub/CompanyName</code> attribute under
-     * <code>ProductFields</code>.</p> <p>Security Hub does not synchronize those two
-     * attributes.</p>
+     * cannot update this attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by company name, you use this attribute.</p>
      */
     inline AwsSecurityFinding& WithCompanyName(const char* value) { SetCompanyName(value); return *this;}
 
@@ -2075,6 +2019,27 @@ namespace Model
      */
     inline AwsSecurityFinding& WithFindingProviderFields(FindingProviderFields&& value) { SetFindingProviderFields(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates whether the finding is a sample finding.</p>
+     */
+    inline bool GetSample() const{ return m_sample; }
+
+    /**
+     * <p>Indicates whether the finding is a sample finding.</p>
+     */
+    inline bool SampleHasBeenSet() const { return m_sampleHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the finding is a sample finding.</p>
+     */
+    inline void SetSample(bool value) { m_sampleHasBeenSet = true; m_sample = value; }
+
+    /**
+     * <p>Indicates whether the finding is a sample finding.</p>
+     */
+    inline AwsSecurityFinding& WithSample(bool value) { SetSample(value); return *this;}
+
   private:
 
     Aws::String m_schemaVersion;
@@ -2193,6 +2158,9 @@ namespace Model
 
     FindingProviderFields m_findingProviderFields;
     bool m_findingProviderFieldsHasBeenSet;
+
+    bool m_sample;
+    bool m_sampleHasBeenSet;
   };
 
 } // namespace Model

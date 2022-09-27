@@ -21,7 +21,8 @@ CreateFlowRequest::CreateFlowRequest() :
     m_sourceHasBeenSet(false),
     m_sourceFailoverConfigHasBeenSet(false),
     m_sourcesHasBeenSet(false),
-    m_vpcInterfacesHasBeenSet(false)
+    m_vpcInterfacesHasBeenSet(false),
+    m_maintenanceHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,12 @@ Aws::String CreateFlowRequest::SerializePayload() const
      vpcInterfacesJsonList[vpcInterfacesIndex].AsObject(m_vpcInterfaces[vpcInterfacesIndex].Jsonize());
    }
    payload.WithArray("vpcInterfaces", std::move(vpcInterfacesJsonList));
+
+  }
+
+  if(m_maintenanceHasBeenSet)
+  {
+   payload.WithObject("maintenance", m_maintenance.Jsonize());
 
   }
 

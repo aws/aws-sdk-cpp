@@ -79,6 +79,31 @@ namespace Model
 
 
     /**
+     * <p>Is either <code>null</code>, if no hooks invoke for the resource, or contains
+     * the number of hooks that will invoke for the resource.</p>
+     */
+    inline int GetHookInvocationCount() const{ return m_hookInvocationCount; }
+
+    /**
+     * <p>Is either <code>null</code>, if no hooks invoke for the resource, or contains
+     * the number of hooks that will invoke for the resource.</p>
+     */
+    inline bool HookInvocationCountHasBeenSet() const { return m_hookInvocationCountHasBeenSet; }
+
+    /**
+     * <p>Is either <code>null</code>, if no hooks invoke for the resource, or contains
+     * the number of hooks that will invoke for the resource.</p>
+     */
+    inline void SetHookInvocationCount(int value) { m_hookInvocationCountHasBeenSet = true; m_hookInvocationCount = value; }
+
+    /**
+     * <p>Is either <code>null</code>, if no hooks invoke for the resource, or contains
+     * the number of hooks that will invoke for the resource.</p>
+     */
+    inline Change& WithHookInvocationCount(int value) { SetHookInvocationCount(value); return *this;}
+
+
+    /**
      * <p>A <code>ResourceChange</code> structure that describes the resource and
      * action that CloudFormation will perform.</p>
      */
@@ -118,6 +143,9 @@ namespace Model
 
     ChangeType m_type;
     bool m_typeHasBeenSet;
+
+    int m_hookInvocationCount;
+    bool m_hookInvocationCountHasBeenSet;
 
     ResourceChange m_resourceChange;
     bool m_resourceChangeHasBeenSet;

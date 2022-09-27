@@ -227,6 +227,7 @@ namespace Model
      * permissions to. If you later want to revoke the permission for this external
      * account, specify this <code>StatementId</code> when you run <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.</p>
+     *  <p>Each <code>StatementId</code> must be unique.</p> 
      */
     inline const Aws::String& GetStatementId() const{ return m_statementId; }
 
@@ -235,6 +236,7 @@ namespace Model
      * permissions to. If you later want to revoke the permission for this external
      * account, specify this <code>StatementId</code> when you run <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.</p>
+     *  <p>Each <code>StatementId</code> must be unique.</p> 
      */
     inline bool StatementIdHasBeenSet() const { return m_statementIdHasBeenSet; }
 
@@ -243,6 +245,7 @@ namespace Model
      * permissions to. If you later want to revoke the permission for this external
      * account, specify this <code>StatementId</code> when you run <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.</p>
+     *  <p>Each <code>StatementId</code> must be unique.</p> 
      */
     inline void SetStatementId(const Aws::String& value) { m_statementIdHasBeenSet = true; m_statementId = value; }
 
@@ -251,6 +254,7 @@ namespace Model
      * permissions to. If you later want to revoke the permission for this external
      * account, specify this <code>StatementId</code> when you run <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.</p>
+     *  <p>Each <code>StatementId</code> must be unique.</p> 
      */
     inline void SetStatementId(Aws::String&& value) { m_statementIdHasBeenSet = true; m_statementId = std::move(value); }
 
@@ -259,6 +263,7 @@ namespace Model
      * permissions to. If you later want to revoke the permission for this external
      * account, specify this <code>StatementId</code> when you run <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.</p>
+     *  <p>Each <code>StatementId</code> must be unique.</p> 
      */
     inline void SetStatementId(const char* value) { m_statementIdHasBeenSet = true; m_statementId.assign(value); }
 
@@ -267,6 +272,7 @@ namespace Model
      * permissions to. If you later want to revoke the permission for this external
      * account, specify this <code>StatementId</code> when you run <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.</p>
+     *  <p>Each <code>StatementId</code> must be unique.</p> 
      */
     inline PutPermissionRequest& WithStatementId(const Aws::String& value) { SetStatementId(value); return *this;}
 
@@ -275,6 +281,7 @@ namespace Model
      * permissions to. If you later want to revoke the permission for this external
      * account, specify this <code>StatementId</code> when you run <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.</p>
+     *  <p>Each <code>StatementId</code> must be unique.</p> 
      */
     inline PutPermissionRequest& WithStatementId(Aws::String&& value) { SetStatementId(std::move(value)); return *this;}
 
@@ -283,6 +290,7 @@ namespace Model
      * permissions to. If you later want to revoke the permission for this external
      * account, specify this <code>StatementId</code> when you run <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.</p>
+     *  <p>Each <code>StatementId</code> must be unique.</p> 
      */
     inline PutPermissionRequest& WithStatementId(const char* value) { SetStatementId(value); return *this;}
 

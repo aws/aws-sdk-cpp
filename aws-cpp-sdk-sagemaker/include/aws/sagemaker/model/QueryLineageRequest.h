@@ -93,45 +93,45 @@ namespace Model
 
 
     /**
-     * <p>Associations between lineage entities are directed. This parameter determines
-     * the direction from the StartArn(s) the query will look.</p>
+     * <p>Associations between lineage entities have a direction. This parameter
+     * determines the direction from the StartArn(s) that the query traverses.</p>
      */
     inline const Direction& GetDirection() const{ return m_direction; }
 
     /**
-     * <p>Associations between lineage entities are directed. This parameter determines
-     * the direction from the StartArn(s) the query will look.</p>
+     * <p>Associations between lineage entities have a direction. This parameter
+     * determines the direction from the StartArn(s) that the query traverses.</p>
      */
     inline bool DirectionHasBeenSet() const { return m_directionHasBeenSet; }
 
     /**
-     * <p>Associations between lineage entities are directed. This parameter determines
-     * the direction from the StartArn(s) the query will look.</p>
+     * <p>Associations between lineage entities have a direction. This parameter
+     * determines the direction from the StartArn(s) that the query traverses.</p>
      */
     inline void SetDirection(const Direction& value) { m_directionHasBeenSet = true; m_direction = value; }
 
     /**
-     * <p>Associations between lineage entities are directed. This parameter determines
-     * the direction from the StartArn(s) the query will look.</p>
+     * <p>Associations between lineage entities have a direction. This parameter
+     * determines the direction from the StartArn(s) that the query traverses.</p>
      */
     inline void SetDirection(Direction&& value) { m_directionHasBeenSet = true; m_direction = std::move(value); }
 
     /**
-     * <p>Associations between lineage entities are directed. This parameter determines
-     * the direction from the StartArn(s) the query will look.</p>
+     * <p>Associations between lineage entities have a direction. This parameter
+     * determines the direction from the StartArn(s) that the query traverses.</p>
      */
     inline QueryLineageRequest& WithDirection(const Direction& value) { SetDirection(value); return *this;}
 
     /**
-     * <p>Associations between lineage entities are directed. This parameter determines
-     * the direction from the StartArn(s) the query will look.</p>
+     * <p>Associations between lineage entities have a direction. This parameter
+     * determines the direction from the StartArn(s) that the query traverses.</p>
      */
     inline QueryLineageRequest& WithDirection(Direction&& value) { SetDirection(std::move(value)); return *this;}
 
 
     /**
-     * <p> Setting this value to <code>True</code> will retrieve not only the entities
-     * of interest but also the <a
+     * <p> Setting this value to <code>True</code> retrieves not only the entities of
+     * interest but also the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a>
      * and lineage entities on the path. Set to <code>False</code> to only return
      * lineage entities that match your query.</p>
@@ -139,8 +139,8 @@ namespace Model
     inline bool GetIncludeEdges() const{ return m_includeEdges; }
 
     /**
-     * <p> Setting this value to <code>True</code> will retrieve not only the entities
-     * of interest but also the <a
+     * <p> Setting this value to <code>True</code> retrieves not only the entities of
+     * interest but also the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a>
      * and lineage entities on the path. Set to <code>False</code> to only return
      * lineage entities that match your query.</p>
@@ -148,8 +148,8 @@ namespace Model
     inline bool IncludeEdgesHasBeenSet() const { return m_includeEdgesHasBeenSet; }
 
     /**
-     * <p> Setting this value to <code>True</code> will retrieve not only the entities
-     * of interest but also the <a
+     * <p> Setting this value to <code>True</code> retrieves not only the entities of
+     * interest but also the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a>
      * and lineage entities on the path. Set to <code>False</code> to only return
      * lineage entities that match your query.</p>
@@ -157,8 +157,8 @@ namespace Model
     inline void SetIncludeEdges(bool value) { m_includeEdgesHasBeenSet = true; m_includeEdges = value; }
 
     /**
-     * <p> Setting this value to <code>True</code> will retrieve not only the entities
-     * of interest but also the <a
+     * <p> Setting this value to <code>True</code> retrieves not only the entities of
+     * interest but also the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a>
      * and lineage entities on the path. Set to <code>False</code> to only return
      * lineage entities that match your query.</p>
@@ -241,7 +241,7 @@ namespace Model
 
     /**
      * <p>The maximum depth in lineage relationships from the <code>StartArns</code>
-     * that will be traversed. Depth is a measure of the number of
+     * that are traversed. Depth is a measure of the number of
      * <code>Associations</code> from the <code>StartArn</code> entity to the matched
      * results.</p>
      */
@@ -249,7 +249,7 @@ namespace Model
 
     /**
      * <p>The maximum depth in lineage relationships from the <code>StartArns</code>
-     * that will be traversed. Depth is a measure of the number of
+     * that are traversed. Depth is a measure of the number of
      * <code>Associations</code> from the <code>StartArn</code> entity to the matched
      * results.</p>
      */
@@ -257,7 +257,7 @@ namespace Model
 
     /**
      * <p>The maximum depth in lineage relationships from the <code>StartArns</code>
-     * that will be traversed. Depth is a measure of the number of
+     * that are traversed. Depth is a measure of the number of
      * <code>Associations</code> from the <code>StartArn</code> entity to the matched
      * results.</p>
      */
@@ -265,7 +265,7 @@ namespace Model
 
     /**
      * <p>The maximum depth in lineage relationships from the <code>StartArns</code>
-     * that will be traversed. Depth is a measure of the number of
+     * that are traversed. Depth is a measure of the number of
      * <code>Associations</code> from the <code>StartArn</code> entity to the matched
      * results.</p>
      */

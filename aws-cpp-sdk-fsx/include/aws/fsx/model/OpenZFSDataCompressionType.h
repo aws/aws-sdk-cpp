@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     NONE,
-    ZSTD
+    ZSTD,
+    LZ4
   };
 
 namespace OpenZFSDataCompressionTypeMapper

@@ -30,7 +30,8 @@ PipelineExecutionStepMetadata::PipelineExecutionStepMetadata() :
     m_lambdaHasBeenSet(false),
     m_qualityCheckHasBeenSet(false),
     m_clarifyCheckHasBeenSet(false),
-    m_eMRHasBeenSet(false)
+    m_eMRHasBeenSet(false),
+    m_failHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ PipelineExecutionStepMetadata::PipelineExecutionStepMetadata(JsonView jsonValue)
     m_lambdaHasBeenSet(false),
     m_qualityCheckHasBeenSet(false),
     m_clarifyCheckHasBeenSet(false),
-    m_eMRHasBeenSet(false)
+    m_eMRHasBeenSet(false),
+    m_failHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -137,6 +139,13 @@ PipelineExecutionStepMetadata& PipelineExecutionStepMetadata::operator =(JsonVie
     m_eMRHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Fail"))
+  {
+    m_fail = jsonValue.GetObject("Fail");
+
+    m_failHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -213,6 +222,12 @@ JsonValue PipelineExecutionStepMetadata::Jsonize() const
   if(m_eMRHasBeenSet)
   {
    payload.WithObject("EMR", m_eMR.Jsonize());
+
+  }
+
+  if(m_failHasBeenSet)
+  {
+   payload.WithObject("Fail", m_fail.Jsonize());
 
   }
 

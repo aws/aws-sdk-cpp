@@ -76,25 +76,25 @@ namespace Model
 
 
     /**
-     * <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data
+     * <p>When set to true, IoT Secure Tunneling deletes the tunnel data
      * immediately.</p>
      */
     inline bool GetDelete() const{ return m_delete; }
 
     /**
-     * <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data
+     * <p>When set to true, IoT Secure Tunneling deletes the tunnel data
      * immediately.</p>
      */
     inline bool DeleteHasBeenSet() const { return m_deleteHasBeenSet; }
 
     /**
-     * <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data
+     * <p>When set to true, IoT Secure Tunneling deletes the tunnel data
      * immediately.</p>
      */
     inline void SetDelete(bool value) { m_deleteHasBeenSet = true; m_delete = value; }
 
     /**
-     * <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data
+     * <p>When set to true, IoT Secure Tunneling deletes the tunnel data
      * immediately.</p>
      */
     inline CloseTunnelRequest& WithDelete(bool value) { SetDelete(value); return *this;}

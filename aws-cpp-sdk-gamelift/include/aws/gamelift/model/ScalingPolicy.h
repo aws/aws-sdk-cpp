@@ -825,42 +825,42 @@ namespace Model
 
 
     /**
-     * <p> </p>
+     * <p> The fleet location. </p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
     /**
-     * <p> </p>
+     * <p> The fleet location. </p>
      */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
-     * <p> </p>
+     * <p> The fleet location. </p>
      */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
-     * <p> </p>
+     * <p> The fleet location. </p>
      */
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
-     * <p> </p>
+     * <p> The fleet location. </p>
      */
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
 
     /**
-     * <p> </p>
+     * <p> The fleet location. </p>
      */
     inline ScalingPolicy& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     /**
-     * <p> </p>
+     * <p> The fleet location. </p>
      */
     inline ScalingPolicy& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
-     * <p> </p>
+     * <p> The fleet location. </p>
      */
     inline ScalingPolicy& WithLocation(const char* value) { SetLocation(value); return *this;}
 

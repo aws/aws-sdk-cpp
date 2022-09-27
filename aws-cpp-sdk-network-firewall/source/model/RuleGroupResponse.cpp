@@ -33,7 +33,11 @@ RuleGroupResponse::RuleGroupResponse() :
     m_consumedCapacity(0),
     m_consumedCapacityHasBeenSet(false),
     m_numberOfAssociations(0),
-    m_numberOfAssociationsHasBeenSet(false)
+    m_numberOfAssociationsHasBeenSet(false),
+    m_encryptionConfigurationHasBeenSet(false),
+    m_sourceMetadataHasBeenSet(false),
+    m_snsTopicHasBeenSet(false),
+    m_lastModifiedTimeHasBeenSet(false)
 {
 }
 
@@ -52,7 +56,11 @@ RuleGroupResponse::RuleGroupResponse(JsonView jsonValue) :
     m_consumedCapacity(0),
     m_consumedCapacityHasBeenSet(false),
     m_numberOfAssociations(0),
-    m_numberOfAssociationsHasBeenSet(false)
+    m_numberOfAssociationsHasBeenSet(false),
+    m_encryptionConfigurationHasBeenSet(false),
+    m_sourceMetadataHasBeenSet(false),
+    m_snsTopicHasBeenSet(false),
+    m_lastModifiedTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -132,6 +140,34 @@ RuleGroupResponse& RuleGroupResponse::operator =(JsonView jsonValue)
     m_numberOfAssociationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EncryptionConfiguration"))
+  {
+    m_encryptionConfiguration = jsonValue.GetObject("EncryptionConfiguration");
+
+    m_encryptionConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SourceMetadata"))
+  {
+    m_sourceMetadata = jsonValue.GetObject("SourceMetadata");
+
+    m_sourceMetadataHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SnsTopic"))
+  {
+    m_snsTopic = jsonValue.GetString("SnsTopic");
+
+    m_snsTopicHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastModifiedTime"))
+  {
+    m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
+
+    m_lastModifiedTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -200,6 +236,29 @@ JsonValue RuleGroupResponse::Jsonize() const
   {
    payload.WithInteger("NumberOfAssociations", m_numberOfAssociations);
 
+  }
+
+  if(m_encryptionConfigurationHasBeenSet)
+  {
+   payload.WithObject("EncryptionConfiguration", m_encryptionConfiguration.Jsonize());
+
+  }
+
+  if(m_sourceMetadataHasBeenSet)
+  {
+   payload.WithObject("SourceMetadata", m_sourceMetadata.Jsonize());
+
+  }
+
+  if(m_snsTopicHasBeenSet)
+  {
+   payload.WithString("SnsTopic", m_snsTopic);
+
+  }
+
+  if(m_lastModifiedTimeHasBeenSet)
+  {
+   payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
   }
 
   return payload;

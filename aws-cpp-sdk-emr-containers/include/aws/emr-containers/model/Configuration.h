@@ -8,7 +8,6 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/emr-containers/model/Configuration.h>
 #include <utility>
 
 namespace Aws

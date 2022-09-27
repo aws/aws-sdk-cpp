@@ -25,6 +25,7 @@ namespace Aws
         static const int FINISHED_HASH = HashingUtils::HashString("FINISHED");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
         static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
+        static const int TIMED_OUT_HASH = HashingUtils::HashString("TIMED_OUT");
 
 
         QueryStatus GetQueryStatusForName(const Aws::String& name)
@@ -50,6 +51,10 @@ namespace Aws
           {
             return QueryStatus::CANCELLED;
           }
+          else if (hashCode == TIMED_OUT_HASH)
+          {
+            return QueryStatus::TIMED_OUT;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
             return "FAILED";
           case QueryStatus::CANCELLED:
             return "CANCELLED";
+          case QueryStatus::TIMED_OUT:
+            return "TIMED_OUT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

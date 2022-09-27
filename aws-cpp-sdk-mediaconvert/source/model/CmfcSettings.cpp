@@ -29,6 +29,8 @@ CmfcSettings::CmfcSettings() :
     m_descriptiveVideoServiceFlagHasBeenSet(false),
     m_iFrameOnlyManifest(CmfcIFrameOnlyManifest::NOT_SET),
     m_iFrameOnlyManifestHasBeenSet(false),
+    m_klvMetadata(CmfcKlvMetadata::NOT_SET),
+    m_klvMetadataHasBeenSet(false),
     m_scte35Esam(CmfcScte35Esam::NOT_SET),
     m_scte35EsamHasBeenSet(false),
     m_scte35Source(CmfcScte35Source::NOT_SET),
@@ -49,6 +51,8 @@ CmfcSettings::CmfcSettings(JsonView jsonValue) :
     m_descriptiveVideoServiceFlagHasBeenSet(false),
     m_iFrameOnlyManifest(CmfcIFrameOnlyManifest::NOT_SET),
     m_iFrameOnlyManifestHasBeenSet(false),
+    m_klvMetadata(CmfcKlvMetadata::NOT_SET),
+    m_klvMetadataHasBeenSet(false),
     m_scte35Esam(CmfcScte35Esam::NOT_SET),
     m_scte35EsamHasBeenSet(false),
     m_scte35Source(CmfcScte35Source::NOT_SET),
@@ -101,6 +105,13 @@ CmfcSettings& CmfcSettings::operator =(JsonView jsonValue)
     m_iFrameOnlyManifest = CmfcIFrameOnlyManifestMapper::GetCmfcIFrameOnlyManifestForName(jsonValue.GetString("iFrameOnlyManifest"));
 
     m_iFrameOnlyManifestHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("klvMetadata"))
+  {
+    m_klvMetadata = CmfcKlvMetadataMapper::GetCmfcKlvMetadataForName(jsonValue.GetString("klvMetadata"));
+
+    m_klvMetadataHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("scte35Esam"))
@@ -161,6 +172,11 @@ JsonValue CmfcSettings::Jsonize() const
   if(m_iFrameOnlyManifestHasBeenSet)
   {
    payload.WithString("iFrameOnlyManifest", CmfcIFrameOnlyManifestMapper::GetNameForCmfcIFrameOnlyManifest(m_iFrameOnlyManifest));
+  }
+
+  if(m_klvMetadataHasBeenSet)
+  {
+   payload.WithString("klvMetadata", CmfcKlvMetadataMapper::GetNameForCmfcKlvMetadata(m_klvMetadata));
   }
 
   if(m_scte35EsamHasBeenSet)

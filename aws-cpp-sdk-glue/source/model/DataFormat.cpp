@@ -22,6 +22,7 @@ namespace Aws
 
         static const int AVRO_HASH = HashingUtils::HashString("AVRO");
         static const int JSON_HASH = HashingUtils::HashString("JSON");
+        static const int PROTOBUF_HASH = HashingUtils::HashString("PROTOBUF");
 
 
         DataFormat GetDataFormatForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == JSON_HASH)
           {
             return DataFormat::JSON;
+          }
+          else if (hashCode == PROTOBUF_HASH)
+          {
+            return DataFormat::PROTOBUF;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "AVRO";
           case DataFormat::JSON:
             return "JSON";
+          case DataFormat::PROTOBUF:
+            return "PROTOBUF";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

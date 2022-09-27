@@ -383,9 +383,9 @@ namespace Model
      * separation character (<code>separator</code>) and the type of compression
      * (<code>compression</code>). </p> <p> <code>formatType</code> is a required
      * attribute and can have the following values: </p> <ul> <li> <p>
-     * <code>PARQUET</code> - Parquet source file format.</p> </li> <li> <p>
-     * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
-     * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
+     * <code>PARQUET</code> – Parquet source file format.</p> </li> <li> <p>
+     * <code>CSV</code> – CSV source file format.</p> </li> <li> <p> <code>JSON</code>
+     * – JSON source file format.</p> </li> <li> <p> <code>XML</code> – XML source file
      * format.</p> </li> </ul> <p>Here is an example of how you could specify the
      * <code>formatParams</code>:</p> <p> <code> "formatParams": { "formatType": "CSV",
      * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
@@ -404,9 +404,9 @@ namespace Model
      * separation character (<code>separator</code>) and the type of compression
      * (<code>compression</code>). </p> <p> <code>formatType</code> is a required
      * attribute and can have the following values: </p> <ul> <li> <p>
-     * <code>PARQUET</code> - Parquet source file format.</p> </li> <li> <p>
-     * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
-     * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
+     * <code>PARQUET</code> – Parquet source file format.</p> </li> <li> <p>
+     * <code>CSV</code> – CSV source file format.</p> </li> <li> <p> <code>JSON</code>
+     * – JSON source file format.</p> </li> <li> <p> <code>XML</code> – XML source file
      * format.</p> </li> </ul> <p>Here is an example of how you could specify the
      * <code>formatParams</code>:</p> <p> <code> "formatParams": { "formatType": "CSV",
      * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
@@ -425,9 +425,9 @@ namespace Model
      * separation character (<code>separator</code>) and the type of compression
      * (<code>compression</code>). </p> <p> <code>formatType</code> is a required
      * attribute and can have the following values: </p> <ul> <li> <p>
-     * <code>PARQUET</code> - Parquet source file format.</p> </li> <li> <p>
-     * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
-     * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
+     * <code>PARQUET</code> – Parquet source file format.</p> </li> <li> <p>
+     * <code>CSV</code> – CSV source file format.</p> </li> <li> <p> <code>JSON</code>
+     * – JSON source file format.</p> </li> <li> <p> <code>XML</code> – XML source file
      * format.</p> </li> </ul> <p>Here is an example of how you could specify the
      * <code>formatParams</code>:</p> <p> <code> "formatParams": { "formatType": "CSV",
      * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
@@ -446,9 +446,9 @@ namespace Model
      * separation character (<code>separator</code>) and the type of compression
      * (<code>compression</code>). </p> <p> <code>formatType</code> is a required
      * attribute and can have the following values: </p> <ul> <li> <p>
-     * <code>PARQUET</code> - Parquet source file format.</p> </li> <li> <p>
-     * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
-     * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
+     * <code>PARQUET</code> – Parquet source file format.</p> </li> <li> <p>
+     * <code>CSV</code> – CSV source file format.</p> </li> <li> <p> <code>JSON</code>
+     * – JSON source file format.</p> </li> <li> <p> <code>XML</code> – XML source file
      * format.</p> </li> </ul> <p>Here is an example of how you could specify the
      * <code>formatParams</code>:</p> <p> <code> "formatParams": { "formatType": "CSV",
      * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
@@ -467,9 +467,9 @@ namespace Model
      * separation character (<code>separator</code>) and the type of compression
      * (<code>compression</code>). </p> <p> <code>formatType</code> is a required
      * attribute and can have the following values: </p> <ul> <li> <p>
-     * <code>PARQUET</code> - Parquet source file format.</p> </li> <li> <p>
-     * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
-     * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
+     * <code>PARQUET</code> – Parquet source file format.</p> </li> <li> <p>
+     * <code>CSV</code> – CSV source file format.</p> </li> <li> <p> <code>JSON</code>
+     * – JSON source file format.</p> </li> <li> <p> <code>XML</code> – XML source file
      * format.</p> </li> </ul> <p>Here is an example of how you could specify the
      * <code>formatParams</code>:</p> <p> <code> "formatParams": { "formatType": "CSV",
      * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
@@ -488,9 +488,9 @@ namespace Model
      * separation character (<code>separator</code>) and the type of compression
      * (<code>compression</code>). </p> <p> <code>formatType</code> is a required
      * attribute and can have the following values: </p> <ul> <li> <p>
-     * <code>PARQUET</code> - Parquet source file format.</p> </li> <li> <p>
-     * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
-     * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
+     * <code>PARQUET</code> – Parquet source file format.</p> </li> <li> <p>
+     * <code>CSV</code> – CSV source file format.</p> </li> <li> <p> <code>JSON</code>
+     * – JSON source file format.</p> </li> <li> <p> <code>XML</code> – XML source file
      * format.</p> </li> </ul> <p>Here is an example of how you could specify the
      * <code>formatParams</code>:</p> <p> <code> "formatParams": { "formatType": "CSV",
      * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
@@ -509,9 +509,9 @@ namespace Model
      * separation character (<code>separator</code>) and the type of compression
      * (<code>compression</code>). </p> <p> <code>formatType</code> is a required
      * attribute and can have the following values: </p> <ul> <li> <p>
-     * <code>PARQUET</code> - Parquet source file format.</p> </li> <li> <p>
-     * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
-     * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
+     * <code>PARQUET</code> – Parquet source file format.</p> </li> <li> <p>
+     * <code>CSV</code> – CSV source file format.</p> </li> <li> <p> <code>JSON</code>
+     * – JSON source file format.</p> </li> <li> <p> <code>XML</code> – XML source file
      * format.</p> </li> </ul> <p>Here is an example of how you could specify the
      * <code>formatParams</code>:</p> <p> <code> "formatParams": { "formatType": "CSV",
      * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
@@ -530,9 +530,9 @@ namespace Model
      * separation character (<code>separator</code>) and the type of compression
      * (<code>compression</code>). </p> <p> <code>formatType</code> is a required
      * attribute and can have the following values: </p> <ul> <li> <p>
-     * <code>PARQUET</code> - Parquet source file format.</p> </li> <li> <p>
-     * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
-     * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
+     * <code>PARQUET</code> – Parquet source file format.</p> </li> <li> <p>
+     * <code>CSV</code> – CSV source file format.</p> </li> <li> <p> <code>JSON</code>
+     * – JSON source file format.</p> </li> <li> <p> <code>XML</code> – XML source file
      * format.</p> </li> </ul> <p>Here is an example of how you could specify the
      * <code>formatParams</code>:</p> <p> <code> "formatParams": { "formatType": "CSV",
      * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
@@ -551,9 +551,9 @@ namespace Model
      * separation character (<code>separator</code>) and the type of compression
      * (<code>compression</code>). </p> <p> <code>formatType</code> is a required
      * attribute and can have the following values: </p> <ul> <li> <p>
-     * <code>PARQUET</code> - Parquet source file format.</p> </li> <li> <p>
-     * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
-     * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
+     * <code>PARQUET</code> – Parquet source file format.</p> </li> <li> <p>
+     * <code>CSV</code> – CSV source file format.</p> </li> <li> <p> <code>JSON</code>
+     * – JSON source file format.</p> </li> <li> <p> <code>XML</code> – XML source file
      * format.</p> </li> </ul> <p>Here is an example of how you could specify the
      * <code>formatParams</code>:</p> <p> <code> "formatParams": { "formatType": "CSV",
      * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
@@ -572,9 +572,9 @@ namespace Model
      * separation character (<code>separator</code>) and the type of compression
      * (<code>compression</code>). </p> <p> <code>formatType</code> is a required
      * attribute and can have the following values: </p> <ul> <li> <p>
-     * <code>PARQUET</code> - Parquet source file format.</p> </li> <li> <p>
-     * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
-     * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
+     * <code>PARQUET</code> – Parquet source file format.</p> </li> <li> <p>
+     * <code>CSV</code> – CSV source file format.</p> </li> <li> <p> <code>JSON</code>
+     * – JSON source file format.</p> </li> <li> <p> <code>XML</code> – XML source file
      * format.</p> </li> </ul> <p>Here is an example of how you could specify the
      * <code>formatParams</code>:</p> <p> <code> "formatParams": { "formatType": "CSV",
      * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
@@ -593,9 +593,9 @@ namespace Model
      * separation character (<code>separator</code>) and the type of compression
      * (<code>compression</code>). </p> <p> <code>formatType</code> is a required
      * attribute and can have the following values: </p> <ul> <li> <p>
-     * <code>PARQUET</code> - Parquet source file format.</p> </li> <li> <p>
-     * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
-     * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
+     * <code>PARQUET</code> – Parquet source file format.</p> </li> <li> <p>
+     * <code>CSV</code> – CSV source file format.</p> </li> <li> <p> <code>JSON</code>
+     * – JSON source file format.</p> </li> <li> <p> <code>XML</code> – XML source file
      * format.</p> </li> </ul> <p>Here is an example of how you could specify the
      * <code>formatParams</code>:</p> <p> <code> "formatParams": { "formatType": "CSV",
      * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
@@ -614,9 +614,9 @@ namespace Model
      * separation character (<code>separator</code>) and the type of compression
      * (<code>compression</code>). </p> <p> <code>formatType</code> is a required
      * attribute and can have the following values: </p> <ul> <li> <p>
-     * <code>PARQUET</code> - Parquet source file format.</p> </li> <li> <p>
-     * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
-     * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
+     * <code>PARQUET</code> – Parquet source file format.</p> </li> <li> <p>
+     * <code>CSV</code> – CSV source file format.</p> </li> <li> <p> <code>JSON</code>
+     * – JSON source file format.</p> </li> <li> <p> <code>XML</code> – XML source file
      * format.</p> </li> </ul> <p>Here is an example of how you could specify the
      * <code>formatParams</code>:</p> <p> <code> "formatParams": { "formatType": "CSV",
      * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
@@ -635,9 +635,9 @@ namespace Model
      * separation character (<code>separator</code>) and the type of compression
      * (<code>compression</code>). </p> <p> <code>formatType</code> is a required
      * attribute and can have the following values: </p> <ul> <li> <p>
-     * <code>PARQUET</code> - Parquet source file format.</p> </li> <li> <p>
-     * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
-     * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
+     * <code>PARQUET</code> – Parquet source file format.</p> </li> <li> <p>
+     * <code>CSV</code> – CSV source file format.</p> </li> <li> <p> <code>JSON</code>
+     * – JSON source file format.</p> </li> <li> <p> <code>XML</code> – XML source file
      * format.</p> </li> </ul> <p>Here is an example of how you could specify the
      * <code>formatParams</code>:</p> <p> <code> "formatParams": { "formatType": "CSV",
      * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>

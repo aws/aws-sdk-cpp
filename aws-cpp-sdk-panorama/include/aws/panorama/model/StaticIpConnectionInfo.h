@@ -39,6 +39,93 @@ namespace Model
 
 
     /**
+     * <p>The connection's default gateway.</p>
+     */
+    inline const Aws::String& GetDefaultGateway() const{ return m_defaultGateway; }
+
+    /**
+     * <p>The connection's default gateway.</p>
+     */
+    inline bool DefaultGatewayHasBeenSet() const { return m_defaultGatewayHasBeenSet; }
+
+    /**
+     * <p>The connection's default gateway.</p>
+     */
+    inline void SetDefaultGateway(const Aws::String& value) { m_defaultGatewayHasBeenSet = true; m_defaultGateway = value; }
+
+    /**
+     * <p>The connection's default gateway.</p>
+     */
+    inline void SetDefaultGateway(Aws::String&& value) { m_defaultGatewayHasBeenSet = true; m_defaultGateway = std::move(value); }
+
+    /**
+     * <p>The connection's default gateway.</p>
+     */
+    inline void SetDefaultGateway(const char* value) { m_defaultGatewayHasBeenSet = true; m_defaultGateway.assign(value); }
+
+    /**
+     * <p>The connection's default gateway.</p>
+     */
+    inline StaticIpConnectionInfo& WithDefaultGateway(const Aws::String& value) { SetDefaultGateway(value); return *this;}
+
+    /**
+     * <p>The connection's default gateway.</p>
+     */
+    inline StaticIpConnectionInfo& WithDefaultGateway(Aws::String&& value) { SetDefaultGateway(std::move(value)); return *this;}
+
+    /**
+     * <p>The connection's default gateway.</p>
+     */
+    inline StaticIpConnectionInfo& WithDefaultGateway(const char* value) { SetDefaultGateway(value); return *this;}
+
+
+    /**
+     * <p>The connection's DNS address.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetDns() const{ return m_dns; }
+
+    /**
+     * <p>The connection's DNS address.</p>
+     */
+    inline bool DnsHasBeenSet() const { return m_dnsHasBeenSet; }
+
+    /**
+     * <p>The connection's DNS address.</p>
+     */
+    inline void SetDns(const Aws::Vector<Aws::String>& value) { m_dnsHasBeenSet = true; m_dns = value; }
+
+    /**
+     * <p>The connection's DNS address.</p>
+     */
+    inline void SetDns(Aws::Vector<Aws::String>&& value) { m_dnsHasBeenSet = true; m_dns = std::move(value); }
+
+    /**
+     * <p>The connection's DNS address.</p>
+     */
+    inline StaticIpConnectionInfo& WithDns(const Aws::Vector<Aws::String>& value) { SetDns(value); return *this;}
+
+    /**
+     * <p>The connection's DNS address.</p>
+     */
+    inline StaticIpConnectionInfo& WithDns(Aws::Vector<Aws::String>&& value) { SetDns(std::move(value)); return *this;}
+
+    /**
+     * <p>The connection's DNS address.</p>
+     */
+    inline StaticIpConnectionInfo& AddDns(const Aws::String& value) { m_dnsHasBeenSet = true; m_dns.push_back(value); return *this; }
+
+    /**
+     * <p>The connection's DNS address.</p>
+     */
+    inline StaticIpConnectionInfo& AddDns(Aws::String&& value) { m_dnsHasBeenSet = true; m_dns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The connection's DNS address.</p>
+     */
+    inline StaticIpConnectionInfo& AddDns(const char* value) { m_dnsHasBeenSet = true; m_dns.push_back(value); return *this; }
+
+
+    /**
      * <p>The connection's IP address.</p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
@@ -119,106 +206,19 @@ namespace Model
      */
     inline StaticIpConnectionInfo& WithMask(const char* value) { SetMask(value); return *this;}
 
-
-    /**
-     * <p>The connection's DNS address.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetDns() const{ return m_dns; }
-
-    /**
-     * <p>The connection's DNS address.</p>
-     */
-    inline bool DnsHasBeenSet() const { return m_dnsHasBeenSet; }
-
-    /**
-     * <p>The connection's DNS address.</p>
-     */
-    inline void SetDns(const Aws::Vector<Aws::String>& value) { m_dnsHasBeenSet = true; m_dns = value; }
-
-    /**
-     * <p>The connection's DNS address.</p>
-     */
-    inline void SetDns(Aws::Vector<Aws::String>&& value) { m_dnsHasBeenSet = true; m_dns = std::move(value); }
-
-    /**
-     * <p>The connection's DNS address.</p>
-     */
-    inline StaticIpConnectionInfo& WithDns(const Aws::Vector<Aws::String>& value) { SetDns(value); return *this;}
-
-    /**
-     * <p>The connection's DNS address.</p>
-     */
-    inline StaticIpConnectionInfo& WithDns(Aws::Vector<Aws::String>&& value) { SetDns(std::move(value)); return *this;}
-
-    /**
-     * <p>The connection's DNS address.</p>
-     */
-    inline StaticIpConnectionInfo& AddDns(const Aws::String& value) { m_dnsHasBeenSet = true; m_dns.push_back(value); return *this; }
-
-    /**
-     * <p>The connection's DNS address.</p>
-     */
-    inline StaticIpConnectionInfo& AddDns(Aws::String&& value) { m_dnsHasBeenSet = true; m_dns.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The connection's DNS address.</p>
-     */
-    inline StaticIpConnectionInfo& AddDns(const char* value) { m_dnsHasBeenSet = true; m_dns.push_back(value); return *this; }
-
-
-    /**
-     * <p>The connection's default gateway.</p>
-     */
-    inline const Aws::String& GetDefaultGateway() const{ return m_defaultGateway; }
-
-    /**
-     * <p>The connection's default gateway.</p>
-     */
-    inline bool DefaultGatewayHasBeenSet() const { return m_defaultGatewayHasBeenSet; }
-
-    /**
-     * <p>The connection's default gateway.</p>
-     */
-    inline void SetDefaultGateway(const Aws::String& value) { m_defaultGatewayHasBeenSet = true; m_defaultGateway = value; }
-
-    /**
-     * <p>The connection's default gateway.</p>
-     */
-    inline void SetDefaultGateway(Aws::String&& value) { m_defaultGatewayHasBeenSet = true; m_defaultGateway = std::move(value); }
-
-    /**
-     * <p>The connection's default gateway.</p>
-     */
-    inline void SetDefaultGateway(const char* value) { m_defaultGatewayHasBeenSet = true; m_defaultGateway.assign(value); }
-
-    /**
-     * <p>The connection's default gateway.</p>
-     */
-    inline StaticIpConnectionInfo& WithDefaultGateway(const Aws::String& value) { SetDefaultGateway(value); return *this;}
-
-    /**
-     * <p>The connection's default gateway.</p>
-     */
-    inline StaticIpConnectionInfo& WithDefaultGateway(Aws::String&& value) { SetDefaultGateway(std::move(value)); return *this;}
-
-    /**
-     * <p>The connection's default gateway.</p>
-     */
-    inline StaticIpConnectionInfo& WithDefaultGateway(const char* value) { SetDefaultGateway(value); return *this;}
-
   private:
+
+    Aws::String m_defaultGateway;
+    bool m_defaultGatewayHasBeenSet;
+
+    Aws::Vector<Aws::String> m_dns;
+    bool m_dnsHasBeenSet;
 
     Aws::String m_ipAddress;
     bool m_ipAddressHasBeenSet;
 
     Aws::String m_mask;
     bool m_maskHasBeenSet;
-
-    Aws::Vector<Aws::String> m_dns;
-    bool m_dnsHasBeenSet;
-
-    Aws::String m_defaultGateway;
-    bool m_defaultGatewayHasBeenSet;
   };
 
 } // namespace Model

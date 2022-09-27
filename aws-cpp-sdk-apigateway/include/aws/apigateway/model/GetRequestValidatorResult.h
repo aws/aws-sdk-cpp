@@ -25,15 +25,8 @@ namespace APIGateway
 namespace Model
 {
   /**
-   * <p>A set of validation rules for incoming <a>Method</a> requests.</p> <div
-   * class="remarks"> <p>In OpenAPI, a <a>RequestValidator</a> of an API is defined
-   * by the <a
-   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions.html#api-gateway-swagger-extensions-request-validators.requestValidator.html">x-amazon-apigateway-request-validators.requestValidator</a>
-   * object. It the referenced using the <a
-   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions.html#api-gateway-swagger-extensions-request-validator">x-amazon-apigateway-request-validator</a>
-   * property.</p> </div> <div class="seeAlso"><a
-   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-method-request-validation.html">Enable
-   * Basic Request Validation in API Gateway</a></div><p><h3>See Also:</h3>   <a
+   * <p>A set of validation rules for incoming Method requests.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/RequestValidator">AWS
    * API Reference</a></p>
    */
@@ -46,92 +39,92 @@ namespace Model
 
 
     /**
-     * <p>The identifier of this <a>RequestValidator</a>.</p>
+     * <p>The identifier of this RequestValidator.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The identifier of this <a>RequestValidator</a>.</p>
+     * <p>The identifier of this RequestValidator.</p>
      */
     inline void SetId(const Aws::String& value) { m_id = value; }
 
     /**
-     * <p>The identifier of this <a>RequestValidator</a>.</p>
+     * <p>The identifier of this RequestValidator.</p>
      */
     inline void SetId(Aws::String&& value) { m_id = std::move(value); }
 
     /**
-     * <p>The identifier of this <a>RequestValidator</a>.</p>
+     * <p>The identifier of this RequestValidator.</p>
      */
     inline void SetId(const char* value) { m_id.assign(value); }
 
     /**
-     * <p>The identifier of this <a>RequestValidator</a>.</p>
+     * <p>The identifier of this RequestValidator.</p>
      */
     inline GetRequestValidatorResult& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The identifier of this <a>RequestValidator</a>.</p>
+     * <p>The identifier of this RequestValidator.</p>
      */
     inline GetRequestValidatorResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of this <a>RequestValidator</a>.</p>
+     * <p>The identifier of this RequestValidator.</p>
      */
     inline GetRequestValidatorResult& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * <p>The name of this <a>RequestValidator</a></p>
+     * <p>The name of this RequestValidator</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of this <a>RequestValidator</a></p>
+     * <p>The name of this RequestValidator</p>
      */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
-     * <p>The name of this <a>RequestValidator</a></p>
+     * <p>The name of this RequestValidator</p>
      */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
-     * <p>The name of this <a>RequestValidator</a></p>
+     * <p>The name of this RequestValidator</p>
      */
     inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
-     * <p>The name of this <a>RequestValidator</a></p>
+     * <p>The name of this RequestValidator</p>
      */
     inline GetRequestValidatorResult& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of this <a>RequestValidator</a></p>
+     * <p>The name of this RequestValidator</p>
      */
     inline GetRequestValidatorResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of this <a>RequestValidator</a></p>
+     * <p>The name of this RequestValidator</p>
      */
     inline GetRequestValidatorResult& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
      * <p>A Boolean flag to indicate whether to validate a request body according to
-     * the configured <a>Model</a> schema.</p>
+     * the configured Model schema.</p>
      */
     inline bool GetValidateRequestBody() const{ return m_validateRequestBody; }
 
     /**
      * <p>A Boolean flag to indicate whether to validate a request body according to
-     * the configured <a>Model</a> schema.</p>
+     * the configured Model schema.</p>
      */
     inline void SetValidateRequestBody(bool value) { m_validateRequestBody = value; }
 
     /**
      * <p>A Boolean flag to indicate whether to validate a request body according to
-     * the configured <a>Model</a> schema.</p>
+     * the configured Model schema.</p>
      */
     inline GetRequestValidatorResult& WithValidateRequestBody(bool value) { SetValidateRequestBody(value); return *this;}
 

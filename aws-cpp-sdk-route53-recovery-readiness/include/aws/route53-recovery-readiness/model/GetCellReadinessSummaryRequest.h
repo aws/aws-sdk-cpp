@@ -39,104 +39,104 @@ namespace Model
 
 
     /**
-     * The name of the Cell
+     * <p>The name of the cell.</p>
      */
     inline const Aws::String& GetCellName() const{ return m_cellName; }
 
     /**
-     * The name of the Cell
+     * <p>The name of the cell.</p>
      */
     inline bool CellNameHasBeenSet() const { return m_cellNameHasBeenSet; }
 
     /**
-     * The name of the Cell
+     * <p>The name of the cell.</p>
      */
     inline void SetCellName(const Aws::String& value) { m_cellNameHasBeenSet = true; m_cellName = value; }
 
     /**
-     * The name of the Cell
+     * <p>The name of the cell.</p>
      */
     inline void SetCellName(Aws::String&& value) { m_cellNameHasBeenSet = true; m_cellName = std::move(value); }
 
     /**
-     * The name of the Cell
+     * <p>The name of the cell.</p>
      */
     inline void SetCellName(const char* value) { m_cellNameHasBeenSet = true; m_cellName.assign(value); }
 
     /**
-     * The name of the Cell
+     * <p>The name of the cell.</p>
      */
     inline GetCellReadinessSummaryRequest& WithCellName(const Aws::String& value) { SetCellName(value); return *this;}
 
     /**
-     * The name of the Cell
+     * <p>The name of the cell.</p>
      */
     inline GetCellReadinessSummaryRequest& WithCellName(Aws::String&& value) { SetCellName(std::move(value)); return *this;}
 
     /**
-     * The name of the Cell
+     * <p>The name of the cell.</p>
      */
     inline GetCellReadinessSummaryRequest& WithCellName(const char* value) { SetCellName(value); return *this;}
 
 
     /**
-     * Upper bound on number of records to return.
+     * <p>The number of objects that you want to return with this call.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * Upper bound on number of records to return.
+     * <p>The number of objects that you want to return with this call.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * Upper bound on number of records to return.
+     * <p>The number of objects that you want to return with this call.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * Upper bound on number of records to return.
+     * <p>The number of objects that you want to return with this call.</p>
      */
     inline GetCellReadinessSummaryRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * A token used to resume pagination from the end of a previous request.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * A token used to resume pagination from the end of a previous request.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * A token used to resume pagination from the end of a previous request.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * A token used to resume pagination from the end of a previous request.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * A token used to resume pagination from the end of a previous request.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * A token used to resume pagination from the end of a previous request.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline GetCellReadinessSummaryRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * A token used to resume pagination from the end of a previous request.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline GetCellReadinessSummaryRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * A token used to resume pagination from the end of a previous request.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline GetCellReadinessSummaryRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

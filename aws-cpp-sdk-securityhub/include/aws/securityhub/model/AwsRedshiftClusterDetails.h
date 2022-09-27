@@ -14,6 +14,7 @@
 #include <aws/securityhub/model/AwsRedshiftClusterPendingModifiedValues.h>
 #include <aws/securityhub/model/AwsRedshiftClusterResizeInfo.h>
 #include <aws/securityhub/model/AwsRedshiftClusterRestoreStatus.h>
+#include <aws/securityhub/model/AwsRedshiftClusterLoggingStatus.h>
 #include <aws/securityhub/model/AwsRedshiftClusterClusterNode.h>
 #include <aws/securityhub/model/AwsRedshiftClusterClusterParameterGroup.h>
 #include <aws/securityhub/model/AwsRedshiftClusterClusterSecurityGroup.h>
@@ -2036,6 +2037,37 @@ namespace Model
      */
     inline AwsRedshiftClusterDetails& AddVpcSecurityGroups(AwsRedshiftClusterVpcSecurityGroup&& value) { m_vpcSecurityGroupsHasBeenSet = true; m_vpcSecurityGroups.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Information about the logging status of the cluster.</p>
+     */
+    inline const AwsRedshiftClusterLoggingStatus& GetLoggingStatus() const{ return m_loggingStatus; }
+
+    /**
+     * <p>Information about the logging status of the cluster.</p>
+     */
+    inline bool LoggingStatusHasBeenSet() const { return m_loggingStatusHasBeenSet; }
+
+    /**
+     * <p>Information about the logging status of the cluster.</p>
+     */
+    inline void SetLoggingStatus(const AwsRedshiftClusterLoggingStatus& value) { m_loggingStatusHasBeenSet = true; m_loggingStatus = value; }
+
+    /**
+     * <p>Information about the logging status of the cluster.</p>
+     */
+    inline void SetLoggingStatus(AwsRedshiftClusterLoggingStatus&& value) { m_loggingStatusHasBeenSet = true; m_loggingStatus = std::move(value); }
+
+    /**
+     * <p>Information about the logging status of the cluster.</p>
+     */
+    inline AwsRedshiftClusterDetails& WithLoggingStatus(const AwsRedshiftClusterLoggingStatus& value) { SetLoggingStatus(value); return *this;}
+
+    /**
+     * <p>Information about the logging status of the cluster.</p>
+     */
+    inline AwsRedshiftClusterDetails& WithLoggingStatus(AwsRedshiftClusterLoggingStatus&& value) { SetLoggingStatus(std::move(value)); return *this;}
+
   private:
 
     bool m_allowVersionUpgrade;
@@ -2166,6 +2198,9 @@ namespace Model
 
     Aws::Vector<AwsRedshiftClusterVpcSecurityGroup> m_vpcSecurityGroups;
     bool m_vpcSecurityGroupsHasBeenSet;
+
+    AwsRedshiftClusterLoggingStatus m_loggingStatus;
+    bool m_loggingStatusHasBeenSet;
   };
 
 } // namespace Model

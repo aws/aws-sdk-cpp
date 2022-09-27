@@ -80,6 +80,55 @@ namespace Model
 
 
     /**
+     * <p>The external-Id property of a component. The external-Id property is the
+     * primary key of an external storage system.</p>
+     */
+    inline const Aws::String& GetExternalId() const{ return m_externalId; }
+
+    /**
+     * <p>The external-Id property of a component. The external-Id property is the
+     * primary key of an external storage system.</p>
+     */
+    inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
+
+    /**
+     * <p>The external-Id property of a component. The external-Id property is the
+     * primary key of an external storage system.</p>
+     */
+    inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
+
+    /**
+     * <p>The external-Id property of a component. The external-Id property is the
+     * primary key of an external storage system.</p>
+     */
+    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
+
+    /**
+     * <p>The external-Id property of a component. The external-Id property is the
+     * primary key of an external storage system.</p>
+     */
+    inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
+
+    /**
+     * <p>The external-Id property of a component. The external-Id property is the
+     * primary key of an external storage system.</p>
+     */
+    inline ListEntitiesFilter& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
+
+    /**
+     * <p>The external-Id property of a component. The external-Id property is the
+     * primary key of an external storage system.</p>
+     */
+    inline ListEntitiesFilter& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
+
+    /**
+     * <p>The external-Id property of a component. The external-Id property is the
+     * primary key of an external storage system.</p>
+     */
+    inline ListEntitiesFilter& WithExternalId(const char* value) { SetExternalId(value); return *this;}
+
+
+    /**
      * <p>The parent of the entities in the list.</p>
      */
     inline const Aws::String& GetParentEntityId() const{ return m_parentEntityId; }
@@ -123,6 +172,9 @@ namespace Model
 
     Aws::String m_componentTypeId;
     bool m_componentTypeIdHasBeenSet;
+
+    Aws::String m_externalId;
+    bool m_externalIdHasBeenSet;
 
     Aws::String m_parentEntityId;
     bool m_parentEntityIdHasBeenSet;

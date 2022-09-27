@@ -7,7 +7,6 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/HashingUtils.h>
-#include <CommonCrypto/CommonDigest.h>
 #include <CommonCrypto/CommonHMAC.h>
 #include <CommonCrypto/CommonCryptor.h>
 #include <CommonCrypto/CommonSymmetricKeywrap.h>
@@ -76,6 +75,13 @@ namespace Aws
                 }
             }
 
+            MD5CommonCryptoImpl::MD5CommonCryptoImpl()
+            {
+AWS_SUPPRESS_DEPRECATION(
+                CC_MD5_Init(&m_ctx);
+                )
+            }
+
             HashResult MD5CommonCryptoImpl::Calculate(const Aws::String& str)
             {
                 ByteBuffer hash(CC_MD5_DIGEST_LENGTH);
@@ -120,6 +126,27 @@ AWS_SUPPRESS_DEPRECATION(
                 return HashResult(std::move(hash));
             }
 
+            void MD5CommonCryptoImpl::Update(unsigned char* buffer, size_t bufferSize)
+            {
+AWS_SUPPRESS_DEPRECATION(
+                CC_MD5_Update(&m_ctx, buffer, static_cast<CC_LONG>(bufferSize));
+                )
+            }
+
+            HashResult MD5CommonCryptoImpl::GetHash()
+            {
+                ByteBuffer hash(CC_MD5_DIGEST_LENGTH);
+AWS_SUPPRESS_DEPRECATION(
+                CC_MD5_Final(hash.GetUnderlyingData(), &m_ctx);
+                )
+                return HashResult(std::move(hash));
+            }
+
+            Sha1CommonCryptoImpl::Sha1CommonCryptoImpl()
+            {
+                CC_SHA1_Init(&m_ctx);
+            }
+
             HashResult Sha1CommonCryptoImpl::Calculate(const Aws::String& str)
             {
                 ByteBuffer hash(CC_SHA1_DIGEST_LENGTH);
@@ -157,6 +184,23 @@ AWS_SUPPRESS_DEPRECATION(
                 return HashResult(std::move(hash));
             }
 
+            void Sha1CommonCryptoImpl::Update(unsigned char* buffer, size_t bufferSize)
+            {
+                CC_SHA1_Update(&m_ctx, buffer, static_cast<CC_LONG>(bufferSize));
+            }
+
+            HashResult Sha1CommonCryptoImpl::GetHash()
+            {
+                ByteBuffer hash(CC_SHA1_DIGEST_LENGTH);
+                CC_SHA1_Final(hash.GetUnderlyingData(), &m_ctx);
+                return HashResult(std::move(hash));
+            }
+
+            Sha256CommonCryptoImpl::Sha256CommonCryptoImpl()
+            {
+                CC_SHA256_Init(&m_ctx);
+            }
+
             HashResult Sha256CommonCryptoImpl::Calculate(const Aws::String& str)
             {
                 ByteBuffer hash(CC_SHA256_DIGEST_LENGTH);
@@ -191,6 +235,18 @@ AWS_SUPPRESS_DEPRECATION(
                 ByteBuffer hash(CC_SHA256_DIGEST_LENGTH);
                 CC_SHA256_Final(hash.GetUnderlyingData(), &sha256);
 
+                return HashResult(std::move(hash));
+            }
+
+            void Sha256CommonCryptoImpl::Update(unsigned char* buffer, size_t bufferSize)
+            {
+                CC_SHA256_Update(&m_ctx, buffer, static_cast<CC_LONG>(bufferSize));
+            }
+
+            HashResult Sha256CommonCryptoImpl::GetHash()
+            {
+                ByteBuffer hash(CC_SHA256_DIGEST_LENGTH);
+                CC_SHA256_Final(hash.GetUnderlyingData(), &m_ctx);
                 return HashResult(std::move(hash));
             }
 

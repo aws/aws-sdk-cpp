@@ -165,48 +165,48 @@ namespace Model
 
     /**
      * <p>The format in which Dataset data is structured.</p> <ul> <li> <p>
-     * <code>TABULAR</code> - Data is structured in a tabular format.</p> </li> <li>
-     * <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
+     * <code>TABULAR</code> – Data is structured in a tabular format.</p> </li> <li>
+     * <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p>
      * </li> </ul>
      */
     inline const DatasetKind& GetKind() const{ return m_kind; }
 
     /**
      * <p>The format in which Dataset data is structured.</p> <ul> <li> <p>
-     * <code>TABULAR</code> - Data is structured in a tabular format.</p> </li> <li>
-     * <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
+     * <code>TABULAR</code> – Data is structured in a tabular format.</p> </li> <li>
+     * <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p>
      * </li> </ul>
      */
     inline bool KindHasBeenSet() const { return m_kindHasBeenSet; }
 
     /**
      * <p>The format in which Dataset data is structured.</p> <ul> <li> <p>
-     * <code>TABULAR</code> - Data is structured in a tabular format.</p> </li> <li>
-     * <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
+     * <code>TABULAR</code> – Data is structured in a tabular format.</p> </li> <li>
+     * <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p>
      * </li> </ul>
      */
     inline void SetKind(const DatasetKind& value) { m_kindHasBeenSet = true; m_kind = value; }
 
     /**
      * <p>The format in which Dataset data is structured.</p> <ul> <li> <p>
-     * <code>TABULAR</code> - Data is structured in a tabular format.</p> </li> <li>
-     * <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
+     * <code>TABULAR</code> – Data is structured in a tabular format.</p> </li> <li>
+     * <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p>
      * </li> </ul>
      */
     inline void SetKind(DatasetKind&& value) { m_kindHasBeenSet = true; m_kind = std::move(value); }
 
     /**
      * <p>The format in which Dataset data is structured.</p> <ul> <li> <p>
-     * <code>TABULAR</code> - Data is structured in a tabular format.</p> </li> <li>
-     * <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
+     * <code>TABULAR</code> – Data is structured in a tabular format.</p> </li> <li>
+     * <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p>
      * </li> </ul>
      */
     inline Dataset& WithKind(const DatasetKind& value) { SetKind(value); return *this;}
 
     /**
      * <p>The format in which Dataset data is structured.</p> <ul> <li> <p>
-     * <code>TABULAR</code> - Data is structured in a tabular format.</p> </li> <li>
-     * <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
+     * <code>TABULAR</code> – Data is structured in a tabular format.</p> </li> <li>
+     * <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p>
      * </li> </ul>
      */
     inline Dataset& WithKind(DatasetKind&& value) { SetKind(std::move(value)); return *this;}
@@ -286,56 +286,56 @@ namespace Model
 
     /**
      * <p>The timestamp at which the Dataset was created in FinSpace. The value is
-     * determined as Epoch time in milliseconds. For example, the value for Monday,
+     * determined as epoch time in milliseconds. For example, the value for Monday,
      * November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
     inline long long GetCreateTime() const{ return m_createTime; }
 
     /**
      * <p>The timestamp at which the Dataset was created in FinSpace. The value is
-     * determined as Epoch time in milliseconds. For example, the value for Monday,
+     * determined as epoch time in milliseconds. For example, the value for Monday,
      * November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
     inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
 
     /**
      * <p>The timestamp at which the Dataset was created in FinSpace. The value is
-     * determined as Epoch time in milliseconds. For example, the value for Monday,
+     * determined as epoch time in milliseconds. For example, the value for Monday,
      * November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
     inline void SetCreateTime(long long value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
     /**
      * <p>The timestamp at which the Dataset was created in FinSpace. The value is
-     * determined as Epoch time in milliseconds. For example, the value for Monday,
+     * determined as epoch time in milliseconds. For example, the value for Monday,
      * November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
     inline Dataset& WithCreateTime(long long value) { SetCreateTime(value); return *this;}
 
 
     /**
-     * <p>The last time that the Dataset was modified. The value is determined as Epoch
+     * <p>The last time that the Dataset was modified. The value is determined as epoch
      * time in milliseconds. For example, the value for Monday, November 1, 2021
      * 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
     inline long long GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * <p>The last time that the Dataset was modified. The value is determined as Epoch
+     * <p>The last time that the Dataset was modified. The value is determined as epoch
      * time in milliseconds. For example, the value for Monday, November 1, 2021
      * 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
 
     /**
-     * <p>The last time that the Dataset was modified. The value is determined as Epoch
+     * <p>The last time that the Dataset was modified. The value is determined as epoch
      * time in milliseconds. For example, the value for Monday, November 1, 2021
      * 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
     inline void SetLastModifiedTime(long long value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
 
     /**
-     * <p>The last time that the Dataset was modified. The value is determined as Epoch
+     * <p>The last time that the Dataset was modified. The value is determined as epoch
      * time in milliseconds. For example, the value for Monday, November 1, 2021
      * 12:00:00 PM UTC is specified as 1635768000000.</p>
      */

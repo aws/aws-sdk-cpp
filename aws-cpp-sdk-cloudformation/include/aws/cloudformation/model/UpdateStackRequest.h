@@ -176,7 +176,7 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template that is located in an Amazon S3 bucket or a Systems Manager document.
+     * template that's located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
@@ -188,7 +188,7 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template that is located in an Amazon S3 bucket or a Systems Manager document.
+     * template that's located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
@@ -200,7 +200,7 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template that is located in an Amazon S3 bucket or a Systems Manager document.
+     * template that's located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
@@ -212,7 +212,7 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template that is located in an Amazon S3 bucket or a Systems Manager document.
+     * template that's located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
@@ -224,7 +224,7 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template that is located in an Amazon S3 bucket or a Systems Manager document.
+     * template that's located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
@@ -236,7 +236,7 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template that is located in an Amazon S3 bucket or a Systems Manager document.
+     * template that's located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
@@ -248,7 +248,7 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template that is located in an Amazon S3 bucket or a Systems Manager document.
+     * template that's located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
@@ -260,7 +260,7 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template that is located in an Amazon S3 bucket or a Systems Manager document.
+     * template that's located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
@@ -309,8 +309,8 @@ namespace Model
      * specify either the <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
-     * during this update. If you do not specify a stack policy, the current policy
-     * that is associated with the stack will be used.</p>
+     * during this update. If you don't specify a stack policy, the current policy that
+     * is associated with the stack will be used.</p>
      */
     inline const Aws::String& GetStackPolicyDuringUpdateBody() const{ return m_stackPolicyDuringUpdateBody; }
 
@@ -319,8 +319,8 @@ namespace Model
      * specify either the <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
-     * during this update. If you do not specify a stack policy, the current policy
-     * that is associated with the stack will be used.</p>
+     * during this update. If you don't specify a stack policy, the current policy that
+     * is associated with the stack will be used.</p>
      */
     inline bool StackPolicyDuringUpdateBodyHasBeenSet() const { return m_stackPolicyDuringUpdateBodyHasBeenSet; }
 
@@ -329,8 +329,8 @@ namespace Model
      * specify either the <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
-     * during this update. If you do not specify a stack policy, the current policy
-     * that is associated with the stack will be used.</p>
+     * during this update. If you don't specify a stack policy, the current policy that
+     * is associated with the stack will be used.</p>
      */
     inline void SetStackPolicyDuringUpdateBody(const Aws::String& value) { m_stackPolicyDuringUpdateBodyHasBeenSet = true; m_stackPolicyDuringUpdateBody = value; }
 
@@ -339,8 +339,8 @@ namespace Model
      * specify either the <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
-     * during this update. If you do not specify a stack policy, the current policy
-     * that is associated with the stack will be used.</p>
+     * during this update. If you don't specify a stack policy, the current policy that
+     * is associated with the stack will be used.</p>
      */
     inline void SetStackPolicyDuringUpdateBody(Aws::String&& value) { m_stackPolicyDuringUpdateBodyHasBeenSet = true; m_stackPolicyDuringUpdateBody = std::move(value); }
 
@@ -349,8 +349,8 @@ namespace Model
      * specify either the <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
-     * during this update. If you do not specify a stack policy, the current policy
-     * that is associated with the stack will be used.</p>
+     * during this update. If you don't specify a stack policy, the current policy that
+     * is associated with the stack will be used.</p>
      */
     inline void SetStackPolicyDuringUpdateBody(const char* value) { m_stackPolicyDuringUpdateBodyHasBeenSet = true; m_stackPolicyDuringUpdateBody.assign(value); }
 
@@ -359,8 +359,8 @@ namespace Model
      * specify either the <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
-     * during this update. If you do not specify a stack policy, the current policy
-     * that is associated with the stack will be used.</p>
+     * during this update. If you don't specify a stack policy, the current policy that
+     * is associated with the stack will be used.</p>
      */
     inline UpdateStackRequest& WithStackPolicyDuringUpdateBody(const Aws::String& value) { SetStackPolicyDuringUpdateBody(value); return *this;}
 
@@ -369,8 +369,8 @@ namespace Model
      * specify either the <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
-     * during this update. If you do not specify a stack policy, the current policy
-     * that is associated with the stack will be used.</p>
+     * during this update. If you don't specify a stack policy, the current policy that
+     * is associated with the stack will be used.</p>
      */
     inline UpdateStackRequest& WithStackPolicyDuringUpdateBody(Aws::String&& value) { SetStackPolicyDuringUpdateBody(std::move(value)); return *this;}
 
@@ -379,8 +379,8 @@ namespace Model
      * specify either the <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
-     * during this update. If you do not specify a stack policy, the current policy
-     * that is associated with the stack will be used.</p>
+     * during this update. If you don't specify a stack policy, the current policy that
+     * is associated with the stack will be used.</p>
      */
     inline UpdateStackRequest& WithStackPolicyDuringUpdateBody(const char* value) { SetStackPolicyDuringUpdateBody(value); return *this;}
 
@@ -392,8 +392,8 @@ namespace Model
      * <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
-     * during this update. If you do not specify a stack policy, the current policy
-     * that is associated with the stack will be used.</p>
+     * during this update. If you don't specify a stack policy, the current policy that
+     * is associated with the stack will be used.</p>
      */
     inline const Aws::String& GetStackPolicyDuringUpdateURL() const{ return m_stackPolicyDuringUpdateURL; }
 
@@ -404,8 +404,8 @@ namespace Model
      * <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
-     * during this update. If you do not specify a stack policy, the current policy
-     * that is associated with the stack will be used.</p>
+     * during this update. If you don't specify a stack policy, the current policy that
+     * is associated with the stack will be used.</p>
      */
     inline bool StackPolicyDuringUpdateURLHasBeenSet() const { return m_stackPolicyDuringUpdateURLHasBeenSet; }
 
@@ -416,8 +416,8 @@ namespace Model
      * <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
-     * during this update. If you do not specify a stack policy, the current policy
-     * that is associated with the stack will be used.</p>
+     * during this update. If you don't specify a stack policy, the current policy that
+     * is associated with the stack will be used.</p>
      */
     inline void SetStackPolicyDuringUpdateURL(const Aws::String& value) { m_stackPolicyDuringUpdateURLHasBeenSet = true; m_stackPolicyDuringUpdateURL = value; }
 
@@ -428,8 +428,8 @@ namespace Model
      * <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
-     * during this update. If you do not specify a stack policy, the current policy
-     * that is associated with the stack will be used.</p>
+     * during this update. If you don't specify a stack policy, the current policy that
+     * is associated with the stack will be used.</p>
      */
     inline void SetStackPolicyDuringUpdateURL(Aws::String&& value) { m_stackPolicyDuringUpdateURLHasBeenSet = true; m_stackPolicyDuringUpdateURL = std::move(value); }
 
@@ -440,8 +440,8 @@ namespace Model
      * <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
-     * during this update. If you do not specify a stack policy, the current policy
-     * that is associated with the stack will be used.</p>
+     * during this update. If you don't specify a stack policy, the current policy that
+     * is associated with the stack will be used.</p>
      */
     inline void SetStackPolicyDuringUpdateURL(const char* value) { m_stackPolicyDuringUpdateURLHasBeenSet = true; m_stackPolicyDuringUpdateURL.assign(value); }
 
@@ -452,8 +452,8 @@ namespace Model
      * <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
-     * during this update. If you do not specify a stack policy, the current policy
-     * that is associated with the stack will be used.</p>
+     * during this update. If you don't specify a stack policy, the current policy that
+     * is associated with the stack will be used.</p>
      */
     inline UpdateStackRequest& WithStackPolicyDuringUpdateURL(const Aws::String& value) { SetStackPolicyDuringUpdateURL(value); return *this;}
 
@@ -464,8 +464,8 @@ namespace Model
      * <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
-     * during this update. If you do not specify a stack policy, the current policy
-     * that is associated with the stack will be used.</p>
+     * during this update. If you don't specify a stack policy, the current policy that
+     * is associated with the stack will be used.</p>
      */
     inline UpdateStackRequest& WithStackPolicyDuringUpdateURL(Aws::String&& value) { SetStackPolicyDuringUpdateURL(std::move(value)); return *this;}
 
@@ -476,8 +476,8 @@ namespace Model
      * <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
-     * during this update. If you do not specify a stack policy, the current policy
-     * that is associated with the stack will be used.</p>
+     * during this update. If you don't specify a stack policy, the current policy that
+     * is associated with the stack will be used.</p>
      */
     inline UpdateStackRequest& WithStackPolicyDuringUpdateURL(const char* value) { SetStackPolicyDuringUpdateURL(value); return *this;}
 
@@ -562,24 +562,23 @@ namespace Model
      * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
      * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
-     * template contains these resources, we recommend that you review all permissions
+     * template contains these resources, we suggest that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      * AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
      * AWS::IAM::Group</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     * AWS::IAM::InstanceProfile</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
+     * </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
      * AWS::IAM::Policy</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
      * AWS::IAM::Role</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
      * AWS::IAM::User</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-     * AWS::IAM::UserToGroupAddition</a> </p> </li> </ul> <p>For more information, see
-     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
+     * </p> </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
@@ -624,24 +623,23 @@ namespace Model
      * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
      * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
-     * template contains these resources, we recommend that you review all permissions
+     * template contains these resources, we suggest that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      * AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
      * AWS::IAM::Group</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     * AWS::IAM::InstanceProfile</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
+     * </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
      * AWS::IAM::Policy</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
      * AWS::IAM::Role</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
      * AWS::IAM::User</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-     * AWS::IAM::UserToGroupAddition</a> </p> </li> </ul> <p>For more information, see
-     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
+     * </p> </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
@@ -686,24 +684,23 @@ namespace Model
      * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
      * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
-     * template contains these resources, we recommend that you review all permissions
+     * template contains these resources, we suggest that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      * AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
      * AWS::IAM::Group</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     * AWS::IAM::InstanceProfile</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
+     * </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
      * AWS::IAM::Policy</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
      * AWS::IAM::Role</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
      * AWS::IAM::User</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-     * AWS::IAM::UserToGroupAddition</a> </p> </li> </ul> <p>For more information, see
-     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
+     * </p> </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
@@ -748,24 +745,23 @@ namespace Model
      * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
      * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
-     * template contains these resources, we recommend that you review all permissions
+     * template contains these resources, we suggest that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      * AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
      * AWS::IAM::Group</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     * AWS::IAM::InstanceProfile</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
+     * </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
      * AWS::IAM::Policy</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
      * AWS::IAM::Role</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
      * AWS::IAM::User</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-     * AWS::IAM::UserToGroupAddition</a> </p> </li> </ul> <p>For more information, see
-     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
+     * </p> </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
@@ -810,24 +806,23 @@ namespace Model
      * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
      * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
-     * template contains these resources, we recommend that you review all permissions
+     * template contains these resources, we suggest that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      * AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
      * AWS::IAM::Group</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     * AWS::IAM::InstanceProfile</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
+     * </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
      * AWS::IAM::Policy</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
      * AWS::IAM::Role</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
      * AWS::IAM::User</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-     * AWS::IAM::UserToGroupAddition</a> </p> </li> </ul> <p>For more information, see
-     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
+     * </p> </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
@@ -872,24 +867,23 @@ namespace Model
      * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
      * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
-     * template contains these resources, we recommend that you review all permissions
+     * template contains these resources, we suggest that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      * AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
      * AWS::IAM::Group</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     * AWS::IAM::InstanceProfile</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
+     * </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
      * AWS::IAM::Policy</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
      * AWS::IAM::Role</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
      * AWS::IAM::User</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-     * AWS::IAM::UserToGroupAddition</a> </p> </li> </ul> <p>For more information, see
-     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
+     * </p> </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
@@ -934,24 +928,23 @@ namespace Model
      * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
      * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
-     * template contains these resources, we recommend that you review all permissions
+     * template contains these resources, we suggest that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      * AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
      * AWS::IAM::Group</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     * AWS::IAM::InstanceProfile</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
+     * </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
      * AWS::IAM::Policy</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
      * AWS::IAM::Role</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
      * AWS::IAM::User</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-     * AWS::IAM::UserToGroupAddition</a> </p> </li> </ul> <p>For more information, see
-     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
+     * </p> </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
@@ -996,24 +989,23 @@ namespace Model
      * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
      * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
-     * template contains these resources, we recommend that you review all permissions
+     * template contains these resources, we suggest that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      * AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
      * AWS::IAM::Group</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     * AWS::IAM::InstanceProfile</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
+     * </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
      * AWS::IAM::Policy</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
      * AWS::IAM::Role</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
      * AWS::IAM::User</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-     * AWS::IAM::UserToGroupAddition</a> </p> </li> </ul> <p>For more information, see
-     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
+     * </p> </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
@@ -1175,12 +1167,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
      * role that CloudFormation assumes to update the stack. CloudFormation uses the
      * role's credentials to make calls on your behalf. CloudFormation always uses this
-     * role for all future operations on the stack. As long as users have permission to
-     * operate on the stack, CloudFormation uses this role even if the users don't have
-     * permission to pass it. Ensure that the role grants least privilege.</p> <p>If
-     * you don't specify a value, CloudFormation uses the role that was previously
-     * associated with the stack. If no role is available, CloudFormation uses a
-     * temporary session that is generated from your user credentials.</p>
+     * role for all future operations on the stack. Provided that users have permission
+     * to operate on the stack, CloudFormation uses this role even if the users don't
+     * have permission to pass it. Ensure that the role grants least privilege.</p>
+     * <p>If you don't specify a value, CloudFormation uses the role that was
+     * previously associated with the stack. If no role is available, CloudFormation
+     * uses a temporary session that is generated from your user credentials.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
@@ -1188,12 +1180,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
      * role that CloudFormation assumes to update the stack. CloudFormation uses the
      * role's credentials to make calls on your behalf. CloudFormation always uses this
-     * role for all future operations on the stack. As long as users have permission to
-     * operate on the stack, CloudFormation uses this role even if the users don't have
-     * permission to pass it. Ensure that the role grants least privilege.</p> <p>If
-     * you don't specify a value, CloudFormation uses the role that was previously
-     * associated with the stack. If no role is available, CloudFormation uses a
-     * temporary session that is generated from your user credentials.</p>
+     * role for all future operations on the stack. Provided that users have permission
+     * to operate on the stack, CloudFormation uses this role even if the users don't
+     * have permission to pass it. Ensure that the role grants least privilege.</p>
+     * <p>If you don't specify a value, CloudFormation uses the role that was
+     * previously associated with the stack. If no role is available, CloudFormation
+     * uses a temporary session that is generated from your user credentials.</p>
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
@@ -1201,12 +1193,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
      * role that CloudFormation assumes to update the stack. CloudFormation uses the
      * role's credentials to make calls on your behalf. CloudFormation always uses this
-     * role for all future operations on the stack. As long as users have permission to
-     * operate on the stack, CloudFormation uses this role even if the users don't have
-     * permission to pass it. Ensure that the role grants least privilege.</p> <p>If
-     * you don't specify a value, CloudFormation uses the role that was previously
-     * associated with the stack. If no role is available, CloudFormation uses a
-     * temporary session that is generated from your user credentials.</p>
+     * role for all future operations on the stack. Provided that users have permission
+     * to operate on the stack, CloudFormation uses this role even if the users don't
+     * have permission to pass it. Ensure that the role grants least privilege.</p>
+     * <p>If you don't specify a value, CloudFormation uses the role that was
+     * previously associated with the stack. If no role is available, CloudFormation
+     * uses a temporary session that is generated from your user credentials.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
@@ -1214,12 +1206,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
      * role that CloudFormation assumes to update the stack. CloudFormation uses the
      * role's credentials to make calls on your behalf. CloudFormation always uses this
-     * role for all future operations on the stack. As long as users have permission to
-     * operate on the stack, CloudFormation uses this role even if the users don't have
-     * permission to pass it. Ensure that the role grants least privilege.</p> <p>If
-     * you don't specify a value, CloudFormation uses the role that was previously
-     * associated with the stack. If no role is available, CloudFormation uses a
-     * temporary session that is generated from your user credentials.</p>
+     * role for all future operations on the stack. Provided that users have permission
+     * to operate on the stack, CloudFormation uses this role even if the users don't
+     * have permission to pass it. Ensure that the role grants least privilege.</p>
+     * <p>If you don't specify a value, CloudFormation uses the role that was
+     * previously associated with the stack. If no role is available, CloudFormation
+     * uses a temporary session that is generated from your user credentials.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
@@ -1227,12 +1219,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
      * role that CloudFormation assumes to update the stack. CloudFormation uses the
      * role's credentials to make calls on your behalf. CloudFormation always uses this
-     * role for all future operations on the stack. As long as users have permission to
-     * operate on the stack, CloudFormation uses this role even if the users don't have
-     * permission to pass it. Ensure that the role grants least privilege.</p> <p>If
-     * you don't specify a value, CloudFormation uses the role that was previously
-     * associated with the stack. If no role is available, CloudFormation uses a
-     * temporary session that is generated from your user credentials.</p>
+     * role for all future operations on the stack. Provided that users have permission
+     * to operate on the stack, CloudFormation uses this role even if the users don't
+     * have permission to pass it. Ensure that the role grants least privilege.</p>
+     * <p>If you don't specify a value, CloudFormation uses the role that was
+     * previously associated with the stack. If no role is available, CloudFormation
+     * uses a temporary session that is generated from your user credentials.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
@@ -1240,12 +1232,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
      * role that CloudFormation assumes to update the stack. CloudFormation uses the
      * role's credentials to make calls on your behalf. CloudFormation always uses this
-     * role for all future operations on the stack. As long as users have permission to
-     * operate on the stack, CloudFormation uses this role even if the users don't have
-     * permission to pass it. Ensure that the role grants least privilege.</p> <p>If
-     * you don't specify a value, CloudFormation uses the role that was previously
-     * associated with the stack. If no role is available, CloudFormation uses a
-     * temporary session that is generated from your user credentials.</p>
+     * role for all future operations on the stack. Provided that users have permission
+     * to operate on the stack, CloudFormation uses this role even if the users don't
+     * have permission to pass it. Ensure that the role grants least privilege.</p>
+     * <p>If you don't specify a value, CloudFormation uses the role that was
+     * previously associated with the stack. If no role is available, CloudFormation
+     * uses a temporary session that is generated from your user credentials.</p>
      */
     inline UpdateStackRequest& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
@@ -1253,12 +1245,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
      * role that CloudFormation assumes to update the stack. CloudFormation uses the
      * role's credentials to make calls on your behalf. CloudFormation always uses this
-     * role for all future operations on the stack. As long as users have permission to
-     * operate on the stack, CloudFormation uses this role even if the users don't have
-     * permission to pass it. Ensure that the role grants least privilege.</p> <p>If
-     * you don't specify a value, CloudFormation uses the role that was previously
-     * associated with the stack. If no role is available, CloudFormation uses a
-     * temporary session that is generated from your user credentials.</p>
+     * role for all future operations on the stack. Provided that users have permission
+     * to operate on the stack, CloudFormation uses this role even if the users don't
+     * have permission to pass it. Ensure that the role grants least privilege.</p>
+     * <p>If you don't specify a value, CloudFormation uses the role that was
+     * previously associated with the stack. If no role is available, CloudFormation
+     * uses a temporary session that is generated from your user credentials.</p>
      */
     inline UpdateStackRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
@@ -1266,12 +1258,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
      * role that CloudFormation assumes to update the stack. CloudFormation uses the
      * role's credentials to make calls on your behalf. CloudFormation always uses this
-     * role for all future operations on the stack. As long as users have permission to
-     * operate on the stack, CloudFormation uses this role even if the users don't have
-     * permission to pass it. Ensure that the role grants least privilege.</p> <p>If
-     * you don't specify a value, CloudFormation uses the role that was previously
-     * associated with the stack. If no role is available, CloudFormation uses a
-     * temporary session that is generated from your user credentials.</p>
+     * role for all future operations on the stack. Provided that users have permission
+     * to operate on the stack, CloudFormation uses this role even if the users don't
+     * have permission to pass it. Ensure that the role grants least privilege.</p>
+     * <p>If you don't specify a value, CloudFormation uses the role that was
+     * previously associated with the stack. If no role is available, CloudFormation
+     * uses a temporary session that is generated from your user credentials.</p>
      */
     inline UpdateStackRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
@@ -1317,7 +1309,7 @@ namespace Model
      * <p>Structure containing a new stack policy body. You can specify either the
      * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
      * not both.</p> <p>You might update the stack policy, for example, in order to
-     * protect a new resource that you created during a stack update. If you do not
+     * protect a new resource that you created during a stack update. If you don't
      * specify a stack policy, the current policy that is associated with the stack is
      * unchanged.</p>
      */
@@ -1327,7 +1319,7 @@ namespace Model
      * <p>Structure containing a new stack policy body. You can specify either the
      * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
      * not both.</p> <p>You might update the stack policy, for example, in order to
-     * protect a new resource that you created during a stack update. If you do not
+     * protect a new resource that you created during a stack update. If you don't
      * specify a stack policy, the current policy that is associated with the stack is
      * unchanged.</p>
      */
@@ -1337,7 +1329,7 @@ namespace Model
      * <p>Structure containing a new stack policy body. You can specify either the
      * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
      * not both.</p> <p>You might update the stack policy, for example, in order to
-     * protect a new resource that you created during a stack update. If you do not
+     * protect a new resource that you created during a stack update. If you don't
      * specify a stack policy, the current policy that is associated with the stack is
      * unchanged.</p>
      */
@@ -1347,7 +1339,7 @@ namespace Model
      * <p>Structure containing a new stack policy body. You can specify either the
      * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
      * not both.</p> <p>You might update the stack policy, for example, in order to
-     * protect a new resource that you created during a stack update. If you do not
+     * protect a new resource that you created during a stack update. If you don't
      * specify a stack policy, the current policy that is associated with the stack is
      * unchanged.</p>
      */
@@ -1357,7 +1349,7 @@ namespace Model
      * <p>Structure containing a new stack policy body. You can specify either the
      * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
      * not both.</p> <p>You might update the stack policy, for example, in order to
-     * protect a new resource that you created during a stack update. If you do not
+     * protect a new resource that you created during a stack update. If you don't
      * specify a stack policy, the current policy that is associated with the stack is
      * unchanged.</p>
      */
@@ -1367,7 +1359,7 @@ namespace Model
      * <p>Structure containing a new stack policy body. You can specify either the
      * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
      * not both.</p> <p>You might update the stack policy, for example, in order to
-     * protect a new resource that you created during a stack update. If you do not
+     * protect a new resource that you created during a stack update. If you don't
      * specify a stack policy, the current policy that is associated with the stack is
      * unchanged.</p>
      */
@@ -1377,7 +1369,7 @@ namespace Model
      * <p>Structure containing a new stack policy body. You can specify either the
      * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
      * not both.</p> <p>You might update the stack policy, for example, in order to
-     * protect a new resource that you created during a stack update. If you do not
+     * protect a new resource that you created during a stack update. If you don't
      * specify a stack policy, the current policy that is associated with the stack is
      * unchanged.</p>
      */
@@ -1387,7 +1379,7 @@ namespace Model
      * <p>Structure containing a new stack policy body. You can specify either the
      * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
      * not both.</p> <p>You might update the stack policy, for example, in order to
-     * protect a new resource that you created during a stack update. If you do not
+     * protect a new resource that you created during a stack update. If you don't
      * specify a stack policy, the current policy that is associated with the stack is
      * unchanged.</p>
      */
@@ -1400,7 +1392,7 @@ namespace Model
      * stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the
      * stack policy, for example, in order to protect a new resource that you created
-     * during a stack update. If you do not specify a stack policy, the current policy
+     * during a stack update. If you don't specify a stack policy, the current policy
      * that is associated with the stack is unchanged.</p>
      */
     inline const Aws::String& GetStackPolicyURL() const{ return m_stackPolicyURL; }
@@ -1411,7 +1403,7 @@ namespace Model
      * stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the
      * stack policy, for example, in order to protect a new resource that you created
-     * during a stack update. If you do not specify a stack policy, the current policy
+     * during a stack update. If you don't specify a stack policy, the current policy
      * that is associated with the stack is unchanged.</p>
      */
     inline bool StackPolicyURLHasBeenSet() const { return m_stackPolicyURLHasBeenSet; }
@@ -1422,7 +1414,7 @@ namespace Model
      * stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the
      * stack policy, for example, in order to protect a new resource that you created
-     * during a stack update. If you do not specify a stack policy, the current policy
+     * during a stack update. If you don't specify a stack policy, the current policy
      * that is associated with the stack is unchanged.</p>
      */
     inline void SetStackPolicyURL(const Aws::String& value) { m_stackPolicyURLHasBeenSet = true; m_stackPolicyURL = value; }
@@ -1433,7 +1425,7 @@ namespace Model
      * stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the
      * stack policy, for example, in order to protect a new resource that you created
-     * during a stack update. If you do not specify a stack policy, the current policy
+     * during a stack update. If you don't specify a stack policy, the current policy
      * that is associated with the stack is unchanged.</p>
      */
     inline void SetStackPolicyURL(Aws::String&& value) { m_stackPolicyURLHasBeenSet = true; m_stackPolicyURL = std::move(value); }
@@ -1444,7 +1436,7 @@ namespace Model
      * stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the
      * stack policy, for example, in order to protect a new resource that you created
-     * during a stack update. If you do not specify a stack policy, the current policy
+     * during a stack update. If you don't specify a stack policy, the current policy
      * that is associated with the stack is unchanged.</p>
      */
     inline void SetStackPolicyURL(const char* value) { m_stackPolicyURLHasBeenSet = true; m_stackPolicyURL.assign(value); }
@@ -1455,7 +1447,7 @@ namespace Model
      * stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the
      * stack policy, for example, in order to protect a new resource that you created
-     * during a stack update. If you do not specify a stack policy, the current policy
+     * during a stack update. If you don't specify a stack policy, the current policy
      * that is associated with the stack is unchanged.</p>
      */
     inline UpdateStackRequest& WithStackPolicyURL(const Aws::String& value) { SetStackPolicyURL(value); return *this;}
@@ -1466,7 +1458,7 @@ namespace Model
      * stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the
      * stack policy, for example, in order to protect a new resource that you created
-     * during a stack update. If you do not specify a stack policy, the current policy
+     * during a stack update. If you don't specify a stack policy, the current policy
      * that is associated with the stack is unchanged.</p>
      */
     inline UpdateStackRequest& WithStackPolicyURL(Aws::String&& value) { SetStackPolicyURL(std::move(value)); return *this;}
@@ -1477,7 +1469,7 @@ namespace Model
      * stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the
      * stack policy, for example, in order to protect a new resource that you created
-     * during a stack update. If you do not specify a stack policy, the current policy
+     * during a stack update. If you don't specify a stack policy, the current policy
      * that is associated with the stack is unchanged.</p>
      */
     inline UpdateStackRequest& WithStackPolicyURL(const char* value) { SetStackPolicyURL(value); return *this;}

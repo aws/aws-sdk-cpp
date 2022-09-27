@@ -52,6 +52,24 @@ GetNetworkAnalyzerConfigurationResult& GetNetworkAnalyzerConfigurationResult::op
     }
   }
 
+  if(jsonValue.ValueExists("Description"))
+  {
+    m_description = jsonValue.GetString("Description");
+
+  }
+
+  if(jsonValue.ValueExists("Arn"))
+  {
+    m_arn = jsonValue.GetString("Arn");
+
+  }
+
+  if(jsonValue.ValueExists("Name"))
+  {
+    m_name = jsonValue.GetString("Name");
+
+  }
+
 
 
   return *this;

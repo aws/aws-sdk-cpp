@@ -400,123 +400,147 @@ namespace Model
 
 
     /**
-     * <p>The data of the component. Used to specify the data inline. Either
-     * <code>data</code> or <code>uri</code> can be used to specify the data within the
-     * component.</p>
+     * <p>Component <code>data</code> contains inline YAML document content for the
+     * component. Alternatively, you can specify the <code>uri</code> of a YAML
+     * document file stored in Amazon S3. However, you cannot specify both
+     * properties.</p>
      */
     inline const Aws::String& GetData() const{ return m_data; }
 
     /**
-     * <p>The data of the component. Used to specify the data inline. Either
-     * <code>data</code> or <code>uri</code> can be used to specify the data within the
-     * component.</p>
+     * <p>Component <code>data</code> contains inline YAML document content for the
+     * component. Alternatively, you can specify the <code>uri</code> of a YAML
+     * document file stored in Amazon S3. However, you cannot specify both
+     * properties.</p>
      */
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
 
     /**
-     * <p>The data of the component. Used to specify the data inline. Either
-     * <code>data</code> or <code>uri</code> can be used to specify the data within the
-     * component.</p>
+     * <p>Component <code>data</code> contains inline YAML document content for the
+     * component. Alternatively, you can specify the <code>uri</code> of a YAML
+     * document file stored in Amazon S3. However, you cannot specify both
+     * properties.</p>
      */
     inline void SetData(const Aws::String& value) { m_dataHasBeenSet = true; m_data = value; }
 
     /**
-     * <p>The data of the component. Used to specify the data inline. Either
-     * <code>data</code> or <code>uri</code> can be used to specify the data within the
-     * component.</p>
+     * <p>Component <code>data</code> contains inline YAML document content for the
+     * component. Alternatively, you can specify the <code>uri</code> of a YAML
+     * document file stored in Amazon S3. However, you cannot specify both
+     * properties.</p>
      */
     inline void SetData(Aws::String&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
 
     /**
-     * <p>The data of the component. Used to specify the data inline. Either
-     * <code>data</code> or <code>uri</code> can be used to specify the data within the
-     * component.</p>
+     * <p>Component <code>data</code> contains inline YAML document content for the
+     * component. Alternatively, you can specify the <code>uri</code> of a YAML
+     * document file stored in Amazon S3. However, you cannot specify both
+     * properties.</p>
      */
     inline void SetData(const char* value) { m_dataHasBeenSet = true; m_data.assign(value); }
 
     /**
-     * <p>The data of the component. Used to specify the data inline. Either
-     * <code>data</code> or <code>uri</code> can be used to specify the data within the
-     * component.</p>
+     * <p>Component <code>data</code> contains inline YAML document content for the
+     * component. Alternatively, you can specify the <code>uri</code> of a YAML
+     * document file stored in Amazon S3. However, you cannot specify both
+     * properties.</p>
      */
     inline CreateComponentRequest& WithData(const Aws::String& value) { SetData(value); return *this;}
 
     /**
-     * <p>The data of the component. Used to specify the data inline. Either
-     * <code>data</code> or <code>uri</code> can be used to specify the data within the
-     * component.</p>
+     * <p>Component <code>data</code> contains inline YAML document content for the
+     * component. Alternatively, you can specify the <code>uri</code> of a YAML
+     * document file stored in Amazon S3. However, you cannot specify both
+     * properties.</p>
      */
     inline CreateComponentRequest& WithData(Aws::String&& value) { SetData(std::move(value)); return *this;}
 
     /**
-     * <p>The data of the component. Used to specify the data inline. Either
-     * <code>data</code> or <code>uri</code> can be used to specify the data within the
-     * component.</p>
+     * <p>Component <code>data</code> contains inline YAML document content for the
+     * component. Alternatively, you can specify the <code>uri</code> of a YAML
+     * document file stored in Amazon S3. However, you cannot specify both
+     * properties.</p>
      */
     inline CreateComponentRequest& WithData(const char* value) { SetData(value); return *this;}
 
 
     /**
-     * <p>The uri of the component. Must be an Amazon S3 URL and the requester must
-     * have permission to access the Amazon S3 bucket. If you use Amazon S3, you can
-     * specify component content up to your service quota. Either <code>data</code> or
-     * <code>uri</code> can be used to specify the data within the component.</p>
+     * <p>The <code>uri</code> of a YAML component document file. This must be an S3
+     * URL (<code>s3://bucket/key</code>), and the requester must have permission to
+     * access the S3 bucket it points to. If you use Amazon S3, you can specify
+     * component content up to your service quota.</p> <p>Alternatively, you can
+     * specify the YAML document inline, using the component <code>data</code>
+     * property. You cannot specify both properties.</p>
      */
     inline const Aws::String& GetUri() const{ return m_uri; }
 
     /**
-     * <p>The uri of the component. Must be an Amazon S3 URL and the requester must
-     * have permission to access the Amazon S3 bucket. If you use Amazon S3, you can
-     * specify component content up to your service quota. Either <code>data</code> or
-     * <code>uri</code> can be used to specify the data within the component.</p>
+     * <p>The <code>uri</code> of a YAML component document file. This must be an S3
+     * URL (<code>s3://bucket/key</code>), and the requester must have permission to
+     * access the S3 bucket it points to. If you use Amazon S3, you can specify
+     * component content up to your service quota.</p> <p>Alternatively, you can
+     * specify the YAML document inline, using the component <code>data</code>
+     * property. You cannot specify both properties.</p>
      */
     inline bool UriHasBeenSet() const { return m_uriHasBeenSet; }
 
     /**
-     * <p>The uri of the component. Must be an Amazon S3 URL and the requester must
-     * have permission to access the Amazon S3 bucket. If you use Amazon S3, you can
-     * specify component content up to your service quota. Either <code>data</code> or
-     * <code>uri</code> can be used to specify the data within the component.</p>
+     * <p>The <code>uri</code> of a YAML component document file. This must be an S3
+     * URL (<code>s3://bucket/key</code>), and the requester must have permission to
+     * access the S3 bucket it points to. If you use Amazon S3, you can specify
+     * component content up to your service quota.</p> <p>Alternatively, you can
+     * specify the YAML document inline, using the component <code>data</code>
+     * property. You cannot specify both properties.</p>
      */
     inline void SetUri(const Aws::String& value) { m_uriHasBeenSet = true; m_uri = value; }
 
     /**
-     * <p>The uri of the component. Must be an Amazon S3 URL and the requester must
-     * have permission to access the Amazon S3 bucket. If you use Amazon S3, you can
-     * specify component content up to your service quota. Either <code>data</code> or
-     * <code>uri</code> can be used to specify the data within the component.</p>
+     * <p>The <code>uri</code> of a YAML component document file. This must be an S3
+     * URL (<code>s3://bucket/key</code>), and the requester must have permission to
+     * access the S3 bucket it points to. If you use Amazon S3, you can specify
+     * component content up to your service quota.</p> <p>Alternatively, you can
+     * specify the YAML document inline, using the component <code>data</code>
+     * property. You cannot specify both properties.</p>
      */
     inline void SetUri(Aws::String&& value) { m_uriHasBeenSet = true; m_uri = std::move(value); }
 
     /**
-     * <p>The uri of the component. Must be an Amazon S3 URL and the requester must
-     * have permission to access the Amazon S3 bucket. If you use Amazon S3, you can
-     * specify component content up to your service quota. Either <code>data</code> or
-     * <code>uri</code> can be used to specify the data within the component.</p>
+     * <p>The <code>uri</code> of a YAML component document file. This must be an S3
+     * URL (<code>s3://bucket/key</code>), and the requester must have permission to
+     * access the S3 bucket it points to. If you use Amazon S3, you can specify
+     * component content up to your service quota.</p> <p>Alternatively, you can
+     * specify the YAML document inline, using the component <code>data</code>
+     * property. You cannot specify both properties.</p>
      */
     inline void SetUri(const char* value) { m_uriHasBeenSet = true; m_uri.assign(value); }
 
     /**
-     * <p>The uri of the component. Must be an Amazon S3 URL and the requester must
-     * have permission to access the Amazon S3 bucket. If you use Amazon S3, you can
-     * specify component content up to your service quota. Either <code>data</code> or
-     * <code>uri</code> can be used to specify the data within the component.</p>
+     * <p>The <code>uri</code> of a YAML component document file. This must be an S3
+     * URL (<code>s3://bucket/key</code>), and the requester must have permission to
+     * access the S3 bucket it points to. If you use Amazon S3, you can specify
+     * component content up to your service quota.</p> <p>Alternatively, you can
+     * specify the YAML document inline, using the component <code>data</code>
+     * property. You cannot specify both properties.</p>
      */
     inline CreateComponentRequest& WithUri(const Aws::String& value) { SetUri(value); return *this;}
 
     /**
-     * <p>The uri of the component. Must be an Amazon S3 URL and the requester must
-     * have permission to access the Amazon S3 bucket. If you use Amazon S3, you can
-     * specify component content up to your service quota. Either <code>data</code> or
-     * <code>uri</code> can be used to specify the data within the component.</p>
+     * <p>The <code>uri</code> of a YAML component document file. This must be an S3
+     * URL (<code>s3://bucket/key</code>), and the requester must have permission to
+     * access the S3 bucket it points to. If you use Amazon S3, you can specify
+     * component content up to your service quota.</p> <p>Alternatively, you can
+     * specify the YAML document inline, using the component <code>data</code>
+     * property. You cannot specify both properties.</p>
      */
     inline CreateComponentRequest& WithUri(Aws::String&& value) { SetUri(std::move(value)); return *this;}
 
     /**
-     * <p>The uri of the component. Must be an Amazon S3 URL and the requester must
-     * have permission to access the Amazon S3 bucket. If you use Amazon S3, you can
-     * specify component content up to your service quota. Either <code>data</code> or
-     * <code>uri</code> can be used to specify the data within the component.</p>
+     * <p>The <code>uri</code> of a YAML component document file. This must be an S3
+     * URL (<code>s3://bucket/key</code>), and the requester must have permission to
+     * access the S3 bucket it points to. If you use Amazon S3, you can specify
+     * component content up to your service quota.</p> <p>Alternatively, you can
+     * specify the YAML document inline, using the component <code>data</code>
+     * property. You cannot specify both properties.</p>
      */
     inline CreateComponentRequest& WithUri(const char* value) { SetUri(value); return *this;}
 

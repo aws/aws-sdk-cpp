@@ -10,6 +10,7 @@
 #include <aws/mediaconvert/model/CmfcAudioTrackType.h>
 #include <aws/mediaconvert/model/CmfcDescriptiveVideoServiceFlag.h>
 #include <aws/mediaconvert/model/CmfcIFrameOnlyManifest.h>
+#include <aws/mediaconvert/model/CmfcKlvMetadata.h>
 #include <aws/mediaconvert/model/CmfcScte35Esam.h>
 #include <aws/mediaconvert/model/CmfcScte35Source.h>
 #include <aws/mediaconvert/model/CmfcTimedMetadata.h>
@@ -670,6 +671,61 @@ namespace Model
 
 
     /**
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and writes
+     * each instance to a separate event message box in the output, according to MISB
+     * ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or
+     * leave blank.
+     */
+    inline const CmfcKlvMetadata& GetKlvMetadata() const{ return m_klvMetadata; }
+
+    /**
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and writes
+     * each instance to a separate event message box in the output, according to MISB
+     * ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or
+     * leave blank.
+     */
+    inline bool KlvMetadataHasBeenSet() const { return m_klvMetadataHasBeenSet; }
+
+    /**
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and writes
+     * each instance to a separate event message box in the output, according to MISB
+     * ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or
+     * leave blank.
+     */
+    inline void SetKlvMetadata(const CmfcKlvMetadata& value) { m_klvMetadataHasBeenSet = true; m_klvMetadata = value; }
+
+    /**
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and writes
+     * each instance to a separate event message box in the output, according to MISB
+     * ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or
+     * leave blank.
+     */
+    inline void SetKlvMetadata(CmfcKlvMetadata&& value) { m_klvMetadataHasBeenSet = true; m_klvMetadata = std::move(value); }
+
+    /**
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and writes
+     * each instance to a separate event message box in the output, according to MISB
+     * ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or
+     * leave blank.
+     */
+    inline CmfcSettings& WithKlvMetadata(const CmfcKlvMetadata& value) { SetKlvMetadata(value); return *this;}
+
+    /**
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and writes
+     * each instance to a separate event message box in the output, according to MISB
+     * ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or
+     * leave blank.
+     */
+    inline CmfcSettings& WithKlvMetadata(CmfcKlvMetadata&& value) { SetKlvMetadata(std::move(value)); return *this;}
+
+
+    /**
      * Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT
      * to put SCTE-35 markers in this output at the insertion points that you specify
      * in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
@@ -762,38 +818,56 @@ namespace Model
 
 
     /**
-     * Applies to CMAF outputs. Use this setting to specify whether the service inserts
-     * the ID3 timed metadata from the input in this output.
+     * To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata
+     * inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3
+     * metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata:
+     * Set ID3 metadata to None (NONE) or leave blank.
      */
     inline const CmfcTimedMetadata& GetTimedMetadata() const{ return m_timedMetadata; }
 
     /**
-     * Applies to CMAF outputs. Use this setting to specify whether the service inserts
-     * the ID3 timed metadata from the input in this output.
+     * To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata
+     * inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3
+     * metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata:
+     * Set ID3 metadata to None (NONE) or leave blank.
      */
     inline bool TimedMetadataHasBeenSet() const { return m_timedMetadataHasBeenSet; }
 
     /**
-     * Applies to CMAF outputs. Use this setting to specify whether the service inserts
-     * the ID3 timed metadata from the input in this output.
+     * To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata
+     * inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3
+     * metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata:
+     * Set ID3 metadata to None (NONE) or leave blank.
      */
     inline void SetTimedMetadata(const CmfcTimedMetadata& value) { m_timedMetadataHasBeenSet = true; m_timedMetadata = value; }
 
     /**
-     * Applies to CMAF outputs. Use this setting to specify whether the service inserts
-     * the ID3 timed metadata from the input in this output.
+     * To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata
+     * inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3
+     * metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata:
+     * Set ID3 metadata to None (NONE) or leave blank.
      */
     inline void SetTimedMetadata(CmfcTimedMetadata&& value) { m_timedMetadataHasBeenSet = true; m_timedMetadata = std::move(value); }
 
     /**
-     * Applies to CMAF outputs. Use this setting to specify whether the service inserts
-     * the ID3 timed metadata from the input in this output.
+     * To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata
+     * inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3
+     * metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata:
+     * Set ID3 metadata to None (NONE) or leave blank.
      */
     inline CmfcSettings& WithTimedMetadata(const CmfcTimedMetadata& value) { SetTimedMetadata(value); return *this;}
 
     /**
-     * Applies to CMAF outputs. Use this setting to specify whether the service inserts
-     * the ID3 timed metadata from the input in this output.
+     * To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata
+     * inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3
+     * metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata:
+     * Set ID3 metadata to None (NONE) or leave blank.
      */
     inline CmfcSettings& WithTimedMetadata(CmfcTimedMetadata&& value) { SetTimedMetadata(std::move(value)); return *this;}
 
@@ -816,6 +890,9 @@ namespace Model
 
     CmfcIFrameOnlyManifest m_iFrameOnlyManifest;
     bool m_iFrameOnlyManifestHasBeenSet;
+
+    CmfcKlvMetadata m_klvMetadata;
+    bool m_klvMetadataHasBeenSet;
 
     CmfcScte35Esam m_scte35Esam;
     bool m_scte35EsamHasBeenSet;

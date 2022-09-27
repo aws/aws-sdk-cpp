@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>An object that represents the Cloud Map attribute information for your
-   * virtual node.</p>  <p>AWS Cloud Map is not available in the eu-south-1
+   * virtual node.</p>  <p>Cloud Map is not available in the eu-south-1
    * Region.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/AwsCloudMapInstanceAttribute">AWS
    * API Reference</a></p>

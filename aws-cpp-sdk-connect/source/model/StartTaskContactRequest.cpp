@@ -22,7 +22,9 @@ StartTaskContactRequest::StartTaskContactRequest() :
     m_descriptionHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_scheduledTimeHasBeenSet(false)
+    m_scheduledTimeHasBeenSet(false),
+    m_taskTemplateIdHasBeenSet(false),
+    m_quickConnectIdHasBeenSet(false)
 {
 }
 
@@ -91,6 +93,18 @@ Aws::String StartTaskContactRequest::SerializePayload() const
   if(m_scheduledTimeHasBeenSet)
   {
    payload.WithDouble("ScheduledTime", m_scheduledTime.SecondsWithMSPrecision());
+  }
+
+  if(m_taskTemplateIdHasBeenSet)
+  {
+   payload.WithString("TaskTemplateId", m_taskTemplateId);
+
+  }
+
+  if(m_quickConnectIdHasBeenSet)
+  {
+   payload.WithString("QuickConnectId", m_quickConnectId);
+
   }
 
   return payload.View().WriteReadable();

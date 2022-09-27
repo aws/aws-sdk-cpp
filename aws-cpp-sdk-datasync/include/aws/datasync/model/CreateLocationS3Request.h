@@ -252,7 +252,7 @@ namespace Model
 
 
     /**
-     * <p>If you are using DataSync on an Amazon Web Services Outpost, specify the
+     * <p>If you're using DataSync on an Amazon Web Services Outpost, specify the
      * Amazon Resource Names (ARNs) of the DataSync agents deployed on your Outpost.
      * For more information about launching a DataSync agent on an Amazon Web Services
      * Outpost, see <a
@@ -262,7 +262,7 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetAgentArns() const{ return m_agentArns; }
 
     /**
-     * <p>If you are using DataSync on an Amazon Web Services Outpost, specify the
+     * <p>If you're using DataSync on an Amazon Web Services Outpost, specify the
      * Amazon Resource Names (ARNs) of the DataSync agents deployed on your Outpost.
      * For more information about launching a DataSync agent on an Amazon Web Services
      * Outpost, see <a
@@ -272,7 +272,7 @@ namespace Model
     inline bool AgentArnsHasBeenSet() const { return m_agentArnsHasBeenSet; }
 
     /**
-     * <p>If you are using DataSync on an Amazon Web Services Outpost, specify the
+     * <p>If you're using DataSync on an Amazon Web Services Outpost, specify the
      * Amazon Resource Names (ARNs) of the DataSync agents deployed on your Outpost.
      * For more information about launching a DataSync agent on an Amazon Web Services
      * Outpost, see <a
@@ -282,7 +282,7 @@ namespace Model
     inline void SetAgentArns(const Aws::Vector<Aws::String>& value) { m_agentArnsHasBeenSet = true; m_agentArns = value; }
 
     /**
-     * <p>If you are using DataSync on an Amazon Web Services Outpost, specify the
+     * <p>If you're using DataSync on an Amazon Web Services Outpost, specify the
      * Amazon Resource Names (ARNs) of the DataSync agents deployed on your Outpost.
      * For more information about launching a DataSync agent on an Amazon Web Services
      * Outpost, see <a
@@ -292,7 +292,7 @@ namespace Model
     inline void SetAgentArns(Aws::Vector<Aws::String>&& value) { m_agentArnsHasBeenSet = true; m_agentArns = std::move(value); }
 
     /**
-     * <p>If you are using DataSync on an Amazon Web Services Outpost, specify the
+     * <p>If you're using DataSync on an Amazon Web Services Outpost, specify the
      * Amazon Resource Names (ARNs) of the DataSync agents deployed on your Outpost.
      * For more information about launching a DataSync agent on an Amazon Web Services
      * Outpost, see <a
@@ -302,7 +302,7 @@ namespace Model
     inline CreateLocationS3Request& WithAgentArns(const Aws::Vector<Aws::String>& value) { SetAgentArns(value); return *this;}
 
     /**
-     * <p>If you are using DataSync on an Amazon Web Services Outpost, specify the
+     * <p>If you're using DataSync on an Amazon Web Services Outpost, specify the
      * Amazon Resource Names (ARNs) of the DataSync agents deployed on your Outpost.
      * For more information about launching a DataSync agent on an Amazon Web Services
      * Outpost, see <a
@@ -312,7 +312,7 @@ namespace Model
     inline CreateLocationS3Request& WithAgentArns(Aws::Vector<Aws::String>&& value) { SetAgentArns(std::move(value)); return *this;}
 
     /**
-     * <p>If you are using DataSync on an Amazon Web Services Outpost, specify the
+     * <p>If you're using DataSync on an Amazon Web Services Outpost, specify the
      * Amazon Resource Names (ARNs) of the DataSync agents deployed on your Outpost.
      * For more information about launching a DataSync agent on an Amazon Web Services
      * Outpost, see <a
@@ -322,7 +322,7 @@ namespace Model
     inline CreateLocationS3Request& AddAgentArns(const Aws::String& value) { m_agentArnsHasBeenSet = true; m_agentArns.push_back(value); return *this; }
 
     /**
-     * <p>If you are using DataSync on an Amazon Web Services Outpost, specify the
+     * <p>If you're using DataSync on an Amazon Web Services Outpost, specify the
      * Amazon Resource Names (ARNs) of the DataSync agents deployed on your Outpost.
      * For more information about launching a DataSync agent on an Amazon Web Services
      * Outpost, see <a
@@ -332,7 +332,7 @@ namespace Model
     inline CreateLocationS3Request& AddAgentArns(Aws::String&& value) { m_agentArnsHasBeenSet = true; m_agentArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>If you are using DataSync on an Amazon Web Services Outpost, specify the
+     * <p>If you're using DataSync on an Amazon Web Services Outpost, specify the
      * Amazon Resource Names (ARNs) of the DataSync agents deployed on your Outpost.
      * For more information about launching a DataSync agent on an Amazon Web Services
      * Outpost, see <a

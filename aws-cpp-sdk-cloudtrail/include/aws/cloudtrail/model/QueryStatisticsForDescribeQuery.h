@@ -82,6 +82,35 @@ namespace Model
 
 
     /**
+     * <p>The total bytes that the query scanned in the event data store. This value
+     * matches the number of bytes for which your account is billed for the query,
+     * unless the query is still running.</p>
+     */
+    inline long long GetBytesScanned() const{ return m_bytesScanned; }
+
+    /**
+     * <p>The total bytes that the query scanned in the event data store. This value
+     * matches the number of bytes for which your account is billed for the query,
+     * unless the query is still running.</p>
+     */
+    inline bool BytesScannedHasBeenSet() const { return m_bytesScannedHasBeenSet; }
+
+    /**
+     * <p>The total bytes that the query scanned in the event data store. This value
+     * matches the number of bytes for which your account is billed for the query,
+     * unless the query is still running.</p>
+     */
+    inline void SetBytesScanned(long long value) { m_bytesScannedHasBeenSet = true; m_bytesScanned = value; }
+
+    /**
+     * <p>The total bytes that the query scanned in the event data store. This value
+     * matches the number of bytes for which your account is billed for the query,
+     * unless the query is still running.</p>
+     */
+    inline QueryStatisticsForDescribeQuery& WithBytesScanned(long long value) { SetBytesScanned(value); return *this;}
+
+
+    /**
      * <p>The query's run time, in milliseconds.</p>
      */
     inline int GetExecutionTimeInMillis() const{ return m_executionTimeInMillis; }
@@ -139,6 +168,9 @@ namespace Model
 
     long long m_eventsScanned;
     bool m_eventsScannedHasBeenSet;
+
+    long long m_bytesScanned;
+    bool m_bytesScannedHasBeenSet;
 
     int m_executionTimeInMillis;
     bool m_executionTimeInMillisHasBeenSet;

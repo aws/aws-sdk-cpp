@@ -19,31 +19,24 @@ namespace Model
 {
 
 BadRequestException::BadRequestException() : 
-    m_detailsHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_reason(BadRequestReason::NOT_SET),
-    m_reasonHasBeenSet(false)
+    m_reasonHasBeenSet(false),
+    m_detailsHasBeenSet(false)
 {
 }
 
 BadRequestException::BadRequestException(JsonView jsonValue) : 
-    m_detailsHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_reason(BadRequestReason::NOT_SET),
-    m_reasonHasBeenSet(false)
+    m_reasonHasBeenSet(false),
+    m_detailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 BadRequestException& BadRequestException::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Details"))
-  {
-    m_details = jsonValue.GetObject("Details");
-
-    m_detailsHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
@@ -58,18 +51,19 @@ BadRequestException& BadRequestException::operator =(JsonView jsonValue)
     m_reasonHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Details"))
+  {
+    m_details = jsonValue.GetObject("Details");
+
+    m_detailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue BadRequestException::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_detailsHasBeenSet)
-  {
-   payload.WithObject("Details", m_details.Jsonize());
-
-  }
 
   if(m_messageHasBeenSet)
   {
@@ -80,6 +74,12 @@ JsonValue BadRequestException::Jsonize() const
   if(m_reasonHasBeenSet)
   {
    payload.WithString("Reason", BadRequestReasonMapper::GetNameForBadRequestReason(m_reason));
+  }
+
+  if(m_detailsHasBeenSet)
+  {
+   payload.WithObject("Details", m_details.Jsonize());
+
   }
 
   return payload;

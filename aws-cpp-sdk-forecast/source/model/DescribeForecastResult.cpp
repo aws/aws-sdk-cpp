@@ -93,6 +93,12 @@ DescribeForecastResult& DescribeForecastResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("TimeSeriesSelector"))
+  {
+    m_timeSeriesSelector = jsonValue.GetObject("TimeSeriesSelector");
+
+  }
+
 
 
   return *this;

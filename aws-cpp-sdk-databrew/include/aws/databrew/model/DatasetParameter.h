@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents a dataset paramater that defines type and conditions for a
+   * <p>Represents a dataset parameter that defines type and conditions for a
    * parameter in the Amazon S3 path of the dataset.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DatasetParameter">AWS
    * API Reference</a></p>

@@ -23,7 +23,8 @@ WorldExportJobSummary::WorldExportJobSummary() :
     m_status(WorldExportJobStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_worldsHasBeenSet(false)
+    m_worldsHasBeenSet(false),
+    m_outputLocationHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ WorldExportJobSummary::WorldExportJobSummary(JsonView jsonValue) :
     m_status(WorldExportJobStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_worldsHasBeenSet(false)
+    m_worldsHasBeenSet(false),
+    m_outputLocationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -70,6 +72,13 @@ WorldExportJobSummary& WorldExportJobSummary::operator =(JsonView jsonValue)
     m_worldsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("outputLocation"))
+  {
+    m_outputLocation = jsonValue.GetObject("outputLocation");
+
+    m_outputLocationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -101,6 +110,12 @@ JsonValue WorldExportJobSummary::Jsonize() const
      worldsJsonList[worldsIndex].AsString(m_worlds[worldsIndex]);
    }
    payload.WithArray("worlds", std::move(worldsJsonList));
+
+  }
+
+  if(m_outputLocationHasBeenSet)
+  {
+   payload.WithObject("outputLocation", m_outputLocation.Jsonize());
 
   }
 

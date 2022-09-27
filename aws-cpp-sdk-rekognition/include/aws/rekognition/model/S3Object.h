@@ -28,7 +28,7 @@ namespace Model
    * bucket containing the S3 object must match the region you use for Amazon
    * Rekognition operations.</p> <p>For Amazon Rekognition to process an S3 object,
    * the user must have permission to access the S3 object. For more information, see
-   * Resource-Based Policies in the Amazon Rekognition Developer Guide.
+   * How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/S3Object">AWS
    * API Reference</a></p>

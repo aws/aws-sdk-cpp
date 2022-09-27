@@ -67,6 +67,7 @@
 #include <aws/securityhub/model/AwsNetworkFirewallFirewallPolicyDetails.h>
 #include <aws/securityhub/model/AwsNetworkFirewallFirewallDetails.h>
 #include <aws/securityhub/model/AwsNetworkFirewallRuleGroupDetails.h>
+#include <aws/securityhub/model/AwsRdsDbSecurityGroupDetails.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -2172,6 +2173,37 @@ namespace Model
      */
     inline ResourceDetails& WithAwsNetworkFirewallRuleGroup(AwsNetworkFirewallRuleGroupDetails&& value) { SetAwsNetworkFirewallRuleGroup(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Details about an Amazon RDS DB security group.</p>
+     */
+    inline const AwsRdsDbSecurityGroupDetails& GetAwsRdsDbSecurityGroup() const{ return m_awsRdsDbSecurityGroup; }
+
+    /**
+     * <p>Details about an Amazon RDS DB security group.</p>
+     */
+    inline bool AwsRdsDbSecurityGroupHasBeenSet() const { return m_awsRdsDbSecurityGroupHasBeenSet; }
+
+    /**
+     * <p>Details about an Amazon RDS DB security group.</p>
+     */
+    inline void SetAwsRdsDbSecurityGroup(const AwsRdsDbSecurityGroupDetails& value) { m_awsRdsDbSecurityGroupHasBeenSet = true; m_awsRdsDbSecurityGroup = value; }
+
+    /**
+     * <p>Details about an Amazon RDS DB security group.</p>
+     */
+    inline void SetAwsRdsDbSecurityGroup(AwsRdsDbSecurityGroupDetails&& value) { m_awsRdsDbSecurityGroupHasBeenSet = true; m_awsRdsDbSecurityGroup = std::move(value); }
+
+    /**
+     * <p>Details about an Amazon RDS DB security group.</p>
+     */
+    inline ResourceDetails& WithAwsRdsDbSecurityGroup(const AwsRdsDbSecurityGroupDetails& value) { SetAwsRdsDbSecurityGroup(value); return *this;}
+
+    /**
+     * <p>Details about an Amazon RDS DB security group.</p>
+     */
+    inline ResourceDetails& WithAwsRdsDbSecurityGroup(AwsRdsDbSecurityGroupDetails&& value) { SetAwsRdsDbSecurityGroup(std::move(value)); return *this;}
+
   private:
 
     AwsAutoScalingAutoScalingGroupDetails m_awsAutoScalingAutoScalingGroup;
@@ -2359,6 +2391,9 @@ namespace Model
 
     AwsNetworkFirewallRuleGroupDetails m_awsNetworkFirewallRuleGroup;
     bool m_awsNetworkFirewallRuleGroupHasBeenSet;
+
+    AwsRdsDbSecurityGroupDetails m_awsRdsDbSecurityGroup;
+    bool m_awsRdsDbSecurityGroupHasBeenSet;
   };
 
 } // namespace Model

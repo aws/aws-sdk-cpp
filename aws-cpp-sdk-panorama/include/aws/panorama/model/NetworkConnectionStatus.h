@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     CONNECTED,
-    NOT_CONNECTED
+    NOT_CONNECTED,
+    CONNECTING
   };
 
 namespace NetworkConnectionStatusMapper

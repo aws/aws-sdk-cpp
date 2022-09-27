@@ -18,6 +18,7 @@ CreateVpcEndpointServiceConfigurationRequest::CreateVpcEndpointServiceConfigurat
     m_privateDnsNameHasBeenSet(false),
     m_networkLoadBalancerArnsHasBeenSet(false),
     m_gatewayLoadBalancerArnsHasBeenSet(false),
+    m_supportedIpAddressTypesHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false)
 {
@@ -61,6 +62,17 @@ Aws::String CreateVpcEndpointServiceConfigurationRequest::SerializePayload() con
       ss << "GatewayLoadBalancerArn." << gatewayLoadBalancerArnsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       gatewayLoadBalancerArnsCount++;
+    }
+  }
+
+  if(m_supportedIpAddressTypesHasBeenSet)
+  {
+    unsigned supportedIpAddressTypesCount = 1;
+    for(auto& item : m_supportedIpAddressTypes)
+    {
+      ss << "SupportedIpAddressType." << supportedIpAddressTypesCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      supportedIpAddressTypesCount++;
     }
   }
 

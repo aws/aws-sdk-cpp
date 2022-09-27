@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/panorama/Panorama_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/panorama/model/ConflictExceptionErrorArgument.h>
 #include <utility>
 
@@ -37,6 +37,88 @@ namespace Model
     ConflictException(Aws::Utils::Json::JsonView jsonValue);
     ConflictException& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>A list of attributes that led to the exception and their values.</p>
+     */
+    inline const Aws::Vector<ConflictExceptionErrorArgument>& GetErrorArguments() const{ return m_errorArguments; }
+
+    /**
+     * <p>A list of attributes that led to the exception and their values.</p>
+     */
+    inline bool ErrorArgumentsHasBeenSet() const { return m_errorArgumentsHasBeenSet; }
+
+    /**
+     * <p>A list of attributes that led to the exception and their values.</p>
+     */
+    inline void SetErrorArguments(const Aws::Vector<ConflictExceptionErrorArgument>& value) { m_errorArgumentsHasBeenSet = true; m_errorArguments = value; }
+
+    /**
+     * <p>A list of attributes that led to the exception and their values.</p>
+     */
+    inline void SetErrorArguments(Aws::Vector<ConflictExceptionErrorArgument>&& value) { m_errorArgumentsHasBeenSet = true; m_errorArguments = std::move(value); }
+
+    /**
+     * <p>A list of attributes that led to the exception and their values.</p>
+     */
+    inline ConflictException& WithErrorArguments(const Aws::Vector<ConflictExceptionErrorArgument>& value) { SetErrorArguments(value); return *this;}
+
+    /**
+     * <p>A list of attributes that led to the exception and their values.</p>
+     */
+    inline ConflictException& WithErrorArguments(Aws::Vector<ConflictExceptionErrorArgument>&& value) { SetErrorArguments(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of attributes that led to the exception and their values.</p>
+     */
+    inline ConflictException& AddErrorArguments(const ConflictExceptionErrorArgument& value) { m_errorArgumentsHasBeenSet = true; m_errorArguments.push_back(value); return *this; }
+
+    /**
+     * <p>A list of attributes that led to the exception and their values.</p>
+     */
+    inline ConflictException& AddErrorArguments(ConflictExceptionErrorArgument&& value) { m_errorArgumentsHasBeenSet = true; m_errorArguments.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A unique ID for the error.</p>
+     */
+    inline const Aws::String& GetErrorId() const{ return m_errorId; }
+
+    /**
+     * <p>A unique ID for the error.</p>
+     */
+    inline bool ErrorIdHasBeenSet() const { return m_errorIdHasBeenSet; }
+
+    /**
+     * <p>A unique ID for the error.</p>
+     */
+    inline void SetErrorId(const Aws::String& value) { m_errorIdHasBeenSet = true; m_errorId = value; }
+
+    /**
+     * <p>A unique ID for the error.</p>
+     */
+    inline void SetErrorId(Aws::String&& value) { m_errorIdHasBeenSet = true; m_errorId = std::move(value); }
+
+    /**
+     * <p>A unique ID for the error.</p>
+     */
+    inline void SetErrorId(const char* value) { m_errorIdHasBeenSet = true; m_errorId.assign(value); }
+
+    /**
+     * <p>A unique ID for the error.</p>
+     */
+    inline ConflictException& WithErrorId(const Aws::String& value) { SetErrorId(value); return *this;}
+
+    /**
+     * <p>A unique ID for the error.</p>
+     */
+    inline ConflictException& WithErrorId(Aws::String&& value) { SetErrorId(std::move(value)); return *this;}
+
+    /**
+     * <p>A unique ID for the error.</p>
+     */
+    inline ConflictException& WithErrorId(const char* value) { SetErrorId(value); return *this;}
 
 
     
@@ -145,89 +227,13 @@ namespace Model
      */
     inline ConflictException& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
-
-    /**
-     * <p>A unique ID for the error.</p>
-     */
-    inline const Aws::String& GetErrorId() const{ return m_errorId; }
-
-    /**
-     * <p>A unique ID for the error.</p>
-     */
-    inline bool ErrorIdHasBeenSet() const { return m_errorIdHasBeenSet; }
-
-    /**
-     * <p>A unique ID for the error.</p>
-     */
-    inline void SetErrorId(const Aws::String& value) { m_errorIdHasBeenSet = true; m_errorId = value; }
-
-    /**
-     * <p>A unique ID for the error.</p>
-     */
-    inline void SetErrorId(Aws::String&& value) { m_errorIdHasBeenSet = true; m_errorId = std::move(value); }
-
-    /**
-     * <p>A unique ID for the error.</p>
-     */
-    inline void SetErrorId(const char* value) { m_errorIdHasBeenSet = true; m_errorId.assign(value); }
-
-    /**
-     * <p>A unique ID for the error.</p>
-     */
-    inline ConflictException& WithErrorId(const Aws::String& value) { SetErrorId(value); return *this;}
-
-    /**
-     * <p>A unique ID for the error.</p>
-     */
-    inline ConflictException& WithErrorId(Aws::String&& value) { SetErrorId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique ID for the error.</p>
-     */
-    inline ConflictException& WithErrorId(const char* value) { SetErrorId(value); return *this;}
-
-
-    /**
-     * <p>A list of attributes that led to the exception and their values.</p>
-     */
-    inline const Aws::Vector<ConflictExceptionErrorArgument>& GetErrorArguments() const{ return m_errorArguments; }
-
-    /**
-     * <p>A list of attributes that led to the exception and their values.</p>
-     */
-    inline bool ErrorArgumentsHasBeenSet() const { return m_errorArgumentsHasBeenSet; }
-
-    /**
-     * <p>A list of attributes that led to the exception and their values.</p>
-     */
-    inline void SetErrorArguments(const Aws::Vector<ConflictExceptionErrorArgument>& value) { m_errorArgumentsHasBeenSet = true; m_errorArguments = value; }
-
-    /**
-     * <p>A list of attributes that led to the exception and their values.</p>
-     */
-    inline void SetErrorArguments(Aws::Vector<ConflictExceptionErrorArgument>&& value) { m_errorArgumentsHasBeenSet = true; m_errorArguments = std::move(value); }
-
-    /**
-     * <p>A list of attributes that led to the exception and their values.</p>
-     */
-    inline ConflictException& WithErrorArguments(const Aws::Vector<ConflictExceptionErrorArgument>& value) { SetErrorArguments(value); return *this;}
-
-    /**
-     * <p>A list of attributes that led to the exception and their values.</p>
-     */
-    inline ConflictException& WithErrorArguments(Aws::Vector<ConflictExceptionErrorArgument>&& value) { SetErrorArguments(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of attributes that led to the exception and their values.</p>
-     */
-    inline ConflictException& AddErrorArguments(const ConflictExceptionErrorArgument& value) { m_errorArgumentsHasBeenSet = true; m_errorArguments.push_back(value); return *this; }
-
-    /**
-     * <p>A list of attributes that led to the exception and their values.</p>
-     */
-    inline ConflictException& AddErrorArguments(ConflictExceptionErrorArgument&& value) { m_errorArgumentsHasBeenSet = true; m_errorArguments.push_back(std::move(value)); return *this; }
-
   private:
+
+    Aws::Vector<ConflictExceptionErrorArgument> m_errorArguments;
+    bool m_errorArgumentsHasBeenSet;
+
+    Aws::String m_errorId;
+    bool m_errorIdHasBeenSet;
 
     Aws::String m_message;
     bool m_messageHasBeenSet;
@@ -237,12 +243,6 @@ namespace Model
 
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet;
-
-    Aws::String m_errorId;
-    bool m_errorIdHasBeenSet;
-
-    Aws::Vector<ConflictExceptionErrorArgument> m_errorArguments;
-    bool m_errorArgumentsHasBeenSet;
   };
 
 } // namespace Model

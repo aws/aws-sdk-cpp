@@ -20,7 +20,8 @@ CreateContainerServiceRequest::CreateContainerServiceRequest() :
     m_scaleHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_publicDomainNamesHasBeenSet(false),
-    m_deploymentHasBeenSet(false)
+    m_deploymentHasBeenSet(false),
+    m_privateRegistryAccessHasBeenSet(false)
 {
 }
 
@@ -75,6 +76,12 @@ Aws::String CreateContainerServiceRequest::SerializePayload() const
   if(m_deploymentHasBeenSet)
   {
    payload.WithObject("deployment", m_deployment.Jsonize());
+
+  }
+
+  if(m_privateRegistryAccessHasBeenSet)
+  {
+   payload.WithObject("privateRegistryAccess", m_privateRegistryAccess.Jsonize());
 
   }
 

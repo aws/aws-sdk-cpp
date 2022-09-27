@@ -125,171 +125,153 @@ namespace Model
 
 
     /**
-     * <p>The authentication flow for this call to execute. The API action will depend
-     * on this value. For example:</p> <ul> <li> <p> <code>REFRESH_TOKEN_AUTH</code>
-     * will take in a valid refresh token and return new tokens.</p> </li> <li> <p>
+     * <p>The authentication flow for this call to run. The API action will depend on
+     * this value. For example:</p> <ul> <li> <p> <code>REFRESH_TOKEN_AUTH</code> will
+     * take in a valid refresh token and return new tokens.</p> </li> <li> <p>
      * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and
-     * <code>SRP_A</code> and return the SRP variables to be used for next challenge
-     * execution.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code> will take in
-     * <code>USERNAME</code> and <code>PASSWORD</code> and return the next challenge or
-     * tokens.</p> </li> </ul> <p>Valid values include:</p> <ul> <li> <p>
-     * <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password
-     * (SRP) protocol.</p> </li> <li> <p>
-     * <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow
-     * for refreshing the access token and ID token by supplying a valid refresh
-     * token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom authentication
-     * flow.</p> </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP authentication
-     * flow; you can pass in the USERNAME and PASSWORD directly if the flow is enabled
-     * for calling the app client.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code>:
-     * Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
-     * user migration Lambda trigger is set, this flow will invoke the user migration
-     * Lambda if the USERNAME is not found in the user pool. </p> </li> <li> <p>
+     * <code>SRP_A</code> and return the Secure Remote Password (SRP) protocol
+     * variables to be used for next challenge execution.</p> </li> <li> <p>
+     * <code>ADMIN_USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and
+     * <code>PASSWORD</code> and return the next challenge or tokens.</p> </li> </ul>
+     * <p>Valid values include:</p> <ul> <li> <p> <code>USER_SRP_AUTH</code>:
+     * Authentication flow for the Secure Remote Password (SRP) protocol.</p> </li>
+     * <li> <p> <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>:
+     * Authentication flow for refreshing the access token and ID token by supplying a
+     * valid refresh token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom
+     * authentication flow.</p> </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP
+     * authentication flow; you can pass in the USERNAME and PASSWORD directly if the
+     * flow is enabled for calling the app client.</p> </li> <li> <p>
      * <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication.
      * This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this
-     * flow, Cognito receives the password in the request instead of using the SRP
-     * process to verify passwords.</p> </li> </ul>
+     * flow, Amazon Cognito receives the password in the request instead of using the
+     * SRP process to verify passwords.</p> </li> </ul>
      */
     inline const AuthFlowType& GetAuthFlow() const{ return m_authFlow; }
 
     /**
-     * <p>The authentication flow for this call to execute. The API action will depend
-     * on this value. For example:</p> <ul> <li> <p> <code>REFRESH_TOKEN_AUTH</code>
-     * will take in a valid refresh token and return new tokens.</p> </li> <li> <p>
+     * <p>The authentication flow for this call to run. The API action will depend on
+     * this value. For example:</p> <ul> <li> <p> <code>REFRESH_TOKEN_AUTH</code> will
+     * take in a valid refresh token and return new tokens.</p> </li> <li> <p>
      * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and
-     * <code>SRP_A</code> and return the SRP variables to be used for next challenge
-     * execution.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code> will take in
-     * <code>USERNAME</code> and <code>PASSWORD</code> and return the next challenge or
-     * tokens.</p> </li> </ul> <p>Valid values include:</p> <ul> <li> <p>
-     * <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password
-     * (SRP) protocol.</p> </li> <li> <p>
-     * <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow
-     * for refreshing the access token and ID token by supplying a valid refresh
-     * token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom authentication
-     * flow.</p> </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP authentication
-     * flow; you can pass in the USERNAME and PASSWORD directly if the flow is enabled
-     * for calling the app client.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code>:
-     * Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
-     * user migration Lambda trigger is set, this flow will invoke the user migration
-     * Lambda if the USERNAME is not found in the user pool. </p> </li> <li> <p>
+     * <code>SRP_A</code> and return the Secure Remote Password (SRP) protocol
+     * variables to be used for next challenge execution.</p> </li> <li> <p>
+     * <code>ADMIN_USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and
+     * <code>PASSWORD</code> and return the next challenge or tokens.</p> </li> </ul>
+     * <p>Valid values include:</p> <ul> <li> <p> <code>USER_SRP_AUTH</code>:
+     * Authentication flow for the Secure Remote Password (SRP) protocol.</p> </li>
+     * <li> <p> <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>:
+     * Authentication flow for refreshing the access token and ID token by supplying a
+     * valid refresh token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom
+     * authentication flow.</p> </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP
+     * authentication flow; you can pass in the USERNAME and PASSWORD directly if the
+     * flow is enabled for calling the app client.</p> </li> <li> <p>
      * <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication.
      * This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this
-     * flow, Cognito receives the password in the request instead of using the SRP
-     * process to verify passwords.</p> </li> </ul>
+     * flow, Amazon Cognito receives the password in the request instead of using the
+     * SRP process to verify passwords.</p> </li> </ul>
      */
     inline bool AuthFlowHasBeenSet() const { return m_authFlowHasBeenSet; }
 
     /**
-     * <p>The authentication flow for this call to execute. The API action will depend
-     * on this value. For example:</p> <ul> <li> <p> <code>REFRESH_TOKEN_AUTH</code>
-     * will take in a valid refresh token and return new tokens.</p> </li> <li> <p>
+     * <p>The authentication flow for this call to run. The API action will depend on
+     * this value. For example:</p> <ul> <li> <p> <code>REFRESH_TOKEN_AUTH</code> will
+     * take in a valid refresh token and return new tokens.</p> </li> <li> <p>
      * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and
-     * <code>SRP_A</code> and return the SRP variables to be used for next challenge
-     * execution.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code> will take in
-     * <code>USERNAME</code> and <code>PASSWORD</code> and return the next challenge or
-     * tokens.</p> </li> </ul> <p>Valid values include:</p> <ul> <li> <p>
-     * <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password
-     * (SRP) protocol.</p> </li> <li> <p>
-     * <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow
-     * for refreshing the access token and ID token by supplying a valid refresh
-     * token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom authentication
-     * flow.</p> </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP authentication
-     * flow; you can pass in the USERNAME and PASSWORD directly if the flow is enabled
-     * for calling the app client.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code>:
-     * Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
-     * user migration Lambda trigger is set, this flow will invoke the user migration
-     * Lambda if the USERNAME is not found in the user pool. </p> </li> <li> <p>
+     * <code>SRP_A</code> and return the Secure Remote Password (SRP) protocol
+     * variables to be used for next challenge execution.</p> </li> <li> <p>
+     * <code>ADMIN_USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and
+     * <code>PASSWORD</code> and return the next challenge or tokens.</p> </li> </ul>
+     * <p>Valid values include:</p> <ul> <li> <p> <code>USER_SRP_AUTH</code>:
+     * Authentication flow for the Secure Remote Password (SRP) protocol.</p> </li>
+     * <li> <p> <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>:
+     * Authentication flow for refreshing the access token and ID token by supplying a
+     * valid refresh token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom
+     * authentication flow.</p> </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP
+     * authentication flow; you can pass in the USERNAME and PASSWORD directly if the
+     * flow is enabled for calling the app client.</p> </li> <li> <p>
      * <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication.
      * This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this
-     * flow, Cognito receives the password in the request instead of using the SRP
-     * process to verify passwords.</p> </li> </ul>
+     * flow, Amazon Cognito receives the password in the request instead of using the
+     * SRP process to verify passwords.</p> </li> </ul>
      */
     inline void SetAuthFlow(const AuthFlowType& value) { m_authFlowHasBeenSet = true; m_authFlow = value; }
 
     /**
-     * <p>The authentication flow for this call to execute. The API action will depend
-     * on this value. For example:</p> <ul> <li> <p> <code>REFRESH_TOKEN_AUTH</code>
-     * will take in a valid refresh token and return new tokens.</p> </li> <li> <p>
+     * <p>The authentication flow for this call to run. The API action will depend on
+     * this value. For example:</p> <ul> <li> <p> <code>REFRESH_TOKEN_AUTH</code> will
+     * take in a valid refresh token and return new tokens.</p> </li> <li> <p>
      * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and
-     * <code>SRP_A</code> and return the SRP variables to be used for next challenge
-     * execution.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code> will take in
-     * <code>USERNAME</code> and <code>PASSWORD</code> and return the next challenge or
-     * tokens.</p> </li> </ul> <p>Valid values include:</p> <ul> <li> <p>
-     * <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password
-     * (SRP) protocol.</p> </li> <li> <p>
-     * <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow
-     * for refreshing the access token and ID token by supplying a valid refresh
-     * token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom authentication
-     * flow.</p> </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP authentication
-     * flow; you can pass in the USERNAME and PASSWORD directly if the flow is enabled
-     * for calling the app client.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code>:
-     * Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
-     * user migration Lambda trigger is set, this flow will invoke the user migration
-     * Lambda if the USERNAME is not found in the user pool. </p> </li> <li> <p>
+     * <code>SRP_A</code> and return the Secure Remote Password (SRP) protocol
+     * variables to be used for next challenge execution.</p> </li> <li> <p>
+     * <code>ADMIN_USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and
+     * <code>PASSWORD</code> and return the next challenge or tokens.</p> </li> </ul>
+     * <p>Valid values include:</p> <ul> <li> <p> <code>USER_SRP_AUTH</code>:
+     * Authentication flow for the Secure Remote Password (SRP) protocol.</p> </li>
+     * <li> <p> <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>:
+     * Authentication flow for refreshing the access token and ID token by supplying a
+     * valid refresh token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom
+     * authentication flow.</p> </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP
+     * authentication flow; you can pass in the USERNAME and PASSWORD directly if the
+     * flow is enabled for calling the app client.</p> </li> <li> <p>
      * <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication.
      * This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this
-     * flow, Cognito receives the password in the request instead of using the SRP
-     * process to verify passwords.</p> </li> </ul>
+     * flow, Amazon Cognito receives the password in the request instead of using the
+     * SRP process to verify passwords.</p> </li> </ul>
      */
     inline void SetAuthFlow(AuthFlowType&& value) { m_authFlowHasBeenSet = true; m_authFlow = std::move(value); }
 
     /**
-     * <p>The authentication flow for this call to execute. The API action will depend
-     * on this value. For example:</p> <ul> <li> <p> <code>REFRESH_TOKEN_AUTH</code>
-     * will take in a valid refresh token and return new tokens.</p> </li> <li> <p>
+     * <p>The authentication flow for this call to run. The API action will depend on
+     * this value. For example:</p> <ul> <li> <p> <code>REFRESH_TOKEN_AUTH</code> will
+     * take in a valid refresh token and return new tokens.</p> </li> <li> <p>
      * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and
-     * <code>SRP_A</code> and return the SRP variables to be used for next challenge
-     * execution.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code> will take in
-     * <code>USERNAME</code> and <code>PASSWORD</code> and return the next challenge or
-     * tokens.</p> </li> </ul> <p>Valid values include:</p> <ul> <li> <p>
-     * <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password
-     * (SRP) protocol.</p> </li> <li> <p>
-     * <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow
-     * for refreshing the access token and ID token by supplying a valid refresh
-     * token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom authentication
-     * flow.</p> </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP authentication
-     * flow; you can pass in the USERNAME and PASSWORD directly if the flow is enabled
-     * for calling the app client.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code>:
-     * Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
-     * user migration Lambda trigger is set, this flow will invoke the user migration
-     * Lambda if the USERNAME is not found in the user pool. </p> </li> <li> <p>
+     * <code>SRP_A</code> and return the Secure Remote Password (SRP) protocol
+     * variables to be used for next challenge execution.</p> </li> <li> <p>
+     * <code>ADMIN_USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and
+     * <code>PASSWORD</code> and return the next challenge or tokens.</p> </li> </ul>
+     * <p>Valid values include:</p> <ul> <li> <p> <code>USER_SRP_AUTH</code>:
+     * Authentication flow for the Secure Remote Password (SRP) protocol.</p> </li>
+     * <li> <p> <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>:
+     * Authentication flow for refreshing the access token and ID token by supplying a
+     * valid refresh token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom
+     * authentication flow.</p> </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP
+     * authentication flow; you can pass in the USERNAME and PASSWORD directly if the
+     * flow is enabled for calling the app client.</p> </li> <li> <p>
      * <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication.
      * This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this
-     * flow, Cognito receives the password in the request instead of using the SRP
-     * process to verify passwords.</p> </li> </ul>
+     * flow, Amazon Cognito receives the password in the request instead of using the
+     * SRP process to verify passwords.</p> </li> </ul>
      */
     inline AdminInitiateAuthRequest& WithAuthFlow(const AuthFlowType& value) { SetAuthFlow(value); return *this;}
 
     /**
-     * <p>The authentication flow for this call to execute. The API action will depend
-     * on this value. For example:</p> <ul> <li> <p> <code>REFRESH_TOKEN_AUTH</code>
-     * will take in a valid refresh token and return new tokens.</p> </li> <li> <p>
+     * <p>The authentication flow for this call to run. The API action will depend on
+     * this value. For example:</p> <ul> <li> <p> <code>REFRESH_TOKEN_AUTH</code> will
+     * take in a valid refresh token and return new tokens.</p> </li> <li> <p>
      * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and
-     * <code>SRP_A</code> and return the SRP variables to be used for next challenge
-     * execution.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code> will take in
-     * <code>USERNAME</code> and <code>PASSWORD</code> and return the next challenge or
-     * tokens.</p> </li> </ul> <p>Valid values include:</p> <ul> <li> <p>
-     * <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password
-     * (SRP) protocol.</p> </li> <li> <p>
-     * <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow
-     * for refreshing the access token and ID token by supplying a valid refresh
-     * token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom authentication
-     * flow.</p> </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP authentication
-     * flow; you can pass in the USERNAME and PASSWORD directly if the flow is enabled
-     * for calling the app client.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code>:
-     * Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
-     * user migration Lambda trigger is set, this flow will invoke the user migration
-     * Lambda if the USERNAME is not found in the user pool. </p> </li> <li> <p>
+     * <code>SRP_A</code> and return the Secure Remote Password (SRP) protocol
+     * variables to be used for next challenge execution.</p> </li> <li> <p>
+     * <code>ADMIN_USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and
+     * <code>PASSWORD</code> and return the next challenge or tokens.</p> </li> </ul>
+     * <p>Valid values include:</p> <ul> <li> <p> <code>USER_SRP_AUTH</code>:
+     * Authentication flow for the Secure Remote Password (SRP) protocol.</p> </li>
+     * <li> <p> <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>:
+     * Authentication flow for refreshing the access token and ID token by supplying a
+     * valid refresh token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom
+     * authentication flow.</p> </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP
+     * authentication flow; you can pass in the USERNAME and PASSWORD directly if the
+     * flow is enabled for calling the app client.</p> </li> <li> <p>
      * <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication.
      * This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this
-     * flow, Cognito receives the password in the request instead of using the SRP
-     * process to verify passwords.</p> </li> </ul>
+     * flow, Amazon Cognito receives the password in the request instead of using the
+     * SRP process to verify passwords.</p> </li> </ul>
      */
     inline AdminInitiateAuthRequest& WithAuthFlow(AuthFlowType&& value) { SetAuthFlow(std::move(value)); return *this;}
 
 
     /**
      * <p>The authentication parameters. These are inputs corresponding to the
-     * <code>AuthFlow</code> that you are invoking. The required values depend on the
+     * <code>AuthFlow</code> that you're invoking. The required values depend on the
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
@@ -310,7 +292,7 @@ namespace Model
 
     /**
      * <p>The authentication parameters. These are inputs corresponding to the
-     * <code>AuthFlow</code> that you are invoking. The required values depend on the
+     * <code>AuthFlow</code> that you're invoking. The required values depend on the
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
@@ -331,7 +313,7 @@ namespace Model
 
     /**
      * <p>The authentication parameters. These are inputs corresponding to the
-     * <code>AuthFlow</code> that you are invoking. The required values depend on the
+     * <code>AuthFlow</code> that you're invoking. The required values depend on the
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
@@ -352,7 +334,7 @@ namespace Model
 
     /**
      * <p>The authentication parameters. These are inputs corresponding to the
-     * <code>AuthFlow</code> that you are invoking. The required values depend on the
+     * <code>AuthFlow</code> that you're invoking. The required values depend on the
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
@@ -373,7 +355,7 @@ namespace Model
 
     /**
      * <p>The authentication parameters. These are inputs corresponding to the
-     * <code>AuthFlow</code> that you are invoking. The required values depend on the
+     * <code>AuthFlow</code> that you're invoking. The required values depend on the
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
@@ -394,7 +376,7 @@ namespace Model
 
     /**
      * <p>The authentication parameters. These are inputs corresponding to the
-     * <code>AuthFlow</code> that you are invoking. The required values depend on the
+     * <code>AuthFlow</code> that you're invoking. The required values depend on the
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
@@ -415,7 +397,7 @@ namespace Model
 
     /**
      * <p>The authentication parameters. These are inputs corresponding to the
-     * <code>AuthFlow</code> that you are invoking. The required values depend on the
+     * <code>AuthFlow</code> that you're invoking. The required values depend on the
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
@@ -436,7 +418,7 @@ namespace Model
 
     /**
      * <p>The authentication parameters. These are inputs corresponding to the
-     * <code>AuthFlow</code> that you are invoking. The required values depend on the
+     * <code>AuthFlow</code> that you're invoking. The required values depend on the
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
@@ -457,7 +439,7 @@ namespace Model
 
     /**
      * <p>The authentication parameters. These are inputs corresponding to the
-     * <code>AuthFlow</code> that you are invoking. The required values depend on the
+     * <code>AuthFlow</code> that you're invoking. The required values depend on the
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
@@ -478,7 +460,7 @@ namespace Model
 
     /**
      * <p>The authentication parameters. These are inputs corresponding to the
-     * <code>AuthFlow</code> that you are invoking. The required values depend on the
+     * <code>AuthFlow</code> that you're invoking. The required values depend on the
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
@@ -499,7 +481,7 @@ namespace Model
 
     /**
      * <p>The authentication parameters. These are inputs corresponding to the
-     * <code>AuthFlow</code> that you are invoking. The required values depend on the
+     * <code>AuthFlow</code> that you're invoking. The required values depend on the
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
@@ -520,7 +502,7 @@ namespace Model
 
     /**
      * <p>The authentication parameters. These are inputs corresponding to the
-     * <code>AuthFlow</code> that you are invoking. The required values depend on the
+     * <code>AuthFlow</code> that you're invoking. The required values depend on the
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
@@ -541,7 +523,7 @@ namespace Model
 
     /**
      * <p>The authentication parameters. These are inputs corresponding to the
-     * <code>AuthFlow</code> that you are invoking. The required values depend on the
+     * <code>AuthFlow</code> that you're invoking. The required values depend on the
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
@@ -576,21 +558,21 @@ namespace Model
      * In your function code in Lambda, you can process the <code>validationData</code>
      * value to enhance your workflow for your specific needs.</p> <p>When you use the
      * AdminInitiateAuth API action, Amazon Cognito also invokes the functions for the
-     * following triggers, but it does not provide the ClientMetadata value as
+     * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
      * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
      * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
-     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to Lambda triggers
-     * that are assigned to a user pool to support custom workflows. If your user pool
-     * configuration does not include triggers, the ClientMetadata parameter serves no
-     * purpose.</p> </li> <li> <p>Amazon Cognito does not validate the ClientMetadata
-     * value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the ClientMetadata
-     * value, so don't use it to provide sensitive information.</p> </li> </ul> 
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
+     * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
+     * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
+     * parameter, remember that Amazon Cognito won't do the following:</p> <ul> <li>
+     * <p>Store the ClientMetadata value. This data is available only to Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration doesn't include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p>
+     * </li> <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to
+     * provide sensitive information.</p> </li> </ul> 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetClientMetadata() const{ return m_clientMetadata; }
 
@@ -609,21 +591,21 @@ namespace Model
      * In your function code in Lambda, you can process the <code>validationData</code>
      * value to enhance your workflow for your specific needs.</p> <p>When you use the
      * AdminInitiateAuth API action, Amazon Cognito also invokes the functions for the
-     * following triggers, but it does not provide the ClientMetadata value as
+     * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
      * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
      * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
-     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to Lambda triggers
-     * that are assigned to a user pool to support custom workflows. If your user pool
-     * configuration does not include triggers, the ClientMetadata parameter serves no
-     * purpose.</p> </li> <li> <p>Amazon Cognito does not validate the ClientMetadata
-     * value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the ClientMetadata
-     * value, so don't use it to provide sensitive information.</p> </li> </ul> 
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
+     * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
+     * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
+     * parameter, remember that Amazon Cognito won't do the following:</p> <ul> <li>
+     * <p>Store the ClientMetadata value. This data is available only to Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration doesn't include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p>
+     * </li> <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to
+     * provide sensitive information.</p> </li> </ul> 
      */
     inline bool ClientMetadataHasBeenSet() const { return m_clientMetadataHasBeenSet; }
 
@@ -642,21 +624,21 @@ namespace Model
      * In your function code in Lambda, you can process the <code>validationData</code>
      * value to enhance your workflow for your specific needs.</p> <p>When you use the
      * AdminInitiateAuth API action, Amazon Cognito also invokes the functions for the
-     * following triggers, but it does not provide the ClientMetadata value as
+     * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
      * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
      * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
-     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to Lambda triggers
-     * that are assigned to a user pool to support custom workflows. If your user pool
-     * configuration does not include triggers, the ClientMetadata parameter serves no
-     * purpose.</p> </li> <li> <p>Amazon Cognito does not validate the ClientMetadata
-     * value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the ClientMetadata
-     * value, so don't use it to provide sensitive information.</p> </li> </ul> 
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
+     * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
+     * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
+     * parameter, remember that Amazon Cognito won't do the following:</p> <ul> <li>
+     * <p>Store the ClientMetadata value. This data is available only to Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration doesn't include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p>
+     * </li> <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to
+     * provide sensitive information.</p> </li> </ul> 
      */
     inline void SetClientMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata = value; }
 
@@ -675,21 +657,21 @@ namespace Model
      * In your function code in Lambda, you can process the <code>validationData</code>
      * value to enhance your workflow for your specific needs.</p> <p>When you use the
      * AdminInitiateAuth API action, Amazon Cognito also invokes the functions for the
-     * following triggers, but it does not provide the ClientMetadata value as
+     * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
      * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
      * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
-     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to Lambda triggers
-     * that are assigned to a user pool to support custom workflows. If your user pool
-     * configuration does not include triggers, the ClientMetadata parameter serves no
-     * purpose.</p> </li> <li> <p>Amazon Cognito does not validate the ClientMetadata
-     * value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the ClientMetadata
-     * value, so don't use it to provide sensitive information.</p> </li> </ul> 
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
+     * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
+     * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
+     * parameter, remember that Amazon Cognito won't do the following:</p> <ul> <li>
+     * <p>Store the ClientMetadata value. This data is available only to Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration doesn't include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p>
+     * </li> <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to
+     * provide sensitive information.</p> </li> </ul> 
      */
     inline void SetClientMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata = std::move(value); }
 
@@ -708,21 +690,21 @@ namespace Model
      * In your function code in Lambda, you can process the <code>validationData</code>
      * value to enhance your workflow for your specific needs.</p> <p>When you use the
      * AdminInitiateAuth API action, Amazon Cognito also invokes the functions for the
-     * following triggers, but it does not provide the ClientMetadata value as
+     * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
      * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
      * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
-     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to Lambda triggers
-     * that are assigned to a user pool to support custom workflows. If your user pool
-     * configuration does not include triggers, the ClientMetadata parameter serves no
-     * purpose.</p> </li> <li> <p>Amazon Cognito does not validate the ClientMetadata
-     * value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the ClientMetadata
-     * value, so don't use it to provide sensitive information.</p> </li> </ul> 
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
+     * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
+     * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
+     * parameter, remember that Amazon Cognito won't do the following:</p> <ul> <li>
+     * <p>Store the ClientMetadata value. This data is available only to Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration doesn't include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p>
+     * </li> <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to
+     * provide sensitive information.</p> </li> </ul> 
      */
     inline AdminInitiateAuthRequest& WithClientMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetClientMetadata(value); return *this;}
 
@@ -741,21 +723,21 @@ namespace Model
      * In your function code in Lambda, you can process the <code>validationData</code>
      * value to enhance your workflow for your specific needs.</p> <p>When you use the
      * AdminInitiateAuth API action, Amazon Cognito also invokes the functions for the
-     * following triggers, but it does not provide the ClientMetadata value as
+     * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
      * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
      * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
-     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to Lambda triggers
-     * that are assigned to a user pool to support custom workflows. If your user pool
-     * configuration does not include triggers, the ClientMetadata parameter serves no
-     * purpose.</p> </li> <li> <p>Amazon Cognito does not validate the ClientMetadata
-     * value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the ClientMetadata
-     * value, so don't use it to provide sensitive information.</p> </li> </ul> 
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
+     * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
+     * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
+     * parameter, remember that Amazon Cognito won't do the following:</p> <ul> <li>
+     * <p>Store the ClientMetadata value. This data is available only to Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration doesn't include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p>
+     * </li> <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to
+     * provide sensitive information.</p> </li> </ul> 
      */
     inline AdminInitiateAuthRequest& WithClientMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetClientMetadata(std::move(value)); return *this;}
 
@@ -774,21 +756,21 @@ namespace Model
      * In your function code in Lambda, you can process the <code>validationData</code>
      * value to enhance your workflow for your specific needs.</p> <p>When you use the
      * AdminInitiateAuth API action, Amazon Cognito also invokes the functions for the
-     * following triggers, but it does not provide the ClientMetadata value as
+     * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
      * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
      * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
-     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to Lambda triggers
-     * that are assigned to a user pool to support custom workflows. If your user pool
-     * configuration does not include triggers, the ClientMetadata parameter serves no
-     * purpose.</p> </li> <li> <p>Amazon Cognito does not validate the ClientMetadata
-     * value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the ClientMetadata
-     * value, so don't use it to provide sensitive information.</p> </li> </ul> 
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
+     * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
+     * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
+     * parameter, remember that Amazon Cognito won't do the following:</p> <ul> <li>
+     * <p>Store the ClientMetadata value. This data is available only to Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration doesn't include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p>
+     * </li> <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to
+     * provide sensitive information.</p> </li> </ul> 
      */
     inline AdminInitiateAuthRequest& AddClientMetadata(const Aws::String& key, const Aws::String& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, value); return *this; }
 
@@ -807,21 +789,21 @@ namespace Model
      * In your function code in Lambda, you can process the <code>validationData</code>
      * value to enhance your workflow for your specific needs.</p> <p>When you use the
      * AdminInitiateAuth API action, Amazon Cognito also invokes the functions for the
-     * following triggers, but it does not provide the ClientMetadata value as
+     * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
      * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
      * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
-     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to Lambda triggers
-     * that are assigned to a user pool to support custom workflows. If your user pool
-     * configuration does not include triggers, the ClientMetadata parameter serves no
-     * purpose.</p> </li> <li> <p>Amazon Cognito does not validate the ClientMetadata
-     * value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the ClientMetadata
-     * value, so don't use it to provide sensitive information.</p> </li> </ul> 
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
+     * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
+     * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
+     * parameter, remember that Amazon Cognito won't do the following:</p> <ul> <li>
+     * <p>Store the ClientMetadata value. This data is available only to Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration doesn't include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p>
+     * </li> <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to
+     * provide sensitive information.</p> </li> </ul> 
      */
     inline AdminInitiateAuthRequest& AddClientMetadata(Aws::String&& key, const Aws::String& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::move(key), value); return *this; }
 
@@ -840,21 +822,21 @@ namespace Model
      * In your function code in Lambda, you can process the <code>validationData</code>
      * value to enhance your workflow for your specific needs.</p> <p>When you use the
      * AdminInitiateAuth API action, Amazon Cognito also invokes the functions for the
-     * following triggers, but it does not provide the ClientMetadata value as
+     * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
      * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
      * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
-     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to Lambda triggers
-     * that are assigned to a user pool to support custom workflows. If your user pool
-     * configuration does not include triggers, the ClientMetadata parameter serves no
-     * purpose.</p> </li> <li> <p>Amazon Cognito does not validate the ClientMetadata
-     * value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the ClientMetadata
-     * value, so don't use it to provide sensitive information.</p> </li> </ul> 
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
+     * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
+     * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
+     * parameter, remember that Amazon Cognito won't do the following:</p> <ul> <li>
+     * <p>Store the ClientMetadata value. This data is available only to Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration doesn't include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p>
+     * </li> <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to
+     * provide sensitive information.</p> </li> </ul> 
      */
     inline AdminInitiateAuthRequest& AddClientMetadata(const Aws::String& key, Aws::String&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, std::move(value)); return *this; }
 
@@ -873,21 +855,21 @@ namespace Model
      * In your function code in Lambda, you can process the <code>validationData</code>
      * value to enhance your workflow for your specific needs.</p> <p>When you use the
      * AdminInitiateAuth API action, Amazon Cognito also invokes the functions for the
-     * following triggers, but it does not provide the ClientMetadata value as
+     * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
      * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
      * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
-     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to Lambda triggers
-     * that are assigned to a user pool to support custom workflows. If your user pool
-     * configuration does not include triggers, the ClientMetadata parameter serves no
-     * purpose.</p> </li> <li> <p>Amazon Cognito does not validate the ClientMetadata
-     * value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the ClientMetadata
-     * value, so don't use it to provide sensitive information.</p> </li> </ul> 
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
+     * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
+     * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
+     * parameter, remember that Amazon Cognito won't do the following:</p> <ul> <li>
+     * <p>Store the ClientMetadata value. This data is available only to Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration doesn't include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p>
+     * </li> <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to
+     * provide sensitive information.</p> </li> </ul> 
      */
     inline AdminInitiateAuthRequest& AddClientMetadata(Aws::String&& key, Aws::String&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -906,21 +888,21 @@ namespace Model
      * In your function code in Lambda, you can process the <code>validationData</code>
      * value to enhance your workflow for your specific needs.</p> <p>When you use the
      * AdminInitiateAuth API action, Amazon Cognito also invokes the functions for the
-     * following triggers, but it does not provide the ClientMetadata value as
+     * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
      * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
      * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
-     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to Lambda triggers
-     * that are assigned to a user pool to support custom workflows. If your user pool
-     * configuration does not include triggers, the ClientMetadata parameter serves no
-     * purpose.</p> </li> <li> <p>Amazon Cognito does not validate the ClientMetadata
-     * value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the ClientMetadata
-     * value, so don't use it to provide sensitive information.</p> </li> </ul> 
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
+     * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
+     * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
+     * parameter, remember that Amazon Cognito won't do the following:</p> <ul> <li>
+     * <p>Store the ClientMetadata value. This data is available only to Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration doesn't include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p>
+     * </li> <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to
+     * provide sensitive information.</p> </li> </ul> 
      */
     inline AdminInitiateAuthRequest& AddClientMetadata(const char* key, Aws::String&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, std::move(value)); return *this; }
 
@@ -939,21 +921,21 @@ namespace Model
      * In your function code in Lambda, you can process the <code>validationData</code>
      * value to enhance your workflow for your specific needs.</p> <p>When you use the
      * AdminInitiateAuth API action, Amazon Cognito also invokes the functions for the
-     * following triggers, but it does not provide the ClientMetadata value as
+     * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
      * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
      * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
-     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to Lambda triggers
-     * that are assigned to a user pool to support custom workflows. If your user pool
-     * configuration does not include triggers, the ClientMetadata parameter serves no
-     * purpose.</p> </li> <li> <p>Amazon Cognito does not validate the ClientMetadata
-     * value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the ClientMetadata
-     * value, so don't use it to provide sensitive information.</p> </li> </ul> 
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
+     * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
+     * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
+     * parameter, remember that Amazon Cognito won't do the following:</p> <ul> <li>
+     * <p>Store the ClientMetadata value. This data is available only to Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration doesn't include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p>
+     * </li> <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to
+     * provide sensitive information.</p> </li> </ul> 
      */
     inline AdminInitiateAuthRequest& AddClientMetadata(Aws::String&& key, const char* value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::move(key), value); return *this; }
 
@@ -972,21 +954,21 @@ namespace Model
      * In your function code in Lambda, you can process the <code>validationData</code>
      * value to enhance your workflow for your specific needs.</p> <p>When you use the
      * AdminInitiateAuth API action, Amazon Cognito also invokes the functions for the
-     * following triggers, but it does not provide the ClientMetadata value as
+     * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
      * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
      * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
-     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to Lambda triggers
-     * that are assigned to a user pool to support custom workflows. If your user pool
-     * configuration does not include triggers, the ClientMetadata parameter serves no
-     * purpose.</p> </li> <li> <p>Amazon Cognito does not validate the ClientMetadata
-     * value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the ClientMetadata
-     * value, so don't use it to provide sensitive information.</p> </li> </ul> 
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
+     * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
+     * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
+     * parameter, remember that Amazon Cognito won't do the following:</p> <ul> <li>
+     * <p>Store the ClientMetadata value. This data is available only to Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration doesn't include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p>
+     * </li> <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to
+     * provide sensitive information.</p> </li> </ul> 
      */
     inline AdminInitiateAuthRequest& AddClientMetadata(const char* key, const char* value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, value); return *this; }
 
@@ -1029,44 +1011,50 @@ namespace Model
 
 
     /**
-     * <p>Contextual data such as the user's device fingerprint, IP address, or
-     * location used for evaluating the risk of an unexpected event by Amazon Cognito
-     * advanced security.</p>
+     * <p>Contextual data about your user session, such as the device fingerprint, IP
+     * address, or location. Amazon Cognito advanced security evaluates the risk of an
+     * authentication event based on the context that your app generates and passes to
+     * Amazon Cognito when it makes API requests.</p>
      */
     inline const ContextDataType& GetContextData() const{ return m_contextData; }
 
     /**
-     * <p>Contextual data such as the user's device fingerprint, IP address, or
-     * location used for evaluating the risk of an unexpected event by Amazon Cognito
-     * advanced security.</p>
+     * <p>Contextual data about your user session, such as the device fingerprint, IP
+     * address, or location. Amazon Cognito advanced security evaluates the risk of an
+     * authentication event based on the context that your app generates and passes to
+     * Amazon Cognito when it makes API requests.</p>
      */
     inline bool ContextDataHasBeenSet() const { return m_contextDataHasBeenSet; }
 
     /**
-     * <p>Contextual data such as the user's device fingerprint, IP address, or
-     * location used for evaluating the risk of an unexpected event by Amazon Cognito
-     * advanced security.</p>
+     * <p>Contextual data about your user session, such as the device fingerprint, IP
+     * address, or location. Amazon Cognito advanced security evaluates the risk of an
+     * authentication event based on the context that your app generates and passes to
+     * Amazon Cognito when it makes API requests.</p>
      */
     inline void SetContextData(const ContextDataType& value) { m_contextDataHasBeenSet = true; m_contextData = value; }
 
     /**
-     * <p>Contextual data such as the user's device fingerprint, IP address, or
-     * location used for evaluating the risk of an unexpected event by Amazon Cognito
-     * advanced security.</p>
+     * <p>Contextual data about your user session, such as the device fingerprint, IP
+     * address, or location. Amazon Cognito advanced security evaluates the risk of an
+     * authentication event based on the context that your app generates and passes to
+     * Amazon Cognito when it makes API requests.</p>
      */
     inline void SetContextData(ContextDataType&& value) { m_contextDataHasBeenSet = true; m_contextData = std::move(value); }
 
     /**
-     * <p>Contextual data such as the user's device fingerprint, IP address, or
-     * location used for evaluating the risk of an unexpected event by Amazon Cognito
-     * advanced security.</p>
+     * <p>Contextual data about your user session, such as the device fingerprint, IP
+     * address, or location. Amazon Cognito advanced security evaluates the risk of an
+     * authentication event based on the context that your app generates and passes to
+     * Amazon Cognito when it makes API requests.</p>
      */
     inline AdminInitiateAuthRequest& WithContextData(const ContextDataType& value) { SetContextData(value); return *this;}
 
     /**
-     * <p>Contextual data such as the user's device fingerprint, IP address, or
-     * location used for evaluating the risk of an unexpected event by Amazon Cognito
-     * advanced security.</p>
+     * <p>Contextual data about your user session, such as the device fingerprint, IP
+     * address, or location. Amazon Cognito advanced security evaluates the risk of an
+     * authentication event based on the context that your app generates and passes to
+     * Amazon Cognito when it makes API requests.</p>
      */
     inline AdminInitiateAuthRequest& WithContextData(ContextDataType&& value) { SetContextData(std::move(value)); return *this;}
 

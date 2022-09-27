@@ -444,6 +444,79 @@ namespace Model
      */
     inline ImageDetail& WithArtifactMediaType(const char* value) { SetArtifactMediaType(value); return *this;}
 
+
+    /**
+     * <p>The date and time, expressed in standard JavaScript date format, when Amazon
+     * ECR recorded the last image pull.</p>  <p>Amazon ECR refreshes the last
+     * image pull timestamp at least once every 24 hours. For example, if you pull an
+     * image once a day then the <code>lastRecordedPullTime</code> timestamp will
+     * indicate the exact time that the image was last pulled. However, if you pull an
+     * image once an hour, because Amazon ECR refreshes the
+     * <code>lastRecordedPullTime</code> timestamp at least once every 24 hours, the
+     * result may not be the exact time that the image was last pulled.</p> 
+     */
+    inline const Aws::Utils::DateTime& GetLastRecordedPullTime() const{ return m_lastRecordedPullTime; }
+
+    /**
+     * <p>The date and time, expressed in standard JavaScript date format, when Amazon
+     * ECR recorded the last image pull.</p>  <p>Amazon ECR refreshes the last
+     * image pull timestamp at least once every 24 hours. For example, if you pull an
+     * image once a day then the <code>lastRecordedPullTime</code> timestamp will
+     * indicate the exact time that the image was last pulled. However, if you pull an
+     * image once an hour, because Amazon ECR refreshes the
+     * <code>lastRecordedPullTime</code> timestamp at least once every 24 hours, the
+     * result may not be the exact time that the image was last pulled.</p> 
+     */
+    inline bool LastRecordedPullTimeHasBeenSet() const { return m_lastRecordedPullTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time, expressed in standard JavaScript date format, when Amazon
+     * ECR recorded the last image pull.</p>  <p>Amazon ECR refreshes the last
+     * image pull timestamp at least once every 24 hours. For example, if you pull an
+     * image once a day then the <code>lastRecordedPullTime</code> timestamp will
+     * indicate the exact time that the image was last pulled. However, if you pull an
+     * image once an hour, because Amazon ECR refreshes the
+     * <code>lastRecordedPullTime</code> timestamp at least once every 24 hours, the
+     * result may not be the exact time that the image was last pulled.</p> 
+     */
+    inline void SetLastRecordedPullTime(const Aws::Utils::DateTime& value) { m_lastRecordedPullTimeHasBeenSet = true; m_lastRecordedPullTime = value; }
+
+    /**
+     * <p>The date and time, expressed in standard JavaScript date format, when Amazon
+     * ECR recorded the last image pull.</p>  <p>Amazon ECR refreshes the last
+     * image pull timestamp at least once every 24 hours. For example, if you pull an
+     * image once a day then the <code>lastRecordedPullTime</code> timestamp will
+     * indicate the exact time that the image was last pulled. However, if you pull an
+     * image once an hour, because Amazon ECR refreshes the
+     * <code>lastRecordedPullTime</code> timestamp at least once every 24 hours, the
+     * result may not be the exact time that the image was last pulled.</p> 
+     */
+    inline void SetLastRecordedPullTime(Aws::Utils::DateTime&& value) { m_lastRecordedPullTimeHasBeenSet = true; m_lastRecordedPullTime = std::move(value); }
+
+    /**
+     * <p>The date and time, expressed in standard JavaScript date format, when Amazon
+     * ECR recorded the last image pull.</p>  <p>Amazon ECR refreshes the last
+     * image pull timestamp at least once every 24 hours. For example, if you pull an
+     * image once a day then the <code>lastRecordedPullTime</code> timestamp will
+     * indicate the exact time that the image was last pulled. However, if you pull an
+     * image once an hour, because Amazon ECR refreshes the
+     * <code>lastRecordedPullTime</code> timestamp at least once every 24 hours, the
+     * result may not be the exact time that the image was last pulled.</p> 
+     */
+    inline ImageDetail& WithLastRecordedPullTime(const Aws::Utils::DateTime& value) { SetLastRecordedPullTime(value); return *this;}
+
+    /**
+     * <p>The date and time, expressed in standard JavaScript date format, when Amazon
+     * ECR recorded the last image pull.</p>  <p>Amazon ECR refreshes the last
+     * image pull timestamp at least once every 24 hours. For example, if you pull an
+     * image once a day then the <code>lastRecordedPullTime</code> timestamp will
+     * indicate the exact time that the image was last pulled. However, if you pull an
+     * image once an hour, because Amazon ECR refreshes the
+     * <code>lastRecordedPullTime</code> timestamp at least once every 24 hours, the
+     * result may not be the exact time that the image was last pulled.</p> 
+     */
+    inline ImageDetail& WithLastRecordedPullTime(Aws::Utils::DateTime&& value) { SetLastRecordedPullTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_registryId;
@@ -475,6 +548,9 @@ namespace Model
 
     Aws::String m_artifactMediaType;
     bool m_artifactMediaTypeHasBeenSet;
+
+    Aws::Utils::DateTime m_lastRecordedPullTime;
+    bool m_lastRecordedPullTimeHasBeenSet;
   };
 
 } // namespace Model

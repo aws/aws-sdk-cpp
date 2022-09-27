@@ -195,6 +195,47 @@ namespace Model
 
 
     /**
+     * <p>The agent through which the API request was made.</p>
+     */
+    inline const Aws::String& GetUserAgent() const{ return m_userAgent; }
+
+    /**
+     * <p>The agent through which the API request was made.</p>
+     */
+    inline bool UserAgentHasBeenSet() const { return m_userAgentHasBeenSet; }
+
+    /**
+     * <p>The agent through which the API request was made.</p>
+     */
+    inline void SetUserAgent(const Aws::String& value) { m_userAgentHasBeenSet = true; m_userAgent = value; }
+
+    /**
+     * <p>The agent through which the API request was made.</p>
+     */
+    inline void SetUserAgent(Aws::String&& value) { m_userAgentHasBeenSet = true; m_userAgent = std::move(value); }
+
+    /**
+     * <p>The agent through which the API request was made.</p>
+     */
+    inline void SetUserAgent(const char* value) { m_userAgentHasBeenSet = true; m_userAgent.assign(value); }
+
+    /**
+     * <p>The agent through which the API request was made.</p>
+     */
+    inline AwsApiCallAction& WithUserAgent(const Aws::String& value) { SetUserAgent(value); return *this;}
+
+    /**
+     * <p>The agent through which the API request was made.</p>
+     */
+    inline AwsApiCallAction& WithUserAgent(Aws::String&& value) { SetUserAgent(std::move(value)); return *this;}
+
+    /**
+     * <p>The agent through which the API request was made.</p>
+     */
+    inline AwsApiCallAction& WithUserAgent(const char* value) { SetUserAgent(value); return *this;}
+
+
+    /**
      * <p>The remote IP information of the connection that initiated the Amazon Web
      * Services API call.</p>
      */
@@ -321,6 +362,9 @@ namespace Model
 
     Aws::String m_errorCode;
     bool m_errorCodeHasBeenSet;
+
+    Aws::String m_userAgent;
+    bool m_userAgentHasBeenSet;
 
     RemoteIpDetails m_remoteIpDetails;
     bool m_remoteIpDetailsHasBeenSet;

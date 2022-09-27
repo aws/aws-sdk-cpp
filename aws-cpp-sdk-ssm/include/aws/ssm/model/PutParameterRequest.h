@@ -56,13 +56,12 @@ namespace Model
      * <p>For additional information about valid values for parameter names, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
      * Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager
-     * User Guide</i>.</p>  <p>The maximum length constraint listed below
-     * includes capacity for additional system attributes that aren't part of the name.
-     * The maximum length for a parameter name, including the full length of the
-     * parameter ARN, is 1011 characters. For example, the length of the following
-     * parameter name is 65 characters, not 20 characters:</p> <p>
-     * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
-     * </p> 
+     * User Guide</i>.</p>  <p>The maximum length constraint of 2048 characters
+     * listed below includes 1037 characters reserved for internal use by Systems
+     * Manager. The maximum length for a parameter name that you create is 1011
+     * characters. This includes the characters in the ARN that precede the name you
+     * specify, such as <code>arn:aws:ssm:us-east-2:111122223333:parameter/</code>.</p>
+     * 
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -84,13 +83,12 @@ namespace Model
      * <p>For additional information about valid values for parameter names, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
      * Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager
-     * User Guide</i>.</p>  <p>The maximum length constraint listed below
-     * includes capacity for additional system attributes that aren't part of the name.
-     * The maximum length for a parameter name, including the full length of the
-     * parameter ARN, is 1011 characters. For example, the length of the following
-     * parameter name is 65 characters, not 20 characters:</p> <p>
-     * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
-     * </p> 
+     * User Guide</i>.</p>  <p>The maximum length constraint of 2048 characters
+     * listed below includes 1037 characters reserved for internal use by Systems
+     * Manager. The maximum length for a parameter name that you create is 1011
+     * characters. This includes the characters in the ARN that precede the name you
+     * specify, such as <code>arn:aws:ssm:us-east-2:111122223333:parameter/</code>.</p>
+     * 
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
@@ -112,13 +110,12 @@ namespace Model
      * <p>For additional information about valid values for parameter names, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
      * Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager
-     * User Guide</i>.</p>  <p>The maximum length constraint listed below
-     * includes capacity for additional system attributes that aren't part of the name.
-     * The maximum length for a parameter name, including the full length of the
-     * parameter ARN, is 1011 characters. For example, the length of the following
-     * parameter name is 65 characters, not 20 characters:</p> <p>
-     * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
-     * </p> 
+     * User Guide</i>.</p>  <p>The maximum length constraint of 2048 characters
+     * listed below includes 1037 characters reserved for internal use by Systems
+     * Manager. The maximum length for a parameter name that you create is 1011
+     * characters. This includes the characters in the ARN that precede the name you
+     * specify, such as <code>arn:aws:ssm:us-east-2:111122223333:parameter/</code>.</p>
+     * 
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -140,13 +137,12 @@ namespace Model
      * <p>For additional information about valid values for parameter names, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
      * Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager
-     * User Guide</i>.</p>  <p>The maximum length constraint listed below
-     * includes capacity for additional system attributes that aren't part of the name.
-     * The maximum length for a parameter name, including the full length of the
-     * parameter ARN, is 1011 characters. For example, the length of the following
-     * parameter name is 65 characters, not 20 characters:</p> <p>
-     * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
-     * </p> 
+     * User Guide</i>.</p>  <p>The maximum length constraint of 2048 characters
+     * listed below includes 1037 characters reserved for internal use by Systems
+     * Manager. The maximum length for a parameter name that you create is 1011
+     * characters. This includes the characters in the ARN that precede the name you
+     * specify, such as <code>arn:aws:ssm:us-east-2:111122223333:parameter/</code>.</p>
+     * 
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
@@ -168,13 +164,12 @@ namespace Model
      * <p>For additional information about valid values for parameter names, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
      * Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager
-     * User Guide</i>.</p>  <p>The maximum length constraint listed below
-     * includes capacity for additional system attributes that aren't part of the name.
-     * The maximum length for a parameter name, including the full length of the
-     * parameter ARN, is 1011 characters. For example, the length of the following
-     * parameter name is 65 characters, not 20 characters:</p> <p>
-     * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
-     * </p> 
+     * User Guide</i>.</p>  <p>The maximum length constraint of 2048 characters
+     * listed below includes 1037 characters reserved for internal use by Systems
+     * Manager. The maximum length for a parameter name that you create is 1011
+     * characters. This includes the characters in the ARN that precede the name you
+     * specify, such as <code>arn:aws:ssm:us-east-2:111122223333:parameter/</code>.</p>
+     * 
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
@@ -196,13 +191,12 @@ namespace Model
      * <p>For additional information about valid values for parameter names, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
      * Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager
-     * User Guide</i>.</p>  <p>The maximum length constraint listed below
-     * includes capacity for additional system attributes that aren't part of the name.
-     * The maximum length for a parameter name, including the full length of the
-     * parameter ARN, is 1011 characters. For example, the length of the following
-     * parameter name is 65 characters, not 20 characters:</p> <p>
-     * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
-     * </p> 
+     * User Guide</i>.</p>  <p>The maximum length constraint of 2048 characters
+     * listed below includes 1037 characters reserved for internal use by Systems
+     * Manager. The maximum length for a parameter name that you create is 1011
+     * characters. This includes the characters in the ARN that precede the name you
+     * specify, such as <code>arn:aws:ssm:us-east-2:111122223333:parameter/</code>.</p>
+     * 
      */
     inline PutParameterRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
@@ -224,13 +218,12 @@ namespace Model
      * <p>For additional information about valid values for parameter names, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
      * Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager
-     * User Guide</i>.</p>  <p>The maximum length constraint listed below
-     * includes capacity for additional system attributes that aren't part of the name.
-     * The maximum length for a parameter name, including the full length of the
-     * parameter ARN, is 1011 characters. For example, the length of the following
-     * parameter name is 65 characters, not 20 characters:</p> <p>
-     * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
-     * </p> 
+     * User Guide</i>.</p>  <p>The maximum length constraint of 2048 characters
+     * listed below includes 1037 characters reserved for internal use by Systems
+     * Manager. The maximum length for a parameter name that you create is 1011
+     * characters. This includes the characters in the ARN that precede the name you
+     * specify, such as <code>arn:aws:ssm:us-east-2:111122223333:parameter/</code>.</p>
+     * 
      */
     inline PutParameterRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
@@ -252,13 +245,12 @@ namespace Model
      * <p>For additional information about valid values for parameter names, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
      * Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager
-     * User Guide</i>.</p>  <p>The maximum length constraint listed below
-     * includes capacity for additional system attributes that aren't part of the name.
-     * The maximum length for a parameter name, including the full length of the
-     * parameter ARN, is 1011 characters. For example, the length of the following
-     * parameter name is 65 characters, not 20 characters:</p> <p>
-     * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
-     * </p> 
+     * User Guide</i>.</p>  <p>The maximum length constraint of 2048 characters
+     * listed below includes 1037 characters reserved for internal use by Systems
+     * Manager. The maximum length for a parameter name that you create is 1011
+     * characters. This includes the characters in the ARN that precede the name you
+     * specify, such as <code>arn:aws:ssm:us-east-2:111122223333:parameter/</code>.</p>
+     * 
      */
     inline PutParameterRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -1268,7 +1260,8 @@ namespace Model
      * <p>The data type for a <code>String</code> parameter. Supported data types
      * include plain text and Amazon Machine Image (AMI) IDs.</p> <p> <b>The following
      * data type values are supported.</b> </p> <ul> <li> <p> <code>text</code> </p>
-     * </li> <li> <p> <code>aws:ec2:image</code> </p> </li> </ul> <p>When you create a
+     * </li> <li> <p> <code>aws:ec2:image</code> </p> </li> <li> <p>
+     * <code>aws:ssm:integration</code> </p> </li> </ul> <p>When you create a
      * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web
      * Services Systems Manager validates the parameter value is in the required
      * format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI
@@ -1283,7 +1276,8 @@ namespace Model
      * <p>The data type for a <code>String</code> parameter. Supported data types
      * include plain text and Amazon Machine Image (AMI) IDs.</p> <p> <b>The following
      * data type values are supported.</b> </p> <ul> <li> <p> <code>text</code> </p>
-     * </li> <li> <p> <code>aws:ec2:image</code> </p> </li> </ul> <p>When you create a
+     * </li> <li> <p> <code>aws:ec2:image</code> </p> </li> <li> <p>
+     * <code>aws:ssm:integration</code> </p> </li> </ul> <p>When you create a
      * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web
      * Services Systems Manager validates the parameter value is in the required
      * format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI
@@ -1298,7 +1292,8 @@ namespace Model
      * <p>The data type for a <code>String</code> parameter. Supported data types
      * include plain text and Amazon Machine Image (AMI) IDs.</p> <p> <b>The following
      * data type values are supported.</b> </p> <ul> <li> <p> <code>text</code> </p>
-     * </li> <li> <p> <code>aws:ec2:image</code> </p> </li> </ul> <p>When you create a
+     * </li> <li> <p> <code>aws:ec2:image</code> </p> </li> <li> <p>
+     * <code>aws:ssm:integration</code> </p> </li> </ul> <p>When you create a
      * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web
      * Services Systems Manager validates the parameter value is in the required
      * format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI
@@ -1313,7 +1308,8 @@ namespace Model
      * <p>The data type for a <code>String</code> parameter. Supported data types
      * include plain text and Amazon Machine Image (AMI) IDs.</p> <p> <b>The following
      * data type values are supported.</b> </p> <ul> <li> <p> <code>text</code> </p>
-     * </li> <li> <p> <code>aws:ec2:image</code> </p> </li> </ul> <p>When you create a
+     * </li> <li> <p> <code>aws:ec2:image</code> </p> </li> <li> <p>
+     * <code>aws:ssm:integration</code> </p> </li> </ul> <p>When you create a
      * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web
      * Services Systems Manager validates the parameter value is in the required
      * format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI
@@ -1328,7 +1324,8 @@ namespace Model
      * <p>The data type for a <code>String</code> parameter. Supported data types
      * include plain text and Amazon Machine Image (AMI) IDs.</p> <p> <b>The following
      * data type values are supported.</b> </p> <ul> <li> <p> <code>text</code> </p>
-     * </li> <li> <p> <code>aws:ec2:image</code> </p> </li> </ul> <p>When you create a
+     * </li> <li> <p> <code>aws:ec2:image</code> </p> </li> <li> <p>
+     * <code>aws:ssm:integration</code> </p> </li> </ul> <p>When you create a
      * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web
      * Services Systems Manager validates the parameter value is in the required
      * format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI
@@ -1343,7 +1340,8 @@ namespace Model
      * <p>The data type for a <code>String</code> parameter. Supported data types
      * include plain text and Amazon Machine Image (AMI) IDs.</p> <p> <b>The following
      * data type values are supported.</b> </p> <ul> <li> <p> <code>text</code> </p>
-     * </li> <li> <p> <code>aws:ec2:image</code> </p> </li> </ul> <p>When you create a
+     * </li> <li> <p> <code>aws:ec2:image</code> </p> </li> <li> <p>
+     * <code>aws:ssm:integration</code> </p> </li> </ul> <p>When you create a
      * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web
      * Services Systems Manager validates the parameter value is in the required
      * format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI
@@ -1358,7 +1356,8 @@ namespace Model
      * <p>The data type for a <code>String</code> parameter. Supported data types
      * include plain text and Amazon Machine Image (AMI) IDs.</p> <p> <b>The following
      * data type values are supported.</b> </p> <ul> <li> <p> <code>text</code> </p>
-     * </li> <li> <p> <code>aws:ec2:image</code> </p> </li> </ul> <p>When you create a
+     * </li> <li> <p> <code>aws:ec2:image</code> </p> </li> <li> <p>
+     * <code>aws:ssm:integration</code> </p> </li> </ul> <p>When you create a
      * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web
      * Services Systems Manager validates the parameter value is in the required
      * format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI
@@ -1373,7 +1372,8 @@ namespace Model
      * <p>The data type for a <code>String</code> parameter. Supported data types
      * include plain text and Amazon Machine Image (AMI) IDs.</p> <p> <b>The following
      * data type values are supported.</b> </p> <ul> <li> <p> <code>text</code> </p>
-     * </li> <li> <p> <code>aws:ec2:image</code> </p> </li> </ul> <p>When you create a
+     * </li> <li> <p> <code>aws:ec2:image</code> </p> </li> <li> <p>
+     * <code>aws:ssm:integration</code> </p> </li> </ul> <p>When you create a
      * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web
      * Services Systems Manager validates the parameter value is in the required
      * format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI

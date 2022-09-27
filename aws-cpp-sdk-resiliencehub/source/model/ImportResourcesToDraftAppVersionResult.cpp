@@ -57,6 +57,15 @@ ImportResourcesToDraftAppVersionResult& ImportResourcesToDraftAppVersionResult::
 
   }
 
+  if(jsonValue.ValueExists("terraformSources"))
+  {
+    Array<JsonView> terraformSourcesJsonList = jsonValue.GetArray("terraformSources");
+    for(unsigned terraformSourcesIndex = 0; terraformSourcesIndex < terraformSourcesJsonList.GetLength(); ++terraformSourcesIndex)
+    {
+      m_terraformSources.push_back(terraformSourcesJsonList[terraformSourcesIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

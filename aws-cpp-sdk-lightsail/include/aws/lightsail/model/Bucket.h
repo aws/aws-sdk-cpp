@@ -169,64 +169,72 @@ namespace Model
     /**
      * <p>The ID of the bundle currently applied to the bucket.</p> <p>A bucket bundle
      * specifies the monthly cost, storage space, and data transfer quota for a
-     * bucket.</p> <p>Use the <a>UpdateBucketBundle</a> action to change the bundle of
-     * a bucket.</p>
+     * bucket.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a>
+     * action to change the bundle of a bucket.</p>
      */
     inline const Aws::String& GetBundleId() const{ return m_bundleId; }
 
     /**
      * <p>The ID of the bundle currently applied to the bucket.</p> <p>A bucket bundle
      * specifies the monthly cost, storage space, and data transfer quota for a
-     * bucket.</p> <p>Use the <a>UpdateBucketBundle</a> action to change the bundle of
-     * a bucket.</p>
+     * bucket.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a>
+     * action to change the bundle of a bucket.</p>
      */
     inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }
 
     /**
      * <p>The ID of the bundle currently applied to the bucket.</p> <p>A bucket bundle
      * specifies the monthly cost, storage space, and data transfer quota for a
-     * bucket.</p> <p>Use the <a>UpdateBucketBundle</a> action to change the bundle of
-     * a bucket.</p>
+     * bucket.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a>
+     * action to change the bundle of a bucket.</p>
      */
     inline void SetBundleId(const Aws::String& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
 
     /**
      * <p>The ID of the bundle currently applied to the bucket.</p> <p>A bucket bundle
      * specifies the monthly cost, storage space, and data transfer quota for a
-     * bucket.</p> <p>Use the <a>UpdateBucketBundle</a> action to change the bundle of
-     * a bucket.</p>
+     * bucket.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a>
+     * action to change the bundle of a bucket.</p>
      */
     inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::move(value); }
 
     /**
      * <p>The ID of the bundle currently applied to the bucket.</p> <p>A bucket bundle
      * specifies the monthly cost, storage space, and data transfer quota for a
-     * bucket.</p> <p>Use the <a>UpdateBucketBundle</a> action to change the bundle of
-     * a bucket.</p>
+     * bucket.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a>
+     * action to change the bundle of a bucket.</p>
      */
     inline void SetBundleId(const char* value) { m_bundleIdHasBeenSet = true; m_bundleId.assign(value); }
 
     /**
      * <p>The ID of the bundle currently applied to the bucket.</p> <p>A bucket bundle
      * specifies the monthly cost, storage space, and data transfer quota for a
-     * bucket.</p> <p>Use the <a>UpdateBucketBundle</a> action to change the bundle of
-     * a bucket.</p>
+     * bucket.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a>
+     * action to change the bundle of a bucket.</p>
      */
     inline Bucket& WithBundleId(const Aws::String& value) { SetBundleId(value); return *this;}
 
     /**
      * <p>The ID of the bundle currently applied to the bucket.</p> <p>A bucket bundle
      * specifies the monthly cost, storage space, and data transfer quota for a
-     * bucket.</p> <p>Use the <a>UpdateBucketBundle</a> action to change the bundle of
-     * a bucket.</p>
+     * bucket.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a>
+     * action to change the bundle of a bucket.</p>
      */
     inline Bucket& WithBundleId(Aws::String&& value) { SetBundleId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the bundle currently applied to the bucket.</p> <p>A bucket bundle
      * specifies the monthly cost, storage space, and data transfer quota for a
-     * bucket.</p> <p>Use the <a>UpdateBucketBundle</a> action to change the bundle of
-     * a bucket.</p>
+     * bucket.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a>
+     * action to change the bundle of a bucket.</p>
      */
     inline Bucket& WithBundleId(const char* value) { SetBundleId(value); return *this;}
 
@@ -303,22 +311,40 @@ namespace Model
     inline Bucket& WithUrl(const char* value) { SetUrl(value); return *this;}
 
 
-    
+    /**
+     * <p>An object that describes the location of the bucket, such as the Amazon Web
+     * Services Region and Availability Zone.</p>
+     */
     inline const ResourceLocation& GetLocation() const{ return m_location; }
 
-    
+    /**
+     * <p>An object that describes the location of the bucket, such as the Amazon Web
+     * Services Region and Availability Zone.</p>
+     */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
-    
+    /**
+     * <p>An object that describes the location of the bucket, such as the Amazon Web
+     * Services Region and Availability Zone.</p>
+     */
     inline void SetLocation(const ResourceLocation& value) { m_locationHasBeenSet = true; m_location = value; }
 
-    
+    /**
+     * <p>An object that describes the location of the bucket, such as the Amazon Web
+     * Services Region and Availability Zone.</p>
+     */
     inline void SetLocation(ResourceLocation&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
-    
+    /**
+     * <p>An object that describes the location of the bucket, such as the Amazon Web
+     * Services Region and Availability Zone.</p>
+     */
     inline Bucket& WithLocation(const ResourceLocation& value) { SetLocation(value); return *this;}
 
-    
+    /**
+     * <p>An object that describes the location of the bucket, such as the Amazon Web
+     * Services Region and Availability Zone.</p>
+     */
     inline Bucket& WithLocation(ResourceLocation&& value) { SetLocation(std::move(value)); return *this;}
 
 
@@ -561,7 +587,8 @@ namespace Model
     /**
      * <p>Indicates whether the bundle that is currently applied to a bucket can be
      * changed to another bundle.</p> <p>You can update a bucket's bundle only one time
-     * within a monthly AWS billing cycle.</p> <p>Use the <a>UpdateBucketBundle</a>
+     * within a monthly Amazon Web Services billing cycle.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a>
      * action to change a bucket's bundle.</p>
      */
     inline bool GetAbleToUpdateBundle() const{ return m_ableToUpdateBundle; }
@@ -569,7 +596,8 @@ namespace Model
     /**
      * <p>Indicates whether the bundle that is currently applied to a bucket can be
      * changed to another bundle.</p> <p>You can update a bucket's bundle only one time
-     * within a monthly AWS billing cycle.</p> <p>Use the <a>UpdateBucketBundle</a>
+     * within a monthly Amazon Web Services billing cycle.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a>
      * action to change a bucket's bundle.</p>
      */
     inline bool AbleToUpdateBundleHasBeenSet() const { return m_ableToUpdateBundleHasBeenSet; }
@@ -577,7 +605,8 @@ namespace Model
     /**
      * <p>Indicates whether the bundle that is currently applied to a bucket can be
      * changed to another bundle.</p> <p>You can update a bucket's bundle only one time
-     * within a monthly AWS billing cycle.</p> <p>Use the <a>UpdateBucketBundle</a>
+     * within a monthly Amazon Web Services billing cycle.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a>
      * action to change a bucket's bundle.</p>
      */
     inline void SetAbleToUpdateBundle(bool value) { m_ableToUpdateBundleHasBeenSet = true; m_ableToUpdateBundle = value; }
@@ -585,120 +614,129 @@ namespace Model
     /**
      * <p>Indicates whether the bundle that is currently applied to a bucket can be
      * changed to another bundle.</p> <p>You can update a bucket's bundle only one time
-     * within a monthly AWS billing cycle.</p> <p>Use the <a>UpdateBucketBundle</a>
+     * within a monthly Amazon Web Services billing cycle.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a>
      * action to change a bucket's bundle.</p>
      */
     inline Bucket& WithAbleToUpdateBundle(bool value) { SetAbleToUpdateBundle(value); return *this;}
 
 
     /**
-     * <p>An array of strings that specify the AWS account IDs that have read-only
-     * access to the bucket.</p>
+     * <p>An array of strings that specify the Amazon Web Services account IDs that
+     * have read-only access to the bucket.</p>
      */
     inline const Aws::Vector<Aws::String>& GetReadonlyAccessAccounts() const{ return m_readonlyAccessAccounts; }
 
     /**
-     * <p>An array of strings that specify the AWS account IDs that have read-only
-     * access to the bucket.</p>
+     * <p>An array of strings that specify the Amazon Web Services account IDs that
+     * have read-only access to the bucket.</p>
      */
     inline bool ReadonlyAccessAccountsHasBeenSet() const { return m_readonlyAccessAccountsHasBeenSet; }
 
     /**
-     * <p>An array of strings that specify the AWS account IDs that have read-only
-     * access to the bucket.</p>
+     * <p>An array of strings that specify the Amazon Web Services account IDs that
+     * have read-only access to the bucket.</p>
      */
     inline void SetReadonlyAccessAccounts(const Aws::Vector<Aws::String>& value) { m_readonlyAccessAccountsHasBeenSet = true; m_readonlyAccessAccounts = value; }
 
     /**
-     * <p>An array of strings that specify the AWS account IDs that have read-only
-     * access to the bucket.</p>
+     * <p>An array of strings that specify the Amazon Web Services account IDs that
+     * have read-only access to the bucket.</p>
      */
     inline void SetReadonlyAccessAccounts(Aws::Vector<Aws::String>&& value) { m_readonlyAccessAccountsHasBeenSet = true; m_readonlyAccessAccounts = std::move(value); }
 
     /**
-     * <p>An array of strings that specify the AWS account IDs that have read-only
-     * access to the bucket.</p>
+     * <p>An array of strings that specify the Amazon Web Services account IDs that
+     * have read-only access to the bucket.</p>
      */
     inline Bucket& WithReadonlyAccessAccounts(const Aws::Vector<Aws::String>& value) { SetReadonlyAccessAccounts(value); return *this;}
 
     /**
-     * <p>An array of strings that specify the AWS account IDs that have read-only
-     * access to the bucket.</p>
+     * <p>An array of strings that specify the Amazon Web Services account IDs that
+     * have read-only access to the bucket.</p>
      */
     inline Bucket& WithReadonlyAccessAccounts(Aws::Vector<Aws::String>&& value) { SetReadonlyAccessAccounts(std::move(value)); return *this;}
 
     /**
-     * <p>An array of strings that specify the AWS account IDs that have read-only
-     * access to the bucket.</p>
+     * <p>An array of strings that specify the Amazon Web Services account IDs that
+     * have read-only access to the bucket.</p>
      */
     inline Bucket& AddReadonlyAccessAccounts(const Aws::String& value) { m_readonlyAccessAccountsHasBeenSet = true; m_readonlyAccessAccounts.push_back(value); return *this; }
 
     /**
-     * <p>An array of strings that specify the AWS account IDs that have read-only
-     * access to the bucket.</p>
+     * <p>An array of strings that specify the Amazon Web Services account IDs that
+     * have read-only access to the bucket.</p>
      */
     inline Bucket& AddReadonlyAccessAccounts(Aws::String&& value) { m_readonlyAccessAccountsHasBeenSet = true; m_readonlyAccessAccounts.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array of strings that specify the AWS account IDs that have read-only
-     * access to the bucket.</p>
+     * <p>An array of strings that specify the Amazon Web Services account IDs that
+     * have read-only access to the bucket.</p>
      */
     inline Bucket& AddReadonlyAccessAccounts(const char* value) { m_readonlyAccessAccountsHasBeenSet = true; m_readonlyAccessAccounts.push_back(value); return *this; }
 
 
     /**
      * <p>An array of objects that describe Lightsail instances that have access to the
-     * bucket.</p> <p>Use the <a>SetResourceAccessForBucket</a> action to update the
-     * instances that have access to a bucket.</p>
+     * bucket.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a>
+     * action to update the instances that have access to a bucket.</p>
      */
     inline const Aws::Vector<ResourceReceivingAccess>& GetResourcesReceivingAccess() const{ return m_resourcesReceivingAccess; }
 
     /**
      * <p>An array of objects that describe Lightsail instances that have access to the
-     * bucket.</p> <p>Use the <a>SetResourceAccessForBucket</a> action to update the
-     * instances that have access to a bucket.</p>
+     * bucket.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a>
+     * action to update the instances that have access to a bucket.</p>
      */
     inline bool ResourcesReceivingAccessHasBeenSet() const { return m_resourcesReceivingAccessHasBeenSet; }
 
     /**
      * <p>An array of objects that describe Lightsail instances that have access to the
-     * bucket.</p> <p>Use the <a>SetResourceAccessForBucket</a> action to update the
-     * instances that have access to a bucket.</p>
+     * bucket.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a>
+     * action to update the instances that have access to a bucket.</p>
      */
     inline void SetResourcesReceivingAccess(const Aws::Vector<ResourceReceivingAccess>& value) { m_resourcesReceivingAccessHasBeenSet = true; m_resourcesReceivingAccess = value; }
 
     /**
      * <p>An array of objects that describe Lightsail instances that have access to the
-     * bucket.</p> <p>Use the <a>SetResourceAccessForBucket</a> action to update the
-     * instances that have access to a bucket.</p>
+     * bucket.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a>
+     * action to update the instances that have access to a bucket.</p>
      */
     inline void SetResourcesReceivingAccess(Aws::Vector<ResourceReceivingAccess>&& value) { m_resourcesReceivingAccessHasBeenSet = true; m_resourcesReceivingAccess = std::move(value); }
 
     /**
      * <p>An array of objects that describe Lightsail instances that have access to the
-     * bucket.</p> <p>Use the <a>SetResourceAccessForBucket</a> action to update the
-     * instances that have access to a bucket.</p>
+     * bucket.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a>
+     * action to update the instances that have access to a bucket.</p>
      */
     inline Bucket& WithResourcesReceivingAccess(const Aws::Vector<ResourceReceivingAccess>& value) { SetResourcesReceivingAccess(value); return *this;}
 
     /**
      * <p>An array of objects that describe Lightsail instances that have access to the
-     * bucket.</p> <p>Use the <a>SetResourceAccessForBucket</a> action to update the
-     * instances that have access to a bucket.</p>
+     * bucket.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a>
+     * action to update the instances that have access to a bucket.</p>
      */
     inline Bucket& WithResourcesReceivingAccess(Aws::Vector<ResourceReceivingAccess>&& value) { SetResourcesReceivingAccess(std::move(value)); return *this;}
 
     /**
      * <p>An array of objects that describe Lightsail instances that have access to the
-     * bucket.</p> <p>Use the <a>SetResourceAccessForBucket</a> action to update the
-     * instances that have access to a bucket.</p>
+     * bucket.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a>
+     * action to update the instances that have access to a bucket.</p>
      */
     inline Bucket& AddResourcesReceivingAccess(const ResourceReceivingAccess& value) { m_resourcesReceivingAccessHasBeenSet = true; m_resourcesReceivingAccess.push_back(value); return *this; }
 
     /**
      * <p>An array of objects that describe Lightsail instances that have access to the
-     * bucket.</p> <p>Use the <a>SetResourceAccessForBucket</a> action to update the
-     * instances that have access to a bucket.</p>
+     * bucket.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a>
+     * action to update the instances that have access to a bucket.</p>
      */
     inline Bucket& AddResourcesReceivingAccess(ResourceReceivingAccess&& value) { m_resourcesReceivingAccessHasBeenSet = true; m_resourcesReceivingAccess.push_back(std::move(value)); return *this; }
 

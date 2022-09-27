@@ -90,6 +90,12 @@ CreateChannelResult& CreateChannelResult::operator =(const Aws::AmazonWebService
     }
   }
 
+  if(jsonValue.ValueExists("Tier"))
+  {
+    m_tier = jsonValue.GetString("Tier");
+
+  }
+
 
 
   return *this;

@@ -242,7 +242,7 @@ namespace Model
 
 
     /**
-     * <p> The beginning of the time interval to retrieve events for, specified in ISO
+     * <p>The beginning of the time interval to retrieve events for, specified in ISO
      * 8601 format. For more information about ISO 8601, go to the <a
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
      * <p>Example: 2009-07-08T18:00Z</p>
@@ -250,7 +250,7 @@ namespace Model
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p> The beginning of the time interval to retrieve events for, specified in ISO
+     * <p>The beginning of the time interval to retrieve events for, specified in ISO
      * 8601 format. For more information about ISO 8601, go to the <a
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
      * <p>Example: 2009-07-08T18:00Z</p>
@@ -258,7 +258,7 @@ namespace Model
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
-     * <p> The beginning of the time interval to retrieve events for, specified in ISO
+     * <p>The beginning of the time interval to retrieve events for, specified in ISO
      * 8601 format. For more information about ISO 8601, go to the <a
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
      * <p>Example: 2009-07-08T18:00Z</p>
@@ -266,7 +266,7 @@ namespace Model
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p> The beginning of the time interval to retrieve events for, specified in ISO
+     * <p>The beginning of the time interval to retrieve events for, specified in ISO
      * 8601 format. For more information about ISO 8601, go to the <a
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
      * <p>Example: 2009-07-08T18:00Z</p>
@@ -274,7 +274,7 @@ namespace Model
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p> The beginning of the time interval to retrieve events for, specified in ISO
+     * <p>The beginning of the time interval to retrieve events for, specified in ISO
      * 8601 format. For more information about ISO 8601, go to the <a
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
      * <p>Example: 2009-07-08T18:00Z</p>
@@ -282,7 +282,7 @@ namespace Model
     inline DescribeEventsRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p> The beginning of the time interval to retrieve events for, specified in ISO
+     * <p>The beginning of the time interval to retrieve events for, specified in ISO
      * 8601 format. For more information about ISO 8601, go to the <a
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
      * <p>Example: 2009-07-08T18:00Z</p>
@@ -291,7 +291,7 @@ namespace Model
 
 
     /**
-     * <p> The end of the time interval for which to retrieve events, specified in ISO
+     * <p>The end of the time interval for which to retrieve events, specified in ISO
      * 8601 format. For more information about ISO 8601, go to the <a
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
      * <p>Example: 2009-07-08T18:00Z</p>
@@ -299,7 +299,7 @@ namespace Model
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p> The end of the time interval for which to retrieve events, specified in ISO
+     * <p>The end of the time interval for which to retrieve events, specified in ISO
      * 8601 format. For more information about ISO 8601, go to the <a
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
      * <p>Example: 2009-07-08T18:00Z</p>
@@ -307,7 +307,7 @@ namespace Model
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
-     * <p> The end of the time interval for which to retrieve events, specified in ISO
+     * <p>The end of the time interval for which to retrieve events, specified in ISO
      * 8601 format. For more information about ISO 8601, go to the <a
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
      * <p>Example: 2009-07-08T18:00Z</p>
@@ -315,7 +315,7 @@ namespace Model
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p> The end of the time interval for which to retrieve events, specified in ISO
+     * <p>The end of the time interval for which to retrieve events, specified in ISO
      * 8601 format. For more information about ISO 8601, go to the <a
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
      * <p>Example: 2009-07-08T18:00Z</p>
@@ -323,7 +323,7 @@ namespace Model
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p> The end of the time interval for which to retrieve events, specified in ISO
+     * <p>The end of the time interval for which to retrieve events, specified in ISO
      * 8601 format. For more information about ISO 8601, go to the <a
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
      * <p>Example: 2009-07-08T18:00Z</p>
@@ -331,7 +331,7 @@ namespace Model
     inline DescribeEventsRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p> The end of the time interval for which to retrieve events, specified in ISO
+     * <p>The end of the time interval for which to retrieve events, specified in ISO
      * 8601 format. For more information about ISO 8601, go to the <a
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
      * <p>Example: 2009-07-08T18:00Z</p>
@@ -457,95 +457,95 @@ namespace Model
 
 
     /**
-     * <p> The maximum number of records to include in the response. If more records
+     * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
-     * remaining results. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
+     * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
      * 100.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
 
     /**
-     * <p> The maximum number of records to include in the response. If more records
+     * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
-     * remaining results. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
+     * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
      * 100.</p>
      */
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
 
     /**
-     * <p> The maximum number of records to include in the response. If more records
+     * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
-     * remaining results. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
+     * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
      * 100.</p>
      */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
-     * <p> The maximum number of records to include in the response. If more records
+     * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
-     * remaining results. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
+     * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
      * 100.</p>
      */
     inline DescribeEventsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 
 
     /**
-     * <p> An optional pagination token provided by a previous DescribeEvents request.
+     * <p>An optional pagination token provided by a previous DescribeEvents request.
      * If this parameter is specified, the response includes only records beyond the
-     * marker, up to the value specified by <code>MaxRecords</code>. </p>
+     * marker, up to the value specified by <code>MaxRecords</code>.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p> An optional pagination token provided by a previous DescribeEvents request.
+     * <p>An optional pagination token provided by a previous DescribeEvents request.
      * If this parameter is specified, the response includes only records beyond the
-     * marker, up to the value specified by <code>MaxRecords</code>. </p>
+     * marker, up to the value specified by <code>MaxRecords</code>.</p>
      */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
-     * <p> An optional pagination token provided by a previous DescribeEvents request.
+     * <p>An optional pagination token provided by a previous DescribeEvents request.
      * If this parameter is specified, the response includes only records beyond the
-     * marker, up to the value specified by <code>MaxRecords</code>. </p>
+     * marker, up to the value specified by <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
-     * <p> An optional pagination token provided by a previous DescribeEvents request.
+     * <p>An optional pagination token provided by a previous DescribeEvents request.
      * If this parameter is specified, the response includes only records beyond the
-     * marker, up to the value specified by <code>MaxRecords</code>. </p>
+     * marker, up to the value specified by <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
-     * <p> An optional pagination token provided by a previous DescribeEvents request.
+     * <p>An optional pagination token provided by a previous DescribeEvents request.
      * If this parameter is specified, the response includes only records beyond the
-     * marker, up to the value specified by <code>MaxRecords</code>. </p>
+     * marker, up to the value specified by <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
-     * <p> An optional pagination token provided by a previous DescribeEvents request.
+     * <p>An optional pagination token provided by a previous DescribeEvents request.
      * If this parameter is specified, the response includes only records beyond the
-     * marker, up to the value specified by <code>MaxRecords</code>. </p>
+     * marker, up to the value specified by <code>MaxRecords</code>.</p>
      */
     inline DescribeEventsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p> An optional pagination token provided by a previous DescribeEvents request.
+     * <p>An optional pagination token provided by a previous DescribeEvents request.
      * If this parameter is specified, the response includes only records beyond the
-     * marker, up to the value specified by <code>MaxRecords</code>. </p>
+     * marker, up to the value specified by <code>MaxRecords</code>.</p>
      */
     inline DescribeEventsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
-     * <p> An optional pagination token provided by a previous DescribeEvents request.
+     * <p>An optional pagination token provided by a previous DescribeEvents request.
      * If this parameter is specified, the response includes only records beyond the
-     * marker, up to the value specified by <code>MaxRecords</code>. </p>
+     * marker, up to the value specified by <code>MaxRecords</code>.</p>
      */
     inline DescribeEventsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 

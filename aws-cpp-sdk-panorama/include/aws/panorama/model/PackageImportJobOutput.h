@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/panorama/Panorama_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/panorama/model/OutPutS3Location.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -36,6 +36,37 @@ namespace Model
     PackageImportJobOutput(Aws::Utils::Json::JsonView jsonValue);
     PackageImportJobOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The package's output location.</p>
+     */
+    inline const OutPutS3Location& GetOutputS3Location() const{ return m_outputS3Location; }
+
+    /**
+     * <p>The package's output location.</p>
+     */
+    inline bool OutputS3LocationHasBeenSet() const { return m_outputS3LocationHasBeenSet; }
+
+    /**
+     * <p>The package's output location.</p>
+     */
+    inline void SetOutputS3Location(const OutPutS3Location& value) { m_outputS3LocationHasBeenSet = true; m_outputS3Location = value; }
+
+    /**
+     * <p>The package's output location.</p>
+     */
+    inline void SetOutputS3Location(OutPutS3Location&& value) { m_outputS3LocationHasBeenSet = true; m_outputS3Location = std::move(value); }
+
+    /**
+     * <p>The package's output location.</p>
+     */
+    inline PackageImportJobOutput& WithOutputS3Location(const OutPutS3Location& value) { SetOutputS3Location(value); return *this;}
+
+    /**
+     * <p>The package's output location.</p>
+     */
+    inline PackageImportJobOutput& WithOutputS3Location(OutPutS3Location&& value) { SetOutputS3Location(std::move(value)); return *this;}
 
 
     /**
@@ -160,38 +191,10 @@ namespace Model
      */
     inline PackageImportJobOutput& WithPatchVersion(const char* value) { SetPatchVersion(value); return *this;}
 
-
-    /**
-     * <p>The package's output location.</p>
-     */
-    inline const OutPutS3Location& GetOutputS3Location() const{ return m_outputS3Location; }
-
-    /**
-     * <p>The package's output location.</p>
-     */
-    inline bool OutputS3LocationHasBeenSet() const { return m_outputS3LocationHasBeenSet; }
-
-    /**
-     * <p>The package's output location.</p>
-     */
-    inline void SetOutputS3Location(const OutPutS3Location& value) { m_outputS3LocationHasBeenSet = true; m_outputS3Location = value; }
-
-    /**
-     * <p>The package's output location.</p>
-     */
-    inline void SetOutputS3Location(OutPutS3Location&& value) { m_outputS3LocationHasBeenSet = true; m_outputS3Location = std::move(value); }
-
-    /**
-     * <p>The package's output location.</p>
-     */
-    inline PackageImportJobOutput& WithOutputS3Location(const OutPutS3Location& value) { SetOutputS3Location(value); return *this;}
-
-    /**
-     * <p>The package's output location.</p>
-     */
-    inline PackageImportJobOutput& WithOutputS3Location(OutPutS3Location&& value) { SetOutputS3Location(std::move(value)); return *this;}
-
   private:
+
+    OutPutS3Location m_outputS3Location;
+    bool m_outputS3LocationHasBeenSet;
 
     Aws::String m_packageId;
     bool m_packageIdHasBeenSet;
@@ -201,9 +204,6 @@ namespace Model
 
     Aws::String m_patchVersion;
     bool m_patchVersionHasBeenSet;
-
-    OutPutS3Location m_outputS3Location;
-    bool m_outputS3LocationHasBeenSet;
   };
 
 } // namespace Model

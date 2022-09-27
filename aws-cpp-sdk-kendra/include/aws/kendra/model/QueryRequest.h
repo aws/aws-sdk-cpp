@@ -12,6 +12,7 @@
 #include <aws/kendra/model/QueryResultType.h>
 #include <aws/kendra/model/SortingConfiguration.h>
 #include <aws/kendra/model/UserContext.h>
+#include <aws/kendra/model/SpellCorrectionConfiguration.h>
 #include <aws/kendra/model/Facet.h>
 #include <aws/kendra/model/DocumentRelevanceConfiguration.h>
 #include <utility>
@@ -43,49 +44,49 @@ namespace Model
 
     /**
      * <p>The unique identifier of the index to search. The identifier is returned in
-     * the response from the <code>CreateIndex</code> operation.</p>
+     * the response from the <code>CreateIndex</code> API.</p>
      */
     inline const Aws::String& GetIndexId() const{ return m_indexId; }
 
     /**
      * <p>The unique identifier of the index to search. The identifier is returned in
-     * the response from the <code>CreateIndex</code> operation.</p>
+     * the response from the <code>CreateIndex</code> API.</p>
      */
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
 
     /**
      * <p>The unique identifier of the index to search. The identifier is returned in
-     * the response from the <code>CreateIndex</code> operation.</p>
+     * the response from the <code>CreateIndex</code> API.</p>
      */
     inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
 
     /**
      * <p>The unique identifier of the index to search. The identifier is returned in
-     * the response from the <code>CreateIndex</code> operation.</p>
+     * the response from the <code>CreateIndex</code> API.</p>
      */
     inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
 
     /**
      * <p>The unique identifier of the index to search. The identifier is returned in
-     * the response from the <code>CreateIndex</code> operation.</p>
+     * the response from the <code>CreateIndex</code> API.</p>
      */
     inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
 
     /**
      * <p>The unique identifier of the index to search. The identifier is returned in
-     * the response from the <code>CreateIndex</code> operation.</p>
+     * the response from the <code>CreateIndex</code> API.</p>
      */
     inline QueryRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
 
     /**
      * <p>The unique identifier of the index to search. The identifier is returned in
-     * the response from the <code>CreateIndex</code> operation.</p>
+     * the response from the <code>CreateIndex</code> API.</p>
      */
     inline QueryRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier of the index to search. The identifier is returned in
-     * the response from the <code>CreateIndex</code> operation.</p>
+     * the response from the <code>CreateIndex</code> API.</p>
      */
     inline QueryRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
 
@@ -194,121 +195,113 @@ namespace Model
 
     /**
      * <p>An array of documents attributes. Amazon Kendra returns a count for each
-     * attribute key specified. You can use this information to help narrow the search
-     * for your user.</p>
+     * attribute key specified. This helps your users narrow their search.</p>
      */
     inline const Aws::Vector<Facet>& GetFacets() const{ return m_facets; }
 
     /**
      * <p>An array of documents attributes. Amazon Kendra returns a count for each
-     * attribute key specified. You can use this information to help narrow the search
-     * for your user.</p>
+     * attribute key specified. This helps your users narrow their search.</p>
      */
     inline bool FacetsHasBeenSet() const { return m_facetsHasBeenSet; }
 
     /**
      * <p>An array of documents attributes. Amazon Kendra returns a count for each
-     * attribute key specified. You can use this information to help narrow the search
-     * for your user.</p>
+     * attribute key specified. This helps your users narrow their search.</p>
      */
     inline void SetFacets(const Aws::Vector<Facet>& value) { m_facetsHasBeenSet = true; m_facets = value; }
 
     /**
      * <p>An array of documents attributes. Amazon Kendra returns a count for each
-     * attribute key specified. You can use this information to help narrow the search
-     * for your user.</p>
+     * attribute key specified. This helps your users narrow their search.</p>
      */
     inline void SetFacets(Aws::Vector<Facet>&& value) { m_facetsHasBeenSet = true; m_facets = std::move(value); }
 
     /**
      * <p>An array of documents attributes. Amazon Kendra returns a count for each
-     * attribute key specified. You can use this information to help narrow the search
-     * for your user.</p>
+     * attribute key specified. This helps your users narrow their search.</p>
      */
     inline QueryRequest& WithFacets(const Aws::Vector<Facet>& value) { SetFacets(value); return *this;}
 
     /**
      * <p>An array of documents attributes. Amazon Kendra returns a count for each
-     * attribute key specified. You can use this information to help narrow the search
-     * for your user.</p>
+     * attribute key specified. This helps your users narrow their search.</p>
      */
     inline QueryRequest& WithFacets(Aws::Vector<Facet>&& value) { SetFacets(std::move(value)); return *this;}
 
     /**
      * <p>An array of documents attributes. Amazon Kendra returns a count for each
-     * attribute key specified. You can use this information to help narrow the search
-     * for your user.</p>
+     * attribute key specified. This helps your users narrow their search.</p>
      */
     inline QueryRequest& AddFacets(const Facet& value) { m_facetsHasBeenSet = true; m_facets.push_back(value); return *this; }
 
     /**
      * <p>An array of documents attributes. Amazon Kendra returns a count for each
-     * attribute key specified. You can use this information to help narrow the search
-     * for your user.</p>
+     * attribute key specified. This helps your users narrow their search.</p>
      */
     inline QueryRequest& AddFacets(Facet&& value) { m_facetsHasBeenSet = true; m_facets.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>An array of document attributes to include in the response. No other document
-     * attributes are included in the response. By default all document attributes are
-     * included in the response. </p>
+     * <p>An array of document attributes to include in the response. You can limit the
+     * response to include certain document attributes. By default all document
+     * attributes are included in the response.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRequestedDocumentAttributes() const{ return m_requestedDocumentAttributes; }
 
     /**
-     * <p>An array of document attributes to include in the response. No other document
-     * attributes are included in the response. By default all document attributes are
-     * included in the response. </p>
+     * <p>An array of document attributes to include in the response. You can limit the
+     * response to include certain document attributes. By default all document
+     * attributes are included in the response.</p>
      */
     inline bool RequestedDocumentAttributesHasBeenSet() const { return m_requestedDocumentAttributesHasBeenSet; }
 
     /**
-     * <p>An array of document attributes to include in the response. No other document
-     * attributes are included in the response. By default all document attributes are
-     * included in the response. </p>
+     * <p>An array of document attributes to include in the response. You can limit the
+     * response to include certain document attributes. By default all document
+     * attributes are included in the response.</p>
      */
     inline void SetRequestedDocumentAttributes(const Aws::Vector<Aws::String>& value) { m_requestedDocumentAttributesHasBeenSet = true; m_requestedDocumentAttributes = value; }
 
     /**
-     * <p>An array of document attributes to include in the response. No other document
-     * attributes are included in the response. By default all document attributes are
-     * included in the response. </p>
+     * <p>An array of document attributes to include in the response. You can limit the
+     * response to include certain document attributes. By default all document
+     * attributes are included in the response.</p>
      */
     inline void SetRequestedDocumentAttributes(Aws::Vector<Aws::String>&& value) { m_requestedDocumentAttributesHasBeenSet = true; m_requestedDocumentAttributes = std::move(value); }
 
     /**
-     * <p>An array of document attributes to include in the response. No other document
-     * attributes are included in the response. By default all document attributes are
-     * included in the response. </p>
+     * <p>An array of document attributes to include in the response. You can limit the
+     * response to include certain document attributes. By default all document
+     * attributes are included in the response.</p>
      */
     inline QueryRequest& WithRequestedDocumentAttributes(const Aws::Vector<Aws::String>& value) { SetRequestedDocumentAttributes(value); return *this;}
 
     /**
-     * <p>An array of document attributes to include in the response. No other document
-     * attributes are included in the response. By default all document attributes are
-     * included in the response. </p>
+     * <p>An array of document attributes to include in the response. You can limit the
+     * response to include certain document attributes. By default all document
+     * attributes are included in the response.</p>
      */
     inline QueryRequest& WithRequestedDocumentAttributes(Aws::Vector<Aws::String>&& value) { SetRequestedDocumentAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>An array of document attributes to include in the response. No other document
-     * attributes are included in the response. By default all document attributes are
-     * included in the response. </p>
+     * <p>An array of document attributes to include in the response. You can limit the
+     * response to include certain document attributes. By default all document
+     * attributes are included in the response.</p>
      */
     inline QueryRequest& AddRequestedDocumentAttributes(const Aws::String& value) { m_requestedDocumentAttributesHasBeenSet = true; m_requestedDocumentAttributes.push_back(value); return *this; }
 
     /**
-     * <p>An array of document attributes to include in the response. No other document
-     * attributes are included in the response. By default all document attributes are
-     * included in the response. </p>
+     * <p>An array of document attributes to include in the response. You can limit the
+     * response to include certain document attributes. By default all document
+     * attributes are included in the response.</p>
      */
     inline QueryRequest& AddRequestedDocumentAttributes(Aws::String&& value) { m_requestedDocumentAttributesHasBeenSet = true; m_requestedDocumentAttributes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array of document attributes to include in the response. No other document
-     * attributes are included in the response. By default all document attributes are
-     * included in the response. </p>
+     * <p>An array of document attributes to include in the response. You can limit the
+     * response to include certain document attributes. By default all document
+     * attributes are included in the response.</p>
      */
     inline QueryRequest& AddRequestedDocumentAttributes(const char* value) { m_requestedDocumentAttributesHasBeenSet = true; m_requestedDocumentAttributes.push_back(value); return *this; }
 
@@ -677,6 +670,37 @@ namespace Model
      */
     inline QueryRequest& WithVisitorId(const char* value) { SetVisitorId(value); return *this;}
 
+
+    /**
+     * <p>Enables suggested spell corrections for queries.</p>
+     */
+    inline const SpellCorrectionConfiguration& GetSpellCorrectionConfiguration() const{ return m_spellCorrectionConfiguration; }
+
+    /**
+     * <p>Enables suggested spell corrections for queries.</p>
+     */
+    inline bool SpellCorrectionConfigurationHasBeenSet() const { return m_spellCorrectionConfigurationHasBeenSet; }
+
+    /**
+     * <p>Enables suggested spell corrections for queries.</p>
+     */
+    inline void SetSpellCorrectionConfiguration(const SpellCorrectionConfiguration& value) { m_spellCorrectionConfigurationHasBeenSet = true; m_spellCorrectionConfiguration = value; }
+
+    /**
+     * <p>Enables suggested spell corrections for queries.</p>
+     */
+    inline void SetSpellCorrectionConfiguration(SpellCorrectionConfiguration&& value) { m_spellCorrectionConfigurationHasBeenSet = true; m_spellCorrectionConfiguration = std::move(value); }
+
+    /**
+     * <p>Enables suggested spell corrections for queries.</p>
+     */
+    inline QueryRequest& WithSpellCorrectionConfiguration(const SpellCorrectionConfiguration& value) { SetSpellCorrectionConfiguration(value); return *this;}
+
+    /**
+     * <p>Enables suggested spell corrections for queries.</p>
+     */
+    inline QueryRequest& WithSpellCorrectionConfiguration(SpellCorrectionConfiguration&& value) { SetSpellCorrectionConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_indexId;
@@ -714,6 +738,9 @@ namespace Model
 
     Aws::String m_visitorId;
     bool m_visitorIdHasBeenSet;
+
+    SpellCorrectionConfiguration m_spellCorrectionConfiguration;
+    bool m_spellCorrectionConfigurationHasBeenSet;
   };
 
 } // namespace Model

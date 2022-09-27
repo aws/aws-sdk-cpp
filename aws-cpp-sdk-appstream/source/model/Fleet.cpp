@@ -50,7 +50,8 @@ Fleet::Fleet() :
     m_platformHasBeenSet(false),
     m_maxConcurrentSessions(0),
     m_maxConcurrentSessionsHasBeenSet(false),
-    m_usbDeviceFilterStringsHasBeenSet(false)
+    m_usbDeviceFilterStringsHasBeenSet(false),
+    m_sessionScriptS3LocationHasBeenSet(false)
 {
 }
 
@@ -86,7 +87,8 @@ Fleet::Fleet(JsonView jsonValue) :
     m_platformHasBeenSet(false),
     m_maxConcurrentSessions(0),
     m_maxConcurrentSessionsHasBeenSet(false),
-    m_usbDeviceFilterStringsHasBeenSet(false)
+    m_usbDeviceFilterStringsHasBeenSet(false),
+    m_sessionScriptS3LocationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -260,6 +262,13 @@ Fleet& Fleet::operator =(JsonView jsonValue)
     m_usbDeviceFilterStringsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SessionScriptS3Location"))
+  {
+    m_sessionScriptS3Location = jsonValue.GetObject("SessionScriptS3Location");
+
+    m_sessionScriptS3LocationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -407,6 +416,12 @@ JsonValue Fleet::Jsonize() const
      usbDeviceFilterStringsJsonList[usbDeviceFilterStringsIndex].AsString(m_usbDeviceFilterStrings[usbDeviceFilterStringsIndex]);
    }
    payload.WithArray("UsbDeviceFilterStrings", std::move(usbDeviceFilterStringsJsonList));
+
+  }
+
+  if(m_sessionScriptS3LocationHasBeenSet)
+  {
+   payload.WithObject("SessionScriptS3Location", m_sessionScriptS3Location.Jsonize());
 
   }
 

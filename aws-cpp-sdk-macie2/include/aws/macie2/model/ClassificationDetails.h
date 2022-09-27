@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/macie2/model/OriginType.h>
 #include <aws/macie2/model/ClassificationResult.h>
 #include <utility>
 
@@ -25,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about a sensitive data finding, including the
-   * classification job that produced the finding.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides information about a sensitive data finding and the details of the
+   * finding.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ClassificationDetails">AWS
    * API Reference</a></p>
    */
@@ -203,6 +204,43 @@ namespace Model
 
 
     /**
+     * <p>Specifies how Amazon Macie found the sensitive data that produced the
+     * finding: SENSITIVE_DATA_DISCOVERY_JOB, for a classification job.</p>
+     */
+    inline const OriginType& GetOriginType() const{ return m_originType; }
+
+    /**
+     * <p>Specifies how Amazon Macie found the sensitive data that produced the
+     * finding: SENSITIVE_DATA_DISCOVERY_JOB, for a classification job.</p>
+     */
+    inline bool OriginTypeHasBeenSet() const { return m_originTypeHasBeenSet; }
+
+    /**
+     * <p>Specifies how Amazon Macie found the sensitive data that produced the
+     * finding: SENSITIVE_DATA_DISCOVERY_JOB, for a classification job.</p>
+     */
+    inline void SetOriginType(const OriginType& value) { m_originTypeHasBeenSet = true; m_originType = value; }
+
+    /**
+     * <p>Specifies how Amazon Macie found the sensitive data that produced the
+     * finding: SENSITIVE_DATA_DISCOVERY_JOB, for a classification job.</p>
+     */
+    inline void SetOriginType(OriginType&& value) { m_originTypeHasBeenSet = true; m_originType = std::move(value); }
+
+    /**
+     * <p>Specifies how Amazon Macie found the sensitive data that produced the
+     * finding: SENSITIVE_DATA_DISCOVERY_JOB, for a classification job.</p>
+     */
+    inline ClassificationDetails& WithOriginType(const OriginType& value) { SetOriginType(value); return *this;}
+
+    /**
+     * <p>Specifies how Amazon Macie found the sensitive data that produced the
+     * finding: SENSITIVE_DATA_DISCOVERY_JOB, for a classification job.</p>
+     */
+    inline ClassificationDetails& WithOriginType(OriginType&& value) { SetOriginType(std::move(value)); return *this;}
+
+
+    /**
      * <p>The status and other details of the finding.</p>
      */
     inline const ClassificationResult& GetResult() const{ return m_result; }
@@ -242,6 +280,9 @@ namespace Model
 
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet;
+
+    OriginType m_originType;
+    bool m_originTypeHasBeenSet;
 
     ClassificationResult m_result;
     bool m_resultHasBeenSet;

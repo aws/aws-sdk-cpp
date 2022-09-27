@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     ADMIN,
-    EDITOR
+    EDITOR,
+    VIEWER
   };
 
 namespace RoleMapper

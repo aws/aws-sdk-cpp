@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/rds-data/RDSDataService_EXPORTS.h>
 #include <aws/rds-data/model/DecimalReturnType.h>
+#include <aws/rds-data/model/LongReturnType.h>
 #include <utility>
 
 namespace Aws
@@ -110,10 +111,62 @@ namespace Model
      */
     inline ResultSetOptions& WithDecimalReturnType(DecimalReturnType&& value) { SetDecimalReturnType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A value that indicates how a field of <code>LONG</code> type is represented.
+     * Allowed values are <code>LONG</code> and <code>STRING</code>. The default is
+     * <code>LONG</code>. Specify <code>STRING</code> if the length or precision of
+     * numeric values might cause truncation or rounding errors. </p>
+     */
+    inline const LongReturnType& GetLongReturnType() const{ return m_longReturnType; }
+
+    /**
+     * <p>A value that indicates how a field of <code>LONG</code> type is represented.
+     * Allowed values are <code>LONG</code> and <code>STRING</code>. The default is
+     * <code>LONG</code>. Specify <code>STRING</code> if the length or precision of
+     * numeric values might cause truncation or rounding errors. </p>
+     */
+    inline bool LongReturnTypeHasBeenSet() const { return m_longReturnTypeHasBeenSet; }
+
+    /**
+     * <p>A value that indicates how a field of <code>LONG</code> type is represented.
+     * Allowed values are <code>LONG</code> and <code>STRING</code>. The default is
+     * <code>LONG</code>. Specify <code>STRING</code> if the length or precision of
+     * numeric values might cause truncation or rounding errors. </p>
+     */
+    inline void SetLongReturnType(const LongReturnType& value) { m_longReturnTypeHasBeenSet = true; m_longReturnType = value; }
+
+    /**
+     * <p>A value that indicates how a field of <code>LONG</code> type is represented.
+     * Allowed values are <code>LONG</code> and <code>STRING</code>. The default is
+     * <code>LONG</code>. Specify <code>STRING</code> if the length or precision of
+     * numeric values might cause truncation or rounding errors. </p>
+     */
+    inline void SetLongReturnType(LongReturnType&& value) { m_longReturnTypeHasBeenSet = true; m_longReturnType = std::move(value); }
+
+    /**
+     * <p>A value that indicates how a field of <code>LONG</code> type is represented.
+     * Allowed values are <code>LONG</code> and <code>STRING</code>. The default is
+     * <code>LONG</code>. Specify <code>STRING</code> if the length or precision of
+     * numeric values might cause truncation or rounding errors. </p>
+     */
+    inline ResultSetOptions& WithLongReturnType(const LongReturnType& value) { SetLongReturnType(value); return *this;}
+
+    /**
+     * <p>A value that indicates how a field of <code>LONG</code> type is represented.
+     * Allowed values are <code>LONG</code> and <code>STRING</code>. The default is
+     * <code>LONG</code>. Specify <code>STRING</code> if the length or precision of
+     * numeric values might cause truncation or rounding errors. </p>
+     */
+    inline ResultSetOptions& WithLongReturnType(LongReturnType&& value) { SetLongReturnType(std::move(value)); return *this;}
+
   private:
 
     DecimalReturnType m_decimalReturnType;
     bool m_decimalReturnTypeHasBeenSet;
+
+    LongReturnType m_longReturnType;
+    bool m_longReturnTypeHasBeenSet;
   };
 
 } // namespace Model

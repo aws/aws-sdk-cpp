@@ -1241,6 +1241,76 @@ namespace Model
      */
     inline AssociationDescription& AddTargetLocations(TargetLocation&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Number of days to wait after the scheduled day to run an association.</p>
+     */
+    inline int GetScheduleOffset() const{ return m_scheduleOffset; }
+
+    /**
+     * <p>Number of days to wait after the scheduled day to run an association.</p>
+     */
+    inline bool ScheduleOffsetHasBeenSet() const { return m_scheduleOffsetHasBeenSet; }
+
+    /**
+     * <p>Number of days to wait after the scheduled day to run an association.</p>
+     */
+    inline void SetScheduleOffset(int value) { m_scheduleOffsetHasBeenSet = true; m_scheduleOffset = value; }
+
+    /**
+     * <p>Number of days to wait after the scheduled day to run an association.</p>
+     */
+    inline AssociationDescription& WithScheduleOffset(int value) { SetScheduleOffset(value); return *this;}
+
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline const Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& GetTargetMaps() const{ return m_targetMaps; }
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline bool TargetMapsHasBeenSet() const { return m_targetMapsHasBeenSet; }
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline void SetTargetMaps(const Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& value) { m_targetMapsHasBeenSet = true; m_targetMaps = value; }
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline void SetTargetMaps(Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { m_targetMapsHasBeenSet = true; m_targetMaps = std::move(value); }
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline AssociationDescription& WithTargetMaps(const Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& value) { SetTargetMaps(value); return *this;}
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline AssociationDescription& WithTargetMaps(Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { SetTargetMaps(std::move(value)); return *this;}
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline AssociationDescription& AddTargetMaps(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_targetMapsHasBeenSet = true; m_targetMaps.push_back(value); return *this; }
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline AssociationDescription& AddTargetMaps(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_targetMapsHasBeenSet = true; m_targetMaps.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -1314,6 +1384,12 @@ namespace Model
 
     Aws::Vector<TargetLocation> m_targetLocations;
     bool m_targetLocationsHasBeenSet;
+
+    int m_scheduleOffset;
+    bool m_scheduleOffsetHasBeenSet;
+
+    Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>> m_targetMaps;
+    bool m_targetMapsHasBeenSet;
   };
 
 } // namespace Model

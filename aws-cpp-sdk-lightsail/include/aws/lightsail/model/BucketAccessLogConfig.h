@@ -68,66 +68,74 @@ namespace Model
 
 
     /**
-     * <p>The name of the bucket where the access is saved. The destination can be a
-     * Lightsail bucket in the same account, and in the same AWS Region as the source
-     * bucket.</p>  <p>This parameter is required when enabling the access log
-     * for a bucket, and should be omitted when disabling the access log.</p> 
+     * <p>The name of the bucket where the access logs are saved. The destination can
+     * be a Lightsail bucket in the same account, and in the same Amazon Web Services
+     * Region as the source bucket.</p>  <p>This parameter is required when
+     * enabling the access log for a bucket, and should be omitted when disabling the
+     * access log.</p> 
      */
     inline const Aws::String& GetDestination() const{ return m_destination; }
 
     /**
-     * <p>The name of the bucket where the access is saved. The destination can be a
-     * Lightsail bucket in the same account, and in the same AWS Region as the source
-     * bucket.</p>  <p>This parameter is required when enabling the access log
-     * for a bucket, and should be omitted when disabling the access log.</p> 
+     * <p>The name of the bucket where the access logs are saved. The destination can
+     * be a Lightsail bucket in the same account, and in the same Amazon Web Services
+     * Region as the source bucket.</p>  <p>This parameter is required when
+     * enabling the access log for a bucket, and should be omitted when disabling the
+     * access log.</p> 
      */
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
 
     /**
-     * <p>The name of the bucket where the access is saved. The destination can be a
-     * Lightsail bucket in the same account, and in the same AWS Region as the source
-     * bucket.</p>  <p>This parameter is required when enabling the access log
-     * for a bucket, and should be omitted when disabling the access log.</p> 
+     * <p>The name of the bucket where the access logs are saved. The destination can
+     * be a Lightsail bucket in the same account, and in the same Amazon Web Services
+     * Region as the source bucket.</p>  <p>This parameter is required when
+     * enabling the access log for a bucket, and should be omitted when disabling the
+     * access log.</p> 
      */
     inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
-     * <p>The name of the bucket where the access is saved. The destination can be a
-     * Lightsail bucket in the same account, and in the same AWS Region as the source
-     * bucket.</p>  <p>This parameter is required when enabling the access log
-     * for a bucket, and should be omitted when disabling the access log.</p> 
+     * <p>The name of the bucket where the access logs are saved. The destination can
+     * be a Lightsail bucket in the same account, and in the same Amazon Web Services
+     * Region as the source bucket.</p>  <p>This parameter is required when
+     * enabling the access log for a bucket, and should be omitted when disabling the
+     * access log.</p> 
      */
     inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
 
     /**
-     * <p>The name of the bucket where the access is saved. The destination can be a
-     * Lightsail bucket in the same account, and in the same AWS Region as the source
-     * bucket.</p>  <p>This parameter is required when enabling the access log
-     * for a bucket, and should be omitted when disabling the access log.</p> 
+     * <p>The name of the bucket where the access logs are saved. The destination can
+     * be a Lightsail bucket in the same account, and in the same Amazon Web Services
+     * Region as the source bucket.</p>  <p>This parameter is required when
+     * enabling the access log for a bucket, and should be omitted when disabling the
+     * access log.</p> 
      */
     inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
 
     /**
-     * <p>The name of the bucket where the access is saved. The destination can be a
-     * Lightsail bucket in the same account, and in the same AWS Region as the source
-     * bucket.</p>  <p>This parameter is required when enabling the access log
-     * for a bucket, and should be omitted when disabling the access log.</p> 
+     * <p>The name of the bucket where the access logs are saved. The destination can
+     * be a Lightsail bucket in the same account, and in the same Amazon Web Services
+     * Region as the source bucket.</p>  <p>This parameter is required when
+     * enabling the access log for a bucket, and should be omitted when disabling the
+     * access log.</p> 
      */
     inline BucketAccessLogConfig& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
 
     /**
-     * <p>The name of the bucket where the access is saved. The destination can be a
-     * Lightsail bucket in the same account, and in the same AWS Region as the source
-     * bucket.</p>  <p>This parameter is required when enabling the access log
-     * for a bucket, and should be omitted when disabling the access log.</p> 
+     * <p>The name of the bucket where the access logs are saved. The destination can
+     * be a Lightsail bucket in the same account, and in the same Amazon Web Services
+     * Region as the source bucket.</p>  <p>This parameter is required when
+     * enabling the access log for a bucket, and should be omitted when disabling the
+     * access log.</p> 
      */
     inline BucketAccessLogConfig& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the bucket where the access is saved. The destination can be a
-     * Lightsail bucket in the same account, and in the same AWS Region as the source
-     * bucket.</p>  <p>This parameter is required when enabling the access log
-     * for a bucket, and should be omitted when disabling the access log.</p> 
+     * <p>The name of the bucket where the access logs are saved. The destination can
+     * be a Lightsail bucket in the same account, and in the same Amazon Web Services
+     * Region as the source bucket.</p>  <p>This parameter is required when
+     * enabling the access log for a bucket, and should be omitted when disabling the
+     * access log.</p> 
      */
     inline BucketAccessLogConfig& WithDestination(const char* value) { SetDestination(value); return *this;}
 

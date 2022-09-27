@@ -78,58 +78,58 @@ namespace Model
 
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribePendingMaintenanceActions</code> request. If this parameter is
      * specified, the response includes only records beyond the marker, up to a number
-     * of records specified by <code>MaxRecords</code>. </p>
+     * of records specified by <code>MaxRecords</code>.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribePendingMaintenanceActions</code> request. If this parameter is
      * specified, the response includes only records beyond the marker, up to a number
-     * of records specified by <code>MaxRecords</code>. </p>
+     * of records specified by <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribePendingMaintenanceActions</code> request. If this parameter is
      * specified, the response includes only records beyond the marker, up to a number
-     * of records specified by <code>MaxRecords</code>. </p>
+     * of records specified by <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribePendingMaintenanceActions</code> request. If this parameter is
      * specified, the response includes only records beyond the marker, up to a number
-     * of records specified by <code>MaxRecords</code>. </p>
+     * of records specified by <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribePendingMaintenanceActions</code> request. If this parameter is
      * specified, the response includes only records beyond the marker, up to a number
-     * of records specified by <code>MaxRecords</code>. </p>
+     * of records specified by <code>MaxRecords</code>.</p>
      */
     inline DescribePendingMaintenanceActionsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribePendingMaintenanceActions</code> request. If this parameter is
      * specified, the response includes only records beyond the marker, up to a number
-     * of records specified by <code>MaxRecords</code>. </p>
+     * of records specified by <code>MaxRecords</code>.</p>
      */
     inline DescribePendingMaintenanceActionsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribePendingMaintenanceActions</code> request. If this parameter is
      * specified, the response includes only records beyond the marker, up to a number
-     * of records specified by <code>MaxRecords</code>. </p>
+     * of records specified by <code>MaxRecords</code>.</p>
      */
     inline DescribePendingMaintenanceActionsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 

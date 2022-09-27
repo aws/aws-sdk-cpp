@@ -120,22 +120,12 @@ namespace Model
         virtual Model::DescribeGroupOutcome DescribeGroup(const Model::DescribeGroupRequest& request) const;
 
         /**
-         * <p>Retrieves the group metadata and attributes from <code>GroupId</code> in an
-         * identity store.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DescribeGroup">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeGroupOutcomeCallable DescribeGroupCallable(const Model::DescribeGroupRequest& request) const;
 
         /**
-         * <p>Retrieves the group metadata and attributes from <code>GroupId</code> in an
-         * identity store.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DescribeGroup">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeGroupAsync(const Model::DescribeGroupRequest& request, const DescribeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -148,22 +138,12 @@ namespace Model
         virtual Model::DescribeUserOutcome DescribeUser(const Model::DescribeUserRequest& request) const;
 
         /**
-         * <p>Retrieves the user metadata and attributes from <code>UserId</code> in an
-         * identity store.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DescribeUser">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeUser that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeUserOutcomeCallable DescribeUserCallable(const Model::DescribeUserRequest& request) const;
 
         /**
-         * <p>Retrieves the user metadata and attributes from <code>UserId</code> in an
-         * identity store.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DescribeUser">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeUser that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeUserAsync(const Model::DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -179,28 +159,12 @@ namespace Model
         virtual Model::ListGroupsOutcome ListGroups(const Model::ListGroupsRequest& request) const;
 
         /**
-         * <p>Lists the attribute name and value of the group that you specified in the
-         * search. We only support <code>DisplayName</code> as a valid filter attribute
-         * path currently, and filter is required. This API returns minimum attributes,
-         * including <code>GroupId</code> and group <code>DisplayName</code> in the
-         * response.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/ListGroups">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListGroupsOutcomeCallable ListGroupsCallable(const Model::ListGroupsRequest& request) const;
 
         /**
-         * <p>Lists the attribute name and value of the group that you specified in the
-         * search. We only support <code>DisplayName</code> as a valid filter attribute
-         * path currently, and filter is required. This API returns minimum attributes,
-         * including <code>GroupId</code> and group <code>DisplayName</code> in the
-         * response.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/ListGroups">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListGroupsAsync(const Model::ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -216,28 +180,12 @@ namespace Model
         virtual Model::ListUsersOutcome ListUsers(const Model::ListUsersRequest& request) const;
 
         /**
-         * <p>Lists the attribute name and value of the user that you specified in the
-         * search. We only support <code>UserName</code> as a valid filter attribute path
-         * currently, and filter is required. This API returns minimum attributes,
-         * including <code>UserId</code> and <code>UserName</code> in the
-         * response.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/ListUsers">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListUsers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListUsersOutcomeCallable ListUsersCallable(const Model::ListUsersRequest& request) const;
 
         /**
-         * <p>Lists the attribute name and value of the user that you specified in the
-         * search. We only support <code>UserName</code> as a valid filter attribute path
-         * currently, and filter is required. This API returns minimum attributes,
-         * including <code>UserId</code> and <code>UserName</code> in the
-         * response.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/ListUsers">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListUsers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListUsersAsync(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

@@ -27,7 +27,9 @@ namespace Model
 
   /**
    * <p>Provides a summary of the properties of a recipe. For a complete listing,
-   * call the <a>DescribeRecipe</a> API.</p><p><h3>See Also:</h3>   <a
+   * call the <a
+   * href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecipe.html">DescribeRecipe</a>
+   * API.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/RecipeSummary">AWS
    * API Reference</a></p>
    */

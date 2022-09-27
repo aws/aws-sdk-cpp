@@ -40,6 +40,78 @@ namespace Model
 
 
     /**
+     * <p>The package's ARN.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The package's ARN.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The package's ARN.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /**
+     * <p>The package's ARN.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    /**
+     * <p>The package's ARN.</p>
+     */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /**
+     * <p>The package's ARN.</p>
+     */
+    inline PackageListItem& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The package's ARN.</p>
+     */
+    inline PackageListItem& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The package's ARN.</p>
+     */
+    inline PackageListItem& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * <p>When the package was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
+
+    /**
+     * <p>When the package was created.</p>
+     */
+    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
+
+    /**
+     * <p>When the package was created.</p>
+     */
+    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
+
+    /**
+     * <p>When the package was created.</p>
+     */
+    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
+
+    /**
+     * <p>When the package was created.</p>
+     */
+    inline PackageListItem& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
+
+    /**
+     * <p>When the package was created.</p>
+     */
+    inline PackageListItem& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+
+
+    /**
      * <p>The package's ID.</p>
      */
     inline const Aws::String& GetPackageId() const{ return m_packageId; }
@@ -122,78 +194,6 @@ namespace Model
 
 
     /**
-     * <p>The package's ARN.</p>
-     */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The package's ARN.</p>
-     */
-    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p>The package's ARN.</p>
-     */
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p>The package's ARN.</p>
-     */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p>The package's ARN.</p>
-     */
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p>The package's ARN.</p>
-     */
-    inline PackageListItem& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The package's ARN.</p>
-     */
-    inline PackageListItem& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The package's ARN.</p>
-     */
-    inline PackageListItem& WithArn(const char* value) { SetArn(value); return *this;}
-
-
-    /**
-     * <p>When the package was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
-
-    /**
-     * <p>When the package was created.</p>
-     */
-    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
-
-    /**
-     * <p>When the package was created.</p>
-     */
-    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
-
-    /**
-     * <p>When the package was created.</p>
-     */
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
-
-    /**
-     * <p>When the package was created.</p>
-     */
-    inline PackageListItem& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
-
-    /**
-     * <p>When the package was created.</p>
-     */
-    inline PackageListItem& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
-
-
-    /**
      * <p>The package's tags.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -260,17 +260,17 @@ namespace Model
 
   private:
 
-    Aws::String m_packageId;
-    bool m_packageIdHasBeenSet;
-
-    Aws::String m_packageName;
-    bool m_packageNameHasBeenSet;
-
     Aws::String m_arn;
     bool m_arnHasBeenSet;
 
     Aws::Utils::DateTime m_createdTime;
     bool m_createdTimeHasBeenSet;
+
+    Aws::String m_packageId;
+    bool m_packageIdHasBeenSet;
+
+    Aws::String m_packageName;
+    bool m_packageNameHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

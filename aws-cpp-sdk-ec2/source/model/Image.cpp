@@ -58,6 +58,8 @@ Image::Image() :
     m_virtualizationTypeHasBeenSet(false),
     m_bootMode(BootModeValues::NOT_SET),
     m_bootModeHasBeenSet(false),
+    m_tpmSupport(TpmSupportValues::NOT_SET),
+    m_tpmSupportHasBeenSet(false),
     m_deprecationTimeHasBeenSet(false)
 {
 }
@@ -100,6 +102,8 @@ Image::Image(const XmlNode& xmlNode) :
     m_virtualizationTypeHasBeenSet(false),
     m_bootMode(BootModeValues::NOT_SET),
     m_bootModeHasBeenSet(false),
+    m_tpmSupport(TpmSupportValues::NOT_SET),
+    m_tpmSupportHasBeenSet(false),
     m_deprecationTimeHasBeenSet(false)
 {
   *this = xmlNode;
@@ -291,6 +295,12 @@ Image& Image::operator =(const XmlNode& xmlNode)
       m_bootMode = BootModeValuesMapper::GetBootModeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bootModeNode.GetText()).c_str()).c_str());
       m_bootModeHasBeenSet = true;
     }
+    XmlNode tpmSupportNode = resultNode.FirstChild("tpmSupport");
+    if(!tpmSupportNode.IsNull())
+    {
+      m_tpmSupport = TpmSupportValuesMapper::GetTpmSupportValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tpmSupportNode.GetText()).c_str()).c_str());
+      m_tpmSupportHasBeenSet = true;
+    }
     XmlNode deprecationTimeNode = resultNode.FirstChild("deprecationTime");
     if(!deprecationTimeNode.IsNull())
     {
@@ -459,6 +469,11 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       oStream << location << index << locationValue << ".BootMode=" << BootModeValuesMapper::GetNameForBootModeValues(m_bootMode) << "&";
   }
 
+  if(m_tpmSupportHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TpmSupport=" << TpmSupportValuesMapper::GetNameForTpmSupportValues(m_tpmSupport) << "&";
+  }
+
   if(m_deprecationTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".DeprecationTime=" << StringUtils::URLEncode(m_deprecationTime.c_str()) << "&";
@@ -595,6 +610,10 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_bootModeHasBeenSet)
   {
       oStream << location << ".BootMode=" << BootModeValuesMapper::GetNameForBootModeValues(m_bootMode) << "&";
+  }
+  if(m_tpmSupportHasBeenSet)
+  {
+      oStream << location << ".TpmSupport=" << TpmSupportValuesMapper::GetNameForTpmSupportValues(m_tpmSupport) << "&";
   }
   if(m_deprecationTimeHasBeenSet)
   {

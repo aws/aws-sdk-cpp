@@ -126,42 +126,42 @@ namespace Model
 
 
     /**
-     * <p>Request to describe Job log by last date.</p>
+     * <p>Request to describe job log items by last date.</p>
      */
     inline const Aws::String& GetToDate() const{ return m_toDate; }
 
     /**
-     * <p>Request to describe Job log by last date.</p>
+     * <p>Request to describe job log items by last date.</p>
      */
     inline bool ToDateHasBeenSet() const { return m_toDateHasBeenSet; }
 
     /**
-     * <p>Request to describe Job log by last date.</p>
+     * <p>Request to describe job log items by last date.</p>
      */
     inline void SetToDate(const Aws::String& value) { m_toDateHasBeenSet = true; m_toDate = value; }
 
     /**
-     * <p>Request to describe Job log by last date.</p>
+     * <p>Request to describe job log items by last date.</p>
      */
     inline void SetToDate(Aws::String&& value) { m_toDateHasBeenSet = true; m_toDate = std::move(value); }
 
     /**
-     * <p>Request to describe Job log by last date.</p>
+     * <p>Request to describe job log items by last date.</p>
      */
     inline void SetToDate(const char* value) { m_toDateHasBeenSet = true; m_toDate.assign(value); }
 
     /**
-     * <p>Request to describe Job log by last date.</p>
+     * <p>Request to describe job log items by last date.</p>
      */
     inline DescribeJobsRequestFilters& WithToDate(const Aws::String& value) { SetToDate(value); return *this;}
 
     /**
-     * <p>Request to describe Job log by last date.</p>
+     * <p>Request to describe job log items by last date.</p>
      */
     inline DescribeJobsRequestFilters& WithToDate(Aws::String&& value) { SetToDate(std::move(value)); return *this;}
 
     /**
-     * <p>Request to describe Job log by last date.</p>
+     * <p>Request to describe job log items by last date.</p>
      */
     inline DescribeJobsRequestFilters& WithToDate(const char* value) { SetToDate(value); return *this;}
 

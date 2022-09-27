@@ -41,7 +41,8 @@ Block::Block() :
     m_selectionStatus(SelectionStatus::NOT_SET),
     m_selectionStatusHasBeenSet(false),
     m_page(0),
-    m_pageHasBeenSet(false)
+    m_pageHasBeenSet(false),
+    m_queryHasBeenSet(false)
 {
 }
 
@@ -68,7 +69,8 @@ Block::Block(JsonView jsonValue) :
     m_selectionStatus(SelectionStatus::NOT_SET),
     m_selectionStatusHasBeenSet(false),
     m_page(0),
-    m_pageHasBeenSet(false)
+    m_pageHasBeenSet(false),
+    m_queryHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -179,6 +181,13 @@ Block& Block::operator =(JsonView jsonValue)
     m_pageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Query"))
+  {
+    m_query = jsonValue.GetObject("Query");
+
+    m_queryHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -274,6 +283,12 @@ JsonValue Block::Jsonize() const
   if(m_pageHasBeenSet)
   {
    payload.WithInteger("Page", m_page);
+
+  }
+
+  if(m_queryHasBeenSet)
+  {
+   payload.WithObject("Query", m_query.Jsonize());
 
   }
 

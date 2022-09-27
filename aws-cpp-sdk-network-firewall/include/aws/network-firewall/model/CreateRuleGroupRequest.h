@@ -10,6 +10,8 @@
 #include <aws/network-firewall/model/RuleGroup.h>
 #include <aws/network-firewall/model/RuleGroupType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/network-firewall/model/EncryptionConfiguration.h>
+#include <aws/network-firewall/model/SourceMetadata.h>
 #include <aws/network-firewall/model/Tag.h>
 #include <utility>
 
@@ -525,6 +527,86 @@ namespace Model
      */
     inline CreateRuleGroupRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p>A complex type that contains settings for encryption of your rule group
+     * resources.</p>
+     */
+    inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
+
+    /**
+     * <p>A complex type that contains settings for encryption of your rule group
+     * resources.</p>
+     */
+    inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
+
+    /**
+     * <p>A complex type that contains settings for encryption of your rule group
+     * resources.</p>
+     */
+    inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
+
+    /**
+     * <p>A complex type that contains settings for encryption of your rule group
+     * resources.</p>
+     */
+    inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
+
+    /**
+     * <p>A complex type that contains settings for encryption of your rule group
+     * resources.</p>
+     */
+    inline CreateRuleGroupRequest& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
+
+    /**
+     * <p>A complex type that contains settings for encryption of your rule group
+     * resources.</p>
+     */
+    inline CreateRuleGroupRequest& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A complex type that contains metadata about the rule group that your own rule
+     * group is copied from. You can use the metadata to keep track of updates made to
+     * the originating rule group.</p>
+     */
+    inline const SourceMetadata& GetSourceMetadata() const{ return m_sourceMetadata; }
+
+    /**
+     * <p>A complex type that contains metadata about the rule group that your own rule
+     * group is copied from. You can use the metadata to keep track of updates made to
+     * the originating rule group.</p>
+     */
+    inline bool SourceMetadataHasBeenSet() const { return m_sourceMetadataHasBeenSet; }
+
+    /**
+     * <p>A complex type that contains metadata about the rule group that your own rule
+     * group is copied from. You can use the metadata to keep track of updates made to
+     * the originating rule group.</p>
+     */
+    inline void SetSourceMetadata(const SourceMetadata& value) { m_sourceMetadataHasBeenSet = true; m_sourceMetadata = value; }
+
+    /**
+     * <p>A complex type that contains metadata about the rule group that your own rule
+     * group is copied from. You can use the metadata to keep track of updates made to
+     * the originating rule group.</p>
+     */
+    inline void SetSourceMetadata(SourceMetadata&& value) { m_sourceMetadataHasBeenSet = true; m_sourceMetadata = std::move(value); }
+
+    /**
+     * <p>A complex type that contains metadata about the rule group that your own rule
+     * group is copied from. You can use the metadata to keep track of updates made to
+     * the originating rule group.</p>
+     */
+    inline CreateRuleGroupRequest& WithSourceMetadata(const SourceMetadata& value) { SetSourceMetadata(value); return *this;}
+
+    /**
+     * <p>A complex type that contains metadata about the rule group that your own rule
+     * group is copied from. You can use the metadata to keep track of updates made to
+     * the originating rule group.</p>
+     */
+    inline CreateRuleGroupRequest& WithSourceMetadata(SourceMetadata&& value) { SetSourceMetadata(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_ruleGroupName;
@@ -550,6 +632,12 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
+    EncryptionConfiguration m_encryptionConfiguration;
+    bool m_encryptionConfigurationHasBeenSet;
+
+    SourceMetadata m_sourceMetadata;
+    bool m_sourceMetadataHasBeenSet;
   };
 
 } // namespace Model

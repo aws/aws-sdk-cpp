@@ -8,6 +8,7 @@
 #include <aws/athena/model/QueryExecutionState.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/athena/model/AthenaError.h>
 #include <utility>
 
 namespace Aws
@@ -227,6 +228,37 @@ namespace Model
      */
     inline QueryExecutionStatus& WithCompletionDateTime(Aws::Utils::DateTime&& value) { SetCompletionDateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides information about an Athena query error.</p>
+     */
+    inline const AthenaError& GetAthenaError() const{ return m_athenaError; }
+
+    /**
+     * <p>Provides information about an Athena query error.</p>
+     */
+    inline bool AthenaErrorHasBeenSet() const { return m_athenaErrorHasBeenSet; }
+
+    /**
+     * <p>Provides information about an Athena query error.</p>
+     */
+    inline void SetAthenaError(const AthenaError& value) { m_athenaErrorHasBeenSet = true; m_athenaError = value; }
+
+    /**
+     * <p>Provides information about an Athena query error.</p>
+     */
+    inline void SetAthenaError(AthenaError&& value) { m_athenaErrorHasBeenSet = true; m_athenaError = std::move(value); }
+
+    /**
+     * <p>Provides information about an Athena query error.</p>
+     */
+    inline QueryExecutionStatus& WithAthenaError(const AthenaError& value) { SetAthenaError(value); return *this;}
+
+    /**
+     * <p>Provides information about an Athena query error.</p>
+     */
+    inline QueryExecutionStatus& WithAthenaError(AthenaError&& value) { SetAthenaError(std::move(value)); return *this;}
+
   private:
 
     QueryExecutionState m_state;
@@ -240,6 +272,9 @@ namespace Model
 
     Aws::Utils::DateTime m_completionDateTime;
     bool m_completionDateTimeHasBeenSet;
+
+    AthenaError m_athenaError;
+    bool m_athenaErrorHasBeenSet;
   };
 
 } // namespace Model

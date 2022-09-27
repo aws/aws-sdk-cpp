@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/imagebuilder/model/S3ExportConfiguration.h>
 #include <aws/imagebuilder/model/LaunchTemplateConfiguration.h>
+#include <aws/imagebuilder/model/FastLaunchConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -291,6 +292,47 @@ namespace Model
      */
     inline Distribution& WithS3ExportConfiguration(S3ExportConfiguration&& value) { SetS3ExportConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Windows faster-launching configurations to use for AMI distribution.</p>
+     */
+    inline const Aws::Vector<FastLaunchConfiguration>& GetFastLaunchConfigurations() const{ return m_fastLaunchConfigurations; }
+
+    /**
+     * <p>The Windows faster-launching configurations to use for AMI distribution.</p>
+     */
+    inline bool FastLaunchConfigurationsHasBeenSet() const { return m_fastLaunchConfigurationsHasBeenSet; }
+
+    /**
+     * <p>The Windows faster-launching configurations to use for AMI distribution.</p>
+     */
+    inline void SetFastLaunchConfigurations(const Aws::Vector<FastLaunchConfiguration>& value) { m_fastLaunchConfigurationsHasBeenSet = true; m_fastLaunchConfigurations = value; }
+
+    /**
+     * <p>The Windows faster-launching configurations to use for AMI distribution.</p>
+     */
+    inline void SetFastLaunchConfigurations(Aws::Vector<FastLaunchConfiguration>&& value) { m_fastLaunchConfigurationsHasBeenSet = true; m_fastLaunchConfigurations = std::move(value); }
+
+    /**
+     * <p>The Windows faster-launching configurations to use for AMI distribution.</p>
+     */
+    inline Distribution& WithFastLaunchConfigurations(const Aws::Vector<FastLaunchConfiguration>& value) { SetFastLaunchConfigurations(value); return *this;}
+
+    /**
+     * <p>The Windows faster-launching configurations to use for AMI distribution.</p>
+     */
+    inline Distribution& WithFastLaunchConfigurations(Aws::Vector<FastLaunchConfiguration>&& value) { SetFastLaunchConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>The Windows faster-launching configurations to use for AMI distribution.</p>
+     */
+    inline Distribution& AddFastLaunchConfigurations(const FastLaunchConfiguration& value) { m_fastLaunchConfigurationsHasBeenSet = true; m_fastLaunchConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>The Windows faster-launching configurations to use for AMI distribution.</p>
+     */
+    inline Distribution& AddFastLaunchConfigurations(FastLaunchConfiguration&& value) { m_fastLaunchConfigurationsHasBeenSet = true; m_fastLaunchConfigurations.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_region;
@@ -310,6 +352,9 @@ namespace Model
 
     S3ExportConfiguration m_s3ExportConfiguration;
     bool m_s3ExportConfigurationHasBeenSet;
+
+    Aws::Vector<FastLaunchConfiguration> m_fastLaunchConfigurations;
+    bool m_fastLaunchConfigurationsHasBeenSet;
   };
 
 } // namespace Model

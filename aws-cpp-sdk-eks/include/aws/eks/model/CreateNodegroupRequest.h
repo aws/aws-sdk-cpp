@@ -167,7 +167,7 @@ namespace Model
      * specify <code>diskSize</code>, or the node group deployment will fail. For more
      * information about using launch templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline int GetDiskSize() const{ return m_diskSize; }
 
@@ -177,7 +177,7 @@ namespace Model
      * specify <code>diskSize</code>, or the node group deployment will fail. For more
      * information about using launch templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline bool DiskSizeHasBeenSet() const { return m_diskSizeHasBeenSet; }
 
@@ -187,7 +187,7 @@ namespace Model
      * specify <code>diskSize</code>, or the node group deployment will fail. For more
      * information about using launch templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline void SetDiskSize(int value) { m_diskSizeHasBeenSet = true; m_diskSize = value; }
 
@@ -197,7 +197,7 @@ namespace Model
      * specify <code>diskSize</code>, or the node group deployment will fail. For more
      * information about using launch templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline CreateNodegroupRequest& WithDiskSize(int value) { SetDiskSize(value); return *this;}
 
@@ -210,7 +210,7 @@ namespace Model
      * will fail. For more information about using launch templates with Amazon EKS,
      * see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
 
@@ -222,7 +222,7 @@ namespace Model
      * will fail. For more information about using launch templates with Amazon EKS,
      * see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
 
@@ -234,7 +234,7 @@ namespace Model
      * will fail. For more information about using launch templates with Amazon EKS,
      * see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
 
@@ -246,7 +246,7 @@ namespace Model
      * will fail. For more information about using launch templates with Amazon EKS,
      * see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnetsHasBeenSet = true; m_subnets = std::move(value); }
 
@@ -258,7 +258,7 @@ namespace Model
      * will fail. For more information about using launch templates with Amazon EKS,
      * see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline CreateNodegroupRequest& WithSubnets(const Aws::Vector<Aws::String>& value) { SetSubnets(value); return *this;}
 
@@ -270,7 +270,7 @@ namespace Model
      * will fail. For more information about using launch templates with Amazon EKS,
      * see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline CreateNodegroupRequest& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(std::move(value)); return *this;}
 
@@ -282,7 +282,7 @@ namespace Model
      * will fail. For more information about using launch templates with Amazon EKS,
      * see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline CreateNodegroupRequest& AddSubnets(const Aws::String& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
@@ -294,7 +294,7 @@ namespace Model
      * will fail. For more information about using launch templates with Amazon EKS,
      * see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline CreateNodegroupRequest& AddSubnets(Aws::String&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
 
@@ -306,7 +306,7 @@ namespace Model
      * will fail. For more information about using launch templates with Amazon EKS,
      * see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline CreateNodegroupRequest& AddSubnets(const char* value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
@@ -493,7 +493,7 @@ namespace Model
      * group deployment will fail. For more information about using launch templates
      * with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline const AMITypes& GetAmiType() const{ return m_amiType; }
 
@@ -507,7 +507,7 @@ namespace Model
      * group deployment will fail. For more information about using launch templates
      * with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline bool AmiTypeHasBeenSet() const { return m_amiTypeHasBeenSet; }
 
@@ -521,7 +521,7 @@ namespace Model
      * group deployment will fail. For more information about using launch templates
      * with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline void SetAmiType(const AMITypes& value) { m_amiTypeHasBeenSet = true; m_amiType = value; }
 
@@ -535,7 +535,7 @@ namespace Model
      * group deployment will fail. For more information about using launch templates
      * with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline void SetAmiType(AMITypes&& value) { m_amiTypeHasBeenSet = true; m_amiType = std::move(value); }
 
@@ -549,7 +549,7 @@ namespace Model
      * group deployment will fail. For more information about using launch templates
      * with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline CreateNodegroupRequest& WithAmiType(const AMITypes& value) { SetAmiType(value); return *this;}
 
@@ -563,7 +563,7 @@ namespace Model
      * group deployment will fail. For more information about using launch templates
      * with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline CreateNodegroupRequest& WithAmiType(AMITypes&& value) { SetAmiType(std::move(value)); return *this;}
 
@@ -574,7 +574,7 @@ namespace Model
      * <code>remoteAccess</code>, or the node group deployment will fail. For more
      * information about using launch templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline const RemoteAccessConfig& GetRemoteAccess() const{ return m_remoteAccess; }
 
@@ -584,7 +584,7 @@ namespace Model
      * <code>remoteAccess</code>, or the node group deployment will fail. For more
      * information about using launch templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline bool RemoteAccessHasBeenSet() const { return m_remoteAccessHasBeenSet; }
 
@@ -594,7 +594,7 @@ namespace Model
      * <code>remoteAccess</code>, or the node group deployment will fail. For more
      * information about using launch templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline void SetRemoteAccess(const RemoteAccessConfig& value) { m_remoteAccessHasBeenSet = true; m_remoteAccess = value; }
 
@@ -604,7 +604,7 @@ namespace Model
      * <code>remoteAccess</code>, or the node group deployment will fail. For more
      * information about using launch templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline void SetRemoteAccess(RemoteAccessConfig&& value) { m_remoteAccessHasBeenSet = true; m_remoteAccess = std::move(value); }
 
@@ -614,7 +614,7 @@ namespace Model
      * <code>remoteAccess</code>, or the node group deployment will fail. For more
      * information about using launch templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline CreateNodegroupRequest& WithRemoteAccess(const RemoteAccessConfig& value) { SetRemoteAccess(value); return *this;}
 
@@ -624,7 +624,7 @@ namespace Model
      * <code>remoteAccess</code>, or the node group deployment will fail. For more
      * information about using launch templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline CreateNodegroupRequest& WithRemoteAccess(RemoteAccessConfig&& value) { SetRemoteAccess(std::move(value)); return *this;}
 
@@ -636,7 +636,7 @@ namespace Model
      * calls through an IAM instance profile and associated policies. Before you can
      * launch nodes and register them into a cluster, you must create an IAM role for
      * those nodes to use when they are launched. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon
      * EKS node IAM role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. If you
      * specify <code>launchTemplate</code>, then don't specify <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">
@@ -644,7 +644,7 @@ namespace Model
      * deployment will fail. For more information about using launch templates with
      * Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline const Aws::String& GetNodeRole() const{ return m_nodeRole; }
 
@@ -655,7 +655,7 @@ namespace Model
      * calls through an IAM instance profile and associated policies. Before you can
      * launch nodes and register them into a cluster, you must create an IAM role for
      * those nodes to use when they are launched. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon
      * EKS node IAM role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. If you
      * specify <code>launchTemplate</code>, then don't specify <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">
@@ -663,7 +663,7 @@ namespace Model
      * deployment will fail. For more information about using launch templates with
      * Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline bool NodeRoleHasBeenSet() const { return m_nodeRoleHasBeenSet; }
 
@@ -674,7 +674,7 @@ namespace Model
      * calls through an IAM instance profile and associated policies. Before you can
      * launch nodes and register them into a cluster, you must create an IAM role for
      * those nodes to use when they are launched. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon
      * EKS node IAM role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. If you
      * specify <code>launchTemplate</code>, then don't specify <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">
@@ -682,7 +682,7 @@ namespace Model
      * deployment will fail. For more information about using launch templates with
      * Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline void SetNodeRole(const Aws::String& value) { m_nodeRoleHasBeenSet = true; m_nodeRole = value; }
 
@@ -693,7 +693,7 @@ namespace Model
      * calls through an IAM instance profile and associated policies. Before you can
      * launch nodes and register them into a cluster, you must create an IAM role for
      * those nodes to use when they are launched. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon
      * EKS node IAM role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. If you
      * specify <code>launchTemplate</code>, then don't specify <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">
@@ -701,7 +701,7 @@ namespace Model
      * deployment will fail. For more information about using launch templates with
      * Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline void SetNodeRole(Aws::String&& value) { m_nodeRoleHasBeenSet = true; m_nodeRole = std::move(value); }
 
@@ -712,7 +712,7 @@ namespace Model
      * calls through an IAM instance profile and associated policies. Before you can
      * launch nodes and register them into a cluster, you must create an IAM role for
      * those nodes to use when they are launched. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon
      * EKS node IAM role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. If you
      * specify <code>launchTemplate</code>, then don't specify <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">
@@ -720,7 +720,7 @@ namespace Model
      * deployment will fail. For more information about using launch templates with
      * Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline void SetNodeRole(const char* value) { m_nodeRoleHasBeenSet = true; m_nodeRole.assign(value); }
 
@@ -731,7 +731,7 @@ namespace Model
      * calls through an IAM instance profile and associated policies. Before you can
      * launch nodes and register them into a cluster, you must create an IAM role for
      * those nodes to use when they are launched. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon
      * EKS node IAM role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. If you
      * specify <code>launchTemplate</code>, then don't specify <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">
@@ -739,7 +739,7 @@ namespace Model
      * deployment will fail. For more information about using launch templates with
      * Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline CreateNodegroupRequest& WithNodeRole(const Aws::String& value) { SetNodeRole(value); return *this;}
 
@@ -750,7 +750,7 @@ namespace Model
      * calls through an IAM instance profile and associated policies. Before you can
      * launch nodes and register them into a cluster, you must create an IAM role for
      * those nodes to use when they are launched. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon
      * EKS node IAM role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. If you
      * specify <code>launchTemplate</code>, then don't specify <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">
@@ -758,7 +758,7 @@ namespace Model
      * deployment will fail. For more information about using launch templates with
      * Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline CreateNodegroupRequest& WithNodeRole(Aws::String&& value) { SetNodeRole(std::move(value)); return *this;}
 
@@ -769,7 +769,7 @@ namespace Model
      * calls through an IAM instance profile and associated policies. Before you can
      * launch nodes and register them into a cluster, you must create an IAM role for
      * those nodes to use when they are launched. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon
      * EKS node IAM role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. If you
      * specify <code>launchTemplate</code>, then don't specify <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">
@@ -777,7 +777,7 @@ namespace Model
      * deployment will fail. For more information about using launch templates with
      * Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline CreateNodegroupRequest& WithNodeRole(const char* value) { SetNodeRole(value); return *this;}
 
@@ -862,42 +862,66 @@ namespace Model
 
 
     /**
-     * <p>The Kubernetes taints to be applied to the nodes in the node group.</p>
+     * <p>The Kubernetes taints to be applied to the nodes in the node group. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
      */
     inline const Aws::Vector<Taint>& GetTaints() const{ return m_taints; }
 
     /**
-     * <p>The Kubernetes taints to be applied to the nodes in the node group.</p>
+     * <p>The Kubernetes taints to be applied to the nodes in the node group. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
      */
     inline bool TaintsHasBeenSet() const { return m_taintsHasBeenSet; }
 
     /**
-     * <p>The Kubernetes taints to be applied to the nodes in the node group.</p>
+     * <p>The Kubernetes taints to be applied to the nodes in the node group. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
      */
     inline void SetTaints(const Aws::Vector<Taint>& value) { m_taintsHasBeenSet = true; m_taints = value; }
 
     /**
-     * <p>The Kubernetes taints to be applied to the nodes in the node group.</p>
+     * <p>The Kubernetes taints to be applied to the nodes in the node group. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
      */
     inline void SetTaints(Aws::Vector<Taint>&& value) { m_taintsHasBeenSet = true; m_taints = std::move(value); }
 
     /**
-     * <p>The Kubernetes taints to be applied to the nodes in the node group.</p>
+     * <p>The Kubernetes taints to be applied to the nodes in the node group. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
      */
     inline CreateNodegroupRequest& WithTaints(const Aws::Vector<Taint>& value) { SetTaints(value); return *this;}
 
     /**
-     * <p>The Kubernetes taints to be applied to the nodes in the node group.</p>
+     * <p>The Kubernetes taints to be applied to the nodes in the node group. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
      */
     inline CreateNodegroupRequest& WithTaints(Aws::Vector<Taint>&& value) { SetTaints(std::move(value)); return *this;}
 
     /**
-     * <p>The Kubernetes taints to be applied to the nodes in the node group.</p>
+     * <p>The Kubernetes taints to be applied to the nodes in the node group. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
      */
     inline CreateNodegroupRequest& AddTaints(const Taint& value) { m_taintsHasBeenSet = true; m_taints.push_back(value); return *this; }
 
     /**
-     * <p>The Kubernetes taints to be applied to the nodes in the node group.</p>
+     * <p>The Kubernetes taints to be applied to the nodes in the node group. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
      */
     inline CreateNodegroupRequest& AddTaints(Taint&& value) { m_taintsHasBeenSet = true; m_taints.push_back(std::move(value)); return *this; }
 
@@ -1181,7 +1205,7 @@ namespace Model
      * group deployment will fail. For more information about using launch templates
      * with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
@@ -1193,7 +1217,7 @@ namespace Model
      * group deployment will fail. For more information about using launch templates
      * with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
@@ -1205,7 +1229,7 @@ namespace Model
      * group deployment will fail. For more information about using launch templates
      * with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
@@ -1217,7 +1241,7 @@ namespace Model
      * group deployment will fail. For more information about using launch templates
      * with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
@@ -1229,7 +1253,7 @@ namespace Model
      * group deployment will fail. For more information about using launch templates
      * with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
@@ -1241,7 +1265,7 @@ namespace Model
      * group deployment will fail. For more information about using launch templates
      * with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline CreateNodegroupRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
@@ -1253,7 +1277,7 @@ namespace Model
      * group deployment will fail. For more information about using launch templates
      * with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline CreateNodegroupRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
@@ -1265,7 +1289,7 @@ namespace Model
      * group deployment will fail. For more information about using launch templates
      * with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline CreateNodegroupRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 
@@ -1281,7 +1305,7 @@ namespace Model
      * group deployment will fail. For more information about using launch templates
      * with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline const Aws::String& GetReleaseVersion() const{ return m_releaseVersion; }
 
@@ -1296,7 +1320,7 @@ namespace Model
      * group deployment will fail. For more information about using launch templates
      * with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline bool ReleaseVersionHasBeenSet() const { return m_releaseVersionHasBeenSet; }
 
@@ -1311,7 +1335,7 @@ namespace Model
      * group deployment will fail. For more information about using launch templates
      * with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline void SetReleaseVersion(const Aws::String& value) { m_releaseVersionHasBeenSet = true; m_releaseVersion = value; }
 
@@ -1326,7 +1350,7 @@ namespace Model
      * group deployment will fail. For more information about using launch templates
      * with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline void SetReleaseVersion(Aws::String&& value) { m_releaseVersionHasBeenSet = true; m_releaseVersion = std::move(value); }
 
@@ -1341,7 +1365,7 @@ namespace Model
      * group deployment will fail. For more information about using launch templates
      * with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline void SetReleaseVersion(const char* value) { m_releaseVersionHasBeenSet = true; m_releaseVersion.assign(value); }
 
@@ -1356,7 +1380,7 @@ namespace Model
      * group deployment will fail. For more information about using launch templates
      * with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline CreateNodegroupRequest& WithReleaseVersion(const Aws::String& value) { SetReleaseVersion(value); return *this;}
 
@@ -1371,7 +1395,7 @@ namespace Model
      * group deployment will fail. For more information about using launch templates
      * with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline CreateNodegroupRequest& WithReleaseVersion(Aws::String&& value) { SetReleaseVersion(std::move(value)); return *this;}
 
@@ -1386,7 +1410,7 @@ namespace Model
      * group deployment will fail. For more information about using launch templates
      * with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline CreateNodegroupRequest& WithReleaseVersion(const char* value) { SetReleaseVersion(value); return *this;}
 

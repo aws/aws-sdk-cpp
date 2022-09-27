@@ -115,22 +115,30 @@ namespace Model
 
 
     /**
-     * <p>The number of seconds the credential will be valid.</p>
+     * <p>The number of seconds the credential will be valid.</p> <p>This value must be
+     * less than or equal to the maximum session duration of the IAM role that the role
+     * alias references.</p>
      */
     inline int GetCredentialDurationSeconds() const{ return m_credentialDurationSeconds; }
 
     /**
-     * <p>The number of seconds the credential will be valid.</p>
+     * <p>The number of seconds the credential will be valid.</p> <p>This value must be
+     * less than or equal to the maximum session duration of the IAM role that the role
+     * alias references.</p>
      */
     inline bool CredentialDurationSecondsHasBeenSet() const { return m_credentialDurationSecondsHasBeenSet; }
 
     /**
-     * <p>The number of seconds the credential will be valid.</p>
+     * <p>The number of seconds the credential will be valid.</p> <p>This value must be
+     * less than or equal to the maximum session duration of the IAM role that the role
+     * alias references.</p>
      */
     inline void SetCredentialDurationSeconds(int value) { m_credentialDurationSecondsHasBeenSet = true; m_credentialDurationSeconds = value; }
 
     /**
-     * <p>The number of seconds the credential will be valid.</p>
+     * <p>The number of seconds the credential will be valid.</p> <p>This value must be
+     * less than or equal to the maximum session duration of the IAM role that the role
+     * alias references.</p>
      */
     inline UpdateRoleAliasRequest& WithCredentialDurationSeconds(int value) { SetCredentialDurationSeconds(value); return *this;}
 

@@ -11,6 +11,7 @@
 #include <aws/fsx/model/DriveCacheType.h>
 #include <aws/fsx/model/DataCompressionType.h>
 #include <aws/fsx/model/LustreLogCreateConfiguration.h>
+#include <aws/fsx/model/LustreRootSquashConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -479,7 +480,7 @@ namespace Model
      * data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption
      * of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
      * <p>Choose <code>PERSISTENT_1</code> for longer-term storage and for
-     * throughput-focused workloads that aren’t latency-sensitive. a.
+     * throughput-focused workloads that aren’t latency-sensitive.
      * <code>PERSISTENT_1</code> supports encryption of data in transit, and is
      * available in all Amazon Web Services Regions in which FSx for Lustre is
      * available.</p> <p>Choose <code>PERSISTENT_2</code> for longer-term storage and
@@ -513,7 +514,7 @@ namespace Model
      * data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption
      * of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
      * <p>Choose <code>PERSISTENT_1</code> for longer-term storage and for
-     * throughput-focused workloads that aren’t latency-sensitive. a.
+     * throughput-focused workloads that aren’t latency-sensitive.
      * <code>PERSISTENT_1</code> supports encryption of data in transit, and is
      * available in all Amazon Web Services Regions in which FSx for Lustre is
      * available.</p> <p>Choose <code>PERSISTENT_2</code> for longer-term storage and
@@ -547,7 +548,7 @@ namespace Model
      * data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption
      * of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
      * <p>Choose <code>PERSISTENT_1</code> for longer-term storage and for
-     * throughput-focused workloads that aren’t latency-sensitive. a.
+     * throughput-focused workloads that aren’t latency-sensitive.
      * <code>PERSISTENT_1</code> supports encryption of data in transit, and is
      * available in all Amazon Web Services Regions in which FSx for Lustre is
      * available.</p> <p>Choose <code>PERSISTENT_2</code> for longer-term storage and
@@ -581,7 +582,7 @@ namespace Model
      * data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption
      * of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
      * <p>Choose <code>PERSISTENT_1</code> for longer-term storage and for
-     * throughput-focused workloads that aren’t latency-sensitive. a.
+     * throughput-focused workloads that aren’t latency-sensitive.
      * <code>PERSISTENT_1</code> supports encryption of data in transit, and is
      * available in all Amazon Web Services Regions in which FSx for Lustre is
      * available.</p> <p>Choose <code>PERSISTENT_2</code> for longer-term storage and
@@ -615,7 +616,7 @@ namespace Model
      * data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption
      * of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
      * <p>Choose <code>PERSISTENT_1</code> for longer-term storage and for
-     * throughput-focused workloads that aren’t latency-sensitive. a.
+     * throughput-focused workloads that aren’t latency-sensitive.
      * <code>PERSISTENT_1</code> supports encryption of data in transit, and is
      * available in all Amazon Web Services Regions in which FSx for Lustre is
      * available.</p> <p>Choose <code>PERSISTENT_2</code> for longer-term storage and
@@ -649,7 +650,7 @@ namespace Model
      * data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption
      * of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
      * <p>Choose <code>PERSISTENT_1</code> for longer-term storage and for
-     * throughput-focused workloads that aren’t latency-sensitive. a.
+     * throughput-focused workloads that aren’t latency-sensitive.
      * <code>PERSISTENT_1</code> supports encryption of data in transit, and is
      * available in all Amazon Web Services Regions in which FSx for Lustre is
      * available.</p> <p>Choose <code>PERSISTENT_2</code> for longer-term storage and
@@ -699,10 +700,10 @@ namespace Model
      * added to the S3 bucket, any existing objects that are changed in the S3 bucket,
      * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/older-deployment-types.html#legacy-auto-import-from-s3">
      * Automatically import updates from your S3 bucket</a>.</p>  <p>This
      * parameter is not supported for file systems with the <code>Persistent_2</code>
-     * deployment type. Instead, use <code>CreateDataRepositoryAssociation"</code> to
+     * deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to
      * create a data repository association to link your Lustre file system to a data
      * repository.</p> 
      */
@@ -729,10 +730,10 @@ namespace Model
      * added to the S3 bucket, any existing objects that are changed in the S3 bucket,
      * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/older-deployment-types.html#legacy-auto-import-from-s3">
      * Automatically import updates from your S3 bucket</a>.</p>  <p>This
      * parameter is not supported for file systems with the <code>Persistent_2</code>
-     * deployment type. Instead, use <code>CreateDataRepositoryAssociation"</code> to
+     * deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to
      * create a data repository association to link your Lustre file system to a data
      * repository.</p> 
      */
@@ -759,10 +760,10 @@ namespace Model
      * added to the S3 bucket, any existing objects that are changed in the S3 bucket,
      * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/older-deployment-types.html#legacy-auto-import-from-s3">
      * Automatically import updates from your S3 bucket</a>.</p>  <p>This
      * parameter is not supported for file systems with the <code>Persistent_2</code>
-     * deployment type. Instead, use <code>CreateDataRepositoryAssociation"</code> to
+     * deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to
      * create a data repository association to link your Lustre file system to a data
      * repository.</p> 
      */
@@ -789,10 +790,10 @@ namespace Model
      * added to the S3 bucket, any existing objects that are changed in the S3 bucket,
      * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/older-deployment-types.html#legacy-auto-import-from-s3">
      * Automatically import updates from your S3 bucket</a>.</p>  <p>This
      * parameter is not supported for file systems with the <code>Persistent_2</code>
-     * deployment type. Instead, use <code>CreateDataRepositoryAssociation"</code> to
+     * deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to
      * create a data repository association to link your Lustre file system to a data
      * repository.</p> 
      */
@@ -819,10 +820,10 @@ namespace Model
      * added to the S3 bucket, any existing objects that are changed in the S3 bucket,
      * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/older-deployment-types.html#legacy-auto-import-from-s3">
      * Automatically import updates from your S3 bucket</a>.</p>  <p>This
      * parameter is not supported for file systems with the <code>Persistent_2</code>
-     * deployment type. Instead, use <code>CreateDataRepositoryAssociation"</code> to
+     * deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to
      * create a data repository association to link your Lustre file system to a data
      * repository.</p> 
      */
@@ -849,10 +850,10 @@ namespace Model
      * added to the S3 bucket, any existing objects that are changed in the S3 bucket,
      * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/older-deployment-types.html#legacy-auto-import-from-s3">
      * Automatically import updates from your S3 bucket</a>.</p>  <p>This
      * parameter is not supported for file systems with the <code>Persistent_2</code>
-     * deployment type. Instead, use <code>CreateDataRepositoryAssociation"</code> to
+     * deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to
      * create a data repository association to link your Lustre file system to a data
      * repository.</p> 
      */
@@ -1209,6 +1210,49 @@ namespace Model
      */
     inline CreateFileSystemLustreConfiguration& WithLogConfiguration(LustreLogCreateConfiguration&& value) { SetLogConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Lustre root squash configuration used when creating an Amazon FSx for
+     * Lustre file system. When enabled, root squash restricts root-level access from
+     * clients that try to access your file system as a root user.</p>
+     */
+    inline const LustreRootSquashConfiguration& GetRootSquashConfiguration() const{ return m_rootSquashConfiguration; }
+
+    /**
+     * <p>The Lustre root squash configuration used when creating an Amazon FSx for
+     * Lustre file system. When enabled, root squash restricts root-level access from
+     * clients that try to access your file system as a root user.</p>
+     */
+    inline bool RootSquashConfigurationHasBeenSet() const { return m_rootSquashConfigurationHasBeenSet; }
+
+    /**
+     * <p>The Lustre root squash configuration used when creating an Amazon FSx for
+     * Lustre file system. When enabled, root squash restricts root-level access from
+     * clients that try to access your file system as a root user.</p>
+     */
+    inline void SetRootSquashConfiguration(const LustreRootSquashConfiguration& value) { m_rootSquashConfigurationHasBeenSet = true; m_rootSquashConfiguration = value; }
+
+    /**
+     * <p>The Lustre root squash configuration used when creating an Amazon FSx for
+     * Lustre file system. When enabled, root squash restricts root-level access from
+     * clients that try to access your file system as a root user.</p>
+     */
+    inline void SetRootSquashConfiguration(LustreRootSquashConfiguration&& value) { m_rootSquashConfigurationHasBeenSet = true; m_rootSquashConfiguration = std::move(value); }
+
+    /**
+     * <p>The Lustre root squash configuration used when creating an Amazon FSx for
+     * Lustre file system. When enabled, root squash restricts root-level access from
+     * clients that try to access your file system as a root user.</p>
+     */
+    inline CreateFileSystemLustreConfiguration& WithRootSquashConfiguration(const LustreRootSquashConfiguration& value) { SetRootSquashConfiguration(value); return *this;}
+
+    /**
+     * <p>The Lustre root squash configuration used when creating an Amazon FSx for
+     * Lustre file system. When enabled, root squash restricts root-level access from
+     * clients that try to access your file system as a root user.</p>
+     */
+    inline CreateFileSystemLustreConfiguration& WithRootSquashConfiguration(LustreRootSquashConfiguration&& value) { SetRootSquashConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_weeklyMaintenanceStartTime;
@@ -1249,6 +1293,9 @@ namespace Model
 
     LustreLogCreateConfiguration m_logConfiguration;
     bool m_logConfigurationHasBeenSet;
+
+    LustreRootSquashConfiguration m_rootSquashConfiguration;
+    bool m_rootSquashConfigurationHasBeenSet;
   };
 
 } // namespace Model

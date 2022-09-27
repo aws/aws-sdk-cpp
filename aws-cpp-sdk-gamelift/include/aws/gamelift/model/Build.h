@@ -347,25 +347,29 @@ namespace Model
 
     /**
      * <p>File size of the uploaded game build, expressed in bytes. When the build
-     * status is <code>INITIALIZED</code>, this value is 0.</p>
+     * status is <code>INITIALIZED</code> or when using a custom Amazon S3 storage
+     * location, this value is 0.</p>
      */
     inline long long GetSizeOnDisk() const{ return m_sizeOnDisk; }
 
     /**
      * <p>File size of the uploaded game build, expressed in bytes. When the build
-     * status is <code>INITIALIZED</code>, this value is 0.</p>
+     * status is <code>INITIALIZED</code> or when using a custom Amazon S3 storage
+     * location, this value is 0.</p>
      */
     inline bool SizeOnDiskHasBeenSet() const { return m_sizeOnDiskHasBeenSet; }
 
     /**
      * <p>File size of the uploaded game build, expressed in bytes. When the build
-     * status is <code>INITIALIZED</code>, this value is 0.</p>
+     * status is <code>INITIALIZED</code> or when using a custom Amazon S3 storage
+     * location, this value is 0.</p>
      */
     inline void SetSizeOnDisk(long long value) { m_sizeOnDiskHasBeenSet = true; m_sizeOnDisk = value; }
 
     /**
      * <p>File size of the uploaded game build, expressed in bytes. When the build
-     * status is <code>INITIALIZED</code>, this value is 0.</p>
+     * status is <code>INITIALIZED</code> or when using a custom Amazon S3 storage
+     * location, this value is 0.</p>
      */
     inline Build& WithSizeOnDisk(long long value) { SetSizeOnDisk(value); return *this;}
 

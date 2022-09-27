@@ -151,42 +151,58 @@ namespace Model
 
 
     /**
-     * <p>The share identifier for the job.</p>
+     * <p>The share identifier for the job. If the job queue does not have a scheduling
+     * policy, then this parameter must not be specified. If the job queue has a
+     * scheduling policy, then this parameter must be specified.</p>
      */
     inline const Aws::String& GetShareIdentifier() const{ return m_shareIdentifier; }
 
     /**
-     * <p>The share identifier for the job.</p>
+     * <p>The share identifier for the job. If the job queue does not have a scheduling
+     * policy, then this parameter must not be specified. If the job queue has a
+     * scheduling policy, then this parameter must be specified.</p>
      */
     inline bool ShareIdentifierHasBeenSet() const { return m_shareIdentifierHasBeenSet; }
 
     /**
-     * <p>The share identifier for the job.</p>
+     * <p>The share identifier for the job. If the job queue does not have a scheduling
+     * policy, then this parameter must not be specified. If the job queue has a
+     * scheduling policy, then this parameter must be specified.</p>
      */
     inline void SetShareIdentifier(const Aws::String& value) { m_shareIdentifierHasBeenSet = true; m_shareIdentifier = value; }
 
     /**
-     * <p>The share identifier for the job.</p>
+     * <p>The share identifier for the job. If the job queue does not have a scheduling
+     * policy, then this parameter must not be specified. If the job queue has a
+     * scheduling policy, then this parameter must be specified.</p>
      */
     inline void SetShareIdentifier(Aws::String&& value) { m_shareIdentifierHasBeenSet = true; m_shareIdentifier = std::move(value); }
 
     /**
-     * <p>The share identifier for the job.</p>
+     * <p>The share identifier for the job. If the job queue does not have a scheduling
+     * policy, then this parameter must not be specified. If the job queue has a
+     * scheduling policy, then this parameter must be specified.</p>
      */
     inline void SetShareIdentifier(const char* value) { m_shareIdentifierHasBeenSet = true; m_shareIdentifier.assign(value); }
 
     /**
-     * <p>The share identifier for the job.</p>
+     * <p>The share identifier for the job. If the job queue does not have a scheduling
+     * policy, then this parameter must not be specified. If the job queue has a
+     * scheduling policy, then this parameter must be specified.</p>
      */
     inline SubmitJobRequest& WithShareIdentifier(const Aws::String& value) { SetShareIdentifier(value); return *this;}
 
     /**
-     * <p>The share identifier for the job.</p>
+     * <p>The share identifier for the job. If the job queue does not have a scheduling
+     * policy, then this parameter must not be specified. If the job queue has a
+     * scheduling policy, then this parameter must be specified.</p>
      */
     inline SubmitJobRequest& WithShareIdentifier(Aws::String&& value) { SetShareIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The share identifier for the job.</p>
+     * <p>The share identifier for the job. If the job queue does not have a scheduling
+     * policy, then this parameter must not be specified. If the job queue has a
+     * scheduling policy, then this parameter must be specified.</p>
      */
     inline SubmitJobRequest& WithShareIdentifier(const char* value) { SetShareIdentifier(value); return *this;}
 
@@ -544,60 +560,60 @@ namespace Model
 
     /**
      * <p>A list of container overrides in the JSON format that specify the name of a
-     * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container, which is specified in the
-     * job definition or the Docker image, with a <code>command</code> override. You
-     * can also override existing environment variables on a container or add new
+     * container in the specified job definition and the overrides it receives. You can
+     * override the default command for a container, which is specified in the job
+     * definition or the Docker image, with a <code>command</code> override. You can
+     * also override existing environment variables on a container or add new
      * environment variables to it with an <code>environment</code> override.</p>
      */
     inline const ContainerOverrides& GetContainerOverrides() const{ return m_containerOverrides; }
 
     /**
      * <p>A list of container overrides in the JSON format that specify the name of a
-     * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container, which is specified in the
-     * job definition or the Docker image, with a <code>command</code> override. You
-     * can also override existing environment variables on a container or add new
+     * container in the specified job definition and the overrides it receives. You can
+     * override the default command for a container, which is specified in the job
+     * definition or the Docker image, with a <code>command</code> override. You can
+     * also override existing environment variables on a container or add new
      * environment variables to it with an <code>environment</code> override.</p>
      */
     inline bool ContainerOverridesHasBeenSet() const { return m_containerOverridesHasBeenSet; }
 
     /**
      * <p>A list of container overrides in the JSON format that specify the name of a
-     * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container, which is specified in the
-     * job definition or the Docker image, with a <code>command</code> override. You
-     * can also override existing environment variables on a container or add new
+     * container in the specified job definition and the overrides it receives. You can
+     * override the default command for a container, which is specified in the job
+     * definition or the Docker image, with a <code>command</code> override. You can
+     * also override existing environment variables on a container or add new
      * environment variables to it with an <code>environment</code> override.</p>
      */
     inline void SetContainerOverrides(const ContainerOverrides& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = value; }
 
     /**
      * <p>A list of container overrides in the JSON format that specify the name of a
-     * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container, which is specified in the
-     * job definition or the Docker image, with a <code>command</code> override. You
-     * can also override existing environment variables on a container or add new
+     * container in the specified job definition and the overrides it receives. You can
+     * override the default command for a container, which is specified in the job
+     * definition or the Docker image, with a <code>command</code> override. You can
+     * also override existing environment variables on a container or add new
      * environment variables to it with an <code>environment</code> override.</p>
      */
     inline void SetContainerOverrides(ContainerOverrides&& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = std::move(value); }
 
     /**
      * <p>A list of container overrides in the JSON format that specify the name of a
-     * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container, which is specified in the
-     * job definition or the Docker image, with a <code>command</code> override. You
-     * can also override existing environment variables on a container or add new
+     * container in the specified job definition and the overrides it receives. You can
+     * override the default command for a container, which is specified in the job
+     * definition or the Docker image, with a <code>command</code> override. You can
+     * also override existing environment variables on a container or add new
      * environment variables to it with an <code>environment</code> override.</p>
      */
     inline SubmitJobRequest& WithContainerOverrides(const ContainerOverrides& value) { SetContainerOverrides(value); return *this;}
 
     /**
      * <p>A list of container overrides in the JSON format that specify the name of a
-     * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container, which is specified in the
-     * job definition or the Docker image, with a <code>command</code> override. You
-     * can also override existing environment variables on a container or add new
+     * container in the specified job definition and the overrides it receives. You can
+     * override the default command for a container, which is specified in the job
+     * definition or the Docker image, with a <code>command</code> override. You can
+     * also override existing environment variables on a container or add new
      * environment variables to it with an <code>environment</code> override.</p>
      */
     inline SubmitJobRequest& WithContainerOverrides(ContainerOverrides&& value) { SetContainerOverrides(std::move(value)); return *this;}

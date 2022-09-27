@@ -19,7 +19,8 @@ namespace Model
     BIGINT,
     BOOLEAN,
     DOUBLE,
-    VARCHAR
+    VARCHAR,
+    TIMESTAMP
   };
 
 namespace ScalarMeasureValueTypeMapper

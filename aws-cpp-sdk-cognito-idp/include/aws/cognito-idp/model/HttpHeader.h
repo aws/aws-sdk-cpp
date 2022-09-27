@@ -38,42 +38,42 @@ namespace Model
 
 
     /**
-     * <p>The header name</p>
+     * <p>The header name.</p>
      */
     inline const Aws::String& GetHeaderName() const{ return m_headerName; }
 
     /**
-     * <p>The header name</p>
+     * <p>The header name.</p>
      */
     inline bool HeaderNameHasBeenSet() const { return m_headerNameHasBeenSet; }
 
     /**
-     * <p>The header name</p>
+     * <p>The header name.</p>
      */
     inline void SetHeaderName(const Aws::String& value) { m_headerNameHasBeenSet = true; m_headerName = value; }
 
     /**
-     * <p>The header name</p>
+     * <p>The header name.</p>
      */
     inline void SetHeaderName(Aws::String&& value) { m_headerNameHasBeenSet = true; m_headerName = std::move(value); }
 
     /**
-     * <p>The header name</p>
+     * <p>The header name.</p>
      */
     inline void SetHeaderName(const char* value) { m_headerNameHasBeenSet = true; m_headerName.assign(value); }
 
     /**
-     * <p>The header name</p>
+     * <p>The header name.</p>
      */
     inline HttpHeader& WithHeaderName(const Aws::String& value) { SetHeaderName(value); return *this;}
 
     /**
-     * <p>The header name</p>
+     * <p>The header name.</p>
      */
     inline HttpHeader& WithHeaderName(Aws::String&& value) { SetHeaderName(std::move(value)); return *this;}
 
     /**
-     * <p>The header name</p>
+     * <p>The header name.</p>
      */
     inline HttpHeader& WithHeaderName(const char* value) { SetHeaderName(value); return *this;}
 

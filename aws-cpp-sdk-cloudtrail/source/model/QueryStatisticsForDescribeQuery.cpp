@@ -23,6 +23,8 @@ QueryStatisticsForDescribeQuery::QueryStatisticsForDescribeQuery() :
     m_eventsMatchedHasBeenSet(false),
     m_eventsScanned(0),
     m_eventsScannedHasBeenSet(false),
+    m_bytesScanned(0),
+    m_bytesScannedHasBeenSet(false),
     m_executionTimeInMillis(0),
     m_executionTimeInMillisHasBeenSet(false),
     m_creationTimeHasBeenSet(false)
@@ -34,6 +36,8 @@ QueryStatisticsForDescribeQuery::QueryStatisticsForDescribeQuery(JsonView jsonVa
     m_eventsMatchedHasBeenSet(false),
     m_eventsScanned(0),
     m_eventsScannedHasBeenSet(false),
+    m_bytesScanned(0),
+    m_bytesScannedHasBeenSet(false),
     m_executionTimeInMillis(0),
     m_executionTimeInMillisHasBeenSet(false),
     m_creationTimeHasBeenSet(false)
@@ -55,6 +59,13 @@ QueryStatisticsForDescribeQuery& QueryStatisticsForDescribeQuery::operator =(Jso
     m_eventsScanned = jsonValue.GetInt64("EventsScanned");
 
     m_eventsScannedHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("BytesScanned"))
+  {
+    m_bytesScanned = jsonValue.GetInt64("BytesScanned");
+
+    m_bytesScannedHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ExecutionTimeInMillis"))
@@ -87,6 +98,12 @@ JsonValue QueryStatisticsForDescribeQuery::Jsonize() const
   if(m_eventsScannedHasBeenSet)
   {
    payload.WithInt64("EventsScanned", m_eventsScanned);
+
+  }
+
+  if(m_bytesScannedHasBeenSet)
+  {
+   payload.WithInt64("BytesScanned", m_bytesScanned);
 
   }
 

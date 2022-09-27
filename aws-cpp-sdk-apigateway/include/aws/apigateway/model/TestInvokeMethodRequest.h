@@ -19,7 +19,7 @@ namespace Model
 {
 
   /**
-   * <p>Make a request to simulate the execution of a <a>Method</a>.</p><p><h3>See
+   * <p>Make a request to simulate the invocation of a Method.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TestInvokeMethodRequest">AWS
    * API Reference</a></p>
@@ -39,124 +39,124 @@ namespace Model
 
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline TestInvokeMethodRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline TestInvokeMethodRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline TestInvokeMethodRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
 
     /**
-     * <p>[Required] Specifies a test invoke method request's resource ID.</p>
+     * <p>Specifies a test invoke method request's resource ID.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>[Required] Specifies a test invoke method request's resource ID.</p>
+     * <p>Specifies a test invoke method request's resource ID.</p>
      */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
-     * <p>[Required] Specifies a test invoke method request's resource ID.</p>
+     * <p>Specifies a test invoke method request's resource ID.</p>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>[Required] Specifies a test invoke method request's resource ID.</p>
+     * <p>Specifies a test invoke method request's resource ID.</p>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * <p>[Required] Specifies a test invoke method request's resource ID.</p>
+     * <p>Specifies a test invoke method request's resource ID.</p>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * <p>[Required] Specifies a test invoke method request's resource ID.</p>
+     * <p>Specifies a test invoke method request's resource ID.</p>
      */
     inline TestInvokeMethodRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>[Required] Specifies a test invoke method request's resource ID.</p>
+     * <p>Specifies a test invoke method request's resource ID.</p>
      */
     inline TestInvokeMethodRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] Specifies a test invoke method request's resource ID.</p>
+     * <p>Specifies a test invoke method request's resource ID.</p>
      */
     inline TestInvokeMethodRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
 
     /**
-     * <p>[Required] Specifies a test invoke method request's HTTP method.</p>
+     * <p>Specifies a test invoke method request's HTTP method.</p>
      */
     inline const Aws::String& GetHttpMethod() const{ return m_httpMethod; }
 
     /**
-     * <p>[Required] Specifies a test invoke method request's HTTP method.</p>
+     * <p>Specifies a test invoke method request's HTTP method.</p>
      */
     inline bool HttpMethodHasBeenSet() const { return m_httpMethodHasBeenSet; }
 
     /**
-     * <p>[Required] Specifies a test invoke method request's HTTP method.</p>
+     * <p>Specifies a test invoke method request's HTTP method.</p>
      */
     inline void SetHttpMethod(const Aws::String& value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
 
     /**
-     * <p>[Required] Specifies a test invoke method request's HTTP method.</p>
+     * <p>Specifies a test invoke method request's HTTP method.</p>
      */
     inline void SetHttpMethod(Aws::String&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = std::move(value); }
 
     /**
-     * <p>[Required] Specifies a test invoke method request's HTTP method.</p>
+     * <p>Specifies a test invoke method request's HTTP method.</p>
      */
     inline void SetHttpMethod(const char* value) { m_httpMethodHasBeenSet = true; m_httpMethod.assign(value); }
 
     /**
-     * <p>[Required] Specifies a test invoke method request's HTTP method.</p>
+     * <p>Specifies a test invoke method request's HTTP method.</p>
      */
     inline TestInvokeMethodRequest& WithHttpMethod(const Aws::String& value) { SetHttpMethod(value); return *this;}
 
     /**
-     * <p>[Required] Specifies a test invoke method request's HTTP method.</p>
+     * <p>Specifies a test invoke method request's HTTP method.</p>
      */
     inline TestInvokeMethodRequest& WithHttpMethod(Aws::String&& value) { SetHttpMethod(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] Specifies a test invoke method request's HTTP method.</p>
+     * <p>Specifies a test invoke method request's HTTP method.</p>
      */
     inline TestInvokeMethodRequest& WithHttpMethod(const char* value) { SetHttpMethod(value); return *this;}
 
@@ -284,137 +284,137 @@ namespace Model
 
 
     /**
-     * <p>A <a>ClientCertificate</a> identifier to use in the test invocation. API
-     * Gateway will use the certificate when making the HTTPS request to the defined
-     * back-end endpoint.</p>
+     * <p>A ClientCertificate identifier to use in the test invocation. API Gateway
+     * will use the certificate when making the HTTPS request to the defined back-end
+     * endpoint.</p>
      */
     inline const Aws::String& GetClientCertificateId() const{ return m_clientCertificateId; }
 
     /**
-     * <p>A <a>ClientCertificate</a> identifier to use in the test invocation. API
-     * Gateway will use the certificate when making the HTTPS request to the defined
-     * back-end endpoint.</p>
+     * <p>A ClientCertificate identifier to use in the test invocation. API Gateway
+     * will use the certificate when making the HTTPS request to the defined back-end
+     * endpoint.</p>
      */
     inline bool ClientCertificateIdHasBeenSet() const { return m_clientCertificateIdHasBeenSet; }
 
     /**
-     * <p>A <a>ClientCertificate</a> identifier to use in the test invocation. API
-     * Gateway will use the certificate when making the HTTPS request to the defined
-     * back-end endpoint.</p>
+     * <p>A ClientCertificate identifier to use in the test invocation. API Gateway
+     * will use the certificate when making the HTTPS request to the defined back-end
+     * endpoint.</p>
      */
     inline void SetClientCertificateId(const Aws::String& value) { m_clientCertificateIdHasBeenSet = true; m_clientCertificateId = value; }
 
     /**
-     * <p>A <a>ClientCertificate</a> identifier to use in the test invocation. API
-     * Gateway will use the certificate when making the HTTPS request to the defined
-     * back-end endpoint.</p>
+     * <p>A ClientCertificate identifier to use in the test invocation. API Gateway
+     * will use the certificate when making the HTTPS request to the defined back-end
+     * endpoint.</p>
      */
     inline void SetClientCertificateId(Aws::String&& value) { m_clientCertificateIdHasBeenSet = true; m_clientCertificateId = std::move(value); }
 
     /**
-     * <p>A <a>ClientCertificate</a> identifier to use in the test invocation. API
-     * Gateway will use the certificate when making the HTTPS request to the defined
-     * back-end endpoint.</p>
+     * <p>A ClientCertificate identifier to use in the test invocation. API Gateway
+     * will use the certificate when making the HTTPS request to the defined back-end
+     * endpoint.</p>
      */
     inline void SetClientCertificateId(const char* value) { m_clientCertificateIdHasBeenSet = true; m_clientCertificateId.assign(value); }
 
     /**
-     * <p>A <a>ClientCertificate</a> identifier to use in the test invocation. API
-     * Gateway will use the certificate when making the HTTPS request to the defined
-     * back-end endpoint.</p>
+     * <p>A ClientCertificate identifier to use in the test invocation. API Gateway
+     * will use the certificate when making the HTTPS request to the defined back-end
+     * endpoint.</p>
      */
     inline TestInvokeMethodRequest& WithClientCertificateId(const Aws::String& value) { SetClientCertificateId(value); return *this;}
 
     /**
-     * <p>A <a>ClientCertificate</a> identifier to use in the test invocation. API
-     * Gateway will use the certificate when making the HTTPS request to the defined
-     * back-end endpoint.</p>
+     * <p>A ClientCertificate identifier to use in the test invocation. API Gateway
+     * will use the certificate when making the HTTPS request to the defined back-end
+     * endpoint.</p>
      */
     inline TestInvokeMethodRequest& WithClientCertificateId(Aws::String&& value) { SetClientCertificateId(std::move(value)); return *this;}
 
     /**
-     * <p>A <a>ClientCertificate</a> identifier to use in the test invocation. API
-     * Gateway will use the certificate when making the HTTPS request to the defined
-     * back-end endpoint.</p>
+     * <p>A ClientCertificate identifier to use in the test invocation. API Gateway
+     * will use the certificate when making the HTTPS request to the defined back-end
+     * endpoint.</p>
      */
     inline TestInvokeMethodRequest& WithClientCertificateId(const char* value) { SetClientCertificateId(value); return *this;}
 
 
     /**
      * <p>A key-value map of stage variables to simulate an invocation on a deployed
-     * <a>Stage</a>.</p>
+     * Stage.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetStageVariables() const{ return m_stageVariables; }
 
     /**
      * <p>A key-value map of stage variables to simulate an invocation on a deployed
-     * <a>Stage</a>.</p>
+     * Stage.</p>
      */
     inline bool StageVariablesHasBeenSet() const { return m_stageVariablesHasBeenSet; }
 
     /**
      * <p>A key-value map of stage variables to simulate an invocation on a deployed
-     * <a>Stage</a>.</p>
+     * Stage.</p>
      */
     inline void SetStageVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_stageVariablesHasBeenSet = true; m_stageVariables = value; }
 
     /**
      * <p>A key-value map of stage variables to simulate an invocation on a deployed
-     * <a>Stage</a>.</p>
+     * Stage.</p>
      */
     inline void SetStageVariables(Aws::Map<Aws::String, Aws::String>&& value) { m_stageVariablesHasBeenSet = true; m_stageVariables = std::move(value); }
 
     /**
      * <p>A key-value map of stage variables to simulate an invocation on a deployed
-     * <a>Stage</a>.</p>
+     * Stage.</p>
      */
     inline TestInvokeMethodRequest& WithStageVariables(const Aws::Map<Aws::String, Aws::String>& value) { SetStageVariables(value); return *this;}
 
     /**
      * <p>A key-value map of stage variables to simulate an invocation on a deployed
-     * <a>Stage</a>.</p>
+     * Stage.</p>
      */
     inline TestInvokeMethodRequest& WithStageVariables(Aws::Map<Aws::String, Aws::String>&& value) { SetStageVariables(std::move(value)); return *this;}
 
     /**
      * <p>A key-value map of stage variables to simulate an invocation on a deployed
-     * <a>Stage</a>.</p>
+     * Stage.</p>
      */
     inline TestInvokeMethodRequest& AddStageVariables(const Aws::String& key, const Aws::String& value) { m_stageVariablesHasBeenSet = true; m_stageVariables.emplace(key, value); return *this; }
 
     /**
      * <p>A key-value map of stage variables to simulate an invocation on a deployed
-     * <a>Stage</a>.</p>
+     * Stage.</p>
      */
     inline TestInvokeMethodRequest& AddStageVariables(Aws::String&& key, const Aws::String& value) { m_stageVariablesHasBeenSet = true; m_stageVariables.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A key-value map of stage variables to simulate an invocation on a deployed
-     * <a>Stage</a>.</p>
+     * Stage.</p>
      */
     inline TestInvokeMethodRequest& AddStageVariables(const Aws::String& key, Aws::String&& value) { m_stageVariablesHasBeenSet = true; m_stageVariables.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A key-value map of stage variables to simulate an invocation on a deployed
-     * <a>Stage</a>.</p>
+     * Stage.</p>
      */
     inline TestInvokeMethodRequest& AddStageVariables(Aws::String&& key, Aws::String&& value) { m_stageVariablesHasBeenSet = true; m_stageVariables.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A key-value map of stage variables to simulate an invocation on a deployed
-     * <a>Stage</a>.</p>
+     * Stage.</p>
      */
     inline TestInvokeMethodRequest& AddStageVariables(const char* key, Aws::String&& value) { m_stageVariablesHasBeenSet = true; m_stageVariables.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A key-value map of stage variables to simulate an invocation on a deployed
-     * <a>Stage</a>.</p>
+     * Stage.</p>
      */
     inline TestInvokeMethodRequest& AddStageVariables(Aws::String&& key, const char* value) { m_stageVariablesHasBeenSet = true; m_stageVariables.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A key-value map of stage variables to simulate an invocation on a deployed
-     * <a>Stage</a>.</p>
+     * Stage.</p>
      */
     inline TestInvokeMethodRequest& AddStageVariables(const char* key, const char* value) { m_stageVariablesHasBeenSet = true; m_stageVariables.emplace(key, value); return *this; }
 

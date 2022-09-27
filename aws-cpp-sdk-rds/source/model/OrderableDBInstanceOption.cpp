@@ -68,7 +68,8 @@ OrderableDBInstanceOption::OrderableDBInstanceOption() :
     m_supportsGlobalDatabases(false),
     m_supportsGlobalDatabasesHasBeenSet(false),
     m_supportsClusters(false),
-    m_supportsClustersHasBeenSet(false)
+    m_supportsClustersHasBeenSet(false),
+    m_supportedNetworkTypesHasBeenSet(false)
 {
 }
 
@@ -120,7 +121,8 @@ OrderableDBInstanceOption::OrderableDBInstanceOption(const XmlNode& xmlNode) :
     m_supportsGlobalDatabases(false),
     m_supportsGlobalDatabasesHasBeenSet(false),
     m_supportsClusters(false),
-    m_supportsClustersHasBeenSet(false)
+    m_supportsClustersHasBeenSet(false),
+    m_supportedNetworkTypesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -329,6 +331,18 @@ OrderableDBInstanceOption& OrderableDBInstanceOption::operator =(const XmlNode& 
       m_supportsClusters = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsClustersNode.GetText()).c_str()).c_str());
       m_supportsClustersHasBeenSet = true;
     }
+    XmlNode supportedNetworkTypesNode = resultNode.FirstChild("SupportedNetworkTypes");
+    if(!supportedNetworkTypesNode.IsNull())
+    {
+      XmlNode supportedNetworkTypesMember = supportedNetworkTypesNode.FirstChild("member");
+      while(!supportedNetworkTypesMember.IsNull())
+      {
+        m_supportedNetworkTypes.push_back(supportedNetworkTypesMember.GetText());
+        supportedNetworkTypesMember = supportedNetworkTypesMember.NextNode("member");
+      }
+
+      m_supportedNetworkTypesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -501,6 +515,15 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
       oStream << location << index << locationValue << ".SupportsClusters=" << std::boolalpha << m_supportsClusters << "&";
   }
 
+  if(m_supportedNetworkTypesHasBeenSet)
+  {
+      unsigned supportedNetworkTypesIdx = 1;
+      for(auto& item : m_supportedNetworkTypes)
+      {
+        oStream << location << index << locationValue << ".SupportedNetworkTypes.member." << supportedNetworkTypesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
 }
 
 void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -640,6 +663,14 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
   if(m_supportsClustersHasBeenSet)
   {
       oStream << location << ".SupportsClusters=" << std::boolalpha << m_supportsClusters << "&";
+  }
+  if(m_supportedNetworkTypesHasBeenSet)
+  {
+      unsigned supportedNetworkTypesIdx = 1;
+      for(auto& item : m_supportedNetworkTypes)
+      {
+        oStream << location << ".SupportedNetworkTypes.member." << supportedNetworkTypesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
 }
 

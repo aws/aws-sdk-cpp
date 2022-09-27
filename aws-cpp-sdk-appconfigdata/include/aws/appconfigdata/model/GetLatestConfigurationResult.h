@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/appconfigdata/AppConfigData_EXPORTS.h>
 #include <aws/core/utils/stream/ResponseStream.h>
-#include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/Array.h>
 #include <utility>
 
 namespace Aws
@@ -19,12 +19,6 @@ namespace AppConfigData
 {
 namespace Model
 {
-  /**
-   * <p>Response parameters for the GetLatestConfiguration API</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/appconfigdata-2021-11-11/GetLatestConfigurationResponse">AWS
-   * API Reference</a></p>
-   */
   class AWS_APPCONFIGDATA_API GetLatestConfigurationResult
   {
   public:
@@ -44,16 +38,75 @@ namespace Model
 
 
     /**
-     * <p>The data of the configuration. Note that this may be empty if the client
-     * already has the latest version of configuration.</p>
+     * <p>The latest token describing the current state of the configuration session.
+     * This MUST be provided to the next call to <code>GetLatestConfiguration.</code>
+     * </p>
      */
-    inline Aws::IOStream& GetConfiguration() { return m_configuration.GetUnderlyingStream(); }
+    inline const Aws::String& GetNextPollConfigurationToken() const{ return m_nextPollConfigurationToken; }
 
     /**
-     * <p>The data of the configuration. Note that this may be empty if the client
-     * already has the latest version of configuration.</p>
+     * <p>The latest token describing the current state of the configuration session.
+     * This MUST be provided to the next call to <code>GetLatestConfiguration.</code>
+     * </p>
      */
-    inline void ReplaceBody(Aws::IOStream* body) { m_configuration = Aws::Utils::Stream::ResponseStream(body); }
+    inline void SetNextPollConfigurationToken(const Aws::String& value) { m_nextPollConfigurationToken = value; }
+
+    /**
+     * <p>The latest token describing the current state of the configuration session.
+     * This MUST be provided to the next call to <code>GetLatestConfiguration.</code>
+     * </p>
+     */
+    inline void SetNextPollConfigurationToken(Aws::String&& value) { m_nextPollConfigurationToken = std::move(value); }
+
+    /**
+     * <p>The latest token describing the current state of the configuration session.
+     * This MUST be provided to the next call to <code>GetLatestConfiguration.</code>
+     * </p>
+     */
+    inline void SetNextPollConfigurationToken(const char* value) { m_nextPollConfigurationToken.assign(value); }
+
+    /**
+     * <p>The latest token describing the current state of the configuration session.
+     * This MUST be provided to the next call to <code>GetLatestConfiguration.</code>
+     * </p>
+     */
+    inline GetLatestConfigurationResult& WithNextPollConfigurationToken(const Aws::String& value) { SetNextPollConfigurationToken(value); return *this;}
+
+    /**
+     * <p>The latest token describing the current state of the configuration session.
+     * This MUST be provided to the next call to <code>GetLatestConfiguration.</code>
+     * </p>
+     */
+    inline GetLatestConfigurationResult& WithNextPollConfigurationToken(Aws::String&& value) { SetNextPollConfigurationToken(std::move(value)); return *this;}
+
+    /**
+     * <p>The latest token describing the current state of the configuration session.
+     * This MUST be provided to the next call to <code>GetLatestConfiguration.</code>
+     * </p>
+     */
+    inline GetLatestConfigurationResult& WithNextPollConfigurationToken(const char* value) { SetNextPollConfigurationToken(value); return *this;}
+
+
+    /**
+     * <p>The amount of time the client should wait before polling for configuration
+     * updates again. Use <code>RequiredMinimumPollIntervalInSeconds</code> to set the
+     * desired poll interval.</p>
+     */
+    inline int GetNextPollIntervalInSeconds() const{ return m_nextPollIntervalInSeconds; }
+
+    /**
+     * <p>The amount of time the client should wait before polling for configuration
+     * updates again. Use <code>RequiredMinimumPollIntervalInSeconds</code> to set the
+     * desired poll interval.</p>
+     */
+    inline void SetNextPollIntervalInSeconds(int value) { m_nextPollIntervalInSeconds = value; }
+
+    /**
+     * <p>The amount of time the client should wait before polling for configuration
+     * updates again. Use <code>RequiredMinimumPollIntervalInSeconds</code> to set the
+     * desired poll interval.</p>
+     */
+    inline GetLatestConfigurationResult& WithNextPollIntervalInSeconds(int value) { SetNextPollIntervalInSeconds(value); return *this;}
 
 
     /**
@@ -93,78 +146,26 @@ namespace Model
 
 
     /**
-     * <p>The latest token describing the current state of the configuration session.
-     * This MUST be provided to the next call to GetLatestConfiguration.</p>
+     * <p>The data of the configuration. This may be empty if the client already has
+     * the latest version of configuration.</p>
      */
-    inline const Aws::String& GetNextPollConfigurationToken() const{ return m_nextPollConfigurationToken; }
+    inline Aws::IOStream& GetConfiguration() { return m_configuration.GetUnderlyingStream(); }
 
     /**
-     * <p>The latest token describing the current state of the configuration session.
-     * This MUST be provided to the next call to GetLatestConfiguration.</p>
+     * <p>The data of the configuration. This may be empty if the client already has
+     * the latest version of configuration.</p>
      */
-    inline void SetNextPollConfigurationToken(const Aws::String& value) { m_nextPollConfigurationToken = value; }
-
-    /**
-     * <p>The latest token describing the current state of the configuration session.
-     * This MUST be provided to the next call to GetLatestConfiguration.</p>
-     */
-    inline void SetNextPollConfigurationToken(Aws::String&& value) { m_nextPollConfigurationToken = std::move(value); }
-
-    /**
-     * <p>The latest token describing the current state of the configuration session.
-     * This MUST be provided to the next call to GetLatestConfiguration.</p>
-     */
-    inline void SetNextPollConfigurationToken(const char* value) { m_nextPollConfigurationToken.assign(value); }
-
-    /**
-     * <p>The latest token describing the current state of the configuration session.
-     * This MUST be provided to the next call to GetLatestConfiguration.</p>
-     */
-    inline GetLatestConfigurationResult& WithNextPollConfigurationToken(const Aws::String& value) { SetNextPollConfigurationToken(value); return *this;}
-
-    /**
-     * <p>The latest token describing the current state of the configuration session.
-     * This MUST be provided to the next call to GetLatestConfiguration.</p>
-     */
-    inline GetLatestConfigurationResult& WithNextPollConfigurationToken(Aws::String&& value) { SetNextPollConfigurationToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The latest token describing the current state of the configuration session.
-     * This MUST be provided to the next call to GetLatestConfiguration.</p>
-     */
-    inline GetLatestConfigurationResult& WithNextPollConfigurationToken(const char* value) { SetNextPollConfigurationToken(value); return *this;}
-
-
-    /**
-     * <p>The amount of time the client should wait before polling for configuration
-     * updates again. See RequiredMinimumPollIntervalInSeconds to set the desired poll
-     * interval.</p>
-     */
-    inline int GetNextPollIntervalInSeconds() const{ return m_nextPollIntervalInSeconds; }
-
-    /**
-     * <p>The amount of time the client should wait before polling for configuration
-     * updates again. See RequiredMinimumPollIntervalInSeconds to set the desired poll
-     * interval.</p>
-     */
-    inline void SetNextPollIntervalInSeconds(int value) { m_nextPollIntervalInSeconds = value; }
-
-    /**
-     * <p>The amount of time the client should wait before polling for configuration
-     * updates again. See RequiredMinimumPollIntervalInSeconds to set the desired poll
-     * interval.</p>
-     */
-    inline GetLatestConfigurationResult& WithNextPollIntervalInSeconds(int value) { SetNextPollIntervalInSeconds(value); return *this;}
+    inline void ReplaceBody(Aws::IOStream* body) { m_configuration = Aws::Utils::Stream::ResponseStream(body); }
 
   private:
-
-  Aws::Utils::Stream::ResponseStream m_configuration;
-
-    Aws::String m_contentType;
 
     Aws::String m_nextPollConfigurationToken;
 
     int m_nextPollIntervalInSeconds;
+
+    Aws::String m_contentType;
+
+  Aws::Utils::Stream::ResponseStream m_configuration;
   };
 
 } // namespace Model

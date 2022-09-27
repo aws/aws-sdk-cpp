@@ -219,43 +219,43 @@ namespace Model
 
     /**
      * <p>The enrollment config that contains details such as the action to take when a
-     * speaker is already enrolled in the Voice ID system or when a speaker is
-     * identified as a fraudster.</p>
+     * speaker is already enrolled in Voice ID or when a speaker is identified as a
+     * fraudster.</p>
      */
     inline const EnrollmentConfig& GetEnrollmentConfig() const{ return m_enrollmentConfig; }
 
     /**
      * <p>The enrollment config that contains details such as the action to take when a
-     * speaker is already enrolled in the Voice ID system or when a speaker is
-     * identified as a fraudster.</p>
+     * speaker is already enrolled in Voice ID or when a speaker is identified as a
+     * fraudster.</p>
      */
     inline bool EnrollmentConfigHasBeenSet() const { return m_enrollmentConfigHasBeenSet; }
 
     /**
      * <p>The enrollment config that contains details such as the action to take when a
-     * speaker is already enrolled in the Voice ID system or when a speaker is
-     * identified as a fraudster.</p>
+     * speaker is already enrolled in Voice ID or when a speaker is identified as a
+     * fraudster.</p>
      */
     inline void SetEnrollmentConfig(const EnrollmentConfig& value) { m_enrollmentConfigHasBeenSet = true; m_enrollmentConfig = value; }
 
     /**
      * <p>The enrollment config that contains details such as the action to take when a
-     * speaker is already enrolled in the Voice ID system or when a speaker is
-     * identified as a fraudster.</p>
+     * speaker is already enrolled in Voice ID or when a speaker is identified as a
+     * fraudster.</p>
      */
     inline void SetEnrollmentConfig(EnrollmentConfig&& value) { m_enrollmentConfigHasBeenSet = true; m_enrollmentConfig = std::move(value); }
 
     /**
      * <p>The enrollment config that contains details such as the action to take when a
-     * speaker is already enrolled in the Voice ID system or when a speaker is
-     * identified as a fraudster.</p>
+     * speaker is already enrolled in Voice ID or when a speaker is identified as a
+     * fraudster.</p>
      */
     inline StartSpeakerEnrollmentJobRequest& WithEnrollmentConfig(const EnrollmentConfig& value) { SetEnrollmentConfig(value); return *this;}
 
     /**
      * <p>The enrollment config that contains details such as the action to take when a
-     * speaker is already enrolled in the Voice ID system or when a speaker is
-     * identified as a fraudster.</p>
+     * speaker is already enrolled in Voice ID or when a speaker is identified as a
+     * fraudster.</p>
      */
     inline StartSpeakerEnrollmentJobRequest& WithEnrollmentConfig(EnrollmentConfig&& value) { SetEnrollmentConfig(std::move(value)); return *this;}
 
@@ -340,37 +340,37 @@ namespace Model
 
     /**
      * <p>The output data config containing the S3 location where Voice ID writes the
-     * job output file; you must also include a KMS Key ID to encrypt the file.</p>
+     * job output file; you must also include a KMS key ID to encrypt the file.</p>
      */
     inline const OutputDataConfig& GetOutputDataConfig() const{ return m_outputDataConfig; }
 
     /**
      * <p>The output data config containing the S3 location where Voice ID writes the
-     * job output file; you must also include a KMS Key ID to encrypt the file.</p>
+     * job output file; you must also include a KMS key ID to encrypt the file.</p>
      */
     inline bool OutputDataConfigHasBeenSet() const { return m_outputDataConfigHasBeenSet; }
 
     /**
      * <p>The output data config containing the S3 location where Voice ID writes the
-     * job output file; you must also include a KMS Key ID to encrypt the file.</p>
+     * job output file; you must also include a KMS key ID to encrypt the file.</p>
      */
     inline void SetOutputDataConfig(const OutputDataConfig& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = value; }
 
     /**
      * <p>The output data config containing the S3 location where Voice ID writes the
-     * job output file; you must also include a KMS Key ID to encrypt the file.</p>
+     * job output file; you must also include a KMS key ID to encrypt the file.</p>
      */
     inline void SetOutputDataConfig(OutputDataConfig&& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = std::move(value); }
 
     /**
      * <p>The output data config containing the S3 location where Voice ID writes the
-     * job output file; you must also include a KMS Key ID to encrypt the file.</p>
+     * job output file; you must also include a KMS key ID to encrypt the file.</p>
      */
     inline StartSpeakerEnrollmentJobRequest& WithOutputDataConfig(const OutputDataConfig& value) { SetOutputDataConfig(value); return *this;}
 
     /**
      * <p>The output data config containing the S3 location where Voice ID writes the
-     * job output file; you must also include a KMS Key ID to encrypt the file.</p>
+     * job output file; you must also include a KMS key ID to encrypt the file.</p>
      */
     inline StartSpeakerEnrollmentJobRequest& WithOutputDataConfig(OutputDataConfig&& value) { SetOutputDataConfig(std::move(value)); return *this;}
 

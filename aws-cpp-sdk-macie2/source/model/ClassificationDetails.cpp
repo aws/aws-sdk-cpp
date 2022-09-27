@@ -22,6 +22,8 @@ ClassificationDetails::ClassificationDetails() :
     m_detailedResultsLocationHasBeenSet(false),
     m_jobArnHasBeenSet(false),
     m_jobIdHasBeenSet(false),
+    m_originType(OriginType::NOT_SET),
+    m_originTypeHasBeenSet(false),
     m_resultHasBeenSet(false)
 {
 }
@@ -30,6 +32,8 @@ ClassificationDetails::ClassificationDetails(JsonView jsonValue) :
     m_detailedResultsLocationHasBeenSet(false),
     m_jobArnHasBeenSet(false),
     m_jobIdHasBeenSet(false),
+    m_originType(OriginType::NOT_SET),
+    m_originTypeHasBeenSet(false),
     m_resultHasBeenSet(false)
 {
   *this = jsonValue;
@@ -56,6 +60,13 @@ ClassificationDetails& ClassificationDetails::operator =(JsonView jsonValue)
     m_jobId = jsonValue.GetString("jobId");
 
     m_jobIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("originType"))
+  {
+    m_originType = OriginTypeMapper::GetOriginTypeForName(jsonValue.GetString("originType"));
+
+    m_originTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("result"))
@@ -88,6 +99,11 @@ JsonValue ClassificationDetails::Jsonize() const
   {
    payload.WithString("jobId", m_jobId);
 
+  }
+
+  if(m_originTypeHasBeenSet)
+  {
+   payload.WithString("originType", OriginTypeMapper::GetNameForOriginType(m_originType));
   }
 
   if(m_resultHasBeenSet)

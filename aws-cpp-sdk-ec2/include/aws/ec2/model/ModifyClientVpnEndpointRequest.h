@@ -527,35 +527,65 @@ namespace Model
     inline ModifyClientVpnEndpointRequest& WithClientConnectOptions(ClientConnectOptions&& value) { SetClientConnectOptions(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The maximum VPN session duration time in hours.</p> <p>Valid values: <code>8
+     * | 10 | 12 | 24</code> </p> <p>Default value: <code>24</code> </p>
+     */
     inline int GetSessionTimeoutHours() const{ return m_sessionTimeoutHours; }
 
-    
+    /**
+     * <p>The maximum VPN session duration time in hours.</p> <p>Valid values: <code>8
+     * | 10 | 12 | 24</code> </p> <p>Default value: <code>24</code> </p>
+     */
     inline bool SessionTimeoutHoursHasBeenSet() const { return m_sessionTimeoutHoursHasBeenSet; }
 
-    
+    /**
+     * <p>The maximum VPN session duration time in hours.</p> <p>Valid values: <code>8
+     * | 10 | 12 | 24</code> </p> <p>Default value: <code>24</code> </p>
+     */
     inline void SetSessionTimeoutHours(int value) { m_sessionTimeoutHoursHasBeenSet = true; m_sessionTimeoutHours = value; }
 
-    
+    /**
+     * <p>The maximum VPN session duration time in hours.</p> <p>Valid values: <code>8
+     * | 10 | 12 | 24</code> </p> <p>Default value: <code>24</code> </p>
+     */
     inline ModifyClientVpnEndpointRequest& WithSessionTimeoutHours(int value) { SetSessionTimeoutHours(value); return *this;}
 
 
-    
+    /**
+     * <p>Options for enabling a customizable text banner that will be displayed on
+     * Amazon Web Services provided clients when a VPN session is established.</p>
+     */
     inline const ClientLoginBannerOptions& GetClientLoginBannerOptions() const{ return m_clientLoginBannerOptions; }
 
-    
+    /**
+     * <p>Options for enabling a customizable text banner that will be displayed on
+     * Amazon Web Services provided clients when a VPN session is established.</p>
+     */
     inline bool ClientLoginBannerOptionsHasBeenSet() const { return m_clientLoginBannerOptionsHasBeenSet; }
 
-    
+    /**
+     * <p>Options for enabling a customizable text banner that will be displayed on
+     * Amazon Web Services provided clients when a VPN session is established.</p>
+     */
     inline void SetClientLoginBannerOptions(const ClientLoginBannerOptions& value) { m_clientLoginBannerOptionsHasBeenSet = true; m_clientLoginBannerOptions = value; }
 
-    
+    /**
+     * <p>Options for enabling a customizable text banner that will be displayed on
+     * Amazon Web Services provided clients when a VPN session is established.</p>
+     */
     inline void SetClientLoginBannerOptions(ClientLoginBannerOptions&& value) { m_clientLoginBannerOptionsHasBeenSet = true; m_clientLoginBannerOptions = std::move(value); }
 
-    
+    /**
+     * <p>Options for enabling a customizable text banner that will be displayed on
+     * Amazon Web Services provided clients when a VPN session is established.</p>
+     */
     inline ModifyClientVpnEndpointRequest& WithClientLoginBannerOptions(const ClientLoginBannerOptions& value) { SetClientLoginBannerOptions(value); return *this;}
 
-    
+    /**
+     * <p>Options for enabling a customizable text banner that will be displayed on
+     * Amazon Web Services provided clients when a VPN session is established.</p>
+     */
     inline ModifyClientVpnEndpointRequest& WithClientLoginBannerOptions(ClientLoginBannerOptions&& value) { SetClientLoginBannerOptions(std::move(value)); return *this;}
 
   private:

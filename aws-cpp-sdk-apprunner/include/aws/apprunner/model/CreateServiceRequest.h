@@ -12,6 +12,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/apprunner/model/EncryptionConfiguration.h>
 #include <aws/apprunner/model/HealthCheckConfiguration.h>
+#include <aws/apprunner/model/NetworkConfiguration.h>
+#include <aws/apprunner/model/ServiceObservabilityConfiguration.h>
 #include <aws/apprunner/model/Tag.h>
 #include <utility>
 
@@ -41,58 +43,58 @@ namespace Model
 
 
     /**
-     * <p>A name for the new service. It must be unique across all the running App
-     * Runner services in your Amazon Web Services account in the Amazon Web Services
-     * Region.</p>
+     * <p>A name for the App Runner service. It must be unique across all the running
+     * App Runner services in your Amazon Web Services account in the Amazon Web
+     * Services Region.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
 
     /**
-     * <p>A name for the new service. It must be unique across all the running App
-     * Runner services in your Amazon Web Services account in the Amazon Web Services
-     * Region.</p>
+     * <p>A name for the App Runner service. It must be unique across all the running
+     * App Runner services in your Amazon Web Services account in the Amazon Web
+     * Services Region.</p>
      */
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
 
     /**
-     * <p>A name for the new service. It must be unique across all the running App
-     * Runner services in your Amazon Web Services account in the Amazon Web Services
-     * Region.</p>
+     * <p>A name for the App Runner service. It must be unique across all the running
+     * App Runner services in your Amazon Web Services account in the Amazon Web
+     * Services Region.</p>
      */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
-     * <p>A name for the new service. It must be unique across all the running App
-     * Runner services in your Amazon Web Services account in the Amazon Web Services
-     * Region.</p>
+     * <p>A name for the App Runner service. It must be unique across all the running
+     * App Runner services in your Amazon Web Services account in the Amazon Web
+     * Services Region.</p>
      */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
-     * <p>A name for the new service. It must be unique across all the running App
-     * Runner services in your Amazon Web Services account in the Amazon Web Services
-     * Region.</p>
+     * <p>A name for the App Runner service. It must be unique across all the running
+     * App Runner services in your Amazon Web Services account in the Amazon Web
+     * Services Region.</p>
      */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
     /**
-     * <p>A name for the new service. It must be unique across all the running App
-     * Runner services in your Amazon Web Services account in the Amazon Web Services
-     * Region.</p>
+     * <p>A name for the App Runner service. It must be unique across all the running
+     * App Runner services in your Amazon Web Services account in the Amazon Web
+     * Services Region.</p>
      */
     inline CreateServiceRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
 
     /**
-     * <p>A name for the new service. It must be unique across all the running App
-     * Runner services in your Amazon Web Services account in the Amazon Web Services
-     * Region.</p>
+     * <p>A name for the App Runner service. It must be unique across all the running
+     * App Runner services in your Amazon Web Services account in the Amazon Web
+     * Services Region.</p>
      */
     inline CreateServiceRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
     /**
-     * <p>A name for the new service. It must be unique across all the running App
-     * Runner services in your Amazon Web Services account in the Amazon Web Services
-     * Region.</p>
+     * <p>A name for the App Runner service. It must be unique across all the running
+     * App Runner services in your Amazon Web Services account in the Amazon Web
+     * Services Region.</p>
      */
     inline CreateServiceRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 
@@ -135,87 +137,81 @@ namespace Model
 
 
     /**
-     * <p>The runtime configuration of instances (scaling units) of the App Runner
-     * service.</p>
+     * <p>The runtime configuration of instances (scaling units) of your service.</p>
      */
     inline const InstanceConfiguration& GetInstanceConfiguration() const{ return m_instanceConfiguration; }
 
     /**
-     * <p>The runtime configuration of instances (scaling units) of the App Runner
-     * service.</p>
+     * <p>The runtime configuration of instances (scaling units) of your service.</p>
      */
     inline bool InstanceConfigurationHasBeenSet() const { return m_instanceConfigurationHasBeenSet; }
 
     /**
-     * <p>The runtime configuration of instances (scaling units) of the App Runner
-     * service.</p>
+     * <p>The runtime configuration of instances (scaling units) of your service.</p>
      */
     inline void SetInstanceConfiguration(const InstanceConfiguration& value) { m_instanceConfigurationHasBeenSet = true; m_instanceConfiguration = value; }
 
     /**
-     * <p>The runtime configuration of instances (scaling units) of the App Runner
-     * service.</p>
+     * <p>The runtime configuration of instances (scaling units) of your service.</p>
      */
     inline void SetInstanceConfiguration(InstanceConfiguration&& value) { m_instanceConfigurationHasBeenSet = true; m_instanceConfiguration = std::move(value); }
 
     /**
-     * <p>The runtime configuration of instances (scaling units) of the App Runner
-     * service.</p>
+     * <p>The runtime configuration of instances (scaling units) of your service.</p>
      */
     inline CreateServiceRequest& WithInstanceConfiguration(const InstanceConfiguration& value) { SetInstanceConfiguration(value); return *this;}
 
     /**
-     * <p>The runtime configuration of instances (scaling units) of the App Runner
-     * service.</p>
+     * <p>The runtime configuration of instances (scaling units) of your service.</p>
      */
     inline CreateServiceRequest& WithInstanceConfiguration(InstanceConfiguration&& value) { SetInstanceConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>An optional list of metadata items that you can associate with your service
-     * resource. A tag is a key-value pair.</p>
+     * <p>An optional list of metadata items that you can associate with the App Runner
+     * service resource. A tag is a key-value pair.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>An optional list of metadata items that you can associate with your service
-     * resource. A tag is a key-value pair.</p>
+     * <p>An optional list of metadata items that you can associate with the App Runner
+     * service resource. A tag is a key-value pair.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>An optional list of metadata items that you can associate with your service
-     * resource. A tag is a key-value pair.</p>
+     * <p>An optional list of metadata items that you can associate with the App Runner
+     * service resource. A tag is a key-value pair.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>An optional list of metadata items that you can associate with your service
-     * resource. A tag is a key-value pair.</p>
+     * <p>An optional list of metadata items that you can associate with the App Runner
+     * service resource. A tag is a key-value pair.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>An optional list of metadata items that you can associate with your service
-     * resource. A tag is a key-value pair.</p>
+     * <p>An optional list of metadata items that you can associate with the App Runner
+     * service resource. A tag is a key-value pair.</p>
      */
     inline CreateServiceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>An optional list of metadata items that you can associate with your service
-     * resource. A tag is a key-value pair.</p>
+     * <p>An optional list of metadata items that you can associate with the App Runner
+     * service resource. A tag is a key-value pair.</p>
      */
     inline CreateServiceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>An optional list of metadata items that you can associate with your service
-     * resource. A tag is a key-value pair.</p>
+     * <p>An optional list of metadata items that you can associate with the App Runner
+     * service resource. A tag is a key-value pair.</p>
      */
     inline CreateServiceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>An optional list of metadata items that you can associate with your service
-     * resource. A tag is a key-value pair.</p>
+     * <p>An optional list of metadata items that you can associate with the App Runner
+     * service resource. A tag is a key-value pair.</p>
      */
     inline CreateServiceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
@@ -223,79 +219,79 @@ namespace Model
     /**
      * <p>An optional custom encryption key that App Runner uses to encrypt the copy of
      * your source repository that it maintains and your service logs. By default, App
-     * Runner uses an Amazon Web Services managed CMK.</p>
+     * Runner uses an Amazon Web Services managed key.</p>
      */
     inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
 
     /**
      * <p>An optional custom encryption key that App Runner uses to encrypt the copy of
      * your source repository that it maintains and your service logs. By default, App
-     * Runner uses an Amazon Web Services managed CMK.</p>
+     * Runner uses an Amazon Web Services managed key.</p>
      */
     inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
 
     /**
      * <p>An optional custom encryption key that App Runner uses to encrypt the copy of
      * your source repository that it maintains and your service logs. By default, App
-     * Runner uses an Amazon Web Services managed CMK.</p>
+     * Runner uses an Amazon Web Services managed key.</p>
      */
     inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
 
     /**
      * <p>An optional custom encryption key that App Runner uses to encrypt the copy of
      * your source repository that it maintains and your service logs. By default, App
-     * Runner uses an Amazon Web Services managed CMK.</p>
+     * Runner uses an Amazon Web Services managed key.</p>
      */
     inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
 
     /**
      * <p>An optional custom encryption key that App Runner uses to encrypt the copy of
      * your source repository that it maintains and your service logs. By default, App
-     * Runner uses an Amazon Web Services managed CMK.</p>
+     * Runner uses an Amazon Web Services managed key.</p>
      */
     inline CreateServiceRequest& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
 
     /**
      * <p>An optional custom encryption key that App Runner uses to encrypt the copy of
      * your source repository that it maintains and your service logs. By default, App
-     * Runner uses an Amazon Web Services managed CMK.</p>
+     * Runner uses an Amazon Web Services managed key.</p>
      */
     inline CreateServiceRequest& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
 
 
     /**
      * <p>The settings for the health check that App Runner performs to monitor the
-     * health of your service.</p>
+     * health of the App Runner service.</p>
      */
     inline const HealthCheckConfiguration& GetHealthCheckConfiguration() const{ return m_healthCheckConfiguration; }
 
     /**
      * <p>The settings for the health check that App Runner performs to monitor the
-     * health of your service.</p>
+     * health of the App Runner service.</p>
      */
     inline bool HealthCheckConfigurationHasBeenSet() const { return m_healthCheckConfigurationHasBeenSet; }
 
     /**
      * <p>The settings for the health check that App Runner performs to monitor the
-     * health of your service.</p>
+     * health of the App Runner service.</p>
      */
     inline void SetHealthCheckConfiguration(const HealthCheckConfiguration& value) { m_healthCheckConfigurationHasBeenSet = true; m_healthCheckConfiguration = value; }
 
     /**
      * <p>The settings for the health check that App Runner performs to monitor the
-     * health of your service.</p>
+     * health of the App Runner service.</p>
      */
     inline void SetHealthCheckConfiguration(HealthCheckConfiguration&& value) { m_healthCheckConfigurationHasBeenSet = true; m_healthCheckConfiguration = std::move(value); }
 
     /**
      * <p>The settings for the health check that App Runner performs to monitor the
-     * health of your service.</p>
+     * health of the App Runner service.</p>
      */
     inline CreateServiceRequest& WithHealthCheckConfiguration(const HealthCheckConfiguration& value) { SetHealthCheckConfiguration(value); return *this;}
 
     /**
      * <p>The settings for the health check that App Runner performs to monitor the
-     * health of your service.</p>
+     * health of the App Runner service.</p>
      */
     inline CreateServiceRequest& WithHealthCheckConfiguration(HealthCheckConfiguration&& value) { SetHealthCheckConfiguration(std::move(value)); return *this;}
 
@@ -304,7 +300,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling
      * configuration resource that you want to associate with your service. If not
      * provided, App Runner associates the latest revision of a default auto scaling
-     * configuration.</p>
+     * configuration.</p> <p>Specify an ARN with a name and a revision number to
+     * associate that revision. For example:
+     * <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability/3</code>
+     * </p> <p>Specify just the name to associate the latest revision. For example:
+     * <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability</code>
+     * </p>
      */
     inline const Aws::String& GetAutoScalingConfigurationArn() const{ return m_autoScalingConfigurationArn; }
 
@@ -312,7 +313,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling
      * configuration resource that you want to associate with your service. If not
      * provided, App Runner associates the latest revision of a default auto scaling
-     * configuration.</p>
+     * configuration.</p> <p>Specify an ARN with a name and a revision number to
+     * associate that revision. For example:
+     * <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability/3</code>
+     * </p> <p>Specify just the name to associate the latest revision. For example:
+     * <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability</code>
+     * </p>
      */
     inline bool AutoScalingConfigurationArnHasBeenSet() const { return m_autoScalingConfigurationArnHasBeenSet; }
 
@@ -320,7 +326,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling
      * configuration resource that you want to associate with your service. If not
      * provided, App Runner associates the latest revision of a default auto scaling
-     * configuration.</p>
+     * configuration.</p> <p>Specify an ARN with a name and a revision number to
+     * associate that revision. For example:
+     * <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability/3</code>
+     * </p> <p>Specify just the name to associate the latest revision. For example:
+     * <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability</code>
+     * </p>
      */
     inline void SetAutoScalingConfigurationArn(const Aws::String& value) { m_autoScalingConfigurationArnHasBeenSet = true; m_autoScalingConfigurationArn = value; }
 
@@ -328,7 +339,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling
      * configuration resource that you want to associate with your service. If not
      * provided, App Runner associates the latest revision of a default auto scaling
-     * configuration.</p>
+     * configuration.</p> <p>Specify an ARN with a name and a revision number to
+     * associate that revision. For example:
+     * <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability/3</code>
+     * </p> <p>Specify just the name to associate the latest revision. For example:
+     * <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability</code>
+     * </p>
      */
     inline void SetAutoScalingConfigurationArn(Aws::String&& value) { m_autoScalingConfigurationArnHasBeenSet = true; m_autoScalingConfigurationArn = std::move(value); }
 
@@ -336,7 +352,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling
      * configuration resource that you want to associate with your service. If not
      * provided, App Runner associates the latest revision of a default auto scaling
-     * configuration.</p>
+     * configuration.</p> <p>Specify an ARN with a name and a revision number to
+     * associate that revision. For example:
+     * <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability/3</code>
+     * </p> <p>Specify just the name to associate the latest revision. For example:
+     * <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability</code>
+     * </p>
      */
     inline void SetAutoScalingConfigurationArn(const char* value) { m_autoScalingConfigurationArnHasBeenSet = true; m_autoScalingConfigurationArn.assign(value); }
 
@@ -344,7 +365,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling
      * configuration resource that you want to associate with your service. If not
      * provided, App Runner associates the latest revision of a default auto scaling
-     * configuration.</p>
+     * configuration.</p> <p>Specify an ARN with a name and a revision number to
+     * associate that revision. For example:
+     * <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability/3</code>
+     * </p> <p>Specify just the name to associate the latest revision. For example:
+     * <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability</code>
+     * </p>
      */
     inline CreateServiceRequest& WithAutoScalingConfigurationArn(const Aws::String& value) { SetAutoScalingConfigurationArn(value); return *this;}
 
@@ -352,7 +378,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling
      * configuration resource that you want to associate with your service. If not
      * provided, App Runner associates the latest revision of a default auto scaling
-     * configuration.</p>
+     * configuration.</p> <p>Specify an ARN with a name and a revision number to
+     * associate that revision. For example:
+     * <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability/3</code>
+     * </p> <p>Specify just the name to associate the latest revision. For example:
+     * <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability</code>
+     * </p>
      */
     inline CreateServiceRequest& WithAutoScalingConfigurationArn(Aws::String&& value) { SetAutoScalingConfigurationArn(std::move(value)); return *this;}
 
@@ -360,9 +391,82 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling
      * configuration resource that you want to associate with your service. If not
      * provided, App Runner associates the latest revision of a default auto scaling
-     * configuration.</p>
+     * configuration.</p> <p>Specify an ARN with a name and a revision number to
+     * associate that revision. For example:
+     * <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability/3</code>
+     * </p> <p>Specify just the name to associate the latest revision. For example:
+     * <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability</code>
+     * </p>
      */
     inline CreateServiceRequest& WithAutoScalingConfigurationArn(const char* value) { SetAutoScalingConfigurationArn(value); return *this;}
+
+
+    /**
+     * <p>Configuration settings related to network traffic of the web application that
+     * the App Runner service runs.</p>
+     */
+    inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
+
+    /**
+     * <p>Configuration settings related to network traffic of the web application that
+     * the App Runner service runs.</p>
+     */
+    inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
+
+    /**
+     * <p>Configuration settings related to network traffic of the web application that
+     * the App Runner service runs.</p>
+     */
+    inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
+
+    /**
+     * <p>Configuration settings related to network traffic of the web application that
+     * the App Runner service runs.</p>
+     */
+    inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
+
+    /**
+     * <p>Configuration settings related to network traffic of the web application that
+     * the App Runner service runs.</p>
+     */
+    inline CreateServiceRequest& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
+
+    /**
+     * <p>Configuration settings related to network traffic of the web application that
+     * the App Runner service runs.</p>
+     */
+    inline CreateServiceRequest& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The observability configuration of your service.</p>
+     */
+    inline const ServiceObservabilityConfiguration& GetObservabilityConfiguration() const{ return m_observabilityConfiguration; }
+
+    /**
+     * <p>The observability configuration of your service.</p>
+     */
+    inline bool ObservabilityConfigurationHasBeenSet() const { return m_observabilityConfigurationHasBeenSet; }
+
+    /**
+     * <p>The observability configuration of your service.</p>
+     */
+    inline void SetObservabilityConfiguration(const ServiceObservabilityConfiguration& value) { m_observabilityConfigurationHasBeenSet = true; m_observabilityConfiguration = value; }
+
+    /**
+     * <p>The observability configuration of your service.</p>
+     */
+    inline void SetObservabilityConfiguration(ServiceObservabilityConfiguration&& value) { m_observabilityConfigurationHasBeenSet = true; m_observabilityConfiguration = std::move(value); }
+
+    /**
+     * <p>The observability configuration of your service.</p>
+     */
+    inline CreateServiceRequest& WithObservabilityConfiguration(const ServiceObservabilityConfiguration& value) { SetObservabilityConfiguration(value); return *this;}
+
+    /**
+     * <p>The observability configuration of your service.</p>
+     */
+    inline CreateServiceRequest& WithObservabilityConfiguration(ServiceObservabilityConfiguration&& value) { SetObservabilityConfiguration(std::move(value)); return *this;}
 
   private:
 
@@ -386,6 +490,12 @@ namespace Model
 
     Aws::String m_autoScalingConfigurationArn;
     bool m_autoScalingConfigurationArnHasBeenSet;
+
+    NetworkConfiguration m_networkConfiguration;
+    bool m_networkConfigurationHasBeenSet;
+
+    ServiceObservabilityConfiguration m_observabilityConfiguration;
+    bool m_observabilityConfigurationHasBeenSet;
   };
 
 } // namespace Model

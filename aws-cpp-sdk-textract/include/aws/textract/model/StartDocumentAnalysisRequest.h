@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/textract/model/NotificationChannel.h>
 #include <aws/textract/model/OutputConfig.h>
+#include <aws/textract/model/QueriesConfig.h>
 #include <aws/textract/model/FeatureType.h>
 #include <utility>
 
@@ -457,6 +458,25 @@ namespace Model
      */
     inline StartDocumentAnalysisRequest& WithKMSKeyId(const char* value) { SetKMSKeyId(value); return *this;}
 
+
+    
+    inline const QueriesConfig& GetQueriesConfig() const{ return m_queriesConfig; }
+
+    
+    inline bool QueriesConfigHasBeenSet() const { return m_queriesConfigHasBeenSet; }
+
+    
+    inline void SetQueriesConfig(const QueriesConfig& value) { m_queriesConfigHasBeenSet = true; m_queriesConfig = value; }
+
+    
+    inline void SetQueriesConfig(QueriesConfig&& value) { m_queriesConfigHasBeenSet = true; m_queriesConfig = std::move(value); }
+
+    
+    inline StartDocumentAnalysisRequest& WithQueriesConfig(const QueriesConfig& value) { SetQueriesConfig(value); return *this;}
+
+    
+    inline StartDocumentAnalysisRequest& WithQueriesConfig(QueriesConfig&& value) { SetQueriesConfig(std::move(value)); return *this;}
+
   private:
 
     DocumentLocation m_documentLocation;
@@ -479,6 +499,9 @@ namespace Model
 
     Aws::String m_kMSKeyId;
     bool m_kMSKeyIdHasBeenSet;
+
+    QueriesConfig m_queriesConfig;
+    bool m_queriesConfigHasBeenSet;
   };
 
 } // namespace Model

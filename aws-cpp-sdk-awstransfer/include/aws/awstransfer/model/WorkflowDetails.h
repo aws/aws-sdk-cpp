@@ -42,49 +42,73 @@ namespace Model
 
     /**
      * <p>A trigger that starts a workflow: the workflow begins to execute after a file
-     * is uploaded.</p>
+     * is uploaded.</p> <p>To remove an associated workflow from a server, you can
+     * provide an empty <code>OnUpload</code> object, as in the following example.</p>
+     * <p> <code>aws transfer update-server --server-id s-01234567890abcdef
+     * --workflow-details '{"OnUpload":[]}'</code> </p>
      */
     inline const Aws::Vector<WorkflowDetail>& GetOnUpload() const{ return m_onUpload; }
 
     /**
      * <p>A trigger that starts a workflow: the workflow begins to execute after a file
-     * is uploaded.</p>
+     * is uploaded.</p> <p>To remove an associated workflow from a server, you can
+     * provide an empty <code>OnUpload</code> object, as in the following example.</p>
+     * <p> <code>aws transfer update-server --server-id s-01234567890abcdef
+     * --workflow-details '{"OnUpload":[]}'</code> </p>
      */
     inline bool OnUploadHasBeenSet() const { return m_onUploadHasBeenSet; }
 
     /**
      * <p>A trigger that starts a workflow: the workflow begins to execute after a file
-     * is uploaded.</p>
+     * is uploaded.</p> <p>To remove an associated workflow from a server, you can
+     * provide an empty <code>OnUpload</code> object, as in the following example.</p>
+     * <p> <code>aws transfer update-server --server-id s-01234567890abcdef
+     * --workflow-details '{"OnUpload":[]}'</code> </p>
      */
     inline void SetOnUpload(const Aws::Vector<WorkflowDetail>& value) { m_onUploadHasBeenSet = true; m_onUpload = value; }
 
     /**
      * <p>A trigger that starts a workflow: the workflow begins to execute after a file
-     * is uploaded.</p>
+     * is uploaded.</p> <p>To remove an associated workflow from a server, you can
+     * provide an empty <code>OnUpload</code> object, as in the following example.</p>
+     * <p> <code>aws transfer update-server --server-id s-01234567890abcdef
+     * --workflow-details '{"OnUpload":[]}'</code> </p>
      */
     inline void SetOnUpload(Aws::Vector<WorkflowDetail>&& value) { m_onUploadHasBeenSet = true; m_onUpload = std::move(value); }
 
     /**
      * <p>A trigger that starts a workflow: the workflow begins to execute after a file
-     * is uploaded.</p>
+     * is uploaded.</p> <p>To remove an associated workflow from a server, you can
+     * provide an empty <code>OnUpload</code> object, as in the following example.</p>
+     * <p> <code>aws transfer update-server --server-id s-01234567890abcdef
+     * --workflow-details '{"OnUpload":[]}'</code> </p>
      */
     inline WorkflowDetails& WithOnUpload(const Aws::Vector<WorkflowDetail>& value) { SetOnUpload(value); return *this;}
 
     /**
      * <p>A trigger that starts a workflow: the workflow begins to execute after a file
-     * is uploaded.</p>
+     * is uploaded.</p> <p>To remove an associated workflow from a server, you can
+     * provide an empty <code>OnUpload</code> object, as in the following example.</p>
+     * <p> <code>aws transfer update-server --server-id s-01234567890abcdef
+     * --workflow-details '{"OnUpload":[]}'</code> </p>
      */
     inline WorkflowDetails& WithOnUpload(Aws::Vector<WorkflowDetail>&& value) { SetOnUpload(std::move(value)); return *this;}
 
     /**
      * <p>A trigger that starts a workflow: the workflow begins to execute after a file
-     * is uploaded.</p>
+     * is uploaded.</p> <p>To remove an associated workflow from a server, you can
+     * provide an empty <code>OnUpload</code> object, as in the following example.</p>
+     * <p> <code>aws transfer update-server --server-id s-01234567890abcdef
+     * --workflow-details '{"OnUpload":[]}'</code> </p>
      */
     inline WorkflowDetails& AddOnUpload(const WorkflowDetail& value) { m_onUploadHasBeenSet = true; m_onUpload.push_back(value); return *this; }
 
     /**
      * <p>A trigger that starts a workflow: the workflow begins to execute after a file
-     * is uploaded.</p>
+     * is uploaded.</p> <p>To remove an associated workflow from a server, you can
+     * provide an empty <code>OnUpload</code> object, as in the following example.</p>
+     * <p> <code>aws transfer update-server --server-id s-01234567890abcdef
+     * --workflow-details '{"OnUpload":[]}'</code> </p>
      */
     inline WorkflowDetails& AddOnUpload(WorkflowDetail&& value) { m_onUploadHasBeenSet = true; m_onUpload.push_back(std::move(value)); return *this; }
 

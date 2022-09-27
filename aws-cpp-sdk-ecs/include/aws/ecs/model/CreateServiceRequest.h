@@ -272,20 +272,17 @@ namespace Model
      * the replacement task set. The load balancer can also have up to two listeners: a
      * required listener for production traffic and an optional listener that you can
      * use to perform validation tests with Lambda functions before routing production
-     * traffic to it.</p> <p>After you create a service using the <code>ECS</code>
-     * deployment controller, the load balancer name or target group ARN, container
-     * name, and container port that's specified in the service definition are
-     * immutable. If you use the <code>CODE_DEPLOY</code> deployment controller, these
-     * values can be changed when updating the service.</p> <p>For Application Load
-     * Balancers and Network Load Balancers, this object must contain the load balancer
-     * target group ARN, the container name, and the container port to access from the
-     * load balancer. The container name must be as it appears in a container
-     * definition. The load balancer name parameter must be omitted. When a task from
-     * this service is placed on a container instance, the container instance and port
-     * combination is registered as a target in the target group that's specified
-     * here.</p> <p>For Classic Load Balancers, this object must contain the load
-     * balancer name, the container name , and the container port to access from the
-     * load balancer. The container name must be as it appears in a container
+     * traffic to it.</p> <p>If you use the <code>CODE_DEPLOY</code> deployment
+     * controller, these values can be changed when updating the service.</p> <p>For
+     * Application Load Balancers and Network Load Balancers, this object must contain
+     * the load balancer target group ARN, the container name, and the container port
+     * to access from the load balancer. The container name must be as it appears in a
+     * container definition. The load balancer name parameter must be omitted. When a
+     * task from this service is placed on a container instance, the container instance
+     * and port combination is registered as a target in the target group that's
+     * specified here.</p> <p>For Classic Load Balancers, this object must contain the
+     * load balancer name, the container name , and the container port to access from
+     * the load balancer. The container name must be as it appears in a container
      * definition. The target group ARN parameter must be omitted. When a task from
      * this service is placed on a container instance, the container instance is
      * registered with the load balancer that's specified here.</p> <p>Services with
@@ -321,20 +318,17 @@ namespace Model
      * the replacement task set. The load balancer can also have up to two listeners: a
      * required listener for production traffic and an optional listener that you can
      * use to perform validation tests with Lambda functions before routing production
-     * traffic to it.</p> <p>After you create a service using the <code>ECS</code>
-     * deployment controller, the load balancer name or target group ARN, container
-     * name, and container port that's specified in the service definition are
-     * immutable. If you use the <code>CODE_DEPLOY</code> deployment controller, these
-     * values can be changed when updating the service.</p> <p>For Application Load
-     * Balancers and Network Load Balancers, this object must contain the load balancer
-     * target group ARN, the container name, and the container port to access from the
-     * load balancer. The container name must be as it appears in a container
-     * definition. The load balancer name parameter must be omitted. When a task from
-     * this service is placed on a container instance, the container instance and port
-     * combination is registered as a target in the target group that's specified
-     * here.</p> <p>For Classic Load Balancers, this object must contain the load
-     * balancer name, the container name , and the container port to access from the
-     * load balancer. The container name must be as it appears in a container
+     * traffic to it.</p> <p>If you use the <code>CODE_DEPLOY</code> deployment
+     * controller, these values can be changed when updating the service.</p> <p>For
+     * Application Load Balancers and Network Load Balancers, this object must contain
+     * the load balancer target group ARN, the container name, and the container port
+     * to access from the load balancer. The container name must be as it appears in a
+     * container definition. The load balancer name parameter must be omitted. When a
+     * task from this service is placed on a container instance, the container instance
+     * and port combination is registered as a target in the target group that's
+     * specified here.</p> <p>For Classic Load Balancers, this object must contain the
+     * load balancer name, the container name , and the container port to access from
+     * the load balancer. The container name must be as it appears in a container
      * definition. The target group ARN parameter must be omitted. When a task from
      * this service is placed on a container instance, the container instance is
      * registered with the load balancer that's specified here.</p> <p>Services with
@@ -370,20 +364,17 @@ namespace Model
      * the replacement task set. The load balancer can also have up to two listeners: a
      * required listener for production traffic and an optional listener that you can
      * use to perform validation tests with Lambda functions before routing production
-     * traffic to it.</p> <p>After you create a service using the <code>ECS</code>
-     * deployment controller, the load balancer name or target group ARN, container
-     * name, and container port that's specified in the service definition are
-     * immutable. If you use the <code>CODE_DEPLOY</code> deployment controller, these
-     * values can be changed when updating the service.</p> <p>For Application Load
-     * Balancers and Network Load Balancers, this object must contain the load balancer
-     * target group ARN, the container name, and the container port to access from the
-     * load balancer. The container name must be as it appears in a container
-     * definition. The load balancer name parameter must be omitted. When a task from
-     * this service is placed on a container instance, the container instance and port
-     * combination is registered as a target in the target group that's specified
-     * here.</p> <p>For Classic Load Balancers, this object must contain the load
-     * balancer name, the container name , and the container port to access from the
-     * load balancer. The container name must be as it appears in a container
+     * traffic to it.</p> <p>If you use the <code>CODE_DEPLOY</code> deployment
+     * controller, these values can be changed when updating the service.</p> <p>For
+     * Application Load Balancers and Network Load Balancers, this object must contain
+     * the load balancer target group ARN, the container name, and the container port
+     * to access from the load balancer. The container name must be as it appears in a
+     * container definition. The load balancer name parameter must be omitted. When a
+     * task from this service is placed on a container instance, the container instance
+     * and port combination is registered as a target in the target group that's
+     * specified here.</p> <p>For Classic Load Balancers, this object must contain the
+     * load balancer name, the container name , and the container port to access from
+     * the load balancer. The container name must be as it appears in a container
      * definition. The target group ARN parameter must be omitted. When a task from
      * this service is placed on a container instance, the container instance is
      * registered with the load balancer that's specified here.</p> <p>Services with
@@ -419,20 +410,17 @@ namespace Model
      * the replacement task set. The load balancer can also have up to two listeners: a
      * required listener for production traffic and an optional listener that you can
      * use to perform validation tests with Lambda functions before routing production
-     * traffic to it.</p> <p>After you create a service using the <code>ECS</code>
-     * deployment controller, the load balancer name or target group ARN, container
-     * name, and container port that's specified in the service definition are
-     * immutable. If you use the <code>CODE_DEPLOY</code> deployment controller, these
-     * values can be changed when updating the service.</p> <p>For Application Load
-     * Balancers and Network Load Balancers, this object must contain the load balancer
-     * target group ARN, the container name, and the container port to access from the
-     * load balancer. The container name must be as it appears in a container
-     * definition. The load balancer name parameter must be omitted. When a task from
-     * this service is placed on a container instance, the container instance and port
-     * combination is registered as a target in the target group that's specified
-     * here.</p> <p>For Classic Load Balancers, this object must contain the load
-     * balancer name, the container name , and the container port to access from the
-     * load balancer. The container name must be as it appears in a container
+     * traffic to it.</p> <p>If you use the <code>CODE_DEPLOY</code> deployment
+     * controller, these values can be changed when updating the service.</p> <p>For
+     * Application Load Balancers and Network Load Balancers, this object must contain
+     * the load balancer target group ARN, the container name, and the container port
+     * to access from the load balancer. The container name must be as it appears in a
+     * container definition. The load balancer name parameter must be omitted. When a
+     * task from this service is placed on a container instance, the container instance
+     * and port combination is registered as a target in the target group that's
+     * specified here.</p> <p>For Classic Load Balancers, this object must contain the
+     * load balancer name, the container name , and the container port to access from
+     * the load balancer. The container name must be as it appears in a container
      * definition. The target group ARN parameter must be omitted. When a task from
      * this service is placed on a container instance, the container instance is
      * registered with the load balancer that's specified here.</p> <p>Services with
@@ -468,20 +456,17 @@ namespace Model
      * the replacement task set. The load balancer can also have up to two listeners: a
      * required listener for production traffic and an optional listener that you can
      * use to perform validation tests with Lambda functions before routing production
-     * traffic to it.</p> <p>After you create a service using the <code>ECS</code>
-     * deployment controller, the load balancer name or target group ARN, container
-     * name, and container port that's specified in the service definition are
-     * immutable. If you use the <code>CODE_DEPLOY</code> deployment controller, these
-     * values can be changed when updating the service.</p> <p>For Application Load
-     * Balancers and Network Load Balancers, this object must contain the load balancer
-     * target group ARN, the container name, and the container port to access from the
-     * load balancer. The container name must be as it appears in a container
-     * definition. The load balancer name parameter must be omitted. When a task from
-     * this service is placed on a container instance, the container instance and port
-     * combination is registered as a target in the target group that's specified
-     * here.</p> <p>For Classic Load Balancers, this object must contain the load
-     * balancer name, the container name , and the container port to access from the
-     * load balancer. The container name must be as it appears in a container
+     * traffic to it.</p> <p>If you use the <code>CODE_DEPLOY</code> deployment
+     * controller, these values can be changed when updating the service.</p> <p>For
+     * Application Load Balancers and Network Load Balancers, this object must contain
+     * the load balancer target group ARN, the container name, and the container port
+     * to access from the load balancer. The container name must be as it appears in a
+     * container definition. The load balancer name parameter must be omitted. When a
+     * task from this service is placed on a container instance, the container instance
+     * and port combination is registered as a target in the target group that's
+     * specified here.</p> <p>For Classic Load Balancers, this object must contain the
+     * load balancer name, the container name , and the container port to access from
+     * the load balancer. The container name must be as it appears in a container
      * definition. The target group ARN parameter must be omitted. When a task from
      * this service is placed on a container instance, the container instance is
      * registered with the load balancer that's specified here.</p> <p>Services with
@@ -517,20 +502,17 @@ namespace Model
      * the replacement task set. The load balancer can also have up to two listeners: a
      * required listener for production traffic and an optional listener that you can
      * use to perform validation tests with Lambda functions before routing production
-     * traffic to it.</p> <p>After you create a service using the <code>ECS</code>
-     * deployment controller, the load balancer name or target group ARN, container
-     * name, and container port that's specified in the service definition are
-     * immutable. If you use the <code>CODE_DEPLOY</code> deployment controller, these
-     * values can be changed when updating the service.</p> <p>For Application Load
-     * Balancers and Network Load Balancers, this object must contain the load balancer
-     * target group ARN, the container name, and the container port to access from the
-     * load balancer. The container name must be as it appears in a container
-     * definition. The load balancer name parameter must be omitted. When a task from
-     * this service is placed on a container instance, the container instance and port
-     * combination is registered as a target in the target group that's specified
-     * here.</p> <p>For Classic Load Balancers, this object must contain the load
-     * balancer name, the container name , and the container port to access from the
-     * load balancer. The container name must be as it appears in a container
+     * traffic to it.</p> <p>If you use the <code>CODE_DEPLOY</code> deployment
+     * controller, these values can be changed when updating the service.</p> <p>For
+     * Application Load Balancers and Network Load Balancers, this object must contain
+     * the load balancer target group ARN, the container name, and the container port
+     * to access from the load balancer. The container name must be as it appears in a
+     * container definition. The load balancer name parameter must be omitted. When a
+     * task from this service is placed on a container instance, the container instance
+     * and port combination is registered as a target in the target group that's
+     * specified here.</p> <p>For Classic Load Balancers, this object must contain the
+     * load balancer name, the container name , and the container port to access from
+     * the load balancer. The container name must be as it appears in a container
      * definition. The target group ARN parameter must be omitted. When a task from
      * this service is placed on a container instance, the container instance is
      * registered with the load balancer that's specified here.</p> <p>Services with
@@ -566,20 +548,17 @@ namespace Model
      * the replacement task set. The load balancer can also have up to two listeners: a
      * required listener for production traffic and an optional listener that you can
      * use to perform validation tests with Lambda functions before routing production
-     * traffic to it.</p> <p>After you create a service using the <code>ECS</code>
-     * deployment controller, the load balancer name or target group ARN, container
-     * name, and container port that's specified in the service definition are
-     * immutable. If you use the <code>CODE_DEPLOY</code> deployment controller, these
-     * values can be changed when updating the service.</p> <p>For Application Load
-     * Balancers and Network Load Balancers, this object must contain the load balancer
-     * target group ARN, the container name, and the container port to access from the
-     * load balancer. The container name must be as it appears in a container
-     * definition. The load balancer name parameter must be omitted. When a task from
-     * this service is placed on a container instance, the container instance and port
-     * combination is registered as a target in the target group that's specified
-     * here.</p> <p>For Classic Load Balancers, this object must contain the load
-     * balancer name, the container name , and the container port to access from the
-     * load balancer. The container name must be as it appears in a container
+     * traffic to it.</p> <p>If you use the <code>CODE_DEPLOY</code> deployment
+     * controller, these values can be changed when updating the service.</p> <p>For
+     * Application Load Balancers and Network Load Balancers, this object must contain
+     * the load balancer target group ARN, the container name, and the container port
+     * to access from the load balancer. The container name must be as it appears in a
+     * container definition. The load balancer name parameter must be omitted. When a
+     * task from this service is placed on a container instance, the container instance
+     * and port combination is registered as a target in the target group that's
+     * specified here.</p> <p>For Classic Load Balancers, this object must contain the
+     * load balancer name, the container name , and the container port to access from
+     * the load balancer. The container name must be as it appears in a container
      * definition. The target group ARN parameter must be omitted. When a task from
      * this service is placed on a container instance, the container instance is
      * registered with the load balancer that's specified here.</p> <p>Services with
@@ -615,20 +594,17 @@ namespace Model
      * the replacement task set. The load balancer can also have up to two listeners: a
      * required listener for production traffic and an optional listener that you can
      * use to perform validation tests with Lambda functions before routing production
-     * traffic to it.</p> <p>After you create a service using the <code>ECS</code>
-     * deployment controller, the load balancer name or target group ARN, container
-     * name, and container port that's specified in the service definition are
-     * immutable. If you use the <code>CODE_DEPLOY</code> deployment controller, these
-     * values can be changed when updating the service.</p> <p>For Application Load
-     * Balancers and Network Load Balancers, this object must contain the load balancer
-     * target group ARN, the container name, and the container port to access from the
-     * load balancer. The container name must be as it appears in a container
-     * definition. The load balancer name parameter must be omitted. When a task from
-     * this service is placed on a container instance, the container instance and port
-     * combination is registered as a target in the target group that's specified
-     * here.</p> <p>For Classic Load Balancers, this object must contain the load
-     * balancer name, the container name , and the container port to access from the
-     * load balancer. The container name must be as it appears in a container
+     * traffic to it.</p> <p>If you use the <code>CODE_DEPLOY</code> deployment
+     * controller, these values can be changed when updating the service.</p> <p>For
+     * Application Load Balancers and Network Load Balancers, this object must contain
+     * the load balancer target group ARN, the container name, and the container port
+     * to access from the load balancer. The container name must be as it appears in a
+     * container definition. The load balancer name parameter must be omitted. When a
+     * task from this service is placed on a container instance, the container instance
+     * and port combination is registered as a target in the target group that's
+     * specified here.</p> <p>For Classic Load Balancers, this object must contain the
+     * load balancer name, the container name , and the container port to access from
+     * the load balancer. The container name must be as it appears in a container
      * definition. The target group ARN parameter must be omitted. When a task from
      * this service is placed on a container instance, the container instance is
      * registered with the load balancer that's specified here.</p> <p>Services with
@@ -1520,7 +1496,11 @@ namespace Model
      * started. This is only used when your service is configured to use a load
      * balancer. If your service has a load balancer defined and you don't specify a
      * health check grace period value, the default value of <code>0</code> is
-     * used.</p> <p>If your service's tasks take a while to start and respond to
+     * used.</p> <p>If you do not use an Elastic Load Balancing, we recomend that you
+     * use the <code>startPeriod</code> in the task definition healtch check
+     * parameters. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health
+     * check</a>.</p> <p>If your service's tasks take a while to start and respond to
      * Elastic Load Balancing health checks, you can specify a health check grace
      * period of up to 2,147,483,647 seconds (about 69 years). During that time, the
      * Amazon ECS service scheduler ignores health check status. This grace period can
@@ -1535,7 +1515,11 @@ namespace Model
      * started. This is only used when your service is configured to use a load
      * balancer. If your service has a load balancer defined and you don't specify a
      * health check grace period value, the default value of <code>0</code> is
-     * used.</p> <p>If your service's tasks take a while to start and respond to
+     * used.</p> <p>If you do not use an Elastic Load Balancing, we recomend that you
+     * use the <code>startPeriod</code> in the task definition healtch check
+     * parameters. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health
+     * check</a>.</p> <p>If your service's tasks take a while to start and respond to
      * Elastic Load Balancing health checks, you can specify a health check grace
      * period of up to 2,147,483,647 seconds (about 69 years). During that time, the
      * Amazon ECS service scheduler ignores health check status. This grace period can
@@ -1550,7 +1534,11 @@ namespace Model
      * started. This is only used when your service is configured to use a load
      * balancer. If your service has a load balancer defined and you don't specify a
      * health check grace period value, the default value of <code>0</code> is
-     * used.</p> <p>If your service's tasks take a while to start and respond to
+     * used.</p> <p>If you do not use an Elastic Load Balancing, we recomend that you
+     * use the <code>startPeriod</code> in the task definition healtch check
+     * parameters. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health
+     * check</a>.</p> <p>If your service's tasks take a while to start and respond to
      * Elastic Load Balancing health checks, you can specify a health check grace
      * period of up to 2,147,483,647 seconds (about 69 years). During that time, the
      * Amazon ECS service scheduler ignores health check status. This grace period can
@@ -1565,7 +1553,11 @@ namespace Model
      * started. This is only used when your service is configured to use a load
      * balancer. If your service has a load balancer defined and you don't specify a
      * health check grace period value, the default value of <code>0</code> is
-     * used.</p> <p>If your service's tasks take a while to start and respond to
+     * used.</p> <p>If you do not use an Elastic Load Balancing, we recomend that you
+     * use the <code>startPeriod</code> in the task definition healtch check
+     * parameters. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health
+     * check</a>.</p> <p>If your service's tasks take a while to start and respond to
      * Elastic Load Balancing health checks, you can specify a health check grace
      * period of up to 2,147,483,647 seconds (about 69 years). During that time, the
      * Amazon ECS service scheduler ignores health check status. This grace period can
@@ -1921,7 +1913,7 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether to enable Amazon ECS managed tags for the tasks within the
+     * <p>Specifies whether to turn on Amazon ECS managed tags for the tasks within the
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
@@ -1930,7 +1922,7 @@ namespace Model
     inline bool GetEnableECSManagedTags() const{ return m_enableECSManagedTags; }
 
     /**
-     * <p>Specifies whether to enable Amazon ECS managed tags for the tasks within the
+     * <p>Specifies whether to turn on Amazon ECS managed tags for the tasks within the
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
@@ -1939,7 +1931,7 @@ namespace Model
     inline bool EnableECSManagedTagsHasBeenSet() const { return m_enableECSManagedTagsHasBeenSet; }
 
     /**
-     * <p>Specifies whether to enable Amazon ECS managed tags for the tasks within the
+     * <p>Specifies whether to turn on Amazon ECS managed tags for the tasks within the
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
@@ -1948,7 +1940,7 @@ namespace Model
     inline void SetEnableECSManagedTags(bool value) { m_enableECSManagedTagsHasBeenSet = true; m_enableECSManagedTags = value; }
 
     /**
-     * <p>Specifies whether to enable Amazon ECS managed tags for the tasks within the
+     * <p>Specifies whether to turn on Amazon ECS managed tags for the tasks within the
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
@@ -1958,56 +1950,50 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether to propagate the tags from the task definition or the
-     * service to the tasks in the service. If no value is specified, the tags aren't
-     * propagated. Tags can only be propagated to the tasks within the service during
-     * service creation. To add tags to a task after service creation or task creation,
-     * use the <a>TagResource</a> API action.</p>
+     * <p>Specifies whether to propagate the tags from the task definition to the task.
+     * If no value is specified, the tags aren't propagated. Tags can only be
+     * propagated to the task during task creation. To add tags to a task after task
+     * creation, use the <a>TagResource</a> API action.</p>
      */
     inline const PropagateTags& GetPropagateTags() const{ return m_propagateTags; }
 
     /**
-     * <p>Specifies whether to propagate the tags from the task definition or the
-     * service to the tasks in the service. If no value is specified, the tags aren't
-     * propagated. Tags can only be propagated to the tasks within the service during
-     * service creation. To add tags to a task after service creation or task creation,
-     * use the <a>TagResource</a> API action.</p>
+     * <p>Specifies whether to propagate the tags from the task definition to the task.
+     * If no value is specified, the tags aren't propagated. Tags can only be
+     * propagated to the task during task creation. To add tags to a task after task
+     * creation, use the <a>TagResource</a> API action.</p>
      */
     inline bool PropagateTagsHasBeenSet() const { return m_propagateTagsHasBeenSet; }
 
     /**
-     * <p>Specifies whether to propagate the tags from the task definition or the
-     * service to the tasks in the service. If no value is specified, the tags aren't
-     * propagated. Tags can only be propagated to the tasks within the service during
-     * service creation. To add tags to a task after service creation or task creation,
-     * use the <a>TagResource</a> API action.</p>
+     * <p>Specifies whether to propagate the tags from the task definition to the task.
+     * If no value is specified, the tags aren't propagated. Tags can only be
+     * propagated to the task during task creation. To add tags to a task after task
+     * creation, use the <a>TagResource</a> API action.</p>
      */
     inline void SetPropagateTags(const PropagateTags& value) { m_propagateTagsHasBeenSet = true; m_propagateTags = value; }
 
     /**
-     * <p>Specifies whether to propagate the tags from the task definition or the
-     * service to the tasks in the service. If no value is specified, the tags aren't
-     * propagated. Tags can only be propagated to the tasks within the service during
-     * service creation. To add tags to a task after service creation or task creation,
-     * use the <a>TagResource</a> API action.</p>
+     * <p>Specifies whether to propagate the tags from the task definition to the task.
+     * If no value is specified, the tags aren't propagated. Tags can only be
+     * propagated to the task during task creation. To add tags to a task after task
+     * creation, use the <a>TagResource</a> API action.</p>
      */
     inline void SetPropagateTags(PropagateTags&& value) { m_propagateTagsHasBeenSet = true; m_propagateTags = std::move(value); }
 
     /**
-     * <p>Specifies whether to propagate the tags from the task definition or the
-     * service to the tasks in the service. If no value is specified, the tags aren't
-     * propagated. Tags can only be propagated to the tasks within the service during
-     * service creation. To add tags to a task after service creation or task creation,
-     * use the <a>TagResource</a> API action.</p>
+     * <p>Specifies whether to propagate the tags from the task definition to the task.
+     * If no value is specified, the tags aren't propagated. Tags can only be
+     * propagated to the task during task creation. To add tags to a task after task
+     * creation, use the <a>TagResource</a> API action.</p>
      */
     inline CreateServiceRequest& WithPropagateTags(const PropagateTags& value) { SetPropagateTags(value); return *this;}
 
     /**
-     * <p>Specifies whether to propagate the tags from the task definition or the
-     * service to the tasks in the service. If no value is specified, the tags aren't
-     * propagated. Tags can only be propagated to the tasks within the service during
-     * service creation. To add tags to a task after service creation or task creation,
-     * use the <a>TagResource</a> API action.</p>
+     * <p>Specifies whether to propagate the tags from the task definition to the task.
+     * If no value is specified, the tags aren't propagated. Tags can only be
+     * propagated to the task during task creation. To add tags to a task after task
+     * creation, use the <a>TagResource</a> API action.</p>
      */
     inline CreateServiceRequest& WithPropagateTags(PropagateTags&& value) { SetPropagateTags(std::move(value)); return *this;}
 

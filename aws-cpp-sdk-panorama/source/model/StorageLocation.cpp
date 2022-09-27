@@ -19,38 +19,38 @@ namespace Model
 {
 
 StorageLocation::StorageLocation() : 
-    m_bucketHasBeenSet(false),
-    m_repoPrefixLocationHasBeenSet(false),
-    m_generatedPrefixLocationHasBeenSet(false),
     m_binaryPrefixLocationHasBeenSet(false),
-    m_manifestPrefixLocationHasBeenSet(false)
+    m_bucketHasBeenSet(false),
+    m_generatedPrefixLocationHasBeenSet(false),
+    m_manifestPrefixLocationHasBeenSet(false),
+    m_repoPrefixLocationHasBeenSet(false)
 {
 }
 
 StorageLocation::StorageLocation(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_repoPrefixLocationHasBeenSet(false),
-    m_generatedPrefixLocationHasBeenSet(false),
     m_binaryPrefixLocationHasBeenSet(false),
-    m_manifestPrefixLocationHasBeenSet(false)
+    m_bucketHasBeenSet(false),
+    m_generatedPrefixLocationHasBeenSet(false),
+    m_manifestPrefixLocationHasBeenSet(false),
+    m_repoPrefixLocationHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 StorageLocation& StorageLocation::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("BinaryPrefixLocation"))
+  {
+    m_binaryPrefixLocation = jsonValue.GetString("BinaryPrefixLocation");
+
+    m_binaryPrefixLocationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Bucket"))
   {
     m_bucket = jsonValue.GetString("Bucket");
 
     m_bucketHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("RepoPrefixLocation"))
-  {
-    m_repoPrefixLocation = jsonValue.GetString("RepoPrefixLocation");
-
-    m_repoPrefixLocationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("GeneratedPrefixLocation"))
@@ -60,18 +60,18 @@ StorageLocation& StorageLocation::operator =(JsonView jsonValue)
     m_generatedPrefixLocationHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("BinaryPrefixLocation"))
-  {
-    m_binaryPrefixLocation = jsonValue.GetString("BinaryPrefixLocation");
-
-    m_binaryPrefixLocationHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("ManifestPrefixLocation"))
   {
     m_manifestPrefixLocation = jsonValue.GetString("ManifestPrefixLocation");
 
     m_manifestPrefixLocationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RepoPrefixLocation"))
+  {
+    m_repoPrefixLocation = jsonValue.GetString("RepoPrefixLocation");
+
+    m_repoPrefixLocationHasBeenSet = true;
   }
 
   return *this;
@@ -81,15 +81,15 @@ JsonValue StorageLocation::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_bucketHasBeenSet)
+  if(m_binaryPrefixLocationHasBeenSet)
   {
-   payload.WithString("Bucket", m_bucket);
+   payload.WithString("BinaryPrefixLocation", m_binaryPrefixLocation);
 
   }
 
-  if(m_repoPrefixLocationHasBeenSet)
+  if(m_bucketHasBeenSet)
   {
-   payload.WithString("RepoPrefixLocation", m_repoPrefixLocation);
+   payload.WithString("Bucket", m_bucket);
 
   }
 
@@ -99,15 +99,15 @@ JsonValue StorageLocation::Jsonize() const
 
   }
 
-  if(m_binaryPrefixLocationHasBeenSet)
-  {
-   payload.WithString("BinaryPrefixLocation", m_binaryPrefixLocation);
-
-  }
-
   if(m_manifestPrefixLocationHasBeenSet)
   {
    payload.WithString("ManifestPrefixLocation", m_manifestPrefixLocation);
+
+  }
+
+  if(m_repoPrefixLocationHasBeenSet)
+  {
+   payload.WithString("RepoPrefixLocation", m_repoPrefixLocation);
 
   }
 

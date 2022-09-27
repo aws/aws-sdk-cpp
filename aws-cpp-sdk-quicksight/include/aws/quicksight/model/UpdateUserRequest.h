@@ -296,10 +296,10 @@ namespace Model
      * includes any combination of these restrictions. Currently, you need to create
      * the profile names for custom permission sets by using the Amazon QuickSight
      * console. Then, you use the <code>RegisterUser</code> API operation to assign the
-     * named set of permissions to a QuickSight user. </p> <p>Amazon QuickSight custom
-     * permissions are applied through IAM policies. Therefore, they override the
-     * permissions typically granted by assigning Amazon QuickSight users to one of the
-     * default security cohorts in Amazon QuickSight (admin, author, reader).</p>
+     * named set of permissions to a Amazon QuickSight user. </p> <p>Amazon QuickSight
+     * custom permissions are applied through IAM policies. Therefore, they override
+     * the permissions typically granted by assigning Amazon QuickSight users to one of
+     * the default security cohorts in Amazon QuickSight (admin, author, reader).</p>
      * <p>This feature is available only to Amazon QuickSight Enterprise edition
      * subscriptions.</p>
      */
@@ -315,10 +315,10 @@ namespace Model
      * includes any combination of these restrictions. Currently, you need to create
      * the profile names for custom permission sets by using the Amazon QuickSight
      * console. Then, you use the <code>RegisterUser</code> API operation to assign the
-     * named set of permissions to a QuickSight user. </p> <p>Amazon QuickSight custom
-     * permissions are applied through IAM policies. Therefore, they override the
-     * permissions typically granted by assigning Amazon QuickSight users to one of the
-     * default security cohorts in Amazon QuickSight (admin, author, reader).</p>
+     * named set of permissions to a Amazon QuickSight user. </p> <p>Amazon QuickSight
+     * custom permissions are applied through IAM policies. Therefore, they override
+     * the permissions typically granted by assigning Amazon QuickSight users to one of
+     * the default security cohorts in Amazon QuickSight (admin, author, reader).</p>
      * <p>This feature is available only to Amazon QuickSight Enterprise edition
      * subscriptions.</p>
      */
@@ -334,10 +334,10 @@ namespace Model
      * includes any combination of these restrictions. Currently, you need to create
      * the profile names for custom permission sets by using the Amazon QuickSight
      * console. Then, you use the <code>RegisterUser</code> API operation to assign the
-     * named set of permissions to a QuickSight user. </p> <p>Amazon QuickSight custom
-     * permissions are applied through IAM policies. Therefore, they override the
-     * permissions typically granted by assigning Amazon QuickSight users to one of the
-     * default security cohorts in Amazon QuickSight (admin, author, reader).</p>
+     * named set of permissions to a Amazon QuickSight user. </p> <p>Amazon QuickSight
+     * custom permissions are applied through IAM policies. Therefore, they override
+     * the permissions typically granted by assigning Amazon QuickSight users to one of
+     * the default security cohorts in Amazon QuickSight (admin, author, reader).</p>
      * <p>This feature is available only to Amazon QuickSight Enterprise edition
      * subscriptions.</p>
      */
@@ -353,10 +353,10 @@ namespace Model
      * includes any combination of these restrictions. Currently, you need to create
      * the profile names for custom permission sets by using the Amazon QuickSight
      * console. Then, you use the <code>RegisterUser</code> API operation to assign the
-     * named set of permissions to a QuickSight user. </p> <p>Amazon QuickSight custom
-     * permissions are applied through IAM policies. Therefore, they override the
-     * permissions typically granted by assigning Amazon QuickSight users to one of the
-     * default security cohorts in Amazon QuickSight (admin, author, reader).</p>
+     * named set of permissions to a Amazon QuickSight user. </p> <p>Amazon QuickSight
+     * custom permissions are applied through IAM policies. Therefore, they override
+     * the permissions typically granted by assigning Amazon QuickSight users to one of
+     * the default security cohorts in Amazon QuickSight (admin, author, reader).</p>
      * <p>This feature is available only to Amazon QuickSight Enterprise edition
      * subscriptions.</p>
      */
@@ -372,10 +372,10 @@ namespace Model
      * includes any combination of these restrictions. Currently, you need to create
      * the profile names for custom permission sets by using the Amazon QuickSight
      * console. Then, you use the <code>RegisterUser</code> API operation to assign the
-     * named set of permissions to a QuickSight user. </p> <p>Amazon QuickSight custom
-     * permissions are applied through IAM policies. Therefore, they override the
-     * permissions typically granted by assigning Amazon QuickSight users to one of the
-     * default security cohorts in Amazon QuickSight (admin, author, reader).</p>
+     * named set of permissions to a Amazon QuickSight user. </p> <p>Amazon QuickSight
+     * custom permissions are applied through IAM policies. Therefore, they override
+     * the permissions typically granted by assigning Amazon QuickSight users to one of
+     * the default security cohorts in Amazon QuickSight (admin, author, reader).</p>
      * <p>This feature is available only to Amazon QuickSight Enterprise edition
      * subscriptions.</p>
      */
@@ -391,10 +391,10 @@ namespace Model
      * includes any combination of these restrictions. Currently, you need to create
      * the profile names for custom permission sets by using the Amazon QuickSight
      * console. Then, you use the <code>RegisterUser</code> API operation to assign the
-     * named set of permissions to a QuickSight user. </p> <p>Amazon QuickSight custom
-     * permissions are applied through IAM policies. Therefore, they override the
-     * permissions typically granted by assigning Amazon QuickSight users to one of the
-     * default security cohorts in Amazon QuickSight (admin, author, reader).</p>
+     * named set of permissions to a Amazon QuickSight user. </p> <p>Amazon QuickSight
+     * custom permissions are applied through IAM policies. Therefore, they override
+     * the permissions typically granted by assigning Amazon QuickSight users to one of
+     * the default security cohorts in Amazon QuickSight (admin, author, reader).</p>
      * <p>This feature is available only to Amazon QuickSight Enterprise edition
      * subscriptions.</p>
      */
@@ -410,10 +410,10 @@ namespace Model
      * includes any combination of these restrictions. Currently, you need to create
      * the profile names for custom permission sets by using the Amazon QuickSight
      * console. Then, you use the <code>RegisterUser</code> API operation to assign the
-     * named set of permissions to a QuickSight user. </p> <p>Amazon QuickSight custom
-     * permissions are applied through IAM policies. Therefore, they override the
-     * permissions typically granted by assigning Amazon QuickSight users to one of the
-     * default security cohorts in Amazon QuickSight (admin, author, reader).</p>
+     * named set of permissions to a Amazon QuickSight user. </p> <p>Amazon QuickSight
+     * custom permissions are applied through IAM policies. Therefore, they override
+     * the permissions typically granted by assigning Amazon QuickSight users to one of
+     * the default security cohorts in Amazon QuickSight (admin, author, reader).</p>
      * <p>This feature is available only to Amazon QuickSight Enterprise edition
      * subscriptions.</p>
      */
@@ -429,10 +429,10 @@ namespace Model
      * includes any combination of these restrictions. Currently, you need to create
      * the profile names for custom permission sets by using the Amazon QuickSight
      * console. Then, you use the <code>RegisterUser</code> API operation to assign the
-     * named set of permissions to a QuickSight user. </p> <p>Amazon QuickSight custom
-     * permissions are applied through IAM policies. Therefore, they override the
-     * permissions typically granted by assigning Amazon QuickSight users to one of the
-     * default security cohorts in Amazon QuickSight (admin, author, reader).</p>
+     * named set of permissions to a Amazon QuickSight user. </p> <p>Amazon QuickSight
+     * custom permissions are applied through IAM policies. Therefore, they override
+     * the permissions typically granted by assigning Amazon QuickSight users to one of
+     * the default security cohorts in Amazon QuickSight (admin, author, reader).</p>
      * <p>This feature is available only to Amazon QuickSight Enterprise edition
      * subscriptions.</p>
      */

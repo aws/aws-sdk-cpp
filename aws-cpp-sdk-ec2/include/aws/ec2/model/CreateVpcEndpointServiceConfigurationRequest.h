@@ -73,29 +73,25 @@ namespace Model
 
     /**
      * <p>Indicates whether requests from service consumers to create an endpoint to
-     * your service must be accepted. To accept a request, use
-     * <a>AcceptVpcEndpointConnections</a>.</p>
+     * your service must be accepted manually.</p>
      */
     inline bool GetAcceptanceRequired() const{ return m_acceptanceRequired; }
 
     /**
      * <p>Indicates whether requests from service consumers to create an endpoint to
-     * your service must be accepted. To accept a request, use
-     * <a>AcceptVpcEndpointConnections</a>.</p>
+     * your service must be accepted manually.</p>
      */
     inline bool AcceptanceRequiredHasBeenSet() const { return m_acceptanceRequiredHasBeenSet; }
 
     /**
      * <p>Indicates whether requests from service consumers to create an endpoint to
-     * your service must be accepted. To accept a request, use
-     * <a>AcceptVpcEndpointConnections</a>.</p>
+     * your service must be accepted manually.</p>
      */
     inline void SetAcceptanceRequired(bool value) { m_acceptanceRequiredHasBeenSet = true; m_acceptanceRequired = value; }
 
     /**
      * <p>Indicates whether requests from service consumers to create an endpoint to
-     * your service must be accepted. To accept a request, use
-     * <a>AcceptVpcEndpointConnections</a>.</p>
+     * your service must be accepted manually.</p>
      */
     inline CreateVpcEndpointServiceConfigurationRequest& WithAcceptanceRequired(bool value) { SetAcceptanceRequired(value); return *this;}
 
@@ -251,6 +247,61 @@ namespace Model
 
 
     /**
+     * <p>The supported IP address types. The possible values are <code>ipv4</code> and
+     * <code>ipv6</code>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSupportedIpAddressTypes() const{ return m_supportedIpAddressTypes; }
+
+    /**
+     * <p>The supported IP address types. The possible values are <code>ipv4</code> and
+     * <code>ipv6</code>.</p>
+     */
+    inline bool SupportedIpAddressTypesHasBeenSet() const { return m_supportedIpAddressTypesHasBeenSet; }
+
+    /**
+     * <p>The supported IP address types. The possible values are <code>ipv4</code> and
+     * <code>ipv6</code>.</p>
+     */
+    inline void SetSupportedIpAddressTypes(const Aws::Vector<Aws::String>& value) { m_supportedIpAddressTypesHasBeenSet = true; m_supportedIpAddressTypes = value; }
+
+    /**
+     * <p>The supported IP address types. The possible values are <code>ipv4</code> and
+     * <code>ipv6</code>.</p>
+     */
+    inline void SetSupportedIpAddressTypes(Aws::Vector<Aws::String>&& value) { m_supportedIpAddressTypesHasBeenSet = true; m_supportedIpAddressTypes = std::move(value); }
+
+    /**
+     * <p>The supported IP address types. The possible values are <code>ipv4</code> and
+     * <code>ipv6</code>.</p>
+     */
+    inline CreateVpcEndpointServiceConfigurationRequest& WithSupportedIpAddressTypes(const Aws::Vector<Aws::String>& value) { SetSupportedIpAddressTypes(value); return *this;}
+
+    /**
+     * <p>The supported IP address types. The possible values are <code>ipv4</code> and
+     * <code>ipv6</code>.</p>
+     */
+    inline CreateVpcEndpointServiceConfigurationRequest& WithSupportedIpAddressTypes(Aws::Vector<Aws::String>&& value) { SetSupportedIpAddressTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The supported IP address types. The possible values are <code>ipv4</code> and
+     * <code>ipv6</code>.</p>
+     */
+    inline CreateVpcEndpointServiceConfigurationRequest& AddSupportedIpAddressTypes(const Aws::String& value) { m_supportedIpAddressTypesHasBeenSet = true; m_supportedIpAddressTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The supported IP address types. The possible values are <code>ipv4</code> and
+     * <code>ipv6</code>.</p>
+     */
+    inline CreateVpcEndpointServiceConfigurationRequest& AddSupportedIpAddressTypes(Aws::String&& value) { m_supportedIpAddressTypesHasBeenSet = true; m_supportedIpAddressTypes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The supported IP address types. The possible values are <code>ipv4</code> and
+     * <code>ipv6</code>.</p>
+     */
+    inline CreateVpcEndpointServiceConfigurationRequest& AddSupportedIpAddressTypes(const char* value) { m_supportedIpAddressTypesHasBeenSet = true; m_supportedIpAddressTypes.push_back(value); return *this; }
+
+
+    /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
@@ -371,6 +422,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_gatewayLoadBalancerArns;
     bool m_gatewayLoadBalancerArnsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_supportedIpAddressTypes;
+    bool m_supportedIpAddressTypesHasBeenSet;
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;

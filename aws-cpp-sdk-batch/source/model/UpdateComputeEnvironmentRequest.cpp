@@ -19,7 +19,8 @@ UpdateComputeEnvironmentRequest::UpdateComputeEnvironmentRequest() :
     m_unmanagedvCpus(0),
     m_unmanagedvCpusHasBeenSet(false),
     m_computeResourcesHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false)
+    m_serviceRoleHasBeenSet(false),
+    m_updatePolicyHasBeenSet(false)
 {
 }
 
@@ -53,6 +54,12 @@ Aws::String UpdateComputeEnvironmentRequest::SerializePayload() const
   if(m_serviceRoleHasBeenSet)
   {
    payload.WithString("serviceRole", m_serviceRole);
+
+  }
+
+  if(m_updatePolicyHasBeenSet)
+  {
+   payload.WithObject("updatePolicy", m_updatePolicy.Jsonize());
 
   }
 

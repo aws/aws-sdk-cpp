@@ -76,6 +76,12 @@ DescribeExplainabilityExportResult& DescribeExplainabilityExportResult::operator
 
   }
 
+  if(jsonValue.ValueExists("Format"))
+  {
+    m_format = jsonValue.GetString("Format");
+
+  }
+
 
 
   return *this;

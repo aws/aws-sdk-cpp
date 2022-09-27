@@ -13,6 +13,7 @@
 #include <aws/ec2/model/ServiceTypeDetail.h>
 #include <aws/ec2/model/PrivateDnsDetails.h>
 #include <aws/ec2/model/Tag.h>
+#include <aws/ec2/model/ServiceConnectivityType.h>
 #include <utility>
 
 namespace Aws
@@ -568,6 +569,47 @@ namespace Model
      */
     inline ServiceDetail& WithPrivateDnsNameVerificationState(DnsNameState&& value) { SetPrivateDnsNameVerificationState(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The supported IP address types.</p>
+     */
+    inline const Aws::Vector<ServiceConnectivityType>& GetSupportedIpAddressTypes() const{ return m_supportedIpAddressTypes; }
+
+    /**
+     * <p>The supported IP address types.</p>
+     */
+    inline bool SupportedIpAddressTypesHasBeenSet() const { return m_supportedIpAddressTypesHasBeenSet; }
+
+    /**
+     * <p>The supported IP address types.</p>
+     */
+    inline void SetSupportedIpAddressTypes(const Aws::Vector<ServiceConnectivityType>& value) { m_supportedIpAddressTypesHasBeenSet = true; m_supportedIpAddressTypes = value; }
+
+    /**
+     * <p>The supported IP address types.</p>
+     */
+    inline void SetSupportedIpAddressTypes(Aws::Vector<ServiceConnectivityType>&& value) { m_supportedIpAddressTypesHasBeenSet = true; m_supportedIpAddressTypes = std::move(value); }
+
+    /**
+     * <p>The supported IP address types.</p>
+     */
+    inline ServiceDetail& WithSupportedIpAddressTypes(const Aws::Vector<ServiceConnectivityType>& value) { SetSupportedIpAddressTypes(value); return *this;}
+
+    /**
+     * <p>The supported IP address types.</p>
+     */
+    inline ServiceDetail& WithSupportedIpAddressTypes(Aws::Vector<ServiceConnectivityType>&& value) { SetSupportedIpAddressTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The supported IP address types.</p>
+     */
+    inline ServiceDetail& AddSupportedIpAddressTypes(const ServiceConnectivityType& value) { m_supportedIpAddressTypesHasBeenSet = true; m_supportedIpAddressTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The supported IP address types.</p>
+     */
+    inline ServiceDetail& AddSupportedIpAddressTypes(ServiceConnectivityType&& value) { m_supportedIpAddressTypesHasBeenSet = true; m_supportedIpAddressTypes.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_serviceName;
@@ -611,6 +653,9 @@ namespace Model
 
     DnsNameState m_privateDnsNameVerificationState;
     bool m_privateDnsNameVerificationStateHasBeenSet;
+
+    Aws::Vector<ServiceConnectivityType> m_supportedIpAddressTypes;
+    bool m_supportedIpAddressTypesHasBeenSet;
   };
 
 } // namespace Model

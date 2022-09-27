@@ -618,6 +618,152 @@ namespace Model
 
 
     /**
+     * <p>Specify a string to display when users connect to a server. This string is
+     * displayed after the user authenticates.</p>  <p>The SFTP protocol does not
+     * support post-authentication display banners.</p> 
+     */
+    inline const Aws::String& GetPostAuthenticationLoginBanner() const{ return m_postAuthenticationLoginBanner; }
+
+    /**
+     * <p>Specify a string to display when users connect to a server. This string is
+     * displayed after the user authenticates.</p>  <p>The SFTP protocol does not
+     * support post-authentication display banners.</p> 
+     */
+    inline bool PostAuthenticationLoginBannerHasBeenSet() const { return m_postAuthenticationLoginBannerHasBeenSet; }
+
+    /**
+     * <p>Specify a string to display when users connect to a server. This string is
+     * displayed after the user authenticates.</p>  <p>The SFTP protocol does not
+     * support post-authentication display banners.</p> 
+     */
+    inline void SetPostAuthenticationLoginBanner(const Aws::String& value) { m_postAuthenticationLoginBannerHasBeenSet = true; m_postAuthenticationLoginBanner = value; }
+
+    /**
+     * <p>Specify a string to display when users connect to a server. This string is
+     * displayed after the user authenticates.</p>  <p>The SFTP protocol does not
+     * support post-authentication display banners.</p> 
+     */
+    inline void SetPostAuthenticationLoginBanner(Aws::String&& value) { m_postAuthenticationLoginBannerHasBeenSet = true; m_postAuthenticationLoginBanner = std::move(value); }
+
+    /**
+     * <p>Specify a string to display when users connect to a server. This string is
+     * displayed after the user authenticates.</p>  <p>The SFTP protocol does not
+     * support post-authentication display banners.</p> 
+     */
+    inline void SetPostAuthenticationLoginBanner(const char* value) { m_postAuthenticationLoginBannerHasBeenSet = true; m_postAuthenticationLoginBanner.assign(value); }
+
+    /**
+     * <p>Specify a string to display when users connect to a server. This string is
+     * displayed after the user authenticates.</p>  <p>The SFTP protocol does not
+     * support post-authentication display banners.</p> 
+     */
+    inline DescribedServer& WithPostAuthenticationLoginBanner(const Aws::String& value) { SetPostAuthenticationLoginBanner(value); return *this;}
+
+    /**
+     * <p>Specify a string to display when users connect to a server. This string is
+     * displayed after the user authenticates.</p>  <p>The SFTP protocol does not
+     * support post-authentication display banners.</p> 
+     */
+    inline DescribedServer& WithPostAuthenticationLoginBanner(Aws::String&& value) { SetPostAuthenticationLoginBanner(std::move(value)); return *this;}
+
+    /**
+     * <p>Specify a string to display when users connect to a server. This string is
+     * displayed after the user authenticates.</p>  <p>The SFTP protocol does not
+     * support post-authentication display banners.</p> 
+     */
+    inline DescribedServer& WithPostAuthenticationLoginBanner(const char* value) { SetPostAuthenticationLoginBanner(value); return *this;}
+
+
+    /**
+     * <p>Specify a string to display when users connect to a server. This string is
+     * displayed before the user authenticates. For example, the following banner
+     * displays details about using the system.</p> <p> <code>This system is for the
+     * use of authorized users only. Individuals using this computer system without
+     * authority, or in excess of their authority, are subject to having all of their
+     * activities on this system monitored and recorded by system personnel.</code>
+     * </p>
+     */
+    inline const Aws::String& GetPreAuthenticationLoginBanner() const{ return m_preAuthenticationLoginBanner; }
+
+    /**
+     * <p>Specify a string to display when users connect to a server. This string is
+     * displayed before the user authenticates. For example, the following banner
+     * displays details about using the system.</p> <p> <code>This system is for the
+     * use of authorized users only. Individuals using this computer system without
+     * authority, or in excess of their authority, are subject to having all of their
+     * activities on this system monitored and recorded by system personnel.</code>
+     * </p>
+     */
+    inline bool PreAuthenticationLoginBannerHasBeenSet() const { return m_preAuthenticationLoginBannerHasBeenSet; }
+
+    /**
+     * <p>Specify a string to display when users connect to a server. This string is
+     * displayed before the user authenticates. For example, the following banner
+     * displays details about using the system.</p> <p> <code>This system is for the
+     * use of authorized users only. Individuals using this computer system without
+     * authority, or in excess of their authority, are subject to having all of their
+     * activities on this system monitored and recorded by system personnel.</code>
+     * </p>
+     */
+    inline void SetPreAuthenticationLoginBanner(const Aws::String& value) { m_preAuthenticationLoginBannerHasBeenSet = true; m_preAuthenticationLoginBanner = value; }
+
+    /**
+     * <p>Specify a string to display when users connect to a server. This string is
+     * displayed before the user authenticates. For example, the following banner
+     * displays details about using the system.</p> <p> <code>This system is for the
+     * use of authorized users only. Individuals using this computer system without
+     * authority, or in excess of their authority, are subject to having all of their
+     * activities on this system monitored and recorded by system personnel.</code>
+     * </p>
+     */
+    inline void SetPreAuthenticationLoginBanner(Aws::String&& value) { m_preAuthenticationLoginBannerHasBeenSet = true; m_preAuthenticationLoginBanner = std::move(value); }
+
+    /**
+     * <p>Specify a string to display when users connect to a server. This string is
+     * displayed before the user authenticates. For example, the following banner
+     * displays details about using the system.</p> <p> <code>This system is for the
+     * use of authorized users only. Individuals using this computer system without
+     * authority, or in excess of their authority, are subject to having all of their
+     * activities on this system monitored and recorded by system personnel.</code>
+     * </p>
+     */
+    inline void SetPreAuthenticationLoginBanner(const char* value) { m_preAuthenticationLoginBannerHasBeenSet = true; m_preAuthenticationLoginBanner.assign(value); }
+
+    /**
+     * <p>Specify a string to display when users connect to a server. This string is
+     * displayed before the user authenticates. For example, the following banner
+     * displays details about using the system.</p> <p> <code>This system is for the
+     * use of authorized users only. Individuals using this computer system without
+     * authority, or in excess of their authority, are subject to having all of their
+     * activities on this system monitored and recorded by system personnel.</code>
+     * </p>
+     */
+    inline DescribedServer& WithPreAuthenticationLoginBanner(const Aws::String& value) { SetPreAuthenticationLoginBanner(value); return *this;}
+
+    /**
+     * <p>Specify a string to display when users connect to a server. This string is
+     * displayed before the user authenticates. For example, the following banner
+     * displays details about using the system.</p> <p> <code>This system is for the
+     * use of authorized users only. Individuals using this computer system without
+     * authority, or in excess of their authority, are subject to having all of their
+     * activities on this system monitored and recorded by system personnel.</code>
+     * </p>
+     */
+    inline DescribedServer& WithPreAuthenticationLoginBanner(Aws::String&& value) { SetPreAuthenticationLoginBanner(std::move(value)); return *this;}
+
+    /**
+     * <p>Specify a string to display when users connect to a server. This string is
+     * displayed before the user authenticates. For example, the following banner
+     * displays details about using the system.</p> <p> <code>This system is for the
+     * use of authorized users only. Individuals using this computer system without
+     * authority, or in excess of their authority, are subject to having all of their
+     * activities on this system monitored and recorded by system personnel.</code>
+     * </p>
+     */
+    inline DescribedServer& WithPreAuthenticationLoginBanner(const char* value) { SetPreAuthenticationLoginBanner(value); return *this;}
+
+
+    /**
      * <p>Specifies the file transfer protocol or protocols over which your file
      * transfer protocol client can connect to your server's endpoint. The available
      * protocols are:</p> <ul> <li> <p> <code>SFTP</code> (Secure Shell (SSH) File
@@ -1010,6 +1156,12 @@ namespace Model
 
     Aws::String m_loggingRole;
     bool m_loggingRoleHasBeenSet;
+
+    Aws::String m_postAuthenticationLoginBanner;
+    bool m_postAuthenticationLoginBannerHasBeenSet;
+
+    Aws::String m_preAuthenticationLoginBanner;
+    bool m_preAuthenticationLoginBannerHasBeenSet;
 
     Aws::Vector<Protocol> m_protocols;
     bool m_protocolsHasBeenSet;

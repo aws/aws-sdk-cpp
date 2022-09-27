@@ -21,7 +21,9 @@ namespace Model
     METRIC,
     PARENT,
     ATTACHMENT,
-    OTHER
+    OTHER,
+    AUTOMATION,
+    INVOLVED_RESOURCE
   };
 
 namespace ItemTypeMapper

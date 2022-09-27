@@ -85,37 +85,37 @@ namespace Model
 
 
     /**
-     * <p>The messages in downlink queue.</p>
+     * <p>The messages in the downlink queue.</p>
      */
     inline const Aws::Vector<DownlinkQueueMessage>& GetDownlinkQueueMessagesList() const{ return m_downlinkQueueMessagesList; }
 
     /**
-     * <p>The messages in downlink queue.</p>
+     * <p>The messages in the downlink queue.</p>
      */
     inline void SetDownlinkQueueMessagesList(const Aws::Vector<DownlinkQueueMessage>& value) { m_downlinkQueueMessagesList = value; }
 
     /**
-     * <p>The messages in downlink queue.</p>
+     * <p>The messages in the downlink queue.</p>
      */
     inline void SetDownlinkQueueMessagesList(Aws::Vector<DownlinkQueueMessage>&& value) { m_downlinkQueueMessagesList = std::move(value); }
 
     /**
-     * <p>The messages in downlink queue.</p>
+     * <p>The messages in the downlink queue.</p>
      */
     inline ListQueuedMessagesResult& WithDownlinkQueueMessagesList(const Aws::Vector<DownlinkQueueMessage>& value) { SetDownlinkQueueMessagesList(value); return *this;}
 
     /**
-     * <p>The messages in downlink queue.</p>
+     * <p>The messages in the downlink queue.</p>
      */
     inline ListQueuedMessagesResult& WithDownlinkQueueMessagesList(Aws::Vector<DownlinkQueueMessage>&& value) { SetDownlinkQueueMessagesList(std::move(value)); return *this;}
 
     /**
-     * <p>The messages in downlink queue.</p>
+     * <p>The messages in the downlink queue.</p>
      */
     inline ListQueuedMessagesResult& AddDownlinkQueueMessagesList(const DownlinkQueueMessage& value) { m_downlinkQueueMessagesList.push_back(value); return *this; }
 
     /**
-     * <p>The messages in downlink queue.</p>
+     * <p>The messages in the downlink queue.</p>
      */
     inline ListQueuedMessagesResult& AddDownlinkQueueMessagesList(DownlinkQueueMessage&& value) { m_downlinkQueueMessagesList.push_back(std::move(value)); return *this; }
 

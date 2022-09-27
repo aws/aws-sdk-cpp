@@ -7,6 +7,7 @@
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/LambdaRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lambda/model/FunctionUrlAuthType.h>
 #include <utility>
 
 namespace Aws
@@ -590,6 +591,116 @@ namespace Model
      */
     inline AddPermissionRequest& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
 
+
+    /**
+     * <p>The identifier for your organization in Organizations. Use this to grant
+     * permissions to all the Amazon Web Services accounts under this organization.</p>
+     */
+    inline const Aws::String& GetPrincipalOrgID() const{ return m_principalOrgID; }
+
+    /**
+     * <p>The identifier for your organization in Organizations. Use this to grant
+     * permissions to all the Amazon Web Services accounts under this organization.</p>
+     */
+    inline bool PrincipalOrgIDHasBeenSet() const { return m_principalOrgIDHasBeenSet; }
+
+    /**
+     * <p>The identifier for your organization in Organizations. Use this to grant
+     * permissions to all the Amazon Web Services accounts under this organization.</p>
+     */
+    inline void SetPrincipalOrgID(const Aws::String& value) { m_principalOrgIDHasBeenSet = true; m_principalOrgID = value; }
+
+    /**
+     * <p>The identifier for your organization in Organizations. Use this to grant
+     * permissions to all the Amazon Web Services accounts under this organization.</p>
+     */
+    inline void SetPrincipalOrgID(Aws::String&& value) { m_principalOrgIDHasBeenSet = true; m_principalOrgID = std::move(value); }
+
+    /**
+     * <p>The identifier for your organization in Organizations. Use this to grant
+     * permissions to all the Amazon Web Services accounts under this organization.</p>
+     */
+    inline void SetPrincipalOrgID(const char* value) { m_principalOrgIDHasBeenSet = true; m_principalOrgID.assign(value); }
+
+    /**
+     * <p>The identifier for your organization in Organizations. Use this to grant
+     * permissions to all the Amazon Web Services accounts under this organization.</p>
+     */
+    inline AddPermissionRequest& WithPrincipalOrgID(const Aws::String& value) { SetPrincipalOrgID(value); return *this;}
+
+    /**
+     * <p>The identifier for your organization in Organizations. Use this to grant
+     * permissions to all the Amazon Web Services accounts under this organization.</p>
+     */
+    inline AddPermissionRequest& WithPrincipalOrgID(Aws::String&& value) { SetPrincipalOrgID(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier for your organization in Organizations. Use this to grant
+     * permissions to all the Amazon Web Services accounts under this organization.</p>
+     */
+    inline AddPermissionRequest& WithPrincipalOrgID(const char* value) { SetPrincipalOrgID(value); return *this;}
+
+
+    /**
+     * <p>The type of authentication that your function URL uses. Set to
+     * <code>AWS_IAM</code> if you want to restrict access to authenticated
+     * <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM
+     * authentication to create a public endpoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and
+     * auth model for Lambda function URLs</a>.</p>
+     */
+    inline const FunctionUrlAuthType& GetFunctionUrlAuthType() const{ return m_functionUrlAuthType; }
+
+    /**
+     * <p>The type of authentication that your function URL uses. Set to
+     * <code>AWS_IAM</code> if you want to restrict access to authenticated
+     * <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM
+     * authentication to create a public endpoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and
+     * auth model for Lambda function URLs</a>.</p>
+     */
+    inline bool FunctionUrlAuthTypeHasBeenSet() const { return m_functionUrlAuthTypeHasBeenSet; }
+
+    /**
+     * <p>The type of authentication that your function URL uses. Set to
+     * <code>AWS_IAM</code> if you want to restrict access to authenticated
+     * <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM
+     * authentication to create a public endpoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and
+     * auth model for Lambda function URLs</a>.</p>
+     */
+    inline void SetFunctionUrlAuthType(const FunctionUrlAuthType& value) { m_functionUrlAuthTypeHasBeenSet = true; m_functionUrlAuthType = value; }
+
+    /**
+     * <p>The type of authentication that your function URL uses. Set to
+     * <code>AWS_IAM</code> if you want to restrict access to authenticated
+     * <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM
+     * authentication to create a public endpoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and
+     * auth model for Lambda function URLs</a>.</p>
+     */
+    inline void SetFunctionUrlAuthType(FunctionUrlAuthType&& value) { m_functionUrlAuthTypeHasBeenSet = true; m_functionUrlAuthType = std::move(value); }
+
+    /**
+     * <p>The type of authentication that your function URL uses. Set to
+     * <code>AWS_IAM</code> if you want to restrict access to authenticated
+     * <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM
+     * authentication to create a public endpoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and
+     * auth model for Lambda function URLs</a>.</p>
+     */
+    inline AddPermissionRequest& WithFunctionUrlAuthType(const FunctionUrlAuthType& value) { SetFunctionUrlAuthType(value); return *this;}
+
+    /**
+     * <p>The type of authentication that your function URL uses. Set to
+     * <code>AWS_IAM</code> if you want to restrict access to authenticated
+     * <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM
+     * authentication to create a public endpoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and
+     * auth model for Lambda function URLs</a>.</p>
+     */
+    inline AddPermissionRequest& WithFunctionUrlAuthType(FunctionUrlAuthType&& value) { SetFunctionUrlAuthType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_functionName;
@@ -618,6 +729,12 @@ namespace Model
 
     Aws::String m_revisionId;
     bool m_revisionIdHasBeenSet;
+
+    Aws::String m_principalOrgID;
+    bool m_principalOrgIDHasBeenSet;
+
+    FunctionUrlAuthType m_functionUrlAuthType;
+    bool m_functionUrlAuthTypeHasBeenSet;
   };
 
 } // namespace Model

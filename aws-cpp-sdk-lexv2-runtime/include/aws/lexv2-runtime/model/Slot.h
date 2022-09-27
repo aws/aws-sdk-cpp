@@ -8,7 +8,6 @@
 #include <aws/lexv2-runtime/model/Value.h>
 #include <aws/lexv2-runtime/model/Shape.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/lexv2-runtime/model/Slot.h>
 #include <utility>
 
 namespace Aws

@@ -1,11 +1,11 @@
 {
     "version": "0.1",
-    "language": "en-US",
+    "language": "en-US,en-GB",
     "words": [
         // C++ STL
         "smatch",
         // General
-        "SDK's", "sdks", "awssdk", "executables", "debuggable",
+        "SDK's", "sdks", "awssdk", "executables", "debuggable", "sdkutils",
         // AWS general
         "Arns", "AMZN", "amzn", "Paulo", "Ningxia", "ISOB", "isob",
         // AWS Signature

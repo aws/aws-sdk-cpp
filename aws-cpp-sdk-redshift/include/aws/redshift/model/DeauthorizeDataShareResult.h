@@ -148,44 +148,44 @@ namespace Model
 
 
     /**
-     * <p>A value that specifies when the datashare has an association between a
-     * producer and data consumers.</p>
+     * <p>A value that specifies when the datashare has an association between producer
+     * and data consumers.</p>
      */
     inline const Aws::Vector<DataShareAssociation>& GetDataShareAssociations() const{ return m_dataShareAssociations; }
 
     /**
-     * <p>A value that specifies when the datashare has an association between a
-     * producer and data consumers.</p>
+     * <p>A value that specifies when the datashare has an association between producer
+     * and data consumers.</p>
      */
     inline void SetDataShareAssociations(const Aws::Vector<DataShareAssociation>& value) { m_dataShareAssociations = value; }
 
     /**
-     * <p>A value that specifies when the datashare has an association between a
-     * producer and data consumers.</p>
+     * <p>A value that specifies when the datashare has an association between producer
+     * and data consumers.</p>
      */
     inline void SetDataShareAssociations(Aws::Vector<DataShareAssociation>&& value) { m_dataShareAssociations = std::move(value); }
 
     /**
-     * <p>A value that specifies when the datashare has an association between a
-     * producer and data consumers.</p>
+     * <p>A value that specifies when the datashare has an association between producer
+     * and data consumers.</p>
      */
     inline DeauthorizeDataShareResult& WithDataShareAssociations(const Aws::Vector<DataShareAssociation>& value) { SetDataShareAssociations(value); return *this;}
 
     /**
-     * <p>A value that specifies when the datashare has an association between a
-     * producer and data consumers.</p>
+     * <p>A value that specifies when the datashare has an association between producer
+     * and data consumers.</p>
      */
     inline DeauthorizeDataShareResult& WithDataShareAssociations(Aws::Vector<DataShareAssociation>&& value) { SetDataShareAssociations(std::move(value)); return *this;}
 
     /**
-     * <p>A value that specifies when the datashare has an association between a
-     * producer and data consumers.</p>
+     * <p>A value that specifies when the datashare has an association between producer
+     * and data consumers.</p>
      */
     inline DeauthorizeDataShareResult& AddDataShareAssociations(const DataShareAssociation& value) { m_dataShareAssociations.push_back(value); return *this; }
 
     /**
-     * <p>A value that specifies when the datashare has an association between a
-     * producer and data consumers.</p>
+     * <p>A value that specifies when the datashare has an association between producer
+     * and data consumers.</p>
      */
     inline DeauthorizeDataShareResult& AddDataShareAssociations(DataShareAssociation&& value) { m_dataShareAssociations.push_back(std::move(value)); return *this; }
 

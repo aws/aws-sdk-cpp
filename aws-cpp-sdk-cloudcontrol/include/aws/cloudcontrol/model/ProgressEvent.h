@@ -241,7 +241,7 @@ namespace Model
 
     /**
      * <p>The current status of the resource operation request.</p> <ul> <li> <p>
-     * <code>PENDING</code>: The resource operation has not yet started.</p> </li> <li>
+     * <code>PENDING</code>: The resource operation hasn't yet started.</p> </li> <li>
      * <p> <code>IN_PROGRESS</code>: The resource operation is currently in
      * progress.</p> </li> <li> <p> <code>SUCCESS</code>: The resource operation has
      * successfully completed.</p> </li> <li> <p> <code>FAILED</code>: The resource
@@ -255,7 +255,7 @@ namespace Model
 
     /**
      * <p>The current status of the resource operation request.</p> <ul> <li> <p>
-     * <code>PENDING</code>: The resource operation has not yet started.</p> </li> <li>
+     * <code>PENDING</code>: The resource operation hasn't yet started.</p> </li> <li>
      * <p> <code>IN_PROGRESS</code>: The resource operation is currently in
      * progress.</p> </li> <li> <p> <code>SUCCESS</code>: The resource operation has
      * successfully completed.</p> </li> <li> <p> <code>FAILED</code>: The resource
@@ -269,7 +269,7 @@ namespace Model
 
     /**
      * <p>The current status of the resource operation request.</p> <ul> <li> <p>
-     * <code>PENDING</code>: The resource operation has not yet started.</p> </li> <li>
+     * <code>PENDING</code>: The resource operation hasn't yet started.</p> </li> <li>
      * <p> <code>IN_PROGRESS</code>: The resource operation is currently in
      * progress.</p> </li> <li> <p> <code>SUCCESS</code>: The resource operation has
      * successfully completed.</p> </li> <li> <p> <code>FAILED</code>: The resource
@@ -283,7 +283,7 @@ namespace Model
 
     /**
      * <p>The current status of the resource operation request.</p> <ul> <li> <p>
-     * <code>PENDING</code>: The resource operation has not yet started.</p> </li> <li>
+     * <code>PENDING</code>: The resource operation hasn't yet started.</p> </li> <li>
      * <p> <code>IN_PROGRESS</code>: The resource operation is currently in
      * progress.</p> </li> <li> <p> <code>SUCCESS</code>: The resource operation has
      * successfully completed.</p> </li> <li> <p> <code>FAILED</code>: The resource
@@ -297,7 +297,7 @@ namespace Model
 
     /**
      * <p>The current status of the resource operation request.</p> <ul> <li> <p>
-     * <code>PENDING</code>: The resource operation has not yet started.</p> </li> <li>
+     * <code>PENDING</code>: The resource operation hasn't yet started.</p> </li> <li>
      * <p> <code>IN_PROGRESS</code>: The resource operation is currently in
      * progress.</p> </li> <li> <p> <code>SUCCESS</code>: The resource operation has
      * successfully completed.</p> </li> <li> <p> <code>FAILED</code>: The resource
@@ -311,7 +311,7 @@ namespace Model
 
     /**
      * <p>The current status of the resource operation request.</p> <ul> <li> <p>
-     * <code>PENDING</code>: The resource operation has not yet started.</p> </li> <li>
+     * <code>PENDING</code>: The resource operation hasn't yet started.</p> </li> <li>
      * <p> <code>IN_PROGRESS</code>: The resource operation is currently in
      * progress.</p> </li> <li> <p> <code>SUCCESS</code>: The resource operation has
      * successfully completed.</p> </li> <li> <p> <code>FAILED</code>: The resource

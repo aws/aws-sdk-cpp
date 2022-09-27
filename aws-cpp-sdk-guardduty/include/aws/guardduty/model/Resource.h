@@ -8,6 +8,8 @@
 #include <aws/guardduty/model/AccessKeyDetails.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/guardduty/model/InstanceDetails.h>
+#include <aws/guardduty/model/EksClusterDetails.h>
+#include <aws/guardduty/model/KubernetesDetails.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/guardduty/model/S3BucketDetail.h>
 #include <utility>
@@ -159,6 +161,74 @@ namespace Model
 
 
     /**
+     * <p>Details about the EKS cluster involved in a Kubernetes finding.</p>
+     */
+    inline const EksClusterDetails& GetEksClusterDetails() const{ return m_eksClusterDetails; }
+
+    /**
+     * <p>Details about the EKS cluster involved in a Kubernetes finding.</p>
+     */
+    inline bool EksClusterDetailsHasBeenSet() const { return m_eksClusterDetailsHasBeenSet; }
+
+    /**
+     * <p>Details about the EKS cluster involved in a Kubernetes finding.</p>
+     */
+    inline void SetEksClusterDetails(const EksClusterDetails& value) { m_eksClusterDetailsHasBeenSet = true; m_eksClusterDetails = value; }
+
+    /**
+     * <p>Details about the EKS cluster involved in a Kubernetes finding.</p>
+     */
+    inline void SetEksClusterDetails(EksClusterDetails&& value) { m_eksClusterDetailsHasBeenSet = true; m_eksClusterDetails = std::move(value); }
+
+    /**
+     * <p>Details about the EKS cluster involved in a Kubernetes finding.</p>
+     */
+    inline Resource& WithEksClusterDetails(const EksClusterDetails& value) { SetEksClusterDetails(value); return *this;}
+
+    /**
+     * <p>Details about the EKS cluster involved in a Kubernetes finding.</p>
+     */
+    inline Resource& WithEksClusterDetails(EksClusterDetails&& value) { SetEksClusterDetails(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about the Kubernetes user and workload involved in a Kubernetes
+     * finding.</p>
+     */
+    inline const KubernetesDetails& GetKubernetesDetails() const{ return m_kubernetesDetails; }
+
+    /**
+     * <p>Details about the Kubernetes user and workload involved in a Kubernetes
+     * finding.</p>
+     */
+    inline bool KubernetesDetailsHasBeenSet() const { return m_kubernetesDetailsHasBeenSet; }
+
+    /**
+     * <p>Details about the Kubernetes user and workload involved in a Kubernetes
+     * finding.</p>
+     */
+    inline void SetKubernetesDetails(const KubernetesDetails& value) { m_kubernetesDetailsHasBeenSet = true; m_kubernetesDetails = value; }
+
+    /**
+     * <p>Details about the Kubernetes user and workload involved in a Kubernetes
+     * finding.</p>
+     */
+    inline void SetKubernetesDetails(KubernetesDetails&& value) { m_kubernetesDetailsHasBeenSet = true; m_kubernetesDetails = std::move(value); }
+
+    /**
+     * <p>Details about the Kubernetes user and workload involved in a Kubernetes
+     * finding.</p>
+     */
+    inline Resource& WithKubernetesDetails(const KubernetesDetails& value) { SetKubernetesDetails(value); return *this;}
+
+    /**
+     * <p>Details about the Kubernetes user and workload involved in a Kubernetes
+     * finding.</p>
+     */
+    inline Resource& WithKubernetesDetails(KubernetesDetails&& value) { SetKubernetesDetails(std::move(value)); return *this;}
+
+
+    /**
      * <p>The type of Amazon Web Services resource.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
@@ -208,6 +278,12 @@ namespace Model
 
     InstanceDetails m_instanceDetails;
     bool m_instanceDetailsHasBeenSet;
+
+    EksClusterDetails m_eksClusterDetails;
+    bool m_eksClusterDetailsHasBeenSet;
+
+    KubernetesDetails m_kubernetesDetails;
+    bool m_kubernetesDetailsHasBeenSet;
 
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet;

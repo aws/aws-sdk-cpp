@@ -25,7 +25,8 @@ ResponseHeadersPolicyConfig::ResponseHeadersPolicyConfig() :
     m_nameHasBeenSet(false),
     m_corsConfigHasBeenSet(false),
     m_securityHeadersConfigHasBeenSet(false),
-    m_customHeadersConfigHasBeenSet(false)
+    m_customHeadersConfigHasBeenSet(false),
+    m_serverTimingHeadersConfigHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ ResponseHeadersPolicyConfig::ResponseHeadersPolicyConfig(const XmlNode& xmlNode)
     m_nameHasBeenSet(false),
     m_corsConfigHasBeenSet(false),
     m_securityHeadersConfigHasBeenSet(false),
-    m_customHeadersConfigHasBeenSet(false)
+    m_customHeadersConfigHasBeenSet(false),
+    m_serverTimingHeadersConfigHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -75,6 +77,12 @@ ResponseHeadersPolicyConfig& ResponseHeadersPolicyConfig::operator =(const XmlNo
       m_customHeadersConfig = customHeadersConfigNode;
       m_customHeadersConfigHasBeenSet = true;
     }
+    XmlNode serverTimingHeadersConfigNode = resultNode.FirstChild("ServerTimingHeadersConfig");
+    if(!serverTimingHeadersConfigNode.IsNull())
+    {
+      m_serverTimingHeadersConfig = serverTimingHeadersConfigNode;
+      m_serverTimingHeadersConfigHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -111,6 +119,12 @@ void ResponseHeadersPolicyConfig::AddToNode(XmlNode& parentNode) const
   {
    XmlNode customHeadersConfigNode = parentNode.CreateChildElement("CustomHeadersConfig");
    m_customHeadersConfig.AddToNode(customHeadersConfigNode);
+  }
+
+  if(m_serverTimingHeadersConfigHasBeenSet)
+  {
+   XmlNode serverTimingHeadersConfigNode = parentNode.CreateChildElement("ServerTimingHeadersConfig");
+   m_serverTimingHeadersConfig.AddToNode(serverTimingHeadersConfigNode);
   }
 
 }

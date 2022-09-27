@@ -239,39 +239,6 @@ namespace Model
 
 
     /**
-     * <p>A Boolean indicating whether to use default upload configurations. By
-     * default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the
-     * application terminates and all ROS topics will be recorded.</p> <p>If you set
-     * this value, you must specify an <code>outputLocation</code>. </p>
-     */
-    inline bool GetUseDefaultUploadConfigurations() const{ return m_useDefaultUploadConfigurations; }
-
-    /**
-     * <p>A Boolean indicating whether to use default upload configurations. By
-     * default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the
-     * application terminates and all ROS topics will be recorded.</p> <p>If you set
-     * this value, you must specify an <code>outputLocation</code>. </p>
-     */
-    inline bool UseDefaultUploadConfigurationsHasBeenSet() const { return m_useDefaultUploadConfigurationsHasBeenSet; }
-
-    /**
-     * <p>A Boolean indicating whether to use default upload configurations. By
-     * default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the
-     * application terminates and all ROS topics will be recorded.</p> <p>If you set
-     * this value, you must specify an <code>outputLocation</code>. </p>
-     */
-    inline void SetUseDefaultUploadConfigurations(bool value) { m_useDefaultUploadConfigurationsHasBeenSet = true; m_useDefaultUploadConfigurations = value; }
-
-    /**
-     * <p>A Boolean indicating whether to use default upload configurations. By
-     * default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the
-     * application terminates and all ROS topics will be recorded.</p> <p>If you set
-     * this value, you must specify an <code>outputLocation</code>. </p>
-     */
-    inline SimulationApplicationConfig& WithUseDefaultUploadConfigurations(bool value) { SetUseDefaultUploadConfigurations(value); return *this;}
-
-
-    /**
      * <p>Information about tools configured for the simulation application.</p>
      */
     inline const Aws::Vector<Tool>& GetTools() const{ return m_tools; }
@@ -311,35 +278,6 @@ namespace Model
      */
     inline SimulationApplicationConfig& AddTools(Tool&& value) { m_toolsHasBeenSet = true; m_tools.push_back(std::move(value)); return *this; }
 
-
-    /**
-     * <p>A Boolean indicating whether to use default simulation application tools. The
-     * default tools are rviz, rqt, terminal and rosbag record. The default is
-     * <code>False</code>. </p>
-     */
-    inline bool GetUseDefaultTools() const{ return m_useDefaultTools; }
-
-    /**
-     * <p>A Boolean indicating whether to use default simulation application tools. The
-     * default tools are rviz, rqt, terminal and rosbag record. The default is
-     * <code>False</code>. </p>
-     */
-    inline bool UseDefaultToolsHasBeenSet() const { return m_useDefaultToolsHasBeenSet; }
-
-    /**
-     * <p>A Boolean indicating whether to use default simulation application tools. The
-     * default tools are rviz, rqt, terminal and rosbag record. The default is
-     * <code>False</code>. </p>
-     */
-    inline void SetUseDefaultTools(bool value) { m_useDefaultToolsHasBeenSet = true; m_useDefaultTools = value; }
-
-    /**
-     * <p>A Boolean indicating whether to use default simulation application tools. The
-     * default tools are rviz, rqt, terminal and rosbag record. The default is
-     * <code>False</code>. </p>
-     */
-    inline SimulationApplicationConfig& WithUseDefaultTools(bool value) { SetUseDefaultTools(value); return *this;}
-
   private:
 
     Aws::String m_application;
@@ -357,14 +295,8 @@ namespace Model
     Aws::Vector<WorldConfig> m_worldConfigs;
     bool m_worldConfigsHasBeenSet;
 
-    bool m_useDefaultUploadConfigurations;
-    bool m_useDefaultUploadConfigurationsHasBeenSet;
-
     Aws::Vector<Tool> m_tools;
     bool m_toolsHasBeenSet;
-
-    bool m_useDefaultTools;
-    bool m_useDefaultToolsHasBeenSet;
   };
 
 } // namespace Model

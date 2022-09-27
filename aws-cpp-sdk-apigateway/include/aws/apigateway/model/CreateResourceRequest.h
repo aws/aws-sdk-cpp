@@ -17,8 +17,8 @@ namespace Model
 {
 
   /**
-   * <p>Requests API Gateway to create a <a>Resource</a> resource.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Requests API Gateway to create a Resource resource.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateResourceRequest">AWS
    * API Reference</a></p>
    */
@@ -37,83 +37,83 @@ namespace Model
 
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline CreateResourceRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline CreateResourceRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline CreateResourceRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
 
     /**
-     * <p>[Required] The parent resource's identifier.</p>
+     * <p>The parent resource's identifier.</p>
      */
     inline const Aws::String& GetParentId() const{ return m_parentId; }
 
     /**
-     * <p>[Required] The parent resource's identifier.</p>
+     * <p>The parent resource's identifier.</p>
      */
     inline bool ParentIdHasBeenSet() const { return m_parentIdHasBeenSet; }
 
     /**
-     * <p>[Required] The parent resource's identifier.</p>
+     * <p>The parent resource's identifier.</p>
      */
     inline void SetParentId(const Aws::String& value) { m_parentIdHasBeenSet = true; m_parentId = value; }
 
     /**
-     * <p>[Required] The parent resource's identifier.</p>
+     * <p>The parent resource's identifier.</p>
      */
     inline void SetParentId(Aws::String&& value) { m_parentIdHasBeenSet = true; m_parentId = std::move(value); }
 
     /**
-     * <p>[Required] The parent resource's identifier.</p>
+     * <p>The parent resource's identifier.</p>
      */
     inline void SetParentId(const char* value) { m_parentIdHasBeenSet = true; m_parentId.assign(value); }
 
     /**
-     * <p>[Required] The parent resource's identifier.</p>
+     * <p>The parent resource's identifier.</p>
      */
     inline CreateResourceRequest& WithParentId(const Aws::String& value) { SetParentId(value); return *this;}
 
     /**
-     * <p>[Required] The parent resource's identifier.</p>
+     * <p>The parent resource's identifier.</p>
      */
     inline CreateResourceRequest& WithParentId(Aws::String&& value) { SetParentId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The parent resource's identifier.</p>
+     * <p>The parent resource's identifier.</p>
      */
     inline CreateResourceRequest& WithParentId(const char* value) { SetParentId(value); return *this;}
 

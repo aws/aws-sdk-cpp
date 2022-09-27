@@ -8,6 +8,7 @@
 #include <aws/mediaconnect/MediaConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconnect/model/UpdateFailoverConfig.h>
+#include <aws/mediaconnect/model/UpdateMaintenance.h>
 #include <utility>
 
 namespace Aws
@@ -95,6 +96,25 @@ namespace Model
     
     inline UpdateFlowRequest& WithSourceFailoverConfig(UpdateFailoverConfig&& value) { SetSourceFailoverConfig(std::move(value)); return *this;}
 
+
+    
+    inline const UpdateMaintenance& GetMaintenance() const{ return m_maintenance; }
+
+    
+    inline bool MaintenanceHasBeenSet() const { return m_maintenanceHasBeenSet; }
+
+    
+    inline void SetMaintenance(const UpdateMaintenance& value) { m_maintenanceHasBeenSet = true; m_maintenance = value; }
+
+    
+    inline void SetMaintenance(UpdateMaintenance&& value) { m_maintenanceHasBeenSet = true; m_maintenance = std::move(value); }
+
+    
+    inline UpdateFlowRequest& WithMaintenance(const UpdateMaintenance& value) { SetMaintenance(value); return *this;}
+
+    
+    inline UpdateFlowRequest& WithMaintenance(UpdateMaintenance&& value) { SetMaintenance(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_flowArn;
@@ -102,6 +122,9 @@ namespace Model
 
     UpdateFailoverConfig m_sourceFailoverConfig;
     bool m_sourceFailoverConfigHasBeenSet;
+
+    UpdateMaintenance m_maintenance;
+    bool m_maintenanceHasBeenSet;
   };
 
 } // namespace Model

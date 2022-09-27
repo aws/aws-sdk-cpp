@@ -83,58 +83,122 @@ namespace Model
 
 
     /**
-     * <p>Returns whether a DynamoDB recovery point was taken using <a
-     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html">
-     * Backup's advanced DynamoDB backup features</a>. </p>
+     * <p>Returns whether Backup fully manages the backups for a resource type.</p>
+     * <p>For the benefits of full Backup management, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#full-management">
+     * Full Backup management</a>.</p> <p>For a list of resource types and whether each
+     * supports full Backup management, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+     * Feature availability by resource</a> table.</p> <p>If
+     * <code>"DynamoDB":false</code>, you can enable full Backup management for
+     * DynamoDB backup by enabling <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli">
+     * Backup's advanced DynamoDB backup features</a>.</p>
      */
     inline const Aws::Map<Aws::String, bool>& GetResourceTypeManagementPreference() const{ return m_resourceTypeManagementPreference; }
 
     /**
-     * <p>Returns whether a DynamoDB recovery point was taken using <a
-     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html">
-     * Backup's advanced DynamoDB backup features</a>. </p>
+     * <p>Returns whether Backup fully manages the backups for a resource type.</p>
+     * <p>For the benefits of full Backup management, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#full-management">
+     * Full Backup management</a>.</p> <p>For a list of resource types and whether each
+     * supports full Backup management, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+     * Feature availability by resource</a> table.</p> <p>If
+     * <code>"DynamoDB":false</code>, you can enable full Backup management for
+     * DynamoDB backup by enabling <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli">
+     * Backup's advanced DynamoDB backup features</a>.</p>
      */
     inline void SetResourceTypeManagementPreference(const Aws::Map<Aws::String, bool>& value) { m_resourceTypeManagementPreference = value; }
 
     /**
-     * <p>Returns whether a DynamoDB recovery point was taken using <a
-     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html">
-     * Backup's advanced DynamoDB backup features</a>. </p>
+     * <p>Returns whether Backup fully manages the backups for a resource type.</p>
+     * <p>For the benefits of full Backup management, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#full-management">
+     * Full Backup management</a>.</p> <p>For a list of resource types and whether each
+     * supports full Backup management, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+     * Feature availability by resource</a> table.</p> <p>If
+     * <code>"DynamoDB":false</code>, you can enable full Backup management for
+     * DynamoDB backup by enabling <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli">
+     * Backup's advanced DynamoDB backup features</a>.</p>
      */
     inline void SetResourceTypeManagementPreference(Aws::Map<Aws::String, bool>&& value) { m_resourceTypeManagementPreference = std::move(value); }
 
     /**
-     * <p>Returns whether a DynamoDB recovery point was taken using <a
-     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html">
-     * Backup's advanced DynamoDB backup features</a>. </p>
+     * <p>Returns whether Backup fully manages the backups for a resource type.</p>
+     * <p>For the benefits of full Backup management, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#full-management">
+     * Full Backup management</a>.</p> <p>For a list of resource types and whether each
+     * supports full Backup management, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+     * Feature availability by resource</a> table.</p> <p>If
+     * <code>"DynamoDB":false</code>, you can enable full Backup management for
+     * DynamoDB backup by enabling <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli">
+     * Backup's advanced DynamoDB backup features</a>.</p>
      */
     inline DescribeRegionSettingsResult& WithResourceTypeManagementPreference(const Aws::Map<Aws::String, bool>& value) { SetResourceTypeManagementPreference(value); return *this;}
 
     /**
-     * <p>Returns whether a DynamoDB recovery point was taken using <a
-     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html">
-     * Backup's advanced DynamoDB backup features</a>. </p>
+     * <p>Returns whether Backup fully manages the backups for a resource type.</p>
+     * <p>For the benefits of full Backup management, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#full-management">
+     * Full Backup management</a>.</p> <p>For a list of resource types and whether each
+     * supports full Backup management, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+     * Feature availability by resource</a> table.</p> <p>If
+     * <code>"DynamoDB":false</code>, you can enable full Backup management for
+     * DynamoDB backup by enabling <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli">
+     * Backup's advanced DynamoDB backup features</a>.</p>
      */
     inline DescribeRegionSettingsResult& WithResourceTypeManagementPreference(Aws::Map<Aws::String, bool>&& value) { SetResourceTypeManagementPreference(std::move(value)); return *this;}
 
     /**
-     * <p>Returns whether a DynamoDB recovery point was taken using <a
-     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html">
-     * Backup's advanced DynamoDB backup features</a>. </p>
+     * <p>Returns whether Backup fully manages the backups for a resource type.</p>
+     * <p>For the benefits of full Backup management, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#full-management">
+     * Full Backup management</a>.</p> <p>For a list of resource types and whether each
+     * supports full Backup management, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+     * Feature availability by resource</a> table.</p> <p>If
+     * <code>"DynamoDB":false</code>, you can enable full Backup management for
+     * DynamoDB backup by enabling <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli">
+     * Backup's advanced DynamoDB backup features</a>.</p>
      */
     inline DescribeRegionSettingsResult& AddResourceTypeManagementPreference(const Aws::String& key, bool value) { m_resourceTypeManagementPreference.emplace(key, value); return *this; }
 
     /**
-     * <p>Returns whether a DynamoDB recovery point was taken using <a
-     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html">
-     * Backup's advanced DynamoDB backup features</a>. </p>
+     * <p>Returns whether Backup fully manages the backups for a resource type.</p>
+     * <p>For the benefits of full Backup management, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#full-management">
+     * Full Backup management</a>.</p> <p>For a list of resource types and whether each
+     * supports full Backup management, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+     * Feature availability by resource</a> table.</p> <p>If
+     * <code>"DynamoDB":false</code>, you can enable full Backup management for
+     * DynamoDB backup by enabling <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli">
+     * Backup's advanced DynamoDB backup features</a>.</p>
      */
     inline DescribeRegionSettingsResult& AddResourceTypeManagementPreference(Aws::String&& key, bool value) { m_resourceTypeManagementPreference.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Returns whether a DynamoDB recovery point was taken using <a
-     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html">
-     * Backup's advanced DynamoDB backup features</a>. </p>
+     * <p>Returns whether Backup fully manages the backups for a resource type.</p>
+     * <p>For the benefits of full Backup management, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#full-management">
+     * Full Backup management</a>.</p> <p>For a list of resource types and whether each
+     * supports full Backup management, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+     * Feature availability by resource</a> table.</p> <p>If
+     * <code>"DynamoDB":false</code>, you can enable full Backup management for
+     * DynamoDB backup by enabling <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli">
+     * Backup's advanced DynamoDB backup features</a>.</p>
      */
     inline DescribeRegionSettingsResult& AddResourceTypeManagementPreference(const char* key, bool value) { m_resourceTypeManagementPreference.emplace(key, value); return *this; }
 

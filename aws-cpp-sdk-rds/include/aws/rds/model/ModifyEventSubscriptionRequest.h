@@ -236,113 +236,113 @@ namespace Model
 
 
     /**
-     * <p> A list of event categories for a source type (<code>SourceType</code>) that
+     * <p>A list of event categories for a source type (<code>SourceType</code>) that
      * you want to subscribe to. You can see a list of the categories for a given
      * source type in <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
      * in the <i>Amazon RDS User Guide</i> or by using the
-     * <code>DescribeEventCategories</code> operation. </p>
+     * <code>DescribeEventCategories</code> operation.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEventCategories() const{ return m_eventCategories; }
 
     /**
-     * <p> A list of event categories for a source type (<code>SourceType</code>) that
+     * <p>A list of event categories for a source type (<code>SourceType</code>) that
      * you want to subscribe to. You can see a list of the categories for a given
      * source type in <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
      * in the <i>Amazon RDS User Guide</i> or by using the
-     * <code>DescribeEventCategories</code> operation. </p>
+     * <code>DescribeEventCategories</code> operation.</p>
      */
     inline bool EventCategoriesHasBeenSet() const { return m_eventCategoriesHasBeenSet; }
 
     /**
-     * <p> A list of event categories for a source type (<code>SourceType</code>) that
+     * <p>A list of event categories for a source type (<code>SourceType</code>) that
      * you want to subscribe to. You can see a list of the categories for a given
      * source type in <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
      * in the <i>Amazon RDS User Guide</i> or by using the
-     * <code>DescribeEventCategories</code> operation. </p>
+     * <code>DescribeEventCategories</code> operation.</p>
      */
     inline void SetEventCategories(const Aws::Vector<Aws::String>& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = value; }
 
     /**
-     * <p> A list of event categories for a source type (<code>SourceType</code>) that
+     * <p>A list of event categories for a source type (<code>SourceType</code>) that
      * you want to subscribe to. You can see a list of the categories for a given
      * source type in <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
      * in the <i>Amazon RDS User Guide</i> or by using the
-     * <code>DescribeEventCategories</code> operation. </p>
+     * <code>DescribeEventCategories</code> operation.</p>
      */
     inline void SetEventCategories(Aws::Vector<Aws::String>&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = std::move(value); }
 
     /**
-     * <p> A list of event categories for a source type (<code>SourceType</code>) that
+     * <p>A list of event categories for a source type (<code>SourceType</code>) that
      * you want to subscribe to. You can see a list of the categories for a given
      * source type in <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
      * in the <i>Amazon RDS User Guide</i> or by using the
-     * <code>DescribeEventCategories</code> operation. </p>
+     * <code>DescribeEventCategories</code> operation.</p>
      */
     inline ModifyEventSubscriptionRequest& WithEventCategories(const Aws::Vector<Aws::String>& value) { SetEventCategories(value); return *this;}
 
     /**
-     * <p> A list of event categories for a source type (<code>SourceType</code>) that
+     * <p>A list of event categories for a source type (<code>SourceType</code>) that
      * you want to subscribe to. You can see a list of the categories for a given
      * source type in <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
      * in the <i>Amazon RDS User Guide</i> or by using the
-     * <code>DescribeEventCategories</code> operation. </p>
+     * <code>DescribeEventCategories</code> operation.</p>
      */
     inline ModifyEventSubscriptionRequest& WithEventCategories(Aws::Vector<Aws::String>&& value) { SetEventCategories(std::move(value)); return *this;}
 
     /**
-     * <p> A list of event categories for a source type (<code>SourceType</code>) that
+     * <p>A list of event categories for a source type (<code>SourceType</code>) that
      * you want to subscribe to. You can see a list of the categories for a given
      * source type in <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
      * in the <i>Amazon RDS User Guide</i> or by using the
-     * <code>DescribeEventCategories</code> operation. </p>
+     * <code>DescribeEventCategories</code> operation.</p>
      */
     inline ModifyEventSubscriptionRequest& AddEventCategories(const Aws::String& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
 
     /**
-     * <p> A list of event categories for a source type (<code>SourceType</code>) that
+     * <p>A list of event categories for a source type (<code>SourceType</code>) that
      * you want to subscribe to. You can see a list of the categories for a given
      * source type in <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
      * in the <i>Amazon RDS User Guide</i> or by using the
-     * <code>DescribeEventCategories</code> operation. </p>
+     * <code>DescribeEventCategories</code> operation.</p>
      */
     inline ModifyEventSubscriptionRequest& AddEventCategories(Aws::String&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> A list of event categories for a source type (<code>SourceType</code>) that
+     * <p>A list of event categories for a source type (<code>SourceType</code>) that
      * you want to subscribe to. You can see a list of the categories for a given
      * source type in <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
      * in the <i>Amazon RDS User Guide</i> or by using the
-     * <code>DescribeEventCategories</code> operation. </p>
+     * <code>DescribeEventCategories</code> operation.</p>
      */
     inline ModifyEventSubscriptionRequest& AddEventCategories(const char* value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
 
 
     /**
-     * <p> A value that indicates whether to activate the subscription. </p>
+     * <p>A value that indicates whether to activate the subscription.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * <p> A value that indicates whether to activate the subscription. </p>
+     * <p>A value that indicates whether to activate the subscription.</p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
-     * <p> A value that indicates whether to activate the subscription. </p>
+     * <p>A value that indicates whether to activate the subscription.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * <p> A value that indicates whether to activate the subscription. </p>
+     * <p>A value that indicates whether to activate the subscription.</p>
      */
     inline ModifyEventSubscriptionRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
 

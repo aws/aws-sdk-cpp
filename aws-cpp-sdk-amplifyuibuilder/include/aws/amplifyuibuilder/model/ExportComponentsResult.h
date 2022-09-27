@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/amplifyuibuilder/AmplifyUIBuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/amplifyuibuilder/model/Component.h>
 #include <utility>
 
@@ -68,9 +69,47 @@ namespace Model
      */
     inline ExportComponentsResult& AddEntities(Component&& value) { m_entities.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The pagination token that's included if more results are available.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The pagination token that's included if more results are available.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /**
+     * <p>The pagination token that's included if more results are available.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
+
+    /**
+     * <p>The pagination token that's included if more results are available.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
+
+    /**
+     * <p>The pagination token that's included if more results are available.</p>
+     */
+    inline ExportComponentsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>The pagination token that's included if more results are available.</p>
+     */
+    inline ExportComponentsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * <p>The pagination token that's included if more results are available.</p>
+     */
+    inline ExportComponentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
   private:
 
     Aws::Vector<Component> m_entities;
+
+    Aws::String m_nextToken;
   };
 
 } // namespace Model

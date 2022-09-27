@@ -1057,12 +1057,20 @@ namespace Model
      * <p>By default, when you update an association, the system runs it immediately
      * after it is updated and then according to the schedule you specified. Specify
      * this option if you don't want an association to run immediately after you update
-     * it. This parameter isn't supported for rate expressions.</p> <p>Also, if you
-     * specified this option when you created the association, you can reset it. To do
-     * so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you
-     * update the association from the command line. This parameter forces the
-     * association to run immediately after updating it and according to the interval
-     * specified.</p>
+     * it. This parameter isn't supported for rate expressions.</p> <p>If you chose
+     * this option when you created an association and later you edit that association
+     * or you make changes to the SSM document on which that association is based (by
+     * using the Documents page in the console), State Manager applies the association
+     * at the next specified cron interval. For example, if you chose the
+     * <code>Latest</code> version of an SSM document when you created an association
+     * and you edit the association by choosing a different document version on the
+     * Documents page, State Manager applies the association at the next specified cron
+     * interval if you previously selected this option. If this option wasn't selected,
+     * State Manager immediately runs the association.</p> <p>You can reset this
+     * option. To do so, specify the <code>no-apply-only-at-cron-interval</code>
+     * parameter when you update the association from the command line. This parameter
+     * forces the association to run immediately after updating it and according to the
+     * interval specified.</p>
      */
     inline bool GetApplyOnlyAtCronInterval() const{ return m_applyOnlyAtCronInterval; }
 
@@ -1070,12 +1078,20 @@ namespace Model
      * <p>By default, when you update an association, the system runs it immediately
      * after it is updated and then according to the schedule you specified. Specify
      * this option if you don't want an association to run immediately after you update
-     * it. This parameter isn't supported for rate expressions.</p> <p>Also, if you
-     * specified this option when you created the association, you can reset it. To do
-     * so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you
-     * update the association from the command line. This parameter forces the
-     * association to run immediately after updating it and according to the interval
-     * specified.</p>
+     * it. This parameter isn't supported for rate expressions.</p> <p>If you chose
+     * this option when you created an association and later you edit that association
+     * or you make changes to the SSM document on which that association is based (by
+     * using the Documents page in the console), State Manager applies the association
+     * at the next specified cron interval. For example, if you chose the
+     * <code>Latest</code> version of an SSM document when you created an association
+     * and you edit the association by choosing a different document version on the
+     * Documents page, State Manager applies the association at the next specified cron
+     * interval if you previously selected this option. If this option wasn't selected,
+     * State Manager immediately runs the association.</p> <p>You can reset this
+     * option. To do so, specify the <code>no-apply-only-at-cron-interval</code>
+     * parameter when you update the association from the command line. This parameter
+     * forces the association to run immediately after updating it and according to the
+     * interval specified.</p>
      */
     inline bool ApplyOnlyAtCronIntervalHasBeenSet() const { return m_applyOnlyAtCronIntervalHasBeenSet; }
 
@@ -1083,12 +1099,20 @@ namespace Model
      * <p>By default, when you update an association, the system runs it immediately
      * after it is updated and then according to the schedule you specified. Specify
      * this option if you don't want an association to run immediately after you update
-     * it. This parameter isn't supported for rate expressions.</p> <p>Also, if you
-     * specified this option when you created the association, you can reset it. To do
-     * so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you
-     * update the association from the command line. This parameter forces the
-     * association to run immediately after updating it and according to the interval
-     * specified.</p>
+     * it. This parameter isn't supported for rate expressions.</p> <p>If you chose
+     * this option when you created an association and later you edit that association
+     * or you make changes to the SSM document on which that association is based (by
+     * using the Documents page in the console), State Manager applies the association
+     * at the next specified cron interval. For example, if you chose the
+     * <code>Latest</code> version of an SSM document when you created an association
+     * and you edit the association by choosing a different document version on the
+     * Documents page, State Manager applies the association at the next specified cron
+     * interval if you previously selected this option. If this option wasn't selected,
+     * State Manager immediately runs the association.</p> <p>You can reset this
+     * option. To do so, specify the <code>no-apply-only-at-cron-interval</code>
+     * parameter when you update the association from the command line. This parameter
+     * forces the association to run immediately after updating it and according to the
+     * interval specified.</p>
      */
     inline void SetApplyOnlyAtCronInterval(bool value) { m_applyOnlyAtCronIntervalHasBeenSet = true; m_applyOnlyAtCronInterval = value; }
 
@@ -1096,12 +1120,20 @@ namespace Model
      * <p>By default, when you update an association, the system runs it immediately
      * after it is updated and then according to the schedule you specified. Specify
      * this option if you don't want an association to run immediately after you update
-     * it. This parameter isn't supported for rate expressions.</p> <p>Also, if you
-     * specified this option when you created the association, you can reset it. To do
-     * so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you
-     * update the association from the command line. This parameter forces the
-     * association to run immediately after updating it and according to the interval
-     * specified.</p>
+     * it. This parameter isn't supported for rate expressions.</p> <p>If you chose
+     * this option when you created an association and later you edit that association
+     * or you make changes to the SSM document on which that association is based (by
+     * using the Documents page in the console), State Manager applies the association
+     * at the next specified cron interval. For example, if you chose the
+     * <code>Latest</code> version of an SSM document when you created an association
+     * and you edit the association by choosing a different document version on the
+     * Documents page, State Manager applies the association at the next specified cron
+     * interval if you previously selected this option. If this option wasn't selected,
+     * State Manager immediately runs the association.</p> <p>You can reset this
+     * option. To do so, specify the <code>no-apply-only-at-cron-interval</code>
+     * parameter when you update the association from the command line. This parameter
+     * forces the association to run immediately after updating it and according to the
+     * interval specified.</p>
      */
     inline UpdateAssociationRequest& WithApplyOnlyAtCronInterval(bool value) { SetApplyOnlyAtCronInterval(value); return *this;}
 
@@ -1244,6 +1276,112 @@ namespace Model
      */
     inline UpdateAssociationRequest& AddTargetLocations(TargetLocation&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Number of days to wait after the scheduled day to run an association. For
+     * example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>,
+     * you could specify an offset of 3 to run the association each Sunday after the
+     * second Thursday of the month. For more information about cron schedules for
+     * associations, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference:
+     * Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>. </p>  <p>To use offsets, you must specify
+     * the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system
+     * not to run an association immediately after you create it. </p> 
+     */
+    inline int GetScheduleOffset() const{ return m_scheduleOffset; }
+
+    /**
+     * <p>Number of days to wait after the scheduled day to run an association. For
+     * example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>,
+     * you could specify an offset of 3 to run the association each Sunday after the
+     * second Thursday of the month. For more information about cron schedules for
+     * associations, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference:
+     * Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>. </p>  <p>To use offsets, you must specify
+     * the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system
+     * not to run an association immediately after you create it. </p> 
+     */
+    inline bool ScheduleOffsetHasBeenSet() const { return m_scheduleOffsetHasBeenSet; }
+
+    /**
+     * <p>Number of days to wait after the scheduled day to run an association. For
+     * example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>,
+     * you could specify an offset of 3 to run the association each Sunday after the
+     * second Thursday of the month. For more information about cron schedules for
+     * associations, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference:
+     * Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>. </p>  <p>To use offsets, you must specify
+     * the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system
+     * not to run an association immediately after you create it. </p> 
+     */
+    inline void SetScheduleOffset(int value) { m_scheduleOffsetHasBeenSet = true; m_scheduleOffset = value; }
+
+    /**
+     * <p>Number of days to wait after the scheduled day to run an association. For
+     * example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>,
+     * you could specify an offset of 3 to run the association each Sunday after the
+     * second Thursday of the month. For more information about cron schedules for
+     * associations, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference:
+     * Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>. </p>  <p>To use offsets, you must specify
+     * the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system
+     * not to run an association immediately after you create it. </p> 
+     */
+    inline UpdateAssociationRequest& WithScheduleOffset(int value) { SetScheduleOffset(value); return *this;}
+
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline const Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& GetTargetMaps() const{ return m_targetMaps; }
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline bool TargetMapsHasBeenSet() const { return m_targetMapsHasBeenSet; }
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline void SetTargetMaps(const Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& value) { m_targetMapsHasBeenSet = true; m_targetMaps = value; }
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline void SetTargetMaps(Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { m_targetMapsHasBeenSet = true; m_targetMaps = std::move(value); }
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline UpdateAssociationRequest& WithTargetMaps(const Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& value) { SetTargetMaps(value); return *this;}
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline UpdateAssociationRequest& WithTargetMaps(Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { SetTargetMaps(std::move(value)); return *this;}
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline UpdateAssociationRequest& AddTargetMaps(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_targetMapsHasBeenSet = true; m_targetMaps.push_back(value); return *this; }
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline UpdateAssociationRequest& AddTargetMaps(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_targetMapsHasBeenSet = true; m_targetMaps.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_associationId;
@@ -1296,6 +1434,12 @@ namespace Model
 
     Aws::Vector<TargetLocation> m_targetLocations;
     bool m_targetLocationsHasBeenSet;
+
+    int m_scheduleOffset;
+    bool m_scheduleOffsetHasBeenSet;
+
+    Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>> m_targetMaps;
+    bool m_targetMapsHasBeenSet;
   };
 
 } // namespace Model

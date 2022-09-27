@@ -28,6 +28,12 @@ GetExperimentResultsResult::GetExperimentResultsResult(const Aws::AmazonWebServi
 GetExperimentResultsResult& GetExperimentResultsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("details"))
+  {
+    m_details = jsonValue.GetString("details");
+
+  }
+
   if(jsonValue.ValueExists("reports"))
   {
     Array<JsonView> reportsJsonList = jsonValue.GetArray("reports");

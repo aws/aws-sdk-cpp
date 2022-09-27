@@ -20,6 +20,7 @@ namespace Model
 
 TestRecommendation::TestRecommendation() : 
     m_appComponentNameHasBeenSet(false),
+    m_dependsOnAlarmsHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_intentHasBeenSet(false),
     m_itemsHasBeenSet(false),
@@ -36,6 +37,7 @@ TestRecommendation::TestRecommendation() :
 
 TestRecommendation::TestRecommendation(JsonView jsonValue) : 
     m_appComponentNameHasBeenSet(false),
+    m_dependsOnAlarmsHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_intentHasBeenSet(false),
     m_itemsHasBeenSet(false),
@@ -58,6 +60,16 @@ TestRecommendation& TestRecommendation::operator =(JsonView jsonValue)
     m_appComponentName = jsonValue.GetString("appComponentName");
 
     m_appComponentNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dependsOnAlarms"))
+  {
+    Array<JsonView> dependsOnAlarmsJsonList = jsonValue.GetArray("dependsOnAlarms");
+    for(unsigned dependsOnAlarmsIndex = 0; dependsOnAlarmsIndex < dependsOnAlarmsJsonList.GetLength(); ++dependsOnAlarmsIndex)
+    {
+      m_dependsOnAlarms.push_back(dependsOnAlarmsJsonList[dependsOnAlarmsIndex].AsString());
+    }
+    m_dependsOnAlarmsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("description"))
@@ -136,6 +148,17 @@ JsonValue TestRecommendation::Jsonize() const
   if(m_appComponentNameHasBeenSet)
   {
    payload.WithString("appComponentName", m_appComponentName);
+
+  }
+
+  if(m_dependsOnAlarmsHasBeenSet)
+  {
+   Array<JsonValue> dependsOnAlarmsJsonList(m_dependsOnAlarms.size());
+   for(unsigned dependsOnAlarmsIndex = 0; dependsOnAlarmsIndex < dependsOnAlarmsJsonList.GetLength(); ++dependsOnAlarmsIndex)
+   {
+     dependsOnAlarmsJsonList[dependsOnAlarmsIndex].AsString(m_dependsOnAlarms[dependsOnAlarmsIndex]);
+   }
+   payload.WithArray("dependsOnAlarms", std::move(dependsOnAlarmsJsonList));
 
   }
 

@@ -35,91 +35,91 @@ namespace Model
 
 
     /**
-     * <p>A token to indicate the location of the next output in the array of outputs,
-     * after the list of outputs that was previously requested.</p>
+     * <p>A token that indicates the location of the next output in the array of
+     * outputs, after the list of outputs that was previously requested.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>A token to indicate the location of the next output in the array of outputs,
-     * after the list of outputs that was previously requested.</p>
+     * <p>A token that indicates the location of the next output in the array of
+     * outputs, after the list of outputs that was previously requested.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>A token to indicate the location of the next output in the array of outputs,
-     * after the list of outputs that was previously requested.</p>
+     * <p>A token that indicates the location of the next output in the array of
+     * outputs, after the list of outputs that was previously requested.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>A token to indicate the location of the next output in the array of outputs,
-     * after the list of outputs that was previously requested.</p>
+     * <p>A token that indicates the location of the next output in the array of
+     * outputs, after the list of outputs that was previously requested.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>A token to indicate the location of the next output in the array of outputs,
-     * after the list of outputs that was previously requested.</p>
+     * <p>A token that indicates the location of the next output in the array of
+     * outputs, after the list of outputs that was previously requested.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>A token to indicate the location of the next output in the array of outputs,
-     * after the list of outputs that was previously requested.</p>
+     * <p>A token that indicates the location of the next output in the array of
+     * outputs, after the list of outputs that was previously requested.</p>
      */
     inline ListServicePipelineOutputsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>A token to indicate the location of the next output in the array of outputs,
-     * after the list of outputs that was previously requested.</p>
+     * <p>A token that indicates the location of the next output in the array of
+     * outputs, after the list of outputs that was previously requested.</p>
      */
     inline ListServicePipelineOutputsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token to indicate the location of the next output in the array of outputs,
-     * after the list of outputs that was previously requested.</p>
+     * <p>A token that indicates the location of the next output in the array of
+     * outputs, after the list of outputs that was previously requested.</p>
      */
     inline ListServicePipelineOutputsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * <p>The service name.</p>
+     * <p>The name of the service whose pipeline's outputs you want.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
 
     /**
-     * <p>The service name.</p>
+     * <p>The name of the service whose pipeline's outputs you want.</p>
      */
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
 
     /**
-     * <p>The service name.</p>
+     * <p>The name of the service whose pipeline's outputs you want.</p>
      */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
-     * <p>The service name.</p>
+     * <p>The name of the service whose pipeline's outputs you want.</p>
      */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
-     * <p>The service name.</p>
+     * <p>The name of the service whose pipeline's outputs you want.</p>
      */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
     /**
-     * <p>The service name.</p>
+     * <p>The name of the service whose pipeline's outputs you want.</p>
      */
     inline ListServicePipelineOutputsRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
 
     /**
-     * <p>The service name.</p>
+     * <p>The name of the service whose pipeline's outputs you want.</p>
      */
     inline ListServicePipelineOutputsRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
     /**
-     * <p>The service name.</p>
+     * <p>The name of the service whose pipeline's outputs you want.</p>
      */
     inline ListServicePipelineOutputsRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 

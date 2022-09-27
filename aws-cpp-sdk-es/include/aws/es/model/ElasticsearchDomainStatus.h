@@ -18,6 +18,7 @@
 #include <aws/es/model/DomainEndpointOptions.h>
 #include <aws/es/model/AdvancedSecurityOptions.h>
 #include <aws/es/model/AutoTuneOptionsOutput.h>
+#include <aws/es/model/ChangeProgressDetails.h>
 #include <aws/es/model/LogType.h>
 #include <aws/es/model/LogPublishingOption.h>
 #include <utility>
@@ -1060,6 +1061,37 @@ namespace Model
      */
     inline ElasticsearchDomainStatus& WithAutoTuneOptions(AutoTuneOptionsOutput&& value) { SetAutoTuneOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies change details of the domain configuration change.</p>
+     */
+    inline const ChangeProgressDetails& GetChangeProgressDetails() const{ return m_changeProgressDetails; }
+
+    /**
+     * <p>Specifies change details of the domain configuration change.</p>
+     */
+    inline bool ChangeProgressDetailsHasBeenSet() const { return m_changeProgressDetailsHasBeenSet; }
+
+    /**
+     * <p>Specifies change details of the domain configuration change.</p>
+     */
+    inline void SetChangeProgressDetails(const ChangeProgressDetails& value) { m_changeProgressDetailsHasBeenSet = true; m_changeProgressDetails = value; }
+
+    /**
+     * <p>Specifies change details of the domain configuration change.</p>
+     */
+    inline void SetChangeProgressDetails(ChangeProgressDetails&& value) { m_changeProgressDetailsHasBeenSet = true; m_changeProgressDetails = std::move(value); }
+
+    /**
+     * <p>Specifies change details of the domain configuration change.</p>
+     */
+    inline ElasticsearchDomainStatus& WithChangeProgressDetails(const ChangeProgressDetails& value) { SetChangeProgressDetails(value); return *this;}
+
+    /**
+     * <p>Specifies change details of the domain configuration change.</p>
+     */
+    inline ElasticsearchDomainStatus& WithChangeProgressDetails(ChangeProgressDetails&& value) { SetChangeProgressDetails(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainId;
@@ -1133,6 +1165,9 @@ namespace Model
 
     AutoTuneOptionsOutput m_autoTuneOptions;
     bool m_autoTuneOptionsHasBeenSet;
+
+    ChangeProgressDetails m_changeProgressDetails;
+    bool m_changeProgressDetailsHasBeenSet;
   };
 
 } // namespace Model

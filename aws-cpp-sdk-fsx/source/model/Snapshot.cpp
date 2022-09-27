@@ -26,6 +26,7 @@ Snapshot::Snapshot() :
     m_creationTimeHasBeenSet(false),
     m_lifecycle(SnapshotLifecycle::NOT_SET),
     m_lifecycleHasBeenSet(false),
+    m_lifecycleTransitionReasonHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_administrativeActionsHasBeenSet(false)
 {
@@ -39,6 +40,7 @@ Snapshot::Snapshot(JsonView jsonValue) :
     m_creationTimeHasBeenSet(false),
     m_lifecycle(SnapshotLifecycle::NOT_SET),
     m_lifecycleHasBeenSet(false),
+    m_lifecycleTransitionReasonHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_administrativeActionsHasBeenSet(false)
 {
@@ -87,6 +89,13 @@ Snapshot& Snapshot::operator =(JsonView jsonValue)
     m_lifecycle = SnapshotLifecycleMapper::GetSnapshotLifecycleForName(jsonValue.GetString("Lifecycle"));
 
     m_lifecycleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LifecycleTransitionReason"))
+  {
+    m_lifecycleTransitionReason = jsonValue.GetObject("LifecycleTransitionReason");
+
+    m_lifecycleTransitionReasonHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Tags"))
@@ -148,6 +157,12 @@ JsonValue Snapshot::Jsonize() const
   if(m_lifecycleHasBeenSet)
   {
    payload.WithString("Lifecycle", SnapshotLifecycleMapper::GetNameForSnapshotLifecycle(m_lifecycle));
+  }
+
+  if(m_lifecycleTransitionReasonHasBeenSet)
+  {
+   payload.WithObject("LifecycleTransitionReason", m_lifecycleTransitionReason.Jsonize());
+
   }
 
   if(m_tagsHasBeenSet)

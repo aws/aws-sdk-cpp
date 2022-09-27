@@ -555,30 +555,22 @@ namespace Model
 
 
     /**
-     * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
-     * checking the health status of an EC2 instance that has come into service and
-     * marking it unhealthy due to a failed health check.</p>
+     * <p>The duration of the health check grace period, in seconds.</p>
      */
     inline int GetHealthCheckGracePeriod() const{ return m_healthCheckGracePeriod; }
 
     /**
-     * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
-     * checking the health status of an EC2 instance that has come into service and
-     * marking it unhealthy due to a failed health check.</p>
+     * <p>The duration of the health check grace period, in seconds.</p>
      */
     inline bool HealthCheckGracePeriodHasBeenSet() const { return m_healthCheckGracePeriodHasBeenSet; }
 
     /**
-     * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
-     * checking the health status of an EC2 instance that has come into service and
-     * marking it unhealthy due to a failed health check.</p>
+     * <p>The duration of the health check grace period, in seconds.</p>
      */
     inline void SetHealthCheckGracePeriod(int value) { m_healthCheckGracePeriodHasBeenSet = true; m_healthCheckGracePeriod = value; }
 
     /**
-     * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
-     * checking the health status of an EC2 instance that has come into service and
-     * marking it unhealthy due to a failed health check.</p>
+     * <p>The duration of the health check grace period, in seconds.</p>
      */
     inline AutoScalingGroup& WithHealthCheckGracePeriod(int value) { SetHealthCheckGracePeriod(value); return *this;}
 
@@ -1179,106 +1171,79 @@ namespace Model
     /**
      * <p>The unit of measurement for the value specified for desired capacity. Amazon
      * EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based
-     * instance type selection only. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
-     * an Auto Scaling group using attribute-based instance type selection</a> in the
-     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>By default, Amazon EC2 Auto
-     * Scaling specifies <code>units</code>, which translates into number of
-     * instances.</p> <p>Valid values: <code>units</code> | <code>vcpu</code> |
-     * <code>memory-mib</code> </p>
+     * instance type selection only.</p>
      */
     inline const Aws::String& GetDesiredCapacityType() const{ return m_desiredCapacityType; }
 
     /**
      * <p>The unit of measurement for the value specified for desired capacity. Amazon
      * EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based
-     * instance type selection only. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
-     * an Auto Scaling group using attribute-based instance type selection</a> in the
-     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>By default, Amazon EC2 Auto
-     * Scaling specifies <code>units</code>, which translates into number of
-     * instances.</p> <p>Valid values: <code>units</code> | <code>vcpu</code> |
-     * <code>memory-mib</code> </p>
+     * instance type selection only.</p>
      */
     inline bool DesiredCapacityTypeHasBeenSet() const { return m_desiredCapacityTypeHasBeenSet; }
 
     /**
      * <p>The unit of measurement for the value specified for desired capacity. Amazon
      * EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based
-     * instance type selection only. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
-     * an Auto Scaling group using attribute-based instance type selection</a> in the
-     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>By default, Amazon EC2 Auto
-     * Scaling specifies <code>units</code>, which translates into number of
-     * instances.</p> <p>Valid values: <code>units</code> | <code>vcpu</code> |
-     * <code>memory-mib</code> </p>
+     * instance type selection only.</p>
      */
     inline void SetDesiredCapacityType(const Aws::String& value) { m_desiredCapacityTypeHasBeenSet = true; m_desiredCapacityType = value; }
 
     /**
      * <p>The unit of measurement for the value specified for desired capacity. Amazon
      * EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based
-     * instance type selection only. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
-     * an Auto Scaling group using attribute-based instance type selection</a> in the
-     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>By default, Amazon EC2 Auto
-     * Scaling specifies <code>units</code>, which translates into number of
-     * instances.</p> <p>Valid values: <code>units</code> | <code>vcpu</code> |
-     * <code>memory-mib</code> </p>
+     * instance type selection only.</p>
      */
     inline void SetDesiredCapacityType(Aws::String&& value) { m_desiredCapacityTypeHasBeenSet = true; m_desiredCapacityType = std::move(value); }
 
     /**
      * <p>The unit of measurement for the value specified for desired capacity. Amazon
      * EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based
-     * instance type selection only. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
-     * an Auto Scaling group using attribute-based instance type selection</a> in the
-     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>By default, Amazon EC2 Auto
-     * Scaling specifies <code>units</code>, which translates into number of
-     * instances.</p> <p>Valid values: <code>units</code> | <code>vcpu</code> |
-     * <code>memory-mib</code> </p>
+     * instance type selection only.</p>
      */
     inline void SetDesiredCapacityType(const char* value) { m_desiredCapacityTypeHasBeenSet = true; m_desiredCapacityType.assign(value); }
 
     /**
      * <p>The unit of measurement for the value specified for desired capacity. Amazon
      * EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based
-     * instance type selection only. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
-     * an Auto Scaling group using attribute-based instance type selection</a> in the
-     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>By default, Amazon EC2 Auto
-     * Scaling specifies <code>units</code>, which translates into number of
-     * instances.</p> <p>Valid values: <code>units</code> | <code>vcpu</code> |
-     * <code>memory-mib</code> </p>
+     * instance type selection only.</p>
      */
     inline AutoScalingGroup& WithDesiredCapacityType(const Aws::String& value) { SetDesiredCapacityType(value); return *this;}
 
     /**
      * <p>The unit of measurement for the value specified for desired capacity. Amazon
      * EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based
-     * instance type selection only. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
-     * an Auto Scaling group using attribute-based instance type selection</a> in the
-     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>By default, Amazon EC2 Auto
-     * Scaling specifies <code>units</code>, which translates into number of
-     * instances.</p> <p>Valid values: <code>units</code> | <code>vcpu</code> |
-     * <code>memory-mib</code> </p>
+     * instance type selection only.</p>
      */
     inline AutoScalingGroup& WithDesiredCapacityType(Aws::String&& value) { SetDesiredCapacityType(std::move(value)); return *this;}
 
     /**
      * <p>The unit of measurement for the value specified for desired capacity. Amazon
      * EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based
-     * instance type selection only. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
-     * an Auto Scaling group using attribute-based instance type selection</a> in the
-     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>By default, Amazon EC2 Auto
-     * Scaling specifies <code>units</code>, which translates into number of
-     * instances.</p> <p>Valid values: <code>units</code> | <code>vcpu</code> |
-     * <code>memory-mib</code> </p>
+     * instance type selection only.</p>
      */
     inline AutoScalingGroup& WithDesiredCapacityType(const char* value) { SetDesiredCapacityType(value); return *this;}
+
+
+    /**
+     * <p>The duration of the default instance warmup, in seconds.</p>
+     */
+    inline int GetDefaultInstanceWarmup() const{ return m_defaultInstanceWarmup; }
+
+    /**
+     * <p>The duration of the default instance warmup, in seconds.</p>
+     */
+    inline bool DefaultInstanceWarmupHasBeenSet() const { return m_defaultInstanceWarmupHasBeenSet; }
+
+    /**
+     * <p>The duration of the default instance warmup, in seconds.</p>
+     */
+    inline void SetDefaultInstanceWarmup(int value) { m_defaultInstanceWarmupHasBeenSet = true; m_defaultInstanceWarmup = value; }
+
+    /**
+     * <p>The duration of the default instance warmup, in seconds.</p>
+     */
+    inline AutoScalingGroup& WithDefaultInstanceWarmup(int value) { SetDefaultInstanceWarmup(value); return *this;}
 
   private:
 
@@ -1377,6 +1342,9 @@ namespace Model
 
     Aws::String m_desiredCapacityType;
     bool m_desiredCapacityTypeHasBeenSet;
+
+    int m_defaultInstanceWarmup;
+    bool m_defaultInstanceWarmupHasBeenSet;
   };
 
 } // namespace Model

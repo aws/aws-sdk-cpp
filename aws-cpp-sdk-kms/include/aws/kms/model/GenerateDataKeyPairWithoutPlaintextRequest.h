@@ -40,177 +40,190 @@ namespace Model
     /**
      * <p>Specifies the encryption context that will be used when encrypting the
      * private key in the data key pair.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric KMS
-     * key, but it is highly recommended.</p> <p>For more information, see <a
+     * collection of non-secret key-value pairs that represent additional authenticated
+     * data. When you use an encryption context to encrypt data, you must specify the
+     * same (an exact case-sensitive match) encryption context to decrypt the data. An
+     * encryption context is supported only on operations with symmetric encryption KMS
+     * keys. On operations with symmetric encryption KMS keys, an encryption context is
+     * optional, but it is strongly recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     * context</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEncryptionContext() const{ return m_encryptionContext; }
 
     /**
      * <p>Specifies the encryption context that will be used when encrypting the
      * private key in the data key pair.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric KMS
-     * key, but it is highly recommended.</p> <p>For more information, see <a
+     * collection of non-secret key-value pairs that represent additional authenticated
+     * data. When you use an encryption context to encrypt data, you must specify the
+     * same (an exact case-sensitive match) encryption context to decrypt the data. An
+     * encryption context is supported only on operations with symmetric encryption KMS
+     * keys. On operations with symmetric encryption KMS keys, an encryption context is
+     * optional, but it is strongly recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     * context</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline bool EncryptionContextHasBeenSet() const { return m_encryptionContextHasBeenSet; }
 
     /**
      * <p>Specifies the encryption context that will be used when encrypting the
      * private key in the data key pair.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric KMS
-     * key, but it is highly recommended.</p> <p>For more information, see <a
+     * collection of non-secret key-value pairs that represent additional authenticated
+     * data. When you use an encryption context to encrypt data, you must specify the
+     * same (an exact case-sensitive match) encryption context to decrypt the data. An
+     * encryption context is supported only on operations with symmetric encryption KMS
+     * keys. On operations with symmetric encryption KMS keys, an encryption context is
+     * optional, but it is strongly recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     * context</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline void SetEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext = value; }
 
     /**
      * <p>Specifies the encryption context that will be used when encrypting the
      * private key in the data key pair.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric KMS
-     * key, but it is highly recommended.</p> <p>For more information, see <a
+     * collection of non-secret key-value pairs that represent additional authenticated
+     * data. When you use an encryption context to encrypt data, you must specify the
+     * same (an exact case-sensitive match) encryption context to decrypt the data. An
+     * encryption context is supported only on operations with symmetric encryption KMS
+     * keys. On operations with symmetric encryption KMS keys, an encryption context is
+     * optional, but it is strongly recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     * context</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline void SetEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext = std::move(value); }
 
     /**
      * <p>Specifies the encryption context that will be used when encrypting the
      * private key in the data key pair.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric KMS
-     * key, but it is highly recommended.</p> <p>For more information, see <a
+     * collection of non-secret key-value pairs that represent additional authenticated
+     * data. When you use an encryption context to encrypt data, you must specify the
+     * same (an exact case-sensitive match) encryption context to decrypt the data. An
+     * encryption context is supported only on operations with symmetric encryption KMS
+     * keys. On operations with symmetric encryption KMS keys, an encryption context is
+     * optional, but it is strongly recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     * context</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline GenerateDataKeyPairWithoutPlaintextRequest& WithEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { SetEncryptionContext(value); return *this;}
 
     /**
      * <p>Specifies the encryption context that will be used when encrypting the
      * private key in the data key pair.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric KMS
-     * key, but it is highly recommended.</p> <p>For more information, see <a
+     * collection of non-secret key-value pairs that represent additional authenticated
+     * data. When you use an encryption context to encrypt data, you must specify the
+     * same (an exact case-sensitive match) encryption context to decrypt the data. An
+     * encryption context is supported only on operations with symmetric encryption KMS
+     * keys. On operations with symmetric encryption KMS keys, an encryption context is
+     * optional, but it is strongly recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     * context</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline GenerateDataKeyPairWithoutPlaintextRequest& WithEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { SetEncryptionContext(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the encryption context that will be used when encrypting the
      * private key in the data key pair.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric KMS
-     * key, but it is highly recommended.</p> <p>For more information, see <a
+     * collection of non-secret key-value pairs that represent additional authenticated
+     * data. When you use an encryption context to encrypt data, you must specify the
+     * same (an exact case-sensitive match) encryption context to decrypt the data. An
+     * encryption context is supported only on operations with symmetric encryption KMS
+     * keys. On operations with symmetric encryption KMS keys, an encryption context is
+     * optional, but it is strongly recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     * context</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline GenerateDataKeyPairWithoutPlaintextRequest& AddEncryptionContext(const Aws::String& key, const Aws::String& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(key, value); return *this; }
 
     /**
      * <p>Specifies the encryption context that will be used when encrypting the
      * private key in the data key pair.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric KMS
-     * key, but it is highly recommended.</p> <p>For more information, see <a
+     * collection of non-secret key-value pairs that represent additional authenticated
+     * data. When you use an encryption context to encrypt data, you must specify the
+     * same (an exact case-sensitive match) encryption context to decrypt the data. An
+     * encryption context is supported only on operations with symmetric encryption KMS
+     * keys. On operations with symmetric encryption KMS keys, an encryption context is
+     * optional, but it is strongly recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     * context</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline GenerateDataKeyPairWithoutPlaintextRequest& AddEncryptionContext(Aws::String&& key, const Aws::String& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Specifies the encryption context that will be used when encrypting the
      * private key in the data key pair.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric KMS
-     * key, but it is highly recommended.</p> <p>For more information, see <a
+     * collection of non-secret key-value pairs that represent additional authenticated
+     * data. When you use an encryption context to encrypt data, you must specify the
+     * same (an exact case-sensitive match) encryption context to decrypt the data. An
+     * encryption context is supported only on operations with symmetric encryption KMS
+     * keys. On operations with symmetric encryption KMS keys, an encryption context is
+     * optional, but it is strongly recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     * context</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline GenerateDataKeyPairWithoutPlaintextRequest& AddEncryptionContext(const Aws::String& key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Specifies the encryption context that will be used when encrypting the
      * private key in the data key pair.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric KMS
-     * key, but it is highly recommended.</p> <p>For more information, see <a
+     * collection of non-secret key-value pairs that represent additional authenticated
+     * data. When you use an encryption context to encrypt data, you must specify the
+     * same (an exact case-sensitive match) encryption context to decrypt the data. An
+     * encryption context is supported only on operations with symmetric encryption KMS
+     * keys. On operations with symmetric encryption KMS keys, an encryption context is
+     * optional, but it is strongly recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     * context</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline GenerateDataKeyPairWithoutPlaintextRequest& AddEncryptionContext(Aws::String&& key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Specifies the encryption context that will be used when encrypting the
      * private key in the data key pair.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric KMS
-     * key, but it is highly recommended.</p> <p>For more information, see <a
+     * collection of non-secret key-value pairs that represent additional authenticated
+     * data. When you use an encryption context to encrypt data, you must specify the
+     * same (an exact case-sensitive match) encryption context to decrypt the data. An
+     * encryption context is supported only on operations with symmetric encryption KMS
+     * keys. On operations with symmetric encryption KMS keys, an encryption context is
+     * optional, but it is strongly recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     * context</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline GenerateDataKeyPairWithoutPlaintextRequest& AddEncryptionContext(const char* key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Specifies the encryption context that will be used when encrypting the
      * private key in the data key pair.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric KMS
-     * key, but it is highly recommended.</p> <p>For more information, see <a
+     * collection of non-secret key-value pairs that represent additional authenticated
+     * data. When you use an encryption context to encrypt data, you must specify the
+     * same (an exact case-sensitive match) encryption context to decrypt the data. An
+     * encryption context is supported only on operations with symmetric encryption KMS
+     * keys. On operations with symmetric encryption KMS keys, an encryption context is
+     * optional, but it is strongly recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     * context</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline GenerateDataKeyPairWithoutPlaintextRequest& AddEncryptionContext(Aws::String&& key, const char* value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Specifies the encryption context that will be used when encrypting the
      * private key in the data key pair.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric KMS
-     * key, but it is highly recommended.</p> <p>For more information, see <a
+     * collection of non-secret key-value pairs that represent additional authenticated
+     * data. When you use an encryption context to encrypt data, you must specify the
+     * same (an exact case-sensitive match) encryption context to decrypt the data. An
+     * encryption context is supported only on operations with symmetric encryption KMS
+     * keys. On operations with symmetric encryption KMS keys, an encryption context is
+     * optional, but it is strongly recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     * context</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline GenerateDataKeyPairWithoutPlaintextRequest& AddEncryptionContext(const char* key, const char* value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(key, value); return *this; }
 
 
     /**
-     * <p>Specifies the KMS key that encrypts the private key in the data key pair. You
-     * must specify a symmetric KMS key. You cannot use an asymmetric KMS key or a KMS
-     * key in a custom key store. To get the type and origin of your KMS key, use the
+     * <p>Specifies the symmetric encryption KMS key that encrypts the private key in
+     * the data key pair. You cannot specify an asymmetric KMS key or a KMS key in a
+     * custom key store. To get the type and origin of your KMS key, use the
      * <a>DescribeKey</a> operation. </p> <p>To specify a KMS key, use its key ID, key
      * ARN, alias name, or alias ARN. When using an alias name, prefix it with
      * <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services
@@ -227,9 +240,9 @@ namespace Model
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>Specifies the KMS key that encrypts the private key in the data key pair. You
-     * must specify a symmetric KMS key. You cannot use an asymmetric KMS key or a KMS
-     * key in a custom key store. To get the type and origin of your KMS key, use the
+     * <p>Specifies the symmetric encryption KMS key that encrypts the private key in
+     * the data key pair. You cannot specify an asymmetric KMS key or a KMS key in a
+     * custom key store. To get the type and origin of your KMS key, use the
      * <a>DescribeKey</a> operation. </p> <p>To specify a KMS key, use its key ID, key
      * ARN, alias name, or alias ARN. When using an alias name, prefix it with
      * <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services
@@ -246,9 +259,9 @@ namespace Model
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
 
     /**
-     * <p>Specifies the KMS key that encrypts the private key in the data key pair. You
-     * must specify a symmetric KMS key. You cannot use an asymmetric KMS key or a KMS
-     * key in a custom key store. To get the type and origin of your KMS key, use the
+     * <p>Specifies the symmetric encryption KMS key that encrypts the private key in
+     * the data key pair. You cannot specify an asymmetric KMS key or a KMS key in a
+     * custom key store. To get the type and origin of your KMS key, use the
      * <a>DescribeKey</a> operation. </p> <p>To specify a KMS key, use its key ID, key
      * ARN, alias name, or alias ARN. When using an alias name, prefix it with
      * <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services
@@ -265,9 +278,9 @@ namespace Model
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * <p>Specifies the KMS key that encrypts the private key in the data key pair. You
-     * must specify a symmetric KMS key. You cannot use an asymmetric KMS key or a KMS
-     * key in a custom key store. To get the type and origin of your KMS key, use the
+     * <p>Specifies the symmetric encryption KMS key that encrypts the private key in
+     * the data key pair. You cannot specify an asymmetric KMS key or a KMS key in a
+     * custom key store. To get the type and origin of your KMS key, use the
      * <a>DescribeKey</a> operation. </p> <p>To specify a KMS key, use its key ID, key
      * ARN, alias name, or alias ARN. When using an alias name, prefix it with
      * <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services
@@ -284,9 +297,9 @@ namespace Model
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
-     * <p>Specifies the KMS key that encrypts the private key in the data key pair. You
-     * must specify a symmetric KMS key. You cannot use an asymmetric KMS key or a KMS
-     * key in a custom key store. To get the type and origin of your KMS key, use the
+     * <p>Specifies the symmetric encryption KMS key that encrypts the private key in
+     * the data key pair. You cannot specify an asymmetric KMS key or a KMS key in a
+     * custom key store. To get the type and origin of your KMS key, use the
      * <a>DescribeKey</a> operation. </p> <p>To specify a KMS key, use its key ID, key
      * ARN, alias name, or alias ARN. When using an alias name, prefix it with
      * <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services
@@ -303,9 +316,9 @@ namespace Model
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
-     * <p>Specifies the KMS key that encrypts the private key in the data key pair. You
-     * must specify a symmetric KMS key. You cannot use an asymmetric KMS key or a KMS
-     * key in a custom key store. To get the type and origin of your KMS key, use the
+     * <p>Specifies the symmetric encryption KMS key that encrypts the private key in
+     * the data key pair. You cannot specify an asymmetric KMS key or a KMS key in a
+     * custom key store. To get the type and origin of your KMS key, use the
      * <a>DescribeKey</a> operation. </p> <p>To specify a KMS key, use its key ID, key
      * ARN, alias name, or alias ARN. When using an alias name, prefix it with
      * <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services
@@ -322,9 +335,9 @@ namespace Model
     inline GenerateDataKeyPairWithoutPlaintextRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>Specifies the KMS key that encrypts the private key in the data key pair. You
-     * must specify a symmetric KMS key. You cannot use an asymmetric KMS key or a KMS
-     * key in a custom key store. To get the type and origin of your KMS key, use the
+     * <p>Specifies the symmetric encryption KMS key that encrypts the private key in
+     * the data key pair. You cannot specify an asymmetric KMS key or a KMS key in a
+     * custom key store. To get the type and origin of your KMS key, use the
      * <a>DescribeKey</a> operation. </p> <p>To specify a KMS key, use its key ID, key
      * ARN, alias name, or alias ARN. When using an alias name, prefix it with
      * <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services
@@ -341,9 +354,9 @@ namespace Model
     inline GenerateDataKeyPairWithoutPlaintextRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the KMS key that encrypts the private key in the data key pair. You
-     * must specify a symmetric KMS key. You cannot use an asymmetric KMS key or a KMS
-     * key in a custom key store. To get the type and origin of your KMS key, use the
+     * <p>Specifies the symmetric encryption KMS key that encrypts the private key in
+     * the data key pair. You cannot specify an asymmetric KMS key or a KMS key in a
+     * custom key store. To get the type and origin of your KMS key, use the
      * <a>DescribeKey</a> operation. </p> <p>To specify a KMS key, use its key ID, key
      * ARN, alias name, or alias ARN. When using an alias name, prefix it with
      * <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services

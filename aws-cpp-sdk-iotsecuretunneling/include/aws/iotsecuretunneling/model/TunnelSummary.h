@@ -81,58 +81,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name of the tunnel. The tunnel ARN format is
-     * <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code>
-     * </p>
+     * <p>The Amazon Resource Name of the tunnel. </p>
      */
     inline const Aws::String& GetTunnelArn() const{ return m_tunnelArn; }
 
     /**
-     * <p>The Amazon Resource Name of the tunnel. The tunnel ARN format is
-     * <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code>
-     * </p>
+     * <p>The Amazon Resource Name of the tunnel. </p>
      */
     inline bool TunnelArnHasBeenSet() const { return m_tunnelArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name of the tunnel. The tunnel ARN format is
-     * <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code>
-     * </p>
+     * <p>The Amazon Resource Name of the tunnel. </p>
      */
     inline void SetTunnelArn(const Aws::String& value) { m_tunnelArnHasBeenSet = true; m_tunnelArn = value; }
 
     /**
-     * <p>The Amazon Resource Name of the tunnel. The tunnel ARN format is
-     * <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code>
-     * </p>
+     * <p>The Amazon Resource Name of the tunnel. </p>
      */
     inline void SetTunnelArn(Aws::String&& value) { m_tunnelArnHasBeenSet = true; m_tunnelArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name of the tunnel. The tunnel ARN format is
-     * <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code>
-     * </p>
+     * <p>The Amazon Resource Name of the tunnel. </p>
      */
     inline void SetTunnelArn(const char* value) { m_tunnelArnHasBeenSet = true; m_tunnelArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name of the tunnel. The tunnel ARN format is
-     * <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code>
-     * </p>
+     * <p>The Amazon Resource Name of the tunnel. </p>
      */
     inline TunnelSummary& WithTunnelArn(const Aws::String& value) { SetTunnelArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name of the tunnel. The tunnel ARN format is
-     * <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code>
-     * </p>
+     * <p>The Amazon Resource Name of the tunnel. </p>
      */
     inline TunnelSummary& WithTunnelArn(Aws::String&& value) { SetTunnelArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name of the tunnel. The tunnel ARN format is
-     * <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code>
-     * </p>
+     * <p>The Amazon Resource Name of the tunnel. </p>
      */
     inline TunnelSummary& WithTunnelArn(const char* value) { SetTunnelArn(value); return *this;}
 

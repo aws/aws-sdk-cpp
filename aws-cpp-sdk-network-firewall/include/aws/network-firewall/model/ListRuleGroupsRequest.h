@@ -8,6 +8,8 @@
 #include <aws/network-firewall/NetworkFirewallRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/network-firewall/model/ResourceManagedStatus.h>
+#include <aws/network-firewall/model/ResourceManagedType.h>
+#include <aws/network-firewall/model/RuleGroupType.h>
 #include <utility>
 
 namespace Aws
@@ -183,6 +185,86 @@ namespace Model
      */
     inline ListRuleGroupsRequest& WithScope(ResourceManagedStatus&& value) { SetScope(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates the general category of the Amazon Web Services managed rule
+     * group.</p>
+     */
+    inline const ResourceManagedType& GetManagedType() const{ return m_managedType; }
+
+    /**
+     * <p>Indicates the general category of the Amazon Web Services managed rule
+     * group.</p>
+     */
+    inline bool ManagedTypeHasBeenSet() const { return m_managedTypeHasBeenSet; }
+
+    /**
+     * <p>Indicates the general category of the Amazon Web Services managed rule
+     * group.</p>
+     */
+    inline void SetManagedType(const ResourceManagedType& value) { m_managedTypeHasBeenSet = true; m_managedType = value; }
+
+    /**
+     * <p>Indicates the general category of the Amazon Web Services managed rule
+     * group.</p>
+     */
+    inline void SetManagedType(ResourceManagedType&& value) { m_managedTypeHasBeenSet = true; m_managedType = std::move(value); }
+
+    /**
+     * <p>Indicates the general category of the Amazon Web Services managed rule
+     * group.</p>
+     */
+    inline ListRuleGroupsRequest& WithManagedType(const ResourceManagedType& value) { SetManagedType(value); return *this;}
+
+    /**
+     * <p>Indicates the general category of the Amazon Web Services managed rule
+     * group.</p>
+     */
+    inline ListRuleGroupsRequest& WithManagedType(ResourceManagedType&& value) { SetManagedType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Indicates whether the rule group is stateless or stateful. If the rule group
+     * is stateless, it contains stateless rules. If it is stateful, it contains
+     * stateful rules.</p>
+     */
+    inline const RuleGroupType& GetType() const{ return m_type; }
+
+    /**
+     * <p>Indicates whether the rule group is stateless or stateful. If the rule group
+     * is stateless, it contains stateless rules. If it is stateful, it contains
+     * stateful rules.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the rule group is stateless or stateful. If the rule group
+     * is stateless, it contains stateless rules. If it is stateful, it contains
+     * stateful rules.</p>
+     */
+    inline void SetType(const RuleGroupType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>Indicates whether the rule group is stateless or stateful. If the rule group
+     * is stateless, it contains stateless rules. If it is stateful, it contains
+     * stateful rules.</p>
+     */
+    inline void SetType(RuleGroupType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>Indicates whether the rule group is stateless or stateful. If the rule group
+     * is stateless, it contains stateless rules. If it is stateful, it contains
+     * stateful rules.</p>
+     */
+    inline ListRuleGroupsRequest& WithType(const RuleGroupType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>Indicates whether the rule group is stateless or stateful. If the rule group
+     * is stateless, it contains stateless rules. If it is stateful, it contains
+     * stateful rules.</p>
+     */
+    inline ListRuleGroupsRequest& WithType(RuleGroupType&& value) { SetType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_nextToken;
@@ -193,6 +275,12 @@ namespace Model
 
     ResourceManagedStatus m_scope;
     bool m_scopeHasBeenSet;
+
+    ResourceManagedType m_managedType;
+    bool m_managedTypeHasBeenSet;
+
+    RuleGroupType m_type;
+    bool m_typeHasBeenSet;
   };
 
 } // namespace Model

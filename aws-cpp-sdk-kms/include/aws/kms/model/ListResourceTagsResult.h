@@ -38,9 +38,8 @@ namespace Model
      * <p>A list of tags. Each tag consists of a tag key and a tag value.</p> 
      * <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key.
      * For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using
-     * ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
-     * 
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p> 
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -48,9 +47,8 @@ namespace Model
      * <p>A list of tags. Each tag consists of a tag key and a tag value.</p> 
      * <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key.
      * For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using
-     * ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
-     * 
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p> 
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
 
@@ -58,9 +56,8 @@ namespace Model
      * <p>A list of tags. Each tag consists of a tag key and a tag value.</p> 
      * <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key.
      * For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using
-     * ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
-     * 
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p> 
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
 
@@ -68,9 +65,8 @@ namespace Model
      * <p>A list of tags. Each tag consists of a tag key and a tag value.</p> 
      * <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key.
      * For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using
-     * ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
-     * 
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p> 
      */
     inline ListResourceTagsResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -78,9 +74,8 @@ namespace Model
      * <p>A list of tags. Each tag consists of a tag key and a tag value.</p> 
      * <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key.
      * For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using
-     * ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
-     * 
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p> 
      */
     inline ListResourceTagsResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -88,9 +83,8 @@ namespace Model
      * <p>A list of tags. Each tag consists of a tag key and a tag value.</p> 
      * <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key.
      * For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using
-     * ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
-     * 
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p> 
      */
     inline ListResourceTagsResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
 
@@ -98,9 +92,8 @@ namespace Model
      * <p>A list of tags. Each tag consists of a tag key and a tag value.</p> 
      * <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key.
      * For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using
-     * ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
-     * 
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p> 
      */
     inline ListResourceTagsResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 

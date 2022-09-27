@@ -15,6 +15,7 @@
 #include <aws/kafkaconnect/model/KafkaClusterEncryptionInTransitDescription.h>
 #include <aws/kafkaconnect/model/LogDeliveryDescription.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/kafkaconnect/model/StateDescription.h>
 #include <aws/kafkaconnect/model/WorkerConfigurationDescription.h>
 #include <aws/kafkaconnect/model/PluginDescription.h>
 #include <utility>
@@ -575,6 +576,32 @@ namespace Model
 
 
     /**
+     * <p>Details about the state of a connector.</p>
+     */
+    inline const StateDescription& GetStateDescription() const{ return m_stateDescription; }
+
+    /**
+     * <p>Details about the state of a connector.</p>
+     */
+    inline void SetStateDescription(const StateDescription& value) { m_stateDescription = value; }
+
+    /**
+     * <p>Details about the state of a connector.</p>
+     */
+    inline void SetStateDescription(StateDescription&& value) { m_stateDescription = std::move(value); }
+
+    /**
+     * <p>Details about the state of a connector.</p>
+     */
+    inline DescribeConnectorResult& WithStateDescription(const StateDescription& value) { SetStateDescription(value); return *this;}
+
+    /**
+     * <p>Details about the state of a connector.</p>
+     */
+    inline DescribeConnectorResult& WithStateDescription(StateDescription&& value) { SetStateDescription(std::move(value)); return *this;}
+
+
+    /**
      * <p>Specifies which worker configuration was used for the connector.</p>
      */
     inline const WorkerConfigurationDescription& GetWorkerConfiguration() const{ return m_workerConfiguration; }
@@ -630,6 +657,8 @@ namespace Model
     Aws::Vector<PluginDescription> m_plugins;
 
     Aws::String m_serviceExecutionRoleArn;
+
+    StateDescription m_stateDescription;
 
     WorkerConfigurationDescription m_workerConfiguration;
   };

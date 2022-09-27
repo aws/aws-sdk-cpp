@@ -21,14 +21,16 @@ namespace Model
 LogicalResourceId::LogicalResourceId() : 
     m_identifierHasBeenSet(false),
     m_logicalStackNameHasBeenSet(false),
-    m_resourceGroupNameHasBeenSet(false)
+    m_resourceGroupNameHasBeenSet(false),
+    m_terraformSourceNameHasBeenSet(false)
 {
 }
 
 LogicalResourceId::LogicalResourceId(JsonView jsonValue) : 
     m_identifierHasBeenSet(false),
     m_logicalStackNameHasBeenSet(false),
-    m_resourceGroupNameHasBeenSet(false)
+    m_resourceGroupNameHasBeenSet(false),
+    m_terraformSourceNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ LogicalResourceId& LogicalResourceId::operator =(JsonView jsonValue)
     m_resourceGroupNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("terraformSourceName"))
+  {
+    m_terraformSourceName = jsonValue.GetString("terraformSourceName");
+
+    m_terraformSourceNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue LogicalResourceId::Jsonize() const
   if(m_resourceGroupNameHasBeenSet)
   {
    payload.WithString("resourceGroupName", m_resourceGroupName);
+
+  }
+
+  if(m_terraformSourceNameHasBeenSet)
+  {
+   payload.WithString("terraformSourceName", m_terraformSourceName);
 
   }
 

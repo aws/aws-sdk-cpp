@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/panorama/Panorama_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/panorama/model/NodeInstance.h>
 #include <utility>
 
@@ -32,42 +32,6 @@ namespace Model
     ListApplicationInstanceNodeInstancesResult();
     ListApplicationInstanceNodeInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     ListApplicationInstanceNodeInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>A list of node instances.</p>
-     */
-    inline const Aws::Vector<NodeInstance>& GetNodeInstances() const{ return m_nodeInstances; }
-
-    /**
-     * <p>A list of node instances.</p>
-     */
-    inline void SetNodeInstances(const Aws::Vector<NodeInstance>& value) { m_nodeInstances = value; }
-
-    /**
-     * <p>A list of node instances.</p>
-     */
-    inline void SetNodeInstances(Aws::Vector<NodeInstance>&& value) { m_nodeInstances = std::move(value); }
-
-    /**
-     * <p>A list of node instances.</p>
-     */
-    inline ListApplicationInstanceNodeInstancesResult& WithNodeInstances(const Aws::Vector<NodeInstance>& value) { SetNodeInstances(value); return *this;}
-
-    /**
-     * <p>A list of node instances.</p>
-     */
-    inline ListApplicationInstanceNodeInstancesResult& WithNodeInstances(Aws::Vector<NodeInstance>&& value) { SetNodeInstances(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of node instances.</p>
-     */
-    inline ListApplicationInstanceNodeInstancesResult& AddNodeInstances(const NodeInstance& value) { m_nodeInstances.push_back(value); return *this; }
-
-    /**
-     * <p>A list of node instances.</p>
-     */
-    inline ListApplicationInstanceNodeInstancesResult& AddNodeInstances(NodeInstance&& value) { m_nodeInstances.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -105,11 +69,47 @@ namespace Model
      */
     inline ListApplicationInstanceNodeInstancesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>A list of node instances.</p>
+     */
+    inline const Aws::Vector<NodeInstance>& GetNodeInstances() const{ return m_nodeInstances; }
+
+    /**
+     * <p>A list of node instances.</p>
+     */
+    inline void SetNodeInstances(const Aws::Vector<NodeInstance>& value) { m_nodeInstances = value; }
+
+    /**
+     * <p>A list of node instances.</p>
+     */
+    inline void SetNodeInstances(Aws::Vector<NodeInstance>&& value) { m_nodeInstances = std::move(value); }
+
+    /**
+     * <p>A list of node instances.</p>
+     */
+    inline ListApplicationInstanceNodeInstancesResult& WithNodeInstances(const Aws::Vector<NodeInstance>& value) { SetNodeInstances(value); return *this;}
+
+    /**
+     * <p>A list of node instances.</p>
+     */
+    inline ListApplicationInstanceNodeInstancesResult& WithNodeInstances(Aws::Vector<NodeInstance>&& value) { SetNodeInstances(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of node instances.</p>
+     */
+    inline ListApplicationInstanceNodeInstancesResult& AddNodeInstances(const NodeInstance& value) { m_nodeInstances.push_back(value); return *this; }
+
+    /**
+     * <p>A list of node instances.</p>
+     */
+    inline ListApplicationInstanceNodeInstancesResult& AddNodeInstances(NodeInstance&& value) { m_nodeInstances.push_back(std::move(value)); return *this; }
+
   private:
 
-    Aws::Vector<NodeInstance> m_nodeInstances;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<NodeInstance> m_nodeInstances;
   };
 
 } // namespace Model

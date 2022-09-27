@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/model/ScalingConfiguration.h>
+#include <aws/rds/model/ServerlessV2ScalingConfiguration.h>
 #include <aws/rds/model/Tag.h>
 #include <utility>
 
@@ -44,7 +45,7 @@ namespace Model
 
     /**
      * <p>A list of Availability Zones (AZs) where DB instances in the DB cluster can
-     * be created. </p> <p>For information on Amazon Web Services Regions and
+     * be created.</p> <p>For information on Amazon Web Services Regions and
      * Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing
      * the Regions and Availability Zones</a> in the <i>Amazon Aurora User
@@ -54,7 +55,7 @@ namespace Model
 
     /**
      * <p>A list of Availability Zones (AZs) where DB instances in the DB cluster can
-     * be created. </p> <p>For information on Amazon Web Services Regions and
+     * be created.</p> <p>For information on Amazon Web Services Regions and
      * Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing
      * the Regions and Availability Zones</a> in the <i>Amazon Aurora User
@@ -64,7 +65,7 @@ namespace Model
 
     /**
      * <p>A list of Availability Zones (AZs) where DB instances in the DB cluster can
-     * be created. </p> <p>For information on Amazon Web Services Regions and
+     * be created.</p> <p>For information on Amazon Web Services Regions and
      * Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing
      * the Regions and Availability Zones</a> in the <i>Amazon Aurora User
@@ -74,7 +75,7 @@ namespace Model
 
     /**
      * <p>A list of Availability Zones (AZs) where DB instances in the DB cluster can
-     * be created. </p> <p>For information on Amazon Web Services Regions and
+     * be created.</p> <p>For information on Amazon Web Services Regions and
      * Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing
      * the Regions and Availability Zones</a> in the <i>Amazon Aurora User
@@ -84,7 +85,7 @@ namespace Model
 
     /**
      * <p>A list of Availability Zones (AZs) where DB instances in the DB cluster can
-     * be created. </p> <p>For information on Amazon Web Services Regions and
+     * be created.</p> <p>For information on Amazon Web Services Regions and
      * Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing
      * the Regions and Availability Zones</a> in the <i>Amazon Aurora User
@@ -94,7 +95,7 @@ namespace Model
 
     /**
      * <p>A list of Availability Zones (AZs) where DB instances in the DB cluster can
-     * be created. </p> <p>For information on Amazon Web Services Regions and
+     * be created.</p> <p>For information on Amazon Web Services Regions and
      * Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing
      * the Regions and Availability Zones</a> in the <i>Amazon Aurora User
@@ -104,7 +105,7 @@ namespace Model
 
     /**
      * <p>A list of Availability Zones (AZs) where DB instances in the DB cluster can
-     * be created. </p> <p>For information on Amazon Web Services Regions and
+     * be created.</p> <p>For information on Amazon Web Services Regions and
      * Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing
      * the Regions and Availability Zones</a> in the <i>Amazon Aurora User
@@ -114,7 +115,7 @@ namespace Model
 
     /**
      * <p>A list of Availability Zones (AZs) where DB instances in the DB cluster can
-     * be created. </p> <p>For information on Amazon Web Services Regions and
+     * be created.</p> <p>For information on Amazon Web Services Regions and
      * Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing
      * the Regions and Availability Zones</a> in the <i>Amazon Aurora User
@@ -124,7 +125,7 @@ namespace Model
 
     /**
      * <p>A list of Availability Zones (AZs) where DB instances in the DB cluster can
-     * be created. </p> <p>For information on Amazon Web Services Regions and
+     * be created.</p> <p>For information on Amazon Web Services Regions and
      * Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing
      * the Regions and Availability Zones</a> in the <i>Amazon Aurora User
@@ -350,82 +351,82 @@ namespace Model
 
 
     /**
-     * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If you do not specify a value, then the default DB cluster parameter
-     * group for the specified DB engine and version is used. </p> <p>Constraints:</p>
-     * <ul> <li> <p>If supplied, must match the name of an existing DB cluster
-     * parameter group.</p> </li> </ul> <p>Valid for: Aurora DB clusters and Multi-AZ
-     * DB clusters</p>
+     * <p>The name of the DB cluster parameter group to associate with this DB cluster.
+     * If you do not specify a value, then the default DB cluster parameter group for
+     * the specified DB engine and version is used.</p> <p>Constraints:</p> <ul> <li>
+     * <p>If supplied, must match the name of an existing DB cluster parameter
+     * group.</p> </li> </ul> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline const Aws::String& GetDBClusterParameterGroupName() const{ return m_dBClusterParameterGroupName; }
 
     /**
-     * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If you do not specify a value, then the default DB cluster parameter
-     * group for the specified DB engine and version is used. </p> <p>Constraints:</p>
-     * <ul> <li> <p>If supplied, must match the name of an existing DB cluster
-     * parameter group.</p> </li> </ul> <p>Valid for: Aurora DB clusters and Multi-AZ
-     * DB clusters</p>
+     * <p>The name of the DB cluster parameter group to associate with this DB cluster.
+     * If you do not specify a value, then the default DB cluster parameter group for
+     * the specified DB engine and version is used.</p> <p>Constraints:</p> <ul> <li>
+     * <p>If supplied, must match the name of an existing DB cluster parameter
+     * group.</p> </li> </ul> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline bool DBClusterParameterGroupNameHasBeenSet() const { return m_dBClusterParameterGroupNameHasBeenSet; }
 
     /**
-     * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If you do not specify a value, then the default DB cluster parameter
-     * group for the specified DB engine and version is used. </p> <p>Constraints:</p>
-     * <ul> <li> <p>If supplied, must match the name of an existing DB cluster
-     * parameter group.</p> </li> </ul> <p>Valid for: Aurora DB clusters and Multi-AZ
-     * DB clusters</p>
+     * <p>The name of the DB cluster parameter group to associate with this DB cluster.
+     * If you do not specify a value, then the default DB cluster parameter group for
+     * the specified DB engine and version is used.</p> <p>Constraints:</p> <ul> <li>
+     * <p>If supplied, must match the name of an existing DB cluster parameter
+     * group.</p> </li> </ul> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline void SetDBClusterParameterGroupName(const Aws::String& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = value; }
 
     /**
-     * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If you do not specify a value, then the default DB cluster parameter
-     * group for the specified DB engine and version is used. </p> <p>Constraints:</p>
-     * <ul> <li> <p>If supplied, must match the name of an existing DB cluster
-     * parameter group.</p> </li> </ul> <p>Valid for: Aurora DB clusters and Multi-AZ
-     * DB clusters</p>
+     * <p>The name of the DB cluster parameter group to associate with this DB cluster.
+     * If you do not specify a value, then the default DB cluster parameter group for
+     * the specified DB engine and version is used.</p> <p>Constraints:</p> <ul> <li>
+     * <p>If supplied, must match the name of an existing DB cluster parameter
+     * group.</p> </li> </ul> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline void SetDBClusterParameterGroupName(Aws::String&& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = std::move(value); }
 
     /**
-     * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If you do not specify a value, then the default DB cluster parameter
-     * group for the specified DB engine and version is used. </p> <p>Constraints:</p>
-     * <ul> <li> <p>If supplied, must match the name of an existing DB cluster
-     * parameter group.</p> </li> </ul> <p>Valid for: Aurora DB clusters and Multi-AZ
-     * DB clusters</p>
+     * <p>The name of the DB cluster parameter group to associate with this DB cluster.
+     * If you do not specify a value, then the default DB cluster parameter group for
+     * the specified DB engine and version is used.</p> <p>Constraints:</p> <ul> <li>
+     * <p>If supplied, must match the name of an existing DB cluster parameter
+     * group.</p> </li> </ul> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline void SetDBClusterParameterGroupName(const char* value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName.assign(value); }
 
     /**
-     * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If you do not specify a value, then the default DB cluster parameter
-     * group for the specified DB engine and version is used. </p> <p>Constraints:</p>
-     * <ul> <li> <p>If supplied, must match the name of an existing DB cluster
-     * parameter group.</p> </li> </ul> <p>Valid for: Aurora DB clusters and Multi-AZ
-     * DB clusters</p>
+     * <p>The name of the DB cluster parameter group to associate with this DB cluster.
+     * If you do not specify a value, then the default DB cluster parameter group for
+     * the specified DB engine and version is used.</p> <p>Constraints:</p> <ul> <li>
+     * <p>If supplied, must match the name of an existing DB cluster parameter
+     * group.</p> </li> </ul> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline CreateDBClusterRequest& WithDBClusterParameterGroupName(const Aws::String& value) { SetDBClusterParameterGroupName(value); return *this;}
 
     /**
-     * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If you do not specify a value, then the default DB cluster parameter
-     * group for the specified DB engine and version is used. </p> <p>Constraints:</p>
-     * <ul> <li> <p>If supplied, must match the name of an existing DB cluster
-     * parameter group.</p> </li> </ul> <p>Valid for: Aurora DB clusters and Multi-AZ
-     * DB clusters</p>
+     * <p>The name of the DB cluster parameter group to associate with this DB cluster.
+     * If you do not specify a value, then the default DB cluster parameter group for
+     * the specified DB engine and version is used.</p> <p>Constraints:</p> <ul> <li>
+     * <p>If supplied, must match the name of an existing DB cluster parameter
+     * group.</p> </li> </ul> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline CreateDBClusterRequest& WithDBClusterParameterGroupName(Aws::String&& value) { SetDBClusterParameterGroupName(std::move(value)); return *this;}
 
     /**
-     * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If you do not specify a value, then the default DB cluster parameter
-     * group for the specified DB engine and version is used. </p> <p>Constraints:</p>
-     * <ul> <li> <p>If supplied, must match the name of an existing DB cluster
-     * parameter group.</p> </li> </ul> <p>Valid for: Aurora DB clusters and Multi-AZ
-     * DB clusters</p>
+     * <p>The name of the DB cluster parameter group to associate with this DB cluster.
+     * If you do not specify a value, then the default DB cluster parameter group for
+     * the specified DB engine and version is used.</p> <p>Constraints:</p> <ul> <li>
+     * <p>If supplied, must match the name of an existing DB cluster parameter
+     * group.</p> </li> </ul> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline CreateDBClusterRequest& WithDBClusterParameterGroupName(const char* value) { SetDBClusterParameterGroupName(value); return *this;}
 
@@ -489,8 +490,8 @@ namespace Model
      * <p>A DB subnet group to associate with this DB cluster.</p> <p>This setting is
      * required to create a Multi-AZ DB cluster.</p> <p>Constraints: Must match the
      * name of an existing DBSubnetGroup. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ DB
-     * clusters</p>
+     * <code>mydbsubnetgroup</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ
+     * DB clusters</p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
 
@@ -498,8 +499,8 @@ namespace Model
      * <p>A DB subnet group to associate with this DB cluster.</p> <p>This setting is
      * required to create a Multi-AZ DB cluster.</p> <p>Constraints: Must match the
      * name of an existing DBSubnetGroup. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ DB
-     * clusters</p>
+     * <code>mydbsubnetgroup</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ
+     * DB clusters</p>
      */
     inline bool DBSubnetGroupNameHasBeenSet() const { return m_dBSubnetGroupNameHasBeenSet; }
 
@@ -507,8 +508,8 @@ namespace Model
      * <p>A DB subnet group to associate with this DB cluster.</p> <p>This setting is
      * required to create a Multi-AZ DB cluster.</p> <p>Constraints: Must match the
      * name of an existing DBSubnetGroup. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ DB
-     * clusters</p>
+     * <code>mydbsubnetgroup</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ
+     * DB clusters</p>
      */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
@@ -516,8 +517,8 @@ namespace Model
      * <p>A DB subnet group to associate with this DB cluster.</p> <p>This setting is
      * required to create a Multi-AZ DB cluster.</p> <p>Constraints: Must match the
      * name of an existing DBSubnetGroup. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ DB
-     * clusters</p>
+     * <code>mydbsubnetgroup</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ
+     * DB clusters</p>
      */
     inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::move(value); }
 
@@ -525,8 +526,8 @@ namespace Model
      * <p>A DB subnet group to associate with this DB cluster.</p> <p>This setting is
      * required to create a Multi-AZ DB cluster.</p> <p>Constraints: Must match the
      * name of an existing DBSubnetGroup. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ DB
-     * clusters</p>
+     * <code>mydbsubnetgroup</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ
+     * DB clusters</p>
      */
     inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
 
@@ -534,8 +535,8 @@ namespace Model
      * <p>A DB subnet group to associate with this DB cluster.</p> <p>This setting is
      * required to create a Multi-AZ DB cluster.</p> <p>Constraints: Must match the
      * name of an existing DBSubnetGroup. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ DB
-     * clusters</p>
+     * <code>mydbsubnetgroup</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ
+     * DB clusters</p>
      */
     inline CreateDBClusterRequest& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
 
@@ -543,8 +544,8 @@ namespace Model
      * <p>A DB subnet group to associate with this DB cluster.</p> <p>This setting is
      * required to create a Multi-AZ DB cluster.</p> <p>Constraints: Must match the
      * name of an existing DBSubnetGroup. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ DB
-     * clusters</p>
+     * <code>mydbsubnetgroup</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ
+     * DB clusters</p>
      */
     inline CreateDBClusterRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(std::move(value)); return *this;}
 
@@ -552,8 +553,8 @@ namespace Model
      * <p>A DB subnet group to associate with this DB cluster.</p> <p>This setting is
      * required to create a Multi-AZ DB cluster.</p> <p>Constraints: Must match the
      * name of an existing DBSubnetGroup. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ DB
-     * clusters</p>
+     * <code>mydbsubnetgroup</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ
+     * DB clusters</p>
      */
     inline CreateDBClusterRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 
@@ -667,17 +668,17 @@ namespace Model
      * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
      * <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html">MySQL
-     * on Amazon RDS Versions</a> in the <i>Amazon Aurora User Guide.</i> </p> <p>
+     * on Amazon RDS Versions</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>
      * <b>Aurora PostgreSQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.Updates.20180305.html">Amazon
      * Aurora PostgreSQL releases and engine versions</a> in the <i>Amazon Aurora User
-     * Guide.</i> </p> <p> <b>MySQL</b> </p> <p>For information, see <a
+     * Guide</i>.</p> <p> <b>MySQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
-     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.</p> <p>
      * <b>PostgreSQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
      * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * Guide</i>.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
@@ -701,17 +702,17 @@ namespace Model
      * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
      * <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html">MySQL
-     * on Amazon RDS Versions</a> in the <i>Amazon Aurora User Guide.</i> </p> <p>
+     * on Amazon RDS Versions</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>
      * <b>Aurora PostgreSQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.Updates.20180305.html">Amazon
      * Aurora PostgreSQL releases and engine versions</a> in the <i>Amazon Aurora User
-     * Guide.</i> </p> <p> <b>MySQL</b> </p> <p>For information, see <a
+     * Guide</i>.</p> <p> <b>MySQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
-     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.</p> <p>
      * <b>PostgreSQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
      * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * Guide</i>.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
@@ -735,17 +736,17 @@ namespace Model
      * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
      * <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html">MySQL
-     * on Amazon RDS Versions</a> in the <i>Amazon Aurora User Guide.</i> </p> <p>
+     * on Amazon RDS Versions</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>
      * <b>Aurora PostgreSQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.Updates.20180305.html">Amazon
      * Aurora PostgreSQL releases and engine versions</a> in the <i>Amazon Aurora User
-     * Guide.</i> </p> <p> <b>MySQL</b> </p> <p>For information, see <a
+     * Guide</i>.</p> <p> <b>MySQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
-     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.</p> <p>
      * <b>PostgreSQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
      * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * Guide</i>.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
@@ -769,17 +770,17 @@ namespace Model
      * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
      * <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html">MySQL
-     * on Amazon RDS Versions</a> in the <i>Amazon Aurora User Guide.</i> </p> <p>
+     * on Amazon RDS Versions</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>
      * <b>Aurora PostgreSQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.Updates.20180305.html">Amazon
      * Aurora PostgreSQL releases and engine versions</a> in the <i>Amazon Aurora User
-     * Guide.</i> </p> <p> <b>MySQL</b> </p> <p>For information, see <a
+     * Guide</i>.</p> <p> <b>MySQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
-     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.</p> <p>
      * <b>PostgreSQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
      * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * Guide</i>.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
@@ -803,17 +804,17 @@ namespace Model
      * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
      * <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html">MySQL
-     * on Amazon RDS Versions</a> in the <i>Amazon Aurora User Guide.</i> </p> <p>
+     * on Amazon RDS Versions</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>
      * <b>Aurora PostgreSQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.Updates.20180305.html">Amazon
      * Aurora PostgreSQL releases and engine versions</a> in the <i>Amazon Aurora User
-     * Guide.</i> </p> <p> <b>MySQL</b> </p> <p>For information, see <a
+     * Guide</i>.</p> <p> <b>MySQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
-     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.</p> <p>
      * <b>PostgreSQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
      * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * Guide</i>.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
@@ -837,17 +838,17 @@ namespace Model
      * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
      * <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html">MySQL
-     * on Amazon RDS Versions</a> in the <i>Amazon Aurora User Guide.</i> </p> <p>
+     * on Amazon RDS Versions</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>
      * <b>Aurora PostgreSQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.Updates.20180305.html">Amazon
      * Aurora PostgreSQL releases and engine versions</a> in the <i>Amazon Aurora User
-     * Guide.</i> </p> <p> <b>MySQL</b> </p> <p>For information, see <a
+     * Guide</i>.</p> <p> <b>MySQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
-     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.</p> <p>
      * <b>PostgreSQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
      * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * Guide</i>.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline CreateDBClusterRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
@@ -871,17 +872,17 @@ namespace Model
      * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
      * <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html">MySQL
-     * on Amazon RDS Versions</a> in the <i>Amazon Aurora User Guide.</i> </p> <p>
+     * on Amazon RDS Versions</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>
      * <b>Aurora PostgreSQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.Updates.20180305.html">Amazon
      * Aurora PostgreSQL releases and engine versions</a> in the <i>Amazon Aurora User
-     * Guide.</i> </p> <p> <b>MySQL</b> </p> <p>For information, see <a
+     * Guide</i>.</p> <p> <b>MySQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
-     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.</p> <p>
      * <b>PostgreSQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
      * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * Guide</i>.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline CreateDBClusterRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
@@ -905,58 +906,58 @@ namespace Model
      * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
      * <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html">MySQL
-     * on Amazon RDS Versions</a> in the <i>Amazon Aurora User Guide.</i> </p> <p>
+     * on Amazon RDS Versions</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>
      * <b>Aurora PostgreSQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.Updates.20180305.html">Amazon
      * Aurora PostgreSQL releases and engine versions</a> in the <i>Amazon Aurora User
-     * Guide.</i> </p> <p> <b>MySQL</b> </p> <p>For information, see <a
+     * Guide</i>.</p> <p> <b>MySQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
-     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.</p> <p>
      * <b>PostgreSQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
      * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * Guide</i>.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline CreateDBClusterRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
 
     /**
      * <p>The port number on which the instances in the DB cluster accept
-     * connections.</p> <p> <b>RDS for MySQL and Aurora MySQL</b> </p> <p> Default:
-     * <code>3306</code> </p> <p> Valid values: <code>1150-65535</code> </p> <p> <b>RDS
-     * for PostgreSQL and Aurora PostgreSQL</b> </p> <p> Default: <code>5432</code>
-     * </p> <p> Valid values: <code>1150-65535</code> </p> <p>Valid for: Aurora DB
-     * clusters and Multi-AZ DB clusters</p>
+     * connections.</p> <p> <b>RDS for MySQL and Aurora MySQL</b> </p> <p>Default:
+     * <code>3306</code> </p> <p>Valid values: <code>1150-65535</code> </p> <p> <b>RDS
+     * for PostgreSQL and Aurora PostgreSQL</b> </p> <p>Default: <code>5432</code> </p>
+     * <p>Valid values: <code>1150-65535</code> </p> <p>Valid for: Aurora DB clusters
+     * and Multi-AZ DB clusters</p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
      * <p>The port number on which the instances in the DB cluster accept
-     * connections.</p> <p> <b>RDS for MySQL and Aurora MySQL</b> </p> <p> Default:
-     * <code>3306</code> </p> <p> Valid values: <code>1150-65535</code> </p> <p> <b>RDS
-     * for PostgreSQL and Aurora PostgreSQL</b> </p> <p> Default: <code>5432</code>
-     * </p> <p> Valid values: <code>1150-65535</code> </p> <p>Valid for: Aurora DB
-     * clusters and Multi-AZ DB clusters</p>
+     * connections.</p> <p> <b>RDS for MySQL and Aurora MySQL</b> </p> <p>Default:
+     * <code>3306</code> </p> <p>Valid values: <code>1150-65535</code> </p> <p> <b>RDS
+     * for PostgreSQL and Aurora PostgreSQL</b> </p> <p>Default: <code>5432</code> </p>
+     * <p>Valid values: <code>1150-65535</code> </p> <p>Valid for: Aurora DB clusters
+     * and Multi-AZ DB clusters</p>
      */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
 
     /**
      * <p>The port number on which the instances in the DB cluster accept
-     * connections.</p> <p> <b>RDS for MySQL and Aurora MySQL</b> </p> <p> Default:
-     * <code>3306</code> </p> <p> Valid values: <code>1150-65535</code> </p> <p> <b>RDS
-     * for PostgreSQL and Aurora PostgreSQL</b> </p> <p> Default: <code>5432</code>
-     * </p> <p> Valid values: <code>1150-65535</code> </p> <p>Valid for: Aurora DB
-     * clusters and Multi-AZ DB clusters</p>
+     * connections.</p> <p> <b>RDS for MySQL and Aurora MySQL</b> </p> <p>Default:
+     * <code>3306</code> </p> <p>Valid values: <code>1150-65535</code> </p> <p> <b>RDS
+     * for PostgreSQL and Aurora PostgreSQL</b> </p> <p>Default: <code>5432</code> </p>
+     * <p>Valid values: <code>1150-65535</code> </p> <p>Valid for: Aurora DB clusters
+     * and Multi-AZ DB clusters</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>The port number on which the instances in the DB cluster accept
-     * connections.</p> <p> <b>RDS for MySQL and Aurora MySQL</b> </p> <p> Default:
-     * <code>3306</code> </p> <p> Valid values: <code>1150-65535</code> </p> <p> <b>RDS
-     * for PostgreSQL and Aurora PostgreSQL</b> </p> <p> Default: <code>5432</code>
-     * </p> <p> Valid values: <code>1150-65535</code> </p> <p>Valid for: Aurora DB
-     * clusters and Multi-AZ DB clusters</p>
+     * connections.</p> <p> <b>RDS for MySQL and Aurora MySQL</b> </p> <p>Default:
+     * <code>3306</code> </p> <p>Valid values: <code>1150-65535</code> </p> <p> <b>RDS
+     * for PostgreSQL and Aurora PostgreSQL</b> </p> <p>Default: <code>5432</code> </p>
+     * <p>Valid values: <code>1150-65535</code> </p> <p>Valid for: Aurora DB clusters
+     * and Multi-AZ DB clusters</p>
      */
     inline CreateDBClusterRequest& WithPort(int value) { SetPort(value); return *this;}
 
@@ -1158,12 +1159,12 @@ namespace Model
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
+     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Web Services Region. To view the time blocks available, see
      * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
-     * Backup window</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
@@ -1174,12 +1175,12 @@ namespace Model
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
+     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Web Services Region. To view the time blocks available, see
      * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
-     * Backup window</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
@@ -1190,12 +1191,12 @@ namespace Model
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
+     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Web Services Region. To view the time blocks available, see
      * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
-     * Backup window</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
@@ -1206,12 +1207,12 @@ namespace Model
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
+     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Web Services Region. To view the time blocks available, see
      * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
-     * Backup window</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
@@ -1222,12 +1223,12 @@ namespace Model
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
+     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Web Services Region. To view the time blocks available, see
      * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
-     * Backup window</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
@@ -1238,12 +1239,12 @@ namespace Model
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
+     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Web Services Region. To view the time blocks available, see
      * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
-     * Backup window</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
@@ -1254,12 +1255,12 @@ namespace Model
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
+     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Web Services Region. To view the time blocks available, see
      * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
-     * Backup window</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
@@ -1270,12 +1271,12 @@ namespace Model
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
+     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Web Services Region. To view the time blocks available, see
      * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
-     * Backup window</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
@@ -1293,9 +1294,9 @@ namespace Model
      * To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
      * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
-     * Aurora User Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
-     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p> <p>Valid for: Aurora DB
-     * clusters and Multi-AZ DB clusters</p>
+     * Aurora User Guide</i>.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+     * <p>Constraints: Minimum 30-minute window.</p> <p>Valid for: Aurora DB clusters
+     * and Multi-AZ DB clusters</p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
 
@@ -1307,9 +1308,9 @@ namespace Model
      * To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
      * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
-     * Aurora User Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
-     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p> <p>Valid for: Aurora DB
-     * clusters and Multi-AZ DB clusters</p>
+     * Aurora User Guide</i>.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+     * <p>Constraints: Minimum 30-minute window.</p> <p>Valid for: Aurora DB clusters
+     * and Multi-AZ DB clusters</p>
      */
     inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
 
@@ -1321,9 +1322,9 @@ namespace Model
      * To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
      * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
-     * Aurora User Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
-     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p> <p>Valid for: Aurora DB
-     * clusters and Multi-AZ DB clusters</p>
+     * Aurora User Guide</i>.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+     * <p>Constraints: Minimum 30-minute window.</p> <p>Valid for: Aurora DB clusters
+     * and Multi-AZ DB clusters</p>
      */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
@@ -1335,9 +1336,9 @@ namespace Model
      * To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
      * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
-     * Aurora User Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
-     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p> <p>Valid for: Aurora DB
-     * clusters and Multi-AZ DB clusters</p>
+     * Aurora User Guide</i>.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+     * <p>Constraints: Minimum 30-minute window.</p> <p>Valid for: Aurora DB clusters
+     * and Multi-AZ DB clusters</p>
      */
     inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
@@ -1349,9 +1350,9 @@ namespace Model
      * To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
      * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
-     * Aurora User Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
-     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p> <p>Valid for: Aurora DB
-     * clusters and Multi-AZ DB clusters</p>
+     * Aurora User Guide</i>.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+     * <p>Constraints: Minimum 30-minute window.</p> <p>Valid for: Aurora DB clusters
+     * and Multi-AZ DB clusters</p>
      */
     inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
 
@@ -1363,9 +1364,9 @@ namespace Model
      * To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
      * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
-     * Aurora User Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
-     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p> <p>Valid for: Aurora DB
-     * clusters and Multi-AZ DB clusters</p>
+     * Aurora User Guide</i>.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+     * <p>Constraints: Minimum 30-minute window.</p> <p>Valid for: Aurora DB clusters
+     * and Multi-AZ DB clusters</p>
      */
     inline CreateDBClusterRequest& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
 
@@ -1377,9 +1378,9 @@ namespace Model
      * To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
      * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
-     * Aurora User Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
-     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p> <p>Valid for: Aurora DB
-     * clusters and Multi-AZ DB clusters</p>
+     * Aurora User Guide</i>.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+     * <p>Constraints: Minimum 30-minute window.</p> <p>Valid for: Aurora DB clusters
+     * and Multi-AZ DB clusters</p>
      */
     inline CreateDBClusterRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
@@ -1391,9 +1392,9 @@ namespace Model
      * To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
      * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
-     * Aurora User Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
-     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p> <p>Valid for: Aurora DB
-     * clusters and Multi-AZ DB clusters</p>
+     * Aurora User Guide</i>.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+     * <p>Constraints: Minimum 30-minute window.</p> <p>Valid for: Aurora DB clusters
+     * and Multi-AZ DB clusters</p>
      */
     inline CreateDBClusterRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
@@ -1537,7 +1538,7 @@ namespace Model
      * specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon RDS will use the KMS key used to encrypt the source. Otherwise, Amazon
-     * RDS will use your default KMS key. </p> </li> <li> <p>If the
+     * RDS will use your default KMS key.</p> </li> <li> <p>If the
      * <code>StorageEncrypted</code> parameter is enabled and
      * <code>ReplicationSourceIdentifier</code> isn't specified, then Amazon RDS will
      * use your default KMS key.</p> </li> </ul> <p>There is a default KMS key for your
@@ -1559,7 +1560,7 @@ namespace Model
      * specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon RDS will use the KMS key used to encrypt the source. Otherwise, Amazon
-     * RDS will use your default KMS key. </p> </li> <li> <p>If the
+     * RDS will use your default KMS key.</p> </li> <li> <p>If the
      * <code>StorageEncrypted</code> parameter is enabled and
      * <code>ReplicationSourceIdentifier</code> isn't specified, then Amazon RDS will
      * use your default KMS key.</p> </li> </ul> <p>There is a default KMS key for your
@@ -1581,7 +1582,7 @@ namespace Model
      * specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon RDS will use the KMS key used to encrypt the source. Otherwise, Amazon
-     * RDS will use your default KMS key. </p> </li> <li> <p>If the
+     * RDS will use your default KMS key.</p> </li> <li> <p>If the
      * <code>StorageEncrypted</code> parameter is enabled and
      * <code>ReplicationSourceIdentifier</code> isn't specified, then Amazon RDS will
      * use your default KMS key.</p> </li> </ul> <p>There is a default KMS key for your
@@ -1603,7 +1604,7 @@ namespace Model
      * specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon RDS will use the KMS key used to encrypt the source. Otherwise, Amazon
-     * RDS will use your default KMS key. </p> </li> <li> <p>If the
+     * RDS will use your default KMS key.</p> </li> <li> <p>If the
      * <code>StorageEncrypted</code> parameter is enabled and
      * <code>ReplicationSourceIdentifier</code> isn't specified, then Amazon RDS will
      * use your default KMS key.</p> </li> </ul> <p>There is a default KMS key for your
@@ -1625,7 +1626,7 @@ namespace Model
      * specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon RDS will use the KMS key used to encrypt the source. Otherwise, Amazon
-     * RDS will use your default KMS key. </p> </li> <li> <p>If the
+     * RDS will use your default KMS key.</p> </li> <li> <p>If the
      * <code>StorageEncrypted</code> parameter is enabled and
      * <code>ReplicationSourceIdentifier</code> isn't specified, then Amazon RDS will
      * use your default KMS key.</p> </li> </ul> <p>There is a default KMS key for your
@@ -1647,7 +1648,7 @@ namespace Model
      * specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon RDS will use the KMS key used to encrypt the source. Otherwise, Amazon
-     * RDS will use your default KMS key. </p> </li> <li> <p>If the
+     * RDS will use your default KMS key.</p> </li> <li> <p>If the
      * <code>StorageEncrypted</code> parameter is enabled and
      * <code>ReplicationSourceIdentifier</code> isn't specified, then Amazon RDS will
      * use your default KMS key.</p> </li> </ul> <p>There is a default KMS key for your
@@ -1669,7 +1670,7 @@ namespace Model
      * specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon RDS will use the KMS key used to encrypt the source. Otherwise, Amazon
-     * RDS will use your default KMS key. </p> </li> <li> <p>If the
+     * RDS will use your default KMS key.</p> </li> <li> <p>If the
      * <code>StorageEncrypted</code> parameter is enabled and
      * <code>ReplicationSourceIdentifier</code> isn't specified, then Amazon RDS will
      * use your default KMS key.</p> </li> </ul> <p>There is a default KMS key for your
@@ -1691,7 +1692,7 @@ namespace Model
      * specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon RDS will use the KMS key used to encrypt the source. Otherwise, Amazon
-     * RDS will use your default KMS key. </p> </li> <li> <p>If the
+     * RDS will use your default KMS key.</p> </li> <li> <p>If the
      * <code>StorageEncrypted</code> parameter is enabled and
      * <code>ReplicationSourceIdentifier</code> isn't specified, then Amazon RDS will
      * use your default KMS key.</p> </li> </ul> <p>There is a default KMS key for your
@@ -2024,7 +2025,7 @@ namespace Model
      * Identity and Access Management (IAM) accounts to database accounts. By default,
      * mapping isn't enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
-     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>.</p>
      * <p>Valid for: Aurora DB clusters only</p>
      */
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
@@ -2034,7 +2035,7 @@ namespace Model
      * Identity and Access Management (IAM) accounts to database accounts. By default,
      * mapping isn't enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
-     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>.</p>
      * <p>Valid for: Aurora DB clusters only</p>
      */
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
@@ -2044,7 +2045,7 @@ namespace Model
      * Identity and Access Management (IAM) accounts to database accounts. By default,
      * mapping isn't enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
-     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>.</p>
      * <p>Valid for: Aurora DB clusters only</p>
      */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
@@ -2054,7 +2055,7 @@ namespace Model
      * Identity and Access Management (IAM) accounts to database accounts. By default,
      * mapping isn't enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
-     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>.</p>
      * <p>Valid for: Aurora DB clusters only</p>
      */
     inline CreateDBClusterRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
@@ -2062,151 +2063,223 @@ namespace Model
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0. </p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If
-     * specified, this value must be set to a number from 0 to 259,200 (72 hours).</p>
-     * </li> </ul> <p>Valid for: Aurora MySQL DB clusters only</p>
+     * value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified,
+     * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
+     * <p>Valid for: Aurora MySQL DB clusters only</p>
      */
     inline long long GetBacktrackWindow() const{ return m_backtrackWindow; }
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0. </p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If
-     * specified, this value must be set to a number from 0 to 259,200 (72 hours).</p>
-     * </li> </ul> <p>Valid for: Aurora MySQL DB clusters only</p>
+     * value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified,
+     * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
+     * <p>Valid for: Aurora MySQL DB clusters only</p>
      */
     inline bool BacktrackWindowHasBeenSet() const { return m_backtrackWindowHasBeenSet; }
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0. </p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If
-     * specified, this value must be set to a number from 0 to 259,200 (72 hours).</p>
-     * </li> </ul> <p>Valid for: Aurora MySQL DB clusters only</p>
+     * value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified,
+     * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
+     * <p>Valid for: Aurora MySQL DB clusters only</p>
      */
     inline void SetBacktrackWindow(long long value) { m_backtrackWindowHasBeenSet = true; m_backtrackWindow = value; }
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0. </p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If
-     * specified, this value must be set to a number from 0 to 259,200 (72 hours).</p>
-     * </li> </ul> <p>Valid for: Aurora MySQL DB clusters only</p>
+     * value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified,
+     * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
+     * <p>Valid for: Aurora MySQL DB clusters only</p>
      */
     inline CreateDBClusterRequest& WithBacktrackWindow(long long value) { SetBacktrackWindow(value); return *this;}
 
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p> <b>Aurora MySQL</b> </p> <p>Possible values are
+     * Logs. The values in the list depend on the DB engine being used.</p> <p> <b>RDS
+     * for MySQL</b> </p> <p>Possible values are <code>error</code>,
+     * <code>general</code>, and <code>slowquery</code>.</p> <p> <b>RDS for
+     * PostgreSQL</b> </p> <p>Possible values are <code>postgresql</code> and
+     * <code>upgrade</code>.</p> <p> <b>Aurora MySQL</b> </p> <p>Possible values are
      * <code>audit</code>, <code>error</code>, <code>general</code>, and
      * <code>slowquery</code>.</p> <p> <b>Aurora PostgreSQL</b> </p> <p>Possible value
-     * is <code>postgresql</code>.</p> <p>Valid for: Aurora DB clusters only</p>
+     * is <code>postgresql</code>.</p> <p>For more information about exporting
+     * CloudWatch Logs for Amazon RDS, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Amazon Aurora, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline const Aws::Vector<Aws::String>& GetEnableCloudwatchLogsExports() const{ return m_enableCloudwatchLogsExports; }
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p> <b>Aurora MySQL</b> </p> <p>Possible values are
+     * Logs. The values in the list depend on the DB engine being used.</p> <p> <b>RDS
+     * for MySQL</b> </p> <p>Possible values are <code>error</code>,
+     * <code>general</code>, and <code>slowquery</code>.</p> <p> <b>RDS for
+     * PostgreSQL</b> </p> <p>Possible values are <code>postgresql</code> and
+     * <code>upgrade</code>.</p> <p> <b>Aurora MySQL</b> </p> <p>Possible values are
      * <code>audit</code>, <code>error</code>, <code>general</code>, and
      * <code>slowquery</code>.</p> <p> <b>Aurora PostgreSQL</b> </p> <p>Possible value
-     * is <code>postgresql</code>.</p> <p>Valid for: Aurora DB clusters only</p>
+     * is <code>postgresql</code>.</p> <p>For more information about exporting
+     * CloudWatch Logs for Amazon RDS, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Amazon Aurora, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline bool EnableCloudwatchLogsExportsHasBeenSet() const { return m_enableCloudwatchLogsExportsHasBeenSet; }
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p> <b>Aurora MySQL</b> </p> <p>Possible values are
+     * Logs. The values in the list depend on the DB engine being used.</p> <p> <b>RDS
+     * for MySQL</b> </p> <p>Possible values are <code>error</code>,
+     * <code>general</code>, and <code>slowquery</code>.</p> <p> <b>RDS for
+     * PostgreSQL</b> </p> <p>Possible values are <code>postgresql</code> and
+     * <code>upgrade</code>.</p> <p> <b>Aurora MySQL</b> </p> <p>Possible values are
      * <code>audit</code>, <code>error</code>, <code>general</code>, and
      * <code>slowquery</code>.</p> <p> <b>Aurora PostgreSQL</b> </p> <p>Possible value
-     * is <code>postgresql</code>.</p> <p>Valid for: Aurora DB clusters only</p>
+     * is <code>postgresql</code>.</p> <p>For more information about exporting
+     * CloudWatch Logs for Amazon RDS, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Amazon Aurora, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline void SetEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = value; }
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p> <b>Aurora MySQL</b> </p> <p>Possible values are
+     * Logs. The values in the list depend on the DB engine being used.</p> <p> <b>RDS
+     * for MySQL</b> </p> <p>Possible values are <code>error</code>,
+     * <code>general</code>, and <code>slowquery</code>.</p> <p> <b>RDS for
+     * PostgreSQL</b> </p> <p>Possible values are <code>postgresql</code> and
+     * <code>upgrade</code>.</p> <p> <b>Aurora MySQL</b> </p> <p>Possible values are
      * <code>audit</code>, <code>error</code>, <code>general</code>, and
      * <code>slowquery</code>.</p> <p> <b>Aurora PostgreSQL</b> </p> <p>Possible value
-     * is <code>postgresql</code>.</p> <p>Valid for: Aurora DB clusters only</p>
+     * is <code>postgresql</code>.</p> <p>For more information about exporting
+     * CloudWatch Logs for Amazon RDS, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Amazon Aurora, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline void SetEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = std::move(value); }
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p> <b>Aurora MySQL</b> </p> <p>Possible values are
+     * Logs. The values in the list depend on the DB engine being used.</p> <p> <b>RDS
+     * for MySQL</b> </p> <p>Possible values are <code>error</code>,
+     * <code>general</code>, and <code>slowquery</code>.</p> <p> <b>RDS for
+     * PostgreSQL</b> </p> <p>Possible values are <code>postgresql</code> and
+     * <code>upgrade</code>.</p> <p> <b>Aurora MySQL</b> </p> <p>Possible values are
      * <code>audit</code>, <code>error</code>, <code>general</code>, and
      * <code>slowquery</code>.</p> <p> <b>Aurora PostgreSQL</b> </p> <p>Possible value
-     * is <code>postgresql</code>.</p> <p>Valid for: Aurora DB clusters only</p>
+     * is <code>postgresql</code>.</p> <p>For more information about exporting
+     * CloudWatch Logs for Amazon RDS, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Amazon Aurora, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline CreateDBClusterRequest& WithEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { SetEnableCloudwatchLogsExports(value); return *this;}
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p> <b>Aurora MySQL</b> </p> <p>Possible values are
+     * Logs. The values in the list depend on the DB engine being used.</p> <p> <b>RDS
+     * for MySQL</b> </p> <p>Possible values are <code>error</code>,
+     * <code>general</code>, and <code>slowquery</code>.</p> <p> <b>RDS for
+     * PostgreSQL</b> </p> <p>Possible values are <code>postgresql</code> and
+     * <code>upgrade</code>.</p> <p> <b>Aurora MySQL</b> </p> <p>Possible values are
      * <code>audit</code>, <code>error</code>, <code>general</code>, and
      * <code>slowquery</code>.</p> <p> <b>Aurora PostgreSQL</b> </p> <p>Possible value
-     * is <code>postgresql</code>.</p> <p>Valid for: Aurora DB clusters only</p>
+     * is <code>postgresql</code>.</p> <p>For more information about exporting
+     * CloudWatch Logs for Amazon RDS, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Amazon Aurora, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline CreateDBClusterRequest& WithEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { SetEnableCloudwatchLogsExports(std::move(value)); return *this;}
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p> <b>Aurora MySQL</b> </p> <p>Possible values are
+     * Logs. The values in the list depend on the DB engine being used.</p> <p> <b>RDS
+     * for MySQL</b> </p> <p>Possible values are <code>error</code>,
+     * <code>general</code>, and <code>slowquery</code>.</p> <p> <b>RDS for
+     * PostgreSQL</b> </p> <p>Possible values are <code>postgresql</code> and
+     * <code>upgrade</code>.</p> <p> <b>Aurora MySQL</b> </p> <p>Possible values are
      * <code>audit</code>, <code>error</code>, <code>general</code>, and
      * <code>slowquery</code>.</p> <p> <b>Aurora PostgreSQL</b> </p> <p>Possible value
-     * is <code>postgresql</code>.</p> <p>Valid for: Aurora DB clusters only</p>
+     * is <code>postgresql</code>.</p> <p>For more information about exporting
+     * CloudWatch Logs for Amazon RDS, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Amazon Aurora, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline CreateDBClusterRequest& AddEnableCloudwatchLogsExports(const Aws::String& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p> <b>Aurora MySQL</b> </p> <p>Possible values are
+     * Logs. The values in the list depend on the DB engine being used.</p> <p> <b>RDS
+     * for MySQL</b> </p> <p>Possible values are <code>error</code>,
+     * <code>general</code>, and <code>slowquery</code>.</p> <p> <b>RDS for
+     * PostgreSQL</b> </p> <p>Possible values are <code>postgresql</code> and
+     * <code>upgrade</code>.</p> <p> <b>Aurora MySQL</b> </p> <p>Possible values are
      * <code>audit</code>, <code>error</code>, <code>general</code>, and
      * <code>slowquery</code>.</p> <p> <b>Aurora PostgreSQL</b> </p> <p>Possible value
-     * is <code>postgresql</code>.</p> <p>Valid for: Aurora DB clusters only</p>
+     * is <code>postgresql</code>.</p> <p>For more information about exporting
+     * CloudWatch Logs for Amazon RDS, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Amazon Aurora, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline CreateDBClusterRequest& AddEnableCloudwatchLogsExports(Aws::String&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p> <b>Aurora MySQL</b> </p> <p>Possible values are
+     * Logs. The values in the list depend on the DB engine being used.</p> <p> <b>RDS
+     * for MySQL</b> </p> <p>Possible values are <code>error</code>,
+     * <code>general</code>, and <code>slowquery</code>.</p> <p> <b>RDS for
+     * PostgreSQL</b> </p> <p>Possible values are <code>postgresql</code> and
+     * <code>upgrade</code>.</p> <p> <b>Aurora MySQL</b> </p> <p>Possible values are
      * <code>audit</code>, <code>error</code>, <code>general</code>, and
      * <code>slowquery</code>.</p> <p> <b>Aurora PostgreSQL</b> </p> <p>Possible value
-     * is <code>postgresql</code>.</p> <p>Valid for: Aurora DB clusters only</p>
+     * is <code>postgresql</code>.</p> <p>For more information about exporting
+     * CloudWatch Logs for Amazon RDS, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Amazon Aurora, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline CreateDBClusterRequest& AddEnableCloudwatchLogsExports(const char* value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
 
@@ -2227,7 +2300,7 @@ namespace Model
      * engine modes. For more information, see the following sections in the <i>Amazon
      * Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">
-     * Limitations of Aurora Serverless</a> </p> </li> <li> <p> <a
+     * Limitations of Aurora Serverless v1</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">
      * Limitations of Parallel Query</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">
@@ -2254,7 +2327,7 @@ namespace Model
      * engine modes. For more information, see the following sections in the <i>Amazon
      * Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">
-     * Limitations of Aurora Serverless</a> </p> </li> <li> <p> <a
+     * Limitations of Aurora Serverless v1</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">
      * Limitations of Parallel Query</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">
@@ -2281,7 +2354,7 @@ namespace Model
      * engine modes. For more information, see the following sections in the <i>Amazon
      * Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">
-     * Limitations of Aurora Serverless</a> </p> </li> <li> <p> <a
+     * Limitations of Aurora Serverless v1</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">
      * Limitations of Parallel Query</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">
@@ -2308,7 +2381,7 @@ namespace Model
      * engine modes. For more information, see the following sections in the <i>Amazon
      * Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">
-     * Limitations of Aurora Serverless</a> </p> </li> <li> <p> <a
+     * Limitations of Aurora Serverless v1</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">
      * Limitations of Parallel Query</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">
@@ -2335,7 +2408,7 @@ namespace Model
      * engine modes. For more information, see the following sections in the <i>Amazon
      * Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">
-     * Limitations of Aurora Serverless</a> </p> </li> <li> <p> <a
+     * Limitations of Aurora Serverless v1</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">
      * Limitations of Parallel Query</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">
@@ -2362,7 +2435,7 @@ namespace Model
      * engine modes. For more information, see the following sections in the <i>Amazon
      * Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">
-     * Limitations of Aurora Serverless</a> </p> </li> <li> <p> <a
+     * Limitations of Aurora Serverless v1</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">
      * Limitations of Parallel Query</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">
@@ -2389,7 +2462,7 @@ namespace Model
      * engine modes. For more information, see the following sections in the <i>Amazon
      * Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">
-     * Limitations of Aurora Serverless</a> </p> </li> <li> <p> <a
+     * Limitations of Aurora Serverless v1</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">
      * Limitations of Parallel Query</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">
@@ -2416,7 +2489,7 @@ namespace Model
      * engine modes. For more information, see the following sections in the <i>Amazon
      * Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">
-     * Limitations of Aurora Serverless</a> </p> </li> <li> <p> <a
+     * Limitations of Aurora Serverless v1</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">
      * Limitations of Parallel Query</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">
@@ -2499,57 +2572,57 @@ namespace Model
 
 
     /**
-     * <p> The global cluster ID of an Aurora cluster that becomes the primary cluster
-     * in the new global database cluster. </p> <p>Valid for: Aurora DB clusters
+     * <p>The global cluster ID of an Aurora cluster that becomes the primary cluster
+     * in the new global database cluster.</p> <p>Valid for: Aurora DB clusters
      * only</p>
      */
     inline const Aws::String& GetGlobalClusterIdentifier() const{ return m_globalClusterIdentifier; }
 
     /**
-     * <p> The global cluster ID of an Aurora cluster that becomes the primary cluster
-     * in the new global database cluster. </p> <p>Valid for: Aurora DB clusters
+     * <p>The global cluster ID of an Aurora cluster that becomes the primary cluster
+     * in the new global database cluster.</p> <p>Valid for: Aurora DB clusters
      * only</p>
      */
     inline bool GlobalClusterIdentifierHasBeenSet() const { return m_globalClusterIdentifierHasBeenSet; }
 
     /**
-     * <p> The global cluster ID of an Aurora cluster that becomes the primary cluster
-     * in the new global database cluster. </p> <p>Valid for: Aurora DB clusters
+     * <p>The global cluster ID of an Aurora cluster that becomes the primary cluster
+     * in the new global database cluster.</p> <p>Valid for: Aurora DB clusters
      * only</p>
      */
     inline void SetGlobalClusterIdentifier(const Aws::String& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = value; }
 
     /**
-     * <p> The global cluster ID of an Aurora cluster that becomes the primary cluster
-     * in the new global database cluster. </p> <p>Valid for: Aurora DB clusters
+     * <p>The global cluster ID of an Aurora cluster that becomes the primary cluster
+     * in the new global database cluster.</p> <p>Valid for: Aurora DB clusters
      * only</p>
      */
     inline void SetGlobalClusterIdentifier(Aws::String&& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = std::move(value); }
 
     /**
-     * <p> The global cluster ID of an Aurora cluster that becomes the primary cluster
-     * in the new global database cluster. </p> <p>Valid for: Aurora DB clusters
+     * <p>The global cluster ID of an Aurora cluster that becomes the primary cluster
+     * in the new global database cluster.</p> <p>Valid for: Aurora DB clusters
      * only</p>
      */
     inline void SetGlobalClusterIdentifier(const char* value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier.assign(value); }
 
     /**
-     * <p> The global cluster ID of an Aurora cluster that becomes the primary cluster
-     * in the new global database cluster. </p> <p>Valid for: Aurora DB clusters
+     * <p>The global cluster ID of an Aurora cluster that becomes the primary cluster
+     * in the new global database cluster.</p> <p>Valid for: Aurora DB clusters
      * only</p>
      */
     inline CreateDBClusterRequest& WithGlobalClusterIdentifier(const Aws::String& value) { SetGlobalClusterIdentifier(value); return *this;}
 
     /**
-     * <p> The global cluster ID of an Aurora cluster that becomes the primary cluster
-     * in the new global database cluster. </p> <p>Valid for: Aurora DB clusters
+     * <p>The global cluster ID of an Aurora cluster that becomes the primary cluster
+     * in the new global database cluster.</p> <p>Valid for: Aurora DB clusters
      * only</p>
      */
     inline CreateDBClusterRequest& WithGlobalClusterIdentifier(Aws::String&& value) { SetGlobalClusterIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p> The global cluster ID of an Aurora cluster that becomes the primary cluster
-     * in the new global database cluster. </p> <p>Valid for: Aurora DB clusters
+     * <p>The global cluster ID of an Aurora cluster that becomes the primary cluster
+     * in the new global database cluster.</p> <p>Valid for: Aurora DB clusters
      * only</p>
      */
     inline CreateDBClusterRequest& WithGlobalClusterIdentifier(const char* value) { SetGlobalClusterIdentifier(value); return *this;}
@@ -2557,52 +2630,52 @@ namespace Model
 
     /**
      * <p>A value that indicates whether to enable the HTTP endpoint for an Aurora
-     * Serverless DB cluster. By default, the HTTP endpoint is disabled.</p> <p>When
+     * Serverless v1 DB cluster. By default, the HTTP endpoint is disabled.</p> <p>When
      * enabled, the HTTP endpoint provides a connectionless web service API for running
-     * SQL queries on the Aurora Serverless DB cluster. You can also query your
+     * SQL queries on the Aurora Serverless v1 DB cluster. You can also query your
      * database from inside the RDS console with the query editor.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless</a> in the <i>Amazon Aurora User
+     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
      * Guide</i>.</p> <p>Valid for: Aurora DB clusters only</p>
      */
     inline bool GetEnableHttpEndpoint() const{ return m_enableHttpEndpoint; }
 
     /**
      * <p>A value that indicates whether to enable the HTTP endpoint for an Aurora
-     * Serverless DB cluster. By default, the HTTP endpoint is disabled.</p> <p>When
+     * Serverless v1 DB cluster. By default, the HTTP endpoint is disabled.</p> <p>When
      * enabled, the HTTP endpoint provides a connectionless web service API for running
-     * SQL queries on the Aurora Serverless DB cluster. You can also query your
+     * SQL queries on the Aurora Serverless v1 DB cluster. You can also query your
      * database from inside the RDS console with the query editor.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless</a> in the <i>Amazon Aurora User
+     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
      * Guide</i>.</p> <p>Valid for: Aurora DB clusters only</p>
      */
     inline bool EnableHttpEndpointHasBeenSet() const { return m_enableHttpEndpointHasBeenSet; }
 
     /**
      * <p>A value that indicates whether to enable the HTTP endpoint for an Aurora
-     * Serverless DB cluster. By default, the HTTP endpoint is disabled.</p> <p>When
+     * Serverless v1 DB cluster. By default, the HTTP endpoint is disabled.</p> <p>When
      * enabled, the HTTP endpoint provides a connectionless web service API for running
-     * SQL queries on the Aurora Serverless DB cluster. You can also query your
+     * SQL queries on the Aurora Serverless v1 DB cluster. You can also query your
      * database from inside the RDS console with the query editor.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless</a> in the <i>Amazon Aurora User
+     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
      * Guide</i>.</p> <p>Valid for: Aurora DB clusters only</p>
      */
     inline void SetEnableHttpEndpoint(bool value) { m_enableHttpEndpointHasBeenSet = true; m_enableHttpEndpoint = value; }
 
     /**
      * <p>A value that indicates whether to enable the HTTP endpoint for an Aurora
-     * Serverless DB cluster. By default, the HTTP endpoint is disabled.</p> <p>When
+     * Serverless v1 DB cluster. By default, the HTTP endpoint is disabled.</p> <p>When
      * enabled, the HTTP endpoint provides a connectionless web service API for running
-     * SQL queries on the Aurora Serverless DB cluster. You can also query your
+     * SQL queries on the Aurora Serverless v1 DB cluster. You can also query your
      * database from inside the RDS console with the query editor.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless</a> in the <i>Amazon Aurora User
+     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
      * Guide</i>.</p> <p>Valid for: Aurora DB clusters only</p>
      */
     inline CreateDBClusterRequest& WithEnableHttpEndpoint(bool value) { SetEnableHttpEndpoint(value); return *this;}
@@ -2611,34 +2684,34 @@ namespace Model
     /**
      * <p>A value that indicates whether to copy all tags from the DB cluster to
      * snapshots of the DB cluster. The default is not to copy them.</p> <p>Valid for:
-     * Aurora DB clusters only</p>
+     * Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
 
     /**
      * <p>A value that indicates whether to copy all tags from the DB cluster to
      * snapshots of the DB cluster. The default is not to copy them.</p> <p>Valid for:
-     * Aurora DB clusters only</p>
+     * Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
 
     /**
      * <p>A value that indicates whether to copy all tags from the DB cluster to
      * snapshots of the DB cluster. The default is not to copy them.</p> <p>Valid for:
-     * Aurora DB clusters only</p>
+     * Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
 
     /**
      * <p>A value that indicates whether to copy all tags from the DB cluster to
      * snapshots of the DB cluster. The default is not to copy them.</p> <p>Valid for:
-     * Aurora DB clusters only</p>
+     * Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline CreateDBClusterRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 
 
     /**
-     * <p>The Active Directory directory ID to create the DB cluster in.</p> <p> For
+     * <p>The Active Directory directory ID to create the DB cluster in.</p> <p>For
      * Amazon Aurora DB clusters, Amazon RDS can use Kerberos authentication to
      * authenticate users that connect to the DB cluster.</p> <p>For more information,
      * see <a
@@ -2649,7 +2722,7 @@ namespace Model
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>The Active Directory directory ID to create the DB cluster in.</p> <p> For
+     * <p>The Active Directory directory ID to create the DB cluster in.</p> <p>For
      * Amazon Aurora DB clusters, Amazon RDS can use Kerberos authentication to
      * authenticate users that connect to the DB cluster.</p> <p>For more information,
      * see <a
@@ -2660,7 +2733,7 @@ namespace Model
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
-     * <p>The Active Directory directory ID to create the DB cluster in.</p> <p> For
+     * <p>The Active Directory directory ID to create the DB cluster in.</p> <p>For
      * Amazon Aurora DB clusters, Amazon RDS can use Kerberos authentication to
      * authenticate users that connect to the DB cluster.</p> <p>For more information,
      * see <a
@@ -2671,7 +2744,7 @@ namespace Model
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * <p>The Active Directory directory ID to create the DB cluster in.</p> <p> For
+     * <p>The Active Directory directory ID to create the DB cluster in.</p> <p>For
      * Amazon Aurora DB clusters, Amazon RDS can use Kerberos authentication to
      * authenticate users that connect to the DB cluster.</p> <p>For more information,
      * see <a
@@ -2682,7 +2755,7 @@ namespace Model
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
-     * <p>The Active Directory directory ID to create the DB cluster in.</p> <p> For
+     * <p>The Active Directory directory ID to create the DB cluster in.</p> <p>For
      * Amazon Aurora DB clusters, Amazon RDS can use Kerberos authentication to
      * authenticate users that connect to the DB cluster.</p> <p>For more information,
      * see <a
@@ -2693,7 +2766,7 @@ namespace Model
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
-     * <p>The Active Directory directory ID to create the DB cluster in.</p> <p> For
+     * <p>The Active Directory directory ID to create the DB cluster in.</p> <p>For
      * Amazon Aurora DB clusters, Amazon RDS can use Kerberos authentication to
      * authenticate users that connect to the DB cluster.</p> <p>For more information,
      * see <a
@@ -2704,7 +2777,7 @@ namespace Model
     inline CreateDBClusterRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>The Active Directory directory ID to create the DB cluster in.</p> <p> For
+     * <p>The Active Directory directory ID to create the DB cluster in.</p> <p>For
      * Amazon Aurora DB clusters, Amazon RDS can use Kerberos authentication to
      * authenticate users that connect to the DB cluster.</p> <p>For more information,
      * see <a
@@ -2715,7 +2788,7 @@ namespace Model
     inline CreateDBClusterRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
-     * <p>The Active Directory directory ID to create the DB cluster in.</p> <p> For
+     * <p>The Active Directory directory ID to create the DB cluster in.</p> <p>For
      * Amazon Aurora DB clusters, Amazon RDS can use Kerberos authentication to
      * authenticate users that connect to the DB cluster.</p> <p>For more information,
      * see <a
@@ -2785,7 +2858,7 @@ namespace Model
      * writes to the current primary cluster and the resulting changes are replicated
      * back to this cluster. For the primary DB cluster of an Aurora global database,
      * this value is used immediately if the primary is demoted by the
-     * <a>FailoverGlobalCluster</a> API operation, but it does nothing until then. </p>
+     * <a>FailoverGlobalCluster</a> API operation, but it does nothing until then.</p>
      * <p>Valid for: Aurora DB clusters only</p>
      */
     inline bool GetEnableGlobalWriteForwarding() const{ return m_enableGlobalWriteForwarding; }
@@ -2800,7 +2873,7 @@ namespace Model
      * writes to the current primary cluster and the resulting changes are replicated
      * back to this cluster. For the primary DB cluster of an Aurora global database,
      * this value is used immediately if the primary is demoted by the
-     * <a>FailoverGlobalCluster</a> API operation, but it does nothing until then. </p>
+     * <a>FailoverGlobalCluster</a> API operation, but it does nothing until then.</p>
      * <p>Valid for: Aurora DB clusters only</p>
      */
     inline bool EnableGlobalWriteForwardingHasBeenSet() const { return m_enableGlobalWriteForwardingHasBeenSet; }
@@ -2815,7 +2888,7 @@ namespace Model
      * writes to the current primary cluster and the resulting changes are replicated
      * back to this cluster. For the primary DB cluster of an Aurora global database,
      * this value is used immediately if the primary is demoted by the
-     * <a>FailoverGlobalCluster</a> API operation, but it does nothing until then. </p>
+     * <a>FailoverGlobalCluster</a> API operation, but it does nothing until then.</p>
      * <p>Valid for: Aurora DB clusters only</p>
      */
     inline void SetEnableGlobalWriteForwarding(bool value) { m_enableGlobalWriteForwardingHasBeenSet = true; m_enableGlobalWriteForwarding = value; }
@@ -2830,7 +2903,7 @@ namespace Model
      * writes to the current primary cluster and the resulting changes are replicated
      * back to this cluster. For the primary DB cluster of an Aurora global database,
      * this value is used immediately if the primary is demoted by the
-     * <a>FailoverGlobalCluster</a> API operation, but it does nothing until then. </p>
+     * <a>FailoverGlobalCluster</a> API operation, but it does nothing until then.</p>
      * <p>Valid for: Aurora DB clusters only</p>
      */
     inline CreateDBClusterRequest& WithEnableGlobalWriteForwarding(bool value) { SetEnableGlobalWriteForwarding(value); return *this;}
@@ -2842,7 +2915,7 @@ namespace Model
      * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>This setting is
+     * instance class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This setting is
      * required to create a Multi-AZ DB cluster.</p> <p>Valid for: Multi-AZ DB clusters
      * only</p>
      */
@@ -2854,7 +2927,7 @@ namespace Model
      * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>This setting is
+     * instance class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This setting is
      * required to create a Multi-AZ DB cluster.</p> <p>Valid for: Multi-AZ DB clusters
      * only</p>
      */
@@ -2866,7 +2939,7 @@ namespace Model
      * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>This setting is
+     * instance class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This setting is
      * required to create a Multi-AZ DB cluster.</p> <p>Valid for: Multi-AZ DB clusters
      * only</p>
      */
@@ -2878,7 +2951,7 @@ namespace Model
      * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>This setting is
+     * instance class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This setting is
      * required to create a Multi-AZ DB cluster.</p> <p>Valid for: Multi-AZ DB clusters
      * only</p>
      */
@@ -2890,7 +2963,7 @@ namespace Model
      * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>This setting is
+     * instance class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This setting is
      * required to create a Multi-AZ DB cluster.</p> <p>Valid for: Multi-AZ DB clusters
      * only</p>
      */
@@ -2902,7 +2975,7 @@ namespace Model
      * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>This setting is
+     * instance class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This setting is
      * required to create a Multi-AZ DB cluster.</p> <p>Valid for: Multi-AZ DB clusters
      * only</p>
      */
@@ -2914,7 +2987,7 @@ namespace Model
      * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>This setting is
+     * instance class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This setting is
      * required to create a Multi-AZ DB cluster.</p> <p>Valid for: Multi-AZ DB clusters
      * only</p>
      */
@@ -2926,7 +2999,7 @@ namespace Model
      * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>This setting is
+     * instance class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This setting is
      * required to create a Multi-AZ DB cluster.</p> <p>Valid for: Multi-AZ DB clusters
      * only</p>
      */
@@ -2964,72 +3037,72 @@ namespace Model
 
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>This
-     * setting is required to create a Multi-AZ DB cluster.</p> <p> Valid values:
-     * <code>io1</code> </p> <p> When specified, a value for the <code>Iops</code>
-     * parameter is required. </p> <p> Default: <code>io1</code> </p> <p>Valid for:
+     * setting is required to create a Multi-AZ DB cluster.</p> <p>Valid values:
+     * <code>io1</code> </p> <p>When specified, a value for the <code>Iops</code>
+     * parameter is required.</p> <p>Default: <code>io1</code> </p> <p>Valid for:
      * Multi-AZ DB clusters only</p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>This
-     * setting is required to create a Multi-AZ DB cluster.</p> <p> Valid values:
-     * <code>io1</code> </p> <p> When specified, a value for the <code>Iops</code>
-     * parameter is required. </p> <p> Default: <code>io1</code> </p> <p>Valid for:
+     * setting is required to create a Multi-AZ DB cluster.</p> <p>Valid values:
+     * <code>io1</code> </p> <p>When specified, a value for the <code>Iops</code>
+     * parameter is required.</p> <p>Default: <code>io1</code> </p> <p>Valid for:
      * Multi-AZ DB clusters only</p>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>This
-     * setting is required to create a Multi-AZ DB cluster.</p> <p> Valid values:
-     * <code>io1</code> </p> <p> When specified, a value for the <code>Iops</code>
-     * parameter is required. </p> <p> Default: <code>io1</code> </p> <p>Valid for:
+     * setting is required to create a Multi-AZ DB cluster.</p> <p>Valid values:
+     * <code>io1</code> </p> <p>When specified, a value for the <code>Iops</code>
+     * parameter is required.</p> <p>Default: <code>io1</code> </p> <p>Valid for:
      * Multi-AZ DB clusters only</p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>This
-     * setting is required to create a Multi-AZ DB cluster.</p> <p> Valid values:
-     * <code>io1</code> </p> <p> When specified, a value for the <code>Iops</code>
-     * parameter is required. </p> <p> Default: <code>io1</code> </p> <p>Valid for:
+     * setting is required to create a Multi-AZ DB cluster.</p> <p>Valid values:
+     * <code>io1</code> </p> <p>When specified, a value for the <code>Iops</code>
+     * parameter is required.</p> <p>Default: <code>io1</code> </p> <p>Valid for:
      * Multi-AZ DB clusters only</p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>This
-     * setting is required to create a Multi-AZ DB cluster.</p> <p> Valid values:
-     * <code>io1</code> </p> <p> When specified, a value for the <code>Iops</code>
-     * parameter is required. </p> <p> Default: <code>io1</code> </p> <p>Valid for:
+     * setting is required to create a Multi-AZ DB cluster.</p> <p>Valid values:
+     * <code>io1</code> </p> <p>When specified, a value for the <code>Iops</code>
+     * parameter is required.</p> <p>Default: <code>io1</code> </p> <p>Valid for:
      * Multi-AZ DB clusters only</p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>This
-     * setting is required to create a Multi-AZ DB cluster.</p> <p> Valid values:
-     * <code>io1</code> </p> <p> When specified, a value for the <code>Iops</code>
-     * parameter is required. </p> <p> Default: <code>io1</code> </p> <p>Valid for:
+     * setting is required to create a Multi-AZ DB cluster.</p> <p>Valid values:
+     * <code>io1</code> </p> <p>When specified, a value for the <code>Iops</code>
+     * parameter is required.</p> <p>Default: <code>io1</code> </p> <p>Valid for:
      * Multi-AZ DB clusters only</p>
      */
     inline CreateDBClusterRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>This
-     * setting is required to create a Multi-AZ DB cluster.</p> <p> Valid values:
-     * <code>io1</code> </p> <p> When specified, a value for the <code>Iops</code>
-     * parameter is required. </p> <p> Default: <code>io1</code> </p> <p>Valid for:
+     * setting is required to create a Multi-AZ DB cluster.</p> <p>Valid values:
+     * <code>io1</code> </p> <p>When specified, a value for the <code>Iops</code>
+     * parameter is required.</p> <p>Default: <code>io1</code> </p> <p>Valid for:
      * Multi-AZ DB clusters only</p>
      */
     inline CreateDBClusterRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>This
-     * setting is required to create a Multi-AZ DB cluster.</p> <p> Valid values:
-     * <code>io1</code> </p> <p> When specified, a value for the <code>Iops</code>
-     * parameter is required. </p> <p> Default: <code>io1</code> </p> <p>Valid for:
+     * setting is required to create a Multi-AZ DB cluster.</p> <p>Valid values:
+     * <code>io1</code> </p> <p>When specified, a value for the <code>Iops</code>
+     * parameter is required.</p> <p>Default: <code>io1</code> </p> <p>Valid for:
      * Multi-AZ DB clusters only</p>
      */
     inline CreateDBClusterRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
@@ -3041,7 +3114,7 @@ namespace Model
      * information about valid <code>Iops</code> values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
      * RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS
-     * User Guide</i>. </p> <p>This setting is required to create a Multi-AZ DB
+     * User Guide</i>.</p> <p>This setting is required to create a Multi-AZ DB
      * cluster.</p> <p>Constraints: Must be a multiple between .5 and 50 of the storage
      * amount for the DB cluster.</p> <p>Valid for: Multi-AZ DB clusters only</p>
      */
@@ -3053,7 +3126,7 @@ namespace Model
      * information about valid <code>Iops</code> values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
      * RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS
-     * User Guide</i>. </p> <p>This setting is required to create a Multi-AZ DB
+     * User Guide</i>.</p> <p>This setting is required to create a Multi-AZ DB
      * cluster.</p> <p>Constraints: Must be a multiple between .5 and 50 of the storage
      * amount for the DB cluster.</p> <p>Valid for: Multi-AZ DB clusters only</p>
      */
@@ -3065,7 +3138,7 @@ namespace Model
      * information about valid <code>Iops</code> values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
      * RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS
-     * User Guide</i>. </p> <p>This setting is required to create a Multi-AZ DB
+     * User Guide</i>.</p> <p>This setting is required to create a Multi-AZ DB
      * cluster.</p> <p>Constraints: Must be a multiple between .5 and 50 of the storage
      * amount for the DB cluster.</p> <p>Valid for: Multi-AZ DB clusters only</p>
      */
@@ -3077,7 +3150,7 @@ namespace Model
      * information about valid <code>Iops</code> values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
      * RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS
-     * User Guide</i>. </p> <p>This setting is required to create a Multi-AZ DB
+     * User Guide</i>.</p> <p>This setting is required to create a Multi-AZ DB
      * cluster.</p> <p>Constraints: Must be a multiple between .5 and 50 of the storage
      * amount for the DB cluster.</p> <p>Valid for: Multi-AZ DB clusters only</p>
      */
@@ -3366,36 +3439,36 @@ namespace Model
 
     /**
      * <p>A value that indicates whether to turn on Performance Insights for the DB
-     * cluster. </p> <p>For more information, see <a
+     * cluster.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">
-     * Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>. </p>
+     * Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Valid for: Multi-AZ DB clusters only</p>
      */
     inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
 
     /**
      * <p>A value that indicates whether to turn on Performance Insights for the DB
-     * cluster. </p> <p>For more information, see <a
+     * cluster.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">
-     * Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>. </p>
+     * Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Valid for: Multi-AZ DB clusters only</p>
      */
     inline bool EnablePerformanceInsightsHasBeenSet() const { return m_enablePerformanceInsightsHasBeenSet; }
 
     /**
      * <p>A value that indicates whether to turn on Performance Insights for the DB
-     * cluster. </p> <p>For more information, see <a
+     * cluster.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">
-     * Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>. </p>
+     * Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Valid for: Multi-AZ DB clusters only</p>
      */
     inline void SetEnablePerformanceInsights(bool value) { m_enablePerformanceInsightsHasBeenSet = true; m_enablePerformanceInsights = value; }
 
     /**
      * <p>A value that indicates whether to turn on Performance Insights for the DB
-     * cluster. </p> <p>For more information, see <a
+     * cluster.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">
-     * Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>. </p>
+     * Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Valid for: Multi-AZ DB clusters only</p>
      */
     inline CreateDBClusterRequest& WithEnablePerformanceInsights(bool value) { SetEnablePerformanceInsights(value); return *this;}
@@ -3513,6 +3586,25 @@ namespace Model
      * values are 7 or 731 (2 years).</p> <p>Valid for: Multi-AZ DB clusters only</p>
      */
     inline CreateDBClusterRequest& WithPerformanceInsightsRetentionPeriod(int value) { SetPerformanceInsightsRetentionPeriod(value); return *this;}
+
+
+    
+    inline const ServerlessV2ScalingConfiguration& GetServerlessV2ScalingConfiguration() const{ return m_serverlessV2ScalingConfiguration; }
+
+    
+    inline bool ServerlessV2ScalingConfigurationHasBeenSet() const { return m_serverlessV2ScalingConfigurationHasBeenSet; }
+
+    
+    inline void SetServerlessV2ScalingConfiguration(const ServerlessV2ScalingConfiguration& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = value; }
+
+    
+    inline void SetServerlessV2ScalingConfiguration(ServerlessV2ScalingConfiguration&& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = std::move(value); }
+
+    
+    inline CreateDBClusterRequest& WithServerlessV2ScalingConfiguration(const ServerlessV2ScalingConfiguration& value) { SetServerlessV2ScalingConfiguration(value); return *this;}
+
+    
+    inline CreateDBClusterRequest& WithServerlessV2ScalingConfiguration(ServerlessV2ScalingConfiguration&& value) { SetServerlessV2ScalingConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -3688,6 +3780,9 @@ namespace Model
 
     int m_performanceInsightsRetentionPeriod;
     bool m_performanceInsightsRetentionPeriodHasBeenSet;
+
+    ServerlessV2ScalingConfiguration m_serverlessV2ScalingConfiguration;
+    bool m_serverlessV2ScalingConfigurationHasBeenSet;
 
     Aws::String m_sourceRegion;
     bool m_sourceRegionHasBeenSet;

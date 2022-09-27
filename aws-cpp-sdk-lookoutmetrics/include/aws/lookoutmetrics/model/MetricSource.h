@@ -10,6 +10,7 @@
 #include <aws/lookoutmetrics/model/CloudWatchConfig.h>
 #include <aws/lookoutmetrics/model/RDSSourceConfig.h>
 #include <aws/lookoutmetrics/model/RedshiftSourceConfig.h>
+#include <aws/lookoutmetrics/model/AthenaSourceConfig.h>
 #include <utility>
 
 namespace Aws
@@ -28,8 +29,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about source data used to generate a
-   * metric.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about source data used to generate
+   * metrics.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/MetricSource">AWS
    * API Reference</a></p>
    */
@@ -62,145 +63,158 @@ namespace Model
 
 
     /**
-     * <p>An object containing information about the AppFlow configuration.</p>
+     * <p>Details about an AppFlow datasource.</p>
      */
     inline const AppFlowConfig& GetAppFlowConfig() const{ return m_appFlowConfig; }
 
     /**
-     * <p>An object containing information about the AppFlow configuration.</p>
+     * <p>Details about an AppFlow datasource.</p>
      */
     inline bool AppFlowConfigHasBeenSet() const { return m_appFlowConfigHasBeenSet; }
 
     /**
-     * <p>An object containing information about the AppFlow configuration.</p>
+     * <p>Details about an AppFlow datasource.</p>
      */
     inline void SetAppFlowConfig(const AppFlowConfig& value) { m_appFlowConfigHasBeenSet = true; m_appFlowConfig = value; }
 
     /**
-     * <p>An object containing information about the AppFlow configuration.</p>
+     * <p>Details about an AppFlow datasource.</p>
      */
     inline void SetAppFlowConfig(AppFlowConfig&& value) { m_appFlowConfigHasBeenSet = true; m_appFlowConfig = std::move(value); }
 
     /**
-     * <p>An object containing information about the AppFlow configuration.</p>
+     * <p>Details about an AppFlow datasource.</p>
      */
     inline MetricSource& WithAppFlowConfig(const AppFlowConfig& value) { SetAppFlowConfig(value); return *this;}
 
     /**
-     * <p>An object containing information about the AppFlow configuration.</p>
+     * <p>Details about an AppFlow datasource.</p>
      */
     inline MetricSource& WithAppFlowConfig(AppFlowConfig&& value) { SetAppFlowConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>An object containing information about the Amazon CloudWatch monitoring
-     * configuration.</p>
+     * <p>Details about an Amazon CloudWatch monitoring datasource.</p>
      */
     inline const CloudWatchConfig& GetCloudWatchConfig() const{ return m_cloudWatchConfig; }
 
     /**
-     * <p>An object containing information about the Amazon CloudWatch monitoring
-     * configuration.</p>
+     * <p>Details about an Amazon CloudWatch monitoring datasource.</p>
      */
     inline bool CloudWatchConfigHasBeenSet() const { return m_cloudWatchConfigHasBeenSet; }
 
     /**
-     * <p>An object containing information about the Amazon CloudWatch monitoring
-     * configuration.</p>
+     * <p>Details about an Amazon CloudWatch monitoring datasource.</p>
      */
     inline void SetCloudWatchConfig(const CloudWatchConfig& value) { m_cloudWatchConfigHasBeenSet = true; m_cloudWatchConfig = value; }
 
     /**
-     * <p>An object containing information about the Amazon CloudWatch monitoring
-     * configuration.</p>
+     * <p>Details about an Amazon CloudWatch monitoring datasource.</p>
      */
     inline void SetCloudWatchConfig(CloudWatchConfig&& value) { m_cloudWatchConfigHasBeenSet = true; m_cloudWatchConfig = std::move(value); }
 
     /**
-     * <p>An object containing information about the Amazon CloudWatch monitoring
-     * configuration.</p>
+     * <p>Details about an Amazon CloudWatch monitoring datasource.</p>
      */
     inline MetricSource& WithCloudWatchConfig(const CloudWatchConfig& value) { SetCloudWatchConfig(value); return *this;}
 
     /**
-     * <p>An object containing information about the Amazon CloudWatch monitoring
-     * configuration.</p>
+     * <p>Details about an Amazon CloudWatch monitoring datasource.</p>
      */
     inline MetricSource& WithCloudWatchConfig(CloudWatchConfig&& value) { SetCloudWatchConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>An object containing information about the Amazon Relational Database Service
-     * (RDS) configuration.</p>
+     * <p>Details about an Amazon Relational Database Service (RDS) datasource.</p>
      */
     inline const RDSSourceConfig& GetRDSSourceConfig() const{ return m_rDSSourceConfig; }
 
     /**
-     * <p>An object containing information about the Amazon Relational Database Service
-     * (RDS) configuration.</p>
+     * <p>Details about an Amazon Relational Database Service (RDS) datasource.</p>
      */
     inline bool RDSSourceConfigHasBeenSet() const { return m_rDSSourceConfigHasBeenSet; }
 
     /**
-     * <p>An object containing information about the Amazon Relational Database Service
-     * (RDS) configuration.</p>
+     * <p>Details about an Amazon Relational Database Service (RDS) datasource.</p>
      */
     inline void SetRDSSourceConfig(const RDSSourceConfig& value) { m_rDSSourceConfigHasBeenSet = true; m_rDSSourceConfig = value; }
 
     /**
-     * <p>An object containing information about the Amazon Relational Database Service
-     * (RDS) configuration.</p>
+     * <p>Details about an Amazon Relational Database Service (RDS) datasource.</p>
      */
     inline void SetRDSSourceConfig(RDSSourceConfig&& value) { m_rDSSourceConfigHasBeenSet = true; m_rDSSourceConfig = std::move(value); }
 
     /**
-     * <p>An object containing information about the Amazon Relational Database Service
-     * (RDS) configuration.</p>
+     * <p>Details about an Amazon Relational Database Service (RDS) datasource.</p>
      */
     inline MetricSource& WithRDSSourceConfig(const RDSSourceConfig& value) { SetRDSSourceConfig(value); return *this;}
 
     /**
-     * <p>An object containing information about the Amazon Relational Database Service
-     * (RDS) configuration.</p>
+     * <p>Details about an Amazon Relational Database Service (RDS) datasource.</p>
      */
     inline MetricSource& WithRDSSourceConfig(RDSSourceConfig&& value) { SetRDSSourceConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>An object containing information about the Amazon Redshift database
-     * configuration.</p>
+     * <p>Details about an Amazon Redshift database datasource.</p>
      */
     inline const RedshiftSourceConfig& GetRedshiftSourceConfig() const{ return m_redshiftSourceConfig; }
 
     /**
-     * <p>An object containing information about the Amazon Redshift database
-     * configuration.</p>
+     * <p>Details about an Amazon Redshift database datasource.</p>
      */
     inline bool RedshiftSourceConfigHasBeenSet() const { return m_redshiftSourceConfigHasBeenSet; }
 
     /**
-     * <p>An object containing information about the Amazon Redshift database
-     * configuration.</p>
+     * <p>Details about an Amazon Redshift database datasource.</p>
      */
     inline void SetRedshiftSourceConfig(const RedshiftSourceConfig& value) { m_redshiftSourceConfigHasBeenSet = true; m_redshiftSourceConfig = value; }
 
     /**
-     * <p>An object containing information about the Amazon Redshift database
-     * configuration.</p>
+     * <p>Details about an Amazon Redshift database datasource.</p>
      */
     inline void SetRedshiftSourceConfig(RedshiftSourceConfig&& value) { m_redshiftSourceConfigHasBeenSet = true; m_redshiftSourceConfig = std::move(value); }
 
     /**
-     * <p>An object containing information about the Amazon Redshift database
-     * configuration.</p>
+     * <p>Details about an Amazon Redshift database datasource.</p>
      */
     inline MetricSource& WithRedshiftSourceConfig(const RedshiftSourceConfig& value) { SetRedshiftSourceConfig(value); return *this;}
 
     /**
-     * <p>An object containing information about the Amazon Redshift database
-     * configuration.</p>
+     * <p>Details about an Amazon Redshift database datasource.</p>
      */
     inline MetricSource& WithRedshiftSourceConfig(RedshiftSourceConfig&& value) { SetRedshiftSourceConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about an Amazon Athena datasource.</p>
+     */
+    inline const AthenaSourceConfig& GetAthenaSourceConfig() const{ return m_athenaSourceConfig; }
+
+    /**
+     * <p>Details about an Amazon Athena datasource.</p>
+     */
+    inline bool AthenaSourceConfigHasBeenSet() const { return m_athenaSourceConfigHasBeenSet; }
+
+    /**
+     * <p>Details about an Amazon Athena datasource.</p>
+     */
+    inline void SetAthenaSourceConfig(const AthenaSourceConfig& value) { m_athenaSourceConfigHasBeenSet = true; m_athenaSourceConfig = value; }
+
+    /**
+     * <p>Details about an Amazon Athena datasource.</p>
+     */
+    inline void SetAthenaSourceConfig(AthenaSourceConfig&& value) { m_athenaSourceConfigHasBeenSet = true; m_athenaSourceConfig = std::move(value); }
+
+    /**
+     * <p>Details about an Amazon Athena datasource.</p>
+     */
+    inline MetricSource& WithAthenaSourceConfig(const AthenaSourceConfig& value) { SetAthenaSourceConfig(value); return *this;}
+
+    /**
+     * <p>Details about an Amazon Athena datasource.</p>
+     */
+    inline MetricSource& WithAthenaSourceConfig(AthenaSourceConfig&& value) { SetAthenaSourceConfig(std::move(value)); return *this;}
 
   private:
 
@@ -218,6 +232,9 @@ namespace Model
 
     RedshiftSourceConfig m_redshiftSourceConfig;
     bool m_redshiftSourceConfigHasBeenSet;
+
+    AthenaSourceConfig m_athenaSourceConfig;
+    bool m_athenaSourceConfigHasBeenSet;
   };
 
 } // namespace Model

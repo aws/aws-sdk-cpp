@@ -489,6 +489,55 @@ namespace Model
      */
     inline AllocateHostsRequest& WithHostRecovery(HostRecovery&& value) { SetHostRecovery(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to
+     * allocate the Dedicated Host.</p>
+     */
+    inline const Aws::String& GetOutpostArn() const{ return m_outpostArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to
+     * allocate the Dedicated Host.</p>
+     */
+    inline bool OutpostArnHasBeenSet() const { return m_outpostArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to
+     * allocate the Dedicated Host.</p>
+     */
+    inline void SetOutpostArn(const Aws::String& value) { m_outpostArnHasBeenSet = true; m_outpostArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to
+     * allocate the Dedicated Host.</p>
+     */
+    inline void SetOutpostArn(Aws::String&& value) { m_outpostArnHasBeenSet = true; m_outpostArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to
+     * allocate the Dedicated Host.</p>
+     */
+    inline void SetOutpostArn(const char* value) { m_outpostArnHasBeenSet = true; m_outpostArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to
+     * allocate the Dedicated Host.</p>
+     */
+    inline AllocateHostsRequest& WithOutpostArn(const Aws::String& value) { SetOutpostArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to
+     * allocate the Dedicated Host.</p>
+     */
+    inline AllocateHostsRequest& WithOutpostArn(Aws::String&& value) { SetOutpostArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to
+     * allocate the Dedicated Host.</p>
+     */
+    inline AllocateHostsRequest& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
+
   private:
 
     AutoPlacement m_autoPlacement;
@@ -514,6 +563,9 @@ namespace Model
 
     HostRecovery m_hostRecovery;
     bool m_hostRecoveryHasBeenSet;
+
+    Aws::String m_outpostArn;
+    bool m_outpostArnHasBeenSet;
   };
 
 } // namespace Model

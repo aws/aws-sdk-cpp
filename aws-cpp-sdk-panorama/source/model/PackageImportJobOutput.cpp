@@ -19,24 +19,31 @@ namespace Model
 {
 
 PackageImportJobOutput::PackageImportJobOutput() : 
+    m_outputS3LocationHasBeenSet(false),
     m_packageIdHasBeenSet(false),
     m_packageVersionHasBeenSet(false),
-    m_patchVersionHasBeenSet(false),
-    m_outputS3LocationHasBeenSet(false)
+    m_patchVersionHasBeenSet(false)
 {
 }
 
 PackageImportJobOutput::PackageImportJobOutput(JsonView jsonValue) : 
+    m_outputS3LocationHasBeenSet(false),
     m_packageIdHasBeenSet(false),
     m_packageVersionHasBeenSet(false),
-    m_patchVersionHasBeenSet(false),
-    m_outputS3LocationHasBeenSet(false)
+    m_patchVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 PackageImportJobOutput& PackageImportJobOutput::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("OutputS3Location"))
+  {
+    m_outputS3Location = jsonValue.GetObject("OutputS3Location");
+
+    m_outputS3LocationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("PackageId"))
   {
     m_packageId = jsonValue.GetString("PackageId");
@@ -58,19 +65,18 @@ PackageImportJobOutput& PackageImportJobOutput::operator =(JsonView jsonValue)
     m_patchVersionHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("OutputS3Location"))
-  {
-    m_outputS3Location = jsonValue.GetObject("OutputS3Location");
-
-    m_outputS3LocationHasBeenSet = true;
-  }
-
   return *this;
 }
 
 JsonValue PackageImportJobOutput::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_outputS3LocationHasBeenSet)
+  {
+   payload.WithObject("OutputS3Location", m_outputS3Location.Jsonize());
+
+  }
 
   if(m_packageIdHasBeenSet)
   {
@@ -87,12 +93,6 @@ JsonValue PackageImportJobOutput::Jsonize() const
   if(m_patchVersionHasBeenSet)
   {
    payload.WithString("PatchVersion", m_patchVersion);
-
-  }
-
-  if(m_outputS3LocationHasBeenSet)
-  {
-   payload.WithObject("OutputS3Location", m_outputS3Location.Jsonize());
 
   }
 

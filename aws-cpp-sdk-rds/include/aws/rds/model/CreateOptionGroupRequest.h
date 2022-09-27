@@ -116,7 +116,7 @@ namespace Model
 
     /**
      * <p>Specifies the name of the engine that this option group should be associated
-     * with.</p> <p>Valid Values: </p> <ul> <li> <p> <code>mariadb</code> </p> </li>
+     * with.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li>
      * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
      * </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
      * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
@@ -129,7 +129,7 @@ namespace Model
 
     /**
      * <p>Specifies the name of the engine that this option group should be associated
-     * with.</p> <p>Valid Values: </p> <ul> <li> <p> <code>mariadb</code> </p> </li>
+     * with.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li>
      * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
      * </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
      * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
@@ -142,7 +142,7 @@ namespace Model
 
     /**
      * <p>Specifies the name of the engine that this option group should be associated
-     * with.</p> <p>Valid Values: </p> <ul> <li> <p> <code>mariadb</code> </p> </li>
+     * with.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li>
      * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
      * </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
      * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
@@ -155,7 +155,7 @@ namespace Model
 
     /**
      * <p>Specifies the name of the engine that this option group should be associated
-     * with.</p> <p>Valid Values: </p> <ul> <li> <p> <code>mariadb</code> </p> </li>
+     * with.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li>
      * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
      * </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
      * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
@@ -168,7 +168,7 @@ namespace Model
 
     /**
      * <p>Specifies the name of the engine that this option group should be associated
-     * with.</p> <p>Valid Values: </p> <ul> <li> <p> <code>mariadb</code> </p> </li>
+     * with.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li>
      * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
      * </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
      * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
@@ -181,7 +181,7 @@ namespace Model
 
     /**
      * <p>Specifies the name of the engine that this option group should be associated
-     * with.</p> <p>Valid Values: </p> <ul> <li> <p> <code>mariadb</code> </p> </li>
+     * with.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li>
      * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
      * </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
      * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
@@ -194,7 +194,7 @@ namespace Model
 
     /**
      * <p>Specifies the name of the engine that this option group should be associated
-     * with.</p> <p>Valid Values: </p> <ul> <li> <p> <code>mariadb</code> </p> </li>
+     * with.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li>
      * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
      * </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
      * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
@@ -207,7 +207,7 @@ namespace Model
 
     /**
      * <p>Specifies the name of the engine that this option group should be associated
-     * with.</p> <p>Valid Values: </p> <ul> <li> <p> <code>mariadb</code> </p> </li>
+     * with.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li>
      * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
      * </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
      * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>

@@ -8,6 +8,7 @@
 #include <aws/wisdom/model/Document.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/wisdom/model/RelevanceLevel.h>
+#include <aws/wisdom/model/RecommendationType.h>
 #include <utility>
 
 namespace Aws
@@ -162,6 +163,37 @@ namespace Model
      */
     inline RecommendationData& WithRelevanceScore(double value) { SetRelevanceScore(value); return *this;}
 
+
+    /**
+     * <p>The type of recommendation.</p>
+     */
+    inline const RecommendationType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of recommendation.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of recommendation.</p>
+     */
+    inline void SetType(const RecommendationType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The type of recommendation.</p>
+     */
+    inline void SetType(RecommendationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>The type of recommendation.</p>
+     */
+    inline RecommendationData& WithType(const RecommendationType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The type of recommendation.</p>
+     */
+    inline RecommendationData& WithType(RecommendationType&& value) { SetType(std::move(value)); return *this;}
+
   private:
 
     Document m_document;
@@ -175,6 +207,9 @@ namespace Model
 
     double m_relevanceScore;
     bool m_relevanceScoreHasBeenSet;
+
+    RecommendationType m_type;
+    bool m_typeHasBeenSet;
   };
 
 } // namespace Model

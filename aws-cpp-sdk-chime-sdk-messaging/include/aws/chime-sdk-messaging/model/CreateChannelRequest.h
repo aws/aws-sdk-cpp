@@ -376,6 +376,139 @@ namespace Model
      */
     inline CreateChannelRequest& WithChimeBearer(const char* value) { SetChimeBearer(value); return *this;}
 
+
+    /**
+     * <p>The ID of the channel in the request.</p>
+     */
+    inline const Aws::String& GetChannelId() const{ return m_channelId; }
+
+    /**
+     * <p>The ID of the channel in the request.</p>
+     */
+    inline bool ChannelIdHasBeenSet() const { return m_channelIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the channel in the request.</p>
+     */
+    inline void SetChannelId(const Aws::String& value) { m_channelIdHasBeenSet = true; m_channelId = value; }
+
+    /**
+     * <p>The ID of the channel in the request.</p>
+     */
+    inline void SetChannelId(Aws::String&& value) { m_channelIdHasBeenSet = true; m_channelId = std::move(value); }
+
+    /**
+     * <p>The ID of the channel in the request.</p>
+     */
+    inline void SetChannelId(const char* value) { m_channelIdHasBeenSet = true; m_channelId.assign(value); }
+
+    /**
+     * <p>The ID of the channel in the request.</p>
+     */
+    inline CreateChannelRequest& WithChannelId(const Aws::String& value) { SetChannelId(value); return *this;}
+
+    /**
+     * <p>The ID of the channel in the request.</p>
+     */
+    inline CreateChannelRequest& WithChannelId(Aws::String&& value) { SetChannelId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the channel in the request.</p>
+     */
+    inline CreateChannelRequest& WithChannelId(const char* value) { SetChannelId(value); return *this;}
+
+
+    /**
+     * <p>The ARNs of the channel members in the request.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetMemberArns() const{ return m_memberArns; }
+
+    /**
+     * <p>The ARNs of the channel members in the request.</p>
+     */
+    inline bool MemberArnsHasBeenSet() const { return m_memberArnsHasBeenSet; }
+
+    /**
+     * <p>The ARNs of the channel members in the request.</p>
+     */
+    inline void SetMemberArns(const Aws::Vector<Aws::String>& value) { m_memberArnsHasBeenSet = true; m_memberArns = value; }
+
+    /**
+     * <p>The ARNs of the channel members in the request.</p>
+     */
+    inline void SetMemberArns(Aws::Vector<Aws::String>&& value) { m_memberArnsHasBeenSet = true; m_memberArns = std::move(value); }
+
+    /**
+     * <p>The ARNs of the channel members in the request.</p>
+     */
+    inline CreateChannelRequest& WithMemberArns(const Aws::Vector<Aws::String>& value) { SetMemberArns(value); return *this;}
+
+    /**
+     * <p>The ARNs of the channel members in the request.</p>
+     */
+    inline CreateChannelRequest& WithMemberArns(Aws::Vector<Aws::String>&& value) { SetMemberArns(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARNs of the channel members in the request.</p>
+     */
+    inline CreateChannelRequest& AddMemberArns(const Aws::String& value) { m_memberArnsHasBeenSet = true; m_memberArns.push_back(value); return *this; }
+
+    /**
+     * <p>The ARNs of the channel members in the request.</p>
+     */
+    inline CreateChannelRequest& AddMemberArns(Aws::String&& value) { m_memberArnsHasBeenSet = true; m_memberArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The ARNs of the channel members in the request.</p>
+     */
+    inline CreateChannelRequest& AddMemberArns(const char* value) { m_memberArnsHasBeenSet = true; m_memberArns.push_back(value); return *this; }
+
+
+    /**
+     * <p>The ARNs of the channel moderators in the request.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetModeratorArns() const{ return m_moderatorArns; }
+
+    /**
+     * <p>The ARNs of the channel moderators in the request.</p>
+     */
+    inline bool ModeratorArnsHasBeenSet() const { return m_moderatorArnsHasBeenSet; }
+
+    /**
+     * <p>The ARNs of the channel moderators in the request.</p>
+     */
+    inline void SetModeratorArns(const Aws::Vector<Aws::String>& value) { m_moderatorArnsHasBeenSet = true; m_moderatorArns = value; }
+
+    /**
+     * <p>The ARNs of the channel moderators in the request.</p>
+     */
+    inline void SetModeratorArns(Aws::Vector<Aws::String>&& value) { m_moderatorArnsHasBeenSet = true; m_moderatorArns = std::move(value); }
+
+    /**
+     * <p>The ARNs of the channel moderators in the request.</p>
+     */
+    inline CreateChannelRequest& WithModeratorArns(const Aws::Vector<Aws::String>& value) { SetModeratorArns(value); return *this;}
+
+    /**
+     * <p>The ARNs of the channel moderators in the request.</p>
+     */
+    inline CreateChannelRequest& WithModeratorArns(Aws::Vector<Aws::String>&& value) { SetModeratorArns(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARNs of the channel moderators in the request.</p>
+     */
+    inline CreateChannelRequest& AddModeratorArns(const Aws::String& value) { m_moderatorArnsHasBeenSet = true; m_moderatorArns.push_back(value); return *this; }
+
+    /**
+     * <p>The ARNs of the channel moderators in the request.</p>
+     */
+    inline CreateChannelRequest& AddModeratorArns(Aws::String&& value) { m_moderatorArnsHasBeenSet = true; m_moderatorArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The ARNs of the channel moderators in the request.</p>
+     */
+    inline CreateChannelRequest& AddModeratorArns(const char* value) { m_moderatorArnsHasBeenSet = true; m_moderatorArns.push_back(value); return *this; }
+
   private:
 
     Aws::String m_appInstanceArn;
@@ -401,6 +534,15 @@ namespace Model
 
     Aws::String m_chimeBearer;
     bool m_chimeBearerHasBeenSet;
+
+    Aws::String m_channelId;
+    bool m_channelIdHasBeenSet;
+
+    Aws::Vector<Aws::String> m_memberArns;
+    bool m_memberArnsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_moderatorArns;
+    bool m_moderatorArnsHasBeenSet;
   };
 
 } // namespace Model

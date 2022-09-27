@@ -27,10 +27,7 @@ namespace Model
     CREATE_TABLE,
     DATA_LOCATION_ACCESS,
     CREATE_TAG,
-    ALTER_TAG,
-    DELETE_TAG,
-    DESCRIBE_TAG,
-    ASSOCIATE_TAG
+    ASSOCIATE
   };
 
 namespace PermissionMapper

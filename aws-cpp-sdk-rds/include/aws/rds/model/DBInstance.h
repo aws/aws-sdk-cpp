@@ -43,7 +43,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains the details of an Amazon RDS DB instance. </p> <p>This data type is
+   * <p>Contains the details of an Amazon RDS DB instance.</p> <p>This data type is
    * used as a response element in the operations <code>CreateDBInstance</code>,
    * <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>,
    * <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>,
@@ -51,7 +51,7 @@ namespace Model
    * <code>RestoreDBInstanceFromDBSnapshot</code>,
    * <code>RestoreDBInstanceFromS3</code>,
    * <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and
-   * <code>StopDBInstance</code>. </p><p><h3>See Also:</h3>   <a
+   * <code>StopDBInstance</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBInstance">AWS API
    * Reference</a></p>
    */
@@ -529,58 +529,58 @@ namespace Model
 
 
     /**
-     * <p> Specifies the daily time range during which automated backups are created if
+     * <p>Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
 
     /**
-     * <p> Specifies the daily time range during which automated backups are created if
+     * <p>Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
 
     /**
-     * <p> Specifies the daily time range during which automated backups are created if
+     * <p>Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline void SetPreferredBackupWindow(const Aws::String& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
 
     /**
-     * <p> Specifies the daily time range during which automated backups are created if
+     * <p>Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::move(value); }
 
     /**
-     * <p> Specifies the daily time range during which automated backups are created if
+     * <p>Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline void SetPreferredBackupWindow(const char* value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow.assign(value); }
 
     /**
-     * <p> Specifies the daily time range during which automated backups are created if
+     * <p>Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline DBInstance& WithPreferredBackupWindow(const Aws::String& value) { SetPreferredBackupWindow(value); return *this;}
 
     /**
-     * <p> Specifies the daily time range during which automated backups are created if
+     * <p>Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline DBInstance& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(std::move(value)); return *this;}
 
     /**
-     * <p> Specifies the daily time range during which automated backups are created if
+     * <p>Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline DBInstance& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
 
@@ -611,58 +611,58 @@ namespace Model
 
 
     /**
-     * <p> A list of DB security group elements containing
+     * <p>A list of DB security group elements containing
      * <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code>
-     * subelements. </p>
+     * subelements.</p>
      */
     inline const Aws::Vector<DBSecurityGroupMembership>& GetDBSecurityGroups() const{ return m_dBSecurityGroups; }
 
     /**
-     * <p> A list of DB security group elements containing
+     * <p>A list of DB security group elements containing
      * <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code>
-     * subelements. </p>
+     * subelements.</p>
      */
     inline bool DBSecurityGroupsHasBeenSet() const { return m_dBSecurityGroupsHasBeenSet; }
 
     /**
-     * <p> A list of DB security group elements containing
+     * <p>A list of DB security group elements containing
      * <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code>
-     * subelements. </p>
+     * subelements.</p>
      */
     inline void SetDBSecurityGroups(const Aws::Vector<DBSecurityGroupMembership>& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups = value; }
 
     /**
-     * <p> A list of DB security group elements containing
+     * <p>A list of DB security group elements containing
      * <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code>
-     * subelements. </p>
+     * subelements.</p>
      */
     inline void SetDBSecurityGroups(Aws::Vector<DBSecurityGroupMembership>&& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups = std::move(value); }
 
     /**
-     * <p> A list of DB security group elements containing
+     * <p>A list of DB security group elements containing
      * <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code>
-     * subelements. </p>
+     * subelements.</p>
      */
     inline DBInstance& WithDBSecurityGroups(const Aws::Vector<DBSecurityGroupMembership>& value) { SetDBSecurityGroups(value); return *this;}
 
     /**
-     * <p> A list of DB security group elements containing
+     * <p>A list of DB security group elements containing
      * <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code>
-     * subelements. </p>
+     * subelements.</p>
      */
     inline DBInstance& WithDBSecurityGroups(Aws::Vector<DBSecurityGroupMembership>&& value) { SetDBSecurityGroups(std::move(value)); return *this;}
 
     /**
-     * <p> A list of DB security group elements containing
+     * <p>A list of DB security group elements containing
      * <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code>
-     * subelements. </p>
+     * subelements.</p>
      */
     inline DBInstance& AddDBSecurityGroups(const DBSecurityGroupMembership& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups.push_back(value); return *this; }
 
     /**
-     * <p> A list of DB security group elements containing
+     * <p>A list of DB security group elements containing
      * <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code>
-     * subelements. </p>
+     * subelements.</p>
      */
     inline DBInstance& AddDBSecurityGroups(DBSecurityGroupMembership&& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups.push_back(std::move(value)); return *this; }
 
@@ -1482,56 +1482,56 @@ namespace Model
     /**
      * <p>The name of the NCHAR character set for the Oracle DB instance. This
      * character set specifies the Unicode encoding for data stored in table columns of
-     * type NCHAR, NCLOB, or NVARCHAR2. </p>
+     * type NCHAR, NCLOB, or NVARCHAR2.</p>
      */
     inline const Aws::String& GetNcharCharacterSetName() const{ return m_ncharCharacterSetName; }
 
     /**
      * <p>The name of the NCHAR character set for the Oracle DB instance. This
      * character set specifies the Unicode encoding for data stored in table columns of
-     * type NCHAR, NCLOB, or NVARCHAR2. </p>
+     * type NCHAR, NCLOB, or NVARCHAR2.</p>
      */
     inline bool NcharCharacterSetNameHasBeenSet() const { return m_ncharCharacterSetNameHasBeenSet; }
 
     /**
      * <p>The name of the NCHAR character set for the Oracle DB instance. This
      * character set specifies the Unicode encoding for data stored in table columns of
-     * type NCHAR, NCLOB, or NVARCHAR2. </p>
+     * type NCHAR, NCLOB, or NVARCHAR2.</p>
      */
     inline void SetNcharCharacterSetName(const Aws::String& value) { m_ncharCharacterSetNameHasBeenSet = true; m_ncharCharacterSetName = value; }
 
     /**
      * <p>The name of the NCHAR character set for the Oracle DB instance. This
      * character set specifies the Unicode encoding for data stored in table columns of
-     * type NCHAR, NCLOB, or NVARCHAR2. </p>
+     * type NCHAR, NCLOB, or NVARCHAR2.</p>
      */
     inline void SetNcharCharacterSetName(Aws::String&& value) { m_ncharCharacterSetNameHasBeenSet = true; m_ncharCharacterSetName = std::move(value); }
 
     /**
      * <p>The name of the NCHAR character set for the Oracle DB instance. This
      * character set specifies the Unicode encoding for data stored in table columns of
-     * type NCHAR, NCLOB, or NVARCHAR2. </p>
+     * type NCHAR, NCLOB, or NVARCHAR2.</p>
      */
     inline void SetNcharCharacterSetName(const char* value) { m_ncharCharacterSetNameHasBeenSet = true; m_ncharCharacterSetName.assign(value); }
 
     /**
      * <p>The name of the NCHAR character set for the Oracle DB instance. This
      * character set specifies the Unicode encoding for data stored in table columns of
-     * type NCHAR, NCLOB, or NVARCHAR2. </p>
+     * type NCHAR, NCLOB, or NVARCHAR2.</p>
      */
     inline DBInstance& WithNcharCharacterSetName(const Aws::String& value) { SetNcharCharacterSetName(value); return *this;}
 
     /**
      * <p>The name of the NCHAR character set for the Oracle DB instance. This
      * character set specifies the Unicode encoding for data stored in table columns of
-     * type NCHAR, NCLOB, or NVARCHAR2. </p>
+     * type NCHAR, NCLOB, or NVARCHAR2.</p>
      */
     inline DBInstance& WithNcharCharacterSetName(Aws::String&& value) { SetNcharCharacterSetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the NCHAR character set for the Oracle DB instance. This
      * character set specifies the Unicode encoding for data stored in table columns of
-     * type NCHAR, NCLOB, or NVARCHAR2. </p>
+     * type NCHAR, NCLOB, or NVARCHAR2.</p>
      */
     inline DBInstance& WithNcharCharacterSetName(const char* value) { SetNcharCharacterSetName(value); return *this;}
 
@@ -1877,66 +1877,58 @@ namespace Model
 
 
     /**
-     * <p> If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
-     * identifier for the encrypted DB instance. </p> <p>The Amazon Web Services KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
-     * key.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
+     * identifier for the encrypted DB instance.</p> <p>The Amazon Web Services KMS key
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p> If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
-     * identifier for the encrypted DB instance. </p> <p>The Amazon Web Services KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
-     * key.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
+     * identifier for the encrypted DB instance.</p> <p>The Amazon Web Services KMS key
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p> If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
-     * identifier for the encrypted DB instance. </p> <p>The Amazon Web Services KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
-     * key.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
+     * identifier for the encrypted DB instance.</p> <p>The Amazon Web Services KMS key
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p> If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
-     * identifier for the encrypted DB instance. </p> <p>The Amazon Web Services KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
-     * key.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
+     * identifier for the encrypted DB instance.</p> <p>The Amazon Web Services KMS key
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p> If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
-     * identifier for the encrypted DB instance. </p> <p>The Amazon Web Services KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
-     * key.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
+     * identifier for the encrypted DB instance.</p> <p>The Amazon Web Services KMS key
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p> If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
-     * identifier for the encrypted DB instance. </p> <p>The Amazon Web Services KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
-     * key.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
+     * identifier for the encrypted DB instance.</p> <p>The Amazon Web Services KMS key
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline DBInstance& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p> If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
-     * identifier for the encrypted DB instance. </p> <p>The Amazon Web Services KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
-     * key.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
+     * identifier for the encrypted DB instance.</p> <p>The Amazon Web Services KMS key
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline DBInstance& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p> If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
-     * identifier for the encrypted DB instance. </p> <p>The Amazon Web Services KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
-     * key.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
+     * identifier for the encrypted DB instance.</p> <p>The Amazon Web Services KMS key
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline DBInstance& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -2254,7 +2246,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
      * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline int GetPromotionTier() const{ return m_promotionTier; }
 
@@ -2264,7 +2256,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
      * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline bool PromotionTierHasBeenSet() const { return m_promotionTierHasBeenSet; }
 
@@ -2274,7 +2266,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
      * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline void SetPromotionTier(int value) { m_promotionTierHasBeenSet = true; m_promotionTier = value; }
 
@@ -2284,7 +2276,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
      * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline DBInstance& WithPromotionTier(int value) { SetPromotionTier(value); return *this;}
 
@@ -2333,56 +2325,56 @@ namespace Model
     /**
      * <p>The time zone of the DB instance. In most cases, the <code>Timezone</code>
      * element is empty. <code>Timezone</code> content appears only for Microsoft SQL
-     * Server DB instances that were created with a time zone specified. </p>
+     * Server DB instances that were created with a time zone specified.</p>
      */
     inline const Aws::String& GetTimezone() const{ return m_timezone; }
 
     /**
      * <p>The time zone of the DB instance. In most cases, the <code>Timezone</code>
      * element is empty. <code>Timezone</code> content appears only for Microsoft SQL
-     * Server DB instances that were created with a time zone specified. </p>
+     * Server DB instances that were created with a time zone specified.</p>
      */
     inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
 
     /**
      * <p>The time zone of the DB instance. In most cases, the <code>Timezone</code>
      * element is empty. <code>Timezone</code> content appears only for Microsoft SQL
-     * Server DB instances that were created with a time zone specified. </p>
+     * Server DB instances that were created with a time zone specified.</p>
      */
     inline void SetTimezone(const Aws::String& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
 
     /**
      * <p>The time zone of the DB instance. In most cases, the <code>Timezone</code>
      * element is empty. <code>Timezone</code> content appears only for Microsoft SQL
-     * Server DB instances that were created with a time zone specified. </p>
+     * Server DB instances that were created with a time zone specified.</p>
      */
     inline void SetTimezone(Aws::String&& value) { m_timezoneHasBeenSet = true; m_timezone = std::move(value); }
 
     /**
      * <p>The time zone of the DB instance. In most cases, the <code>Timezone</code>
      * element is empty. <code>Timezone</code> content appears only for Microsoft SQL
-     * Server DB instances that were created with a time zone specified. </p>
+     * Server DB instances that were created with a time zone specified.</p>
      */
     inline void SetTimezone(const char* value) { m_timezoneHasBeenSet = true; m_timezone.assign(value); }
 
     /**
      * <p>The time zone of the DB instance. In most cases, the <code>Timezone</code>
      * element is empty. <code>Timezone</code> content appears only for Microsoft SQL
-     * Server DB instances that were created with a time zone specified. </p>
+     * Server DB instances that were created with a time zone specified.</p>
      */
     inline DBInstance& WithTimezone(const Aws::String& value) { SetTimezone(value); return *this;}
 
     /**
      * <p>The time zone of the DB instance. In most cases, the <code>Timezone</code>
      * element is empty. <code>Timezone</code> content appears only for Microsoft SQL
-     * Server DB instances that were created with a time zone specified. </p>
+     * Server DB instances that were created with a time zone specified.</p>
      */
     inline DBInstance& WithTimezone(Aws::String&& value) { SetTimezone(std::move(value)); return *this;}
 
     /**
      * <p>The time zone of the DB instance. In most cases, the <code>Timezone</code>
      * element is empty. <code>Timezone</code> content appears only for Microsoft SQL
-     * Server DB instances that were created with a time zone specified. </p>
+     * Server DB instances that were created with a time zone specified.</p>
      */
     inline DBInstance& WithTimezone(const char* value) { SetTimezone(value); return *this;}
 
@@ -2516,25 +2508,25 @@ namespace Model
 
     /**
      * <p>The amount of time, in days, to retain Performance Insights data. Valid
-     * values are 7 or 731 (2 years). </p>
+     * values are 7 or 731 (2 years).</p>
      */
     inline int GetPerformanceInsightsRetentionPeriod() const{ return m_performanceInsightsRetentionPeriod; }
 
     /**
      * <p>The amount of time, in days, to retain Performance Insights data. Valid
-     * values are 7 or 731 (2 years). </p>
+     * values are 7 or 731 (2 years).</p>
      */
     inline bool PerformanceInsightsRetentionPeriodHasBeenSet() const { return m_performanceInsightsRetentionPeriodHasBeenSet; }
 
     /**
      * <p>The amount of time, in days, to retain Performance Insights data. Valid
-     * values are 7 or 731 (2 years). </p>
+     * values are 7 or 731 (2 years).</p>
      */
     inline void SetPerformanceInsightsRetentionPeriod(int value) { m_performanceInsightsRetentionPeriodHasBeenSet = true; m_performanceInsightsRetentionPeriod = value; }
 
     /**
      * <p>The amount of time, in days, to retain Performance Insights data. Valid
-     * values are 7 or 731 (2 years). </p>
+     * values are 7 or 731 (2 years).</p>
      */
     inline DBInstance& WithPerformanceInsightsRetentionPeriod(int value) { SetPerformanceInsightsRetentionPeriod(value); return *this;}
 
@@ -2675,7 +2667,7 @@ namespace Model
      * can't be deleted when deletion protection is enabled. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
-     * Deleting a DB Instance</a>. </p>
+     * Deleting a DB Instance</a>.</p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
@@ -2684,7 +2676,7 @@ namespace Model
      * can't be deleted when deletion protection is enabled. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
-     * Deleting a DB Instance</a>. </p>
+     * Deleting a DB Instance</a>.</p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
@@ -2693,7 +2685,7 @@ namespace Model
      * can't be deleted when deletion protection is enabled. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
-     * Deleting a DB Instance</a>. </p>
+     * Deleting a DB Instance</a>.</p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
@@ -2702,56 +2694,56 @@ namespace Model
      * can't be deleted when deletion protection is enabled. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
-     * Deleting a DB Instance</a>. </p>
+     * Deleting a DB Instance</a>.</p>
      */
     inline DBInstance& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
 
     /**
-     * <p> The Amazon Web Services Identity and Access Management (IAM) roles
-     * associated with the DB instance. </p>
+     * <p>The Amazon Web Services Identity and Access Management (IAM) roles associated
+     * with the DB instance.</p>
      */
     inline const Aws::Vector<DBInstanceRole>& GetAssociatedRoles() const{ return m_associatedRoles; }
 
     /**
-     * <p> The Amazon Web Services Identity and Access Management (IAM) roles
-     * associated with the DB instance. </p>
+     * <p>The Amazon Web Services Identity and Access Management (IAM) roles associated
+     * with the DB instance.</p>
      */
     inline bool AssociatedRolesHasBeenSet() const { return m_associatedRolesHasBeenSet; }
 
     /**
-     * <p> The Amazon Web Services Identity and Access Management (IAM) roles
-     * associated with the DB instance. </p>
+     * <p>The Amazon Web Services Identity and Access Management (IAM) roles associated
+     * with the DB instance.</p>
      */
     inline void SetAssociatedRoles(const Aws::Vector<DBInstanceRole>& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles = value; }
 
     /**
-     * <p> The Amazon Web Services Identity and Access Management (IAM) roles
-     * associated with the DB instance. </p>
+     * <p>The Amazon Web Services Identity and Access Management (IAM) roles associated
+     * with the DB instance.</p>
      */
     inline void SetAssociatedRoles(Aws::Vector<DBInstanceRole>&& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles = std::move(value); }
 
     /**
-     * <p> The Amazon Web Services Identity and Access Management (IAM) roles
-     * associated with the DB instance. </p>
+     * <p>The Amazon Web Services Identity and Access Management (IAM) roles associated
+     * with the DB instance.</p>
      */
     inline DBInstance& WithAssociatedRoles(const Aws::Vector<DBInstanceRole>& value) { SetAssociatedRoles(value); return *this;}
 
     /**
-     * <p> The Amazon Web Services Identity and Access Management (IAM) roles
-     * associated with the DB instance. </p>
+     * <p>The Amazon Web Services Identity and Access Management (IAM) roles associated
+     * with the DB instance.</p>
      */
     inline DBInstance& WithAssociatedRoles(Aws::Vector<DBInstanceRole>&& value) { SetAssociatedRoles(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon Web Services Identity and Access Management (IAM) roles
-     * associated with the DB instance. </p>
+     * <p>The Amazon Web Services Identity and Access Management (IAM) roles associated
+     * with the DB instance.</p>
      */
     inline DBInstance& AddAssociatedRoles(const DBInstanceRole& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles.push_back(value); return *this; }
 
     /**
-     * <p> The Amazon Web Services Identity and Access Management (IAM) roles
-     * associated with the DB instance. </p>
+     * <p>The Amazon Web Services Identity and Access Management (IAM) roles associated
+     * with the DB instance.</p>
      */
     inline DBInstance& AddAssociatedRoles(DBInstanceRole&& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles.push_back(std::move(value)); return *this; }
 
@@ -3251,42 +3243,42 @@ namespace Model
     /**
      * <p>The number of minutes to pause the automation. When the time period ends, RDS
      * Custom resumes full automation. The minimum value is 60 (default). The maximum
-     * value is 1,440. </p>
+     * value is 1,440.</p>
      */
     inline const Aws::Utils::DateTime& GetResumeFullAutomationModeTime() const{ return m_resumeFullAutomationModeTime; }
 
     /**
      * <p>The number of minutes to pause the automation. When the time period ends, RDS
      * Custom resumes full automation. The minimum value is 60 (default). The maximum
-     * value is 1,440. </p>
+     * value is 1,440.</p>
      */
     inline bool ResumeFullAutomationModeTimeHasBeenSet() const { return m_resumeFullAutomationModeTimeHasBeenSet; }
 
     /**
      * <p>The number of minutes to pause the automation. When the time period ends, RDS
      * Custom resumes full automation. The minimum value is 60 (default). The maximum
-     * value is 1,440. </p>
+     * value is 1,440.</p>
      */
     inline void SetResumeFullAutomationModeTime(const Aws::Utils::DateTime& value) { m_resumeFullAutomationModeTimeHasBeenSet = true; m_resumeFullAutomationModeTime = value; }
 
     /**
      * <p>The number of minutes to pause the automation. When the time period ends, RDS
      * Custom resumes full automation. The minimum value is 60 (default). The maximum
-     * value is 1,440. </p>
+     * value is 1,440.</p>
      */
     inline void SetResumeFullAutomationModeTime(Aws::Utils::DateTime&& value) { m_resumeFullAutomationModeTimeHasBeenSet = true; m_resumeFullAutomationModeTime = std::move(value); }
 
     /**
      * <p>The number of minutes to pause the automation. When the time period ends, RDS
      * Custom resumes full automation. The minimum value is 60 (default). The maximum
-     * value is 1,440. </p>
+     * value is 1,440.</p>
      */
     inline DBInstance& WithResumeFullAutomationModeTime(const Aws::Utils::DateTime& value) { SetResumeFullAutomationModeTime(value); return *this;}
 
     /**
      * <p>The number of minutes to pause the automation. When the time period ends, RDS
      * Custom resumes full automation. The minimum value is 60 (default). The maximum
-     * value is 1,440. </p>
+     * value is 1,440.</p>
      */
     inline DBInstance& WithResumeFullAutomationModeTime(Aws::Utils::DateTime&& value) { SetResumeFullAutomationModeTime(std::move(value)); return *this;}
 
@@ -3300,8 +3292,7 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline const Aws::String& GetCustomIamInstanceProfile() const{ return m_customIamInstanceProfile; }
 
@@ -3314,8 +3305,7 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline bool CustomIamInstanceProfileHasBeenSet() const { return m_customIamInstanceProfileHasBeenSet; }
 
@@ -3328,8 +3318,7 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline void SetCustomIamInstanceProfile(const Aws::String& value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile = value; }
 
@@ -3342,8 +3331,7 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline void SetCustomIamInstanceProfile(Aws::String&& value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile = std::move(value); }
 
@@ -3356,8 +3344,7 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline void SetCustomIamInstanceProfile(const char* value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile.assign(value); }
 
@@ -3370,8 +3357,7 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline DBInstance& WithCustomIamInstanceProfile(const Aws::String& value) { SetCustomIamInstanceProfile(value); return *this;}
 
@@ -3384,8 +3370,7 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline DBInstance& WithCustomIamInstanceProfile(Aws::String&& value) { SetCustomIamInstanceProfile(std::move(value)); return *this;}
 
@@ -3398,8 +3383,7 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline DBInstance& WithCustomIamInstanceProfile(const char* value) { SetCustomIamInstanceProfile(value); return *this;}
 
@@ -3451,6 +3435,135 @@ namespace Model
      * Services Outposts or the Amazon Web Services Region.</p>
      */
     inline DBInstance& WithBackupTarget(const char* value) { SetBackupTarget(value); return *this;}
+
+
+    /**
+     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
+     */
+    inline const Aws::String& GetNetworkType() const{ return m_networkType; }
+
+    /**
+     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
+     */
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+
+    /**
+     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
+     */
+    inline void SetNetworkType(const Aws::String& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+
+    /**
+     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
+     */
+    inline void SetNetworkType(Aws::String&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
+
+    /**
+     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
+     */
+    inline void SetNetworkType(const char* value) { m_networkTypeHasBeenSet = true; m_networkType.assign(value); }
+
+    /**
+     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
+     */
+    inline DBInstance& WithNetworkType(const Aws::String& value) { SetNetworkType(value); return *this;}
+
+    /**
+     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
+     */
+    inline DBInstance& WithNetworkType(Aws::String&& value) { SetNetworkType(std::move(value)); return *this;}
+
+    /**
+     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
+     */
+    inline DBInstance& WithNetworkType(const char* value) { SetNetworkType(value); return *this;}
 
   private:
 
@@ -3675,6 +3788,9 @@ namespace Model
 
     Aws::String m_backupTarget;
     bool m_backupTargetHasBeenSet;
+
+    Aws::String m_networkType;
+    bool m_networkTypeHasBeenSet;
   };
 
 } // namespace Model

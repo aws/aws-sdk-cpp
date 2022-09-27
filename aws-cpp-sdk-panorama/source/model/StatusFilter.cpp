@@ -26,6 +26,7 @@ namespace Aws
         static const int REMOVAL_FAILED_HASH = HashingUtils::HashString("REMOVAL_FAILED");
         static const int PROCESSING_DEPLOYMENT_HASH = HashingUtils::HashString("PROCESSING_DEPLOYMENT");
         static const int PROCESSING_REMOVAL_HASH = HashingUtils::HashString("PROCESSING_REMOVAL");
+        static const int DEPLOYMENT_FAILED_HASH = HashingUtils::HashString("DEPLOYMENT_FAILED");
 
 
         StatusFilter GetStatusFilterForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return StatusFilter::PROCESSING_REMOVAL;
           }
+          else if (hashCode == DEPLOYMENT_FAILED_HASH)
+          {
+            return StatusFilter::DEPLOYMENT_FAILED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +86,8 @@ namespace Aws
             return "PROCESSING_DEPLOYMENT";
           case StatusFilter::PROCESSING_REMOVAL:
             return "PROCESSING_REMOVAL";
+          case StatusFilter::DEPLOYMENT_FAILED:
+            return "DEPLOYMENT_FAILED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

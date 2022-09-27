@@ -13,6 +13,7 @@
 #include <aws/s3control/model/S3InitiateRestoreObjectOperation.h>
 #include <aws/s3control/model/S3SetObjectLegalHoldOperation.h>
 #include <aws/s3control/model/S3SetObjectRetentionOperation.h>
+#include <aws/s3control/model/S3ReplicateObjectOperation.h>
 #include <utility>
 
 namespace Aws
@@ -306,6 +307,43 @@ namespace Model
     
     inline JobOperation& WithS3PutObjectRetention(S3SetObjectRetentionOperation&& value) { SetS3PutObjectRetention(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Directs the specified job to invoke <code>ReplicateObject</code> on every
+     * object in the job's manifest.</p>
+     */
+    inline const S3ReplicateObjectOperation& GetS3ReplicateObject() const{ return m_s3ReplicateObject; }
+
+    /**
+     * <p>Directs the specified job to invoke <code>ReplicateObject</code> on every
+     * object in the job's manifest.</p>
+     */
+    inline bool S3ReplicateObjectHasBeenSet() const { return m_s3ReplicateObjectHasBeenSet; }
+
+    /**
+     * <p>Directs the specified job to invoke <code>ReplicateObject</code> on every
+     * object in the job's manifest.</p>
+     */
+    inline void SetS3ReplicateObject(const S3ReplicateObjectOperation& value) { m_s3ReplicateObjectHasBeenSet = true; m_s3ReplicateObject = value; }
+
+    /**
+     * <p>Directs the specified job to invoke <code>ReplicateObject</code> on every
+     * object in the job's manifest.</p>
+     */
+    inline void SetS3ReplicateObject(S3ReplicateObjectOperation&& value) { m_s3ReplicateObjectHasBeenSet = true; m_s3ReplicateObject = std::move(value); }
+
+    /**
+     * <p>Directs the specified job to invoke <code>ReplicateObject</code> on every
+     * object in the job's manifest.</p>
+     */
+    inline JobOperation& WithS3ReplicateObject(const S3ReplicateObjectOperation& value) { SetS3ReplicateObject(value); return *this;}
+
+    /**
+     * <p>Directs the specified job to invoke <code>ReplicateObject</code> on every
+     * object in the job's manifest.</p>
+     */
+    inline JobOperation& WithS3ReplicateObject(S3ReplicateObjectOperation&& value) { SetS3ReplicateObject(std::move(value)); return *this;}
+
   private:
 
     LambdaInvokeOperation m_lambdaInvoke;
@@ -331,6 +369,9 @@ namespace Model
 
     S3SetObjectRetentionOperation m_s3PutObjectRetention;
     bool m_s3PutObjectRetentionHasBeenSet;
+
+    S3ReplicateObjectOperation m_s3ReplicateObject;
+    bool m_s3ReplicateObjectHasBeenSet;
   };
 
 } // namespace Model

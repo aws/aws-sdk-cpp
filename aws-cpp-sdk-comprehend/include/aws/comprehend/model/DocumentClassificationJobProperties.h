@@ -631,7 +631,7 @@ namespace Model
      * <p> Configuration parameters for a private Virtual Private Cloud (VPC)
      * containing the resources you are using for your document classification job. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+     * href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon
      * VPC</a>. </p>
      */
     inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
@@ -640,7 +640,7 @@ namespace Model
      * <p> Configuration parameters for a private Virtual Private Cloud (VPC)
      * containing the resources you are using for your document classification job. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+     * href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon
      * VPC</a>. </p>
      */
     inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
@@ -649,7 +649,7 @@ namespace Model
      * <p> Configuration parameters for a private Virtual Private Cloud (VPC)
      * containing the resources you are using for your document classification job. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+     * href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon
      * VPC</a>. </p>
      */
     inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
@@ -658,7 +658,7 @@ namespace Model
      * <p> Configuration parameters for a private Virtual Private Cloud (VPC)
      * containing the resources you are using for your document classification job. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+     * href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon
      * VPC</a>. </p>
      */
     inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
@@ -667,7 +667,7 @@ namespace Model
      * <p> Configuration parameters for a private Virtual Private Cloud (VPC)
      * containing the resources you are using for your document classification job. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+     * href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon
      * VPC</a>. </p>
      */
     inline DocumentClassificationJobProperties& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
@@ -676,7 +676,7 @@ namespace Model
      * <p> Configuration parameters for a private Virtual Private Cloud (VPC)
      * containing the resources you are using for your document classification job. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+     * href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon
      * VPC</a>. </p>
      */
     inline DocumentClassificationJobProperties& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}

@@ -18,7 +18,8 @@ PutMetricStreamRequest::PutMetricStreamRequest() :
     m_roleArnHasBeenSet(false),
     m_outputFormat(MetricStreamOutputFormat::NOT_SET),
     m_outputFormatHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_statisticsConfigurationsHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ Aws::String PutMetricStreamRequest::SerializePayload() const
     {
       item.OutputToStream(ss, "Tags.member.", tagsCount, "");
       tagsCount++;
+    }
+  }
+
+  if(m_statisticsConfigurationsHasBeenSet)
+  {
+    unsigned statisticsConfigurationsCount = 1;
+    for(auto& item : m_statisticsConfigurations)
+    {
+      item.OutputToStream(ss, "StatisticsConfigurations.member.", statisticsConfigurationsCount, "");
+      statisticsConfigurationsCount++;
     }
   }
 

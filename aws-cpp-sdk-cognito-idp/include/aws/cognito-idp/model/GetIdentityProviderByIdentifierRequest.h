@@ -76,42 +76,42 @@ namespace Model
 
 
     /**
-     * <p>The identity provider ID.</p>
+     * <p>The IdP identifier.</p>
      */
     inline const Aws::String& GetIdpIdentifier() const{ return m_idpIdentifier; }
 
     /**
-     * <p>The identity provider ID.</p>
+     * <p>The IdP identifier.</p>
      */
     inline bool IdpIdentifierHasBeenSet() const { return m_idpIdentifierHasBeenSet; }
 
     /**
-     * <p>The identity provider ID.</p>
+     * <p>The IdP identifier.</p>
      */
     inline void SetIdpIdentifier(const Aws::String& value) { m_idpIdentifierHasBeenSet = true; m_idpIdentifier = value; }
 
     /**
-     * <p>The identity provider ID.</p>
+     * <p>The IdP identifier.</p>
      */
     inline void SetIdpIdentifier(Aws::String&& value) { m_idpIdentifierHasBeenSet = true; m_idpIdentifier = std::move(value); }
 
     /**
-     * <p>The identity provider ID.</p>
+     * <p>The IdP identifier.</p>
      */
     inline void SetIdpIdentifier(const char* value) { m_idpIdentifierHasBeenSet = true; m_idpIdentifier.assign(value); }
 
     /**
-     * <p>The identity provider ID.</p>
+     * <p>The IdP identifier.</p>
      */
     inline GetIdentityProviderByIdentifierRequest& WithIdpIdentifier(const Aws::String& value) { SetIdpIdentifier(value); return *this;}
 
     /**
-     * <p>The identity provider ID.</p>
+     * <p>The IdP identifier.</p>
      */
     inline GetIdentityProviderByIdentifierRequest& WithIdpIdentifier(Aws::String&& value) { SetIdpIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The identity provider ID.</p>
+     * <p>The IdP identifier.</p>
      */
     inline GetIdentityProviderByIdentifierRequest& WithIdpIdentifier(const char* value) { SetIdpIdentifier(value); return *this;}
 

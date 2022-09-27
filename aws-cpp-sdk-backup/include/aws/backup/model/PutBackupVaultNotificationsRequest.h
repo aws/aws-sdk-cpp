@@ -166,9 +166,10 @@ namespace Model
      * <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
      * <code>COPY_JOB_FAILED</code> </p> </li> <li> <p>
      * <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
-     * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> </ul>  <p>Ignore the list
-     * below because it includes deprecated events. Refer to the list above.</p>
-     * 
+     * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> <li> <p>
+     * <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code>
+     * </p> </li> </ul>  <p>Ignore the list below because it includes deprecated
+     * events. Refer to the list above.</p> 
      */
     inline const Aws::Vector<BackupVaultEvent>& GetBackupVaultEvents() const{ return m_backupVaultEvents; }
 
@@ -182,9 +183,10 @@ namespace Model
      * <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
      * <code>COPY_JOB_FAILED</code> </p> </li> <li> <p>
      * <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
-     * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> </ul>  <p>Ignore the list
-     * below because it includes deprecated events. Refer to the list above.</p>
-     * 
+     * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> <li> <p>
+     * <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code>
+     * </p> </li> </ul>  <p>Ignore the list below because it includes deprecated
+     * events. Refer to the list above.</p> 
      */
     inline bool BackupVaultEventsHasBeenSet() const { return m_backupVaultEventsHasBeenSet; }
 
@@ -198,9 +200,10 @@ namespace Model
      * <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
      * <code>COPY_JOB_FAILED</code> </p> </li> <li> <p>
      * <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
-     * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> </ul>  <p>Ignore the list
-     * below because it includes deprecated events. Refer to the list above.</p>
-     * 
+     * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> <li> <p>
+     * <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code>
+     * </p> </li> </ul>  <p>Ignore the list below because it includes deprecated
+     * events. Refer to the list above.</p> 
      */
     inline void SetBackupVaultEvents(const Aws::Vector<BackupVaultEvent>& value) { m_backupVaultEventsHasBeenSet = true; m_backupVaultEvents = value; }
 
@@ -214,9 +217,10 @@ namespace Model
      * <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
      * <code>COPY_JOB_FAILED</code> </p> </li> <li> <p>
      * <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
-     * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> </ul>  <p>Ignore the list
-     * below because it includes deprecated events. Refer to the list above.</p>
-     * 
+     * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> <li> <p>
+     * <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code>
+     * </p> </li> </ul>  <p>Ignore the list below because it includes deprecated
+     * events. Refer to the list above.</p> 
      */
     inline void SetBackupVaultEvents(Aws::Vector<BackupVaultEvent>&& value) { m_backupVaultEventsHasBeenSet = true; m_backupVaultEvents = std::move(value); }
 
@@ -230,9 +234,10 @@ namespace Model
      * <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
      * <code>COPY_JOB_FAILED</code> </p> </li> <li> <p>
      * <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
-     * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> </ul>  <p>Ignore the list
-     * below because it includes deprecated events. Refer to the list above.</p>
-     * 
+     * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> <li> <p>
+     * <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code>
+     * </p> </li> </ul>  <p>Ignore the list below because it includes deprecated
+     * events. Refer to the list above.</p> 
      */
     inline PutBackupVaultNotificationsRequest& WithBackupVaultEvents(const Aws::Vector<BackupVaultEvent>& value) { SetBackupVaultEvents(value); return *this;}
 
@@ -246,9 +251,10 @@ namespace Model
      * <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
      * <code>COPY_JOB_FAILED</code> </p> </li> <li> <p>
      * <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
-     * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> </ul>  <p>Ignore the list
-     * below because it includes deprecated events. Refer to the list above.</p>
-     * 
+     * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> <li> <p>
+     * <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code>
+     * </p> </li> </ul>  <p>Ignore the list below because it includes deprecated
+     * events. Refer to the list above.</p> 
      */
     inline PutBackupVaultNotificationsRequest& WithBackupVaultEvents(Aws::Vector<BackupVaultEvent>&& value) { SetBackupVaultEvents(std::move(value)); return *this;}
 
@@ -262,9 +268,10 @@ namespace Model
      * <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
      * <code>COPY_JOB_FAILED</code> </p> </li> <li> <p>
      * <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
-     * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> </ul>  <p>Ignore the list
-     * below because it includes deprecated events. Refer to the list above.</p>
-     * 
+     * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> <li> <p>
+     * <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code>
+     * </p> </li> </ul>  <p>Ignore the list below because it includes deprecated
+     * events. Refer to the list above.</p> 
      */
     inline PutBackupVaultNotificationsRequest& AddBackupVaultEvents(const BackupVaultEvent& value) { m_backupVaultEventsHasBeenSet = true; m_backupVaultEvents.push_back(value); return *this; }
 
@@ -278,9 +285,10 @@ namespace Model
      * <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
      * <code>COPY_JOB_FAILED</code> </p> </li> <li> <p>
      * <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
-     * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> </ul>  <p>Ignore the list
-     * below because it includes deprecated events. Refer to the list above.</p>
-     * 
+     * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> <li> <p>
+     * <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code>
+     * </p> </li> </ul>  <p>Ignore the list below because it includes deprecated
+     * events. Refer to the list above.</p> 
      */
     inline PutBackupVaultNotificationsRequest& AddBackupVaultEvents(BackupVaultEvent&& value) { m_backupVaultEventsHasBeenSet = true; m_backupVaultEvents.push_back(std::move(value)); return *this; }
 

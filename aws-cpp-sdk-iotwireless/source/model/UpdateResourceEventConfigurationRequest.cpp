@@ -22,7 +22,9 @@ UpdateResourceEventConfigurationRequest::UpdateResourceEventConfigurationRequest
     m_partnerType(EventNotificationPartnerType::NOT_SET),
     m_partnerTypeHasBeenSet(false),
     m_deviceRegistrationStateHasBeenSet(false),
-    m_proximityHasBeenSet(false)
+    m_proximityHasBeenSet(false),
+    m_joinHasBeenSet(false),
+    m_connectionStatusHasBeenSet(false)
 {
 }
 
@@ -39,6 +41,18 @@ Aws::String UpdateResourceEventConfigurationRequest::SerializePayload() const
   if(m_proximityHasBeenSet)
   {
    payload.WithObject("Proximity", m_proximity.Jsonize());
+
+  }
+
+  if(m_joinHasBeenSet)
+  {
+   payload.WithObject("Join", m_join.Jsonize());
+
+  }
+
+  if(m_connectionStatusHasBeenSet)
+  {
+   payload.WithObject("ConnectionStatus", m_connectionStatus.Jsonize());
 
   }
 

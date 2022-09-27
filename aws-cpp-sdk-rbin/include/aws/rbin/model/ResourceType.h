@@ -16,7 +16,8 @@ namespace Model
   enum class ResourceType
   {
     NOT_SET,
-    EBS_SNAPSHOT
+    EBS_SNAPSHOT,
+    EC2_IMAGE
   };
 
 namespace ResourceTypeMapper

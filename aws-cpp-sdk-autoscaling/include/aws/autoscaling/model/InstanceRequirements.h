@@ -504,8 +504,11 @@ namespace Model
      * Scaling selects instance types with your attributes, we will exclude instance
      * types whose price is higher than your threshold. The parameter accepts an
      * integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off
-     * price protection, specify a high value, such as <code>999999</code>. </p>
-     * <p>Default: <code>100</code> </p>
+     * price protection, specify a high value, such as <code>999999</code>. </p> <p>If
+     * you set <code>DesiredCapacityType</code> to <code>vcpu</code> or
+     * <code>memory-mib</code>, the price protection threshold is applied based on the
+     * per vCPU or per memory price instead of the per instance price. </p> <p>Default:
+     * <code>100</code> </p>
      */
     inline int GetSpotMaxPricePercentageOverLowestPrice() const{ return m_spotMaxPricePercentageOverLowestPrice; }
 
@@ -516,8 +519,11 @@ namespace Model
      * Scaling selects instance types with your attributes, we will exclude instance
      * types whose price is higher than your threshold. The parameter accepts an
      * integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off
-     * price protection, specify a high value, such as <code>999999</code>. </p>
-     * <p>Default: <code>100</code> </p>
+     * price protection, specify a high value, such as <code>999999</code>. </p> <p>If
+     * you set <code>DesiredCapacityType</code> to <code>vcpu</code> or
+     * <code>memory-mib</code>, the price protection threshold is applied based on the
+     * per vCPU or per memory price instead of the per instance price. </p> <p>Default:
+     * <code>100</code> </p>
      */
     inline bool SpotMaxPricePercentageOverLowestPriceHasBeenSet() const { return m_spotMaxPricePercentageOverLowestPriceHasBeenSet; }
 
@@ -528,8 +534,11 @@ namespace Model
      * Scaling selects instance types with your attributes, we will exclude instance
      * types whose price is higher than your threshold. The parameter accepts an
      * integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off
-     * price protection, specify a high value, such as <code>999999</code>. </p>
-     * <p>Default: <code>100</code> </p>
+     * price protection, specify a high value, such as <code>999999</code>. </p> <p>If
+     * you set <code>DesiredCapacityType</code> to <code>vcpu</code> or
+     * <code>memory-mib</code>, the price protection threshold is applied based on the
+     * per vCPU or per memory price instead of the per instance price. </p> <p>Default:
+     * <code>100</code> </p>
      */
     inline void SetSpotMaxPricePercentageOverLowestPrice(int value) { m_spotMaxPricePercentageOverLowestPriceHasBeenSet = true; m_spotMaxPricePercentageOverLowestPrice = value; }
 
@@ -540,8 +549,11 @@ namespace Model
      * Scaling selects instance types with your attributes, we will exclude instance
      * types whose price is higher than your threshold. The parameter accepts an
      * integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off
-     * price protection, specify a high value, such as <code>999999</code>. </p>
-     * <p>Default: <code>100</code> </p>
+     * price protection, specify a high value, such as <code>999999</code>. </p> <p>If
+     * you set <code>DesiredCapacityType</code> to <code>vcpu</code> or
+     * <code>memory-mib</code>, the price protection threshold is applied based on the
+     * per vCPU or per memory price instead of the per instance price. </p> <p>Default:
+     * <code>100</code> </p>
      */
     inline InstanceRequirements& WithSpotMaxPricePercentageOverLowestPrice(int value) { SetSpotMaxPricePercentageOverLowestPrice(value); return *this;}
 
@@ -554,7 +566,10 @@ namespace Model
      * instance types whose price is higher than your threshold. The parameter accepts
      * an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn
      * off price protection, specify a high value, such as <code>999999</code>. </p>
-     * <p>Default: <code>20</code> </p>
+     * <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or
+     * <code>memory-mib</code>, the price protection threshold is applied based on the
+     * per vCPU or per memory price instead of the per instance price. </p> <p>Default:
+     * <code>20</code> </p>
      */
     inline int GetOnDemandMaxPricePercentageOverLowestPrice() const{ return m_onDemandMaxPricePercentageOverLowestPrice; }
 
@@ -566,7 +581,10 @@ namespace Model
      * instance types whose price is higher than your threshold. The parameter accepts
      * an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn
      * off price protection, specify a high value, such as <code>999999</code>. </p>
-     * <p>Default: <code>20</code> </p>
+     * <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or
+     * <code>memory-mib</code>, the price protection threshold is applied based on the
+     * per vCPU or per memory price instead of the per instance price. </p> <p>Default:
+     * <code>20</code> </p>
      */
     inline bool OnDemandMaxPricePercentageOverLowestPriceHasBeenSet() const { return m_onDemandMaxPricePercentageOverLowestPriceHasBeenSet; }
 
@@ -578,7 +596,10 @@ namespace Model
      * instance types whose price is higher than your threshold. The parameter accepts
      * an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn
      * off price protection, specify a high value, such as <code>999999</code>. </p>
-     * <p>Default: <code>20</code> </p>
+     * <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or
+     * <code>memory-mib</code>, the price protection threshold is applied based on the
+     * per vCPU or per memory price instead of the per instance price. </p> <p>Default:
+     * <code>20</code> </p>
      */
     inline void SetOnDemandMaxPricePercentageOverLowestPrice(int value) { m_onDemandMaxPricePercentageOverLowestPriceHasBeenSet = true; m_onDemandMaxPricePercentageOverLowestPrice = value; }
 
@@ -590,7 +611,10 @@ namespace Model
      * instance types whose price is higher than your threshold. The parameter accepts
      * an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn
      * off price protection, specify a high value, such as <code>999999</code>. </p>
-     * <p>Default: <code>20</code> </p>
+     * <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or
+     * <code>memory-mib</code>, the price protection threshold is applied based on the
+     * per vCPU or per memory price instead of the per instance price. </p> <p>Default:
+     * <code>20</code> </p>
      */
     inline InstanceRequirements& WithOnDemandMaxPricePercentageOverLowestPrice(int value) { SetOnDemandMaxPricePercentageOverLowestPrice(value); return *this;}
 

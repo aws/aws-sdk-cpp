@@ -81,6 +81,7 @@ static const int TOO_MANY_STREAMING_DISTRIBUTIONS_HASH = HashingUtils::HashStrin
 static const int ILLEGAL_FIELD_LEVEL_ENCRYPTION_CONFIG_ASSOCIATION_WITH_CACHE_BEHAVIOR_HASH = HashingUtils::HashString("IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior");
 static const int INVALID_ORIGIN_HASH = HashingUtils::HashString("InvalidOrigin");
 static const int TRUSTED_SIGNER_DOES_NOT_EXIST_HASH = HashingUtils::HashString("TrustedSignerDoesNotExist");
+static const int TOO_LONG_C_S_P_IN_RESPONSE_HEADERS_POLICY_HASH = HashingUtils::HashString("TooLongCSPInResponseHeadersPolicy");
 static const int TOO_MANY_FIELD_LEVEL_ENCRYPTION_CONFIGS_HASH = HashingUtils::HashString("TooManyFieldLevelEncryptionConfigs");
 static const int NO_SUCH_INVALIDATION_HASH = HashingUtils::HashString("NoSuchInvalidation");
 static const int RESPONSE_HEADERS_POLICY_IN_USE_HASH = HashingUtils::HashString("ResponseHeadersPolicyInUse");
@@ -469,6 +470,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TRUSTED_SIGNER_DOES_NOT_EXIST), false);
     return true;
   }
+  else if (hashCode == TOO_LONG_C_S_P_IN_RESPONSE_HEADERS_POLICY_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TOO_LONG_C_S_P_IN_RESPONSE_HEADERS_POLICY), false);
+    return true;
+  }
   else if (hashCode == TOO_MANY_FIELD_LEVEL_ENCRYPTION_CONFIGS_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TOO_MANY_FIELD_LEVEL_ENCRYPTION_CONFIGS), false);
@@ -759,17 +765,17 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TOO_MANY_KEY_GROUPS), false);
     return true;
   }
-  else if (hashCode == PUBLIC_KEY_ALREADY_EXISTS_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::PUBLIC_KEY_ALREADY_EXISTS), false);
-    return true;
-  }
   return false;
 }
 
 static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
 {
-  if (hashCode == REALTIME_LOG_CONFIG_IN_USE_HASH)
+  if (hashCode == PUBLIC_KEY_ALREADY_EXISTS_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::PUBLIC_KEY_ALREADY_EXISTS), false);
+    return true;
+  }
+  else if (hashCode == REALTIME_LOG_CONFIG_IN_USE_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::REALTIME_LOG_CONFIG_IN_USE), false);
     return true;

@@ -47,6 +47,7 @@ Input::Input() :
     m_timecodeSource(InputTimecodeSource::NOT_SET),
     m_timecodeSourceHasBeenSet(false),
     m_timecodeStartHasBeenSet(false),
+    m_videoGeneratorHasBeenSet(false),
     m_videoSelectorHasBeenSet(false)
 {
 }
@@ -80,6 +81,7 @@ Input::Input(JsonView jsonValue) :
     m_timecodeSource(InputTimecodeSource::NOT_SET),
     m_timecodeSourceHasBeenSet(false),
     m_timecodeStartHasBeenSet(false),
+    m_videoGeneratorHasBeenSet(false),
     m_videoSelectorHasBeenSet(false)
 {
   *this = jsonValue;
@@ -242,6 +244,13 @@ Input& Input::operator =(JsonView jsonValue)
     m_timecodeStartHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("videoGenerator"))
+  {
+    m_videoGenerator = jsonValue.GetObject("videoGenerator");
+
+    m_videoGeneratorHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("videoSelector"))
   {
     m_videoSelector = jsonValue.GetObject("videoSelector");
@@ -392,6 +401,12 @@ JsonValue Input::Jsonize() const
   if(m_timecodeStartHasBeenSet)
   {
    payload.WithString("timecodeStart", m_timecodeStart);
+
+  }
+
+  if(m_videoGeneratorHasBeenSet)
+  {
+   payload.WithObject("videoGenerator", m_videoGenerator.Jsonize());
 
   }
 

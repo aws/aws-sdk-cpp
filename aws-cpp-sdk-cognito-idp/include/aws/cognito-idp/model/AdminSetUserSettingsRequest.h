@@ -41,91 +41,91 @@ namespace Model
 
 
     /**
-     * <p>The ID of the user pool that contains the user that you are setting options
-     * for.</p>
+     * <p>The ID of the user pool that contains the user whose options you're
+     * setting.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
 
     /**
-     * <p>The ID of the user pool that contains the user that you are setting options
-     * for.</p>
+     * <p>The ID of the user pool that contains the user whose options you're
+     * setting.</p>
      */
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
 
     /**
-     * <p>The ID of the user pool that contains the user that you are setting options
-     * for.</p>
+     * <p>The ID of the user pool that contains the user whose options you're
+     * setting.</p>
      */
     inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
 
     /**
-     * <p>The ID of the user pool that contains the user that you are setting options
-     * for.</p>
+     * <p>The ID of the user pool that contains the user whose options you're
+     * setting.</p>
      */
     inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
 
     /**
-     * <p>The ID of the user pool that contains the user that you are setting options
-     * for.</p>
+     * <p>The ID of the user pool that contains the user whose options you're
+     * setting.</p>
      */
     inline void SetUserPoolId(const char* value) { m_userPoolIdHasBeenSet = true; m_userPoolId.assign(value); }
 
     /**
-     * <p>The ID of the user pool that contains the user that you are setting options
-     * for.</p>
+     * <p>The ID of the user pool that contains the user whose options you're
+     * setting.</p>
      */
     inline AdminSetUserSettingsRequest& WithUserPoolId(const Aws::String& value) { SetUserPoolId(value); return *this;}
 
     /**
-     * <p>The ID of the user pool that contains the user that you are setting options
-     * for.</p>
+     * <p>The ID of the user pool that contains the user whose options you're
+     * setting.</p>
      */
     inline AdminSetUserSettingsRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the user pool that contains the user that you are setting options
-     * for.</p>
+     * <p>The ID of the user pool that contains the user whose options you're
+     * setting.</p>
      */
     inline AdminSetUserSettingsRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
 
 
     /**
-     * <p>The user name of the user that you are setting options for.</p>
+     * <p>The user name of the user whose options you're setting.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
 
     /**
-     * <p>The user name of the user that you are setting options for.</p>
+     * <p>The user name of the user whose options you're setting.</p>
      */
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
-     * <p>The user name of the user that you are setting options for.</p>
+     * <p>The user name of the user whose options you're setting.</p>
      */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
-     * <p>The user name of the user that you are setting options for.</p>
+     * <p>The user name of the user whose options you're setting.</p>
      */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
-     * <p>The user name of the user that you are setting options for.</p>
+     * <p>The user name of the user whose options you're setting.</p>
      */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
 
     /**
-     * <p>The user name of the user that you are setting options for.</p>
+     * <p>The user name of the user whose options you're setting.</p>
      */
     inline AdminSetUserSettingsRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
 
     /**
-     * <p>The user name of the user that you are setting options for.</p>
+     * <p>The user name of the user whose options you're setting.</p>
      */
     inline AdminSetUserSettingsRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
-     * <p>The user name of the user that you are setting options for.</p>
+     * <p>The user name of the user whose options you're setting.</p>
      */
     inline AdminSetUserSettingsRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 

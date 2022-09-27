@@ -46,50 +46,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Web Services resource type. The resource type must be supported
-     * for the specified action.</p>
+     * <p>The resource type. The resource type must be supported for the specified
+     * action.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The Amazon Web Services resource type. The resource type must be supported
-     * for the specified action.</p>
+     * <p>The resource type. The resource type must be supported for the specified
+     * action.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The Amazon Web Services resource type. The resource type must be supported
-     * for the specified action.</p>
+     * <p>The resource type. The resource type must be supported for the specified
+     * action.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The Amazon Web Services resource type. The resource type must be supported
-     * for the specified action.</p>
+     * <p>The resource type. The resource type must be supported for the specified
+     * action.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services resource type. The resource type must be supported
-     * for the specified action.</p>
+     * <p>The resource type. The resource type must be supported for the specified
+     * action.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
-     * <p>The Amazon Web Services resource type. The resource type must be supported
-     * for the specified action.</p>
+     * <p>The resource type. The resource type must be supported for the specified
+     * action.</p>
      */
     inline CreateExperimentTemplateTargetInput& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services resource type. The resource type must be supported
-     * for the specified action.</p>
+     * <p>The resource type. The resource type must be supported for the specified
+     * action.</p>
      */
     inline CreateExperimentTemplateTargetInput& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services resource type. The resource type must be supported
-     * for the specified action.</p>
+     * <p>The resource type. The resource type must be supported for the specified
+     * action.</p>
      */
     inline CreateExperimentTemplateTargetInput& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
@@ -359,6 +359,72 @@ namespace Model
      */
     inline CreateExperimentTemplateTargetInput& WithSelectionMode(const char* value) { SetSelectionMode(value); return *this;}
 
+
+    /**
+     * <p>The resource type parameters.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>The resource type parameters.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
+
+    /**
+     * <p>The resource type parameters.</p>
+     */
+    inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
+
+    /**
+     * <p>The resource type parameters.</p>
+     */
+    inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
+
+    /**
+     * <p>The resource type parameters.</p>
+     */
+    inline CreateExperimentTemplateTargetInput& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
+
+    /**
+     * <p>The resource type parameters.</p>
+     */
+    inline CreateExperimentTemplateTargetInput& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>The resource type parameters.</p>
+     */
+    inline CreateExperimentTemplateTargetInput& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+
+    /**
+     * <p>The resource type parameters.</p>
+     */
+    inline CreateExperimentTemplateTargetInput& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The resource type parameters.</p>
+     */
+    inline CreateExperimentTemplateTargetInput& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The resource type parameters.</p>
+     */
+    inline CreateExperimentTemplateTargetInput& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The resource type parameters.</p>
+     */
+    inline CreateExperimentTemplateTargetInput& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The resource type parameters.</p>
+     */
+    inline CreateExperimentTemplateTargetInput& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The resource type parameters.</p>
+     */
+    inline CreateExperimentTemplateTargetInput& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_resourceType;
@@ -375,6 +441,9 @@ namespace Model
 
     Aws::String m_selectionMode;
     bool m_selectionModeHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_parameters;
+    bool m_parametersHasBeenSet;
   };
 
 } // namespace Model

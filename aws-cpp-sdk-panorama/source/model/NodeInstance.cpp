@@ -19,37 +19,37 @@ namespace Model
 {
 
 NodeInstance::NodeInstance() : 
-    m_nodeInstanceIdHasBeenSet(false),
-    m_nodeIdHasBeenSet(false),
-    m_packageNameHasBeenSet(false),
-    m_packageVersionHasBeenSet(false),
-    m_packagePatchVersionHasBeenSet(false),
-    m_nodeNameHasBeenSet(false),
     m_currentStatus(NodeInstanceStatus::NOT_SET),
-    m_currentStatusHasBeenSet(false)
+    m_currentStatusHasBeenSet(false),
+    m_nodeIdHasBeenSet(false),
+    m_nodeInstanceIdHasBeenSet(false),
+    m_nodeNameHasBeenSet(false),
+    m_packageNameHasBeenSet(false),
+    m_packagePatchVersionHasBeenSet(false),
+    m_packageVersionHasBeenSet(false)
 {
 }
 
 NodeInstance::NodeInstance(JsonView jsonValue) : 
-    m_nodeInstanceIdHasBeenSet(false),
-    m_nodeIdHasBeenSet(false),
-    m_packageNameHasBeenSet(false),
-    m_packageVersionHasBeenSet(false),
-    m_packagePatchVersionHasBeenSet(false),
-    m_nodeNameHasBeenSet(false),
     m_currentStatus(NodeInstanceStatus::NOT_SET),
-    m_currentStatusHasBeenSet(false)
+    m_currentStatusHasBeenSet(false),
+    m_nodeIdHasBeenSet(false),
+    m_nodeInstanceIdHasBeenSet(false),
+    m_nodeNameHasBeenSet(false),
+    m_packageNameHasBeenSet(false),
+    m_packagePatchVersionHasBeenSet(false),
+    m_packageVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 NodeInstance& NodeInstance::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("NodeInstanceId"))
+  if(jsonValue.ValueExists("CurrentStatus"))
   {
-    m_nodeInstanceId = jsonValue.GetString("NodeInstanceId");
+    m_currentStatus = NodeInstanceStatusMapper::GetNodeInstanceStatusForName(jsonValue.GetString("CurrentStatus"));
 
-    m_nodeInstanceIdHasBeenSet = true;
+    m_currentStatusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("NodeId"))
@@ -59,25 +59,11 @@ NodeInstance& NodeInstance::operator =(JsonView jsonValue)
     m_nodeIdHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("PackageName"))
+  if(jsonValue.ValueExists("NodeInstanceId"))
   {
-    m_packageName = jsonValue.GetString("PackageName");
+    m_nodeInstanceId = jsonValue.GetString("NodeInstanceId");
 
-    m_packageNameHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("PackageVersion"))
-  {
-    m_packageVersion = jsonValue.GetString("PackageVersion");
-
-    m_packageVersionHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("PackagePatchVersion"))
-  {
-    m_packagePatchVersion = jsonValue.GetString("PackagePatchVersion");
-
-    m_packagePatchVersionHasBeenSet = true;
+    m_nodeInstanceIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("NodeName"))
@@ -87,11 +73,25 @@ NodeInstance& NodeInstance::operator =(JsonView jsonValue)
     m_nodeNameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("CurrentStatus"))
+  if(jsonValue.ValueExists("PackageName"))
   {
-    m_currentStatus = NodeInstanceStatusMapper::GetNodeInstanceStatusForName(jsonValue.GetString("CurrentStatus"));
+    m_packageName = jsonValue.GetString("PackageName");
 
-    m_currentStatusHasBeenSet = true;
+    m_packageNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PackagePatchVersion"))
+  {
+    m_packagePatchVersion = jsonValue.GetString("PackagePatchVersion");
+
+    m_packagePatchVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PackageVersion"))
+  {
+    m_packageVersion = jsonValue.GetString("PackageVersion");
+
+    m_packageVersionHasBeenSet = true;
   }
 
   return *this;
@@ -101,10 +101,9 @@ JsonValue NodeInstance::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_nodeInstanceIdHasBeenSet)
+  if(m_currentStatusHasBeenSet)
   {
-   payload.WithString("NodeInstanceId", m_nodeInstanceId);
-
+   payload.WithString("CurrentStatus", NodeInstanceStatusMapper::GetNameForNodeInstanceStatus(m_currentStatus));
   }
 
   if(m_nodeIdHasBeenSet)
@@ -113,21 +112,9 @@ JsonValue NodeInstance::Jsonize() const
 
   }
 
-  if(m_packageNameHasBeenSet)
+  if(m_nodeInstanceIdHasBeenSet)
   {
-   payload.WithString("PackageName", m_packageName);
-
-  }
-
-  if(m_packageVersionHasBeenSet)
-  {
-   payload.WithString("PackageVersion", m_packageVersion);
-
-  }
-
-  if(m_packagePatchVersionHasBeenSet)
-  {
-   payload.WithString("PackagePatchVersion", m_packagePatchVersion);
+   payload.WithString("NodeInstanceId", m_nodeInstanceId);
 
   }
 
@@ -137,9 +124,22 @@ JsonValue NodeInstance::Jsonize() const
 
   }
 
-  if(m_currentStatusHasBeenSet)
+  if(m_packageNameHasBeenSet)
   {
-   payload.WithString("CurrentStatus", NodeInstanceStatusMapper::GetNameForNodeInstanceStatus(m_currentStatus));
+   payload.WithString("PackageName", m_packageName);
+
+  }
+
+  if(m_packagePatchVersionHasBeenSet)
+  {
+   payload.WithString("PackagePatchVersion", m_packagePatchVersion);
+
+  }
+
+  if(m_packageVersionHasBeenSet)
+  {
+   payload.WithString("PackageVersion", m_packageVersion);
+
   }
 
   return payload;

@@ -32,6 +32,7 @@
 #include <aws/lookoutmetrics/model/DescribeAnomalyDetectionExecutionsRequest.h>
 #include <aws/lookoutmetrics/model/DescribeAnomalyDetectorRequest.h>
 #include <aws/lookoutmetrics/model/DescribeMetricSetRequest.h>
+#include <aws/lookoutmetrics/model/DetectMetricSetConfigRequest.h>
 #include <aws/lookoutmetrics/model/GetAnomalyGroupRequest.h>
 #include <aws/lookoutmetrics/model/GetFeedbackRequest.h>
 #include <aws/lookoutmetrics/model/GetSampleDataRequest.h>
@@ -419,6 +420,31 @@ void LookoutMetricsClient::DescribeMetricSetAsync(const DescribeMetricSetRequest
 void LookoutMetricsClient::DescribeMetricSetAsyncHelper(const DescribeMetricSetRequest& request, const DescribeMetricSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeMetricSet(request), context);
+}
+
+DetectMetricSetConfigOutcome LookoutMetricsClient::DetectMetricSetConfig(const DetectMetricSetConfigRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/DetectMetricSetConfig");
+  return DetectMetricSetConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DetectMetricSetConfigOutcomeCallable LookoutMetricsClient::DetectMetricSetConfigCallable(const DetectMetricSetConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DetectMetricSetConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DetectMetricSetConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LookoutMetricsClient::DetectMetricSetConfigAsync(const DetectMetricSetConfigRequest& request, const DetectMetricSetConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DetectMetricSetConfigAsyncHelper( request, handler, context ); } );
+}
+
+void LookoutMetricsClient::DetectMetricSetConfigAsyncHelper(const DetectMetricSetConfigRequest& request, const DetectMetricSetConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DetectMetricSetConfig(request), context);
 }
 
 GetAnomalyGroupOutcome LookoutMetricsClient::GetAnomalyGroup(const GetAnomalyGroupRequest& request) const

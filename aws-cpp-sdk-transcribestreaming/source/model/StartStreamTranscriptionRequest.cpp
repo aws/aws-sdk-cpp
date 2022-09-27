@@ -47,6 +47,8 @@ StartStreamTranscriptionRequest::StartStreamTranscriptionRequest() :
     m_languageOptionsHasBeenSet(false),
     m_preferredLanguage(LanguageCode::NOT_SET),
     m_preferredLanguageHasBeenSet(false),
+    m_vocabularyNamesHasBeenSet(false),
+    m_vocabularyFilterNamesHasBeenSet(false),
     m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
 {
 }
@@ -179,6 +181,20 @@ Aws::Http::HeaderValueCollection StartStreamTranscriptionRequest::GetRequestSpec
   if(m_preferredLanguageHasBeenSet)
   {
     headers.emplace("x-amzn-transcribe-preferred-language", LanguageCodeMapper::GetNameForLanguageCode(m_preferredLanguage));
+  }
+
+  if(m_vocabularyNamesHasBeenSet)
+  {
+    ss << m_vocabularyNames;
+    headers.emplace("x-amzn-transcribe-vocabulary-names",  ss.str());
+    ss.str("");
+  }
+
+  if(m_vocabularyFilterNamesHasBeenSet)
+  {
+    ss << m_vocabularyFilterNames;
+    headers.emplace("x-amzn-transcribe-vocabulary-filter-names",  ss.str());
+    ss.str("");
   }
 
   return headers;

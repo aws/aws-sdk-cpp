@@ -36,7 +36,12 @@ EngineTranscribeSettings::EngineTranscribeSettings() :
     m_contentRedactionType(TranscribeContentRedactionType::NOT_SET),
     m_contentRedactionTypeHasBeenSet(false),
     m_piiEntityTypesHasBeenSet(false),
-    m_languageModelNameHasBeenSet(false)
+    m_languageModelNameHasBeenSet(false),
+    m_identifyLanguage(false),
+    m_identifyLanguageHasBeenSet(false),
+    m_languageOptionsHasBeenSet(false),
+    m_preferredLanguage(TranscribeLanguageCode::NOT_SET),
+    m_preferredLanguageHasBeenSet(false)
 {
 }
 
@@ -58,7 +63,12 @@ EngineTranscribeSettings::EngineTranscribeSettings(JsonView jsonValue) :
     m_contentRedactionType(TranscribeContentRedactionType::NOT_SET),
     m_contentRedactionTypeHasBeenSet(false),
     m_piiEntityTypesHasBeenSet(false),
-    m_languageModelNameHasBeenSet(false)
+    m_languageModelNameHasBeenSet(false),
+    m_identifyLanguage(false),
+    m_identifyLanguageHasBeenSet(false),
+    m_languageOptionsHasBeenSet(false),
+    m_preferredLanguage(TranscribeLanguageCode::NOT_SET),
+    m_preferredLanguageHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -142,6 +152,27 @@ EngineTranscribeSettings& EngineTranscribeSettings::operator =(JsonView jsonValu
     m_languageModelNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IdentifyLanguage"))
+  {
+    m_identifyLanguage = jsonValue.GetBool("IdentifyLanguage");
+
+    m_identifyLanguageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LanguageOptions"))
+  {
+    m_languageOptions = jsonValue.GetString("LanguageOptions");
+
+    m_languageOptionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PreferredLanguage"))
+  {
+    m_preferredLanguage = TranscribeLanguageCodeMapper::GetTranscribeLanguageCodeForName(jsonValue.GetString("PreferredLanguage"));
+
+    m_preferredLanguageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -207,6 +238,23 @@ JsonValue EngineTranscribeSettings::Jsonize() const
   {
    payload.WithString("LanguageModelName", m_languageModelName);
 
+  }
+
+  if(m_identifyLanguageHasBeenSet)
+  {
+   payload.WithBool("IdentifyLanguage", m_identifyLanguage);
+
+  }
+
+  if(m_languageOptionsHasBeenSet)
+  {
+   payload.WithString("LanguageOptions", m_languageOptions);
+
+  }
+
+  if(m_preferredLanguageHasBeenSet)
+  {
+   payload.WithString("PreferredLanguage", TranscribeLanguageCodeMapper::GetNameForTranscribeLanguageCode(m_preferredLanguage));
   }
 
   return payload;

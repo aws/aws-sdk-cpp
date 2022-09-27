@@ -30,8 +30,8 @@ namespace Model
 {
 
   /**
-   * <p>The structure that contains information about a stack set operation.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>The structure that contains information about a stack set
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackSetOperation">AWS
    * API Reference</a></p>
    */
@@ -132,8 +132,8 @@ namespace Model
      * <p>The type of stack set operation: <code>CREATE</code>, <code>UPDATE</code>, or
      * <code>DELETE</code>. Create and delete operations affect only the specified
      * stack set instances that are associated with the specified stack set. Update
-     * operations affect both the stack set itself, as well as <i>all</i> associated
-     * stack set instances.</p>
+     * operations affect both the stack set itself, in addition to <i>all</i>
+     * associated stack set instances.</p>
      */
     inline const StackSetOperationAction& GetAction() const{ return m_action; }
 
@@ -141,8 +141,8 @@ namespace Model
      * <p>The type of stack set operation: <code>CREATE</code>, <code>UPDATE</code>, or
      * <code>DELETE</code>. Create and delete operations affect only the specified
      * stack set instances that are associated with the specified stack set. Update
-     * operations affect both the stack set itself, as well as <i>all</i> associated
-     * stack set instances.</p>
+     * operations affect both the stack set itself, in addition to <i>all</i>
+     * associated stack set instances.</p>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
@@ -150,8 +150,8 @@ namespace Model
      * <p>The type of stack set operation: <code>CREATE</code>, <code>UPDATE</code>, or
      * <code>DELETE</code>. Create and delete operations affect only the specified
      * stack set instances that are associated with the specified stack set. Update
-     * operations affect both the stack set itself, as well as <i>all</i> associated
-     * stack set instances.</p>
+     * operations affect both the stack set itself, in addition to <i>all</i>
+     * associated stack set instances.</p>
      */
     inline void SetAction(const StackSetOperationAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
@@ -159,8 +159,8 @@ namespace Model
      * <p>The type of stack set operation: <code>CREATE</code>, <code>UPDATE</code>, or
      * <code>DELETE</code>. Create and delete operations affect only the specified
      * stack set instances that are associated with the specified stack set. Update
-     * operations affect both the stack set itself, as well as <i>all</i> associated
-     * stack set instances.</p>
+     * operations affect both the stack set itself, in addition to <i>all</i>
+     * associated stack set instances.</p>
      */
     inline void SetAction(StackSetOperationAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
@@ -168,8 +168,8 @@ namespace Model
      * <p>The type of stack set operation: <code>CREATE</code>, <code>UPDATE</code>, or
      * <code>DELETE</code>. Create and delete operations affect only the specified
      * stack set instances that are associated with the specified stack set. Update
-     * operations affect both the stack set itself, as well as <i>all</i> associated
-     * stack set instances.</p>
+     * operations affect both the stack set itself, in addition to <i>all</i>
+     * associated stack set instances.</p>
      */
     inline StackSetOperation& WithAction(const StackSetOperationAction& value) { SetAction(value); return *this;}
 
@@ -177,14 +177,14 @@ namespace Model
      * <p>The type of stack set operation: <code>CREATE</code>, <code>UPDATE</code>, or
      * <code>DELETE</code>. Create and delete operations affect only the specified
      * stack set instances that are associated with the specified stack set. Update
-     * operations affect both the stack set itself, as well as <i>all</i> associated
-     * stack set instances.</p>
+     * operations affect both the stack set itself, in addition to <i>all</i>
+     * associated stack set instances.</p>
      */
     inline StackSetOperation& WithAction(StackSetOperationAction&& value) { SetAction(std::move(value)); return *this;}
 
 
     /**
-     * <p>The status of the operation. </p> <ul> <li> <p> <code>FAILED</code>: The
+     * <p>The status of the operation.</p> <ul> <li> <p> <code>FAILED</code>: The
      * operation exceeded the specified failure tolerance. The failure tolerance value
      * that you've set for an operation is applied for each Region during stack create
      * and update operations. If the number of failed stacks within a Region exceeds
@@ -197,16 +197,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
      * set operation status codes</a> in the CloudFormation User Guide.</p> </li> <li>
      * <p> <code>RUNNING</code>: The operation is currently being performed.</p> </li>
-     * <li> <p> <code>STOPPED</code>: The user has cancelled the operation.</p> </li>
+     * <li> <p> <code>STOPPED</code>: The user has canceled the operation.</p> </li>
      * <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at
-     * user request. </p> </li> <li> <p> <code>SUCCEEDED</code>: The operation
-     * completed creating or updating all the specified stacks without exceeding the
-     * failure tolerance for the operation.</p> </li> </ul>
+     * user request.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation completed
+     * creating or updating all the specified stacks without exceeding the failure
+     * tolerance for the operation.</p> </li> </ul>
      */
     inline const StackSetOperationStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the operation. </p> <ul> <li> <p> <code>FAILED</code>: The
+     * <p>The status of the operation.</p> <ul> <li> <p> <code>FAILED</code>: The
      * operation exceeded the specified failure tolerance. The failure tolerance value
      * that you've set for an operation is applied for each Region during stack create
      * and update operations. If the number of failed stacks within a Region exceeds
@@ -219,16 +219,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
      * set operation status codes</a> in the CloudFormation User Guide.</p> </li> <li>
      * <p> <code>RUNNING</code>: The operation is currently being performed.</p> </li>
-     * <li> <p> <code>STOPPED</code>: The user has cancelled the operation.</p> </li>
+     * <li> <p> <code>STOPPED</code>: The user has canceled the operation.</p> </li>
      * <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at
-     * user request. </p> </li> <li> <p> <code>SUCCEEDED</code>: The operation
-     * completed creating or updating all the specified stacks without exceeding the
-     * failure tolerance for the operation.</p> </li> </ul>
+     * user request.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation completed
+     * creating or updating all the specified stacks without exceeding the failure
+     * tolerance for the operation.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the operation. </p> <ul> <li> <p> <code>FAILED</code>: The
+     * <p>The status of the operation.</p> <ul> <li> <p> <code>FAILED</code>: The
      * operation exceeded the specified failure tolerance. The failure tolerance value
      * that you've set for an operation is applied for each Region during stack create
      * and update operations. If the number of failed stacks within a Region exceeds
@@ -241,16 +241,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
      * set operation status codes</a> in the CloudFormation User Guide.</p> </li> <li>
      * <p> <code>RUNNING</code>: The operation is currently being performed.</p> </li>
-     * <li> <p> <code>STOPPED</code>: The user has cancelled the operation.</p> </li>
+     * <li> <p> <code>STOPPED</code>: The user has canceled the operation.</p> </li>
      * <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at
-     * user request. </p> </li> <li> <p> <code>SUCCEEDED</code>: The operation
-     * completed creating or updating all the specified stacks without exceeding the
-     * failure tolerance for the operation.</p> </li> </ul>
+     * user request.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation completed
+     * creating or updating all the specified stacks without exceeding the failure
+     * tolerance for the operation.</p> </li> </ul>
      */
     inline void SetStatus(const StackSetOperationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the operation. </p> <ul> <li> <p> <code>FAILED</code>: The
+     * <p>The status of the operation.</p> <ul> <li> <p> <code>FAILED</code>: The
      * operation exceeded the specified failure tolerance. The failure tolerance value
      * that you've set for an operation is applied for each Region during stack create
      * and update operations. If the number of failed stacks within a Region exceeds
@@ -263,16 +263,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
      * set operation status codes</a> in the CloudFormation User Guide.</p> </li> <li>
      * <p> <code>RUNNING</code>: The operation is currently being performed.</p> </li>
-     * <li> <p> <code>STOPPED</code>: The user has cancelled the operation.</p> </li>
+     * <li> <p> <code>STOPPED</code>: The user has canceled the operation.</p> </li>
      * <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at
-     * user request. </p> </li> <li> <p> <code>SUCCEEDED</code>: The operation
-     * completed creating or updating all the specified stacks without exceeding the
-     * failure tolerance for the operation.</p> </li> </ul>
+     * user request.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation completed
+     * creating or updating all the specified stacks without exceeding the failure
+     * tolerance for the operation.</p> </li> </ul>
      */
     inline void SetStatus(StackSetOperationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the operation. </p> <ul> <li> <p> <code>FAILED</code>: The
+     * <p>The status of the operation.</p> <ul> <li> <p> <code>FAILED</code>: The
      * operation exceeded the specified failure tolerance. The failure tolerance value
      * that you've set for an operation is applied for each Region during stack create
      * and update operations. If the number of failed stacks within a Region exceeds
@@ -285,16 +285,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
      * set operation status codes</a> in the CloudFormation User Guide.</p> </li> <li>
      * <p> <code>RUNNING</code>: The operation is currently being performed.</p> </li>
-     * <li> <p> <code>STOPPED</code>: The user has cancelled the operation.</p> </li>
+     * <li> <p> <code>STOPPED</code>: The user has canceled the operation.</p> </li>
      * <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at
-     * user request. </p> </li> <li> <p> <code>SUCCEEDED</code>: The operation
-     * completed creating or updating all the specified stacks without exceeding the
-     * failure tolerance for the operation.</p> </li> </ul>
+     * user request.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation completed
+     * creating or updating all the specified stacks without exceeding the failure
+     * tolerance for the operation.</p> </li> </ul>
      */
     inline StackSetOperation& WithStatus(const StackSetOperationStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the operation. </p> <ul> <li> <p> <code>FAILED</code>: The
+     * <p>The status of the operation.</p> <ul> <li> <p> <code>FAILED</code>: The
      * operation exceeded the specified failure tolerance. The failure tolerance value
      * that you've set for an operation is applied for each Region during stack create
      * and update operations. If the number of failed stacks within a Region exceeds
@@ -307,11 +307,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
      * set operation status codes</a> in the CloudFormation User Guide.</p> </li> <li>
      * <p> <code>RUNNING</code>: The operation is currently being performed.</p> </li>
-     * <li> <p> <code>STOPPED</code>: The user has cancelled the operation.</p> </li>
+     * <li> <p> <code>STOPPED</code>: The user has canceled the operation.</p> </li>
      * <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at
-     * user request. </p> </li> <li> <p> <code>SUCCEEDED</code>: The operation
-     * completed creating or updating all the specified stacks without exceeding the
-     * failure tolerance for the operation.</p> </li> </ul>
+     * user request.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation completed
+     * creating or updating all the specified stacks without exceeding the failure
+     * tolerance for the operation.</p> </li> </ul>
      */
     inline StackSetOperation& WithStatus(StackSetOperationStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -350,7 +350,7 @@ namespace Model
     /**
      * <p>For stack set operations of action type <code>DELETE</code>, specifies
      * whether to remove the stack instances from the specified stack set, but doesn't
-     * delete the stacks. You can't reassociate a retained stack, or add an existing,
+     * delete the stacks. You can't re-associate a retained stack, or add an existing,
      * saved stack to a new stack set.</p>
      */
     inline bool GetRetainStacks() const{ return m_retainStacks; }
@@ -358,7 +358,7 @@ namespace Model
     /**
      * <p>For stack set operations of action type <code>DELETE</code>, specifies
      * whether to remove the stack instances from the specified stack set, but doesn't
-     * delete the stacks. You can't reassociate a retained stack, or add an existing,
+     * delete the stacks. You can't re-associate a retained stack, or add an existing,
      * saved stack to a new stack set.</p>
      */
     inline bool RetainStacksHasBeenSet() const { return m_retainStacksHasBeenSet; }
@@ -366,7 +366,7 @@ namespace Model
     /**
      * <p>For stack set operations of action type <code>DELETE</code>, specifies
      * whether to remove the stack instances from the specified stack set, but doesn't
-     * delete the stacks. You can't reassociate a retained stack, or add an existing,
+     * delete the stacks. You can't re-associate a retained stack, or add an existing,
      * saved stack to a new stack set.</p>
      */
     inline void SetRetainStacks(bool value) { m_retainStacksHasBeenSet = true; m_retainStacks = value; }
@@ -374,17 +374,17 @@ namespace Model
     /**
      * <p>For stack set operations of action type <code>DELETE</code>, specifies
      * whether to remove the stack instances from the specified stack set, but doesn't
-     * delete the stacks. You can't reassociate a retained stack, or add an existing,
+     * delete the stacks. You can't re-associate a retained stack, or add an existing,
      * saved stack to a new stack set.</p>
      */
     inline StackSetOperation& WithRetainStacks(bool value) { SetRetainStacks(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role used to perform this stack
-     * set operation. </p> <p>Use customized administrator roles to control which users
-     * or groups can manage specific stack sets within the same administrator account.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role used to perform this stack set
+     * operation.</p> <p>Use customized administrator roles to control which users or
+     * groups can manage specific stack sets within the same administrator account. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
      * Permissions for Multiple Administrators</a> in the <i>CloudFormation User
      * Guide</i>.</p>
@@ -392,10 +392,10 @@ namespace Model
     inline const Aws::String& GetAdministrationRoleARN() const{ return m_administrationRoleARN; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role used to perform this stack
-     * set operation. </p> <p>Use customized administrator roles to control which users
-     * or groups can manage specific stack sets within the same administrator account.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role used to perform this stack set
+     * operation.</p> <p>Use customized administrator roles to control which users or
+     * groups can manage specific stack sets within the same administrator account. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
      * Permissions for Multiple Administrators</a> in the <i>CloudFormation User
      * Guide</i>.</p>
@@ -403,10 +403,10 @@ namespace Model
     inline bool AdministrationRoleARNHasBeenSet() const { return m_administrationRoleARNHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role used to perform this stack
-     * set operation. </p> <p>Use customized administrator roles to control which users
-     * or groups can manage specific stack sets within the same administrator account.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role used to perform this stack set
+     * operation.</p> <p>Use customized administrator roles to control which users or
+     * groups can manage specific stack sets within the same administrator account. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
      * Permissions for Multiple Administrators</a> in the <i>CloudFormation User
      * Guide</i>.</p>
@@ -414,10 +414,10 @@ namespace Model
     inline void SetAdministrationRoleARN(const Aws::String& value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN = value; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role used to perform this stack
-     * set operation. </p> <p>Use customized administrator roles to control which users
-     * or groups can manage specific stack sets within the same administrator account.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role used to perform this stack set
+     * operation.</p> <p>Use customized administrator roles to control which users or
+     * groups can manage specific stack sets within the same administrator account. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
      * Permissions for Multiple Administrators</a> in the <i>CloudFormation User
      * Guide</i>.</p>
@@ -425,10 +425,10 @@ namespace Model
     inline void SetAdministrationRoleARN(Aws::String&& value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role used to perform this stack
-     * set operation. </p> <p>Use customized administrator roles to control which users
-     * or groups can manage specific stack sets within the same administrator account.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role used to perform this stack set
+     * operation.</p> <p>Use customized administrator roles to control which users or
+     * groups can manage specific stack sets within the same administrator account. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
      * Permissions for Multiple Administrators</a> in the <i>CloudFormation User
      * Guide</i>.</p>
@@ -436,10 +436,10 @@ namespace Model
     inline void SetAdministrationRoleARN(const char* value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role used to perform this stack
-     * set operation. </p> <p>Use customized administrator roles to control which users
-     * or groups can manage specific stack sets within the same administrator account.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role used to perform this stack set
+     * operation.</p> <p>Use customized administrator roles to control which users or
+     * groups can manage specific stack sets within the same administrator account. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
      * Permissions for Multiple Administrators</a> in the <i>CloudFormation User
      * Guide</i>.</p>
@@ -447,10 +447,10 @@ namespace Model
     inline StackSetOperation& WithAdministrationRoleARN(const Aws::String& value) { SetAdministrationRoleARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role used to perform this stack
-     * set operation. </p> <p>Use customized administrator roles to control which users
-     * or groups can manage specific stack sets within the same administrator account.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role used to perform this stack set
+     * operation.</p> <p>Use customized administrator roles to control which users or
+     * groups can manage specific stack sets within the same administrator account. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
      * Permissions for Multiple Administrators</a> in the <i>CloudFormation User
      * Guide</i>.</p>
@@ -458,10 +458,10 @@ namespace Model
     inline StackSetOperation& WithAdministrationRoleARN(Aws::String&& value) { SetAdministrationRoleARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role used to perform this stack
-     * set operation. </p> <p>Use customized administrator roles to control which users
-     * or groups can manage specific stack sets within the same administrator account.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role used to perform this stack set
+     * operation.</p> <p>Use customized administrator roles to control which users or
+     * groups can manage specific stack sets within the same administrator account. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
      * Permissions for Multiple Administrators</a> in the <i>CloudFormation User
      * Guide</i>.</p>
@@ -472,56 +472,56 @@ namespace Model
     /**
      * <p>The name of the IAM execution role used to create or update the stack
      * set.</p> <p>Use customized execution roles to control which stack resources
-     * users and groups can include in their stack sets. </p>
+     * users and groups can include in their stack sets.</p>
      */
     inline const Aws::String& GetExecutionRoleName() const{ return m_executionRoleName; }
 
     /**
      * <p>The name of the IAM execution role used to create or update the stack
      * set.</p> <p>Use customized execution roles to control which stack resources
-     * users and groups can include in their stack sets. </p>
+     * users and groups can include in their stack sets.</p>
      */
     inline bool ExecutionRoleNameHasBeenSet() const { return m_executionRoleNameHasBeenSet; }
 
     /**
      * <p>The name of the IAM execution role used to create or update the stack
      * set.</p> <p>Use customized execution roles to control which stack resources
-     * users and groups can include in their stack sets. </p>
+     * users and groups can include in their stack sets.</p>
      */
     inline void SetExecutionRoleName(const Aws::String& value) { m_executionRoleNameHasBeenSet = true; m_executionRoleName = value; }
 
     /**
      * <p>The name of the IAM execution role used to create or update the stack
      * set.</p> <p>Use customized execution roles to control which stack resources
-     * users and groups can include in their stack sets. </p>
+     * users and groups can include in their stack sets.</p>
      */
     inline void SetExecutionRoleName(Aws::String&& value) { m_executionRoleNameHasBeenSet = true; m_executionRoleName = std::move(value); }
 
     /**
      * <p>The name of the IAM execution role used to create or update the stack
      * set.</p> <p>Use customized execution roles to control which stack resources
-     * users and groups can include in their stack sets. </p>
+     * users and groups can include in their stack sets.</p>
      */
     inline void SetExecutionRoleName(const char* value) { m_executionRoleNameHasBeenSet = true; m_executionRoleName.assign(value); }
 
     /**
      * <p>The name of the IAM execution role used to create or update the stack
      * set.</p> <p>Use customized execution roles to control which stack resources
-     * users and groups can include in their stack sets. </p>
+     * users and groups can include in their stack sets.</p>
      */
     inline StackSetOperation& WithExecutionRoleName(const Aws::String& value) { SetExecutionRoleName(value); return *this;}
 
     /**
      * <p>The name of the IAM execution role used to create or update the stack
      * set.</p> <p>Use customized execution roles to control which stack resources
-     * users and groups can include in their stack sets. </p>
+     * users and groups can include in their stack sets.</p>
      */
     inline StackSetOperation& WithExecutionRoleName(Aws::String&& value) { SetExecutionRoleName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the IAM execution role used to create or update the stack
      * set.</p> <p>Use customized execution roles to control which stack resources
-     * users and groups can include in their stack sets. </p>
+     * users and groups can include in their stack sets.</p>
      */
     inline StackSetOperation& WithExecutionRoleName(const char* value) { SetExecutionRoleName(value); return *this;}
 
@@ -664,7 +664,7 @@ namespace Model
     /**
      * <p>Detailed information about the drift status of the stack set. This includes
      * information about drift operations currently being performed on the stack
-     * set.</p> <p>this information will only be present for stack set operations whose
+     * set.</p> <p>This information will only be present for stack set operations whose
      * <code>Action</code> type is <code>DETECT_DRIFT</code>.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
@@ -675,7 +675,7 @@ namespace Model
     /**
      * <p>Detailed information about the drift status of the stack set. This includes
      * information about drift operations currently being performed on the stack
-     * set.</p> <p>this information will only be present for stack set operations whose
+     * set.</p> <p>This information will only be present for stack set operations whose
      * <code>Action</code> type is <code>DETECT_DRIFT</code>.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
@@ -686,7 +686,7 @@ namespace Model
     /**
      * <p>Detailed information about the drift status of the stack set. This includes
      * information about drift operations currently being performed on the stack
-     * set.</p> <p>this information will only be present for stack set operations whose
+     * set.</p> <p>This information will only be present for stack set operations whose
      * <code>Action</code> type is <code>DETECT_DRIFT</code>.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
@@ -697,7 +697,7 @@ namespace Model
     /**
      * <p>Detailed information about the drift status of the stack set. This includes
      * information about drift operations currently being performed on the stack
-     * set.</p> <p>this information will only be present for stack set operations whose
+     * set.</p> <p>This information will only be present for stack set operations whose
      * <code>Action</code> type is <code>DETECT_DRIFT</code>.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
@@ -708,7 +708,7 @@ namespace Model
     /**
      * <p>Detailed information about the drift status of the stack set. This includes
      * information about drift operations currently being performed on the stack
-     * set.</p> <p>this information will only be present for stack set operations whose
+     * set.</p> <p>This information will only be present for stack set operations whose
      * <code>Action</code> type is <code>DETECT_DRIFT</code>.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
@@ -719,13 +719,54 @@ namespace Model
     /**
      * <p>Detailed information about the drift status of the stack set. This includes
      * information about drift operations currently being performed on the stack
-     * set.</p> <p>this information will only be present for stack set operations whose
+     * set.</p> <p>This information will only be present for stack set operations whose
      * <code>Action</code> type is <code>DETECT_DRIFT</code>.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
      * Unmanaged Changes in Stack Sets</a> in the CloudFormation User Guide.</p>
      */
     inline StackSetOperation& WithStackSetDriftDetectionDetails(StackSetDriftDetectionDetails&& value) { SetStackSetDriftDetectionDetails(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The status of the operation in details.</p>
+     */
+    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+
+    /**
+     * <p>The status of the operation in details.</p>
+     */
+    inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
+
+    /**
+     * <p>The status of the operation in details.</p>
+     */
+    inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
+
+    /**
+     * <p>The status of the operation in details.</p>
+     */
+    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
+
+    /**
+     * <p>The status of the operation in details.</p>
+     */
+    inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
+
+    /**
+     * <p>The status of the operation in details.</p>
+     */
+    inline StackSetOperation& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
+
+    /**
+     * <p>The status of the operation in details.</p>
+     */
+    inline StackSetOperation& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
+
+    /**
+     * <p>The status of the operation in details.</p>
+     */
+    inline StackSetOperation& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
 
   private:
 
@@ -764,6 +805,9 @@ namespace Model
 
     StackSetDriftDetectionDetails m_stackSetDriftDetectionDetails;
     bool m_stackSetDriftDetectionDetailsHasBeenSet;
+
+    Aws::String m_statusReason;
+    bool m_statusReasonHasBeenSet;
   };
 
 } // namespace Model

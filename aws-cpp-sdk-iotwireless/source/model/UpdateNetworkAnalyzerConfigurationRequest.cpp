@@ -18,7 +18,8 @@ UpdateNetworkAnalyzerConfigurationRequest::UpdateNetworkAnalyzerConfigurationReq
     m_wirelessDevicesToAddHasBeenSet(false),
     m_wirelessDevicesToRemoveHasBeenSet(false),
     m_wirelessGatewaysToAddHasBeenSet(false),
-    m_wirelessGatewaysToRemoveHasBeenSet(false)
+    m_wirelessGatewaysToRemoveHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,12 @@ Aws::String UpdateNetworkAnalyzerConfigurationRequest::SerializePayload() const
      wirelessGatewaysToRemoveJsonList[wirelessGatewaysToRemoveIndex].AsString(m_wirelessGatewaysToRemove[wirelessGatewaysToRemoveIndex]);
    }
    payload.WithArray("WirelessGatewaysToRemove", std::move(wirelessGatewaysToRemoveJsonList));
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("Description", m_description);
 
   }
 

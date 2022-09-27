@@ -75,58 +75,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the extension.</p> <p>Conditional: You
-     * must specify <code>Arn</code>, or <code>TypeName</code> and
-     * <code>Type</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the extension.</p> <p>Conditional: You must
+     * specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the extension.</p> <p>Conditional: You
-     * must specify <code>Arn</code>, or <code>TypeName</code> and
-     * <code>Type</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the extension.</p> <p>Conditional: You must
+     * specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the extension.</p> <p>Conditional: You
-     * must specify <code>Arn</code>, or <code>TypeName</code> and
-     * <code>Type</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the extension.</p> <p>Conditional: You must
+     * specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the extension.</p> <p>Conditional: You
-     * must specify <code>Arn</code>, or <code>TypeName</code> and
-     * <code>Type</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the extension.</p> <p>Conditional: You must
+     * specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the extension.</p> <p>Conditional: You
-     * must specify <code>Arn</code>, or <code>TypeName</code> and
-     * <code>Type</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the extension.</p> <p>Conditional: You must
+     * specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the extension.</p> <p>Conditional: You
-     * must specify <code>Arn</code>, or <code>TypeName</code> and
-     * <code>Type</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the extension.</p> <p>Conditional: You must
+     * specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
      */
     inline PublishTypeRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the extension.</p> <p>Conditional: You
-     * must specify <code>Arn</code>, or <code>TypeName</code> and
-     * <code>Type</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the extension.</p> <p>Conditional: You must
+     * specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
      */
     inline PublishTypeRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the extension.</p> <p>Conditional: You
-     * must specify <code>Arn</code>, or <code>TypeName</code> and
-     * <code>Type</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the extension.</p> <p>Conditional: You must
+     * specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
      */
     inline PublishTypeRequest& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -183,9 +175,9 @@ namespace Model
     /**
      * <p>The version number to assign to this version of the extension.</p> <p>Use the
      * following format, and adhere to semantic versioning when assigning a version
-     * number to your extension: </p> <p> <code>MAJOR.MINOR.PATCH</code> </p> <p>For
+     * number to your extension:</p> <p> <code>MAJOR.MINOR.PATCH</code> </p> <p>For
      * more information, see <a href="https://semver.org/">Semantic Versioning
-     * 2.0.0</a>.</p> <p>If you do not specify a version number, CloudFormation
+     * 2.0.0</a>.</p> <p>If you don't specify a version number, CloudFormation
      * increments the version number by one minor version release.</p> <p>You cannot
      * specify a version number the first time you publish a type. CloudFormation
      * automatically sets the first version number to be <code>1.0.0</code>.</p>
@@ -195,9 +187,9 @@ namespace Model
     /**
      * <p>The version number to assign to this version of the extension.</p> <p>Use the
      * following format, and adhere to semantic versioning when assigning a version
-     * number to your extension: </p> <p> <code>MAJOR.MINOR.PATCH</code> </p> <p>For
+     * number to your extension:</p> <p> <code>MAJOR.MINOR.PATCH</code> </p> <p>For
      * more information, see <a href="https://semver.org/">Semantic Versioning
-     * 2.0.0</a>.</p> <p>If you do not specify a version number, CloudFormation
+     * 2.0.0</a>.</p> <p>If you don't specify a version number, CloudFormation
      * increments the version number by one minor version release.</p> <p>You cannot
      * specify a version number the first time you publish a type. CloudFormation
      * automatically sets the first version number to be <code>1.0.0</code>.</p>
@@ -207,9 +199,9 @@ namespace Model
     /**
      * <p>The version number to assign to this version of the extension.</p> <p>Use the
      * following format, and adhere to semantic versioning when assigning a version
-     * number to your extension: </p> <p> <code>MAJOR.MINOR.PATCH</code> </p> <p>For
+     * number to your extension:</p> <p> <code>MAJOR.MINOR.PATCH</code> </p> <p>For
      * more information, see <a href="https://semver.org/">Semantic Versioning
-     * 2.0.0</a>.</p> <p>If you do not specify a version number, CloudFormation
+     * 2.0.0</a>.</p> <p>If you don't specify a version number, CloudFormation
      * increments the version number by one minor version release.</p> <p>You cannot
      * specify a version number the first time you publish a type. CloudFormation
      * automatically sets the first version number to be <code>1.0.0</code>.</p>
@@ -219,9 +211,9 @@ namespace Model
     /**
      * <p>The version number to assign to this version of the extension.</p> <p>Use the
      * following format, and adhere to semantic versioning when assigning a version
-     * number to your extension: </p> <p> <code>MAJOR.MINOR.PATCH</code> </p> <p>For
+     * number to your extension:</p> <p> <code>MAJOR.MINOR.PATCH</code> </p> <p>For
      * more information, see <a href="https://semver.org/">Semantic Versioning
-     * 2.0.0</a>.</p> <p>If you do not specify a version number, CloudFormation
+     * 2.0.0</a>.</p> <p>If you don't specify a version number, CloudFormation
      * increments the version number by one minor version release.</p> <p>You cannot
      * specify a version number the first time you publish a type. CloudFormation
      * automatically sets the first version number to be <code>1.0.0</code>.</p>
@@ -231,9 +223,9 @@ namespace Model
     /**
      * <p>The version number to assign to this version of the extension.</p> <p>Use the
      * following format, and adhere to semantic versioning when assigning a version
-     * number to your extension: </p> <p> <code>MAJOR.MINOR.PATCH</code> </p> <p>For
+     * number to your extension:</p> <p> <code>MAJOR.MINOR.PATCH</code> </p> <p>For
      * more information, see <a href="https://semver.org/">Semantic Versioning
-     * 2.0.0</a>.</p> <p>If you do not specify a version number, CloudFormation
+     * 2.0.0</a>.</p> <p>If you don't specify a version number, CloudFormation
      * increments the version number by one minor version release.</p> <p>You cannot
      * specify a version number the first time you publish a type. CloudFormation
      * automatically sets the first version number to be <code>1.0.0</code>.</p>
@@ -243,9 +235,9 @@ namespace Model
     /**
      * <p>The version number to assign to this version of the extension.</p> <p>Use the
      * following format, and adhere to semantic versioning when assigning a version
-     * number to your extension: </p> <p> <code>MAJOR.MINOR.PATCH</code> </p> <p>For
+     * number to your extension:</p> <p> <code>MAJOR.MINOR.PATCH</code> </p> <p>For
      * more information, see <a href="https://semver.org/">Semantic Versioning
-     * 2.0.0</a>.</p> <p>If you do not specify a version number, CloudFormation
+     * 2.0.0</a>.</p> <p>If you don't specify a version number, CloudFormation
      * increments the version number by one minor version release.</p> <p>You cannot
      * specify a version number the first time you publish a type. CloudFormation
      * automatically sets the first version number to be <code>1.0.0</code>.</p>
@@ -255,9 +247,9 @@ namespace Model
     /**
      * <p>The version number to assign to this version of the extension.</p> <p>Use the
      * following format, and adhere to semantic versioning when assigning a version
-     * number to your extension: </p> <p> <code>MAJOR.MINOR.PATCH</code> </p> <p>For
+     * number to your extension:</p> <p> <code>MAJOR.MINOR.PATCH</code> </p> <p>For
      * more information, see <a href="https://semver.org/">Semantic Versioning
-     * 2.0.0</a>.</p> <p>If you do not specify a version number, CloudFormation
+     * 2.0.0</a>.</p> <p>If you don't specify a version number, CloudFormation
      * increments the version number by one minor version release.</p> <p>You cannot
      * specify a version number the first time you publish a type. CloudFormation
      * automatically sets the first version number to be <code>1.0.0</code>.</p>
@@ -267,9 +259,9 @@ namespace Model
     /**
      * <p>The version number to assign to this version of the extension.</p> <p>Use the
      * following format, and adhere to semantic versioning when assigning a version
-     * number to your extension: </p> <p> <code>MAJOR.MINOR.PATCH</code> </p> <p>For
+     * number to your extension:</p> <p> <code>MAJOR.MINOR.PATCH</code> </p> <p>For
      * more information, see <a href="https://semver.org/">Semantic Versioning
-     * 2.0.0</a>.</p> <p>If you do not specify a version number, CloudFormation
+     * 2.0.0</a>.</p> <p>If you don't specify a version number, CloudFormation
      * increments the version number by one minor version release.</p> <p>You cannot
      * specify a version number the first time you publish a type. CloudFormation
      * automatically sets the first version number to be <code>1.0.0</code>.</p>

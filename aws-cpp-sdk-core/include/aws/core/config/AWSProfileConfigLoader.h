@@ -104,6 +104,10 @@ namespace Aws
 
             using ProfilesContainer = Aws::Map<Aws::String, Aws::Config::Profile>;
 
+            // Delete copy c-tor and assignment operator
+            AWSProfileConfigLoader() = default;
+            AWSProfileConfigLoader(const AWSProfileConfigLoader&) = delete;
+            const AWSProfileConfigLoader& operator=(AWSProfileConfigLoader&) = delete;
         protected:
             /**
              * Subclasses override this method to implement fetching the profiles.
@@ -173,6 +177,8 @@ namespace Aws
             virtual bool LoadInternal() override;
         private:
             std::shared_ptr<Aws::Internal::EC2MetadataClient> m_ec2metadataClient;
+            int64_t credentialsValidUntilMillis = 0;
+            int64_t calculateRetryTime() const;
         };
 
         /**

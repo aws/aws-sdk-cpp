@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/DirectInternetAccess.h>
 #include <aws/sagemaker/model/RootAccess.h>
+#include <aws/sagemaker/model/InstanceMetadataServiceConfiguration.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <aws/sagemaker/model/NotebookInstanceAcceleratorType.h>
 #include <utility>
@@ -218,121 +219,113 @@ namespace Model
 
     /**
      * <p> When you send any requests to Amazon Web Services resources from the
-     * notebook instance, Amazon SageMaker assumes this role to perform tasks on your
-     * behalf. You must grant this role necessary permissions so Amazon SageMaker can
-     * perform these tasks. The policy must allow the Amazon SageMaker service
-     * principal (sagemaker.amazonaws.com) permissions to assume this role. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
-     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> 
+     * notebook instance, SageMaker assumes this role to perform tasks on your behalf.
+     * You must grant this role necessary permissions so SageMaker can perform these
+     * tasks. The policy must allow the SageMaker service principal
+     * (sagemaker.amazonaws.com) permissions to assume this role. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to SageMaker, the caller
+     * of this API must have the <code>iam:PassRole</code> permission.</p> 
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p> When you send any requests to Amazon Web Services resources from the
-     * notebook instance, Amazon SageMaker assumes this role to perform tasks on your
-     * behalf. You must grant this role necessary permissions so Amazon SageMaker can
-     * perform these tasks. The policy must allow the Amazon SageMaker service
-     * principal (sagemaker.amazonaws.com) permissions to assume this role. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
-     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> 
+     * notebook instance, SageMaker assumes this role to perform tasks on your behalf.
+     * You must grant this role necessary permissions so SageMaker can perform these
+     * tasks. The policy must allow the SageMaker service principal
+     * (sagemaker.amazonaws.com) permissions to assume this role. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to SageMaker, the caller
+     * of this API must have the <code>iam:PassRole</code> permission.</p> 
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p> When you send any requests to Amazon Web Services resources from the
-     * notebook instance, Amazon SageMaker assumes this role to perform tasks on your
-     * behalf. You must grant this role necessary permissions so Amazon SageMaker can
-     * perform these tasks. The policy must allow the Amazon SageMaker service
-     * principal (sagemaker.amazonaws.com) permissions to assume this role. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
-     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> 
+     * notebook instance, SageMaker assumes this role to perform tasks on your behalf.
+     * You must grant this role necessary permissions so SageMaker can perform these
+     * tasks. The policy must allow the SageMaker service principal
+     * (sagemaker.amazonaws.com) permissions to assume this role. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to SageMaker, the caller
+     * of this API must have the <code>iam:PassRole</code> permission.</p> 
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
      * <p> When you send any requests to Amazon Web Services resources from the
-     * notebook instance, Amazon SageMaker assumes this role to perform tasks on your
-     * behalf. You must grant this role necessary permissions so Amazon SageMaker can
-     * perform these tasks. The policy must allow the Amazon SageMaker service
-     * principal (sagemaker.amazonaws.com) permissions to assume this role. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
-     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> 
+     * notebook instance, SageMaker assumes this role to perform tasks on your behalf.
+     * You must grant this role necessary permissions so SageMaker can perform these
+     * tasks. The policy must allow the SageMaker service principal
+     * (sagemaker.amazonaws.com) permissions to assume this role. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to SageMaker, the caller
+     * of this API must have the <code>iam:PassRole</code> permission.</p> 
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p> When you send any requests to Amazon Web Services resources from the
-     * notebook instance, Amazon SageMaker assumes this role to perform tasks on your
-     * behalf. You must grant this role necessary permissions so Amazon SageMaker can
-     * perform these tasks. The policy must allow the Amazon SageMaker service
-     * principal (sagemaker.amazonaws.com) permissions to assume this role. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
-     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> 
+     * notebook instance, SageMaker assumes this role to perform tasks on your behalf.
+     * You must grant this role necessary permissions so SageMaker can perform these
+     * tasks. The policy must allow the SageMaker service principal
+     * (sagemaker.amazonaws.com) permissions to assume this role. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to SageMaker, the caller
+     * of this API must have the <code>iam:PassRole</code> permission.</p> 
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
      * <p> When you send any requests to Amazon Web Services resources from the
-     * notebook instance, Amazon SageMaker assumes this role to perform tasks on your
-     * behalf. You must grant this role necessary permissions so Amazon SageMaker can
-     * perform these tasks. The policy must allow the Amazon SageMaker service
-     * principal (sagemaker.amazonaws.com) permissions to assume this role. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
-     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> 
+     * notebook instance, SageMaker assumes this role to perform tasks on your behalf.
+     * You must grant this role necessary permissions so SageMaker can perform these
+     * tasks. The policy must allow the SageMaker service principal
+     * (sagemaker.amazonaws.com) permissions to assume this role. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to SageMaker, the caller
+     * of this API must have the <code>iam:PassRole</code> permission.</p> 
      */
     inline CreateNotebookInstanceRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p> When you send any requests to Amazon Web Services resources from the
-     * notebook instance, Amazon SageMaker assumes this role to perform tasks on your
-     * behalf. You must grant this role necessary permissions so Amazon SageMaker can
-     * perform these tasks. The policy must allow the Amazon SageMaker service
-     * principal (sagemaker.amazonaws.com) permissions to assume this role. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
-     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> 
+     * notebook instance, SageMaker assumes this role to perform tasks on your behalf.
+     * You must grant this role necessary permissions so SageMaker can perform these
+     * tasks. The policy must allow the SageMaker service principal
+     * (sagemaker.amazonaws.com) permissions to assume this role. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to SageMaker, the caller
+     * of this API must have the <code>iam:PassRole</code> permission.</p> 
      */
     inline CreateNotebookInstanceRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p> When you send any requests to Amazon Web Services resources from the
-     * notebook instance, Amazon SageMaker assumes this role to perform tasks on your
-     * behalf. You must grant this role necessary permissions so Amazon SageMaker can
-     * perform these tasks. The policy must allow the Amazon SageMaker service
-     * principal (sagemaker.amazonaws.com) permissions to assume this role. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
-     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> 
+     * notebook instance, SageMaker assumes this role to perform tasks on your behalf.
+     * You must grant this role necessary permissions so SageMaker can perform these
+     * tasks. The policy must allow the SageMaker service principal
+     * (sagemaker.amazonaws.com) permissions to assume this role. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to SageMaker, the caller
+     * of this API must have the <code>iam:PassRole</code> permission.</p> 
      */
     inline CreateNotebookInstanceRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
-     * Service key that Amazon SageMaker uses to encrypt data on the storage volume
-     * attached to your notebook instance. The KMS key you provide must be enabled. For
+     * Service key that SageMaker uses to encrypt data on the storage volume attached
+     * to your notebook instance. The KMS key you provide must be enabled. For
      * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling
      * and Disabling Keys</a> in the <i>Amazon Web Services Key Management Service
@@ -342,8 +335,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
-     * Service key that Amazon SageMaker uses to encrypt data on the storage volume
-     * attached to your notebook instance. The KMS key you provide must be enabled. For
+     * Service key that SageMaker uses to encrypt data on the storage volume attached
+     * to your notebook instance. The KMS key you provide must be enabled. For
      * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling
      * and Disabling Keys</a> in the <i>Amazon Web Services Key Management Service
@@ -353,8 +346,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
-     * Service key that Amazon SageMaker uses to encrypt data on the storage volume
-     * attached to your notebook instance. The KMS key you provide must be enabled. For
+     * Service key that SageMaker uses to encrypt data on the storage volume attached
+     * to your notebook instance. The KMS key you provide must be enabled. For
      * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling
      * and Disabling Keys</a> in the <i>Amazon Web Services Key Management Service
@@ -364,8 +357,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
-     * Service key that Amazon SageMaker uses to encrypt data on the storage volume
-     * attached to your notebook instance. The KMS key you provide must be enabled. For
+     * Service key that SageMaker uses to encrypt data on the storage volume attached
+     * to your notebook instance. The KMS key you provide must be enabled. For
      * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling
      * and Disabling Keys</a> in the <i>Amazon Web Services Key Management Service
@@ -375,8 +368,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
-     * Service key that Amazon SageMaker uses to encrypt data on the storage volume
-     * attached to your notebook instance. The KMS key you provide must be enabled. For
+     * Service key that SageMaker uses to encrypt data on the storage volume attached
+     * to your notebook instance. The KMS key you provide must be enabled. For
      * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling
      * and Disabling Keys</a> in the <i>Amazon Web Services Key Management Service
@@ -386,8 +379,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
-     * Service key that Amazon SageMaker uses to encrypt data on the storage volume
-     * attached to your notebook instance. The KMS key you provide must be enabled. For
+     * Service key that SageMaker uses to encrypt data on the storage volume attached
+     * to your notebook instance. The KMS key you provide must be enabled. For
      * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling
      * and Disabling Keys</a> in the <i>Amazon Web Services Key Management Service
@@ -397,8 +390,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
-     * Service key that Amazon SageMaker uses to encrypt data on the storage volume
-     * attached to your notebook instance. The KMS key you provide must be enabled. For
+     * Service key that SageMaker uses to encrypt data on the storage volume attached
+     * to your notebook instance. The KMS key you provide must be enabled. For
      * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling
      * and Disabling Keys</a> in the <i>Amazon Web Services Key Management Service
@@ -408,8 +401,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
-     * Service key that Amazon SageMaker uses to encrypt data on the storage volume
-     * attached to your notebook instance. The KMS key you provide must be enabled. For
+     * Service key that SageMaker uses to encrypt data on the storage volume attached
+     * to your notebook instance. The KMS key you provide must be enabled. For
      * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling
      * and Disabling Keys</a> in the <i>Amazon Web Services Key Management Service
@@ -557,11 +550,11 @@ namespace Model
 
 
     /**
-     * <p>Sets whether Amazon SageMaker provides internet access to the notebook
-     * instance. If you set this to <code>Disabled</code> this notebook instance is
-     * able to access resources only in your VPC, and is not be able to connect to
-     * Amazon SageMaker training and endpoint services unless you configure a NAT
-     * Gateway in your VPC.</p> <p>For more information, see <a
+     * <p>Sets whether SageMaker provides internet access to the notebook instance. If
+     * you set this to <code>Disabled</code> this notebook instance is able to access
+     * resources only in your VPC, and is not be able to connect to SageMaker training
+     * and endpoint services unless you configure a NAT Gateway in your VPC.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
      * Instances Are Internet-Enabled by Default</a>. You can set the value of this
      * parameter to <code>Disabled</code> only if you set a value for the
@@ -570,11 +563,11 @@ namespace Model
     inline const DirectInternetAccess& GetDirectInternetAccess() const{ return m_directInternetAccess; }
 
     /**
-     * <p>Sets whether Amazon SageMaker provides internet access to the notebook
-     * instance. If you set this to <code>Disabled</code> this notebook instance is
-     * able to access resources only in your VPC, and is not be able to connect to
-     * Amazon SageMaker training and endpoint services unless you configure a NAT
-     * Gateway in your VPC.</p> <p>For more information, see <a
+     * <p>Sets whether SageMaker provides internet access to the notebook instance. If
+     * you set this to <code>Disabled</code> this notebook instance is able to access
+     * resources only in your VPC, and is not be able to connect to SageMaker training
+     * and endpoint services unless you configure a NAT Gateway in your VPC.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
      * Instances Are Internet-Enabled by Default</a>. You can set the value of this
      * parameter to <code>Disabled</code> only if you set a value for the
@@ -583,11 +576,11 @@ namespace Model
     inline bool DirectInternetAccessHasBeenSet() const { return m_directInternetAccessHasBeenSet; }
 
     /**
-     * <p>Sets whether Amazon SageMaker provides internet access to the notebook
-     * instance. If you set this to <code>Disabled</code> this notebook instance is
-     * able to access resources only in your VPC, and is not be able to connect to
-     * Amazon SageMaker training and endpoint services unless you configure a NAT
-     * Gateway in your VPC.</p> <p>For more information, see <a
+     * <p>Sets whether SageMaker provides internet access to the notebook instance. If
+     * you set this to <code>Disabled</code> this notebook instance is able to access
+     * resources only in your VPC, and is not be able to connect to SageMaker training
+     * and endpoint services unless you configure a NAT Gateway in your VPC.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
      * Instances Are Internet-Enabled by Default</a>. You can set the value of this
      * parameter to <code>Disabled</code> only if you set a value for the
@@ -596,11 +589,11 @@ namespace Model
     inline void SetDirectInternetAccess(const DirectInternetAccess& value) { m_directInternetAccessHasBeenSet = true; m_directInternetAccess = value; }
 
     /**
-     * <p>Sets whether Amazon SageMaker provides internet access to the notebook
-     * instance. If you set this to <code>Disabled</code> this notebook instance is
-     * able to access resources only in your VPC, and is not be able to connect to
-     * Amazon SageMaker training and endpoint services unless you configure a NAT
-     * Gateway in your VPC.</p> <p>For more information, see <a
+     * <p>Sets whether SageMaker provides internet access to the notebook instance. If
+     * you set this to <code>Disabled</code> this notebook instance is able to access
+     * resources only in your VPC, and is not be able to connect to SageMaker training
+     * and endpoint services unless you configure a NAT Gateway in your VPC.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
      * Instances Are Internet-Enabled by Default</a>. You can set the value of this
      * parameter to <code>Disabled</code> only if you set a value for the
@@ -609,11 +602,11 @@ namespace Model
     inline void SetDirectInternetAccess(DirectInternetAccess&& value) { m_directInternetAccessHasBeenSet = true; m_directInternetAccess = std::move(value); }
 
     /**
-     * <p>Sets whether Amazon SageMaker provides internet access to the notebook
-     * instance. If you set this to <code>Disabled</code> this notebook instance is
-     * able to access resources only in your VPC, and is not be able to connect to
-     * Amazon SageMaker training and endpoint services unless you configure a NAT
-     * Gateway in your VPC.</p> <p>For more information, see <a
+     * <p>Sets whether SageMaker provides internet access to the notebook instance. If
+     * you set this to <code>Disabled</code> this notebook instance is able to access
+     * resources only in your VPC, and is not be able to connect to SageMaker training
+     * and endpoint services unless you configure a NAT Gateway in your VPC.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
      * Instances Are Internet-Enabled by Default</a>. You can set the value of this
      * parameter to <code>Disabled</code> only if you set a value for the
@@ -622,11 +615,11 @@ namespace Model
     inline CreateNotebookInstanceRequest& WithDirectInternetAccess(const DirectInternetAccess& value) { SetDirectInternetAccess(value); return *this;}
 
     /**
-     * <p>Sets whether Amazon SageMaker provides internet access to the notebook
-     * instance. If you set this to <code>Disabled</code> this notebook instance is
-     * able to access resources only in your VPC, and is not be able to connect to
-     * Amazon SageMaker training and endpoint services unless you configure a NAT
-     * Gateway in your VPC.</p> <p>For more information, see <a
+     * <p>Sets whether SageMaker provides internet access to the notebook instance. If
+     * you set this to <code>Disabled</code> this notebook instance is able to access
+     * resources only in your VPC, and is not be able to connect to SageMaker training
+     * and endpoint services unless you configure a NAT Gateway in your VPC.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
      * Instances Are Internet-Enabled by Default</a>. You can set the value of this
      * parameter to <code>Disabled</code> only if you set a value for the
@@ -742,7 +735,7 @@ namespace Model
      * notebook instance, it opens in the directory that contains this repository. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline const Aws::String& GetDefaultCodeRepository() const{ return m_defaultCodeRepository; }
 
@@ -755,7 +748,7 @@ namespace Model
      * notebook instance, it opens in the directory that contains this repository. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline bool DefaultCodeRepositoryHasBeenSet() const { return m_defaultCodeRepositoryHasBeenSet; }
 
@@ -768,7 +761,7 @@ namespace Model
      * notebook instance, it opens in the directory that contains this repository. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline void SetDefaultCodeRepository(const Aws::String& value) { m_defaultCodeRepositoryHasBeenSet = true; m_defaultCodeRepository = value; }
 
@@ -781,7 +774,7 @@ namespace Model
      * notebook instance, it opens in the directory that contains this repository. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline void SetDefaultCodeRepository(Aws::String&& value) { m_defaultCodeRepositoryHasBeenSet = true; m_defaultCodeRepository = std::move(value); }
 
@@ -794,7 +787,7 @@ namespace Model
      * notebook instance, it opens in the directory that contains this repository. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline void SetDefaultCodeRepository(const char* value) { m_defaultCodeRepositoryHasBeenSet = true; m_defaultCodeRepository.assign(value); }
 
@@ -807,7 +800,7 @@ namespace Model
      * notebook instance, it opens in the directory that contains this repository. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline CreateNotebookInstanceRequest& WithDefaultCodeRepository(const Aws::String& value) { SetDefaultCodeRepository(value); return *this;}
 
@@ -820,7 +813,7 @@ namespace Model
      * notebook instance, it opens in the directory that contains this repository. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline CreateNotebookInstanceRequest& WithDefaultCodeRepository(Aws::String&& value) { SetDefaultCodeRepository(std::move(value)); return *this;}
 
@@ -833,7 +826,7 @@ namespace Model
      * notebook instance, it opens in the directory that contains this repository. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline CreateNotebookInstanceRequest& WithDefaultCodeRepository(const char* value) { SetDefaultCodeRepository(value); return *this;}
 
@@ -847,7 +840,7 @@ namespace Model
      * are cloned at the same level as the default repository of your notebook
      * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAdditionalCodeRepositories() const{ return m_additionalCodeRepositories; }
 
@@ -860,7 +853,7 @@ namespace Model
      * are cloned at the same level as the default repository of your notebook
      * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline bool AdditionalCodeRepositoriesHasBeenSet() const { return m_additionalCodeRepositoriesHasBeenSet; }
 
@@ -873,7 +866,7 @@ namespace Model
      * are cloned at the same level as the default repository of your notebook
      * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline void SetAdditionalCodeRepositories(const Aws::Vector<Aws::String>& value) { m_additionalCodeRepositoriesHasBeenSet = true; m_additionalCodeRepositories = value; }
 
@@ -886,7 +879,7 @@ namespace Model
      * are cloned at the same level as the default repository of your notebook
      * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline void SetAdditionalCodeRepositories(Aws::Vector<Aws::String>&& value) { m_additionalCodeRepositoriesHasBeenSet = true; m_additionalCodeRepositories = std::move(value); }
 
@@ -899,7 +892,7 @@ namespace Model
      * are cloned at the same level as the default repository of your notebook
      * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline CreateNotebookInstanceRequest& WithAdditionalCodeRepositories(const Aws::Vector<Aws::String>& value) { SetAdditionalCodeRepositories(value); return *this;}
 
@@ -912,7 +905,7 @@ namespace Model
      * are cloned at the same level as the default repository of your notebook
      * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline CreateNotebookInstanceRequest& WithAdditionalCodeRepositories(Aws::Vector<Aws::String>&& value) { SetAdditionalCodeRepositories(std::move(value)); return *this;}
 
@@ -925,7 +918,7 @@ namespace Model
      * are cloned at the same level as the default repository of your notebook
      * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline CreateNotebookInstanceRequest& AddAdditionalCodeRepositories(const Aws::String& value) { m_additionalCodeRepositoriesHasBeenSet = true; m_additionalCodeRepositories.push_back(value); return *this; }
 
@@ -938,7 +931,7 @@ namespace Model
      * are cloned at the same level as the default repository of your notebook
      * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline CreateNotebookInstanceRequest& AddAdditionalCodeRepositories(Aws::String&& value) { m_additionalCodeRepositoriesHasBeenSet = true; m_additionalCodeRepositories.push_back(std::move(value)); return *this; }
 
@@ -951,7 +944,7 @@ namespace Model
      * are cloned at the same level as the default repository of your notebook
      * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline CreateNotebookInstanceRequest& AddAdditionalCodeRepositories(const char* value) { m_additionalCodeRepositoriesHasBeenSet = true; m_additionalCodeRepositories.push_back(value); return *this; }
 
@@ -1057,6 +1050,37 @@ namespace Model
      */
     inline CreateNotebookInstanceRequest& WithPlatformIdentifier(const char* value) { SetPlatformIdentifier(value); return *this;}
 
+
+    /**
+     * <p>Information on the IMDS configuration of the notebook instance</p>
+     */
+    inline const InstanceMetadataServiceConfiguration& GetInstanceMetadataServiceConfiguration() const{ return m_instanceMetadataServiceConfiguration; }
+
+    /**
+     * <p>Information on the IMDS configuration of the notebook instance</p>
+     */
+    inline bool InstanceMetadataServiceConfigurationHasBeenSet() const { return m_instanceMetadataServiceConfigurationHasBeenSet; }
+
+    /**
+     * <p>Information on the IMDS configuration of the notebook instance</p>
+     */
+    inline void SetInstanceMetadataServiceConfiguration(const InstanceMetadataServiceConfiguration& value) { m_instanceMetadataServiceConfigurationHasBeenSet = true; m_instanceMetadataServiceConfiguration = value; }
+
+    /**
+     * <p>Information on the IMDS configuration of the notebook instance</p>
+     */
+    inline void SetInstanceMetadataServiceConfiguration(InstanceMetadataServiceConfiguration&& value) { m_instanceMetadataServiceConfigurationHasBeenSet = true; m_instanceMetadataServiceConfiguration = std::move(value); }
+
+    /**
+     * <p>Information on the IMDS configuration of the notebook instance</p>
+     */
+    inline CreateNotebookInstanceRequest& WithInstanceMetadataServiceConfiguration(const InstanceMetadataServiceConfiguration& value) { SetInstanceMetadataServiceConfiguration(value); return *this;}
+
+    /**
+     * <p>Information on the IMDS configuration of the notebook instance</p>
+     */
+    inline CreateNotebookInstanceRequest& WithInstanceMetadataServiceConfiguration(InstanceMetadataServiceConfiguration&& value) { SetInstanceMetadataServiceConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_notebookInstanceName;
@@ -1103,6 +1127,9 @@ namespace Model
 
     Aws::String m_platformIdentifier;
     bool m_platformIdentifierHasBeenSet;
+
+    InstanceMetadataServiceConfiguration m_instanceMetadataServiceConfiguration;
+    bool m_instanceMetadataServiceConfigurationHasBeenSet;
   };
 
 } // namespace Model

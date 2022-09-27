@@ -80,7 +80,8 @@ ModifyDBInstanceRequest::ModifyDBInstanceRequest() :
     m_automationMode(AutomationMode::NOT_SET),
     m_automationModeHasBeenSet(false),
     m_resumeFullAutomationModeMinutes(0),
-    m_resumeFullAutomationModeMinutesHasBeenSet(false)
+    m_resumeFullAutomationModeMinutesHasBeenSet(false),
+    m_networkTypeHasBeenSet(false)
 {
 }
 
@@ -338,6 +339,11 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
   if(m_resumeFullAutomationModeMinutesHasBeenSet)
   {
     ss << "ResumeFullAutomationModeMinutes=" << m_resumeFullAutomationModeMinutes << "&";
+  }
+
+  if(m_networkTypeHasBeenSet)
+  {
+    ss << "NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

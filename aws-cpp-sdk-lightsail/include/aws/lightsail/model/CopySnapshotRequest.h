@@ -389,32 +389,38 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region where the source manual or automatic snapshot is located.</p>
+     * <p>The Amazon Web Services Region where the source manual or automatic snapshot
+     * is located.</p>
      */
     inline const RegionName& GetSourceRegion() const{ return m_sourceRegion; }
 
     /**
-     * <p>The AWS Region where the source manual or automatic snapshot is located.</p>
+     * <p>The Amazon Web Services Region where the source manual or automatic snapshot
+     * is located.</p>
      */
     inline bool SourceRegionHasBeenSet() const { return m_sourceRegionHasBeenSet; }
 
     /**
-     * <p>The AWS Region where the source manual or automatic snapshot is located.</p>
+     * <p>The Amazon Web Services Region where the source manual or automatic snapshot
+     * is located.</p>
      */
     inline void SetSourceRegion(const RegionName& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = value; }
 
     /**
-     * <p>The AWS Region where the source manual or automatic snapshot is located.</p>
+     * <p>The Amazon Web Services Region where the source manual or automatic snapshot
+     * is located.</p>
      */
     inline void SetSourceRegion(RegionName&& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = std::move(value); }
 
     /**
-     * <p>The AWS Region where the source manual or automatic snapshot is located.</p>
+     * <p>The Amazon Web Services Region where the source manual or automatic snapshot
+     * is located.</p>
      */
     inline CopySnapshotRequest& WithSourceRegion(const RegionName& value) { SetSourceRegion(value); return *this;}
 
     /**
-     * <p>The AWS Region where the source manual or automatic snapshot is located.</p>
+     * <p>The Amazon Web Services Region where the source manual or automatic snapshot
+     * is located.</p>
      */
     inline CopySnapshotRequest& WithSourceRegion(RegionName&& value) { SetSourceRegion(std::move(value)); return *this;}
 

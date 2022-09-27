@@ -7,8 +7,8 @@
 #include <aws/panorama/Panorama_EXPORTS.h>
 #include <aws/panorama/PanoramaRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/panorama/model/NetworkPayload.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -32,6 +32,47 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "ProvisionDevice"; }
 
     Aws::String SerializePayload() const override;
+
+
+    /**
+     * <p>A description for the device.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description for the device.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description for the device.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>A description for the device.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>A description for the device.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>A description for the device.</p>
+     */
+    inline ProvisionDeviceRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>A description for the device.</p>
+     */
+    inline ProvisionDeviceRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>A description for the device.</p>
+     */
+    inline ProvisionDeviceRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
@@ -76,44 +117,34 @@ namespace Model
 
 
     /**
-     * <p>A description for the device.</p>
+     * <p>A networking configuration for the device.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const NetworkPayload& GetNetworkingConfiguration() const{ return m_networkingConfiguration; }
 
     /**
-     * <p>A description for the device.</p>
+     * <p>A networking configuration for the device.</p>
      */
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    inline bool NetworkingConfigurationHasBeenSet() const { return m_networkingConfigurationHasBeenSet; }
 
     /**
-     * <p>A description for the device.</p>
+     * <p>A networking configuration for the device.</p>
      */
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetNetworkingConfiguration(const NetworkPayload& value) { m_networkingConfigurationHasBeenSet = true; m_networkingConfiguration = value; }
 
     /**
-     * <p>A description for the device.</p>
+     * <p>A networking configuration for the device.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+    inline void SetNetworkingConfiguration(NetworkPayload&& value) { m_networkingConfigurationHasBeenSet = true; m_networkingConfiguration = std::move(value); }
 
     /**
-     * <p>A description for the device.</p>
+     * <p>A networking configuration for the device.</p>
      */
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+    inline ProvisionDeviceRequest& WithNetworkingConfiguration(const NetworkPayload& value) { SetNetworkingConfiguration(value); return *this;}
 
     /**
-     * <p>A description for the device.</p>
+     * <p>A networking configuration for the device.</p>
      */
-    inline ProvisionDeviceRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A description for the device.</p>
-     */
-    inline ProvisionDeviceRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A description for the device.</p>
-     */
-    inline ProvisionDeviceRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline ProvisionDeviceRequest& WithNetworkingConfiguration(NetworkPayload&& value) { SetNetworkingConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -181,50 +212,19 @@ namespace Model
      */
     inline ProvisionDeviceRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
-
-    /**
-     * <p>A networking configuration for the device.</p>
-     */
-    inline const NetworkPayload& GetNetworkingConfiguration() const{ return m_networkingConfiguration; }
-
-    /**
-     * <p>A networking configuration for the device.</p>
-     */
-    inline bool NetworkingConfigurationHasBeenSet() const { return m_networkingConfigurationHasBeenSet; }
-
-    /**
-     * <p>A networking configuration for the device.</p>
-     */
-    inline void SetNetworkingConfiguration(const NetworkPayload& value) { m_networkingConfigurationHasBeenSet = true; m_networkingConfiguration = value; }
-
-    /**
-     * <p>A networking configuration for the device.</p>
-     */
-    inline void SetNetworkingConfiguration(NetworkPayload&& value) { m_networkingConfigurationHasBeenSet = true; m_networkingConfiguration = std::move(value); }
-
-    /**
-     * <p>A networking configuration for the device.</p>
-     */
-    inline ProvisionDeviceRequest& WithNetworkingConfiguration(const NetworkPayload& value) { SetNetworkingConfiguration(value); return *this;}
-
-    /**
-     * <p>A networking configuration for the device.</p>
-     */
-    inline ProvisionDeviceRequest& WithNetworkingConfiguration(NetworkPayload&& value) { SetNetworkingConfiguration(std::move(value)); return *this;}
-
   private:
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
 
-    Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    Aws::String m_name;
+    bool m_nameHasBeenSet;
 
     NetworkPayload m_networkingConfiguration;
     bool m_networkingConfigurationHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

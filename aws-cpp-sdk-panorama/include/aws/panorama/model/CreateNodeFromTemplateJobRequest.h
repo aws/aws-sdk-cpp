@@ -6,10 +6,10 @@
 #pragma once
 #include <aws/panorama/Panorama_EXPORTS.h>
 #include <aws/panorama/PanoramaRequest.h>
-#include <aws/panorama/model/TemplateType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/panorama/model/TemplateType.h>
 #include <aws/panorama/model/JobResourceTags.h>
 #include <utility>
 
@@ -37,34 +37,126 @@ namespace Model
 
 
     /**
-     * <p>The type of node.</p>
+     * <p>Tags for the job.</p>
      */
-    inline const TemplateType& GetTemplateType() const{ return m_templateType; }
+    inline const Aws::Vector<JobResourceTags>& GetJobTags() const{ return m_jobTags; }
 
     /**
-     * <p>The type of node.</p>
+     * <p>Tags for the job.</p>
      */
-    inline bool TemplateTypeHasBeenSet() const { return m_templateTypeHasBeenSet; }
+    inline bool JobTagsHasBeenSet() const { return m_jobTagsHasBeenSet; }
 
     /**
-     * <p>The type of node.</p>
+     * <p>Tags for the job.</p>
      */
-    inline void SetTemplateType(const TemplateType& value) { m_templateTypeHasBeenSet = true; m_templateType = value; }
+    inline void SetJobTags(const Aws::Vector<JobResourceTags>& value) { m_jobTagsHasBeenSet = true; m_jobTags = value; }
 
     /**
-     * <p>The type of node.</p>
+     * <p>Tags for the job.</p>
      */
-    inline void SetTemplateType(TemplateType&& value) { m_templateTypeHasBeenSet = true; m_templateType = std::move(value); }
+    inline void SetJobTags(Aws::Vector<JobResourceTags>&& value) { m_jobTagsHasBeenSet = true; m_jobTags = std::move(value); }
 
     /**
-     * <p>The type of node.</p>
+     * <p>Tags for the job.</p>
      */
-    inline CreateNodeFromTemplateJobRequest& WithTemplateType(const TemplateType& value) { SetTemplateType(value); return *this;}
+    inline CreateNodeFromTemplateJobRequest& WithJobTags(const Aws::Vector<JobResourceTags>& value) { SetJobTags(value); return *this;}
 
     /**
-     * <p>The type of node.</p>
+     * <p>Tags for the job.</p>
      */
-    inline CreateNodeFromTemplateJobRequest& WithTemplateType(TemplateType&& value) { SetTemplateType(std::move(value)); return *this;}
+    inline CreateNodeFromTemplateJobRequest& WithJobTags(Aws::Vector<JobResourceTags>&& value) { SetJobTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Tags for the job.</p>
+     */
+    inline CreateNodeFromTemplateJobRequest& AddJobTags(const JobResourceTags& value) { m_jobTagsHasBeenSet = true; m_jobTags.push_back(value); return *this; }
+
+    /**
+     * <p>Tags for the job.</p>
+     */
+    inline CreateNodeFromTemplateJobRequest& AddJobTags(JobResourceTags&& value) { m_jobTagsHasBeenSet = true; m_jobTags.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A description for the node.</p>
+     */
+    inline const Aws::String& GetNodeDescription() const{ return m_nodeDescription; }
+
+    /**
+     * <p>A description for the node.</p>
+     */
+    inline bool NodeDescriptionHasBeenSet() const { return m_nodeDescriptionHasBeenSet; }
+
+    /**
+     * <p>A description for the node.</p>
+     */
+    inline void SetNodeDescription(const Aws::String& value) { m_nodeDescriptionHasBeenSet = true; m_nodeDescription = value; }
+
+    /**
+     * <p>A description for the node.</p>
+     */
+    inline void SetNodeDescription(Aws::String&& value) { m_nodeDescriptionHasBeenSet = true; m_nodeDescription = std::move(value); }
+
+    /**
+     * <p>A description for the node.</p>
+     */
+    inline void SetNodeDescription(const char* value) { m_nodeDescriptionHasBeenSet = true; m_nodeDescription.assign(value); }
+
+    /**
+     * <p>A description for the node.</p>
+     */
+    inline CreateNodeFromTemplateJobRequest& WithNodeDescription(const Aws::String& value) { SetNodeDescription(value); return *this;}
+
+    /**
+     * <p>A description for the node.</p>
+     */
+    inline CreateNodeFromTemplateJobRequest& WithNodeDescription(Aws::String&& value) { SetNodeDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>A description for the node.</p>
+     */
+    inline CreateNodeFromTemplateJobRequest& WithNodeDescription(const char* value) { SetNodeDescription(value); return *this;}
+
+
+    /**
+     * <p>A name for the node.</p>
+     */
+    inline const Aws::String& GetNodeName() const{ return m_nodeName; }
+
+    /**
+     * <p>A name for the node.</p>
+     */
+    inline bool NodeNameHasBeenSet() const { return m_nodeNameHasBeenSet; }
+
+    /**
+     * <p>A name for the node.</p>
+     */
+    inline void SetNodeName(const Aws::String& value) { m_nodeNameHasBeenSet = true; m_nodeName = value; }
+
+    /**
+     * <p>A name for the node.</p>
+     */
+    inline void SetNodeName(Aws::String&& value) { m_nodeNameHasBeenSet = true; m_nodeName = std::move(value); }
+
+    /**
+     * <p>A name for the node.</p>
+     */
+    inline void SetNodeName(const char* value) { m_nodeNameHasBeenSet = true; m_nodeName.assign(value); }
+
+    /**
+     * <p>A name for the node.</p>
+     */
+    inline CreateNodeFromTemplateJobRequest& WithNodeName(const Aws::String& value) { SetNodeName(value); return *this;}
+
+    /**
+     * <p>A name for the node.</p>
+     */
+    inline CreateNodeFromTemplateJobRequest& WithNodeName(Aws::String&& value) { SetNodeName(std::move(value)); return *this;}
+
+    /**
+     * <p>A name for the node.</p>
+     */
+    inline CreateNodeFromTemplateJobRequest& WithNodeName(const char* value) { SetNodeName(value); return *this;}
 
 
     /**
@@ -150,88 +242,6 @@ namespace Model
 
 
     /**
-     * <p>A name for the node.</p>
-     */
-    inline const Aws::String& GetNodeName() const{ return m_nodeName; }
-
-    /**
-     * <p>A name for the node.</p>
-     */
-    inline bool NodeNameHasBeenSet() const { return m_nodeNameHasBeenSet; }
-
-    /**
-     * <p>A name for the node.</p>
-     */
-    inline void SetNodeName(const Aws::String& value) { m_nodeNameHasBeenSet = true; m_nodeName = value; }
-
-    /**
-     * <p>A name for the node.</p>
-     */
-    inline void SetNodeName(Aws::String&& value) { m_nodeNameHasBeenSet = true; m_nodeName = std::move(value); }
-
-    /**
-     * <p>A name for the node.</p>
-     */
-    inline void SetNodeName(const char* value) { m_nodeNameHasBeenSet = true; m_nodeName.assign(value); }
-
-    /**
-     * <p>A name for the node.</p>
-     */
-    inline CreateNodeFromTemplateJobRequest& WithNodeName(const Aws::String& value) { SetNodeName(value); return *this;}
-
-    /**
-     * <p>A name for the node.</p>
-     */
-    inline CreateNodeFromTemplateJobRequest& WithNodeName(Aws::String&& value) { SetNodeName(std::move(value)); return *this;}
-
-    /**
-     * <p>A name for the node.</p>
-     */
-    inline CreateNodeFromTemplateJobRequest& WithNodeName(const char* value) { SetNodeName(value); return *this;}
-
-
-    /**
-     * <p>A description for the node.</p>
-     */
-    inline const Aws::String& GetNodeDescription() const{ return m_nodeDescription; }
-
-    /**
-     * <p>A description for the node.</p>
-     */
-    inline bool NodeDescriptionHasBeenSet() const { return m_nodeDescriptionHasBeenSet; }
-
-    /**
-     * <p>A description for the node.</p>
-     */
-    inline void SetNodeDescription(const Aws::String& value) { m_nodeDescriptionHasBeenSet = true; m_nodeDescription = value; }
-
-    /**
-     * <p>A description for the node.</p>
-     */
-    inline void SetNodeDescription(Aws::String&& value) { m_nodeDescriptionHasBeenSet = true; m_nodeDescription = std::move(value); }
-
-    /**
-     * <p>A description for the node.</p>
-     */
-    inline void SetNodeDescription(const char* value) { m_nodeDescriptionHasBeenSet = true; m_nodeDescription.assign(value); }
-
-    /**
-     * <p>A description for the node.</p>
-     */
-    inline CreateNodeFromTemplateJobRequest& WithNodeDescription(const Aws::String& value) { SetNodeDescription(value); return *this;}
-
-    /**
-     * <p>A description for the node.</p>
-     */
-    inline CreateNodeFromTemplateJobRequest& WithNodeDescription(Aws::String&& value) { SetNodeDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A description for the node.</p>
-     */
-    inline CreateNodeFromTemplateJobRequest& WithNodeDescription(const char* value) { SetNodeDescription(value); return *this;}
-
-
-    /**
      * <p>Template parameters for the node.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTemplateParameters() const{ return m_templateParameters; }
@@ -298,49 +308,45 @@ namespace Model
 
 
     /**
-     * <p>Tags for the job.</p>
+     * <p>The type of node.</p>
      */
-    inline const Aws::Vector<JobResourceTags>& GetJobTags() const{ return m_jobTags; }
+    inline const TemplateType& GetTemplateType() const{ return m_templateType; }
 
     /**
-     * <p>Tags for the job.</p>
+     * <p>The type of node.</p>
      */
-    inline bool JobTagsHasBeenSet() const { return m_jobTagsHasBeenSet; }
+    inline bool TemplateTypeHasBeenSet() const { return m_templateTypeHasBeenSet; }
 
     /**
-     * <p>Tags for the job.</p>
+     * <p>The type of node.</p>
      */
-    inline void SetJobTags(const Aws::Vector<JobResourceTags>& value) { m_jobTagsHasBeenSet = true; m_jobTags = value; }
+    inline void SetTemplateType(const TemplateType& value) { m_templateTypeHasBeenSet = true; m_templateType = value; }
 
     /**
-     * <p>Tags for the job.</p>
+     * <p>The type of node.</p>
      */
-    inline void SetJobTags(Aws::Vector<JobResourceTags>&& value) { m_jobTagsHasBeenSet = true; m_jobTags = std::move(value); }
+    inline void SetTemplateType(TemplateType&& value) { m_templateTypeHasBeenSet = true; m_templateType = std::move(value); }
 
     /**
-     * <p>Tags for the job.</p>
+     * <p>The type of node.</p>
      */
-    inline CreateNodeFromTemplateJobRequest& WithJobTags(const Aws::Vector<JobResourceTags>& value) { SetJobTags(value); return *this;}
+    inline CreateNodeFromTemplateJobRequest& WithTemplateType(const TemplateType& value) { SetTemplateType(value); return *this;}
 
     /**
-     * <p>Tags for the job.</p>
+     * <p>The type of node.</p>
      */
-    inline CreateNodeFromTemplateJobRequest& WithJobTags(Aws::Vector<JobResourceTags>&& value) { SetJobTags(std::move(value)); return *this;}
-
-    /**
-     * <p>Tags for the job.</p>
-     */
-    inline CreateNodeFromTemplateJobRequest& AddJobTags(const JobResourceTags& value) { m_jobTagsHasBeenSet = true; m_jobTags.push_back(value); return *this; }
-
-    /**
-     * <p>Tags for the job.</p>
-     */
-    inline CreateNodeFromTemplateJobRequest& AddJobTags(JobResourceTags&& value) { m_jobTagsHasBeenSet = true; m_jobTags.push_back(std::move(value)); return *this; }
+    inline CreateNodeFromTemplateJobRequest& WithTemplateType(TemplateType&& value) { SetTemplateType(std::move(value)); return *this;}
 
   private:
 
-    TemplateType m_templateType;
-    bool m_templateTypeHasBeenSet;
+    Aws::Vector<JobResourceTags> m_jobTags;
+    bool m_jobTagsHasBeenSet;
+
+    Aws::String m_nodeDescription;
+    bool m_nodeDescriptionHasBeenSet;
+
+    Aws::String m_nodeName;
+    bool m_nodeNameHasBeenSet;
 
     Aws::String m_outputPackageName;
     bool m_outputPackageNameHasBeenSet;
@@ -348,17 +354,11 @@ namespace Model
     Aws::String m_outputPackageVersion;
     bool m_outputPackageVersionHasBeenSet;
 
-    Aws::String m_nodeName;
-    bool m_nodeNameHasBeenSet;
-
-    Aws::String m_nodeDescription;
-    bool m_nodeDescriptionHasBeenSet;
-
     Aws::Map<Aws::String, Aws::String> m_templateParameters;
     bool m_templateParametersHasBeenSet;
 
-    Aws::Vector<JobResourceTags> m_jobTags;
-    bool m_jobTagsHasBeenSet;
+    TemplateType m_templateType;
+    bool m_templateTypeHasBeenSet;
   };
 
 } // namespace Model

@@ -25,6 +25,7 @@
 #include <aws/backup-gateway/model/DeleteGatewayRequest.h>
 #include <aws/backup-gateway/model/DeleteHypervisorRequest.h>
 #include <aws/backup-gateway/model/DisassociateGatewayFromServerRequest.h>
+#include <aws/backup-gateway/model/GetGatewayRequest.h>
 #include <aws/backup-gateway/model/ImportHypervisorConfigurationRequest.h>
 #include <aws/backup-gateway/model/ListGatewaysRequest.h>
 #include <aws/backup-gateway/model/ListHypervisorsRequest.h>
@@ -35,6 +36,7 @@
 #include <aws/backup-gateway/model/TestHypervisorConfigurationRequest.h>
 #include <aws/backup-gateway/model/UntagResourceRequest.h>
 #include <aws/backup-gateway/model/UpdateGatewayInformationRequest.h>
+#include <aws/backup-gateway/model/UpdateGatewaySoftwareNowRequest.h>
 #include <aws/backup-gateway/model/UpdateHypervisorRequest.h>
 
 using namespace Aws;
@@ -228,6 +230,30 @@ void BackupGatewayClient::DisassociateGatewayFromServerAsync(const DisassociateG
 void BackupGatewayClient::DisassociateGatewayFromServerAsyncHelper(const DisassociateGatewayFromServerRequest& request, const DisassociateGatewayFromServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DisassociateGatewayFromServer(request), context);
+}
+
+GetGatewayOutcome BackupGatewayClient::GetGateway(const GetGatewayRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetGatewayOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetGatewayOutcomeCallable BackupGatewayClient::GetGatewayCallable(const GetGatewayRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetGatewayOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetGateway(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupGatewayClient::GetGatewayAsync(const GetGatewayRequest& request, const GetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetGatewayAsyncHelper( request, handler, context ); } );
+}
+
+void BackupGatewayClient::GetGatewayAsyncHelper(const GetGatewayRequest& request, const GetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetGateway(request), context);
 }
 
 ImportHypervisorConfigurationOutcome BackupGatewayClient::ImportHypervisorConfiguration(const ImportHypervisorConfigurationRequest& request) const
@@ -468,6 +494,30 @@ void BackupGatewayClient::UpdateGatewayInformationAsync(const UpdateGatewayInfor
 void BackupGatewayClient::UpdateGatewayInformationAsyncHelper(const UpdateGatewayInformationRequest& request, const UpdateGatewayInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateGatewayInformation(request), context);
+}
+
+UpdateGatewaySoftwareNowOutcome BackupGatewayClient::UpdateGatewaySoftwareNow(const UpdateGatewaySoftwareNowRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateGatewaySoftwareNowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateGatewaySoftwareNowOutcomeCallable BackupGatewayClient::UpdateGatewaySoftwareNowCallable(const UpdateGatewaySoftwareNowRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateGatewaySoftwareNowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateGatewaySoftwareNow(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupGatewayClient::UpdateGatewaySoftwareNowAsync(const UpdateGatewaySoftwareNowRequest& request, const UpdateGatewaySoftwareNowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateGatewaySoftwareNowAsyncHelper( request, handler, context ); } );
+}
+
+void BackupGatewayClient::UpdateGatewaySoftwareNowAsyncHelper(const UpdateGatewaySoftwareNowRequest& request, const UpdateGatewaySoftwareNowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateGatewaySoftwareNow(request), context);
 }
 
 UpdateHypervisorOutcome BackupGatewayClient::UpdateHypervisor(const UpdateHypervisorRequest& request) const

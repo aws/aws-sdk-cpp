@@ -19,12 +19,16 @@ namespace Model
 {
 
 ProximityEventConfiguration::ProximityEventConfiguration() : 
-    m_sidewalkHasBeenSet(false)
+    m_sidewalkHasBeenSet(false),
+    m_wirelessDeviceIdEventTopic(EventNotificationTopicStatus::NOT_SET),
+    m_wirelessDeviceIdEventTopicHasBeenSet(false)
 {
 }
 
 ProximityEventConfiguration::ProximityEventConfiguration(JsonView jsonValue) : 
-    m_sidewalkHasBeenSet(false)
+    m_sidewalkHasBeenSet(false),
+    m_wirelessDeviceIdEventTopic(EventNotificationTopicStatus::NOT_SET),
+    m_wirelessDeviceIdEventTopicHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +42,13 @@ ProximityEventConfiguration& ProximityEventConfiguration::operator =(JsonView js
     m_sidewalkHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("WirelessDeviceIdEventTopic"))
+  {
+    m_wirelessDeviceIdEventTopic = EventNotificationTopicStatusMapper::GetEventNotificationTopicStatusForName(jsonValue.GetString("WirelessDeviceIdEventTopic"));
+
+    m_wirelessDeviceIdEventTopicHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -49,6 +60,11 @@ JsonValue ProximityEventConfiguration::Jsonize() const
   {
    payload.WithObject("Sidewalk", m_sidewalk.Jsonize());
 
+  }
+
+  if(m_wirelessDeviceIdEventTopicHasBeenSet)
+  {
+   payload.WithString("WirelessDeviceIdEventTopic", EventNotificationTopicStatusMapper::GetNameForEventNotificationTopicStatus(m_wirelessDeviceIdEventTopic));
   }
 
   return payload;

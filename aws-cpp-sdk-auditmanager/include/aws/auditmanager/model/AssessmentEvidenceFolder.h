@@ -464,28 +464,28 @@ namespace Model
     /**
      * <p> The number of evidence that falls under the configuration data category.
      * This evidence is collected from configuration snapshots of other Amazon Web
-     * Services services such as Amazon EC2, Amazon S3, or IAM. </p>
+     * Services such as Amazon EC2, Amazon S3, or IAM. </p>
      */
     inline int GetEvidenceByTypeConfigurationDataCount() const{ return m_evidenceByTypeConfigurationDataCount; }
 
     /**
      * <p> The number of evidence that falls under the configuration data category.
      * This evidence is collected from configuration snapshots of other Amazon Web
-     * Services services such as Amazon EC2, Amazon S3, or IAM. </p>
+     * Services such as Amazon EC2, Amazon S3, or IAM. </p>
      */
     inline bool EvidenceByTypeConfigurationDataCountHasBeenSet() const { return m_evidenceByTypeConfigurationDataCountHasBeenSet; }
 
     /**
      * <p> The number of evidence that falls under the configuration data category.
      * This evidence is collected from configuration snapshots of other Amazon Web
-     * Services services such as Amazon EC2, Amazon S3, or IAM. </p>
+     * Services such as Amazon EC2, Amazon S3, or IAM. </p>
      */
     inline void SetEvidenceByTypeConfigurationDataCount(int value) { m_evidenceByTypeConfigurationDataCountHasBeenSet = true; m_evidenceByTypeConfigurationDataCount = value; }
 
     /**
      * <p> The number of evidence that falls under the configuration data category.
      * This evidence is collected from configuration snapshots of other Amazon Web
-     * Services services such as Amazon EC2, Amazon S3, or IAM. </p>
+     * Services such as Amazon EC2, Amazon S3, or IAM. </p>
      */
     inline AssessmentEvidenceFolder& WithEvidenceByTypeConfigurationDataCount(int value) { SetEvidenceByTypeConfigurationDataCount(value); return *this;}
 

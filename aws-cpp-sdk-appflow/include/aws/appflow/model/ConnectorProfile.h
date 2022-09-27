@@ -169,6 +169,47 @@ namespace Model
 
 
     /**
+     * <p>The label for the connector profile being created.</p>
+     */
+    inline const Aws::String& GetConnectorLabel() const{ return m_connectorLabel; }
+
+    /**
+     * <p>The label for the connector profile being created.</p>
+     */
+    inline bool ConnectorLabelHasBeenSet() const { return m_connectorLabelHasBeenSet; }
+
+    /**
+     * <p>The label for the connector profile being created.</p>
+     */
+    inline void SetConnectorLabel(const Aws::String& value) { m_connectorLabelHasBeenSet = true; m_connectorLabel = value; }
+
+    /**
+     * <p>The label for the connector profile being created.</p>
+     */
+    inline void SetConnectorLabel(Aws::String&& value) { m_connectorLabelHasBeenSet = true; m_connectorLabel = std::move(value); }
+
+    /**
+     * <p>The label for the connector profile being created.</p>
+     */
+    inline void SetConnectorLabel(const char* value) { m_connectorLabelHasBeenSet = true; m_connectorLabel.assign(value); }
+
+    /**
+     * <p>The label for the connector profile being created.</p>
+     */
+    inline ConnectorProfile& WithConnectorLabel(const Aws::String& value) { SetConnectorLabel(value); return *this;}
+
+    /**
+     * <p>The label for the connector profile being created.</p>
+     */
+    inline ConnectorProfile& WithConnectorLabel(Aws::String&& value) { SetConnectorLabel(std::move(value)); return *this;}
+
+    /**
+     * <p>The label for the connector profile being created.</p>
+     */
+    inline ConnectorProfile& WithConnectorLabel(const char* value) { SetConnectorLabel(value); return *this;}
+
+
+    /**
      * <p> Indicates the connection mode and if it is public or private. </p>
      */
     inline const ConnectionMode& GetConnectionMode() const{ return m_connectionMode; }
@@ -373,6 +414,9 @@ namespace Model
 
     ConnectorType m_connectorType;
     bool m_connectorTypeHasBeenSet;
+
+    Aws::String m_connectorLabel;
+    bool m_connectorLabelHasBeenSet;
 
     ConnectionMode m_connectionMode;
     bool m_connectionModeHasBeenSet;

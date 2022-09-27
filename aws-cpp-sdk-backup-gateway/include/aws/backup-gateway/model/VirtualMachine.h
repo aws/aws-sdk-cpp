@@ -240,42 +240,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the virtual machine.</p>
+     * <p>The Amazon Resource Name (ARN) of the virtual machine. For example,
+     * <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the virtual machine.</p>
+     * <p>The Amazon Resource Name (ARN) of the virtual machine. For example,
+     * <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.</p>
      */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the virtual machine.</p>
+     * <p>The Amazon Resource Name (ARN) of the virtual machine. For example,
+     * <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.</p>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the virtual machine.</p>
+     * <p>The Amazon Resource Name (ARN) of the virtual machine. For example,
+     * <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.</p>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the virtual machine.</p>
+     * <p>The Amazon Resource Name (ARN) of the virtual machine. For example,
+     * <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.</p>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the virtual machine.</p>
+     * <p>The Amazon Resource Name (ARN) of the virtual machine. For example,
+     * <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.</p>
      */
     inline VirtualMachine& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the virtual machine.</p>
+     * <p>The Amazon Resource Name (ARN) of the virtual machine. For example,
+     * <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.</p>
      */
     inline VirtualMachine& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the virtual machine.</p>
+     * <p>The Amazon Resource Name (ARN) of the virtual machine. For example,
+     * <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.</p>
      */
     inline VirtualMachine& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 

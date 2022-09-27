@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/panorama/Panorama_EXPORTS.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/panorama/model/DeviceType.h>
 #include <aws/panorama/model/UpdateProgress.h>
-#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -36,75 +36,29 @@ namespace Model
 
 
     /**
-     * <p>The job's ID.</p>
+     * <p>When the job was created.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
+    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
 
     /**
-     * <p>The job's ID.</p>
+     * <p>When the job was created.</p>
      */
-    inline void SetJobId(const Aws::String& value) { m_jobId = value; }
+    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTime = value; }
 
     /**
-     * <p>The job's ID.</p>
+     * <p>When the job was created.</p>
      */
-    inline void SetJobId(Aws::String&& value) { m_jobId = std::move(value); }
+    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTime = std::move(value); }
 
     /**
-     * <p>The job's ID.</p>
+     * <p>When the job was created.</p>
      */
-    inline void SetJobId(const char* value) { m_jobId.assign(value); }
+    inline DescribeDeviceJobResult& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
 
     /**
-     * <p>The job's ID.</p>
+     * <p>When the job was created.</p>
      */
-    inline DescribeDeviceJobResult& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-
-    /**
-     * <p>The job's ID.</p>
-     */
-    inline DescribeDeviceJobResult& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-
-    /**
-     * <p>The job's ID.</p>
-     */
-    inline DescribeDeviceJobResult& WithJobId(const char* value) { SetJobId(value); return *this;}
-
-
-    /**
-     * <p>The device's ID.</p>
-     */
-    inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
-
-    /**
-     * <p>The device's ID.</p>
-     */
-    inline void SetDeviceId(const Aws::String& value) { m_deviceId = value; }
-
-    /**
-     * <p>The device's ID.</p>
-     */
-    inline void SetDeviceId(Aws::String&& value) { m_deviceId = std::move(value); }
-
-    /**
-     * <p>The device's ID.</p>
-     */
-    inline void SetDeviceId(const char* value) { m_deviceId.assign(value); }
-
-    /**
-     * <p>The device's ID.</p>
-     */
-    inline DescribeDeviceJobResult& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
-
-    /**
-     * <p>The device's ID.</p>
-     */
-    inline DescribeDeviceJobResult& WithDeviceId(Aws::String&& value) { SetDeviceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The device's ID.</p>
-     */
-    inline DescribeDeviceJobResult& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
+    inline DescribeDeviceJobResult& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 
 
     /**
@@ -141,6 +95,42 @@ namespace Model
      * <p>The device's ARN.</p>
      */
     inline DescribeDeviceJobResult& WithDeviceArn(const char* value) { SetDeviceArn(value); return *this;}
+
+
+    /**
+     * <p>The device's ID.</p>
+     */
+    inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
+
+    /**
+     * <p>The device's ID.</p>
+     */
+    inline void SetDeviceId(const Aws::String& value) { m_deviceId = value; }
+
+    /**
+     * <p>The device's ID.</p>
+     */
+    inline void SetDeviceId(Aws::String&& value) { m_deviceId = std::move(value); }
+
+    /**
+     * <p>The device's ID.</p>
+     */
+    inline void SetDeviceId(const char* value) { m_deviceId.assign(value); }
+
+    /**
+     * <p>The device's ID.</p>
+     */
+    inline DescribeDeviceJobResult& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
+
+    /**
+     * <p>The device's ID.</p>
+     */
+    inline DescribeDeviceJobResult& WithDeviceId(Aws::String&& value) { SetDeviceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The device's ID.</p>
+     */
+    inline DescribeDeviceJobResult& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
 
 
     /**
@@ -242,6 +232,42 @@ namespace Model
 
 
     /**
+     * <p>The job's ID.</p>
+     */
+    inline const Aws::String& GetJobId() const{ return m_jobId; }
+
+    /**
+     * <p>The job's ID.</p>
+     */
+    inline void SetJobId(const Aws::String& value) { m_jobId = value; }
+
+    /**
+     * <p>The job's ID.</p>
+     */
+    inline void SetJobId(Aws::String&& value) { m_jobId = std::move(value); }
+
+    /**
+     * <p>The job's ID.</p>
+     */
+    inline void SetJobId(const char* value) { m_jobId.assign(value); }
+
+    /**
+     * <p>The job's ID.</p>
+     */
+    inline DescribeDeviceJobResult& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
+
+    /**
+     * <p>The job's ID.</p>
+     */
+    inline DescribeDeviceJobResult& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
+
+    /**
+     * <p>The job's ID.</p>
+     */
+    inline DescribeDeviceJobResult& WithJobId(const char* value) { SetJobId(value); return *this;}
+
+
+    /**
      * <p>The job's status.</p>
      */
     inline const UpdateProgress& GetStatus() const{ return m_status; }
@@ -266,39 +292,13 @@ namespace Model
      */
     inline DescribeDeviceJobResult& WithStatus(UpdateProgress&& value) { SetStatus(std::move(value)); return *this;}
 
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTime = value; }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTime = std::move(value); }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline DescribeDeviceJobResult& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline DescribeDeviceJobResult& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
-
   private:
 
-    Aws::String m_jobId;
-
-    Aws::String m_deviceId;
+    Aws::Utils::DateTime m_createdTime;
 
     Aws::String m_deviceArn;
+
+    Aws::String m_deviceId;
 
     Aws::String m_deviceName;
 
@@ -306,9 +306,9 @@ namespace Model
 
     Aws::String m_imageVersion;
 
-    UpdateProgress m_status;
+    Aws::String m_jobId;
 
-    Aws::Utils::DateTime m_createdTime;
+    UpdateProgress m_status;
   };
 
 } // namespace Model

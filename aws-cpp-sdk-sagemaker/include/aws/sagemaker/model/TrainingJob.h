@@ -391,9 +391,9 @@ namespace Model
     /**
      * <p> Provides detailed information about the state of the training job. For
      * detailed information about the secondary status of the training job, see
-     * <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.</p> <p>Amazon
-     * SageMaker provides primary statuses and secondary statuses that apply to each of
-     * them:</p> <dl> <dt>InProgress</dt> <dd> <ul> <li> <p> <code>Starting</code> -
+     * <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.</p>
+     * <p>SageMaker provides primary statuses and secondary statuses that apply to each
+     * of them:</p> <dl> <dt>InProgress</dt> <dd> <ul> <li> <p> <code>Starting</code> -
      * Starting the training job.</p> </li> <li> <p> <code>Downloading</code> - An
      * optional stage for algorithms that support <code>File</code> training input
      * mode. It indicates that data is being downloaded to the ML storage volumes.</p>
@@ -420,9 +420,9 @@ namespace Model
     /**
      * <p> Provides detailed information about the state of the training job. For
      * detailed information about the secondary status of the training job, see
-     * <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.</p> <p>Amazon
-     * SageMaker provides primary statuses and secondary statuses that apply to each of
-     * them:</p> <dl> <dt>InProgress</dt> <dd> <ul> <li> <p> <code>Starting</code> -
+     * <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.</p>
+     * <p>SageMaker provides primary statuses and secondary statuses that apply to each
+     * of them:</p> <dl> <dt>InProgress</dt> <dd> <ul> <li> <p> <code>Starting</code> -
      * Starting the training job.</p> </li> <li> <p> <code>Downloading</code> - An
      * optional stage for algorithms that support <code>File</code> training input
      * mode. It indicates that data is being downloaded to the ML storage volumes.</p>
@@ -449,9 +449,9 @@ namespace Model
     /**
      * <p> Provides detailed information about the state of the training job. For
      * detailed information about the secondary status of the training job, see
-     * <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.</p> <p>Amazon
-     * SageMaker provides primary statuses and secondary statuses that apply to each of
-     * them:</p> <dl> <dt>InProgress</dt> <dd> <ul> <li> <p> <code>Starting</code> -
+     * <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.</p>
+     * <p>SageMaker provides primary statuses and secondary statuses that apply to each
+     * of them:</p> <dl> <dt>InProgress</dt> <dd> <ul> <li> <p> <code>Starting</code> -
      * Starting the training job.</p> </li> <li> <p> <code>Downloading</code> - An
      * optional stage for algorithms that support <code>File</code> training input
      * mode. It indicates that data is being downloaded to the ML storage volumes.</p>
@@ -478,9 +478,9 @@ namespace Model
     /**
      * <p> Provides detailed information about the state of the training job. For
      * detailed information about the secondary status of the training job, see
-     * <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.</p> <p>Amazon
-     * SageMaker provides primary statuses and secondary statuses that apply to each of
-     * them:</p> <dl> <dt>InProgress</dt> <dd> <ul> <li> <p> <code>Starting</code> -
+     * <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.</p>
+     * <p>SageMaker provides primary statuses and secondary statuses that apply to each
+     * of them:</p> <dl> <dt>InProgress</dt> <dd> <ul> <li> <p> <code>Starting</code> -
      * Starting the training job.</p> </li> <li> <p> <code>Downloading</code> - An
      * optional stage for algorithms that support <code>File</code> training input
      * mode. It indicates that data is being downloaded to the ML storage volumes.</p>
@@ -507,9 +507,9 @@ namespace Model
     /**
      * <p> Provides detailed information about the state of the training job. For
      * detailed information about the secondary status of the training job, see
-     * <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.</p> <p>Amazon
-     * SageMaker provides primary statuses and secondary statuses that apply to each of
-     * them:</p> <dl> <dt>InProgress</dt> <dd> <ul> <li> <p> <code>Starting</code> -
+     * <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.</p>
+     * <p>SageMaker provides primary statuses and secondary statuses that apply to each
+     * of them:</p> <dl> <dt>InProgress</dt> <dd> <ul> <li> <p> <code>Starting</code> -
      * Starting the training job.</p> </li> <li> <p> <code>Downloading</code> - An
      * optional stage for algorithms that support <code>File</code> training input
      * mode. It indicates that data is being downloaded to the ML storage volumes.</p>
@@ -536,9 +536,9 @@ namespace Model
     /**
      * <p> Provides detailed information about the state of the training job. For
      * detailed information about the secondary status of the training job, see
-     * <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.</p> <p>Amazon
-     * SageMaker provides primary statuses and secondary statuses that apply to each of
-     * them:</p> <dl> <dt>InProgress</dt> <dd> <ul> <li> <p> <code>Starting</code> -
+     * <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.</p>
+     * <p>SageMaker provides primary statuses and secondary statuses that apply to each
+     * of them:</p> <dl> <dt>InProgress</dt> <dd> <ul> <li> <p> <code>Starting</code> -
      * Starting the training job.</p> </li> <li> <p> <code>Downloading</code> - An
      * optional stage for algorithms that support <code>File</code> training input
      * mode. It indicates that data is being downloaded to the ML storage volumes.</p>
@@ -807,37 +807,37 @@ namespace Model
 
     /**
      * <p>The S3 path where model artifacts that you configured when creating the job
-     * are stored. Amazon SageMaker creates subfolders for model artifacts.</p>
+     * are stored. SageMaker creates subfolders for model artifacts.</p>
      */
     inline const OutputDataConfig& GetOutputDataConfig() const{ return m_outputDataConfig; }
 
     /**
      * <p>The S3 path where model artifacts that you configured when creating the job
-     * are stored. Amazon SageMaker creates subfolders for model artifacts.</p>
+     * are stored. SageMaker creates subfolders for model artifacts.</p>
      */
     inline bool OutputDataConfigHasBeenSet() const { return m_outputDataConfigHasBeenSet; }
 
     /**
      * <p>The S3 path where model artifacts that you configured when creating the job
-     * are stored. Amazon SageMaker creates subfolders for model artifacts.</p>
+     * are stored. SageMaker creates subfolders for model artifacts.</p>
      */
     inline void SetOutputDataConfig(const OutputDataConfig& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = value; }
 
     /**
      * <p>The S3 path where model artifacts that you configured when creating the job
-     * are stored. Amazon SageMaker creates subfolders for model artifacts.</p>
+     * are stored. SageMaker creates subfolders for model artifacts.</p>
      */
     inline void SetOutputDataConfig(OutputDataConfig&& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = std::move(value); }
 
     /**
      * <p>The S3 path where model artifacts that you configured when creating the job
-     * are stored. Amazon SageMaker creates subfolders for model artifacts.</p>
+     * are stored. SageMaker creates subfolders for model artifacts.</p>
      */
     inline TrainingJob& WithOutputDataConfig(const OutputDataConfig& value) { SetOutputDataConfig(value); return *this;}
 
     /**
      * <p>The S3 path where model artifacts that you configured when creating the job
-     * are stored. Amazon SageMaker creates subfolders for model artifacts.</p>
+     * are stored. SageMaker creates subfolders for model artifacts.</p>
      */
     inline TrainingJob& WithOutputDataConfig(OutputDataConfig&& value) { SetOutputDataConfig(std::move(value)); return *this;}
 
@@ -931,8 +931,8 @@ namespace Model
     /**
      * <p>Specifies a limit to how long a model training job can run. It also specifies
      * how long a managed Spot training job has to complete. When the job reaches the
-     * time limit, Amazon SageMaker ends the training job. Use this API to cap model
-     * training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the
+     * time limit, SageMaker ends the training job. Use this API to cap model training
+     * costs.</p> <p>To stop a job, SageMaker sends the algorithm the
      * <code>SIGTERM</code> signal, which delays job termination for 120 seconds.
      * Algorithms can use this 120-second window to save the model artifacts, so the
      * results of training are not lost. </p>
@@ -942,8 +942,8 @@ namespace Model
     /**
      * <p>Specifies a limit to how long a model training job can run. It also specifies
      * how long a managed Spot training job has to complete. When the job reaches the
-     * time limit, Amazon SageMaker ends the training job. Use this API to cap model
-     * training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the
+     * time limit, SageMaker ends the training job. Use this API to cap model training
+     * costs.</p> <p>To stop a job, SageMaker sends the algorithm the
      * <code>SIGTERM</code> signal, which delays job termination for 120 seconds.
      * Algorithms can use this 120-second window to save the model artifacts, so the
      * results of training are not lost. </p>
@@ -953,8 +953,8 @@ namespace Model
     /**
      * <p>Specifies a limit to how long a model training job can run. It also specifies
      * how long a managed Spot training job has to complete. When the job reaches the
-     * time limit, Amazon SageMaker ends the training job. Use this API to cap model
-     * training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the
+     * time limit, SageMaker ends the training job. Use this API to cap model training
+     * costs.</p> <p>To stop a job, SageMaker sends the algorithm the
      * <code>SIGTERM</code> signal, which delays job termination for 120 seconds.
      * Algorithms can use this 120-second window to save the model artifacts, so the
      * results of training are not lost. </p>
@@ -964,8 +964,8 @@ namespace Model
     /**
      * <p>Specifies a limit to how long a model training job can run. It also specifies
      * how long a managed Spot training job has to complete. When the job reaches the
-     * time limit, Amazon SageMaker ends the training job. Use this API to cap model
-     * training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the
+     * time limit, SageMaker ends the training job. Use this API to cap model training
+     * costs.</p> <p>To stop a job, SageMaker sends the algorithm the
      * <code>SIGTERM</code> signal, which delays job termination for 120 seconds.
      * Algorithms can use this 120-second window to save the model artifacts, so the
      * results of training are not lost. </p>
@@ -975,8 +975,8 @@ namespace Model
     /**
      * <p>Specifies a limit to how long a model training job can run. It also specifies
      * how long a managed Spot training job has to complete. When the job reaches the
-     * time limit, Amazon SageMaker ends the training job. Use this API to cap model
-     * training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the
+     * time limit, SageMaker ends the training job. Use this API to cap model training
+     * costs.</p> <p>To stop a job, SageMaker sends the algorithm the
      * <code>SIGTERM</code> signal, which delays job termination for 120 seconds.
      * Algorithms can use this 120-second window to save the model artifacts, so the
      * results of training are not lost. </p>
@@ -986,8 +986,8 @@ namespace Model
     /**
      * <p>Specifies a limit to how long a model training job can run. It also specifies
      * how long a managed Spot training job has to complete. When the job reaches the
-     * time limit, Amazon SageMaker ends the training job. Use this API to cap model
-     * training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the
+     * time limit, SageMaker ends the training job. Use this API to cap model training
+     * costs.</p> <p>To stop a job, SageMaker sends the algorithm the
      * <code>SIGTERM</code> signal, which delays job termination for 120 seconds.
      * Algorithms can use this 120-second window to save the model artifacts, so the
      * results of training are not lost. </p>
@@ -1085,8 +1085,8 @@ namespace Model
      * <p>Indicates the time when the training job ends on training instances. You are
      * billed for the time interval between the value of <code>TrainingStartTime</code>
      * and this time. For successful jobs and stopped jobs, this is the time after
-     * model artifacts are uploaded. For failed jobs, this is the time when Amazon
-     * SageMaker detects a job failure.</p>
+     * model artifacts are uploaded. For failed jobs, this is the time when SageMaker
+     * detects a job failure.</p>
      */
     inline const Aws::Utils::DateTime& GetTrainingEndTime() const{ return m_trainingEndTime; }
 
@@ -1094,8 +1094,8 @@ namespace Model
      * <p>Indicates the time when the training job ends on training instances. You are
      * billed for the time interval between the value of <code>TrainingStartTime</code>
      * and this time. For successful jobs and stopped jobs, this is the time after
-     * model artifacts are uploaded. For failed jobs, this is the time when Amazon
-     * SageMaker detects a job failure.</p>
+     * model artifacts are uploaded. For failed jobs, this is the time when SageMaker
+     * detects a job failure.</p>
      */
     inline bool TrainingEndTimeHasBeenSet() const { return m_trainingEndTimeHasBeenSet; }
 
@@ -1103,8 +1103,8 @@ namespace Model
      * <p>Indicates the time when the training job ends on training instances. You are
      * billed for the time interval between the value of <code>TrainingStartTime</code>
      * and this time. For successful jobs and stopped jobs, this is the time after
-     * model artifacts are uploaded. For failed jobs, this is the time when Amazon
-     * SageMaker detects a job failure.</p>
+     * model artifacts are uploaded. For failed jobs, this is the time when SageMaker
+     * detects a job failure.</p>
      */
     inline void SetTrainingEndTime(const Aws::Utils::DateTime& value) { m_trainingEndTimeHasBeenSet = true; m_trainingEndTime = value; }
 
@@ -1112,8 +1112,8 @@ namespace Model
      * <p>Indicates the time when the training job ends on training instances. You are
      * billed for the time interval between the value of <code>TrainingStartTime</code>
      * and this time. For successful jobs and stopped jobs, this is the time after
-     * model artifacts are uploaded. For failed jobs, this is the time when Amazon
-     * SageMaker detects a job failure.</p>
+     * model artifacts are uploaded. For failed jobs, this is the time when SageMaker
+     * detects a job failure.</p>
      */
     inline void SetTrainingEndTime(Aws::Utils::DateTime&& value) { m_trainingEndTimeHasBeenSet = true; m_trainingEndTime = std::move(value); }
 
@@ -1121,8 +1121,8 @@ namespace Model
      * <p>Indicates the time when the training job ends on training instances. You are
      * billed for the time interval between the value of <code>TrainingStartTime</code>
      * and this time. For successful jobs and stopped jobs, this is the time after
-     * model artifacts are uploaded. For failed jobs, this is the time when Amazon
-     * SageMaker detects a job failure.</p>
+     * model artifacts are uploaded. For failed jobs, this is the time when SageMaker
+     * detects a job failure.</p>
      */
     inline TrainingJob& WithTrainingEndTime(const Aws::Utils::DateTime& value) { SetTrainingEndTime(value); return *this;}
 
@@ -1130,8 +1130,8 @@ namespace Model
      * <p>Indicates the time when the training job ends on training instances. You are
      * billed for the time interval between the value of <code>TrainingStartTime</code>
      * and this time. For successful jobs and stopped jobs, this is the time after
-     * model artifacts are uploaded. For failed jobs, this is the time when Amazon
-     * SageMaker detects a job failure.</p>
+     * model artifacts are uploaded. For failed jobs, this is the time when SageMaker
+     * detects a job failure.</p>
      */
     inline TrainingJob& WithTrainingEndTime(Aws::Utils::DateTime&& value) { SetTrainingEndTime(std::move(value)); return *this;}
 

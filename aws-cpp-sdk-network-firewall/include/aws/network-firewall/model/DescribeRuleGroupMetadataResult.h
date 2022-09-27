@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/network-firewall/model/RuleGroupType.h>
 #include <aws/network-firewall/model/StatefulRuleOptions.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -260,6 +261,32 @@ namespace Model
     
     inline DescribeRuleGroupMetadataResult& WithStatefulRuleOptions(StatefulRuleOptions&& value) { SetStatefulRuleOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The last time that the rule group was changed.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+
+    /**
+     * <p>The last time that the rule group was changed.</p>
+     */
+    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
+
+    /**
+     * <p>The last time that the rule group was changed.</p>
+     */
+    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
+
+    /**
+     * <p>The last time that the rule group was changed.</p>
+     */
+    inline DescribeRuleGroupMetadataResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
+
+    /**
+     * <p>The last time that the rule group was changed.</p>
+     */
+    inline DescribeRuleGroupMetadataResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_ruleGroupArn;
@@ -273,6 +300,8 @@ namespace Model
     int m_capacity;
 
     StatefulRuleOptions m_statefulRuleOptions;
+
+    Aws::Utils::DateTime m_lastModifiedTime;
   };
 
 } // namespace Model

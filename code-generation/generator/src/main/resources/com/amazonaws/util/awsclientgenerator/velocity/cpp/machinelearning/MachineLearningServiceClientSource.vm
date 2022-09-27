@@ -33,64 +33,10 @@ static const char* ALLOCATION_TAG = "${className}";
 #foreach($operation in $serviceModel.operations)
 ${operation.name}Outcome ${className}::${operation.name}(const ${operation.request.shape.name}& request) const
 {
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientOperationRequestRequiredMemberValidate.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationRequestRequiredMemberValidate.vm")
 #if($operation.name != "Predict")
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientOperationEndpointPrepareCommonBody.vm")
-#if($operation.http.requestUri.contains("?"))
-  Aws::StringStream ss;
-#end
-#set($uriParts = $operation.http.requestUriParts)
-#set($uriVars = $operation.http.requestParameters)
-#set($partIndex = 1)
-#set($uriPartString = "${uriParts.get(0)}")
-#set($queryStart = false)
-#if($uriPartString.contains("?"))
-#set($queryStart = true)
-#set($pathAndQuery = $operation.http.splitUriPartIntoPathAndQuery($uriPartString))
-#if(!$pathAndQuery.get(0).isEmpty())
-  uri.AddPathSegments("${pathAndQuery.get(0)}");
-#end
-  ss.str("${pathAndQuery.get(1)}");
-#elseif(!$uriPartString.equals("/"))
-  uri.AddPathSegments("$uriPartString");
-#end
-#foreach($var in $uriVars)
-#set($varIndex = $partIndex - 1)
-#set($uriVar = $uriVars.get($varIndex).replace('+', ''))
-#set($greedySyntax = $uriVars.get($varIndex).contains("+"))
-#set($partShapeMember = $operation.request.shape.getMemberByLocationName($uriVar))
-#if($partShapeMember.shape.enum)
-#set($parameter = "${partShapeMember.shape.name}Mapper::GetNameFor${partShapeMember.shape.name}(request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVar))}())")
-#else
-#set($parameter = "request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVar))}()")
-#end
-#if($queryStart)
-  ss << $parameter;
-#else
-#if($greedySyntax)
-  uri.AddPathSegments($parameter);
-#else
-  uri.AddPathSegment($parameter);
-#end
-#end
-#if($uriParts.size() > $partIndex)
-#set($uriPartString = "${uriParts.get($partIndex)}")
-#if(!$queryStart && $uriPartString.contains("?"))
-#set($queryStart = true)
-#set($pathAndQuery = $operation.http.splitUriPartIntoPathAndQuery($uriPartString))
-#if(!$pathAndQuery.get(0).isEmpty())
-  uri.AddPathSegments("${pathAndQuery.get(0)}");
-#end
-  ss.str("${pathAndQuery.get(1)}");
-#elseif(!$uriPartString.equals("/"))
-  uri.AddPathSegments("$uriPartString");
-#end
-#end
-#set($partIndex = $partIndex + 1)
-#end
-#if($queryStart)
-  uri.SetQueryString(ss.str());
-#end
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationEndpointPrepareCommonBody.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/UriRequestQueryParams.vm")
   return ${operation.name}Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}));
 #else
   return ${operation.name}Outcome(MakeRequest(request.GetPredictEndpoint(), request, Aws::Http::HttpMethod::HTTP_${operation.http.method}));

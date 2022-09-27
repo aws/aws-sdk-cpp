@@ -27,10 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains a list of available options for a DB instance.</p> <p> This data
-   * type is used as a response element in the
-   * <code>DescribeOrderableDBInstanceOptions</code> action. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Contains a list of available options for a DB instance.</p> <p>This data type
+   * is used as a response element in the
+   * <code>DescribeOrderableDBInstanceOptions</code> action.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/OrderableDBInstanceOption">AWS
    * API Reference</a></p>
    */
@@ -907,8 +907,7 @@ namespace Model
 
 
     /**
-     * <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p> <p>The
-     * Multi-AZ DB clusters feature is in preview and is subject to change.</p> <p>For
+     * <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p> <p>For
      * more information on Multi-AZ DB clusters, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
      * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
@@ -917,8 +916,7 @@ namespace Model
     inline bool GetSupportsClusters() const{ return m_supportsClusters; }
 
     /**
-     * <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p> <p>The
-     * Multi-AZ DB clusters feature is in preview and is subject to change.</p> <p>For
+     * <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p> <p>For
      * more information on Multi-AZ DB clusters, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
      * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
@@ -927,8 +925,7 @@ namespace Model
     inline bool SupportsClustersHasBeenSet() const { return m_supportsClustersHasBeenSet; }
 
     /**
-     * <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p> <p>The
-     * Multi-AZ DB clusters feature is in preview and is subject to change.</p> <p>For
+     * <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p> <p>For
      * more information on Multi-AZ DB clusters, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
      * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
@@ -937,14 +934,113 @@ namespace Model
     inline void SetSupportsClusters(bool value) { m_supportsClustersHasBeenSet = true; m_supportsClusters = value; }
 
     /**
-     * <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p> <p>The
-     * Multi-AZ DB clusters feature is in preview and is subject to change.</p> <p>For
+     * <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p> <p>For
      * more information on Multi-AZ DB clusters, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
      * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
      * RDS User Guide.</i> </p>
      */
     inline OrderableDBInstanceOption& WithSupportsClusters(bool value) { SetSupportsClusters(value); return *this;}
+
+
+    /**
+     * <p>The network types supported by the DB instance (<code>IPV4</code> or
+     * <code>DUAL</code>).</p> <p>A DB instance can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSupportedNetworkTypes() const{ return m_supportedNetworkTypes; }
+
+    /**
+     * <p>The network types supported by the DB instance (<code>IPV4</code> or
+     * <code>DUAL</code>).</p> <p>A DB instance can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline bool SupportedNetworkTypesHasBeenSet() const { return m_supportedNetworkTypesHasBeenSet; }
+
+    /**
+     * <p>The network types supported by the DB instance (<code>IPV4</code> or
+     * <code>DUAL</code>).</p> <p>A DB instance can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline void SetSupportedNetworkTypes(const Aws::Vector<Aws::String>& value) { m_supportedNetworkTypesHasBeenSet = true; m_supportedNetworkTypes = value; }
+
+    /**
+     * <p>The network types supported by the DB instance (<code>IPV4</code> or
+     * <code>DUAL</code>).</p> <p>A DB instance can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline void SetSupportedNetworkTypes(Aws::Vector<Aws::String>&& value) { m_supportedNetworkTypesHasBeenSet = true; m_supportedNetworkTypes = std::move(value); }
+
+    /**
+     * <p>The network types supported by the DB instance (<code>IPV4</code> or
+     * <code>DUAL</code>).</p> <p>A DB instance can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline OrderableDBInstanceOption& WithSupportedNetworkTypes(const Aws::Vector<Aws::String>& value) { SetSupportedNetworkTypes(value); return *this;}
+
+    /**
+     * <p>The network types supported by the DB instance (<code>IPV4</code> or
+     * <code>DUAL</code>).</p> <p>A DB instance can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline OrderableDBInstanceOption& WithSupportedNetworkTypes(Aws::Vector<Aws::String>&& value) { SetSupportedNetworkTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The network types supported by the DB instance (<code>IPV4</code> or
+     * <code>DUAL</code>).</p> <p>A DB instance can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline OrderableDBInstanceOption& AddSupportedNetworkTypes(const Aws::String& value) { m_supportedNetworkTypesHasBeenSet = true; m_supportedNetworkTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The network types supported by the DB instance (<code>IPV4</code> or
+     * <code>DUAL</code>).</p> <p>A DB instance can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline OrderableDBInstanceOption& AddSupportedNetworkTypes(Aws::String&& value) { m_supportedNetworkTypesHasBeenSet = true; m_supportedNetworkTypes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The network types supported by the DB instance (<code>IPV4</code> or
+     * <code>DUAL</code>).</p> <p>A DB instance can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline OrderableDBInstanceOption& AddSupportedNetworkTypes(const char* value) { m_supportedNetworkTypesHasBeenSet = true; m_supportedNetworkTypes.push_back(value); return *this; }
 
   private:
 
@@ -1034,6 +1130,9 @@ namespace Model
 
     bool m_supportsClusters;
     bool m_supportsClustersHasBeenSet;
+
+    Aws::Vector<Aws::String> m_supportedNetworkTypes;
+    bool m_supportedNetworkTypesHasBeenSet;
   };
 
 } // namespace Model

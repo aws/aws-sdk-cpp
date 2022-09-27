@@ -21,10 +21,6 @@ namespace Model
 {
 
   /**
-   * <p>Request parameters for the GetLatestConfiguration API</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/appconfigdata-2021-11-11/GetLatestConfigurationRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_APPCONFIGDATA_API GetLatestConfigurationRequest : public AppConfigDataRequest
   {
@@ -44,73 +40,81 @@ namespace Model
 
     /**
      * <p>Token describing the current state of the configuration session. To obtain a
-     * token, first call the StartConfigurationSession API. Note that every call to
-     * GetLatestConfiguration will return a new ConfigurationToken
-     * (NextPollConfigurationToken in the response) and MUST be provided to subsequent
-     * GetLatestConfiguration API calls.</p>
+     * token, first call the <a>StartConfigurationSession</a> API. Note that every call
+     * to <code>GetLatestConfiguration</code> will return a new
+     * <code>ConfigurationToken</code> (<code>NextPollConfigurationToken</code> in the
+     * response) and MUST be provided to subsequent <code>GetLatestConfiguration</code>
+     * API calls.</p>
      */
     inline const Aws::String& GetConfigurationToken() const{ return m_configurationToken; }
 
     /**
      * <p>Token describing the current state of the configuration session. To obtain a
-     * token, first call the StartConfigurationSession API. Note that every call to
-     * GetLatestConfiguration will return a new ConfigurationToken
-     * (NextPollConfigurationToken in the response) and MUST be provided to subsequent
-     * GetLatestConfiguration API calls.</p>
+     * token, first call the <a>StartConfigurationSession</a> API. Note that every call
+     * to <code>GetLatestConfiguration</code> will return a new
+     * <code>ConfigurationToken</code> (<code>NextPollConfigurationToken</code> in the
+     * response) and MUST be provided to subsequent <code>GetLatestConfiguration</code>
+     * API calls.</p>
      */
     inline bool ConfigurationTokenHasBeenSet() const { return m_configurationTokenHasBeenSet; }
 
     /**
      * <p>Token describing the current state of the configuration session. To obtain a
-     * token, first call the StartConfigurationSession API. Note that every call to
-     * GetLatestConfiguration will return a new ConfigurationToken
-     * (NextPollConfigurationToken in the response) and MUST be provided to subsequent
-     * GetLatestConfiguration API calls.</p>
+     * token, first call the <a>StartConfigurationSession</a> API. Note that every call
+     * to <code>GetLatestConfiguration</code> will return a new
+     * <code>ConfigurationToken</code> (<code>NextPollConfigurationToken</code> in the
+     * response) and MUST be provided to subsequent <code>GetLatestConfiguration</code>
+     * API calls.</p>
      */
     inline void SetConfigurationToken(const Aws::String& value) { m_configurationTokenHasBeenSet = true; m_configurationToken = value; }
 
     /**
      * <p>Token describing the current state of the configuration session. To obtain a
-     * token, first call the StartConfigurationSession API. Note that every call to
-     * GetLatestConfiguration will return a new ConfigurationToken
-     * (NextPollConfigurationToken in the response) and MUST be provided to subsequent
-     * GetLatestConfiguration API calls.</p>
+     * token, first call the <a>StartConfigurationSession</a> API. Note that every call
+     * to <code>GetLatestConfiguration</code> will return a new
+     * <code>ConfigurationToken</code> (<code>NextPollConfigurationToken</code> in the
+     * response) and MUST be provided to subsequent <code>GetLatestConfiguration</code>
+     * API calls.</p>
      */
     inline void SetConfigurationToken(Aws::String&& value) { m_configurationTokenHasBeenSet = true; m_configurationToken = std::move(value); }
 
     /**
      * <p>Token describing the current state of the configuration session. To obtain a
-     * token, first call the StartConfigurationSession API. Note that every call to
-     * GetLatestConfiguration will return a new ConfigurationToken
-     * (NextPollConfigurationToken in the response) and MUST be provided to subsequent
-     * GetLatestConfiguration API calls.</p>
+     * token, first call the <a>StartConfigurationSession</a> API. Note that every call
+     * to <code>GetLatestConfiguration</code> will return a new
+     * <code>ConfigurationToken</code> (<code>NextPollConfigurationToken</code> in the
+     * response) and MUST be provided to subsequent <code>GetLatestConfiguration</code>
+     * API calls.</p>
      */
     inline void SetConfigurationToken(const char* value) { m_configurationTokenHasBeenSet = true; m_configurationToken.assign(value); }
 
     /**
      * <p>Token describing the current state of the configuration session. To obtain a
-     * token, first call the StartConfigurationSession API. Note that every call to
-     * GetLatestConfiguration will return a new ConfigurationToken
-     * (NextPollConfigurationToken in the response) and MUST be provided to subsequent
-     * GetLatestConfiguration API calls.</p>
+     * token, first call the <a>StartConfigurationSession</a> API. Note that every call
+     * to <code>GetLatestConfiguration</code> will return a new
+     * <code>ConfigurationToken</code> (<code>NextPollConfigurationToken</code> in the
+     * response) and MUST be provided to subsequent <code>GetLatestConfiguration</code>
+     * API calls.</p>
      */
     inline GetLatestConfigurationRequest& WithConfigurationToken(const Aws::String& value) { SetConfigurationToken(value); return *this;}
 
     /**
      * <p>Token describing the current state of the configuration session. To obtain a
-     * token, first call the StartConfigurationSession API. Note that every call to
-     * GetLatestConfiguration will return a new ConfigurationToken
-     * (NextPollConfigurationToken in the response) and MUST be provided to subsequent
-     * GetLatestConfiguration API calls.</p>
+     * token, first call the <a>StartConfigurationSession</a> API. Note that every call
+     * to <code>GetLatestConfiguration</code> will return a new
+     * <code>ConfigurationToken</code> (<code>NextPollConfigurationToken</code> in the
+     * response) and MUST be provided to subsequent <code>GetLatestConfiguration</code>
+     * API calls.</p>
      */
     inline GetLatestConfigurationRequest& WithConfigurationToken(Aws::String&& value) { SetConfigurationToken(std::move(value)); return *this;}
 
     /**
      * <p>Token describing the current state of the configuration session. To obtain a
-     * token, first call the StartConfigurationSession API. Note that every call to
-     * GetLatestConfiguration will return a new ConfigurationToken
-     * (NextPollConfigurationToken in the response) and MUST be provided to subsequent
-     * GetLatestConfiguration API calls.</p>
+     * token, first call the <a>StartConfigurationSession</a> API. Note that every call
+     * to <code>GetLatestConfiguration</code> will return a new
+     * <code>ConfigurationToken</code> (<code>NextPollConfigurationToken</code> in the
+     * response) and MUST be provided to subsequent <code>GetLatestConfiguration</code>
+     * API calls.</p>
      */
     inline GetLatestConfigurationRequest& WithConfigurationToken(const char* value) { SetConfigurationToken(value); return *this;}
 

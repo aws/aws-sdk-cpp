@@ -20,7 +20,8 @@ UpdateContainerServiceRequest::UpdateContainerServiceRequest() :
     m_scaleHasBeenSet(false),
     m_isDisabled(false),
     m_isDisabledHasBeenSet(false),
-    m_publicDomainNamesHasBeenSet(false)
+    m_publicDomainNamesHasBeenSet(false),
+    m_privateRegistryAccessHasBeenSet(false)
 {
 }
 
@@ -64,6 +65,12 @@ Aws::String UpdateContainerServiceRequest::SerializePayload() const
      publicDomainNamesJsonMap.WithArray(publicDomainNamesItem.first, std::move(containerServicePublicDomainsListJsonList));
    }
    payload.WithObject("publicDomainNames", std::move(publicDomainNamesJsonMap));
+
+  }
+
+  if(m_privateRegistryAccessHasBeenSet)
+  {
+   payload.WithObject("privateRegistryAccess", m_privateRegistryAccess.Jsonize());
 
   }
 

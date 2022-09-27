@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides configuration information required to connect to a ServiceNow data
+   * <p>Provides the configuration information to connect to ServiceNow as your data
    * source.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ServiceNowConfiguration">AWS
    * API Reference</a></p>
@@ -44,49 +44,49 @@ namespace Model
 
     /**
      * <p>The ServiceNow instance that the data source connects to. The host endpoint
-     * should look like the following: <code>{instance}.service-now.com.</code> </p>
+     * should look like the following: <i>{instance}.service-now.com.</i> </p>
      */
     inline const Aws::String& GetHostUrl() const{ return m_hostUrl; }
 
     /**
      * <p>The ServiceNow instance that the data source connects to. The host endpoint
-     * should look like the following: <code>{instance}.service-now.com.</code> </p>
+     * should look like the following: <i>{instance}.service-now.com.</i> </p>
      */
     inline bool HostUrlHasBeenSet() const { return m_hostUrlHasBeenSet; }
 
     /**
      * <p>The ServiceNow instance that the data source connects to. The host endpoint
-     * should look like the following: <code>{instance}.service-now.com.</code> </p>
+     * should look like the following: <i>{instance}.service-now.com.</i> </p>
      */
     inline void SetHostUrl(const Aws::String& value) { m_hostUrlHasBeenSet = true; m_hostUrl = value; }
 
     /**
      * <p>The ServiceNow instance that the data source connects to. The host endpoint
-     * should look like the following: <code>{instance}.service-now.com.</code> </p>
+     * should look like the following: <i>{instance}.service-now.com.</i> </p>
      */
     inline void SetHostUrl(Aws::String&& value) { m_hostUrlHasBeenSet = true; m_hostUrl = std::move(value); }
 
     /**
      * <p>The ServiceNow instance that the data source connects to. The host endpoint
-     * should look like the following: <code>{instance}.service-now.com.</code> </p>
+     * should look like the following: <i>{instance}.service-now.com.</i> </p>
      */
     inline void SetHostUrl(const char* value) { m_hostUrlHasBeenSet = true; m_hostUrl.assign(value); }
 
     /**
      * <p>The ServiceNow instance that the data source connects to. The host endpoint
-     * should look like the following: <code>{instance}.service-now.com.</code> </p>
+     * should look like the following: <i>{instance}.service-now.com.</i> </p>
      */
     inline ServiceNowConfiguration& WithHostUrl(const Aws::String& value) { SetHostUrl(value); return *this;}
 
     /**
      * <p>The ServiceNow instance that the data source connects to. The host endpoint
-     * should look like the following: <code>{instance}.service-now.com.</code> </p>
+     * should look like the following: <i>{instance}.service-now.com.</i> </p>
      */
     inline ServiceNowConfiguration& WithHostUrl(Aws::String&& value) { SetHostUrl(std::move(value)); return *this;}
 
     /**
      * <p>The ServiceNow instance that the data source connects to. The host endpoint
-     * should look like the following: <code>{instance}.service-now.com.</code> </p>
+     * should look like the following: <i>{instance}.service-now.com.</i> </p>
      */
     inline ServiceNowConfiguration& WithHostUrl(const char* value) { SetHostUrl(value); return *this;}
 
@@ -184,83 +184,83 @@ namespace Model
 
 
     /**
-     * <p>Provides configuration information for crawling knowledge articles in the
-     * ServiceNow site.</p>
+     * <p>Configuration information for crawling knowledge articles in the ServiceNow
+     * site.</p>
      */
     inline const ServiceNowKnowledgeArticleConfiguration& GetKnowledgeArticleConfiguration() const{ return m_knowledgeArticleConfiguration; }
 
     /**
-     * <p>Provides configuration information for crawling knowledge articles in the
-     * ServiceNow site.</p>
+     * <p>Configuration information for crawling knowledge articles in the ServiceNow
+     * site.</p>
      */
     inline bool KnowledgeArticleConfigurationHasBeenSet() const { return m_knowledgeArticleConfigurationHasBeenSet; }
 
     /**
-     * <p>Provides configuration information for crawling knowledge articles in the
-     * ServiceNow site.</p>
+     * <p>Configuration information for crawling knowledge articles in the ServiceNow
+     * site.</p>
      */
     inline void SetKnowledgeArticleConfiguration(const ServiceNowKnowledgeArticleConfiguration& value) { m_knowledgeArticleConfigurationHasBeenSet = true; m_knowledgeArticleConfiguration = value; }
 
     /**
-     * <p>Provides configuration information for crawling knowledge articles in the
-     * ServiceNow site.</p>
+     * <p>Configuration information for crawling knowledge articles in the ServiceNow
+     * site.</p>
      */
     inline void SetKnowledgeArticleConfiguration(ServiceNowKnowledgeArticleConfiguration&& value) { m_knowledgeArticleConfigurationHasBeenSet = true; m_knowledgeArticleConfiguration = std::move(value); }
 
     /**
-     * <p>Provides configuration information for crawling knowledge articles in the
-     * ServiceNow site.</p>
+     * <p>Configuration information for crawling knowledge articles in the ServiceNow
+     * site.</p>
      */
     inline ServiceNowConfiguration& WithKnowledgeArticleConfiguration(const ServiceNowKnowledgeArticleConfiguration& value) { SetKnowledgeArticleConfiguration(value); return *this;}
 
     /**
-     * <p>Provides configuration information for crawling knowledge articles in the
-     * ServiceNow site.</p>
+     * <p>Configuration information for crawling knowledge articles in the ServiceNow
+     * site.</p>
      */
     inline ServiceNowConfiguration& WithKnowledgeArticleConfiguration(ServiceNowKnowledgeArticleConfiguration&& value) { SetKnowledgeArticleConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>Provides configuration information for crawling service catalogs in the
-     * ServiceNow site.</p>
+     * <p>Configuration information for crawling service catalogs in the ServiceNow
+     * site.</p>
      */
     inline const ServiceNowServiceCatalogConfiguration& GetServiceCatalogConfiguration() const{ return m_serviceCatalogConfiguration; }
 
     /**
-     * <p>Provides configuration information for crawling service catalogs in the
-     * ServiceNow site.</p>
+     * <p>Configuration information for crawling service catalogs in the ServiceNow
+     * site.</p>
      */
     inline bool ServiceCatalogConfigurationHasBeenSet() const { return m_serviceCatalogConfigurationHasBeenSet; }
 
     /**
-     * <p>Provides configuration information for crawling service catalogs in the
-     * ServiceNow site.</p>
+     * <p>Configuration information for crawling service catalogs in the ServiceNow
+     * site.</p>
      */
     inline void SetServiceCatalogConfiguration(const ServiceNowServiceCatalogConfiguration& value) { m_serviceCatalogConfigurationHasBeenSet = true; m_serviceCatalogConfiguration = value; }
 
     /**
-     * <p>Provides configuration information for crawling service catalogs in the
-     * ServiceNow site.</p>
+     * <p>Configuration information for crawling service catalogs in the ServiceNow
+     * site.</p>
      */
     inline void SetServiceCatalogConfiguration(ServiceNowServiceCatalogConfiguration&& value) { m_serviceCatalogConfigurationHasBeenSet = true; m_serviceCatalogConfiguration = std::move(value); }
 
     /**
-     * <p>Provides configuration information for crawling service catalogs in the
-     * ServiceNow site.</p>
+     * <p>Configuration information for crawling service catalogs in the ServiceNow
+     * site.</p>
      */
     inline ServiceNowConfiguration& WithServiceCatalogConfiguration(const ServiceNowServiceCatalogConfiguration& value) { SetServiceCatalogConfiguration(value); return *this;}
 
     /**
-     * <p>Provides configuration information for crawling service catalogs in the
-     * ServiceNow site.</p>
+     * <p>Configuration information for crawling service catalogs in the ServiceNow
+     * site.</p>
      */
     inline ServiceNowConfiguration& WithServiceCatalogConfiguration(ServiceNowServiceCatalogConfiguration&& value) { SetServiceCatalogConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>Determines the type of authentication used to connect to the ServiceNow
-     * instance. If you choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated
-     * using the user name and password provided in the Secrets Manager secret in the
+     * <p>The type of authentication used to connect to the ServiceNow instance. If you
+     * choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user
+     * name and password provided in the Secrets Manager secret in the
      * <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon Kendra
      * is authenticated using the OAuth token and secret provided in the Secrets
      * Manager secret, and the user name and password are used to determine which
@@ -273,9 +273,9 @@ namespace Model
     inline const ServiceNowAuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
 
     /**
-     * <p>Determines the type of authentication used to connect to the ServiceNow
-     * instance. If you choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated
-     * using the user name and password provided in the Secrets Manager secret in the
+     * <p>The type of authentication used to connect to the ServiceNow instance. If you
+     * choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user
+     * name and password provided in the Secrets Manager secret in the
      * <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon Kendra
      * is authenticated using the OAuth token and secret provided in the Secrets
      * Manager secret, and the user name and password are used to determine which
@@ -288,9 +288,9 @@ namespace Model
     inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
 
     /**
-     * <p>Determines the type of authentication used to connect to the ServiceNow
-     * instance. If you choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated
-     * using the user name and password provided in the Secrets Manager secret in the
+     * <p>The type of authentication used to connect to the ServiceNow instance. If you
+     * choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user
+     * name and password provided in the Secrets Manager secret in the
      * <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon Kendra
      * is authenticated using the OAuth token and secret provided in the Secrets
      * Manager secret, and the user name and password are used to determine which
@@ -303,9 +303,9 @@ namespace Model
     inline void SetAuthenticationType(const ServiceNowAuthenticationType& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
 
     /**
-     * <p>Determines the type of authentication used to connect to the ServiceNow
-     * instance. If you choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated
-     * using the user name and password provided in the Secrets Manager secret in the
+     * <p>The type of authentication used to connect to the ServiceNow instance. If you
+     * choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user
+     * name and password provided in the Secrets Manager secret in the
      * <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon Kendra
      * is authenticated using the OAuth token and secret provided in the Secrets
      * Manager secret, and the user name and password are used to determine which
@@ -318,9 +318,9 @@ namespace Model
     inline void SetAuthenticationType(ServiceNowAuthenticationType&& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = std::move(value); }
 
     /**
-     * <p>Determines the type of authentication used to connect to the ServiceNow
-     * instance. If you choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated
-     * using the user name and password provided in the Secrets Manager secret in the
+     * <p>The type of authentication used to connect to the ServiceNow instance. If you
+     * choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user
+     * name and password provided in the Secrets Manager secret in the
      * <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon Kendra
      * is authenticated using the OAuth token and secret provided in the Secrets
      * Manager secret, and the user name and password are used to determine which
@@ -333,9 +333,9 @@ namespace Model
     inline ServiceNowConfiguration& WithAuthenticationType(const ServiceNowAuthenticationType& value) { SetAuthenticationType(value); return *this;}
 
     /**
-     * <p>Determines the type of authentication used to connect to the ServiceNow
-     * instance. If you choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated
-     * using the user name and password provided in the Secrets Manager secret in the
+     * <p>The type of authentication used to connect to the ServiceNow instance. If you
+     * choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user
+     * name and password provided in the Secrets Manager secret in the
      * <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon Kendra
      * is authenticated using the OAuth token and secret provided in the Secrets
      * Manager secret, and the user name and password are used to determine which

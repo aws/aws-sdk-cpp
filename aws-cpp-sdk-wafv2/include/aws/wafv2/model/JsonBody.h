@@ -8,6 +8,7 @@
 #include <aws/wafv2/model/JsonMatchPattern.h>
 #include <aws/wafv2/model/JsonMatchScope.h>
 #include <aws/wafv2/model/BodyParsingFallbackBehavior.h>
+#include <aws/wafv2/model/OversizeHandling.h>
 #include <utility>
 
 namespace Aws
@@ -26,13 +27,14 @@ namespace Model
 {
 
   /**
-   * <p>The body of a web request, inspected as JSON. The body immediately follows
-   * the request headers. This is used in the <a>FieldToMatch</a> specification.</p>
-   * <p>Use the specifications in this object to indicate which parts of the JSON
-   * body to inspect using the rule's inspection criteria. WAF inspects only the
-   * parts of the JSON that result from the matches that you indicate. </p>
-   * <p>Example JSON: <code>"JsonBody": { "MatchPattern": { "All": {} },
-   * "MatchScope": "ALL" }</code> </p><p><h3>See Also:</h3>   <a
+   * <p>Inspect the body of the web request as JSON. The body immediately follows the
+   * request headers. </p> <p>This is used to indicate the web request component for
+   * WAF to inspect, in the <a>FieldToMatch</a> specification. </p> <p>Use the
+   * specifications in this object to indicate which parts of the JSON body to
+   * inspect using the rule's inspection criteria. WAF inspects only the parts of the
+   * JSON that result from the matches that you indicate. </p> <p>Example JSON:
+   * <code>"JsonBody": { "MatchPattern": { "All": {} }, "MatchScope": "ALL" }</code>
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/JsonBody">AWS API
    * Reference</a></p>
    */
@@ -239,6 +241,109 @@ namespace Model
      */
     inline JsonBody& WithInvalidFallbackBehavior(BodyParsingFallbackBehavior&& value) { SetInvalidFallbackBehavior(std::move(value)); return *this;}
 
+
+    /**
+     * <p>What WAF should do if the body is larger than WAF can inspect. WAF does not
+     * support inspecting the entire contents of the body of a web request when the
+     * body exceeds 8 KB (8192 bytes). Only the first 8 KB of the request body are
+     * forwarded to WAF by the underlying host service. </p> <p>The options for
+     * oversize handling are the following:</p> <ul> <li> <p> <code>CONTINUE</code> -
+     * Inspect the body normally, according to the rule inspection criteria. </p> </li>
+     * <li> <p> <code>MATCH</code> - Treat the web request as matching the rule
+     * statement. WAF applies the rule action to the request.</p> </li> <li> <p>
+     * <code>NO_MATCH</code> - Treat the web request as not matching the rule
+     * statement.</p> </li> </ul> <p>You can combine the <code>MATCH</code> or
+     * <code>NO_MATCH</code> settings for oversize handling with your rule and web ACL
+     * action settings, so that you block any request whose body is over 8 KB. </p>
+     * <p>Default: <code>CONTINUE</code> </p>
+     */
+    inline const OversizeHandling& GetOversizeHandling() const{ return m_oversizeHandling; }
+
+    /**
+     * <p>What WAF should do if the body is larger than WAF can inspect. WAF does not
+     * support inspecting the entire contents of the body of a web request when the
+     * body exceeds 8 KB (8192 bytes). Only the first 8 KB of the request body are
+     * forwarded to WAF by the underlying host service. </p> <p>The options for
+     * oversize handling are the following:</p> <ul> <li> <p> <code>CONTINUE</code> -
+     * Inspect the body normally, according to the rule inspection criteria. </p> </li>
+     * <li> <p> <code>MATCH</code> - Treat the web request as matching the rule
+     * statement. WAF applies the rule action to the request.</p> </li> <li> <p>
+     * <code>NO_MATCH</code> - Treat the web request as not matching the rule
+     * statement.</p> </li> </ul> <p>You can combine the <code>MATCH</code> or
+     * <code>NO_MATCH</code> settings for oversize handling with your rule and web ACL
+     * action settings, so that you block any request whose body is over 8 KB. </p>
+     * <p>Default: <code>CONTINUE</code> </p>
+     */
+    inline bool OversizeHandlingHasBeenSet() const { return m_oversizeHandlingHasBeenSet; }
+
+    /**
+     * <p>What WAF should do if the body is larger than WAF can inspect. WAF does not
+     * support inspecting the entire contents of the body of a web request when the
+     * body exceeds 8 KB (8192 bytes). Only the first 8 KB of the request body are
+     * forwarded to WAF by the underlying host service. </p> <p>The options for
+     * oversize handling are the following:</p> <ul> <li> <p> <code>CONTINUE</code> -
+     * Inspect the body normally, according to the rule inspection criteria. </p> </li>
+     * <li> <p> <code>MATCH</code> - Treat the web request as matching the rule
+     * statement. WAF applies the rule action to the request.</p> </li> <li> <p>
+     * <code>NO_MATCH</code> - Treat the web request as not matching the rule
+     * statement.</p> </li> </ul> <p>You can combine the <code>MATCH</code> or
+     * <code>NO_MATCH</code> settings for oversize handling with your rule and web ACL
+     * action settings, so that you block any request whose body is over 8 KB. </p>
+     * <p>Default: <code>CONTINUE</code> </p>
+     */
+    inline void SetOversizeHandling(const OversizeHandling& value) { m_oversizeHandlingHasBeenSet = true; m_oversizeHandling = value; }
+
+    /**
+     * <p>What WAF should do if the body is larger than WAF can inspect. WAF does not
+     * support inspecting the entire contents of the body of a web request when the
+     * body exceeds 8 KB (8192 bytes). Only the first 8 KB of the request body are
+     * forwarded to WAF by the underlying host service. </p> <p>The options for
+     * oversize handling are the following:</p> <ul> <li> <p> <code>CONTINUE</code> -
+     * Inspect the body normally, according to the rule inspection criteria. </p> </li>
+     * <li> <p> <code>MATCH</code> - Treat the web request as matching the rule
+     * statement. WAF applies the rule action to the request.</p> </li> <li> <p>
+     * <code>NO_MATCH</code> - Treat the web request as not matching the rule
+     * statement.</p> </li> </ul> <p>You can combine the <code>MATCH</code> or
+     * <code>NO_MATCH</code> settings for oversize handling with your rule and web ACL
+     * action settings, so that you block any request whose body is over 8 KB. </p>
+     * <p>Default: <code>CONTINUE</code> </p>
+     */
+    inline void SetOversizeHandling(OversizeHandling&& value) { m_oversizeHandlingHasBeenSet = true; m_oversizeHandling = std::move(value); }
+
+    /**
+     * <p>What WAF should do if the body is larger than WAF can inspect. WAF does not
+     * support inspecting the entire contents of the body of a web request when the
+     * body exceeds 8 KB (8192 bytes). Only the first 8 KB of the request body are
+     * forwarded to WAF by the underlying host service. </p> <p>The options for
+     * oversize handling are the following:</p> <ul> <li> <p> <code>CONTINUE</code> -
+     * Inspect the body normally, according to the rule inspection criteria. </p> </li>
+     * <li> <p> <code>MATCH</code> - Treat the web request as matching the rule
+     * statement. WAF applies the rule action to the request.</p> </li> <li> <p>
+     * <code>NO_MATCH</code> - Treat the web request as not matching the rule
+     * statement.</p> </li> </ul> <p>You can combine the <code>MATCH</code> or
+     * <code>NO_MATCH</code> settings for oversize handling with your rule and web ACL
+     * action settings, so that you block any request whose body is over 8 KB. </p>
+     * <p>Default: <code>CONTINUE</code> </p>
+     */
+    inline JsonBody& WithOversizeHandling(const OversizeHandling& value) { SetOversizeHandling(value); return *this;}
+
+    /**
+     * <p>What WAF should do if the body is larger than WAF can inspect. WAF does not
+     * support inspecting the entire contents of the body of a web request when the
+     * body exceeds 8 KB (8192 bytes). Only the first 8 KB of the request body are
+     * forwarded to WAF by the underlying host service. </p> <p>The options for
+     * oversize handling are the following:</p> <ul> <li> <p> <code>CONTINUE</code> -
+     * Inspect the body normally, according to the rule inspection criteria. </p> </li>
+     * <li> <p> <code>MATCH</code> - Treat the web request as matching the rule
+     * statement. WAF applies the rule action to the request.</p> </li> <li> <p>
+     * <code>NO_MATCH</code> - Treat the web request as not matching the rule
+     * statement.</p> </li> </ul> <p>You can combine the <code>MATCH</code> or
+     * <code>NO_MATCH</code> settings for oversize handling with your rule and web ACL
+     * action settings, so that you block any request whose body is over 8 KB. </p>
+     * <p>Default: <code>CONTINUE</code> </p>
+     */
+    inline JsonBody& WithOversizeHandling(OversizeHandling&& value) { SetOversizeHandling(std::move(value)); return *this;}
+
   private:
 
     JsonMatchPattern m_matchPattern;
@@ -249,6 +354,9 @@ namespace Model
 
     BodyParsingFallbackBehavior m_invalidFallbackBehavior;
     bool m_invalidFallbackBehaviorHasBeenSet;
+
+    OversizeHandling m_oversizeHandling;
+    bool m_oversizeHandlingHasBeenSet;
   };
 
 } // namespace Model

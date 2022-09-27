@@ -31,7 +31,9 @@ FirewallPolicyResponse::FirewallPolicyResponse() :
     m_consumedStatefulRuleCapacity(0),
     m_consumedStatefulRuleCapacityHasBeenSet(false),
     m_numberOfAssociations(0),
-    m_numberOfAssociationsHasBeenSet(false)
+    m_numberOfAssociationsHasBeenSet(false),
+    m_encryptionConfigurationHasBeenSet(false),
+    m_lastModifiedTimeHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ FirewallPolicyResponse::FirewallPolicyResponse(JsonView jsonValue) :
     m_consumedStatefulRuleCapacity(0),
     m_consumedStatefulRuleCapacityHasBeenSet(false),
     m_numberOfAssociations(0),
-    m_numberOfAssociationsHasBeenSet(false)
+    m_numberOfAssociationsHasBeenSet(false),
+    m_encryptionConfigurationHasBeenSet(false),
+    m_lastModifiedTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -121,6 +125,20 @@ FirewallPolicyResponse& FirewallPolicyResponse::operator =(JsonView jsonValue)
     m_numberOfAssociationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EncryptionConfiguration"))
+  {
+    m_encryptionConfiguration = jsonValue.GetObject("EncryptionConfiguration");
+
+    m_encryptionConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastModifiedTime"))
+  {
+    m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
+
+    m_lastModifiedTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -184,6 +202,17 @@ JsonValue FirewallPolicyResponse::Jsonize() const
   {
    payload.WithInteger("NumberOfAssociations", m_numberOfAssociations);
 
+  }
+
+  if(m_encryptionConfigurationHasBeenSet)
+  {
+   payload.WithObject("EncryptionConfiguration", m_encryptionConfiguration.Jsonize());
+
+  }
+
+  if(m_lastModifiedTimeHasBeenSet)
+  {
+   payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
   }
 
   return payload;

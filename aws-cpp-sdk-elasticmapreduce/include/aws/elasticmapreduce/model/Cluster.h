@@ -595,13 +595,7 @@ namespace Model
      * is not provided when creating a cluster using the EMR API <a>RunJobFlow</a>
      * command, the CLI <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
-     * command, or the Amazon Web Services Management Console. IAM principals that are
-     * allowed to perform actions on the cluster can use the
-     * <a>SetVisibleToAllUsers</a> action to change the value on a running cluster. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding
-     * the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement
-     * Guide</i>.</p>
+     * command, or the Amazon Web Services Management Console.</p>
      */
     inline bool GetVisibleToAllUsers() const{ return m_visibleToAllUsers; }
 
@@ -616,13 +610,7 @@ namespace Model
      * is not provided when creating a cluster using the EMR API <a>RunJobFlow</a>
      * command, the CLI <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
-     * command, or the Amazon Web Services Management Console. IAM principals that are
-     * allowed to perform actions on the cluster can use the
-     * <a>SetVisibleToAllUsers</a> action to change the value on a running cluster. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding
-     * the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement
-     * Guide</i>.</p>
+     * command, or the Amazon Web Services Management Console.</p>
      */
     inline bool VisibleToAllUsersHasBeenSet() const { return m_visibleToAllUsersHasBeenSet; }
 
@@ -637,13 +625,7 @@ namespace Model
      * is not provided when creating a cluster using the EMR API <a>RunJobFlow</a>
      * command, the CLI <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
-     * command, or the Amazon Web Services Management Console. IAM principals that are
-     * allowed to perform actions on the cluster can use the
-     * <a>SetVisibleToAllUsers</a> action to change the value on a running cluster. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding
-     * the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement
-     * Guide</i>.</p>
+     * command, or the Amazon Web Services Management Console.</p>
      */
     inline void SetVisibleToAllUsers(bool value) { m_visibleToAllUsersHasBeenSet = true; m_visibleToAllUsers = value; }
 
@@ -658,13 +640,7 @@ namespace Model
      * is not provided when creating a cluster using the EMR API <a>RunJobFlow</a>
      * command, the CLI <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
-     * command, or the Amazon Web Services Management Console. IAM principals that are
-     * allowed to perform actions on the cluster can use the
-     * <a>SetVisibleToAllUsers</a> action to change the value on a running cluster. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding
-     * the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement
-     * Guide</i>.</p>
+     * command, or the Amazon Web Services Management Console.</p>
      */
     inline Cluster& WithVisibleToAllUsers(bool value) { SetVisibleToAllUsers(value); return *this;}
 
@@ -1469,6 +1445,63 @@ namespace Model
      */
     inline Cluster& AddPlacementGroups(PlacementGroupConfig&& value) { m_placementGroupsHasBeenSet = true; m_placementGroups.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The Amazon Linux release specified in a cluster launch RunJobFlow request. If
+     * no Amazon Linux release was specified, the default Amazon Linux release is shown
+     * in the response.</p>
+     */
+    inline const Aws::String& GetOSReleaseLabel() const{ return m_oSReleaseLabel; }
+
+    /**
+     * <p>The Amazon Linux release specified in a cluster launch RunJobFlow request. If
+     * no Amazon Linux release was specified, the default Amazon Linux release is shown
+     * in the response.</p>
+     */
+    inline bool OSReleaseLabelHasBeenSet() const { return m_oSReleaseLabelHasBeenSet; }
+
+    /**
+     * <p>The Amazon Linux release specified in a cluster launch RunJobFlow request. If
+     * no Amazon Linux release was specified, the default Amazon Linux release is shown
+     * in the response.</p>
+     */
+    inline void SetOSReleaseLabel(const Aws::String& value) { m_oSReleaseLabelHasBeenSet = true; m_oSReleaseLabel = value; }
+
+    /**
+     * <p>The Amazon Linux release specified in a cluster launch RunJobFlow request. If
+     * no Amazon Linux release was specified, the default Amazon Linux release is shown
+     * in the response.</p>
+     */
+    inline void SetOSReleaseLabel(Aws::String&& value) { m_oSReleaseLabelHasBeenSet = true; m_oSReleaseLabel = std::move(value); }
+
+    /**
+     * <p>The Amazon Linux release specified in a cluster launch RunJobFlow request. If
+     * no Amazon Linux release was specified, the default Amazon Linux release is shown
+     * in the response.</p>
+     */
+    inline void SetOSReleaseLabel(const char* value) { m_oSReleaseLabelHasBeenSet = true; m_oSReleaseLabel.assign(value); }
+
+    /**
+     * <p>The Amazon Linux release specified in a cluster launch RunJobFlow request. If
+     * no Amazon Linux release was specified, the default Amazon Linux release is shown
+     * in the response.</p>
+     */
+    inline Cluster& WithOSReleaseLabel(const Aws::String& value) { SetOSReleaseLabel(value); return *this;}
+
+    /**
+     * <p>The Amazon Linux release specified in a cluster launch RunJobFlow request. If
+     * no Amazon Linux release was specified, the default Amazon Linux release is shown
+     * in the response.</p>
+     */
+    inline Cluster& WithOSReleaseLabel(Aws::String&& value) { SetOSReleaseLabel(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Linux release specified in a cluster launch RunJobFlow request. If
+     * no Amazon Linux release was specified, the default Amazon Linux release is shown
+     * in the response.</p>
+     */
+    inline Cluster& WithOSReleaseLabel(const char* value) { SetOSReleaseLabel(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -1560,6 +1593,9 @@ namespace Model
 
     Aws::Vector<PlacementGroupConfig> m_placementGroups;
     bool m_placementGroupsHasBeenSet;
+
+    Aws::String m_oSReleaseLabel;
+    bool m_oSReleaseLabelHasBeenSet;
   };
 
 } // namespace Model

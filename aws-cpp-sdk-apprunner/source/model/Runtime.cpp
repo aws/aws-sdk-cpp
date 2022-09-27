@@ -22,6 +22,9 @@ namespace Aws
 
         static const int PYTHON_3_HASH = HashingUtils::HashString("PYTHON_3");
         static const int NODEJS_12_HASH = HashingUtils::HashString("NODEJS_12");
+        static const int NODEJS_14_HASH = HashingUtils::HashString("NODEJS_14");
+        static const int CORRETTO_8_HASH = HashingUtils::HashString("CORRETTO_8");
+        static const int CORRETTO_11_HASH = HashingUtils::HashString("CORRETTO_11");
 
 
         Runtime GetRuntimeForName(const Aws::String& name)
@@ -34,6 +37,18 @@ namespace Aws
           else if (hashCode == NODEJS_12_HASH)
           {
             return Runtime::NODEJS_12;
+          }
+          else if (hashCode == NODEJS_14_HASH)
+          {
+            return Runtime::NODEJS_14;
+          }
+          else if (hashCode == CORRETTO_8_HASH)
+          {
+            return Runtime::CORRETTO_8;
+          }
+          else if (hashCode == CORRETTO_11_HASH)
+          {
+            return Runtime::CORRETTO_11;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +68,12 @@ namespace Aws
             return "PYTHON_3";
           case Runtime::NODEJS_12:
             return "NODEJS_12";
+          case Runtime::NODEJS_14:
+            return "NODEJS_14";
+          case Runtime::CORRETTO_8:
+            return "CORRETTO_8";
+          case Runtime::CORRETTO_11:
+            return "CORRETTO_11";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

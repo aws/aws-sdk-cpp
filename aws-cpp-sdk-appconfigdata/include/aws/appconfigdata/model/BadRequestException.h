@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/appconfigdata/AppConfigData_EXPORTS.h>
-#include <aws/appconfigdata/model/BadRequestDetails.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/appconfigdata/model/BadRequestReason.h>
+#include <aws/appconfigdata/model/BadRequestDetails.h>
 #include <utility>
 
 namespace Aws
@@ -38,37 +38,6 @@ namespace Model
     BadRequestException(Aws::Utils::Json::JsonView jsonValue);
     BadRequestException& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>Details describing why the request was invalid</p>
-     */
-    inline const BadRequestDetails& GetDetails() const{ return m_details; }
-
-    /**
-     * <p>Details describing why the request was invalid</p>
-     */
-    inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-
-    /**
-     * <p>Details describing why the request was invalid</p>
-     */
-    inline void SetDetails(const BadRequestDetails& value) { m_detailsHasBeenSet = true; m_details = value; }
-
-    /**
-     * <p>Details describing why the request was invalid</p>
-     */
-    inline void SetDetails(BadRequestDetails&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
-
-    /**
-     * <p>Details describing why the request was invalid</p>
-     */
-    inline BadRequestException& WithDetails(const BadRequestDetails& value) { SetDetails(value); return *this;}
-
-    /**
-     * <p>Details describing why the request was invalid</p>
-     */
-    inline BadRequestException& WithDetails(BadRequestDetails&& value) { SetDetails(std::move(value)); return *this;}
 
 
     
@@ -126,16 +95,47 @@ namespace Model
      */
     inline BadRequestException& WithReason(BadRequestReason&& value) { SetReason(std::move(value)); return *this;}
 
-  private:
 
-    BadRequestDetails m_details;
-    bool m_detailsHasBeenSet;
+    /**
+     * <p>Details describing why the request was invalid.</p>
+     */
+    inline const BadRequestDetails& GetDetails() const{ return m_details; }
+
+    /**
+     * <p>Details describing why the request was invalid.</p>
+     */
+    inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
+
+    /**
+     * <p>Details describing why the request was invalid.</p>
+     */
+    inline void SetDetails(const BadRequestDetails& value) { m_detailsHasBeenSet = true; m_details = value; }
+
+    /**
+     * <p>Details describing why the request was invalid.</p>
+     */
+    inline void SetDetails(BadRequestDetails&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
+
+    /**
+     * <p>Details describing why the request was invalid.</p>
+     */
+    inline BadRequestException& WithDetails(const BadRequestDetails& value) { SetDetails(value); return *this;}
+
+    /**
+     * <p>Details describing why the request was invalid.</p>
+     */
+    inline BadRequestException& WithDetails(BadRequestDetails&& value) { SetDetails(std::move(value)); return *this;}
+
+  private:
 
     Aws::String m_message;
     bool m_messageHasBeenSet;
 
     BadRequestReason m_reason;
     bool m_reasonHasBeenSet;
+
+    BadRequestDetails m_details;
+    bool m_detailsHasBeenSet;
   };
 
 } // namespace Model

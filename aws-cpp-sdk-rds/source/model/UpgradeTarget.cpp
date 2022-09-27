@@ -32,7 +32,9 @@ UpgradeTarget::UpgradeTarget() :
     m_supportsParallelQuery(false),
     m_supportsParallelQueryHasBeenSet(false),
     m_supportsGlobalDatabases(false),
-    m_supportsGlobalDatabasesHasBeenSet(false)
+    m_supportsGlobalDatabasesHasBeenSet(false),
+    m_supportsBabelfish(false),
+    m_supportsBabelfishHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ UpgradeTarget::UpgradeTarget(const XmlNode& xmlNode) :
     m_supportsParallelQuery(false),
     m_supportsParallelQueryHasBeenSet(false),
     m_supportsGlobalDatabases(false),
-    m_supportsGlobalDatabasesHasBeenSet(false)
+    m_supportsGlobalDatabasesHasBeenSet(false),
+    m_supportsBabelfish(false),
+    m_supportsBabelfishHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -113,6 +117,12 @@ UpgradeTarget& UpgradeTarget::operator =(const XmlNode& xmlNode)
       m_supportsGlobalDatabases = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsGlobalDatabasesNode.GetText()).c_str()).c_str());
       m_supportsGlobalDatabasesHasBeenSet = true;
     }
+    XmlNode supportsBabelfishNode = resultNode.FirstChild("SupportsBabelfish");
+    if(!supportsBabelfishNode.IsNull())
+    {
+      m_supportsBabelfish = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsBabelfishNode.GetText()).c_str()).c_str());
+      m_supportsBabelfishHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -164,6 +174,11 @@ void UpgradeTarget::OutputToStream(Aws::OStream& oStream, const char* location, 
       oStream << location << index << locationValue << ".SupportsGlobalDatabases=" << std::boolalpha << m_supportsGlobalDatabases << "&";
   }
 
+  if(m_supportsBabelfishHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsBabelfish=" << std::boolalpha << m_supportsBabelfish << "&";
+  }
+
 }
 
 void UpgradeTarget::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -203,6 +218,10 @@ void UpgradeTarget::OutputToStream(Aws::OStream& oStream, const char* location) 
   if(m_supportsGlobalDatabasesHasBeenSet)
   {
       oStream << location << ".SupportsGlobalDatabases=" << std::boolalpha << m_supportsGlobalDatabases << "&";
+  }
+  if(m_supportsBabelfishHasBeenSet)
+  {
+      oStream << location << ".SupportsBabelfish=" << std::boolalpha << m_supportsBabelfish << "&";
   }
 }
 

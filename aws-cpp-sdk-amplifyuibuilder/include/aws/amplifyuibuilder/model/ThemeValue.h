@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/amplifyuibuilder/AmplifyUIBuilder_EXPORTS.h>
+#include <aws/amplifyuibuilder/model/ThemeValues.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/amplifyuibuilder/model/ThemeValues.h>
 #include <utility>
 
 namespace Aws
@@ -24,6 +24,7 @@ namespace AmplifyUIBuilder
 {
 namespace Model
 {
+  class ThemeValues;
 
   /**
    * <p>Describes the configuration of a theme's properties.</p><p><h3>See Also:</h3>

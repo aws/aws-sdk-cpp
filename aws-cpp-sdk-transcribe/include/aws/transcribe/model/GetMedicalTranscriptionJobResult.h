@@ -33,27 +33,32 @@ namespace Model
 
 
     /**
-     * <p>An object that contains the results of the medical transcription job.</p>
+     * <p>Provides detailed information about the specified medical transcription job,
+     * including job status and, if applicable, failure reason.</p>
      */
     inline const MedicalTranscriptionJob& GetMedicalTranscriptionJob() const{ return m_medicalTranscriptionJob; }
 
     /**
-     * <p>An object that contains the results of the medical transcription job.</p>
+     * <p>Provides detailed information about the specified medical transcription job,
+     * including job status and, if applicable, failure reason.</p>
      */
     inline void SetMedicalTranscriptionJob(const MedicalTranscriptionJob& value) { m_medicalTranscriptionJob = value; }
 
     /**
-     * <p>An object that contains the results of the medical transcription job.</p>
+     * <p>Provides detailed information about the specified medical transcription job,
+     * including job status and, if applicable, failure reason.</p>
      */
     inline void SetMedicalTranscriptionJob(MedicalTranscriptionJob&& value) { m_medicalTranscriptionJob = std::move(value); }
 
     /**
-     * <p>An object that contains the results of the medical transcription job.</p>
+     * <p>Provides detailed information about the specified medical transcription job,
+     * including job status and, if applicable, failure reason.</p>
      */
     inline GetMedicalTranscriptionJobResult& WithMedicalTranscriptionJob(const MedicalTranscriptionJob& value) { SetMedicalTranscriptionJob(value); return *this;}
 
     /**
-     * <p>An object that contains the results of the medical transcription job.</p>
+     * <p>Provides detailed information about the specified medical transcription job,
+     * including job status and, if applicable, failure reason.</p>
      */
     inline GetMedicalTranscriptionJobResult& WithMedicalTranscriptionJob(MedicalTranscriptionJob&& value) { SetMedicalTranscriptionJob(std::move(value)); return *this;}
 

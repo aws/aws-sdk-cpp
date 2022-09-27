@@ -13,12 +13,12 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreatePackageImportJobRequest::CreatePackageImportJobRequest() : 
+    m_clientTokenHasBeenSet(false),
+    m_inputConfigHasBeenSet(false),
+    m_jobTagsHasBeenSet(false),
     m_jobType(PackageImportJobType::NOT_SET),
     m_jobTypeHasBeenSet(false),
-    m_inputConfigHasBeenSet(false),
-    m_outputConfigHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_jobTagsHasBeenSet(false)
+    m_outputConfigHasBeenSet(false)
 {
 }
 
@@ -26,26 +26,15 @@ Aws::String CreatePackageImportJobRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_jobTypeHasBeenSet)
+  if(m_clientTokenHasBeenSet)
   {
-   payload.WithString("JobType", PackageImportJobTypeMapper::GetNameForPackageImportJobType(m_jobType));
+   payload.WithString("ClientToken", m_clientToken);
+
   }
 
   if(m_inputConfigHasBeenSet)
   {
    payload.WithObject("InputConfig", m_inputConfig.Jsonize());
-
-  }
-
-  if(m_outputConfigHasBeenSet)
-  {
-   payload.WithObject("OutputConfig", m_outputConfig.Jsonize());
-
-  }
-
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("ClientToken", m_clientToken);
 
   }
 
@@ -57,6 +46,17 @@ Aws::String CreatePackageImportJobRequest::SerializePayload() const
      jobTagsJsonList[jobTagsIndex].AsObject(m_jobTags[jobTagsIndex].Jsonize());
    }
    payload.WithArray("JobTags", std::move(jobTagsJsonList));
+
+  }
+
+  if(m_jobTypeHasBeenSet)
+  {
+   payload.WithString("JobType", PackageImportJobTypeMapper::GetNameForPackageImportJobType(m_jobType));
+  }
+
+  if(m_outputConfigHasBeenSet)
+  {
+   payload.WithObject("OutputConfig", m_outputConfig.Jsonize());
 
   }
 

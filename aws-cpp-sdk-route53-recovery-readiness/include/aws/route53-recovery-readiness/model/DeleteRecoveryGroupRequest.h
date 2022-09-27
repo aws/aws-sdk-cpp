@@ -33,42 +33,42 @@ namespace Model
 
 
     /**
-     * The RecoveryGroup to delete
+     * <p>The name of a recovery group.</p>
      */
     inline const Aws::String& GetRecoveryGroupName() const{ return m_recoveryGroupName; }
 
     /**
-     * The RecoveryGroup to delete
+     * <p>The name of a recovery group.</p>
      */
     inline bool RecoveryGroupNameHasBeenSet() const { return m_recoveryGroupNameHasBeenSet; }
 
     /**
-     * The RecoveryGroup to delete
+     * <p>The name of a recovery group.</p>
      */
     inline void SetRecoveryGroupName(const Aws::String& value) { m_recoveryGroupNameHasBeenSet = true; m_recoveryGroupName = value; }
 
     /**
-     * The RecoveryGroup to delete
+     * <p>The name of a recovery group.</p>
      */
     inline void SetRecoveryGroupName(Aws::String&& value) { m_recoveryGroupNameHasBeenSet = true; m_recoveryGroupName = std::move(value); }
 
     /**
-     * The RecoveryGroup to delete
+     * <p>The name of a recovery group.</p>
      */
     inline void SetRecoveryGroupName(const char* value) { m_recoveryGroupNameHasBeenSet = true; m_recoveryGroupName.assign(value); }
 
     /**
-     * The RecoveryGroup to delete
+     * <p>The name of a recovery group.</p>
      */
     inline DeleteRecoveryGroupRequest& WithRecoveryGroupName(const Aws::String& value) { SetRecoveryGroupName(value); return *this;}
 
     /**
-     * The RecoveryGroup to delete
+     * <p>The name of a recovery group.</p>
      */
     inline DeleteRecoveryGroupRequest& WithRecoveryGroupName(Aws::String&& value) { SetRecoveryGroupName(std::move(value)); return *this;}
 
     /**
-     * The RecoveryGroup to delete
+     * <p>The name of a recovery group.</p>
      */
     inline DeleteRecoveryGroupRequest& WithRecoveryGroupName(const char* value) { SetRecoveryGroupName(value); return *this;}
 

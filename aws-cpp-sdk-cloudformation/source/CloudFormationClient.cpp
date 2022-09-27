@@ -36,6 +36,7 @@
 #include <aws/cloudformation/model/DeregisterTypeRequest.h>
 #include <aws/cloudformation/model/DescribeAccountLimitsRequest.h>
 #include <aws/cloudformation/model/DescribeChangeSetRequest.h>
+#include <aws/cloudformation/model/DescribeChangeSetHooksRequest.h>
 #include <aws/cloudformation/model/DescribePublisherRequest.h>
 #include <aws/cloudformation/model/DescribeStackDriftDetectionStatusRequest.h>
 #include <aws/cloudformation/model/DescribeStackEventsRequest.h>
@@ -552,6 +553,30 @@ void CloudFormationClient::DescribeChangeSetAsync(const DescribeChangeSetRequest
 void CloudFormationClient::DescribeChangeSetAsyncHelper(const DescribeChangeSetRequest& request, const DescribeChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeChangeSet(request), context);
+}
+
+DescribeChangeSetHooksOutcome CloudFormationClient::DescribeChangeSetHooks(const DescribeChangeSetHooksRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeChangeSetHooksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribeChangeSetHooksOutcomeCallable CloudFormationClient::DescribeChangeSetHooksCallable(const DescribeChangeSetHooksRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeChangeSetHooksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeChangeSetHooks(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFormationClient::DescribeChangeSetHooksAsync(const DescribeChangeSetHooksRequest& request, const DescribeChangeSetHooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeChangeSetHooksAsyncHelper( request, handler, context ); } );
+}
+
+void CloudFormationClient::DescribeChangeSetHooksAsyncHelper(const DescribeChangeSetHooksRequest& request, const DescribeChangeSetHooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeChangeSetHooks(request), context);
 }
 
 DescribePublisherOutcome CloudFormationClient::DescribePublisher(const DescribePublisherRequest& request) const

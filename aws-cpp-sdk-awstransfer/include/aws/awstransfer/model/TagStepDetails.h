@@ -122,6 +122,95 @@ namespace Model
      */
     inline TagStepDetails& AddTags(S3Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Specifies which file to use as input to the workflow step: either the output
+     * from the previous step, or the originally uploaded file for the workflow.</p>
+     * <ul> <li> <p>Enter <code>${previous.file}</code> to use the previous file as the
+     * input. In this case, this workflow step uses the output file from the previous
+     * workflow step as input. This is the default value.</p> </li> <li> <p>Enter
+     * <code>${original.file}</code> to use the originally-uploaded file location as
+     * input for this step.</p> </li> </ul>
+     */
+    inline const Aws::String& GetSourceFileLocation() const{ return m_sourceFileLocation; }
+
+    /**
+     * <p>Specifies which file to use as input to the workflow step: either the output
+     * from the previous step, or the originally uploaded file for the workflow.</p>
+     * <ul> <li> <p>Enter <code>${previous.file}</code> to use the previous file as the
+     * input. In this case, this workflow step uses the output file from the previous
+     * workflow step as input. This is the default value.</p> </li> <li> <p>Enter
+     * <code>${original.file}</code> to use the originally-uploaded file location as
+     * input for this step.</p> </li> </ul>
+     */
+    inline bool SourceFileLocationHasBeenSet() const { return m_sourceFileLocationHasBeenSet; }
+
+    /**
+     * <p>Specifies which file to use as input to the workflow step: either the output
+     * from the previous step, or the originally uploaded file for the workflow.</p>
+     * <ul> <li> <p>Enter <code>${previous.file}</code> to use the previous file as the
+     * input. In this case, this workflow step uses the output file from the previous
+     * workflow step as input. This is the default value.</p> </li> <li> <p>Enter
+     * <code>${original.file}</code> to use the originally-uploaded file location as
+     * input for this step.</p> </li> </ul>
+     */
+    inline void SetSourceFileLocation(const Aws::String& value) { m_sourceFileLocationHasBeenSet = true; m_sourceFileLocation = value; }
+
+    /**
+     * <p>Specifies which file to use as input to the workflow step: either the output
+     * from the previous step, or the originally uploaded file for the workflow.</p>
+     * <ul> <li> <p>Enter <code>${previous.file}</code> to use the previous file as the
+     * input. In this case, this workflow step uses the output file from the previous
+     * workflow step as input. This is the default value.</p> </li> <li> <p>Enter
+     * <code>${original.file}</code> to use the originally-uploaded file location as
+     * input for this step.</p> </li> </ul>
+     */
+    inline void SetSourceFileLocation(Aws::String&& value) { m_sourceFileLocationHasBeenSet = true; m_sourceFileLocation = std::move(value); }
+
+    /**
+     * <p>Specifies which file to use as input to the workflow step: either the output
+     * from the previous step, or the originally uploaded file for the workflow.</p>
+     * <ul> <li> <p>Enter <code>${previous.file}</code> to use the previous file as the
+     * input. In this case, this workflow step uses the output file from the previous
+     * workflow step as input. This is the default value.</p> </li> <li> <p>Enter
+     * <code>${original.file}</code> to use the originally-uploaded file location as
+     * input for this step.</p> </li> </ul>
+     */
+    inline void SetSourceFileLocation(const char* value) { m_sourceFileLocationHasBeenSet = true; m_sourceFileLocation.assign(value); }
+
+    /**
+     * <p>Specifies which file to use as input to the workflow step: either the output
+     * from the previous step, or the originally uploaded file for the workflow.</p>
+     * <ul> <li> <p>Enter <code>${previous.file}</code> to use the previous file as the
+     * input. In this case, this workflow step uses the output file from the previous
+     * workflow step as input. This is the default value.</p> </li> <li> <p>Enter
+     * <code>${original.file}</code> to use the originally-uploaded file location as
+     * input for this step.</p> </li> </ul>
+     */
+    inline TagStepDetails& WithSourceFileLocation(const Aws::String& value) { SetSourceFileLocation(value); return *this;}
+
+    /**
+     * <p>Specifies which file to use as input to the workflow step: either the output
+     * from the previous step, or the originally uploaded file for the workflow.</p>
+     * <ul> <li> <p>Enter <code>${previous.file}</code> to use the previous file as the
+     * input. In this case, this workflow step uses the output file from the previous
+     * workflow step as input. This is the default value.</p> </li> <li> <p>Enter
+     * <code>${original.file}</code> to use the originally-uploaded file location as
+     * input for this step.</p> </li> </ul>
+     */
+    inline TagStepDetails& WithSourceFileLocation(Aws::String&& value) { SetSourceFileLocation(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies which file to use as input to the workflow step: either the output
+     * from the previous step, or the originally uploaded file for the workflow.</p>
+     * <ul> <li> <p>Enter <code>${previous.file}</code> to use the previous file as the
+     * input. In this case, this workflow step uses the output file from the previous
+     * workflow step as input. This is the default value.</p> </li> <li> <p>Enter
+     * <code>${original.file}</code> to use the originally-uploaded file location as
+     * input for this step.</p> </li> </ul>
+     */
+    inline TagStepDetails& WithSourceFileLocation(const char* value) { SetSourceFileLocation(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -129,6 +218,9 @@ namespace Model
 
     Aws::Vector<S3Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_sourceFileLocation;
+    bool m_sourceFileLocationHasBeenSet;
   };
 
 } // namespace Model

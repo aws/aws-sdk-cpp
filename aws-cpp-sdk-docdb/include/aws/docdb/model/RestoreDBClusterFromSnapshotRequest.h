@@ -527,9 +527,9 @@ namespace Model
      * <p>The KMS key identifier to use when restoring an encrypted cluster from a DB
      * snapshot or cluster snapshot.</p> <p>The KMS key identifier is the Amazon
      * Resource Name (ARN) for the KMS encryption key. If you are restoring a cluster
-     * with the same account that owns the KMS encryption key used to encrypt the new
-     * cluster, then you can use the KMS key alias instead of the ARN for the KMS
-     * encryption key.</p> <p>If you do not specify a value for the
+     * with the same Amazon Web Services account that owns the KMS encryption key used
+     * to encrypt the new cluster, then you can use the KMS key alias instead of the
+     * ARN for the KMS encryption key.</p> <p>If you do not specify a value for the
      * <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li> <p>If
      * the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is
      * encrypted, then the restored cluster is encrypted using the KMS key that was
@@ -543,9 +543,9 @@ namespace Model
      * <p>The KMS key identifier to use when restoring an encrypted cluster from a DB
      * snapshot or cluster snapshot.</p> <p>The KMS key identifier is the Amazon
      * Resource Name (ARN) for the KMS encryption key. If you are restoring a cluster
-     * with the same account that owns the KMS encryption key used to encrypt the new
-     * cluster, then you can use the KMS key alias instead of the ARN for the KMS
-     * encryption key.</p> <p>If you do not specify a value for the
+     * with the same Amazon Web Services account that owns the KMS encryption key used
+     * to encrypt the new cluster, then you can use the KMS key alias instead of the
+     * ARN for the KMS encryption key.</p> <p>If you do not specify a value for the
      * <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li> <p>If
      * the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is
      * encrypted, then the restored cluster is encrypted using the KMS key that was
@@ -559,9 +559,9 @@ namespace Model
      * <p>The KMS key identifier to use when restoring an encrypted cluster from a DB
      * snapshot or cluster snapshot.</p> <p>The KMS key identifier is the Amazon
      * Resource Name (ARN) for the KMS encryption key. If you are restoring a cluster
-     * with the same account that owns the KMS encryption key used to encrypt the new
-     * cluster, then you can use the KMS key alias instead of the ARN for the KMS
-     * encryption key.</p> <p>If you do not specify a value for the
+     * with the same Amazon Web Services account that owns the KMS encryption key used
+     * to encrypt the new cluster, then you can use the KMS key alias instead of the
+     * ARN for the KMS encryption key.</p> <p>If you do not specify a value for the
      * <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li> <p>If
      * the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is
      * encrypted, then the restored cluster is encrypted using the KMS key that was
@@ -575,9 +575,9 @@ namespace Model
      * <p>The KMS key identifier to use when restoring an encrypted cluster from a DB
      * snapshot or cluster snapshot.</p> <p>The KMS key identifier is the Amazon
      * Resource Name (ARN) for the KMS encryption key. If you are restoring a cluster
-     * with the same account that owns the KMS encryption key used to encrypt the new
-     * cluster, then you can use the KMS key alias instead of the ARN for the KMS
-     * encryption key.</p> <p>If you do not specify a value for the
+     * with the same Amazon Web Services account that owns the KMS encryption key used
+     * to encrypt the new cluster, then you can use the KMS key alias instead of the
+     * ARN for the KMS encryption key.</p> <p>If you do not specify a value for the
      * <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li> <p>If
      * the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is
      * encrypted, then the restored cluster is encrypted using the KMS key that was
@@ -591,9 +591,9 @@ namespace Model
      * <p>The KMS key identifier to use when restoring an encrypted cluster from a DB
      * snapshot or cluster snapshot.</p> <p>The KMS key identifier is the Amazon
      * Resource Name (ARN) for the KMS encryption key. If you are restoring a cluster
-     * with the same account that owns the KMS encryption key used to encrypt the new
-     * cluster, then you can use the KMS key alias instead of the ARN for the KMS
-     * encryption key.</p> <p>If you do not specify a value for the
+     * with the same Amazon Web Services account that owns the KMS encryption key used
+     * to encrypt the new cluster, then you can use the KMS key alias instead of the
+     * ARN for the KMS encryption key.</p> <p>If you do not specify a value for the
      * <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li> <p>If
      * the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is
      * encrypted, then the restored cluster is encrypted using the KMS key that was
@@ -607,9 +607,9 @@ namespace Model
      * <p>The KMS key identifier to use when restoring an encrypted cluster from a DB
      * snapshot or cluster snapshot.</p> <p>The KMS key identifier is the Amazon
      * Resource Name (ARN) for the KMS encryption key. If you are restoring a cluster
-     * with the same account that owns the KMS encryption key used to encrypt the new
-     * cluster, then you can use the KMS key alias instead of the ARN for the KMS
-     * encryption key.</p> <p>If you do not specify a value for the
+     * with the same Amazon Web Services account that owns the KMS encryption key used
+     * to encrypt the new cluster, then you can use the KMS key alias instead of the
+     * ARN for the KMS encryption key.</p> <p>If you do not specify a value for the
      * <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li> <p>If
      * the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is
      * encrypted, then the restored cluster is encrypted using the KMS key that was
@@ -623,9 +623,9 @@ namespace Model
      * <p>The KMS key identifier to use when restoring an encrypted cluster from a DB
      * snapshot or cluster snapshot.</p> <p>The KMS key identifier is the Amazon
      * Resource Name (ARN) for the KMS encryption key. If you are restoring a cluster
-     * with the same account that owns the KMS encryption key used to encrypt the new
-     * cluster, then you can use the KMS key alias instead of the ARN for the KMS
-     * encryption key.</p> <p>If you do not specify a value for the
+     * with the same Amazon Web Services account that owns the KMS encryption key used
+     * to encrypt the new cluster, then you can use the KMS key alias instead of the
+     * ARN for the KMS encryption key.</p> <p>If you do not specify a value for the
      * <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li> <p>If
      * the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is
      * encrypted, then the restored cluster is encrypted using the KMS key that was
@@ -639,9 +639,9 @@ namespace Model
      * <p>The KMS key identifier to use when restoring an encrypted cluster from a DB
      * snapshot or cluster snapshot.</p> <p>The KMS key identifier is the Amazon
      * Resource Name (ARN) for the KMS encryption key. If you are restoring a cluster
-     * with the same account that owns the KMS encryption key used to encrypt the new
-     * cluster, then you can use the KMS key alias instead of the ARN for the KMS
-     * encryption key.</p> <p>If you do not specify a value for the
+     * with the same Amazon Web Services account that owns the KMS encryption key used
+     * to encrypt the new cluster, then you can use the KMS key alias instead of the
+     * ARN for the KMS encryption key.</p> <p>If you do not specify a value for the
      * <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li> <p>If
      * the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is
      * encrypted, then the restored cluster is encrypted using the KMS key that was

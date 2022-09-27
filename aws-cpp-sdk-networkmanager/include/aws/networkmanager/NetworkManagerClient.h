@@ -70,12 +70,14 @@
 #include <aws/networkmanager/model/ListConnectPeersResult.h>
 #include <aws/networkmanager/model/ListCoreNetworkPolicyVersionsResult.h>
 #include <aws/networkmanager/model/ListCoreNetworksResult.h>
+#include <aws/networkmanager/model/ListOrganizationServiceAccessStatusResult.h>
 #include <aws/networkmanager/model/ListTagsForResourceResult.h>
 #include <aws/networkmanager/model/PutCoreNetworkPolicyResult.h>
 #include <aws/networkmanager/model/PutResourcePolicyResult.h>
 #include <aws/networkmanager/model/RegisterTransitGatewayResult.h>
 #include <aws/networkmanager/model/RejectAttachmentResult.h>
 #include <aws/networkmanager/model/RestoreCoreNetworkPolicyVersionResult.h>
+#include <aws/networkmanager/model/StartOrganizationServiceAccessUpdateResult.h>
 #include <aws/networkmanager/model/StartRouteAnalysisResult.h>
 #include <aws/networkmanager/model/TagResourceResult.h>
 #include <aws/networkmanager/model/UntagResourceResult.h>
@@ -185,12 +187,14 @@ namespace Model
         class ListConnectPeersRequest;
         class ListCoreNetworkPolicyVersionsRequest;
         class ListCoreNetworksRequest;
+        class ListOrganizationServiceAccessStatusRequest;
         class ListTagsForResourceRequest;
         class PutCoreNetworkPolicyRequest;
         class PutResourcePolicyRequest;
         class RegisterTransitGatewayRequest;
         class RejectAttachmentRequest;
         class RestoreCoreNetworkPolicyVersionRequest;
+        class StartOrganizationServiceAccessUpdateRequest;
         class StartRouteAnalysisRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
@@ -262,12 +266,14 @@ namespace Model
         typedef Aws::Utils::Outcome<ListConnectPeersResult, NetworkManagerError> ListConnectPeersOutcome;
         typedef Aws::Utils::Outcome<ListCoreNetworkPolicyVersionsResult, NetworkManagerError> ListCoreNetworkPolicyVersionsOutcome;
         typedef Aws::Utils::Outcome<ListCoreNetworksResult, NetworkManagerError> ListCoreNetworksOutcome;
+        typedef Aws::Utils::Outcome<ListOrganizationServiceAccessStatusResult, NetworkManagerError> ListOrganizationServiceAccessStatusOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, NetworkManagerError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<PutCoreNetworkPolicyResult, NetworkManagerError> PutCoreNetworkPolicyOutcome;
         typedef Aws::Utils::Outcome<PutResourcePolicyResult, NetworkManagerError> PutResourcePolicyOutcome;
         typedef Aws::Utils::Outcome<RegisterTransitGatewayResult, NetworkManagerError> RegisterTransitGatewayOutcome;
         typedef Aws::Utils::Outcome<RejectAttachmentResult, NetworkManagerError> RejectAttachmentOutcome;
         typedef Aws::Utils::Outcome<RestoreCoreNetworkPolicyVersionResult, NetworkManagerError> RestoreCoreNetworkPolicyVersionOutcome;
+        typedef Aws::Utils::Outcome<StartOrganizationServiceAccessUpdateResult, NetworkManagerError> StartOrganizationServiceAccessUpdateOutcome;
         typedef Aws::Utils::Outcome<StartRouteAnalysisResult, NetworkManagerError> StartRouteAnalysisOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, NetworkManagerError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, NetworkManagerError> UntagResourceOutcome;
@@ -339,12 +345,14 @@ namespace Model
         typedef std::future<ListConnectPeersOutcome> ListConnectPeersOutcomeCallable;
         typedef std::future<ListCoreNetworkPolicyVersionsOutcome> ListCoreNetworkPolicyVersionsOutcomeCallable;
         typedef std::future<ListCoreNetworksOutcome> ListCoreNetworksOutcomeCallable;
+        typedef std::future<ListOrganizationServiceAccessStatusOutcome> ListOrganizationServiceAccessStatusOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutCoreNetworkPolicyOutcome> PutCoreNetworkPolicyOutcomeCallable;
         typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
         typedef std::future<RegisterTransitGatewayOutcome> RegisterTransitGatewayOutcomeCallable;
         typedef std::future<RejectAttachmentOutcome> RejectAttachmentOutcomeCallable;
         typedef std::future<RestoreCoreNetworkPolicyVersionOutcome> RestoreCoreNetworkPolicyVersionOutcomeCallable;
+        typedef std::future<StartOrganizationServiceAccessUpdateOutcome> StartOrganizationServiceAccessUpdateOutcomeCallable;
         typedef std::future<StartRouteAnalysisOutcome> StartRouteAnalysisOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -419,12 +427,14 @@ namespace Model
     typedef std::function<void(const NetworkManagerClient*, const Model::ListConnectPeersRequest&, const Model::ListConnectPeersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConnectPeersResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::ListCoreNetworkPolicyVersionsRequest&, const Model::ListCoreNetworkPolicyVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCoreNetworkPolicyVersionsResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::ListCoreNetworksRequest&, const Model::ListCoreNetworksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCoreNetworksResponseReceivedHandler;
+    typedef std::function<void(const NetworkManagerClient*, const Model::ListOrganizationServiceAccessStatusRequest&, const Model::ListOrganizationServiceAccessStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOrganizationServiceAccessStatusResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::PutCoreNetworkPolicyRequest&, const Model::PutCoreNetworkPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutCoreNetworkPolicyResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::PutResourcePolicyRequest&, const Model::PutResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::RegisterTransitGatewayRequest&, const Model::RegisterTransitGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterTransitGatewayResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::RejectAttachmentRequest&, const Model::RejectAttachmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectAttachmentResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::RestoreCoreNetworkPolicyVersionRequest&, const Model::RestoreCoreNetworkPolicyVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreCoreNetworkPolicyVersionResponseReceivedHandler;
+    typedef std::function<void(const NetworkManagerClient*, const Model::StartOrganizationServiceAccessUpdateRequest&, const Model::StartOrganizationServiceAccessUpdateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartOrganizationServiceAccessUpdateResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::StartRouteAnalysisRequest&, const Model::StartRouteAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartRouteAnalysisResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
@@ -438,9 +448,9 @@ namespace Model
     typedef std::function<void(const NetworkManagerClient*, const Model::UpdateVpcAttachmentRequest&, const Model::UpdateVpcAttachmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVpcAttachmentResponseReceivedHandler;
 
   /**
-   * <p>Transit Gateway Network Manager (Network Manager) enables you to create a
-   * global network, in which you can monitor your Amazon Web Services and
-   * on-premises networks that are built around transit gateways.</p>
+   * <p>Amazon Web Services enables you to centrally manage your Amazon Web Services
+   * Cloud WAN core network and your Transit Gateway network across Amazon Web
+   * Services accounts, Regions, and on-premises locations.</p>
    */
   class AWS_NETWORKMANAGER_API NetworkManagerClient : public Aws::Client::AWSJsonClient
   {
@@ -479,24 +489,12 @@ namespace Model
         virtual Model::AcceptAttachmentOutcome AcceptAttachment(const Model::AcceptAttachmentRequest& request) const;
 
         /**
-         * <p>Accepts a core network attachment request. </p> <p>Once the attachment
-         * request is accepted by a core network owner, the attachment is created and
-         * connected to a core network.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AcceptAttachment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for AcceptAttachment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AcceptAttachmentOutcomeCallable AcceptAttachmentCallable(const Model::AcceptAttachmentRequest& request) const;
 
         /**
-         * <p>Accepts a core network attachment request. </p> <p>Once the attachment
-         * request is accepted by a core network owner, the attachment is created and
-         * connected to a core network.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AcceptAttachment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for AcceptAttachment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AcceptAttachmentAsync(const Model::AcceptAttachmentRequest& request, const AcceptAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -512,28 +510,12 @@ namespace Model
         virtual Model::AssociateConnectPeerOutcome AssociateConnectPeer(const Model::AssociateConnectPeerRequest& request) const;
 
         /**
-         * <p>Associates a core network Connect peer with a device and optionally, with a
-         * link. </p> <p>If you specify a link, it must be associated with the specified
-         * device. You can only associate core network Connect peers that have been created
-         * on a core network Connect attachment on a core network. </p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AssociateConnectPeer">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for AssociateConnectPeer that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AssociateConnectPeerOutcomeCallable AssociateConnectPeerCallable(const Model::AssociateConnectPeerRequest& request) const;
 
         /**
-         * <p>Associates a core network Connect peer with a device and optionally, with a
-         * link. </p> <p>If you specify a link, it must be associated with the specified
-         * device. You can only associate core network Connect peers that have been created
-         * on a core network Connect attachment on a core network. </p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AssociateConnectPeer">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for AssociateConnectPeer that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateConnectPeerAsync(const Model::AssociateConnectPeerRequest& request, const AssociateConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -541,9 +523,9 @@ namespace Model
          * <p>Associates a customer gateway with a device and optionally, with a link. If
          * you specify a link, it must be associated with the specified device. </p> <p>You
          * can only associate customer gateways that are connected to a VPN attachment on a
-         * transit gateway. The transit gateway must be registered in your global network.
-         * When you register a transit gateway, customer gateways that are connected to the
-         * transit gateway are automatically included in the global network. To list
+         * transit gateway or core network registered in your global network. When you
+         * register a transit gateway or core network, customer gateways that are connected
+         * to the transit gateway are automatically included in the global network. To list
          * customer gateways that are connected to a transit gateway, use the <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnConnections.html">DescribeVpnConnections</a>
          * EC2 API and filter by <code>transit-gateway-id</code>.</p> <p>You cannot
@@ -555,40 +537,12 @@ namespace Model
         virtual Model::AssociateCustomerGatewayOutcome AssociateCustomerGateway(const Model::AssociateCustomerGatewayRequest& request) const;
 
         /**
-         * <p>Associates a customer gateway with a device and optionally, with a link. If
-         * you specify a link, it must be associated with the specified device. </p> <p>You
-         * can only associate customer gateways that are connected to a VPN attachment on a
-         * transit gateway. The transit gateway must be registered in your global network.
-         * When you register a transit gateway, customer gateways that are connected to the
-         * transit gateway are automatically included in the global network. To list
-         * customer gateways that are connected to a transit gateway, use the <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnConnections.html">DescribeVpnConnections</a>
-         * EC2 API and filter by <code>transit-gateway-id</code>.</p> <p>You cannot
-         * associate a customer gateway with more than one device and link. </p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AssociateCustomerGateway">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for AssociateCustomerGateway that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AssociateCustomerGatewayOutcomeCallable AssociateCustomerGatewayCallable(const Model::AssociateCustomerGatewayRequest& request) const;
 
         /**
-         * <p>Associates a customer gateway with a device and optionally, with a link. If
-         * you specify a link, it must be associated with the specified device. </p> <p>You
-         * can only associate customer gateways that are connected to a VPN attachment on a
-         * transit gateway. The transit gateway must be registered in your global network.
-         * When you register a transit gateway, customer gateways that are connected to the
-         * transit gateway are automatically included in the global network. To list
-         * customer gateways that are connected to a transit gateway, use the <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnConnections.html">DescribeVpnConnections</a>
-         * EC2 API and filter by <code>transit-gateway-id</code>.</p> <p>You cannot
-         * associate a customer gateway with more than one device and link. </p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AssociateCustomerGateway">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for AssociateCustomerGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateCustomerGatewayAsync(const Model::AssociateCustomerGatewayRequest& request, const AssociateCustomerGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -602,24 +556,12 @@ namespace Model
         virtual Model::AssociateLinkOutcome AssociateLink(const Model::AssociateLinkRequest& request) const;
 
         /**
-         * <p>Associates a link to a device. A device can be associated to multiple links
-         * and a link can be associated to multiple devices. The device and link must be in
-         * the same global network and the same site.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AssociateLink">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for AssociateLink that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AssociateLinkOutcomeCallable AssociateLinkCallable(const Model::AssociateLinkRequest& request) const;
 
         /**
-         * <p>Associates a link to a device. A device can be associated to multiple links
-         * and a link can be associated to multiple devices. The device and link must be in
-         * the same global network and the same site.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AssociateLink">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for AssociateLink that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateLinkAsync(const Model::AssociateLinkRequest& request, const AssociateLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -636,30 +578,12 @@ namespace Model
         virtual Model::AssociateTransitGatewayConnectPeerOutcome AssociateTransitGatewayConnectPeer(const Model::AssociateTransitGatewayConnectPeerRequest& request) const;
 
         /**
-         * <p>Associates a transit gateway Connect peer with a device, and optionally, with
-         * a link. If you specify a link, it must be associated with the specified device.
-         * </p> <p>You can only associate transit gateway Connect peers that have been
-         * created on a transit gateway that's registered in your global network.</p>
-         * <p>You cannot associate a transit gateway Connect peer with more than one device
-         * and link. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AssociateTransitGatewayConnectPeer">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for AssociateTransitGatewayConnectPeer that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AssociateTransitGatewayConnectPeerOutcomeCallable AssociateTransitGatewayConnectPeerCallable(const Model::AssociateTransitGatewayConnectPeerRequest& request) const;
 
         /**
-         * <p>Associates a transit gateway Connect peer with a device, and optionally, with
-         * a link. If you specify a link, it must be associated with the specified device.
-         * </p> <p>You can only associate transit gateway Connect peers that have been
-         * created on a transit gateway that's registered in your global network.</p>
-         * <p>You cannot associate a transit gateway Connect peer with more than one device
-         * and link. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AssociateTransitGatewayConnectPeer">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for AssociateTransitGatewayConnectPeer that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateTransitGatewayConnectPeerAsync(const Model::AssociateTransitGatewayConnectPeerRequest& request, const AssociateTransitGatewayConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -675,33 +599,17 @@ namespace Model
         virtual Model::CreateConnectAttachmentOutcome CreateConnectAttachment(const Model::CreateConnectAttachmentRequest& request) const;
 
         /**
-         * <p>Creates a core network Connect attachment from a specified core network
-         * attachment. </p> <p>A core network Connect attachment is a GRE-based tunnel
-         * attachment that you can use to establish a connection between a core network and
-         * an appliance. A core network Connect attachment uses an existing VPC attachment
-         * as the underlying transport mechanism.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnectAttachment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateConnectAttachment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateConnectAttachmentOutcomeCallable CreateConnectAttachmentCallable(const Model::CreateConnectAttachmentRequest& request) const;
 
         /**
-         * <p>Creates a core network Connect attachment from a specified core network
-         * attachment. </p> <p>A core network Connect attachment is a GRE-based tunnel
-         * attachment that you can use to establish a connection between a core network and
-         * an appliance. A core network Connect attachment uses an existing VPC attachment
-         * as the underlying transport mechanism.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnectAttachment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateConnectAttachment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateConnectAttachmentAsync(const Model::CreateConnectAttachmentRequest& request, const CreateConnectAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a core network connect peer for a specified core network connect
+         * <p>Creates a core network Connect peer for a specified core network connect
          * attachment between a core network and an appliance. The peer address and transit
          * gateway address must be the same IP address family (IPv4 or IPv6).</p><p><h3>See
          * Also:</h3>   <a
@@ -711,26 +619,12 @@ namespace Model
         virtual Model::CreateConnectPeerOutcome CreateConnectPeer(const Model::CreateConnectPeerRequest& request) const;
 
         /**
-         * <p>Creates a core network connect peer for a specified core network connect
-         * attachment between a core network and an appliance. The peer address and transit
-         * gateway address must be the same IP address family (IPv4 or IPv6).</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnectPeer">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateConnectPeer that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateConnectPeerOutcomeCallable CreateConnectPeerCallable(const Model::CreateConnectPeerRequest& request) const;
 
         /**
-         * <p>Creates a core network connect peer for a specified core network connect
-         * attachment between a core network and an appliance. The peer address and transit
-         * gateway address must be the same IP address family (IPv4 or IPv6).</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnectPeer">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateConnectPeer that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateConnectPeerAsync(const Model::CreateConnectPeerRequest& request, const CreateConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -745,26 +639,12 @@ namespace Model
         virtual Model::CreateConnectionOutcome CreateConnection(const Model::CreateConnectionRequest& request) const;
 
         /**
-         * <p>Creates a connection between two devices. The devices can be a physical or
-         * virtual appliance that connects to a third-party appliance in a VPC, or a
-         * physical appliance that connects to another physical appliance in an on-premises
-         * network.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnection">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateConnection that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateConnectionOutcomeCallable CreateConnectionCallable(const Model::CreateConnectionRequest& request) const;
 
         /**
-         * <p>Creates a connection between two devices. The devices can be a physical or
-         * virtual appliance that connects to a third-party appliance in a VPC, or a
-         * physical appliance that connects to another physical appliance in an on-premises
-         * network.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnection">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateConnectionAsync(const Model::CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -777,22 +657,12 @@ namespace Model
         virtual Model::CreateCoreNetworkOutcome CreateCoreNetwork(const Model::CreateCoreNetworkRequest& request) const;
 
         /**
-         * <p>Creates a core network as part of your global network, and optionally, with a
-         * core network policy.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateCoreNetwork">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateCoreNetwork that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateCoreNetworkOutcomeCallable CreateCoreNetworkCallable(const Model::CreateCoreNetworkRequest& request) const;
 
         /**
-         * <p>Creates a core network as part of your global network, and optionally, with a
-         * core network policy.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateCoreNetwork">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateCoreNetwork that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateCoreNetworkAsync(const Model::CreateCoreNetworkRequest& request, const CreateCoreNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -806,24 +676,12 @@ namespace Model
         virtual Model::CreateDeviceOutcome CreateDevice(const Model::CreateDeviceRequest& request) const;
 
         /**
-         * <p>Creates a new device in a global network. If you specify both a site ID and a
-         * location, the location of the site is used for visualization in the Network
-         * Manager console.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateDevice">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateDevice that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateDeviceOutcomeCallable CreateDeviceCallable(const Model::CreateDeviceRequest& request) const;
 
         /**
-         * <p>Creates a new device in a global network. If you specify both a site ID and a
-         * location, the location of the site is used for visualization in the Network
-         * Manager console.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateDevice">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateDevice that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateDeviceAsync(const Model::CreateDeviceRequest& request, const CreateDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -835,20 +693,12 @@ namespace Model
         virtual Model::CreateGlobalNetworkOutcome CreateGlobalNetwork(const Model::CreateGlobalNetworkRequest& request) const;
 
         /**
-         * <p>Creates a new, empty global network.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateGlobalNetwork">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateGlobalNetwork that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateGlobalNetworkOutcomeCallable CreateGlobalNetworkCallable(const Model::CreateGlobalNetworkRequest& request) const;
 
         /**
-         * <p>Creates a new, empty global network.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateGlobalNetwork">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateGlobalNetwork that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateGlobalNetworkAsync(const Model::CreateGlobalNetworkRequest& request, const CreateGlobalNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -860,20 +710,12 @@ namespace Model
         virtual Model::CreateLinkOutcome CreateLink(const Model::CreateLinkRequest& request) const;
 
         /**
-         * <p>Creates a new link for a specified site.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateLink">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateLink that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateLinkOutcomeCallable CreateLinkCallable(const Model::CreateLinkRequest& request) const;
 
         /**
-         * <p>Creates a new link for a specified site.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateLink">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateLink that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateLinkAsync(const Model::CreateLinkRequest& request, const CreateLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -885,48 +727,30 @@ namespace Model
         virtual Model::CreateSiteOutcome CreateSite(const Model::CreateSiteRequest& request) const;
 
         /**
-         * <p>Creates a new site in a global network.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateSite">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateSite that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateSiteOutcomeCallable CreateSiteCallable(const Model::CreateSiteRequest& request) const;
 
         /**
-         * <p>Creates a new site in a global network.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateSite">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateSite that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateSiteAsync(const Model::CreateSiteRequest& request, const CreateSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a site-to-site VPN attachment on an edge location of a core
-         * network.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an Amazon Web Services site-to-site VPN attachment on an edge
+         * location of a core network.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateSiteToSiteVpnAttachment">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateSiteToSiteVpnAttachmentOutcome CreateSiteToSiteVpnAttachment(const Model::CreateSiteToSiteVpnAttachmentRequest& request) const;
 
         /**
-         * <p>Creates a site-to-site VPN attachment on an edge location of a core
-         * network.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateSiteToSiteVpnAttachment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateSiteToSiteVpnAttachment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateSiteToSiteVpnAttachmentOutcomeCallable CreateSiteToSiteVpnAttachmentCallable(const Model::CreateSiteToSiteVpnAttachmentRequest& request) const;
 
         /**
-         * <p>Creates a site-to-site VPN attachment on an edge location of a core
-         * network.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateSiteToSiteVpnAttachment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateSiteToSiteVpnAttachment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateSiteToSiteVpnAttachmentAsync(const Model::CreateSiteToSiteVpnAttachmentRequest& request, const CreateSiteToSiteVpnAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -939,22 +763,12 @@ namespace Model
         virtual Model::CreateVpcAttachmentOutcome CreateVpcAttachment(const Model::CreateVpcAttachmentRequest& request) const;
 
         /**
-         * <p>Creates a VPC attachment on an edge location of a core network.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateVpcAttachment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateVpcAttachment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateVpcAttachmentOutcomeCallable CreateVpcAttachmentCallable(const Model::CreateVpcAttachmentRequest& request) const;
 
         /**
-         * <p>Creates a VPC attachment on an edge location of a core network.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateVpcAttachment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateVpcAttachment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateVpcAttachmentAsync(const Model::CreateVpcAttachmentRequest& request, const CreateVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -967,22 +781,12 @@ namespace Model
         virtual Model::DeleteAttachmentOutcome DeleteAttachment(const Model::DeleteAttachmentRequest& request) const;
 
         /**
-         * <p>Deletes an attachment. Supports all attachment types.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteAttachment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteAttachment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteAttachmentOutcomeCallable DeleteAttachmentCallable(const Model::DeleteAttachmentRequest& request) const;
 
         /**
-         * <p>Deletes an attachment. Supports all attachment types.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteAttachment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteAttachment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteAttachmentAsync(const Model::DeleteAttachmentRequest& request, const DeleteAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -994,20 +798,12 @@ namespace Model
         virtual Model::DeleteConnectPeerOutcome DeleteConnectPeer(const Model::DeleteConnectPeerRequest& request) const;
 
         /**
-         * <p>Deletes a Connect peer.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteConnectPeer">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteConnectPeer that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteConnectPeerOutcomeCallable DeleteConnectPeerCallable(const Model::DeleteConnectPeerRequest& request) const;
 
         /**
-         * <p>Deletes a Connect peer.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteConnectPeer">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteConnectPeer that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteConnectPeerAsync(const Model::DeleteConnectPeerRequest& request, const DeleteConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1020,22 +816,12 @@ namespace Model
         virtual Model::DeleteConnectionOutcome DeleteConnection(const Model::DeleteConnectionRequest& request) const;
 
         /**
-         * <p>Deletes the specified connection in your global network.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteConnection">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteConnection that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteConnectionOutcomeCallable DeleteConnectionCallable(const Model::DeleteConnectionRequest& request) const;
 
         /**
-         * <p>Deletes the specified connection in your global network.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteConnection">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteConnectionAsync(const Model::DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1049,24 +835,12 @@ namespace Model
         virtual Model::DeleteCoreNetworkOutcome DeleteCoreNetwork(const Model::DeleteCoreNetworkRequest& request) const;
 
         /**
-         * <p>Deletes a core network along with all core network policies. This can only be
-         * done if there are no attachments on a core network.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteCoreNetwork">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteCoreNetwork that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteCoreNetworkOutcomeCallable DeleteCoreNetworkCallable(const Model::DeleteCoreNetworkRequest& request) const;
 
         /**
-         * <p>Deletes a core network along with all core network policies. This can only be
-         * done if there are no attachments on a core network.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteCoreNetwork">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteCoreNetwork that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteCoreNetworkAsync(const Model::DeleteCoreNetworkRequest& request, const DeleteCoreNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1079,22 +853,12 @@ namespace Model
         virtual Model::DeleteCoreNetworkPolicyVersionOutcome DeleteCoreNetworkPolicyVersion(const Model::DeleteCoreNetworkPolicyVersionRequest& request) const;
 
         /**
-         * <p>Deletes a policy version from a core network. You can't delete the current
-         * LIVE policy.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteCoreNetworkPolicyVersion">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteCoreNetworkPolicyVersion that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteCoreNetworkPolicyVersionOutcomeCallable DeleteCoreNetworkPolicyVersionCallable(const Model::DeleteCoreNetworkPolicyVersionRequest& request) const;
 
         /**
-         * <p>Deletes a policy version from a core network. You can't delete the current
-         * LIVE policy.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteCoreNetworkPolicyVersion">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteCoreNetworkPolicyVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteCoreNetworkPolicyVersionAsync(const Model::DeleteCoreNetworkPolicyVersionRequest& request, const DeleteCoreNetworkPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1107,53 +871,31 @@ namespace Model
         virtual Model::DeleteDeviceOutcome DeleteDevice(const Model::DeleteDeviceRequest& request) const;
 
         /**
-         * <p>Deletes an existing device. You must first disassociate the device from any
-         * links and customer gateways.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteDevice">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteDevice that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteDeviceOutcomeCallable DeleteDeviceCallable(const Model::DeleteDeviceRequest& request) const;
 
         /**
-         * <p>Deletes an existing device. You must first disassociate the device from any
-         * links and customer gateways.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteDevice">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteDevice that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteDeviceAsync(const Model::DeleteDeviceRequest& request, const DeleteDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an existing global network. You must first delete all global network
-         * objects (devices, links, and sites) and deregister all transit
-         * gateways.</p><p><h3>See Also:</h3>   <a
+         * objects (devices, links, and sites), deregister all transit gateways, and delete
+         * any core networks.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteGlobalNetwork">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteGlobalNetworkOutcome DeleteGlobalNetwork(const Model::DeleteGlobalNetworkRequest& request) const;
 
         /**
-         * <p>Deletes an existing global network. You must first delete all global network
-         * objects (devices, links, and sites) and deregister all transit
-         * gateways.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteGlobalNetwork">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteGlobalNetwork that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteGlobalNetworkOutcomeCallable DeleteGlobalNetworkCallable(const Model::DeleteGlobalNetworkRequest& request) const;
 
         /**
-         * <p>Deletes an existing global network. You must first delete all global network
-         * objects (devices, links, and sites) and deregister all transit
-         * gateways.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteGlobalNetwork">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteGlobalNetwork that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteGlobalNetworkAsync(const Model::DeleteGlobalNetworkRequest& request, const DeleteGlobalNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1166,22 +908,12 @@ namespace Model
         virtual Model::DeleteLinkOutcome DeleteLink(const Model::DeleteLinkRequest& request) const;
 
         /**
-         * <p>Deletes an existing link. You must first disassociate the link from any
-         * devices and customer gateways.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteLink">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteLink that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteLinkOutcomeCallable DeleteLinkCallable(const Model::DeleteLinkRequest& request) const;
 
         /**
-         * <p>Deletes an existing link. You must first disassociate the link from any
-         * devices and customer gateways.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteLink">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteLink that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteLinkAsync(const Model::DeleteLinkRequest& request, const DeleteLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1195,24 +927,12 @@ namespace Model
         virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request) const;
 
         /**
-         * <p>Deletes a resource policy for the specified resource. This revokes the access
-         * of the principals specified in the resource policy.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteResourcePolicy">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const Model::DeleteResourcePolicyRequest& request) const;
 
         /**
-         * <p>Deletes a resource policy for the specified resource. This revokes the access
-         * of the principals specified in the resource policy.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteResourcePolicy">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteResourcePolicyAsync(const Model::DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1225,22 +945,12 @@ namespace Model
         virtual Model::DeleteSiteOutcome DeleteSite(const Model::DeleteSiteRequest& request) const;
 
         /**
-         * <p>Deletes an existing site. The site cannot be associated with any device or
-         * link.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteSite">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteSite that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteSiteOutcomeCallable DeleteSiteCallable(const Model::DeleteSiteRequest& request) const;
 
         /**
-         * <p>Deletes an existing site. The site cannot be associated with any device or
-         * link.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteSite">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteSite that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteSiteAsync(const Model::DeleteSiteRequest& request, const DeleteSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1254,24 +964,12 @@ namespace Model
         virtual Model::DeregisterTransitGatewayOutcome DeregisterTransitGateway(const Model::DeregisterTransitGatewayRequest& request) const;
 
         /**
-         * <p>Deregisters a transit gateway from your global network. This action does not
-         * delete your transit gateway, or modify any of its attachments. This action
-         * removes any customer gateway associations.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeregisterTransitGateway">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeregisterTransitGateway that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeregisterTransitGatewayOutcomeCallable DeregisterTransitGatewayCallable(const Model::DeregisterTransitGatewayRequest& request) const;
 
         /**
-         * <p>Deregisters a transit gateway from your global network. This action does not
-         * delete your transit gateway, or modify any of its attachments. This action
-         * removes any customer gateway associations.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeregisterTransitGateway">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeregisterTransitGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeregisterTransitGatewayAsync(const Model::DeregisterTransitGatewayRequest& request, const DeregisterTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1287,28 +985,12 @@ namespace Model
         virtual Model::DescribeGlobalNetworksOutcome DescribeGlobalNetworks(const Model::DescribeGlobalNetworksRequest& request) const;
 
         /**
-         * <p>Describes one or more global networks. By default, all global networks are
-         * described. To describe the objects in your global network, you must use the
-         * appropriate <code>Get*</code> action. For example, to list the transit gateways
-         * in your global network, use <a>GetTransitGatewayRegistrations</a>.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DescribeGlobalNetworks">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeGlobalNetworks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeGlobalNetworksOutcomeCallable DescribeGlobalNetworksCallable(const Model::DescribeGlobalNetworksRequest& request) const;
 
         /**
-         * <p>Describes one or more global networks. By default, all global networks are
-         * described. To describe the objects in your global network, you must use the
-         * appropriate <code>Get*</code> action. For example, to list the transit gateways
-         * in your global network, use <a>GetTransitGatewayRegistrations</a>.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DescribeGlobalNetworks">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeGlobalNetworks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeGlobalNetworksAsync(const Model::DescribeGlobalNetworksRequest& request, const DescribeGlobalNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1321,22 +1003,12 @@ namespace Model
         virtual Model::DisassociateConnectPeerOutcome DisassociateConnectPeer(const Model::DisassociateConnectPeerRequest& request) const;
 
         /**
-         * <p>Disassociates a core network Connect peer from a device and a link.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateConnectPeer">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DisassociateConnectPeer that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DisassociateConnectPeerOutcomeCallable DisassociateConnectPeerCallable(const Model::DisassociateConnectPeerRequest& request) const;
 
         /**
-         * <p>Disassociates a core network Connect peer from a device and a link.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateConnectPeer">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DisassociateConnectPeer that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateConnectPeerAsync(const Model::DisassociateConnectPeerRequest& request, const DisassociateConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1349,22 +1021,12 @@ namespace Model
         virtual Model::DisassociateCustomerGatewayOutcome DisassociateCustomerGateway(const Model::DisassociateCustomerGatewayRequest& request) const;
 
         /**
-         * <p>Disassociates a customer gateway from a device and a link.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateCustomerGateway">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DisassociateCustomerGateway that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DisassociateCustomerGatewayOutcomeCallable DisassociateCustomerGatewayCallable(const Model::DisassociateCustomerGatewayRequest& request) const;
 
         /**
-         * <p>Disassociates a customer gateway from a device and a link.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateCustomerGateway">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DisassociateCustomerGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateCustomerGatewayAsync(const Model::DisassociateCustomerGatewayRequest& request, const DisassociateCustomerGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1378,24 +1040,12 @@ namespace Model
         virtual Model::DisassociateLinkOutcome DisassociateLink(const Model::DisassociateLinkRequest& request) const;
 
         /**
-         * <p>Disassociates an existing device from a link. You must first disassociate any
-         * customer gateways that are associated with the link.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateLink">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DisassociateLink that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DisassociateLinkOutcomeCallable DisassociateLinkCallable(const Model::DisassociateLinkRequest& request) const;
 
         /**
-         * <p>Disassociates an existing device from a link. You must first disassociate any
-         * customer gateways that are associated with the link.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateLink">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DisassociateLink that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateLinkAsync(const Model::DisassociateLinkRequest& request, const DisassociateLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1408,22 +1058,12 @@ namespace Model
         virtual Model::DisassociateTransitGatewayConnectPeerOutcome DisassociateTransitGatewayConnectPeer(const Model::DisassociateTransitGatewayConnectPeerRequest& request) const;
 
         /**
-         * <p>Disassociates a transit gateway Connect peer from a device and
-         * link.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateTransitGatewayConnectPeer">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DisassociateTransitGatewayConnectPeer that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DisassociateTransitGatewayConnectPeerOutcomeCallable DisassociateTransitGatewayConnectPeerCallable(const Model::DisassociateTransitGatewayConnectPeerRequest& request) const;
 
         /**
-         * <p>Disassociates a transit gateway Connect peer from a device and
-         * link.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateTransitGatewayConnectPeer">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DisassociateTransitGatewayConnectPeer that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateTransitGatewayConnectPeerAsync(const Model::DisassociateTransitGatewayConnectPeerRequest& request, const DisassociateTransitGatewayConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1436,22 +1076,12 @@ namespace Model
         virtual Model::ExecuteCoreNetworkChangeSetOutcome ExecuteCoreNetworkChangeSet(const Model::ExecuteCoreNetworkChangeSetRequest& request) const;
 
         /**
-         * <p>Executes a change set on your core network. Deploys changes globally based on
-         * the policy submitted..</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ExecuteCoreNetworkChangeSet">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ExecuteCoreNetworkChangeSet that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ExecuteCoreNetworkChangeSetOutcomeCallable ExecuteCoreNetworkChangeSetCallable(const Model::ExecuteCoreNetworkChangeSetRequest& request) const;
 
         /**
-         * <p>Executes a change set on your core network. Deploys changes globally based on
-         * the policy submitted..</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ExecuteCoreNetworkChangeSet">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ExecuteCoreNetworkChangeSet that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ExecuteCoreNetworkChangeSetAsync(const Model::ExecuteCoreNetworkChangeSetRequest& request, const ExecuteCoreNetworkChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1464,22 +1094,12 @@ namespace Model
         virtual Model::GetConnectAttachmentOutcome GetConnectAttachment(const Model::GetConnectAttachmentRequest& request) const;
 
         /**
-         * <p>Returns information about a core network Connect attachment.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectAttachment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetConnectAttachment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetConnectAttachmentOutcomeCallable GetConnectAttachmentCallable(const Model::GetConnectAttachmentRequest& request) const;
 
         /**
-         * <p>Returns information about a core network Connect attachment.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectAttachment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetConnectAttachment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetConnectAttachmentAsync(const Model::GetConnectAttachmentRequest& request, const GetConnectAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1492,22 +1112,12 @@ namespace Model
         virtual Model::GetConnectPeerOutcome GetConnectPeer(const Model::GetConnectPeerRequest& request) const;
 
         /**
-         * <p>Returns information about a core network Connect peer.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectPeer">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetConnectPeer that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetConnectPeerOutcomeCallable GetConnectPeerCallable(const Model::GetConnectPeerRequest& request) const;
 
         /**
-         * <p>Returns information about a core network Connect peer.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectPeer">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetConnectPeer that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetConnectPeerAsync(const Model::GetConnectPeerRequest& request, const GetConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1520,22 +1130,12 @@ namespace Model
         virtual Model::GetConnectPeerAssociationsOutcome GetConnectPeerAssociations(const Model::GetConnectPeerAssociationsRequest& request) const;
 
         /**
-         * <p>Returns information about a core network Connect peer
-         * associations.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectPeerAssociations">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetConnectPeerAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetConnectPeerAssociationsOutcomeCallable GetConnectPeerAssociationsCallable(const Model::GetConnectPeerAssociationsRequest& request) const;
 
         /**
-         * <p>Returns information about a core network Connect peer
-         * associations.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectPeerAssociations">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetConnectPeerAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetConnectPeerAssociationsAsync(const Model::GetConnectPeerAssociationsRequest& request, const GetConnectPeerAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1548,50 +1148,30 @@ namespace Model
         virtual Model::GetConnectionsOutcome GetConnections(const Model::GetConnectionsRequest& request) const;
 
         /**
-         * <p>Gets information about one or more of your connections in a global
-         * network.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnections">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetConnections that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetConnectionsOutcomeCallable GetConnectionsCallable(const Model::GetConnectionsRequest& request) const;
 
         /**
-         * <p>Gets information about one or more of your connections in a global
-         * network.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnections">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetConnections that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetConnectionsAsync(const Model::GetConnectionsRequest& request, const GetConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about a core network. By default it returns the LIVE
-         * policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about the LIVE policy for a core network.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetwork">AWS
          * API Reference</a></p>
          */
         virtual Model::GetCoreNetworkOutcome GetCoreNetwork(const Model::GetCoreNetworkRequest& request) const;
 
         /**
-         * <p>Returns information about a core network. By default it returns the LIVE
-         * policy.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetwork">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetCoreNetwork that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetCoreNetworkOutcomeCallable GetCoreNetworkCallable(const Model::GetCoreNetworkRequest& request) const;
 
         /**
-         * <p>Returns information about a core network. By default it returns the LIVE
-         * policy.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetwork">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetCoreNetwork that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetCoreNetworkAsync(const Model::GetCoreNetworkRequest& request, const GetCoreNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1604,22 +1184,12 @@ namespace Model
         virtual Model::GetCoreNetworkChangeSetOutcome GetCoreNetworkChangeSet(const Model::GetCoreNetworkChangeSetRequest& request) const;
 
         /**
-         * <p>Returns a change set between the LIVE core network policy and a submitted
-         * policy.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetworkChangeSet">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetCoreNetworkChangeSet that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetCoreNetworkChangeSetOutcomeCallable GetCoreNetworkChangeSetCallable(const Model::GetCoreNetworkChangeSetRequest& request) const;
 
         /**
-         * <p>Returns a change set between the LIVE core network policy and a submitted
-         * policy.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetworkChangeSet">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetCoreNetworkChangeSet that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetCoreNetworkChangeSetAsync(const Model::GetCoreNetworkChangeSetRequest& request, const GetCoreNetworkChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1633,24 +1203,12 @@ namespace Model
         virtual Model::GetCoreNetworkPolicyOutcome GetCoreNetworkPolicy(const Model::GetCoreNetworkPolicyRequest& request) const;
 
         /**
-         * <p>Gets details about a core network policy. You can get details about your
-         * current live policy or any previous policy version.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetworkPolicy">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetCoreNetworkPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetCoreNetworkPolicyOutcomeCallable GetCoreNetworkPolicyCallable(const Model::GetCoreNetworkPolicyRequest& request) const;
 
         /**
-         * <p>Gets details about a core network policy. You can get details about your
-         * current live policy or any previous policy version.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetworkPolicy">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetCoreNetworkPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetCoreNetworkPolicyAsync(const Model::GetCoreNetworkPolicyRequest& request, const GetCoreNetworkPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1663,22 +1221,12 @@ namespace Model
         virtual Model::GetCustomerGatewayAssociationsOutcome GetCustomerGatewayAssociations(const Model::GetCustomerGatewayAssociationsRequest& request) const;
 
         /**
-         * <p>Gets the association information for customer gateways that are associated
-         * with devices and links in your global network.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCustomerGatewayAssociations">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetCustomerGatewayAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetCustomerGatewayAssociationsOutcomeCallable GetCustomerGatewayAssociationsCallable(const Model::GetCustomerGatewayAssociationsRequest& request) const;
 
         /**
-         * <p>Gets the association information for customer gateways that are associated
-         * with devices and links in your global network.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCustomerGatewayAssociations">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetCustomerGatewayAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetCustomerGatewayAssociationsAsync(const Model::GetCustomerGatewayAssociationsRequest& request, const GetCustomerGatewayAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1691,22 +1239,12 @@ namespace Model
         virtual Model::GetDevicesOutcome GetDevices(const Model::GetDevicesRequest& request) const;
 
         /**
-         * <p>Gets information about one or more of your devices in a global
-         * network.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetDevices">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetDevices that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetDevicesOutcomeCallable GetDevicesCallable(const Model::GetDevicesRequest& request) const;
 
         /**
-         * <p>Gets information about one or more of your devices in a global
-         * network.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetDevices">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetDevices that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDevicesAsync(const Model::GetDevicesRequest& request, const GetDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1719,22 +1257,12 @@ namespace Model
         virtual Model::GetLinkAssociationsOutcome GetLinkAssociations(const Model::GetLinkAssociationsRequest& request) const;
 
         /**
-         * <p>Gets the link associations for a device or a link. Either the device ID or
-         * the link ID must be specified.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetLinkAssociations">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetLinkAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetLinkAssociationsOutcomeCallable GetLinkAssociationsCallable(const Model::GetLinkAssociationsRequest& request) const;
 
         /**
-         * <p>Gets the link associations for a device or a link. Either the device ID or
-         * the link ID must be specified.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetLinkAssociations">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetLinkAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetLinkAssociationsAsync(const Model::GetLinkAssociationsRequest& request, const GetLinkAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1749,26 +1277,12 @@ namespace Model
         virtual Model::GetLinksOutcome GetLinks(const Model::GetLinksRequest& request) const;
 
         /**
-         * <p>Gets information about one or more links in a specified global network.</p>
-         * <p>If you specify the site ID, you cannot specify the type or provider in the
-         * same request. You can specify the type and provider in the same
-         * request.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetLinks">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetLinks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetLinksOutcomeCallable GetLinksCallable(const Model::GetLinksRequest& request) const;
 
         /**
-         * <p>Gets information about one or more links in a specified global network.</p>
-         * <p>If you specify the site ID, you cannot specify the type or provider in the
-         * same request. You can specify the type and provider in the same
-         * request.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetLinks">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetLinks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetLinksAsync(const Model::GetLinksRequest& request, const GetLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1781,22 +1295,12 @@ namespace Model
         virtual Model::GetNetworkResourceCountsOutcome GetNetworkResourceCounts(const Model::GetNetworkResourceCountsRequest& request) const;
 
         /**
-         * <p>Gets the count of network resources, by resource type, for the specified
-         * global network.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkResourceCounts">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetNetworkResourceCounts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetNetworkResourceCountsOutcomeCallable GetNetworkResourceCountsCallable(const Model::GetNetworkResourceCountsRequest& request) const;
 
         /**
-         * <p>Gets the count of network resources, by resource type, for the specified
-         * global network.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkResourceCounts">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetNetworkResourceCounts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetNetworkResourceCountsAsync(const Model::GetNetworkResourceCountsRequest& request, const GetNetworkResourceCountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1809,22 +1313,12 @@ namespace Model
         virtual Model::GetNetworkResourceRelationshipsOutcome GetNetworkResourceRelationships(const Model::GetNetworkResourceRelationshipsRequest& request) const;
 
         /**
-         * <p>Gets the network resource relationships for the specified global
-         * network.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkResourceRelationships">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetNetworkResourceRelationships that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetNetworkResourceRelationshipsOutcomeCallable GetNetworkResourceRelationshipsCallable(const Model::GetNetworkResourceRelationshipsRequest& request) const;
 
         /**
-         * <p>Gets the network resource relationships for the specified global
-         * network.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkResourceRelationships">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetNetworkResourceRelationships that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetNetworkResourceRelationshipsAsync(const Model::GetNetworkResourceRelationshipsRequest& request, const GetNetworkResourceRelationshipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1839,26 +1333,12 @@ namespace Model
         virtual Model::GetNetworkResourcesOutcome GetNetworkResources(const Model::GetNetworkResourcesRequest& request) const;
 
         /**
-         * <p>Describes the network resources for the specified global network.</p> <p>The
-         * results include information from the corresponding Describe call for the
-         * resource, minus any sensitive information such as pre-shared keys.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkResources">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetNetworkResources that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetNetworkResourcesOutcomeCallable GetNetworkResourcesCallable(const Model::GetNetworkResourcesRequest& request) const;
 
         /**
-         * <p>Describes the network resources for the specified global network.</p> <p>The
-         * results include information from the corresponding Describe call for the
-         * resource, minus any sensitive information such as pre-shared keys.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkResources">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetNetworkResources that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetNetworkResourcesAsync(const Model::GetNetworkResourcesRequest& request, const GetNetworkResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1871,22 +1351,12 @@ namespace Model
         virtual Model::GetNetworkRoutesOutcome GetNetworkRoutes(const Model::GetNetworkRoutesRequest& request) const;
 
         /**
-         * <p>Gets the network routes of the specified global network.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkRoutes">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetNetworkRoutes that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetNetworkRoutesOutcomeCallable GetNetworkRoutesCallable(const Model::GetNetworkRoutesRequest& request) const;
 
         /**
-         * <p>Gets the network routes of the specified global network.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkRoutes">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetNetworkRoutes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetNetworkRoutesAsync(const Model::GetNetworkRoutesRequest& request, const GetNetworkRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1899,22 +1369,12 @@ namespace Model
         virtual Model::GetNetworkTelemetryOutcome GetNetworkTelemetry(const Model::GetNetworkTelemetryRequest& request) const;
 
         /**
-         * <p>Gets the network telemetry of the specified global network.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkTelemetry">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetNetworkTelemetry that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetNetworkTelemetryOutcomeCallable GetNetworkTelemetryCallable(const Model::GetNetworkTelemetryRequest& request) const;
 
         /**
-         * <p>Gets the network telemetry of the specified global network.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkTelemetry">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetNetworkTelemetry that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetNetworkTelemetryAsync(const Model::GetNetworkTelemetryRequest& request, const GetNetworkTelemetryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1926,20 +1386,12 @@ namespace Model
         virtual Model::GetResourcePolicyOutcome GetResourcePolicy(const Model::GetResourcePolicyRequest& request) const;
 
         /**
-         * <p>Returns information about a resource policy.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetResourcePolicy">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetResourcePolicyOutcomeCallable GetResourcePolicyCallable(const Model::GetResourcePolicyRequest& request) const;
 
         /**
-         * <p>Returns information about a resource policy.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetResourcePolicy">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetResourcePolicyAsync(const Model::GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1952,22 +1404,12 @@ namespace Model
         virtual Model::GetRouteAnalysisOutcome GetRouteAnalysis(const Model::GetRouteAnalysisRequest& request) const;
 
         /**
-         * <p>Gets information about the specified route analysis.</p><p><h3>See Also:</h3>
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetRouteAnalysis">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetRouteAnalysis that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetRouteAnalysisOutcomeCallable GetRouteAnalysisCallable(const Model::GetRouteAnalysisRequest& request) const;
 
         /**
-         * <p>Gets information about the specified route analysis.</p><p><h3>See Also:</h3>
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetRouteAnalysis">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetRouteAnalysis that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetRouteAnalysisAsync(const Model::GetRouteAnalysisRequest& request, const GetRouteAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1980,22 +1422,12 @@ namespace Model
         virtual Model::GetSiteToSiteVpnAttachmentOutcome GetSiteToSiteVpnAttachment(const Model::GetSiteToSiteVpnAttachmentRequest& request) const;
 
         /**
-         * <p>Returns information about a site-to-site VPN attachment.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetSiteToSiteVpnAttachment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetSiteToSiteVpnAttachment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetSiteToSiteVpnAttachmentOutcomeCallable GetSiteToSiteVpnAttachmentCallable(const Model::GetSiteToSiteVpnAttachmentRequest& request) const;
 
         /**
-         * <p>Returns information about a site-to-site VPN attachment.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetSiteToSiteVpnAttachment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetSiteToSiteVpnAttachment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetSiteToSiteVpnAttachmentAsync(const Model::GetSiteToSiteVpnAttachmentRequest& request, const GetSiteToSiteVpnAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2008,22 +1440,12 @@ namespace Model
         virtual Model::GetSitesOutcome GetSites(const Model::GetSitesRequest& request) const;
 
         /**
-         * <p>Gets information about one or more of your sites in a global
-         * network.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetSites">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetSites that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetSitesOutcomeCallable GetSitesCallable(const Model::GetSitesRequest& request) const;
 
         /**
-         * <p>Gets information about one or more of your sites in a global
-         * network.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetSites">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetSites that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetSitesAsync(const Model::GetSitesRequest& request, const GetSitesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2036,22 +1458,12 @@ namespace Model
         virtual Model::GetTransitGatewayConnectPeerAssociationsOutcome GetTransitGatewayConnectPeerAssociations(const Model::GetTransitGatewayConnectPeerAssociationsRequest& request) const;
 
         /**
-         * <p>Gets information about one or more of your transit gateway Connect peer
-         * associations in a global network.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetTransitGatewayConnectPeerAssociations">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetTransitGatewayConnectPeerAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetTransitGatewayConnectPeerAssociationsOutcomeCallable GetTransitGatewayConnectPeerAssociationsCallable(const Model::GetTransitGatewayConnectPeerAssociationsRequest& request) const;
 
         /**
-         * <p>Gets information about one or more of your transit gateway Connect peer
-         * associations in a global network.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetTransitGatewayConnectPeerAssociations">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetTransitGatewayConnectPeerAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetTransitGatewayConnectPeerAssociationsAsync(const Model::GetTransitGatewayConnectPeerAssociationsRequest& request, const GetTransitGatewayConnectPeerAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2064,22 +1476,12 @@ namespace Model
         virtual Model::GetTransitGatewayRegistrationsOutcome GetTransitGatewayRegistrations(const Model::GetTransitGatewayRegistrationsRequest& request) const;
 
         /**
-         * <p>Gets information about the transit gateway registrations in a specified
-         * global network.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetTransitGatewayRegistrations">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetTransitGatewayRegistrations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetTransitGatewayRegistrationsOutcomeCallable GetTransitGatewayRegistrationsCallable(const Model::GetTransitGatewayRegistrationsRequest& request) const;
 
         /**
-         * <p>Gets information about the transit gateway registrations in a specified
-         * global network.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetTransitGatewayRegistrations">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetTransitGatewayRegistrations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetTransitGatewayRegistrationsAsync(const Model::GetTransitGatewayRegistrationsRequest& request, const GetTransitGatewayRegistrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2091,20 +1493,12 @@ namespace Model
         virtual Model::GetVpcAttachmentOutcome GetVpcAttachment(const Model::GetVpcAttachmentRequest& request) const;
 
         /**
-         * <p>Returns information about a VPC attachment.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetVpcAttachment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetVpcAttachment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetVpcAttachmentOutcomeCallable GetVpcAttachmentCallable(const Model::GetVpcAttachmentRequest& request) const;
 
         /**
-         * <p>Returns information about a VPC attachment.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetVpcAttachment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetVpcAttachment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetVpcAttachmentAsync(const Model::GetVpcAttachmentRequest& request, const GetVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2116,20 +1510,12 @@ namespace Model
         virtual Model::ListAttachmentsOutcome ListAttachments(const Model::ListAttachmentsRequest& request) const;
 
         /**
-         * <p>Returns a list of core network attachments.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListAttachments">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListAttachments that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListAttachmentsOutcomeCallable ListAttachmentsCallable(const Model::ListAttachmentsRequest& request) const;
 
         /**
-         * <p>Returns a list of core network attachments.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListAttachments">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListAttachments that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListAttachmentsAsync(const Model::ListAttachmentsRequest& request, const ListAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2141,20 +1527,12 @@ namespace Model
         virtual Model::ListConnectPeersOutcome ListConnectPeers(const Model::ListConnectPeersRequest& request) const;
 
         /**
-         * <p>Returns a list of core network Connect peers.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListConnectPeers">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListConnectPeers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListConnectPeersOutcomeCallable ListConnectPeersCallable(const Model::ListConnectPeersRequest& request) const;
 
         /**
-         * <p>Returns a list of core network Connect peers.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListConnectPeers">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListConnectPeers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListConnectPeersAsync(const Model::ListConnectPeersRequest& request, const ListConnectPeersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2166,20 +1544,12 @@ namespace Model
         virtual Model::ListCoreNetworkPolicyVersionsOutcome ListCoreNetworkPolicyVersions(const Model::ListCoreNetworkPolicyVersionsRequest& request) const;
 
         /**
-         * <p>Returns a list of core network policy versions.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworkPolicyVersions">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListCoreNetworkPolicyVersions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListCoreNetworkPolicyVersionsOutcomeCallable ListCoreNetworkPolicyVersionsCallable(const Model::ListCoreNetworkPolicyVersionsRequest& request) const;
 
         /**
-         * <p>Returns a list of core network policy versions.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworkPolicyVersions">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListCoreNetworkPolicyVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListCoreNetworkPolicyVersionsAsync(const Model::ListCoreNetworkPolicyVersionsRequest& request, const ListCoreNetworkPolicyVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2192,24 +1562,29 @@ namespace Model
         virtual Model::ListCoreNetworksOutcome ListCoreNetworks(const Model::ListCoreNetworksRequest& request) const;
 
         /**
-         * <p>Returns a list of owned and shared core networks.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworks">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListCoreNetworks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListCoreNetworksOutcomeCallable ListCoreNetworksCallable(const Model::ListCoreNetworksRequest& request) const;
 
         /**
-         * <p>Returns a list of owned and shared core networks.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworks">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListCoreNetworks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListCoreNetworksAsync(const Model::ListCoreNetworksRequest& request, const ListCoreNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::ListOrganizationServiceAccessStatusOutcome ListOrganizationServiceAccessStatus(const Model::ListOrganizationServiceAccessStatusRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListOrganizationServiceAccessStatus that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListOrganizationServiceAccessStatusOutcomeCallable ListOrganizationServiceAccessStatusCallable(const Model::ListOrganizationServiceAccessStatusRequest& request) const;
+
+        /**
+         * An Async wrapper for ListOrganizationServiceAccessStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListOrganizationServiceAccessStatusAsync(const Model::ListOrganizationServiceAccessStatusRequest& request, const ListOrganizationServiceAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags for a specified resource.</p><p><h3>See Also:</h3>   <a
@@ -2219,20 +1594,12 @@ namespace Model
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists the tags for a specified resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists the tags for a specified resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2246,24 +1613,12 @@ namespace Model
         virtual Model::PutCoreNetworkPolicyOutcome PutCoreNetworkPolicy(const Model::PutCoreNetworkPolicyRequest& request) const;
 
         /**
-         * <p>Creates a new, immutable version of a core network policy. A subsequent
-         * change set is created showing the differences between the LIVE policy and the
-         * submitted policy.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/PutCoreNetworkPolicy">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for PutCoreNetworkPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutCoreNetworkPolicyOutcomeCallable PutCoreNetworkPolicyCallable(const Model::PutCoreNetworkPolicyRequest& request) const;
 
         /**
-         * <p>Creates a new, immutable version of a core network policy. A subsequent
-         * change set is created showing the differences between the LIVE policy and the
-         * submitted policy.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/PutCoreNetworkPolicy">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for PutCoreNetworkPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutCoreNetworkPolicyAsync(const Model::PutCoreNetworkPolicyRequest& request, const PutCoreNetworkPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2275,20 +1630,12 @@ namespace Model
         virtual Model::PutResourcePolicyOutcome PutResourcePolicy(const Model::PutResourcePolicyRequest& request) const;
 
         /**
-         * <p>Creates or updates a resource policy.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/PutResourcePolicy">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for PutResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutResourcePolicyOutcomeCallable PutResourcePolicyCallable(const Model::PutResourcePolicyRequest& request) const;
 
         /**
-         * <p>Creates or updates a resource policy.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/PutResourcePolicy">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for PutResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutResourcePolicyAsync(const Model::PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2303,26 +1650,12 @@ namespace Model
         virtual Model::RegisterTransitGatewayOutcome RegisterTransitGateway(const Model::RegisterTransitGatewayRequest& request) const;
 
         /**
-         * <p>Registers a transit gateway in your global network. The transit gateway can
-         * be in any Amazon Web Services Region, but it must be owned by the same Amazon
-         * Web Services account that owns the global network. You cannot register a transit
-         * gateway in more than one global network.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RegisterTransitGateway">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for RegisterTransitGateway that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RegisterTransitGatewayOutcomeCallable RegisterTransitGatewayCallable(const Model::RegisterTransitGatewayRequest& request) const;
 
         /**
-         * <p>Registers a transit gateway in your global network. The transit gateway can
-         * be in any Amazon Web Services Region, but it must be owned by the same Amazon
-         * Web Services account that owns the global network. You cannot register a transit
-         * gateway in more than one global network.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RegisterTransitGateway">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for RegisterTransitGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RegisterTransitGatewayAsync(const Model::RegisterTransitGatewayRequest& request, const RegisterTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2334,20 +1667,12 @@ namespace Model
         virtual Model::RejectAttachmentOutcome RejectAttachment(const Model::RejectAttachmentRequest& request) const;
 
         /**
-         * <p>Rejects a core network attachment request.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RejectAttachment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for RejectAttachment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RejectAttachmentOutcomeCallable RejectAttachmentCallable(const Model::RejectAttachmentRequest& request) const;
 
         /**
-         * <p>Rejects a core network attachment request.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RejectAttachment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for RejectAttachment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RejectAttachmentAsync(const Model::RejectAttachmentRequest& request, const RejectAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2361,26 +1686,29 @@ namespace Model
         virtual Model::RestoreCoreNetworkPolicyVersionOutcome RestoreCoreNetworkPolicyVersion(const Model::RestoreCoreNetworkPolicyVersionRequest& request) const;
 
         /**
-         * <p>Restores a previous policy version as a new, immutable version of a core
-         * network policy. A subsequent change set is created showing the differences
-         * between the LIVE policy and restored policy.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RestoreCoreNetworkPolicyVersion">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for RestoreCoreNetworkPolicyVersion that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RestoreCoreNetworkPolicyVersionOutcomeCallable RestoreCoreNetworkPolicyVersionCallable(const Model::RestoreCoreNetworkPolicyVersionRequest& request) const;
 
         /**
-         * <p>Restores a previous policy version as a new, immutable version of a core
-         * network policy. A subsequent change set is created showing the differences
-         * between the LIVE policy and restored policy.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RestoreCoreNetworkPolicyVersion">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for RestoreCoreNetworkPolicyVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RestoreCoreNetworkPolicyVersionAsync(const Model::RestoreCoreNetworkPolicyVersionRequest& request, const RestoreCoreNetworkPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::StartOrganizationServiceAccessUpdateOutcome StartOrganizationServiceAccessUpdate(const Model::StartOrganizationServiceAccessUpdateRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartOrganizationServiceAccessUpdate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartOrganizationServiceAccessUpdateOutcomeCallable StartOrganizationServiceAccessUpdateCallable(const Model::StartOrganizationServiceAccessUpdateRequest& request) const;
+
+        /**
+         * An Async wrapper for StartOrganizationServiceAccessUpdate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartOrganizationServiceAccessUpdateAsync(const Model::StartOrganizationServiceAccessUpdateRequest& request, const StartOrganizationServiceAccessUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts analyzing the routing path between the specified source and
@@ -2393,26 +1721,12 @@ namespace Model
         virtual Model::StartRouteAnalysisOutcome StartRouteAnalysis(const Model::StartRouteAnalysisRequest& request) const;
 
         /**
-         * <p>Starts analyzing the routing path between the specified source and
-         * destination. For more information, see <a
-         * href="https://docs.aws.amazon.com/vpc/latest/tgw/route-analyzer.html">Route
-         * Analyzer</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/StartRouteAnalysis">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for StartRouteAnalysis that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StartRouteAnalysisOutcomeCallable StartRouteAnalysisCallable(const Model::StartRouteAnalysisRequest& request) const;
 
         /**
-         * <p>Starts analyzing the routing path between the specified source and
-         * destination. For more information, see <a
-         * href="https://docs.aws.amazon.com/vpc/latest/tgw/route-analyzer.html">Route
-         * Analyzer</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/StartRouteAnalysis">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for StartRouteAnalysis that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartRouteAnalysisAsync(const Model::StartRouteAnalysisRequest& request, const StartRouteAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2424,20 +1738,12 @@ namespace Model
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Tags a specified resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Tags a specified resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2449,20 +1755,12 @@ namespace Model
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes tags from a specified resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes tags from a specified resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2475,22 +1773,12 @@ namespace Model
         virtual Model::UpdateConnectionOutcome UpdateConnection(const Model::UpdateConnectionRequest& request) const;
 
         /**
-         * <p>Updates the information for an existing connection. To remove information for
-         * any of the parameters, specify an empty string.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateConnection">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateConnection that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateConnectionOutcomeCallable UpdateConnectionCallable(const Model::UpdateConnectionRequest& request) const;
 
         /**
-         * <p>Updates the information for an existing connection. To remove information for
-         * any of the parameters, specify an empty string.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateConnection">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateConnectionAsync(const Model::UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2502,20 +1790,12 @@ namespace Model
         virtual Model::UpdateCoreNetworkOutcome UpdateCoreNetwork(const Model::UpdateCoreNetworkRequest& request) const;
 
         /**
-         * <p>Updates the description of a core network.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateCoreNetwork">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateCoreNetwork that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateCoreNetworkOutcomeCallable UpdateCoreNetworkCallable(const Model::UpdateCoreNetworkRequest& request) const;
 
         /**
-         * <p>Updates the description of a core network.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateCoreNetwork">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateCoreNetwork that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateCoreNetworkAsync(const Model::UpdateCoreNetworkRequest& request, const UpdateCoreNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2528,22 +1808,12 @@ namespace Model
         virtual Model::UpdateDeviceOutcome UpdateDevice(const Model::UpdateDeviceRequest& request) const;
 
         /**
-         * <p>Updates the details for an existing device. To remove information for any of
-         * the parameters, specify an empty string.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateDevice">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateDevice that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateDeviceOutcomeCallable UpdateDeviceCallable(const Model::UpdateDeviceRequest& request) const;
 
         /**
-         * <p>Updates the details for an existing device. To remove information for any of
-         * the parameters, specify an empty string.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateDevice">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateDevice that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateDeviceAsync(const Model::UpdateDeviceRequest& request, const UpdateDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2556,22 +1826,12 @@ namespace Model
         virtual Model::UpdateGlobalNetworkOutcome UpdateGlobalNetwork(const Model::UpdateGlobalNetworkRequest& request) const;
 
         /**
-         * <p>Updates an existing global network. To remove information for any of the
-         * parameters, specify an empty string.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateGlobalNetwork">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateGlobalNetwork that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateGlobalNetworkOutcomeCallable UpdateGlobalNetworkCallable(const Model::UpdateGlobalNetworkRequest& request) const;
 
         /**
-         * <p>Updates an existing global network. To remove information for any of the
-         * parameters, specify an empty string.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateGlobalNetwork">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateGlobalNetwork that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateGlobalNetworkAsync(const Model::UpdateGlobalNetworkRequest& request, const UpdateGlobalNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2584,22 +1844,12 @@ namespace Model
         virtual Model::UpdateLinkOutcome UpdateLink(const Model::UpdateLinkRequest& request) const;
 
         /**
-         * <p>Updates the details for an existing link. To remove information for any of
-         * the parameters, specify an empty string.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateLink">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateLink that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateLinkOutcomeCallable UpdateLinkCallable(const Model::UpdateLinkRequest& request) const;
 
         /**
-         * <p>Updates the details for an existing link. To remove information for any of
-         * the parameters, specify an empty string.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateLink">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateLink that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateLinkAsync(const Model::UpdateLinkRequest& request, const UpdateLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2612,22 +1862,12 @@ namespace Model
         virtual Model::UpdateNetworkResourceMetadataOutcome UpdateNetworkResourceMetadata(const Model::UpdateNetworkResourceMetadataRequest& request) const;
 
         /**
-         * <p>Updates the resource metadata for the specified global network.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateNetworkResourceMetadata">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateNetworkResourceMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateNetworkResourceMetadataOutcomeCallable UpdateNetworkResourceMetadataCallable(const Model::UpdateNetworkResourceMetadataRequest& request) const;
 
         /**
-         * <p>Updates the resource metadata for the specified global network.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateNetworkResourceMetadata">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateNetworkResourceMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateNetworkResourceMetadataAsync(const Model::UpdateNetworkResourceMetadataRequest& request, const UpdateNetworkResourceMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2640,22 +1880,12 @@ namespace Model
         virtual Model::UpdateSiteOutcome UpdateSite(const Model::UpdateSiteRequest& request) const;
 
         /**
-         * <p>Updates the information for an existing site. To remove information for any
-         * of the parameters, specify an empty string.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateSite">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateSite that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateSiteOutcomeCallable UpdateSiteCallable(const Model::UpdateSiteRequest& request) const;
 
         /**
-         * <p>Updates the information for an existing site. To remove information for any
-         * of the parameters, specify an empty string.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateSite">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateSite that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateSiteAsync(const Model::UpdateSiteRequest& request, const UpdateSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2667,20 +1897,12 @@ namespace Model
         virtual Model::UpdateVpcAttachmentOutcome UpdateVpcAttachment(const Model::UpdateVpcAttachmentRequest& request) const;
 
         /**
-         * <p>Updates a VPC attachment.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateVpcAttachment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateVpcAttachment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateVpcAttachmentOutcomeCallable UpdateVpcAttachmentCallable(const Model::UpdateVpcAttachmentRequest& request) const;
 
         /**
-         * <p>Updates a VPC attachment.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateVpcAttachment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateVpcAttachment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateVpcAttachmentAsync(const Model::UpdateVpcAttachmentRequest& request, const UpdateVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2747,12 +1969,14 @@ namespace Model
         void ListConnectPeersAsyncHelper(const Model::ListConnectPeersRequest& request, const ListConnectPeersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCoreNetworkPolicyVersionsAsyncHelper(const Model::ListCoreNetworkPolicyVersionsRequest& request, const ListCoreNetworkPolicyVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCoreNetworksAsyncHelper(const Model::ListCoreNetworksRequest& request, const ListCoreNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListOrganizationServiceAccessStatusAsyncHelper(const Model::ListOrganizationServiceAccessStatusRequest& request, const ListOrganizationServiceAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutCoreNetworkPolicyAsyncHelper(const Model::PutCoreNetworkPolicyRequest& request, const PutCoreNetworkPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutResourcePolicyAsyncHelper(const Model::PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterTransitGatewayAsyncHelper(const Model::RegisterTransitGatewayRequest& request, const RegisterTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RejectAttachmentAsyncHelper(const Model::RejectAttachmentRequest& request, const RejectAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestoreCoreNetworkPolicyVersionAsyncHelper(const Model::RestoreCoreNetworkPolicyVersionRequest& request, const RestoreCoreNetworkPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartOrganizationServiceAccessUpdateAsyncHelper(const Model::StartOrganizationServiceAccessUpdateRequest& request, const StartOrganizationServiceAccessUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartRouteAnalysisAsyncHelper(const Model::StartRouteAnalysisRequest& request, const StartRouteAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

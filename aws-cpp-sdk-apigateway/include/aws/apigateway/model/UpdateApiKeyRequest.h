@@ -19,8 +19,8 @@ namespace Model
 {
 
   /**
-   * <p>A request to change information about an <a>ApiKey</a>
-   * resource.</p><p><h3>See Also:</h3>   <a
+   * <p>A request to change information about an ApiKey resource.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateApiKeyRequest">AWS
    * API Reference</a></p>
    */
@@ -39,91 +39,99 @@ namespace Model
 
 
     /**
-     * <p>[Required] The identifier of the <a>ApiKey</a> resource to be updated.</p>
+     * <p>The identifier of the ApiKey resource to be updated.</p>
      */
     inline const Aws::String& GetApiKey() const{ return m_apiKey; }
 
     /**
-     * <p>[Required] The identifier of the <a>ApiKey</a> resource to be updated.</p>
+     * <p>The identifier of the ApiKey resource to be updated.</p>
      */
     inline bool ApiKeyHasBeenSet() const { return m_apiKeyHasBeenSet; }
 
     /**
-     * <p>[Required] The identifier of the <a>ApiKey</a> resource to be updated.</p>
+     * <p>The identifier of the ApiKey resource to be updated.</p>
      */
     inline void SetApiKey(const Aws::String& value) { m_apiKeyHasBeenSet = true; m_apiKey = value; }
 
     /**
-     * <p>[Required] The identifier of the <a>ApiKey</a> resource to be updated.</p>
+     * <p>The identifier of the ApiKey resource to be updated.</p>
      */
     inline void SetApiKey(Aws::String&& value) { m_apiKeyHasBeenSet = true; m_apiKey = std::move(value); }
 
     /**
-     * <p>[Required] The identifier of the <a>ApiKey</a> resource to be updated.</p>
+     * <p>The identifier of the ApiKey resource to be updated.</p>
      */
     inline void SetApiKey(const char* value) { m_apiKeyHasBeenSet = true; m_apiKey.assign(value); }
 
     /**
-     * <p>[Required] The identifier of the <a>ApiKey</a> resource to be updated.</p>
+     * <p>The identifier of the ApiKey resource to be updated.</p>
      */
     inline UpdateApiKeyRequest& WithApiKey(const Aws::String& value) { SetApiKey(value); return *this;}
 
     /**
-     * <p>[Required] The identifier of the <a>ApiKey</a> resource to be updated.</p>
+     * <p>The identifier of the ApiKey resource to be updated.</p>
      */
     inline UpdateApiKeyRequest& WithApiKey(Aws::String&& value) { SetApiKey(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The identifier of the <a>ApiKey</a> resource to be updated.</p>
+     * <p>The identifier of the ApiKey resource to be updated.</p>
      */
     inline UpdateApiKeyRequest& WithApiKey(const char* value) { SetApiKey(value); return *this;}
 
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline const Aws::Vector<PatchOperation>& GetPatchOperations() const{ return m_patchOperations; }
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline bool PatchOperationsHasBeenSet() const { return m_patchOperationsHasBeenSet; }
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline void SetPatchOperations(const Aws::Vector<PatchOperation>& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = value; }
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline void SetPatchOperations(Aws::Vector<PatchOperation>&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = std::move(value); }
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline UpdateApiKeyRequest& WithPatchOperations(const Aws::Vector<PatchOperation>& value) { SetPatchOperations(value); return *this;}
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline UpdateApiKeyRequest& WithPatchOperations(Aws::Vector<PatchOperation>&& value) { SetPatchOperations(std::move(value)); return *this;}
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline UpdateApiKeyRequest& AddPatchOperations(const PatchOperation& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(value); return *this; }
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline UpdateApiKeyRequest& AddPatchOperations(PatchOperation&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(std::move(value)); return *this; }
 

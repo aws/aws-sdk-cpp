@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     CUSTOM_LAMBDA,
-    AWS
+    AWS,
+    CUSTOM_POLICY
   };
 
 namespace OwnerMapper

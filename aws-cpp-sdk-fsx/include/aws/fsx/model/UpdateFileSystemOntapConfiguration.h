@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fsx/model/DiskIopsConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -141,6 +142,96 @@ namespace Model
     
     inline UpdateFileSystemOntapConfiguration& WithWeeklyMaintenanceStartTime(const char* value) { SetWeeklyMaintenanceStartTime(value); return *this;}
 
+
+    /**
+     * <p>The SSD IOPS (input/output operations per second) configuration for an Amazon
+     * FSx for NetApp ONTAP file system. The default is 3 IOPS per GB of storage
+     * capacity, but you can provision additional IOPS per GB of storage. The
+     * configuration consists of an IOPS mode (<code>AUTOMATIC</code> or
+     * <code>USER_PROVISIONED</code>), and in the case of <code>USER_PROVISIONED</code>
+     * IOPS, the total number of SSD IOPS provisioned.</p>
+     */
+    inline const DiskIopsConfiguration& GetDiskIopsConfiguration() const{ return m_diskIopsConfiguration; }
+
+    /**
+     * <p>The SSD IOPS (input/output operations per second) configuration for an Amazon
+     * FSx for NetApp ONTAP file system. The default is 3 IOPS per GB of storage
+     * capacity, but you can provision additional IOPS per GB of storage. The
+     * configuration consists of an IOPS mode (<code>AUTOMATIC</code> or
+     * <code>USER_PROVISIONED</code>), and in the case of <code>USER_PROVISIONED</code>
+     * IOPS, the total number of SSD IOPS provisioned.</p>
+     */
+    inline bool DiskIopsConfigurationHasBeenSet() const { return m_diskIopsConfigurationHasBeenSet; }
+
+    /**
+     * <p>The SSD IOPS (input/output operations per second) configuration for an Amazon
+     * FSx for NetApp ONTAP file system. The default is 3 IOPS per GB of storage
+     * capacity, but you can provision additional IOPS per GB of storage. The
+     * configuration consists of an IOPS mode (<code>AUTOMATIC</code> or
+     * <code>USER_PROVISIONED</code>), and in the case of <code>USER_PROVISIONED</code>
+     * IOPS, the total number of SSD IOPS provisioned.</p>
+     */
+    inline void SetDiskIopsConfiguration(const DiskIopsConfiguration& value) { m_diskIopsConfigurationHasBeenSet = true; m_diskIopsConfiguration = value; }
+
+    /**
+     * <p>The SSD IOPS (input/output operations per second) configuration for an Amazon
+     * FSx for NetApp ONTAP file system. The default is 3 IOPS per GB of storage
+     * capacity, but you can provision additional IOPS per GB of storage. The
+     * configuration consists of an IOPS mode (<code>AUTOMATIC</code> or
+     * <code>USER_PROVISIONED</code>), and in the case of <code>USER_PROVISIONED</code>
+     * IOPS, the total number of SSD IOPS provisioned.</p>
+     */
+    inline void SetDiskIopsConfiguration(DiskIopsConfiguration&& value) { m_diskIopsConfigurationHasBeenSet = true; m_diskIopsConfiguration = std::move(value); }
+
+    /**
+     * <p>The SSD IOPS (input/output operations per second) configuration for an Amazon
+     * FSx for NetApp ONTAP file system. The default is 3 IOPS per GB of storage
+     * capacity, but you can provision additional IOPS per GB of storage. The
+     * configuration consists of an IOPS mode (<code>AUTOMATIC</code> or
+     * <code>USER_PROVISIONED</code>), and in the case of <code>USER_PROVISIONED</code>
+     * IOPS, the total number of SSD IOPS provisioned.</p>
+     */
+    inline UpdateFileSystemOntapConfiguration& WithDiskIopsConfiguration(const DiskIopsConfiguration& value) { SetDiskIopsConfiguration(value); return *this;}
+
+    /**
+     * <p>The SSD IOPS (input/output operations per second) configuration for an Amazon
+     * FSx for NetApp ONTAP file system. The default is 3 IOPS per GB of storage
+     * capacity, but you can provision additional IOPS per GB of storage. The
+     * configuration consists of an IOPS mode (<code>AUTOMATIC</code> or
+     * <code>USER_PROVISIONED</code>), and in the case of <code>USER_PROVISIONED</code>
+     * IOPS, the total number of SSD IOPS provisioned.</p>
+     */
+    inline UpdateFileSystemOntapConfiguration& WithDiskIopsConfiguration(DiskIopsConfiguration&& value) { SetDiskIopsConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies the throughput of an FSx for NetApp ONTAP file system, measured in
+     * megabytes per second (MBps). Valid values are 128, 256, 512, 1024, or 2048
+     * MB/s.</p>
+     */
+    inline int GetThroughputCapacity() const{ return m_throughputCapacity; }
+
+    /**
+     * <p>Specifies the throughput of an FSx for NetApp ONTAP file system, measured in
+     * megabytes per second (MBps). Valid values are 128, 256, 512, 1024, or 2048
+     * MB/s.</p>
+     */
+    inline bool ThroughputCapacityHasBeenSet() const { return m_throughputCapacityHasBeenSet; }
+
+    /**
+     * <p>Specifies the throughput of an FSx for NetApp ONTAP file system, measured in
+     * megabytes per second (MBps). Valid values are 128, 256, 512, 1024, or 2048
+     * MB/s.</p>
+     */
+    inline void SetThroughputCapacity(int value) { m_throughputCapacityHasBeenSet = true; m_throughputCapacity = value; }
+
+    /**
+     * <p>Specifies the throughput of an FSx for NetApp ONTAP file system, measured in
+     * megabytes per second (MBps). Valid values are 128, 256, 512, 1024, or 2048
+     * MB/s.</p>
+     */
+    inline UpdateFileSystemOntapConfiguration& WithThroughputCapacity(int value) { SetThroughputCapacity(value); return *this;}
+
   private:
 
     int m_automaticBackupRetentionDays;
@@ -154,6 +245,12 @@ namespace Model
 
     Aws::String m_weeklyMaintenanceStartTime;
     bool m_weeklyMaintenanceStartTimeHasBeenSet;
+
+    DiskIopsConfiguration m_diskIopsConfiguration;
+    bool m_diskIopsConfigurationHasBeenSet;
+
+    int m_throughputCapacity;
+    bool m_throughputCapacityHasBeenSet;
   };
 
 } // namespace Model

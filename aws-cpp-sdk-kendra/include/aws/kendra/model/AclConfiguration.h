@@ -42,7 +42,7 @@ namespace Model
      * <p>A list of groups, separated by semi-colons, that filters a query response
      * based on user context. The document is only returned to users that are in one of
      * the groups specified in the <code>UserContext</code> field of the
-     * <code>Query</code> operation.</p>
+     * <code>Query</code> API.</p>
      */
     inline const Aws::String& GetAllowedGroupsColumnName() const{ return m_allowedGroupsColumnName; }
 
@@ -50,7 +50,7 @@ namespace Model
      * <p>A list of groups, separated by semi-colons, that filters a query response
      * based on user context. The document is only returned to users that are in one of
      * the groups specified in the <code>UserContext</code> field of the
-     * <code>Query</code> operation.</p>
+     * <code>Query</code> API.</p>
      */
     inline bool AllowedGroupsColumnNameHasBeenSet() const { return m_allowedGroupsColumnNameHasBeenSet; }
 
@@ -58,7 +58,7 @@ namespace Model
      * <p>A list of groups, separated by semi-colons, that filters a query response
      * based on user context. The document is only returned to users that are in one of
      * the groups specified in the <code>UserContext</code> field of the
-     * <code>Query</code> operation.</p>
+     * <code>Query</code> API.</p>
      */
     inline void SetAllowedGroupsColumnName(const Aws::String& value) { m_allowedGroupsColumnNameHasBeenSet = true; m_allowedGroupsColumnName = value; }
 
@@ -66,7 +66,7 @@ namespace Model
      * <p>A list of groups, separated by semi-colons, that filters a query response
      * based on user context. The document is only returned to users that are in one of
      * the groups specified in the <code>UserContext</code> field of the
-     * <code>Query</code> operation.</p>
+     * <code>Query</code> API.</p>
      */
     inline void SetAllowedGroupsColumnName(Aws::String&& value) { m_allowedGroupsColumnNameHasBeenSet = true; m_allowedGroupsColumnName = std::move(value); }
 
@@ -74,7 +74,7 @@ namespace Model
      * <p>A list of groups, separated by semi-colons, that filters a query response
      * based on user context. The document is only returned to users that are in one of
      * the groups specified in the <code>UserContext</code> field of the
-     * <code>Query</code> operation.</p>
+     * <code>Query</code> API.</p>
      */
     inline void SetAllowedGroupsColumnName(const char* value) { m_allowedGroupsColumnNameHasBeenSet = true; m_allowedGroupsColumnName.assign(value); }
 
@@ -82,7 +82,7 @@ namespace Model
      * <p>A list of groups, separated by semi-colons, that filters a query response
      * based on user context. The document is only returned to users that are in one of
      * the groups specified in the <code>UserContext</code> field of the
-     * <code>Query</code> operation.</p>
+     * <code>Query</code> API.</p>
      */
     inline AclConfiguration& WithAllowedGroupsColumnName(const Aws::String& value) { SetAllowedGroupsColumnName(value); return *this;}
 
@@ -90,7 +90,7 @@ namespace Model
      * <p>A list of groups, separated by semi-colons, that filters a query response
      * based on user context. The document is only returned to users that are in one of
      * the groups specified in the <code>UserContext</code> field of the
-     * <code>Query</code> operation.</p>
+     * <code>Query</code> API.</p>
      */
     inline AclConfiguration& WithAllowedGroupsColumnName(Aws::String&& value) { SetAllowedGroupsColumnName(std::move(value)); return *this;}
 
@@ -98,7 +98,7 @@ namespace Model
      * <p>A list of groups, separated by semi-colons, that filters a query response
      * based on user context. The document is only returned to users that are in one of
      * the groups specified in the <code>UserContext</code> field of the
-     * <code>Query</code> operation.</p>
+     * <code>Query</code> API.</p>
      */
     inline AclConfiguration& WithAllowedGroupsColumnName(const char* value) { SetAllowedGroupsColumnName(value); return *this;}
 

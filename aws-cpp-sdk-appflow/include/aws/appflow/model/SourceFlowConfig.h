@@ -73,6 +73,47 @@ namespace Model
 
 
     /**
+     * <p>The API version of the connector when it's used as a source in the flow.</p>
+     */
+    inline const Aws::String& GetApiVersion() const{ return m_apiVersion; }
+
+    /**
+     * <p>The API version of the connector when it's used as a source in the flow.</p>
+     */
+    inline bool ApiVersionHasBeenSet() const { return m_apiVersionHasBeenSet; }
+
+    /**
+     * <p>The API version of the connector when it's used as a source in the flow.</p>
+     */
+    inline void SetApiVersion(const Aws::String& value) { m_apiVersionHasBeenSet = true; m_apiVersion = value; }
+
+    /**
+     * <p>The API version of the connector when it's used as a source in the flow.</p>
+     */
+    inline void SetApiVersion(Aws::String&& value) { m_apiVersionHasBeenSet = true; m_apiVersion = std::move(value); }
+
+    /**
+     * <p>The API version of the connector when it's used as a source in the flow.</p>
+     */
+    inline void SetApiVersion(const char* value) { m_apiVersionHasBeenSet = true; m_apiVersion.assign(value); }
+
+    /**
+     * <p>The API version of the connector when it's used as a source in the flow.</p>
+     */
+    inline SourceFlowConfig& WithApiVersion(const Aws::String& value) { SetApiVersion(value); return *this;}
+
+    /**
+     * <p>The API version of the connector when it's used as a source in the flow.</p>
+     */
+    inline SourceFlowConfig& WithApiVersion(Aws::String&& value) { SetApiVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The API version of the connector when it's used as a source in the flow.</p>
+     */
+    inline SourceFlowConfig& WithApiVersion(const char* value) { SetApiVersion(value); return *this;}
+
+
+    /**
      * <p> The name of the connector profile. This name must be unique for each
      * connector profile in the Amazon Web Services account. </p>
      */
@@ -204,6 +245,9 @@ namespace Model
 
     ConnectorType m_connectorType;
     bool m_connectorTypeHasBeenSet;
+
+    Aws::String m_apiVersion;
+    bool m_apiVersionHasBeenSet;
 
     Aws::String m_connectorProfileName;
     bool m_connectorProfileNameHasBeenSet;

@@ -33,6 +33,7 @@
 #include <aws/budgets/model/DescribeBudgetActionHistoriesRequest.h>
 #include <aws/budgets/model/DescribeBudgetActionsForAccountRequest.h>
 #include <aws/budgets/model/DescribeBudgetActionsForBudgetRequest.h>
+#include <aws/budgets/model/DescribeBudgetNotificationsForAccountRequest.h>
 #include <aws/budgets/model/DescribeBudgetPerformanceHistoryRequest.h>
 #include <aws/budgets/model/DescribeBudgetsRequest.h>
 #include <aws/budgets/model/DescribeNotificationsForBudgetRequest.h>
@@ -426,6 +427,30 @@ void BudgetsClient::DescribeBudgetActionsForBudgetAsync(const DescribeBudgetActi
 void BudgetsClient::DescribeBudgetActionsForBudgetAsyncHelper(const DescribeBudgetActionsForBudgetRequest& request, const DescribeBudgetActionsForBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeBudgetActionsForBudget(request), context);
+}
+
+DescribeBudgetNotificationsForAccountOutcome BudgetsClient::DescribeBudgetNotificationsForAccount(const DescribeBudgetNotificationsForAccountRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeBudgetNotificationsForAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeBudgetNotificationsForAccountOutcomeCallable BudgetsClient::DescribeBudgetNotificationsForAccountCallable(const DescribeBudgetNotificationsForAccountRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeBudgetNotificationsForAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeBudgetNotificationsForAccount(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BudgetsClient::DescribeBudgetNotificationsForAccountAsync(const DescribeBudgetNotificationsForAccountRequest& request, const DescribeBudgetNotificationsForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeBudgetNotificationsForAccountAsyncHelper( request, handler, context ); } );
+}
+
+void BudgetsClient::DescribeBudgetNotificationsForAccountAsyncHelper(const DescribeBudgetNotificationsForAccountRequest& request, const DescribeBudgetNotificationsForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeBudgetNotificationsForAccount(request), context);
 }
 
 DescribeBudgetPerformanceHistoryOutcome BudgetsClient::DescribeBudgetPerformanceHistory(const DescribeBudgetPerformanceHistoryRequest& request) const

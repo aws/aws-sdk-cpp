@@ -1,0 +1,63 @@
+#if($operation.http.requestUri.contains("?"))
+  Aws::StringStream ss;
+#end
+#set($uriParts = $operation.http.requestUriParts)
+#set($uriVars = $operation.http.requestParameters)
+#if(!$startIndex)
+#set($startIndex = 0)
+#end
+#set($partIndex = 1)
+#set($queryStart = false)
+#if($uriParts.size() > $startIndex)
+#set($uriPartString = ${uriParts.get($startIndex)})
+#if($uriPartString.contains("?"))## if (request uri contains query) ----------
+#set($queryStart = true)
+#set($pathAndQuery = $operation.http.splitUriPartIntoPathAndQuery($uriPartString))
+#if(!$pathAndQuery.get(0).isEmpty())
+  uri.AddPathSegments("${pathAndQuery.get(0)}");
+#end
+  ss.str("${pathAndQuery.get(1)}");
+#elseif(!$uriPartString.equals("/"))
+  uri.AddPathSegments("$uriPartString");
+#end## ---------------------------- if (request uri contains query) end ------
+#foreach($var in $uriVars)## for (parameter in request uri parameters) -------
+#set($varIndex = $partIndex - 1)
+#set($uriVar = $uriVars.get($varIndex).replace('+', ''))
+#set($greedySyntax = $uriVars.get($varIndex).contains("+"))
+#if(!$skipFirst)
+#set($partShapeMember = $operation.request.shape.getMemberByLocationName($uriVar))
+#if($partShapeMember.shape.enum)
+#set($parameter = "${partShapeMember.shape.name}Mapper::GetNameFor${partShapeMember.shape.name}(request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVar))}())")
+#else
+#set($parameter = "request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVar))}()")
+#end
+#if($queryStart)
+  ss << $parameter;
+#else
+#if($greedySyntax)
+  uri.AddPathSegments($parameter);
+#else
+  uri.AddPathSegment($parameter);
+#end
+#end
+#if($uriParts.size() > $partIndex)
+#set($uriPartString = "${uriParts.get($partIndex)}")
+#if(!$queryStart && $uriPartString.contains("?"))
+#set($queryStart = true)
+#set($pathAndQuery = $operation.http.splitUriPartIntoPathAndQuery($uriPartString))
+#if(!$pathAndQuery.get(0).isEmpty())
+  uri.AddPathSegments("${pathAndQuery.get(0)}");
+#end
+  ss.str("${pathAndQuery.get(1)}");
+#elseif(!$uriPartString.equals("/"))
+  uri.AddPathSegments("$uriPartString");
+#end
+#end
+#end## --------------------- if !skipFirst end ---
+#set($partIndex = $partIndex + 1)
+#set($skipFirst = false)
+#end## --------------------- if uriParts.size() > startIndex end ---
+#end## --------------------- for (parameter in request uri parameters) end ---
+#if($queryStart)
+  uri.SetQueryString(ss.str());
+#end

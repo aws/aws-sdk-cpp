@@ -28,6 +28,10 @@ namespace Aws
         static const int ECC_NIST_P521_HASH = HashingUtils::HashString("ECC_NIST_P521");
         static const int ECC_SECG_P256K1_HASH = HashingUtils::HashString("ECC_SECG_P256K1");
         static const int SYMMETRIC_DEFAULT_HASH = HashingUtils::HashString("SYMMETRIC_DEFAULT");
+        static const int HMAC_224_HASH = HashingUtils::HashString("HMAC_224");
+        static const int HMAC_256_HASH = HashingUtils::HashString("HMAC_256");
+        static const int HMAC_384_HASH = HashingUtils::HashString("HMAC_384");
+        static const int HMAC_512_HASH = HashingUtils::HashString("HMAC_512");
 
 
         KeySpec GetKeySpecForName(const Aws::String& name)
@@ -65,6 +69,22 @@ namespace Aws
           {
             return KeySpec::SYMMETRIC_DEFAULT;
           }
+          else if (hashCode == HMAC_224_HASH)
+          {
+            return KeySpec::HMAC_224;
+          }
+          else if (hashCode == HMAC_256_HASH)
+          {
+            return KeySpec::HMAC_256;
+          }
+          else if (hashCode == HMAC_384_HASH)
+          {
+            return KeySpec::HMAC_384;
+          }
+          else if (hashCode == HMAC_512_HASH)
+          {
+            return KeySpec::HMAC_512;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -95,6 +115,14 @@ namespace Aws
             return "ECC_SECG_P256K1";
           case KeySpec::SYMMETRIC_DEFAULT:
             return "SYMMETRIC_DEFAULT";
+          case KeySpec::HMAC_224:
+            return "HMAC_224";
+          case KeySpec::HMAC_256:
+            return "HMAC_256";
+          case KeySpec::HMAC_384:
+            return "HMAC_384";
+          case KeySpec::HMAC_512:
+            return "HMAC_512";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

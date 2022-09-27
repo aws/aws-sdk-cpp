@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p> The trigger threshold of the action. </p><p><h3>See Also:</h3>   <a
+   * <p>The trigger threshold of the action. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/ActionThreshold">AWS
    * API Reference</a></p>
    */

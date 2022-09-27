@@ -79,49 +79,49 @@ namespace Model
 
 
     /**
-     * <p>A URL back to managed agent on the container that the SSM Session Manager
+     * <p>A URL to the managed agent on the container that the SSM Session Manager
      * client uses to send commands and receive output from the container.</p>
      */
     inline const Aws::String& GetStreamUrl() const{ return m_streamUrl; }
 
     /**
-     * <p>A URL back to managed agent on the container that the SSM Session Manager
+     * <p>A URL to the managed agent on the container that the SSM Session Manager
      * client uses to send commands and receive output from the container.</p>
      */
     inline bool StreamUrlHasBeenSet() const { return m_streamUrlHasBeenSet; }
 
     /**
-     * <p>A URL back to managed agent on the container that the SSM Session Manager
+     * <p>A URL to the managed agent on the container that the SSM Session Manager
      * client uses to send commands and receive output from the container.</p>
      */
     inline void SetStreamUrl(const Aws::String& value) { m_streamUrlHasBeenSet = true; m_streamUrl = value; }
 
     /**
-     * <p>A URL back to managed agent on the container that the SSM Session Manager
+     * <p>A URL to the managed agent on the container that the SSM Session Manager
      * client uses to send commands and receive output from the container.</p>
      */
     inline void SetStreamUrl(Aws::String&& value) { m_streamUrlHasBeenSet = true; m_streamUrl = std::move(value); }
 
     /**
-     * <p>A URL back to managed agent on the container that the SSM Session Manager
+     * <p>A URL to the managed agent on the container that the SSM Session Manager
      * client uses to send commands and receive output from the container.</p>
      */
     inline void SetStreamUrl(const char* value) { m_streamUrlHasBeenSet = true; m_streamUrl.assign(value); }
 
     /**
-     * <p>A URL back to managed agent on the container that the SSM Session Manager
+     * <p>A URL to the managed agent on the container that the SSM Session Manager
      * client uses to send commands and receive output from the container.</p>
      */
     inline Session& WithStreamUrl(const Aws::String& value) { SetStreamUrl(value); return *this;}
 
     /**
-     * <p>A URL back to managed agent on the container that the SSM Session Manager
+     * <p>A URL to the managed agent on the container that the SSM Session Manager
      * client uses to send commands and receive output from the container.</p>
      */
     inline Session& WithStreamUrl(Aws::String&& value) { SetStreamUrl(std::move(value)); return *this;}
 
     /**
-     * <p>A URL back to managed agent on the container that the SSM Session Manager
+     * <p>A URL to the managed agent on the container that the SSM Session Manager
      * client uses to send commands and receive output from the container.</p>
      */
     inline Session& WithStreamUrl(const char* value) { SetStreamUrl(value); return *this;}

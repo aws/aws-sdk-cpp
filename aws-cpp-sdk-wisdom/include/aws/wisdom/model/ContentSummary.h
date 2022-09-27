@@ -204,42 +204,42 @@ namespace Model
 
 
     /**
-     * <p>The the identifier of the knowledge base.</p>
+     * <p>The identifier of the knowledge base.</p>
      */
     inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
 
     /**
-     * <p>The the identifier of the knowledge base.</p>
+     * <p>The identifier of the knowledge base.</p>
      */
     inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
 
     /**
-     * <p>The the identifier of the knowledge base.</p>
+     * <p>The identifier of the knowledge base.</p>
      */
     inline void SetKnowledgeBaseId(const Aws::String& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = value; }
 
     /**
-     * <p>The the identifier of the knowledge base.</p>
+     * <p>The identifier of the knowledge base.</p>
      */
     inline void SetKnowledgeBaseId(Aws::String&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::move(value); }
 
     /**
-     * <p>The the identifier of the knowledge base.</p>
+     * <p>The identifier of the knowledge base.</p>
      */
     inline void SetKnowledgeBaseId(const char* value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId.assign(value); }
 
     /**
-     * <p>The the identifier of the knowledge base.</p>
+     * <p>The identifier of the knowledge base.</p>
      */
     inline ContentSummary& WithKnowledgeBaseId(const Aws::String& value) { SetKnowledgeBaseId(value); return *this;}
 
     /**
-     * <p>The the identifier of the knowledge base.</p>
+     * <p>The identifier of the knowledge base.</p>
      */
     inline ContentSummary& WithKnowledgeBaseId(Aws::String&& value) { SetKnowledgeBaseId(std::move(value)); return *this;}
 
     /**
-     * <p>The the identifier of the knowledge base.</p>
+     * <p>The identifier of the knowledge base.</p>
      */
     inline ContentSummary& WithKnowledgeBaseId(const char* value) { SetKnowledgeBaseId(value); return *this;}
 

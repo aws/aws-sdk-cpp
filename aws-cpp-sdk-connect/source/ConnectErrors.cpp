@@ -6,6 +6,7 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/connect/ConnectErrors.h>
+#include <aws/connect/model/PropertyValidationException.h>
 #include <aws/connect/model/InvalidContactFlowException.h>
 #include <aws/connect/model/InvalidContactFlowModuleException.h>
 #include <aws/connect/model/ResourceInUseException.h>
@@ -19,6 +20,12 @@ namespace Aws
 {
 namespace Connect
 {
+template<> AWS_CONNECT_API PropertyValidationException ConnectError::GetModeledError()
+{
+  assert(this->GetErrorType() == ConnectErrors::PROPERTY_VALIDATION);
+  return PropertyValidationException(this->GetJsonPayload().View());
+}
+
 template<> AWS_CONNECT_API InvalidContactFlowException ConnectError::GetModeledError()
 {
   assert(this->GetErrorType() == ConnectErrors::INVALID_CONTACT_FLOW);
@@ -41,6 +48,7 @@ namespace ConnectErrorMapper
 {
 
 static const int IDEMPOTENCY_HASH = HashingUtils::HashString("IdempotencyException");
+static const int PROPERTY_VALIDATION_HASH = HashingUtils::HashString("PropertyValidationException");
 static const int INVALID_CONTACT_FLOW_HASH = HashingUtils::HashString("InvalidContactFlowException");
 static const int USER_NOT_FOUND_HASH = HashingUtils::HashString("UserNotFoundException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
@@ -65,6 +73,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == IDEMPOTENCY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::IDEMPOTENCY), false);
+  }
+  else if (hashCode == PROPERTY_VALIDATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::PROPERTY_VALIDATION), false);
   }
   else if (hashCode == INVALID_CONTACT_FLOW_HASH)
   {

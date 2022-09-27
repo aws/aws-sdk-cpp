@@ -244,8 +244,8 @@ namespace Model
      * the Amazon EFS server. If you don't specify a transit encryption port, it uses
      * the port selection strategy that the Amazon EFS mount helper uses. The value
      * must be between 0 and 65,535. For more information, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount
-     * Helper</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS mount
+     * helper</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
      */
     inline int GetTransitEncryptionPort() const{ return m_transitEncryptionPort; }
 
@@ -254,8 +254,8 @@ namespace Model
      * the Amazon EFS server. If you don't specify a transit encryption port, it uses
      * the port selection strategy that the Amazon EFS mount helper uses. The value
      * must be between 0 and 65,535. For more information, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount
-     * Helper</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS mount
+     * helper</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
      */
     inline bool TransitEncryptionPortHasBeenSet() const { return m_transitEncryptionPortHasBeenSet; }
 
@@ -264,8 +264,8 @@ namespace Model
      * the Amazon EFS server. If you don't specify a transit encryption port, it uses
      * the port selection strategy that the Amazon EFS mount helper uses. The value
      * must be between 0 and 65,535. For more information, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount
-     * Helper</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS mount
+     * helper</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
      */
     inline void SetTransitEncryptionPort(int value) { m_transitEncryptionPortHasBeenSet = true; m_transitEncryptionPort = value; }
 
@@ -274,8 +274,8 @@ namespace Model
      * the Amazon EFS server. If you don't specify a transit encryption port, it uses
      * the port selection strategy that the Amazon EFS mount helper uses. The value
      * must be between 0 and 65,535. For more information, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount
-     * Helper</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS mount
+     * helper</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
      */
     inline EFSVolumeConfiguration& WithTransitEncryptionPort(int value) { SetTransitEncryptionPort(value); return *this;}
 

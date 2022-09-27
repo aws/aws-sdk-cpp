@@ -41,7 +41,9 @@ namespace Model
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
      * File System</p> </li> <li> <p> <code>FSX</code> for Amazon FSx</p> </li> <li>
      * <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
-     * <code>Storage Gateway</code> for Storage Gateway</p> </li> </ul>
+     * <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+     * <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetResourceTypes() const{ return m_resourceTypes; }
 
@@ -53,7 +55,9 @@ namespace Model
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
      * File System</p> </li> <li> <p> <code>FSX</code> for Amazon FSx</p> </li> <li>
      * <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
-     * <code>Storage Gateway</code> for Storage Gateway</p> </li> </ul>
+     * <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+     * <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li> </ul>
      */
     inline void SetResourceTypes(const Aws::Vector<Aws::String>& value) { m_resourceTypes = value; }
 
@@ -65,7 +69,9 @@ namespace Model
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
      * File System</p> </li> <li> <p> <code>FSX</code> for Amazon FSx</p> </li> <li>
      * <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
-     * <code>Storage Gateway</code> for Storage Gateway</p> </li> </ul>
+     * <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+     * <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li> </ul>
      */
     inline void SetResourceTypes(Aws::Vector<Aws::String>&& value) { m_resourceTypes = std::move(value); }
 
@@ -77,7 +83,9 @@ namespace Model
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
      * File System</p> </li> <li> <p> <code>FSX</code> for Amazon FSx</p> </li> <li>
      * <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
-     * <code>Storage Gateway</code> for Storage Gateway</p> </li> </ul>
+     * <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+     * <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li> </ul>
      */
     inline GetSupportedResourceTypesResult& WithResourceTypes(const Aws::Vector<Aws::String>& value) { SetResourceTypes(value); return *this;}
 
@@ -89,7 +97,9 @@ namespace Model
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
      * File System</p> </li> <li> <p> <code>FSX</code> for Amazon FSx</p> </li> <li>
      * <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
-     * <code>Storage Gateway</code> for Storage Gateway</p> </li> </ul>
+     * <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+     * <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li> </ul>
      */
     inline GetSupportedResourceTypesResult& WithResourceTypes(Aws::Vector<Aws::String>&& value) { SetResourceTypes(std::move(value)); return *this;}
 
@@ -101,7 +111,9 @@ namespace Model
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
      * File System</p> </li> <li> <p> <code>FSX</code> for Amazon FSx</p> </li> <li>
      * <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
-     * <code>Storage Gateway</code> for Storage Gateway</p> </li> </ul>
+     * <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+     * <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li> </ul>
      */
     inline GetSupportedResourceTypesResult& AddResourceTypes(const Aws::String& value) { m_resourceTypes.push_back(value); return *this; }
 
@@ -113,7 +125,9 @@ namespace Model
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
      * File System</p> </li> <li> <p> <code>FSX</code> for Amazon FSx</p> </li> <li>
      * <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
-     * <code>Storage Gateway</code> for Storage Gateway</p> </li> </ul>
+     * <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+     * <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li> </ul>
      */
     inline GetSupportedResourceTypesResult& AddResourceTypes(Aws::String&& value) { m_resourceTypes.push_back(std::move(value)); return *this; }
 
@@ -125,7 +139,9 @@ namespace Model
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
      * File System</p> </li> <li> <p> <code>FSX</code> for Amazon FSx</p> </li> <li>
      * <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
-     * <code>Storage Gateway</code> for Storage Gateway</p> </li> </ul>
+     * <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+     * <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li> </ul>
      */
     inline GetSupportedResourceTypesResult& AddResourceTypes(const char* value) { m_resourceTypes.push_back(value); return *this; }
 

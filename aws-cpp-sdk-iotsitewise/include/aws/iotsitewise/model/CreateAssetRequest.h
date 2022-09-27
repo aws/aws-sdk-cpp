@@ -277,6 +277,47 @@ namespace Model
      */
     inline CreateAssetRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>A description for the asset.</p>
+     */
+    inline const Aws::String& GetAssetDescription() const{ return m_assetDescription; }
+
+    /**
+     * <p>A description for the asset.</p>
+     */
+    inline bool AssetDescriptionHasBeenSet() const { return m_assetDescriptionHasBeenSet; }
+
+    /**
+     * <p>A description for the asset.</p>
+     */
+    inline void SetAssetDescription(const Aws::String& value) { m_assetDescriptionHasBeenSet = true; m_assetDescription = value; }
+
+    /**
+     * <p>A description for the asset.</p>
+     */
+    inline void SetAssetDescription(Aws::String&& value) { m_assetDescriptionHasBeenSet = true; m_assetDescription = std::move(value); }
+
+    /**
+     * <p>A description for the asset.</p>
+     */
+    inline void SetAssetDescription(const char* value) { m_assetDescriptionHasBeenSet = true; m_assetDescription.assign(value); }
+
+    /**
+     * <p>A description for the asset.</p>
+     */
+    inline CreateAssetRequest& WithAssetDescription(const Aws::String& value) { SetAssetDescription(value); return *this;}
+
+    /**
+     * <p>A description for the asset.</p>
+     */
+    inline CreateAssetRequest& WithAssetDescription(Aws::String&& value) { SetAssetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>A description for the asset.</p>
+     */
+    inline CreateAssetRequest& WithAssetDescription(const char* value) { SetAssetDescription(value); return *this;}
+
   private:
 
     Aws::String m_assetName;
@@ -290,6 +331,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_assetDescription;
+    bool m_assetDescriptionHasBeenSet;
   };
 
 } // namespace Model

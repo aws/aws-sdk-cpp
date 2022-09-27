@@ -20,6 +20,7 @@ namespace Model
 
 EnvironmentSummary::EnvironmentSummary() : 
     m_arnHasBeenSet(false),
+    m_componentRoleArnHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_deploymentStatus(DeploymentStatus::NOT_SET),
     m_deploymentStatusHasBeenSet(false),
@@ -41,6 +42,7 @@ EnvironmentSummary::EnvironmentSummary() :
 
 EnvironmentSummary::EnvironmentSummary(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
+    m_componentRoleArnHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_deploymentStatus(DeploymentStatus::NOT_SET),
     m_deploymentStatusHasBeenSet(false),
@@ -68,6 +70,13 @@ EnvironmentSummary& EnvironmentSummary::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("componentRoleArn"))
+  {
+    m_componentRoleArn = jsonValue.GetString("componentRoleArn");
+
+    m_componentRoleArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("createdAt"))
@@ -178,6 +187,12 @@ JsonValue EnvironmentSummary::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
+
+  }
+
+  if(m_componentRoleArnHasBeenSet)
+  {
+   payload.WithString("componentRoleArn", m_componentRoleArn);
 
   }
 

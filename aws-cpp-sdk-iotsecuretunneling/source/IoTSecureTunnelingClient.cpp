@@ -25,6 +25,7 @@
 #include <aws/iotsecuretunneling/model/ListTagsForResourceRequest.h>
 #include <aws/iotsecuretunneling/model/ListTunnelsRequest.h>
 #include <aws/iotsecuretunneling/model/OpenTunnelRequest.h>
+#include <aws/iotsecuretunneling/model/RotateTunnelAccessTokenRequest.h>
 #include <aws/iotsecuretunneling/model/TagResourceRequest.h>
 #include <aws/iotsecuretunneling/model/UntagResourceRequest.h>
 
@@ -219,6 +220,30 @@ void IoTSecureTunnelingClient::OpenTunnelAsync(const OpenTunnelRequest& request,
 void IoTSecureTunnelingClient::OpenTunnelAsyncHelper(const OpenTunnelRequest& request, const OpenTunnelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, OpenTunnel(request), context);
+}
+
+RotateTunnelAccessTokenOutcome IoTSecureTunnelingClient::RotateTunnelAccessToken(const RotateTunnelAccessTokenRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return RotateTunnelAccessTokenOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+RotateTunnelAccessTokenOutcomeCallable IoTSecureTunnelingClient::RotateTunnelAccessTokenCallable(const RotateTunnelAccessTokenRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RotateTunnelAccessTokenOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RotateTunnelAccessToken(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTSecureTunnelingClient::RotateTunnelAccessTokenAsync(const RotateTunnelAccessTokenRequest& request, const RotateTunnelAccessTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RotateTunnelAccessTokenAsyncHelper( request, handler, context ); } );
+}
+
+void IoTSecureTunnelingClient::RotateTunnelAccessTokenAsyncHelper(const RotateTunnelAccessTokenRequest& request, const RotateTunnelAccessTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RotateTunnelAccessToken(request), context);
 }
 
 TagResourceOutcome IoTSecureTunnelingClient::TagResource(const TagResourceRequest& request) const

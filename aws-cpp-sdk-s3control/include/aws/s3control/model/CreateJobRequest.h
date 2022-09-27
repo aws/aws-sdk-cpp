@@ -11,6 +11,7 @@
 #include <aws/s3control/model/JobReport.h>
 #include <aws/s3control/model/JobManifest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/s3control/model/JobManifestGenerator.h>
 #include <aws/s3control/model/S3Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -457,6 +458,43 @@ namespace Model
      */
     inline CreateJobRequest& AddTags(S3Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The attribute container for the ManifestGenerator details. Jobs must be
+     * created with either a manifest file or a ManifestGenerator, but not both.</p>
+     */
+    inline const JobManifestGenerator& GetManifestGenerator() const{ return m_manifestGenerator; }
+
+    /**
+     * <p>The attribute container for the ManifestGenerator details. Jobs must be
+     * created with either a manifest file or a ManifestGenerator, but not both.</p>
+     */
+    inline bool ManifestGeneratorHasBeenSet() const { return m_manifestGeneratorHasBeenSet; }
+
+    /**
+     * <p>The attribute container for the ManifestGenerator details. Jobs must be
+     * created with either a manifest file or a ManifestGenerator, but not both.</p>
+     */
+    inline void SetManifestGenerator(const JobManifestGenerator& value) { m_manifestGeneratorHasBeenSet = true; m_manifestGenerator = value; }
+
+    /**
+     * <p>The attribute container for the ManifestGenerator details. Jobs must be
+     * created with either a manifest file or a ManifestGenerator, but not both.</p>
+     */
+    inline void SetManifestGenerator(JobManifestGenerator&& value) { m_manifestGeneratorHasBeenSet = true; m_manifestGenerator = std::move(value); }
+
+    /**
+     * <p>The attribute container for the ManifestGenerator details. Jobs must be
+     * created with either a manifest file or a ManifestGenerator, but not both.</p>
+     */
+    inline CreateJobRequest& WithManifestGenerator(const JobManifestGenerator& value) { SetManifestGenerator(value); return *this;}
+
+    /**
+     * <p>The attribute container for the ManifestGenerator details. Jobs must be
+     * created with either a manifest file or a ManifestGenerator, but not both.</p>
+     */
+    inline CreateJobRequest& WithManifestGenerator(JobManifestGenerator&& value) { SetManifestGenerator(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_accountId;
@@ -488,6 +526,9 @@ namespace Model
 
     Aws::Vector<S3Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    JobManifestGenerator m_manifestGenerator;
+    bool m_manifestGeneratorHasBeenSet;
   };
 
 } // namespace Model

@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     NONE,
     HTTP_HEAD,
-    HTTP_ISO
+    HTTP_ISO,
+    HTTP_XSDATE
   };
 
 namespace UtcTimingMapper

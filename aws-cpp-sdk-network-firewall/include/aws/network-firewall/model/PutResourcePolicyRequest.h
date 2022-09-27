@@ -84,12 +84,12 @@ namespace Model
 
 
     /**
-     * <p>The AWS Identity and Access Management policy statement that lists the
-     * accounts that you want to share your rule group or firewall policy with and the
-     * operations that you want the accounts to be able to perform. </p> <p>For a rule
-     * group resource, you can specify the following operations in the Actions section
-     * of the statement:</p> <ul> <li> <p>network-firewall:CreateFirewallPolicy</p>
-     * </li> <li> <p>network-firewall:UpdateFirewallPolicy</p> </li> <li>
+     * <p>The IAM policy statement that lists the accounts that you want to share your
+     * rule group or firewall policy with and the operations that you want the accounts
+     * to be able to perform. </p> <p>For a rule group resource, you can specify the
+     * following operations in the Actions section of the statement:</p> <ul> <li>
+     * <p>network-firewall:CreateFirewallPolicy</p> </li> <li>
+     * <p>network-firewall:UpdateFirewallPolicy</p> </li> <li>
      * <p>network-firewall:ListRuleGroups</p> </li> </ul> <p>For a firewall policy
      * resource, you can specify the following operations in the Actions section of the
      * statement:</p> <ul> <li> <p>network-firewall:CreateFirewall</p> </li> <li>
@@ -103,12 +103,12 @@ namespace Model
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
     /**
-     * <p>The AWS Identity and Access Management policy statement that lists the
-     * accounts that you want to share your rule group or firewall policy with and the
-     * operations that you want the accounts to be able to perform. </p> <p>For a rule
-     * group resource, you can specify the following operations in the Actions section
-     * of the statement:</p> <ul> <li> <p>network-firewall:CreateFirewallPolicy</p>
-     * </li> <li> <p>network-firewall:UpdateFirewallPolicy</p> </li> <li>
+     * <p>The IAM policy statement that lists the accounts that you want to share your
+     * rule group or firewall policy with and the operations that you want the accounts
+     * to be able to perform. </p> <p>For a rule group resource, you can specify the
+     * following operations in the Actions section of the statement:</p> <ul> <li>
+     * <p>network-firewall:CreateFirewallPolicy</p> </li> <li>
+     * <p>network-firewall:UpdateFirewallPolicy</p> </li> <li>
      * <p>network-firewall:ListRuleGroups</p> </li> </ul> <p>For a firewall policy
      * resource, you can specify the following operations in the Actions section of the
      * statement:</p> <ul> <li> <p>network-firewall:CreateFirewall</p> </li> <li>
@@ -122,12 +122,12 @@ namespace Model
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
     /**
-     * <p>The AWS Identity and Access Management policy statement that lists the
-     * accounts that you want to share your rule group or firewall policy with and the
-     * operations that you want the accounts to be able to perform. </p> <p>For a rule
-     * group resource, you can specify the following operations in the Actions section
-     * of the statement:</p> <ul> <li> <p>network-firewall:CreateFirewallPolicy</p>
-     * </li> <li> <p>network-firewall:UpdateFirewallPolicy</p> </li> <li>
+     * <p>The IAM policy statement that lists the accounts that you want to share your
+     * rule group or firewall policy with and the operations that you want the accounts
+     * to be able to perform. </p> <p>For a rule group resource, you can specify the
+     * following operations in the Actions section of the statement:</p> <ul> <li>
+     * <p>network-firewall:CreateFirewallPolicy</p> </li> <li>
+     * <p>network-firewall:UpdateFirewallPolicy</p> </li> <li>
      * <p>network-firewall:ListRuleGroups</p> </li> </ul> <p>For a firewall policy
      * resource, you can specify the following operations in the Actions section of the
      * statement:</p> <ul> <li> <p>network-firewall:CreateFirewall</p> </li> <li>
@@ -141,12 +141,12 @@ namespace Model
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
     /**
-     * <p>The AWS Identity and Access Management policy statement that lists the
-     * accounts that you want to share your rule group or firewall policy with and the
-     * operations that you want the accounts to be able to perform. </p> <p>For a rule
-     * group resource, you can specify the following operations in the Actions section
-     * of the statement:</p> <ul> <li> <p>network-firewall:CreateFirewallPolicy</p>
-     * </li> <li> <p>network-firewall:UpdateFirewallPolicy</p> </li> <li>
+     * <p>The IAM policy statement that lists the accounts that you want to share your
+     * rule group or firewall policy with and the operations that you want the accounts
+     * to be able to perform. </p> <p>For a rule group resource, you can specify the
+     * following operations in the Actions section of the statement:</p> <ul> <li>
+     * <p>network-firewall:CreateFirewallPolicy</p> </li> <li>
+     * <p>network-firewall:UpdateFirewallPolicy</p> </li> <li>
      * <p>network-firewall:ListRuleGroups</p> </li> </ul> <p>For a firewall policy
      * resource, you can specify the following operations in the Actions section of the
      * statement:</p> <ul> <li> <p>network-firewall:CreateFirewall</p> </li> <li>
@@ -160,12 +160,12 @@ namespace Model
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
     /**
-     * <p>The AWS Identity and Access Management policy statement that lists the
-     * accounts that you want to share your rule group or firewall policy with and the
-     * operations that you want the accounts to be able to perform. </p> <p>For a rule
-     * group resource, you can specify the following operations in the Actions section
-     * of the statement:</p> <ul> <li> <p>network-firewall:CreateFirewallPolicy</p>
-     * </li> <li> <p>network-firewall:UpdateFirewallPolicy</p> </li> <li>
+     * <p>The IAM policy statement that lists the accounts that you want to share your
+     * rule group or firewall policy with and the operations that you want the accounts
+     * to be able to perform. </p> <p>For a rule group resource, you can specify the
+     * following operations in the Actions section of the statement:</p> <ul> <li>
+     * <p>network-firewall:CreateFirewallPolicy</p> </li> <li>
+     * <p>network-firewall:UpdateFirewallPolicy</p> </li> <li>
      * <p>network-firewall:ListRuleGroups</p> </li> </ul> <p>For a firewall policy
      * resource, you can specify the following operations in the Actions section of the
      * statement:</p> <ul> <li> <p>network-firewall:CreateFirewall</p> </li> <li>
@@ -179,12 +179,12 @@ namespace Model
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
     /**
-     * <p>The AWS Identity and Access Management policy statement that lists the
-     * accounts that you want to share your rule group or firewall policy with and the
-     * operations that you want the accounts to be able to perform. </p> <p>For a rule
-     * group resource, you can specify the following operations in the Actions section
-     * of the statement:</p> <ul> <li> <p>network-firewall:CreateFirewallPolicy</p>
-     * </li> <li> <p>network-firewall:UpdateFirewallPolicy</p> </li> <li>
+     * <p>The IAM policy statement that lists the accounts that you want to share your
+     * rule group or firewall policy with and the operations that you want the accounts
+     * to be able to perform. </p> <p>For a rule group resource, you can specify the
+     * following operations in the Actions section of the statement:</p> <ul> <li>
+     * <p>network-firewall:CreateFirewallPolicy</p> </li> <li>
+     * <p>network-firewall:UpdateFirewallPolicy</p> </li> <li>
      * <p>network-firewall:ListRuleGroups</p> </li> </ul> <p>For a firewall policy
      * resource, you can specify the following operations in the Actions section of the
      * statement:</p> <ul> <li> <p>network-firewall:CreateFirewall</p> </li> <li>
@@ -198,12 +198,12 @@ namespace Model
     inline PutResourcePolicyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
     /**
-     * <p>The AWS Identity and Access Management policy statement that lists the
-     * accounts that you want to share your rule group or firewall policy with and the
-     * operations that you want the accounts to be able to perform. </p> <p>For a rule
-     * group resource, you can specify the following operations in the Actions section
-     * of the statement:</p> <ul> <li> <p>network-firewall:CreateFirewallPolicy</p>
-     * </li> <li> <p>network-firewall:UpdateFirewallPolicy</p> </li> <li>
+     * <p>The IAM policy statement that lists the accounts that you want to share your
+     * rule group or firewall policy with and the operations that you want the accounts
+     * to be able to perform. </p> <p>For a rule group resource, you can specify the
+     * following operations in the Actions section of the statement:</p> <ul> <li>
+     * <p>network-firewall:CreateFirewallPolicy</p> </li> <li>
+     * <p>network-firewall:UpdateFirewallPolicy</p> </li> <li>
      * <p>network-firewall:ListRuleGroups</p> </li> </ul> <p>For a firewall policy
      * resource, you can specify the following operations in the Actions section of the
      * statement:</p> <ul> <li> <p>network-firewall:CreateFirewall</p> </li> <li>
@@ -217,12 +217,12 @@ namespace Model
     inline PutResourcePolicyRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Identity and Access Management policy statement that lists the
-     * accounts that you want to share your rule group or firewall policy with and the
-     * operations that you want the accounts to be able to perform. </p> <p>For a rule
-     * group resource, you can specify the following operations in the Actions section
-     * of the statement:</p> <ul> <li> <p>network-firewall:CreateFirewallPolicy</p>
-     * </li> <li> <p>network-firewall:UpdateFirewallPolicy</p> </li> <li>
+     * <p>The IAM policy statement that lists the accounts that you want to share your
+     * rule group or firewall policy with and the operations that you want the accounts
+     * to be able to perform. </p> <p>For a rule group resource, you can specify the
+     * following operations in the Actions section of the statement:</p> <ul> <li>
+     * <p>network-firewall:CreateFirewallPolicy</p> </li> <li>
+     * <p>network-firewall:UpdateFirewallPolicy</p> </li> <li>
      * <p>network-firewall:ListRuleGroups</p> </li> </ul> <p>For a firewall policy
      * resource, you can specify the following operations in the Actions section of the
      * statement:</p> <ul> <li> <p>network-firewall:CreateFirewall</p> </li> <li>

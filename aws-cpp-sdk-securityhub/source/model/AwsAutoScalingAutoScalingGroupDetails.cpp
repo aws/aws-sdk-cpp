@@ -26,7 +26,10 @@ AwsAutoScalingAutoScalingGroupDetails::AwsAutoScalingAutoScalingGroupDetails() :
     m_healthCheckGracePeriodHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_mixedInstancesPolicyHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false)
+    m_availabilityZonesHasBeenSet(false),
+    m_launchTemplateHasBeenSet(false),
+    m_capacityRebalance(false),
+    m_capacityRebalanceHasBeenSet(false)
 {
 }
 
@@ -38,7 +41,10 @@ AwsAutoScalingAutoScalingGroupDetails::AwsAutoScalingAutoScalingGroupDetails(Jso
     m_healthCheckGracePeriodHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_mixedInstancesPolicyHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false)
+    m_availabilityZonesHasBeenSet(false),
+    m_launchTemplateHasBeenSet(false),
+    m_capacityRebalance(false),
+    m_capacityRebalanceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -100,6 +106,20 @@ AwsAutoScalingAutoScalingGroupDetails& AwsAutoScalingAutoScalingGroupDetails::op
     m_availabilityZonesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LaunchTemplate"))
+  {
+    m_launchTemplate = jsonValue.GetObject("LaunchTemplate");
+
+    m_launchTemplateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CapacityRebalance"))
+  {
+    m_capacityRebalance = jsonValue.GetBool("CapacityRebalance");
+
+    m_capacityRebalanceHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -156,6 +176,18 @@ JsonValue AwsAutoScalingAutoScalingGroupDetails::Jsonize() const
      availabilityZonesJsonList[availabilityZonesIndex].AsObject(m_availabilityZones[availabilityZonesIndex].Jsonize());
    }
    payload.WithArray("AvailabilityZones", std::move(availabilityZonesJsonList));
+
+  }
+
+  if(m_launchTemplateHasBeenSet)
+  {
+   payload.WithObject("LaunchTemplate", m_launchTemplate.Jsonize());
+
+  }
+
+  if(m_capacityRebalanceHasBeenSet)
+  {
+   payload.WithBool("CapacityRebalance", m_capacityRebalance);
 
   }
 

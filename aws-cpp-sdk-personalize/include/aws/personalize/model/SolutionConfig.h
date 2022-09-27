@@ -255,38 +255,44 @@ namespace Model
 
 
     /**
-     * <p>The <a>AutoMLConfig</a> object containing a list of recipes to search when
-     * AutoML is performed.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/API_AutoMLConfig.html">AutoMLConfig</a>
+     * object containing a list of recipes to search when AutoML is performed.</p>
      */
     inline const AutoMLConfig& GetAutoMLConfig() const{ return m_autoMLConfig; }
 
     /**
-     * <p>The <a>AutoMLConfig</a> object containing a list of recipes to search when
-     * AutoML is performed.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/API_AutoMLConfig.html">AutoMLConfig</a>
+     * object containing a list of recipes to search when AutoML is performed.</p>
      */
     inline bool AutoMLConfigHasBeenSet() const { return m_autoMLConfigHasBeenSet; }
 
     /**
-     * <p>The <a>AutoMLConfig</a> object containing a list of recipes to search when
-     * AutoML is performed.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/API_AutoMLConfig.html">AutoMLConfig</a>
+     * object containing a list of recipes to search when AutoML is performed.</p>
      */
     inline void SetAutoMLConfig(const AutoMLConfig& value) { m_autoMLConfigHasBeenSet = true; m_autoMLConfig = value; }
 
     /**
-     * <p>The <a>AutoMLConfig</a> object containing a list of recipes to search when
-     * AutoML is performed.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/API_AutoMLConfig.html">AutoMLConfig</a>
+     * object containing a list of recipes to search when AutoML is performed.</p>
      */
     inline void SetAutoMLConfig(AutoMLConfig&& value) { m_autoMLConfigHasBeenSet = true; m_autoMLConfig = std::move(value); }
 
     /**
-     * <p>The <a>AutoMLConfig</a> object containing a list of recipes to search when
-     * AutoML is performed.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/API_AutoMLConfig.html">AutoMLConfig</a>
+     * object containing a list of recipes to search when AutoML is performed.</p>
      */
     inline SolutionConfig& WithAutoMLConfig(const AutoMLConfig& value) { SetAutoMLConfig(value); return *this;}
 
     /**
-     * <p>The <a>AutoMLConfig</a> object containing a list of recipes to search when
-     * AutoML is performed.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/API_AutoMLConfig.html">AutoMLConfig</a>
+     * object containing a list of recipes to search when AutoML is performed.</p>
      */
     inline SolutionConfig& WithAutoMLConfig(AutoMLConfig&& value) { SetAutoMLConfig(std::move(value)); return *this;}
 

@@ -24,7 +24,10 @@ CreateChannelRequest::CreateChannelRequest() :
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_tagsHasBeenSet(false),
-    m_chimeBearerHasBeenSet(false)
+    m_chimeBearerHasBeenSet(false),
+    m_channelIdHasBeenSet(false),
+    m_memberArnsHasBeenSet(false),
+    m_moderatorArnsHasBeenSet(false)
 {
 }
 
@@ -74,6 +77,34 @@ Aws::String CreateChannelRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_channelIdHasBeenSet)
+  {
+   payload.WithString("ChannelId", m_channelId);
+
+  }
+
+  if(m_memberArnsHasBeenSet)
+  {
+   Array<JsonValue> memberArnsJsonList(m_memberArns.size());
+   for(unsigned memberArnsIndex = 0; memberArnsIndex < memberArnsJsonList.GetLength(); ++memberArnsIndex)
+   {
+     memberArnsJsonList[memberArnsIndex].AsString(m_memberArns[memberArnsIndex]);
+   }
+   payload.WithArray("MemberArns", std::move(memberArnsJsonList));
+
+  }
+
+  if(m_moderatorArnsHasBeenSet)
+  {
+   Array<JsonValue> moderatorArnsJsonList(m_moderatorArns.size());
+   for(unsigned moderatorArnsIndex = 0; moderatorArnsIndex < moderatorArnsJsonList.GetLength(); ++moderatorArnsIndex)
+   {
+     moderatorArnsJsonList[moderatorArnsIndex].AsString(m_moderatorArns[moderatorArnsIndex]);
+   }
+   payload.WithArray("ModeratorArns", std::move(moderatorArnsJsonList));
 
   }
 

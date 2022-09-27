@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/proton/Proton_EXPORTS.h>
 #include <aws/proton/ProtonRequest.h>
-#include <aws/proton/model/DeploymentUpdateType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/proton/model/DeploymentUpdateType.h>
 #include <aws/proton/model/RepositoryBranchInput.h>
 #include <utility>
 
@@ -37,18 +37,115 @@ namespace Model
 
 
     /**
-     * <p>There are four modes for updating an environment as described in the
-     * following. The <code>deploymentType</code> field defines the mode.</p> <dl>
-     * <dt/> <dd> <p> <code>NONE</code> </p> <p>In this mode, a deployment
-     * <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
-     * </dd> <dt/> <dd> <p> <code>CURRENT_VERSION</code> </p> <p>In this mode, the
-     * environment is deployed and updated with the new spec that you provide. Only
-     * requested parameters are updated. <i>Don’t</i> include minor or major version
-     * parameters when you use this <code>deployment-type</code>.</p> </dd> <dt/> <dd>
-     * <p> <code>MINOR_VERSION</code> </p> <p>In this mode, the environment is deployed
-     * and updated with the published, recommended (latest) minor version of the
-     * current major version in use, by default. You can also specify a different minor
-     * version of the current major version in use.</p> </dd> <dt/> <dd> <p>
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
+     * provisioning directly defined components in this environment. It determines the
+     * scope of infrastructure that a component can provision.</p> <p>The environment
+     * must have a <code>componentRoleArn</code> to allow directly defined components
+     * to be associated with the environment.</p> <p>For more information about
+     * components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     */
+    inline const Aws::String& GetComponentRoleArn() const{ return m_componentRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
+     * provisioning directly defined components in this environment. It determines the
+     * scope of infrastructure that a component can provision.</p> <p>The environment
+     * must have a <code>componentRoleArn</code> to allow directly defined components
+     * to be associated with the environment.</p> <p>For more information about
+     * components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     */
+    inline bool ComponentRoleArnHasBeenSet() const { return m_componentRoleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
+     * provisioning directly defined components in this environment. It determines the
+     * scope of infrastructure that a component can provision.</p> <p>The environment
+     * must have a <code>componentRoleArn</code> to allow directly defined components
+     * to be associated with the environment.</p> <p>For more information about
+     * components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     */
+    inline void SetComponentRoleArn(const Aws::String& value) { m_componentRoleArnHasBeenSet = true; m_componentRoleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
+     * provisioning directly defined components in this environment. It determines the
+     * scope of infrastructure that a component can provision.</p> <p>The environment
+     * must have a <code>componentRoleArn</code> to allow directly defined components
+     * to be associated with the environment.</p> <p>For more information about
+     * components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     */
+    inline void SetComponentRoleArn(Aws::String&& value) { m_componentRoleArnHasBeenSet = true; m_componentRoleArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
+     * provisioning directly defined components in this environment. It determines the
+     * scope of infrastructure that a component can provision.</p> <p>The environment
+     * must have a <code>componentRoleArn</code> to allow directly defined components
+     * to be associated with the environment.</p> <p>For more information about
+     * components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     */
+    inline void SetComponentRoleArn(const char* value) { m_componentRoleArnHasBeenSet = true; m_componentRoleArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
+     * provisioning directly defined components in this environment. It determines the
+     * scope of infrastructure that a component can provision.</p> <p>The environment
+     * must have a <code>componentRoleArn</code> to allow directly defined components
+     * to be associated with the environment.</p> <p>For more information about
+     * components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     */
+    inline UpdateEnvironmentRequest& WithComponentRoleArn(const Aws::String& value) { SetComponentRoleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
+     * provisioning directly defined components in this environment. It determines the
+     * scope of infrastructure that a component can provision.</p> <p>The environment
+     * must have a <code>componentRoleArn</code> to allow directly defined components
+     * to be associated with the environment.</p> <p>For more information about
+     * components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     */
+    inline UpdateEnvironmentRequest& WithComponentRoleArn(Aws::String&& value) { SetComponentRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
+     * provisioning directly defined components in this environment. It determines the
+     * scope of infrastructure that a component can provision.</p> <p>The environment
+     * must have a <code>componentRoleArn</code> to allow directly defined components
+     * to be associated with the environment.</p> <p>For more information about
+     * components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     */
+    inline UpdateEnvironmentRequest& WithComponentRoleArn(const char* value) { SetComponentRoleArn(value); return *this;}
+
+
+    /**
+     * <p>There are four modes for updating an environment. The
+     * <code>deploymentType</code> field defines the mode.</p> <dl> <dt/> <dd> <p>
+     * <code>NONE</code> </p> <p>In this mode, a deployment <i>doesn't</i> occur. Only
+     * the requested metadata parameters are updated.</p> </dd> <dt/> <dd> <p>
+     * <code>CURRENT_VERSION</code> </p> <p>In this mode, the environment is deployed
+     * and updated with the new spec that you provide. Only requested parameters are
+     * updated. <i>Don’t</i> include major or minor version parameters when you use
+     * this <code>deployment-type</code>.</p> </dd> <dt/> <dd> <p>
+     * <code>MINOR_VERSION</code> </p> <p>In this mode, the environment is deployed and
+     * updated with the published, recommended (latest) minor version of the current
+     * major version in use, by default. You can also specify a different minor version
+     * of the current major version in use.</p> </dd> <dt/> <dd> <p>
      * <code>MAJOR_VERSION</code> </p> <p>In this mode, the environment is deployed and
      * updated with the published, recommended (latest) major and minor version of the
      * current template, by default. You can also specify a different major version
@@ -58,18 +155,18 @@ namespace Model
     inline const DeploymentUpdateType& GetDeploymentType() const{ return m_deploymentType; }
 
     /**
-     * <p>There are four modes for updating an environment as described in the
-     * following. The <code>deploymentType</code> field defines the mode.</p> <dl>
-     * <dt/> <dd> <p> <code>NONE</code> </p> <p>In this mode, a deployment
-     * <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
-     * </dd> <dt/> <dd> <p> <code>CURRENT_VERSION</code> </p> <p>In this mode, the
-     * environment is deployed and updated with the new spec that you provide. Only
-     * requested parameters are updated. <i>Don’t</i> include minor or major version
-     * parameters when you use this <code>deployment-type</code>.</p> </dd> <dt/> <dd>
-     * <p> <code>MINOR_VERSION</code> </p> <p>In this mode, the environment is deployed
-     * and updated with the published, recommended (latest) minor version of the
-     * current major version in use, by default. You can also specify a different minor
-     * version of the current major version in use.</p> </dd> <dt/> <dd> <p>
+     * <p>There are four modes for updating an environment. The
+     * <code>deploymentType</code> field defines the mode.</p> <dl> <dt/> <dd> <p>
+     * <code>NONE</code> </p> <p>In this mode, a deployment <i>doesn't</i> occur. Only
+     * the requested metadata parameters are updated.</p> </dd> <dt/> <dd> <p>
+     * <code>CURRENT_VERSION</code> </p> <p>In this mode, the environment is deployed
+     * and updated with the new spec that you provide. Only requested parameters are
+     * updated. <i>Don’t</i> include major or minor version parameters when you use
+     * this <code>deployment-type</code>.</p> </dd> <dt/> <dd> <p>
+     * <code>MINOR_VERSION</code> </p> <p>In this mode, the environment is deployed and
+     * updated with the published, recommended (latest) minor version of the current
+     * major version in use, by default. You can also specify a different minor version
+     * of the current major version in use.</p> </dd> <dt/> <dd> <p>
      * <code>MAJOR_VERSION</code> </p> <p>In this mode, the environment is deployed and
      * updated with the published, recommended (latest) major and minor version of the
      * current template, by default. You can also specify a different major version
@@ -79,18 +176,18 @@ namespace Model
     inline bool DeploymentTypeHasBeenSet() const { return m_deploymentTypeHasBeenSet; }
 
     /**
-     * <p>There are four modes for updating an environment as described in the
-     * following. The <code>deploymentType</code> field defines the mode.</p> <dl>
-     * <dt/> <dd> <p> <code>NONE</code> </p> <p>In this mode, a deployment
-     * <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
-     * </dd> <dt/> <dd> <p> <code>CURRENT_VERSION</code> </p> <p>In this mode, the
-     * environment is deployed and updated with the new spec that you provide. Only
-     * requested parameters are updated. <i>Don’t</i> include minor or major version
-     * parameters when you use this <code>deployment-type</code>.</p> </dd> <dt/> <dd>
-     * <p> <code>MINOR_VERSION</code> </p> <p>In this mode, the environment is deployed
-     * and updated with the published, recommended (latest) minor version of the
-     * current major version in use, by default. You can also specify a different minor
-     * version of the current major version in use.</p> </dd> <dt/> <dd> <p>
+     * <p>There are four modes for updating an environment. The
+     * <code>deploymentType</code> field defines the mode.</p> <dl> <dt/> <dd> <p>
+     * <code>NONE</code> </p> <p>In this mode, a deployment <i>doesn't</i> occur. Only
+     * the requested metadata parameters are updated.</p> </dd> <dt/> <dd> <p>
+     * <code>CURRENT_VERSION</code> </p> <p>In this mode, the environment is deployed
+     * and updated with the new spec that you provide. Only requested parameters are
+     * updated. <i>Don’t</i> include major or minor version parameters when you use
+     * this <code>deployment-type</code>.</p> </dd> <dt/> <dd> <p>
+     * <code>MINOR_VERSION</code> </p> <p>In this mode, the environment is deployed and
+     * updated with the published, recommended (latest) minor version of the current
+     * major version in use, by default. You can also specify a different minor version
+     * of the current major version in use.</p> </dd> <dt/> <dd> <p>
      * <code>MAJOR_VERSION</code> </p> <p>In this mode, the environment is deployed and
      * updated with the published, recommended (latest) major and minor version of the
      * current template, by default. You can also specify a different major version
@@ -100,18 +197,18 @@ namespace Model
     inline void SetDeploymentType(const DeploymentUpdateType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
 
     /**
-     * <p>There are four modes for updating an environment as described in the
-     * following. The <code>deploymentType</code> field defines the mode.</p> <dl>
-     * <dt/> <dd> <p> <code>NONE</code> </p> <p>In this mode, a deployment
-     * <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
-     * </dd> <dt/> <dd> <p> <code>CURRENT_VERSION</code> </p> <p>In this mode, the
-     * environment is deployed and updated with the new spec that you provide. Only
-     * requested parameters are updated. <i>Don’t</i> include minor or major version
-     * parameters when you use this <code>deployment-type</code>.</p> </dd> <dt/> <dd>
-     * <p> <code>MINOR_VERSION</code> </p> <p>In this mode, the environment is deployed
-     * and updated with the published, recommended (latest) minor version of the
-     * current major version in use, by default. You can also specify a different minor
-     * version of the current major version in use.</p> </dd> <dt/> <dd> <p>
+     * <p>There are four modes for updating an environment. The
+     * <code>deploymentType</code> field defines the mode.</p> <dl> <dt/> <dd> <p>
+     * <code>NONE</code> </p> <p>In this mode, a deployment <i>doesn't</i> occur. Only
+     * the requested metadata parameters are updated.</p> </dd> <dt/> <dd> <p>
+     * <code>CURRENT_VERSION</code> </p> <p>In this mode, the environment is deployed
+     * and updated with the new spec that you provide. Only requested parameters are
+     * updated. <i>Don’t</i> include major or minor version parameters when you use
+     * this <code>deployment-type</code>.</p> </dd> <dt/> <dd> <p>
+     * <code>MINOR_VERSION</code> </p> <p>In this mode, the environment is deployed and
+     * updated with the published, recommended (latest) minor version of the current
+     * major version in use, by default. You can also specify a different minor version
+     * of the current major version in use.</p> </dd> <dt/> <dd> <p>
      * <code>MAJOR_VERSION</code> </p> <p>In this mode, the environment is deployed and
      * updated with the published, recommended (latest) major and minor version of the
      * current template, by default. You can also specify a different major version
@@ -121,18 +218,18 @@ namespace Model
     inline void SetDeploymentType(DeploymentUpdateType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
 
     /**
-     * <p>There are four modes for updating an environment as described in the
-     * following. The <code>deploymentType</code> field defines the mode.</p> <dl>
-     * <dt/> <dd> <p> <code>NONE</code> </p> <p>In this mode, a deployment
-     * <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
-     * </dd> <dt/> <dd> <p> <code>CURRENT_VERSION</code> </p> <p>In this mode, the
-     * environment is deployed and updated with the new spec that you provide. Only
-     * requested parameters are updated. <i>Don’t</i> include minor or major version
-     * parameters when you use this <code>deployment-type</code>.</p> </dd> <dt/> <dd>
-     * <p> <code>MINOR_VERSION</code> </p> <p>In this mode, the environment is deployed
-     * and updated with the published, recommended (latest) minor version of the
-     * current major version in use, by default. You can also specify a different minor
-     * version of the current major version in use.</p> </dd> <dt/> <dd> <p>
+     * <p>There are four modes for updating an environment. The
+     * <code>deploymentType</code> field defines the mode.</p> <dl> <dt/> <dd> <p>
+     * <code>NONE</code> </p> <p>In this mode, a deployment <i>doesn't</i> occur. Only
+     * the requested metadata parameters are updated.</p> </dd> <dt/> <dd> <p>
+     * <code>CURRENT_VERSION</code> </p> <p>In this mode, the environment is deployed
+     * and updated with the new spec that you provide. Only requested parameters are
+     * updated. <i>Don’t</i> include major or minor version parameters when you use
+     * this <code>deployment-type</code>.</p> </dd> <dt/> <dd> <p>
+     * <code>MINOR_VERSION</code> </p> <p>In this mode, the environment is deployed and
+     * updated with the published, recommended (latest) minor version of the current
+     * major version in use, by default. You can also specify a different minor version
+     * of the current major version in use.</p> </dd> <dt/> <dd> <p>
      * <code>MAJOR_VERSION</code> </p> <p>In this mode, the environment is deployed and
      * updated with the published, recommended (latest) major and minor version of the
      * current template, by default. You can also specify a different major version
@@ -142,18 +239,18 @@ namespace Model
     inline UpdateEnvironmentRequest& WithDeploymentType(const DeploymentUpdateType& value) { SetDeploymentType(value); return *this;}
 
     /**
-     * <p>There are four modes for updating an environment as described in the
-     * following. The <code>deploymentType</code> field defines the mode.</p> <dl>
-     * <dt/> <dd> <p> <code>NONE</code> </p> <p>In this mode, a deployment
-     * <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
-     * </dd> <dt/> <dd> <p> <code>CURRENT_VERSION</code> </p> <p>In this mode, the
-     * environment is deployed and updated with the new spec that you provide. Only
-     * requested parameters are updated. <i>Don’t</i> include minor or major version
-     * parameters when you use this <code>deployment-type</code>.</p> </dd> <dt/> <dd>
-     * <p> <code>MINOR_VERSION</code> </p> <p>In this mode, the environment is deployed
-     * and updated with the published, recommended (latest) minor version of the
-     * current major version in use, by default. You can also specify a different minor
-     * version of the current major version in use.</p> </dd> <dt/> <dd> <p>
+     * <p>There are four modes for updating an environment. The
+     * <code>deploymentType</code> field defines the mode.</p> <dl> <dt/> <dd> <p>
+     * <code>NONE</code> </p> <p>In this mode, a deployment <i>doesn't</i> occur. Only
+     * the requested metadata parameters are updated.</p> </dd> <dt/> <dd> <p>
+     * <code>CURRENT_VERSION</code> </p> <p>In this mode, the environment is deployed
+     * and updated with the new spec that you provide. Only requested parameters are
+     * updated. <i>Don’t</i> include major or minor version parameters when you use
+     * this <code>deployment-type</code>.</p> </dd> <dt/> <dd> <p>
+     * <code>MINOR_VERSION</code> </p> <p>In this mode, the environment is deployed and
+     * updated with the published, recommended (latest) minor version of the current
+     * major version in use, by default. You can also specify a different minor version
+     * of the current major version in use.</p> </dd> <dt/> <dd> <p>
      * <code>MAJOR_VERSION</code> </p> <p>In this mode, the environment is deployed and
      * updated with the published, recommended (latest) major and minor version of the
      * current template, by default. You can also specify a different major version
@@ -360,56 +457,38 @@ namespace Model
 
 
     /**
-     * <p>The repository that you provide with pull request provisioning.</p>
-     *  <p>Provisioning by pull request is currently in feature preview and
-     * is only usable with Terraform based Proton Templates. To learn more about <a
-     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
-     * terms</a>, see section 2 on Beta and Previews.</p> 
+     * <p>The infrastructure repository that you use to host your rendered
+     * infrastructure templates for self-managed provisioning.</p>
      */
     inline const RepositoryBranchInput& GetProvisioningRepository() const{ return m_provisioningRepository; }
 
     /**
-     * <p>The repository that you provide with pull request provisioning.</p>
-     *  <p>Provisioning by pull request is currently in feature preview and
-     * is only usable with Terraform based Proton Templates. To learn more about <a
-     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
-     * terms</a>, see section 2 on Beta and Previews.</p> 
+     * <p>The infrastructure repository that you use to host your rendered
+     * infrastructure templates for self-managed provisioning.</p>
      */
     inline bool ProvisioningRepositoryHasBeenSet() const { return m_provisioningRepositoryHasBeenSet; }
 
     /**
-     * <p>The repository that you provide with pull request provisioning.</p>
-     *  <p>Provisioning by pull request is currently in feature preview and
-     * is only usable with Terraform based Proton Templates. To learn more about <a
-     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
-     * terms</a>, see section 2 on Beta and Previews.</p> 
+     * <p>The infrastructure repository that you use to host your rendered
+     * infrastructure templates for self-managed provisioning.</p>
      */
     inline void SetProvisioningRepository(const RepositoryBranchInput& value) { m_provisioningRepositoryHasBeenSet = true; m_provisioningRepository = value; }
 
     /**
-     * <p>The repository that you provide with pull request provisioning.</p>
-     *  <p>Provisioning by pull request is currently in feature preview and
-     * is only usable with Terraform based Proton Templates. To learn more about <a
-     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
-     * terms</a>, see section 2 on Beta and Previews.</p> 
+     * <p>The infrastructure repository that you use to host your rendered
+     * infrastructure templates for self-managed provisioning.</p>
      */
     inline void SetProvisioningRepository(RepositoryBranchInput&& value) { m_provisioningRepositoryHasBeenSet = true; m_provisioningRepository = std::move(value); }
 
     /**
-     * <p>The repository that you provide with pull request provisioning.</p>
-     *  <p>Provisioning by pull request is currently in feature preview and
-     * is only usable with Terraform based Proton Templates. To learn more about <a
-     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
-     * terms</a>, see section 2 on Beta and Previews.</p> 
+     * <p>The infrastructure repository that you use to host your rendered
+     * infrastructure templates for self-managed provisioning.</p>
      */
     inline UpdateEnvironmentRequest& WithProvisioningRepository(const RepositoryBranchInput& value) { SetProvisioningRepository(value); return *this;}
 
     /**
-     * <p>The repository that you provide with pull request provisioning.</p>
-     *  <p>Provisioning by pull request is currently in feature preview and
-     * is only usable with Terraform based Proton Templates. To learn more about <a
-     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
-     * terms</a>, see section 2 on Beta and Previews.</p> 
+     * <p>The infrastructure repository that you use to host your rendered
+     * infrastructure templates for self-managed provisioning.</p>
      */
     inline UpdateEnvironmentRequest& WithProvisioningRepository(RepositoryBranchInput&& value) { SetProvisioningRepository(std::move(value)); return *this;}
 
@@ -537,6 +616,9 @@ namespace Model
     inline UpdateEnvironmentRequest& WithTemplateMinorVersion(const char* value) { SetTemplateMinorVersion(value); return *this;}
 
   private:
+
+    Aws::String m_componentRoleArn;
+    bool m_componentRoleArnHasBeenSet;
 
     DeploymentUpdateType m_deploymentType;
     bool m_deploymentTypeHasBeenSet;

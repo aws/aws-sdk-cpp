@@ -33,6 +33,27 @@ namespace Model
 
 
     /**
+     * <p>Whether to mark the new version as the latest version.</p>
+     */
+    inline bool GetMarkLatest() const{ return m_markLatest; }
+
+    /**
+     * <p>Whether to mark the new version as the latest version.</p>
+     */
+    inline bool MarkLatestHasBeenSet() const { return m_markLatestHasBeenSet; }
+
+    /**
+     * <p>Whether to mark the new version as the latest version.</p>
+     */
+    inline void SetMarkLatest(bool value) { m_markLatestHasBeenSet = true; m_markLatest = value; }
+
+    /**
+     * <p>Whether to mark the new version as the latest version.</p>
+     */
+    inline RegisterPackageVersionRequest& WithMarkLatest(bool value) { SetMarkLatest(value); return *this;}
+
+
+    /**
      * <p>An owner account.</p>
      */
     inline const Aws::String& GetOwnerAccount() const{ return m_ownerAccount; }
@@ -195,28 +216,10 @@ namespace Model
      */
     inline RegisterPackageVersionRequest& WithPatchVersion(const char* value) { SetPatchVersion(value); return *this;}
 
-
-    /**
-     * <p>Whether to mark the new version as the latest version.</p>
-     */
-    inline bool GetMarkLatest() const{ return m_markLatest; }
-
-    /**
-     * <p>Whether to mark the new version as the latest version.</p>
-     */
-    inline bool MarkLatestHasBeenSet() const { return m_markLatestHasBeenSet; }
-
-    /**
-     * <p>Whether to mark the new version as the latest version.</p>
-     */
-    inline void SetMarkLatest(bool value) { m_markLatestHasBeenSet = true; m_markLatest = value; }
-
-    /**
-     * <p>Whether to mark the new version as the latest version.</p>
-     */
-    inline RegisterPackageVersionRequest& WithMarkLatest(bool value) { SetMarkLatest(value); return *this;}
-
   private:
+
+    bool m_markLatest;
+    bool m_markLatestHasBeenSet;
 
     Aws::String m_ownerAccount;
     bool m_ownerAccountHasBeenSet;
@@ -229,9 +232,6 @@ namespace Model
 
     Aws::String m_patchVersion;
     bool m_patchVersionHasBeenSet;
-
-    bool m_markLatest;
-    bool m_markLatestHasBeenSet;
   };
 
 } // namespace Model

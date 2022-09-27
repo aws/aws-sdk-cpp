@@ -48,7 +48,9 @@ ConnectorOperator::ConnectorOperator() :
     m_zendesk(ZendeskConnectorOperator::NOT_SET),
     m_zendeskHasBeenSet(false),
     m_sAPOData(SAPODataConnectorOperator::NOT_SET),
-    m_sAPODataHasBeenSet(false)
+    m_sAPODataHasBeenSet(false),
+    m_customConnector(Operator::NOT_SET),
+    m_customConnectorHasBeenSet(false)
 {
 }
 
@@ -82,7 +84,9 @@ ConnectorOperator::ConnectorOperator(JsonView jsonValue) :
     m_zendesk(ZendeskConnectorOperator::NOT_SET),
     m_zendeskHasBeenSet(false),
     m_sAPOData(SAPODataConnectorOperator::NOT_SET),
-    m_sAPODataHasBeenSet(false)
+    m_sAPODataHasBeenSet(false),
+    m_customConnector(Operator::NOT_SET),
+    m_customConnectorHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -194,6 +198,13 @@ ConnectorOperator& ConnectorOperator::operator =(JsonView jsonValue)
     m_sAPODataHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CustomConnector"))
+  {
+    m_customConnector = OperatorMapper::GetOperatorForName(jsonValue.GetString("CustomConnector"));
+
+    m_customConnectorHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -274,6 +285,11 @@ JsonValue ConnectorOperator::Jsonize() const
   if(m_sAPODataHasBeenSet)
   {
    payload.WithString("SAPOData", SAPODataConnectorOperatorMapper::GetNameForSAPODataConnectorOperator(m_sAPOData));
+  }
+
+  if(m_customConnectorHasBeenSet)
+  {
+   payload.WithString("CustomConnector", OperatorMapper::GetNameForOperator(m_customConnector));
   }
 
   return payload;

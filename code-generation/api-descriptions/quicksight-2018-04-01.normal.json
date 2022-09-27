@@ -188,7 +188,7 @@
         {"shape":"InternalFailureException"},
         {"shape":"ResourceUnavailableException"}
       ],
-      "documentation":"<p>Creates an Amazon QuickSight group.</p> <p>The permissions resource is <code>arn:aws:quicksight:us-east-1:<i>&lt;relevant-aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i> </code>.</p> <p>The response is a group object.</p>"
+      "documentation":"<p>Creates an Amazon QuickSight group.</p> <p>The permissions resource is <code>arn:aws:quicksight:&lt;your-region&gt;:<i>&lt;relevant-aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i> </code>.</p> <p>The response is a group object.</p>"
     },
     "CreateGroupMembership":{
       "name":"CreateGroupMembership",
@@ -911,6 +911,25 @@
       ],
       "documentation":"<p>Returns an Amazon QuickSight group's description and Amazon Resource Name (ARN). </p>"
     },
+    "DescribeGroupMembership":{
+      "name":"DescribeGroupMembership",
+      "http":{
+        "method":"GET",
+        "requestUri":"/accounts/{AwsAccountId}/namespaces/{Namespace}/groups/{GroupName}/members/{MemberName}"
+      },
+      "input":{"shape":"DescribeGroupMembershipRequest"},
+      "output":{"shape":"DescribeGroupMembershipResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"InvalidParameterValueException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"PreconditionNotMetException"},
+        {"shape":"InternalFailureException"},
+        {"shape":"ResourceUnavailableException"}
+      ],
+      "documentation":"<p>Use the <code>DescribeGroupMembership</code> operation to determine if a user is a member of the specified group. If the user exists and is a member of the specified group, an associated <code>GroupMember</code> object is returned.</p>"
+    },
     "DescribeIAMPolicyAssignment":{
       "name":"DescribeIAMPolicyAssignment",
       "http":{
@@ -1128,7 +1147,7 @@
         {"shape":"UnsupportedPricingPlanException"},
         {"shape":"InternalFailureException"}
       ],
-      "documentation":"<p>Generates an embed URL that you can use to embed an Amazon QuickSight dashboard in your website, without having to register any reader users. Before you use this action, make sure that you have configured the dashboards and permissions.</p> <p>The following rules apply to the generated URL:</p> <ul> <li> <p>It contains a temporary bearer token. It is valid for 5 minutes after it is generated. Once redeemed within this period, it cannot be re-used again.</p> </li> <li> <p>The URL validity period should not be confused with the actual session lifetime that can be customized using the <code> <a href=\"https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForAnonymousUser.html#QS-GenerateEmbedUrlForAnonymousUser-request-SessionLifetimeInMinutes\">SessionLifetimeInMinutes</a> </code> parameter.</p> <p>The resulting user session is valid for 15 minutes (default) to 10 hours (maximum).</p> </li> <li> <p>You are charged only when the URL is used or there is interaction with Amazon QuickSight.</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html\">Embedded Analytics</a> in the <i>Amazon QuickSight User Guide</i>.</p> <p>For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the <a href=\"https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html\">Amazon QuickSight Developer Portal</a>.</p>"
+      "documentation":"<p>Generates an embed URL that you can use to embed an Amazon QuickSight dashboard in your website, without having to register any reader users. Before you use this action, make sure that you have configured the dashboards and permissions.</p> <p>The following rules apply to the generated URL:</p> <ul> <li> <p>It contains a temporary bearer token. It is valid for 5 minutes after it is generated. Once redeemed within this period, it cannot be re-used again.</p> </li> <li> <p>The URL validity period should not be confused with the actual session lifetime that can be customized using the <code> <a href=\"https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForAnonymousUser.html#QS-GenerateEmbedUrlForAnonymousUser-request-SessionLifetimeInMinutes\">SessionLifetimeInMinutes</a> </code> parameter.</p> <p>The resulting user session is valid for 15 minutes (minimum) to 10 hours (maximum). The default session duration is 10 hours. </p> </li> <li> <p>You are charged only when the URL is used or there is interaction with Amazon QuickSight.</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html\">Embedded Analytics</a> in the <i>Amazon QuickSight User Guide</i>.</p> <p>For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the <a href=\"https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html\">Amazon QuickSight Developer Portal</a>.</p>"
     },
     "GenerateEmbedUrlForRegisteredUser":{
       "name":"GenerateEmbedUrlForRegisteredUser",
@@ -1149,7 +1168,7 @@
         {"shape":"UnsupportedPricingPlanException"},
         {"shape":"InternalFailureException"}
       ],
-      "documentation":"<p>Generates an embed URL that you can use to embed an Amazon QuickSight experience in your website. This action can be used for any type of user registered in an Amazon QuickSight account. Before you use this action, make sure that you have configured the relevant Amazon QuickSight resource and permissions.</p> <p>The following rules apply to the generated URL:</p> <ul> <li> <p>It contains a temporary bearer token. It is valid for 5 minutes after it is generated. Once redeemed within this period, it cannot be re-used again.</p> </li> <li> <p>The URL validity period should not be confused with the actual session lifetime that can be customized using the <code> <a href=\"https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html#QS-GenerateEmbedUrlForRegisteredUser-request-SessionLifetimeInMinutes\">SessionLifetimeInMinutes</a> </code> parameter.</p> <p>The resulting user session is valid for 15 minutes (default) to 10 hours (maximum).</p> </li> <li> <p>You are charged only when the URL is used or there is interaction with Amazon QuickSight.</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html\">Embedded Analytics</a> in the <i>Amazon QuickSight User Guide</i>.</p> <p>For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the <a href=\"https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html\">Amazon QuickSight Developer Portal</a>.</p>"
+      "documentation":"<p>Generates an embed URL that you can use to embed an Amazon QuickSight experience in your website. This action can be used for any type of user registered in an Amazon QuickSight account. Before you use this action, make sure that you have configured the relevant Amazon QuickSight resource and permissions.</p> <p>The following rules apply to the generated URL:</p> <ul> <li> <p>It contains a temporary bearer token. It is valid for 5 minutes after it is generated. Once redeemed within this period, it cannot be re-used again.</p> </li> <li> <p>The URL validity period should not be confused with the actual session lifetime that can be customized using the <code> <a href=\"https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html#QS-GenerateEmbedUrlForRegisteredUser-request-SessionLifetimeInMinutes\">SessionLifetimeInMinutes</a> </code> parameter.</p> <p>The resulting user session is valid for 15 minutes (minimum) to 10 hours (maximum). The default session duration is 10 hours.</p> </li> <li> <p>You are charged only when the URL is used or there is interaction with Amazon QuickSight.</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html\">Embedded Analytics</a> in the <i>Amazon QuickSight User Guide</i>.</p> <p>For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the <a href=\"https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html\">Amazon QuickSight Developer Portal</a>.</p>"
     },
     "GetDashboardEmbedUrl":{
       "name":"GetDashboardEmbedUrl",
@@ -1694,6 +1713,26 @@
       ],
       "documentation":"<p>Searches the subfolders in a folder.</p>"
     },
+    "SearchGroups":{
+      "name":"SearchGroups",
+      "http":{
+        "method":"POST",
+        "requestUri":"/accounts/{AwsAccountId}/namespaces/{Namespace}/groups-search"
+      },
+      "input":{"shape":"SearchGroupsRequest"},
+      "output":{"shape":"SearchGroupsResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"InvalidParameterValueException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InvalidNextTokenException"},
+        {"shape":"PreconditionNotMetException"},
+        {"shape":"InternalFailureException"},
+        {"shape":"ResourceUnavailableException"}
+      ],
+      "documentation":"<p>Use the <code>SearchGroups</code> operation to search groups in a specified Amazon QuickSight namespace using the supplied filters.</p>"
+    },
     "TagResource":{
       "name":"TagResource",
       "http":{
@@ -2027,6 +2066,24 @@
       ],
       "documentation":"<p>Updates the content and status of IP rules. To use this operation, you need to provide the entire map of rules. You can use the <code>DescribeIpRestriction</code> operation to get the current rule map.</p>"
     },
+    "UpdatePublicSharingSettings":{
+      "name":"UpdatePublicSharingSettings",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/accounts/{AwsAccountId}/public-sharing-settings"
+      },
+      "input":{"shape":"UpdatePublicSharingSettingsRequest"},
+      "output":{"shape":"UpdatePublicSharingSettingsResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"InvalidParameterValueException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"UnsupportedPricingPlanException"},
+        {"shape":"InternalFailureException"}
+      ],
+      "documentation":"<p>Use the UpdatePublicSharingSettings operation to enable or disable the public sharing settings of an Amazon QuickSight dashboard.</p> <p>To use this operation, enable session capacity pricing on your Amazon QuickSight account.</p> <p>Before you can enable public sharing on your account, you need to allow public sharing permissions to an administrative user in the IAM console. For more information on using IAM with Amazon QuickSight, see <a href=\"https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html\">Using Amazon QuickSight with IAM</a>.</p>"
+    },
     "UpdateTemplate":{
       "name":"UpdateTemplate",
       "http":{
@@ -2206,6 +2263,10 @@
         "NotificationEmail":{
           "shape":"String",
           "documentation":"<p>The main notification email for your Amazon QuickSight subscription.</p>"
+        },
+        "PublicSharingEnabled":{
+          "shape":"Boolean",
+          "documentation":"<p>A boolean that indicates whether or not public sharing is enabled on an Amazon QuickSight account. For more information about enabling public sharing, see <a href=\"https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html\">UpdatePublicSharingSettings</a>.</p>"
         }
       },
       "documentation":"<p>The Amazon QuickSight settings associated with your Amazon Web Services account.</p>"
@@ -3444,7 +3505,7 @@
         },
         "Namespace":{
           "shape":"Namespace",
-          "documentation":"<p>The namespace. Currently, you should set this to <code>default</code>.</p>",
+          "documentation":"<p>The namespace that you want the user to be a part of.</p>",
           "location":"uri",
           "locationName":"Namespace"
         }
@@ -3492,7 +3553,7 @@
         },
         "Namespace":{
           "shape":"Namespace",
-          "documentation":"<p>The namespace. Currently, you should set this to <code>default</code>.</p>",
+          "documentation":"<p>The namespace that you want the group to be a part of.</p>",
           "location":"uri",
           "locationName":"Namespace"
         }
@@ -5147,7 +5208,7 @@
         },
         "Namespace":{
           "shape":"Namespace",
-          "documentation":"<p>The namespace. Currently, you should set this to <code>default</code>.</p>",
+          "documentation":"<p>The namespace of the group that you want to remove a user from.</p>",
           "location":"uri",
           "locationName":"Namespace"
         }
@@ -5189,7 +5250,7 @@
         },
         "Namespace":{
           "shape":"Namespace",
-          "documentation":"<p>The namespace. Currently, you should set this to <code>default</code>.</p>",
+          "documentation":"<p>The namespace of the group that you want to delete.</p>",
           "location":"uri",
           "locationName":"Namespace"
         }
@@ -6163,6 +6224,56 @@
         }
       }
     },
+    "DescribeGroupMembershipRequest":{
+      "type":"structure",
+      "required":[
+        "MemberName",
+        "GroupName",
+        "AwsAccountId",
+        "Namespace"
+      ],
+      "members":{
+        "MemberName":{
+          "shape":"GroupMemberName",
+          "documentation":"<p>The user name of the user that you want to search for.</p>",
+          "location":"uri",
+          "locationName":"MemberName"
+        },
+        "GroupName":{
+          "shape":"GroupName",
+          "documentation":"<p>The name of the group that you want to search.</p>",
+          "location":"uri",
+          "locationName":"GroupName"
+        },
+        "AwsAccountId":{
+          "shape":"AwsAccountId",
+          "documentation":"<p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>",
+          "location":"uri",
+          "locationName":"AwsAccountId"
+        },
+        "Namespace":{
+          "shape":"Namespace",
+          "documentation":"<p>The namespace that includes the group you are searching within.</p>",
+          "location":"uri",
+          "locationName":"Namespace"
+        }
+      }
+    },
+    "DescribeGroupMembershipResponse":{
+      "type":"structure",
+      "members":{
+        "GroupMember":{"shape":"GroupMember"},
+        "RequestId":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Web Services request ID for this operation.</p>"
+        },
+        "Status":{
+          "shape":"StatusCode",
+          "documentation":"<p>The HTTP status of the request.</p>",
+          "location":"statusCode"
+        }
+      }
+    },
     "DescribeGroupRequest":{
       "type":"structure",
       "required":[
@@ -6185,7 +6296,7 @@
         },
         "Namespace":{
           "shape":"Namespace",
-          "documentation":"<p>The namespace. Currently, you should set this to <code>default</code>.</p>",
+          "documentation":"<p>The namespace of the group that you want described.</p>",
           "location":"uri",
           "locationName":"Namespace"
         }
@@ -7037,7 +7148,7 @@
         },
         "AuthorizedResourceArns":{
           "shape":"ArnList",
-          "documentation":"<p>The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view.</p>"
+          "documentation":"<p>The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in each API call.</p>"
         },
         "ExperienceConfiguration":{
           "shape":"AnonymousUserEmbeddingExperienceConfiguration",
@@ -7322,6 +7433,14 @@
       "max":512,
       "min":1
     },
+    "GroupFilterAttribute":{
+      "type":"string",
+      "enum":["GROUP_NAME"]
+    },
+    "GroupFilterOperator":{
+      "type":"string",
+      "enum":["StartsWith"]
+    },
     "GroupList":{
       "type":"list",
       "member":{"shape":"Group"}
@@ -7354,6 +7473,35 @@
       "type":"string",
       "min":1,
       "pattern":"[\\u0020-\\u00FF]+"
+    },
+    "GroupSearchFilter":{
+      "type":"structure",
+      "required":[
+        "Operator",
+        "Name",
+        "Value"
+      ],
+      "members":{
+        "Operator":{
+          "shape":"GroupFilterOperator",
+          "documentation":"<p>The comparison operator that you want to use as a filter, for example <code>\"Operator\": \"StartsWith\"</code>. Currently, the only supported operator is <code>StartsWith</code>.</p>"
+        },
+        "Name":{
+          "shape":"GroupFilterAttribute",
+          "documentation":"<p>The name of the value that you want to use as a filter, for example <code>\"Name\": \"GROUP_NAME\"</code>. Currently, the only supported name is <code>GROUP_NAME</code>.</p>"
+        },
+        "Value":{
+          "shape":"String",
+          "documentation":"<p>The value of the named item, in this case <code>GROUP_NAME</code>, that you want to use as a filter.</p>"
+        }
+      },
+      "documentation":"<p>A <code>GroupSearchFilter</code> object that you want to apply to your search.</p>"
+    },
+    "GroupSearchFilterList":{
+      "type":"list",
+      "member":{"shape":"GroupSearchFilter"},
+      "max":1,
+      "min":1
     },
     "GutterStyle":{
       "type":"structure",
@@ -8207,7 +8355,7 @@
         },
         "Namespace":{
           "shape":"Namespace",
-          "documentation":"<p>The namespace. Currently, you should set this to <code>default</code>.</p>",
+          "documentation":"<p>The namespace of the group that you want a list of users from.</p>",
           "location":"uri",
           "locationName":"Namespace"
         }
@@ -8263,7 +8411,7 @@
         },
         "Namespace":{
           "shape":"Namespace",
-          "documentation":"<p>The namespace. Currently, you should set this to <code>default</code>.</p>",
+          "documentation":"<p>The namespace that you want a list of groups from.</p>",
           "location":"uri",
           "locationName":"Namespace"
         }
@@ -9575,7 +9723,7 @@
         },
         "CustomPermissionsName":{
           "shape":"RoleName",
-          "documentation":"<p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p> <ul> <li> <p>Create and update data sources</p> </li> <li> <p>Create and update datasets</p> </li> <li> <p>Create and update email reports</p> </li> <li> <p>Subscribe to email reports</p> </li> </ul> <p>To add custom permissions to an existing user, use <code> <a href=\"https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html\">UpdateUser</a> </code> instead.</p> <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user. </p> <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p> <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>"
+          "documentation":"<p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p> <ul> <li> <p>Create and update data sources</p> </li> <li> <p>Create and update datasets</p> </li> <li> <p>Create and update email reports</p> </li> <li> <p>Subscribe to email reports</p> </li> </ul> <p>To add custom permissions to an existing user, use <code> <a href=\"https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html\">UpdateUser</a> </code> instead.</p> <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user. </p> <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p> <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>"
         },
         "ExternalLoginFederationProviderType":{
           "shape":"String",
@@ -10184,6 +10332,67 @@
         "RequestId":{
           "shape":"String",
           "documentation":"<p>The Amazon Web Services request ID for this operation.</p>"
+        }
+      }
+    },
+    "SearchGroupsRequest":{
+      "type":"structure",
+      "required":[
+        "AwsAccountId",
+        "Namespace",
+        "Filters"
+      ],
+      "members":{
+        "AwsAccountId":{
+          "shape":"AwsAccountId",
+          "documentation":"<p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>",
+          "location":"uri",
+          "locationName":"AwsAccountId"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>A pagination token that can be used in a subsequent request.</p>",
+          "location":"querystring",
+          "locationName":"next-token"
+        },
+        "MaxResults":{
+          "shape":"MaxResults",
+          "documentation":"<p>The maximum number of results to return from this request.</p>",
+          "box":true,
+          "location":"querystring",
+          "locationName":"max-results"
+        },
+        "Namespace":{
+          "shape":"Namespace",
+          "documentation":"<p>The namespace that you want to search.</p>",
+          "location":"uri",
+          "locationName":"Namespace"
+        },
+        "Filters":{
+          "shape":"GroupSearchFilterList",
+          "documentation":"<p>The structure for the search filters that you want to apply to your search.</p>"
+        }
+      }
+    },
+    "SearchGroupsResponse":{
+      "type":"structure",
+      "members":{
+        "GroupList":{
+          "shape":"GroupList",
+          "documentation":"<p>A list of groups in a specified namespace that match the filters you set in your <code>SearchGroups</code> request.</p>"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>A pagination token that can be used in a subsequent request.</p>"
+        },
+        "RequestId":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Web Services request ID for this operation.</p>"
+        },
+        "Status":{
+          "shape":"StatusCode",
+          "documentation":"<p>The HTTP status of the request.</p>",
+          "location":"statusCode"
         }
       }
     },
@@ -12028,7 +12237,7 @@
         },
         "Namespace":{
           "shape":"Namespace",
-          "documentation":"<p>The namespace. Currently, you should set this to <code>default</code>.</p>",
+          "documentation":"<p>The namespace of the group that you want to update.</p>",
           "location":"uri",
           "locationName":"Namespace"
         }
@@ -12168,6 +12377,36 @@
       "type":"list",
       "member":{"shape":"ResourcePermission"},
       "max":2
+    },
+    "UpdatePublicSharingSettingsRequest":{
+      "type":"structure",
+      "required":["AwsAccountId"],
+      "members":{
+        "AwsAccountId":{
+          "shape":"AwsAccountId",
+          "documentation":"<p>The Amazon Web Services account ID associated with your Amazon QuickSight subscription.</p>",
+          "location":"uri",
+          "locationName":"AwsAccountId"
+        },
+        "PublicSharingEnabled":{
+          "shape":"Boolean",
+          "documentation":"<p>A boolean that indicates whether or not public sharing is enabled on a Amazon QuickSight account.</p>"
+        }
+      }
+    },
+    "UpdatePublicSharingSettingsResponse":{
+      "type":"structure",
+      "members":{
+        "RequestId":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Web Services request ID for this operation.</p>"
+        },
+        "Status":{
+          "shape":"StatusCode",
+          "documentation":"<p>The HTTP status of the request.</p>",
+          "location":"statusCode"
+        }
+      }
     },
     "UpdateResourcePermissionList":{
       "type":"list",
@@ -12556,7 +12795,7 @@
         },
         "CustomPermissionsName":{
           "shape":"RoleName",
-          "documentation":"<p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p> <ul> <li> <p>Create and update data sources</p> </li> <li> <p>Create and update datasets</p> </li> <li> <p>Create and update email reports</p> </li> <li> <p>Subscribe to email reports</p> </li> </ul> <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user. </p> <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p> <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>"
+          "documentation":"<p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p> <ul> <li> <p>Create and update data sources</p> </li> <li> <p>Create and update datasets</p> </li> <li> <p>Create and update email reports</p> </li> <li> <p>Subscribe to email reports</p> </li> </ul> <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user. </p> <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p> <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>"
         },
         "UnapplyCustomPermissions":{
           "shape":"Boolean",

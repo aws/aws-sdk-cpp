@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/appconfigdata/AppConfigData_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/appconfigdata/model/ResourceType.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -62,6 +62,37 @@ namespace Model
 
     
     inline ResourceNotFoundException& WithMessage(const char* value) { SetMessage(value); return *this;}
+
+
+    /**
+     * <p>The type of resource that was not found.</p>
+     */
+    inline const ResourceType& GetResourceType() const{ return m_resourceType; }
+
+    /**
+     * <p>The type of resource that was not found.</p>
+     */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of resource that was not found.</p>
+     */
+    inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+
+    /**
+     * <p>The type of resource that was not found.</p>
+     */
+    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
+
+    /**
+     * <p>The type of resource that was not found.</p>
+     */
+    inline ResourceNotFoundException& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
+
+    /**
+     * <p>The type of resource that was not found.</p>
+     */
+    inline ResourceNotFoundException& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
 
     /**
@@ -142,47 +173,16 @@ namespace Model
      */
     inline ResourceNotFoundException& AddReferencedBy(const char* key, const char* value) { m_referencedByHasBeenSet = true; m_referencedBy.emplace(key, value); return *this; }
 
-
-    /**
-     * <p>The type of resource that was not found.</p>
-     */
-    inline const ResourceType& GetResourceType() const{ return m_resourceType; }
-
-    /**
-     * <p>The type of resource that was not found.</p>
-     */
-    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-
-    /**
-     * <p>The type of resource that was not found.</p>
-     */
-    inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-
-    /**
-     * <p>The type of resource that was not found.</p>
-     */
-    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-
-    /**
-     * <p>The type of resource that was not found.</p>
-     */
-    inline ResourceNotFoundException& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
-
-    /**
-     * <p>The type of resource that was not found.</p>
-     */
-    inline ResourceNotFoundException& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
-
   private:
 
     Aws::String m_message;
     bool m_messageHasBeenSet;
 
-    Aws::Map<Aws::String, Aws::String> m_referencedBy;
-    bool m_referencedByHasBeenSet;
-
     ResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_referencedBy;
+    bool m_referencedByHasBeenSet;
   };
 
 } // namespace Model

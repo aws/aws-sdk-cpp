@@ -46,7 +46,7 @@ namespace Model
      * <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file
      * system.</p> </li> <li> <p> <b> <code>ENABLING</code> </b> - EFS is turning on
      * automatic backups for the file system.</p> </li> <li> <p> <b>
-     * <code>DISABLED</code> </b> - automatic back ups are turned off for the file
+     * <code>DISABLED</code> </b> - Automatic back ups are turned off for the file
      * system.</p> </li> <li> <p> <b> <code>DISABLING</code> </b> - EFS is turning off
      * automatic backups for the file system.</p> </li> </ul>
      */
@@ -57,7 +57,7 @@ namespace Model
      * <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file
      * system.</p> </li> <li> <p> <b> <code>ENABLING</code> </b> - EFS is turning on
      * automatic backups for the file system.</p> </li> <li> <p> <b>
-     * <code>DISABLED</code> </b> - automatic back ups are turned off for the file
+     * <code>DISABLED</code> </b> - Automatic back ups are turned off for the file
      * system.</p> </li> <li> <p> <b> <code>DISABLING</code> </b> - EFS is turning off
      * automatic backups for the file system.</p> </li> </ul>
      */
@@ -68,7 +68,7 @@ namespace Model
      * <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file
      * system.</p> </li> <li> <p> <b> <code>ENABLING</code> </b> - EFS is turning on
      * automatic backups for the file system.</p> </li> <li> <p> <b>
-     * <code>DISABLED</code> </b> - automatic back ups are turned off for the file
+     * <code>DISABLED</code> </b> - Automatic back ups are turned off for the file
      * system.</p> </li> <li> <p> <b> <code>DISABLING</code> </b> - EFS is turning off
      * automatic backups for the file system.</p> </li> </ul>
      */
@@ -79,7 +79,7 @@ namespace Model
      * <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file
      * system.</p> </li> <li> <p> <b> <code>ENABLING</code> </b> - EFS is turning on
      * automatic backups for the file system.</p> </li> <li> <p> <b>
-     * <code>DISABLED</code> </b> - automatic back ups are turned off for the file
+     * <code>DISABLED</code> </b> - Automatic back ups are turned off for the file
      * system.</p> </li> <li> <p> <b> <code>DISABLING</code> </b> - EFS is turning off
      * automatic backups for the file system.</p> </li> </ul>
      */
@@ -90,7 +90,7 @@ namespace Model
      * <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file
      * system.</p> </li> <li> <p> <b> <code>ENABLING</code> </b> - EFS is turning on
      * automatic backups for the file system.</p> </li> <li> <p> <b>
-     * <code>DISABLED</code> </b> - automatic back ups are turned off for the file
+     * <code>DISABLED</code> </b> - Automatic back ups are turned off for the file
      * system.</p> </li> <li> <p> <b> <code>DISABLING</code> </b> - EFS is turning off
      * automatic backups for the file system.</p> </li> </ul>
      */
@@ -101,7 +101,7 @@ namespace Model
      * <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file
      * system.</p> </li> <li> <p> <b> <code>ENABLING</code> </b> - EFS is turning on
      * automatic backups for the file system.</p> </li> <li> <p> <b>
-     * <code>DISABLED</code> </b> - automatic back ups are turned off for the file
+     * <code>DISABLED</code> </b> - Automatic back ups are turned off for the file
      * system.</p> </li> <li> <p> <b> <code>DISABLING</code> </b> - EFS is turning off
      * automatic backups for the file system.</p> </li> </ul>
      */

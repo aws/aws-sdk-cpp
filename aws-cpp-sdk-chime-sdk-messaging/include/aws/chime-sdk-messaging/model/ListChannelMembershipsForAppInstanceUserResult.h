@@ -35,44 +35,37 @@ namespace Model
 
 
     /**
-     * <p>The token passed by previous API calls until all requested users are
-     * returned.</p>
+     * <p>The information for the requested channel memberships.</p>
      */
     inline const Aws::Vector<ChannelMembershipForAppInstanceUserSummary>& GetChannelMemberships() const{ return m_channelMemberships; }
 
     /**
-     * <p>The token passed by previous API calls until all requested users are
-     * returned.</p>
+     * <p>The information for the requested channel memberships.</p>
      */
     inline void SetChannelMemberships(const Aws::Vector<ChannelMembershipForAppInstanceUserSummary>& value) { m_channelMemberships = value; }
 
     /**
-     * <p>The token passed by previous API calls until all requested users are
-     * returned.</p>
+     * <p>The information for the requested channel memberships.</p>
      */
     inline void SetChannelMemberships(Aws::Vector<ChannelMembershipForAppInstanceUserSummary>&& value) { m_channelMemberships = std::move(value); }
 
     /**
-     * <p>The token passed by previous API calls until all requested users are
-     * returned.</p>
+     * <p>The information for the requested channel memberships.</p>
      */
     inline ListChannelMembershipsForAppInstanceUserResult& WithChannelMemberships(const Aws::Vector<ChannelMembershipForAppInstanceUserSummary>& value) { SetChannelMemberships(value); return *this;}
 
     /**
-     * <p>The token passed by previous API calls until all requested users are
-     * returned.</p>
+     * <p>The information for the requested channel memberships.</p>
      */
     inline ListChannelMembershipsForAppInstanceUserResult& WithChannelMemberships(Aws::Vector<ChannelMembershipForAppInstanceUserSummary>&& value) { SetChannelMemberships(std::move(value)); return *this;}
 
     /**
-     * <p>The token passed by previous API calls until all requested users are
-     * returned.</p>
+     * <p>The information for the requested channel memberships.</p>
      */
     inline ListChannelMembershipsForAppInstanceUserResult& AddChannelMemberships(const ChannelMembershipForAppInstanceUserSummary& value) { m_channelMemberships.push_back(value); return *this; }
 
     /**
-     * <p>The token passed by previous API calls until all requested users are
-     * returned.</p>
+     * <p>The information for the requested channel memberships.</p>
      */
     inline ListChannelMembershipsForAppInstanceUserResult& AddChannelMemberships(ChannelMembershipForAppInstanceUserSummary&& value) { m_channelMemberships.push_back(std::move(value)); return *this; }
 

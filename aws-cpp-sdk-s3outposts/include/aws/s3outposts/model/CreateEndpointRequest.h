@@ -34,91 +34,91 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS Outposts. </p>
+     * <p>The ID of the Outposts. </p>
      */
     inline const Aws::String& GetOutpostId() const{ return m_outpostId; }
 
     /**
-     * <p>The ID of the AWS Outposts. </p>
+     * <p>The ID of the Outposts. </p>
      */
     inline bool OutpostIdHasBeenSet() const { return m_outpostIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS Outposts. </p>
+     * <p>The ID of the Outposts. </p>
      */
     inline void SetOutpostId(const Aws::String& value) { m_outpostIdHasBeenSet = true; m_outpostId = value; }
 
     /**
-     * <p>The ID of the AWS Outposts. </p>
+     * <p>The ID of the Outposts. </p>
      */
     inline void SetOutpostId(Aws::String&& value) { m_outpostIdHasBeenSet = true; m_outpostId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS Outposts. </p>
+     * <p>The ID of the Outposts. </p>
      */
     inline void SetOutpostId(const char* value) { m_outpostIdHasBeenSet = true; m_outpostId.assign(value); }
 
     /**
-     * <p>The ID of the AWS Outposts. </p>
+     * <p>The ID of the Outposts. </p>
      */
     inline CreateEndpointRequest& WithOutpostId(const Aws::String& value) { SetOutpostId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS Outposts. </p>
+     * <p>The ID of the Outposts. </p>
      */
     inline CreateEndpointRequest& WithOutpostId(Aws::String&& value) { SetOutpostId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS Outposts. </p>
+     * <p>The ID of the Outposts. </p>
      */
     inline CreateEndpointRequest& WithOutpostId(const char* value) { SetOutpostId(value); return *this;}
 
 
     /**
      * <p>The ID of the subnet in the selected VPC. The endpoint subnet must belong to
-     * the Outpost that has the Amazon S3 on Outposts provisioned.</p>
+     * the Outpost that has Amazon S3 on Outposts provisioned.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
 
     /**
      * <p>The ID of the subnet in the selected VPC. The endpoint subnet must belong to
-     * the Outpost that has the Amazon S3 on Outposts provisioned.</p>
+     * the Outpost that has Amazon S3 on Outposts provisioned.</p>
      */
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
 
     /**
      * <p>The ID of the subnet in the selected VPC. The endpoint subnet must belong to
-     * the Outpost that has the Amazon S3 on Outposts provisioned.</p>
+     * the Outpost that has Amazon S3 on Outposts provisioned.</p>
      */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
      * <p>The ID of the subnet in the selected VPC. The endpoint subnet must belong to
-     * the Outpost that has the Amazon S3 on Outposts provisioned.</p>
+     * the Outpost that has Amazon S3 on Outposts provisioned.</p>
      */
     inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
      * <p>The ID of the subnet in the selected VPC. The endpoint subnet must belong to
-     * the Outpost that has the Amazon S3 on Outposts provisioned.</p>
+     * the Outpost that has Amazon S3 on Outposts provisioned.</p>
      */
     inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
 
     /**
      * <p>The ID of the subnet in the selected VPC. The endpoint subnet must belong to
-     * the Outpost that has the Amazon S3 on Outposts provisioned.</p>
+     * the Outpost that has Amazon S3 on Outposts provisioned.</p>
      */
     inline CreateEndpointRequest& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
 
     /**
      * <p>The ID of the subnet in the selected VPC. The endpoint subnet must belong to
-     * the Outpost that has the Amazon S3 on Outposts provisioned.</p>
+     * the Outpost that has Amazon S3 on Outposts provisioned.</p>
      */
     inline CreateEndpointRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the subnet in the selected VPC. The endpoint subnet must belong to
-     * the Outpost that has the Amazon S3 on Outposts provisioned.</p>
+     * the Outpost that has Amazon S3 on Outposts provisioned.</p>
      */
     inline CreateEndpointRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
@@ -165,93 +165,111 @@ namespace Model
 
 
     /**
-     * <p>The type of access for the on-premise network connectivity for the Outpost
-     * endpoint. To access the endpoint from an on-premises network, you must specify
-     * the access type and provide the customer owned IPv4 pool.</p>
+     * <p>The type of access for the network connectivity for the Amazon S3 on Outposts
+     * endpoint. To use the Amazon Web Services VPC, choose <code>Private</code>. To
+     * use the endpoint with an on-premises network, choose
+     * <code>CustomerOwnedIp</code>. If you choose <code>CustomerOwnedIp</code>, you
+     * must also provide the customer-owned IP address pool (CoIP pool).</p>  <p>
+     * <code>Private</code> is the default access type value.</p> 
      */
     inline const EndpointAccessType& GetAccessType() const{ return m_accessType; }
 
     /**
-     * <p>The type of access for the on-premise network connectivity for the Outpost
-     * endpoint. To access the endpoint from an on-premises network, you must specify
-     * the access type and provide the customer owned IPv4 pool.</p>
+     * <p>The type of access for the network connectivity for the Amazon S3 on Outposts
+     * endpoint. To use the Amazon Web Services VPC, choose <code>Private</code>. To
+     * use the endpoint with an on-premises network, choose
+     * <code>CustomerOwnedIp</code>. If you choose <code>CustomerOwnedIp</code>, you
+     * must also provide the customer-owned IP address pool (CoIP pool).</p>  <p>
+     * <code>Private</code> is the default access type value.</p> 
      */
     inline bool AccessTypeHasBeenSet() const { return m_accessTypeHasBeenSet; }
 
     /**
-     * <p>The type of access for the on-premise network connectivity for the Outpost
-     * endpoint. To access the endpoint from an on-premises network, you must specify
-     * the access type and provide the customer owned IPv4 pool.</p>
+     * <p>The type of access for the network connectivity for the Amazon S3 on Outposts
+     * endpoint. To use the Amazon Web Services VPC, choose <code>Private</code>. To
+     * use the endpoint with an on-premises network, choose
+     * <code>CustomerOwnedIp</code>. If you choose <code>CustomerOwnedIp</code>, you
+     * must also provide the customer-owned IP address pool (CoIP pool).</p>  <p>
+     * <code>Private</code> is the default access type value.</p> 
      */
     inline void SetAccessType(const EndpointAccessType& value) { m_accessTypeHasBeenSet = true; m_accessType = value; }
 
     /**
-     * <p>The type of access for the on-premise network connectivity for the Outpost
-     * endpoint. To access the endpoint from an on-premises network, you must specify
-     * the access type and provide the customer owned IPv4 pool.</p>
+     * <p>The type of access for the network connectivity for the Amazon S3 on Outposts
+     * endpoint. To use the Amazon Web Services VPC, choose <code>Private</code>. To
+     * use the endpoint with an on-premises network, choose
+     * <code>CustomerOwnedIp</code>. If you choose <code>CustomerOwnedIp</code>, you
+     * must also provide the customer-owned IP address pool (CoIP pool).</p>  <p>
+     * <code>Private</code> is the default access type value.</p> 
      */
     inline void SetAccessType(EndpointAccessType&& value) { m_accessTypeHasBeenSet = true; m_accessType = std::move(value); }
 
     /**
-     * <p>The type of access for the on-premise network connectivity for the Outpost
-     * endpoint. To access the endpoint from an on-premises network, you must specify
-     * the access type and provide the customer owned IPv4 pool.</p>
+     * <p>The type of access for the network connectivity for the Amazon S3 on Outposts
+     * endpoint. To use the Amazon Web Services VPC, choose <code>Private</code>. To
+     * use the endpoint with an on-premises network, choose
+     * <code>CustomerOwnedIp</code>. If you choose <code>CustomerOwnedIp</code>, you
+     * must also provide the customer-owned IP address pool (CoIP pool).</p>  <p>
+     * <code>Private</code> is the default access type value.</p> 
      */
     inline CreateEndpointRequest& WithAccessType(const EndpointAccessType& value) { SetAccessType(value); return *this;}
 
     /**
-     * <p>The type of access for the on-premise network connectivity for the Outpost
-     * endpoint. To access the endpoint from an on-premises network, you must specify
-     * the access type and provide the customer owned IPv4 pool.</p>
+     * <p>The type of access for the network connectivity for the Amazon S3 on Outposts
+     * endpoint. To use the Amazon Web Services VPC, choose <code>Private</code>. To
+     * use the endpoint with an on-premises network, choose
+     * <code>CustomerOwnedIp</code>. If you choose <code>CustomerOwnedIp</code>, you
+     * must also provide the customer-owned IP address pool (CoIP pool).</p>  <p>
+     * <code>Private</code> is the default access type value.</p> 
      */
     inline CreateEndpointRequest& WithAccessType(EndpointAccessType&& value) { SetAccessType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The ID of the customer-owned IPv4 pool for the endpoint. IP addresses will be
-     * allocated from this pool for the endpoint.</p>
+     * <p>The ID of the customer-owned IPv4 address pool (CoIP pool) for the endpoint.
+     * IP addresses are allocated from this pool for the endpoint.</p>
      */
     inline const Aws::String& GetCustomerOwnedIpv4Pool() const{ return m_customerOwnedIpv4Pool; }
 
     /**
-     * <p>The ID of the customer-owned IPv4 pool for the endpoint. IP addresses will be
-     * allocated from this pool for the endpoint.</p>
+     * <p>The ID of the customer-owned IPv4 address pool (CoIP pool) for the endpoint.
+     * IP addresses are allocated from this pool for the endpoint.</p>
      */
     inline bool CustomerOwnedIpv4PoolHasBeenSet() const { return m_customerOwnedIpv4PoolHasBeenSet; }
 
     /**
-     * <p>The ID of the customer-owned IPv4 pool for the endpoint. IP addresses will be
-     * allocated from this pool for the endpoint.</p>
+     * <p>The ID of the customer-owned IPv4 address pool (CoIP pool) for the endpoint.
+     * IP addresses are allocated from this pool for the endpoint.</p>
      */
     inline void SetCustomerOwnedIpv4Pool(const Aws::String& value) { m_customerOwnedIpv4PoolHasBeenSet = true; m_customerOwnedIpv4Pool = value; }
 
     /**
-     * <p>The ID of the customer-owned IPv4 pool for the endpoint. IP addresses will be
-     * allocated from this pool for the endpoint.</p>
+     * <p>The ID of the customer-owned IPv4 address pool (CoIP pool) for the endpoint.
+     * IP addresses are allocated from this pool for the endpoint.</p>
      */
     inline void SetCustomerOwnedIpv4Pool(Aws::String&& value) { m_customerOwnedIpv4PoolHasBeenSet = true; m_customerOwnedIpv4Pool = std::move(value); }
 
     /**
-     * <p>The ID of the customer-owned IPv4 pool for the endpoint. IP addresses will be
-     * allocated from this pool for the endpoint.</p>
+     * <p>The ID of the customer-owned IPv4 address pool (CoIP pool) for the endpoint.
+     * IP addresses are allocated from this pool for the endpoint.</p>
      */
     inline void SetCustomerOwnedIpv4Pool(const char* value) { m_customerOwnedIpv4PoolHasBeenSet = true; m_customerOwnedIpv4Pool.assign(value); }
 
     /**
-     * <p>The ID of the customer-owned IPv4 pool for the endpoint. IP addresses will be
-     * allocated from this pool for the endpoint.</p>
+     * <p>The ID of the customer-owned IPv4 address pool (CoIP pool) for the endpoint.
+     * IP addresses are allocated from this pool for the endpoint.</p>
      */
     inline CreateEndpointRequest& WithCustomerOwnedIpv4Pool(const Aws::String& value) { SetCustomerOwnedIpv4Pool(value); return *this;}
 
     /**
-     * <p>The ID of the customer-owned IPv4 pool for the endpoint. IP addresses will be
-     * allocated from this pool for the endpoint.</p>
+     * <p>The ID of the customer-owned IPv4 address pool (CoIP pool) for the endpoint.
+     * IP addresses are allocated from this pool for the endpoint.</p>
      */
     inline CreateEndpointRequest& WithCustomerOwnedIpv4Pool(Aws::String&& value) { SetCustomerOwnedIpv4Pool(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the customer-owned IPv4 pool for the endpoint. IP addresses will be
-     * allocated from this pool for the endpoint.</p>
+     * <p>The ID of the customer-owned IPv4 address pool (CoIP pool) for the endpoint.
+     * IP addresses are allocated from this pool for the endpoint.</p>
      */
     inline CreateEndpointRequest& WithCustomerOwnedIpv4Pool(const char* value) { SetCustomerOwnedIpv4Pool(value); return *this;}
 

@@ -7,6 +7,7 @@
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/opensearch/model/ChangeProgressDetails.h>
 #include <utility>
 
 namespace Aws
@@ -174,6 +175,22 @@ namespace Model
     
     inline UpgradeDomainResult& AddAdvancedOptions(const char* key, const char* value) { m_advancedOptions.emplace(key, value); return *this; }
 
+
+    
+    inline const ChangeProgressDetails& GetChangeProgressDetails() const{ return m_changeProgressDetails; }
+
+    
+    inline void SetChangeProgressDetails(const ChangeProgressDetails& value) { m_changeProgressDetails = value; }
+
+    
+    inline void SetChangeProgressDetails(ChangeProgressDetails&& value) { m_changeProgressDetails = std::move(value); }
+
+    
+    inline UpgradeDomainResult& WithChangeProgressDetails(const ChangeProgressDetails& value) { SetChangeProgressDetails(value); return *this;}
+
+    
+    inline UpgradeDomainResult& WithChangeProgressDetails(ChangeProgressDetails&& value) { SetChangeProgressDetails(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_upgradeId;
@@ -185,6 +202,8 @@ namespace Model
     bool m_performCheckOnly;
 
     Aws::Map<Aws::String, Aws::String> m_advancedOptions;
+
+    ChangeProgressDetails m_changeProgressDetails;
   };
 
 } // namespace Model

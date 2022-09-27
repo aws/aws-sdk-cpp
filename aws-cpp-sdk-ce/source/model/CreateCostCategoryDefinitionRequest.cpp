@@ -18,7 +18,8 @@ CreateCostCategoryDefinitionRequest::CreateCostCategoryDefinitionRequest() :
     m_ruleVersionHasBeenSet(false),
     m_rulesHasBeenSet(false),
     m_defaultValueHasBeenSet(false),
-    m_splitChargeRulesHasBeenSet(false)
+    m_splitChargeRulesHasBeenSet(false),
+    m_resourceTagsHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,17 @@ Aws::String CreateCostCategoryDefinitionRequest::SerializePayload() const
      splitChargeRulesJsonList[splitChargeRulesIndex].AsObject(m_splitChargeRules[splitChargeRulesIndex].Jsonize());
    }
    payload.WithArray("SplitChargeRules", std::move(splitChargeRulesJsonList));
+
+  }
+
+  if(m_resourceTagsHasBeenSet)
+  {
+   Array<JsonValue> resourceTagsJsonList(m_resourceTags.size());
+   for(unsigned resourceTagsIndex = 0; resourceTagsIndex < resourceTagsJsonList.GetLength(); ++resourceTagsIndex)
+   {
+     resourceTagsJsonList[resourceTagsIndex].AsObject(m_resourceTags[resourceTagsIndex].Jsonize());
+   }
+   payload.WithArray("ResourceTags", std::move(resourceTagsJsonList));
 
   }
 

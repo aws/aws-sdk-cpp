@@ -10,6 +10,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/ssm/model/AssociationOverview.h>
 #include <aws/ssm/model/Target.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -215,7 +216,10 @@ namespace Model
 
 
     /**
-     * <p>The version of the document used in the association.</p>  <p>State
+     * <p>The version of the document used in the association. If you change a document
+     * version for a State Manager association, Systems Manager immediately runs the
+     * association unless you previously specifed the
+     * <code>apply-only-at-cron-interval</code> parameter.</p>  <p>State
      * Manager doesn't support running associations that use a new version of a
      * document if that document is shared from another account. State Manager always
      * runs the <code>default</code> version of a document if shared from another
@@ -227,7 +231,10 @@ namespace Model
     inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
 
     /**
-     * <p>The version of the document used in the association.</p>  <p>State
+     * <p>The version of the document used in the association. If you change a document
+     * version for a State Manager association, Systems Manager immediately runs the
+     * association unless you previously specifed the
+     * <code>apply-only-at-cron-interval</code> parameter.</p>  <p>State
      * Manager doesn't support running associations that use a new version of a
      * document if that document is shared from another account. State Manager always
      * runs the <code>default</code> version of a document if shared from another
@@ -239,7 +246,10 @@ namespace Model
     inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
 
     /**
-     * <p>The version of the document used in the association.</p>  <p>State
+     * <p>The version of the document used in the association. If you change a document
+     * version for a State Manager association, Systems Manager immediately runs the
+     * association unless you previously specifed the
+     * <code>apply-only-at-cron-interval</code> parameter.</p>  <p>State
      * Manager doesn't support running associations that use a new version of a
      * document if that document is shared from another account. State Manager always
      * runs the <code>default</code> version of a document if shared from another
@@ -251,7 +261,10 @@ namespace Model
     inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
 
     /**
-     * <p>The version of the document used in the association.</p>  <p>State
+     * <p>The version of the document used in the association. If you change a document
+     * version for a State Manager association, Systems Manager immediately runs the
+     * association unless you previously specifed the
+     * <code>apply-only-at-cron-interval</code> parameter.</p>  <p>State
      * Manager doesn't support running associations that use a new version of a
      * document if that document is shared from another account. State Manager always
      * runs the <code>default</code> version of a document if shared from another
@@ -263,7 +276,10 @@ namespace Model
     inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
 
     /**
-     * <p>The version of the document used in the association.</p>  <p>State
+     * <p>The version of the document used in the association. If you change a document
+     * version for a State Manager association, Systems Manager immediately runs the
+     * association unless you previously specifed the
+     * <code>apply-only-at-cron-interval</code> parameter.</p>  <p>State
      * Manager doesn't support running associations that use a new version of a
      * document if that document is shared from another account. State Manager always
      * runs the <code>default</code> version of a document if shared from another
@@ -275,7 +291,10 @@ namespace Model
     inline void SetDocumentVersion(const char* value) { m_documentVersionHasBeenSet = true; m_documentVersion.assign(value); }
 
     /**
-     * <p>The version of the document used in the association.</p>  <p>State
+     * <p>The version of the document used in the association. If you change a document
+     * version for a State Manager association, Systems Manager immediately runs the
+     * association unless you previously specifed the
+     * <code>apply-only-at-cron-interval</code> parameter.</p>  <p>State
      * Manager doesn't support running associations that use a new version of a
      * document if that document is shared from another account. State Manager always
      * runs the <code>default</code> version of a document if shared from another
@@ -287,7 +306,10 @@ namespace Model
     inline Association& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
 
     /**
-     * <p>The version of the document used in the association.</p>  <p>State
+     * <p>The version of the document used in the association. If you change a document
+     * version for a State Manager association, Systems Manager immediately runs the
+     * association unless you previously specifed the
+     * <code>apply-only-at-cron-interval</code> parameter.</p>  <p>State
      * Manager doesn't support running associations that use a new version of a
      * document if that document is shared from another account. State Manager always
      * runs the <code>default</code> version of a document if shared from another
@@ -299,7 +321,10 @@ namespace Model
     inline Association& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version of the document used in the association.</p>  <p>State
+     * <p>The version of the document used in the association. If you change a document
+     * version for a State Manager association, Systems Manager immediately runs the
+     * association unless you previously specifed the
+     * <code>apply-only-at-cron-interval</code> parameter.</p>  <p>State
      * Manager doesn't support running associations that use a new version of a
      * document if that document is shared from another account. State Manager always
      * runs the <code>default</code> version of a document if shared from another
@@ -519,6 +544,76 @@ namespace Model
      */
     inline Association& WithAssociationName(const char* value) { SetAssociationName(value); return *this;}
 
+
+    /**
+     * <p>Number of days to wait after the scheduled day to run an association.</p>
+     */
+    inline int GetScheduleOffset() const{ return m_scheduleOffset; }
+
+    /**
+     * <p>Number of days to wait after the scheduled day to run an association.</p>
+     */
+    inline bool ScheduleOffsetHasBeenSet() const { return m_scheduleOffsetHasBeenSet; }
+
+    /**
+     * <p>Number of days to wait after the scheduled day to run an association.</p>
+     */
+    inline void SetScheduleOffset(int value) { m_scheduleOffsetHasBeenSet = true; m_scheduleOffset = value; }
+
+    /**
+     * <p>Number of days to wait after the scheduled day to run an association.</p>
+     */
+    inline Association& WithScheduleOffset(int value) { SetScheduleOffset(value); return *this;}
+
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline const Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& GetTargetMaps() const{ return m_targetMaps; }
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline bool TargetMapsHasBeenSet() const { return m_targetMapsHasBeenSet; }
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline void SetTargetMaps(const Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& value) { m_targetMapsHasBeenSet = true; m_targetMaps = value; }
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline void SetTargetMaps(Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { m_targetMapsHasBeenSet = true; m_targetMaps = std::move(value); }
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline Association& WithTargetMaps(const Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& value) { SetTargetMaps(value); return *this;}
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline Association& WithTargetMaps(Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { SetTargetMaps(std::move(value)); return *this;}
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline Association& AddTargetMaps(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_targetMapsHasBeenSet = true; m_targetMaps.push_back(value); return *this; }
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline Association& AddTargetMaps(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_targetMapsHasBeenSet = true; m_targetMaps.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -550,6 +645,12 @@ namespace Model
 
     Aws::String m_associationName;
     bool m_associationNameHasBeenSet;
+
+    int m_scheduleOffset;
+    bool m_scheduleOffsetHasBeenSet;
+
+    Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>> m_targetMaps;
+    bool m_targetMapsHasBeenSet;
   };
 
 } // namespace Model

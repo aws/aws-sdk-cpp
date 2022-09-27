@@ -25,6 +25,7 @@ namespace Aws
         static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
         static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
+        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
 
 
         StreamProcessorStatus GetStreamProcessorStatusForName(const Aws::String& name)
@@ -50,6 +51,10 @@ namespace Aws
           {
             return StreamProcessorStatus::STOPPING;
           }
+          else if (hashCode == UPDATING_HASH)
+          {
+            return StreamProcessorStatus::UPDATING;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
             return "FAILED";
           case StreamProcessorStatus::STOPPING:
             return "STOPPING";
+          case StreamProcessorStatus::UPDATING:
+            return "UPDATING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

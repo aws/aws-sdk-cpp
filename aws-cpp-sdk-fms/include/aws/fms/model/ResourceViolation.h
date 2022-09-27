@@ -22,6 +22,12 @@
 #include <aws/fms/model/DnsDuplicateRuleGroupViolation.h>
 #include <aws/fms/model/DnsRuleGroupLimitExceededViolation.h>
 #include <aws/fms/model/PossibleRemediationActions.h>
+#include <aws/fms/model/FirewallSubnetIsOutOfScopeViolation.h>
+#include <aws/fms/model/RouteHasOutOfScopeEndpointViolation.h>
+#include <aws/fms/model/ThirdPartyFirewallMissingFirewallViolation.h>
+#include <aws/fms/model/ThirdPartyFirewallMissingSubnetViolation.h>
+#include <aws/fms/model/ThirdPartyFirewallMissingExpectedRouteTableViolation.h>
+#include <aws/fms/model/FirewallSubnetMissingVPCEndpointViolation.h>
 #include <utility>
 
 namespace Aws
@@ -657,6 +663,222 @@ namespace Model
      */
     inline ResourceViolation& WithPossibleRemediationActions(PossibleRemediationActions&& value) { SetPossibleRemediationActions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Contains details about the firewall subnet that violates the policy
+     * scope.</p>
+     */
+    inline const FirewallSubnetIsOutOfScopeViolation& GetFirewallSubnetIsOutOfScopeViolation() const{ return m_firewallSubnetIsOutOfScopeViolation; }
+
+    /**
+     * <p>Contains details about the firewall subnet that violates the policy
+     * scope.</p>
+     */
+    inline bool FirewallSubnetIsOutOfScopeViolationHasBeenSet() const { return m_firewallSubnetIsOutOfScopeViolationHasBeenSet; }
+
+    /**
+     * <p>Contains details about the firewall subnet that violates the policy
+     * scope.</p>
+     */
+    inline void SetFirewallSubnetIsOutOfScopeViolation(const FirewallSubnetIsOutOfScopeViolation& value) { m_firewallSubnetIsOutOfScopeViolationHasBeenSet = true; m_firewallSubnetIsOutOfScopeViolation = value; }
+
+    /**
+     * <p>Contains details about the firewall subnet that violates the policy
+     * scope.</p>
+     */
+    inline void SetFirewallSubnetIsOutOfScopeViolation(FirewallSubnetIsOutOfScopeViolation&& value) { m_firewallSubnetIsOutOfScopeViolationHasBeenSet = true; m_firewallSubnetIsOutOfScopeViolation = std::move(value); }
+
+    /**
+     * <p>Contains details about the firewall subnet that violates the policy
+     * scope.</p>
+     */
+    inline ResourceViolation& WithFirewallSubnetIsOutOfScopeViolation(const FirewallSubnetIsOutOfScopeViolation& value) { SetFirewallSubnetIsOutOfScopeViolation(value); return *this;}
+
+    /**
+     * <p>Contains details about the firewall subnet that violates the policy
+     * scope.</p>
+     */
+    inline ResourceViolation& WithFirewallSubnetIsOutOfScopeViolation(FirewallSubnetIsOutOfScopeViolation&& value) { SetFirewallSubnetIsOutOfScopeViolation(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Contains details about the route endpoint that violates the policy scope.</p>
+     */
+    inline const RouteHasOutOfScopeEndpointViolation& GetRouteHasOutOfScopeEndpointViolation() const{ return m_routeHasOutOfScopeEndpointViolation; }
+
+    /**
+     * <p>Contains details about the route endpoint that violates the policy scope.</p>
+     */
+    inline bool RouteHasOutOfScopeEndpointViolationHasBeenSet() const { return m_routeHasOutOfScopeEndpointViolationHasBeenSet; }
+
+    /**
+     * <p>Contains details about the route endpoint that violates the policy scope.</p>
+     */
+    inline void SetRouteHasOutOfScopeEndpointViolation(const RouteHasOutOfScopeEndpointViolation& value) { m_routeHasOutOfScopeEndpointViolationHasBeenSet = true; m_routeHasOutOfScopeEndpointViolation = value; }
+
+    /**
+     * <p>Contains details about the route endpoint that violates the policy scope.</p>
+     */
+    inline void SetRouteHasOutOfScopeEndpointViolation(RouteHasOutOfScopeEndpointViolation&& value) { m_routeHasOutOfScopeEndpointViolationHasBeenSet = true; m_routeHasOutOfScopeEndpointViolation = std::move(value); }
+
+    /**
+     * <p>Contains details about the route endpoint that violates the policy scope.</p>
+     */
+    inline ResourceViolation& WithRouteHasOutOfScopeEndpointViolation(const RouteHasOutOfScopeEndpointViolation& value) { SetRouteHasOutOfScopeEndpointViolation(value); return *this;}
+
+    /**
+     * <p>Contains details about the route endpoint that violates the policy scope.</p>
+     */
+    inline ResourceViolation& WithRouteHasOutOfScopeEndpointViolation(RouteHasOutOfScopeEndpointViolation&& value) { SetRouteHasOutOfScopeEndpointViolation(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The violation details for a third-party firewall that's been deleted.</p>
+     */
+    inline const ThirdPartyFirewallMissingFirewallViolation& GetThirdPartyFirewallMissingFirewallViolation() const{ return m_thirdPartyFirewallMissingFirewallViolation; }
+
+    /**
+     * <p>The violation details for a third-party firewall that's been deleted.</p>
+     */
+    inline bool ThirdPartyFirewallMissingFirewallViolationHasBeenSet() const { return m_thirdPartyFirewallMissingFirewallViolationHasBeenSet; }
+
+    /**
+     * <p>The violation details for a third-party firewall that's been deleted.</p>
+     */
+    inline void SetThirdPartyFirewallMissingFirewallViolation(const ThirdPartyFirewallMissingFirewallViolation& value) { m_thirdPartyFirewallMissingFirewallViolationHasBeenSet = true; m_thirdPartyFirewallMissingFirewallViolation = value; }
+
+    /**
+     * <p>The violation details for a third-party firewall that's been deleted.</p>
+     */
+    inline void SetThirdPartyFirewallMissingFirewallViolation(ThirdPartyFirewallMissingFirewallViolation&& value) { m_thirdPartyFirewallMissingFirewallViolationHasBeenSet = true; m_thirdPartyFirewallMissingFirewallViolation = std::move(value); }
+
+    /**
+     * <p>The violation details for a third-party firewall that's been deleted.</p>
+     */
+    inline ResourceViolation& WithThirdPartyFirewallMissingFirewallViolation(const ThirdPartyFirewallMissingFirewallViolation& value) { SetThirdPartyFirewallMissingFirewallViolation(value); return *this;}
+
+    /**
+     * <p>The violation details for a third-party firewall that's been deleted.</p>
+     */
+    inline ResourceViolation& WithThirdPartyFirewallMissingFirewallViolation(ThirdPartyFirewallMissingFirewallViolation&& value) { SetThirdPartyFirewallMissingFirewallViolation(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The violation details for a third-party firewall's subnet that's been
+     * deleted.</p>
+     */
+    inline const ThirdPartyFirewallMissingSubnetViolation& GetThirdPartyFirewallMissingSubnetViolation() const{ return m_thirdPartyFirewallMissingSubnetViolation; }
+
+    /**
+     * <p>The violation details for a third-party firewall's subnet that's been
+     * deleted.</p>
+     */
+    inline bool ThirdPartyFirewallMissingSubnetViolationHasBeenSet() const { return m_thirdPartyFirewallMissingSubnetViolationHasBeenSet; }
+
+    /**
+     * <p>The violation details for a third-party firewall's subnet that's been
+     * deleted.</p>
+     */
+    inline void SetThirdPartyFirewallMissingSubnetViolation(const ThirdPartyFirewallMissingSubnetViolation& value) { m_thirdPartyFirewallMissingSubnetViolationHasBeenSet = true; m_thirdPartyFirewallMissingSubnetViolation = value; }
+
+    /**
+     * <p>The violation details for a third-party firewall's subnet that's been
+     * deleted.</p>
+     */
+    inline void SetThirdPartyFirewallMissingSubnetViolation(ThirdPartyFirewallMissingSubnetViolation&& value) { m_thirdPartyFirewallMissingSubnetViolationHasBeenSet = true; m_thirdPartyFirewallMissingSubnetViolation = std::move(value); }
+
+    /**
+     * <p>The violation details for a third-party firewall's subnet that's been
+     * deleted.</p>
+     */
+    inline ResourceViolation& WithThirdPartyFirewallMissingSubnetViolation(const ThirdPartyFirewallMissingSubnetViolation& value) { SetThirdPartyFirewallMissingSubnetViolation(value); return *this;}
+
+    /**
+     * <p>The violation details for a third-party firewall's subnet that's been
+     * deleted.</p>
+     */
+    inline ResourceViolation& WithThirdPartyFirewallMissingSubnetViolation(ThirdPartyFirewallMissingSubnetViolation&& value) { SetThirdPartyFirewallMissingSubnetViolation(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The violation details for a third-party firewall that has the Firewall
+     * Manager managed route table that was associated with the third-party firewall
+     * has been deleted.</p>
+     */
+    inline const ThirdPartyFirewallMissingExpectedRouteTableViolation& GetThirdPartyFirewallMissingExpectedRouteTableViolation() const{ return m_thirdPartyFirewallMissingExpectedRouteTableViolation; }
+
+    /**
+     * <p>The violation details for a third-party firewall that has the Firewall
+     * Manager managed route table that was associated with the third-party firewall
+     * has been deleted.</p>
+     */
+    inline bool ThirdPartyFirewallMissingExpectedRouteTableViolationHasBeenSet() const { return m_thirdPartyFirewallMissingExpectedRouteTableViolationHasBeenSet; }
+
+    /**
+     * <p>The violation details for a third-party firewall that has the Firewall
+     * Manager managed route table that was associated with the third-party firewall
+     * has been deleted.</p>
+     */
+    inline void SetThirdPartyFirewallMissingExpectedRouteTableViolation(const ThirdPartyFirewallMissingExpectedRouteTableViolation& value) { m_thirdPartyFirewallMissingExpectedRouteTableViolationHasBeenSet = true; m_thirdPartyFirewallMissingExpectedRouteTableViolation = value; }
+
+    /**
+     * <p>The violation details for a third-party firewall that has the Firewall
+     * Manager managed route table that was associated with the third-party firewall
+     * has been deleted.</p>
+     */
+    inline void SetThirdPartyFirewallMissingExpectedRouteTableViolation(ThirdPartyFirewallMissingExpectedRouteTableViolation&& value) { m_thirdPartyFirewallMissingExpectedRouteTableViolationHasBeenSet = true; m_thirdPartyFirewallMissingExpectedRouteTableViolation = std::move(value); }
+
+    /**
+     * <p>The violation details for a third-party firewall that has the Firewall
+     * Manager managed route table that was associated with the third-party firewall
+     * has been deleted.</p>
+     */
+    inline ResourceViolation& WithThirdPartyFirewallMissingExpectedRouteTableViolation(const ThirdPartyFirewallMissingExpectedRouteTableViolation& value) { SetThirdPartyFirewallMissingExpectedRouteTableViolation(value); return *this;}
+
+    /**
+     * <p>The violation details for a third-party firewall that has the Firewall
+     * Manager managed route table that was associated with the third-party firewall
+     * has been deleted.</p>
+     */
+    inline ResourceViolation& WithThirdPartyFirewallMissingExpectedRouteTableViolation(ThirdPartyFirewallMissingExpectedRouteTableViolation&& value) { SetThirdPartyFirewallMissingExpectedRouteTableViolation(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The violation details for a third-party firewall's VPC endpoint subnet that
+     * was deleted.</p>
+     */
+    inline const FirewallSubnetMissingVPCEndpointViolation& GetFirewallSubnetMissingVPCEndpointViolation() const{ return m_firewallSubnetMissingVPCEndpointViolation; }
+
+    /**
+     * <p>The violation details for a third-party firewall's VPC endpoint subnet that
+     * was deleted.</p>
+     */
+    inline bool FirewallSubnetMissingVPCEndpointViolationHasBeenSet() const { return m_firewallSubnetMissingVPCEndpointViolationHasBeenSet; }
+
+    /**
+     * <p>The violation details for a third-party firewall's VPC endpoint subnet that
+     * was deleted.</p>
+     */
+    inline void SetFirewallSubnetMissingVPCEndpointViolation(const FirewallSubnetMissingVPCEndpointViolation& value) { m_firewallSubnetMissingVPCEndpointViolationHasBeenSet = true; m_firewallSubnetMissingVPCEndpointViolation = value; }
+
+    /**
+     * <p>The violation details for a third-party firewall's VPC endpoint subnet that
+     * was deleted.</p>
+     */
+    inline void SetFirewallSubnetMissingVPCEndpointViolation(FirewallSubnetMissingVPCEndpointViolation&& value) { m_firewallSubnetMissingVPCEndpointViolationHasBeenSet = true; m_firewallSubnetMissingVPCEndpointViolation = std::move(value); }
+
+    /**
+     * <p>The violation details for a third-party firewall's VPC endpoint subnet that
+     * was deleted.</p>
+     */
+    inline ResourceViolation& WithFirewallSubnetMissingVPCEndpointViolation(const FirewallSubnetMissingVPCEndpointViolation& value) { SetFirewallSubnetMissingVPCEndpointViolation(value); return *this;}
+
+    /**
+     * <p>The violation details for a third-party firewall's VPC endpoint subnet that
+     * was deleted.</p>
+     */
+    inline ResourceViolation& WithFirewallSubnetMissingVPCEndpointViolation(FirewallSubnetMissingVPCEndpointViolation&& value) { SetFirewallSubnetMissingVPCEndpointViolation(std::move(value)); return *this;}
+
   private:
 
     AwsVPCSecurityGroupViolation m_awsVPCSecurityGroupViolation;
@@ -709,6 +931,24 @@ namespace Model
 
     PossibleRemediationActions m_possibleRemediationActions;
     bool m_possibleRemediationActionsHasBeenSet;
+
+    FirewallSubnetIsOutOfScopeViolation m_firewallSubnetIsOutOfScopeViolation;
+    bool m_firewallSubnetIsOutOfScopeViolationHasBeenSet;
+
+    RouteHasOutOfScopeEndpointViolation m_routeHasOutOfScopeEndpointViolation;
+    bool m_routeHasOutOfScopeEndpointViolationHasBeenSet;
+
+    ThirdPartyFirewallMissingFirewallViolation m_thirdPartyFirewallMissingFirewallViolation;
+    bool m_thirdPartyFirewallMissingFirewallViolationHasBeenSet;
+
+    ThirdPartyFirewallMissingSubnetViolation m_thirdPartyFirewallMissingSubnetViolation;
+    bool m_thirdPartyFirewallMissingSubnetViolationHasBeenSet;
+
+    ThirdPartyFirewallMissingExpectedRouteTableViolation m_thirdPartyFirewallMissingExpectedRouteTableViolation;
+    bool m_thirdPartyFirewallMissingExpectedRouteTableViolationHasBeenSet;
+
+    FirewallSubnetMissingVPCEndpointViolation m_firewallSubnetMissingVPCEndpointViolation;
+    bool m_firewallSubnetMissingVPCEndpointViolationHasBeenSet;
   };
 
 } // namespace Model

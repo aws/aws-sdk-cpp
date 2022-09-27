@@ -27,9 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the details for an Amazon RDS DB cluster snapshot </p> <p>This data
+   * <p>Contains the details for an Amazon RDS DB cluster snapshot</p> <p>This data
    * type is used as a response element in the
-   * <code>DescribeDBClusterSnapshots</code> action. </p><p><h3>See Also:</h3>   <a
+   * <code>DescribeDBClusterSnapshots</code> action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBClusterSnapshot">AWS
    * API Reference</a></p>
    */

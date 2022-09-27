@@ -64,32 +64,32 @@ namespace Model
 
 
     /**
-     * <p>Specifies the recovery method for a user.</p>
+     * <p>The recovery method for a user.</p>
      */
     inline const RecoveryOptionNameType& GetName() const{ return m_name; }
 
     /**
-     * <p>Specifies the recovery method for a user.</p>
+     * <p>The recovery method for a user.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>Specifies the recovery method for a user.</p>
+     * <p>The recovery method for a user.</p>
      */
     inline void SetName(const RecoveryOptionNameType& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Specifies the recovery method for a user.</p>
+     * <p>The recovery method for a user.</p>
      */
     inline void SetName(RecoveryOptionNameType&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Specifies the recovery method for a user.</p>
+     * <p>The recovery method for a user.</p>
      */
     inline RecoveryOptionType& WithName(const RecoveryOptionNameType& value) { SetName(value); return *this;}
 
     /**
-     * <p>Specifies the recovery method for a user.</p>
+     * <p>The recovery method for a user.</p>
      */
     inline RecoveryOptionType& WithName(RecoveryOptionNameType&& value) { SetName(std::move(value)); return *this;}
 

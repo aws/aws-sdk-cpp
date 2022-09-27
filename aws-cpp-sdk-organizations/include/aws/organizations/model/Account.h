@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about an AWS account that is a member of an
-   * organization.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about an Amazon Web Services account that is a member of
+   * an organization.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/Account">AWS
    * API Reference</a></p>
    */
@@ -102,8 +102,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the account.</p> <p>For more information
      * about ARNs in Organizations, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Service Authorization
-     * Reference</i>.</p>
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
@@ -111,8 +111,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the account.</p> <p>For more information
      * about ARNs in Organizations, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Service Authorization
-     * Reference</i>.</p>
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
@@ -120,8 +120,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the account.</p> <p>For more information
      * about ARNs in Organizations, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Service Authorization
-     * Reference</i>.</p>
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
@@ -129,8 +129,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the account.</p> <p>For more information
      * about ARNs in Organizations, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Service Authorization
-     * Reference</i>.</p>
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
@@ -138,8 +138,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the account.</p> <p>For more information
      * about ARNs in Organizations, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Service Authorization
-     * Reference</i>.</p>
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
@@ -147,8 +147,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the account.</p> <p>For more information
      * about ARNs in Organizations, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Service Authorization
-     * Reference</i>.</p>
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline Account& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
@@ -156,8 +156,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the account.</p> <p>For more information
      * about ARNs in Organizations, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Service Authorization
-     * Reference</i>.</p>
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline Account& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
@@ -165,65 +165,65 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the account.</p> <p>For more information
      * about ARNs in Organizations, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Service Authorization
-     * Reference</i>.</p>
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline Account& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * <p>The email address associated with the AWS account.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that represents a standard internet email address.</p>
+     * <p>The email address associated with the Amazon Web Services account.</p> <p>The
+     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+     * is a string of characters that represents a standard internet email address.</p>
      */
     inline const Aws::String& GetEmail() const{ return m_email; }
 
     /**
-     * <p>The email address associated with the AWS account.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that represents a standard internet email address.</p>
+     * <p>The email address associated with the Amazon Web Services account.</p> <p>The
+     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+     * is a string of characters that represents a standard internet email address.</p>
      */
     inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
 
     /**
-     * <p>The email address associated with the AWS account.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that represents a standard internet email address.</p>
+     * <p>The email address associated with the Amazon Web Services account.</p> <p>The
+     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+     * is a string of characters that represents a standard internet email address.</p>
      */
     inline void SetEmail(const Aws::String& value) { m_emailHasBeenSet = true; m_email = value; }
 
     /**
-     * <p>The email address associated with the AWS account.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that represents a standard internet email address.</p>
+     * <p>The email address associated with the Amazon Web Services account.</p> <p>The
+     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+     * is a string of characters that represents a standard internet email address.</p>
      */
     inline void SetEmail(Aws::String&& value) { m_emailHasBeenSet = true; m_email = std::move(value); }
 
     /**
-     * <p>The email address associated with the AWS account.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that represents a standard internet email address.</p>
+     * <p>The email address associated with the Amazon Web Services account.</p> <p>The
+     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+     * is a string of characters that represents a standard internet email address.</p>
      */
     inline void SetEmail(const char* value) { m_emailHasBeenSet = true; m_email.assign(value); }
 
     /**
-     * <p>The email address associated with the AWS account.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that represents a standard internet email address.</p>
+     * <p>The email address associated with the Amazon Web Services account.</p> <p>The
+     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+     * is a string of characters that represents a standard internet email address.</p>
      */
     inline Account& WithEmail(const Aws::String& value) { SetEmail(value); return *this;}
 
     /**
-     * <p>The email address associated with the AWS account.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that represents a standard internet email address.</p>
+     * <p>The email address associated with the Amazon Web Services account.</p> <p>The
+     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+     * is a string of characters that represents a standard internet email address.</p>
      */
     inline Account& WithEmail(Aws::String&& value) { SetEmail(std::move(value)); return *this;}
 
     /**
-     * <p>The email address associated with the AWS account.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that represents a standard internet email address.</p>
+     * <p>The email address associated with the Amazon Web Services account.</p> <p>The
+     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+     * is a string of characters that represents a standard internet email address.</p>
      */
     inline Account& WithEmail(const char* value) { SetEmail(value); return *this;}
 

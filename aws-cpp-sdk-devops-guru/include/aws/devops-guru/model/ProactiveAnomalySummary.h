@@ -14,6 +14,9 @@
 #include <aws/devops-guru/model/PredictionTimeRange.h>
 #include <aws/devops-guru/model/AnomalySourceDetails.h>
 #include <aws/devops-guru/model/ResourceCollection.h>
+#include <aws/devops-guru/model/AnomalySourceMetadata.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/devops-guru/model/AnomalyResource.h>
 #include <utility>
 
 namespace Aws
@@ -406,6 +409,86 @@ namespace Model
      */
     inline ProactiveAnomalySummary& WithLimit(double value) { SetLimit(value); return *this;}
 
+
+    /**
+     * <p>The metadata of the source which detects proactive anomalies.</p>
+     */
+    inline const AnomalySourceMetadata& GetSourceMetadata() const{ return m_sourceMetadata; }
+
+    /**
+     * <p>The metadata of the source which detects proactive anomalies.</p>
+     */
+    inline bool SourceMetadataHasBeenSet() const { return m_sourceMetadataHasBeenSet; }
+
+    /**
+     * <p>The metadata of the source which detects proactive anomalies.</p>
+     */
+    inline void SetSourceMetadata(const AnomalySourceMetadata& value) { m_sourceMetadataHasBeenSet = true; m_sourceMetadata = value; }
+
+    /**
+     * <p>The metadata of the source which detects proactive anomalies.</p>
+     */
+    inline void SetSourceMetadata(AnomalySourceMetadata&& value) { m_sourceMetadataHasBeenSet = true; m_sourceMetadata = std::move(value); }
+
+    /**
+     * <p>The metadata of the source which detects proactive anomalies.</p>
+     */
+    inline ProactiveAnomalySummary& WithSourceMetadata(const AnomalySourceMetadata& value) { SetSourceMetadata(value); return *this;}
+
+    /**
+     * <p>The metadata of the source which detects proactive anomalies.</p>
+     */
+    inline ProactiveAnomalySummary& WithSourceMetadata(AnomalySourceMetadata&& value) { SetSourceMetadata(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information about a resource in which DevOps Guru detected anomalous
+     * behavior.</p>
+     */
+    inline const Aws::Vector<AnomalyResource>& GetAnomalyResources() const{ return m_anomalyResources; }
+
+    /**
+     * <p>Information about a resource in which DevOps Guru detected anomalous
+     * behavior.</p>
+     */
+    inline bool AnomalyResourcesHasBeenSet() const { return m_anomalyResourcesHasBeenSet; }
+
+    /**
+     * <p>Information about a resource in which DevOps Guru detected anomalous
+     * behavior.</p>
+     */
+    inline void SetAnomalyResources(const Aws::Vector<AnomalyResource>& value) { m_anomalyResourcesHasBeenSet = true; m_anomalyResources = value; }
+
+    /**
+     * <p>Information about a resource in which DevOps Guru detected anomalous
+     * behavior.</p>
+     */
+    inline void SetAnomalyResources(Aws::Vector<AnomalyResource>&& value) { m_anomalyResourcesHasBeenSet = true; m_anomalyResources = std::move(value); }
+
+    /**
+     * <p>Information about a resource in which DevOps Guru detected anomalous
+     * behavior.</p>
+     */
+    inline ProactiveAnomalySummary& WithAnomalyResources(const Aws::Vector<AnomalyResource>& value) { SetAnomalyResources(value); return *this;}
+
+    /**
+     * <p>Information about a resource in which DevOps Guru detected anomalous
+     * behavior.</p>
+     */
+    inline ProactiveAnomalySummary& WithAnomalyResources(Aws::Vector<AnomalyResource>&& value) { SetAnomalyResources(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about a resource in which DevOps Guru detected anomalous
+     * behavior.</p>
+     */
+    inline ProactiveAnomalySummary& AddAnomalyResources(const AnomalyResource& value) { m_anomalyResourcesHasBeenSet = true; m_anomalyResources.push_back(value); return *this; }
+
+    /**
+     * <p>Information about a resource in which DevOps Guru detected anomalous
+     * behavior.</p>
+     */
+    inline ProactiveAnomalySummary& AddAnomalyResources(AnomalyResource&& value) { m_anomalyResourcesHasBeenSet = true; m_anomalyResources.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_id;
@@ -440,6 +523,12 @@ namespace Model
 
     double m_limit;
     bool m_limitHasBeenSet;
+
+    AnomalySourceMetadata m_sourceMetadata;
+    bool m_sourceMetadataHasBeenSet;
+
+    Aws::Vector<AnomalyResource> m_anomalyResources;
+    bool m_anomalyResourcesHasBeenSet;
   };
 
 } // namespace Model

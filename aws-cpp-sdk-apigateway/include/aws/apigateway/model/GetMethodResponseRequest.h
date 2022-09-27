@@ -17,8 +17,7 @@ namespace Model
 {
 
   /**
-   * <p>Request to describe a <a>MethodResponse</a> resource.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Request to describe a MethodResponse resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetMethodResponseRequest">AWS
    * API Reference</a></p>
    */
@@ -37,173 +36,165 @@ namespace Model
 
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline GetMethodResponseRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline GetMethodResponseRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline GetMethodResponseRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
 
     /**
-     * <p>[Required] The <a>Resource</a> identifier for the <a>MethodResponse</a>
-     * resource.</p>
+     * <p>The Resource identifier for the MethodResponse resource.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>[Required] The <a>Resource</a> identifier for the <a>MethodResponse</a>
-     * resource.</p>
+     * <p>The Resource identifier for the MethodResponse resource.</p>
      */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
-     * <p>[Required] The <a>Resource</a> identifier for the <a>MethodResponse</a>
-     * resource.</p>
+     * <p>The Resource identifier for the MethodResponse resource.</p>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>[Required] The <a>Resource</a> identifier for the <a>MethodResponse</a>
-     * resource.</p>
+     * <p>The Resource identifier for the MethodResponse resource.</p>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * <p>[Required] The <a>Resource</a> identifier for the <a>MethodResponse</a>
-     * resource.</p>
+     * <p>The Resource identifier for the MethodResponse resource.</p>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * <p>[Required] The <a>Resource</a> identifier for the <a>MethodResponse</a>
-     * resource.</p>
+     * <p>The Resource identifier for the MethodResponse resource.</p>
      */
     inline GetMethodResponseRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>[Required] The <a>Resource</a> identifier for the <a>MethodResponse</a>
-     * resource.</p>
+     * <p>The Resource identifier for the MethodResponse resource.</p>
      */
     inline GetMethodResponseRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The <a>Resource</a> identifier for the <a>MethodResponse</a>
-     * resource.</p>
+     * <p>The Resource identifier for the MethodResponse resource.</p>
      */
     inline GetMethodResponseRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
 
     /**
-     * <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
+     * <p>The HTTP verb of the Method resource.</p>
      */
     inline const Aws::String& GetHttpMethod() const{ return m_httpMethod; }
 
     /**
-     * <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
+     * <p>The HTTP verb of the Method resource.</p>
      */
     inline bool HttpMethodHasBeenSet() const { return m_httpMethodHasBeenSet; }
 
     /**
-     * <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
+     * <p>The HTTP verb of the Method resource.</p>
      */
     inline void SetHttpMethod(const Aws::String& value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
 
     /**
-     * <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
+     * <p>The HTTP verb of the Method resource.</p>
      */
     inline void SetHttpMethod(Aws::String&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = std::move(value); }
 
     /**
-     * <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
+     * <p>The HTTP verb of the Method resource.</p>
      */
     inline void SetHttpMethod(const char* value) { m_httpMethodHasBeenSet = true; m_httpMethod.assign(value); }
 
     /**
-     * <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
+     * <p>The HTTP verb of the Method resource.</p>
      */
     inline GetMethodResponseRequest& WithHttpMethod(const Aws::String& value) { SetHttpMethod(value); return *this;}
 
     /**
-     * <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
+     * <p>The HTTP verb of the Method resource.</p>
      */
     inline GetMethodResponseRequest& WithHttpMethod(Aws::String&& value) { SetHttpMethod(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
+     * <p>The HTTP verb of the Method resource.</p>
      */
     inline GetMethodResponseRequest& WithHttpMethod(const char* value) { SetHttpMethod(value); return *this;}
 
 
     /**
-     * <p>[Required] The status code for the <a>MethodResponse</a> resource.</p>
+     * <p>The status code for the MethodResponse resource.</p>
      */
     inline const Aws::String& GetStatusCode() const{ return m_statusCode; }
 
     /**
-     * <p>[Required] The status code for the <a>MethodResponse</a> resource.</p>
+     * <p>The status code for the MethodResponse resource.</p>
      */
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
 
     /**
-     * <p>[Required] The status code for the <a>MethodResponse</a> resource.</p>
+     * <p>The status code for the MethodResponse resource.</p>
      */
     inline void SetStatusCode(const Aws::String& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
 
     /**
-     * <p>[Required] The status code for the <a>MethodResponse</a> resource.</p>
+     * <p>The status code for the MethodResponse resource.</p>
      */
     inline void SetStatusCode(Aws::String&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
 
     /**
-     * <p>[Required] The status code for the <a>MethodResponse</a> resource.</p>
+     * <p>The status code for the MethodResponse resource.</p>
      */
     inline void SetStatusCode(const char* value) { m_statusCodeHasBeenSet = true; m_statusCode.assign(value); }
 
     /**
-     * <p>[Required] The status code for the <a>MethodResponse</a> resource.</p>
+     * <p>The status code for the MethodResponse resource.</p>
      */
     inline GetMethodResponseRequest& WithStatusCode(const Aws::String& value) { SetStatusCode(value); return *this;}
 
     /**
-     * <p>[Required] The status code for the <a>MethodResponse</a> resource.</p>
+     * <p>The status code for the MethodResponse resource.</p>
      */
     inline GetMethodResponseRequest& WithStatusCode(Aws::String&& value) { SetStatusCode(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The status code for the <a>MethodResponse</a> resource.</p>
+     * <p>The status code for the MethodResponse resource.</p>
      */
     inline GetMethodResponseRequest& WithStatusCode(const char* value) { SetStatusCode(value); return *this;}
 

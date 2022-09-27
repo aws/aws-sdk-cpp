@@ -38,49 +38,65 @@ namespace Model
 
     /**
      * <p>The ARN or name of the secret to rotate.</p> <p>For an ARN, we recommend that
-     * you specify a complete ARN rather than a partial ARN.</p>
+     * you specify a complete ARN rather than a partial ARN. See <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding
+     * a secret from a partial ARN</a>.</p>
      */
     inline const Aws::String& GetSecretId() const{ return m_secretId; }
 
     /**
      * <p>The ARN or name of the secret to rotate.</p> <p>For an ARN, we recommend that
-     * you specify a complete ARN rather than a partial ARN.</p>
+     * you specify a complete ARN rather than a partial ARN. See <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding
+     * a secret from a partial ARN</a>.</p>
      */
     inline bool SecretIdHasBeenSet() const { return m_secretIdHasBeenSet; }
 
     /**
      * <p>The ARN or name of the secret to rotate.</p> <p>For an ARN, we recommend that
-     * you specify a complete ARN rather than a partial ARN.</p>
+     * you specify a complete ARN rather than a partial ARN. See <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding
+     * a secret from a partial ARN</a>.</p>
      */
     inline void SetSecretId(const Aws::String& value) { m_secretIdHasBeenSet = true; m_secretId = value; }
 
     /**
      * <p>The ARN or name of the secret to rotate.</p> <p>For an ARN, we recommend that
-     * you specify a complete ARN rather than a partial ARN.</p>
+     * you specify a complete ARN rather than a partial ARN. See <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding
+     * a secret from a partial ARN</a>.</p>
      */
     inline void SetSecretId(Aws::String&& value) { m_secretIdHasBeenSet = true; m_secretId = std::move(value); }
 
     /**
      * <p>The ARN or name of the secret to rotate.</p> <p>For an ARN, we recommend that
-     * you specify a complete ARN rather than a partial ARN.</p>
+     * you specify a complete ARN rather than a partial ARN. See <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding
+     * a secret from a partial ARN</a>.</p>
      */
     inline void SetSecretId(const char* value) { m_secretIdHasBeenSet = true; m_secretId.assign(value); }
 
     /**
      * <p>The ARN or name of the secret to rotate.</p> <p>For an ARN, we recommend that
-     * you specify a complete ARN rather than a partial ARN.</p>
+     * you specify a complete ARN rather than a partial ARN. See <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding
+     * a secret from a partial ARN</a>.</p>
      */
     inline RotateSecretRequest& WithSecretId(const Aws::String& value) { SetSecretId(value); return *this;}
 
     /**
      * <p>The ARN or name of the secret to rotate.</p> <p>For an ARN, we recommend that
-     * you specify a complete ARN rather than a partial ARN.</p>
+     * you specify a complete ARN rather than a partial ARN. See <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding
+     * a secret from a partial ARN</a>.</p>
      */
     inline RotateSecretRequest& WithSecretId(Aws::String&& value) { SetSecretId(std::move(value)); return *this;}
 
     /**
      * <p>The ARN or name of the secret to rotate.</p> <p>For an ARN, we recommend that
-     * you specify a complete ARN rather than a partial ARN.</p>
+     * you specify a complete ARN rather than a partial ARN. See <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding
+     * a secret from a partial ARN</a>.</p>
      */
     inline RotateSecretRequest& WithSecretId(const char* value) { SetSecretId(value); return *this;}
 
@@ -309,6 +325,59 @@ namespace Model
      */
     inline RotateSecretRequest& WithRotationRules(RotationRulesType&& value) { SetRotationRules(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies whether to rotate the secret immediately or wait until the next
+     * scheduled rotation window. The rotation schedule is defined in
+     * <a>RotateSecretRequest$RotationRules</a>.</p> <p>If you don't immediately rotate
+     * the secret, Secrets Manager tests the rotation configuration by running the <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">
+     * <code>testSecret</code> step</a> of the Lambda rotation function. The test
+     * creates an <code>AWSPENDING</code> version of the secret and then removes
+     * it.</p> <p>If you don't specify this value, then by default, Secrets Manager
+     * rotates the secret immediately.</p>
+     */
+    inline bool GetRotateImmediately() const{ return m_rotateImmediately; }
+
+    /**
+     * <p>Specifies whether to rotate the secret immediately or wait until the next
+     * scheduled rotation window. The rotation schedule is defined in
+     * <a>RotateSecretRequest$RotationRules</a>.</p> <p>If you don't immediately rotate
+     * the secret, Secrets Manager tests the rotation configuration by running the <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">
+     * <code>testSecret</code> step</a> of the Lambda rotation function. The test
+     * creates an <code>AWSPENDING</code> version of the secret and then removes
+     * it.</p> <p>If you don't specify this value, then by default, Secrets Manager
+     * rotates the secret immediately.</p>
+     */
+    inline bool RotateImmediatelyHasBeenSet() const { return m_rotateImmediatelyHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to rotate the secret immediately or wait until the next
+     * scheduled rotation window. The rotation schedule is defined in
+     * <a>RotateSecretRequest$RotationRules</a>.</p> <p>If you don't immediately rotate
+     * the secret, Secrets Manager tests the rotation configuration by running the <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">
+     * <code>testSecret</code> step</a> of the Lambda rotation function. The test
+     * creates an <code>AWSPENDING</code> version of the secret and then removes
+     * it.</p> <p>If you don't specify this value, then by default, Secrets Manager
+     * rotates the secret immediately.</p>
+     */
+    inline void SetRotateImmediately(bool value) { m_rotateImmediatelyHasBeenSet = true; m_rotateImmediately = value; }
+
+    /**
+     * <p>Specifies whether to rotate the secret immediately or wait until the next
+     * scheduled rotation window. The rotation schedule is defined in
+     * <a>RotateSecretRequest$RotationRules</a>.</p> <p>If you don't immediately rotate
+     * the secret, Secrets Manager tests the rotation configuration by running the <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">
+     * <code>testSecret</code> step</a> of the Lambda rotation function. The test
+     * creates an <code>AWSPENDING</code> version of the secret and then removes
+     * it.</p> <p>If you don't specify this value, then by default, Secrets Manager
+     * rotates the secret immediately.</p>
+     */
+    inline RotateSecretRequest& WithRotateImmediately(bool value) { SetRotateImmediately(value); return *this;}
+
   private:
 
     Aws::String m_secretId;
@@ -322,6 +391,9 @@ namespace Model
 
     RotationRulesType m_rotationRules;
     bool m_rotationRulesHasBeenSet;
+
+    bool m_rotateImmediately;
+    bool m_rotateImmediatelyHasBeenSet;
   };
 
 } // namespace Model

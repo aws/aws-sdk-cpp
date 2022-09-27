@@ -26,6 +26,8 @@ namespace Aws
         static const int XRAY_HASH = HashingUtils::HashString("XRAY");
         static const int TIMESTREAM_HASH = HashingUtils::HashString("TIMESTREAM");
         static const int SITEWISE_HASH = HashingUtils::HashString("SITEWISE");
+        static const int ATHENA_HASH = HashingUtils::HashString("ATHENA");
+        static const int REDSHIFT_HASH = HashingUtils::HashString("REDSHIFT");
 
 
         DataSourceType GetDataSourceTypeForName(const Aws::String& name)
@@ -55,6 +57,14 @@ namespace Aws
           {
             return DataSourceType::SITEWISE;
           }
+          else if (hashCode == ATHENA_HASH)
+          {
+            return DataSourceType::ATHENA;
+          }
+          else if (hashCode == REDSHIFT_HASH)
+          {
+            return DataSourceType::REDSHIFT;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +91,10 @@ namespace Aws
             return "TIMESTREAM";
           case DataSourceType::SITEWISE:
             return "SITEWISE";
+          case DataSourceType::ATHENA:
+            return "ATHENA";
+          case DataSourceType::REDSHIFT:
+            return "REDSHIFT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

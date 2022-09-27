@@ -31,6 +31,7 @@
 #include <aws/workspaces/model/CreateUpdatedWorkspaceImageRequest.h>
 #include <aws/workspaces/model/CreateWorkspaceBundleRequest.h>
 #include <aws/workspaces/model/CreateWorkspacesRequest.h>
+#include <aws/workspaces/model/DeleteClientBrandingRequest.h>
 #include <aws/workspaces/model/DeleteConnectClientAddInRequest.h>
 #include <aws/workspaces/model/DeleteConnectionAliasRequest.h>
 #include <aws/workspaces/model/DeleteIpGroupRequest.h>
@@ -40,6 +41,7 @@
 #include <aws/workspaces/model/DeregisterWorkspaceDirectoryRequest.h>
 #include <aws/workspaces/model/DescribeAccountRequest.h>
 #include <aws/workspaces/model/DescribeAccountModificationsRequest.h>
+#include <aws/workspaces/model/DescribeClientBrandingRequest.h>
 #include <aws/workspaces/model/DescribeClientPropertiesRequest.h>
 #include <aws/workspaces/model/DescribeConnectClientAddInsRequest.h>
 #include <aws/workspaces/model/DescribeConnectionAliasPermissionsRequest.h>
@@ -55,6 +57,7 @@
 #include <aws/workspaces/model/DescribeWorkspacesConnectionStatusRequest.h>
 #include <aws/workspaces/model/DisassociateConnectionAliasRequest.h>
 #include <aws/workspaces/model/DisassociateIpGroupsRequest.h>
+#include <aws/workspaces/model/ImportClientBrandingRequest.h>
 #include <aws/workspaces/model/ImportWorkspaceImageRequest.h>
 #include <aws/workspaces/model/ListAvailableManagementCidrRangesRequest.h>
 #include <aws/workspaces/model/MigrateWorkspaceRequest.h>
@@ -416,6 +419,30 @@ void WorkSpacesClient::CreateWorkspacesAsyncHelper(const CreateWorkspacesRequest
   handler(this, request, CreateWorkspaces(request), context);
 }
 
+DeleteClientBrandingOutcome WorkSpacesClient::DeleteClientBranding(const DeleteClientBrandingRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteClientBrandingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteClientBrandingOutcomeCallable WorkSpacesClient::DeleteClientBrandingCallable(const DeleteClientBrandingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteClientBrandingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteClientBranding(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesClient::DeleteClientBrandingAsync(const DeleteClientBrandingRequest& request, const DeleteClientBrandingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteClientBrandingAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::DeleteClientBrandingAsyncHelper(const DeleteClientBrandingRequest& request, const DeleteClientBrandingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteClientBranding(request), context);
+}
+
 DeleteConnectClientAddInOutcome WorkSpacesClient::DeleteConnectClientAddIn(const DeleteConnectClientAddInRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -630,6 +657,30 @@ void WorkSpacesClient::DescribeAccountModificationsAsync(const DescribeAccountMo
 void WorkSpacesClient::DescribeAccountModificationsAsyncHelper(const DescribeAccountModificationsRequest& request, const DescribeAccountModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeAccountModifications(request), context);
+}
+
+DescribeClientBrandingOutcome WorkSpacesClient::DescribeClientBranding(const DescribeClientBrandingRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeClientBrandingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeClientBrandingOutcomeCallable WorkSpacesClient::DescribeClientBrandingCallable(const DescribeClientBrandingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeClientBrandingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeClientBranding(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesClient::DescribeClientBrandingAsync(const DescribeClientBrandingRequest& request, const DescribeClientBrandingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeClientBrandingAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::DescribeClientBrandingAsyncHelper(const DescribeClientBrandingRequest& request, const DescribeClientBrandingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeClientBranding(request), context);
 }
 
 DescribeClientPropertiesOutcome WorkSpacesClient::DescribeClientProperties(const DescribeClientPropertiesRequest& request) const
@@ -990,6 +1041,30 @@ void WorkSpacesClient::DisassociateIpGroupsAsync(const DisassociateIpGroupsReque
 void WorkSpacesClient::DisassociateIpGroupsAsyncHelper(const DisassociateIpGroupsRequest& request, const DisassociateIpGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DisassociateIpGroups(request), context);
+}
+
+ImportClientBrandingOutcome WorkSpacesClient::ImportClientBranding(const ImportClientBrandingRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ImportClientBrandingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ImportClientBrandingOutcomeCallable WorkSpacesClient::ImportClientBrandingCallable(const ImportClientBrandingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ImportClientBrandingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportClientBranding(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesClient::ImportClientBrandingAsync(const ImportClientBrandingRequest& request, const ImportClientBrandingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ImportClientBrandingAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::ImportClientBrandingAsyncHelper(const ImportClientBrandingRequest& request, const ImportClientBrandingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ImportClientBranding(request), context);
 }
 
 ImportWorkspaceImageOutcome WorkSpacesClient::ImportWorkspaceImage(const ImportWorkspaceImageRequest& request) const

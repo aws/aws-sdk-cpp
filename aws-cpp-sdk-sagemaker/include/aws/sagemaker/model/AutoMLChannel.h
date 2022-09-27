@@ -8,6 +8,7 @@
 #include <aws/sagemaker/model/AutoMLDataSource.h>
 #include <aws/sagemaker/model/CompressionType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/model/AutoMLChannelType.h>
 #include <utility>
 
 namespace Aws
@@ -26,8 +27,11 @@ namespace Model
 {
 
   /**
-   * <p>A channel is a named input source that training algorithms can consume. For
-   * more information, see .</p><p><h3>See Also:</h3>   <a
+   * <p>A channel is a named input source that training algorithms can consume. The
+   * validation dataset size is limited to less than 2 GB. The training dataset size
+   * must be less than 100 GB. For more information, see .</p>  <p>A validation
+   * dataset must contain the same headers as the training dataset.</p> 
+   * <p/><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLChannel">AWS
    * API Reference</a></p>
    */
@@ -221,6 +225,67 @@ namespace Model
      */
     inline AutoMLChannel& WithContentType(const char* value) { SetContentType(value); return *this;}
 
+
+    /**
+     * <p>The channel type (optional) is an <code>enum</code> string. The default value
+     * is <code>training</code>. Channels for training and validation must share the
+     * same <code>ContentType</code> and <code>TargetAttributeName</code>. For
+     * information on specifying training and validation channel types, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation">
+     * <code>How to specify training and validation datasets</code> </a>.</p>
+     */
+    inline const AutoMLChannelType& GetChannelType() const{ return m_channelType; }
+
+    /**
+     * <p>The channel type (optional) is an <code>enum</code> string. The default value
+     * is <code>training</code>. Channels for training and validation must share the
+     * same <code>ContentType</code> and <code>TargetAttributeName</code>. For
+     * information on specifying training and validation channel types, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation">
+     * <code>How to specify training and validation datasets</code> </a>.</p>
+     */
+    inline bool ChannelTypeHasBeenSet() const { return m_channelTypeHasBeenSet; }
+
+    /**
+     * <p>The channel type (optional) is an <code>enum</code> string. The default value
+     * is <code>training</code>. Channels for training and validation must share the
+     * same <code>ContentType</code> and <code>TargetAttributeName</code>. For
+     * information on specifying training and validation channel types, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation">
+     * <code>How to specify training and validation datasets</code> </a>.</p>
+     */
+    inline void SetChannelType(const AutoMLChannelType& value) { m_channelTypeHasBeenSet = true; m_channelType = value; }
+
+    /**
+     * <p>The channel type (optional) is an <code>enum</code> string. The default value
+     * is <code>training</code>. Channels for training and validation must share the
+     * same <code>ContentType</code> and <code>TargetAttributeName</code>. For
+     * information on specifying training and validation channel types, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation">
+     * <code>How to specify training and validation datasets</code> </a>.</p>
+     */
+    inline void SetChannelType(AutoMLChannelType&& value) { m_channelTypeHasBeenSet = true; m_channelType = std::move(value); }
+
+    /**
+     * <p>The channel type (optional) is an <code>enum</code> string. The default value
+     * is <code>training</code>. Channels for training and validation must share the
+     * same <code>ContentType</code> and <code>TargetAttributeName</code>. For
+     * information on specifying training and validation channel types, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation">
+     * <code>How to specify training and validation datasets</code> </a>.</p>
+     */
+    inline AutoMLChannel& WithChannelType(const AutoMLChannelType& value) { SetChannelType(value); return *this;}
+
+    /**
+     * <p>The channel type (optional) is an <code>enum</code> string. The default value
+     * is <code>training</code>. Channels for training and validation must share the
+     * same <code>ContentType</code> and <code>TargetAttributeName</code>. For
+     * information on specifying training and validation channel types, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation">
+     * <code>How to specify training and validation datasets</code> </a>.</p>
+     */
+    inline AutoMLChannel& WithChannelType(AutoMLChannelType&& value) { SetChannelType(std::move(value)); return *this;}
+
   private:
 
     AutoMLDataSource m_dataSource;
@@ -234,6 +299,9 @@ namespace Model
 
     Aws::String m_contentType;
     bool m_contentTypeHasBeenSet;
+
+    AutoMLChannelType m_channelType;
+    bool m_channelTypeHasBeenSet;
   };
 
 } // namespace Model

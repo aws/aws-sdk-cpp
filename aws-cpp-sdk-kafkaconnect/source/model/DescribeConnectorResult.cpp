@@ -126,6 +126,12 @@ DescribeConnectorResult& DescribeConnectorResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("stateDescription"))
+  {
+    m_stateDescription = jsonValue.GetObject("stateDescription");
+
+  }
+
   if(jsonValue.ValueExists("workerConfiguration"))
   {
     m_workerConfiguration = jsonValue.GetObject("workerConfiguration");

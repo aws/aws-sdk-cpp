@@ -118,6 +118,47 @@ namespace Model
 
 
     /**
+     * <p>The name of the LiveSource for this Program.</p>
+     */
+    inline const Aws::String& GetLiveSourceName() const{ return m_liveSourceName; }
+
+    /**
+     * <p>The name of the LiveSource for this Program.</p>
+     */
+    inline bool LiveSourceNameHasBeenSet() const { return m_liveSourceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the LiveSource for this Program.</p>
+     */
+    inline void SetLiveSourceName(const Aws::String& value) { m_liveSourceNameHasBeenSet = true; m_liveSourceName = value; }
+
+    /**
+     * <p>The name of the LiveSource for this Program.</p>
+     */
+    inline void SetLiveSourceName(Aws::String&& value) { m_liveSourceNameHasBeenSet = true; m_liveSourceName = std::move(value); }
+
+    /**
+     * <p>The name of the LiveSource for this Program.</p>
+     */
+    inline void SetLiveSourceName(const char* value) { m_liveSourceNameHasBeenSet = true; m_liveSourceName.assign(value); }
+
+    /**
+     * <p>The name of the LiveSource for this Program.</p>
+     */
+    inline CreateProgramRequest& WithLiveSourceName(const Aws::String& value) { SetLiveSourceName(value); return *this;}
+
+    /**
+     * <p>The name of the LiveSource for this Program.</p>
+     */
+    inline CreateProgramRequest& WithLiveSourceName(Aws::String&& value) { SetLiveSourceName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the LiveSource for this Program.</p>
+     */
+    inline CreateProgramRequest& WithLiveSourceName(const char* value) { SetLiveSourceName(value); return *this;}
+
+
+    /**
      * <p>The identifier for the program you are working on.</p>
      */
     inline const Aws::String& GetProgramName() const{ return m_programName; }
@@ -277,6 +318,9 @@ namespace Model
 
     Aws::String m_channelName;
     bool m_channelNameHasBeenSet;
+
+    Aws::String m_liveSourceName;
+    bool m_liveSourceNameHasBeenSet;
 
     Aws::String m_programName;
     bool m_programNameHasBeenSet;

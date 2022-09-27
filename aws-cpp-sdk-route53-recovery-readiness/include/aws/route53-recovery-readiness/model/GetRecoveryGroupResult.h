@@ -35,152 +35,176 @@ namespace Model
 
 
     /**
-     * A list of Cell arns
+     * <p>A list of a cell's Amazon Resource Names (ARNs).</p>
      */
     inline const Aws::Vector<Aws::String>& GetCells() const{ return m_cells; }
 
     /**
-     * A list of Cell arns
+     * <p>A list of a cell's Amazon Resource Names (ARNs).</p>
      */
     inline void SetCells(const Aws::Vector<Aws::String>& value) { m_cells = value; }
 
     /**
-     * A list of Cell arns
+     * <p>A list of a cell's Amazon Resource Names (ARNs).</p>
      */
     inline void SetCells(Aws::Vector<Aws::String>&& value) { m_cells = std::move(value); }
 
     /**
-     * A list of Cell arns
+     * <p>A list of a cell's Amazon Resource Names (ARNs).</p>
      */
     inline GetRecoveryGroupResult& WithCells(const Aws::Vector<Aws::String>& value) { SetCells(value); return *this;}
 
     /**
-     * A list of Cell arns
+     * <p>A list of a cell's Amazon Resource Names (ARNs).</p>
      */
     inline GetRecoveryGroupResult& WithCells(Aws::Vector<Aws::String>&& value) { SetCells(std::move(value)); return *this;}
 
     /**
-     * A list of Cell arns
+     * <p>A list of a cell's Amazon Resource Names (ARNs).</p>
      */
     inline GetRecoveryGroupResult& AddCells(const Aws::String& value) { m_cells.push_back(value); return *this; }
 
     /**
-     * A list of Cell arns
+     * <p>A list of a cell's Amazon Resource Names (ARNs).</p>
      */
     inline GetRecoveryGroupResult& AddCells(Aws::String&& value) { m_cells.push_back(std::move(value)); return *this; }
 
     /**
-     * A list of Cell arns
+     * <p>A list of a cell's Amazon Resource Names (ARNs).</p>
      */
     inline GetRecoveryGroupResult& AddCells(const char* value) { m_cells.push_back(value); return *this; }
 
 
     /**
-     * The arn for the RecoveryGroup
+     * <p>The Amazon Resource Name (ARN) for the recovery group.</p>
      */
     inline const Aws::String& GetRecoveryGroupArn() const{ return m_recoveryGroupArn; }
 
     /**
-     * The arn for the RecoveryGroup
+     * <p>The Amazon Resource Name (ARN) for the recovery group.</p>
      */
     inline void SetRecoveryGroupArn(const Aws::String& value) { m_recoveryGroupArn = value; }
 
     /**
-     * The arn for the RecoveryGroup
+     * <p>The Amazon Resource Name (ARN) for the recovery group.</p>
      */
     inline void SetRecoveryGroupArn(Aws::String&& value) { m_recoveryGroupArn = std::move(value); }
 
     /**
-     * The arn for the RecoveryGroup
+     * <p>The Amazon Resource Name (ARN) for the recovery group.</p>
      */
     inline void SetRecoveryGroupArn(const char* value) { m_recoveryGroupArn.assign(value); }
 
     /**
-     * The arn for the RecoveryGroup
+     * <p>The Amazon Resource Name (ARN) for the recovery group.</p>
      */
     inline GetRecoveryGroupResult& WithRecoveryGroupArn(const Aws::String& value) { SetRecoveryGroupArn(value); return *this;}
 
     /**
-     * The arn for the RecoveryGroup
+     * <p>The Amazon Resource Name (ARN) for the recovery group.</p>
      */
     inline GetRecoveryGroupResult& WithRecoveryGroupArn(Aws::String&& value) { SetRecoveryGroupArn(std::move(value)); return *this;}
 
     /**
-     * The arn for the RecoveryGroup
+     * <p>The Amazon Resource Name (ARN) for the recovery group.</p>
      */
     inline GetRecoveryGroupResult& WithRecoveryGroupArn(const char* value) { SetRecoveryGroupArn(value); return *this;}
 
 
     /**
-     * The name of the RecoveryGroup
+     * <p>The name of the recovery group.</p>
      */
     inline const Aws::String& GetRecoveryGroupName() const{ return m_recoveryGroupName; }
 
     /**
-     * The name of the RecoveryGroup
+     * <p>The name of the recovery group.</p>
      */
     inline void SetRecoveryGroupName(const Aws::String& value) { m_recoveryGroupName = value; }
 
     /**
-     * The name of the RecoveryGroup
+     * <p>The name of the recovery group.</p>
      */
     inline void SetRecoveryGroupName(Aws::String&& value) { m_recoveryGroupName = std::move(value); }
 
     /**
-     * The name of the RecoveryGroup
+     * <p>The name of the recovery group.</p>
      */
     inline void SetRecoveryGroupName(const char* value) { m_recoveryGroupName.assign(value); }
 
     /**
-     * The name of the RecoveryGroup
+     * <p>The name of the recovery group.</p>
      */
     inline GetRecoveryGroupResult& WithRecoveryGroupName(const Aws::String& value) { SetRecoveryGroupName(value); return *this;}
 
     /**
-     * The name of the RecoveryGroup
+     * <p>The name of the recovery group.</p>
      */
     inline GetRecoveryGroupResult& WithRecoveryGroupName(Aws::String&& value) { SetRecoveryGroupName(std::move(value)); return *this;}
 
     /**
-     * The name of the RecoveryGroup
+     * <p>The name of the recovery group.</p>
      */
     inline GetRecoveryGroupResult& WithRecoveryGroupName(const char* value) { SetRecoveryGroupName(value); return *this;}
 
 
-    
+    /**
+     * <p>The tags associated with the recovery group.</p>
+     */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
-    
+    /**
+     * <p>The tags associated with the recovery group.</p>
+     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
 
-    
+    /**
+     * <p>The tags associated with the recovery group.</p>
+     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
 
-    
+    /**
+     * <p>The tags associated with the recovery group.</p>
+     */
     inline GetRecoveryGroupResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
-    
+    /**
+     * <p>The tags associated with the recovery group.</p>
+     */
     inline GetRecoveryGroupResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The tags associated with the recovery group.</p>
+     */
     inline GetRecoveryGroupResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
 
-    
+    /**
+     * <p>The tags associated with the recovery group.</p>
+     */
     inline GetRecoveryGroupResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
 
-    
+    /**
+     * <p>The tags associated with the recovery group.</p>
+     */
     inline GetRecoveryGroupResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
-    
+    /**
+     * <p>The tags associated with the recovery group.</p>
+     */
     inline GetRecoveryGroupResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
-    
+    /**
+     * <p>The tags associated with the recovery group.</p>
+     */
     inline GetRecoveryGroupResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
-    
+    /**
+     * <p>The tags associated with the recovery group.</p>
+     */
     inline GetRecoveryGroupResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
 
-    
+    /**
+     * <p>The tags associated with the recovery group.</p>
+     */
     inline GetRecoveryGroupResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
   private:

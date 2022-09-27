@@ -33,9 +33,9 @@ namespace Model
    * for shared datasets in S3 on Outposts. S3 on Outposts uses endpoints to connect
    * to Outposts buckets so that you can perform actions within your virtual private
    * cloud (VPC). For more information, see <a
-   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html">
-   * Accessing S3 on Outposts using VPC only access points</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/WorkingWithS3Outposts.html">
+   * Accessing S3 on Outposts using VPC-only access points</a> in the <i>Amazon
+   * Simple Storage Service User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/Endpoint">AWS
    * API Reference</a></p>
    */
@@ -90,42 +90,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS Outposts.</p>
+     * <p>The ID of the Outposts.</p>
      */
     inline const Aws::String& GetOutpostsId() const{ return m_outpostsId; }
 
     /**
-     * <p>The ID of the AWS Outposts.</p>
+     * <p>The ID of the Outposts.</p>
      */
     inline bool OutpostsIdHasBeenSet() const { return m_outpostsIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS Outposts.</p>
+     * <p>The ID of the Outposts.</p>
      */
     inline void SetOutpostsId(const Aws::String& value) { m_outpostsIdHasBeenSet = true; m_outpostsId = value; }
 
     /**
-     * <p>The ID of the AWS Outposts.</p>
+     * <p>The ID of the Outposts.</p>
      */
     inline void SetOutpostsId(Aws::String&& value) { m_outpostsIdHasBeenSet = true; m_outpostsId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS Outposts.</p>
+     * <p>The ID of the Outposts.</p>
      */
     inline void SetOutpostsId(const char* value) { m_outpostsIdHasBeenSet = true; m_outpostsId.assign(value); }
 
     /**
-     * <p>The ID of the AWS Outposts.</p>
+     * <p>The ID of the Outposts.</p>
      */
     inline Endpoint& WithOutpostsId(const Aws::String& value) { SetOutpostsId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS Outposts.</p>
+     * <p>The ID of the Outposts.</p>
      */
     inline Endpoint& WithOutpostsId(Aws::String&& value) { SetOutpostsId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS Outposts.</p>
+     * <p>The ID of the Outposts.</p>
      */
     inline Endpoint& WithOutpostsId(const char* value) { SetOutpostsId(value); return *this;}
 
@@ -398,73 +398,79 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The type of connectivity used to access the Amazon S3 on Outposts
+     * endpoint.</p>
      */
     inline const EndpointAccessType& GetAccessType() const{ return m_accessType; }
 
     /**
-     * <p/>
+     * <p>The type of connectivity used to access the Amazon S3 on Outposts
+     * endpoint.</p>
      */
     inline bool AccessTypeHasBeenSet() const { return m_accessTypeHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The type of connectivity used to access the Amazon S3 on Outposts
+     * endpoint.</p>
      */
     inline void SetAccessType(const EndpointAccessType& value) { m_accessTypeHasBeenSet = true; m_accessType = value; }
 
     /**
-     * <p/>
+     * <p>The type of connectivity used to access the Amazon S3 on Outposts
+     * endpoint.</p>
      */
     inline void SetAccessType(EndpointAccessType&& value) { m_accessTypeHasBeenSet = true; m_accessType = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The type of connectivity used to access the Amazon S3 on Outposts
+     * endpoint.</p>
      */
     inline Endpoint& WithAccessType(const EndpointAccessType& value) { SetAccessType(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The type of connectivity used to access the Amazon S3 on Outposts
+     * endpoint.</p>
      */
     inline Endpoint& WithAccessType(EndpointAccessType&& value) { SetAccessType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The ID of the customer-owned IPv4 pool used for the endpoint.</p>
+     * <p>The ID of the customer-owned IPv4 address pool used for the endpoint.</p>
      */
     inline const Aws::String& GetCustomerOwnedIpv4Pool() const{ return m_customerOwnedIpv4Pool; }
 
     /**
-     * <p>The ID of the customer-owned IPv4 pool used for the endpoint.</p>
+     * <p>The ID of the customer-owned IPv4 address pool used for the endpoint.</p>
      */
     inline bool CustomerOwnedIpv4PoolHasBeenSet() const { return m_customerOwnedIpv4PoolHasBeenSet; }
 
     /**
-     * <p>The ID of the customer-owned IPv4 pool used for the endpoint.</p>
+     * <p>The ID of the customer-owned IPv4 address pool used for the endpoint.</p>
      */
     inline void SetCustomerOwnedIpv4Pool(const Aws::String& value) { m_customerOwnedIpv4PoolHasBeenSet = true; m_customerOwnedIpv4Pool = value; }
 
     /**
-     * <p>The ID of the customer-owned IPv4 pool used for the endpoint.</p>
+     * <p>The ID of the customer-owned IPv4 address pool used for the endpoint.</p>
      */
     inline void SetCustomerOwnedIpv4Pool(Aws::String&& value) { m_customerOwnedIpv4PoolHasBeenSet = true; m_customerOwnedIpv4Pool = std::move(value); }
 
     /**
-     * <p>The ID of the customer-owned IPv4 pool used for the endpoint.</p>
+     * <p>The ID of the customer-owned IPv4 address pool used for the endpoint.</p>
      */
     inline void SetCustomerOwnedIpv4Pool(const char* value) { m_customerOwnedIpv4PoolHasBeenSet = true; m_customerOwnedIpv4Pool.assign(value); }
 
     /**
-     * <p>The ID of the customer-owned IPv4 pool used for the endpoint.</p>
+     * <p>The ID of the customer-owned IPv4 address pool used for the endpoint.</p>
      */
     inline Endpoint& WithCustomerOwnedIpv4Pool(const Aws::String& value) { SetCustomerOwnedIpv4Pool(value); return *this;}
 
     /**
-     * <p>The ID of the customer-owned IPv4 pool used for the endpoint.</p>
+     * <p>The ID of the customer-owned IPv4 address pool used for the endpoint.</p>
      */
     inline Endpoint& WithCustomerOwnedIpv4Pool(Aws::String&& value) { SetCustomerOwnedIpv4Pool(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the customer-owned IPv4 pool used for the endpoint.</p>
+     * <p>The ID of the customer-owned IPv4 address pool used for the endpoint.</p>
      */
     inline Endpoint& WithCustomerOwnedIpv4Pool(const char* value) { SetCustomerOwnedIpv4Pool(value); return *this;}
 

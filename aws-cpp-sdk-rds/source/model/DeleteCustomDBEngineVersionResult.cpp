@@ -21,7 +21,8 @@ DeleteCustomDBEngineVersionResult::DeleteCustomDBEngineVersionResult() :
     m_supportsLogExportsToCloudwatchLogs(false),
     m_supportsReadReplica(false),
     m_supportsParallelQuery(false),
-    m_supportsGlobalDatabases(false)
+    m_supportsGlobalDatabases(false),
+    m_supportsBabelfish(false)
 {
 }
 
@@ -29,7 +30,8 @@ DeleteCustomDBEngineVersionResult::DeleteCustomDBEngineVersionResult(const Aws::
     m_supportsLogExportsToCloudwatchLogs(false),
     m_supportsReadReplica(false),
     m_supportsParallelQuery(false),
-    m_supportsGlobalDatabases(false)
+    m_supportsGlobalDatabases(false),
+    m_supportsBabelfish(false)
 {
   *this = result;
 }
@@ -218,6 +220,11 @@ DeleteCustomDBEngineVersionResult& DeleteCustomDBEngineVersionResult::operator =
         tagListMember = tagListMember.NextNode("Tag");
       }
 
+    }
+    XmlNode supportsBabelfishNode = resultNode.FirstChild("SupportsBabelfish");
+    if(!supportsBabelfishNode.IsNull())
+    {
+      m_supportsBabelfish = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsBabelfishNode.GetText()).c_str()).c_str());
     }
   }
 

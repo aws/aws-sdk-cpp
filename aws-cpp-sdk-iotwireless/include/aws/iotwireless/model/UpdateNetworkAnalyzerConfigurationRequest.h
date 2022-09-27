@@ -79,187 +79,284 @@ namespace Model
 
 
     /**
-     * <p>WirelessDevices to add into NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless device resources to add to the network analyzer configuration.
+     * Provide the <code>WirelessDeviceId</code> of the resource to add in the input
+     * array.</p>
      */
     inline const Aws::Vector<Aws::String>& GetWirelessDevicesToAdd() const{ return m_wirelessDevicesToAdd; }
 
     /**
-     * <p>WirelessDevices to add into NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless device resources to add to the network analyzer configuration.
+     * Provide the <code>WirelessDeviceId</code> of the resource to add in the input
+     * array.</p>
      */
     inline bool WirelessDevicesToAddHasBeenSet() const { return m_wirelessDevicesToAddHasBeenSet; }
 
     /**
-     * <p>WirelessDevices to add into NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless device resources to add to the network analyzer configuration.
+     * Provide the <code>WirelessDeviceId</code> of the resource to add in the input
+     * array.</p>
      */
     inline void SetWirelessDevicesToAdd(const Aws::Vector<Aws::String>& value) { m_wirelessDevicesToAddHasBeenSet = true; m_wirelessDevicesToAdd = value; }
 
     /**
-     * <p>WirelessDevices to add into NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless device resources to add to the network analyzer configuration.
+     * Provide the <code>WirelessDeviceId</code> of the resource to add in the input
+     * array.</p>
      */
     inline void SetWirelessDevicesToAdd(Aws::Vector<Aws::String>&& value) { m_wirelessDevicesToAddHasBeenSet = true; m_wirelessDevicesToAdd = std::move(value); }
 
     /**
-     * <p>WirelessDevices to add into NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless device resources to add to the network analyzer configuration.
+     * Provide the <code>WirelessDeviceId</code> of the resource to add in the input
+     * array.</p>
      */
     inline UpdateNetworkAnalyzerConfigurationRequest& WithWirelessDevicesToAdd(const Aws::Vector<Aws::String>& value) { SetWirelessDevicesToAdd(value); return *this;}
 
     /**
-     * <p>WirelessDevices to add into NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless device resources to add to the network analyzer configuration.
+     * Provide the <code>WirelessDeviceId</code> of the resource to add in the input
+     * array.</p>
      */
     inline UpdateNetworkAnalyzerConfigurationRequest& WithWirelessDevicesToAdd(Aws::Vector<Aws::String>&& value) { SetWirelessDevicesToAdd(std::move(value)); return *this;}
 
     /**
-     * <p>WirelessDevices to add into NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless device resources to add to the network analyzer configuration.
+     * Provide the <code>WirelessDeviceId</code> of the resource to add in the input
+     * array.</p>
      */
     inline UpdateNetworkAnalyzerConfigurationRequest& AddWirelessDevicesToAdd(const Aws::String& value) { m_wirelessDevicesToAddHasBeenSet = true; m_wirelessDevicesToAdd.push_back(value); return *this; }
 
     /**
-     * <p>WirelessDevices to add into NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless device resources to add to the network analyzer configuration.
+     * Provide the <code>WirelessDeviceId</code> of the resource to add in the input
+     * array.</p>
      */
     inline UpdateNetworkAnalyzerConfigurationRequest& AddWirelessDevicesToAdd(Aws::String&& value) { m_wirelessDevicesToAddHasBeenSet = true; m_wirelessDevicesToAdd.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>WirelessDevices to add into NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless device resources to add to the network analyzer configuration.
+     * Provide the <code>WirelessDeviceId</code> of the resource to add in the input
+     * array.</p>
      */
     inline UpdateNetworkAnalyzerConfigurationRequest& AddWirelessDevicesToAdd(const char* value) { m_wirelessDevicesToAddHasBeenSet = true; m_wirelessDevicesToAdd.push_back(value); return *this; }
 
 
     /**
-     * <p>WirelessDevices to remove from NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless device resources to remove from the network analyzer configuration.
+     * Provide the <code>WirelessDeviceId</code> of the resources to remove in the
+     * input array.</p>
      */
     inline const Aws::Vector<Aws::String>& GetWirelessDevicesToRemove() const{ return m_wirelessDevicesToRemove; }
 
     /**
-     * <p>WirelessDevices to remove from NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless device resources to remove from the network analyzer configuration.
+     * Provide the <code>WirelessDeviceId</code> of the resources to remove in the
+     * input array.</p>
      */
     inline bool WirelessDevicesToRemoveHasBeenSet() const { return m_wirelessDevicesToRemoveHasBeenSet; }
 
     /**
-     * <p>WirelessDevices to remove from NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless device resources to remove from the network analyzer configuration.
+     * Provide the <code>WirelessDeviceId</code> of the resources to remove in the
+     * input array.</p>
      */
     inline void SetWirelessDevicesToRemove(const Aws::Vector<Aws::String>& value) { m_wirelessDevicesToRemoveHasBeenSet = true; m_wirelessDevicesToRemove = value; }
 
     /**
-     * <p>WirelessDevices to remove from NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless device resources to remove from the network analyzer configuration.
+     * Provide the <code>WirelessDeviceId</code> of the resources to remove in the
+     * input array.</p>
      */
     inline void SetWirelessDevicesToRemove(Aws::Vector<Aws::String>&& value) { m_wirelessDevicesToRemoveHasBeenSet = true; m_wirelessDevicesToRemove = std::move(value); }
 
     /**
-     * <p>WirelessDevices to remove from NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless device resources to remove from the network analyzer configuration.
+     * Provide the <code>WirelessDeviceId</code> of the resources to remove in the
+     * input array.</p>
      */
     inline UpdateNetworkAnalyzerConfigurationRequest& WithWirelessDevicesToRemove(const Aws::Vector<Aws::String>& value) { SetWirelessDevicesToRemove(value); return *this;}
 
     /**
-     * <p>WirelessDevices to remove from NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless device resources to remove from the network analyzer configuration.
+     * Provide the <code>WirelessDeviceId</code> of the resources to remove in the
+     * input array.</p>
      */
     inline UpdateNetworkAnalyzerConfigurationRequest& WithWirelessDevicesToRemove(Aws::Vector<Aws::String>&& value) { SetWirelessDevicesToRemove(std::move(value)); return *this;}
 
     /**
-     * <p>WirelessDevices to remove from NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless device resources to remove from the network analyzer configuration.
+     * Provide the <code>WirelessDeviceId</code> of the resources to remove in the
+     * input array.</p>
      */
     inline UpdateNetworkAnalyzerConfigurationRequest& AddWirelessDevicesToRemove(const Aws::String& value) { m_wirelessDevicesToRemoveHasBeenSet = true; m_wirelessDevicesToRemove.push_back(value); return *this; }
 
     /**
-     * <p>WirelessDevices to remove from NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless device resources to remove from the network analyzer configuration.
+     * Provide the <code>WirelessDeviceId</code> of the resources to remove in the
+     * input array.</p>
      */
     inline UpdateNetworkAnalyzerConfigurationRequest& AddWirelessDevicesToRemove(Aws::String&& value) { m_wirelessDevicesToRemoveHasBeenSet = true; m_wirelessDevicesToRemove.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>WirelessDevices to remove from NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless device resources to remove from the network analyzer configuration.
+     * Provide the <code>WirelessDeviceId</code> of the resources to remove in the
+     * input array.</p>
      */
     inline UpdateNetworkAnalyzerConfigurationRequest& AddWirelessDevicesToRemove(const char* value) { m_wirelessDevicesToRemoveHasBeenSet = true; m_wirelessDevicesToRemove.push_back(value); return *this; }
 
 
     /**
-     * <p>WirelessGateways to add into NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless gateway resources to add to the network analyzer configuration.
+     * Provide the <code>WirelessGatewayId</code> of the resource to add in the input
+     * array.</p>
      */
     inline const Aws::Vector<Aws::String>& GetWirelessGatewaysToAdd() const{ return m_wirelessGatewaysToAdd; }
 
     /**
-     * <p>WirelessGateways to add into NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless gateway resources to add to the network analyzer configuration.
+     * Provide the <code>WirelessGatewayId</code> of the resource to add in the input
+     * array.</p>
      */
     inline bool WirelessGatewaysToAddHasBeenSet() const { return m_wirelessGatewaysToAddHasBeenSet; }
 
     /**
-     * <p>WirelessGateways to add into NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless gateway resources to add to the network analyzer configuration.
+     * Provide the <code>WirelessGatewayId</code> of the resource to add in the input
+     * array.</p>
      */
     inline void SetWirelessGatewaysToAdd(const Aws::Vector<Aws::String>& value) { m_wirelessGatewaysToAddHasBeenSet = true; m_wirelessGatewaysToAdd = value; }
 
     /**
-     * <p>WirelessGateways to add into NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless gateway resources to add to the network analyzer configuration.
+     * Provide the <code>WirelessGatewayId</code> of the resource to add in the input
+     * array.</p>
      */
     inline void SetWirelessGatewaysToAdd(Aws::Vector<Aws::String>&& value) { m_wirelessGatewaysToAddHasBeenSet = true; m_wirelessGatewaysToAdd = std::move(value); }
 
     /**
-     * <p>WirelessGateways to add into NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless gateway resources to add to the network analyzer configuration.
+     * Provide the <code>WirelessGatewayId</code> of the resource to add in the input
+     * array.</p>
      */
     inline UpdateNetworkAnalyzerConfigurationRequest& WithWirelessGatewaysToAdd(const Aws::Vector<Aws::String>& value) { SetWirelessGatewaysToAdd(value); return *this;}
 
     /**
-     * <p>WirelessGateways to add into NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless gateway resources to add to the network analyzer configuration.
+     * Provide the <code>WirelessGatewayId</code> of the resource to add in the input
+     * array.</p>
      */
     inline UpdateNetworkAnalyzerConfigurationRequest& WithWirelessGatewaysToAdd(Aws::Vector<Aws::String>&& value) { SetWirelessGatewaysToAdd(std::move(value)); return *this;}
 
     /**
-     * <p>WirelessGateways to add into NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless gateway resources to add to the network analyzer configuration.
+     * Provide the <code>WirelessGatewayId</code> of the resource to add in the input
+     * array.</p>
      */
     inline UpdateNetworkAnalyzerConfigurationRequest& AddWirelessGatewaysToAdd(const Aws::String& value) { m_wirelessGatewaysToAddHasBeenSet = true; m_wirelessGatewaysToAdd.push_back(value); return *this; }
 
     /**
-     * <p>WirelessGateways to add into NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless gateway resources to add to the network analyzer configuration.
+     * Provide the <code>WirelessGatewayId</code> of the resource to add in the input
+     * array.</p>
      */
     inline UpdateNetworkAnalyzerConfigurationRequest& AddWirelessGatewaysToAdd(Aws::String&& value) { m_wirelessGatewaysToAddHasBeenSet = true; m_wirelessGatewaysToAdd.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>WirelessGateways to add into NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless gateway resources to add to the network analyzer configuration.
+     * Provide the <code>WirelessGatewayId</code> of the resource to add in the input
+     * array.</p>
      */
     inline UpdateNetworkAnalyzerConfigurationRequest& AddWirelessGatewaysToAdd(const char* value) { m_wirelessGatewaysToAddHasBeenSet = true; m_wirelessGatewaysToAdd.push_back(value); return *this; }
 
 
     /**
-     * <p>WirelessGateways to remove from NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless gateway resources to remove from the network analyzer configuration.
+     * Provide the <code>WirelessGatewayId</code> of the resources to remove in the
+     * input array.</p>
      */
     inline const Aws::Vector<Aws::String>& GetWirelessGatewaysToRemove() const{ return m_wirelessGatewaysToRemove; }
 
     /**
-     * <p>WirelessGateways to remove from NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless gateway resources to remove from the network analyzer configuration.
+     * Provide the <code>WirelessGatewayId</code> of the resources to remove in the
+     * input array.</p>
      */
     inline bool WirelessGatewaysToRemoveHasBeenSet() const { return m_wirelessGatewaysToRemoveHasBeenSet; }
 
     /**
-     * <p>WirelessGateways to remove from NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless gateway resources to remove from the network analyzer configuration.
+     * Provide the <code>WirelessGatewayId</code> of the resources to remove in the
+     * input array.</p>
      */
     inline void SetWirelessGatewaysToRemove(const Aws::Vector<Aws::String>& value) { m_wirelessGatewaysToRemoveHasBeenSet = true; m_wirelessGatewaysToRemove = value; }
 
     /**
-     * <p>WirelessGateways to remove from NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless gateway resources to remove from the network analyzer configuration.
+     * Provide the <code>WirelessGatewayId</code> of the resources to remove in the
+     * input array.</p>
      */
     inline void SetWirelessGatewaysToRemove(Aws::Vector<Aws::String>&& value) { m_wirelessGatewaysToRemoveHasBeenSet = true; m_wirelessGatewaysToRemove = std::move(value); }
 
     /**
-     * <p>WirelessGateways to remove from NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless gateway resources to remove from the network analyzer configuration.
+     * Provide the <code>WirelessGatewayId</code> of the resources to remove in the
+     * input array.</p>
      */
     inline UpdateNetworkAnalyzerConfigurationRequest& WithWirelessGatewaysToRemove(const Aws::Vector<Aws::String>& value) { SetWirelessGatewaysToRemove(value); return *this;}
 
     /**
-     * <p>WirelessGateways to remove from NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless gateway resources to remove from the network analyzer configuration.
+     * Provide the <code>WirelessGatewayId</code> of the resources to remove in the
+     * input array.</p>
      */
     inline UpdateNetworkAnalyzerConfigurationRequest& WithWirelessGatewaysToRemove(Aws::Vector<Aws::String>&& value) { SetWirelessGatewaysToRemove(std::move(value)); return *this;}
 
     /**
-     * <p>WirelessGateways to remove from NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless gateway resources to remove from the network analyzer configuration.
+     * Provide the <code>WirelessGatewayId</code> of the resources to remove in the
+     * input array.</p>
      */
     inline UpdateNetworkAnalyzerConfigurationRequest& AddWirelessGatewaysToRemove(const Aws::String& value) { m_wirelessGatewaysToRemoveHasBeenSet = true; m_wirelessGatewaysToRemove.push_back(value); return *this; }
 
     /**
-     * <p>WirelessGateways to remove from NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless gateway resources to remove from the network analyzer configuration.
+     * Provide the <code>WirelessGatewayId</code> of the resources to remove in the
+     * input array.</p>
      */
     inline UpdateNetworkAnalyzerConfigurationRequest& AddWirelessGatewaysToRemove(Aws::String&& value) { m_wirelessGatewaysToRemoveHasBeenSet = true; m_wirelessGatewaysToRemove.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>WirelessGateways to remove from NetworkAnalyzerConfiguration.</p>
+     * <p>Wireless gateway resources to remove from the network analyzer configuration.
+     * Provide the <code>WirelessGatewayId</code> of the resources to remove in the
+     * input array.</p>
      */
     inline UpdateNetworkAnalyzerConfigurationRequest& AddWirelessGatewaysToRemove(const char* value) { m_wirelessGatewaysToRemoveHasBeenSet = true; m_wirelessGatewaysToRemove.push_back(value); return *this; }
+
+
+    
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    
+    inline UpdateNetworkAnalyzerConfigurationRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    
+    inline UpdateNetworkAnalyzerConfigurationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    
+    inline UpdateNetworkAnalyzerConfigurationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
 
@@ -280,6 +377,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_wirelessGatewaysToRemove;
     bool m_wirelessGatewaysToRemoveHasBeenSet;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet;
   };
 
 } // namespace Model

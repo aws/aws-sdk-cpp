@@ -203,7 +203,7 @@ else()
     include(AwsFindPackage)
     set(IN_SOURCE_BUILD OFF)
 endif()
-set(AWS_COMMON_RUNTIME_LIBS "aws-crt-cpp;aws-c-auth;aws-c-cal;aws-c-common;aws-c-compression;aws-c-event-stream;aws-c-http;aws-c-io;aws-c-mqtt;aws-c-s3;aws-checksums")
+set(AWS_COMMON_RUNTIME_LIBS "aws-crt-cpp;aws-c-auth;aws-c-cal;aws-c-common;aws-c-compression;aws-c-event-stream;aws-c-http;aws-c-io;aws-c-mqtt;aws-c-s3;aws-checksums;aws-c-sdkutils")
 
 include(compiler_settings)
 # Instead of calling functions/macros inside included cmake scripts, we should call them in our main CMakeList.txt

@@ -162,8 +162,8 @@ namespace Model
 
 
     /**
-     * <p> The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
-     * created when the <code>SkipFinalSnapshot</code> parameter is disabled. </p>
+     * <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
+     * created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p>
      *  <p>If you enable this parameter and also enable SkipFinalShapshot, the
      * command results in an error.</p>  <p>This setting doesn't apply to RDS
      * Custom.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
@@ -174,8 +174,8 @@ namespace Model
     inline const Aws::String& GetFinalDBSnapshotIdentifier() const{ return m_finalDBSnapshotIdentifier; }
 
     /**
-     * <p> The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
-     * created when the <code>SkipFinalSnapshot</code> parameter is disabled. </p>
+     * <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
+     * created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p>
      *  <p>If you enable this parameter and also enable SkipFinalShapshot, the
      * command results in an error.</p>  <p>This setting doesn't apply to RDS
      * Custom.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
@@ -186,8 +186,8 @@ namespace Model
     inline bool FinalDBSnapshotIdentifierHasBeenSet() const { return m_finalDBSnapshotIdentifierHasBeenSet; }
 
     /**
-     * <p> The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
-     * created when the <code>SkipFinalSnapshot</code> parameter is disabled. </p>
+     * <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
+     * created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p>
      *  <p>If you enable this parameter and also enable SkipFinalShapshot, the
      * command results in an error.</p>  <p>This setting doesn't apply to RDS
      * Custom.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
@@ -198,8 +198,8 @@ namespace Model
     inline void SetFinalDBSnapshotIdentifier(const Aws::String& value) { m_finalDBSnapshotIdentifierHasBeenSet = true; m_finalDBSnapshotIdentifier = value; }
 
     /**
-     * <p> The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
-     * created when the <code>SkipFinalSnapshot</code> parameter is disabled. </p>
+     * <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
+     * created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p>
      *  <p>If you enable this parameter and also enable SkipFinalShapshot, the
      * command results in an error.</p>  <p>This setting doesn't apply to RDS
      * Custom.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
@@ -210,8 +210,8 @@ namespace Model
     inline void SetFinalDBSnapshotIdentifier(Aws::String&& value) { m_finalDBSnapshotIdentifierHasBeenSet = true; m_finalDBSnapshotIdentifier = std::move(value); }
 
     /**
-     * <p> The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
-     * created when the <code>SkipFinalSnapshot</code> parameter is disabled. </p>
+     * <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
+     * created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p>
      *  <p>If you enable this parameter and also enable SkipFinalShapshot, the
      * command results in an error.</p>  <p>This setting doesn't apply to RDS
      * Custom.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
@@ -222,8 +222,8 @@ namespace Model
     inline void SetFinalDBSnapshotIdentifier(const char* value) { m_finalDBSnapshotIdentifierHasBeenSet = true; m_finalDBSnapshotIdentifier.assign(value); }
 
     /**
-     * <p> The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
-     * created when the <code>SkipFinalSnapshot</code> parameter is disabled. </p>
+     * <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
+     * created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p>
      *  <p>If you enable this parameter and also enable SkipFinalShapshot, the
      * command results in an error.</p>  <p>This setting doesn't apply to RDS
      * Custom.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
@@ -234,8 +234,8 @@ namespace Model
     inline DeleteDBInstanceRequest& WithFinalDBSnapshotIdentifier(const Aws::String& value) { SetFinalDBSnapshotIdentifier(value); return *this;}
 
     /**
-     * <p> The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
-     * created when the <code>SkipFinalSnapshot</code> parameter is disabled. </p>
+     * <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
+     * created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p>
      *  <p>If you enable this parameter and also enable SkipFinalShapshot, the
      * command results in an error.</p>  <p>This setting doesn't apply to RDS
      * Custom.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
@@ -246,8 +246,8 @@ namespace Model
     inline DeleteDBInstanceRequest& WithFinalDBSnapshotIdentifier(Aws::String&& value) { SetFinalDBSnapshotIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p> The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
-     * created when the <code>SkipFinalSnapshot</code> parameter is disabled. </p>
+     * <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
+     * created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p>
      *  <p>If you enable this parameter and also enable SkipFinalShapshot, the
      * command results in an error.</p>  <p>This setting doesn't apply to RDS
      * Custom.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or

@@ -173,6 +173,7 @@
 #include <aws/iot/model/ListJobTemplatesRequest.h>
 #include <aws/iot/model/ListJobsRequest.h>
 #include <aws/iot/model/ListManagedJobTemplatesRequest.h>
+#include <aws/iot/model/ListMetricValuesRequest.h>
 #include <aws/iot/model/ListMitigationActionsRequest.h>
 #include <aws/iot/model/ListOTAUpdatesRequest.h>
 #include <aws/iot/model/ListOutgoingCertificatesRequest.h>
@@ -4930,6 +4931,51 @@ void IoTClient::ListManagedJobTemplatesAsync(const ListManagedJobTemplatesReques
 void IoTClient::ListManagedJobTemplatesAsyncHelper(const ListManagedJobTemplatesRequest& request, const ListManagedJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListManagedJobTemplates(request), context);
+}
+
+ListMetricValuesOutcome IoTClient::ListMetricValues(const ListMetricValuesRequest& request) const
+{
+  if (!request.ThingNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListMetricValues", "Required field: ThingName, is not set");
+    return ListMetricValuesOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
+  }
+  if (!request.MetricNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListMetricValues", "Required field: MetricName, is not set");
+    return ListMetricValuesOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MetricName]", false));
+  }
+  if (!request.StartTimeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListMetricValues", "Required field: StartTime, is not set");
+    return ListMetricValuesOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StartTime]", false));
+  }
+  if (!request.EndTimeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListMetricValues", "Required field: EndTime, is not set");
+    return ListMetricValuesOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EndTime]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/metric-values");
+  return ListMetricValuesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListMetricValuesOutcomeCallable IoTClient::ListMetricValuesCallable(const ListMetricValuesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListMetricValuesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMetricValues(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::ListMetricValuesAsync(const ListMetricValuesRequest& request, const ListMetricValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListMetricValuesAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::ListMetricValuesAsyncHelper(const ListMetricValuesRequest& request, const ListMetricValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListMetricValues(request), context);
 }
 
 ListMitigationActionsOutcome IoTClient::ListMitigationActions(const ListMitigationActionsRequest& request) const

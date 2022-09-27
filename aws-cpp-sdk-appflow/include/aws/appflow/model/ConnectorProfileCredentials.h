@@ -22,6 +22,7 @@
 #include <aws/appflow/model/VeevaConnectorProfileCredentials.h>
 #include <aws/appflow/model/ZendeskConnectorProfileCredentials.h>
 #include <aws/appflow/model/SAPODataConnectorProfileCredentials.h>
+#include <aws/appflow/model/CustomConnectorProfileCredentials.h>
 #include <utility>
 
 namespace Aws
@@ -580,6 +581,25 @@ namespace Model
     
     inline ConnectorProfileCredentials& WithSAPOData(SAPODataConnectorProfileCredentials&& value) { SetSAPOData(std::move(value)); return *this;}
 
+
+    
+    inline const CustomConnectorProfileCredentials& GetCustomConnector() const{ return m_customConnector; }
+
+    
+    inline bool CustomConnectorHasBeenSet() const { return m_customConnectorHasBeenSet; }
+
+    
+    inline void SetCustomConnector(const CustomConnectorProfileCredentials& value) { m_customConnectorHasBeenSet = true; m_customConnector = value; }
+
+    
+    inline void SetCustomConnector(CustomConnectorProfileCredentials&& value) { m_customConnectorHasBeenSet = true; m_customConnector = std::move(value); }
+
+    
+    inline ConnectorProfileCredentials& WithCustomConnector(const CustomConnectorProfileCredentials& value) { SetCustomConnector(value); return *this;}
+
+    
+    inline ConnectorProfileCredentials& WithCustomConnector(CustomConnectorProfileCredentials&& value) { SetCustomConnector(std::move(value)); return *this;}
+
   private:
 
     AmplitudeConnectorProfileCredentials m_amplitude;
@@ -632,6 +652,9 @@ namespace Model
 
     SAPODataConnectorProfileCredentials m_sAPOData;
     bool m_sAPODataHasBeenSet;
+
+    CustomConnectorProfileCredentials m_customConnector;
+    bool m_customConnectorHasBeenSet;
   };
 
 } // namespace Model

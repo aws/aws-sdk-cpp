@@ -20,13 +20,15 @@ namespace Model
 
 TagStepDetails::TagStepDetails() : 
     m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_sourceFileLocationHasBeenSet(false)
 {
 }
 
 TagStepDetails::TagStepDetails(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_sourceFileLocationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +52,13 @@ TagStepDetails& TagStepDetails::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SourceFileLocation"))
+  {
+    m_sourceFileLocation = jsonValue.GetString("SourceFileLocation");
+
+    m_sourceFileLocationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -71,6 +80,12 @@ JsonValue TagStepDetails::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_sourceFileLocationHasBeenSet)
+  {
+   payload.WithString("SourceFileLocation", m_sourceFileLocation);
 
   }
 

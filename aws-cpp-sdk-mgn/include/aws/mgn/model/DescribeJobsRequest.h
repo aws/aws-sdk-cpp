@@ -65,63 +65,63 @@ namespace Model
 
 
     /**
-     * <p>Request to describe Job log by max results.</p>
+     * <p>Request to describe job log items by max results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Request to describe Job log by max results.</p>
+     * <p>Request to describe job log items by max results.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>Request to describe Job log by max results.</p>
+     * <p>Request to describe job log items by max results.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Request to describe Job log by max results.</p>
+     * <p>Request to describe job log items by max results.</p>
      */
     inline DescribeJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * <p>Request to describe Job logby next token.</p>
+     * <p>Request to describe job log items by next token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Request to describe Job logby next token.</p>
+     * <p>Request to describe job log items by next token.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>Request to describe Job logby next token.</p>
+     * <p>Request to describe job log items by next token.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>Request to describe Job logby next token.</p>
+     * <p>Request to describe job log items by next token.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>Request to describe Job logby next token.</p>
+     * <p>Request to describe job log items by next token.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>Request to describe Job logby next token.</p>
+     * <p>Request to describe job log items by next token.</p>
      */
     inline DescribeJobsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Request to describe Job logby next token.</p>
+     * <p>Request to describe job log items by next token.</p>
      */
     inline DescribeJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Request to describe Job logby next token.</p>
+     * <p>Request to describe job log items by next token.</p>
      */
     inline DescribeJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

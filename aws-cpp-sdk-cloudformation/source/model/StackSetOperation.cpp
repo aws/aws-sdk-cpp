@@ -35,7 +35,8 @@ StackSetOperation::StackSetOperation() :
     m_creationTimestampHasBeenSet(false),
     m_endTimestampHasBeenSet(false),
     m_deploymentTargetsHasBeenSet(false),
-    m_stackSetDriftDetectionDetailsHasBeenSet(false)
+    m_stackSetDriftDetectionDetailsHasBeenSet(false),
+    m_statusReasonHasBeenSet(false)
 {
 }
 
@@ -54,7 +55,8 @@ StackSetOperation::StackSetOperation(const XmlNode& xmlNode) :
     m_creationTimestampHasBeenSet(false),
     m_endTimestampHasBeenSet(false),
     m_deploymentTargetsHasBeenSet(false),
-    m_stackSetDriftDetectionDetailsHasBeenSet(false)
+    m_stackSetDriftDetectionDetailsHasBeenSet(false),
+    m_statusReasonHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -137,6 +139,12 @@ StackSetOperation& StackSetOperation::operator =(const XmlNode& xmlNode)
       m_stackSetDriftDetectionDetails = stackSetDriftDetectionDetailsNode;
       m_stackSetDriftDetectionDetailsHasBeenSet = true;
     }
+    XmlNode statusReasonNode = resultNode.FirstChild("StatusReason");
+    if(!statusReasonNode.IsNull())
+    {
+      m_statusReason = Aws::Utils::Xml::DecodeEscapedXmlText(statusReasonNode.GetText());
+      m_statusReasonHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -210,6 +218,11 @@ void StackSetOperation::OutputToStream(Aws::OStream& oStream, const char* locati
       m_stackSetDriftDetectionDetails.OutputToStream(oStream, stackSetDriftDetectionDetailsLocationAndMemberSs.str().c_str());
   }
 
+  if(m_statusReasonHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StatusReason=" << StringUtils::URLEncode(m_statusReason.c_str()) << "&";
+  }
+
 }
 
 void StackSetOperation::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -267,6 +280,10 @@ void StackSetOperation::OutputToStream(Aws::OStream& oStream, const char* locati
       Aws::String stackSetDriftDetectionDetailsLocationAndMember(location);
       stackSetDriftDetectionDetailsLocationAndMember += ".StackSetDriftDetectionDetails";
       m_stackSetDriftDetectionDetails.OutputToStream(oStream, stackSetDriftDetectionDetailsLocationAndMember.c_str());
+  }
+  if(m_statusReasonHasBeenSet)
+  {
+      oStream << location << ".StatusReason=" << StringUtils::URLEncode(m_statusReason.c_str()) << "&";
   }
 }
 

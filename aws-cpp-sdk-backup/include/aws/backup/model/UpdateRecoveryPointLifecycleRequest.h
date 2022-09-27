@@ -160,8 +160,8 @@ namespace Model
      * storage and when it expires. Backup transitions and expires backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
-     * days. Therefore, the “expire after days” setting must be 90 days greater than
-     * the “transition to cold after days” setting. The “transition to cold after days”
+     * days. Therefore, the “retention” setting must be 90 days greater than the
+     * “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
      */
     inline const Lifecycle& GetLifecycle() const{ return m_lifecycle; }
@@ -171,8 +171,8 @@ namespace Model
      * storage and when it expires. Backup transitions and expires backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
-     * days. Therefore, the “expire after days” setting must be 90 days greater than
-     * the “transition to cold after days” setting. The “transition to cold after days”
+     * days. Therefore, the “retention” setting must be 90 days greater than the
+     * “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
      */
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
@@ -182,8 +182,8 @@ namespace Model
      * storage and when it expires. Backup transitions and expires backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
-     * days. Therefore, the “expire after days” setting must be 90 days greater than
-     * the “transition to cold after days” setting. The “transition to cold after days”
+     * days. Therefore, the “retention” setting must be 90 days greater than the
+     * “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
      */
     inline void SetLifecycle(const Lifecycle& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
@@ -193,8 +193,8 @@ namespace Model
      * storage and when it expires. Backup transitions and expires backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
-     * days. Therefore, the “expire after days” setting must be 90 days greater than
-     * the “transition to cold after days” setting. The “transition to cold after days”
+     * days. Therefore, the “retention” setting must be 90 days greater than the
+     * “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
      */
     inline void SetLifecycle(Lifecycle&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::move(value); }
@@ -204,8 +204,8 @@ namespace Model
      * storage and when it expires. Backup transitions and expires backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
-     * days. Therefore, the “expire after days” setting must be 90 days greater than
-     * the “transition to cold after days” setting. The “transition to cold after days”
+     * days. Therefore, the “retention” setting must be 90 days greater than the
+     * “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
      */
     inline UpdateRecoveryPointLifecycleRequest& WithLifecycle(const Lifecycle& value) { SetLifecycle(value); return *this;}
@@ -215,8 +215,8 @@ namespace Model
      * storage and when it expires. Backup transitions and expires backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
-     * days. Therefore, the “expire after days” setting must be 90 days greater than
-     * the “transition to cold after days” setting. The “transition to cold after days”
+     * days. Therefore, the “retention” setting must be 90 days greater than the
+     * “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
      */
     inline UpdateRecoveryPointLifecycleRequest& WithLifecycle(Lifecycle&& value) { SetLifecycle(std::move(value)); return *this;}

@@ -39,7 +39,8 @@ ServiceDetail::ServiceDetail() :
     m_payerResponsibilityHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_privateDnsNameVerificationState(DnsNameState::NOT_SET),
-    m_privateDnsNameVerificationStateHasBeenSet(false)
+    m_privateDnsNameVerificationStateHasBeenSet(false),
+    m_supportedIpAddressTypesHasBeenSet(false)
 {
 }
 
@@ -62,7 +63,8 @@ ServiceDetail::ServiceDetail(const XmlNode& xmlNode) :
     m_payerResponsibilityHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_privateDnsNameVerificationState(DnsNameState::NOT_SET),
-    m_privateDnsNameVerificationStateHasBeenSet(false)
+    m_privateDnsNameVerificationStateHasBeenSet(false),
+    m_supportedIpAddressTypesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -187,6 +189,18 @@ ServiceDetail& ServiceDetail::operator =(const XmlNode& xmlNode)
       m_privateDnsNameVerificationState = DnsNameStateMapper::GetDnsNameStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(privateDnsNameVerificationStateNode.GetText()).c_str()).c_str());
       m_privateDnsNameVerificationStateHasBeenSet = true;
     }
+    XmlNode supportedIpAddressTypesNode = resultNode.FirstChild("supportedIpAddressTypeSet");
+    if(!supportedIpAddressTypesNode.IsNull())
+    {
+      XmlNode supportedIpAddressTypesMember = supportedIpAddressTypesNode.FirstChild("item");
+      while(!supportedIpAddressTypesMember.IsNull())
+      {
+        m_supportedIpAddressTypes.push_back(ServiceConnectivityTypeMapper::GetServiceConnectivityTypeForName(StringUtils::Trim(supportedIpAddressTypesMember.GetText().c_str())));
+        supportedIpAddressTypesMember = supportedIpAddressTypesMember.NextNode("item");
+      }
+
+      m_supportedIpAddressTypesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -290,6 +304,15 @@ void ServiceDetail::OutputToStream(Aws::OStream& oStream, const char* location, 
       oStream << location << index << locationValue << ".PrivateDnsNameVerificationState=" << DnsNameStateMapper::GetNameForDnsNameState(m_privateDnsNameVerificationState) << "&";
   }
 
+  if(m_supportedIpAddressTypesHasBeenSet)
+  {
+      unsigned supportedIpAddressTypesIdx = 1;
+      for(auto& item : m_supportedIpAddressTypes)
+      {
+        oStream << location << index << locationValue << ".SupportedIpAddressTypeSet." << supportedIpAddressTypesIdx++ << "=" << ServiceConnectivityTypeMapper::GetNameForServiceConnectivityType(item) << "&";
+      }
+  }
+
 }
 
 void ServiceDetail::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -375,6 +398,14 @@ void ServiceDetail::OutputToStream(Aws::OStream& oStream, const char* location) 
   if(m_privateDnsNameVerificationStateHasBeenSet)
   {
       oStream << location << ".PrivateDnsNameVerificationState=" << DnsNameStateMapper::GetNameForDnsNameState(m_privateDnsNameVerificationState) << "&";
+  }
+  if(m_supportedIpAddressTypesHasBeenSet)
+  {
+      unsigned supportedIpAddressTypesIdx = 1;
+      for(auto& item : m_supportedIpAddressTypes)
+      {
+        oStream << location << ".SupportedIpAddressTypeSet." << supportedIpAddressTypesIdx++ << "=" << ServiceConnectivityTypeMapper::GetNameForServiceConnectivityType(item) << "&";
+      }
   }
 }
 

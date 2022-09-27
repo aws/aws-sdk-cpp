@@ -6,9 +6,8 @@
 #pragma once
 #include <aws/timestream-query/TimestreamQuery_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/timestream-query/model/TimeSeriesDataPoint.h>
-#include <aws/timestream-query/model/Datum.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 #include <memory>
 
@@ -27,6 +26,7 @@ namespace TimestreamQuery
 namespace Model
 {
   class Row;
+  class TimeSeriesDataPoint;
 
   /**
    * <p> Datum represents a single data point in a query result. </p><p><h3>See

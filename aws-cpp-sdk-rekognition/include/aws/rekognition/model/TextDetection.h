@@ -32,7 +32,7 @@ namespace Model
    * (<code>Id</code>). Each word belongs to a line and has a parent identifier
    * (<code>ParentId</code>) that identifies the line of text in which the word
    * appears. The word <code>Id</code> is also an index for the word within a line of
-   * words. </p> <p>For more information, see Detecting Text in the Amazon
+   * words. </p> <p>For more information, see Detecting text in the Amazon
    * Rekognition Developer Guide.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/TextDetection">AWS
    * API Reference</a></p>

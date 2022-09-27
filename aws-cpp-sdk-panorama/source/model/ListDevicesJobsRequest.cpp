@@ -17,9 +17,9 @@ using namespace Aws::Http;
 
 ListDevicesJobsRequest::ListDevicesJobsRequest() : 
     m_deviceIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_nextTokenHasBeenSet(false)
 {
 }
 
@@ -38,17 +38,17 @@ void ListDevicesJobsRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
-    if(m_nextTokenHasBeenSet)
-    {
-      ss << m_nextToken;
-      uri.AddQueryStringParameter("NextToken", ss.str());
-      ss.str("");
-    }
-
     if(m_maxResultsHasBeenSet)
     {
       ss << m_maxResults;
       uri.AddQueryStringParameter("MaxResults", ss.str());
+      ss.str("");
+    }
+
+    if(m_nextTokenHasBeenSet)
+    {
+      ss << m_nextToken;
+      uri.AddQueryStringParameter("NextToken", ss.str());
       ss.str("");
     }
 

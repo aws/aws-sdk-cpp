@@ -127,22 +127,12 @@ namespace Model
         virtual Model::BatchGetRecordOutcome BatchGetRecord(const Model::BatchGetRecordRequest& request) const;
 
         /**
-         * <p>Retrieves a batch of <code>Records</code> from a
-         * <code>FeatureGroup</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/BatchGetRecord">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for BatchGetRecord that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::BatchGetRecordOutcomeCallable BatchGetRecordCallable(const Model::BatchGetRecordRequest& request) const;
 
         /**
-         * <p>Retrieves a batch of <code>Records</code> from a
-         * <code>FeatureGroup</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/BatchGetRecord">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for BatchGetRecord that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BatchGetRecordAsync(const Model::BatchGetRecordRequest& request, const BatchGetRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -157,26 +147,12 @@ namespace Model
         virtual Model::DeleteRecordOutcome DeleteRecord(const Model::DeleteRecordRequest& request) const;
 
         /**
-         * <p>Deletes a <code>Record</code> from a <code>FeatureGroup</code>. A new record
-         * will show up in the <code>OfflineStore</code> when the <code>DeleteRecord</code>
-         * API is called. This record will have a value of <code>True</code> in the
-         * <code>is_deleted</code> column.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/DeleteRecord">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteRecord that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteRecordOutcomeCallable DeleteRecordCallable(const Model::DeleteRecordRequest& request) const;
 
         /**
-         * <p>Deletes a <code>Record</code> from a <code>FeatureGroup</code>. A new record
-         * will show up in the <code>OfflineStore</code> when the <code>DeleteRecord</code>
-         * API is called. This record will have a value of <code>True</code> in the
-         * <code>is_deleted</code> column.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/DeleteRecord">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteRecord that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteRecordAsync(const Model::DeleteRecordRequest& request, const DeleteRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -191,26 +167,12 @@ namespace Model
         virtual Model::GetRecordOutcome GetRecord(const Model::GetRecordRequest& request) const;
 
         /**
-         * <p>Use for <code>OnlineStore</code> serving from a <code>FeatureStore</code>.
-         * Only the latest records stored in the <code>OnlineStore</code> can be retrieved.
-         * If no Record with <code>RecordIdentifierValue</code> is found, then an empty
-         * result is returned. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/GetRecord">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetRecord that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetRecordOutcomeCallable GetRecordCallable(const Model::GetRecordRequest& request) const;
 
         /**
-         * <p>Use for <code>OnlineStore</code> serving from a <code>FeatureStore</code>.
-         * Only the latest records stored in the <code>OnlineStore</code> can be retrieved.
-         * If no Record with <code>RecordIdentifierValue</code> is found, then an empty
-         * result is returned. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/GetRecord">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetRecord that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetRecordAsync(const Model::GetRecordRequest& request, const GetRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -228,32 +190,12 @@ namespace Model
         virtual Model::PutRecordOutcome PutRecord(const Model::PutRecordRequest& request) const;
 
         /**
-         * <p>Used for data ingestion into the <code>FeatureStore</code>. The
-         * <code>PutRecord</code> API writes to both the <code>OnlineStore</code> and
-         * <code>OfflineStore</code>. If the record is the latest record for the
-         * <code>recordIdentifier</code>, the record is written to both the
-         * <code>OnlineStore</code> and <code>OfflineStore</code>. If the record is a
-         * historic record, it is written only to the
-         * <code>OfflineStore</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/PutRecord">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for PutRecord that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutRecordOutcomeCallable PutRecordCallable(const Model::PutRecordRequest& request) const;
 
         /**
-         * <p>Used for data ingestion into the <code>FeatureStore</code>. The
-         * <code>PutRecord</code> API writes to both the <code>OnlineStore</code> and
-         * <code>OfflineStore</code>. If the record is the latest record for the
-         * <code>recordIdentifier</code>, the record is written to both the
-         * <code>OnlineStore</code> and <code>OfflineStore</code>. If the record is a
-         * historic record, it is written only to the
-         * <code>OfflineStore</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/PutRecord">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for PutRecord that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutRecordAsync(const Model::PutRecordRequest& request, const PutRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

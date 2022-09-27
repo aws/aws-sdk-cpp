@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * The NLB resource a DNS Target Resource points to<p><h3>See Also:</h3>   <a
+   * <p>The Network Load Balancer resource that a DNS target resource points
+   * to.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/NLBResource">AWS
    * API Reference</a></p>
    */
@@ -38,42 +39,42 @@ namespace Model
 
 
     /**
-     * An NLB resource arn
+     * <p>The Network Load Balancer resource Amazon Resource Name (ARN).</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * An NLB resource arn
+     * <p>The Network Load Balancer resource Amazon Resource Name (ARN).</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * An NLB resource arn
+     * <p>The Network Load Balancer resource Amazon Resource Name (ARN).</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * An NLB resource arn
+     * <p>The Network Load Balancer resource Amazon Resource Name (ARN).</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * An NLB resource arn
+     * <p>The Network Load Balancer resource Amazon Resource Name (ARN).</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * An NLB resource arn
+     * <p>The Network Load Balancer resource Amazon Resource Name (ARN).</p>
      */
     inline NLBResource& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * An NLB resource arn
+     * <p>The Network Load Balancer resource Amazon Resource Name (ARN).</p>
      */
     inline NLBResource& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * An NLB resource arn
+     * <p>The Network Load Balancer resource Amazon Resource Name (ARN).</p>
      */
     inline NLBResource& WithArn(const char* value) { SetArn(value); return *this;}
 

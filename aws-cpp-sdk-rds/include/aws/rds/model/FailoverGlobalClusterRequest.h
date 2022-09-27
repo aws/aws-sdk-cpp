@@ -40,7 +40,7 @@ namespace Model
      * <p>Identifier of the Aurora global database (<a>GlobalCluster</a>) that should
      * be failed over. The identifier is the unique key assigned by the user when the
      * Aurora global database was created. In other words, it's the name of the Aurora
-     * global database that you want to fail over. </p> <p>Constraints:</p> <ul> <li>
+     * global database that you want to fail over.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must match the identifier of an existing <a>GlobalCluster</a> (Aurora global
      * database).</p> </li> </ul>
      */
@@ -50,7 +50,7 @@ namespace Model
      * <p>Identifier of the Aurora global database (<a>GlobalCluster</a>) that should
      * be failed over. The identifier is the unique key assigned by the user when the
      * Aurora global database was created. In other words, it's the name of the Aurora
-     * global database that you want to fail over. </p> <p>Constraints:</p> <ul> <li>
+     * global database that you want to fail over.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must match the identifier of an existing <a>GlobalCluster</a> (Aurora global
      * database).</p> </li> </ul>
      */
@@ -60,7 +60,7 @@ namespace Model
      * <p>Identifier of the Aurora global database (<a>GlobalCluster</a>) that should
      * be failed over. The identifier is the unique key assigned by the user when the
      * Aurora global database was created. In other words, it's the name of the Aurora
-     * global database that you want to fail over. </p> <p>Constraints:</p> <ul> <li>
+     * global database that you want to fail over.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must match the identifier of an existing <a>GlobalCluster</a> (Aurora global
      * database).</p> </li> </ul>
      */
@@ -70,7 +70,7 @@ namespace Model
      * <p>Identifier of the Aurora global database (<a>GlobalCluster</a>) that should
      * be failed over. The identifier is the unique key assigned by the user when the
      * Aurora global database was created. In other words, it's the name of the Aurora
-     * global database that you want to fail over. </p> <p>Constraints:</p> <ul> <li>
+     * global database that you want to fail over.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must match the identifier of an existing <a>GlobalCluster</a> (Aurora global
      * database).</p> </li> </ul>
      */
@@ -80,7 +80,7 @@ namespace Model
      * <p>Identifier of the Aurora global database (<a>GlobalCluster</a>) that should
      * be failed over. The identifier is the unique key assigned by the user when the
      * Aurora global database was created. In other words, it's the name of the Aurora
-     * global database that you want to fail over. </p> <p>Constraints:</p> <ul> <li>
+     * global database that you want to fail over.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must match the identifier of an existing <a>GlobalCluster</a> (Aurora global
      * database).</p> </li> </ul>
      */
@@ -90,7 +90,7 @@ namespace Model
      * <p>Identifier of the Aurora global database (<a>GlobalCluster</a>) that should
      * be failed over. The identifier is the unique key assigned by the user when the
      * Aurora global database was created. In other words, it's the name of the Aurora
-     * global database that you want to fail over. </p> <p>Constraints:</p> <ul> <li>
+     * global database that you want to fail over.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must match the identifier of an existing <a>GlobalCluster</a> (Aurora global
      * database).</p> </li> </ul>
      */
@@ -100,7 +100,7 @@ namespace Model
      * <p>Identifier of the Aurora global database (<a>GlobalCluster</a>) that should
      * be failed over. The identifier is the unique key assigned by the user when the
      * Aurora global database was created. In other words, it's the name of the Aurora
-     * global database that you want to fail over. </p> <p>Constraints:</p> <ul> <li>
+     * global database that you want to fail over.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must match the identifier of an existing <a>GlobalCluster</a> (Aurora global
      * database).</p> </li> </ul>
      */
@@ -110,7 +110,7 @@ namespace Model
      * <p>Identifier of the Aurora global database (<a>GlobalCluster</a>) that should
      * be failed over. The identifier is the unique key assigned by the user when the
      * Aurora global database was created. In other words, it's the name of the Aurora
-     * global database that you want to fail over. </p> <p>Constraints:</p> <ul> <li>
+     * global database that you want to fail over.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must match the identifier of an existing <a>GlobalCluster</a> (Aurora global
      * database).</p> </li> </ul>
      */
@@ -121,7 +121,7 @@ namespace Model
      * <p>Identifier of the secondary Aurora DB cluster that you want to promote to
      * primary for the Aurora global database (<a>GlobalCluster</a>.) Use the Amazon
      * Resource Name (ARN) for the identifier so that Aurora can locate the cluster in
-     * its Amazon Web Services Region. </p>
+     * its Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetTargetDbClusterIdentifier() const{ return m_targetDbClusterIdentifier; }
 
@@ -129,7 +129,7 @@ namespace Model
      * <p>Identifier of the secondary Aurora DB cluster that you want to promote to
      * primary for the Aurora global database (<a>GlobalCluster</a>.) Use the Amazon
      * Resource Name (ARN) for the identifier so that Aurora can locate the cluster in
-     * its Amazon Web Services Region. </p>
+     * its Amazon Web Services Region.</p>
      */
     inline bool TargetDbClusterIdentifierHasBeenSet() const { return m_targetDbClusterIdentifierHasBeenSet; }
 
@@ -137,7 +137,7 @@ namespace Model
      * <p>Identifier of the secondary Aurora DB cluster that you want to promote to
      * primary for the Aurora global database (<a>GlobalCluster</a>.) Use the Amazon
      * Resource Name (ARN) for the identifier so that Aurora can locate the cluster in
-     * its Amazon Web Services Region. </p>
+     * its Amazon Web Services Region.</p>
      */
     inline void SetTargetDbClusterIdentifier(const Aws::String& value) { m_targetDbClusterIdentifierHasBeenSet = true; m_targetDbClusterIdentifier = value; }
 
@@ -145,7 +145,7 @@ namespace Model
      * <p>Identifier of the secondary Aurora DB cluster that you want to promote to
      * primary for the Aurora global database (<a>GlobalCluster</a>.) Use the Amazon
      * Resource Name (ARN) for the identifier so that Aurora can locate the cluster in
-     * its Amazon Web Services Region. </p>
+     * its Amazon Web Services Region.</p>
      */
     inline void SetTargetDbClusterIdentifier(Aws::String&& value) { m_targetDbClusterIdentifierHasBeenSet = true; m_targetDbClusterIdentifier = std::move(value); }
 
@@ -153,7 +153,7 @@ namespace Model
      * <p>Identifier of the secondary Aurora DB cluster that you want to promote to
      * primary for the Aurora global database (<a>GlobalCluster</a>.) Use the Amazon
      * Resource Name (ARN) for the identifier so that Aurora can locate the cluster in
-     * its Amazon Web Services Region. </p>
+     * its Amazon Web Services Region.</p>
      */
     inline void SetTargetDbClusterIdentifier(const char* value) { m_targetDbClusterIdentifierHasBeenSet = true; m_targetDbClusterIdentifier.assign(value); }
 
@@ -161,7 +161,7 @@ namespace Model
      * <p>Identifier of the secondary Aurora DB cluster that you want to promote to
      * primary for the Aurora global database (<a>GlobalCluster</a>.) Use the Amazon
      * Resource Name (ARN) for the identifier so that Aurora can locate the cluster in
-     * its Amazon Web Services Region. </p>
+     * its Amazon Web Services Region.</p>
      */
     inline FailoverGlobalClusterRequest& WithTargetDbClusterIdentifier(const Aws::String& value) { SetTargetDbClusterIdentifier(value); return *this;}
 
@@ -169,7 +169,7 @@ namespace Model
      * <p>Identifier of the secondary Aurora DB cluster that you want to promote to
      * primary for the Aurora global database (<a>GlobalCluster</a>.) Use the Amazon
      * Resource Name (ARN) for the identifier so that Aurora can locate the cluster in
-     * its Amazon Web Services Region. </p>
+     * its Amazon Web Services Region.</p>
      */
     inline FailoverGlobalClusterRequest& WithTargetDbClusterIdentifier(Aws::String&& value) { SetTargetDbClusterIdentifier(std::move(value)); return *this;}
 
@@ -177,7 +177,7 @@ namespace Model
      * <p>Identifier of the secondary Aurora DB cluster that you want to promote to
      * primary for the Aurora global database (<a>GlobalCluster</a>.) Use the Amazon
      * Resource Name (ARN) for the identifier so that Aurora can locate the cluster in
-     * its Amazon Web Services Region. </p>
+     * its Amazon Web Services Region.</p>
      */
     inline FailoverGlobalClusterRequest& WithTargetDbClusterIdentifier(const char* value) { SetTargetDbClusterIdentifier(value); return *this;}
 

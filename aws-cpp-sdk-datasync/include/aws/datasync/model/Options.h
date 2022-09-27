@@ -18,6 +18,7 @@
 #include <aws/datasync/model/LogLevel.h>
 #include <aws/datasync/model/TransferMode.h>
 #include <aws/datasync/model/SmbSecurityDescriptorCopyFlags.h>
+#include <aws/datasync/model/ObjectTags.h>
 #include <utility>
 
 namespace Aws
@@ -69,10 +70,10 @@ namespace Model
      * were transferred. </p> <p>POINT_IN_TIME_CONSISTENT: Scan the entire source and
      * entire destination at the end of the transfer to verify that source and
      * destination are fully synchronized. This option isn't supported when
-     * transferring to S3 Glacier or S3 Glacier Deep Archive storage classes.</p>
-     * <p>NONE: No additional verification is done at the end of the transfer, but all
-     * data transmissions are integrity-checked with checksum verification during the
-     * transfer.</p>
+     * transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage
+     * classes.</p> <p>NONE: No additional verification is done at the end of the
+     * transfer, but all data transmissions are integrity-checked with checksum
+     * verification during the transfer.</p>
      */
     inline const VerifyMode& GetVerifyMode() const{ return m_verifyMode; }
 
@@ -86,10 +87,10 @@ namespace Model
      * were transferred. </p> <p>POINT_IN_TIME_CONSISTENT: Scan the entire source and
      * entire destination at the end of the transfer to verify that source and
      * destination are fully synchronized. This option isn't supported when
-     * transferring to S3 Glacier or S3 Glacier Deep Archive storage classes.</p>
-     * <p>NONE: No additional verification is done at the end of the transfer, but all
-     * data transmissions are integrity-checked with checksum verification during the
-     * transfer.</p>
+     * transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage
+     * classes.</p> <p>NONE: No additional verification is done at the end of the
+     * transfer, but all data transmissions are integrity-checked with checksum
+     * verification during the transfer.</p>
      */
     inline bool VerifyModeHasBeenSet() const { return m_verifyModeHasBeenSet; }
 
@@ -103,10 +104,10 @@ namespace Model
      * were transferred. </p> <p>POINT_IN_TIME_CONSISTENT: Scan the entire source and
      * entire destination at the end of the transfer to verify that source and
      * destination are fully synchronized. This option isn't supported when
-     * transferring to S3 Glacier or S3 Glacier Deep Archive storage classes.</p>
-     * <p>NONE: No additional verification is done at the end of the transfer, but all
-     * data transmissions are integrity-checked with checksum verification during the
-     * transfer.</p>
+     * transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage
+     * classes.</p> <p>NONE: No additional verification is done at the end of the
+     * transfer, but all data transmissions are integrity-checked with checksum
+     * verification during the transfer.</p>
      */
     inline void SetVerifyMode(const VerifyMode& value) { m_verifyModeHasBeenSet = true; m_verifyMode = value; }
 
@@ -120,10 +121,10 @@ namespace Model
      * were transferred. </p> <p>POINT_IN_TIME_CONSISTENT: Scan the entire source and
      * entire destination at the end of the transfer to verify that source and
      * destination are fully synchronized. This option isn't supported when
-     * transferring to S3 Glacier or S3 Glacier Deep Archive storage classes.</p>
-     * <p>NONE: No additional verification is done at the end of the transfer, but all
-     * data transmissions are integrity-checked with checksum verification during the
-     * transfer.</p>
+     * transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage
+     * classes.</p> <p>NONE: No additional verification is done at the end of the
+     * transfer, but all data transmissions are integrity-checked with checksum
+     * verification during the transfer.</p>
      */
     inline void SetVerifyMode(VerifyMode&& value) { m_verifyModeHasBeenSet = true; m_verifyMode = std::move(value); }
 
@@ -137,10 +138,10 @@ namespace Model
      * were transferred. </p> <p>POINT_IN_TIME_CONSISTENT: Scan the entire source and
      * entire destination at the end of the transfer to verify that source and
      * destination are fully synchronized. This option isn't supported when
-     * transferring to S3 Glacier or S3 Glacier Deep Archive storage classes.</p>
-     * <p>NONE: No additional verification is done at the end of the transfer, but all
-     * data transmissions are integrity-checked with checksum verification during the
-     * transfer.</p>
+     * transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage
+     * classes.</p> <p>NONE: No additional verification is done at the end of the
+     * transfer, but all data transmissions are integrity-checked with checksum
+     * verification during the transfer.</p>
      */
     inline Options& WithVerifyMode(const VerifyMode& value) { SetVerifyMode(value); return *this;}
 
@@ -154,10 +155,10 @@ namespace Model
      * were transferred. </p> <p>POINT_IN_TIME_CONSISTENT: Scan the entire source and
      * entire destination at the end of the transfer to verify that source and
      * destination are fully synchronized. This option isn't supported when
-     * transferring to S3 Glacier or S3 Glacier Deep Archive storage classes.</p>
-     * <p>NONE: No additional verification is done at the end of the transfer, but all
-     * data transmissions are integrity-checked with checksum verification during the
-     * transfer.</p>
+     * transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage
+     * classes.</p> <p>NONE: No additional verification is done at the end of the
+     * transfer, but all data transmissions are integrity-checked with checksum
+     * verification during the transfer.</p>
      */
     inline Options& WithVerifyMode(VerifyMode&& value) { SetVerifyMode(std::move(value)); return *this;}
 
@@ -342,11 +343,11 @@ namespace Model
      * <p>A value that indicates the last time that a file was modified (that is, a
      * file was written to) before the PREPARING phase. This option is required for
      * cases when you need to run the same task more than one time. </p> <p>Default
-     * value: PRESERVE. </p> <p>PRESERVE: Preserve original <code>Mtime</code>
-     * (recommended)</p> <p> NONE: Ignore <code>Mtime</code>. </p>  <p>If
-     * <code>Mtime</code> is set to PRESERVE, <code>Atime</code> must be set to
-     * BEST_EFFORT.</p> <p>If <code>Mtime</code> is set to NONE, <code>Atime</code>
-     * must also be set to NONE. </p> 
+     * Value: <code>PRESERVE</code> </p> <p>PRESERVE: Preserve original
+     * <code>Mtime</code> (recommended)</p> <p> NONE: Ignore <code>Mtime</code>. </p>
+     *  <p>If <code>Mtime</code> is set to PRESERVE, <code>Atime</code> must be
+     * set to BEST_EFFORT.</p> <p>If <code>Mtime</code> is set to NONE,
+     * <code>Atime</code> must also be set to NONE. </p> 
      */
     inline const Mtime& GetMtime() const{ return m_mtime; }
 
@@ -354,11 +355,11 @@ namespace Model
      * <p>A value that indicates the last time that a file was modified (that is, a
      * file was written to) before the PREPARING phase. This option is required for
      * cases when you need to run the same task more than one time. </p> <p>Default
-     * value: PRESERVE. </p> <p>PRESERVE: Preserve original <code>Mtime</code>
-     * (recommended)</p> <p> NONE: Ignore <code>Mtime</code>. </p>  <p>If
-     * <code>Mtime</code> is set to PRESERVE, <code>Atime</code> must be set to
-     * BEST_EFFORT.</p> <p>If <code>Mtime</code> is set to NONE, <code>Atime</code>
-     * must also be set to NONE. </p> 
+     * Value: <code>PRESERVE</code> </p> <p>PRESERVE: Preserve original
+     * <code>Mtime</code> (recommended)</p> <p> NONE: Ignore <code>Mtime</code>. </p>
+     *  <p>If <code>Mtime</code> is set to PRESERVE, <code>Atime</code> must be
+     * set to BEST_EFFORT.</p> <p>If <code>Mtime</code> is set to NONE,
+     * <code>Atime</code> must also be set to NONE. </p> 
      */
     inline bool MtimeHasBeenSet() const { return m_mtimeHasBeenSet; }
 
@@ -366,11 +367,11 @@ namespace Model
      * <p>A value that indicates the last time that a file was modified (that is, a
      * file was written to) before the PREPARING phase. This option is required for
      * cases when you need to run the same task more than one time. </p> <p>Default
-     * value: PRESERVE. </p> <p>PRESERVE: Preserve original <code>Mtime</code>
-     * (recommended)</p> <p> NONE: Ignore <code>Mtime</code>. </p>  <p>If
-     * <code>Mtime</code> is set to PRESERVE, <code>Atime</code> must be set to
-     * BEST_EFFORT.</p> <p>If <code>Mtime</code> is set to NONE, <code>Atime</code>
-     * must also be set to NONE. </p> 
+     * Value: <code>PRESERVE</code> </p> <p>PRESERVE: Preserve original
+     * <code>Mtime</code> (recommended)</p> <p> NONE: Ignore <code>Mtime</code>. </p>
+     *  <p>If <code>Mtime</code> is set to PRESERVE, <code>Atime</code> must be
+     * set to BEST_EFFORT.</p> <p>If <code>Mtime</code> is set to NONE,
+     * <code>Atime</code> must also be set to NONE. </p> 
      */
     inline void SetMtime(const Mtime& value) { m_mtimeHasBeenSet = true; m_mtime = value; }
 
@@ -378,11 +379,11 @@ namespace Model
      * <p>A value that indicates the last time that a file was modified (that is, a
      * file was written to) before the PREPARING phase. This option is required for
      * cases when you need to run the same task more than one time. </p> <p>Default
-     * value: PRESERVE. </p> <p>PRESERVE: Preserve original <code>Mtime</code>
-     * (recommended)</p> <p> NONE: Ignore <code>Mtime</code>. </p>  <p>If
-     * <code>Mtime</code> is set to PRESERVE, <code>Atime</code> must be set to
-     * BEST_EFFORT.</p> <p>If <code>Mtime</code> is set to NONE, <code>Atime</code>
-     * must also be set to NONE. </p> 
+     * Value: <code>PRESERVE</code> </p> <p>PRESERVE: Preserve original
+     * <code>Mtime</code> (recommended)</p> <p> NONE: Ignore <code>Mtime</code>. </p>
+     *  <p>If <code>Mtime</code> is set to PRESERVE, <code>Atime</code> must be
+     * set to BEST_EFFORT.</p> <p>If <code>Mtime</code> is set to NONE,
+     * <code>Atime</code> must also be set to NONE. </p> 
      */
     inline void SetMtime(Mtime&& value) { m_mtimeHasBeenSet = true; m_mtime = std::move(value); }
 
@@ -390,11 +391,11 @@ namespace Model
      * <p>A value that indicates the last time that a file was modified (that is, a
      * file was written to) before the PREPARING phase. This option is required for
      * cases when you need to run the same task more than one time. </p> <p>Default
-     * value: PRESERVE. </p> <p>PRESERVE: Preserve original <code>Mtime</code>
-     * (recommended)</p> <p> NONE: Ignore <code>Mtime</code>. </p>  <p>If
-     * <code>Mtime</code> is set to PRESERVE, <code>Atime</code> must be set to
-     * BEST_EFFORT.</p> <p>If <code>Mtime</code> is set to NONE, <code>Atime</code>
-     * must also be set to NONE. </p> 
+     * Value: <code>PRESERVE</code> </p> <p>PRESERVE: Preserve original
+     * <code>Mtime</code> (recommended)</p> <p> NONE: Ignore <code>Mtime</code>. </p>
+     *  <p>If <code>Mtime</code> is set to PRESERVE, <code>Atime</code> must be
+     * set to BEST_EFFORT.</p> <p>If <code>Mtime</code> is set to NONE,
+     * <code>Atime</code> must also be set to NONE. </p> 
      */
     inline Options& WithMtime(const Mtime& value) { SetMtime(value); return *this;}
 
@@ -402,11 +403,11 @@ namespace Model
      * <p>A value that indicates the last time that a file was modified (that is, a
      * file was written to) before the PREPARING phase. This option is required for
      * cases when you need to run the same task more than one time. </p> <p>Default
-     * value: PRESERVE. </p> <p>PRESERVE: Preserve original <code>Mtime</code>
-     * (recommended)</p> <p> NONE: Ignore <code>Mtime</code>. </p>  <p>If
-     * <code>Mtime</code> is set to PRESERVE, <code>Atime</code> must be set to
-     * BEST_EFFORT.</p> <p>If <code>Mtime</code> is set to NONE, <code>Atime</code>
-     * must also be set to NONE. </p> 
+     * Value: <code>PRESERVE</code> </p> <p>PRESERVE: Preserve original
+     * <code>Mtime</code> (recommended)</p> <p> NONE: Ignore <code>Mtime</code>. </p>
+     *  <p>If <code>Mtime</code> is set to PRESERVE, <code>Atime</code> must be
+     * set to BEST_EFFORT.</p> <p>If <code>Mtime</code> is set to NONE,
+     * <code>Atime</code> must also be set to NONE. </p> 
      */
     inline Options& WithMtime(Mtime&& value) { SetMtime(std::move(value)); return *this;}
 
@@ -1192,6 +1193,49 @@ namespace Model
      */
     inline Options& WithSecurityDescriptorCopyFlags(SmbSecurityDescriptorCopyFlags&& value) { SetSecurityDescriptorCopyFlags(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies whether object tags are maintained when transferring between object
+     * storage systems. If you want your DataSync task to ignore object tags, specify
+     * the <code>NONE</code> value.</p> <p>Default Value: <code>PRESERVE</code> </p>
+     */
+    inline const ObjectTags& GetObjectTags() const{ return m_objectTags; }
+
+    /**
+     * <p>Specifies whether object tags are maintained when transferring between object
+     * storage systems. If you want your DataSync task to ignore object tags, specify
+     * the <code>NONE</code> value.</p> <p>Default Value: <code>PRESERVE</code> </p>
+     */
+    inline bool ObjectTagsHasBeenSet() const { return m_objectTagsHasBeenSet; }
+
+    /**
+     * <p>Specifies whether object tags are maintained when transferring between object
+     * storage systems. If you want your DataSync task to ignore object tags, specify
+     * the <code>NONE</code> value.</p> <p>Default Value: <code>PRESERVE</code> </p>
+     */
+    inline void SetObjectTags(const ObjectTags& value) { m_objectTagsHasBeenSet = true; m_objectTags = value; }
+
+    /**
+     * <p>Specifies whether object tags are maintained when transferring between object
+     * storage systems. If you want your DataSync task to ignore object tags, specify
+     * the <code>NONE</code> value.</p> <p>Default Value: <code>PRESERVE</code> </p>
+     */
+    inline void SetObjectTags(ObjectTags&& value) { m_objectTagsHasBeenSet = true; m_objectTags = std::move(value); }
+
+    /**
+     * <p>Specifies whether object tags are maintained when transferring between object
+     * storage systems. If you want your DataSync task to ignore object tags, specify
+     * the <code>NONE</code> value.</p> <p>Default Value: <code>PRESERVE</code> </p>
+     */
+    inline Options& WithObjectTags(const ObjectTags& value) { SetObjectTags(value); return *this;}
+
+    /**
+     * <p>Specifies whether object tags are maintained when transferring between object
+     * storage systems. If you want your DataSync task to ignore object tags, specify
+     * the <code>NONE</code> value.</p> <p>Default Value: <code>PRESERVE</code> </p>
+     */
+    inline Options& WithObjectTags(ObjectTags&& value) { SetObjectTags(std::move(value)); return *this;}
+
   private:
 
     VerifyMode m_verifyMode;
@@ -1235,6 +1279,9 @@ namespace Model
 
     SmbSecurityDescriptorCopyFlags m_securityDescriptorCopyFlags;
     bool m_securityDescriptorCopyFlagsHasBeenSet;
+
+    ObjectTags m_objectTags;
+    bool m_objectTagsHasBeenSet;
   };
 
 } // namespace Model

@@ -12,6 +12,7 @@
 #include <aws/medialive/model/EncoderSettings.h>
 #include <aws/medialive/model/InputSpecification.h>
 #include <aws/medialive/model/LogLevel.h>
+#include <aws/medialive/model/MaintenanceStatus.h>
 #include <aws/medialive/model/ChannelState.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/medialive/model/VpcOutputSettingsDescription.h>
@@ -445,6 +446,37 @@ one destination per
 
 
     /**
+     * Maintenance settings for this channel.
+     */
+    inline const MaintenanceStatus& GetMaintenance() const{ return m_maintenance; }
+
+    /**
+     * Maintenance settings for this channel.
+     */
+    inline bool MaintenanceHasBeenSet() const { return m_maintenanceHasBeenSet; }
+
+    /**
+     * Maintenance settings for this channel.
+     */
+    inline void SetMaintenance(const MaintenanceStatus& value) { m_maintenanceHasBeenSet = true; m_maintenance = value; }
+
+    /**
+     * Maintenance settings for this channel.
+     */
+    inline void SetMaintenance(MaintenanceStatus&& value) { m_maintenanceHasBeenSet = true; m_maintenance = std::move(value); }
+
+    /**
+     * Maintenance settings for this channel.
+     */
+    inline Channel& WithMaintenance(const MaintenanceStatus& value) { SetMaintenance(value); return *this;}
+
+    /**
+     * Maintenance settings for this channel.
+     */
+    inline Channel& WithMaintenance(MaintenanceStatus&& value) { SetMaintenance(std::move(value)); return *this;}
+
+
+    /**
      * The name of the channel. (user-mutable)
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -734,6 +766,9 @@ one destination per
 
     LogLevel m_logLevel;
     bool m_logLevelHasBeenSet;
+
+    MaintenanceStatus m_maintenance;
+    bool m_maintenanceHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;

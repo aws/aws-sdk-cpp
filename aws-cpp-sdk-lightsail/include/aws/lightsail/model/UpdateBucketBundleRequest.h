@@ -76,58 +76,58 @@ namespace Model
 
 
     /**
-     * <p>The ID of the new bundle to apply to the bucket.</p> <p>Use the
-     * <a>GetBucketBundles</a> action to get a list of bundle IDs that you can
-     * specify.</p>
+     * <p>The ID of the new bundle to apply to the bucket.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketBundles.html">GetBucketBundles</a>
+     * action to get a list of bundle IDs that you can specify.</p>
      */
     inline const Aws::String& GetBundleId() const{ return m_bundleId; }
 
     /**
-     * <p>The ID of the new bundle to apply to the bucket.</p> <p>Use the
-     * <a>GetBucketBundles</a> action to get a list of bundle IDs that you can
-     * specify.</p>
+     * <p>The ID of the new bundle to apply to the bucket.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketBundles.html">GetBucketBundles</a>
+     * action to get a list of bundle IDs that you can specify.</p>
      */
     inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }
 
     /**
-     * <p>The ID of the new bundle to apply to the bucket.</p> <p>Use the
-     * <a>GetBucketBundles</a> action to get a list of bundle IDs that you can
-     * specify.</p>
+     * <p>The ID of the new bundle to apply to the bucket.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketBundles.html">GetBucketBundles</a>
+     * action to get a list of bundle IDs that you can specify.</p>
      */
     inline void SetBundleId(const Aws::String& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
 
     /**
-     * <p>The ID of the new bundle to apply to the bucket.</p> <p>Use the
-     * <a>GetBucketBundles</a> action to get a list of bundle IDs that you can
-     * specify.</p>
+     * <p>The ID of the new bundle to apply to the bucket.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketBundles.html">GetBucketBundles</a>
+     * action to get a list of bundle IDs that you can specify.</p>
      */
     inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::move(value); }
 
     /**
-     * <p>The ID of the new bundle to apply to the bucket.</p> <p>Use the
-     * <a>GetBucketBundles</a> action to get a list of bundle IDs that you can
-     * specify.</p>
+     * <p>The ID of the new bundle to apply to the bucket.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketBundles.html">GetBucketBundles</a>
+     * action to get a list of bundle IDs that you can specify.</p>
      */
     inline void SetBundleId(const char* value) { m_bundleIdHasBeenSet = true; m_bundleId.assign(value); }
 
     /**
-     * <p>The ID of the new bundle to apply to the bucket.</p> <p>Use the
-     * <a>GetBucketBundles</a> action to get a list of bundle IDs that you can
-     * specify.</p>
+     * <p>The ID of the new bundle to apply to the bucket.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketBundles.html">GetBucketBundles</a>
+     * action to get a list of bundle IDs that you can specify.</p>
      */
     inline UpdateBucketBundleRequest& WithBundleId(const Aws::String& value) { SetBundleId(value); return *this;}
 
     /**
-     * <p>The ID of the new bundle to apply to the bucket.</p> <p>Use the
-     * <a>GetBucketBundles</a> action to get a list of bundle IDs that you can
-     * specify.</p>
+     * <p>The ID of the new bundle to apply to the bucket.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketBundles.html">GetBucketBundles</a>
+     * action to get a list of bundle IDs that you can specify.</p>
      */
     inline UpdateBucketBundleRequest& WithBundleId(Aws::String&& value) { SetBundleId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the new bundle to apply to the bucket.</p> <p>Use the
-     * <a>GetBucketBundles</a> action to get a list of bundle IDs that you can
-     * specify.</p>
+     * <p>The ID of the new bundle to apply to the bucket.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketBundles.html">GetBucketBundles</a>
+     * action to get a list of bundle IDs that you can specify.</p>
      */
     inline UpdateBucketBundleRequest& WithBundleId(const char* value) { SetBundleId(value); return *this;}
 

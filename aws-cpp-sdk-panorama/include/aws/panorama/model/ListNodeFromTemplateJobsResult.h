@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/panorama/Panorama_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/panorama/model/NodeFromTemplateJob.h>
 #include <utility>
 
@@ -32,42 +32,6 @@ namespace Model
     ListNodeFromTemplateJobsResult();
     ListNodeFromTemplateJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     ListNodeFromTemplateJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>A list of jobs.</p>
-     */
-    inline const Aws::Vector<NodeFromTemplateJob>& GetNodeFromTemplateJobs() const{ return m_nodeFromTemplateJobs; }
-
-    /**
-     * <p>A list of jobs.</p>
-     */
-    inline void SetNodeFromTemplateJobs(const Aws::Vector<NodeFromTemplateJob>& value) { m_nodeFromTemplateJobs = value; }
-
-    /**
-     * <p>A list of jobs.</p>
-     */
-    inline void SetNodeFromTemplateJobs(Aws::Vector<NodeFromTemplateJob>&& value) { m_nodeFromTemplateJobs = std::move(value); }
-
-    /**
-     * <p>A list of jobs.</p>
-     */
-    inline ListNodeFromTemplateJobsResult& WithNodeFromTemplateJobs(const Aws::Vector<NodeFromTemplateJob>& value) { SetNodeFromTemplateJobs(value); return *this;}
-
-    /**
-     * <p>A list of jobs.</p>
-     */
-    inline ListNodeFromTemplateJobsResult& WithNodeFromTemplateJobs(Aws::Vector<NodeFromTemplateJob>&& value) { SetNodeFromTemplateJobs(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of jobs.</p>
-     */
-    inline ListNodeFromTemplateJobsResult& AddNodeFromTemplateJobs(const NodeFromTemplateJob& value) { m_nodeFromTemplateJobs.push_back(value); return *this; }
-
-    /**
-     * <p>A list of jobs.</p>
-     */
-    inline ListNodeFromTemplateJobsResult& AddNodeFromTemplateJobs(NodeFromTemplateJob&& value) { m_nodeFromTemplateJobs.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -105,11 +69,47 @@ namespace Model
      */
     inline ListNodeFromTemplateJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>A list of jobs.</p>
+     */
+    inline const Aws::Vector<NodeFromTemplateJob>& GetNodeFromTemplateJobs() const{ return m_nodeFromTemplateJobs; }
+
+    /**
+     * <p>A list of jobs.</p>
+     */
+    inline void SetNodeFromTemplateJobs(const Aws::Vector<NodeFromTemplateJob>& value) { m_nodeFromTemplateJobs = value; }
+
+    /**
+     * <p>A list of jobs.</p>
+     */
+    inline void SetNodeFromTemplateJobs(Aws::Vector<NodeFromTemplateJob>&& value) { m_nodeFromTemplateJobs = std::move(value); }
+
+    /**
+     * <p>A list of jobs.</p>
+     */
+    inline ListNodeFromTemplateJobsResult& WithNodeFromTemplateJobs(const Aws::Vector<NodeFromTemplateJob>& value) { SetNodeFromTemplateJobs(value); return *this;}
+
+    /**
+     * <p>A list of jobs.</p>
+     */
+    inline ListNodeFromTemplateJobsResult& WithNodeFromTemplateJobs(Aws::Vector<NodeFromTemplateJob>&& value) { SetNodeFromTemplateJobs(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of jobs.</p>
+     */
+    inline ListNodeFromTemplateJobsResult& AddNodeFromTemplateJobs(const NodeFromTemplateJob& value) { m_nodeFromTemplateJobs.push_back(value); return *this; }
+
+    /**
+     * <p>A list of jobs.</p>
+     */
+    inline ListNodeFromTemplateJobsResult& AddNodeFromTemplateJobs(NodeFromTemplateJob&& value) { m_nodeFromTemplateJobs.push_back(std::move(value)); return *this; }
+
   private:
 
-    Aws::Vector<NodeFromTemplateJob> m_nodeFromTemplateJobs;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<NodeFromTemplateJob> m_nodeFromTemplateJobs;
   };
 
 } // namespace Model

@@ -56,57 +56,57 @@ namespace Model
 
 
     /**
-     * <p>A token to indicate the location of the next service in the array of service
-     * instances, after the list of service instances that was previously
+     * <p>A token that indicates the location of the next service in the array of
+     * service instances, after the list of service instances that was previously
      * requested.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>A token to indicate the location of the next service in the array of service
-     * instances, after the list of service instances that was previously
+     * <p>A token that indicates the location of the next service in the array of
+     * service instances, after the list of service instances that was previously
      * requested.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>A token to indicate the location of the next service in the array of service
-     * instances, after the list of service instances that was previously
+     * <p>A token that indicates the location of the next service in the array of
+     * service instances, after the list of service instances that was previously
      * requested.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>A token to indicate the location of the next service in the array of service
-     * instances, after the list of service instances that was previously
+     * <p>A token that indicates the location of the next service in the array of
+     * service instances, after the list of service instances that was previously
      * requested.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>A token to indicate the location of the next service in the array of service
-     * instances, after the list of service instances that was previously
+     * <p>A token that indicates the location of the next service in the array of
+     * service instances, after the list of service instances that was previously
      * requested.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>A token to indicate the location of the next service in the array of service
-     * instances, after the list of service instances that was previously
+     * <p>A token that indicates the location of the next service in the array of
+     * service instances, after the list of service instances that was previously
      * requested.</p>
      */
     inline ListServiceInstancesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>A token to indicate the location of the next service in the array of service
-     * instances, after the list of service instances that was previously
+     * <p>A token that indicates the location of the next service in the array of
+     * service instances, after the list of service instances that was previously
      * requested.</p>
      */
     inline ListServiceInstancesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token to indicate the location of the next service in the array of service
-     * instances, after the list of service instances that was previously
+     * <p>A token that indicates the location of the next service in the array of
+     * service instances, after the list of service instances that was previously
      * requested.</p>
      */
     inline ListServiceInstancesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}

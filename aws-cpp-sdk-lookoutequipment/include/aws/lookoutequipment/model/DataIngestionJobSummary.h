@@ -174,37 +174,37 @@ namespace Model
 
     /**
      * <p> Specifies information for the input data for the data inference job,
-     * including data S3 location parameters. </p>
+     * including data Amazon S3 location parameters. </p>
      */
     inline const IngestionInputConfiguration& GetIngestionInputConfiguration() const{ return m_ingestionInputConfiguration; }
 
     /**
      * <p> Specifies information for the input data for the data inference job,
-     * including data S3 location parameters. </p>
+     * including data Amazon S3 location parameters. </p>
      */
     inline bool IngestionInputConfigurationHasBeenSet() const { return m_ingestionInputConfigurationHasBeenSet; }
 
     /**
      * <p> Specifies information for the input data for the data inference job,
-     * including data S3 location parameters. </p>
+     * including data Amazon S3 location parameters. </p>
      */
     inline void SetIngestionInputConfiguration(const IngestionInputConfiguration& value) { m_ingestionInputConfigurationHasBeenSet = true; m_ingestionInputConfiguration = value; }
 
     /**
      * <p> Specifies information for the input data for the data inference job,
-     * including data S3 location parameters. </p>
+     * including data Amazon S3 location parameters. </p>
      */
     inline void SetIngestionInputConfiguration(IngestionInputConfiguration&& value) { m_ingestionInputConfigurationHasBeenSet = true; m_ingestionInputConfiguration = std::move(value); }
 
     /**
      * <p> Specifies information for the input data for the data inference job,
-     * including data S3 location parameters. </p>
+     * including data Amazon S3 location parameters. </p>
      */
     inline DataIngestionJobSummary& WithIngestionInputConfiguration(const IngestionInputConfiguration& value) { SetIngestionInputConfiguration(value); return *this;}
 
     /**
      * <p> Specifies information for the input data for the data inference job,
-     * including data S3 location parameters. </p>
+     * including data Amazon S3 location parameters. </p>
      */
     inline DataIngestionJobSummary& WithIngestionInputConfiguration(IngestionInputConfiguration&& value) { SetIngestionInputConfiguration(std::move(value)); return *this;}
 

@@ -22,6 +22,7 @@ namespace Aws
 
         static const int network_interface_HASH = HashingUtils::HashString("network-interface");
         static const int network_load_balancer_HASH = HashingUtils::HashString("network-load-balancer");
+        static const int gateway_load_balancer_endpoint_HASH = HashingUtils::HashString("gateway-load-balancer-endpoint");
 
 
         TrafficMirrorTargetType GetTrafficMirrorTargetTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == network_load_balancer_HASH)
           {
             return TrafficMirrorTargetType::network_load_balancer;
+          }
+          else if (hashCode == gateway_load_balancer_endpoint_HASH)
+          {
+            return TrafficMirrorTargetType::gateway_load_balancer_endpoint;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "network-interface";
           case TrafficMirrorTargetType::network_load_balancer:
             return "network-load-balancer";
+          case TrafficMirrorTargetType::gateway_load_balancer_endpoint:
+            return "gateway-load-balancer-endpoint";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

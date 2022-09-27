@@ -24,6 +24,7 @@
 #include <aws/datasync/model/CreateAgentRequest.h>
 #include <aws/datasync/model/CreateLocationEfsRequest.h>
 #include <aws/datasync/model/CreateLocationFsxLustreRequest.h>
+#include <aws/datasync/model/CreateLocationFsxOpenZfsRequest.h>
 #include <aws/datasync/model/CreateLocationFsxWindowsRequest.h>
 #include <aws/datasync/model/CreateLocationHdfsRequest.h>
 #include <aws/datasync/model/CreateLocationNfsRequest.h>
@@ -37,6 +38,7 @@
 #include <aws/datasync/model/DescribeAgentRequest.h>
 #include <aws/datasync/model/DescribeLocationEfsRequest.h>
 #include <aws/datasync/model/DescribeLocationFsxLustreRequest.h>
+#include <aws/datasync/model/DescribeLocationFsxOpenZfsRequest.h>
 #include <aws/datasync/model/DescribeLocationFsxWindowsRequest.h>
 #include <aws/datasync/model/DescribeLocationHdfsRequest.h>
 #include <aws/datasync/model/DescribeLocationNfsRequest.h>
@@ -228,6 +230,30 @@ void DataSyncClient::CreateLocationFsxLustreAsync(const CreateLocationFsxLustreR
 void DataSyncClient::CreateLocationFsxLustreAsyncHelper(const CreateLocationFsxLustreRequest& request, const CreateLocationFsxLustreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateLocationFsxLustre(request), context);
+}
+
+CreateLocationFsxOpenZfsOutcome DataSyncClient::CreateLocationFsxOpenZfs(const CreateLocationFsxOpenZfsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateLocationFsxOpenZfsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateLocationFsxOpenZfsOutcomeCallable DataSyncClient::CreateLocationFsxOpenZfsCallable(const CreateLocationFsxOpenZfsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateLocationFsxOpenZfsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLocationFsxOpenZfs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DataSyncClient::CreateLocationFsxOpenZfsAsync(const CreateLocationFsxOpenZfsRequest& request, const CreateLocationFsxOpenZfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateLocationFsxOpenZfsAsyncHelper( request, handler, context ); } );
+}
+
+void DataSyncClient::CreateLocationFsxOpenZfsAsyncHelper(const CreateLocationFsxOpenZfsRequest& request, const CreateLocationFsxOpenZfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateLocationFsxOpenZfs(request), context);
 }
 
 CreateLocationFsxWindowsOutcome DataSyncClient::CreateLocationFsxWindows(const CreateLocationFsxWindowsRequest& request) const
@@ -540,6 +566,30 @@ void DataSyncClient::DescribeLocationFsxLustreAsync(const DescribeLocationFsxLus
 void DataSyncClient::DescribeLocationFsxLustreAsyncHelper(const DescribeLocationFsxLustreRequest& request, const DescribeLocationFsxLustreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeLocationFsxLustre(request), context);
+}
+
+DescribeLocationFsxOpenZfsOutcome DataSyncClient::DescribeLocationFsxOpenZfs(const DescribeLocationFsxOpenZfsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeLocationFsxOpenZfsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeLocationFsxOpenZfsOutcomeCallable DataSyncClient::DescribeLocationFsxOpenZfsCallable(const DescribeLocationFsxOpenZfsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeLocationFsxOpenZfsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLocationFsxOpenZfs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DataSyncClient::DescribeLocationFsxOpenZfsAsync(const DescribeLocationFsxOpenZfsRequest& request, const DescribeLocationFsxOpenZfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeLocationFsxOpenZfsAsyncHelper( request, handler, context ); } );
+}
+
+void DataSyncClient::DescribeLocationFsxOpenZfsAsyncHelper(const DescribeLocationFsxOpenZfsRequest& request, const DescribeLocationFsxOpenZfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeLocationFsxOpenZfs(request), context);
 }
 
 DescribeLocationFsxWindowsOutcome DataSyncClient::DescribeLocationFsxWindows(const DescribeLocationFsxWindowsRequest& request) const

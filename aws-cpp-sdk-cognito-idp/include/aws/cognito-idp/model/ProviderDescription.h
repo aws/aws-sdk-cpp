@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>A container for identity provider details.</p><p><h3>See Also:</h3>   <a
+   * <p>A container for IdP details.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ProviderDescription">AWS
    * API Reference</a></p>
    */
@@ -40,73 +40,73 @@ namespace Model
 
 
     /**
-     * <p>The identity provider name.</p>
+     * <p>The IdP name.</p>
      */
     inline const Aws::String& GetProviderName() const{ return m_providerName; }
 
     /**
-     * <p>The identity provider name.</p>
+     * <p>The IdP name.</p>
      */
     inline bool ProviderNameHasBeenSet() const { return m_providerNameHasBeenSet; }
 
     /**
-     * <p>The identity provider name.</p>
+     * <p>The IdP name.</p>
      */
     inline void SetProviderName(const Aws::String& value) { m_providerNameHasBeenSet = true; m_providerName = value; }
 
     /**
-     * <p>The identity provider name.</p>
+     * <p>The IdP name.</p>
      */
     inline void SetProviderName(Aws::String&& value) { m_providerNameHasBeenSet = true; m_providerName = std::move(value); }
 
     /**
-     * <p>The identity provider name.</p>
+     * <p>The IdP name.</p>
      */
     inline void SetProviderName(const char* value) { m_providerNameHasBeenSet = true; m_providerName.assign(value); }
 
     /**
-     * <p>The identity provider name.</p>
+     * <p>The IdP name.</p>
      */
     inline ProviderDescription& WithProviderName(const Aws::String& value) { SetProviderName(value); return *this;}
 
     /**
-     * <p>The identity provider name.</p>
+     * <p>The IdP name.</p>
      */
     inline ProviderDescription& WithProviderName(Aws::String&& value) { SetProviderName(std::move(value)); return *this;}
 
     /**
-     * <p>The identity provider name.</p>
+     * <p>The IdP name.</p>
      */
     inline ProviderDescription& WithProviderName(const char* value) { SetProviderName(value); return *this;}
 
 
     /**
-     * <p>The identity provider type.</p>
+     * <p>The IdP type.</p>
      */
     inline const IdentityProviderTypeType& GetProviderType() const{ return m_providerType; }
 
     /**
-     * <p>The identity provider type.</p>
+     * <p>The IdP type.</p>
      */
     inline bool ProviderTypeHasBeenSet() const { return m_providerTypeHasBeenSet; }
 
     /**
-     * <p>The identity provider type.</p>
+     * <p>The IdP type.</p>
      */
     inline void SetProviderType(const IdentityProviderTypeType& value) { m_providerTypeHasBeenSet = true; m_providerType = value; }
 
     /**
-     * <p>The identity provider type.</p>
+     * <p>The IdP type.</p>
      */
     inline void SetProviderType(IdentityProviderTypeType&& value) { m_providerTypeHasBeenSet = true; m_providerType = std::move(value); }
 
     /**
-     * <p>The identity provider type.</p>
+     * <p>The IdP type.</p>
      */
     inline ProviderDescription& WithProviderType(const IdentityProviderTypeType& value) { SetProviderType(value); return *this;}
 
     /**
-     * <p>The identity provider type.</p>
+     * <p>The IdP type.</p>
      */
     inline ProviderDescription& WithProviderType(IdentityProviderTypeType&& value) { SetProviderType(std::move(value)); return *this;}
 

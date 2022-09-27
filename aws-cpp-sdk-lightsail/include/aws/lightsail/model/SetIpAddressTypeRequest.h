@@ -40,8 +40,9 @@ namespace Model
      * <p>The resource type.</p> <p>The possible values are <code>Distribution</code>,
      * <code>Instance</code>, and <code>LoadBalancer</code>.</p> 
      * <p>Distribution-related APIs are available only in the N. Virginia
-     * (<code>us-east-1</code>) AWS Region. Set your AWS Region configuration to
-     * <code>us-east-1</code> to create, view, or edit distributions.</p> 
+     * (<code>us-east-1</code>) Amazon Web Services Region. Set your Amazon Web
+     * Services Region configuration to <code>us-east-1</code> to create, view, or edit
+     * distributions.</p> 
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
@@ -49,8 +50,9 @@ namespace Model
      * <p>The resource type.</p> <p>The possible values are <code>Distribution</code>,
      * <code>Instance</code>, and <code>LoadBalancer</code>.</p> 
      * <p>Distribution-related APIs are available only in the N. Virginia
-     * (<code>us-east-1</code>) AWS Region. Set your AWS Region configuration to
-     * <code>us-east-1</code> to create, view, or edit distributions.</p> 
+     * (<code>us-east-1</code>) Amazon Web Services Region. Set your Amazon Web
+     * Services Region configuration to <code>us-east-1</code> to create, view, or edit
+     * distributions.</p> 
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
@@ -58,8 +60,9 @@ namespace Model
      * <p>The resource type.</p> <p>The possible values are <code>Distribution</code>,
      * <code>Instance</code>, and <code>LoadBalancer</code>.</p> 
      * <p>Distribution-related APIs are available only in the N. Virginia
-     * (<code>us-east-1</code>) AWS Region. Set your AWS Region configuration to
-     * <code>us-east-1</code> to create, view, or edit distributions.</p> 
+     * (<code>us-east-1</code>) Amazon Web Services Region. Set your Amazon Web
+     * Services Region configuration to <code>us-east-1</code> to create, view, or edit
+     * distributions.</p> 
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
@@ -67,8 +70,9 @@ namespace Model
      * <p>The resource type.</p> <p>The possible values are <code>Distribution</code>,
      * <code>Instance</code>, and <code>LoadBalancer</code>.</p> 
      * <p>Distribution-related APIs are available only in the N. Virginia
-     * (<code>us-east-1</code>) AWS Region. Set your AWS Region configuration to
-     * <code>us-east-1</code> to create, view, or edit distributions.</p> 
+     * (<code>us-east-1</code>) Amazon Web Services Region. Set your Amazon Web
+     * Services Region configuration to <code>us-east-1</code> to create, view, or edit
+     * distributions.</p> 
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
@@ -76,8 +80,9 @@ namespace Model
      * <p>The resource type.</p> <p>The possible values are <code>Distribution</code>,
      * <code>Instance</code>, and <code>LoadBalancer</code>.</p> 
      * <p>Distribution-related APIs are available only in the N. Virginia
-     * (<code>us-east-1</code>) AWS Region. Set your AWS Region configuration to
-     * <code>us-east-1</code> to create, view, or edit distributions.</p> 
+     * (<code>us-east-1</code>) Amazon Web Services Region. Set your Amazon Web
+     * Services Region configuration to <code>us-east-1</code> to create, view, or edit
+     * distributions.</p> 
      */
     inline SetIpAddressTypeRequest& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
@@ -85,8 +90,9 @@ namespace Model
      * <p>The resource type.</p> <p>The possible values are <code>Distribution</code>,
      * <code>Instance</code>, and <code>LoadBalancer</code>.</p> 
      * <p>Distribution-related APIs are available only in the N. Virginia
-     * (<code>us-east-1</code>) AWS Region. Set your AWS Region configuration to
-     * <code>us-east-1</code> to create, view, or edit distributions.</p> 
+     * (<code>us-east-1</code>) Amazon Web Services Region. Set your Amazon Web
+     * Services Region configuration to <code>us-east-1</code> to create, view, or edit
+     * distributions.</p> 
      */
     inline SetIpAddressTypeRequest& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 

@@ -11,6 +11,7 @@
 #include <aws/monitoring/model/MetricStreamOutputFormat.h>
 #include <aws/monitoring/model/ResponseMetadata.h>
 #include <aws/monitoring/model/MetricStreamFilter.h>
+#include <aws/monitoring/model/MetricStreamStatisticsConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -384,29 +385,113 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The output format for the stream. Valid values are <code>json</code> and
+     * <code>opentelemetry0.7</code>. For more information about metric stream output
+     * formats, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">
+     * Metric streams output formats</a>.</p>
      */
     inline const MetricStreamOutputFormat& GetOutputFormat() const{ return m_outputFormat; }
 
     /**
-     * <p/>
+     * <p>The output format for the stream. Valid values are <code>json</code> and
+     * <code>opentelemetry0.7</code>. For more information about metric stream output
+     * formats, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">
+     * Metric streams output formats</a>.</p>
      */
     inline void SetOutputFormat(const MetricStreamOutputFormat& value) { m_outputFormat = value; }
 
     /**
-     * <p/>
+     * <p>The output format for the stream. Valid values are <code>json</code> and
+     * <code>opentelemetry0.7</code>. For more information about metric stream output
+     * formats, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">
+     * Metric streams output formats</a>.</p>
      */
     inline void SetOutputFormat(MetricStreamOutputFormat&& value) { m_outputFormat = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The output format for the stream. Valid values are <code>json</code> and
+     * <code>opentelemetry0.7</code>. For more information about metric stream output
+     * formats, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">
+     * Metric streams output formats</a>.</p>
      */
     inline GetMetricStreamResult& WithOutputFormat(const MetricStreamOutputFormat& value) { SetOutputFormat(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The output format for the stream. Valid values are <code>json</code> and
+     * <code>opentelemetry0.7</code>. For more information about metric stream output
+     * formats, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">
+     * Metric streams output formats</a>.</p>
      */
     inline GetMetricStreamResult& WithOutputFormat(MetricStreamOutputFormat&& value) { SetOutputFormat(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Each entry in this array displays information about one or more metrics that
+     * include additional statistics in the metric stream. For more information about
+     * the additional statistics, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
+     * CloudWatch statistics definitions</a>. </p>
+     */
+    inline const Aws::Vector<MetricStreamStatisticsConfiguration>& GetStatisticsConfigurations() const{ return m_statisticsConfigurations; }
+
+    /**
+     * <p>Each entry in this array displays information about one or more metrics that
+     * include additional statistics in the metric stream. For more information about
+     * the additional statistics, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
+     * CloudWatch statistics definitions</a>. </p>
+     */
+    inline void SetStatisticsConfigurations(const Aws::Vector<MetricStreamStatisticsConfiguration>& value) { m_statisticsConfigurations = value; }
+
+    /**
+     * <p>Each entry in this array displays information about one or more metrics that
+     * include additional statistics in the metric stream. For more information about
+     * the additional statistics, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
+     * CloudWatch statistics definitions</a>. </p>
+     */
+    inline void SetStatisticsConfigurations(Aws::Vector<MetricStreamStatisticsConfiguration>&& value) { m_statisticsConfigurations = std::move(value); }
+
+    /**
+     * <p>Each entry in this array displays information about one or more metrics that
+     * include additional statistics in the metric stream. For more information about
+     * the additional statistics, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
+     * CloudWatch statistics definitions</a>. </p>
+     */
+    inline GetMetricStreamResult& WithStatisticsConfigurations(const Aws::Vector<MetricStreamStatisticsConfiguration>& value) { SetStatisticsConfigurations(value); return *this;}
+
+    /**
+     * <p>Each entry in this array displays information about one or more metrics that
+     * include additional statistics in the metric stream. For more information about
+     * the additional statistics, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
+     * CloudWatch statistics definitions</a>. </p>
+     */
+    inline GetMetricStreamResult& WithStatisticsConfigurations(Aws::Vector<MetricStreamStatisticsConfiguration>&& value) { SetStatisticsConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>Each entry in this array displays information about one or more metrics that
+     * include additional statistics in the metric stream. For more information about
+     * the additional statistics, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
+     * CloudWatch statistics definitions</a>. </p>
+     */
+    inline GetMetricStreamResult& AddStatisticsConfigurations(const MetricStreamStatisticsConfiguration& value) { m_statisticsConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>Each entry in this array displays information about one or more metrics that
+     * include additional statistics in the metric stream. For more information about
+     * the additional statistics, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
+     * CloudWatch statistics definitions</a>. </p>
+     */
+    inline GetMetricStreamResult& AddStatisticsConfigurations(MetricStreamStatisticsConfiguration&& value) { m_statisticsConfigurations.push_back(std::move(value)); return *this; }
 
 
     
@@ -445,6 +530,8 @@ namespace Model
     Aws::Utils::DateTime m_lastUpdateDate;
 
     MetricStreamOutputFormat m_outputFormat;
+
+    Aws::Vector<MetricStreamStatisticsConfiguration> m_statisticsConfigurations;
 
     ResponseMetadata m_responseMetadata;
   };

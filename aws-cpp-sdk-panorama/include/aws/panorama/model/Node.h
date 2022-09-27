@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/panorama/Panorama_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/panorama/model/NodeCategory.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -41,44 +41,106 @@ namespace Model
 
 
     /**
-     * <p>The node's ID.</p>
+     * <p>The node's category.</p>
      */
-    inline const Aws::String& GetNodeId() const{ return m_nodeId; }
+    inline const NodeCategory& GetCategory() const{ return m_category; }
 
     /**
-     * <p>The node's ID.</p>
+     * <p>The node's category.</p>
      */
-    inline bool NodeIdHasBeenSet() const { return m_nodeIdHasBeenSet; }
+    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
 
     /**
-     * <p>The node's ID.</p>
+     * <p>The node's category.</p>
      */
-    inline void SetNodeId(const Aws::String& value) { m_nodeIdHasBeenSet = true; m_nodeId = value; }
+    inline void SetCategory(const NodeCategory& value) { m_categoryHasBeenSet = true; m_category = value; }
 
     /**
-     * <p>The node's ID.</p>
+     * <p>The node's category.</p>
      */
-    inline void SetNodeId(Aws::String&& value) { m_nodeIdHasBeenSet = true; m_nodeId = std::move(value); }
+    inline void SetCategory(NodeCategory&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
 
     /**
-     * <p>The node's ID.</p>
+     * <p>The node's category.</p>
      */
-    inline void SetNodeId(const char* value) { m_nodeIdHasBeenSet = true; m_nodeId.assign(value); }
+    inline Node& WithCategory(const NodeCategory& value) { SetCategory(value); return *this;}
 
     /**
-     * <p>The node's ID.</p>
+     * <p>The node's category.</p>
      */
-    inline Node& WithNodeId(const Aws::String& value) { SetNodeId(value); return *this;}
+    inline Node& WithCategory(NodeCategory&& value) { SetCategory(std::move(value)); return *this;}
+
 
     /**
-     * <p>The node's ID.</p>
+     * <p>When the node was created.</p>
      */
-    inline Node& WithNodeId(Aws::String&& value) { SetNodeId(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
 
     /**
-     * <p>The node's ID.</p>
+     * <p>When the node was created.</p>
      */
-    inline Node& WithNodeId(const char* value) { SetNodeId(value); return *this;}
+    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
+
+    /**
+     * <p>When the node was created.</p>
+     */
+    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
+
+    /**
+     * <p>When the node was created.</p>
+     */
+    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
+
+    /**
+     * <p>When the node was created.</p>
+     */
+    inline Node& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
+
+    /**
+     * <p>When the node was created.</p>
+     */
+    inline Node& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The node's description.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The node's description.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The node's description.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>The node's description.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>The node's description.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>The node's description.</p>
+     */
+    inline Node& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>The node's description.</p>
+     */
+    inline Node& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>The node's description.</p>
+     */
+    inline Node& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
@@ -123,34 +185,44 @@ namespace Model
 
 
     /**
-     * <p>The node's category.</p>
+     * <p>The node's ID.</p>
      */
-    inline const NodeCategory& GetCategory() const{ return m_category; }
+    inline const Aws::String& GetNodeId() const{ return m_nodeId; }
 
     /**
-     * <p>The node's category.</p>
+     * <p>The node's ID.</p>
      */
-    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+    inline bool NodeIdHasBeenSet() const { return m_nodeIdHasBeenSet; }
 
     /**
-     * <p>The node's category.</p>
+     * <p>The node's ID.</p>
      */
-    inline void SetCategory(const NodeCategory& value) { m_categoryHasBeenSet = true; m_category = value; }
+    inline void SetNodeId(const Aws::String& value) { m_nodeIdHasBeenSet = true; m_nodeId = value; }
 
     /**
-     * <p>The node's category.</p>
+     * <p>The node's ID.</p>
      */
-    inline void SetCategory(NodeCategory&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
+    inline void SetNodeId(Aws::String&& value) { m_nodeIdHasBeenSet = true; m_nodeId = std::move(value); }
 
     /**
-     * <p>The node's category.</p>
+     * <p>The node's ID.</p>
      */
-    inline Node& WithCategory(const NodeCategory& value) { SetCategory(value); return *this;}
+    inline void SetNodeId(const char* value) { m_nodeIdHasBeenSet = true; m_nodeId.assign(value); }
 
     /**
-     * <p>The node's category.</p>
+     * <p>The node's ID.</p>
      */
-    inline Node& WithCategory(NodeCategory&& value) { SetCategory(std::move(value)); return *this;}
+    inline Node& WithNodeId(const Aws::String& value) { SetNodeId(value); return *this;}
+
+    /**
+     * <p>The node's ID.</p>
+     */
+    inline Node& WithNodeId(Aws::String&& value) { SetNodeId(std::move(value)); return *this;}
+
+    /**
+     * <p>The node's ID.</p>
+     */
+    inline Node& WithNodeId(const char* value) { SetNodeId(value); return *this;}
 
 
     /**
@@ -195,44 +267,44 @@ namespace Model
 
 
     /**
-     * <p>The node's package name.</p>
+     * <p>The node's ARN.</p>
      */
-    inline const Aws::String& GetPackageName() const{ return m_packageName; }
+    inline const Aws::String& GetPackageArn() const{ return m_packageArn; }
 
     /**
-     * <p>The node's package name.</p>
+     * <p>The node's ARN.</p>
      */
-    inline bool PackageNameHasBeenSet() const { return m_packageNameHasBeenSet; }
+    inline bool PackageArnHasBeenSet() const { return m_packageArnHasBeenSet; }
 
     /**
-     * <p>The node's package name.</p>
+     * <p>The node's ARN.</p>
      */
-    inline void SetPackageName(const Aws::String& value) { m_packageNameHasBeenSet = true; m_packageName = value; }
+    inline void SetPackageArn(const Aws::String& value) { m_packageArnHasBeenSet = true; m_packageArn = value; }
 
     /**
-     * <p>The node's package name.</p>
+     * <p>The node's ARN.</p>
      */
-    inline void SetPackageName(Aws::String&& value) { m_packageNameHasBeenSet = true; m_packageName = std::move(value); }
+    inline void SetPackageArn(Aws::String&& value) { m_packageArnHasBeenSet = true; m_packageArn = std::move(value); }
 
     /**
-     * <p>The node's package name.</p>
+     * <p>The node's ARN.</p>
      */
-    inline void SetPackageName(const char* value) { m_packageNameHasBeenSet = true; m_packageName.assign(value); }
+    inline void SetPackageArn(const char* value) { m_packageArnHasBeenSet = true; m_packageArn.assign(value); }
 
     /**
-     * <p>The node's package name.</p>
+     * <p>The node's ARN.</p>
      */
-    inline Node& WithPackageName(const Aws::String& value) { SetPackageName(value); return *this;}
+    inline Node& WithPackageArn(const Aws::String& value) { SetPackageArn(value); return *this;}
 
     /**
-     * <p>The node's package name.</p>
+     * <p>The node's ARN.</p>
      */
-    inline Node& WithPackageName(Aws::String&& value) { SetPackageName(std::move(value)); return *this;}
+    inline Node& WithPackageArn(Aws::String&& value) { SetPackageArn(std::move(value)); return *this;}
 
     /**
-     * <p>The node's package name.</p>
+     * <p>The node's ARN.</p>
      */
-    inline Node& WithPackageName(const char* value) { SetPackageName(value); return *this;}
+    inline Node& WithPackageArn(const char* value) { SetPackageArn(value); return *this;}
 
 
     /**
@@ -277,44 +349,44 @@ namespace Model
 
 
     /**
-     * <p>The node's ARN.</p>
+     * <p>The node's package name.</p>
      */
-    inline const Aws::String& GetPackageArn() const{ return m_packageArn; }
+    inline const Aws::String& GetPackageName() const{ return m_packageName; }
 
     /**
-     * <p>The node's ARN.</p>
+     * <p>The node's package name.</p>
      */
-    inline bool PackageArnHasBeenSet() const { return m_packageArnHasBeenSet; }
+    inline bool PackageNameHasBeenSet() const { return m_packageNameHasBeenSet; }
 
     /**
-     * <p>The node's ARN.</p>
+     * <p>The node's package name.</p>
      */
-    inline void SetPackageArn(const Aws::String& value) { m_packageArnHasBeenSet = true; m_packageArn = value; }
+    inline void SetPackageName(const Aws::String& value) { m_packageNameHasBeenSet = true; m_packageName = value; }
 
     /**
-     * <p>The node's ARN.</p>
+     * <p>The node's package name.</p>
      */
-    inline void SetPackageArn(Aws::String&& value) { m_packageArnHasBeenSet = true; m_packageArn = std::move(value); }
+    inline void SetPackageName(Aws::String&& value) { m_packageNameHasBeenSet = true; m_packageName = std::move(value); }
 
     /**
-     * <p>The node's ARN.</p>
+     * <p>The node's package name.</p>
      */
-    inline void SetPackageArn(const char* value) { m_packageArnHasBeenSet = true; m_packageArn.assign(value); }
+    inline void SetPackageName(const char* value) { m_packageNameHasBeenSet = true; m_packageName.assign(value); }
 
     /**
-     * <p>The node's ARN.</p>
+     * <p>The node's package name.</p>
      */
-    inline Node& WithPackageArn(const Aws::String& value) { SetPackageArn(value); return *this;}
+    inline Node& WithPackageName(const Aws::String& value) { SetPackageName(value); return *this;}
 
     /**
-     * <p>The node's ARN.</p>
+     * <p>The node's package name.</p>
      */
-    inline Node& WithPackageArn(Aws::String&& value) { SetPackageArn(std::move(value)); return *this;}
+    inline Node& WithPackageName(Aws::String&& value) { SetPackageName(std::move(value)); return *this;}
 
     /**
-     * <p>The node's ARN.</p>
+     * <p>The node's package name.</p>
      */
-    inline Node& WithPackageArn(const char* value) { SetPackageArn(value); return *this;}
+    inline Node& WithPackageName(const char* value) { SetPackageName(value); return *this;}
 
 
     /**
@@ -398,112 +470,40 @@ namespace Model
      */
     inline Node& WithPatchVersion(const char* value) { SetPatchVersion(value); return *this;}
 
-
-    /**
-     * <p>The node's description.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The node's description.</p>
-     */
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The node's description.</p>
-     */
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The node's description.</p>
-     */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The node's description.</p>
-     */
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The node's description.</p>
-     */
-    inline Node& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The node's description.</p>
-     */
-    inline Node& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The node's description.</p>
-     */
-    inline Node& WithDescription(const char* value) { SetDescription(value); return *this;}
-
-
-    /**
-     * <p>When the node was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
-
-    /**
-     * <p>When the node was created.</p>
-     */
-    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
-
-    /**
-     * <p>When the node was created.</p>
-     */
-    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
-
-    /**
-     * <p>When the node was created.</p>
-     */
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
-
-    /**
-     * <p>When the node was created.</p>
-     */
-    inline Node& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
-
-    /**
-     * <p>When the node was created.</p>
-     */
-    inline Node& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
-
   private:
-
-    Aws::String m_nodeId;
-    bool m_nodeIdHasBeenSet;
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet;
 
     NodeCategory m_category;
     bool m_categoryHasBeenSet;
 
+    Aws::Utils::DateTime m_createdTime;
+    bool m_createdTimeHasBeenSet;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet;
+
+    Aws::String m_nodeId;
+    bool m_nodeIdHasBeenSet;
+
     Aws::String m_ownerAccount;
     bool m_ownerAccountHasBeenSet;
 
-    Aws::String m_packageName;
-    bool m_packageNameHasBeenSet;
+    Aws::String m_packageArn;
+    bool m_packageArnHasBeenSet;
 
     Aws::String m_packageId;
     bool m_packageIdHasBeenSet;
 
-    Aws::String m_packageArn;
-    bool m_packageArnHasBeenSet;
+    Aws::String m_packageName;
+    bool m_packageNameHasBeenSet;
 
     Aws::String m_packageVersion;
     bool m_packageVersionHasBeenSet;
 
     Aws::String m_patchVersion;
     bool m_patchVersionHasBeenSet;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet;
-
-    Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
   };
 
 } // namespace Model

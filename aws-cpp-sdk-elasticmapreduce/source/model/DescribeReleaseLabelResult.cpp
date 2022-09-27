@@ -49,6 +49,15 @@ DescribeReleaseLabelResult& DescribeReleaseLabelResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("AvailableOSReleases"))
+  {
+    Array<JsonView> availableOSReleasesJsonList = jsonValue.GetArray("AvailableOSReleases");
+    for(unsigned availableOSReleasesIndex = 0; availableOSReleasesIndex < availableOSReleasesJsonList.GetLength(); ++availableOSReleasesIndex)
+    {
+      m_availableOSReleases.push_back(availableOSReleasesJsonList[availableOSReleasesIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

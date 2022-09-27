@@ -40,42 +40,50 @@ namespace Model
 
 
     /**
-     * <p>The access token for the set user settings request.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose user
+     * settings you want to configure.</p>
      */
     inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
 
     /**
-     * <p>The access token for the set user settings request.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose user
+     * settings you want to configure.</p>
      */
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
 
     /**
-     * <p>The access token for the set user settings request.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose user
+     * settings you want to configure.</p>
      */
     inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
 
     /**
-     * <p>The access token for the set user settings request.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose user
+     * settings you want to configure.</p>
      */
     inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
 
     /**
-     * <p>The access token for the set user settings request.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose user
+     * settings you want to configure.</p>
      */
     inline void SetAccessToken(const char* value) { m_accessTokenHasBeenSet = true; m_accessToken.assign(value); }
 
     /**
-     * <p>The access token for the set user settings request.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose user
+     * settings you want to configure.</p>
      */
     inline SetUserSettingsRequest& WithAccessToken(const Aws::String& value) { SetAccessToken(value); return *this;}
 
     /**
-     * <p>The access token for the set user settings request.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose user
+     * settings you want to configure.</p>
      */
     inline SetUserSettingsRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
 
     /**
-     * <p>The access token for the set user settings request.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose user
+     * settings you want to configure.</p>
      */
     inline SetUserSettingsRequest& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
 

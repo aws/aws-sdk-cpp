@@ -1026,58 +1026,82 @@ namespace Model
 
 
     /**
-     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
-     * to use to encrypt data in the cluster that you restore from a shared
-     * snapshot.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that encrypts
+     * data in the cluster restored from a shared snapshot. You can also provide the
+     * key ID when you restore from an unencrypted snapshot to an encrypted cluster in
+     * the same account. Additionally, you can specify a new KMS key ID when you
+     * restore from an encrypted snapshot in the same account in order to change it. In
+     * that case, the restored cluster is encrypted with the new KMS key ID.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
-     * to use to encrypt data in the cluster that you restore from a shared
-     * snapshot.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that encrypts
+     * data in the cluster restored from a shared snapshot. You can also provide the
+     * key ID when you restore from an unencrypted snapshot to an encrypted cluster in
+     * the same account. Additionally, you can specify a new KMS key ID when you
+     * restore from an encrypted snapshot in the same account in order to change it. In
+     * that case, the restored cluster is encrypted with the new KMS key ID.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
-     * to use to encrypt data in the cluster that you restore from a shared
-     * snapshot.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that encrypts
+     * data in the cluster restored from a shared snapshot. You can also provide the
+     * key ID when you restore from an unencrypted snapshot to an encrypted cluster in
+     * the same account. Additionally, you can specify a new KMS key ID when you
+     * restore from an encrypted snapshot in the same account in order to change it. In
+     * that case, the restored cluster is encrypted with the new KMS key ID.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
-     * to use to encrypt data in the cluster that you restore from a shared
-     * snapshot.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that encrypts
+     * data in the cluster restored from a shared snapshot. You can also provide the
+     * key ID when you restore from an unencrypted snapshot to an encrypted cluster in
+     * the same account. Additionally, you can specify a new KMS key ID when you
+     * restore from an encrypted snapshot in the same account in order to change it. In
+     * that case, the restored cluster is encrypted with the new KMS key ID.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
-     * to use to encrypt data in the cluster that you restore from a shared
-     * snapshot.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that encrypts
+     * data in the cluster restored from a shared snapshot. You can also provide the
+     * key ID when you restore from an unencrypted snapshot to an encrypted cluster in
+     * the same account. Additionally, you can specify a new KMS key ID when you
+     * restore from an encrypted snapshot in the same account in order to change it. In
+     * that case, the restored cluster is encrypted with the new KMS key ID.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
-     * to use to encrypt data in the cluster that you restore from a shared
-     * snapshot.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that encrypts
+     * data in the cluster restored from a shared snapshot. You can also provide the
+     * key ID when you restore from an unencrypted snapshot to an encrypted cluster in
+     * the same account. Additionally, you can specify a new KMS key ID when you
+     * restore from an encrypted snapshot in the same account in order to change it. In
+     * that case, the restored cluster is encrypted with the new KMS key ID.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
-     * to use to encrypt data in the cluster that you restore from a shared
-     * snapshot.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that encrypts
+     * data in the cluster restored from a shared snapshot. You can also provide the
+     * key ID when you restore from an unencrypted snapshot to an encrypted cluster in
+     * the same account. Additionally, you can specify a new KMS key ID when you
+     * restore from an encrypted snapshot in the same account in order to change it. In
+     * that case, the restored cluster is encrypted with the new KMS key ID.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
-     * to use to encrypt data in the cluster that you restore from a shared
-     * snapshot.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that encrypts
+     * data in the cluster restored from a shared snapshot. You can also provide the
+     * key ID when you restore from an unencrypted snapshot to an encrypted cluster in
+     * the same account. Additionally, you can specify a new KMS key ID when you
+     * restore from an encrypted snapshot in the same account in order to change it. In
+     * that case, the restored cluster is encrypted with the new KMS key ID.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -1308,81 +1332,99 @@ namespace Model
     /**
      * <p>A list of Identity and Access Management (IAM) roles that can be used by the
      * cluster to access other Amazon Web Services services. You must supply the IAM
-     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
-     * associated at any time.</p>
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIamRoles() const{ return m_iamRoles; }
 
     /**
      * <p>A list of Identity and Access Management (IAM) roles that can be used by the
      * cluster to access other Amazon Web Services services. You must supply the IAM
-     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
-     * associated at any time.</p>
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline bool IamRolesHasBeenSet() const { return m_iamRolesHasBeenSet; }
 
     /**
      * <p>A list of Identity and Access Management (IAM) roles that can be used by the
      * cluster to access other Amazon Web Services services. You must supply the IAM
-     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
-     * associated at any time.</p>
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline void SetIamRoles(const Aws::Vector<Aws::String>& value) { m_iamRolesHasBeenSet = true; m_iamRoles = value; }
 
     /**
      * <p>A list of Identity and Access Management (IAM) roles that can be used by the
      * cluster to access other Amazon Web Services services. You must supply the IAM
-     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
-     * associated at any time.</p>
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline void SetIamRoles(Aws::Vector<Aws::String>&& value) { m_iamRolesHasBeenSet = true; m_iamRoles = std::move(value); }
 
     /**
      * <p>A list of Identity and Access Management (IAM) roles that can be used by the
      * cluster to access other Amazon Web Services services. You must supply the IAM
-     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
-     * associated at any time.</p>
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithIamRoles(const Aws::Vector<Aws::String>& value) { SetIamRoles(value); return *this;}
 
     /**
      * <p>A list of Identity and Access Management (IAM) roles that can be used by the
      * cluster to access other Amazon Web Services services. You must supply the IAM
-     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
-     * associated at any time.</p>
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithIamRoles(Aws::Vector<Aws::String>&& value) { SetIamRoles(std::move(value)); return *this;}
 
     /**
      * <p>A list of Identity and Access Management (IAM) roles that can be used by the
      * cluster to access other Amazon Web Services services. You must supply the IAM
-     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
-     * associated at any time.</p>
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline RestoreFromClusterSnapshotRequest& AddIamRoles(const Aws::String& value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(value); return *this; }
 
     /**
      * <p>A list of Identity and Access Management (IAM) roles that can be used by the
      * cluster to access other Amazon Web Services services. You must supply the IAM
-     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
-     * associated at any time.</p>
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline RestoreFromClusterSnapshotRequest& AddIamRoles(Aws::String&& value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of Identity and Access Management (IAM) roles that can be used by the
      * cluster to access other Amazon Web Services services. You must supply the IAM
-     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
-     * associated at any time.</p>
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline RestoreFromClusterSnapshotRequest& AddIamRoles(const char* value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(value); return *this; }
 
@@ -1762,6 +1804,31 @@ namespace Model
      */
     inline RestoreFromClusterSnapshotRequest& WithTargetReservedNodeOfferingId(const char* value) { SetTargetReservedNodeOfferingId(value); return *this;}
 
+
+    /**
+     * <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted
+     * with Key Management Service (KMS) and a customer managed key.</p>
+     */
+    inline bool GetEncrypted() const{ return m_encrypted; }
+
+    /**
+     * <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted
+     * with Key Management Service (KMS) and a customer managed key.</p>
+     */
+    inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
+
+    /**
+     * <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted
+     * with Key Management Service (KMS) and a customer managed key.</p>
+     */
+    inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
+
+    /**
+     * <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted
+     * with Key Management Service (KMS) and a customer managed key.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -1856,6 +1923,9 @@ namespace Model
 
     Aws::String m_targetReservedNodeOfferingId;
     bool m_targetReservedNodeOfferingIdHasBeenSet;
+
+    bool m_encrypted;
+    bool m_encryptedHasBeenSet;
   };
 
 } // namespace Model

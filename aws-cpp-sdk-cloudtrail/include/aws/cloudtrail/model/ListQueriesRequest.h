@@ -236,42 +236,48 @@ namespace Model
     /**
      * <p>The status of queries that you want to return in results. Valid values for
      * <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>,
-     * <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code>.</p>
+     * <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or
+     * <code>CANCELLED</code>.</p>
      */
     inline const QueryStatus& GetQueryStatus() const{ return m_queryStatus; }
 
     /**
      * <p>The status of queries that you want to return in results. Valid values for
      * <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>,
-     * <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code>.</p>
+     * <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or
+     * <code>CANCELLED</code>.</p>
      */
     inline bool QueryStatusHasBeenSet() const { return m_queryStatusHasBeenSet; }
 
     /**
      * <p>The status of queries that you want to return in results. Valid values for
      * <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>,
-     * <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code>.</p>
+     * <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or
+     * <code>CANCELLED</code>.</p>
      */
     inline void SetQueryStatus(const QueryStatus& value) { m_queryStatusHasBeenSet = true; m_queryStatus = value; }
 
     /**
      * <p>The status of queries that you want to return in results. Valid values for
      * <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>,
-     * <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code>.</p>
+     * <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or
+     * <code>CANCELLED</code>.</p>
      */
     inline void SetQueryStatus(QueryStatus&& value) { m_queryStatusHasBeenSet = true; m_queryStatus = std::move(value); }
 
     /**
      * <p>The status of queries that you want to return in results. Valid values for
      * <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>,
-     * <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code>.</p>
+     * <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or
+     * <code>CANCELLED</code>.</p>
      */
     inline ListQueriesRequest& WithQueryStatus(const QueryStatus& value) { SetQueryStatus(value); return *this;}
 
     /**
      * <p>The status of queries that you want to return in results. Valid values for
      * <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>,
-     * <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code>.</p>
+     * <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or
+     * <code>CANCELLED</code>.</p>
      */
     inline ListQueriesRequest& WithQueryStatus(QueryStatus&& value) { SetQueryStatus(std::move(value)); return *this;}
 

@@ -31,6 +31,8 @@ StartTranscriptionJobRequest::StartTranscriptionJobRequest() :
     m_contentRedactionHasBeenSet(false),
     m_identifyLanguage(false),
     m_identifyLanguageHasBeenSet(false),
+    m_identifyMultipleLanguages(false),
+    m_identifyMultipleLanguagesHasBeenSet(false),
     m_languageOptionsHasBeenSet(false),
     m_subtitlesHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -126,6 +128,12 @@ Aws::String StartTranscriptionJobRequest::SerializePayload() const
   if(m_identifyLanguageHasBeenSet)
   {
    payload.WithBool("IdentifyLanguage", m_identifyLanguage);
+
+  }
+
+  if(m_identifyMultipleLanguagesHasBeenSet)
+  {
+   payload.WithBool("IdentifyMultipleLanguages", m_identifyMultipleLanguages);
 
   }
 

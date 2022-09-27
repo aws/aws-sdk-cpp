@@ -10,6 +10,7 @@
 #include <aws/ec2/model/ArchitectureValues.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/BootModeValues.h>
+#include <aws/ec2/model/TpmSupportValues.h>
 #include <aws/ec2/model/BlockDeviceMapping.h>
 #include <utility>
 
@@ -787,6 +788,152 @@ namespace Model
      */
     inline RegisterImageRequest& WithBootMode(BootModeValues&& value) { SetBootMode(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Set to <code>v2.0</code> to enable Trusted Platform Module (TPM) support. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline const TpmSupportValues& GetTpmSupport() const{ return m_tpmSupport; }
+
+    /**
+     * <p>Set to <code>v2.0</code> to enable Trusted Platform Module (TPM) support. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline bool TpmSupportHasBeenSet() const { return m_tpmSupportHasBeenSet; }
+
+    /**
+     * <p>Set to <code>v2.0</code> to enable Trusted Platform Module (TPM) support. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetTpmSupport(const TpmSupportValues& value) { m_tpmSupportHasBeenSet = true; m_tpmSupport = value; }
+
+    /**
+     * <p>Set to <code>v2.0</code> to enable Trusted Platform Module (TPM) support. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetTpmSupport(TpmSupportValues&& value) { m_tpmSupportHasBeenSet = true; m_tpmSupport = std::move(value); }
+
+    /**
+     * <p>Set to <code>v2.0</code> to enable Trusted Platform Module (TPM) support. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline RegisterImageRequest& WithTpmSupport(const TpmSupportValues& value) { SetTpmSupport(value); return *this;}
+
+    /**
+     * <p>Set to <code>v2.0</code> to enable Trusted Platform Module (TPM) support. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline RegisterImageRequest& WithTpmSupport(TpmSupportValues&& value) { SetTpmSupport(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Base64 representation of the non-volatile UEFI variable store. To retrieve
+     * the UEFI data, use the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a>
+     * command. You can inspect and modify the UEFI data by using the <a
+     * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
+     * GitHub. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
+     * Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline const Aws::String& GetUefiData() const{ return m_uefiData; }
+
+    /**
+     * <p>Base64 representation of the non-volatile UEFI variable store. To retrieve
+     * the UEFI data, use the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a>
+     * command. You can inspect and modify the UEFI data by using the <a
+     * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
+     * GitHub. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
+     * Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline bool UefiDataHasBeenSet() const { return m_uefiDataHasBeenSet; }
+
+    /**
+     * <p>Base64 representation of the non-volatile UEFI variable store. To retrieve
+     * the UEFI data, use the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a>
+     * command. You can inspect and modify the UEFI data by using the <a
+     * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
+     * GitHub. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
+     * Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetUefiData(const Aws::String& value) { m_uefiDataHasBeenSet = true; m_uefiData = value; }
+
+    /**
+     * <p>Base64 representation of the non-volatile UEFI variable store. To retrieve
+     * the UEFI data, use the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a>
+     * command. You can inspect and modify the UEFI data by using the <a
+     * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
+     * GitHub. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
+     * Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetUefiData(Aws::String&& value) { m_uefiDataHasBeenSet = true; m_uefiData = std::move(value); }
+
+    /**
+     * <p>Base64 representation of the non-volatile UEFI variable store. To retrieve
+     * the UEFI data, use the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a>
+     * command. You can inspect and modify the UEFI data by using the <a
+     * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
+     * GitHub. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
+     * Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetUefiData(const char* value) { m_uefiDataHasBeenSet = true; m_uefiData.assign(value); }
+
+    /**
+     * <p>Base64 representation of the non-volatile UEFI variable store. To retrieve
+     * the UEFI data, use the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a>
+     * command. You can inspect and modify the UEFI data by using the <a
+     * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
+     * GitHub. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
+     * Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline RegisterImageRequest& WithUefiData(const Aws::String& value) { SetUefiData(value); return *this;}
+
+    /**
+     * <p>Base64 representation of the non-volatile UEFI variable store. To retrieve
+     * the UEFI data, use the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a>
+     * command. You can inspect and modify the UEFI data by using the <a
+     * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
+     * GitHub. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
+     * Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline RegisterImageRequest& WithUefiData(Aws::String&& value) { SetUefiData(std::move(value)); return *this;}
+
+    /**
+     * <p>Base64 representation of the non-volatile UEFI variable store. To retrieve
+     * the UEFI data, use the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a>
+     * command. You can inspect and modify the UEFI data by using the <a
+     * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
+     * GitHub. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
+     * Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline RegisterImageRequest& WithUefiData(const char* value) { SetUefiData(value); return *this;}
+
   private:
 
     Aws::String m_imageLocation;
@@ -830,6 +977,12 @@ namespace Model
 
     BootModeValues m_bootMode;
     bool m_bootModeHasBeenSet;
+
+    TpmSupportValues m_tpmSupport;
+    bool m_tpmSupportHasBeenSet;
+
+    Aws::String m_uefiData;
+    bool m_uefiDataHasBeenSet;
   };
 
 } // namespace Model

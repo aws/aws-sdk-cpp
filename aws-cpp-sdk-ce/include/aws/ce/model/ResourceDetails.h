@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Details on the resource.</p><p><h3>See Also:</h3>   <a
+   * <p>Details for the resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ResourceDetails">AWS
    * API Reference</a></p>
    */
@@ -38,32 +38,32 @@ namespace Model
 
 
     /**
-     * <p>Details on the Amazon EC2 resource.</p>
+     * <p>Details for the Amazon EC2 resource.</p>
      */
     inline const EC2ResourceDetails& GetEC2ResourceDetails() const{ return m_eC2ResourceDetails; }
 
     /**
-     * <p>Details on the Amazon EC2 resource.</p>
+     * <p>Details for the Amazon EC2 resource.</p>
      */
     inline bool EC2ResourceDetailsHasBeenSet() const { return m_eC2ResourceDetailsHasBeenSet; }
 
     /**
-     * <p>Details on the Amazon EC2 resource.</p>
+     * <p>Details for the Amazon EC2 resource.</p>
      */
     inline void SetEC2ResourceDetails(const EC2ResourceDetails& value) { m_eC2ResourceDetailsHasBeenSet = true; m_eC2ResourceDetails = value; }
 
     /**
-     * <p>Details on the Amazon EC2 resource.</p>
+     * <p>Details for the Amazon EC2 resource.</p>
      */
     inline void SetEC2ResourceDetails(EC2ResourceDetails&& value) { m_eC2ResourceDetailsHasBeenSet = true; m_eC2ResourceDetails = std::move(value); }
 
     /**
-     * <p>Details on the Amazon EC2 resource.</p>
+     * <p>Details for the Amazon EC2 resource.</p>
      */
     inline ResourceDetails& WithEC2ResourceDetails(const EC2ResourceDetails& value) { SetEC2ResourceDetails(value); return *this;}
 
     /**
-     * <p>Details on the Amazon EC2 resource.</p>
+     * <p>Details for the Amazon EC2 resource.</p>
      */
     inline ResourceDetails& WithEC2ResourceDetails(EC2ResourceDetails&& value) { SetEC2ResourceDetails(std::move(value)); return *this;}
 

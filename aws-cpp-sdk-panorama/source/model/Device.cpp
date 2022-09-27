@@ -19,42 +19,39 @@ namespace Model
 {
 
 Device::Device() : 
-    m_deviceIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
+    m_brand(DeviceBrand::NOT_SET),
+    m_brandHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
-    m_provisioningStatus(DeviceStatus::NOT_SET),
-    m_provisioningStatusHasBeenSet(false),
+    m_deviceIdHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
-    m_leaseExpirationTimeHasBeenSet(false)
+    m_leaseExpirationTimeHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_provisioningStatus(DeviceStatus::NOT_SET),
+    m_provisioningStatusHasBeenSet(false)
 {
 }
 
 Device::Device(JsonView jsonValue) : 
-    m_deviceIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
+    m_brand(DeviceBrand::NOT_SET),
+    m_brandHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
-    m_provisioningStatus(DeviceStatus::NOT_SET),
-    m_provisioningStatusHasBeenSet(false),
+    m_deviceIdHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
-    m_leaseExpirationTimeHasBeenSet(false)
+    m_leaseExpirationTimeHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_provisioningStatus(DeviceStatus::NOT_SET),
+    m_provisioningStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 Device& Device::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("DeviceId"))
+  if(jsonValue.ValueExists("Brand"))
   {
-    m_deviceId = jsonValue.GetString("DeviceId");
+    m_brand = DeviceBrandMapper::GetDeviceBrandForName(jsonValue.GetString("Brand"));
 
-    m_deviceIdHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("Name"))
-  {
-    m_name = jsonValue.GetString("Name");
-
-    m_nameHasBeenSet = true;
+    m_brandHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CreatedTime"))
@@ -64,11 +61,11 @@ Device& Device::operator =(JsonView jsonValue)
     m_createdTimeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("ProvisioningStatus"))
+  if(jsonValue.ValueExists("DeviceId"))
   {
-    m_provisioningStatus = DeviceStatusMapper::GetDeviceStatusForName(jsonValue.GetString("ProvisioningStatus"));
+    m_deviceId = jsonValue.GetString("DeviceId");
 
-    m_provisioningStatusHasBeenSet = true;
+    m_deviceIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("LastUpdatedTime"))
@@ -85,6 +82,20 @@ Device& Device::operator =(JsonView jsonValue)
     m_leaseExpirationTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Name"))
+  {
+    m_name = jsonValue.GetString("Name");
+
+    m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ProvisioningStatus"))
+  {
+    m_provisioningStatus = DeviceStatusMapper::GetDeviceStatusForName(jsonValue.GetString("ProvisioningStatus"));
+
+    m_provisioningStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -92,16 +103,9 @@ JsonValue Device::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_deviceIdHasBeenSet)
+  if(m_brandHasBeenSet)
   {
-   payload.WithString("DeviceId", m_deviceId);
-
-  }
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+   payload.WithString("Brand", DeviceBrandMapper::GetNameForDeviceBrand(m_brand));
   }
 
   if(m_createdTimeHasBeenSet)
@@ -109,9 +113,10 @@ JsonValue Device::Jsonize() const
    payload.WithDouble("CreatedTime", m_createdTime.SecondsWithMSPrecision());
   }
 
-  if(m_provisioningStatusHasBeenSet)
+  if(m_deviceIdHasBeenSet)
   {
-   payload.WithString("ProvisioningStatus", DeviceStatusMapper::GetNameForDeviceStatus(m_provisioningStatus));
+   payload.WithString("DeviceId", m_deviceId);
+
   }
 
   if(m_lastUpdatedTimeHasBeenSet)
@@ -122,6 +127,17 @@ JsonValue Device::Jsonize() const
   if(m_leaseExpirationTimeHasBeenSet)
   {
    payload.WithDouble("LeaseExpirationTime", m_leaseExpirationTime.SecondsWithMSPrecision());
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
+
+  }
+
+  if(m_provisioningStatusHasBeenSet)
+  {
+   payload.WithString("ProvisioningStatus", DeviceStatusMapper::GetNameForDeviceStatus(m_provisioningStatus));
   }
 
   return payload;

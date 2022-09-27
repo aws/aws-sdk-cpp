@@ -230,56 +230,72 @@ namespace Model
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session.</p>
+     * object with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
      */
     inline const Aws::Vector<GameProperty>& GetGameProperties() const{ return m_gameProperties; }
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session.</p>
+     * object with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
      */
     inline bool GamePropertiesHasBeenSet() const { return m_gamePropertiesHasBeenSet; }
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session.</p>
+     * object with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
      */
     inline void SetGameProperties(const Aws::Vector<GameProperty>& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = value; }
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session.</p>
+     * object with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
      */
     inline void SetGameProperties(Aws::Vector<GameProperty>&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = std::move(value); }
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session.</p>
+     * object with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
      */
     inline CreateGameSessionRequest& WithGameProperties(const Aws::Vector<GameProperty>& value) { SetGameProperties(value); return *this;}
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session.</p>
+     * object with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
      */
     inline CreateGameSessionRequest& WithGameProperties(Aws::Vector<GameProperty>&& value) { SetGameProperties(std::move(value)); return *this;}
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session.</p>
+     * object with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
      */
     inline CreateGameSessionRequest& AddGameProperties(const GameProperty& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(value); return *this; }
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session.</p>
+     * object with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
      */
     inline CreateGameSessionRequest& AddGameProperties(GameProperty&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(std::move(value)); return *this; }
 
@@ -554,56 +570,72 @@ namespace Model
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
      * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session.</p>
+     * with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
      */
     inline const Aws::String& GetGameSessionData() const{ return m_gameSessionData; }
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
      * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session.</p>
+     * with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
      */
     inline bool GameSessionDataHasBeenSet() const { return m_gameSessionDataHasBeenSet; }
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
      * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session.</p>
+     * with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
      */
     inline void SetGameSessionData(const Aws::String& value) { m_gameSessionDataHasBeenSet = true; m_gameSessionData = value; }
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
      * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session.</p>
+     * with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
      */
     inline void SetGameSessionData(Aws::String&& value) { m_gameSessionDataHasBeenSet = true; m_gameSessionData = std::move(value); }
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
      * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session.</p>
+     * with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
      */
     inline void SetGameSessionData(const char* value) { m_gameSessionDataHasBeenSet = true; m_gameSessionData.assign(value); }
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
      * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session.</p>
+     * with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
      */
     inline CreateGameSessionRequest& WithGameSessionData(const Aws::String& value) { SetGameSessionData(value); return *this;}
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
      * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session.</p>
+     * with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
      */
     inline CreateGameSessionRequest& WithGameSessionData(Aws::String&& value) { SetGameSessionData(std::move(value)); return *this;}
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
      * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session.</p>
+     * with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
      */
     inline CreateGameSessionRequest& WithGameSessionData(const char* value) { SetGameSessionData(value); return *this;}
 
@@ -611,56 +643,64 @@ namespace Model
     /**
      * <p>A fleet's remote location to place the new game session in. If this parameter
      * is not set, the new game session is placed in the fleet's home Region. Specify a
-     * remote location with an AWS Region code such as <code>us-west-2</code>. </p>
+     * remote location with an Amazon Web Services Region code such as
+     * <code>us-west-2</code>. </p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
     /**
      * <p>A fleet's remote location to place the new game session in. If this parameter
      * is not set, the new game session is placed in the fleet's home Region. Specify a
-     * remote location with an AWS Region code such as <code>us-west-2</code>. </p>
+     * remote location with an Amazon Web Services Region code such as
+     * <code>us-west-2</code>. </p>
      */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
      * <p>A fleet's remote location to place the new game session in. If this parameter
      * is not set, the new game session is placed in the fleet's home Region. Specify a
-     * remote location with an AWS Region code such as <code>us-west-2</code>. </p>
+     * remote location with an Amazon Web Services Region code such as
+     * <code>us-west-2</code>. </p>
      */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
      * <p>A fleet's remote location to place the new game session in. If this parameter
      * is not set, the new game session is placed in the fleet's home Region. Specify a
-     * remote location with an AWS Region code such as <code>us-west-2</code>. </p>
+     * remote location with an Amazon Web Services Region code such as
+     * <code>us-west-2</code>. </p>
      */
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
      * <p>A fleet's remote location to place the new game session in. If this parameter
      * is not set, the new game session is placed in the fleet's home Region. Specify a
-     * remote location with an AWS Region code such as <code>us-west-2</code>. </p>
+     * remote location with an Amazon Web Services Region code such as
+     * <code>us-west-2</code>. </p>
      */
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
 
     /**
      * <p>A fleet's remote location to place the new game session in. If this parameter
      * is not set, the new game session is placed in the fleet's home Region. Specify a
-     * remote location with an AWS Region code such as <code>us-west-2</code>. </p>
+     * remote location with an Amazon Web Services Region code such as
+     * <code>us-west-2</code>. </p>
      */
     inline CreateGameSessionRequest& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     /**
      * <p>A fleet's remote location to place the new game session in. If this parameter
      * is not set, the new game session is placed in the fleet's home Region. Specify a
-     * remote location with an AWS Region code such as <code>us-west-2</code>. </p>
+     * remote location with an Amazon Web Services Region code such as
+     * <code>us-west-2</code>. </p>
      */
     inline CreateGameSessionRequest& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
      * <p>A fleet's remote location to place the new game session in. If this parameter
      * is not set, the new game session is placed in the fleet's home Region. Specify a
-     * remote location with an AWS Region code such as <code>us-west-2</code>. </p>
+     * remote location with an Amazon Web Services Region code such as
+     * <code>us-west-2</code>. </p>
      */
     inline CreateGameSessionRequest& WithLocation(const char* value) { SetLocation(value); return *this;}
 

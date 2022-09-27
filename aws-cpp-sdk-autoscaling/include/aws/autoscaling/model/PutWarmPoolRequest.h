@@ -8,6 +8,7 @@
 #include <aws/autoscaling/AutoScalingRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/autoscaling/model/WarmPoolState.h>
+#include <aws/autoscaling/model/InstanceReusePolicy.h>
 #include <utility>
 
 namespace Aws
@@ -228,6 +229,49 @@ namespace Model
      */
     inline PutWarmPoolRequest& WithPoolState(WarmPoolState&& value) { SetPoolState(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates whether instances in the Auto Scaling group can be returned to the
+     * warm pool on scale in. The default is to terminate instances in the Auto Scaling
+     * group when the group scales in.</p>
+     */
+    inline const InstanceReusePolicy& GetInstanceReusePolicy() const{ return m_instanceReusePolicy; }
+
+    /**
+     * <p>Indicates whether instances in the Auto Scaling group can be returned to the
+     * warm pool on scale in. The default is to terminate instances in the Auto Scaling
+     * group when the group scales in.</p>
+     */
+    inline bool InstanceReusePolicyHasBeenSet() const { return m_instanceReusePolicyHasBeenSet; }
+
+    /**
+     * <p>Indicates whether instances in the Auto Scaling group can be returned to the
+     * warm pool on scale in. The default is to terminate instances in the Auto Scaling
+     * group when the group scales in.</p>
+     */
+    inline void SetInstanceReusePolicy(const InstanceReusePolicy& value) { m_instanceReusePolicyHasBeenSet = true; m_instanceReusePolicy = value; }
+
+    /**
+     * <p>Indicates whether instances in the Auto Scaling group can be returned to the
+     * warm pool on scale in. The default is to terminate instances in the Auto Scaling
+     * group when the group scales in.</p>
+     */
+    inline void SetInstanceReusePolicy(InstanceReusePolicy&& value) { m_instanceReusePolicyHasBeenSet = true; m_instanceReusePolicy = std::move(value); }
+
+    /**
+     * <p>Indicates whether instances in the Auto Scaling group can be returned to the
+     * warm pool on scale in. The default is to terminate instances in the Auto Scaling
+     * group when the group scales in.</p>
+     */
+    inline PutWarmPoolRequest& WithInstanceReusePolicy(const InstanceReusePolicy& value) { SetInstanceReusePolicy(value); return *this;}
+
+    /**
+     * <p>Indicates whether instances in the Auto Scaling group can be returned to the
+     * warm pool on scale in. The default is to terminate instances in the Auto Scaling
+     * group when the group scales in.</p>
+     */
+    inline PutWarmPoolRequest& WithInstanceReusePolicy(InstanceReusePolicy&& value) { SetInstanceReusePolicy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_autoScalingGroupName;
@@ -241,6 +285,9 @@ namespace Model
 
     WarmPoolState m_poolState;
     bool m_poolStateHasBeenSet;
+
+    InstanceReusePolicy m_instanceReusePolicy;
+    bool m_instanceReusePolicyHasBeenSet;
   };
 
 } // namespace Model

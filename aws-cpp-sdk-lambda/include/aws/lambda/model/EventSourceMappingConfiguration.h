@@ -928,50 +928,50 @@ namespace Model
 
 
     /**
-     * <p>(Streams only) A list of current response type enums applied to the event
-     * source mapping.</p>
+     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
+     * event source mapping.</p>
      */
     inline const Aws::Vector<FunctionResponseType>& GetFunctionResponseTypes() const{ return m_functionResponseTypes; }
 
     /**
-     * <p>(Streams only) A list of current response type enums applied to the event
-     * source mapping.</p>
+     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
+     * event source mapping.</p>
      */
     inline bool FunctionResponseTypesHasBeenSet() const { return m_functionResponseTypesHasBeenSet; }
 
     /**
-     * <p>(Streams only) A list of current response type enums applied to the event
-     * source mapping.</p>
+     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
+     * event source mapping.</p>
      */
     inline void SetFunctionResponseTypes(const Aws::Vector<FunctionResponseType>& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes = value; }
 
     /**
-     * <p>(Streams only) A list of current response type enums applied to the event
-     * source mapping.</p>
+     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
+     * event source mapping.</p>
      */
     inline void SetFunctionResponseTypes(Aws::Vector<FunctionResponseType>&& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes = std::move(value); }
 
     /**
-     * <p>(Streams only) A list of current response type enums applied to the event
-     * source mapping.</p>
+     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
+     * event source mapping.</p>
      */
     inline EventSourceMappingConfiguration& WithFunctionResponseTypes(const Aws::Vector<FunctionResponseType>& value) { SetFunctionResponseTypes(value); return *this;}
 
     /**
-     * <p>(Streams only) A list of current response type enums applied to the event
-     * source mapping.</p>
+     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
+     * event source mapping.</p>
      */
     inline EventSourceMappingConfiguration& WithFunctionResponseTypes(Aws::Vector<FunctionResponseType>&& value) { SetFunctionResponseTypes(std::move(value)); return *this;}
 
     /**
-     * <p>(Streams only) A list of current response type enums applied to the event
-     * source mapping.</p>
+     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
+     * event source mapping.</p>
      */
     inline EventSourceMappingConfiguration& AddFunctionResponseTypes(const FunctionResponseType& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes.push_back(value); return *this; }
 
     /**
-     * <p>(Streams only) A list of current response type enums applied to the event
-     * source mapping.</p>
+     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
+     * event source mapping.</p>
      */
     inline EventSourceMappingConfiguration& AddFunctionResponseTypes(FunctionResponseType&& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes.push_back(std::move(value)); return *this; }
 

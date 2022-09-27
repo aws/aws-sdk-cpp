@@ -107,27 +107,37 @@ namespace Model
 
 
     /**
-     * <p>The public key (in plaintext).</p>
+     * <p>The public key (in plaintext). When you use the HTTP API or the Amazon Web
+     * Services CLI, the value is Base64-encoded. Otherwise, it is not
+     * Base64-encoded.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetPublicKey() const{ return m_publicKey; }
 
     /**
-     * <p>The public key (in plaintext).</p>
+     * <p>The public key (in plaintext). When you use the HTTP API or the Amazon Web
+     * Services CLI, the value is Base64-encoded. Otherwise, it is not
+     * Base64-encoded.</p>
      */
     inline void SetPublicKey(const Aws::Utils::ByteBuffer& value) { m_publicKey = value; }
 
     /**
-     * <p>The public key (in plaintext).</p>
+     * <p>The public key (in plaintext). When you use the HTTP API or the Amazon Web
+     * Services CLI, the value is Base64-encoded. Otherwise, it is not
+     * Base64-encoded.</p>
      */
     inline void SetPublicKey(Aws::Utils::ByteBuffer&& value) { m_publicKey = std::move(value); }
 
     /**
-     * <p>The public key (in plaintext).</p>
+     * <p>The public key (in plaintext). When you use the HTTP API or the Amazon Web
+     * Services CLI, the value is Base64-encoded. Otherwise, it is not
+     * Base64-encoded.</p>
      */
     inline GenerateDataKeyPairResult& WithPublicKey(const Aws::Utils::ByteBuffer& value) { SetPublicKey(value); return *this;}
 
     /**
-     * <p>The public key (in plaintext).</p>
+     * <p>The public key (in plaintext). When you use the HTTP API or the Amazon Web
+     * Services CLI, the value is Base64-encoded. Otherwise, it is not
+     * Base64-encoded.</p>
      */
     inline GenerateDataKeyPairResult& WithPublicKey(Aws::Utils::ByteBuffer&& value) { SetPublicKey(std::move(value)); return *this;}
 

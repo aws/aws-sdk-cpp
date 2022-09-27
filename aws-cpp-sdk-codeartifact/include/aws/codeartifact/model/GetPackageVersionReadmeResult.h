@@ -34,37 +34,27 @@ namespace Model
 
 
     /**
-     * <p> The format of the package with the requested readme file. Valid format types
-     * are: </p> <ul> <li> <p> <code>npm</code> </p> </li> <li> <p> <code>pypi</code>
-     * </p> </li> <li> <p> <code>maven</code> </p> </li> </ul>
+     * <p> The format of the package with the requested readme file. </p>
      */
     inline const PackageFormat& GetFormat() const{ return m_format; }
 
     /**
-     * <p> The format of the package with the requested readme file. Valid format types
-     * are: </p> <ul> <li> <p> <code>npm</code> </p> </li> <li> <p> <code>pypi</code>
-     * </p> </li> <li> <p> <code>maven</code> </p> </li> </ul>
+     * <p> The format of the package with the requested readme file. </p>
      */
     inline void SetFormat(const PackageFormat& value) { m_format = value; }
 
     /**
-     * <p> The format of the package with the requested readme file. Valid format types
-     * are: </p> <ul> <li> <p> <code>npm</code> </p> </li> <li> <p> <code>pypi</code>
-     * </p> </li> <li> <p> <code>maven</code> </p> </li> </ul>
+     * <p> The format of the package with the requested readme file. </p>
      */
     inline void SetFormat(PackageFormat&& value) { m_format = std::move(value); }
 
     /**
-     * <p> The format of the package with the requested readme file. Valid format types
-     * are: </p> <ul> <li> <p> <code>npm</code> </p> </li> <li> <p> <code>pypi</code>
-     * </p> </li> <li> <p> <code>maven</code> </p> </li> </ul>
+     * <p> The format of the package with the requested readme file. </p>
      */
     inline GetPackageVersionReadmeResult& WithFormat(const PackageFormat& value) { SetFormat(value); return *this;}
 
     /**
-     * <p> The format of the package with the requested readme file. Valid format types
-     * are: </p> <ul> <li> <p> <code>npm</code> </p> </li> <li> <p> <code>pypi</code>
-     * </p> </li> <li> <p> <code>maven</code> </p> </li> </ul>
+     * <p> The format of the package with the requested readme file. </p>
      */
     inline GetPackageVersionReadmeResult& WithFormat(PackageFormat&& value) { SetFormat(std::move(value)); return *this;}
 

@@ -110,6 +110,9 @@ namespace Model
 #else
       Aws::String m_uri;
 #end
+#if($customEndpointUsed)
+      bool m_useCustomEndpoint;
+#end
 #if($metadata.hasEndpointDiscoveryTrait)
       mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;
       bool m_enableEndpointDiscovery;

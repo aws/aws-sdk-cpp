@@ -19,6 +19,8 @@ namespace Model
 {
 
 InstanceConfig::InstanceConfig() : 
+    m_instanceCount(0),
+    m_instanceCountHasBeenSet(false),
     m_instanceType(InstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
     m_volumeSizeInGb(0),
@@ -27,6 +29,8 @@ InstanceConfig::InstanceConfig() :
 }
 
 InstanceConfig::InstanceConfig(JsonView jsonValue) : 
+    m_instanceCount(0),
+    m_instanceCountHasBeenSet(false),
     m_instanceType(InstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
     m_volumeSizeInGb(0),
@@ -37,6 +41,13 @@ InstanceConfig::InstanceConfig(JsonView jsonValue) :
 
 InstanceConfig& InstanceConfig::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("instanceCount"))
+  {
+    m_instanceCount = jsonValue.GetInteger("instanceCount");
+
+    m_instanceCountHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("instanceType"))
   {
     m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(jsonValue.GetString("instanceType"));
@@ -57,6 +68,12 @@ InstanceConfig& InstanceConfig::operator =(JsonView jsonValue)
 JsonValue InstanceConfig::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_instanceCountHasBeenSet)
+  {
+   payload.WithInteger("instanceCount", m_instanceCount);
+
+  }
 
   if(m_instanceTypeHasBeenSet)
   {

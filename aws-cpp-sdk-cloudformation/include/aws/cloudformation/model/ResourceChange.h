@@ -52,7 +52,7 @@ namespace Model
      * <code>Add</code> (adds a new resource), <code>Modify</code> (changes a
      * resource), <code>Remove</code> (deletes a resource), <code>Import</code>
      * (imports a resource), or <code>Dynamic</code> (exact action for the resource
-     * cannot be determined).</p>
+     * can't be determined).</p>
      */
     inline const ChangeAction& GetAction() const{ return m_action; }
 
@@ -61,7 +61,7 @@ namespace Model
      * <code>Add</code> (adds a new resource), <code>Modify</code> (changes a
      * resource), <code>Remove</code> (deletes a resource), <code>Import</code>
      * (imports a resource), or <code>Dynamic</code> (exact action for the resource
-     * cannot be determined).</p>
+     * can't be determined).</p>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
@@ -70,7 +70,7 @@ namespace Model
      * <code>Add</code> (adds a new resource), <code>Modify</code> (changes a
      * resource), <code>Remove</code> (deletes a resource), <code>Import</code>
      * (imports a resource), or <code>Dynamic</code> (exact action for the resource
-     * cannot be determined).</p>
+     * can't be determined).</p>
      */
     inline void SetAction(const ChangeAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
@@ -79,7 +79,7 @@ namespace Model
      * <code>Add</code> (adds a new resource), <code>Modify</code> (changes a
      * resource), <code>Remove</code> (deletes a resource), <code>Import</code>
      * (imports a resource), or <code>Dynamic</code> (exact action for the resource
-     * cannot be determined).</p>
+     * can't be determined).</p>
      */
     inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
@@ -88,7 +88,7 @@ namespace Model
      * <code>Add</code> (adds a new resource), <code>Modify</code> (changes a
      * resource), <code>Remove</code> (deletes a resource), <code>Import</code>
      * (imports a resource), or <code>Dynamic</code> (exact action for the resource
-     * cannot be determined).</p>
+     * can't be determined).</p>
      */
     inline ResourceChange& WithAction(const ChangeAction& value) { SetAction(value); return *this;}
 
@@ -97,7 +97,7 @@ namespace Model
      * <code>Add</code> (adds a new resource), <code>Modify</code> (changes a
      * resource), <code>Remove</code> (deletes a resource), <code>Import</code>
      * (imports a resource), or <code>Dynamic</code> (exact action for the resource
-     * cannot be determined).</p>
+     * can't be determined).</p>
      */
     inline ResourceChange& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
 
@@ -410,56 +410,56 @@ namespace Model
     /**
      * <p>For the <code>Modify</code> action, a list of
      * <code>ResourceChangeDetail</code> structures that describes the changes that
-     * CloudFormation will make to the resource. </p>
+     * CloudFormation will make to the resource.</p>
      */
     inline const Aws::Vector<ResourceChangeDetail>& GetDetails() const{ return m_details; }
 
     /**
      * <p>For the <code>Modify</code> action, a list of
      * <code>ResourceChangeDetail</code> structures that describes the changes that
-     * CloudFormation will make to the resource. </p>
+     * CloudFormation will make to the resource.</p>
      */
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
 
     /**
      * <p>For the <code>Modify</code> action, a list of
      * <code>ResourceChangeDetail</code> structures that describes the changes that
-     * CloudFormation will make to the resource. </p>
+     * CloudFormation will make to the resource.</p>
      */
     inline void SetDetails(const Aws::Vector<ResourceChangeDetail>& value) { m_detailsHasBeenSet = true; m_details = value; }
 
     /**
      * <p>For the <code>Modify</code> action, a list of
      * <code>ResourceChangeDetail</code> structures that describes the changes that
-     * CloudFormation will make to the resource. </p>
+     * CloudFormation will make to the resource.</p>
      */
     inline void SetDetails(Aws::Vector<ResourceChangeDetail>&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
 
     /**
      * <p>For the <code>Modify</code> action, a list of
      * <code>ResourceChangeDetail</code> structures that describes the changes that
-     * CloudFormation will make to the resource. </p>
+     * CloudFormation will make to the resource.</p>
      */
     inline ResourceChange& WithDetails(const Aws::Vector<ResourceChangeDetail>& value) { SetDetails(value); return *this;}
 
     /**
      * <p>For the <code>Modify</code> action, a list of
      * <code>ResourceChangeDetail</code> structures that describes the changes that
-     * CloudFormation will make to the resource. </p>
+     * CloudFormation will make to the resource.</p>
      */
     inline ResourceChange& WithDetails(Aws::Vector<ResourceChangeDetail>&& value) { SetDetails(std::move(value)); return *this;}
 
     /**
      * <p>For the <code>Modify</code> action, a list of
      * <code>ResourceChangeDetail</code> structures that describes the changes that
-     * CloudFormation will make to the resource. </p>
+     * CloudFormation will make to the resource.</p>
      */
     inline ResourceChange& AddDetails(const ResourceChangeDetail& value) { m_detailsHasBeenSet = true; m_details.push_back(value); return *this; }
 
     /**
      * <p>For the <code>Modify</code> action, a list of
      * <code>ResourceChangeDetail</code> structures that describes the changes that
-     * CloudFormation will make to the resource. </p>
+     * CloudFormation will make to the resource.</p>
      */
     inline ResourceChange& AddDetails(ResourceChangeDetail&& value) { m_detailsHasBeenSet = true; m_details.push_back(std::move(value)); return *this; }
 

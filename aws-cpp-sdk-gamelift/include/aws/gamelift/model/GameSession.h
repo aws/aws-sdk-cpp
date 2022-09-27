@@ -479,64 +479,80 @@ namespace Model
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session. You can search for active
-     * game sessions based on this custom data with <a>SearchGameSessions</a>.</p>
+     * object with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>). You can search for active game sessions based on this
+     * custom data with <a>SearchGameSessions</a>.</p>
      */
     inline const Aws::Vector<GameProperty>& GetGameProperties() const{ return m_gameProperties; }
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session. You can search for active
-     * game sessions based on this custom data with <a>SearchGameSessions</a>.</p>
+     * object with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>). You can search for active game sessions based on this
+     * custom data with <a>SearchGameSessions</a>.</p>
      */
     inline bool GamePropertiesHasBeenSet() const { return m_gamePropertiesHasBeenSet; }
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session. You can search for active
-     * game sessions based on this custom data with <a>SearchGameSessions</a>.</p>
+     * object with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>). You can search for active game sessions based on this
+     * custom data with <a>SearchGameSessions</a>.</p>
      */
     inline void SetGameProperties(const Aws::Vector<GameProperty>& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = value; }
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session. You can search for active
-     * game sessions based on this custom data with <a>SearchGameSessions</a>.</p>
+     * object with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>). You can search for active game sessions based on this
+     * custom data with <a>SearchGameSessions</a>.</p>
      */
     inline void SetGameProperties(Aws::Vector<GameProperty>&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = std::move(value); }
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session. You can search for active
-     * game sessions based on this custom data with <a>SearchGameSessions</a>.</p>
+     * object with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>). You can search for active game sessions based on this
+     * custom data with <a>SearchGameSessions</a>.</p>
      */
     inline GameSession& WithGameProperties(const Aws::Vector<GameProperty>& value) { SetGameProperties(value); return *this;}
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session. You can search for active
-     * game sessions based on this custom data with <a>SearchGameSessions</a>.</p>
+     * object with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>). You can search for active game sessions based on this
+     * custom data with <a>SearchGameSessions</a>.</p>
      */
     inline GameSession& WithGameProperties(Aws::Vector<GameProperty>&& value) { SetGameProperties(std::move(value)); return *this;}
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session. You can search for active
-     * game sessions based on this custom data with <a>SearchGameSessions</a>.</p>
+     * object with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>). You can search for active game sessions based on this
+     * custom data with <a>SearchGameSessions</a>.</p>
      */
     inline GameSession& AddGameProperties(const GameProperty& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(value); return *this; }
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session. You can search for active
-     * game sessions based on this custom data with <a>SearchGameSessions</a>.</p>
+     * object with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>). You can search for active game sessions based on this
+     * custom data with <a>SearchGameSessions</a>.</p>
      */
     inline GameSession& AddGameProperties(GameProperty&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(std::move(value)); return *this; }
 
@@ -819,56 +835,72 @@ namespace Model
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
      * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session.</p>
+     * with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
      */
     inline const Aws::String& GetGameSessionData() const{ return m_gameSessionData; }
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
      * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session.</p>
+     * with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
      */
     inline bool GameSessionDataHasBeenSet() const { return m_gameSessionDataHasBeenSet; }
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
      * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session.</p>
+     * with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
      */
     inline void SetGameSessionData(const Aws::String& value) { m_gameSessionDataHasBeenSet = true; m_gameSessionData = value; }
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
      * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session.</p>
+     * with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
      */
     inline void SetGameSessionData(Aws::String&& value) { m_gameSessionDataHasBeenSet = true; m_gameSessionData = std::move(value); }
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
      * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session.</p>
+     * with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
      */
     inline void SetGameSessionData(const char* value) { m_gameSessionDataHasBeenSet = true; m_gameSessionData.assign(value); }
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
      * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session.</p>
+     * with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
      */
     inline GameSession& WithGameSessionData(const Aws::String& value) { SetGameSessionData(value); return *this;}
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
      * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session.</p>
+     * with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
      */
     inline GameSession& WithGameSessionData(Aws::String&& value) { SetGameSessionData(std::move(value)); return *this;}
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
      * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session.</p>
+     * with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
      */
     inline GameSession& WithGameSessionData(const char* value) { SetGameSessionData(value); return *this;}
 
@@ -881,8 +913,9 @@ namespace Model
      * matchmaker data, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
      * Data</a>. Matchmaker data is useful when requesting match backfills, and is
-     * updated whenever new players are added during a successful backfill (see
-     * <a>StartMatchBackfill</a>). </p>
+     * updated whenever new players are added during a successful backfill (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">StartMatchBackfill</a>).
+     * </p>
      */
     inline const Aws::String& GetMatchmakerData() const{ return m_matchmakerData; }
 
@@ -894,8 +927,9 @@ namespace Model
      * matchmaker data, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
      * Data</a>. Matchmaker data is useful when requesting match backfills, and is
-     * updated whenever new players are added during a successful backfill (see
-     * <a>StartMatchBackfill</a>). </p>
+     * updated whenever new players are added during a successful backfill (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">StartMatchBackfill</a>).
+     * </p>
      */
     inline bool MatchmakerDataHasBeenSet() const { return m_matchmakerDataHasBeenSet; }
 
@@ -907,8 +941,9 @@ namespace Model
      * matchmaker data, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
      * Data</a>. Matchmaker data is useful when requesting match backfills, and is
-     * updated whenever new players are added during a successful backfill (see
-     * <a>StartMatchBackfill</a>). </p>
+     * updated whenever new players are added during a successful backfill (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">StartMatchBackfill</a>).
+     * </p>
      */
     inline void SetMatchmakerData(const Aws::String& value) { m_matchmakerDataHasBeenSet = true; m_matchmakerData = value; }
 
@@ -920,8 +955,9 @@ namespace Model
      * matchmaker data, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
      * Data</a>. Matchmaker data is useful when requesting match backfills, and is
-     * updated whenever new players are added during a successful backfill (see
-     * <a>StartMatchBackfill</a>). </p>
+     * updated whenever new players are added during a successful backfill (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">StartMatchBackfill</a>).
+     * </p>
      */
     inline void SetMatchmakerData(Aws::String&& value) { m_matchmakerDataHasBeenSet = true; m_matchmakerData = std::move(value); }
 
@@ -933,8 +969,9 @@ namespace Model
      * matchmaker data, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
      * Data</a>. Matchmaker data is useful when requesting match backfills, and is
-     * updated whenever new players are added during a successful backfill (see
-     * <a>StartMatchBackfill</a>). </p>
+     * updated whenever new players are added during a successful backfill (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">StartMatchBackfill</a>).
+     * </p>
      */
     inline void SetMatchmakerData(const char* value) { m_matchmakerDataHasBeenSet = true; m_matchmakerData.assign(value); }
 
@@ -946,8 +983,9 @@ namespace Model
      * matchmaker data, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
      * Data</a>. Matchmaker data is useful when requesting match backfills, and is
-     * updated whenever new players are added during a successful backfill (see
-     * <a>StartMatchBackfill</a>). </p>
+     * updated whenever new players are added during a successful backfill (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">StartMatchBackfill</a>).
+     * </p>
      */
     inline GameSession& WithMatchmakerData(const Aws::String& value) { SetMatchmakerData(value); return *this;}
 
@@ -959,8 +997,9 @@ namespace Model
      * matchmaker data, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
      * Data</a>. Matchmaker data is useful when requesting match backfills, and is
-     * updated whenever new players are added during a successful backfill (see
-     * <a>StartMatchBackfill</a>). </p>
+     * updated whenever new players are added during a successful backfill (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">StartMatchBackfill</a>).
+     * </p>
      */
     inline GameSession& WithMatchmakerData(Aws::String&& value) { SetMatchmakerData(std::move(value)); return *this;}
 
@@ -972,8 +1011,9 @@ namespace Model
      * matchmaker data, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
      * Data</a>. Matchmaker data is useful when requesting match backfills, and is
-     * updated whenever new players are added during a successful backfill (see
-     * <a>StartMatchBackfill</a>). </p>
+     * updated whenever new players are added during a successful backfill (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">StartMatchBackfill</a>).
+     * </p>
      */
     inline GameSession& WithMatchmakerData(const char* value) { SetMatchmakerData(value); return *this;}
 
@@ -981,56 +1021,56 @@ namespace Model
     /**
      * <p>The fleet location where the game session is running. This value might
      * specify the fleet's home Region or a remote location. Location is expressed as
-     * an AWS Region code such as <code>us-west-2</code>. </p>
+     * an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
     /**
      * <p>The fleet location where the game session is running. This value might
      * specify the fleet's home Region or a remote location. Location is expressed as
-     * an AWS Region code such as <code>us-west-2</code>. </p>
+     * an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
      */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
      * <p>The fleet location where the game session is running. This value might
      * specify the fleet's home Region or a remote location. Location is expressed as
-     * an AWS Region code such as <code>us-west-2</code>. </p>
+     * an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
      */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
      * <p>The fleet location where the game session is running. This value might
      * specify the fleet's home Region or a remote location. Location is expressed as
-     * an AWS Region code such as <code>us-west-2</code>. </p>
+     * an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
      */
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
      * <p>The fleet location where the game session is running. This value might
      * specify the fleet's home Region or a remote location. Location is expressed as
-     * an AWS Region code such as <code>us-west-2</code>. </p>
+     * an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
      */
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
 
     /**
      * <p>The fleet location where the game session is running. This value might
      * specify the fleet's home Region or a remote location. Location is expressed as
-     * an AWS Region code such as <code>us-west-2</code>. </p>
+     * an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
      */
     inline GameSession& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     /**
      * <p>The fleet location where the game session is running. This value might
      * specify the fleet's home Region or a remote location. Location is expressed as
-     * an AWS Region code such as <code>us-west-2</code>. </p>
+     * an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
      */
     inline GameSession& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
      * <p>The fleet location where the game session is running. This value might
      * specify the fleet's home Region or a remote location. Location is expressed as
-     * an AWS Region code such as <code>us-west-2</code>. </p>
+     * an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
      */
     inline GameSession& WithLocation(const char* value) { SetLocation(value); return *this;}
 

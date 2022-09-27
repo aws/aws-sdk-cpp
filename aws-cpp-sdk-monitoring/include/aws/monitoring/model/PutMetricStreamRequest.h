@@ -11,6 +11,7 @@
 #include <aws/monitoring/model/MetricStreamOutputFormat.h>
 #include <aws/monitoring/model/MetricStreamFilter.h>
 #include <aws/monitoring/model/Tag.h>
+#include <aws/monitoring/model/MetricStreamStatisticsConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -540,6 +541,151 @@ namespace Model
      */
     inline PutMetricStreamRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>By default, a metric stream always sends the <code>MAX</code>,
+     * <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for
+     * each metric that is streamed. You can use this parameter to have the metric
+     * stream also send additional statistics in the stream. This array can have up to
+     * 100 members.</p> <p>For each entry in this array, you specify one or more
+     * metrics and the list of additional statistics to stream for those metrics. The
+     * additional statistics that you can stream depend on the stream's
+     * <code>OutputFormat</code>. If the <code>OutputFormat</code> is
+     * <code>json</code>, you can stream any additional statistic that is supported by
+     * CloudWatch, listed in <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
+     * CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is
+     * <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95,
+     * p99.9 and so on.</p>
+     */
+    inline const Aws::Vector<MetricStreamStatisticsConfiguration>& GetStatisticsConfigurations() const{ return m_statisticsConfigurations; }
+
+    /**
+     * <p>By default, a metric stream always sends the <code>MAX</code>,
+     * <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for
+     * each metric that is streamed. You can use this parameter to have the metric
+     * stream also send additional statistics in the stream. This array can have up to
+     * 100 members.</p> <p>For each entry in this array, you specify one or more
+     * metrics and the list of additional statistics to stream for those metrics. The
+     * additional statistics that you can stream depend on the stream's
+     * <code>OutputFormat</code>. If the <code>OutputFormat</code> is
+     * <code>json</code>, you can stream any additional statistic that is supported by
+     * CloudWatch, listed in <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
+     * CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is
+     * <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95,
+     * p99.9 and so on.</p>
+     */
+    inline bool StatisticsConfigurationsHasBeenSet() const { return m_statisticsConfigurationsHasBeenSet; }
+
+    /**
+     * <p>By default, a metric stream always sends the <code>MAX</code>,
+     * <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for
+     * each metric that is streamed. You can use this parameter to have the metric
+     * stream also send additional statistics in the stream. This array can have up to
+     * 100 members.</p> <p>For each entry in this array, you specify one or more
+     * metrics and the list of additional statistics to stream for those metrics. The
+     * additional statistics that you can stream depend on the stream's
+     * <code>OutputFormat</code>. If the <code>OutputFormat</code> is
+     * <code>json</code>, you can stream any additional statistic that is supported by
+     * CloudWatch, listed in <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
+     * CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is
+     * <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95,
+     * p99.9 and so on.</p>
+     */
+    inline void SetStatisticsConfigurations(const Aws::Vector<MetricStreamStatisticsConfiguration>& value) { m_statisticsConfigurationsHasBeenSet = true; m_statisticsConfigurations = value; }
+
+    /**
+     * <p>By default, a metric stream always sends the <code>MAX</code>,
+     * <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for
+     * each metric that is streamed. You can use this parameter to have the metric
+     * stream also send additional statistics in the stream. This array can have up to
+     * 100 members.</p> <p>For each entry in this array, you specify one or more
+     * metrics and the list of additional statistics to stream for those metrics. The
+     * additional statistics that you can stream depend on the stream's
+     * <code>OutputFormat</code>. If the <code>OutputFormat</code> is
+     * <code>json</code>, you can stream any additional statistic that is supported by
+     * CloudWatch, listed in <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
+     * CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is
+     * <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95,
+     * p99.9 and so on.</p>
+     */
+    inline void SetStatisticsConfigurations(Aws::Vector<MetricStreamStatisticsConfiguration>&& value) { m_statisticsConfigurationsHasBeenSet = true; m_statisticsConfigurations = std::move(value); }
+
+    /**
+     * <p>By default, a metric stream always sends the <code>MAX</code>,
+     * <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for
+     * each metric that is streamed. You can use this parameter to have the metric
+     * stream also send additional statistics in the stream. This array can have up to
+     * 100 members.</p> <p>For each entry in this array, you specify one or more
+     * metrics and the list of additional statistics to stream for those metrics. The
+     * additional statistics that you can stream depend on the stream's
+     * <code>OutputFormat</code>. If the <code>OutputFormat</code> is
+     * <code>json</code>, you can stream any additional statistic that is supported by
+     * CloudWatch, listed in <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
+     * CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is
+     * <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95,
+     * p99.9 and so on.</p>
+     */
+    inline PutMetricStreamRequest& WithStatisticsConfigurations(const Aws::Vector<MetricStreamStatisticsConfiguration>& value) { SetStatisticsConfigurations(value); return *this;}
+
+    /**
+     * <p>By default, a metric stream always sends the <code>MAX</code>,
+     * <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for
+     * each metric that is streamed. You can use this parameter to have the metric
+     * stream also send additional statistics in the stream. This array can have up to
+     * 100 members.</p> <p>For each entry in this array, you specify one or more
+     * metrics and the list of additional statistics to stream for those metrics. The
+     * additional statistics that you can stream depend on the stream's
+     * <code>OutputFormat</code>. If the <code>OutputFormat</code> is
+     * <code>json</code>, you can stream any additional statistic that is supported by
+     * CloudWatch, listed in <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
+     * CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is
+     * <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95,
+     * p99.9 and so on.</p>
+     */
+    inline PutMetricStreamRequest& WithStatisticsConfigurations(Aws::Vector<MetricStreamStatisticsConfiguration>&& value) { SetStatisticsConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>By default, a metric stream always sends the <code>MAX</code>,
+     * <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for
+     * each metric that is streamed. You can use this parameter to have the metric
+     * stream also send additional statistics in the stream. This array can have up to
+     * 100 members.</p> <p>For each entry in this array, you specify one or more
+     * metrics and the list of additional statistics to stream for those metrics. The
+     * additional statistics that you can stream depend on the stream's
+     * <code>OutputFormat</code>. If the <code>OutputFormat</code> is
+     * <code>json</code>, you can stream any additional statistic that is supported by
+     * CloudWatch, listed in <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
+     * CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is
+     * <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95,
+     * p99.9 and so on.</p>
+     */
+    inline PutMetricStreamRequest& AddStatisticsConfigurations(const MetricStreamStatisticsConfiguration& value) { m_statisticsConfigurationsHasBeenSet = true; m_statisticsConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>By default, a metric stream always sends the <code>MAX</code>,
+     * <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for
+     * each metric that is streamed. You can use this parameter to have the metric
+     * stream also send additional statistics in the stream. This array can have up to
+     * 100 members.</p> <p>For each entry in this array, you specify one or more
+     * metrics and the list of additional statistics to stream for those metrics. The
+     * additional statistics that you can stream depend on the stream's
+     * <code>OutputFormat</code>. If the <code>OutputFormat</code> is
+     * <code>json</code>, you can stream any additional statistic that is supported by
+     * CloudWatch, listed in <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
+     * CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is
+     * <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95,
+     * p99.9 and so on.</p>
+     */
+    inline PutMetricStreamRequest& AddStatisticsConfigurations(MetricStreamStatisticsConfiguration&& value) { m_statisticsConfigurationsHasBeenSet = true; m_statisticsConfigurations.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -562,6 +708,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::Vector<MetricStreamStatisticsConfiguration> m_statisticsConfigurations;
+    bool m_statisticsConfigurationsHasBeenSet;
   };
 
 } // namespace Model

@@ -118,50 +118,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS service or identity that receives the permission. At this time, the
-     * only valid principal is <code>acm.amazonaws.com</code>.</p>
+     * <p>The Amazon Web Services service or identity that receives the permission. At
+     * this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
      */
     inline const Aws::String& GetPrincipal() const{ return m_principal; }
 
     /**
-     * <p>The AWS service or identity that receives the permission. At this time, the
-     * only valid principal is <code>acm.amazonaws.com</code>.</p>
+     * <p>The Amazon Web Services service or identity that receives the permission. At
+     * this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
      */
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
 
     /**
-     * <p>The AWS service or identity that receives the permission. At this time, the
-     * only valid principal is <code>acm.amazonaws.com</code>.</p>
+     * <p>The Amazon Web Services service or identity that receives the permission. At
+     * this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
      */
     inline void SetPrincipal(const Aws::String& value) { m_principalHasBeenSet = true; m_principal = value; }
 
     /**
-     * <p>The AWS service or identity that receives the permission. At this time, the
-     * only valid principal is <code>acm.amazonaws.com</code>.</p>
+     * <p>The Amazon Web Services service or identity that receives the permission. At
+     * this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
      */
     inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
 
     /**
-     * <p>The AWS service or identity that receives the permission. At this time, the
-     * only valid principal is <code>acm.amazonaws.com</code>.</p>
+     * <p>The Amazon Web Services service or identity that receives the permission. At
+     * this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
      */
     inline void SetPrincipal(const char* value) { m_principalHasBeenSet = true; m_principal.assign(value); }
 
     /**
-     * <p>The AWS service or identity that receives the permission. At this time, the
-     * only valid principal is <code>acm.amazonaws.com</code>.</p>
+     * <p>The Amazon Web Services service or identity that receives the permission. At
+     * this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
      */
     inline CreatePermissionRequest& WithPrincipal(const Aws::String& value) { SetPrincipal(value); return *this;}
 
     /**
-     * <p>The AWS service or identity that receives the permission. At this time, the
-     * only valid principal is <code>acm.amazonaws.com</code>.</p>
+     * <p>The Amazon Web Services service or identity that receives the permission. At
+     * this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
      */
     inline CreatePermissionRequest& WithPrincipal(Aws::String&& value) { SetPrincipal(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS service or identity that receives the permission. At this time, the
-     * only valid principal is <code>acm.amazonaws.com</code>.</p>
+     * <p>The Amazon Web Services service or identity that receives the permission. At
+     * this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
      */
     inline CreatePermissionRequest& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}
 
@@ -208,57 +208,57 @@ namespace Model
 
 
     /**
-     * <p>The actions that the specified AWS service principal can use. These include
-     * <code>IssueCertificate</code>, <code>GetCertificate</code>, and
+     * <p>The actions that the specified Amazon Web Services service principal can use.
+     * These include <code>IssueCertificate</code>, <code>GetCertificate</code>, and
      * <code>ListPermissions</code>.</p>
      */
     inline const Aws::Vector<ActionType>& GetActions() const{ return m_actions; }
 
     /**
-     * <p>The actions that the specified AWS service principal can use. These include
-     * <code>IssueCertificate</code>, <code>GetCertificate</code>, and
+     * <p>The actions that the specified Amazon Web Services service principal can use.
+     * These include <code>IssueCertificate</code>, <code>GetCertificate</code>, and
      * <code>ListPermissions</code>.</p>
      */
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
 
     /**
-     * <p>The actions that the specified AWS service principal can use. These include
-     * <code>IssueCertificate</code>, <code>GetCertificate</code>, and
+     * <p>The actions that the specified Amazon Web Services service principal can use.
+     * These include <code>IssueCertificate</code>, <code>GetCertificate</code>, and
      * <code>ListPermissions</code>.</p>
      */
     inline void SetActions(const Aws::Vector<ActionType>& value) { m_actionsHasBeenSet = true; m_actions = value; }
 
     /**
-     * <p>The actions that the specified AWS service principal can use. These include
-     * <code>IssueCertificate</code>, <code>GetCertificate</code>, and
+     * <p>The actions that the specified Amazon Web Services service principal can use.
+     * These include <code>IssueCertificate</code>, <code>GetCertificate</code>, and
      * <code>ListPermissions</code>.</p>
      */
     inline void SetActions(Aws::Vector<ActionType>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
 
     /**
-     * <p>The actions that the specified AWS service principal can use. These include
-     * <code>IssueCertificate</code>, <code>GetCertificate</code>, and
+     * <p>The actions that the specified Amazon Web Services service principal can use.
+     * These include <code>IssueCertificate</code>, <code>GetCertificate</code>, and
      * <code>ListPermissions</code>.</p>
      */
     inline CreatePermissionRequest& WithActions(const Aws::Vector<ActionType>& value) { SetActions(value); return *this;}
 
     /**
-     * <p>The actions that the specified AWS service principal can use. These include
-     * <code>IssueCertificate</code>, <code>GetCertificate</code>, and
+     * <p>The actions that the specified Amazon Web Services service principal can use.
+     * These include <code>IssueCertificate</code>, <code>GetCertificate</code>, and
      * <code>ListPermissions</code>.</p>
      */
     inline CreatePermissionRequest& WithActions(Aws::Vector<ActionType>&& value) { SetActions(std::move(value)); return *this;}
 
     /**
-     * <p>The actions that the specified AWS service principal can use. These include
-     * <code>IssueCertificate</code>, <code>GetCertificate</code>, and
+     * <p>The actions that the specified Amazon Web Services service principal can use.
+     * These include <code>IssueCertificate</code>, <code>GetCertificate</code>, and
      * <code>ListPermissions</code>.</p>
      */
     inline CreatePermissionRequest& AddActions(const ActionType& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
 
     /**
-     * <p>The actions that the specified AWS service principal can use. These include
-     * <code>IssueCertificate</code>, <code>GetCertificate</code>, and
+     * <p>The actions that the specified Amazon Web Services service principal can use.
+     * These include <code>IssueCertificate</code>, <code>GetCertificate</code>, and
      * <code>ListPermissions</code>.</p>
      */
     inline CreatePermissionRequest& AddActions(ActionType&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }

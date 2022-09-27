@@ -513,66 +513,66 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name of Key Management Service <a
-     * href="/kms/latest/developerguide/concepts.html#master_keys">Customer master
-     * keys</a> . Amazon Cognito uses the key to encrypt codes and temporary passwords
-     * sent to <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of an <a
+     * href="/kms/latest/developerguide/concepts.html#master_keys">KMS key</a>. Amazon
+     * Cognito uses the key to encrypt codes and temporary passwords sent to
+     * <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
      */
     inline const Aws::String& GetKMSKeyID() const{ return m_kMSKeyID; }
 
     /**
-     * <p>The Amazon Resource Name of Key Management Service <a
-     * href="/kms/latest/developerguide/concepts.html#master_keys">Customer master
-     * keys</a> . Amazon Cognito uses the key to encrypt codes and temporary passwords
-     * sent to <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of an <a
+     * href="/kms/latest/developerguide/concepts.html#master_keys">KMS key</a>. Amazon
+     * Cognito uses the key to encrypt codes and temporary passwords sent to
+     * <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
      */
     inline bool KMSKeyIDHasBeenSet() const { return m_kMSKeyIDHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name of Key Management Service <a
-     * href="/kms/latest/developerguide/concepts.html#master_keys">Customer master
-     * keys</a> . Amazon Cognito uses the key to encrypt codes and temporary passwords
-     * sent to <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of an <a
+     * href="/kms/latest/developerguide/concepts.html#master_keys">KMS key</a>. Amazon
+     * Cognito uses the key to encrypt codes and temporary passwords sent to
+     * <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
      */
     inline void SetKMSKeyID(const Aws::String& value) { m_kMSKeyIDHasBeenSet = true; m_kMSKeyID = value; }
 
     /**
-     * <p>The Amazon Resource Name of Key Management Service <a
-     * href="/kms/latest/developerguide/concepts.html#master_keys">Customer master
-     * keys</a> . Amazon Cognito uses the key to encrypt codes and temporary passwords
-     * sent to <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of an <a
+     * href="/kms/latest/developerguide/concepts.html#master_keys">KMS key</a>. Amazon
+     * Cognito uses the key to encrypt codes and temporary passwords sent to
+     * <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
      */
     inline void SetKMSKeyID(Aws::String&& value) { m_kMSKeyIDHasBeenSet = true; m_kMSKeyID = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name of Key Management Service <a
-     * href="/kms/latest/developerguide/concepts.html#master_keys">Customer master
-     * keys</a> . Amazon Cognito uses the key to encrypt codes and temporary passwords
-     * sent to <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of an <a
+     * href="/kms/latest/developerguide/concepts.html#master_keys">KMS key</a>. Amazon
+     * Cognito uses the key to encrypt codes and temporary passwords sent to
+     * <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
      */
     inline void SetKMSKeyID(const char* value) { m_kMSKeyIDHasBeenSet = true; m_kMSKeyID.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name of Key Management Service <a
-     * href="/kms/latest/developerguide/concepts.html#master_keys">Customer master
-     * keys</a> . Amazon Cognito uses the key to encrypt codes and temporary passwords
-     * sent to <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of an <a
+     * href="/kms/latest/developerguide/concepts.html#master_keys">KMS key</a>. Amazon
+     * Cognito uses the key to encrypt codes and temporary passwords sent to
+     * <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
      */
     inline LambdaConfigType& WithKMSKeyID(const Aws::String& value) { SetKMSKeyID(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name of Key Management Service <a
-     * href="/kms/latest/developerguide/concepts.html#master_keys">Customer master
-     * keys</a> . Amazon Cognito uses the key to encrypt codes and temporary passwords
-     * sent to <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of an <a
+     * href="/kms/latest/developerguide/concepts.html#master_keys">KMS key</a>. Amazon
+     * Cognito uses the key to encrypt codes and temporary passwords sent to
+     * <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
      */
     inline LambdaConfigType& WithKMSKeyID(Aws::String&& value) { SetKMSKeyID(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name of Key Management Service <a
-     * href="/kms/latest/developerguide/concepts.html#master_keys">Customer master
-     * keys</a> . Amazon Cognito uses the key to encrypt codes and temporary passwords
-     * sent to <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of an <a
+     * href="/kms/latest/developerguide/concepts.html#master_keys">KMS key</a>. Amazon
+     * Cognito uses the key to encrypt codes and temporary passwords sent to
+     * <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
      */
     inline LambdaConfigType& WithKMSKeyID(const char* value) { SetKMSKeyID(value); return *this;}
 

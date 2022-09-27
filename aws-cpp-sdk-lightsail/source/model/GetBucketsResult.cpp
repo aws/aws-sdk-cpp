@@ -43,6 +43,12 @@ GetBucketsResult& GetBucketsResult::operator =(const Aws::AmazonWebServiceResult
 
   }
 
+  if(jsonValue.ValueExists("accountLevelBpaSync"))
+  {
+    m_accountLevelBpaSync = jsonValue.GetObject("accountLevelBpaSync");
+
+  }
+
 
 
   return *this;

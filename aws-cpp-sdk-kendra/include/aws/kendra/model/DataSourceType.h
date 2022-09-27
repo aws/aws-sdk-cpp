@@ -26,7 +26,13 @@ namespace Model
     CONFLUENCE,
     GOOGLEDRIVE,
     WEBCRAWLER,
-    WORKDOCS
+    WORKDOCS,
+    FSX,
+    SLACK,
+    BOX,
+    QUIP,
+    JIRA,
+    GITHUB
   };
 
 namespace DataSourceTypeMapper

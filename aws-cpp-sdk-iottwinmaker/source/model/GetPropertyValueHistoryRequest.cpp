@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 GetPropertyValueHistoryRequest::GetPropertyValueHistoryRequest() : 
     m_componentNameHasBeenSet(false),
     m_componentTypeIdHasBeenSet(false),
-    m_endDateTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
     m_entityIdHasBeenSet(false),
     m_interpolationHasBeenSet(false),
     m_maxResults(0),
@@ -25,7 +25,7 @@ GetPropertyValueHistoryRequest::GetPropertyValueHistoryRequest() :
     m_orderByTimeHasBeenSet(false),
     m_propertyFiltersHasBeenSet(false),
     m_selectedPropertiesHasBeenSet(false),
-    m_startDateTimeHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
     m_workspaceIdHasBeenSet(false)
 {
 }
@@ -46,9 +46,10 @@ Aws::String GetPropertyValueHistoryRequest::SerializePayload() const
 
   }
 
-  if(m_endDateTimeHasBeenSet)
+  if(m_endTimeHasBeenSet)
   {
-   payload.WithDouble("endDateTime", m_endDateTime.SecondsWithMSPrecision());
+   payload.WithString("endTime", m_endTime);
+
   }
 
   if(m_entityIdHasBeenSet)
@@ -102,9 +103,10 @@ Aws::String GetPropertyValueHistoryRequest::SerializePayload() const
 
   }
 
-  if(m_startDateTimeHasBeenSet)
+  if(m_startTimeHasBeenSet)
   {
-   payload.WithDouble("startDateTime", m_startDateTime.SecondsWithMSPrecision());
+   payload.WithString("startTime", m_startTime);
+
   }
 
   return payload.View().WriteReadable();

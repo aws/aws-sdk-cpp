@@ -20,7 +20,8 @@ CreateMeetingWithAttendeesRequest::CreateMeetingWithAttendeesRequest() :
     m_externalMeetingIdHasBeenSet(false),
     m_meetingFeaturesHasBeenSet(false),
     m_notificationsConfigurationHasBeenSet(false),
-    m_attendeesHasBeenSet(false)
+    m_attendeesHasBeenSet(false),
+    m_primaryMeetingIdHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,12 @@ Aws::String CreateMeetingWithAttendeesRequest::SerializePayload() const
      attendeesJsonList[attendeesIndex].AsObject(m_attendees[attendeesIndex].Jsonize());
    }
    payload.WithArray("Attendees", std::move(attendeesJsonList));
+
+  }
+
+  if(m_primaryMeetingIdHasBeenSet)
+  {
+   payload.WithString("PrimaryMeetingId", m_primaryMeetingId);
 
   }
 

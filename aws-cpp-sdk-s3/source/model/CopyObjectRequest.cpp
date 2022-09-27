@@ -21,6 +21,8 @@ CopyObjectRequest::CopyObjectRequest() :
     m_aCLHasBeenSet(false),
     m_bucketHasBeenSet(false),
     m_cacheControlHasBeenSet(false),
+    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
+    m_checksumAlgorithmHasBeenSet(false),
     m_contentDispositionHasBeenSet(false),
     m_contentEncodingHasBeenSet(false),
     m_contentLanguageHasBeenSet(false),
@@ -111,6 +113,11 @@ Aws::Http::HeaderValueCollection CopyObjectRequest::GetRequestSpecificHeaders() 
     ss << m_cacheControl;
     headers.emplace("cache-control",  ss.str());
     ss.str("");
+  }
+
+  if(m_checksumAlgorithmHasBeenSet)
+  {
+    headers.emplace("x-amz-checksum-algorithm", ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm));
   }
 
   if(m_contentDispositionHasBeenSet)

@@ -35,7 +35,8 @@ CreateJobRequest::CreateJobRequest() :
     m_numberOfWorkers(0),
     m_numberOfWorkersHasBeenSet(false),
     m_workerType(WorkerType::NOT_SET),
-    m_workerTypeHasBeenSet(false)
+    m_workerTypeHasBeenSet(false),
+    m_codeGenConfigurationNodesHasBeenSet(false)
 {
 }
 
@@ -163,6 +164,17 @@ Aws::String CreateJobRequest::SerializePayload() const
   if(m_workerTypeHasBeenSet)
   {
    payload.WithString("WorkerType", WorkerTypeMapper::GetNameForWorkerType(m_workerType));
+  }
+
+  if(m_codeGenConfigurationNodesHasBeenSet)
+  {
+   JsonValue codeGenConfigurationNodesJsonMap;
+   for(auto& codeGenConfigurationNodesItem : m_codeGenConfigurationNodes)
+   {
+     codeGenConfigurationNodesJsonMap.WithObject(codeGenConfigurationNodesItem.first, codeGenConfigurationNodesItem.second.Jsonize());
+   }
+   payload.WithObject("CodeGenConfigurationNodes", std::move(codeGenConfigurationNodesJsonMap));
+
   }
 
   return payload.View().WriteReadable();

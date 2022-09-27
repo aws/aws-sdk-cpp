@@ -38,57 +38,65 @@ namespace Model
 
     /**
      * <p>The identifier of the index to add documents to. The index ID is returned by
-     * the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">
-     * CreateIndex </a> operation.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">CreateIndex
+     * </a> API.</p>
      */
     inline const Aws::String& GetIndexId() const{ return m_indexId; }
 
     /**
      * <p>The identifier of the index to add documents to. The index ID is returned by
-     * the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">
-     * CreateIndex </a> operation.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">CreateIndex
+     * </a> API.</p>
      */
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
 
     /**
      * <p>The identifier of the index to add documents to. The index ID is returned by
-     * the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">
-     * CreateIndex </a> operation.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">CreateIndex
+     * </a> API.</p>
      */
     inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
 
     /**
      * <p>The identifier of the index to add documents to. The index ID is returned by
-     * the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">
-     * CreateIndex </a> operation.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">CreateIndex
+     * </a> API.</p>
      */
     inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
 
     /**
      * <p>The identifier of the index to add documents to. The index ID is returned by
-     * the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">
-     * CreateIndex </a> operation.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">CreateIndex
+     * </a> API.</p>
      */
     inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
 
     /**
      * <p>The identifier of the index to add documents to. The index ID is returned by
-     * the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">
-     * CreateIndex </a> operation.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">CreateIndex
+     * </a> API.</p>
      */
     inline BatchGetDocumentStatusRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
 
     /**
      * <p>The identifier of the index to add documents to. The index ID is returned by
-     * the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">
-     * CreateIndex </a> operation.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">CreateIndex
+     * </a> API.</p>
      */
     inline BatchGetDocumentStatusRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the index to add documents to. The index ID is returned by
-     * the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">
-     * CreateIndex </a> operation.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">CreateIndex
+     * </a> API.</p>
      */
     inline BatchGetDocumentStatusRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
 

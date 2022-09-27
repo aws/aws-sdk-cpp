@@ -21,6 +21,8 @@ UpdateServerRequest::UpdateServerRequest() :
     m_hostKeyHasBeenSet(false),
     m_identityProviderDetailsHasBeenSet(false),
     m_loggingRoleHasBeenSet(false),
+    m_postAuthenticationLoginBannerHasBeenSet(false),
+    m_preAuthenticationLoginBannerHasBeenSet(false),
     m_protocolsHasBeenSet(false),
     m_securityPolicyNameHasBeenSet(false),
     m_serverIdHasBeenSet(false),
@@ -70,6 +72,18 @@ Aws::String UpdateServerRequest::SerializePayload() const
   if(m_loggingRoleHasBeenSet)
   {
    payload.WithString("LoggingRole", m_loggingRole);
+
+  }
+
+  if(m_postAuthenticationLoginBannerHasBeenSet)
+  {
+   payload.WithString("PostAuthenticationLoginBanner", m_postAuthenticationLoginBanner);
+
+  }
+
+  if(m_preAuthenticationLoginBannerHasBeenSet)
+  {
+   payload.WithString("PreAuthenticationLoginBanner", m_preAuthenticationLoginBanner);
 
   }
 

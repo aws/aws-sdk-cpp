@@ -36,42 +36,42 @@ namespace Model
 
 
     /**
-     * <p>An array of HTTP package configuration parameters for this VOD source.</p>
+     * <p>A list of HTTP package configuration parameters for this VOD source.</p>
      */
     inline const Aws::Vector<HttpPackageConfiguration>& GetHttpPackageConfigurations() const{ return m_httpPackageConfigurations; }
 
     /**
-     * <p>An array of HTTP package configuration parameters for this VOD source.</p>
+     * <p>A list of HTTP package configuration parameters for this VOD source.</p>
      */
     inline bool HttpPackageConfigurationsHasBeenSet() const { return m_httpPackageConfigurationsHasBeenSet; }
 
     /**
-     * <p>An array of HTTP package configuration parameters for this VOD source.</p>
+     * <p>A list of HTTP package configuration parameters for this VOD source.</p>
      */
     inline void SetHttpPackageConfigurations(const Aws::Vector<HttpPackageConfiguration>& value) { m_httpPackageConfigurationsHasBeenSet = true; m_httpPackageConfigurations = value; }
 
     /**
-     * <p>An array of HTTP package configuration parameters for this VOD source.</p>
+     * <p>A list of HTTP package configuration parameters for this VOD source.</p>
      */
     inline void SetHttpPackageConfigurations(Aws::Vector<HttpPackageConfiguration>&& value) { m_httpPackageConfigurationsHasBeenSet = true; m_httpPackageConfigurations = std::move(value); }
 
     /**
-     * <p>An array of HTTP package configuration parameters for this VOD source.</p>
+     * <p>A list of HTTP package configuration parameters for this VOD source.</p>
      */
     inline CreateVodSourceRequest& WithHttpPackageConfigurations(const Aws::Vector<HttpPackageConfiguration>& value) { SetHttpPackageConfigurations(value); return *this;}
 
     /**
-     * <p>An array of HTTP package configuration parameters for this VOD source.</p>
+     * <p>A list of HTTP package configuration parameters for this VOD source.</p>
      */
     inline CreateVodSourceRequest& WithHttpPackageConfigurations(Aws::Vector<HttpPackageConfiguration>&& value) { SetHttpPackageConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>An array of HTTP package configuration parameters for this VOD source.</p>
+     * <p>A list of HTTP package configuration parameters for this VOD source.</p>
      */
     inline CreateVodSourceRequest& AddHttpPackageConfigurations(const HttpPackageConfiguration& value) { m_httpPackageConfigurationsHasBeenSet = true; m_httpPackageConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>An array of HTTP package configuration parameters for this VOD source.</p>
+     * <p>A list of HTTP package configuration parameters for this VOD source.</p>
      */
     inline CreateVodSourceRequest& AddHttpPackageConfigurations(HttpPackageConfiguration&& value) { m_httpPackageConfigurationsHasBeenSet = true; m_httpPackageConfigurations.push_back(std::move(value)); return *this; }
 

@@ -39,6 +39,31 @@ namespace Model
 
 
     /**
+     * <p>Configures the number of resource instances to use while running an Amazon
+     * Braket job on Amazon Braket. The default value is 1.</p>
+     */
+    inline int GetInstanceCount() const{ return m_instanceCount; }
+
+    /**
+     * <p>Configures the number of resource instances to use while running an Amazon
+     * Braket job on Amazon Braket. The default value is 1.</p>
+     */
+    inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
+
+    /**
+     * <p>Configures the number of resource instances to use while running an Amazon
+     * Braket job on Amazon Braket. The default value is 1.</p>
+     */
+    inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
+
+    /**
+     * <p>Configures the number of resource instances to use while running an Amazon
+     * Braket job on Amazon Braket. The default value is 1.</p>
+     */
+    inline InstanceConfig& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
+
+
+    /**
      * <p>Configures the type resource instances to use while running an Amazon Braket
      * hybrid job.</p>
      */
@@ -96,6 +121,9 @@ namespace Model
     inline InstanceConfig& WithVolumeSizeInGb(int value) { SetVolumeSizeInGb(value); return *this;}
 
   private:
+
+    int m_instanceCount;
+    bool m_instanceCountHasBeenSet;
 
     InstanceType m_instanceType;
     bool m_instanceTypeHasBeenSet;

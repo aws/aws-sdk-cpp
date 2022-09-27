@@ -215,7 +215,7 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether to enable Amazon ECS managed tags for the task. For more
+     * <p>Specifies whether to use Amazon ECS managed tags for the task. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
@@ -224,7 +224,7 @@ namespace Model
     inline bool GetEnableECSManagedTags() const{ return m_enableECSManagedTags; }
 
     /**
-     * <p>Specifies whether to enable Amazon ECS managed tags for the task. For more
+     * <p>Specifies whether to use Amazon ECS managed tags for the task. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
@@ -233,7 +233,7 @@ namespace Model
     inline bool EnableECSManagedTagsHasBeenSet() const { return m_enableECSManagedTagsHasBeenSet; }
 
     /**
-     * <p>Specifies whether to enable Amazon ECS managed tags for the task. For more
+     * <p>Specifies whether to use Amazon ECS managed tags for the task. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
@@ -242,7 +242,7 @@ namespace Model
     inline void SetEnableECSManagedTags(bool value) { m_enableECSManagedTagsHasBeenSet = true; m_enableECSManagedTags = value; }
 
     /**
-     * <p>Specifies whether to enable Amazon ECS managed tags for the task. For more
+     * <p>Specifies whether to use Amazon ECS managed tags for the task. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
@@ -252,30 +252,38 @@ namespace Model
 
 
     /**
-     * <p>Determines whether to enable the execute command functionality for the
+     * <p>Determines whether to use the execute command functionality for the
      * containers in this task. If <code>true</code>, this enables execute command
-     * functionality on all containers in the task.</p>
+     * functionality on all containers in the task.</p> <p>If <code>true</code>, then
+     * the task definition must have a task role, or you must provide one as an
+     * override.</p>
      */
     inline bool GetEnableExecuteCommand() const{ return m_enableExecuteCommand; }
 
     /**
-     * <p>Determines whether to enable the execute command functionality for the
+     * <p>Determines whether to use the execute command functionality for the
      * containers in this task. If <code>true</code>, this enables execute command
-     * functionality on all containers in the task.</p>
+     * functionality on all containers in the task.</p> <p>If <code>true</code>, then
+     * the task definition must have a task role, or you must provide one as an
+     * override.</p>
      */
     inline bool EnableExecuteCommandHasBeenSet() const { return m_enableExecuteCommandHasBeenSet; }
 
     /**
-     * <p>Determines whether to enable the execute command functionality for the
+     * <p>Determines whether to use the execute command functionality for the
      * containers in this task. If <code>true</code>, this enables execute command
-     * functionality on all containers in the task.</p>
+     * functionality on all containers in the task.</p> <p>If <code>true</code>, then
+     * the task definition must have a task role, or you must provide one as an
+     * override.</p>
      */
     inline void SetEnableExecuteCommand(bool value) { m_enableExecuteCommandHasBeenSet = true; m_enableExecuteCommand = value; }
 
     /**
-     * <p>Determines whether to enable the execute command functionality for the
+     * <p>Determines whether to use the execute command functionality for the
      * containers in this task. If <code>true</code>, this enables execute command
-     * functionality on all containers in the task.</p>
+     * functionality on all containers in the task.</p> <p>If <code>true</code>, then
+     * the task definition must have a task role, or you must provide one as an
+     * override.</p>
      */
     inline RunTaskRequest& WithEnableExecuteCommand(bool value) { SetEnableExecuteCommand(value); return *this;}
 
@@ -1183,12 +1191,26 @@ namespace Model
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run. If a
      * <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision
-     * is used.</p> <p>The full ARN value must match the value that you specified as
-     * the <code>Resource</code> of the IAM principal's permissions policy. For
-     * example, if the <code>Resource</code> is
-     * arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the
-     * <code>taskDefinition</code> ARN value must be
+     * is used.</p> <p>When you create an IAM policy for run-task, you can set the
+     * resource to be the latest task definition revision, or a specific revision.</p>
+     * <p>The full ARN value must match the value that you specified as the
+     * <code>Resource</code> of the IAM principal's permissions policy.</p> <p>When you
+     * specify the policy resource as the latest task definition version (by setting
+     * the <code>Resource</code> in the policy to
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>),
+     * then set this value to
      * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
+     * <p>When you specify the policy resource as a specific task definition version
+     * (by setting the <code>Resource</code> in the policy to
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>
+     * or
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>),
+     * then set this value to
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources">Policy
+     * Resources for Amazon ECS</a> in the Amazon Elastic Container Service developer
+     * Guide.</p>
      */
     inline const Aws::String& GetTaskDefinition() const{ return m_taskDefinition; }
 
@@ -1196,12 +1218,26 @@ namespace Model
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run. If a
      * <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision
-     * is used.</p> <p>The full ARN value must match the value that you specified as
-     * the <code>Resource</code> of the IAM principal's permissions policy. For
-     * example, if the <code>Resource</code> is
-     * arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the
-     * <code>taskDefinition</code> ARN value must be
+     * is used.</p> <p>When you create an IAM policy for run-task, you can set the
+     * resource to be the latest task definition revision, or a specific revision.</p>
+     * <p>The full ARN value must match the value that you specified as the
+     * <code>Resource</code> of the IAM principal's permissions policy.</p> <p>When you
+     * specify the policy resource as the latest task definition version (by setting
+     * the <code>Resource</code> in the policy to
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>),
+     * then set this value to
      * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
+     * <p>When you specify the policy resource as a specific task definition version
+     * (by setting the <code>Resource</code> in the policy to
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>
+     * or
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>),
+     * then set this value to
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources">Policy
+     * Resources for Amazon ECS</a> in the Amazon Elastic Container Service developer
+     * Guide.</p>
      */
     inline bool TaskDefinitionHasBeenSet() const { return m_taskDefinitionHasBeenSet; }
 
@@ -1209,12 +1245,26 @@ namespace Model
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run. If a
      * <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision
-     * is used.</p> <p>The full ARN value must match the value that you specified as
-     * the <code>Resource</code> of the IAM principal's permissions policy. For
-     * example, if the <code>Resource</code> is
-     * arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the
-     * <code>taskDefinition</code> ARN value must be
+     * is used.</p> <p>When you create an IAM policy for run-task, you can set the
+     * resource to be the latest task definition revision, or a specific revision.</p>
+     * <p>The full ARN value must match the value that you specified as the
+     * <code>Resource</code> of the IAM principal's permissions policy.</p> <p>When you
+     * specify the policy resource as the latest task definition version (by setting
+     * the <code>Resource</code> in the policy to
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>),
+     * then set this value to
      * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
+     * <p>When you specify the policy resource as a specific task definition version
+     * (by setting the <code>Resource</code> in the policy to
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>
+     * or
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>),
+     * then set this value to
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources">Policy
+     * Resources for Amazon ECS</a> in the Amazon Elastic Container Service developer
+     * Guide.</p>
      */
     inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
 
@@ -1222,12 +1272,26 @@ namespace Model
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run. If a
      * <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision
-     * is used.</p> <p>The full ARN value must match the value that you specified as
-     * the <code>Resource</code> of the IAM principal's permissions policy. For
-     * example, if the <code>Resource</code> is
-     * arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the
-     * <code>taskDefinition</code> ARN value must be
+     * is used.</p> <p>When you create an IAM policy for run-task, you can set the
+     * resource to be the latest task definition revision, or a specific revision.</p>
+     * <p>The full ARN value must match the value that you specified as the
+     * <code>Resource</code> of the IAM principal's permissions policy.</p> <p>When you
+     * specify the policy resource as the latest task definition version (by setting
+     * the <code>Resource</code> in the policy to
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>),
+     * then set this value to
      * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
+     * <p>When you specify the policy resource as a specific task definition version
+     * (by setting the <code>Resource</code> in the policy to
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>
+     * or
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>),
+     * then set this value to
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources">Policy
+     * Resources for Amazon ECS</a> in the Amazon Elastic Container Service developer
+     * Guide.</p>
      */
     inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = std::move(value); }
 
@@ -1235,12 +1299,26 @@ namespace Model
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run. If a
      * <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision
-     * is used.</p> <p>The full ARN value must match the value that you specified as
-     * the <code>Resource</code> of the IAM principal's permissions policy. For
-     * example, if the <code>Resource</code> is
-     * arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the
-     * <code>taskDefinition</code> ARN value must be
+     * is used.</p> <p>When you create an IAM policy for run-task, you can set the
+     * resource to be the latest task definition revision, or a specific revision.</p>
+     * <p>The full ARN value must match the value that you specified as the
+     * <code>Resource</code> of the IAM principal's permissions policy.</p> <p>When you
+     * specify the policy resource as the latest task definition version (by setting
+     * the <code>Resource</code> in the policy to
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>),
+     * then set this value to
      * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
+     * <p>When you specify the policy resource as a specific task definition version
+     * (by setting the <code>Resource</code> in the policy to
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>
+     * or
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>),
+     * then set this value to
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources">Policy
+     * Resources for Amazon ECS</a> in the Amazon Elastic Container Service developer
+     * Guide.</p>
      */
     inline void SetTaskDefinition(const char* value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition.assign(value); }
 
@@ -1248,12 +1326,26 @@ namespace Model
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run. If a
      * <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision
-     * is used.</p> <p>The full ARN value must match the value that you specified as
-     * the <code>Resource</code> of the IAM principal's permissions policy. For
-     * example, if the <code>Resource</code> is
-     * arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the
-     * <code>taskDefinition</code> ARN value must be
+     * is used.</p> <p>When you create an IAM policy for run-task, you can set the
+     * resource to be the latest task definition revision, or a specific revision.</p>
+     * <p>The full ARN value must match the value that you specified as the
+     * <code>Resource</code> of the IAM principal's permissions policy.</p> <p>When you
+     * specify the policy resource as the latest task definition version (by setting
+     * the <code>Resource</code> in the policy to
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>),
+     * then set this value to
      * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
+     * <p>When you specify the policy resource as a specific task definition version
+     * (by setting the <code>Resource</code> in the policy to
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>
+     * or
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>),
+     * then set this value to
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources">Policy
+     * Resources for Amazon ECS</a> in the Amazon Elastic Container Service developer
+     * Guide.</p>
      */
     inline RunTaskRequest& WithTaskDefinition(const Aws::String& value) { SetTaskDefinition(value); return *this;}
 
@@ -1261,12 +1353,26 @@ namespace Model
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run. If a
      * <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision
-     * is used.</p> <p>The full ARN value must match the value that you specified as
-     * the <code>Resource</code> of the IAM principal's permissions policy. For
-     * example, if the <code>Resource</code> is
-     * arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the
-     * <code>taskDefinition</code> ARN value must be
+     * is used.</p> <p>When you create an IAM policy for run-task, you can set the
+     * resource to be the latest task definition revision, or a specific revision.</p>
+     * <p>The full ARN value must match the value that you specified as the
+     * <code>Resource</code> of the IAM principal's permissions policy.</p> <p>When you
+     * specify the policy resource as the latest task definition version (by setting
+     * the <code>Resource</code> in the policy to
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>),
+     * then set this value to
      * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
+     * <p>When you specify the policy resource as a specific task definition version
+     * (by setting the <code>Resource</code> in the policy to
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>
+     * or
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>),
+     * then set this value to
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources">Policy
+     * Resources for Amazon ECS</a> in the Amazon Elastic Container Service developer
+     * Guide.</p>
      */
     inline RunTaskRequest& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(std::move(value)); return *this;}
 
@@ -1274,12 +1380,26 @@ namespace Model
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run. If a
      * <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision
-     * is used.</p> <p>The full ARN value must match the value that you specified as
-     * the <code>Resource</code> of the IAM principal's permissions policy. For
-     * example, if the <code>Resource</code> is
-     * arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the
-     * <code>taskDefinition</code> ARN value must be
+     * is used.</p> <p>When you create an IAM policy for run-task, you can set the
+     * resource to be the latest task definition revision, or a specific revision.</p>
+     * <p>The full ARN value must match the value that you specified as the
+     * <code>Resource</code> of the IAM principal's permissions policy.</p> <p>When you
+     * specify the policy resource as the latest task definition version (by setting
+     * the <code>Resource</code> in the policy to
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>),
+     * then set this value to
      * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
+     * <p>When you specify the policy resource as a specific task definition version
+     * (by setting the <code>Resource</code> in the policy to
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>
+     * or
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>),
+     * then set this value to
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources">Policy
+     * Resources for Amazon ECS</a> in the Amazon Elastic Container Service developer
+     * Guide.</p>
      */
     inline RunTaskRequest& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
 

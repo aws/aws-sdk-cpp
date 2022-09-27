@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * Information relating to readiness check status<p><h3>See Also:</h3>   <a
+   * <p>Information relating to readiness check status.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/Message">AWS
    * API Reference</a></p>
    */
@@ -38,42 +38,42 @@ namespace Model
 
 
     /**
-     * The text of a readiness check message
+     * <p>The text of a readiness check message.</p>
      */
     inline const Aws::String& GetMessageText() const{ return m_messageText; }
 
     /**
-     * The text of a readiness check message
+     * <p>The text of a readiness check message.</p>
      */
     inline bool MessageTextHasBeenSet() const { return m_messageTextHasBeenSet; }
 
     /**
-     * The text of a readiness check message
+     * <p>The text of a readiness check message.</p>
      */
     inline void SetMessageText(const Aws::String& value) { m_messageTextHasBeenSet = true; m_messageText = value; }
 
     /**
-     * The text of a readiness check message
+     * <p>The text of a readiness check message.</p>
      */
     inline void SetMessageText(Aws::String&& value) { m_messageTextHasBeenSet = true; m_messageText = std::move(value); }
 
     /**
-     * The text of a readiness check message
+     * <p>The text of a readiness check message.</p>
      */
     inline void SetMessageText(const char* value) { m_messageTextHasBeenSet = true; m_messageText.assign(value); }
 
     /**
-     * The text of a readiness check message
+     * <p>The text of a readiness check message.</p>
      */
     inline Message& WithMessageText(const Aws::String& value) { SetMessageText(value); return *this;}
 
     /**
-     * The text of a readiness check message
+     * <p>The text of a readiness check message.</p>
      */
     inline Message& WithMessageText(Aws::String&& value) { SetMessageText(std::move(value)); return *this;}
 
     /**
-     * The text of a readiness check message
+     * <p>The text of a readiness check message.</p>
      */
     inline Message& WithMessageText(const char* value) { SetMessageText(value); return *this;}
 
