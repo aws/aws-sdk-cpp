@@ -16,7 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-CopyObjectRequest::CopyObjectRequest() : 
+CopyObjectRequest::CopyObjectRequest() :
     m_aCL(ObjectCannedACL::NOT_SET),
     m_aCLHasBeenSet(false),
     m_bucketHasBeenSet(false),
@@ -173,7 +173,7 @@ Aws::Http::HeaderValueCollection CopyObjectRequest::GetRequestSpecificHeaders() 
   if(m_copySourceHasBeenSet)
   {
     ss << m_copySource;
-    headers.emplace("x-amz-copy-source", URI::URLEncodePath(ss.str()));
+    headers.emplace("x-amz-copy-source", ss.str());
     ss.str("");
   }
 

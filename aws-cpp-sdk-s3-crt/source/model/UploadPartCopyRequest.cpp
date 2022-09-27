@@ -16,7 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-UploadPartCopyRequest::UploadPartCopyRequest() : 
+UploadPartCopyRequest::UploadPartCopyRequest() :
     m_bucketHasBeenSet(false),
     m_copySourceHasBeenSet(false),
     m_copySourceIfMatchHasBeenSet(false),
@@ -112,7 +112,7 @@ Aws::Http::HeaderValueCollection UploadPartCopyRequest::GetRequestSpecificHeader
   if(m_copySourceHasBeenSet)
   {
     ss << m_copySource;
-    headers.emplace("x-amz-copy-source", URI::URLEncodePath(ss.str()));
+    headers.emplace("x-amz-copy-source", ss.str());
     ss.str("");
   }
 
